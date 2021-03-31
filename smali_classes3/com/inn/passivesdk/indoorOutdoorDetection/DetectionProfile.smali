@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public confidence:D
+.field private confidence:D
 
-.field public environment:Ljava/lang/String;
+.field private environment:Ljava/lang/String;
 
 
 # direct methods

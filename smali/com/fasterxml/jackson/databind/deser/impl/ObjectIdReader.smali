@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -177,6 +177,11 @@
 
 .method public readObjectReference(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->_deserializer:Lcom/fasterxml/jackson/databind/JsonDeserializer;

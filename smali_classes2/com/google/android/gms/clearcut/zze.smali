@@ -41,31 +41,31 @@
     .end annotation
 .end field
 
-.field public zzai:[I
+.field private zzai:[I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x4
     .end annotation
 .end field
 
-.field public zzaj:[Ljava/lang/String;
+.field private zzaj:[Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x5
     .end annotation
 .end field
 
-.field public zzak:[I
+.field private zzak:[I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x6
     .end annotation
 .end field
 
-.field public zzal:[[B
+.field private zzal:[[B
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x7
     .end annotation
 .end field
 
-.field public zzam:[Lcom/google/android/gms/phenotype/ExperimentTokens;
+.field private zzam:[Lcom/google/android/gms/phenotype/ExperimentTokens;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x9
     .end annotation
@@ -75,7 +75,7 @@
 
 .field public final zzt:Lcom/google/android/gms/clearcut/ClearcutLogger$zzb;
 
-.field public zzz:Z
+.field private zzz:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "true"
         id = 0x8
@@ -442,11 +442,11 @@
     goto :goto_0
 
     :cond_0
-    new-instance v2, Ljava/lang/String;
+    new-instance v1, Ljava/lang/String;
 
-    invoke-direct {v2, v1}, Ljava/lang/String;-><init>([B)V
+    iget-object v2, p0, Lcom/google/android/gms/clearcut/zze;->zzah:[B
 
-    move-object v1, v2
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([B)V
 
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -563,53 +563,53 @@
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzag:Lcom/google/android/gms/internal/clearcut/zzr;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzah:[B
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzai:[I
 
-    const/4 v3, 0x4
+    const/4 v2, 0x4
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzaj:[Ljava/lang/String;
 
-    const/4 v3, 0x5
+    const/4 v2, 0x5
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzak:[I
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzal:[[B
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArrayArray(Landroid/os/Parcel;I[[BZ)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArrayArray(Landroid/os/Parcel;I[[BZ)V
 
     iget-boolean v1, p0, Lcom/google/android/gms/clearcut/zze;->zzz:Z
 
-    const/16 v3, 0x8
+    const/16 v2, 0x8
 
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
     iget-object v1, p0, Lcom/google/android/gms/clearcut/zze;->zzam:[Lcom/google/android/gms/phenotype/ExperimentTokens;
 
-    const/16 v3, 0x9
+    const/16 v2, 0x9
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 

@@ -7,17 +7,17 @@
 
 
 # static fields
-.field public static spTask:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private static spTask:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # instance fields
-.field public MODULE:Ljava/lang/String;
+.field private MODULE:Ljava/lang/String;
 
-.field public Que:Ljava/lang/String;
+.field private Que:Ljava/lang/String;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public contextListener:Lcom/elitecore/elitesmp/listener/IBaseEliteListner;
+.field private contextListener:Lcom/elitecore/elitesmp/listener/IBaseEliteListner;
 
 .field public subscriberData:Lcom/elitecorelib/core/pojo/PojoSubscriber;
 
@@ -77,7 +77,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {v2}, Lk30;->j(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/elitecorelib/core/utility/f;->j(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {v2}, Lk30;->j(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/elitecorelib/core/utility/f;->j(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -275,9 +275,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -289,7 +289,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsLogin"
+    const-string/jumbo v2, "wsLogin"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -311,7 +311,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;->getInstance()Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;
 
@@ -323,7 +323,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v0, p2, p3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;->getInstance()Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;
 
@@ -335,7 +335,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v0, p2, p4}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p4}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;->getInstance()Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;
 
@@ -347,7 +347,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v0, p2, p5}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p5}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p2, "KEY_IPADDRESS"
 
@@ -373,7 +373,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v0, p2, p7}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p7}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -392,7 +392,7 @@
 
     move-result-object p3
 
-    invoke-virtual {v0, p2, p3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     invoke-static {}, Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;->getInstance()Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;
@@ -405,7 +405,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v0, p2, p6}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p6}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -413,7 +413,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object p3
 
@@ -431,7 +431,7 @@
 
     invoke-virtual {p3, p4, p5}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object p3
 
@@ -439,7 +439,7 @@
 
     check-cast p4, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {p3, p4, p1, p2}, Lg00;->c(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
+    invoke-virtual {p3, p4, p1, p2}, Lw8;->x(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -477,7 +477,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsDBScan"
+    const-string/jumbo v2, "wsDBScan"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -497,9 +497,9 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v2, Lc40;
+    new-instance v2, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v2}, Lc40;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     if-eqz p4, :cond_0
 
@@ -513,7 +513,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3, p4}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v3, p4}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     if-eqz p2, :cond_1
@@ -528,7 +528,7 @@
 
     move-result-object p4
 
-    invoke-virtual {v2, p4, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, p4, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     if-eqz p3, :cond_2
@@ -543,7 +543,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v2, p2, p3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, p2, p3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
     if-eqz p5, :cond_3
@@ -558,7 +558,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v2, p2, p5}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, p2, p5}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
     if-eqz p6, :cond_4
@@ -579,7 +579,7 @@
 
     move-result-object p3
 
-    invoke-virtual {v2, p2, p3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, p2, p3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
     new-instance p2, Ljava/lang/StringBuilder;
@@ -588,7 +588,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object p3
 
@@ -606,7 +606,7 @@
 
     invoke-virtual {p3, p4, p5}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object p3
 
@@ -614,7 +614,7 @@
 
     check-cast p4, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {p3, p4, p1, p2, p7}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual {p3, p4, p1, p2, p7}, Lw8;->o(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -636,7 +636,7 @@
 
     invoke-direct {p0, v1}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v2
 
@@ -656,7 +656,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "wsRenewAccount"
+    const-string/jumbo v4, "wsRenewAccount"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -688,7 +688,7 @@
 
     move-object/from16 v14, p9
 
-    invoke-virtual/range {v2 .. v14}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual/range {v2 .. v14}, Lw8;->k(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -710,7 +710,7 @@
 
     invoke-direct {p0, v1}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v2
 
@@ -730,7 +730,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "wsRegisterAccount"
+    const-string/jumbo v4, "wsRegisterAccount"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -754,7 +754,7 @@
 
     move-object/from16 v12, p8
 
-    invoke-virtual/range {v2 .. v12}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual/range {v2 .. v12}, Lw8;->l(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -774,9 +774,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -788,7 +788,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsLogin"
+    const-string/jumbo v2, "wsLogin"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -826,7 +826,7 @@
 
     aget-object v2, p2, v2
 
-    invoke-virtual {v0, v3, v2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v3, v2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     const/4 v2, 0x1
@@ -855,7 +855,7 @@
 
     aget-object v2, p2, v2
 
-    invoke-virtual {v0, v3, v2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v3, v2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -864,7 +864,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -882,7 +882,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v3
 
@@ -900,7 +900,7 @@
 
     move-object v8, p2
 
-    invoke-virtual/range {v3 .. v8}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual/range {v3 .. v8}, Lw8;->n(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -920,9 +920,9 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -934,7 +934,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsSubscriberLogout"
+    const-string/jumbo v2, "wsSubscriberLogout"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -964,7 +964,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
@@ -973,7 +973,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -983,7 +983,7 @@
 
     move-result-object v6
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v3
 
@@ -1007,7 +1007,7 @@
 
     move-object v10, p4
 
-    invoke-virtual/range {v3 .. v10}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual/range {v3 .. v10}, Lw8;->m(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1029,7 +1029,7 @@
 
     invoke-direct {p0, v1}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v2
 
@@ -1049,7 +1049,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "wsRechargeAccount"
+    const-string/jumbo v4, "wsRechargeAccount"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1069,7 +1069,7 @@
 
     move-object/from16 v10, p6
 
-    invoke-virtual/range {v2 .. v10}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v2 .. v10}, Lw8;->h(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1091,7 +1091,7 @@
 
     invoke-direct {p0, v1}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v2
 
@@ -1111,7 +1111,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "wsRegisterAccount"
+    const-string/jumbo v4, "wsRegisterAccount"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1137,7 +1137,7 @@
 
     move-object/from16 v13, p9
 
-    invoke-virtual/range {v2 .. v13}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v2 .. v13}, Lw8;->j(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1153,9 +1153,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1167,7 +1167,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsPGLogin"
+    const-string/jumbo v2, "wsPGLogin"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1181,7 +1181,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1242,7 +1242,7 @@
     :cond_0
     move-object v9, p4
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v3
 
@@ -1258,7 +1258,7 @@
 
     move-object v8, p3
 
-    invoke-virtual/range {v3 .. v9}, Lg00;->b(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v3 .. v9}, Lw8;->v(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1274,9 +1274,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1288,7 +1288,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsPGLogout"
+    const-string/jumbo v2, "wsPGLogout"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1302,7 +1302,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1357,7 +1357,7 @@
     :cond_0
     move-object v9, p4
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v3
 
@@ -1373,7 +1373,7 @@
 
     move-object v8, p3
 
-    invoke-virtual/range {v3 .. v9}, Lg00;->c(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v3 .. v9}, Lw8;->A(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1403,9 +1403,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1417,7 +1417,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsLogin"
+    const-string/jumbo v2, "wsLogin"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1459,7 +1459,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     invoke-virtual {p2}, Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;->getPassWord()Ljava/lang/String;
@@ -1492,7 +1492,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1501,7 +1501,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1519,7 +1519,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v3
 
@@ -1539,7 +1539,7 @@
 
     move-object v8, p2
 
-    invoke-virtual/range {v3 .. v8}, Lg00;->b(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;)V
+    invoke-virtual/range {v3 .. v8}, Lw8;->t(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;)V
 
     return-void
 
@@ -1578,9 +1578,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1592,7 +1592,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsSubscriberLogout"
+    const-string/jumbo v2, "wsSubscriberLogout"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1634,7 +1634,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1643,7 +1643,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1653,7 +1653,7 @@
 
     move-result-object v6
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v3
 
@@ -1673,7 +1673,7 @@
 
     move-object v8, p2
 
-    invoke-virtual/range {v3 .. v8}, Lg00;->c(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;)V
+    invoke-virtual/range {v3 .. v8}, Lw8;->z(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -1722,7 +1722,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "wsRegisterAccount"
+    const-string/jumbo v1, "wsRegisterAccount"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1730,7 +1730,7 @@
 
     move-result-object v5
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v2
 
@@ -1750,7 +1750,7 @@
 
     move-object v7, p2
 
-    invoke-virtual/range {v2 .. v7}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;)V
+    invoke-virtual/range {v2 .. v7}, Lw8;->e(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Lcom/elitecore/elitesmp/pojo/UserRegistrationDetail;)V
 
     return-void
 
@@ -1779,11 +1779,11 @@
 
     invoke-direct {p0, p1}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object p1
 
-    invoke-virtual {p1, p2, p3, p4}, Lg00;->f(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
+    invoke-virtual {p1, p2, p3, p4}, Lw8;->F(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -1813,7 +1813,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "wsSendNotification"
+    const-string/jumbo v1, "wsSendNotification"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1827,7 +1827,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -1835,7 +1835,7 @@
 
     check-cast v1, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {v0, v1, p1, p2, p3}, Lg00;->e(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p1, p2, p3}, Lw8;->E(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1857,7 +1857,7 @@
 
     invoke-direct {p0, v1}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v2
 
@@ -1877,7 +1877,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "wsRegisterAccount"
+    const-string/jumbo v4, "wsRegisterAccount"
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1899,7 +1899,7 @@
 
     move-object/from16 v11, p7
 
-    invoke-virtual/range {v2 .. v11}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v2 .. v11}, Lw8;->i(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1919,9 +1919,9 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1933,7 +1933,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsForgotPassword"
+    const-string/jumbo v2, "wsForgotPassword"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1963,7 +1963,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1972,7 +1972,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2002,7 +2002,7 @@
 
     invoke-virtual {p2, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v1
 
@@ -2018,7 +2018,7 @@
 
     move-object v6, p4
 
-    invoke-virtual/range {v1 .. v6}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v1 .. v6}, Lw8;->f(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2049,9 +2049,9 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -2218,7 +2218,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    invoke-virtual {v0, v2, v3}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -2229,7 +2229,7 @@
 
     invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object p2
 
@@ -2259,7 +2259,7 @@
 
     invoke-virtual {p2, p3, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -2275,7 +2275,7 @@
 
     move-object v5, p5
 
-    invoke-virtual/range {v0 .. v5}, Lg00;->b(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v0 .. v5}, Lw8;->u(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2295,7 +2295,7 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -2313,7 +2313,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "wsGetBrandData"
+    const-string/jumbo v3, "wsGetBrandData"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2327,7 +2327,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, p1, v2, v3}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p1, v2, v3}, Lw8;->d(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2347,9 +2347,9 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2361,7 +2361,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsGetPackages"
+    const-string/jumbo v2, "wsGetPackages"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2392,7 +2392,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2418,7 +2418,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2429,7 +2429,7 @@
     move-result-object v1
 
     :cond_0
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object p2
 
@@ -2437,7 +2437,7 @@
 
     check-cast v0, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {p2, v0, p1, v1}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
+    invoke-virtual {p2, v0, p1, v1}, Lw8;->c(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -2457,7 +2457,7 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -2475,7 +2475,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "wsGetPartnerData"
+    const-string/jumbo v3, "wsGetPartnerData"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2489,7 +2489,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, p1, v2, v3}, Lg00;->b(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p1, v2, v3}, Lw8;->s(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2519,7 +2519,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "wsGetPaymentGateway"
+    const-string/jumbo v1, "wsGetPaymentGateway"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2527,7 +2527,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v1
 
@@ -2535,7 +2535,7 @@
 
     check-cast v2, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {v1, v2, p1, v0}, Lg00;->b(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
+    invoke-virtual {v1, v2, p1, v0}, Lw8;->r(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -2555,9 +2555,9 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2569,7 +2569,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsGetSubscriberData"
+    const-string/jumbo v2, "wsGetSubscriberData"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2599,7 +2599,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
@@ -2608,7 +2608,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2618,7 +2618,7 @@
 
     move-result-object v4
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v1
 
@@ -2634,7 +2634,7 @@
 
     move-object v6, p4
 
-    invoke-virtual/range {v1 .. v6}, Lg00;->b(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual/range {v1 .. v6}, Lw8;->w(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2751,7 +2751,7 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v1
 
@@ -2771,7 +2771,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "wsRechargeAccount"
+    const-string/jumbo v3, "wsRechargeAccount"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2787,7 +2787,7 @@
 
     move-object v7, p4
 
-    invoke-virtual/range {v1 .. v7}, Lg00;->a(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v1 .. v7}, Lw8;->g(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2807,9 +2807,9 @@
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2821,7 +2821,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsSendOTP"
+    const-string/jumbo v2, "wsSendOTP"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2851,7 +2851,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
@@ -2860,7 +2860,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2870,7 +2870,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -2878,7 +2878,7 @@
 
     check-cast v1, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {v0, v1, p1, p3, p2}, Lg00;->d(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p1, p3, p2}, Lw8;->C(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2894,7 +2894,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, "verifyOTP"
+    const-string/jumbo v0, "verifyOTP"
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
@@ -2902,7 +2902,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "wsVerifyOTP?mobileNumber="
+    const-string/jumbo v1, "wsVerifyOTP?mobileNumber="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2934,7 +2934,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object p3
 
@@ -2942,7 +2942,7 @@
 
     check-cast v0, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {p3, v0, p1, p2}, Lg00;->e(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
+    invoke-virtual {p3, v0, p1, p2}, Lw8;->D(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -2958,13 +2958,13 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, "verifyPasswordPolicy"
+    const-string/jumbo v0, "verifyPasswordPolicy"
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
-    new-instance v0, Lc40;
+    new-instance v0, Lcom/elitecorelib/core/utility/x;
 
-    invoke-direct {v0}, Lc40;-><init>()V
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/x;-><init>()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2976,7 +2976,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "wsPasswordVerification"
+    const-string/jumbo v2, "wsPasswordVerification"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3006,7 +3006,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, p2}, Lc40;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/utility/x;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
@@ -3015,7 +3015,7 @@
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lc40;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/elitecorelib/core/utility/x;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -3025,7 +3025,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -3033,7 +3033,7 @@
 
     check-cast v1, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {v0, v1, p1, p2, p3}, Lg00;->c(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p1, p2, p3}, Lw8;->y(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -3049,7 +3049,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v0, "voucherVerification"
+    const-string/jumbo v0, "voucherVerification"
 
     invoke-direct {p0, v0}, Lcom/elitecore/elitesmp/api/EliteSMPAPI;->methodValidation(Ljava/lang/String;)V
 
@@ -3057,7 +3057,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "wsVoucherVerification?voucherCode="
+    const-string/jumbo v1, "wsVoucherVerification?voucherCode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3083,7 +3083,7 @@
 
     move-result-object p2
 
-    invoke-static {}, Lg00;->a()Lg00;
+    invoke-static {}, Lw8;->a()Lw8;
 
     move-result-object v0
 
@@ -3091,7 +3091,7 @@
 
     check-cast v1, Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;
 
-    invoke-virtual {v0, v1, p1, p2}, Lg00;->d(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
+    invoke-virtual {v0, v1, p1, p2}, Lw8;->B(Lcom/elitecore/elitesmp/listener/OnEliteSMPTaskCompleteListner;ILjava/lang/String;)V
 
     return-void
 .end method

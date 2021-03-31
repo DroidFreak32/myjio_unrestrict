@@ -87,7 +87,7 @@
 
     if-nez p1, :cond_3
 
-    const-string v4, "wzrk_c2a"
+    const-string/jumbo v4, "wzrk_c2a"
 
     .line 10
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -152,7 +152,7 @@
 
     invoke-virtual {v2, p0}, Landroid/net/UrlQuerySanitizer;->parseUrl(Ljava/lang/String;)V
 
-    const-string p0, "source"
+    const-string/jumbo p0, "source"
 
     .line 5
     invoke-static {p0, v2}, Lcom/clevertap/android/sdk/UriHelper;->getUtmOrWzrkValue(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
@@ -171,17 +171,17 @@
 
     move-result-object v4
 
-    const-string v5, "us"
+    const-string/jumbo v5, "us"
 
     .line 8
     invoke-virtual {v1, v5, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string p0, "um"
+    const-string/jumbo p0, "um"
 
     .line 9
     invoke-virtual {v1, p0, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string p0, "uc"
+    const-string/jumbo p0, "uc"
 
     .line 10
     invoke-virtual {v1, p0, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -202,7 +202,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "wm"
+    const-string/jumbo v0, "wm"
 
     .line 13
     invoke-virtual {v1, v0, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -237,7 +237,7 @@
     return-object v1
 .end method
 
-.method public static getUtmOrWzrkValue(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
+.method private static getUtmOrWzrkValue(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -266,7 +266,7 @@
     return-object v0
 .end method
 
-.method public static getUtmValueForKey(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
+.method private static getUtmValueForKey(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
     .locals 2
 
     .line 1
@@ -274,7 +274,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "utm_"
+    const-string/jumbo v1, "utm_"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -294,7 +294,7 @@
     return-object p0
 .end method
 
-.method public static getValueForKey(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;Z)Ljava/lang/String;
+.method private static getValueForKey(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;Z)Ljava/lang/String;
     .locals 1
 
     const/4 v0, 0x0
@@ -353,7 +353,7 @@
     return-object v0
 .end method
 
-.method public static getWzrkValueForKey(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
+.method private static getWzrkValueForKey(Ljava/lang/String;Landroid/net/UrlQuerySanitizer;)Ljava/lang/String;
     .locals 2
 
     .line 1
@@ -361,7 +361,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "wzrk_"
+    const-string/jumbo v1, "wzrk_"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

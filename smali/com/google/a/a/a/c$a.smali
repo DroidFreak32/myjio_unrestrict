@@ -25,7 +25,7 @@
 
 
 # instance fields
-.field public a:Ljava/util/LinkedHashMap;
+.field private a:Ljava/util/LinkedHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/LinkedHashMap<",
@@ -34,7 +34,7 @@
     .end annotation
 .end field
 
-.field public b:I
+.field private b:I
 
 
 # direct methods

@@ -16,6 +16,10 @@
 
 # virtual methods
 .method public abstract onLoadFailed(Lcom/bumptech/glide/load/engine/GlideException;Ljava/lang/Object;Lcom/bumptech/glide/request/target/Target;Z)Z
+    .param p1    # Lcom/bumptech/glide/load/engine/GlideException;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

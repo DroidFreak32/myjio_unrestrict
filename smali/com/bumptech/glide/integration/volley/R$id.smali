@@ -1,6 +1,5 @@
 .class public final Lcom/bumptech/glide/integration/volley/R$id;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,80 +14,79 @@
 
 
 # static fields
-.field public static final action_container:I = 0x7f0b0098
+.field public static final action_container:I = 0x7f0b00a4
 
-.field public static final action_divider:I = 0x7f0b009d
+.field public static final action_divider:I = 0x7f0b00a9
 
-.field public static final action_image:I = 0x7f0b00a5
+.field public static final action_image:I = 0x7f0b00b1
 
-.field public static final action_text:I = 0x7f0b00b9
+.field public static final action_text:I = 0x7f0b00c5
 
-.field public static final actions:I = 0x7f0b00be
+.field public static final actions:I = 0x7f0b00ca
 
-.field public static final async:I = 0x7f0b014d
+.field public static final async:I = 0x7f0b0161
 
-.field public static final blocking:I = 0x7f0b01de
+.field public static final blocking:I = 0x7f0b01fc
 
-.field public static final bottom:I = 0x7f0b01ec
+.field public static final bottom:I = 0x7f0b020a
 
-.field public static final chronometer:I = 0x7f0b03b8
+.field public static final chronometer:I = 0x7f0b03fb
 
-.field public static final end:I = 0x7f0b0639
+.field public static final end:I = 0x7f0b06c9
 
-.field public static final forever:I = 0x7f0b0754
+.field public static final forever:I = 0x7f0b07f8
 
-.field public static final glide_custom_view_target_tag:I = 0x7f0b07b7
+.field public static final glide_custom_view_target_tag:I = 0x7f0b085b
 
-.field public static final icon:I = 0x7f0b083f
+.field public static final icon:I = 0x7f0b08e7
 
-.field public static final icon_group:I = 0x7f0b0847
+.field public static final icon_group:I = 0x7f0b08f1
 
-.field public static final info:I = 0x7f0b0921
+.field public static final info:I = 0x7f0b09ca
 
-.field public static final italic:I = 0x7f0b0944
+.field public static final italic:I = 0x7f0b09ef
 
-.field public static final left:I = 0x7f0b0aea
+.field public static final left:I = 0x7f0b0ba7
 
-.field public static final line1:I = 0x7f0b0b02
+.field public static final line1:I = 0x7f0b0bc1
 
-.field public static final line3:I = 0x7f0b0b04
+.field public static final line3:I = 0x7f0b0bc3
 
-.field public static final none:I = 0x7f0b0ef3
+.field public static final none:I = 0x7f0b1019
 
-.field public static final normal:I = 0x7f0b0efb
+.field public static final normal:I = 0x7f0b1020
 
-.field public static final notification_background:I = 0x7f0b0f02
+.field public static final notification_background:I = 0x7f0b1029
 
-.field public static final notification_main_column:I = 0x7f0b0f04
+.field public static final notification_main_column:I = 0x7f0b102d
 
-.field public static final notification_main_column_container:I = 0x7f0b0f05
+.field public static final notification_main_column_container:I = 0x7f0b102e
 
-.field public static final right:I = 0x7f0b1127
+.field public static final right:I = 0x7f0b128e
 
-.field public static final right_icon:I = 0x7f0b112c
+.field public static final right_icon:I = 0x7f0b1294
 
-.field public static final right_side:I = 0x7f0b112d
+.field public static final right_side:I = 0x7f0b1295
 
-.field public static final start:I = 0x7f0b1361
+.field public static final start:I = 0x7f0b14e6
 
-.field public static final tag_transition_group:I = 0x7f0b13cf
+.field public static final tag_transition_group:I = 0x7f0b1558
 
-.field public static final text:I = 0x7f0b13e4
+.field public static final text:I = 0x7f0b1572
 
-.field public static final text2:I = 0x7f0b13e6
+.field public static final text2:I = 0x7f0b1574
 
-.field public static final time:I = 0x7f0b146e
+.field public static final time:I = 0x7f0b1603
 
-.field public static final title:I = 0x7f0b1476
+.field public static final title:I = 0x7f0b160b
 
-.field public static final top:I = 0x7f0b149f
+.field public static final top:I = 0x7f0b1635
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

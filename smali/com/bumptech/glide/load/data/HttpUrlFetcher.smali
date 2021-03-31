@@ -26,26 +26,29 @@
 
 # static fields
 .field public static final DEFAULT_CONNECTION_FACTORY:Lcom/bumptech/glide/load/data/HttpUrlFetcher$HttpUrlConnectionFactory;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+.end field
 
-.field public static final INVALID_STATUS_CODE:I = -0x1
+.field private static final INVALID_STATUS_CODE:I = -0x1
 
-.field public static final MAXIMUM_REDIRECTS:I = 0x5
+.field private static final MAXIMUM_REDIRECTS:I = 0x5
 
-.field public static final TAG:Ljava/lang/String; = "HttpUrlFetcher"
+.field private static final TAG:Ljava/lang/String; = "HttpUrlFetcher"
 
 
 # instance fields
-.field public final connectionFactory:Lcom/bumptech/glide/load/data/HttpUrlFetcher$HttpUrlConnectionFactory;
+.field private final connectionFactory:Lcom/bumptech/glide/load/data/HttpUrlFetcher$HttpUrlConnectionFactory;
 
-.field public final glideUrl:Lcom/bumptech/glide/load/model/GlideUrl;
+.field private final glideUrl:Lcom/bumptech/glide/load/model/GlideUrl;
 
-.field public volatile isCancelled:Z
+.field private volatile isCancelled:Z
 
-.field public stream:Ljava/io/InputStream;
+.field private stream:Ljava/io/InputStream;
 
-.field public final timeout:I
+.field private final timeout:I
 
-.field public urlConnection:Ljava/net/HttpURLConnection;
+.field private urlConnection:Ljava/net/HttpURLConnection;
 
 
 # direct methods
@@ -75,6 +78,8 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/load/model/GlideUrl;ILcom/bumptech/glide/load/data/HttpUrlFetcher$HttpUrlConnectionFactory;)V
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,6 +98,11 @@
 
 .method private getStreamForSuccessfulRequest(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getContentEncoding()Ljava/lang/String;
@@ -169,7 +179,7 @@
     return-object p1
 .end method
 
-.method public static isHttpOk(I)Z
+.method private static isHttpOk(I)Z
     .locals 1
 
     .line 1
@@ -190,7 +200,7 @@
     return p0
 .end method
 
-.method public static isHttpRedirect(I)Z
+.method private static isHttpRedirect(I)Z
     .locals 1
 
     .line 1
@@ -224,6 +234,12 @@
             "Ljava/lang/String;",
             ">;)",
             "Ljava/io/InputStream;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -538,6 +554,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -555,6 +574,8 @@
 
 .method public getDataSource()Lcom/bumptech/glide/load/DataSource;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/DataSource;->REMOTE:Lcom/bumptech/glide/load/DataSource;
@@ -564,6 +585,14 @@
 
 .method public loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
     .locals 8
+    .param p1    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

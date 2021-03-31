@@ -1,44 +1,16 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzm;
-.super Landroid/os/Handler;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-
-# static fields
-.field public static zza:Lcom/google/android/gms/internal/measurement/zzo;
+.class public final synthetic Lcom/google/android/gms/internal/measurement/zzm;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+.method public static zza()Lcom/google/android/gms/internal/measurement/zzn;
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzp;->zza()Lcom/google/android/gms/internal/measurement/zzn;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public constructor <init>(Landroid/os/Looper;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final dispatchMessage(Landroid/os/Message;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
-
-    return-void
+    return-object v0
 .end method

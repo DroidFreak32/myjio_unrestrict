@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final mHttpStack:Lcom/android/volley/toolbox/HttpStack;
+.field private final mHttpStack:Lcom/android/volley/toolbox/HttpStack;
 
 
 # direct methods
@@ -34,6 +34,13 @@
             "Ljava/lang/String;",
             ">;)",
             "Lcom/android/volley/toolbox/HttpResponse;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/AuthFailureError;
         }
     .end annotation
 
@@ -79,7 +86,7 @@
     aget-object v4, v0, v3
 
     .line 6
-    new-instance v5, Lrv;
+    new-instance v5, Lcom/android/volley/Header;
 
     invoke-interface {v4}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
 
@@ -89,7 +96,7 @@
 
     move-result-object v4
 
-    invoke-direct {v5, v6, v4}, Lrv;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v5, v6, v4}, Lcom/android/volley/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

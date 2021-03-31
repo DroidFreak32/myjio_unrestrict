@@ -8,23 +8,23 @@
 
 
 # static fields
-.field public static TAG:Ljava/lang/String; = null
+.field private static TAG:Ljava/lang/String; = null
 
 .field public static satellitesUsed:I = -0x1
 
 
 # instance fields
-.field public final ACCURACY_THRESHOLD:F
+.field private final ACCURACY_THRESHOLD:F
 
-.field public final MIN_DISTANCE_INTERVAL_FOR_GPS_LOCATION:F
+.field private final MIN_DISTANCE_INTERVAL_FOR_GPS_LOCATION:F
 
-.field public final MIN_TIME_INTERVAL_FOR_GPS_LOCATION:J
+.field private final MIN_TIME_INTERVAL_FOR_GPS_LOCATION:J
 
-.field public locationManager:Landroid/location/LocationManager;
+.field private locationManager:Landroid/location/LocationManager;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public mCurrentLocation:Landroid/location/Location;
+.field private mCurrentLocation:Landroid/location/Location;
 
 .field public numOfSatellites:Ljava/lang/String;
 
@@ -107,7 +107,7 @@
 
     const-string v1, "getBestLocation..."
 
-    invoke-static {v0, v1}, Llg0;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->locationManager:Landroid/location/LocationManager;
@@ -179,8 +179,6 @@
     iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->locationManager:Landroid/location/LocationManager;
 
     .line 3
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->locationManager:Landroid/location/LocationManager;
-
     invoke-virtual {v0, p0}, Landroid/location/LocationManager;->addGpsStatusListener(Landroid/location/GpsStatus$Listener;)Z
 
     .line 4
@@ -255,8 +253,6 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->mCurrentLocation:Landroid/location/Location;
-
     invoke-virtual {v2}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v2
@@ -328,7 +324,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -354,7 +350,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-object v1
@@ -450,7 +446,7 @@
 
     const-string v1, "onDestroy..."
 
-    invoke-static {v0, v1}, Llg0;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 3
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->locationManager:Landroid/location/LocationManager;
@@ -487,7 +483,7 @@
 
     const-string v0, "onGpsStatusChanged"
 
-    invoke-static {p1, v0}, Llg0;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2
     iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->locationManager:Landroid/location/LocationManager;
@@ -570,11 +566,9 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->numOfSatellites:Ljava/lang/String;
 
     .line 9
-    sget-object p1, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->TAG:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LocationServiceResult;->numOfSatellites:Ljava/lang/String;
-
-    invoke-static {p1, v0}, Llg0;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/inn/passivesdk/util/SDKLogging;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
     return-void
@@ -604,7 +598,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2
     invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;

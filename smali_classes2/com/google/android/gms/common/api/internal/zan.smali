@@ -1,28 +1,29 @@
 .class public final Lcom/google/android/gms/common/api/internal/zan;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zadj:Lcom/google/android/gms/common/api/internal/zam;
+.field public final synthetic zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-.field public final synthetic zadk:Lcom/google/android/gms/common/api/internal/zal;
+.field private final zab:Lcom/google/android/gms/common/api/internal/zak;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zal;Lcom/google/android/gms/common/api/internal/zam;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zal;Lcom/google/android/gms/common/api/internal/zak;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zan;->zadj:Lcom/google/android/gms/common/api/internal/zam;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zan;->zab:Lcom/google/android/gms/common/api/internal/zak;
 
     return-void
 .end method
@@ -31,11 +32,13 @@
 # virtual methods
 .method public final run()V
     .locals 8
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-    iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/zal;->mStarted:Z
+    iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/zal;->zaa:Z
 
     if-nez v0, :cond_0
 
@@ -43,9 +46,9 @@
 
     .line 2
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zan;->zadj:Lcom/google/android/gms/common/api/internal/zam;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zan;->zab:Lcom/google/android/gms/common/api/internal/zak;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/zam;->getConnectionResult()Lcom/google/android/gms/common/ConnectionResult;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/zak;->zab()Lcom/google/android/gms/common/ConnectionResult;
 
     move-result-object v0
 
@@ -57,7 +60,7 @@
     if-eqz v1, :cond_1
 
     .line 4
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
     iget-object v2, v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->mLifecycleFragment:Lcom/google/android/gms/common/api/internal/LifecycleFragment;
 
@@ -71,10 +74,16 @@
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/zan;->zadj:Lcom/google/android/gms/common/api/internal/zam;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/PendingIntent;
+
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/zan;->zab:Lcom/google/android/gms/common/api/internal/zak;
 
     .line 7
-    invoke-virtual {v3}, Lcom/google/android/gms/common/api/internal/zam;->zar()I
+    invoke-virtual {v3}, Lcom/google/android/gms/common/api/internal/zak;->zaa()I
 
     move-result v3
 
@@ -94,9 +103,9 @@
 
     .line 10
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-    iget-object v1, v1, Lcom/google/android/gms/common/api/internal/zal;->zacd:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iget-object v1, v1, Lcom/google/android/gms/common/api/internal/zal;->zac:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->getErrorCode()I
 
@@ -109,16 +118,16 @@
     if-eqz v1, :cond_2
 
     .line 11
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/zal;->zacd:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/zal;->zac:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     .line 12
     invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->getActivity()Landroid/app/Activity;
 
     move-result-object v3
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
     iget-object v4, v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->mLifecycleFragment:Lcom/google/android/gms/common/api/internal/LifecycleFragment;
 
@@ -129,7 +138,7 @@
 
     const/4 v6, 0x2
 
-    iget-object v7, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v7, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
     .line 14
     invoke-virtual/range {v2 .. v7}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/app/Activity;Lcom/google/android/gms/common/api/internal/LifecycleFragment;IILandroid/content/DialogInterface$OnCancelListener;)Z
@@ -147,23 +156,23 @@
     if-ne v1, v2, :cond_3
 
     .line 16
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
     .line 17
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
     invoke-static {v0, v1}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/app/Activity;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object v0
 
     .line 18
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/zal;->zacd:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/zal;->zac:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     .line 19
     invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->getActivity()Landroid/app/Activity;
@@ -174,22 +183,22 @@
 
     move-result-object v1
 
-    new-instance v3, Lcom/google/android/gms/common/api/internal/zao;
+    new-instance v3, Lcom/google/android/gms/common/api/internal/zam;
 
-    invoke-direct {v3, p0, v0}, Lcom/google/android/gms/common/api/internal/zao;-><init>(Lcom/google/android/gms/common/api/internal/zan;Landroid/app/Dialog;)V
+    invoke-direct {v3, p0, v0}, Lcom/google/android/gms/common/api/internal/zam;-><init>(Lcom/google/android/gms/common/api/internal/zan;Landroid/app/Dialog;)V
 
     .line 20
-    invoke-virtual {v2, v1, v3}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/internal/zabr;)Lcom/google/android/gms/common/api/internal/zabq;
+    invoke-virtual {v2, v1, v3}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/internal/zabk;)Lcom/google/android/gms/common/api/internal/zabl;
 
     return-void
 
     .line 21
     :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/zan;->zadj:Lcom/google/android/gms/common/api/internal/zam;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/zan;->zab:Lcom/google/android/gms/common/api/internal/zak;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/zam;->zar()I
+    invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/zak;->zaa()I
 
     move-result v2
 

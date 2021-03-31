@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final q1:I
+.field private final q1:I
 
-.field public final q2:I
+.field private final q2:I
 
-.field public final q3:I
+.field private final q3:I
 
 
 # direct methods

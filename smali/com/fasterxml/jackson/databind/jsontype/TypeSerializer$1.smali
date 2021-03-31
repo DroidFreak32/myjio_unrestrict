@@ -34,8 +34,6 @@
     sput-object v0, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonTypeInfo$As:[I
 
     :try_start_0
-    sget-object v0, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonTypeInfo$As:[I
-
     sget-object v1, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;->EXISTING_PROPERTY:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

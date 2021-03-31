@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public final flags:I
+.field private final flags:I
 
-.field public final info:Ljava/lang/String;
+.field private final info:Ljava/lang/String;
 
-.field public final zzbcz:[Ljava/lang/Object;
+.field private final zzbcz:[Ljava/lang/Object;
 
-.field public final zzbdc:Lcom/google/android/gms/internal/gtm/zzsk;
+.field private final zzbdc:Lcom/google/android/gms/internal/gtm/zzsk;
 
 
 # direct methods

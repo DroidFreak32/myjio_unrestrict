@@ -13,13 +13,13 @@
 
 
 # instance fields
-.field public applyEmbeddedFontSizes:Z
+.field private applyEmbeddedFontSizes:Z
 
-.field public applyEmbeddedStyles:Z
+.field private applyEmbeddedStyles:Z
 
-.field public bottomPaddingFraction:F
+.field private bottomPaddingFraction:F
 
-.field public cues:Ljava/util/List;
+.field private cues:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public final painters:Ljava/util/List;
+.field private final painters:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -39,11 +39,11 @@
     .end annotation
 .end field
 
-.field public style:Lcom/google/android/jioexoplayer2/text/CaptionStyleCompat;
+.field private style:Lcom/google/android/jioexoplayer2/text/CaptionStyleCompat;
 
-.field public textSize:F
+.field private textSize:F
 
-.field public textSizeType:I
+.field private textSizeType:I
 
 
 # direct methods
@@ -543,6 +543,10 @@
 
 .method public setCues(Ljava/util/List;)V
     .locals 3
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

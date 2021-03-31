@@ -1,131 +1,87 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzdi;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzde;
-.implements Ljava/io/Serializable;
+.super Lcom/google/android/gms/internal/measurement/zzdh;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/measurement/zzde<",
-        "TT;>;",
-        "Ljava/io/Serializable;"
+        "Lcom/google/android/gms/internal/measurement/zzdh<",
+        "Ljava/lang/Long;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public final zza:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzdm;Ljava/lang/String;Ljava/lang/Long;Z)V
+    .locals 6
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzdi;->zza:Ljava/lang/Object;
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/measurement/zzdh;-><init>(Lcom/google/android/gms/internal/measurement/zzdm;Ljava/lang/String;Ljava/lang/Object;ZLcom/google/android/gms/internal/measurement/zzdi;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method private final zzb(Ljava/lang/Object;)Ljava/lang/Long;
+    .locals 3
 
     .line 1
-    instance-of v0, p1, Lcom/google/android/gms/internal/measurement/zzdi;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_2
-
-    .line 2
-    check-cast p1, Lcom/google/android/gms/internal/measurement/zzdi;
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzdi;->zza:Ljava/lang/Object;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/measurement/zzdi;->zza:Ljava/lang/Object;
-
-    if-eq v0, p1, :cond_1
+    instance-of v0, p1, Ljava/lang/Long;
 
     if-eqz v0, :cond_0
 
-    .line 4
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_2
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    .line 1
-    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzdi;->zza:Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
     .line 2
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    check-cast p1, Ljava/lang/Long;
 
-    move-result v0
+    return-object p1
 
-    return v0
-.end method
+    .line 3
+    :cond_0
+    instance-of v0, p1, Ljava/lang/String;
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    if-eqz v0, :cond_1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzdi;->zza:Ljava/lang/Object;
+    .line 4
+    :try_start_0
+    move-object v0, p1
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    .line 5
+    :catch_0
+    :cond_1
+    invoke-super {p0}, Lcom/google/android/gms/internal/measurement/zzdh;->zzb()Ljava/lang/String;
 
     move-result-object v0
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -135,39 +91,50 @@
 
     move-result v1
 
-    add-int/lit8 v1, v1, 0x16
+    add-int/lit8 v1, v1, 0x19
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v1, "Suppliers.ofInstance("
+    const-string v1, "Invalid long value for "
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ")"
+    const-string v0, ": "
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    const/4 p1, 0x0
 
-    return-object v0
+    return-object p1
 .end method
 
-.method public final zza()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+
+# virtual methods
+.method public final synthetic zza(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzdi;->zza:Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzdi;->zzb(Ljava/lang/Object;)Ljava/lang/Long;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
 .end method

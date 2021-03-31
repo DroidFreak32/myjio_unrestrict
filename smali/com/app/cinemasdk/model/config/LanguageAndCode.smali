@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public code:Ljava/lang/String;
+.field private code:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public lang:Ljava/lang/String;
+.field private lang:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

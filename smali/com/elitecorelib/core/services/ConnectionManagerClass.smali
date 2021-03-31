@@ -15,21 +15,21 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "ConnectionManagerClass"
+.field private static final MODULE:Ljava/lang/String; = "ConnectionManagerClass"
 
 
 # instance fields
-.field public final JSON:Lokhttp3/MediaType;
+.field private final JSON:Lokhttp3/MediaType;
 
-.field public final TEXT:Lokhttp3/MediaType;
+.field private final TEXT:Lokhttp3/MediaType;
 
-.field public final callback:Lcom/elitecorelib/core/services/ConnectionManagerListner;
+.field private final callback:Lcom/elitecorelib/core/services/ConnectionManagerListner;
 
-.field public final requestId:I
+.field private final requestId:I
 
-.field public responseCode:I
+.field private responseCode:I
 
-.field public responseMessage:Ljava/lang/String;
+.field private responseMessage:Ljava/lang/String;
 
 
 # direct methods
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerClass;->JSON:Lokhttp3/MediaType;
 
-    const-string v0, "text/plain"
+    const-string/jumbo v0, "text/plain"
 
     invoke-static {v0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -163,8 +163,6 @@
     move-result-object v2
 
     const-wide/16 v4, 0xa
-
-    sget-object v7, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v2, v4, v5, v7}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
@@ -395,8 +393,6 @@
     goto :goto_0
 
     :cond_0
-    iget v3, p0, Lcom/elitecorelib/core/services/ConnectionManagerClass;->responseCode:I
-
     const/16 v4, 0xc8
 
     if-ne v3, v4, :cond_1
@@ -409,8 +405,6 @@
 
     :cond_1
     iget-object p1, p0, Lcom/elitecorelib/core/services/ConnectionManagerClass;->responseMessage:Ljava/lang/String;
-
-    iget v3, p0, Lcom/elitecorelib/core/services/ConnectionManagerClass;->responseCode:I
 
     invoke-interface {v0, p1, v3}, Lcom/elitecorelib/core/services/ConnectionManagerListner;->onConnectionFailure(Ljava/lang/String;I)V
 

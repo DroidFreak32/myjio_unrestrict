@@ -19,6 +19,9 @@
 
 # instance fields
 .field public final description:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 .field public final mimeType:Ljava/lang/String;
 
@@ -100,6 +103,10 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I[B)V
     .locals 1
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const-string v0, "APIC"
 
@@ -125,6 +132,10 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 

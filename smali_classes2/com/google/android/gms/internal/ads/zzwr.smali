@@ -1,55 +1,47 @@
-.class public final Lcom/google/android/gms/internal/ads/zzwr;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/android/gms/internal/ads/zzwr;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapx;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzapx<",
-        "Lcom/google/android/gms/internal/ads/zzwy;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic zzbtv:Lcom/google/android/gms/internal/ads/zzwp;
+.implements Lcom/google/android/gms/internal/ads/zzws;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzwp;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.client.IAdClickListener"
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwr;->zzbtv:Lcom/google/android/gms/internal/ads/zzwp;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zze(Ljava/lang/Object;)V
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    const-string p1, "Releasing engine reference."
+    const/4 p2, 0x1
+
+    if-ne p1, p2, :cond_0
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzws;->onAdClicked()V
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzwr;->zzbtv:Lcom/google/android/gms/internal/ads/zzwp;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzwp;->zza(Lcom/google/android/gms/internal/ads/zzwp;)Lcom/google/android/gms/internal/ads/zzwt;
+    return p2
 
-    move-result-object p1
+    :cond_0
+    const/4 p1, 0x0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzwt;->zzni()V
-
-    return-void
+    return p1
 .end method

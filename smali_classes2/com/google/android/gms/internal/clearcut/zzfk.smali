@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final synthetic zzgq:[I
+.field private static final synthetic zzgq:[I
 
 
 # direct methods
@@ -21,8 +21,6 @@
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzfk;->zzgq:[I
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzfk;->zzgq:[I
-
     sget-object v1, Lcom/google/android/gms/internal/clearcut/zzfl;->zzqc:Lcom/google/android/gms/internal/clearcut/zzfl;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

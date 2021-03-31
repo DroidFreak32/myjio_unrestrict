@@ -1,457 +1,336 @@
-.class public Lt0;
-.super Landroid/graphics/drawable/Drawable;
-.source "DrawableWrapper.java"
+.class public abstract Lt0;
+.super Ljava/lang/Object;
+.source "MenuPopup.java"
 
 # interfaces
-.implements Landroid/graphics/drawable/Drawable$Callback;
+.implements Landroidx/appcompat/view/menu/ShowableListMenu;
+.implements Landroidx/appcompat/view/menu/MenuPresenter;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field public mDrawable:Landroid/graphics/drawable/Drawable;
+.field public a:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
-
-    .line 2
-    invoke-virtual {p0, p1}, Lt0;->setWrappedDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static d(Landroid/widget/ListAdapter;Landroid/view/ViewGroup;Landroid/content/Context;I)I
+    .locals 9
+
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-static {v0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v1
+
+    .line 2
+    invoke-static {v0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v2
+
+    .line 3
+    invoke-interface {p0}, Landroid/widget/ListAdapter;->getCount()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    move-object v7, v4
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    :goto_0
+    if-ge v0, v3, :cond_4
+
+    .line 4
+    invoke-interface {p0, v0}, Landroid/widget/ListAdapter;->getItemViewType(I)I
+
+    move-result v8
+
+    if-eq v8, v6, :cond_0
+
+    move-object v7, v4
+
+    move v6, v8
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    .line 5
+    new-instance p1, Landroid/widget/FrameLayout;
+
+    invoke-direct {p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    .line 6
+    :cond_1
+    invoke-interface {p0, v0, v7, p1}, Landroid/widget/ListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v7
+
+    .line 7
+    invoke-virtual {v7, v1, v2}, Landroid/view/View;->measure(II)V
+
+    .line 8
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v8
+
+    if-lt v8, p3, :cond_2
+
+    return p3
+
+    :cond_2
+    if-le v8, v5, :cond_3
+
+    move v5, v8
+
+    :cond_3
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    return v5
+.end method
+
+.method public static m(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+    .locals 5
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/appcompat/view/menu/MenuBuilder;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    .line 2
+    invoke-virtual {p0, v2}, Landroidx/appcompat/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
+
+    move-result-object v3
+
+    .line 3
+    invoke-interface {v3}, Landroid/view/MenuItem;->isVisible()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {v3}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return v1
+.end method
+
+.method public static n(Landroid/widget/ListAdapter;)Landroidx/appcompat/view/menu/MenuAdapter;
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Landroid/widget/HeaderViewListAdapter;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    check-cast p0, Landroid/widget/HeaderViewListAdapter;
+
+    invoke-virtual {p0}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/appcompat/view/menu/MenuAdapter;
+
+    return-object p0
+
+    .line 3
+    :cond_0
+    check-cast p0, Landroidx/appcompat/view/menu/MenuAdapter;
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    return-void
+.method public abstract a(Landroidx/appcompat/view/menu/MenuBuilder;)V
 .end method
 
-.method public getChangingConfigurations()I
+.method public b()Z
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
-
-    move-result v0
+    const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public getCurrent()Landroid/graphics/drawable/Drawable;
+.method public c()Landroid/graphics/Rect;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
+    iget-object v0, p0, Lt0;->a:Landroid/graphics/Rect;
 
     return-object v0
 .end method
 
-.method public getIntrinsicHeight()I
-    .locals 1
+.method public collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getIntrinsicWidth()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getMinimumHeight()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getMinimumWidth()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getOpacity()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPadding(Landroid/graphics/Rect;)Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
-
-    move-result p1
+    const/4 p1, 0x0
 
     return p1
 .end method
 
-.method public getState()[I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getState()[I
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract e(Landroid/view/View;)V
 .end method
 
-.method public getTransparentRegion()Landroid/graphics/Region;
-    .locals 1
+.method public expandItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
+    const/4 p1, 0x0
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getTransparentRegion()Landroid/graphics/Region;
-
-    move-result-object v0
-
-    return-object v0
+    return p1
 .end method
 
-.method public getWrappedDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    return-object v0
-.end method
-
-.method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+.method public f(Landroid/graphics/Rect;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    iput-object p1, p0, Lt0;->a:Landroid/graphics/Rect;
 
     return-void
 .end method
 
-.method public isAutoMirrored()Z
+.method public abstract g(Z)V
+.end method
+
+.method public getId()I
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0}, Lp7;->f(Landroid/graphics/drawable/Drawable;)Z
-
-    move-result v0
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public isStateful()Z
+.method public getMenuView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+    const-string v0, "MenuPopups manage their own views"
 
-    move-result v0
+    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    return v0
+    throw p1
 .end method
 
-.method public jumpToCurrentState()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0}, Lp7;->g(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
+.method public abstract h(I)V
 .end method
 
-.method public onBoundsChange(Landroid/graphics/Rect;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    return-void
+.method public abstract i(I)V
 .end method
 
-.method public onLevelChange(I)Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+.method public initForMenu(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;)V
     .locals 0
-
-    .line 1
-    invoke-virtual {p0, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
-
-    return-void
-.end method
-
-.method public setAlpha(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
-.method public setAutoMirrored(Z)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0, p1}, Lp7;->a(Landroid/graphics/drawable/Drawable;Z)V
-
-    return-void
+.method public abstract j(Landroid/widget/PopupWindow$OnDismissListener;)V
 .end method
 
-.method public setChangingConfigurations(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setChangingConfigurations(I)V
-
-    return-void
+.method public abstract k(Z)V
 .end method
 
-.method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    return-void
+.method public abstract l(I)V
 .end method
 
-.method public setDither(Z)V
-    .locals 1
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/AdapterView<",
+            "*>;",
+            "Landroid/view/View;",
+            "IJ)V"
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
+    move-result-object p1
 
-    return-void
-.end method
+    check-cast p1, Landroid/widget/ListAdapter;
 
-.method public setFilterBitmap(Z)V
-    .locals 1
+    .line 2
+    invoke-static {p1}, Lt0;->n(Landroid/widget/ListAdapter;)Landroidx/appcompat/view/menu/MenuAdapter;
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
+    move-result-object p2
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
+    .line 3
+    iget-object p2, p2, Landroidx/appcompat/view/menu/MenuAdapter;->a:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    return-void
-.end method
+    .line 4
+    invoke-interface {p1, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
-.method public setHotspot(FF)V
-    .locals 1
+    move-result-object p1
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
+    check-cast p1, Landroid/view/MenuItem;
 
-    invoke-static {v0, p1, p2}, Lp7;->a(Landroid/graphics/drawable/Drawable;FF)V
+    .line 5
+    invoke-virtual {p0}, Lt0;->b()Z
 
-    return-void
-.end method
+    move-result p3
 
-.method public setHotspotBounds(IIII)V
-    .locals 1
+    if-eqz p3, :cond_0
 
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0, p1, p2, p3, p4}, Lp7;->a(Landroid/graphics/drawable/Drawable;IIII)V
-
-    return-void
-.end method
-
-.method public setState([I)Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public setTint(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0, p1}, Lp7;->b(Landroid/graphics/drawable/Drawable;I)V
-
-    return-void
-.end method
-
-.method public setTintList(Landroid/content/res/ColorStateList;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0, p1}, Lp7;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
-
-    return-void
-.end method
-
-.method public setTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0, p1}, Lp7;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
-
-    return-void
-.end method
-
-.method public setVisible(ZZ)Z
-    .locals 1
-
-    .line 1
-    invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
+    const/4 p3, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p3, 0x4
 
-    goto :goto_1
-
-    :cond_1
+    .line 6
     :goto_0
-    const/4 p1, 0x1
-
-    :goto_1
-    return p1
-.end method
-
-.method public setWrappedDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 3
-    :cond_0
-    iput-object p1, p0, Lt0;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p1, :cond_1
-
-    .line 4
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p2}, Landroid/graphics/drawable/Drawable;->unscheduleSelf(Ljava/lang/Runnable;)V
+    invoke-virtual {p2, p1, p0, p3}, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;Landroidx/appcompat/view/menu/MenuPresenter;I)Z
 
     return-void
 .end method

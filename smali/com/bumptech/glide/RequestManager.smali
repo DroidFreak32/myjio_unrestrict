@@ -28,21 +28,21 @@
 
 
 # static fields
-.field public static final DECODE_TYPE_BITMAP:Lcom/bumptech/glide/request/RequestOptions;
+.field private static final DECODE_TYPE_BITMAP:Lcom/bumptech/glide/request/RequestOptions;
 
-.field public static final DECODE_TYPE_GIF:Lcom/bumptech/glide/request/RequestOptions;
+.field private static final DECODE_TYPE_GIF:Lcom/bumptech/glide/request/RequestOptions;
 
-.field public static final DOWNLOAD_ONLY_OPTIONS:Lcom/bumptech/glide/request/RequestOptions;
+.field private static final DOWNLOAD_ONLY_OPTIONS:Lcom/bumptech/glide/request/RequestOptions;
 
 
 # instance fields
-.field public final addSelfToLifecycle:Ljava/lang/Runnable;
+.field private final addSelfToLifecycle:Ljava/lang/Runnable;
 
-.field public final connectivityMonitor:Lcom/bumptech/glide/manager/ConnectivityMonitor;
+.field private final connectivityMonitor:Lcom/bumptech/glide/manager/ConnectivityMonitor;
 
 .field public final context:Landroid/content/Context;
 
-.field public final defaultRequestListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+.field private final defaultRequestListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/CopyOnWriteArrayList<",
@@ -57,15 +57,31 @@
 
 .field public final lifecycle:Lcom/bumptech/glide/manager/Lifecycle;
 
-.field public final mainHandler:Landroid/os/Handler;
+.field private final mainHandler:Landroid/os/Handler;
 
-.field public requestOptions:Lcom/bumptech/glide/request/RequestOptions;
+.field private requestOptions:Lcom/bumptech/glide/request/RequestOptions;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
-.field public final requestTracker:Lcom/bumptech/glide/manager/RequestTracker;
+.field private final requestTracker:Lcom/bumptech/glide/manager/RequestTracker;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
-.field public final targetTracker:Lcom/bumptech/glide/manager/TargetTracker;
+.field private final targetTracker:Lcom/bumptech/glide/manager/TargetTracker;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
-.field public final treeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
+.field private final treeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -134,6 +150,22 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/Glide;Lcom/bumptech/glide/manager/Lifecycle;Lcom/bumptech/glide/manager/RequestManagerTreeNode;Landroid/content/Context;)V
     .locals 7
+    .param p1    # Lcom/bumptech/glide/Glide;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/manager/Lifecycle;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/manager/RequestManagerTreeNode;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v4, Lcom/bumptech/glide/manager/RequestTracker;
@@ -162,7 +194,7 @@
 .end method
 
 .method public constructor <init>(Lcom/bumptech/glide/Glide;Lcom/bumptech/glide/manager/Lifecycle;Lcom/bumptech/glide/manager/RequestManagerTreeNode;Lcom/bumptech/glide/manager/RequestTracker;Lcom/bumptech/glide/manager/ConnectivityMonitorFactory;Landroid/content/Context;)V
-    .locals 2
+    .locals 3
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -182,15 +214,15 @@
     iput-object v0, p0, Lcom/bumptech/glide/RequestManager;->addSelfToLifecycle:Ljava/lang/Runnable;
 
     .line 7
-    new-instance v0, Landroid/os/Handler;
+    new-instance v1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/RequestManager;->mainHandler:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/bumptech/glide/RequestManager;->mainHandler:Landroid/os/Handler;
 
     .line 8
     iput-object p1, p0, Lcom/bumptech/glide/RequestManager;->glide:Lcom/bumptech/glide/Glide;
@@ -226,16 +258,12 @@
     .line 15
     invoke-static {}, Lcom/bumptech/glide/util/Util;->isOnBackgroundThread()Z
 
-    move-result p3
+    move-result p4
 
-    if-eqz p3, :cond_0
+    if-eqz p4, :cond_0
 
     .line 16
-    iget-object p3, p0, Lcom/bumptech/glide/RequestManager;->mainHandler:Landroid/os/Handler;
-
-    iget-object p4, p0, Lcom/bumptech/glide/RequestManager;->addSelfToLifecycle:Ljava/lang/Runnable;
-
-    invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 
@@ -245,8 +273,6 @@
 
     .line 18
     :goto_0
-    iget-object p3, p0, Lcom/bumptech/glide/RequestManager;->connectivityMonitor:Lcom/bumptech/glide/manager/ConnectivityMonitor;
-
     invoke-interface {p2, p3}, Lcom/bumptech/glide/manager/Lifecycle;->addListener(Lcom/bumptech/glide/manager/LifecycleListener;)V
 
     .line 19
@@ -284,6 +310,10 @@
 
 .method private untrackOrDelegate(Lcom/bumptech/glide/request/target/Target;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/request/target/Target;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -333,6 +363,10 @@
 
 .method private declared-synchronized updateRequestOptions(Lcom/bumptech/glide/request/RequestOptions;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/RequestOptions;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -387,6 +421,12 @@
 
 .method public declared-synchronized applyDefaultRequestOptions(Lcom/bumptech/glide/request/RequestOptions;)Lcom/bumptech/glide/RequestManager;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/RequestOptions;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     monitor-enter p0
 
@@ -411,6 +451,16 @@
 
 .method public as(Ljava/lang/Class;)Lcom/bumptech/glide/RequestBuilder;
     .locals 3
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ResourceType:",
@@ -437,6 +487,12 @@
 
 .method public asBitmap()Lcom/bumptech/glide/RequestBuilder;
     .locals 2
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -464,6 +520,12 @@
 
 .method public asDrawable()Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -485,6 +547,12 @@
 
 .method public asFile()Lcom/bumptech/glide/RequestBuilder;
     .locals 2
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -516,6 +584,12 @@
 
 .method public asGif()Lcom/bumptech/glide/RequestBuilder;
     .locals 2
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -543,6 +617,10 @@
 
 .method public clear(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/RequestManager$ClearTarget;
@@ -556,6 +634,10 @@
 
 .method public declared-synchronized clear(Lcom/bumptech/glide/request/target/Target;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/target/Target;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -595,6 +677,16 @@
 
 .method public download(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -620,6 +712,12 @@
 
 .method public downloadOnly()Lcom/bumptech/glide/RequestBuilder;
     .locals 2
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -688,6 +786,9 @@
 
 .method public getDefaultTransitionOptions(Ljava/lang/Class;)Lcom/bumptech/glide/TransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -743,6 +844,16 @@
 
 .method public load(Landroid/graphics/Bitmap;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -768,6 +879,16 @@
 
 .method public load(Landroid/graphics/drawable/Drawable;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -793,6 +914,16 @@
 
 .method public load(Landroid/net/Uri;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -818,6 +949,16 @@
 
 .method public load(Ljava/io/File;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Ljava/io/File;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -843,6 +984,22 @@
 
 .method public load(Ljava/lang/Integer;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -868,6 +1025,16 @@
 
 .method public load(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -893,6 +1060,16 @@
 
 .method public load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -918,6 +1095,13 @@
 
 .method public load(Ljava/net/URL;)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # Ljava/net/URL;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -946,6 +1130,16 @@
 
 .method public load([B)Lcom/bumptech/glide/RequestBuilder;
     .locals 1
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -969,6 +1163,15 @@
 
 .method public bridge synthetic load(Landroid/graphics/Bitmap;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Landroid/graphics/Bitmap;)Lcom/bumptech/glide/RequestBuilder;
@@ -980,6 +1183,15 @@
 
 .method public bridge synthetic load(Landroid/graphics/drawable/Drawable;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Landroid/graphics/drawable/Drawable;)Lcom/bumptech/glide/RequestBuilder;
@@ -991,6 +1203,15 @@
 
 .method public bridge synthetic load(Landroid/net/Uri;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 3
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Landroid/net/Uri;)Lcom/bumptech/glide/RequestBuilder;
@@ -1002,6 +1223,15 @@
 
 .method public bridge synthetic load(Ljava/io/File;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Ljava/io/File;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 4
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Ljava/io/File;)Lcom/bumptech/glide/RequestBuilder;
@@ -1013,6 +1243,21 @@
 
 .method public bridge synthetic load(Ljava/lang/Integer;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 5
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/Integer;)Lcom/bumptech/glide/RequestBuilder;
@@ -1024,6 +1269,15 @@
 
 .method public bridge synthetic load(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 6
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
@@ -1035,6 +1289,15 @@
 
 .method public bridge synthetic load(Ljava/lang/String;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 7
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
@@ -1046,6 +1309,13 @@
 
 .method public bridge synthetic load(Ljava/net/URL;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Ljava/net/URL;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1059,6 +1329,15 @@
 
 .method public bridge synthetic load([B)Ljava/lang/Object;
     .locals 0
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 9
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestManager;->load([B)Lcom/bumptech/glide/RequestBuilder;
@@ -1407,6 +1686,12 @@
 
 .method public declared-synchronized setDefaultRequestOptions(Lcom/bumptech/glide/request/RequestOptions;)Lcom/bumptech/glide/RequestManager;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/RequestOptions;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     monitor-enter p0
 
@@ -1431,6 +1716,10 @@
 
 .method public declared-synchronized setRequestOptions(Lcom/bumptech/glide/request/RequestOptions;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/RequestOptions;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -1482,7 +1771,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "{tracker="
+    const-string/jumbo v1, "{tracker="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1498,7 +1787,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1522,6 +1811,14 @@
 
 .method public declared-synchronized track(Lcom/bumptech/glide/request/target/Target;Lcom/bumptech/glide/request/Request;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/Target;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1562,6 +1859,10 @@
 
 .method public declared-synchronized untrack(Lcom/bumptech/glide/request/target/Target;)Z
     .locals 3
+    .param p1    # Lcom/bumptech/glide/request/target/Target;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

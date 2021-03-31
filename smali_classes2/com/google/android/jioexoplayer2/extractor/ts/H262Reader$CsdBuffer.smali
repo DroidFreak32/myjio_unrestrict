@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final START_CODE:[B
+.field private static final START_CODE:[B
 
 
 # instance fields
 .field public data:[B
 
-.field public isFilling:Z
+.field private isFilling:Z
 
 .field public length:I
 
@@ -151,9 +151,7 @@
     if-ne p1, p2, :cond_0
 
     .line 4
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
-
-    iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
+    iput v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
 
     goto :goto_0
 

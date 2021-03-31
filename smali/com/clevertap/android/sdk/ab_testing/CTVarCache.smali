@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final vars:Ljava/util/Map;
+.field private final vars:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",

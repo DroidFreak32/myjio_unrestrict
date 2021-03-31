@@ -15,15 +15,15 @@
 
 
 # instance fields
-.field public final SWIPE_MIN_DISTANCE:I
+.field private final SWIPE_MIN_DISTANCE:I
 
-.field public final SWIPE_THRESHOLD_VELOCITY:I
+.field private final SWIPE_THRESHOLD_VELOCITY:I
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;)V
+.method private constructor <init>(Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;)V
     .locals 0
 
     .line 1

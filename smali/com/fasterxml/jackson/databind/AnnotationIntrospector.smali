@@ -955,12 +955,8 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
-
     .line 3
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     return-object p1
 
@@ -1015,12 +1011,8 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
-
     .line 3
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     return-object p1
 
@@ -1104,6 +1096,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
     return-object p3
 .end method
 
@@ -1118,6 +1116,12 @@
             "Lcom/fasterxml/jackson/databind/JavaType;",
             ")",
             "Lcom/fasterxml/jackson/databind/JavaType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
         }
     .end annotation
 

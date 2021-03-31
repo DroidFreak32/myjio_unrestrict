@@ -52,13 +52,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_0
-
-    :cond_0
-    iget v0, p0, Ljava/io/ByteArrayOutputStream;->count:I
-
     .line 2
-    :goto_0
+    :cond_0
     :try_start_0
     new-instance v1, Ljava/lang/String;
 

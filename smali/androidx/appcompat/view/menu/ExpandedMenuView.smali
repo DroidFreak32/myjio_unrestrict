@@ -3,19 +3,27 @@
 .source "ExpandedMenuView.java"
 
 # interfaces
-.implements Ln1$b;
-.implements Lv1;
+.implements Landroidx/appcompat/view/menu/MenuBuilder$ItemInvoker;
+.implements Landroidx/appcompat/view/menu/MenuView;
 .implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+
 # static fields
-.field public static final u:[I
+.field public static final c:[I
 
 
 # instance fields
-.field public s:Ln1;
+.field public a:Landroidx/appcompat/view/menu/MenuBuilder;
 
-.field public t:I
+.field public b:I
 
 
 # direct methods
@@ -29,7 +37,7 @@
     .line 1
     fill-array-data v0, :array_0
 
-    sput-object v0, Landroidx/appcompat/view/menu/ExpandedMenuView;->u:[I
+    sput-object v0, Landroidx/appcompat/view/menu/ExpandedMenuView;->c:[I
 
     return-void
 
@@ -63,23 +71,23 @@
     invoke-virtual {p0, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     .line 4
-    sget-object v0, Landroidx/appcompat/view/menu/ExpandedMenuView;->u:[I
+    sget-object v0, Landroidx/appcompat/view/menu/ExpandedMenuView;->c:[I
 
     const/4 v1, 0x0
 
-    invoke-static {p1, p2, v0, p3, v1}, Lf3;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Lf3;
+    invoke-static {p1, p2, v0, p3, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object p1
 
     .line 5
-    invoke-virtual {p1, v1}, Lf3;->g(I)Z
+    invoke-virtual {p1, v1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
     .line 6
-    invoke-virtual {p1, v1}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -89,14 +97,14 @@
     const/4 p2, 0x1
 
     .line 7
-    invoke-virtual {p1, p2}, Lf3;->g(I)Z
+    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p3
 
     if-eqz p3, :cond_1
 
     .line 8
-    invoke-virtual {p1, p2}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -104,44 +112,44 @@
 
     .line 9
     :cond_1
-    invoke-virtual {p1}, Lf3;->a()V
+    invoke-virtual {p1}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lq1;)Z
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Landroidx/appcompat/view/menu/ExpandedMenuView;->s:Ln1;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Ln1;->performItemAction(Landroid/view/MenuItem;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
 .method public getWindowAnimations()I
     .locals 1
 
     .line 1
-    iget v0, p0, Landroidx/appcompat/view/menu/ExpandedMenuView;->t:I
+    iget v0, p0, Landroidx/appcompat/view/menu/ExpandedMenuView;->b:I
 
     return v0
 .end method
 
-.method public initialize(Ln1;)V
+.method public initialize(Landroidx/appcompat/view/menu/MenuBuilder;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/view/menu/ExpandedMenuView;->s:Ln1;
+    iput-object p1, p0, Landroidx/appcompat/view/menu/ExpandedMenuView;->a:Landroidx/appcompat/view/menu/MenuBuilder;
 
     return-void
+.end method
+
+.method public invokeItem(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/view/menu/ExpandedMenuView;->a:Landroidx/appcompat/view/menu/MenuBuilder;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;I)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public onDetachedFromWindow()V
@@ -170,9 +178,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lq1;
+    check-cast p1, Landroidx/appcompat/view/menu/MenuItemImpl;
 
-    invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ExpandedMenuView;->a(Lq1;)Z
+    invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ExpandedMenuView;->invokeItem(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
 
     return-void
 .end method

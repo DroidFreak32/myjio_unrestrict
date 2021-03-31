@@ -16,13 +16,13 @@
 
 
 # instance fields
-.field public category:Ljava/lang/String;
+.field private category:Ljava/lang/String;
 
-.field public label:Ljava/lang/String;
+.field private label:Ljava/lang/String;
 
-.field public value:J
+.field private value:J
 
-.field public zzup:Ljava/lang/String;
+.field private zzup:Ljava/lang/String;
 
 
 # direct methods

@@ -1,49 +1,52 @@
 .class public final Lcom/google/android/gms/location/zzad;
-.super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.super Lcom/google/android/gms/location/LocationCallback;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-        "Lcom/google/android/gms/internal/location/zzaz;",
-        "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+.field private final synthetic zzb:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;-><init>()V
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/location/zzad;->zzb:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+    iput-object p2, p0, Lcom/google/android/gms/location/zzad;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-direct {p0}, Lcom/google/android/gms/location/LocationCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
-    .locals 7
+.method public final onLocationAvailability(Lcom/google/android/gms/location/LocationAvailability;)V
+    .locals 0
 
-    new-instance p4, Lcom/google/android/gms/internal/location/zzaz;
+    return-void
+.end method
 
-    const-string v5, "locationServices"
+.method public final onLocationResult(Lcom/google/android/gms/location/LocationResult;)V
+    .locals 1
 
-    move-object v0, p4
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/zzad;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    move-object v1, p1
+    invoke-virtual {p1}, Lcom/google/android/gms/location/LocationResult;->getLastLocation()Landroid/location/Location;
 
-    move-object v2, p2
+    move-result-object p1
 
-    move-object v3, p5
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetResult(Ljava/lang/Object;)Z
 
-    move-object v4, p6
+    .line 2
+    iget-object p1, p0, Lcom/google/android/gms/location/zzad;->zzb:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
-    move-object v6, p3
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/location/FusedLocationProviderClient;->removeLocationUpdates(Lcom/google/android/gms/location/LocationCallback;)Lcom/google/android/gms/tasks/Task;
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/internal/location/zzaz;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;Ljava/lang/String;Lcom/google/android/gms/common/internal/ClientSettings;)V
-
-    return-object p4
+    return-void
 .end method

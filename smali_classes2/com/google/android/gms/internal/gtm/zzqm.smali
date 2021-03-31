@@ -23,13 +23,13 @@
 
 
 # static fields
-.field public static final zzaxe:Lcom/google/android/gms/internal/gtm/zzqm;
+.field private static final zzaxe:Lcom/google/android/gms/internal/gtm/zzqm;
 
 
 # instance fields
-.field public size:I
+.field private size:I
 
-.field public zzaxf:[D
+.field private zzaxf:[D
 
 
 # direct methods
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>([DI)V
+.method private constructor <init>([DI)V
     .locals 0
 
     .line 2

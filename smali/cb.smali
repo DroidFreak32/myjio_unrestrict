@@ -1,210 +1,147 @@
-.class public final Lcb;
+.class public Lcb;
 .super Ljava/lang/Object;
-.source "ScrollerCompat.java"
 
-
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+# interfaces
+.implements Lcom/elitecore/wifi/listener/OnInternetCheckCompleteListner;
 
 
 # instance fields
-.field public a:Landroid/widget/OverScroller;
+.field public final synthetic a:Lorg/json/JSONObject;
+
+.field public final synthetic b:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic d:Lcom/elitecorelib/core/utility/o;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
-    .locals 1
+.method public constructor <init>(Lcom/elitecorelib/core/utility/o;Lorg/json/JSONObject;Lcom/elitecorelib/core/utility/SharedPreferencesTask;Ljava/lang/String;)V
+    .locals 0
 
-    .line 1
+    iput-object p1, p0, Lcb;->d:Lcom/elitecorelib/core/utility/o;
+
+    iput-object p2, p0, Lcb;->a:Lorg/json/JSONObject;
+
+    iput-object p3, p0, Lcb;->b:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    iput-object p4, p0, Lcb;->c:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    new-instance v0, Landroid/widget/OverScroller;
-
-    if-eqz p2, :cond_0
-
-    invoke-direct {v0, p1, p2}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-direct {v0, p1}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;)V
-
-    :goto_0
-    iput-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
     return-void
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Lcb;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    new-instance v0, Lcb;
-
-    invoke-direct {v0, p0, p1}, Lcb;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public isInterNetAvailable(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
-    .line 4
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
+    const-string/jumbo p1, "success"
 
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->abortAnimation()V
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result p1
+
+    const-string p2, "LatencyCheckClass"
+
+    if-eqz p1, :cond_0
+
+    :try_start_0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string p3, "Internet Success"
+
+    invoke-virtual {p1, p2, p3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Lcb;->a:Lorg/json/JSONObject;
+
+    const-string/jumbo p3, "value"
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p1, p3, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    iget-object p1, p0, Lcb;->a:Lorg/json/JSONObject;
+
+    const-string p3, "packetreceive"
+
+    invoke-virtual {p1, p3, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    iget-object p1, p0, Lcb;->a:Lorg/json/JSONObject;
+
+    const-string p3, "packetLost"
+
+    invoke-virtual {p1, p3, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    iget-object p1, p0, Lcb;->b:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    const-string p3, "jitter_value"
+
+    invoke-virtual {p1, p3, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
+
+    iget-object p1, p0, Lcb;->d:Lcom/elitecorelib/core/utility/o;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/o;->a(Lcom/elitecorelib/core/utility/o;)Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    move-result-object p1
+
+    iget-object p3, p0, Lcb;->a:Lorg/json/JSONObject;
+
+    invoke-virtual {p3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-interface {p1, p3}, Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;->getResponseData(Ljava/lang/String;)V
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    sget-object p3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Json parsion Error : "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p3, p2, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string p3, "Internet Failed"
+
+    invoke-virtual {p1, p2, p3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Lcb;->d:Lcom/elitecorelib/core/utility/o;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/o;->a(Lcom/elitecorelib/core/utility/o;)Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lcb;->c:Ljava/lang/String;
+
+    invoke-interface {p1, p2}, Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;->getResponseData(Ljava/lang/String;)V
+
+    :goto_0
     return-void
-.end method
-
-.method public a(IIIII)V
-    .locals 6
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 2
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    invoke-virtual/range {v0 .. v5}, Landroid/widget/OverScroller;->startScroll(IIIII)V
-
-    return-void
-.end method
-
-.method public a(IIIIIIII)V
-    .locals 10
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    move-object v0, p0
-
-    .line 3
-    iget-object v1, v0, Lcb;->a:Landroid/widget/OverScroller;
-
-    move v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    move v6, p5
-
-    move/from16 v7, p6
-
-    move/from16 v8, p7
-
-    move/from16 v9, p8
-
-    invoke-virtual/range {v1 .. v9}, Landroid/widget/OverScroller;->fling(IIIIIIII)V
-
-    return-void
-.end method
-
-.method public b()Z
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c()I
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->getCurrX()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()I
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->getCurrY()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public e()I
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->getFinalX()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public f()I
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->getFinalY()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public g()Z
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcb;->a:Landroid/widget/OverScroller;
-
-    invoke-virtual {v0}, Landroid/widget/OverScroller;->isFinished()Z
-
-    move-result v0
-
-    return v0
 .end method

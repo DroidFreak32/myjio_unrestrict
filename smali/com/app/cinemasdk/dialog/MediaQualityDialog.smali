@@ -16,29 +16,29 @@
 
 
 # instance fields
-.field public _btnCancel:Landroid/widget/Button;
+.field private _btnCancel:Landroid/widget/Button;
 
-.field public _btnOK:Landroid/widget/Button;
+.field private _btnOK:Landroid/widget/Button;
 
-.field public _defaultQualitySelected:Ljava/lang/String;
+.field private _defaultQualitySelected:Ljava/lang/String;
 
-.field public _isRememberMySettingChecked:Z
+.field private _isRememberMySettingChecked:Z
 
-.field public _mediaQuality:[Lcom/app/cinemasdk/utils/MediaQuailty;
+.field private _mediaQuality:[Lcom/app/cinemasdk/utils/MediaQuailty;
 
-.field public _radioGroupQuality:Lcom/app/cinemasdk/utils/CustomRadioGroup;
+.field private _radioGroupQuality:Lcom/app/cinemasdk/utils/CustomRadioGroup;
 
-.field public _rememberMeCheckBox:Landroid/widget/CheckBox;
+.field private _rememberMeCheckBox:Landroid/widget/CheckBox;
 
-.field public customRadioGroup:Lcom/app/cinemasdk/utils/CustomRadioGroup;
+.field private customRadioGroup:Lcom/app/cinemasdk/utils/CustomRadioGroup;
 
 .field public mCancelable:Z
 
-.field public mediaQualityDialog:Lcom/app/cinemasdk/dialog/MediaQualityDialog;
+.field private mediaQualityDialog:Lcom/app/cinemasdk/dialog/MediaQualityDialog;
 
-.field public mediaQualityTitles:[Lcom/app/cinemasdk/utils/MediaQualityTitle;
+.field private mediaQualityTitles:[Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
-.field public menuQualityCallBack:Ljava/lang/ref/WeakReference;
+.field private menuQualityCallBack:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -48,7 +48,7 @@
     .end annotation
 .end field
 
-.field public txtSubTitle:Landroid/widget/TextView;
+.field private txtSubTitle:Landroid/widget/TextView;
 
 
 # direct methods
@@ -185,8 +185,6 @@
     iput-object v5, p0, Lcom/app/cinemasdk/dialog/MediaQualityDialog;->txtSubTitle:Landroid/widget/TextView;
 
     .line 10
-    iget-object v5, p0, Lcom/app/cinemasdk/dialog/MediaQualityDialog;->txtSubTitle:Landroid/widget/TextView;
-
     invoke-static {}, Lcom/app/cinemasdk/utils/FontUtil;->getFontInstance()Lcom/app/cinemasdk/utils/FontUtil;
 
     move-result-object v6
@@ -353,7 +351,7 @@
 
     const v3, 0x106000d
 
-    invoke-static {v2, v3}, Lx6;->a(Landroid/content/Context;I)I
+    invoke-static {v2, v3}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result v2
 
@@ -561,6 +559,10 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -622,8 +624,6 @@
     iput-object p1, p0, Lcom/app/cinemasdk/dialog/MediaQualityDialog;->_btnCancel:Landroid/widget/Button;
 
     .line 8
-    iget-object p1, p0, Lcom/app/cinemasdk/dialog/MediaQualityDialog;->_btnCancel:Landroid/widget/Button;
-
     invoke-virtual {p1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 9

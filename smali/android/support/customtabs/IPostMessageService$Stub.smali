@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static final DESCRIPTOR:Ljava/lang/String; = "android.support.customtabs.IPostMessageService"
+.field private static final DESCRIPTOR:Ljava/lang/String; = "android.support.customtabs.IPostMessageService"
 
 .field public static final TRANSACTION_onMessageChannelReady:I = 0x2
 
@@ -94,6 +94,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 

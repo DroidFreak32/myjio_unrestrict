@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public final converter:Lcom/bumptech/glide/load/model/ByteArrayLoader$Converter;
+.field private final converter:Lcom/bumptech/glide/load/model/ByteArrayLoader$Converter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ByteArrayLoader$Converter<",
@@ -63,6 +63,14 @@
 # virtual methods
 .method public bridge synthetic buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, [B
@@ -76,6 +84,14 @@
 
 .method public buildLoadData([BIILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 1
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -106,6 +122,10 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, [B
@@ -119,6 +139,10 @@
 
 .method public handles([B)Z
     .locals 0
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 p1, 0x1
 

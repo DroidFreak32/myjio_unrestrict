@@ -19,19 +19,19 @@
 
 
 # instance fields
-.field public zzva:Ljava/lang/String;
+.field private zzva:Ljava/lang/String;
 
-.field public zzvb:I
+.field private zzvb:I
 
-.field public zzvc:I
+.field private zzvc:I
 
-.field public zzvd:Ljava/lang/String;
+.field private zzvd:Ljava/lang/String;
 
-.field public zzve:Ljava/lang/String;
+.field private zzve:Ljava/lang/String;
 
-.field public zzvf:Z
+.field private zzvf:Z
 
-.field public zzvg:Z
+.field private zzvg:Z
 
 
 # direct methods
@@ -46,7 +46,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Z)V
+.method private constructor <init>(Z)V
     .locals 4
 
     .line 2
@@ -95,7 +95,7 @@
     return-void
 .end method
 
-.method public constructor <init>(ZI)V
+.method private constructor <init>(ZI)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
     .end annotation

@@ -63,7 +63,7 @@
     :try_start_2
     invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    invoke-static {}, Lc20;->l0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->x()V
 
     :cond_0
     const-string v1, "is_wifi_session_continue"
@@ -81,11 +81,11 @@
     invoke-static {v4}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a(Z)V
 
     :cond_1
-    const-string v1, "settingPopupFrequency"
+    const-string/jumbo v1, "settingPopupFrequency"
 
     const-string v2, "7|1"
 
-    invoke-static {v1, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -152,9 +152,9 @@
 
     invoke-static {p1, v3}, Lcom/elitecorelib/etech/AppUtils;->startForegroundService(Landroid/content/Context;Z)V
 
-    invoke-static {v3}, Lk40;->a(Z)V
+    invoke-static {v3}, Lcom/elitecorelib/wifi/receiver/f;->a(Z)V
 
-    invoke-static {p1}, Lc20;->f(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->f(Landroid/content/Context;)V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -214,13 +214,7 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
 
-    goto :goto_0
-
     :catch_2
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_2
     :goto_0
     return-void

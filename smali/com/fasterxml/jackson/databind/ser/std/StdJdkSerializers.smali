@@ -151,8 +151,6 @@
     .line 14
     sget-object v1, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Lcom/fasterxml/jackson/databind/ser/std/NullSerializer;->instance:Lcom/fasterxml/jackson/databind/ser/std/NullSerializer;
-
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 15

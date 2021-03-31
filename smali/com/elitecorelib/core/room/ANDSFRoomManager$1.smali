@@ -17,16 +17,16 @@
 # instance fields
 .field public final synthetic this$0:Lcom/elitecorelib/core/room/ANDSFRoomManager;
 
-.field public final synthetic val$pojo:Lgh;
+.field public final synthetic val$pojo:Landroidx/room/Room;
 
 
 # direct methods
-.method public constructor <init>(Lcom/elitecorelib/core/room/ANDSFRoomManager;Lgh;)V
+.method public constructor <init>(Lcom/elitecorelib/core/room/ANDSFRoomManager;Landroidx/room/Room;)V
     .locals 0
 
     iput-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;->this$0:Lcom/elitecorelib/core/room/ANDSFRoomManager;
 
-    iput-object p2, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;->val$pojo:Lgh;
+    iput-object p2, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;->val$pojo:Landroidx/room/Room;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -56,9 +56,9 @@
 
     move-result-object p1
 
-    iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;->val$pojo:Lgh;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;->val$pojo:Landroidx/room/Room;
 
-    invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Lgh;)V
+    invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Landroidx/room/Room;)V
 
     const/4 p1, 0x0
 

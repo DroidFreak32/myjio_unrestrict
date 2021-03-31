@@ -18,7 +18,11 @@
 
 
 # instance fields
-.field public final requestTracker:Lcom/bumptech/glide/manager/RequestTracker;
+.field private final requestTracker:Lcom/bumptech/glide/manager/RequestTracker;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "RequestManager.this"
+    .end annotation
+.end field
 
 .field public final synthetic this$0:Lcom/bumptech/glide/RequestManager;
 
@@ -26,6 +30,10 @@
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/RequestManager;Lcom/bumptech/glide/manager/RequestTracker;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/RequestManager;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/RequestManager$RequestManagerConnectivityListener;->this$0:Lcom/bumptech/glide/RequestManager;

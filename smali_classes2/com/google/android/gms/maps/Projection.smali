@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzbn:Lcom/google/android/gms/maps/internal/IProjectionDelegate;
+.field private final zzbn:Lcom/google/android/gms/maps/internal/IProjectionDelegate;
 
 
 # direct methods

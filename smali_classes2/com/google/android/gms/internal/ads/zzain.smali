@@ -1,169 +1,235 @@
 .class public final Lcom/google/android/gms/internal/ads/zzain;
-.super Lcom/google/android/gms/internal/ads/zzaij;
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
+    creator = "HttpResponseParcelCreator"
 .end annotation
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/internal/ads/zzain;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+.field public final data:[B
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x4
+    .end annotation
+.end field
+
+.field public final statusCode:I
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x3
+    .end annotation
+.end field
+
+.field public final zzam:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x7
+    .end annotation
+.end field
+
+.field public final zzan:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x8
+    .end annotation
+.end field
+
+.field public final zzcgs:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x2
+    .end annotation
+.end field
+
+.field public final zzdhh:[Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x5
+    .end annotation
+.end field
+
+.field public final zzdhi:[Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x6
+    .end annotation
+.end field
+
+.field public final zzdhj:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x1
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzaij;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzaim;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzaim;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzain;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ZLjava/lang/String;I[B[Ljava/lang/String;[Ljava/lang/String;ZJ)V
+    .locals 0
+    .param p1    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x1
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x2
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x3
+        .end annotation
+    .end param
+    .param p4    # [B
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x4
+        .end annotation
+    .end param
+    .param p5    # [Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x5
+        .end annotation
+    .end param
+    .param p6    # [Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x6
+        .end annotation
+    .end param
+    .param p7    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x7
+        .end annotation
+    .end param
+    .param p8    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x8
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
+    .end annotation
+
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzain;->zzdhj:Z
+
+    .line 3
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzain;->zzcgs:Ljava/lang/String;
+
+    .line 4
+    iput p3, p0, Lcom/google/android/gms/internal/ads/zzain;->statusCode:I
+
+    .line 5
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzain;->data:[B
+
+    .line 6
+    iput-object p5, p0, Lcom/google/android/gms/internal/ads/zzain;->zzdhh:[Ljava/lang/String;
+
+    .line 7
+    iput-object p6, p0, Lcom/google/android/gms/internal/ads/zzain;->zzdhi:[Ljava/lang/String;
+
+    .line 8
+    iput-boolean p7, p0, Lcom/google/android/gms/internal/ads/zzain;->zzam:Z
+
+    .line 9
+    iput-wide p8, p0, Lcom/google/android/gms/internal/ads/zzain;->zzan:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getRewardedVideoAdListener()Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
-    return-object v0
-.end method
-
-.method public final onRewardedVideoAdClosed()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
-
-    if-eqz v0, :cond_0
+    move-result p2
 
     .line 2
-    invoke-interface {v0}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoAdClosed()V
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzdhj:Z
 
-    :cond_0
-    return-void
-.end method
+    const/4 v1, 0x1
 
-.method public final onRewardedVideoAdFailedToLoad(I)V
-    .locals 1
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzcgs:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x2
 
-    .line 2
-    invoke-interface {v0, p1}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoAdFailedToLoad(I)V
+    const/4 v2, 0x0
 
-    :cond_0
-    return-void
-.end method
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-.method public final onRewardedVideoAdLeftApplication()V
-    .locals 1
+    .line 4
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzain;->statusCode:I
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    const/4 v1, 0x3
 
-    if-eqz v0, :cond_0
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
-    .line 2
-    invoke-interface {v0}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoAdLeftApplication()V
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->data:[B
 
-    :cond_0
-    return-void
-.end method
+    const/4 v1, 0x4
 
-.method public final onRewardedVideoAdLoaded()V
-    .locals 1
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    .line 6
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzdhh:[Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x5
 
-    .line 2
-    invoke-interface {v0}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoAdLoaded()V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
 
-    :cond_0
-    return-void
-.end method
+    .line 7
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzdhi:[Ljava/lang/String;
 
-.method public final onRewardedVideoAdOpened()V
-    .locals 1
+    const/4 v1, 0x6
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
 
-    if-eqz v0, :cond_0
+    .line 8
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzam:Z
 
-    .line 2
-    invoke-interface {v0}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoAdOpened()V
+    const/4 v1, 0x7
 
-    :cond_0
-    return-void
-.end method
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
-.method public final onRewardedVideoCompleted()V
-    .locals 1
+    .line 9
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzan:J
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
+    const/16 v2, 0x8
 
-    if-eqz v0, :cond_0
+    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
 
-    .line 2
-    invoke-interface {v0}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoCompleted()V
+    .line 10
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
-    :cond_0
-    return-void
-.end method
-
-.method public final onRewardedVideoStarted()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-interface {v0}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewardedVideoStarted()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setRewardedVideoAdListener(Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
-
-    return-void
-.end method
-
-.method public final zza(Lcom/google/android/gms/internal/ads/zzahy;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzain;->zzhg:Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    new-instance v1, Lcom/google/android/gms/internal/ads/zzail;
-
-    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/ads/zzail;-><init>(Lcom/google/android/gms/internal/ads/zzahy;)V
-
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;->onRewarded(Lcom/google/android/gms/ads/reward/RewardItem;)V
-
-    :cond_0
     return-void
 .end method

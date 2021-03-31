@@ -20,8 +20,14 @@
 
 # instance fields
 .field public volatile a:Ljava/lang/Thread;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 .field public volatile b:Landroidx/work/impl/utils/futures/AbstractFuture$h;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -47,13 +53,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    sget-object v0, Landroidx/work/impl/utils/futures/AbstractFuture;->x:Landroidx/work/impl/utils/futures/AbstractFuture$b;
+    sget-object v0, Landroidx/work/impl/utils/futures/AbstractFuture;->y:Landroidx/work/impl/utils/futures/AbstractFuture$b;
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
 
-    invoke-virtual {v0, p0, v1}, Landroidx/work/impl/utils/futures/AbstractFuture$b;->a(Landroidx/work/impl/utils/futures/AbstractFuture$h;Ljava/lang/Thread;)V
+    invoke-virtual {v0, p0, v1}, Landroidx/work/impl/utils/futures/AbstractFuture$b;->e(Landroidx/work/impl/utils/futures/AbstractFuture$h;Ljava/lang/Thread;)V
 
     return-void
 .end method
@@ -69,33 +75,33 @@
 
 
 # virtual methods
-.method public a()V
+.method public a(Landroidx/work/impl/utils/futures/AbstractFuture$h;)V
+    .locals 1
+
+    .line 1
+    sget-object v0, Landroidx/work/impl/utils/futures/AbstractFuture;->y:Landroidx/work/impl/utils/futures/AbstractFuture$b;
+
+    invoke-virtual {v0, p0, p1}, Landroidx/work/impl/utils/futures/AbstractFuture$b;->d(Landroidx/work/impl/utils/futures/AbstractFuture$h;Landroidx/work/impl/utils/futures/AbstractFuture$h;)V
+
+    return-void
+.end method
+
+.method public b()V
     .locals 2
 
-    .line 2
+    .line 1
     iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$h;->a:Ljava/lang/Thread;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 3
+    .line 2
     iput-object v1, p0, Landroidx/work/impl/utils/futures/AbstractFuture$h;->a:Ljava/lang/Thread;
 
-    .line 4
+    .line 3
     invoke-static {v0}, Ljava/util/concurrent/locks/LockSupport;->unpark(Ljava/lang/Thread;)V
 
     :cond_0
-    return-void
-.end method
-
-.method public a(Landroidx/work/impl/utils/futures/AbstractFuture$h;)V
-    .locals 1
-
-    .line 1
-    sget-object v0, Landroidx/work/impl/utils/futures/AbstractFuture;->x:Landroidx/work/impl/utils/futures/AbstractFuture$b;
-
-    invoke-virtual {v0, p0, p1}, Landroidx/work/impl/utils/futures/AbstractFuture$b;->a(Landroidx/work/impl/utils/futures/AbstractFuture$h;Landroidx/work/impl/utils/futures/AbstractFuture$h;)V
-
     return-void
 .end method

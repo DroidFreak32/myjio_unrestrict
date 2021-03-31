@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/GoogleApiAvailability;
 .super Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -12,16 +13,23 @@
 
 # static fields
 .field public static final GOOGLE_PLAY_SERVICES_PACKAGE:Ljava/lang/String; = "com.google.android.gms"
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
 .field public static final GOOGLE_PLAY_SERVICES_VERSION_CODE:I
 
-.field public static final mLock:Ljava/lang/Object;
+.field private static final zaa:Ljava/lang/Object;
 
-.field public static final zaao:Lcom/google/android/gms/common/GoogleApiAvailability;
+.field private static final zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
 
 # instance fields
-.field public zaap:Ljava/lang/String;
+.field private zac:Ljava/lang/String;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -33,14 +41,14 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->mLock:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa:Ljava/lang/Object;
 
     .line 2
     new-instance v0, Lcom/google/android/gms/common/GoogleApiAvailability;
 
     invoke-direct {v0}, Lcom/google/android/gms/common/GoogleApiAvailability;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->zaao:Lcom/google/android/gms/common/GoogleApiAvailability;
+    sput-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     .line 3
     sget v0, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->GOOGLE_PLAY_SERVICES_VERSION_CODE:I
@@ -61,9 +69,11 @@
 
 .method public static getInstance()Lcom/google/android/gms/common/GoogleApiAvailability;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->zaao:Lcom/google/android/gms/common/GoogleApiAvailability;
+    sget-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     return-object v0
 .end method
@@ -101,7 +111,7 @@
     const/16 v0, 0x12
 
     .line 14
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getErrorMessage(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/zab;->zac(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -126,8 +136,18 @@
     return-object v0
 .end method
 
-.method public static zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/DialogRedirect;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+.method public static zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/zad;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
     .locals 5
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -135,13 +155,13 @@
 
     return-object v0
 
-    .line 27
+    .line 37
     :cond_0
     new-instance v1, Landroid/util/TypedValue;
 
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
-    .line 28
+    .line 38
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v2
@@ -152,7 +172,7 @@
 
     invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 29
+    .line 39
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -165,14 +185,14 @@
 
     const-string v2, "Theme.Dialog.Alert"
 
-    .line 30
+    .line 40
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 31
+    .line 41
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     const/4 v1, 0x5
@@ -182,14 +202,14 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 32
+    .line 42
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 33
+    .line 43
     :cond_2
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getErrorMessage(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/zab;->zac(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -197,32 +217,32 @@
 
     if-eqz p3, :cond_3
 
-    .line 34
+    .line 44
     invoke-virtual {v0, p3}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 35
+    .line 45
     :cond_3
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getErrorDialogButtonMessage(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/zab;->zae(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object p3
 
     if-eqz p3, :cond_4
 
-    .line 36
+    .line 46
     invoke-virtual {v0, p3, p2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 37
+    .line 47
     :cond_4
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getErrorTitle(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/zab;->zaa(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object p0
 
     if-eqz p0, :cond_5
 
-    .line 38
+    .line 48
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 39
+    .line 49
     :cond_5
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
@@ -231,44 +251,179 @@
     return-object p0
 .end method
 
+.method private static varargs zaa(Lcom/google/android/gms/common/api/HasApiKey;[Lcom/google/android/gms/common/api/HasApiKey;)Lcom/google/android/gms/tasks/Task;
+    .locals 4
+    .param p0    # Lcom/google/android/gms/common/api/HasApiKey;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # [Lcom/google/android/gms/common/api/HasApiKey;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/HasApiKey<",
+            "*>;[",
+            "Lcom/google/android/gms/common/api/HasApiKey<",
+            "*>;)",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/util/Map<",
+            "Lcom/google/android/gms/common/api/internal/ApiKey<",
+            "*>;",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "Requested API must not be null."
+
+    .line 27
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 28
+    array-length v1, p1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    aget-object v3, p1, v2
+
+    .line 29
+    invoke-static {v3, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 30
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    array-length v1, p1
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 31
+    invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 32
+    invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 33
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa()Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa(Ljava/lang/Iterable;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic zaa(Ljava/util/Map;)Lcom/google/android/gms/tasks/Task;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    const/4 p0, 0x0
+
+    .line 99
+    invoke-static {p0}, Lcom/google/android/gms/tasks/Tasks;->forResult(Ljava/lang/Object;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final zaa()Ljava/lang/String;
+    .locals 2
+    .annotation build Landroidx/annotation/VisibleForTesting;
+        otherwise = 0x2
+    .end annotation
+
+    .line 34
+    sget-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 35
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/common/GoogleApiAvailability;->zac:Ljava/lang/String;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    .line 36
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
 .method public static zaa(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
     .locals 1
+    .param p3    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
-    .line 40
+    .line 50
     instance-of v0, p0, Landroidx/fragment/app/FragmentActivity;
 
     if-eqz v0, :cond_0
 
-    .line 41
+    .line 51
     check-cast p0, Landroidx/fragment/app/FragmentActivity;
 
-    .line 42
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    .line 52
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object p0
 
-    .line 43
+    .line 53
     invoke-static {p1, p3}, Lcom/google/android/gms/common/SupportErrorDialogFragment;->newInstance(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/SupportErrorDialogFragment;
 
     move-result-object p1
 
-    .line 44
-    invoke-virtual {p1, p0, p2}, Lcom/google/android/gms/common/SupportErrorDialogFragment;->show(Lrc;Ljava/lang/String;)V
+    .line 54
+    invoke-virtual {p1, p0, p2}, Lcom/google/android/gms/common/SupportErrorDialogFragment;->show(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;)V
 
     return-void
 
-    .line 45
+    .line 55
     :cond_0
     invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object p0
 
-    .line 46
+    .line 56
     invoke-static {p1, p3}, Lcom/google/android/gms/common/ErrorDialogFragment;->newInstance(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/ErrorDialogFragment;
 
     move-result-object p1
 
-    .line 47
+    .line 57
     invoke-virtual {p1, p0, p2}, Lcom/google/android/gms/common/ErrorDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
     return-void
@@ -280,11 +435,39 @@
         value = 0x14
     .end annotation
 
-    const/16 p3, 0x12
+    const/4 p3, 0x2
 
-    if-ne p2, p3, :cond_0
+    new-array v0, p3, [Ljava/lang/Object;
 
-    .line 48
+    .line 58
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x0
+
+    const/4 v3, 0x1
+
+    aput-object v1, v0, v3
+
+    const-string v1, "GMS core API Availability. ConnectionResult=%s, tag=%s"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 59
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    const/16 v0, 0x12
+
+    if-ne p2, v0, :cond_0
+
+    .line 60
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;)V
 
     return-void
@@ -296,219 +479,235 @@
 
     return-void
 
-    .line 49
+    .line 61
     :cond_1
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getErrorNotificationTitle(Landroid/content/Context;I)Ljava/lang/String;
-
-    move-result-object p3
-
-    .line 50
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getErrorNotificationMessage(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/zab;->zab(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 51
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .line 62
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/zab;->zad(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "notification"
-
-    .line 52
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/app/NotificationManager;
-
-    .line 53
-    new-instance v3, Lq6$d;
-
-    invoke-direct {v3, p1}, Lq6$d;-><init>(Landroid/content/Context;)V
-
-    const/4 v4, 0x1
-
-    .line 54
-    invoke-virtual {v3, v4}, Lq6$d;->c(Z)Lq6$d;
-
-    .line 55
-    invoke-virtual {v3, v4}, Lq6$d;->a(Z)Lq6$d;
-
-    .line 56
-    invoke-virtual {v3, p3}, Lq6$d;->b(Ljava/lang/CharSequence;)Lq6$d;
-
-    new-instance p3, Lq6$c;
-
-    invoke-direct {p3}, Lq6$c;-><init>()V
-
-    .line 57
-    invoke-virtual {p3, v0}, Lq6$c;->a(Ljava/lang/CharSequence;)Lq6$c;
-
-    invoke-virtual {v3, p3}, Lq6$d;->a(Lq6$g;)Lq6$d;
-
-    .line 58
-    invoke-static {p1}, Lcom/google/android/gms/common/util/DeviceProperties;->isWearable(Landroid/content/Context;)Z
-
-    move-result p3
-
-    const/4 v5, 0x2
-
-    if-eqz p3, :cond_3
-
-    .line 59
-    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastKitKatWatch()Z
-
-    move-result p3
-
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(Z)V
-
-    .line 60
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p3
-
-    iget p3, p3, Landroid/content/pm/ApplicationInfo;->icon:I
-
-    invoke-virtual {v3, p3}, Lq6$d;->f(I)Lq6$d;
-
-    .line 61
-    invoke-virtual {v3, v5}, Lq6$d;->e(I)Lq6$d;
-
-    .line 62
-    invoke-static {p1}, Lcom/google/android/gms/common/util/DeviceProperties;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_2
-
     .line 63
-    sget p3, Lcom/google/android/gms/base/R$drawable;->common_full_open_on_phone:I
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    sget v0, Lcom/google/android/gms/base/R$string;->common_open_on_phone:I
+    move-result-object v4
+
+    const-string v5, "notification"
 
     .line 64
-    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/app/NotificationManager;
+
+    .line 65
+    new-instance v6, Landroidx/core/app/NotificationCompat$Builder;
+
+    invoke-direct {v6, p1}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 66
+    invoke-virtual {v6, v3}, Landroidx/core/app/NotificationCompat$Builder;->setLocalOnly(Z)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v6
+
+    .line 67
+    invoke-virtual {v6, v3}, Landroidx/core/app/NotificationCompat$Builder;->setAutoCancel(Z)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v6
+
+    .line 68
+    invoke-virtual {v6, v0}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object v0
 
-    .line 65
-    invoke-virtual {v3, p3, v0, p4}, Lq6$d;->a(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Lq6$d;
+    new-instance v6, Landroidx/core/app/NotificationCompat$BigTextStyle;
+
+    invoke-direct {v6}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
+
+    .line 69
+    invoke-virtual {v6, v1}, Landroidx/core/app/NotificationCompat$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 70
+    invoke-static {p1}, Lcom/google/android/gms/common/util/DeviceProperties;->isWearable(Landroid/content/Context;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    .line 71
+    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastKitKatWatch()Z
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(Z)V
+
+    .line 72
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/content/pm/ApplicationInfo;->icon:I
+
+    invoke-virtual {v0, v1}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v1
+
+    .line 73
+    invoke-virtual {v1, p3}, Landroidx/core/app/NotificationCompat$Builder;->setPriority(I)Landroidx/core/app/NotificationCompat$Builder;
+
+    .line 74
+    invoke-static {p1}, Lcom/google/android/gms/common/util/DeviceProperties;->isWearableWithoutPlayStore(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 75
+    sget v1, Lcom/google/android/gms/base/R$drawable;->common_full_open_on_phone:I
+
+    sget v6, Lcom/google/android/gms/base/R$string;->common_open_on_phone:I
+
+    .line 76
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 77
+    invoke-virtual {v0, v1, v4, p4}, Landroidx/core/app/NotificationCompat$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
 
     goto :goto_0
 
-    .line 66
+    .line 78
     :cond_2
-    invoke-virtual {v3, p4}, Lq6$d;->a(Landroid/app/PendingIntent;)Lq6$d;
+    invoke-virtual {v0, p4}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
 
     goto :goto_0
 
     :cond_3
-    const p3, 0x108008a
+    const v6, 0x108008a
 
-    .line 67
-    invoke-virtual {v3, p3}, Lq6$d;->f(I)Lq6$d;
+    .line 79
+    invoke-virtual {v0, v6}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
 
-    sget p3, Lcom/google/android/gms/base/R$string;->common_google_play_services_notification_ticker:I
+    move-result-object v6
 
-    .line 68
-    invoke-virtual {v1, p3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    sget v7, Lcom/google/android/gms/base/R$string;->common_google_play_services_notification_ticker:I
 
-    move-result-object p3
+    .line 80
+    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v3, p3}, Lq6$d;->d(Ljava/lang/CharSequence;)Lq6$d;
+    move-result-object v4
 
-    .line 69
+    invoke-virtual {v6, v4}, Landroidx/core/app/NotificationCompat$Builder;->setTicker(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v4
+
+    .line 81
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v3, v6, v7}, Lq6$d;->a(J)Lq6$d;
+    invoke-virtual {v4, v6, v7}, Landroidx/core/app/NotificationCompat$Builder;->setWhen(J)Landroidx/core/app/NotificationCompat$Builder;
 
-    .line 70
-    invoke-virtual {v3, p4}, Lq6$d;->a(Landroid/app/PendingIntent;)Lq6$d;
+    move-result-object v4
 
-    .line 71
-    invoke-virtual {v3, v0}, Lq6$d;->a(Ljava/lang/CharSequence;)Lq6$d;
-
-    .line 72
-    :goto_0
-    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastO()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_6
-
-    .line 73
-    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastO()Z
-
-    move-result p3
-
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(Z)V
-
-    .line 74
-    invoke-direct {p0}, Lcom/google/android/gms/common/GoogleApiAvailability;->zag()Ljava/lang/String;
-
-    move-result-object p3
-
-    if-nez p3, :cond_5
-
-    const-string p3, "com.google.android.gms.availability"
-
-    .line 75
-    invoke-virtual {v2, p3}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
+    .line 82
+    invoke-virtual {v4, p4}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p4
 
-    .line 76
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/ConnectionErrorMessages;->getDefaultNotificationChannelName(Landroid/content/Context;)Ljava/lang/String;
+    .line 83
+    invoke-virtual {p4, v1}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+
+    .line 84
+    :goto_0
+    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastO()Z
+
+    move-result p4
+
+    if-eqz p4, :cond_6
+
+    .line 85
+    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastO()Z
+
+    move-result p4
+
+    invoke-static {p4}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(Z)V
+
+    .line 86
+    invoke-direct {p0}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa()Ljava/lang/String;
+
+    move-result-object p4
+
+    if-nez p4, :cond_5
+
+    const-string p4, "com.google.android.gms.availability"
+
+    .line 87
+    invoke-virtual {v5, p4}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
+
+    move-result-object v1
+
+    .line 88
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zab;->zaa(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p4, :cond_4
+    if-nez v1, :cond_4
 
-    .line 77
-    new-instance p4, Landroid/app/NotificationChannel;
+    .line 89
+    new-instance v1, Landroid/app/NotificationChannel;
 
-    const/4 v0, 0x4
+    const/4 v4, 0x4
 
-    invoke-direct {p4, p3, p1, v0}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+    invoke-direct {v1, p4, p1, v4}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    invoke-virtual {v2, p4}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+    invoke-virtual {v5, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
     goto :goto_1
 
-    .line 78
+    .line 90
     :cond_4
-    invoke-virtual {p4}, Landroid/app/NotificationChannel;->getName()Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Landroid/app/NotificationChannel;->getName()Ljava/lang/CharSequence;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p1, v4}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result v4
 
-    if-nez v0, :cond_5
+    if-nez v4, :cond_5
 
-    .line 79
-    invoke-virtual {p4, p1}, Landroid/app/NotificationChannel;->setName(Ljava/lang/CharSequence;)V
+    .line 91
+    invoke-virtual {v1, p1}, Landroid/app/NotificationChannel;->setName(Ljava/lang/CharSequence;)V
 
-    .line 80
-    invoke-virtual {v2, p4}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+    .line 92
+    invoke-virtual {v5, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    .line 81
+    .line 93
     :cond_5
     :goto_1
-    invoke-virtual {v3, p3}, Lq6$d;->a(Ljava/lang/String;)Lq6$d;
+    invoke-virtual {v0, p4}, Landroidx/core/app/NotificationCompat$Builder;->setChannelId(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
-    .line 82
+    .line 94
     :cond_6
-    invoke-virtual {v3}, Lq6$d;->a()Landroid/app/Notification;
+    invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p1
 
-    if-eq p2, v4, :cond_7
+    if-eq p2, v3, :cond_7
 
-    if-eq p2, v5, :cond_7
+    if-eq p2, p3, :cond_7
 
     const/4 p3, 0x3
 
@@ -521,51 +720,43 @@
     :cond_7
     const/16 p2, 0x28c4
 
-    .line 83
+    .line 95
     sget-object p3, Lcom/google/android/gms/common/GooglePlayServicesUtilLight;->sCanceledAvailabilityNotification:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 p4, 0x0
+    invoke-virtual {p3, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    invoke-virtual {p3, p4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    .line 84
+    .line 96
     :goto_2
-    invoke-virtual {v2, p2, p1}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+    invoke-virtual {v5, p2, p1}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     return-void
 .end method
 
-.method private final zag()Ljava/lang/String;
-    .locals 2
+.method public static final synthetic zab(Ljava/util/Map;)Lcom/google/android/gms/tasks/Task;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    const/4 p0, 0x0
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/GoogleApiAvailability;->mLock:Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/tasks/Tasks;->forResult(Ljava/lang/Object;)Lcom/google/android/gms/tasks/Task;
 
-    monitor-enter v0
+    move-result-object p0
 
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/GoogleApiAvailability;->zaap:Ljava/lang/String;
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    .line 3
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-object p0
 .end method
 
 
 # virtual methods
 .method public varargs checkApiAvailability(Lcom/google/android/gms/common/api/GoogleApi;[Lcom/google/android/gms/common/api/GoogleApi;)Lcom/google/android/gms/tasks/Task;
-    .locals 4
+    .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -579,64 +770,48 @@
         }
     .end annotation
 
-    const-string v0, "Requested API must not be null."
-
-    .line 1
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    array-length v1, p2
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_0
-
-    aget-object v3, p2, v2
-
     .line 3
-    invoke-static {v3, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Lcom/google/android/gms/common/api/HasApiKey;[Lcom/google/android/gms/common/api/HasApiKey;)Lcom/google/android/gms/tasks/Task;
 
-    add-int/lit8 v2, v2, 0x1
+    move-result-object p1
 
-    goto :goto_0
+    sget-object p2, Lcom/google/android/gms/common/zaa;->zaa:Lcom/google/android/gms/tasks/SuccessContinuation;
 
     .line 4
-    :cond_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    array-length v1, p2
-
-    add-int/lit8 v1, v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 5
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 6
-    invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/Task;->onSuccessTask(Lcom/google/android/gms/tasks/SuccessContinuation;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    return-object p1
+.end method
 
-    .line 7
-    invoke-static {}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zabc()Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+.method public varargs checkApiAvailability(Lcom/google/android/gms/common/api/HasApiKey;[Lcom/google/android/gms/common/api/HasApiKey;)Lcom/google/android/gms/tasks/Task;
+    .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/HasApiKey<",
+            "*>;[",
+            "Lcom/google/android/gms/common/api/HasApiKey<",
+            "*>;)",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Lcom/google/android/gms/common/api/HasApiKey;[Lcom/google/android/gms/common/api/HasApiKey;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa(Ljava/lang/Iterable;)Lcom/google/android/gms/tasks/Task;
+    sget-object p2, Lcom/google/android/gms/common/zab;->zaa:Lcom/google/android/gms/tasks/SuccessContinuation;
 
-    move-result-object p1
-
-    .line 8
-    new-instance p2, Lcom/google/android/gms/common/zaa;
-
-    invoke-direct {p2, p0}, Lcom/google/android/gms/common/zaa;-><init>(Lcom/google/android/gms/common/GoogleApiAvailability;)V
-
-    .line 9
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/Task;->continueWith(Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
+    .line 2
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/Task;->onSuccessTask(Lcom/google/android/gms/tasks/SuccessContinuation;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -674,6 +849,10 @@
 
 .method public getErrorDialog(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
     .locals 1
+    .param p4    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const-string v0, "d"
 
@@ -683,12 +862,12 @@
     move-result-object v0
 
     .line 3
-    invoke-static {p1, v0, p3}, Lcom/google/android/gms/common/internal/DialogRedirect;->getInstance(Landroid/app/Activity;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/DialogRedirect;
+    invoke-static {p1, v0, p3}, Lcom/google/android/gms/common/internal/zad;->zaa(Landroid/app/Activity;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/zad;
 
     move-result-object p3
 
     .line 4
-    invoke-static {p1, p2, p3, p4}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/DialogRedirect;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-static {p1, p2, p3, p4}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/zad;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object p1
 
@@ -697,6 +876,13 @@
 
 .method public getErrorResolutionIntent(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
     .locals 0
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -713,6 +899,8 @@
 
 .method public getErrorResolutionPendingIntent(Landroid/content/Context;II)Landroid/app/PendingIntent;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->getErrorResolutionPendingIntent(Landroid/content/Context;II)Landroid/app/PendingIntent;
@@ -724,6 +912,8 @@
 
 .method public getErrorResolutionPendingIntent(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;)Landroid/app/PendingIntent;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 2
     invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->hasResolution()Z
@@ -756,6 +946,8 @@
 
 .method public final getErrorString(I)Ljava/lang/String;
     .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-super {p0, p1}, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->getErrorString(I)Ljava/lang/String;
@@ -807,6 +999,12 @@
 
 .method public makeGooglePlayServicesAvailable(Landroid/app/Activity;)Lcom/google/android/gms/tasks/Task;
     .locals 3
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -844,7 +1042,7 @@
 
     .line 5
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabu;->zac(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zabu;
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabo;->zaa(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zabo;
 
     move-result-object p1
 
@@ -859,7 +1057,7 @@
     invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/common/api/internal/zal;->zab(Lcom/google/android/gms/common/ConnectionResult;I)V
 
     .line 8
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/zabu;->getTask()Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/zabo;->zac()Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -868,6 +1066,14 @@
 
 .method public setDefaultNotificationChannelId(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x1a
     .end annotation
@@ -897,13 +1103,13 @@
 
     .line 4
     :cond_0
-    sget-object p1, Lcom/google/android/gms/common/GoogleApiAvailability;->mLock:Ljava/lang/Object;
+    sget-object p1, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa:Ljava/lang/Object;
 
     monitor-enter p1
 
     .line 5
     :try_start_0
-    iput-object p2, p0, Lcom/google/android/gms/common/GoogleApiAvailability;->zaap:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/GoogleApiAvailability;->zac:Ljava/lang/String;
 
     .line 6
     monitor-exit p1
@@ -935,6 +1141,10 @@
 
 .method public showErrorDialogFragment(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
     .locals 0
+    .param p4    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/gms/common/GoogleApiAvailability;->getErrorDialog(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
@@ -998,8 +1208,10 @@
     return-void
 .end method
 
-.method public final zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/internal/zabr;)Lcom/google/android/gms/common/api/internal/zabq;
+.method public final zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/internal/zabk;)Lcom/google/android/gms/common/api/internal/zabl;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 19
     new-instance v0, Landroid/content/IntentFilter;
@@ -1014,15 +1226,15 @@
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
     .line 21
-    new-instance v1, Lcom/google/android/gms/common/api/internal/zabq;
+    new-instance v1, Lcom/google/android/gms/common/api/internal/zabl;
 
-    invoke-direct {v1, p2}, Lcom/google/android/gms/common/api/internal/zabq;-><init>(Lcom/google/android/gms/common/api/internal/zabr;)V
+    invoke-direct {v1, p2}, Lcom/google/android/gms/common/api/internal/zabl;-><init>(Lcom/google/android/gms/common/api/internal/zabk;)V
 
     .line 22
     invoke-virtual {p1, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 23
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/common/api/internal/zabq;->zac(Landroid/content/Context;)V
+    invoke-virtual {v1, p1}, Lcom/google/android/gms/common/api/internal/zabl;->zaa(Landroid/content/Context;)V
 
     const-string v0, "com.google.android.gms"
 
@@ -1034,10 +1246,10 @@
     if-nez p1, :cond_0
 
     .line 25
-    invoke-virtual {p2}, Lcom/google/android/gms/common/api/internal/zabr;->zas()V
+    invoke-virtual {p2}, Lcom/google/android/gms/common/api/internal/zabk;->zaa()V
 
     .line 26
-    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/zabq;->unregister()V
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/zabl;->zaa()V
 
     const/4 p1, 0x0
 
@@ -1050,7 +1262,7 @@
 .method public final zaa(Landroid/content/Context;)V
     .locals 3
 
-    .line 85
+    .line 97
     new-instance v0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;
 
     invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;-><init>(Lcom/google/android/gms/common/GoogleApiAvailability;Landroid/content/Context;)V
@@ -1059,7 +1271,7 @@
 
     const-wide/32 v1, 0x1d4c0
 
-    .line 86
+    .line 98
     invoke-virtual {v0, p1, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     return-void
@@ -1067,6 +1279,18 @@
 
 .method public final zaa(Landroid/app/Activity;Lcom/google/android/gms/common/api/internal/LifecycleFragment;IILandroid/content/DialogInterface$OnCancelListener;)Z
     .locals 1
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/common/api/internal/LifecycleFragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p5    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const-string p4, "d"
 
@@ -1078,12 +1302,12 @@
     const/4 v0, 0x2
 
     .line 2
-    invoke-static {p2, p4, v0}, Lcom/google/android/gms/common/internal/DialogRedirect;->getInstance(Lcom/google/android/gms/common/api/internal/LifecycleFragment;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/DialogRedirect;
+    invoke-static {p2, p4, v0}, Lcom/google/android/gms/common/internal/zad;->zaa(Lcom/google/android/gms/common/api/internal/LifecycleFragment;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/zad;
 
     move-result-object p2
 
     .line 3
-    invoke-static {p1, p3, p2, p5}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/DialogRedirect;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-static {p1, p3, p2, p5}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/zad;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object p2
 

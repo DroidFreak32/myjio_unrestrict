@@ -1,53 +1,35 @@
 .class public final Lcom/google/android/gms/common/api/internal/zao;
-.super Lcom/google/android/gms/common/api/internal/zabr;
+.super Ljava/lang/ThreadLocal;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
-# instance fields
-.field public final synthetic zadl:Landroid/app/Dialog;
-
-.field public final synthetic zadm:Lcom/google/android/gms/common/api/internal/zan;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/ThreadLocal<",
+        "Ljava/lang/Boolean;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zan;Landroid/app/Dialog;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zao;->zadm:Lcom/google/android/gms/common/api/internal/zan;
-
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zao;->zadl:Landroid/app/Dialog;
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/zabr;-><init>()V
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zas()V
+.method public final synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zao;->zadm:Lcom/google/android/gms/common/api/internal/zan;
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zan;->zadk:Lcom/google/android/gms/common/api/internal/zal;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/zal;->zaq()V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zao;->zadl:Landroid/app/Dialog;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zao;->zadl:Landroid/app/Dialog;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

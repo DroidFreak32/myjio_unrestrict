@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public w:Lko;
+.field public mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lko<",
-            "Landroidx/work/ListenableWorker$a;",
+            "Landroidx/work/impl/utils/futures/SettableFuture<",
+            "Landroidx/work/ListenableWorker$Result;",
             ">;"
         }
     .end annotation
@@ -18,6 +18,14 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/work/WorkerParameters;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "BanKeepAnnotation"
@@ -35,26 +43,37 @@
 
 
 # virtual methods
-.method public final j()Lcom/google/common/util/concurrent/ListenableFuture;
+.method public abstract doWork()Landroidx/work/ListenableWorker$Result;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
+.end method
+
+.method public final startWork()Lcom/google/common/util/concurrent/ListenableFuture;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Lcom/google/common/util/concurrent/ListenableFuture<",
-            "Landroidx/work/ListenableWorker$a;",
+            "Landroidx/work/ListenableWorker$Result;",
             ">;"
         }
     .end annotation
 
     .line 1
-    invoke-static {}, Lko;->e()Lko;
+    invoke-static {}, Landroidx/work/impl/utils/futures/SettableFuture;->create()Landroidx/work/impl/utils/futures/SettableFuture;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroidx/work/Worker;->w:Lko;
+    iput-object v0, p0, Landroidx/work/Worker;->mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
 
     .line 2
-    invoke-virtual {p0}, Landroidx/work/ListenableWorker;->b()Ljava/util/concurrent/Executor;
+    invoke-virtual {p0}, Landroidx/work/ListenableWorker;->getBackgroundExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
@@ -65,10 +84,7 @@
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 3
-    iget-object v0, p0, Landroidx/work/Worker;->w:Lko;
+    iget-object v0, p0, Landroidx/work/Worker;->mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
 
     return-object v0
-.end method
-
-.method public abstract l()Landroidx/work/ListenableWorker$a;
 .end method

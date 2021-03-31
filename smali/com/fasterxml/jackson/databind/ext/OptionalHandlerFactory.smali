@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final CLASS_DOM_DOCUMENT:Ljava/lang/Class;
+.field private static final CLASS_DOM_DOCUMENT:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -16,7 +16,7 @@
     .end annotation
 .end field
 
-.field public static final CLASS_DOM_NODE:Ljava/lang/Class;
+.field private static final CLASS_DOM_NODE:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -25,23 +25,23 @@
     .end annotation
 .end field
 
-.field public static final DESERIALIZERS_FOR_JAVAX_XML:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.CoreXMLDeserializers"
+.field private static final DESERIALIZERS_FOR_JAVAX_XML:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.CoreXMLDeserializers"
 
-.field public static final DESERIALIZER_FOR_DOM_DOCUMENT:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.DOMDeserializer$DocumentDeserializer"
+.field private static final DESERIALIZER_FOR_DOM_DOCUMENT:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.DOMDeserializer$DocumentDeserializer"
 
-.field public static final DESERIALIZER_FOR_DOM_NODE:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.DOMDeserializer$NodeDeserializer"
+.field private static final DESERIALIZER_FOR_DOM_NODE:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.DOMDeserializer$NodeDeserializer"
 
-.field public static final PACKAGE_PREFIX_JAVAX_XML:Ljava/lang/String; = "javax.xml."
+.field private static final PACKAGE_PREFIX_JAVAX_XML:Ljava/lang/String; = "javax.xml."
 
-.field public static final SERIALIZERS_FOR_JAVAX_XML:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.CoreXMLSerializers"
+.field private static final SERIALIZERS_FOR_JAVAX_XML:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.CoreXMLSerializers"
 
-.field public static final SERIALIZER_FOR_DOM_NODE:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.DOMSerializer"
+.field private static final SERIALIZER_FOR_DOM_NODE:Ljava/lang/String; = "com.fasterxml.jackson.databind.ext.DOMSerializer"
 
-.field public static final _jdk7Helper:Lcom/fasterxml/jackson/databind/ext/Java7Support;
+.field private static final _jdk7Helper:Lcom/fasterxml/jackson/databind/ext/Java7Support;
 
 .field public static final instance:Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -213,6 +213,12 @@
             ")",
             "Lcom/fasterxml/jackson/databind/JsonDeserializer<",
             "*>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
         }
     .end annotation
 

@@ -37,6 +37,18 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/AttrRes;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -51,6 +63,22 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/AttrRes;
+        .end annotation
+    .end param
+    .param p4    # I
+        .annotation build Landroidx/annotation/StyleRes;
+        .end annotation
+    .end param
 
     .line 3
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
@@ -67,64 +95,62 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lb0;->PopupWindow:[I
+    sget-object v0, Landroidx/appcompat/R$styleable;->PopupWindow:[I
 
-    invoke-static {p1, p2, v0, p3, p4}, Lf3;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Lf3;
+    invoke-static {p1, p2, v0, p3, p4}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object p1
 
     .line 2
-    sget p2, Lb0;->PopupWindow_overlapAnchor:I
+    sget p2, Landroidx/appcompat/R$styleable;->PopupWindow_overlapAnchor:I
 
-    invoke-virtual {p1, p2}, Lf3;->g(I)Z
+    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
-    move-result p2
+    move-result p3
 
-    if-eqz p2, :cond_0
-
-    .line 3
-    sget p2, Lb0;->PopupWindow_overlapAnchor:I
+    if-eqz p3, :cond_0
 
     const/4 p3, 0x0
 
-    invoke-virtual {p1, p2, p3}, Lf3;->a(IZ)Z
+    .line 3
+    invoke-virtual {p1, p2, p3}, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
-    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/AppCompatPopupWindow;->a(Z)V
+    invoke-virtual {p0, p2}, Landroidx/appcompat/widget/AppCompatPopupWindow;->b(Z)V
 
     .line 4
     :cond_0
-    sget p2, Lb0;->PopupWindow_android_popupBackground:I
+    sget p2, Landroidx/appcompat/R$styleable;->PopupWindow_android_popupBackground:I
 
-    invoke-virtual {p1, p2}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p0, p2}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 5
-    invoke-virtual {p1}, Lf3;->a()V
+    invoke-virtual {p1}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return-void
 .end method
 
-.method public final a(Z)V
+.method public final b(Z)V
     .locals 1
 
-    .line 6
+    .line 1
     sget-boolean v0, Landroidx/appcompat/widget/AppCompatPopupWindow;->b:Z
 
     if-eqz v0, :cond_0
 
-    .line 7
+    .line 2
     iput-boolean p1, p0, Landroidx/appcompat/widget/AppCompatPopupWindow;->a:Z
 
     goto :goto_0
 
-    .line 8
+    .line 3
     :cond_0
-    invoke-static {p0, p1}, Lbb;->a(Landroid/widget/PopupWindow;Z)V
+    invoke-static {p0, p1}, Landroidx/core/widget/PopupWindowCompat;->setOverlapAnchor(Landroid/widget/PopupWindow;Z)V
 
     :goto_0
     return-void

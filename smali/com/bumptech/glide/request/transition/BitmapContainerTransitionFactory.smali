@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field public final realFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
+.field private final realFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/transition/TransitionFactory<",

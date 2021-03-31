@@ -21,7 +21,7 @@
 
 
 # direct methods
-.method public constructor <init>(IJ)V
+.method private constructor <init>(IJ)V
     .locals 0
 
     .line 2
@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method public static createFromParcel(Landroid/os/Parcel;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
+.method private static createFromParcel(Landroid/os/Parcel;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
     .locals 4
 
     .line 1

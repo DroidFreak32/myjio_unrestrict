@@ -1,124 +1,153 @@
 .class public final Lcom/google/android/gms/internal/vision/zzep;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/vision/zzee;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/vision/zzeu;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lcom/google/android/gms/internal/vision/zzee<",
+        "TE;>;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final zznk:Lcom/google/android/gms/internal/vision/zzee;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/vision/zzee<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final limit:I
+.field private final transient size:I
 
-.field public position:I
-
-.field public final synthetic zzsa:Lcom/google/android/gms/internal/vision/zzeo;
+.field private final transient zznl:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzeo;)V
+.method public static constructor <clinit>()V
+    .locals 3
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzep;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Object;
+
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/internal/vision/zzep;-><init>([Ljava/lang/Object;I)V
+
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzep;->zznk:Lcom/google/android/gms/internal/vision/zzee;
+
+    return-void
+.end method
+
+.method public constructor <init>([Ljava/lang/Object;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzep;->zzsa:Lcom/google/android/gms/internal/vision/zzeo;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, 0x0
+    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzee;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/internal/vision/zzep;->position:I
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzep;->zznl:[Ljava/lang/Object;
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzep;->zzsa:Lcom/google/android/gms/internal/vision/zzeo;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzeo;->size()I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/gms/internal/vision/zzep;->limit:I
+    iput p2, p0, Lcom/google/android/gms/internal/vision/zzep;->size:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 2
+.method public final get(I)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)TE;"
+        }
+    .end annotation
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/vision/zzep;->position:I
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzep;->size:I
 
-    iget v1, p0, Lcom/google/android/gms/internal/vision/zzep;->limit:I
+    invoke-static {p1, v0}, Lcom/google/android/gms/internal/vision/zzde;->zzd(II)I
 
-    if-ge v0, v1, :cond_0
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzep;->zznl:[Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    aget-object p1, v0, p1
+
+    return-object p1
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzep;->size:I
 
     return v0
+.end method
 
-    :cond_0
+.method public final zza([Ljava/lang/Object;I)I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzep;->zznl:[Ljava/lang/Object;
+
+    iget v1, p0, Lcom/google/android/gms/internal/vision/zzep;->size:I
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2, p1, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 2
+    iget p1, p0, Lcom/google/android/gms/internal/vision/zzep;->size:I
+
+    add-int/2addr p2, p1
+
+    return p2
+.end method
+
+.method public final zzcq()[Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzep;->zznl:[Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final zzcr()I
+    .locals 1
+
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
+.method public final zzcs()I
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzep;->nextByte()B
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final nextByte()B
-    .locals 3
-
-    .line 1
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzep;->zzsa:Lcom/google/android/gms/internal/vision/zzeo;
-
-    iget v1, p0, Lcom/google/android/gms/internal/vision/zzep;->position:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lcom/google/android/gms/internal/vision/zzep;->position:I
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/vision/zzeo;->zzai(I)B
-
-    move-result v0
-    :try_end_0
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzep;->size:I
 
     return v0
-
-    :catch_0
-    move-exception v0
-
-    .line 2
-    new-instance v1, Ljava/util/NoSuchElementException;
-
-    invoke-virtual {v0}, Ljava/lang/IndexOutOfBoundsException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
-.method public final remove()V
+.method public final zzcu()Z
     .locals 1
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+    return v0
 .end method

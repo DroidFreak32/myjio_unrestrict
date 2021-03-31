@@ -1,42 +1,62 @@
 .class public final Lcom/google/android/gms/internal/ads/zzrs;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzrq;
+.implements Ljava/util/Comparator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator<",
+        "Lcom/google/android/gms/internal/ads/zzry;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.IOnCustomClickListener"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzrt;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzb(Lcom/google/android/gms/internal/ads/zzrg;Ljava/lang/String;)V
-    .locals 1
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzry;
 
-    move-result-object v0
+    check-cast p2, Lcom/google/android/gms/internal/ads/zzry;
 
     .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    iget v0, p1, Lcom/google/android/gms/internal/ads/zzry;->zzbts:I
+
+    iget v1, p2, Lcom/google/android/gms/internal/ads/zzry;->zzbts:I
+
+    sub-int/2addr v0, v1
+
+    if-eqz v0, :cond_0
+
+    return v0
 
     .line 3
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    :cond_0
+    iget-wide v0, p1, Lcom/google/android/gms/internal/ads/zzry;->value:J
 
-    const/4 p1, 0x1
+    iget-wide p1, p2, Lcom/google/android/gms/internal/ads/zzry;->value:J
 
-    .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    sub-long/2addr v0, p1
 
-    return-void
+    long-to-int p1, v0
+
+    return p1
 .end method

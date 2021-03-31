@@ -17,11 +17,11 @@
 
 
 # static fields
-.field public static final zzme:Lcom/google/android/gms/internal/clearcut/zzdi;
+.field private static final zzme:Lcom/google/android/gms/internal/clearcut/zzdi;
 
 
 # instance fields
-.field public zzfa:Z
+.field private zzfa:Z
 
 
 # direct methods
@@ -41,7 +41,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -53,7 +53,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/Map;)V
+.method private constructor <init>(Ljava/util/Map;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -108,7 +108,7 @@
     throw v0
 .end method
 
-.method public static zzf(Ljava/lang/Object;)I
+.method private static zzf(Ljava/lang/Object;)I
     .locals 1
 
     instance-of v0, p0, [B

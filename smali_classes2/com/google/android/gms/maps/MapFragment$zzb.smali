@@ -25,9 +25,9 @@
 
 
 # instance fields
-.field public final zzba:Landroid/app/Fragment;
+.field private final zzba:Landroid/app/Fragment;
 
-.field public zzbd:Lcom/google/android/gms/dynamic/OnDelegateCreatedListener;
+.field private zzbd:Lcom/google/android/gms/dynamic/OnDelegateCreatedListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/dynamic/OnDelegateCreatedListener<",
@@ -37,9 +37,9 @@
     .end annotation
 .end field
 
-.field public zzbe:Landroid/app/Activity;
+.field private zzbe:Landroid/app/Activity;
 
-.field public final zzbf:Ljava/util/List;
+.field private final zzbf:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

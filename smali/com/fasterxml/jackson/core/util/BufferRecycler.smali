@@ -6,7 +6,7 @@
 # static fields
 .field public static final BYTE_BASE64_CODEC_BUFFER:I = 0x3
 
-.field public static final BYTE_BUFFER_LENGTHS:[I
+.field private static final BYTE_BUFFER_LENGTHS:[I
 
 .field public static final BYTE_READ_IO_BUFFER:I = 0x0
 
@@ -14,7 +14,7 @@
 
 .field public static final BYTE_WRITE_ENCODING_BUFFER:I = 0x1
 
-.field public static final CHAR_BUFFER_LENGTHS:[I
+.field private static final CHAR_BUFFER_LENGTHS:[I
 
 .field public static final CHAR_CONCAT_BUFFER:I = 0x1
 

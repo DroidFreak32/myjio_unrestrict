@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public cause:Ljava/lang/Throwable;
+.field private cause:Ljava/lang/Throwable;
 
 
 # direct methods

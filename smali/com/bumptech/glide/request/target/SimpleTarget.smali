@@ -19,9 +19,9 @@
 
 
 # instance fields
-.field public final height:I
+.field private final height:I
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
@@ -55,6 +55,10 @@
 # virtual methods
 .method public final getSize(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->width:I
@@ -115,6 +119,10 @@
 
 .method public removeCallback(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

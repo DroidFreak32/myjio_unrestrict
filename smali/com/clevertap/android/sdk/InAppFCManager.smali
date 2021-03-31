@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final ddMMyyyy:Ljava/text/SimpleDateFormat;
+.field private static final ddMMyyyy:Ljava/text/SimpleDateFormat;
 
 
 # instance fields
-.field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.field private config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public deviceId:Ljava/lang/String;
+.field private deviceId:Ljava/lang/String;
 
-.field public final mDismissedThisSession:Ljava/util/ArrayList;
+.field private final mDismissedThisSession:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public final mShownThisSession:Ljava/util/HashMap;
+.field private final mShownThisSession:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public mShownThisSessionCount:I
+.field private mShownThisSessionCount:I
 
 
 # direct methods
@@ -132,17 +132,19 @@
 
     const-string v2, "counts_per_inapp"
 
+    .line 2
     invoke-direct {p0, v2, v1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 3
     invoke-static {v0, v1}, Lcom/clevertap/android/sdk/StorageHelper;->getPreferences(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 2
+    .line 4
     invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -153,7 +155,7 @@
 
     new-array p1, v0, [I
 
-    .line 3
+    .line 5
     fill-array-data p1, :array_0
 
     return-object p1
@@ -162,12 +164,12 @@
     :try_start_0
     const-string v1, ","
 
-    .line 4
+    .line 6
     invoke-virtual {p1, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 5
+    .line 7
     array-length v1, p1
 
     const/4 v2, 0x1
@@ -187,7 +189,7 @@
     :cond_1
     new-array v1, v0, [I
 
-    .line 6
+    .line 8
     aget-object v4, p1, v3
 
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -211,7 +213,7 @@
     :catchall_0
     new-array p1, v0, [I
 
-    .line 7
+    .line 9
     fill-array-data p1, :array_1
 
     return-object p1
@@ -670,20 +672,22 @@
 
     const-string v5, "counts_per_inapp"
 
+    .line 5
     invoke-direct {p0, v5, v4}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
+    .line 6
     invoke-static {v2, v4}, Lcom/clevertap/android/sdk/StorageHelper;->getPreferences(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    .line 5
+    .line 7
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 6
+    .line 8
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -706,7 +710,7 @@
 
     invoke-interface {v2, p1, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 7
+    .line 9
     invoke-static {v2}, Lcom/clevertap/android/sdk/StorageHelper;->persist(Landroid/content/SharedPreferences$Editor;)V
 
     return-void
@@ -715,24 +719,25 @@
 .method private init(Ljava/lang/String;)V
     .locals 8
 
+    const-string v0, "ict_date"
+
     .line 1
+    :try_start_0
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->migrateToNewPrefsKey(Ljava/lang/String;)V
 
     .line 2
-    sget-object v0, Lcom/clevertap/android/sdk/InAppFCManager;->ddMMyyyy:Ljava/text/SimpleDateFormat;
+    sget-object v1, Lcom/clevertap/android/sdk/InAppFCManager;->ddMMyyyy:Ljava/text/SimpleDateFormat;
 
-    new-instance v1, Ljava/util/Date;
+    new-instance v2, Ljava/util/Date;
 
-    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+    invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v0
-
-    const-string v1, "ict_date"
+    move-result-object v1
 
     .line 3
-    invoke-direct {p0, v1, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v0, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -743,7 +748,7 @@
     move-result-object v2
 
     .line 4
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -752,21 +757,23 @@
     .line 5
     iget-object v2, p0, Lcom/clevertap/android/sdk/InAppFCManager;->context:Landroid/content/Context;
 
-    invoke-direct {p0, v1, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/clevertap/android/sdk/InAppFCManager;->storageKeyWithSuffix(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1, v0}, Lcom/clevertap/android/sdk/StorageHelper;->putString(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
     .line 6
+    invoke-direct {p0, v0, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/clevertap/android/sdk/InAppFCManager;->storageKeyWithSuffix(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0, v1}, Lcom/clevertap/android/sdk/StorageHelper;->putString(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 7
     iget-object v0, p0, Lcom/clevertap/android/sdk/InAppFCManager;->context:Landroid/content/Context;
 
     const-string v1, "istc_inapp"
 
+    .line 8
     invoke-direct {p0, v1, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -777,32 +784,35 @@
 
     const/4 v2, 0x0
 
+    .line 9
     invoke-static {v0, v1, v2}, Lcom/clevertap/android/sdk/StorageHelper;->putInt(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 7
+    .line 10
     iget-object v0, p0, Lcom/clevertap/android/sdk/InAppFCManager;->context:Landroid/content/Context;
 
     const-string v1, "counts_per_inapp"
 
+    .line 11
     invoke-direct {p0, v1, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
+    .line 12
     invoke-static {v0, p1}, Lcom/clevertap/android/sdk/StorageHelper;->getPreferences(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    .line 8
+    .line 13
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 9
+    .line 14
     invoke-interface {p1}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object p1
 
-    .line 10
+    .line 15
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -824,22 +834,22 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 11
+    .line 16
     invoke-interface {p1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 12
+    .line 17
     instance-of v4, v3, Ljava/lang/String;
 
     if-nez v4, :cond_0
 
-    .line 13
+    .line 18
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 14
+    .line 19
     :cond_0
     check-cast v3, Ljava/lang/String;
 
@@ -849,21 +859,23 @@
 
     move-result-object v3
 
-    .line 15
+    .line 20
     array-length v4, v3
 
     const/4 v5, 0x2
 
     if-eq v4, v5, :cond_1
 
-    .line 16
+    .line 21
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 17
+    .line 22
     :cond_1
-    :try_start_0
+    :try_start_1
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -883,19 +895,21 @@
     move-result-object v3
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
     :catchall_0
     move-exception v3
 
-    .line 18
+    .line 23
+    :try_start_2
     invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppFCManager;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v4
 
+    .line 24
     invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppFCManager;->getConfigAccountId()Ljava/lang/String;
 
     move-result-object v5
@@ -918,11 +932,49 @@
 
     goto :goto_0
 
-    .line 19
+    .line 25
     :cond_2
     invoke-static {v0}, Lcom/clevertap/android/sdk/StorageHelper;->persist(Landroid/content/SharedPreferences$Editor;)V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    .line 26
+    invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppFCManager;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
+
+    move-result-object v0
+
+    .line 27
+    invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppFCManager;->getConfigAccountId()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Failed to init inapp manager "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
+    :goto_1
     return-void
 .end method
 
@@ -999,6 +1051,7 @@
     .line 7
     iget-object v2, p0, Lcom/clevertap/android/sdk/InAppFCManager;->context:Landroid/content/Context;
 
+    .line 8
     invoke-direct {p0, v0, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1009,7 +1062,7 @@
 
     invoke-static {v2, v0, v1}, Lcom/clevertap/android/sdk/StorageHelper;->putInt(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/clevertap/android/sdk/InAppFCManager;->context:Landroid/content/Context;
 
     const-string v1, "counts_per_inapp"
@@ -1018,33 +1071,35 @@
 
     move-result-object v0
 
-    .line 9
+    .line 10
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 10
+    .line 11
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppFCManager;->context:Landroid/content/Context;
 
+    .line 12
     invoke-direct {p0, v1, p1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
+    .line 13
     invoke-static {v3, p1}, Lcom/clevertap/android/sdk/StorageHelper;->getPreferences(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    .line 11
+    .line 14
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
-    .line 12
+    .line 15
     invoke-interface {v0}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 13
+    .line 16
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -1066,22 +1121,22 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 14
+    .line 17
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 15
+    .line 18
     instance-of v5, v4, Ljava/lang/String;
 
     if-nez v5, :cond_1
 
-    .line 16
+    .line 19
     invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 17
+    .line 20
     :cond_1
     move-object v5, v4
 
@@ -1093,19 +1148,19 @@
 
     move-result-object v5
 
-    .line 18
+    .line 21
     array-length v5, v5
 
     const/4 v6, 0x2
 
     if-eq v5, v6, :cond_2
 
-    .line 19
+    .line 22
     invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 20
+    .line 23
     :cond_2
     invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1115,11 +1170,11 @@
 
     goto :goto_0
 
-    .line 21
+    .line 24
     :cond_3
     invoke-static {p1}, Lcom/clevertap/android/sdk/StorageHelper;->persist(Landroid/content/SharedPreferences$Editor;)V
 
-    .line 22
+    .line 25
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
@@ -1193,6 +1248,7 @@
     .line 3
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppFCManager;->deviceId:Ljava/lang/String;
 
+    .line 4
     invoke-direct {p0, v1, v3}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -1201,12 +1257,12 @@
 
     move-result-object p1
 
-    .line 4
+    .line 5
     invoke-interface {p1}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object p1
 
-    .line 5
+    .line 6
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -1229,17 +1285,17 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 6
+    .line 7
     invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 7
+    .line 8
     instance-of v5, v4, Ljava/lang/String;
 
     if-eqz v5, :cond_0
 
-    .line 8
+    .line 9
     check-cast v4, Ljava/lang/String;
 
     const-string v5, ","
@@ -1248,22 +1304,22 @@
 
     move-result-object v4
 
-    .line 9
+    .line 10
     array-length v5, v4
 
     const/4 v6, 0x2
 
     if-ne v5, v6, :cond_0
 
-    .line 10
+    .line 11
     new-instance v5, Lorg/json/JSONArray;
 
     invoke-direct {v5}, Lorg/json/JSONArray;-><init>()V
 
-    .line 11
+    .line 12
     invoke-virtual {v5, v2, v3}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
 
-    .line 12
+    .line 13
     aget-object v3, v4, v2
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1274,7 +1330,7 @@
 
     invoke-virtual {v5, v7, v3}, Lorg/json/JSONArray;->put(II)Lorg/json/JSONArray;
 
-    .line 13
+    .line 14
     aget-object v3, v4, v7
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1283,15 +1339,15 @@
 
     invoke-virtual {v5, v6, v3}, Lorg/json/JSONArray;->put(II)Lorg/json/JSONArray;
 
-    .line 14
+    .line 15
     invoke-virtual {v0, v5}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     goto :goto_0
 
     :cond_1
-    const-string p1, "tlc"
+    const-string/jumbo p1, "tlc"
 
-    .line 15
+    .line 16
     invoke-virtual {p2, p1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1303,7 +1359,7 @@
 
     const-string p2, "Failed to attach FC to header"
 
-    .line 16
+    .line 17
     invoke-static {p2, p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_1
@@ -1498,6 +1554,7 @@
     .line 8
     iget-object v2, p0, Lcom/clevertap/android/sdk/InAppFCManager;->deviceId:Ljava/lang/String;
 
+    .line 9
     invoke-direct {p0, v0, v2}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1539,22 +1596,24 @@
     .line 3
     iget-object v1, p0, Lcom/clevertap/android/sdk/InAppFCManager;->deviceId:Ljava/lang/String;
 
+    .line 4
     invoke-direct {p0, v0, v1}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 5
     invoke-static {p1, v0}, Lcom/clevertap/android/sdk/StorageHelper;->getPreferences(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    .line 4
+    .line 6
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
     const/4 v0, 0x0
 
-    .line 5
+    .line 7
     :goto_0
     invoke-virtual {p2}, Lorg/json/JSONArray;->length()I
 
@@ -1562,12 +1621,12 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 6
+    .line 8
     invoke-virtual {p2, v0}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 7
+    .line 9
     instance-of v2, v1, Ljava/lang/Integer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1576,7 +1635,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 8
+    .line 10
     :try_start_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1594,7 +1653,7 @@
 
     invoke-interface {p1, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 9
+    .line 11
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1611,20 +1670,20 @@
 
     goto :goto_1
 
-    .line 10
+    .line 12
     :cond_1
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 11
+    .line 13
     move-object v2, v1
 
     check-cast v2, Ljava/lang/String;
 
     invoke-interface {p1, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 12
+    .line 14
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1645,7 +1704,7 @@
 
     goto :goto_0
 
-    .line 13
+    .line 15
     :cond_3
     invoke-static {p1}, Lcom/clevertap/android/sdk/StorageHelper;->persist(Landroid/content/SharedPreferences$Editor;)V
     :try_end_1
@@ -1658,7 +1717,7 @@
 
     const-string p2, "Failed to purge out stale targets"
 
-    .line 14
+    .line 16
     invoke-static {p2, p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_2
@@ -1691,6 +1750,7 @@
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/InAppFCManager;->deviceId:Ljava/lang/String;
 
+    .line 3
     invoke-direct {p0, p2, v0}, Lcom/clevertap/android/sdk/InAppFCManager;->getKeyWithDeviceId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1703,7 +1763,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3
+    .line 4
     monitor-exit p0
 
     return-void

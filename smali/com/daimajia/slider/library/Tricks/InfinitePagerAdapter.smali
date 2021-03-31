@@ -1,16 +1,16 @@
 .class public Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;
-.super Lsk;
+.super Landroidx/viewpager/widget/PagerAdapter;
 .source "InfinitePagerAdapter.java"
 
 
 # static fields
-.field public static final DEBUG:Z = false
+.field private static final DEBUG:Z = false
 
-.field public static final TAG:Ljava/lang/String; = "InfinitePagerAdapter"
+.field private static final TAG:Ljava/lang/String; = "InfinitePagerAdapter"
 
 
 # instance fields
-.field public adapter:Lcom/daimajia/slider/library/SliderAdapter;
+.field private adapter:Lcom/daimajia/slider/library/SliderAdapter;
 
 
 # direct methods
@@ -18,7 +18,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lsk;-><init>()V
+    invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
 
     .line 2
     iput-object p1, p0, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;->adapter:Lcom/daimajia/slider/library/SliderAdapter;
@@ -102,7 +102,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;->adapter:Lcom/daimajia/slider/library/SliderAdapter;
 
-    invoke-virtual {v0, p1}, Lsk;->finishUpdate(Landroid/view/ViewGroup;)V
+    invoke-virtual {v0, p1}, Landroidx/viewpager/widget/PagerAdapter;->finishUpdate(Landroid/view/ViewGroup;)V
 
     return-void
 .end method
@@ -222,7 +222,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;->adapter:Lcom/daimajia/slider/library/SliderAdapter;
 
-    invoke-virtual {v0, p1, p2}, Lsk;->restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
+    invoke-virtual {v0, p1, p2}, Landroidx/viewpager/widget/PagerAdapter;->restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
 
     return-void
 .end method
@@ -233,7 +233,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;->adapter:Lcom/daimajia/slider/library/SliderAdapter;
 
-    invoke-virtual {v0}, Lsk;->saveState()Landroid/os/Parcelable;
+    invoke-virtual {v0}, Landroidx/viewpager/widget/PagerAdapter;->saveState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -246,7 +246,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;->adapter:Lcom/daimajia/slider/library/SliderAdapter;
 
-    invoke-virtual {v0, p1}, Lsk;->startUpdate(Landroid/view/ViewGroup;)V
+    invoke-virtual {v0, p1}, Landroidx/viewpager/widget/PagerAdapter;->startUpdate(Landroid/view/ViewGroup;)V
 
     return-void
 .end method

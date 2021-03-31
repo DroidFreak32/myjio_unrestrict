@@ -26,7 +26,7 @@
 
 .field public final isRoot:Z
 
-.field public final subFrames:[Lcom/google/android/jioexoplayer2/metadata/id3/Id3Frame;
+.field private final subFrames:[Lcom/google/android/jioexoplayer2/metadata/id3/Id3Frame;
 
 
 # direct methods
@@ -175,6 +175,10 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 

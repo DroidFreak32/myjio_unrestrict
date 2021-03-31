@@ -64,21 +64,21 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->context:Landroid/content/Context;
 
-    const/4 v1, 0x0
+    const-string v1, "ELITECONNECT_PREFERENCES"
 
-    const-string v2, "ELITECONNECT_PREFERENCES"
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, p1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -95,15 +95,15 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->context:Landroid/content/Context;
 
-    const/4 v1, 0x0
+    const-string v1, "ELITECONNECT_PREFERENCES"
 
-    const-string v2, "ELITECONNECT_PREFERENCES"
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, p1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -115,28 +115,28 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->context:Landroid/content/Context;
 
-    const/4 v1, 0x0
+    const-string v1, "ELITECONNECT_PREFERENCES"
 
-    const-string v2, "ELITECONNECT_PREFERENCES"
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v0, p1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result p1
 
     return p1
 
     :cond_0
-    return v1
+    return v2
 .end method
 
 .method public getIntDefaultMinus1(Ljava/lang/String;)I
@@ -361,9 +361,9 @@
 
     invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
 
-    new-instance v2, Ld30;
+    new-instance v2, Lta;
 
-    invoke-direct {v2, p0}, Ld30;-><init>(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+    invoke-direct {v2, p0}, Lta;-><init>(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
 
     invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
@@ -423,9 +423,9 @@
 
     invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
 
-    new-instance v2, Le30;
+    new-instance v2, Lua;
 
-    invoke-direct {v2, p0}, Le30;-><init>(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+    invoke-direct {v2, p0}, Lua;-><init>(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
 
     invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 

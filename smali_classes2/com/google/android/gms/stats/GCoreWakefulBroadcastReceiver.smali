@@ -11,7 +11,7 @@
 
 
 # static fields
-.field public static TAG:Ljava/lang/String; = "GCoreWakefulBroadcastReceiver"
+.field private static TAG:Ljava/lang/String; = "GCoreWakefulBroadcastReceiver"
 
 
 # direct methods

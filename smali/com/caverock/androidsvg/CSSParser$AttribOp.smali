@@ -31,79 +31,71 @@
 
 .field public static final enum INCLUDES:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-.field public static final synthetic s:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
+.field public static final synthetic a:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    const/4 v1, 0x0
+    const-string v1, "EXISTS"
 
-    const-string v2, "EXISTS"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EXISTS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     .line 2
-    new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     const-string v3, "EQUALS"
 
-    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EQUALS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    invoke-direct {v1, v3, v4}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EQUALS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     .line 3
-    new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    new-instance v3, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    const/4 v3, 0x2
+    const-string v5, "INCLUDES"
 
-    const-string v4, "INCLUDES"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->INCLUDES:Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    sput-object v3, Lcom/caverock/androidsvg/CSSParser$AttribOp;->INCLUDES:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     .line 4
-    new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    new-instance v5, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    const/4 v4, 0x3
+    const-string v7, "DASHMATCH"
 
-    const-string v5, "DASHMATCH"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/caverock/androidsvg/CSSParser$AttribOp;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->DASHMATCH:Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    sput-object v5, Lcom/caverock/androidsvg/CSSParser$AttribOp;->DASHMATCH:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    new-array v7, v7, [Lcom/caverock/androidsvg/CSSParser$AttribOp;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EXISTS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EQUALS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/caverock/androidsvg/CSSParser$AttribOp;->INCLUDES:Lcom/caverock/androidsvg/CSSParser$AttribOp;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/caverock/androidsvg/CSSParser$AttribOp;->DASHMATCH:Lcom/caverock/androidsvg/CSSParser$AttribOp;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->s:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    sput-object v7, Lcom/caverock/androidsvg/CSSParser$AttribOp;->a:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     return-void
 .end method
@@ -141,7 +133,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->s:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
+    sget-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->a:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     invoke-virtual {v0}, [Lcom/caverock/androidsvg/CSSParser$AttribOp;->clone()Ljava/lang/Object;
 

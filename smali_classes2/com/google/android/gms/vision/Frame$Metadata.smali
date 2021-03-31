@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/Frame$Metadata;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -14,17 +15,17 @@
 
 
 # instance fields
-.field public format:I
+.field private format:I
 
-.field public height:I
+.field private height:I
 
-.field public id:I
+.field private id:I
 
-.field public rotation:I
+.field private rotation:I
 
-.field public width:I
+.field private width:I
 
-.field public zzat:J
+.field private zzaz:J
 
 
 # direct methods
@@ -79,14 +80,21 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/google/android/gms/vision/Frame$Metadata;->zzat:J
+    iput-wide v0, p0, Lcom/google/android/gms/vision/Frame$Metadata;->zzaz:J
 
     .line 9
     invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame$Metadata;->getRotation()I
 
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/gms/vision/Frame$Metadata;->rotation:I
+
+    .line 10
+    invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame$Metadata;->getFormat()I
+
     move-result p1
 
-    iput p1, p0, Lcom/google/android/gms/vision/Frame$Metadata;->rotation:I
+    iput p1, p0, Lcom/google/android/gms/vision/Frame$Metadata;->format:I
 
     return-void
 .end method
@@ -104,7 +112,7 @@
     .locals 0
 
     .line 2
-    iput-wide p1, p0, Lcom/google/android/gms/vision/Frame$Metadata;->zzat:J
+    iput-wide p1, p0, Lcom/google/android/gms/vision/Frame$Metadata;->zzaz:J
 
     return-wide p1
 .end method
@@ -130,7 +138,7 @@
 .method public static synthetic zzd(Lcom/google/android/gms/vision/Frame$Metadata;I)I
     .locals 0
 
-    .line 6
+    .line 1
     iput p1, p0, Lcom/google/android/gms/vision/Frame$Metadata;->id:I
 
     return p1
@@ -187,7 +195,7 @@
     .locals 2
 
     .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/vision/Frame$Metadata;->zzat:J
+    iget-wide v0, p0, Lcom/google/android/gms/vision/Frame$Metadata;->zzaz:J
 
     return-wide v0
 .end method
@@ -201,7 +209,7 @@
     return v0
 .end method
 
-.method public final zzd()V
+.method public final zzf()V
     .locals 2
 
     .line 1

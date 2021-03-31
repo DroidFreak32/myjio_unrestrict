@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzk:Lcom/google/android/gms/maps/GoogleMap$OnMarkerDragListener;
+.field private final synthetic zzk:Lcom/google/android/gms/maps/GoogleMap$OnMarkerDragListener;
 
 
 # direct methods

@@ -17,14 +17,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+.field public final synthetic a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iput-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,9 +36,9 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->b(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->v(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
 
     move-result-object p1
 
@@ -51,13 +51,13 @@
     return-void
 
     :cond_0
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->C(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->e(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->D(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;
 
     move-result-object p1
 
@@ -65,32 +65,32 @@
 
     if-ne p1, v0, :cond_1
 
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->f(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lyl0;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->H(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/discovery/c;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lyl0;->b()V
+    invoke-interface {p1}, Lcom/jiny/android/ui/discovery/c;->b()V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-virtual {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c()V
+    invoke-virtual {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->w()V
 
     goto :goto_0
 
     :cond_1
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-virtual {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c()V
+    invoke-virtual {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->w()V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$j;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->f(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lyl0;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->H(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/discovery/c;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lyl0;->b()V
+    invoke-interface {p1}, Lcom/jiny/android/ui/discovery/c;->b()V
 
     :goto_0
     return-void

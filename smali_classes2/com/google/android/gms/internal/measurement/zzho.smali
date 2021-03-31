@@ -1,64 +1,134 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzho;
-.super Lcom/google/android/gms/internal/measurement/zzhu;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/measurement/zzhu;"
-    }
-.end annotation
+# static fields
+.field private static final zza:Lcom/google/android/gms/internal/measurement/zzhn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/measurement/zzhn<",
+            "*>;"
+        }
+    .end annotation
+.end field
 
-
-# instance fields
-.field public final synthetic zza:Lcom/google/android/gms/internal/measurement/zzhn;
+.field private static final zzb:Lcom/google/android/gms/internal/measurement/zzhn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/measurement/zzhn<",
+            "*>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzhn;)V
+.method public static constructor <clinit>()V
     .locals 1
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzho;->zza:Lcom/google/android/gms/internal/measurement/zzhn;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/measurement/zzhu;-><init>(Lcom/google/android/gms/internal/measurement/zzhn;Lcom/google/android/gms/internal/measurement/zzhm;)V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/measurement/zzhn;Lcom/google/android/gms/internal/measurement/zzhm;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzho;-><init>(Lcom/google/android/gms/internal/measurement/zzhn;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Iterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
-        }
-    .end annotation
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/measurement/zzhp;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzho;->zza:Lcom/google/android/gms/internal/measurement/zzhn;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzhp;-><init>()V
 
-    const/4 v2, 0x0
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzho;->zza:Lcom/google/android/gms/internal/measurement/zzhn;
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/internal/measurement/zzhp;-><init>(Lcom/google/android/gms/internal/measurement/zzhn;Lcom/google/android/gms/internal/measurement/zzhm;)V
+    .line 2
+    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzho;->zzc()Lcom/google/android/gms/internal/measurement/zzhn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzho;->zzb:Lcom/google/android/gms/internal/measurement/zzhn;
+
+    return-void
+.end method
+
+.method public static zza()Lcom/google/android/gms/internal/measurement/zzhn;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/measurement/zzhn<",
+            "*>;"
+        }
+    .end annotation
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzho;->zza:Lcom/google/android/gms/internal/measurement/zzhn;
+
+    return-object v0
+.end method
+
+.method public static zzb()Lcom/google/android/gms/internal/measurement/zzhn;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/measurement/zzhn<",
+            "*>;"
+        }
+    .end annotation
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzho;->zzb:Lcom/google/android/gms/internal/measurement/zzhn;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    .line 2
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Protobuf runtime is not correctly loaded."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method private static zzc()Lcom/google/android/gms/internal/measurement/zzhn;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/measurement/zzhn<",
+            "*>;"
+        }
+    .end annotation
+
+    :try_start_0
+    const-string v0, "com.google.protobuf.ExtensionSchemaFull"
+
+    .line 1
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
+
+    .line 2
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/measurement/zzhn;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    const/4 v0, 0x0
 
     return-object v0
 .end method

@@ -5,6 +5,8 @@
 
 # virtual methods
 .method public abstract get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getSize(Landroid/graphics/Bitmap;)I
@@ -20,4 +22,6 @@
 .end method
 
 .method public abstract removeLast()Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method

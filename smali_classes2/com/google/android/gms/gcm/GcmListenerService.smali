@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public zzg:Lcom/google/android/gms/internal/gcm/zzl;
+.field private zzg:Lcom/google/android/gms/internal/gcm/zzl;
 
 
 # direct methods
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public handleIntent(Landroid/content/Intent;)V
-    .locals 9
+    .locals 8
 
     .line 1
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -136,21 +136,19 @@
 
     move-object v1, v2
 
+    .line 5
     :cond_2
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
     const/4 v3, -0x1
 
-    .line 5
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v4
 
-    const/4 v5, 0x3
+    const/4 v5, 0x1
 
-    const/4 v6, 0x2
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x1
+    const/4 v6, 0x0
 
     sparse-switch v4, :sswitch_data_0
 
@@ -163,9 +161,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-nez v2, :cond_3
 
-    const/4 v3, 0x2
+    goto :goto_1
+
+    :cond_3
+    const/4 v3, 0x3
 
     goto :goto_1
 
@@ -176,9 +177,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-nez v2, :cond_4
 
-    const/4 v3, 0x3
+    goto :goto_1
+
+    :cond_4
+    const/4 v3, 0x2
 
     goto :goto_1
 
@@ -187,9 +191,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-nez v2, :cond_5
 
-    const/4 v3, 0x0
+    goto :goto_1
+
+    :cond_5
+    const/4 v3, 0x1
 
     goto :goto_1
 
@@ -200,21 +207,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-nez v2, :cond_6
 
-    const/4 v3, 0x1
+    goto :goto_1
 
-    :cond_3
+    :cond_6
+    const/4 v3, 0x0
+
     :goto_1
-    if-eqz v3, :cond_9
+    const-string v2, "google.message_id"
 
-    if-eq v3, v8, :cond_8
-
-    const-string v0, "google.message_id"
-
-    if-eq v3, v6, :cond_7
-
-    if-eq v3, v5, :cond_5
+    packed-switch v3, :pswitch_data_0
 
     const-string p1, "Received message with unknown type: "
 
@@ -227,13 +230,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_7
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     goto :goto_2
 
-    :cond_4
+    :cond_7
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
@@ -242,36 +245,8 @@
     return-void
 
     .line 7
-    :cond_5
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_6
-
-    const-string v0, "message_id"
-
-    .line 8
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_6
-    const-string v1, "error"
-
-    .line 9
-    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 10
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/gcm/GcmListenerService;->onSendError(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    .line 11
-    :cond_7
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    :pswitch_0
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -279,29 +254,51 @@
 
     return-void
 
-    .line 12
+    .line 8
+    :pswitch_1
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_8
+
+    const-string v0, "message_id"
+
+    .line 9
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
     :cond_8
-    invoke-virtual {p0}, Lcom/google/android/gms/gcm/GcmListenerService;->onDeletedMessages()V
+    const-string v1, "error"
+
+    .line 10
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 11
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/gcm/GcmListenerService;->onSendError(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
-    .line 13
-    :cond_9
+    .line 12
+    :pswitch_2
     invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object p1
 
-    .line 14
+    .line 13
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
     const-string v0, "androidx.contentpager.content.wakelockid"
 
-    .line 15
+    .line 14
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
     const-string v0, "gcm.n.e"
 
-    .line 16
+    .line 15
     invoke-static {p1, v0}, Lcom/google/android/gms/gcm/zzd;->zzd(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -312,79 +309,79 @@
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_a
 
     const-string v1, "gcm.n.icon"
 
-    .line 17
+    .line 16
     invoke-static {p1, v1}, Lcom/google/android/gms/gcm/zzd;->zzd(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_9
 
     goto :goto_3
 
-    :cond_a
+    :cond_9
     const/4 v1, 0x0
 
     goto :goto_4
 
-    :cond_b
+    :cond_a
     :goto_3
     const/4 v1, 0x1
 
     :goto_4
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_13
 
     const-string v1, "keyguard"
 
-    .line 18
+    .line 17
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 19
+    .line 18
     invoke-virtual {v1}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
 
     move-result v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_c
 
-    .line 20
+    .line 19
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v1
 
     const-string v2, "activity"
 
-    .line 21
+    .line 20
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/app/ActivityManager;
 
-    .line 22
+    .line 21
     invoke-virtual {v2}, Landroid/app/ActivityManager;->getRunningAppProcesses()Ljava/util/List;
 
     move-result-object v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
-    .line 23
+    .line 22
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_c
+    :cond_b
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_c
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -392,24 +389,27 @@
 
     check-cast v3, Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-    .line 24
+    .line 23
     iget v4, v3, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
-    if-ne v4, v1, :cond_c
+    if-ne v4, v1, :cond_b
 
-    .line 25
+    .line 24
     iget v1, v3, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
     const/16 v2, 0x64
 
-    if-ne v1, v2, :cond_d
+    if-ne v1, v2, :cond_c
 
-    const/4 v7, 0x1
+    goto :goto_5
 
-    :cond_d
-    if-nez v7, :cond_e
+    :cond_c
+    const/4 v5, 0x0
 
-    .line 26
+    :goto_5
+    if-nez v5, :cond_d
+
+    .line 25
     invoke-static {p0}, Lcom/google/android/gms/gcm/zzd;->zzd(Landroid/content/Context;)Lcom/google/android/gms/gcm/zzd;
 
     move-result-object v0
@@ -418,13 +418,13 @@
 
     return-void
 
-    .line 27
-    :cond_e
+    .line 26
+    :cond_d
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 28
+    .line 27
     invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v2
@@ -433,126 +433,126 @@
 
     move-result-object v2
 
-    .line 29
-    :cond_f
-    :goto_5
+    .line 28
+    :cond_e
+    :goto_6
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_11
 
-    .line 30
+    .line 29
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/lang/String;
 
-    .line 31
+    .line 30
     invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     const-string v5, "gcm.notification."
 
-    .line 32
+    .line 31
     invoke-virtual {v3, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
     const-string v7, "gcm.n."
 
-    if-eqz v6, :cond_10
+    if-eqz v6, :cond_f
 
-    .line 33
+    .line 32
     invoke-virtual {v3, v5, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 34
-    :cond_10
+    .line 33
+    :cond_f
     invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_f
+    if-eqz v5, :cond_e
 
-    .line 35
+    .line 34
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_11
+    if-nez v5, :cond_10
 
     const/4 v5, 0x6
 
-    .line 36
+    .line 35
     invoke-virtual {v3, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 37
-    :cond_11
+    .line 36
+    :cond_10
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_12
+    :cond_11
     const-string v0, "sound2"
 
-    .line 38
+    .line 37
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_12
 
-    .line 39
+    .line 38
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
     const-string v0, "sound"
 
-    .line 40
+    .line 39
     invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 41
-    :cond_13
+    .line 40
+    :cond_12
     invoke-virtual {v1}, Landroid/os/Bundle;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_13
 
     const-string v0, "notification"
 
-    .line 42
+    .line 41
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_14
+    :cond_13
     const-string v0, "from"
 
-    .line 43
+    .line 42
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 44
+    .line 43
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
-    .line 45
+    .line 44
     invoke-static {p1}, Lcom/google/android/gms/gcm/GcmListenerService;->zzd(Landroid/os/Bundle;)V
 
-    .line 46
+    .line 45
     iget-object v0, p0, Lcom/google/android/gms/gcm/GcmListenerService;->zzg:Lcom/google/android/gms/internal/gcm/zzl;
 
     const-string v2, "onMessageReceived"
 
     invoke-interface {v0, v2}, Lcom/google/android/gms/internal/gcm/zzl;->zzl(Ljava/lang/String;)Lcom/google/android/gms/internal/gcm/zzo;
 
-    .line 47
+    .line 46
     :try_start_0
     invoke-virtual {p0, v1, p1}, Lcom/google/android/gms/gcm/GcmListenerService;->onMessageReceived(Ljava/lang/String;Landroid/os/Bundle;)V
     :try_end_0
@@ -563,7 +563,7 @@
     :catchall_0
     move-exception p1
 
-    .line 48
+    .line 47
     :try_start_1
     throw p1
     :try_end_1
@@ -572,10 +572,14 @@
     :catchall_1
     move-exception p1
 
-    .line 49
+    .line 48
     throw p1
 
-    nop
+    .line 49
+    :pswitch_3
+    invoke-virtual {p0}, Lcom/google/android/gms/gcm/GcmListenerService;->onDeletedMessages()V
+
+    return-void
 
     :sswitch_data_0
     .sparse-switch
@@ -584,10 +588,20 @@
         0x308f3e91 -> :sswitch_1
         0x3090df23 -> :sswitch_0
     .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public onCreate()V
     .locals 1
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -596,12 +610,9 @@
     invoke-static {}, Lcom/google/android/gms/internal/gcm/zzm;->zzab()Lcom/google/android/gms/internal/gcm/zzm;
 
     .line 3
-    const-class v0, Lcom/google/android/gms/gcm/GcmListenerService;
-
-    .line 4
     sget-object v0, Lcom/google/android/gms/internal/gcm/zzm;->zzdk:Lcom/google/android/gms/internal/gcm/zzl;
 
-    .line 5
+    .line 4
     iput-object v0, p0, Lcom/google/android/gms/gcm/GcmListenerService;->zzg:Lcom/google/android/gms/internal/gcm/zzl;
 
     return-void

@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/location/GeofencingApi;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -9,6 +10,10 @@
 
 # virtual methods
 .method public abstract addGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.ACCESS_FINE_LOCATION"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -24,6 +29,10 @@
 .end method
 
 .method public abstract addGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Ljava/util/List;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.ACCESS_FINE_LOCATION"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

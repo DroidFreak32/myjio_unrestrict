@@ -4,6 +4,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x1a
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/app/JobIntentService;
 .end annotation
@@ -28,7 +32,7 @@
     invoke-direct {p0, p2}, Landroidx/core/app/JobIntentService$g;-><init>(Landroid/content/ComponentName;)V
 
     .line 2
-    invoke-virtual {p0, p3}, Landroidx/core/app/JobIntentService$g;->a(I)V
+    invoke-virtual {p0, p3}, Landroidx/core/app/JobIntentService$g;->b(I)V
 
     .line 3
     new-instance p2, Landroid/app/job/JobInfo$Builder;

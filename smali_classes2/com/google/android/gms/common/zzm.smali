@@ -1,231 +1,140 @@
-.class public Lcom/google/android/gms/common/zzm;
+.class public final Lcom/google/android/gms/common/zzm;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# static fields
-.field public static final zzac:Lcom/google/android/gms/common/zzm;
-
-
-# instance fields
-.field public final cause:Ljava/lang/Throwable;
-
-.field public final zzad:Z
-
-.field public final zzae:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/common/zzj;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/zzm;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/common/zzm;-><init>(ZLjava/lang/String;Ljava/lang/Throwable;)V
-
-    sput-object v0, Lcom/google/android/gms/common/zzm;->zzac:Lcom/google/android/gms/common/zzm;
-
-    return-void
-.end method
-
-.method public constructor <init>(ZLjava/lang/String;Ljava/lang/Throwable;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-boolean p1, p0, Lcom/google/android/gms/common/zzm;->zzad:Z
-
-    .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/zzm;->zzae:Ljava/lang/String;
-
-    .line 4
-    iput-object p3, p0, Lcom/google/android/gms/common/zzm;->cause:Ljava/lang/Throwable;
-
     return-void
 .end method
 
-.method public static zza(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/gms/common/zzm;
-    .locals 2
 
-    .line 2
-    new-instance v0, Lcom/google/android/gms/common/zzm;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, p0, p1}, Lcom/google/android/gms/common/zzm;-><init>(ZLjava/lang/String;Ljava/lang/Throwable;)V
-
-    return-object v0
-.end method
-
-.method public static zza(Ljava/util/concurrent/Callable;)Lcom/google/android/gms/common/zzm;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/concurrent/Callable<",
-            "Ljava/lang/String;",
-            ">;)",
-            "Lcom/google/android/gms/common/zzm;"
-        }
-    .end annotation
+# virtual methods
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/common/zzo;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/google/android/gms/common/zzo;-><init>(Ljava/util/concurrent/Callable;Lcom/google/android/gms/common/zzn;)V
-
-    return-object v0
-.end method
-
-.method public static zzb(Ljava/lang/String;)Lcom/google/android/gms/common/zzm;
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/zzm;
+    move-result v0
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, p0, v2}, Lcom/google/android/gms/common/zzm;-><init>(ZLjava/lang/String;Ljava/lang/Throwable;)V
+    move-object v3, v2
 
-    return-object v0
-.end method
+    move-object v4, v3
 
-.method public static zzc(Ljava/lang/String;Lcom/google/android/gms/common/zze;ZZ)Ljava/lang/String;
-    .locals 2
+    const/4 v2, 0x0
 
-    if-eqz p3, :cond_0
+    .line 2
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    const-string p3, "debug cert rejected"
+    move-result v5
+
+    if-ge v5, v0, :cond_4
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+
+    move-result v5
+
+    .line 4
+    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+
+    move-result v6
+
+    const/4 v7, 0x1
+
+    if-eq v6, v7, :cond_3
+
+    const/4 v7, 0x2
+
+    if-eq v6, v7, :cond_2
+
+    const/4 v7, 0x3
+
+    if-eq v6, v7, :cond_1
+
+    const/4 v7, 0x4
+
+    if-eq v6, v7, :cond_0
+
+    .line 5
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
+    .line 6
     :cond_0
-    const-string p3, "not whitelisted"
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
 
-    :goto_0
-    const/4 v0, 0x5
+    move-result v2
 
-    new-array v0, v0, [Ljava/lang/Object;
+    goto :goto_0
 
-    const/4 v1, 0x0
-
-    aput-object p3, v0, v1
-
-    const/4 p3, 0x1
-
-    aput-object p0, v0, p3
-
-    const/4 p0, 0x2
-
-    const-string p3, "SHA-1"
-
-    .line 1
-    invoke-static {p3}, Lcom/google/android/gms/common/util/AndroidUtilsLight;->zzj(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object p3
-
-    invoke-virtual {p1}, Lcom/google/android/gms/common/zze;->getBytes()[B
-
-    move-result-object p1
-
-    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->digest([B)[B
-
-    move-result-object p1
-
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/common/util/Hex;->bytesToStringLowercase([B)Ljava/lang/String;
-
-    move-result-object p1
-
-    aput-object p1, v0, p0
-
-    const/4 p0, 0x3
-
-    .line 3
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    aput-object p1, v0, p0
-
-    const/4 p0, 0x4
-
-    const-string p1, "12451009.false"
-
-    aput-object p1, v0, p0
-
-    const-string p0, "%s: pkg=%s, sha1=%s, atk=%s, ver=%s"
-
-    .line 4
-    invoke-static {p0, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static zze()Lcom/google/android/gms/common/zzm;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/common/zzm;->zzac:Lcom/google/android/gms/common/zzm;
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public getErrorMessage()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/zzm;->zzae:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final zzf()V
-    .locals 2
-
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/common/zzm;->zzad:Z
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x3
-
-    const-string v1, "GoogleCertificatesRslt"
-
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/zzm;->cause:Ljava/lang/Throwable;
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/zzm;->getErrorMessage()Ljava/lang/String;
-
-    return-void
-
-    .line 4
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/android/gms/common/zzm;->getErrorMessage()Ljava/lang/String;
-
+    .line 7
     :cond_1
-    return-void
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v1
+
+    goto :goto_0
+
+    .line 8
+    :cond_2
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
+
+    move-result-object v4
+
+    goto :goto_0
+
+    .line 9
+    :cond_3
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_0
+
+    .line 10
+    :cond_4
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    .line 11
+    new-instance p1, Lcom/google/android/gms/common/zzj;
+
+    invoke-direct {p1, v3, v4, v1, v2}, Lcom/google/android/gms/common/zzj;-><init>(Ljava/lang/String;Landroid/os/IBinder;ZZ)V
+
+    return-object p1
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-array p1, p1, [Lcom/google/android/gms/common/zzj;
+
+    return-object p1
 .end method

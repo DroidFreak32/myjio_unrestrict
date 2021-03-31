@@ -1,362 +1,203 @@
 .class public final Lcom/google/android/gms/internal/location/zzbf;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "LocationRequestUpdateDataCreator"
-.end annotation
-
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        0x3e8
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/internal/location/zzbg;",
+        ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/internal/location/zzbf;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public zzbv:Landroid/app/PendingIntent;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        id = 0x4
-    .end annotation
-.end field
-
-.field public zzcg:I
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "LocationRequestUpdateData.OPERATION_ADD"
-        id = 0x1
-    .end annotation
-.end field
-
-.field public zzcj:Lcom/google/android/gms/internal/location/zzaj;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        getter = "getFusedLocationProviderCallbackBinder"
-        id = 0x6
-        type = "android.os.IBinder"
-    .end annotation
-.end field
-
-.field public zzdl:Lcom/google/android/gms/internal/location/zzbd;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        id = 0x2
-    .end annotation
-.end field
-
-.field public zzdm:Lcom/google/android/gms/location/zzx;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        getter = "getLocationListenerBinder"
-        id = 0x3
-        type = "android.os.IBinder"
-    .end annotation
-.end field
-
-.field public zzdn:Lcom/google/android/gms/location/zzu;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        getter = "getLocationCallbackBinder"
-        id = 0x5
-        type = "android.os.IBinder"
-    .end annotation
-.end field
-
-
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/gms/internal/location/zzbg;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/location/zzbg;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/location/zzbf;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILcom/google/android/gms/internal/location/zzbd;Landroid/os/IBinder;Landroid/app/PendingIntent;Landroid/os/IBinder;Landroid/os/IBinder;)V
+.method public constructor <init>()V
     .locals 0
-    .param p1    # I
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x1
-        .end annotation
-    .end param
-    .param p2    # Lcom/google/android/gms/internal/location/zzbd;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x2
-        .end annotation
-    .end param
-    .param p3    # Landroid/os/IBinder;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x3
-        .end annotation
-    .end param
-    .param p4    # Landroid/app/PendingIntent;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x4
-        .end annotation
-    .end param
-    .param p5    # Landroid/os/IBinder;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x5
-        .end annotation
-    .end param
-    .param p6    # Landroid/os/IBinder;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x6
-        .end annotation
-    .end param
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
-    .end annotation
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    iput p1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzcg:I
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/location/zzbf;->zzdl:Lcom/google/android/gms/internal/location/zzbd;
-
-    const/4 p1, 0x0
-
-    if-nez p3, :cond_0
-
-    move-object p2, p1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p3}, Lcom/google/android/gms/location/zzy;->zzc(Landroid/os/IBinder;)Lcom/google/android/gms/location/zzx;
-
-    move-result-object p2
-
-    :goto_0
-    iput-object p2, p0, Lcom/google/android/gms/internal/location/zzbf;->zzdm:Lcom/google/android/gms/location/zzx;
-
-    iput-object p4, p0, Lcom/google/android/gms/internal/location/zzbf;->zzbv:Landroid/app/PendingIntent;
-
-    if-nez p5, :cond_1
-
-    move-object p2, p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p5}, Lcom/google/android/gms/location/zzv;->zzb(Landroid/os/IBinder;)Lcom/google/android/gms/location/zzu;
-
-    move-result-object p2
-
-    :goto_1
-    iput-object p2, p0, Lcom/google/android/gms/internal/location/zzbf;->zzdn:Lcom/google/android/gms/location/zzu;
-
-    if-nez p6, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    if-nez p6, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    const-string p1, "com.google.android.gms.location.internal.IFusedLocationProviderCallback"
-
-    invoke-interface {p6, p1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object p1
-
-    instance-of p2, p1, Lcom/google/android/gms/internal/location/zzaj;
-
-    if-eqz p2, :cond_4
-
-    check-cast p1, Lcom/google/android/gms/internal/location/zzaj;
-
-    goto :goto_2
-
-    :cond_4
-    new-instance p1, Lcom/google/android/gms/internal/location/zzal;
-
-    invoke-direct {p1, p6}, Lcom/google/android/gms/internal/location/zzal;-><init>(Landroid/os/IBinder;)V
-
-    :goto_2
-    iput-object p1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzcj:Lcom/google/android/gms/internal/location/zzaj;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/location/zzu;Lcom/google/android/gms/internal/location/zzaj;)Lcom/google/android/gms/internal/location/zzbf;
-    .locals 8
 
-    new-instance v7, Lcom/google/android/gms/internal/location/zzbf;
+# virtual methods
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 23
 
-    invoke-interface {p0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+    move-object/from16 v0, p1
 
-    move-result-object v5
+    .line 1
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    if-eqz p1, :cond_0
+    move-result v1
 
-    invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    move-object v6, p0
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/internal/location/zzbf;-><init>(ILcom/google/android/gms/internal/location/zzbd;Landroid/os/IBinder;Landroid/app/PendingIntent;Landroid/os/IBinder;Landroid/os/IBinder;)V
-
-    return-object v7
-.end method
-
-.method public static zza(Lcom/google/android/gms/location/zzx;Lcom/google/android/gms/internal/location/zzaj;)Lcom/google/android/gms/internal/location/zzbf;
-    .locals 8
-
-    new-instance v7, Lcom/google/android/gms/internal/location/zzbf;
-
-    invoke-interface {p0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v3
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    move-object v6, p0
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    move-object v0, v7
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/internal/location/zzbf;-><init>(ILcom/google/android/gms/internal/location/zzbd;Landroid/os/IBinder;Landroid/app/PendingIntent;Landroid/os/IBinder;Landroid/os/IBinder;)V
+    const-wide/16 v7, 0x0
 
-    return-object v7
-.end method
+    const/4 v9, -0x1
 
+    move-wide v14, v2
 
-# virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 5
+    move-wide/from16 v16, v14
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
+    move-object v11, v5
 
-    move-result v0
+    move-wide/from16 v19, v7
 
-    iget v1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzcg:I
+    const/4 v12, 0x0
 
-    const/4 v2, 0x1
+    const/4 v13, 0x0
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    const/16 v18, 0x0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzdl:Lcom/google/android/gms/internal/location/zzbd;
+    const/16 v21, 0x0
 
-    const/4 v2, 0x0
+    const/16 v22, -0x1
 
-    const/4 v3, 0x2
+    .line 2
+    :goto_0
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    move-result v2
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzdm:Lcom/google/android/gms/location/zzx;
+    if-ge v2, v1, :cond_0
 
-    const/4 v3, 0x0
+    .line 3
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
 
-    if-nez v1, :cond_0
+    move-result v2
 
-    move-object v1, v3
+    .line 4
+    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+
+    move-result v3
+
+    packed-switch v3, :pswitch_data_0
+
+    .line 5
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
+    .line 6
+    :pswitch_0
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v22
+
+    goto :goto_0
+
+    .line 7
+    :pswitch_1
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v21
+
+    goto :goto_0
+
+    .line 8
+    :pswitch_2
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v12
+
+    goto :goto_0
+
+    .line 9
+    :pswitch_3
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
+
+    move-result v18
+
+    goto :goto_0
+
+    .line 10
+    :pswitch_4
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readDouble(Landroid/os/Parcel;I)D
+
+    move-result-wide v16
+
+    goto :goto_0
+
+    .line 11
+    :pswitch_5
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readDouble(Landroid/os/Parcel;I)D
+
+    move-result-wide v14
+
+    goto :goto_0
+
+    .line 12
+    :pswitch_6
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readShort(Landroid/os/Parcel;I)S
+
+    move-result v13
+
+    goto :goto_0
+
+    .line 13
+    :pswitch_7
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readLong(Landroid/os/Parcel;I)J
+
+    move-result-wide v19
+
+    goto :goto_0
+
+    .line 14
+    :pswitch_8
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v11
+
+    goto :goto_0
+
+    .line 15
     :cond_0
-    invoke-interface {v1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
-    move-result-object v1
+    .line 16
+    new-instance v0, Lcom/google/android/gms/internal/location/zzbg;
 
-    :goto_0
-    const/4 v4, 0x3
+    move-object v10, v0
 
-    invoke-static {p1, v4, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    invoke-direct/range {v10 .. v22}, Lcom/google/android/gms/internal/location/zzbg;-><init>(Ljava/lang/String;ISDDFJII)V
 
-    const/4 v1, 0x4
+    return-object v0
 
-    iget-object v4, p0, Lcom/google/android/gms/internal/location/zzbf;->zzbv:Landroid/app/PendingIntent;
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-static {p1, v1, v4, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
 
-    const/4 p2, 0x5
+    .line 1
+    new-array p1, p1, [Lcom/google/android/gms/internal/location/zzbg;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzdn:Lcom/google/android/gms/location/zzu;
-
-    if-nez v1, :cond_1
-
-    move-object v1, v3
-
-    goto :goto_1
-
-    :cond_1
-    invoke-interface {v1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    :goto_1
-    invoke-static {p1, p2, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
-
-    const/4 p2, 0x6
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbf;->zzcj:Lcom/google/android/gms/internal/location/zzaj;
-
-    if-nez v1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-interface {v1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v3
-
-    :goto_2
-    invoke-static {p1, p2, v3, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
-
-    return-void
+    return-object p1
 .end method

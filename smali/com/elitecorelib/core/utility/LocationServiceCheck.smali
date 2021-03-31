@@ -3,27 +3,27 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public final PLAY_SERVICES_RESOLUTION_REQUEST:I
+.field private final PLAY_SERVICES_RESOLUTION_REQUEST:I
 
-.field public final REQUEST_CHECK_SETTINGS:I
+.field private final REQUEST_CHECK_SETTINGS:I
 
-.field public errorDialog:Landroid/app/Dialog;
+.field private errorDialog:Landroid/app/Dialog;
 
-.field public googleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
+.field private googleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-.field public mActivity:Landroid/app/Activity;
+.field private mActivity:Landroid/app/Activity;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public mListner:Lcom/elitecorelib/core/interfaces/OnLocationEnableListner;
+.field private mListner:Lcom/elitecorelib/core/interfaces/OnLocationEnableListner;
 
-.field public mLocationRequest:Lcom/google/android/gms/location/LocationRequest;
+.field private mLocationRequest:Lcom/google/android/gms/location/LocationRequest;
 
-.field public status:Lcom/google/android/gms/common/api/Status;
+.field private status:Lcom/google/android/gms/common/api/Status;
 
-.field public task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # direct methods
@@ -59,15 +59,13 @@
     iput-object p2, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->mListner:Lcom/elitecorelib/core/interfaces/OnLocationEnableListner;
 
     :try_start_0
-    new-instance p1, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
+    new-instance p2, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
-    iget-object p2, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->mActivity:Landroid/app/Activity;
+    invoke-direct {p2, p1}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p1, p2}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;-><init>(Landroid/content/Context;)V
+    sget-object p1, Lcom/google/android/gms/location/LocationServices;->API:Lcom/google/android/gms/common/api/Api;
 
-    sget-object p2, Lcom/google/android/gms/location/LocationServices;->API:Lcom/google/android/gms/common/api/Api;
-
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->addApi(Lcom/google/android/gms/common/api/Api;)Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
+    invoke-virtual {p2, p1}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->addApi(Lcom/google/android/gms/common/api/Api;)Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
     move-result-object p1
 
@@ -76,8 +74,6 @@
     move-result-object p1
 
     iput-object p1, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->googleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
-
-    iget-object p1, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->googleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/api/GoogleApiClient;->connect()V
 
@@ -254,19 +250,17 @@
 
     invoke-virtual {v3, v0, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v3, 0x18db
+    const/16 v0, 0x18db
 
-    new-instance v4, Lw30;
+    new-instance v3, Leb;
 
-    invoke-direct {v4, p0}, Lw30;-><init>(Lcom/elitecorelib/core/utility/LocationServiceCheck;)V
+    invoke-direct {v3, p0}, Leb;-><init>(Lcom/elitecorelib/core/utility/LocationServiceCheck;)V
 
-    invoke-virtual {v1, p1, v2, v3, v4}, Lcom/google/android/gms/common/GoogleApiAvailability;->getErrorDialog(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-virtual {v1, p1, v2, v0, v3}, Lcom/google/android/gms/common/GoogleApiAvailability;->getErrorDialog(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->errorDialog:Landroid/app/Dialog;
-
-    iget-object p1, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->errorDialog:Landroid/app/Dialog;
 
     invoke-virtual {p1}, Landroid/app/Dialog;->isShowing()Z
 
@@ -296,30 +290,6 @@
     return p1
 
     :catch_0
-    move-exception p1
-
-    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Error -"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, v0, p1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     :cond_2
     const/4 p1, 0x1
 
@@ -360,20 +330,20 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const-string v1, "location_mode"
 
-    const-string v2, "location_mode"
+    const/4 v2, 0x0
 
-    invoke-static {v0, v2, v1}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     :cond_1
-    return v1
+    return v2
 .end method
 
 .method public createLocationRequest()V
@@ -384,8 +354,6 @@
     invoke-direct {v0}, Lcom/google/android/gms/location/LocationRequest;-><init>()V
 
     iput-object v0, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->mLocationRequest:Lcom/google/android/gms/location/LocationRequest;
-
-    iget-object v0, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->mLocationRequest:Lcom/google/android/gms/location/LocationRequest;
 
     const-wide/16 v1, 0x2710
 
@@ -458,9 +426,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lv30;
+    new-instance v1, Ldb;
 
-    invoke-direct {v1, p0}, Lv30;-><init>(Lcom/elitecorelib/core/utility/LocationServiceCheck;)V
+    invoke-direct {v1, p0}, Ldb;-><init>(Lcom/elitecorelib/core/utility/LocationServiceCheck;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/PendingResult;->setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;)V
     :try_end_0
@@ -580,7 +548,7 @@
 
     invoke-direct {p2, v0, v1, v2, v3}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    sput-object p2, Lk30;->c:Lcom/google/android/gms/maps/model/LatLng;
+    sput-object p2, Lcom/elitecorelib/core/utility/f;->a:Lcom/google/android/gms/maps/model/LatLng;
 
     iget-object p2, p0, Lcom/elitecorelib/core/utility/LocationServiceCheck;->task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 

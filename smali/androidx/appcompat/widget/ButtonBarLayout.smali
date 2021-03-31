@@ -3,17 +3,33 @@
 .source "ButtonBarLayout.java"
 
 
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+
 # instance fields
-.field public s:Z
+.field public a:Z
 
-.field public t:I
+.field public b:I
 
-.field public u:I
+.field public c:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 8
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -21,29 +37,19 @@
     const/4 v0, -0x1
 
     .line 2
-    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->t:I
+    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->b:I
 
     const/4 v0, 0x0
 
     .line 3
-    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->u:I
+    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->c:I
 
     .line 4
-    sget-object v0, Lb0;->ButtonBarLayout:[I
+    sget-object v3, Landroidx/appcompat/R$styleable;->ButtonBarLayout:[I
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
-
-    .line 5
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x1d
-
-    if-lt v1, v2, :cond_0
-
-    .line 6
-    sget-object v3, Lb0;->ButtonBarLayout:[I
 
     const/4 v6, 0x0
 
@@ -57,11 +63,11 @@
 
     move-object v5, v0
 
-    invoke-virtual/range {v1 .. v7}, Landroid/widget/LinearLayout;->saveAttributeDataForStyleable(Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    .line 5
+    invoke-static/range {v1 .. v7}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
-    .line 7
-    :cond_0
-    sget p1, Lb0;->ButtonBarLayout_allowStacking:I
+    .line 6
+    sget p1, Landroidx/appcompat/R$styleable;->ButtonBarLayout_allowStacking:I
 
     const/4 p2, 0x1
 
@@ -69,9 +75,9 @@
 
     move-result p1
 
-    iput-boolean p1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->s:Z
+    iput-boolean p1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->a:Z
 
-    .line 8
+    .line 7
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
@@ -97,7 +103,7 @@
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     .line 3
-    sget v0, Lu;->spacer:I
+    sget v0, Landroidx/appcompat/R$id;->spacer:I
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -181,10 +187,10 @@
     return p1
 .end method
 
-.method public final a()Z
+.method public final b()Z
     .locals 2
 
-    .line 3
+    .line 1
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getOrientation()I
 
     move-result v0
@@ -206,7 +212,7 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->u:I
+    iget v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->c:I
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->getMinimumHeight()I
 
@@ -228,18 +234,18 @@
     move-result v0
 
     .line 2
-    iget-boolean v1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->s:Z
+    iget-boolean v1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->a:Z
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
     .line 3
-    iget v1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->t:I
+    iget v1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->b:I
 
     if-le v0, v1, :cond_0
 
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->a()Z
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->b()Z
 
     move-result v1
 
@@ -250,11 +256,11 @@
 
     .line 5
     :cond_0
-    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->t:I
+    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->b:I
 
     .line 6
     :cond_1
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->a()Z
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->b()Z
 
     move-result v1
 
@@ -291,11 +297,11 @@
     invoke-super {p0, v0, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     .line 9
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->s:Z
+    iget-boolean v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->a:Z
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->a()Z
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->b()Z
 
     move-result v0
 
@@ -377,7 +383,7 @@
     add-int/2addr v1, v2
 
     .line 17
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->a()Z
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->b()Z
 
     move-result p2
 
@@ -438,7 +444,7 @@
     .line 22
     :cond_8
     :goto_2
-    invoke-static {p0}, Lba;->n(Landroid/view/View;)I
+    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
 
     move-result p1
 
@@ -455,18 +461,16 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->s:Z
+    iget-boolean v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->a:Z
 
     if-eq v0, p1, :cond_1
 
     .line 2
-    iput-boolean p1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->s:Z
-
-    .line 3
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->s:Z
+    iput-boolean p1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->a:Z
 
     if-nez p1, :cond_0
 
+    .line 3
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getOrientation()I
 
     move-result p1

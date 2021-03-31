@@ -42,6 +42,18 @@
 
 .method public static switchTargetView(Lcom/google/android/jioexoplayer2/SimpleExoPlayer;Lcom/google/android/jioexoplayer2/jioui/SimpleExoPlayerView;Lcom/google/android/jioexoplayer2/jioui/SimpleExoPlayerView;)V
     .locals 0
+    .param p0    # Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Lcom/google/android/jioexoplayer2/jioui/SimpleExoPlayerView;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/jioexoplayer2/jioui/SimpleExoPlayerView;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

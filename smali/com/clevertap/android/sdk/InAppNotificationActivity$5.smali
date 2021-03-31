@@ -46,6 +46,7 @@
     .line 2
     iget-object p2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;->this$0:Lcom/clevertap/android/sdk/InAppNotificationActivity;
 
+    .line 3
     invoke-static {p2}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->access$000(Lcom/clevertap/android/sdk/InAppNotificationActivity;)Lcom/clevertap/android/sdk/CTInAppNotification;
 
     move-result-object p2
@@ -54,11 +55,12 @@
 
     move-result-object p2
 
-    const-string v0, "wzrk_id"
+    const-string/jumbo v0, "wzrk_id"
 
+    .line 4
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3
+    .line 5
     iget-object p2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;->this$0:Lcom/clevertap/android/sdk/InAppNotificationActivity;
 
     invoke-static {p2}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->access$000(Lcom/clevertap/android/sdk/InAppNotificationActivity;)Lcom/clevertap/android/sdk/CTInAppNotification;
@@ -81,18 +83,18 @@
 
     move-result-object p2
 
-    const-string v1, "wzrk_c2a"
+    const-string/jumbo v1, "wzrk_c2a"
 
     invoke-virtual {p1, v1, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4
+    .line 6
     iget-object p2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;->this$0:Lcom/clevertap/android/sdk/InAppNotificationActivity;
 
     const/4 v1, 0x0
 
     invoke-virtual {p2, p1, v1}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->didClick(Landroid/os/Bundle;Ljava/util/HashMap;)V
 
-    .line 5
+    .line 7
     iget-object p2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;->this$0:Lcom/clevertap/android/sdk/InAppNotificationActivity;
 
     invoke-static {p2}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->access$000(Lcom/clevertap/android/sdk/InAppNotificationActivity;)Lcom/clevertap/android/sdk/CTInAppNotification;
@@ -115,14 +117,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 6
+    .line 8
     iget-object v0, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;->this$0:Lcom/clevertap/android/sdk/InAppNotificationActivity;
 
     invoke-virtual {v0, p2, p1}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->fireUrlThroughIntent(Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-void
 
-    .line 7
+    .line 9
     :cond_0
     iget-object p2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;->this$0:Lcom/clevertap/android/sdk/InAppNotificationActivity;
 

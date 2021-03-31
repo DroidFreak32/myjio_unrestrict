@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public s:Ljava/lang/String;
+.field public a:Ljava/lang/String;
 
-.field public t:Lcom/caverock/androidsvg/SVG$m0;
+.field public b:Lcom/caverock/androidsvg/SVG$m0;
 
 
 # direct methods
@@ -28,10 +28,10 @@
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$m0;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$t;->s:Ljava/lang/String;
+    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$t;->a:Ljava/lang/String;
 
     .line 3
-    iput-object p2, p0, Lcom/caverock/androidsvg/SVG$t;->t:Lcom/caverock/androidsvg/SVG$m0;
+    iput-object p2, p0, Lcom/caverock/androidsvg/SVG$t;->b:Lcom/caverock/androidsvg/SVG$m0;
 
     return-void
 .end method
@@ -46,7 +46,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVG$t;->s:Ljava/lang/String;
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVG$t;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVG$t;->t:Lcom/caverock/androidsvg/SVG$m0;
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVG$t;->b:Lcom/caverock/androidsvg/SVG$m0;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -25,7 +25,7 @@
 .method public isInterNetAvailable(ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    const-string p1, "success"
+    const-string/jumbo p1, "success"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -58,7 +58,7 @@
 
     const-string p1, "Failed to send records to analytics server."
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     iget-object p1, p0, Lcom/elitecorelib/analytics/services/AnalyticsSyncService$1;->this$0:Lcom/elitecorelib/analytics/services/AnalyticsSyncService;
 

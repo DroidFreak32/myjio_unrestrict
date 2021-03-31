@@ -19,13 +19,13 @@
 
 
 # static fields
-.field public static final zzbce:Lcom/google/android/gms/internal/gtm/zzrs;
+.field private static final zzbce:Lcom/google/android/gms/internal/gtm/zzrs;
 
-.field public static final zzbcf:Lcom/google/android/gms/internal/gtm/zzrt;
+.field private static final zzbcf:Lcom/google/android/gms/internal/gtm/zzrt;
 
 
 # instance fields
-.field public final zzbcg:Ljava/util/List;
+.field private final zzbcg:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -51,8 +51,6 @@
     invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzpo;->zzmi()V
 
     .line 3
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzrs;->zzbce:Lcom/google/android/gms/internal/gtm/zzrs;
-
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzrs;->zzbcf:Lcom/google/android/gms/internal/gtm/zzrt;
 
     return-void
@@ -82,7 +80,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/ArrayList;)V
+.method private constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,7 +100,7 @@
     return-void
 .end method
 
-.method public static zzv(Ljava/lang/Object;)Ljava/lang/String;
+.method private static zzv(Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -228,7 +226,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/gtm/zzrs;->addAll(ILjava/util/Collection;)Z
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/gtm/zzpo;->addAll(ILjava/util/Collection;)Z
 
     move-result p1
 
@@ -555,7 +553,7 @@
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzrs;->zzmy()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzpo;->zzmy()Z
 
     move-result v0
 

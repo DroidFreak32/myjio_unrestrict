@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -54,9 +55,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/vision/barcode/zzm;
+    new-instance v0, Lcom/google/android/gms/vision/barcode/zzn;
 
-    invoke-direct {v0}, Lcom/google/android/gms/vision/barcode/zzm;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/vision/barcode/zzn;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -112,18 +113,18 @@
     .line 2
     iget-object v0, p0, Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;->title:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 3
     iget-object v0, p0, Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;->url:Ljava/lang/String;
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 4
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V

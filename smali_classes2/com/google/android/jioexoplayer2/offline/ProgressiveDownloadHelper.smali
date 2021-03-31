@@ -4,9 +4,12 @@
 
 
 # instance fields
-.field public final customCacheKey:Ljava/lang/String;
+.field private final customCacheKey:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final uri:Landroid/net/Uri;
+.field private final uri:Landroid/net/Uri;
 
 
 # direct methods
@@ -23,6 +26,10 @@
 
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;)V
     .locals 0
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/offline/DownloadHelper;-><init>()V
@@ -40,6 +47,10 @@
 # virtual methods
 .method public bridge synthetic getDownloadAction([BLjava/util/List;)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
     .locals 0
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0, p1, p2}, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadHelper;->getDownloadAction([BLjava/util/List;)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
@@ -51,6 +62,10 @@
 
 .method public getDownloadAction([BLjava/util/List;)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
     .locals 1
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -83,6 +98,10 @@
 
 .method public bridge synthetic getRemoveAction([B)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
     .locals 0
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadHelper;->getRemoveAction([B)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
@@ -94,6 +113,10 @@
 
 .method public getRemoveAction([B)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
     .locals 2
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadHelper;->uri:Landroid/net/Uri;

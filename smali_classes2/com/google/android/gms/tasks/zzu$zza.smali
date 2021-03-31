@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/tasks/zzu$zza;
 .super Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # annotations
@@ -14,12 +15,12 @@
 
 
 # instance fields
-.field public final zzac:Ljava/util/List;
+.field private final zza:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
             "Ljava/lang/ref/WeakReference<",
-            "Lcom/google/android/gms/tasks/zzq<",
+            "Lcom/google/android/gms/tasks/zzr<",
             "*>;>;>;"
         }
     .end annotation
@@ -27,7 +28,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
+.method private constructor <init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
     .locals 1
 
     .line 1
@@ -38,7 +39,7 @@
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zzac:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zza:Ljava/util/List;
 
     .line 3
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->mLifecycleFragment:Lcom/google/android/gms/common/api/internal/LifecycleFragment;
@@ -84,15 +85,17 @@
 # virtual methods
 .method public onStop()V
     .locals 3
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu$zza;->zzac:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu$zza;->zza:Ljava/util/List;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zzac:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zza:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -117,18 +120,18 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/android/gms/tasks/zzq;
+    check-cast v2, Lcom/google/android/gms/tasks/zzr;
 
     if-eqz v2, :cond_0
 
     .line 4
-    invoke-interface {v2}, Lcom/google/android/gms/tasks/zzq;->cancel()V
+    invoke-interface {v2}, Lcom/google/android/gms/tasks/zzr;->zza()V
 
     goto :goto_0
 
     .line 5
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zzac:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zza:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
@@ -147,26 +150,26 @@
     throw v1
 .end method
 
-.method public final zzb(Lcom/google/android/gms/tasks/zzq;)V
+.method public final zza(Lcom/google/android/gms/tasks/zzr;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lcom/google/android/gms/tasks/zzq<",
+            "Lcom/google/android/gms/tasks/zzr<",
             "TT;>;)V"
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu$zza;->zzac:Ljava/util/List;
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu$zza;->zza:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 2
+    .line 5
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zzac:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu$zza;->zza:Ljava/util/List;
 
     new-instance v2, Ljava/lang/ref/WeakReference;
 
@@ -174,7 +177,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 3
+    .line 6
     monitor-exit v0
 
     return-void

@@ -31,6 +31,9 @@
 # virtual methods
 .method public getResourceClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -53,7 +53,7 @@
     return-void
 .end method
 
-.method public static _badBD(Ljava/lang/String;)Ljava/lang/NumberFormatException;
+.method private static _badBD(Ljava/lang/String;)Ljava/lang/NumberFormatException;
     .locals 3
 
     .line 1
@@ -492,6 +492,11 @@
 
 .method public static parseBigDecimal(Ljava/lang/String;)Ljava/math/BigDecimal;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -514,6 +519,11 @@
 
 .method public static parseBigDecimal([C)Ljava/math/BigDecimal;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     .line 3
     array-length v0, p0
@@ -529,6 +539,11 @@
 
 .method public static parseBigDecimal([CII)Ljava/math/BigDecimal;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     .line 4
     :try_start_0
@@ -555,6 +570,11 @@
 
 .method public static parseDouble(Ljava/lang/String;)D
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     const-string v0, "2.2250738585072012e-308"
 

@@ -15,69 +15,69 @@
 
 
 # static fields
-.field public static final KEYCODE_MEDIA_PAUSE:I = 0x7f
+.field private static final KEYCODE_MEDIA_PAUSE:I = 0x7f
 
-.field public static final KEYCODE_MEDIA_PLAY:I = 0x7e
+.field private static final KEYCODE_MEDIA_PLAY:I = 0x7e
 
-.field public static final MSG_ADD_QUEUE_ITEM:I = 0x19
+.field private static final MSG_ADD_QUEUE_ITEM:I = 0x19
 
-.field public static final MSG_ADD_QUEUE_ITEM_AT:I = 0x1a
+.field private static final MSG_ADD_QUEUE_ITEM_AT:I = 0x1a
 
-.field public static final MSG_ADJUST_VOLUME:I = 0x2
+.field private static final MSG_ADJUST_VOLUME:I = 0x2
 
-.field public static final MSG_COMMAND:I = 0x1
+.field private static final MSG_COMMAND:I = 0x1
 
-.field public static final MSG_CUSTOM_ACTION:I = 0x14
+.field private static final MSG_CUSTOM_ACTION:I = 0x14
 
-.field public static final MSG_FAST_FORWARD:I = 0x10
+.field private static final MSG_FAST_FORWARD:I = 0x10
 
-.field public static final MSG_MEDIA_BUTTON:I = 0x15
+.field private static final MSG_MEDIA_BUTTON:I = 0x15
 
-.field public static final MSG_NEXT:I = 0xe
+.field private static final MSG_NEXT:I = 0xe
 
-.field public static final MSG_PAUSE:I = 0xc
+.field private static final MSG_PAUSE:I = 0xc
 
-.field public static final MSG_PLAY:I = 0x7
+.field private static final MSG_PLAY:I = 0x7
 
-.field public static final MSG_PLAY_MEDIA_ID:I = 0x8
+.field private static final MSG_PLAY_MEDIA_ID:I = 0x8
 
-.field public static final MSG_PLAY_SEARCH:I = 0x9
+.field private static final MSG_PLAY_SEARCH:I = 0x9
 
-.field public static final MSG_PLAY_URI:I = 0xa
+.field private static final MSG_PLAY_URI:I = 0xa
 
-.field public static final MSG_PREPARE:I = 0x3
+.field private static final MSG_PREPARE:I = 0x3
 
-.field public static final MSG_PREPARE_MEDIA_ID:I = 0x4
+.field private static final MSG_PREPARE_MEDIA_ID:I = 0x4
 
-.field public static final MSG_PREPARE_SEARCH:I = 0x5
+.field private static final MSG_PREPARE_SEARCH:I = 0x5
 
-.field public static final MSG_PREPARE_URI:I = 0x6
+.field private static final MSG_PREPARE_URI:I = 0x6
 
-.field public static final MSG_PREVIOUS:I = 0xf
+.field private static final MSG_PREVIOUS:I = 0xf
 
-.field public static final MSG_RATE:I = 0x13
+.field private static final MSG_RATE:I = 0x13
 
-.field public static final MSG_RATE_EXTRA:I = 0x1f
+.field private static final MSG_RATE_EXTRA:I = 0x1f
 
-.field public static final MSG_REMOVE_QUEUE_ITEM:I = 0x1b
+.field private static final MSG_REMOVE_QUEUE_ITEM:I = 0x1b
 
-.field public static final MSG_REMOVE_QUEUE_ITEM_AT:I = 0x1c
+.field private static final MSG_REMOVE_QUEUE_ITEM_AT:I = 0x1c
 
-.field public static final MSG_REWIND:I = 0x11
+.field private static final MSG_REWIND:I = 0x11
 
-.field public static final MSG_SEEK_TO:I = 0x12
+.field private static final MSG_SEEK_TO:I = 0x12
 
-.field public static final MSG_SET_CAPTIONING_ENABLED:I = 0x1d
+.field private static final MSG_SET_CAPTIONING_ENABLED:I = 0x1d
 
-.field public static final MSG_SET_REPEAT_MODE:I = 0x17
+.field private static final MSG_SET_REPEAT_MODE:I = 0x17
 
-.field public static final MSG_SET_SHUFFLE_MODE:I = 0x1e
+.field private static final MSG_SET_SHUFFLE_MODE:I = 0x1e
 
-.field public static final MSG_SET_VOLUME:I = 0x16
+.field private static final MSG_SET_VOLUME:I = 0x16
 
-.field public static final MSG_SKIP_TO_ITEM:I = 0xb
+.field private static final MSG_SKIP_TO_ITEM:I = 0xb
 
-.field public static final MSG_STOP:I = 0xd
+.field private static final MSG_STOP:I = 0xd
 
 
 # instance fields
@@ -135,10 +135,6 @@
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result p1
-
-    const/16 v0, 0x4f
-
-    if-eq p1, v0, :cond_4
 
     const/16 v0, 0x7e
 
@@ -250,14 +246,12 @@
 
     :cond_4
     :goto_1
-    :pswitch_5
     return-void
 
     nop
 
     :pswitch_data_0
-    .packed-switch 0x55
-        :pswitch_5
+    .packed-switch 0x56
         :pswitch_4
         :pswitch_3
         :pswitch_2
@@ -292,7 +286,7 @@
     .line 4
     iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
 
-    new-instance v3, Lbf;
+    new-instance v3, Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
     const-string v4, "data_calling_pkg"
 
@@ -313,10 +307,10 @@
 
     move-result v6
 
-    invoke-direct {v3, v4, v5, v6}, Lbf;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v4, v5, v6}, Landroidx/media/MediaSessionManager$RemoteUserInfo;-><init>(Ljava/lang/String;II)V
 
     .line 6
-    invoke-virtual {v2, v3}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setCurrentControllerInfo(Lbf;)V
+    invoke-virtual {v2, v3}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setCurrentControllerInfo(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
 
     const-string v2, "data_extras"
 
@@ -382,21 +376,15 @@
     if-eqz v1, :cond_2
 
     .line 14
-    iget v1, p1, Landroid/os/Message;->arg1:I
+    iget v3, p1, Landroid/os/Message;->arg1:I
 
-    if-ltz v1, :cond_1
+    if-ltz v3, :cond_1
 
-    iget v1, p1, Landroid/os/Message;->arg1:I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    iget-object v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
+    move-result v1
 
-    iget-object v3, v3, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mQueue:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-ge v1, v3, :cond_1
+    if-ge v3, v1, :cond_1
 
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
 
@@ -696,7 +684,7 @@
     :goto_1
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
 
-    invoke-virtual {p1, v2}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setCurrentControllerInfo(Lbf;)V
+    invoke-virtual {p1, v2}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setCurrentControllerInfo(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
 
     return-void
 
@@ -705,7 +693,7 @@
 
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
 
-    invoke-virtual {v0, v2}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setCurrentControllerInfo(Lbf;)V
+    invoke-virtual {v0, v2}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setCurrentControllerInfo(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
 
     throw p1
 

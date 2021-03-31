@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static zzw:Landroid/content/SharedPreferences;
+.field private static zzw:Landroid/content/SharedPreferences;
 
 
 # direct methods
@@ -15,6 +15,11 @@
 
 .method public static zza(Landroid/content/Context;)Landroid/content/SharedPreferences;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     const-class v0, Landroid/content/SharedPreferences;

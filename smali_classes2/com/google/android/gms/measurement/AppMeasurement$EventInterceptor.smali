@@ -1,9 +1,9 @@
 .class public interface abstract Lcom/google/android/gms/measurement/AppMeasurement$EventInterceptor;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/measurement/internal/zzgx;
+.implements Lcom/google/android/gms/measurement/internal/zzgw;
 
 
 # annotations
@@ -25,6 +25,9 @@
 
 # virtual methods
 .method public abstract interceptEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;J)V
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

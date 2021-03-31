@@ -1,41 +1,75 @@
 .class public final Lcom/google/android/gms/internal/ads/zzfy;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzgf;
-
-
-# instance fields
-.field public final synthetic val$activity:Landroid/app/Activity;
-
-.field public final synthetic zzrr:Landroid/os/Bundle;
+.super Lcom/google/android/gms/internal/ads/zzgl;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzfx;Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzfa;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzcf$zza$zza;II)V
+    .locals 7
+
+    const/16 v6, 0xb
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move v5, p5
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzfy;->val$activity:Landroid/app/Activity;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzfy;->zzrr:Landroid/os/Bundle;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/internal/ads/zzgl;-><init>(Lcom/google/android/gms/internal/ads/zzfa;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzcf$zza$zza;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Landroid/app/Application$ActivityLifecycleCallbacks;)V
-    .locals 2
+.method public final zzcw()V
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalAccessException;,
+            Ljava/lang/reflect/InvocationTargetException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzfy;->val$activity:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaay:Lcom/google/android/gms/internal/ads/zzcf$zza$zza;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzfy;->zzrr:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabi:Ljava/lang/reflect/Method;
 
-    invoke-interface {p1, v0, v1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzwb:Lcom/google/android/gms/internal/ads/zzfa;
+
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/ads/zzfa;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzcf$zza$zza;->zzh(J)Lcom/google/android/gms/internal/ads/zzcf$zza$zza;
 
     return-void
 .end method

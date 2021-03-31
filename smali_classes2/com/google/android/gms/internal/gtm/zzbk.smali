@@ -21,11 +21,11 @@
 
 
 # instance fields
-.field public value:Ljava/lang/String;
+.field private value:Ljava/lang/String;
 
-.field public zzno:Ljava/lang/String;
+.field private zzno:Ljava/lang/String;
 
-.field public zzyj:Ljava/lang/String;
+.field private zzyj:Ljava/lang/String;
 
 
 # direct methods

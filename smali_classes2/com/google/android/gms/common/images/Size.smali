@@ -1,11 +1,12 @@
 .class public final Lcom/google/android/gms/common/images/Size;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final zane:I
+.field private final zaa:I
 
-.field public final zanf:I
+.field private final zab:I
 
 
 # direct methods
@@ -16,16 +17,21 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/common/images/Size;->zane:I
+    iput p1, p0, Lcom/google/android/gms/common/images/Size;->zaa:I
 
     .line 3
-    iput p2, p0, Lcom/google/android/gms/common/images/Size;->zanf:I
+    iput p2, p0, Lcom/google/android/gms/common/images/Size;->zab:I
 
     return-void
 .end method
 
 .method public static parseSize(Ljava/lang/String;)Lcom/google/android/gms/common/images/Size;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     if-eqz p0, :cond_2
 
@@ -82,7 +88,7 @@
 
     .line 6
     :catch_0
-    invoke-static {p0}, Lcom/google/android/gms/common/images/Size;->zah(Ljava/lang/String;)Ljava/lang/NumberFormatException;
+    invoke-static {p0}, Lcom/google/android/gms/common/images/Size;->zaa(Ljava/lang/String;)Ljava/lang/NumberFormatException;
 
     move-result-object p0
 
@@ -90,7 +96,7 @@
 
     .line 7
     :cond_1
-    invoke-static {p0}, Lcom/google/android/gms/common/images/Size;->zah(Ljava/lang/String;)Ljava/lang/NumberFormatException;
+    invoke-static {p0}, Lcom/google/android/gms/common/images/Size;->zaa(Ljava/lang/String;)Ljava/lang/NumberFormatException;
 
     move-result-object p0
 
@@ -107,7 +113,7 @@
     throw p0
 .end method
 
-.method public static zah(Ljava/lang/String;)Ljava/lang/NumberFormatException;
+.method private static zaa(Ljava/lang/String;)Ljava/lang/NumberFormatException;
     .locals 3
 
     .line 1
@@ -150,6 +156,10 @@
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -174,15 +184,15 @@
     check-cast p1, Lcom/google/android/gms/common/images/Size;
 
     .line 3
-    iget v2, p0, Lcom/google/android/gms/common/images/Size;->zane:I
+    iget v2, p0, Lcom/google/android/gms/common/images/Size;->zaa:I
 
-    iget v3, p1, Lcom/google/android/gms/common/images/Size;->zane:I
+    iget v3, p1, Lcom/google/android/gms/common/images/Size;->zaa:I
 
     if-ne v2, v3, :cond_2
 
-    iget v2, p0, Lcom/google/android/gms/common/images/Size;->zanf:I
+    iget v2, p0, Lcom/google/android/gms/common/images/Size;->zab:I
 
-    iget p1, p1, Lcom/google/android/gms/common/images/Size;->zanf:I
+    iget p1, p1, Lcom/google/android/gms/common/images/Size;->zab:I
 
     if-ne v2, p1, :cond_2
 
@@ -196,7 +206,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zanf:I
+    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zab:I
 
     return v0
 .end method
@@ -205,7 +215,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zane:I
+    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zaa:I
 
     return v0
 .end method
@@ -214,9 +224,9 @@
     .locals 3
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zanf:I
+    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zab:I
 
-    iget v1, p0, Lcom/google/android/gms/common/images/Size;->zane:I
+    iget v1, p0, Lcom/google/android/gms/common/images/Size;->zaa:I
 
     shl-int/lit8 v2, v1, 0x10
 
@@ -233,9 +243,9 @@
     .locals 4
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zane:I
+    iget v0, p0, Lcom/google/android/gms/common/images/Size;->zaa:I
 
-    iget v1, p0, Lcom/google/android/gms/common/images/Size;->zanf:I
+    iget v1, p0, Lcom/google/android/gms/common/images/Size;->zab:I
 
     new-instance v2, Ljava/lang/StringBuilder;
 

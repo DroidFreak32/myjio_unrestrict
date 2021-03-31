@@ -28,7 +28,7 @@
 
 
 # instance fields
-.field public final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+.field private final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelCache<",
@@ -63,6 +63,9 @@
 # virtual methods
 .method public build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

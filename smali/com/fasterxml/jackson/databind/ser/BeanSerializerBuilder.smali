@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final NO_PROPERTIES:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+.field private static final NO_PROPERTIES:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
 
 # instance fields

@@ -1,45 +1,62 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzic;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaom;
-
-
-# static fields
-.field public static final zzamh:Lcom/google/android/gms/internal/ads/zzaom;
+.class public final Lcom/google/android/gms/internal/ads/zzic;
+.super Lcom/google/android/gms/internal/ads/zzhz;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzic;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzic;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzic;->zzamh:Lcom/google/android/gms/internal/ads/zzaom;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzhz;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final zza(ILcom/google/android/gms/internal/ads/zzib;Z)Lcom/google/android/gms/internal/ads/zzib;
     .locals 0
 
-    check-cast p1, Landroid/os/IBinder;
+    .line 2
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzer;->zza(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzeq;
+    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
 
-    move-result-object p1
+    throw p1
+.end method
 
-    return-object p1
+.method public final zza(ILcom/google/android/gms/internal/ads/zzie;ZJ)Lcom/google/android/gms/internal/ads/zzie;
+    .locals 0
+
+    .line 1
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final zzc(Ljava/lang/Object;)I
+    .locals 0
+
+    const/4 p1, -0x1
+
+    return p1
+.end method
+
+.method public final zzff()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final zzfg()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

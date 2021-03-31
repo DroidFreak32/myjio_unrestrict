@@ -1,14 +1,15 @@
 .class public final Lcom/google/android/gms/common/api/BatchResult;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Result;
 
 
 # instance fields
-.field public final mStatus:Lcom/google/android/gms/common/api/Status;
+.field private final zaa:Lcom/google/android/gms/common/api/Status;
 
-.field public final zabc:[Lcom/google/android/gms/common/api/PendingResult;
+.field private final zab:[Lcom/google/android/gms/common/api/PendingResult;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -36,10 +37,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/BatchResult;->mStatus:Lcom/google/android/gms/common/api/Status;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/BatchResult;->zaa:Lcom/google/android/gms/common/api/Status;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/api/BatchResult;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/BatchResult;->zab:[Lcom/google/android/gms/common/api/PendingResult;
 
     return-void
 .end method
@@ -50,7 +51,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/BatchResult;->mStatus:Lcom/google/android/gms/common/api/Status;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/BatchResult;->zaa:Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 .end method
@@ -70,7 +71,7 @@
     .line 1
     iget v0, p1, Lcom/google/android/gms/common/api/BatchResultToken;->mId:I
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/BatchResult;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/BatchResult;->zab:[Lcom/google/android/gms/common/api/PendingResult;
 
     array-length v1, v1
 
@@ -89,7 +90,7 @@
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/BatchResult;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/BatchResult;->zab:[Lcom/google/android/gms/common/api/PendingResult;
 
     iget p1, p1, Lcom/google/android/gms/common/api/BatchResultToken;->mId:I
 

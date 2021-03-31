@@ -1,21 +1,22 @@
 .class public abstract Lcom/google/android/gms/common/images/zaa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final zamv:Lcom/google/android/gms/common/images/zab;
+.field public final zaa:Lcom/google/android/gms/common/images/zac;
 
-.field public zamw:I
+.field public zab:I
 
-.field public zamx:I
+.field private zac:I
 
-.field public zamy:Z
+.field private zad:Z
 
-.field public zamz:Z
+.field private zae:Z
 
-.field public zana:Z
+.field private zaf:Z
 
-.field public zanb:Z
+.field private zag:Z
 
 
 # direct methods
@@ -28,34 +29,34 @@
     const/4 v0, 0x0
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/common/images/zaa;->zamw:I
+    iput v0, p0, Lcom/google/android/gms/common/images/zaa;->zac:I
 
     .line 3
-    iput v0, p0, Lcom/google/android/gms/common/images/zaa;->zamx:I
+    iput v0, p0, Lcom/google/android/gms/common/images/zaa;->zab:I
 
     .line 4
-    iput-boolean v0, p0, Lcom/google/android/gms/common/images/zaa;->zamy:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/images/zaa;->zad:Z
 
     const/4 v1, 0x1
 
     .line 5
-    iput-boolean v1, p0, Lcom/google/android/gms/common/images/zaa;->zamz:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/common/images/zaa;->zae:Z
 
     .line 6
-    iput-boolean v0, p0, Lcom/google/android/gms/common/images/zaa;->zana:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/images/zaa;->zaf:Z
 
     .line 7
-    iput-boolean v1, p0, Lcom/google/android/gms/common/images/zaa;->zanb:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/common/images/zaa;->zag:Z
 
     .line 8
-    new-instance v0, Lcom/google/android/gms/common/images/zab;
+    new-instance v0, Lcom/google/android/gms/common/images/zac;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/common/images/zab;-><init>(Landroid/net/Uri;)V
+    invoke-direct {v0, p1}, Lcom/google/android/gms/common/images/zac;-><init>(Landroid/net/Uri;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/images/zaa;->zamv:Lcom/google/android/gms/common/images/zab;
+    iput-object v0, p0, Lcom/google/android/gms/common/images/zaa;->zaa:Lcom/google/android/gms/common/images/zac;
 
     .line 9
-    iput p2, p0, Lcom/google/android/gms/common/images/zaa;->zamx:I
+    iput p2, p0, Lcom/google/android/gms/common/images/zaa;->zab:I
 
     return-void
 .end method
@@ -91,7 +92,7 @@
     .locals 1
 
     .line 4
-    iget-boolean p1, p0, Lcom/google/android/gms/common/images/zaa;->zanb:Z
+    iget-boolean p1, p0, Lcom/google/android/gms/common/images/zaa;->zag:Z
 
     if-eqz p1, :cond_0
 
@@ -112,7 +113,7 @@
     .locals 0
 
     .line 6
-    iget p2, p0, Lcom/google/android/gms/common/images/zaa;->zamx:I
+    iget p2, p0, Lcom/google/android/gms/common/images/zaa;->zab:I
 
     if-eqz p2, :cond_0
 
@@ -141,13 +142,17 @@
 .end method
 
 .method public abstract zaa(Landroid/graphics/drawable/Drawable;ZZZ)V
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 .end method
 
 .method public final zaa(ZZ)Z
     .locals 1
 
     .line 10
-    iget-boolean v0, p0, Lcom/google/android/gms/common/images/zaa;->zamz:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/images/zaa;->zae:Z
 
     if-eqz v0, :cond_0
 

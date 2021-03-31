@@ -3,15 +3,18 @@
 
 
 # instance fields
-.field public final lock:Ljava/lang/Object;
+.field private final lock:Ljava/lang/Object;
 
 .field public final zzbb:Ljava/util/concurrent/ExecutorService;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+.end field
 
-.field public zzbc:Landroid/os/Binder;
+.field private zzbc:Landroid/os/Binder;
 
-.field public zzbd:I
+.field private zzbd:I
 
-.field public zzbe:I
+.field private zzbe:I
 
 
 # direct methods
@@ -87,18 +90,15 @@
 
     iput v0, p0, Lcom/google/android/gms/iid/zze;->zzbe:I
 
-    .line 4
-    iget v0, p0, Lcom/google/android/gms/iid/zze;->zzbe:I
-
     if-nez v0, :cond_1
 
-    .line 5
+    .line 4
     iget v0, p0, Lcom/google/android/gms/iid/zze;->zzbd:I
 
-    .line 6
+    .line 5
     invoke-virtual {p0, v0}, Landroid/app/Service;->stopSelfResult(I)Z
 
-    .line 7
+    .line 6
     :cond_1
     monitor-exit p1
 

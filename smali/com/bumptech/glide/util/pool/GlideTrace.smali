@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final MAX_LENGTH:I = 0x7f
+.field private static final MAX_LENGTH:I = 0x7f
 
-.field public static final TRACING_ENABLED:Z = false
+.field private static final TRACING_ENABLED:Z = false
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -49,7 +49,7 @@
     return-void
 .end method
 
-.method public static truncateTag(Ljava/lang/String;)Ljava/lang/String;
+.method private static truncateTag(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     .line 1

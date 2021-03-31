@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public final synthetic zzxo:Lcom/google/android/gms/internal/gtm/zzay;
+.field private final synthetic zzxo:Lcom/google/android/gms/internal/gtm/zzay;
 
 
 # direct methods
@@ -118,7 +118,7 @@
     throw p1
 .end method
 
-.method public static zzb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
+.method private static zzb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {

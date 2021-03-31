@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzbc:Lcom/google/android/gms/maps/OnMapReadyCallback;
+.field private final synthetic zzbc:Lcom/google/android/gms/maps/OnMapReadyCallback;
 
 
 # direct methods
@@ -22,6 +22,11 @@
 # virtual methods
 .method public final zza(Lcom/google/android/gms/maps/internal/IGoogleMapDelegate;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/zzab;->zzbc:Lcom/google/android/gms/maps/OnMapReadyCallback;

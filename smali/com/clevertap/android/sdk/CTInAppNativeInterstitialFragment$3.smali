@@ -48,7 +48,7 @@
     .line 2
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$3;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$300(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)Lcom/clevertap/android/sdk/GifImageView;
+    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$100(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)Lcom/clevertap/android/sdk/GifImageView;
 
     move-result-object p1
 
@@ -57,7 +57,7 @@
     .line 3
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$3;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$300(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)Lcom/clevertap/android/sdk/GifImageView;
+    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$100(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)Lcom/clevertap/android/sdk/GifImageView;
 
     move-result-object p1
 
@@ -67,7 +67,7 @@
     :cond_0
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$3;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
-    invoke-virtual {p1}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object p1
 

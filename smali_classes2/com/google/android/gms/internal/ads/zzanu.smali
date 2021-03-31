@@ -1,104 +1,387 @@
-.class public final Lcom/google/android/gms/internal/ads/zzanu;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/android/gms/internal/ads/zzanu;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic val$context:Landroid/content/Context;
+.implements Lcom/google/android/gms/internal/ads/zzanv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzant;Landroid/content/Context;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.mediation.client.INativeAppInstallAdMapper"
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzanu;->val$context:Landroid/content/Context;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 5
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    packed-switch p1, :pswitch_data_0
+
+    const/4 p1, 0x0
+
+    return p1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzanu;->val$context:Landroid/content/Context;
+    :pswitch_0
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    const-string v1, "admob_user_agent"
+    move-result-object p1
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
 
     .line 2
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v0
+    move-result-object p4
 
-    const-string v2, "user_agent"
+    invoke-static {p4}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
-    const-string v3, ""
+    move-result-object p4
 
     .line 3
-    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v3
+    move-result-object p2
+
+    invoke-static {p2}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p2
 
     .line 4
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const-string v3, "User agent is not initialized on Google Play Services. Initializing."
+    invoke-interface {p0, p1, p4, p2}, Lcom/google/android/gms/internal/ads/zzanv;->zzc(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
 
     .line 5
-    invoke-static {v3}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
 
     .line 6
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzanu;->val$context:Landroid/content/Context;
+    :pswitch_1
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->zzsy()Lcom/google/android/gms/dynamic/IObjectWrapper;
 
-    invoke-static {v3}, Landroid/webkit/WebSettings;->getDefaultUserAgent(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v3
+    move-result-object p1
 
     .line 7
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 8
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzanu;->val$context:Landroid/content/Context;
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    invoke-static {v2, v0, v1}, Lcom/google/android/gms/common/util/SharedPreferencesUtils;->publishWorldReadableSharedPreferences(Landroid/content/Context;Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+    goto/16 :goto_0
+
+    .line 9
+    :pswitch_2
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->zzuq()Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 10
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 11
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    goto/16 :goto_0
+
+    .line 12
+    :pswitch_3
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->zzsx()Lcom/google/android/gms/internal/ads/zzaeb;
+
+    move-result-object p1
+
+    .line 13
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 14
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    goto/16 :goto_0
+
+    .line 15
+    :pswitch_4
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->zzup()Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 16
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 17
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    goto/16 :goto_0
+
+    .line 18
+    :pswitch_5
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getVideoController()Lcom/google/android/gms/internal/ads/zzys;
+
+    move-result-object p1
+
+    .line 19
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 20
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    goto/16 :goto_0
+
+    .line 21
+    :pswitch_6
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 22
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzanv;->zzw(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+
+    .line 23
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    .line 24
+    :pswitch_7
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getExtras()Landroid/os/Bundle;
+
+    move-result-object p1
+
+    .line 25
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 26
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zzb(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    goto/16 :goto_0
+
+    .line 27
+    :pswitch_8
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getOverrideClickHandling()Z
+
+    move-result p1
+
+    .line 28
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 29
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->writeBoolean(Landroid/os/Parcel;Z)V
+
+    goto/16 :goto_0
+
+    .line 30
+    :pswitch_9
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getOverrideImpressionRecording()Z
+
+    move-result p1
+
+    .line 31
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 32
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->writeBoolean(Landroid/os/Parcel;Z)V
+
+    goto/16 :goto_0
+
+    .line 33
+    :pswitch_a
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 34
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzanv;->zzv(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+
+    .line 35
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    .line 36
+    :pswitch_b
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 37
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzanv;->zzu(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+
+    .line 38
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
 
-    :cond_0
-    const-string v0, "User agent is already initialized on Google Play Services."
+    .line 39
+    :pswitch_c
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->recordImpression()V
 
-    .line 9
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    .line 40
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto :goto_0
+
+    .line 41
+    :pswitch_d
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getPrice()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 42
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 43
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 44
+    :pswitch_e
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getStore()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 45
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 46
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 47
+    :pswitch_f
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getStarRating()D
+
+    move-result-wide p1
+
+    .line 48
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 49
+    invoke-virtual {p3, p1, p2}, Landroid/os/Parcel;->writeDouble(D)V
+
+    goto :goto_0
+
+    .line 50
+    :pswitch_10
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getCallToAction()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 51
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 52
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 53
+    :pswitch_11
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->zzsw()Lcom/google/android/gms/internal/ads/zzaej;
+
+    move-result-object p1
+
+    .line 54
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 55
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    goto :goto_0
+
+    .line 56
+    :pswitch_12
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getBody()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 57
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 58
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 59
+    :pswitch_13
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getImages()Ljava/util/List;
+
+    move-result-object p1
+
+    .line 60
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 61
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
+
+    goto :goto_0
+
+    .line 62
+    :pswitch_14
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzanv;->getHeadline()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 63
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 64
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     :goto_0
-    return-object v3
+    const/4 p1, 0x1
+
+    return p1
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

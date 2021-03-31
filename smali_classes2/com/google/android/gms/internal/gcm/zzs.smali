@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzdt:Ljava/util/concurrent/ConcurrentHashMap;
+.field private final zzdt:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public final zzdu:Ljava/lang/ref/ReferenceQueue;
+.field private final zzdu:Ljava/lang/ref/ReferenceQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/ReferenceQueue<",

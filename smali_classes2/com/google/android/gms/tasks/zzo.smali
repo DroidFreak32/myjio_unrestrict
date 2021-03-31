@@ -1,161 +1,141 @@
 .class public final Lcom/google/android/gms/tasks/zzo;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/OnCanceledListener;
-.implements Lcom/google/android/gms/tasks/OnFailureListener;
-.implements Lcom/google/android/gms/tasks/OnSuccessListener;
-.implements Lcom/google/android/gms/tasks/zzq;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<TResult:",
-        "Ljava/lang/Object;",
-        "TContinuationResult:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/OnCanceledListener;",
-        "Lcom/google/android/gms/tasks/OnFailureListener;",
-        "Lcom/google/android/gms/tasks/OnSuccessListener<",
-        "TTContinuationResult;>;",
-        "Lcom/google/android/gms/tasks/zzq<",
-        "TTResult;>;"
-    }
-.end annotation
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zzd:Ljava/util/concurrent/Executor;
+.field private final synthetic zza:Lcom/google/android/gms/tasks/Task;
 
-.field public final zzf:Lcom/google/android/gms/tasks/zzu;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/tasks/zzu<",
-            "TTContinuationResult;>;"
-        }
-    .end annotation
-.end field
-
-.field public final zzr:Lcom/google/android/gms/tasks/SuccessContinuation;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/tasks/SuccessContinuation<",
-            "TTResult;TTContinuationResult;>;"
-        }
-    .end annotation
-.end field
+.field private final synthetic zzb:Lcom/google/android/gms/tasks/zzp;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/SuccessContinuation;Lcom/google/android/gms/tasks/zzu;)V
+.method public constructor <init>(Lcom/google/android/gms/tasks/zzp;Lcom/google/android/gms/tasks/Task;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/concurrent/Executor;",
-            "Lcom/google/android/gms/tasks/SuccessContinuation<",
-            "TTResult;TTContinuationResult;>;",
-            "Lcom/google/android/gms/tasks/zzu<",
-            "TTContinuationResult;>;)V"
-        }
-    .end annotation
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
+
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzo;->zza:Lcom/google/android/gms/tasks/Task;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzo;->zzd:Ljava/util/concurrent/Executor;
-
-    .line 3
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzo;->zzr:Lcom/google/android/gms/tasks/SuccessContinuation;
-
-    .line 4
-    iput-object p3, p0, Lcom/google/android/gms/tasks/zzo;->zzf:Lcom/google/android/gms/tasks/zzu;
-
     return-void
-.end method
-
-.method public static synthetic zza(Lcom/google/android/gms/tasks/zzo;)Lcom/google/android/gms/tasks/SuccessContinuation;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/tasks/zzo;->zzr:Lcom/google/android/gms/tasks/SuccessContinuation;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final cancel()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
     .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-static {v0}, Lcom/google/android/gms/tasks/zzp;->zza(Lcom/google/android/gms/tasks/zzp;)Lcom/google/android/gms/tasks/SuccessContinuation;
 
-    throw v0
-.end method
+    move-result-object v0
 
-.method public final onCanceled()V
-    .locals 1
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzo;->zza:Lcom/google/android/gms/tasks/Task;
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzf:Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {v1}, Lcom/google/android/gms/tasks/Task;->getResult()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/tasks/zzu;->zza()Z
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/tasks/SuccessContinuation;->then(Ljava/lang/Object;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v0
+    :try_end_0
+    .catch Lcom/google/android/gms/tasks/RuntimeExecutionException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-nez v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
+
+    new-instance v1, Ljava/lang/NullPointerException;
+
+    const-string v2, "Continuation returned null"
+
+    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzp;->onFailure(Ljava/lang/Exception;)V
 
     return-void
-.end method
 
-.method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/tasks/Task<",
-            "TTResult;>;)V"
-        }
-    .end annotation
+    .line 3
+    :cond_0
+    sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->zza:Ljava/util/concurrent/Executor;
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzd:Ljava/util/concurrent/Executor;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
 
-    new-instance v1, Lcom/google/android/gms/tasks/zzp;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzp;-><init>(Lcom/google/android/gms/tasks/zzo;Lcom/google/android/gms/tasks/Task;)V
+    .line 4
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+
+    .line 5
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnCanceledListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
 
     return-void
-.end method
 
-.method public final onFailure(Ljava/lang/Exception;)V
-    .locals 1
+    :catch_0
+    move-exception v0
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzf:Lcom/google/android/gms/tasks/zzu;
+    .line 6
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzp;->onFailure(Ljava/lang/Exception;)V
 
     return-void
-.end method
 
-.method public final onSuccess(Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TTContinuationResult;)V"
-        }
-    .end annotation
+    .line 7
+    :catch_1
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzo;->zzf:Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {v0}, Lcom/google/android/gms/tasks/zzp;->onCanceled()V
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->setResult(Ljava/lang/Object;)V
+    return-void
+
+    :catch_2
+    move-exception v0
+
+    .line 8
+    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v1
+
+    instance-of v1, v1, Ljava/lang/Exception;
+
+    if-eqz v1, :cond_1
+
+    .line 9
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
+
+    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Exception;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzp;->onFailure(Ljava/lang/Exception;)V
+
+    return-void
+
+    .line 10
+    :cond_1
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzo;->zzb:Lcom/google/android/gms/tasks/zzp;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzp;->onFailure(Ljava/lang/Exception;)V
 
     return-void
 .end method

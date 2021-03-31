@@ -1,52 +1,57 @@
 .class public final Lcom/google/android/gms/internal/ads/zznx;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable<",
-        "Ljava/lang/Void;",
+        "Ljava/util/Comparator<",
+        "Lcom/google/android/gms/internal/ads/zzhp;",
         ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public final synthetic val$context:Landroid/content/Context;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zznx;->val$context:Landroid/content/Context;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/ads/zznu;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zznx;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 2
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzhp;
 
-    move-result-object v0
+    check-cast p2, Lcom/google/android/gms/internal/ads/zzhp;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zznx;->val$context:Landroid/content/Context;
+    .line 2
+    iget p2, p2, Lcom/google/android/gms/internal/ads/zzhp;->zzagw:I
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zznt;->initialize(Landroid/content/Context;)V
+    iget p1, p1, Lcom/google/android/gms/internal/ads/zzhp;->zzagw:I
 
-    const/4 v0, 0x0
+    sub-int/2addr p2, p1
 
-    return-object v0
+    return p2
 .end method

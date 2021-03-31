@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzagw:Ljava/util/Set;
+.field private final zzagw:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public final zzqr:Ljava/lang/String;
+.field private final zzqr:Ljava/lang/String;
 
 
 # direct methods

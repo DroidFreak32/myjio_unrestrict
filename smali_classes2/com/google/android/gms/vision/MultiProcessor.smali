@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/MultiProcessor;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
 .implements Lcom/google/android/gms/vision/Detector$Processor;
@@ -27,9 +28,9 @@
 
 
 # instance fields
-.field public zzal:I
+.field private zzat:I
 
-.field public zzaz:Lcom/google/android/gms/vision/MultiProcessor$Factory;
+.field private zzbe:Lcom/google/android/gms/vision/MultiProcessor$Factory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/MultiProcessor$Factory<",
@@ -38,7 +39,7 @@
     .end annotation
 .end field
 
-.field public zzba:Landroid/util/SparseArray;
+.field private zzbf:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -50,7 +51,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -61,12 +62,12 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     const/4 v0, 0x3
 
     .line 3
-    iput v0, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzal:I
+    iput v0, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzat:I
 
     return-void
 .end method
@@ -84,7 +85,7 @@
     .locals 0
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzal:I
+    iput p1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzat:I
 
     return p1
 .end method
@@ -93,7 +94,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzaz:Lcom/google/android/gms/vision/MultiProcessor$Factory;
+    iput-object p1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbe:Lcom/google/android/gms/vision/MultiProcessor$Factory;
 
     return-object p1
 .end method
@@ -138,7 +139,7 @@
     move-result-object v4
 
     .line 5
-    iget-object v5, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v5, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -154,7 +155,7 @@
     invoke-direct {v5, p0, v6}, Lcom/google/android/gms/vision/MultiProcessor$zza;-><init>(Lcom/google/android/gms/vision/MultiProcessor;Lcom/google/android/gms/vision/zze;)V
 
     .line 7
-    iget-object v6, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzaz:Lcom/google/android/gms/vision/MultiProcessor$Factory;
+    iget-object v6, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbe:Lcom/google/android/gms/vision/MultiProcessor$Factory;
 
     invoke-interface {v6, v4}, Lcom/google/android/gms/vision/MultiProcessor$Factory;->create(Ljava/lang/Object;)Lcom/google/android/gms/vision/Tracker;
 
@@ -170,7 +171,7 @@
     invoke-virtual {v6, v3, v4}, Lcom/google/android/gms/vision/Tracker;->onNewItem(ILjava/lang/Object;)V
 
     .line 9
-    iget-object v4, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v4, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v3, v5}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
@@ -194,7 +195,7 @@
 
     .line 12
     :goto_1
-    iget-object v4, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v4, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->size()I
 
@@ -203,7 +204,7 @@
     if-ge v3, v4, :cond_4
 
     .line 13
-    iget-object v4, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v4, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v3}, Landroid/util/SparseArray;->keyAt(I)I
 
@@ -217,7 +218,7 @@
     if-nez v5, :cond_3
 
     .line 15
-    iget-object v5, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v5, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -233,7 +234,7 @@
 
     move-result v6
 
-    iget v7, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzal:I
+    iget v7, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzat:I
 
     if-lt v6, v7, :cond_2
 
@@ -287,7 +288,7 @@
     check-cast v2, Ljava/lang/Integer;
 
     .line 22
-    iget-object v3, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v3, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -324,7 +325,7 @@
     move-result-object v4
 
     .line 27
-    iget-object v5, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v5, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -357,7 +358,7 @@
 
     .line 1
     :goto_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
@@ -366,7 +367,7 @@
     if-ge v0, v1, :cond_0
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -387,7 +388,7 @@
 
     .line 4
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzba:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor;->zzbf:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 

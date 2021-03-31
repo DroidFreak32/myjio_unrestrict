@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public zzuj:Ljava/lang/String;
+.field private zzuj:Ljava/lang/String;
 
 .field public zzuk:I
 

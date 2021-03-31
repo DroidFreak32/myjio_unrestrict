@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = -0x1L
+.field private static final serialVersionUID:J = -0x1L
 
 
 # direct methods
@@ -109,9 +109,16 @@
 
 .method public hasFormat(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
-    const-class v0, Lcom/fasterxml/jackson/databind/MappingJsonFactory;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     const-class v1, Lcom/fasterxml/jackson/databind/MappingJsonFactory;
 

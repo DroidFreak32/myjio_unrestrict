@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzavt:Ljava/lang/Class;
+.field private static final zzavt:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -12,7 +12,7 @@
     .end annotation
 .end field
 
-.field public static final zzavu:Z
+.field private static final zzavu:Z
 
 
 # direct methods
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public static zzcx(Ljava/lang/String;)Ljava/lang/Class;
+.method private static zzcx(Ljava/lang/String;)Ljava/lang/Class;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -22,6 +22,11 @@
 # virtual methods
 .method public init()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
@@ -149,6 +154,11 @@
 
 .method public start()V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/Channel;->getSession()Lcom/jcraft/jsch/Session;
@@ -165,7 +175,7 @@
     invoke-direct {v1}, Lcom/jcraft/jsch/RequestShell;-><init>()V
 
     .line 4
-    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/RequestShell;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
+    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -184,8 +194,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/Channel;->thread:Ljava/lang/Thread;
 
     .line 7
-    iget-object v1, p0, Lcom/jcraft/jsch/Channel;->thread:Ljava/lang/Thread;
-
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V

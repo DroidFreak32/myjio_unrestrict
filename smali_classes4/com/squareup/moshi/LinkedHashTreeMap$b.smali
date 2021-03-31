@@ -54,36 +54,207 @@
 
 
 # virtual methods
-.method public a()Lcom/squareup/moshi/LinkedHashTreeMap$g;
-    .locals 2
+.method public a(Lcom/squareup/moshi/LinkedHashTreeMap$g;)V
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "(",
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
-            "TK;TV;>;"
+            "TK;TV;>;)V"
         }
     .end annotation
 
-    .line 39
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    const/4 v0, 0x0
 
-    .line 40
-    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .line 1
+    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    if-nez v1, :cond_0
+    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    return-object v0
+    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    .line 41
+    const/4 v0, 0x1
+
+    .line 2
+    iput v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->B:I
+
+    .line 3
+    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
+
+    if-lez v1, :cond_0
+
+    iget v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
+
+    and-int/lit8 v3, v2, 0x1
+
+    if-nez v3, :cond_0
+
+    add-int/2addr v2, v0
+
+    .line 4
+    iput v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
+
+    sub-int/2addr v1, v0
+
+    .line 5
+    iput v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
+
+    .line 6
+    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    .line 7
     :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    iput-object v1, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    throw v0
+    .line 8
+    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 9
+    iget p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
+
+    .line 10
+    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
+
+    if-lez v1, :cond_1
+
+    and-int/lit8 v2, p1, 0x1
+
+    if-nez v2, :cond_1
+
+    add-int/2addr p1, v0
+
+    .line 11
+    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
+
+    sub-int/2addr v1, v0
+
+    .line 12
+    iput v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
+
+    .line 13
+    iget p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    :cond_1
+    const/4 p1, 0x4
+
+    .line 14
+    :goto_0
+    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
+
+    add-int/lit8 v2, p1, -0x1
+
+    and-int/2addr v1, v2
+
+    if-ne v1, v2, :cond_5
+
+    .line 15
+    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    if-nez v1, :cond_2
+
+    .line 16
+    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 17
+    iget-object v2, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 18
+    iget-object v3, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 19
+    iget-object v4, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    iput-object v4, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 20
+    iput-object v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 21
+    iput-object v3, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 22
+    iput-object v1, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 23
+    iget v4, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->B:I
+
+    add-int/2addr v4, v0
+
+    iput v4, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->B:I
+
+    .line 24
+    iput-object v2, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 25
+    iput-object v2, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v2, 0x0
+
+    if-ne v1, v0, :cond_3
+
+    .line 26
+    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 27
+    iget-object v3, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 28
+    iput-object v3, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 29
+    iput-object v1, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 30
+    iget v4, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->B:I
+
+    add-int/2addr v4, v0
+
+    iput v4, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->B:I
+
+    .line 31
+    iput-object v3, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 32
+    iput v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v3, 0x2
+
+    if-ne v1, v3, :cond_4
+
+    .line 33
+    iput v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
+
+    :cond_4
+    :goto_1
+    mul-int/lit8 p1, p1, 0x2
+
+    goto :goto_0
+
+    :cond_5
+    return-void
 .end method
 
-.method public a(I)V
+.method public b(I)V
     .locals 1
 
     .line 1
@@ -116,204 +287,31 @@
     return-void
 .end method
 
-.method public a(Lcom/squareup/moshi/LinkedHashTreeMap$g;)V
-    .locals 5
+.method public c()Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
+            "()",
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
-            "TK;TV;>;)V"
+            "TK;TV;>;"
         }
     .end annotation
 
-    const/4 v0, 0x0
+    .line 1
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    .line 6
-    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .line 2
+    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    if-nez v1, :cond_0
 
-    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    return-object v0
 
-    const/4 v0, 0x1
-
-    .line 7
-    iput v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:I
-
-    .line 8
-    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
-
-    if-lez v1, :cond_0
-
-    iget v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    and-int/lit8 v3, v2, 0x1
-
-    if-nez v3, :cond_0
-
-    add-int/2addr v2, v0
-
-    .line 9
-    iput v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    sub-int/2addr v1, v0
-
-    .line 10
-    iput v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
-
-    .line 11
-    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    .line 12
+    .line 3
     :cond_0
-    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iput-object v1, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    .line 13
-    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 14
-    iget p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    add-int/2addr p1, v0
-
-    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    .line 15
-    iget p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
-
-    if-lez p1, :cond_1
-
-    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    and-int/lit8 v2, v1, 0x1
-
-    if-nez v2, :cond_1
-
-    add-int/2addr v1, v0
-
-    .line 16
-    iput v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    sub-int/2addr p1, v0
-
-    .line 17
-    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->b:I
-
-    .line 18
-    iget p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    add-int/2addr p1, v0
-
-    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    :cond_1
-    const/4 p1, 0x4
-
-    .line 19
-    :goto_0
-    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->d:I
-
-    add-int/lit8 v2, p1, -0x1
-
-    and-int/2addr v1, v2
-
-    if-ne v1, v2, :cond_5
-
-    .line 20
-    iget v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    if-nez v1, :cond_2
-
-    .line 21
-    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 22
-    iget-object v2, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 23
-    iget-object v3, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 24
-    iget-object v4, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    iput-object v4, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 25
-    iput-object v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 26
-    iput-object v3, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 27
-    iput-object v1, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 28
-    iget v4, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:I
-
-    add-int/2addr v4, v0
-
-    iput v4, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:I
-
-    .line 29
-    iput-object v2, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 30
-    iput-object v2, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v2, 0x0
-
-    if-ne v1, v0, :cond_3
-
-    .line 31
-    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 32
-    iget-object v3, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 33
-    iput-object v3, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 34
-    iput-object v1, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 35
-    iget v4, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:I
-
-    add-int/2addr v4, v0
-
-    iput v4, v3, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:I
-
-    .line 36
-    iput-object v3, v1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 37
-    iput v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v3, 0x2
-
-    if-ne v1, v3, :cond_4
-
-    .line 38
-    iput v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$b;->c:I
-
-    :cond_4
-    :goto_1
-    mul-int/lit8 p1, p1, 0x2
-
-    goto :goto_0
-
-    :cond_5
-    return-void
+    throw v0
 .end method

@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public final cachedModelLoaders:Ljava/util/Map;
+.field private final cachedModelLoaders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -66,6 +66,9 @@
 
 .method public get(Ljava/lang/Class;)Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",

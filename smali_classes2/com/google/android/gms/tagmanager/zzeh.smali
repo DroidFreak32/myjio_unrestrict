@@ -17,17 +17,17 @@
 
 
 # static fields
-.field public static zzaip:Lcom/google/android/gms/tagmanager/zzeh;
+.field private static zzaip:Lcom/google/android/gms/tagmanager/zzeh;
 
 
 # instance fields
-.field public volatile zzaec:Ljava/lang/String;
+.field private volatile zzaec:Ljava/lang/String;
 
-.field public volatile zzaiq:Lcom/google/android/gms/tagmanager/zzeh$zza;
+.field private volatile zzaiq:Lcom/google/android/gms/tagmanager/zzeh$zza;
 
-.field public volatile zzair:Ljava/lang/String;
+.field private volatile zzair:Ljava/lang/String;
 
-.field public volatile zzais:Ljava/lang/String;
+.field private volatile zzais:Ljava/lang/String;
 
 
 # direct methods
@@ -56,7 +56,7 @@
     return-void
 .end method
 
-.method public static zzbh(Ljava/lang/String;)Ljava/lang/String;
+.method private static zzbh(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
     const-string v0, "&"

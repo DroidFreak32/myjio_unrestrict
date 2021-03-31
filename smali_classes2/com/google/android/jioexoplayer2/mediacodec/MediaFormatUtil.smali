@@ -10,7 +10,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -21,6 +21,10 @@
 
 .method public static maybeSetByteBuffer(Landroid/media/MediaFormat;Ljava/lang/String;[B)V
     .locals 0
+    .param p2    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p2, :cond_0
 
@@ -37,6 +41,10 @@
 
 .method public static maybeSetColorInfo(Landroid/media/MediaFormat;Lcom/google/android/jioexoplayer2/video/ColorInfo;)V
     .locals 2
+    .param p1    # Lcom/google/android/jioexoplayer2/video/ColorInfo;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_0
 

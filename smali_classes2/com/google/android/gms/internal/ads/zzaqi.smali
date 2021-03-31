@@ -1,28 +1,21 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaqi;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final synthetic zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
-
-.field public final synthetic zzdbe:Ljava/lang/String;
-
-.field public final synthetic zzdbf:Ljava/lang/String;
+.field private final synthetic zzdof:Lcom/google/android/gms/internal/ads/zzaqj;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqe;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqj;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbe:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbf:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdof:Lcom/google/android/gms/internal/ads/zzaqj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,31 +24,26 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdof:Lcom/google/android/gms/internal/ads/zzaqj;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zza(Lcom/google/android/gms/internal/ads/zzaqe;)Lcom/google/android/gms/internal/ads/zzaqo;
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaqj;->createIntent()Landroid/content/Intent;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
+    move-result-object p1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzkq()Lcom/google/android/gms/ads/internal/util/zzm;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zza(Lcom/google/android/gms/internal/ads/zzaqe;)Lcom/google/android/gms/internal/ads/zzaqo;
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdof:Lcom/google/android/gms/internal/ads/zzaqj;
 
-    move-result-object v0
+    invoke-static {p2}, Lcom/google/android/gms/internal/ads/zzaqj;->zza(Lcom/google/android/gms/internal/ads/zzaqj;)Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbe:Ljava/lang/String;
+    move-result-object p2
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzaqi;->zzdbf:Ljava/lang/String;
+    invoke-static {p2, p1}, Lcom/google/android/gms/ads/internal/util/zzm;->zza(Landroid/content/Context;Landroid/content/Intent;)V
 
-    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzaqo;->zzg(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method

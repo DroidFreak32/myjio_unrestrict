@@ -22,7 +22,7 @@
     invoke-super {p0, p1}, Landroid/app/Application;->attachBaseContext(Landroid/content/Context;)V
 
     .line 2
-    invoke-static {p0}, Lkf;->d(Landroid/content/Context;)V
+    invoke-static {p0}, Landroidx/multidex/MultiDex;->install(Landroid/content/Context;)V
 
     return-void
 .end method

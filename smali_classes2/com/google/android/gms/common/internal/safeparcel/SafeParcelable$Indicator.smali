@@ -1,5 +1,6 @@
 .class public interface abstract annotation Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Indicator;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;
@@ -24,4 +25,6 @@
 
 # virtual methods
 .method public abstract getter()Ljava/lang/String;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 .end method

@@ -22,13 +22,13 @@
 
 
 # static fields
-.field public static volatile zzsq:Lcom/google/android/gms/analytics/zzk;
+.field private static volatile zzsq:Lcom/google/android/gms/analytics/zzk;
 
 
 # instance fields
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public final zzsr:Ljava/util/List;
+.field private final zzsr:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -38,17 +38,17 @@
     .end annotation
 .end field
 
-.field public final zzss:Lcom/google/android/gms/analytics/zze;
+.field private final zzss:Lcom/google/android/gms/analytics/zze;
 
-.field public final zzst:Lcom/google/android/gms/analytics/zzk$zza;
+.field private final zzst:Lcom/google/android/gms/analytics/zzk$zza;
 
-.field public volatile zzsu:Lcom/google/android/gms/internal/gtm/zzq;
+.field private volatile zzsu:Lcom/google/android/gms/internal/gtm/zzq;
 
-.field public zzsv:Ljava/lang/Thread$UncaughtExceptionHandler;
+.field private zzsv:Ljava/lang/Thread$UncaughtExceptionHandler;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -195,7 +195,7 @@
     return-object p0
 .end method
 
-.method public static zzb(Lcom/google/android/gms/analytics/zzg;)V
+.method private static zzb(Lcom/google/android/gms/analytics/zzg;)V
     .locals 5
 
     const-string v0, "deliver should be called from worker thread"

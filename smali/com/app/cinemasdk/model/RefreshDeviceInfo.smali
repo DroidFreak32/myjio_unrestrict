@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public deviceInfo:Lcom/app/cinemasdk/model/DeviceInfo;
+.field private deviceInfo:Lcom/app/cinemasdk/model/DeviceInfo;
 
 
 # direct methods

@@ -3,105 +3,105 @@
 
 
 # instance fields
-.field public currency:Ljava/lang/String;
+.field private currency:Ljava/lang/String;
 
-.field public dailyTimeQuota:Ljava/lang/String;
+.field private dailyTimeQuota:Ljava/lang/String;
 
-.field public dailyVolumeQuota:Ljava/lang/String;
+.field private dailyVolumeQuota:Ljava/lang/String;
 
-.field public description:Ljava/lang/String;
+.field private description:Ljava/lang/String;
 
-.field public displayName:Ljava/lang/String;
+.field private displayName:Ljava/lang/String;
 
-.field public location:Ljava/lang/String;
+.field private location:Ljava/lang/String;
 
-.field public loginInterval:Ljava/lang/String;
+.field private loginInterval:Ljava/lang/String;
 
-.field public maxAllowedChild:Ljava/lang/String;
+.field private maxAllowedChild:Ljava/lang/String;
 
-.field public minVoucherPurchase:Ljava/lang/String;
+.field private minVoucherPurchase:Ljava/lang/String;
 
-.field public mvnoId:Ljava/lang/String;
+.field private mvnoId:Ljava/lang/String;
 
-.field public operation:Ljava/lang/String;
+.field private operation:Ljava/lang/String;
 
-.field public packageId:Ljava/lang/String;
+.field private packageId:Ljava/lang/String;
 
-.field public packageName:Ljava/lang/String;
+.field private packageName:Ljava/lang/String;
 
-.field public packageType:Ljava/lang/String;
+.field private packageType:Ljava/lang/String;
 
-.field public param1:Ljava/lang/String;
+.field private param1:Ljava/lang/String;
 
-.field public param2:Ljava/lang/String;
+.field private param2:Ljava/lang/String;
 
-.field public param3:Ljava/lang/String;
+.field private param3:Ljava/lang/String;
 
-.field public planCategory:Ljava/lang/String;
+.field private planCategory:Ljava/lang/String;
 
-.field public planCode:Ljava/lang/String;
+.field private planCode:Ljava/lang/String;
 
-.field public planStatus:Ljava/lang/String;
+.field private planStatus:Ljava/lang/String;
 
-.field public price:Ljava/lang/String;
+.field private price:Ljava/lang/String;
 
-.field public quota:Ljava/lang/String;
+.field private quota:Ljava/lang/String;
 
-.field public quotaInDays:Ljava/lang/String;
+.field private quotaInDays:Ljava/lang/String;
 
-.field public quotaInGB:Ljava/lang/String;
+.field private quotaInGB:Ljava/lang/String;
 
-.field public quotaInHours:Ljava/lang/String;
+.field private quotaInHours:Ljava/lang/String;
 
-.field public quotaInMB:Ljava/lang/String;
+.field private quotaInMB:Ljava/lang/String;
 
-.field public quotaInMinutes:Ljava/lang/String;
+.field private quotaInMinutes:Ljava/lang/String;
 
-.field public quotaType:Ljava/lang/String;
+.field private quotaType:Ljava/lang/String;
 
-.field public quotaUOM:Ljava/lang/String;
+.field private quotaUOM:Ljava/lang/String;
 
-.field public speed:Ljava/lang/String;
+.field private speed:Ljava/lang/String;
 
-.field public speedUOM:Ljava/lang/String;
+.field private speedUOM:Ljava/lang/String;
 
-.field public timeBaseQuota:Ljava/lang/String;
+.field private timeBaseQuota:Ljava/lang/String;
 
-.field public timeBaseQuotaUnit:Ljava/lang/String;
+.field private timeBaseQuotaUnit:Ljava/lang/String;
 
-.field public unlimited:Ljava/lang/String;
+.field private unlimited:Ljava/lang/String;
 
-.field public usageInDays:Ljava/lang/String;
+.field private usageInDays:Ljava/lang/String;
 
-.field public usageInHours:Ljava/lang/String;
+.field private usageInHours:Ljava/lang/String;
 
-.field public usageInMinutes:Ljava/lang/String;
+.field private usageInMinutes:Ljava/lang/String;
 
-.field public usageOffer:Ljava/lang/String;
+.field private usageOffer:Ljava/lang/String;
 
-.field public usageOfferUnit:Ljava/lang/String;
+.field private usageOfferUnit:Ljava/lang/String;
 
-.field public validity:Ljava/lang/String;
+.field private validity:Ljava/lang/String;
 
-.field public validityDay:Ljava/lang/String;
+.field private validityDay:Ljava/lang/String;
 
-.field public validityHour:Ljava/lang/String;
+.field private validityHour:Ljava/lang/String;
 
-.field public validityInDays:Ljava/lang/String;
+.field private validityInDays:Ljava/lang/String;
 
-.field public validityInHours:Ljava/lang/String;
+.field private validityInHours:Ljava/lang/String;
 
-.field public validityInMinutes:Ljava/lang/String;
+.field private validityInMinutes:Ljava/lang/String;
 
-.field public validityMinute:Ljava/lang/String;
+.field private validityMinute:Ljava/lang/String;
 
-.field public validityMonth:Ljava/lang/String;
+.field private validityMonth:Ljava/lang/String;
 
-.field public validityUnit:Ljava/lang/String;
+.field private validityUnit:Ljava/lang/String;
 
-.field public volumeBaseQuota:Ljava/lang/String;
+.field private volumeBaseQuota:Ljava/lang/String;
 
-.field public volumeBaseQuotaUnit:Ljava/lang/String;
+.field private volumeBaseQuotaUnit:Ljava/lang/String;
 
 
 # direct methods

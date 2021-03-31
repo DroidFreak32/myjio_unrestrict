@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzcj:Lcom/google/android/gms/maps/internal/IUiSettingsDelegate;
+.field private final zzcj:Lcom/google/android/gms/maps/internal/IUiSettingsDelegate;
 
 
 # direct methods

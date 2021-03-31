@@ -1,9 +1,6 @@
 .class public Landroidx/appcompat/widget/ListPopupWindow$e;
-.super Ljava/lang/Object;
+.super Landroid/database/DataSetObserver;
 .source "ListPopupWindow.java"
-
-# interfaces
-.implements Landroid/widget/AbsListView$OnScrollListener;
 
 
 # annotations
@@ -18,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/ListPopupWindow;
+.field public final synthetic a:Landroidx/appcompat/widget/ListPopupWindow;
 
 
 # direct methods
@@ -26,64 +23,43 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->s:Landroidx/appcompat/widget/ListPopupWindow;
+    iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->a:Landroidx/appcompat/widget/ListPopupWindow;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onScroll(Landroid/widget/AbsListView;III)V
-    .locals 0
+.method public onChanged()V
+    .locals 1
 
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->a:Landroidx/appcompat/widget/ListPopupWindow;
+
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->isShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->a:Landroidx/appcompat/widget/ListPopupWindow;
+
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+
+    :cond_0
     return-void
 .end method
 
-.method public onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .locals 0
-
-    const/4 p1, 0x1
-
-    if-ne p2, p1, :cond_0
+.method public onInvalidated()V
+    .locals 1
 
     .line 1
-    iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->s:Landroidx/appcompat/widget/ListPopupWindow;
+    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->a:Landroidx/appcompat/widget/ListPopupWindow;
 
-    .line 2
-    invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow;->j()Z
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->dismiss()V
 
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->s:Landroidx/appcompat/widget/ListPopupWindow;
-
-    iget-object p1, p1, Landroidx/appcompat/widget/ListPopupWindow;->W:Landroid/widget/PopupWindow;
-
-    invoke-virtual {p1}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    .line 3
-    iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->s:Landroidx/appcompat/widget/ListPopupWindow;
-
-    iget-object p2, p1, Landroidx/appcompat/widget/ListPopupWindow;->S:Landroid/os/Handler;
-
-    iget-object p1, p1, Landroidx/appcompat/widget/ListPopupWindow;->O:Landroidx/appcompat/widget/ListPopupWindow$g;
-
-    invoke-virtual {p2, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    .line 4
-    iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$e;->s:Landroidx/appcompat/widget/ListPopupWindow;
-
-    iget-object p1, p1, Landroidx/appcompat/widget/ListPopupWindow;->O:Landroidx/appcompat/widget/ListPopupWindow$g;
-
-    invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow$g;->run()V
-
-    :cond_0
     return-void
 .end method

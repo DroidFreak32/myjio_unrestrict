@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final location:Lcom/inn/passivesdk/indoorOutdoorDetection/util/Location;
+.field private final location:Lcom/inn/passivesdk/indoorOutdoorDetection/util/Location;
 
-.field public final timeZone:Ljava/util/TimeZone;
+.field private final timeZone:Ljava/util/TimeZone;
 
 
 # direct methods

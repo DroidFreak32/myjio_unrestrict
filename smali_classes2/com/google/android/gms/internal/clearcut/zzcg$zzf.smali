@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field public final zzdu:Ljava/lang/Object;
+.field private final zzdu:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TType;"
@@ -34,7 +34,7 @@
     .end annotation
 .end field
 
-.field public final zzka:Lcom/google/android/gms/internal/clearcut/zzdo;
+.field private final zzka:Lcom/google/android/gms/internal/clearcut/zzdo;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TContainingType;"
@@ -42,9 +42,9 @@
     .end annotation
 .end field
 
-.field public final zzkb:Lcom/google/android/gms/internal/clearcut/zzdo;
+.field private final zzkb:Lcom/google/android/gms/internal/clearcut/zzdo;
 
-.field public final zzkc:Lcom/google/android/gms/internal/clearcut/zzcg$zze;
+.field private final zzkc:Lcom/google/android/gms/internal/clearcut/zzcg$zze;
 
 
 # direct methods

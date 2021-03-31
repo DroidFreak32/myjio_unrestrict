@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+.field private static final synthetic $VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
 .field public static final enum DECODE_DATA:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
@@ -34,64 +34,58 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    const/4 v1, 0x0
+    const-string v1, "INITIALIZE"
 
-    const-string v2, "INITIALIZE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->INITIALIZE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
     .line 2
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
     const-string v3, "SWITCH_TO_SOURCE_SERVICE"
 
-    invoke-direct {v0, v3, v2}, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+    invoke-direct {v1, v3, v4}, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
     .line 3
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+    new-instance v3, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    const/4 v3, 0x2
+    const-string v5, "DECODE_DATA"
 
-    const-string v4, "DECODE_DATA"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->DECODE_DATA:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+    sput-object v3, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->DECODE_DATA:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+    new-array v5, v5, [Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->INITIALIZE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->DECODE_DATA:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->$VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+    sput-object v5, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->$VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

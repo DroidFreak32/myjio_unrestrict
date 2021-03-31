@@ -13,9 +13,23 @@
 
 
 # static fields
-.field public static final c:Lcom/caverock/androidsvg/PreserveAspectRatio;
+.field public static final BOTTOM:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-.field public static final d:Lcom/caverock/androidsvg/PreserveAspectRatio;
+.field public static final END:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final FULLSCREEN:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final FULLSCREEN_START:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final LETTERBOX:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final START:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final STRETCH:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final TOP:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+.field public static final UNSCALED:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
 
 # instance fields
@@ -26,7 +40,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 3
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
@@ -35,6 +49,8 @@
 
     invoke-direct {v0, v1, v1}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->UNSCALED:Lcom/caverock/androidsvg/PreserveAspectRatio;
+
     .line 2
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
@@ -42,7 +58,7 @@
 
     invoke-direct {v0, v2, v1}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->c:Lcom/caverock/androidsvg/PreserveAspectRatio;
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->STRETCH:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 3
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
@@ -53,61 +69,59 @@
 
     invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->d:Lcom/caverock/androidsvg/PreserveAspectRatio;
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->LETTERBOX:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 4
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+    sget-object v3, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    sget-object v2, Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;->meet:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
+    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->START:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 5
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+    sget-object v4, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    sget-object v2, Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;->meet:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
+    invoke-direct {v0, v4, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->END:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 6
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+    sget-object v4, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    sget-object v2, Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;->meet:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
+    invoke-direct {v0, v4, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->TOP:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 7
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+    sget-object v4, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    sget-object v2, Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;->meet:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
+    invoke-direct {v0, v4, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->BOTTOM:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 8
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
-
     sget-object v2, Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;->slice:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
 
     invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
+
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->FULLSCREEN:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     .line 9
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
 
-    sget-object v2, Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;->slice:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
-
-    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio;-><init>(Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;)V
+    sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio;->FULLSCREEN_START:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     return-void
 .end method
@@ -127,26 +141,36 @@
     return-void
 .end method
 
+.method public static of(Ljava/lang/String;)Lcom/caverock/androidsvg/PreserveAspectRatio;
+    .locals 1
+
+    .line 1
+    :try_start_0
+    invoke-static {p0}, Lcom/caverock/androidsvg/SVGParser;->v0(Ljava/lang/String;)Lcom/caverock/androidsvg/PreserveAspectRatio;
+
+    move-result-object p0
+    :try_end_0
+    .catch Lcom/caverock/androidsvg/SVGParseException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    .line 2
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p0}, Lorg/xml/sax/SAXException;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 
 # virtual methods
-.method public a()Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/PreserveAspectRatio;->a:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
-
-    return-object v0
-.end method
-
-.method public b()Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/PreserveAspectRatio;->b:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
-
-    return-object v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -165,7 +189,9 @@
 
     .line 1
     :cond_1
-    const-class v2, Lcom/caverock/androidsvg/PreserveAspectRatio;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -199,6 +225,24 @@
 
     :goto_0
     return v0
+.end method
+
+.method public getAlignment()Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/PreserveAspectRatio;->a:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    return-object v0
+.end method
+
+.method public getScale()Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/PreserveAspectRatio;->b:Lcom/caverock/androidsvg/PreserveAspectRatio$Scale;
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;

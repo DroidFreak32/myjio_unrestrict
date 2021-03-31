@@ -1,369 +1,641 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbd;
-.super Lcom/google/android/gms/internal/ads/zzbgt;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzbgt<",
-        "Lcom/google/android/gms/internal/ads/zzbd;",
-        ">;"
-    }
-.end annotation
+.super Lcom/google/android/gms/internal/ads/zzar;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public zzes:Ljava/lang/Long;
+.field private final zzcs:Lcom/google/android/gms/internal/ads/zzbf;
 
-.field public zzet:Ljava/lang/Long;
-
-.field public zzgm:Ljava/lang/Long;
-
-.field public zzgn:Ljava/lang/Long;
-
-.field public zzgo:Ljava/lang/Long;
+.field private final zzct:Ljavax/net/ssl/SSLSocketFactory;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbgt;-><init>()V
-
     const/4 v0, 0x0
 
-    .line 2
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzes:Ljava/lang/Long;
-
-    .line 3
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzet:Ljava/lang/Long;
-
-    .line 4
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgm:Ljava/lang/Long;
-
-    .line 5
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgn:Ljava/lang/Long;
-
-    .line 6
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgo:Ljava/lang/Long;
-
-    const/4 v0, -0x1
-
-    .line 7
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzbgz;->zzees:I
+    .line 1
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzbd;-><init>(Lcom/google/android/gms/internal/ads/zzbf;)V
 
     return-void
+.end method
+
+.method private constructor <init>(Lcom/google/android/gms/internal/ads/zzbf;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    .line 2
+    invoke-direct {p0, p1, p1}, Lcom/google/android/gms/internal/ads/zzbd;-><init>(Lcom/google/android/gms/internal/ads/zzbf;Ljavax/net/ssl/SSLSocketFactory;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/google/android/gms/internal/ads/zzbf;Ljavax/net/ssl/SSLSocketFactory;)V
+    .locals 0
+
+    .line 3
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzar;-><init>()V
+
+    const/4 p1, 0x0
+
+    .line 4
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzcs:Lcom/google/android/gms/internal/ads/zzbf;
+
+    .line 5
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzct:Ljavax/net/ssl/SSLSocketFactory;
+
+    return-void
+.end method
+
+.method private static zza(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
+    .locals 0
+
+    .line 47
+    :try_start_0
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 48
+    :catch_0
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getErrorStream()Ljava/io/InputStream;
+
+    move-result-object p0
+
+    :goto_0
+    return-object p0
+.end method
+
+.method private static zza(Ljava/util/Map;)Ljava/util/List;
+    .locals 6
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;)",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/internal/ads/zzu;",
+            ">;"
+        }
+    .end annotation
+
+    .line 42
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 43
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    .line 44
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    .line 45
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 46
+    new-instance v4, Lcom/google/android/gms/internal/ads/zzu;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    invoke-direct {v4, v5, v3}, Lcom/google/android/gms/internal/ads/zzu;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    return-object v0
+.end method
+
+.method private static zza(Ljava/net/HttpURLConnection;Lcom/google/android/gms/internal/ads/zzaa;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/net/HttpURLConnection;",
+            "Lcom/google/android/gms/internal/ads/zzaa<",
+            "*>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/google/android/gms/internal/ads/zzl;
+        }
+    .end annotation
+
+    .line 49
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaa;->zzg()[B
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    const/4 v0, 0x1
+
+    .line 50
+    invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
+
+    .line 51
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getRequestProperties()Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v1, "Content-Type"
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "application/x-www-form-urlencoded; charset="
+
+    const-string v2, "UTF-8"
+
+    .line 52
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v2, Ljava/lang/String;
+
+    invoke-direct {v2, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    move-object v0, v2
+
+    .line 53
+    :goto_0
+    invoke-virtual {p0, v1, v0}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 54
+    :cond_1
+    new-instance v0, Ljava/io/DataOutputStream;
+
+    .line 55
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
+
+    move-result-object p0
+
+    .line 56
+    invoke-direct {v0, p0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    .line 57
+    invoke-virtual {v0, p1}, Ljava/io/DataOutputStream;->write([B)V
+
+    .line 58
+    invoke-virtual {v0}, Ljava/io/DataOutputStream;->close()V
+
+    :cond_2
+    return-void
+.end method
+
+.method public static synthetic zzb(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
+    .locals 0
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzbd;->zza(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzbgq;)Lcom/google/android/gms/internal/ads/zzbgz;
-    .locals 2
+.method public final zza(Lcom/google/android/gms/internal/ads/zzaa;Ljava/util/Map;)Lcom/google/android/gms/internal/ads/zzbb;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/internal/ads/zzaa<",
+            "*>;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lcom/google/android/gms/internal/ads/zzbb;"
+        }
+    .end annotation
 
-    .line 12
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzade()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/google/android/gms/internal/ads/zzl;
+        }
+    .end annotation
 
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_5
-
-    const/16 v1, 0x10
-
-    if-eq v0, v1, :cond_4
-
-    const/16 v1, 0x18
-
-    if-eq v0, v1, :cond_3
-
-    const/16 v1, 0x20
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x28
-
-    if-eq v0, v1, :cond_1
-
-    .line 13
-    invoke-super {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgq;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object p0
-
-    .line 14
-    :cond_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadx()J
-
-    move-result-wide v0
-
-    .line 15
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 1
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaa;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgo:Ljava/lang/Long;
+    .line 2
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    .line 3
+    invoke-virtual {v1, p2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+
+    .line 4
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaa;->getHeaders()Ljava/util/Map;
+
+    move-result-object p2
+
+    invoke-virtual {v1, p2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+
+    .line 5
+    new-instance p2, Ljava/net/URL;
+
+    invoke-direct {p2, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    invoke-virtual {p2}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/HttpURLConnection;
+
+    .line 7
+    invoke-static {}, Ljava/net/HttpURLConnection;->getFollowRedirects()Z
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
+
+    .line 8
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaa;->zzi()I
+
+    move-result v2
+
+    .line 9
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+
+    .line 10
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+
+    const/4 v2, 0x0
+
+    .line 11
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setUseCaches(Z)V
+
+    const/4 v3, 0x1
+
+    .line 12
+    invoke-virtual {v0, v3}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
+
+    .line 13
+    invoke-virtual {p2}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v4, "https"
+
+    invoke-virtual {v4, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 14
+    :try_start_0
+    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    .line 15
+    invoke-virtual {v1, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    invoke-virtual {v0, v4, v5}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 16
-    :cond_2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadx()J
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaa;->getMethod()I
 
-    move-result-wide v0
+    move-result p2
+
+    packed-switch p2, :pswitch_data_0
 
     .line 17
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    move-result-object v0
+    goto/16 :goto_3
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgn:Ljava/lang/Long;
-
-    goto :goto_0
+    :pswitch_0
+    const-string p2, "PATCH"
 
     .line 18
-    :cond_3
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadx()J
-
-    move-result-wide v0
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
     .line 19
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzbd;->zza(Ljava/net/HttpURLConnection;Lcom/google/android/gms/internal/ads/zzaa;)V
 
-    move-result-object v0
+    goto :goto_1
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgm:Ljava/lang/Long;
-
-    goto :goto_0
+    :pswitch_1
+    const-string p2, "TRACE"
 
     .line 20
-    :cond_4
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadx()J
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    move-result-wide v0
+    goto :goto_1
+
+    :pswitch_2
+    const-string p2, "OPTIONS"
 
     .line 21
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    move-result-object v0
+    goto :goto_1
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzet:Ljava/lang/Long;
-
-    goto :goto_0
+    :pswitch_3
+    const-string p2, "HEAD"
 
     .line 22
-    :cond_5
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadx()J
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    move-result-wide v0
+    goto :goto_1
+
+    :pswitch_4
+    const-string p2, "DELETE"
 
     .line 23
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    move-result-object v0
+    goto :goto_1
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzes:Ljava/lang/Long;
+    :pswitch_5
+    const-string p2, "PUT"
 
-    goto :goto_0
+    .line 24
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    :cond_6
-    return-object p0
-.end method
+    .line 25
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzbd;->zza(Ljava/net/HttpURLConnection;Lcom/google/android/gms/internal/ads/zzaa;)V
 
-.method public final zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
-    .locals 4
+    goto :goto_1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzes:Ljava/lang/Long;
+    :pswitch_6
+    const-string p2, "POST"
 
-    if-eqz v0, :cond_0
+    .line 26
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    const/4 v1, 0x1
+    .line 27
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzbd;->zza(Ljava/net/HttpURLConnection;Lcom/google/android/gms/internal/ads/zzaa;)V
 
-    .line 2
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    goto :goto_1
 
-    move-result-wide v2
+    :pswitch_7
+    const-string p2, "GET"
 
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzbgr;->zzi(IJ)V
+    .line 28
+    invoke-virtual {v0, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzet:Ljava/lang/Long;
+    .line 29
+    :goto_1
+    :pswitch_8
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
-    if-eqz v0, :cond_1
+    move-result p2
 
-    const/4 v1, 0x2
+    const/4 v1, -0x1
 
-    .line 4
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    if-eq p2, v1, :cond_4
 
-    move-result-wide v2
+    .line 30
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzaa;->getMethod()I
 
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzbgr;->zzi(IJ)V
-
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgm:Ljava/lang/Long;
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x3
-
-    .line 6
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzbgr;->zzi(IJ)V
-
-    .line 7
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgn:Ljava/lang/Long;
-
-    if-eqz v0, :cond_3
+    move-result p1
 
     const/4 v1, 0x4
 
-    .line 8
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    if-eq p1, v1, :cond_2
 
-    move-result-wide v2
+    const/16 p1, 0x64
 
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzbgr;->zzi(IJ)V
+    if-gt p1, p2, :cond_1
 
-    .line 9
+    const/16 p1, 0xc8
+
+    if-lt p2, p1, :cond_2
+
+    :cond_1
+    const/16 p1, 0xcc
+
+    if-eq p2, p1, :cond_2
+
+    const/16 p1, 0x130
+
+    if-eq p2, p1, :cond_2
+
+    const/4 p1, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    const/4 p1, 0x0
+
+    :goto_2
+    if-nez p1, :cond_3
+
+    .line 31
+    new-instance p1, Lcom/google/android/gms/internal/ads/zzbb;
+
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzbd;->zza(Ljava/util/Map;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {p1, p2, v1}, Lcom/google/android/gms/internal/ads/zzbb;-><init>(ILjava/util/List;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 32
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    return-object p1
+
+    .line 33
     :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgo:Ljava/lang/Long;
+    :try_start_1
+    new-instance p1, Lcom/google/android/gms/internal/ads/zzbb;
 
-    if-eqz v0, :cond_4
+    .line 34
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
-    const/4 v1, 0x5
+    move-result-object v1
 
-    .line 10
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzbd;->zza(Ljava/util/Map;)Ljava/util/List;
 
-    move-result-wide v2
+    move-result-object v1
 
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzbgr;->zzi(IJ)V
+    .line 35
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentLength()I
 
-    .line 11
-    :cond_4
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
+    move-result v2
 
-    return-void
-.end method
+    .line 36
+    new-instance v4, Lcom/google/android/gms/internal/ads/zzbg;
 
-.method public final zzs()I
-    .locals 5
+    invoke-direct {v4, v0}, Lcom/google/android/gms/internal/ads/zzbg;-><init>(Ljava/net/HttpURLConnection;)V
 
-    .line 1
-    invoke-super {p0}, Lcom/google/android/gms/internal/ads/zzbgt;->zzs()I
+    .line 37
+    invoke-direct {p1, p2, v1, v2, v4}, Lcom/google/android/gms/internal/ads/zzbb;-><init>(ILjava/util/List;ILjava/io/InputStream;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result v0
+    return-object p1
 
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzes:Ljava/lang/Long;
-
-    if-eqz v1, :cond_0
+    :catchall_0
+    move-exception p1
 
     const/4 v2, 0x1
 
-    .line 3
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    goto :goto_4
 
-    move-result-wide v3
-
-    invoke-static {v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzbgr;->zzd(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 4
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzet:Ljava/lang/Long;
-
-    if-eqz v1, :cond_1
-
-    const/4 v2, 0x2
-
-    .line 5
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-static {v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzbgr;->zzd(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 6
-    :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgm:Ljava/lang/Long;
-
-    if-eqz v1, :cond_2
-
-    const/4 v2, 0x3
-
-    .line 7
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-static {v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzbgr;->zzd(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 8
-    :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgn:Ljava/lang/Long;
-
-    if-eqz v1, :cond_3
-
-    const/4 v2, 0x4
-
-    .line 9
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-static {v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzbgr;->zzd(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 10
-    :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbd;->zzgo:Ljava/lang/Long;
-
-    if-eqz v1, :cond_4
-
-    const/4 v2, 0x5
-
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-static {v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzbgr;->zzd(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
+    .line 38
     :cond_4
-    return v0
+    :try_start_2
+    new-instance p1, Ljava/io/IOException;
+
+    const-string p2, "Could not retrieve response code from HttpUrlConnection."
+
+    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :goto_3
+    const-string p2, "Unknown method type."
+
+    .line 39
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    :catchall_1
+    move-exception p1
+
+    :goto_4
+    if-nez v2, :cond_5
+
+    .line 40
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    .line 41
+    :cond_5
+    throw p1
+
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

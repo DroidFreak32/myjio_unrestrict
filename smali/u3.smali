@@ -1,56 +1,26 @@
-.class public Lu3;
+.class public interface abstract Lu3;
 .super Ljava/lang/Object;
-.source "CustomTabsCallback.java"
+.source "FullLifecycleObserver.java"
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Landroidx/lifecycle/LifecycleObserver;
 
 
 # virtual methods
-.method public a(ILandroid/net/Uri;ZLandroid/os/Bundle;)V
-    .locals 0
-
-    const p0, 0x0
-
-    throw p0
+.method public abstract a(Landroidx/lifecycle/LifecycleOwner;)V
 .end method
 
-.method public a(ILandroid/os/Bundle;)V
-    .locals 0
-
-    const p0, 0x0
-
-    throw p0
+.method public abstract b(Landroidx/lifecycle/LifecycleOwner;)V
 .end method
 
-.method public a(Landroid/os/Bundle;)V
-    .locals 0
-
-    const p0, 0x0
-
-    throw p0
+.method public abstract c(Landroidx/lifecycle/LifecycleOwner;)V
 .end method
 
-.method public a(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 0
-
-    const p0, 0x0
-
-    throw p0
+.method public abstract d(Landroidx/lifecycle/LifecycleOwner;)V
 .end method
 
-.method public b(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 0
+.method public abstract e(Landroidx/lifecycle/LifecycleOwner;)V
+.end method
 
-    const p0, 0x0
-
-    throw p0
+.method public abstract f(Landroidx/lifecycle/LifecycleOwner;)V
 .end method

@@ -36,21 +36,21 @@
 
 .field public static final RATING_NONE:I = 0x0
 
-.field public static final RATING_NOT_RATED:F = -1.0f
+.field private static final RATING_NOT_RATED:F = -1.0f
 
 .field public static final RATING_PERCENTAGE:I = 0x6
 
 .field public static final RATING_THUMB_UP_DOWN:I = 0x2
 
-.field public static final TAG:Ljava/lang/String; = "Rating"
+.field private static final TAG:Ljava/lang/String; = "Rating"
 
 
 # instance fields
-.field public mRatingObj:Ljava/lang/Object;
+.field private mRatingObj:Ljava/lang/Object;
 
-.field public final mRatingStyle:I
+.field private final mRatingStyle:I
 
-.field public final mRatingValue:F
+.field private final mRatingValue:F
 
 
 # direct methods
@@ -696,7 +696,7 @@
 
     if-gez v2, :cond_0
 
-    const-string v1, "unrated"
+    const-string/jumbo v1, "unrated"
 
     goto :goto_0
 

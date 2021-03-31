@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final _hash:I
+.field private final _hash:I
 
-.field public final _params:[Lcom/fasterxml/jackson/databind/JavaType;
+.field private final _params:[Lcom/fasterxml/jackson/databind/JavaType;
 
-.field public final _raw:Ljava/lang/Class;
+.field private final _raw:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",

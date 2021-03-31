@@ -20,13 +20,13 @@
 
 .field public static final OBJECT_NOT_PRESENT:Ljava/lang/Object;
 
-.field public static final zzafn:[Ljava/lang/String;
+.field private static final zzafn:[Ljava/lang/String;
 
-.field public static final zzafo:Ljava/util/regex/Pattern;
+.field private static final zzafo:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field public final zzafp:Ljava/util/concurrent/ConcurrentHashMap;
+.field private final zzafp:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -37,7 +37,7 @@
     .end annotation
 .end field
 
-.field public final zzafq:Ljava/util/Map;
+.field private final zzafq:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -48,9 +48,9 @@
     .end annotation
 .end field
 
-.field public final zzafr:Ljava/util/concurrent/locks/ReentrantLock;
+.field private final zzafr:Ljava/util/concurrent/locks/ReentrantLock;
 
-.field public final zzafs:Ljava/util/LinkedList;
+.field private final zzafs:Ljava/util/LinkedList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/LinkedList<",
@@ -62,9 +62,9 @@
     .end annotation
 .end field
 
-.field public final zzaft:Lcom/google/android/gms/tagmanager/DataLayer$zzc;
+.field private final zzaft:Lcom/google/android/gms/tagmanager/DataLayer$zzc;
 
-.field public final zzafu:Ljava/util/concurrent/CountDownLatch;
+.field private final zzafu:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
@@ -117,7 +117,7 @@
 .end method
 
 .method public constructor <init>(Lcom/google/android/gms/tagmanager/DataLayer$zzc;)V
-    .locals 1
+    .locals 2
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -126,45 +126,43 @@
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzaft:Lcom/google/android/gms/tagmanager/DataLayer$zzc;
 
     .line 4
-    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafp:Ljava/util/concurrent/ConcurrentHashMap;
+    iput-object v0, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafp:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 5
-    new-instance p1, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafq:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafq:Ljava/util/Map;
 
     .line 6
-    new-instance p1, Ljava/util/concurrent/locks/ReentrantLock;
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
-    invoke-direct {p1}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafr:Ljava/util/concurrent/locks/ReentrantLock;
+    iput-object v0, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafr:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 7
-    new-instance p1, Ljava/util/LinkedList;
+    new-instance v0, Ljava/util/LinkedList;
 
-    invoke-direct {p1}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafs:Ljava/util/LinkedList;
+    iput-object v0, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafs:Ljava/util/LinkedList;
 
     .line 8
-    new-instance p1, Ljava/util/concurrent/CountDownLatch;
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafu:Ljava/util/concurrent/CountDownLatch;
+    iput-object v0, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzafu:Ljava/util/concurrent/CountDownLatch;
 
     .line 9
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/DataLayer;->zzaft:Lcom/google/android/gms/tagmanager/DataLayer$zzc;
-
     new-instance v0, Lcom/google/android/gms/tagmanager/zzap;
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/tagmanager/zzap;-><init>(Lcom/google/android/gms/tagmanager/DataLayer;)V
@@ -637,7 +635,7 @@
     return-void
 .end method
 
-.method public static zzar(Ljava/lang/String;)Ljava/lang/Long;
+.method private static zzar(Ljava/lang/String;)Ljava/lang/Long;
     .locals 9
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation

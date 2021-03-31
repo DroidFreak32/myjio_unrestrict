@@ -3,13 +3,13 @@
 
 
 # static fields
-.field public static final zzabr:[B
+.field private static final zzabr:[B
 
 
 # instance fields
-.field public final zzabp:Ljava/lang/String;
+.field private final zzabp:Ljava/lang/String;
 
-.field public final zzabq:Lcom/google/android/gms/internal/gtm/zzcv;
+.field private final zzabq:Lcom/google/android/gms/internal/gtm/zzcv;
 
 
 # direct methods
@@ -56,11 +56,11 @@
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    const-string v6, "GoogleAnalytics"
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const-string v7, "GoogleAnalytics"
 
-    aput-object v6, v5, v7
+    aput-object v7, v5, v6
 
     const/4 v6, 0x1
 
@@ -427,8 +427,13 @@
     throw p2
 .end method
 
-.method public static zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+.method private static zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     .line 66
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->length()I
@@ -469,6 +474,11 @@
 
 .method private final zza(Ljava/net/HttpURLConnection;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-string v0, "Error closing http connection input stream"
 
@@ -908,6 +918,12 @@
 .method private final zzb(Ljava/net/URL;)Ljava/net/HttpURLConnection;
     .locals 2
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .line 90
@@ -1655,9 +1671,7 @@
 
     if-ne v3, v4, :cond_3
 
-    move v3, v0
-
-    const/4 v0, 0x1
+    const/4 v3, 0x1
 
     goto :goto_2
 
@@ -1666,50 +1680,48 @@
     const/4 v0, 0x0
 
     :cond_3
-    move v3, v0
-
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
     :goto_2
     const/16 v4, 0xc8
 
-    if-eqz v3, :cond_a
+    if-eqz v0, :cond_a
 
     .line 11
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    move-result v1
+    move-result v0
 
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
 
     .line 12
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "Uploading batched hits. compression, count"
+    const-string v2, "Uploading batched hits. compression, count"
 
-    invoke-virtual {p0, v3, v1, v2}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v0, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 13
-    new-instance v1, Lcom/google/android/gms/internal/gtm/zzcl;
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzcl;
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/gtm/zzcl;-><init>(Lcom/google/android/gms/internal/gtm/zzck;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/gtm/zzcl;-><init>(Lcom/google/android/gms/internal/gtm/zzck;)V
 
     .line 14
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 15
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1719,45 +1731,45 @@
     :goto_3
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcom/google/android/gms/internal/gtm/zzcd;
+    check-cast v2, Lcom/google/android/gms/internal/gtm/zzcd;
 
     .line 16
-    invoke-virtual {v1, v3}, Lcom/google/android/gms/internal/gtm/zzcl;->zze(Lcom/google/android/gms/internal/gtm/zzcd;)Z
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/internal/gtm/zzcl;->zze(Lcom/google/android/gms/internal/gtm/zzcd;)Z
 
     move-result v5
 
     if-eqz v5, :cond_4
 
     .line 17
-    invoke-virtual {v3}, Lcom/google/android/gms/internal/gtm/zzcd;->zzfg()J
+    invoke-virtual {v2}, Lcom/google/android/gms/internal/gtm/zzcd;->zzfg()J
 
     move-result-wide v5
 
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
     .line 18
     :cond_4
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzcl;->zzfu()I
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzcl;->zzfu()I
 
     move-result p1
 
     if-nez p1, :cond_5
 
-    return-object v2
+    return-object v1
 
     .line 19
     :cond_5
@@ -1775,14 +1787,14 @@
     goto :goto_5
 
     :cond_6
-    if-eqz v0, :cond_7
+    if-eqz v3, :cond_7
 
     .line 21
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzcl;->getPayload()[B
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzcl;->getPayload()[B
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/gtm/zzck;->zzb(Ljava/net/URL;[B)I
+    invoke-direct {p0, p1, v2}, Lcom/google/android/gms/internal/gtm/zzck;->zzb(Ljava/net/URL;[B)I
 
     move-result p1
 
@@ -1790,11 +1802,11 @@
 
     .line 22
     :cond_7
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzcl;->getPayload()[B
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzcl;->getPayload()[B
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/gtm/zzck;->zza(Ljava/net/URL;[B)I
+    invoke-direct {p0, p1, v2}, Lcom/google/android/gms/internal/gtm/zzck;->zza(Ljava/net/URL;[B)I
 
     move-result p1
 
@@ -1802,7 +1814,7 @@
     if-ne v4, p1, :cond_8
 
     .line 23
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzcl;->zzfu()I
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzcl;->zzfu()I
 
     move-result p1
 
@@ -1814,7 +1826,7 @@
 
     invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    return-object v2
+    return-object v1
 
     .line 24
     :cond_8

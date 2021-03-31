@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/location/LocationSettingsStates;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -27,42 +28,42 @@
 
 
 # instance fields
-.field public final zzbn:Z
+.field private final zza:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isGpsUsable"
         id = 0x1
     .end annotation
 .end field
 
-.field public final zzbo:Z
+.field private final zzb:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isNetworkLocationUsable"
         id = 0x2
     .end annotation
 .end field
 
-.field public final zzbp:Z
+.field private final zzc:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isBleUsable"
         id = 0x3
     .end annotation
 .end field
 
-.field public final zzbq:Z
+.field private final zzd:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isGpsPresent"
         id = 0x4
     .end annotation
 .end field
 
-.field public final zzbr:Z
+.field private final zze:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isNetworkLocationPresent"
         id = 0x5
     .end annotation
 .end field
 
-.field public final zzbs:Z
+.field private final zzf:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isBlePresent"
         id = 0x6
@@ -74,9 +75,10 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/location/zzai;
+    .line 1
+    new-instance v0, Lcom/google/android/gms/location/zzbc;
 
-    invoke-direct {v0}, Lcom/google/android/gms/location/zzai;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/location/zzbc;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/LocationSettingsStates;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -118,19 +120,26 @@
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
     .end annotation
 
+    .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput-boolean p1, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbn:Z
+    .line 2
+    iput-boolean p1, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zza:Z
 
-    iput-boolean p2, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbo:Z
+    .line 3
+    iput-boolean p2, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzb:Z
 
-    iput-boolean p3, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbp:Z
+    .line 4
+    iput-boolean p3, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzc:Z
 
-    iput-boolean p4, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbq:Z
+    .line 5
+    iput-boolean p4, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzd:Z
 
-    iput-boolean p5, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbr:Z
+    .line 6
+    iput-boolean p5, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zze:Z
 
-    iput-boolean p6, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbs:Z
+    .line 7
+    iput-boolean p6, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzf:Z
 
     return-void
 .end method
@@ -138,10 +147,12 @@
 .method public static fromIntent(Landroid/content/Intent;)Lcom/google/android/gms/location/LocationSettingsStates;
     .locals 2
 
+    .line 1
     sget-object v0, Lcom/google/android/gms/location/LocationSettingsStates;->CREATOR:Landroid/os/Parcelable$Creator;
 
     const-string v1, "com.google.android.gms.location.LOCATION_SETTINGS_STATES"
 
+    .line 2
     invoke-static {p0, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelableSerializer;->deserializeFromIntentExtra(Landroid/content/Intent;Ljava/lang/String;Landroid/os/Parcelable$Creator;)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
 
     move-result-object p0
@@ -156,7 +167,8 @@
 .method public final isBlePresent()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbs:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzf:Z
 
     return v0
 .end method
@@ -164,7 +176,8 @@
 .method public final isBleUsable()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbp:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzc:Z
 
     return v0
 .end method
@@ -172,7 +185,8 @@
 .method public final isGpsPresent()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbq:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzd:Z
 
     return v0
 .end method
@@ -180,7 +194,8 @@
 .method public final isGpsUsable()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbn:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zza:Z
 
     return v0
 .end method
@@ -188,11 +203,12 @@
 .method public final isLocationPresent()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbq:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzd:Z
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbr:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zze:Z
 
     if-eqz v0, :cond_0
 
@@ -213,11 +229,12 @@
 .method public final isLocationUsable()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbn:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zza:Z
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbo:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzb:Z
 
     if-eqz v0, :cond_0
 
@@ -238,7 +255,8 @@
 .method public final isNetworkLocationPresent()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbr:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zze:Z
 
     return v0
 .end method
@@ -246,7 +264,8 @@
 .method public final isNetworkLocationUsable()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzbo:Z
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->zzb:Z
 
     return v0
 .end method
@@ -254,58 +273,72 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
+    .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
+    .line 2
     invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsStates;->isGpsUsable()Z
 
     move-result v0
 
     const/4 v1, 0x1
 
+    .line 3
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
+    .line 4
     invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsStates;->isNetworkLocationUsable()Z
 
     move-result v0
 
     const/4 v1, 0x2
 
+    .line 5
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
+    .line 6
     invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsStates;->isBleUsable()Z
 
     move-result v0
 
     const/4 v1, 0x3
 
+    .line 7
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
+    .line 8
     invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsStates;->isGpsPresent()Z
 
     move-result v0
 
     const/4 v1, 0x4
 
+    .line 9
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
+    .line 10
     invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsStates;->isNetworkLocationPresent()Z
 
     move-result v0
 
     const/4 v1, 0x5
 
+    .line 11
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
+    .line 12
     invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsStates;->isBlePresent()Z
 
     move-result v0
 
     const/4 v1, 0x6
 
+    .line 13
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
+    .line 14
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
     return-void

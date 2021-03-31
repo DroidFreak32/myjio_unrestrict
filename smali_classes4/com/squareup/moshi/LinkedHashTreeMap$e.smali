@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/squareup/moshi/LinkedHashTreeMap;
+.field public final synthetic a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
 
 # direct methods
@@ -30,7 +30,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
@@ -43,7 +43,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-virtual {v0}, Lcom/squareup/moshi/LinkedHashTreeMap;->clear()V
 
@@ -54,7 +54,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-virtual {v0, p1}, Lcom/squareup/moshi/LinkedHashTreeMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -85,7 +85,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-virtual {v0, p1}, Lcom/squareup/moshi/LinkedHashTreeMap;->removeInternalByKey(Ljava/lang/Object;)Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
@@ -108,7 +108,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$e;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     iget v0, v0, Lcom/squareup/moshi/LinkedHashTreeMap;->size:I
 

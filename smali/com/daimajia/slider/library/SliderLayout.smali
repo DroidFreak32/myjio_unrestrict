@@ -13,41 +13,41 @@
 
 
 # instance fields
-.field public mAutoCycle:Z
+.field private mAutoCycle:Z
 
-.field public mAutoRecover:Z
+.field private mAutoRecover:Z
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public mCustomAnimation:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
+.field private mCustomAnimation:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
 
-.field public mCycleTask:Ljava/util/TimerTask;
+.field private mCycleTask:Ljava/util/TimerTask;
 
-.field public mCycleTimer:Ljava/util/Timer;
+.field private mCycleTimer:Ljava/util/Timer;
 
-.field public mCycling:Z
+.field private mCycling:Z
 
-.field public mIndicator:Lcom/daimajia/slider/library/Indicators/PagerIndicator;
+.field private mIndicator:Lcom/daimajia/slider/library/Indicators/PagerIndicator;
 
-.field public mIndicatorVisibility:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+.field private mIndicatorVisibility:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
-.field public mResumingTask:Ljava/util/TimerTask;
+.field private mResumingTask:Ljava/util/TimerTask;
 
-.field public mResumingTimer:Ljava/util/Timer;
+.field private mResumingTimer:Ljava/util/Timer;
 
-.field public mSliderAdapter:Lcom/daimajia/slider/library/SliderAdapter;
+.field private mSliderAdapter:Lcom/daimajia/slider/library/SliderAdapter;
 
-.field public mSliderDuration:J
+.field private mSliderDuration:J
 
-.field public mTransformerId:I
+.field private mTransformerId:I
 
-.field public mTransformerSpan:I
+.field private mTransformerSpan:I
 
-.field public mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
+.field private mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
 
-.field public mViewPagerTransformer:Lcom/daimajia/slider/library/Transformers/BaseTransformer;
+.field private mViewPagerTransformer:Lcom/daimajia/slider/library/Transformers/BaseTransformer;
 
-.field public mh:Landroid/os/Handler;
+.field private mh:Landroid/os/Handler;
 
 
 # direct methods
@@ -212,27 +212,23 @@
     iput-object p2, p0, Lcom/daimajia/slider/library/SliderLayout;->mSliderAdapter:Lcom/daimajia/slider/library/SliderAdapter;
 
     .line 20
-    new-instance p2, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;
+    new-instance p3, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;
 
-    iget-object p3, p0, Lcom/daimajia/slider/library/SliderLayout;->mSliderAdapter:Lcom/daimajia/slider/library/SliderAdapter;
-
-    invoke-direct {p2, p3}, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;-><init>(Lcom/daimajia/slider/library/SliderAdapter;)V
+    invoke-direct {p3, p2}, Lcom/daimajia/slider/library/Tricks/InfinitePagerAdapter;-><init>(Lcom/daimajia/slider/library/SliderAdapter;)V
 
     .line 21
-    sget p3, Lcom/daimajia/slider/library/R$id;->daimajia_slider_viewpager:I
+    sget p2, Lcom/daimajia/slider/library/R$id;->daimajia_slider_viewpager:I
 
-    invoke-virtual {p0, p3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, p2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object p3
+    move-result-object p2
 
-    check-cast p3, Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
+    check-cast p2, Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
 
-    iput-object p3, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
+    iput-object p2, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
 
     .line 22
-    iget-object p3, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
-
-    invoke-virtual {p3, p2}, Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;->setAdapter(Lsk;)V
+    invoke-virtual {p2, p3}, Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
     .line 23
     iget-object p2, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
@@ -304,7 +300,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -331,7 +327,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -444,13 +440,11 @@
     iput-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mResumingTask:Ljava/util/TimerTask;
 
     .line 8
-    iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mResumingTimer:Ljava/util/Timer;
-
-    iget-object v1, p0, Lcom/daimajia/slider/library/SliderLayout;->mResumingTask:Ljava/util/TimerTask;
+    iget-object v1, p0, Lcom/daimajia/slider/library/SliderLayout;->mResumingTimer:Ljava/util/Timer;
 
     const-wide/16 v2, 0x1770
 
-    invoke-virtual {v0, v1, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    invoke-virtual {v1, v0, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
 
     :cond_2
     :goto_0
@@ -905,14 +899,12 @@
     iput-object p1, p0, Lcom/daimajia/slider/library/SliderLayout;->mCustomAnimation:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
 
     .line 2
-    iget-object p1, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPagerTransformer:Lcom/daimajia/slider/library/Transformers/BaseTransformer;
+    iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPagerTransformer:Lcom/daimajia/slider/library/Transformers/BaseTransformer;
 
-    if-eqz p1, :cond_0
+    if-eqz v0, :cond_0
 
     .line 3
-    iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mCustomAnimation:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
-
-    invoke-virtual {p1, v0}, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->setCustomAnimationInterface(Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;)V
+    invoke-virtual {v0, p1}, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->setCustomAnimationInterface(Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;)V
 
     :cond_0
     return-void
@@ -934,8 +926,6 @@
     iput-object p1, p0, Lcom/daimajia/slider/library/SliderLayout;->mIndicator:Lcom/daimajia/slider/library/Indicators/PagerIndicator;
 
     .line 4
-    iget-object p1, p0, Lcom/daimajia/slider/library/SliderLayout;->mIndicator:Lcom/daimajia/slider/library/Indicators/PagerIndicator;
-
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mIndicatorVisibility:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
     invoke-virtual {p1, v0}, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->setIndicatorVisibility(Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;)V
@@ -1007,8 +997,6 @@
     iput-object p2, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPagerTransformer:Lcom/daimajia/slider/library/Transformers/BaseTransformer;
 
     .line 2
-    iget-object p2, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPagerTransformer:Lcom/daimajia/slider/library/Transformers/BaseTransformer;
-
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mCustomAnimation:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
 
     invoke-virtual {p2, v0}, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->setCustomAnimationInterface(Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;)V
@@ -1299,12 +1287,9 @@
     .line 1
     :try_start_0
     const-class v0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     const-string v1, "mScroller"
 
-    :try_start_1
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v0
@@ -1329,8 +1314,8 @@
     iget-object p1, p0, Lcom/daimajia/slider/library/SliderLayout;->mViewPager:Lcom/daimajia/slider/library/Tricks/InfiniteViewPager;
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     return-void
@@ -1402,16 +1387,14 @@
     iput-boolean p5, p0, Lcom/daimajia/slider/library/SliderLayout;->mAutoRecover:Z
 
     .line 9
-    new-instance p3, Lcom/daimajia/slider/library/SliderLayout$3;
+    new-instance v1, Lcom/daimajia/slider/library/SliderLayout$3;
 
-    invoke-direct {p3, p0}, Lcom/daimajia/slider/library/SliderLayout$3;-><init>(Lcom/daimajia/slider/library/SliderLayout;)V
+    invoke-direct {v1, p0}, Lcom/daimajia/slider/library/SliderLayout$3;-><init>(Lcom/daimajia/slider/library/SliderLayout;)V
 
-    iput-object p3, p0, Lcom/daimajia/slider/library/SliderLayout;->mCycleTask:Ljava/util/TimerTask;
+    iput-object v1, p0, Lcom/daimajia/slider/library/SliderLayout;->mCycleTask:Ljava/util/TimerTask;
 
     .line 10
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderLayout;->mCycleTimer:Ljava/util/Timer;
-
-    iget-object v1, p0, Lcom/daimajia/slider/library/SliderLayout;->mCycleTask:Ljava/util/TimerTask;
 
     iget-wide v4, p0, Lcom/daimajia/slider/library/SliderLayout;->mSliderDuration:J
 

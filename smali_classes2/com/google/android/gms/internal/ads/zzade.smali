@@ -1,41 +1,55 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzade;
+.class public final Lcom/google/android/gms/internal/ads/zzade;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaos;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final zzaab:Ljava/lang/String;
+# static fields
+.field public static zzdda:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final zzcdq:Lcom/google/android/gms/internal/ads/zzadd;
+.field private static zzddb:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzadd;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzade;->zzcdq:Lcom/google/android/gms/internal/ads/zzadd;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzade;->zzaab:Ljava/lang/String;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
+.method public static constructor <clinit>()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzade;->zzcdq:Lcom/google/android/gms/internal/ads/zzadd;
+    const-string v0, "gads:rewarded_sku:enabled"
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzade;->zzaab:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/internal/ads/zzadd;->zza(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
+    .line 1
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzade;->zzdda:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:rewarded_sku:override_test:enabled"
+
+    const/4 v1, 0x0
+
+    .line 2
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzade;->zzddb:Lcom/google/android/gms/internal/ads/zzacn;
+
+    return-void
 .end method

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public _accumulator:Ljava/util/List;
+.field private _accumulator:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public final _elementType:Ljava/lang/Class;
+.field private final _elementType:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -34,7 +34,7 @@
     .end annotation
 .end field
 
-.field public final _result:Ljava/util/Collection;
+.field private final _result:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -144,6 +144,11 @@
 
 .method public resolveForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$CollectionReferringAccumulator;->_accumulator:Ljava/util/List;

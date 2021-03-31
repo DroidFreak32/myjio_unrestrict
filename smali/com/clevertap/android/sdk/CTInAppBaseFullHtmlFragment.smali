@@ -71,13 +71,7 @@
     .line 6
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppWebView;
 
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/Activity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v4
+    iget-object v4, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->context:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
@@ -87,6 +81,7 @@
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 7
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getHeight()I
 
     move-result v6
@@ -99,6 +94,7 @@
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 8
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getHeightPercentage()I
 
     move-result v8
@@ -109,17 +105,17 @@
 
     iput-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
-    .line 7
+    .line 9
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment$InAppWebViewClient;
 
     invoke-direct {v2, p0}, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment$InAppWebViewClient;-><init>(Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;)V
 
-    .line 8
+    .line 10
     iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {v3, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 9
+    .line 11
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->isJsEnabled()Z
@@ -128,7 +124,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 10
+    .line 12
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -139,7 +135,7 @@
 
     invoke-virtual {v2, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 11
+    .line 13
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -148,7 +144,7 @@
 
     invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
 
-    .line 12
+    .line 14
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -157,7 +153,7 @@
 
     invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V
 
-    .line 13
+    .line 15
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -166,14 +162,14 @@
 
     invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V
 
-    .line 14
+    .line 16
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x10
 
     if-lt v2, v3, :cond_0
 
-    .line 15
+    .line 17
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -182,13 +178,14 @@
 
     invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V
 
-    .line 16
+    .line 18
     :cond_0
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     new-instance v3, Lcom/clevertap/android/sdk/CTWebInterface;
 
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    .line 19
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v4
 
@@ -202,9 +199,10 @@
 
     const-string v4, "CleverTap"
 
+    .line 20
     invoke-virtual {v2, v3, v4}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 21
     :cond_1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->isDarkenEnabled()Z
 
@@ -212,59 +210,53 @@
 
     if-eqz v2, :cond_2
 
-    .line 18
+    .line 22
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
     const/high16 v2, -0x45000000    # -0.001953125f
 
     invoke-direct {v1, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-virtual {p2, v1}, Landroid/widget/RelativeLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p2, v1}, Landroid/widget/RelativeLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 19
+    .line 23
     :cond_2
     new-instance v2, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v2, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-virtual {p2, v2}, Landroid/widget/RelativeLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p2, v2}, Landroid/widget/RelativeLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 20
+    .line 24
     :goto_0
     iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->webView:Lcom/clevertap/android/sdk/CTInAppWebView;
 
     invoke-virtual {p2, v1, v0}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 21
+    .line 25
     invoke-direct {p0}, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->isCloseButtonEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 22
+    .line 26
     new-instance v0, Lcom/clevertap/android/sdk/CloseImageView;
 
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/app/Activity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->context:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Lcom/clevertap/android/sdk/CloseImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->closeImageView:Lcom/clevertap/android/sdk/CloseImageView;
 
-    .line 23
+    .line 27
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->getLayoutParamsForCloseButton()Landroid/widget/RelativeLayout$LayoutParams;
 
     move-result-object v0
 
-    .line 24
+    .line 28
     iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->closeImageView:Lcom/clevertap/android/sdk/CloseImageView;
 
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment$1;
@@ -273,7 +265,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 25
+    .line 29
     iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->closeImageView:Lcom/clevertap/android/sdk/CloseImageView;
 
     invoke-virtual {p2, v1, v0}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -286,7 +278,7 @@
     :catchall_0
     move-exception p1
 
-    .line 26
+    .line 30
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     invoke-virtual {p2}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getLogger()Lcom/clevertap/android/sdk/Logger;
@@ -445,7 +437,7 @@
     iget v0, v0, Landroid/graphics/Point;->x:I
 
     .line 5
-    invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -553,9 +545,9 @@
 
     const/4 v10, 0x0
 
-    const-string v8, "text/html"
+    const-string/jumbo v8, "text/html"
 
-    const-string v9, "utf-8"
+    const-string/jumbo v9, "utf-8"
 
     invoke-virtual/range {v5 .. v10}, Landroid/webkit/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -640,20 +632,24 @@
     return-object v0
 .end method
 
-.method public onAttach(Landroid/app/Activity;)V
+.method public onAttach(Landroid/content/Context;)V
     .locals 0
 
     .line 1
-    invoke-super {p0, p1}, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->onAttach(Landroid/app/Activity;)V
+    invoke-super {p0, p1}, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->onAttach(Landroid/content/Context;)V
 
     return-void
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
+    .param p1    # Landroid/content/res/Configuration;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/Fragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     .line 2
     invoke-direct {p0}, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->reDrawInApp()V
@@ -663,15 +659,29 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 0
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
     return-void
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 0
+    .param p1    # Landroid/view/LayoutInflater;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/clevertap/android/sdk/CTInAppBaseFullHtmlFragment;->displayHTMLView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
@@ -683,6 +693,10 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 0
+    .param p2    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1, p2}, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V

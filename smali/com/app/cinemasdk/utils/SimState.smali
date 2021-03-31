@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final ZLA_ON_DATA_NON_JIO_SIM:Ljava/lang/String; = "zlaOnDataWithNonJioSim"
+.field private static final ZLA_ON_DATA_NON_JIO_SIM:Ljava/lang/String; = "zlaOnDataWithNonJioSim"
 
-.field public static final ZLA_ON_DATA_UNKNOWN_SIM:Ljava/lang/String; = "zlaOnDataButErrorInFetchingSimImsi"
+.field private static final ZLA_ON_DATA_UNKNOWN_SIM:Ljava/lang/String; = "zlaOnDataButErrorInFetchingSimImsi"
 
-.field public static final ZLA_ON_WIFI:Ljava/lang/String; = "zlaOnWifiTethering"
+.field private static final ZLA_ON_WIFI:Ljava/lang/String; = "zlaOnWifiTethering"
 
 
 # direct methods
@@ -26,7 +26,7 @@
 .method public getMacAddress(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "wifi"
+    const-string/jumbo v0, "wifi"
 
     .line 1
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -83,6 +83,11 @@
 
 .method public isJioSim(Landroid/content/Context;)Z
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const-string v0, "phone"
 

@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public final number:I
+.field private final number:I
 
-.field public final object:Ljava/lang/Object;
+.field private final object:Ljava/lang/Object;
 
 
 # direct methods

@@ -38,4 +38,10 @@
 
 # virtual methods
 .method public abstract assign(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 .end method

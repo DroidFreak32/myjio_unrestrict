@@ -1,121 +1,103 @@
 .class public final Lcom/google/android/gms/internal/ads/zzba;
-.super Ljava/lang/Object;
+.super Ljava/io/FilterInputStream;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+
+# annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
+
+# instance fields
+.field private final zzcm:J
+
+.field private zzcn:J
 
 
 # direct methods
-.method public static zzd(I)I
-    .locals 3
-
-    if-ltz p0, :cond_0
-
-    const/4 v0, 0x2
-
-    if-gt p0, v0, :cond_0
-
-    return p0
-
-    :cond_0
-    const/16 v0, 0x3e8
-
-    if-lt p0, v0, :cond_1
-
-    if-gt p0, v0, :cond_1
-
-    return p0
+.method public constructor <init>(Ljava/io/InputStream;J)V
+    .locals 0
 
     .line 1
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    const/16 v1, 0x2b
+    .line 2
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcm:J
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, " is not a valid enum EnumBoolean"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method
 
-.method public static zze(I)I
-    .locals 3
 
-    if-ltz p0, :cond_0
-
-    const/4 v0, 0x2
-
-    if-gt p0, v0, :cond_0
-
-    return p0
+# virtual methods
+.method public final read()I
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
+    invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    .line 2
+    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcn:J
+
+    const-wide/16 v3, 0x1
+
+    add-long/2addr v1, v3
+
+    iput-wide v1, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcn:J
+
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const/16 v1, 0x29
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, " is not a valid enum ProtoName"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return v0
 .end method
 
-.method public static zzf(I)I
-    .locals 3
+.method public final read([BII)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    if-ltz p0, :cond_0
+    .line 3
+    invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
 
-    const/4 v0, 0x3
+    move-result p1
 
-    if-gt p0, v0, :cond_0
+    const/4 p2, -0x1
 
-    return p0
+    if-eq p1, p2, :cond_0
+
+    .line 4
+    iget-wide p2, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcn:J
+
+    int-to-long v0, p1
+
+    add-long/2addr p2, v0
+
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcn:J
+
+    :cond_0
+    return p1
+.end method
+
+.method public final zzp()J
+    .locals 4
 
     .line 1
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcm:J
 
-    const/16 v1, 0x30
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ads/zzba;->zzcn:J
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    sub-long/2addr v0, v2
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, " is not a valid enum EncryptionMethod"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-wide v0
 .end method

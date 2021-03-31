@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public final uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader<",
@@ -61,8 +61,10 @@
     return-void
 .end method
 
-.method public static parseUri(Ljava/lang/String;)Landroid/net/Uri;
+.method private static parseUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -121,7 +123,7 @@
     return-object p0
 .end method
 
-.method public static toFileUri(Ljava/lang/String;)Landroid/net/Uri;
+.method private static toFileUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 1
 
     .line 1
@@ -140,6 +142,14 @@
 # virtual methods
 .method public bridge synthetic buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Ljava/lang/String;
@@ -153,6 +163,14 @@
 
 .method public buildLoadData(Ljava/lang/String;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -202,6 +220,10 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Ljava/lang/String;
@@ -215,6 +237,10 @@
 
 .method public handles(Ljava/lang/String;)Z
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 p1, 0x1
 

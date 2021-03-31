@@ -11,15 +11,15 @@
 
 
 # instance fields
-.field public final zzrk:Ljava/lang/Thread$UncaughtExceptionHandler;
+.field private final zzrk:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-.field public final zzrl:Lcom/google/android/gms/analytics/Tracker;
+.field private final zzrl:Lcom/google/android/gms/analytics/Tracker;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public zzrn:Lcom/google/android/gms/analytics/ExceptionParser;
+.field private zzrn:Lcom/google/android/gms/analytics/ExceptionParser;
 
-.field public zzro:Lcom/google/android/gms/analytics/GoogleAnalytics;
+.field private zzro:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
 
 # direct methods
@@ -29,17 +29,23 @@
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_3
-
-    if-eqz p3, :cond_2
+    const-string v0, "tracker cannot be null"
 
     .line 2
-    iput-object p2, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzrk:Ljava/lang/Thread$UncaughtExceptionHandler;
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    const-string v0, "context cannot be null"
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzrl:Lcom/google/android/gms/analytics/Tracker;
+    invoke-static {p3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 4
+    iput-object p2, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzrk:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    .line 5
+    iput-object p1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzrl:Lcom/google/android/gms/analytics/Tracker;
+
+    .line 6
     new-instance p1, Lcom/google/android/gms/analytics/StandardExceptionParser;
 
     new-instance v0, Ljava/util/ArrayList;
@@ -50,7 +56,7 @@
 
     iput-object p1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzrn:Lcom/google/android/gms/analytics/ExceptionParser;
 
-    .line 5
+    .line 7
     invoke-virtual {p3}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
@@ -65,7 +71,7 @@
 
     goto :goto_0
 
-    .line 6
+    .line 8
     :cond_0
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -99,31 +105,11 @@
 
     move-object p1, p2
 
-    .line 7
+    .line 9
     :goto_1
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzch;->zzab(Ljava/lang/String;)V
 
     return-void
-
-    .line 8
-    :cond_2
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "context cannot be null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 9
-    :cond_3
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "tracker cannot be null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 

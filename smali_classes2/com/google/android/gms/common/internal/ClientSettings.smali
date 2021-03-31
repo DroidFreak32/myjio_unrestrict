@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/ClientSettings;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -12,17 +13,18 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/gms/common/internal/ClientSettings$Builder;,
-        Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;
+        Lcom/google/android/gms/common/internal/ClientSettings$zaa;
     }
 .end annotation
 
 
-# static fields
-.field public static final KEY_CLIENT_SESSION_ID:Ljava/lang/String; = "com.google.android.gms.common.internal.ClientSettings.sessionId"
-
-
 # instance fields
-.field public final zabr:Ljava/util/Set;
+.field private final zaa:Landroid/accounts/Account;
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+.end field
+
+.field private final zab:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -32,17 +34,7 @@
     .end annotation
 .end field
 
-.field public final zabt:I
-
-.field public final zabu:Landroid/view/View;
-
-.field public final zabv:Ljava/lang/String;
-
-.field public final zabw:Ljava/lang/String;
-
-.field public final zaby:Z
-
-.field public final zaob:Ljava/util/Set;
+.field private final zac:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -52,23 +44,31 @@
     .end annotation
 .end field
 
-.field public final zaoc:Ljava/util/Map;
+.field private final zad:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
             "Lcom/google/android/gms/common/api/Api<",
             "*>;",
-            "Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;",
+            "Lcom/google/android/gms/common/internal/ClientSettings$zaa;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final zaod:Lcom/google/android/gms/signin/SignInOptions;
+.field private final zae:I
 
-.field public zaoe:Ljava/lang/Integer;
+.field private final zaf:Landroid/view/View;
 
-.field public final zax:Landroid/accounts/Account;
+.field private final zag:Ljava/lang/String;
+
+.field private final zah:Ljava/lang/String;
+
+.field private final zai:Lcom/google/android/gms/signin/SignInOptions;
+
+.field private final zaj:Z
+
+.field private zak:Ljava/lang/Integer;
 
 
 # direct methods
@@ -87,7 +87,7 @@
             "Ljava/util/Map<",
             "Lcom/google/android/gms/common/api/Api<",
             "*>;",
-            "Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;",
+            "Lcom/google/android/gms/common/internal/ClientSettings$zaa;",
             ">;I",
             "Landroid/view/View;",
             "Ljava/lang/String;",
@@ -125,6 +125,10 @@
 
 .method public constructor <init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/signin/SignInOptions;Z)V
     .locals 0
+    .param p1    # Landroid/accounts/Account;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,7 +139,7 @@
             "Ljava/util/Map<",
             "Lcom/google/android/gms/common/api/Api<",
             "*>;",
-            "Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;",
+            "Lcom/google/android/gms/common/internal/ClientSettings$zaa;",
             ">;I",
             "Landroid/view/View;",
             "Ljava/lang/String;",
@@ -149,12 +153,14 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zax:Landroid/accounts/Account;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaa:Landroid/accounts/Account;
 
     if-nez p2, :cond_0
 
     .line 4
-    sget-object p1, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+
+    move-result-object p1
 
     goto :goto_0
 
@@ -164,79 +170,79 @@
     move-result-object p1
 
     :goto_0
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabr:Ljava/util/Set;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zab:Ljava/util/Set;
 
     if-nez p3, :cond_1
 
     .line 5
-    sget-object p3, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object p3
 
     :cond_1
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaoc:Ljava/util/Map;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zad:Ljava/util/Map;
 
     .line 6
-    iput-object p5, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabu:Landroid/view/View;
+    iput-object p5, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaf:Landroid/view/View;
 
     .line 7
-    iput p4, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabt:I
+    iput p4, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zae:I
 
     .line 8
-    iput-object p6, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabv:Ljava/lang/String;
+    iput-object p6, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zag:Ljava/lang/String;
 
     .line 9
-    iput-object p7, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabw:Ljava/lang/String;
+    iput-object p7, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zah:Ljava/lang/String;
 
     .line 10
-    iput-object p8, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaod:Lcom/google/android/gms/signin/SignInOptions;
+    iput-object p8, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zai:Lcom/google/android/gms/signin/SignInOptions;
+
+    const/4 p2, 0x0
 
     .line 11
-    iput-boolean p9, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaby:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaj:Z
 
     .line 12
-    new-instance p1, Ljava/util/HashSet;
+    new-instance p2, Ljava/util/HashSet;
 
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabr:Ljava/util/Set;
-
-    invoke-direct {p1, p2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    invoke-direct {p2, p1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
     .line 13
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaoc:Ljava/util/Map;
+    invoke-interface {p3}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    invoke-interface {p2}, Ljava/util/Map;->values()Ljava/util/Collection;
+    move-result-object p1
 
-    move-result-object p2
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
+    move-result-object p1
 
     :goto_1
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
     if-eqz p3, :cond_2
 
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p3
 
-    check-cast p3, Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;
+    check-cast p3, Lcom/google/android/gms/common/internal/ClientSettings$zaa;
 
     .line 14
-    iget-object p3, p3, Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;->mScopes:Ljava/util/Set;
+    iget-object p3, p3, Lcom/google/android/gms/common/internal/ClientSettings$zaa;->zaa:Ljava/util/Set;
 
-    invoke-interface {p1, p3}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {p2, p3}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_1
 
     .line 15
     :cond_2
-    invoke-static {p1}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {p2}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaob:Ljava/util/Set;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zac:Ljava/util/Set;
 
     return-void
 .end method
@@ -265,8 +271,11 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zax:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaa:Landroid/accounts/Account;
 
     return-object v0
 .end method
@@ -279,8 +288,11 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zax:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaa:Landroid/accounts/Account;
 
     if-eqz v0, :cond_0
 
@@ -300,7 +312,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zax:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaa:Landroid/accounts/Account;
 
     if-eqz v0, :cond_0
 
@@ -334,7 +346,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaob:Ljava/util/Set;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zac:Ljava/util/Set;
 
     return-object v0
 .end method
@@ -356,18 +368,18 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaoc:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zad:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;
+    check-cast p1, Lcom/google/android/gms/common/internal/ClientSettings$zaa;
 
     if-eqz p1, :cond_1
 
     .line 2
-    iget-object v0, p1, Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;->mScopes:Ljava/util/Set;
+    iget-object v0, p1, Lcom/google/android/gms/common/internal/ClientSettings$zaa;->zaa:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
@@ -381,12 +393,12 @@
     :cond_0
     new-instance v0, Ljava/util/HashSet;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabr:Ljava/util/Set;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zab:Ljava/util/Set;
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
     .line 4
-    iget-object p1, p1, Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;->mScopes:Ljava/util/Set;
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/ClientSettings$zaa;->zaa:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
@@ -395,18 +407,9 @@
     .line 5
     :cond_1
     :goto_0
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabr:Ljava/util/Set;
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zab:Ljava/util/Set;
 
     return-object p1
-.end method
-
-.method public final getClientSessionId()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaoe:Ljava/lang/Integer;
-
-    return-object v0
 .end method
 
 .method public final getGravityForPopups()I
@@ -415,37 +418,9 @@
     .end annotation
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabt:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zae:I
 
     return v0
-.end method
-
-.method public final getOptionalApiSettings()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "Lcom/google/android/gms/common/api/Api<",
-            "*>;",
-            "Lcom/google/android/gms/common/internal/ClientSettings$OptionalApiSettings;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaoc:Ljava/util/Map;
-
-    return-object v0
-.end method
-
-.method public final getRealClientClassName()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabw:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method public final getRealClientPackageName()Ljava/lang/String;
@@ -453,8 +428,11 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabv:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zag:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -474,16 +452,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabr:Ljava/util/Set;
-
-    return-object v0
-.end method
-
-.method public final getSignInOptions()Lcom/google/android/gms/signin/SignInOptions;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaod:Lcom/google/android/gms/signin/SignInOptions;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zab:Ljava/util/Set;
 
     return-object v0
 .end method
@@ -493,26 +462,79 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zabu:Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaf:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method public final isSignInClientDisconnectFixEnabled()Z
+.method public final zaa()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Lcom/google/android/gms/common/api/Api<",
+            "*>;",
+            "Lcom/google/android/gms/common/internal/ClientSettings$zaa;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zad:Ljava/util/Map;
+
+    return-object v0
+.end method
+
+.method public final zaa(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zak:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final zab()Ljava/lang/String;
+    .locals 1
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zah:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final zac()Lcom/google/android/gms/signin/SignInOptions;
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaby:Z
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zai:Lcom/google/android/gms/signin/SignInOptions;
 
-    return v0
+    return-object v0
 .end method
 
-.method public final setClientSessionId(Ljava/lang/Integer;)V
-    .locals 0
+.method public final zad()Ljava/lang/Integer;
+    .locals 1
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaoe:Ljava/lang/Integer;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zak:Ljava/lang/Integer;
 
-    return-void
+    return-object v0
+.end method
+
+.method public final zae()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zaj:Z
+
+    return v0
 .end method

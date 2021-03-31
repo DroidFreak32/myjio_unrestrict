@@ -49,25 +49,25 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-object v0, p0, Lcom/clevertap/android/sdk/GifHeader;->gct:[I
-
-    const/4 v0, 0x0
-
-    .line 3
-    iput v0, p0, Lcom/clevertap/android/sdk/GifHeader;->status:I
-
-    .line 4
     iput v0, p0, Lcom/clevertap/android/sdk/GifHeader;->frameCount:I
 
-    .line 5
+    .line 3
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/clevertap/android/sdk/GifHeader;->frames:Ljava/util/List;
 
-    .line 6
+    const/4 v1, 0x0
+
+    .line 4
+    iput-object v1, p0, Lcom/clevertap/android/sdk/GifHeader;->gct:[I
+
+    .line 5
     iput v0, p0, Lcom/clevertap/android/sdk/GifHeader;->loopCount:I
+
+    .line 6
+    iput v0, p0, Lcom/clevertap/android/sdk/GifHeader;->status:I
 
     return-void
 .end method

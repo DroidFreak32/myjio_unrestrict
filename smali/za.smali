@@ -1,124 +1,130 @@
-.class public Lza;
-.super Lua;
-.source "ListViewAutoScrollHelper.java"
+.class public final Lza;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
 
 # instance fields
-.field public final K:Landroid/widget/ListView;
+.field public final synthetic a:Ljava/util/ArrayList;
+
+.field public final synthetic b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/ListView;)V
+.method public constructor <init>(Ljava/util/ArrayList;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0, p1}, Lua;-><init>(Landroid/view/View;)V
+    iput-object p1, p0, Lza;->a:Ljava/util/ArrayList;
 
-    .line 2
-    iput-object p1, p0, Lza;->K:Landroid/widget/ListView;
+    iput-object p2, p0, Lza;->b:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(II)V
-    .locals 0
+.method public onConnnectionManagerTaskComplete(Ljava/lang/String;I)V
+    .locals 4
 
-    .line 1
-    iget-object p1, p0, Lza;->K:Landroid/widget/ListView;
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-static {p1, p2}, Lab;->b(Landroid/widget/ListView;I)V
+    move-result p2
 
-    return-void
-.end method
+    if-nez p2, :cond_1
 
-.method public a(I)Z
-    .locals 0
+    :try_start_0
+    new-instance p2, Lorg/json/JSONObject;
 
-    const/4 p1, 0x0
+    invoke-direct {p2, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    return p1
-.end method
+    const-string v0, "responseCode"
 
-.method public b(I)Z
-    .locals 7
-
-    .line 1
-    iget-object v0, p0, Lza;->K:Landroid/widget/ListView;
-
-    .line 2
-    invoke-virtual {v0}, Landroid/widget/ListView;->getCount()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    return v2
-
-    .line 3
-    :cond_0
-    invoke-virtual {v0}, Landroid/widget/ListView;->getChildCount()I
-
-    move-result v3
-
-    .line 4
-    invoke-virtual {v0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
-
-    move-result v4
-
-    add-int v5, v4, v3
-
-    const/4 v6, 0x1
-
-    if-lez p1, :cond_1
-
-    if-lt v5, v1, :cond_2
-
-    sub-int/2addr v3, v6
-
-    .line 5
-    invoke-virtual {v0, v3}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p1
-
-    .line 6
-    invoke-virtual {p1}, Landroid/view/View;->getBottom()I
-
-    move-result p1
-
-    invoke-virtual {v0}, Landroid/widget/ListView;->getHeight()I
+    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v0
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-gt p1, v0, :cond_2
+    const/16 v1, 0xc8
 
-    return v2
+    const-string v2, "LogSyncUtlity"
 
-    :cond_1
-    if-gez p1, :cond_3
+    if-ne v0, v1, :cond_0
 
-    if-gtz v4, :cond_2
+    :try_start_1
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    .line 7
-    invoke-virtual {v0, v2}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, " File uploaded successfully:"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "responseMessage"
+
+    invoke-virtual {p2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v0, v2, p2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p2, p0, Lza;->a:Ljava/util/ArrayList;
+
+    invoke-static {p2}, Lcom/elitecorelib/core/utility/k;->d(Ljava/util/ArrayList;)V
+
+    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    :goto_0
+    invoke-virtual {p2, v2, p1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    :cond_0
+    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Error while uploading file : "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
+    :try_end_1
+    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 8
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+    goto :goto_0
 
-    move-result p1
+    :catch_0
+    move-exception p1
 
-    if-ltz p1, :cond_2
+    invoke-virtual {p1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
-    return v2
+    :cond_1
+    :goto_1
+    new-instance p1, Ljava/io/File;
 
-    :cond_2
-    return v6
+    iget-object p2, p0, Lza;->b:Ljava/lang/String;
 
-    :cond_3
-    return v2
+    invoke-direct {p1, p2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/k;->b(Ljava/io/File;)V
+
+    return-void
 .end method

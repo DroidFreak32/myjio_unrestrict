@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/measurement/AppMeasurementContentProvider;
 .super Landroid/content/ContentProvider;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # annotations
@@ -85,7 +85,7 @@
     const/4 v1, 0x0
 
     .line 2
-    invoke-static {v0, v1, v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zza(Landroid/content/Context;Lcom/google/android/gms/internal/measurement/zzaa;Ljava/lang/Long;)Lcom/google/android/gms/measurement/internal/zzfx;
+    invoke-static {v0, v1, v1}, Lcom/google/android/gms/measurement/internal/zzfu;->zza(Landroid/content/Context;Lcom/google/android/gms/internal/measurement/zzae;Ljava/lang/Long;)Lcom/google/android/gms/measurement/internal/zzfu;
 
     const/4 v0, 0x0
 

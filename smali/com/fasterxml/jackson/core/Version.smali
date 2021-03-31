@@ -20,9 +20,9 @@
 
 
 # static fields
-.field public static final UNKNOWN_VERSION:Lcom/fasterxml/jackson/core/Version;
+.field private static final UNKNOWN_VERSION:Lcom/fasterxml/jackson/core/Version;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -122,14 +122,11 @@
 
     if-nez p6, :cond_1
 
-    goto :goto_0
-
-    :cond_1
-    move-object p1, p6
+    move-object p6, p1
 
     .line 8
-    :goto_0
-    iput-object p1, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
+    :cond_1
+    iput-object p6, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
 
     return-void
 .end method
@@ -241,7 +238,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/core/Version;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-eq v2, v3, :cond_2
 

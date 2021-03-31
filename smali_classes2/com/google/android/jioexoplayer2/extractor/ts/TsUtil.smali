@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -137,15 +137,13 @@
 
     const/4 p1, 0x6
 
-    new-array p1, p1, [B
+    new-array p2, p1, [B
 
     .line 7
-    array-length p2, p1
-
-    invoke-virtual {p0, p1, v2, p2}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readBytes([BII)V
+    invoke-virtual {p0, p2, v2, p1}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
     .line 8
-    invoke-static {p1}, Lcom/google/android/jioexoplayer2/extractor/ts/TsUtil;->readPcrValueFromPcrBytes([B)J
+    invoke-static {p2}, Lcom/google/android/jioexoplayer2/extractor/ts/TsUtil;->readPcrValueFromPcrBytes([B)J
 
     move-result-wide p0
 
@@ -155,7 +153,7 @@
     return-wide v0
 .end method
 
-.method public static readPcrValueFromPcrBytes([B)J
+.method private static readPcrValueFromPcrBytes([B)J
     .locals 8
 
     const/4 v0, 0x0

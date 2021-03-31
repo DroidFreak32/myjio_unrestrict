@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/barcode/zzl;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -10,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/vision/barcode/Barcode$Sms;",
+        "Lcom/google/android/gms/vision/barcode/Barcode$Phone;",
         ">;"
     }
 .end annotation
@@ -38,7 +39,7 @@
 
     const/4 v1, 0x0
 
-    move-object v2, v1
+    const/4 v2, 0x0
 
     .line 2
     :goto_0
@@ -81,9 +82,9 @@
 
     .line 7
     :cond_1
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result-object v1
+    move-result v1
 
     goto :goto_0
 
@@ -92,9 +93,9 @@
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
     .line 9
-    new-instance p1, Lcom/google/android/gms/vision/barcode/Barcode$Sms;
+    new-instance p1, Lcom/google/android/gms/vision/barcode/Barcode$Phone;
 
-    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/vision/barcode/Barcode$Sms;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/vision/barcode/Barcode$Phone;-><init>(ILjava/lang/String;)V
 
     return-object p1
 .end method
@@ -103,7 +104,7 @@
     .locals 0
 
     .line 1
-    new-array p1, p1, [Lcom/google/android/gms/vision/barcode/Barcode$Sms;
+    new-array p1, p1, [Lcom/google/android/gms/vision/barcode/Barcode$Phone;
 
     return-object p1
 .end method

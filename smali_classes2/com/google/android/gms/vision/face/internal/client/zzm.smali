@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/face/internal/client/zzm;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -37,6 +38,8 @@
     move-result v0
 
     const/4 v1, 0x0
+
+    const/4 v2, 0x0
 
     const/4 v2, 0x0
 
@@ -95,7 +98,7 @@
     :cond_1
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v3
+    move-result v2
 
     goto :goto_0
 
@@ -111,7 +114,7 @@
     :cond_3
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v2
+    move-result v3
 
     goto :goto_0
 
@@ -122,7 +125,7 @@
     .line 11
     new-instance p1, Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;
 
-    invoke-direct {p1, v2, v1, v3, v4}, Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;-><init>(IFFI)V
+    invoke-direct {p1, v3, v1, v2, v4}, Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;-><init>(IFFI)V
 
     return-object p1
 .end method

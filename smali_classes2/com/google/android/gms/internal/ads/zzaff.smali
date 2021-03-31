@@ -1,57 +1,137 @@
-.class public final Lcom/google/android/gms/internal/ads/zzaff;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaff;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# direct methods
-.method public static zzd(Landroid/content/Context;Z)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-nez p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const-string p1, "com.google.android.gms.ads.dynamite"
-
-    .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/dynamite/DynamiteModule;->getRemoteVersion(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    .line 2
-    :cond_1
-    invoke-static {p0, p1}, Lcom/google/android/gms/dynamite/DynamiteModule;->getLocalVersion(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result p0
-
-    if-gt v1, p0, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
+# virtual methods
+.method public abstract destroy()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public static synthetic zze(Landroid/content/Context;Z)Z
-    .locals 0
+.method public abstract getAvailableAssetNames()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ads/zzaff;->zzd(Landroid/content/Context;Z)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result p0
+.method public abstract getCustomTemplateId()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    return p0
+.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzys;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract performClick(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract recordImpression()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzct(Ljava/lang/String;)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzcu(Ljava/lang/String;)Lcom/google/android/gms/internal/ads/zzaej;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzp(Lcom/google/android/gms/dynamic/IObjectWrapper;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzq(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzsv()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzta()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zztb()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zztc()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zztd()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

@@ -1,52 +1,38 @@
-.class public Lcom/google/android/gms/internal/common/zze;
-.super Landroid/os/Handler;
+.class public final Lcom/google/android/gms/internal/common/zze;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # static fields
-.field public static volatile zziu:Lcom/google/android/gms/internal/common/zzf;
+.field private static final zza:Lcom/google/android/gms/internal/common/zzf;
+
+.field private static volatile zzb:Lcom/google/android/gms/internal/common/zzf;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/common/zzg;
 
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method public constructor <init>(Landroid/os/Looper;)V
-    .locals 0
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/common/zzg;-><init>(Lcom/google/android/gms/internal/common/zzh;)V
 
     .line 2
-    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    sput-object v0, Lcom/google/android/gms/internal/common/zze;->zza:Lcom/google/android/gms/internal/common/zzf;
+
+    sput-object v0, Lcom/google/android/gms/internal/common/zze;->zzb:Lcom/google/android/gms/internal/common/zzf;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-    .locals 0
-
-    .line 3
-    invoke-direct {p0, p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final dispatchMessage(Landroid/os/Message;)V
-    .locals 0
+.method public static zza()Lcom/google/android/gms/internal/common/zzf;
+    .locals 1
 
     .line 1
-    invoke-super {p0, p1}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
+    sget-object v0, Lcom/google/android/gms/internal/common/zze;->zzb:Lcom/google/android/gms/internal/common/zzf;
 
-    return-void
+    return-object v0
 .end method

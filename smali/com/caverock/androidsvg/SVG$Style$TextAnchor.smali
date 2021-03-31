@@ -29,64 +29,58 @@
 
 .field public static final enum Start:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
-.field public static final synthetic s:[Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+.field public static final synthetic a:[Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
-    const/4 v1, 0x0
+    const-string v1, "Start"
 
-    const-string v2, "Start"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->Start:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
     .line 2
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
     const-string v3, "Middle"
 
-    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->Middle:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+    invoke-direct {v1, v3, v4}, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->Middle:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
     .line 3
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+    new-instance v3, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
-    const/4 v3, 0x2
+    const-string v5, "End"
 
-    const-string v4, "End"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->End:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+    sput-object v3, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->End:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+    new-array v5, v5, [Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->Start:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->Middle:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->End:Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->s:[Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+    sput-object v5, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->a:[Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
     return-void
 .end method
@@ -124,7 +118,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->s:[Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
+    sget-object v0, Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->a:[Lcom/caverock/androidsvg/SVG$Style$TextAnchor;
 
     invoke-virtual {v0}, [Lcom/caverock/androidsvg/SVG$Style$TextAnchor;->clone()Ljava/lang/Object;
 

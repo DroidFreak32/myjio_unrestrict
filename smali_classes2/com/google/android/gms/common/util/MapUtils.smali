@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/MapUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -19,6 +20,14 @@
 
 .method public static writeStringMapToJson(Ljava/lang/StringBuilder;Ljava/util/HashMap;)V
     .locals 5
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/util/HashMap;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

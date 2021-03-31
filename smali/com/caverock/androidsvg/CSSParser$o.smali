@@ -59,34 +59,6 @@
 
 
 # virtual methods
-.method public a(I)Lcom/caverock/androidsvg/CSSParser$p;
-    .locals 1
-
-    .line 4
-    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->a:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/caverock/androidsvg/CSSParser$p;
-
-    return-object p1
-.end method
-
-.method public a()V
-    .locals 1
-
-    .line 5
-    iget v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->b:I
-
-    add-int/lit16 v0, v0, 0x3e8
-
-    iput v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->b:I
-
-    return-void
-.end method
-
 .method public a(Lcom/caverock/androidsvg/CSSParser$p;)V
     .locals 1
 
@@ -117,7 +89,7 @@
     .line 1
     iget v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->b:I
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit16 v0, v0, 0x3e8
 
     iput v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->b:I
 
@@ -125,6 +97,19 @@
 .end method
 
 .method public c()V
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->b:I
+
+    return-void
+.end method
+
+.method public d()V
     .locals 2
 
     .line 1
@@ -139,7 +124,22 @@
     return-void
 .end method
 
-.method public d()Z
+.method public e(I)Lcom/caverock/androidsvg/CSSParser$p;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$o;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/caverock/androidsvg/CSSParser$p;
+
+    return-object p1
+.end method
+
+.method public f()Z
     .locals 1
 
     .line 1
@@ -168,7 +168,7 @@
     return v0
 .end method
 
-.method public e()I
+.method public g()I
     .locals 1
 
     .line 1

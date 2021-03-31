@@ -3,12 +3,12 @@
 .source "AppCompatDelegateImpl.java"
 
 # interfaces
-.implements Ls2$a;
+.implements Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/app/AppCompatDelegateImpl;->p()Landroid/view/ViewGroup;
+    value = Landroidx/appcompat/app/AppCompatDelegateImpl;->o()Landroid/view/ViewGroup;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,15 +35,15 @@
 
 
 # virtual methods
-.method public a(Landroid/graphics/Rect;)V
+.method public onFitSystemWindows(Landroid/graphics/Rect;)V
     .locals 2
 
     .line 1
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$d;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget v1, p1, Landroid/graphics/Rect;->top:I
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->l(I)I
+    invoke-virtual {v0, v1, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->g0(Landroidx/core/view/WindowInsetsCompat;Landroid/graphics/Rect;)I
 
     move-result v0
 

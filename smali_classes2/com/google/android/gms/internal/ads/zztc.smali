@@ -1,395 +1,176 @@
 .class public final Lcom/google/android/gms/internal/ads/zztc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzm;
+.super Lcom/google/android/gms/ads/internal/zzc;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/ads/internal/zzc<",
+        "Lcom/google/android/gms/internal/ads/zztg;",
+        ">;"
+    }
 .end annotation
 
 
-# instance fields
-.field public final mContext:Landroid/content/Context;
-
-.field public volatile zzbqq:Lcom/google/android/gms/internal/ads/zzst;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;)V
+    .locals 7
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzauc;->zzy(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object v1
+
+    const/16 v3, 0x7b
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zztc;->mContext:Landroid/content/Context;
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/ads/internal/zzc;-><init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method private final disconnect()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztc;->zzbqq:Lcom/google/android/gms/internal/ads/zzst;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 2
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztc;->zzbqq:Lcom/google/android/gms/internal/ads/zzst;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->disconnect()V
-
-    .line 3
-    invoke-static {}, Landroid/os/Binder;->flushPendingCommands()V
-
-    return-void
-.end method
-
-.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zztc;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zztc;->disconnect()V
-
-    return-void
-.end method
-
-.method public static synthetic zzb(Lcom/google/android/gms/internal/ads/zztc;)Lcom/google/android/gms/internal/ads/zzst;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zztc;->zzbqq:Lcom/google/android/gms/internal/ads/zzst;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final zzc(Lcom/google/android/gms/internal/ads/zzr;)Lcom/google/android/gms/internal/ads/zzp;
-    .locals 12
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zzr<",
-            "*>;)",
-            "Lcom/google/android/gms/internal/ads/zzp;"
-        }
+.method public final synthetic createServiceInterface(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 2
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
-
-    const-string v0, "ms"
-
-    const-string v1, "Http assets remote cache took "
-
-    .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzsu;->zzh(Lcom/google/android/gms/internal/ads/zzr;)Lcom/google/android/gms/internal/ads/zzsu;
-
-    move-result-object p1
-
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzer()Lcom/google/android/gms/common/util/Clock;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    const/4 v4, 0x0
-
-    const/16 v5, 0x34
-
-    .line 3
-    :try_start_0
-    new-instance v6, Lcom/google/android/gms/internal/ads/zzaps;
-
-    invoke-direct {v6}, Lcom/google/android/gms/internal/ads/zzaps;-><init>()V
-
-    .line 4
-    new-instance v7, Lcom/google/android/gms/internal/ads/zztg;
-
-    invoke-direct {v7, p0, v6}, Lcom/google/android/gms/internal/ads/zztg;-><init>(Lcom/google/android/gms/internal/ads/zztc;Lcom/google/android/gms/internal/ads/zzaps;)V
-
-    .line 5
-    new-instance v8, Lcom/google/android/gms/internal/ads/zzth;
-
-    invoke-direct {v8, p0, v6}, Lcom/google/android/gms/internal/ads/zzth;-><init>(Lcom/google/android/gms/internal/ads/zztc;Lcom/google/android/gms/internal/ads/zzaps;)V
-
-    .line 6
-    new-instance v9, Lcom/google/android/gms/internal/ads/zzst;
-
-    iget-object v10, p0, Lcom/google/android/gms/internal/ads/zztc;->mContext:Landroid/content/Context;
-
-    .line 7
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzfa()Lcom/google/android/gms/internal/ads/zzanm;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/google/android/gms/internal/ads/zzanm;->zzto()Landroid/os/Looper;
-
-    move-result-object v11
-
-    invoke-direct {v9, v10, v11, v7, v8}, Lcom/google/android/gms/internal/ads/zzst;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;)V
-
-    .line 8
-    iput-object v9, p0, Lcom/google/android/gms/internal/ads/zztc;->zzbqq:Lcom/google/android/gms/internal/ads/zzst;
-
-    .line 9
-    iget-object v7, p0, Lcom/google/android/gms/internal/ads/zztc;->zzbqq:Lcom/google/android/gms/internal/ads/zzst;
-
-    invoke-virtual {v7}, Lcom/google/android/gms/common/internal/BaseGmsClient;->checkAvailabilityAndConnect()V
-
-    .line 10
-    new-instance v7, Lcom/google/android/gms/internal/ads/zztd;
-
-    invoke-direct {v7, p0, p1}, Lcom/google/android/gms/internal/ads/zztd;-><init>(Lcom/google/android/gms/internal/ads/zztc;Lcom/google/android/gms/internal/ads/zzsu;)V
-
-    sget-object p1, Lcom/google/android/gms/internal/ads/zzalm;->zzcve:Lcom/google/android/gms/internal/ads/zzapm;
-
-    .line 11
-    invoke-static {v6, v7, p1}, Lcom/google/android/gms/internal/ads/zzaox;->zza(Lcom/google/android/gms/internal/ads/zzapi;Lcom/google/android/gms/internal/ads/zzaos;Ljava/util/concurrent/Executor;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    .line 12
-    sget-object v6, Lcom/google/android/gms/internal/ads/zznw;->zzbge:Lcom/google/android/gms/internal/ads/zznl;
-
-    .line 13
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v6}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    .line 14
-    check-cast v6, Ljava/lang/Integer;
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
-
-    move-result v6
-
-    int-to-long v6, v6
-
-    sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    sget-object v9, Lcom/google/android/gms/internal/ads/zzalm;->zzcvg:Ljava/util/concurrent/ScheduledExecutorService;
-
-    .line 15
-    invoke-static {p1, v6, v7, v8, v9}, Lcom/google/android/gms/internal/ads/zzaox;->zza(Lcom/google/android/gms/internal/ads/zzapi;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    .line 16
-    new-instance v6, Lcom/google/android/gms/internal/ads/zztf;
-
-    invoke-direct {v6, p0}, Lcom/google/android/gms/internal/ads/zztf;-><init>(Lcom/google/android/gms/internal/ads/zztc;)V
-
-    sget-object v7, Lcom/google/android/gms/internal/ads/zzalm;->zzcve:Lcom/google/android/gms/internal/ads/zzapm;
-
-    invoke-interface {p1, v6, v7}, Lcom/google/android/gms/internal/ads/zzapi;->zza(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    .line 17
-    invoke-interface {p1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/ParcelFileDescriptor;
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 18
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzer()Lcom/google/android/gms/common/util/Clock;
-
-    move-result-object v6
-
-    invoke-interface {v6}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    sub-long/2addr v6, v2
-
-    .line 19
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
-
-    .line 20
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzagf;
-
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzagf;-><init>(Landroid/os/ParcelFileDescriptor;)V
-
-    sget-object p1, Lcom/google/android/gms/internal/ads/zzsw;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 21
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzagf;->zza(Landroid/os/Parcelable$Creator;)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzsw;
 
     if-nez p1, :cond_0
 
-    return-object v4
+    const/4 p1, 0x0
 
-    .line 22
+    return-object p1
+
     :cond_0
-    iget-boolean v0, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzbqo:Z
+    const-string v0, "com.google.android.gms.ads.internal.cache.ICacheService"
 
-    if-nez v0, :cond_3
-
-    .line 23
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzbqm:[Ljava/lang/String;
-
-    array-length v0, v0
-
-    iget-object v1, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzbqn:[Ljava/lang/String;
-
-    array-length v1, v1
-
-    if-eq v0, v1, :cond_1
-
-    return-object v4
-
-    .line 24
-    :cond_1
-    new-instance v8, Ljava/util/HashMap;
-
-    invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 25
-    :goto_0
-    iget-object v1, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzbqm:[Ljava/lang/String;
-
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_2
-
-    .line 26
-    aget-object v1, v1, v0
-
-    iget-object v2, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzbqn:[Ljava/lang/String;
-
-    aget-object v2, v2, v0
-
-    invoke-virtual {v8, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 27
-    :cond_2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzp;
-
-    iget v6, p1, Lcom/google/android/gms/internal/ads/zzsw;->statusCode:I
-
-    iget-object v7, p1, Lcom/google/android/gms/internal/ads/zzsw;->data:[B
-
-    iget-boolean v9, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzac:Z
-
-    iget-wide v10, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzad:J
-
-    move-object v5, v0
-
-    invoke-direct/range {v5 .. v11}, Lcom/google/android/gms/internal/ads/zzp;-><init>(I[BLjava/util/Map;ZJ)V
-
-    return-object v0
-
-    .line 28
-    :cond_3
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzae;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzsw;->zzbqp:Ljava/lang/String;
-
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzae;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :catchall_0
-    move-exception p1
-
-    .line 29
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzer()Lcom/google/android/gms/common/util/Clock;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    sub-long/2addr v6, v2
-
-    .line 30
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    .line 2
+    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zztg;
 
-    .line 31
-    throw p1
+    if-eqz v1, :cond_1
 
-    .line 32
-    :catch_0
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzer()Lcom/google/android/gms/common/util/Clock;
+    .line 3
+    check-cast v0, Lcom/google/android/gms/internal/ads/zztg;
 
-    move-result-object p1
+    return-object v0
 
-    invoke-interface {p1}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
+    .line 4
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zztj;
 
-    move-result-wide v6
+    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zztj;-><init>(Landroid/os/IBinder;)V
 
-    sub-long/2addr v6, v2
+    return-object v0
+.end method
 
-    .line 33
-    new-instance p1, Ljava/lang/StringBuilder;
+.method public final getApiFeatures()[Lcom/google/android/gms/common/Feature;
+    .locals 1
 
-    invoke-direct {p1, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+    .line 1
+    sget-object v0, Lcom/google/android/gms/ads/zzc;->zzadg:[Lcom/google/android/gms/common/Feature;
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v0
+.end method
 
-    invoke-virtual {p1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+.method public final getServiceDescriptor()Ljava/lang/String;
+    .locals 1
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "com.google.android.gms.ads.internal.cache.ICacheService"
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object p1
+.method public final getStartServiceAction()Ljava/lang/String;
+    .locals 1
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    const-string v0, "com.google.android.gms.ads.service.CACHE"
 
-    return-object v4
+    return-object v0
+.end method
+
+.method public final zznc()Lcom/google/android/gms/internal/ads/zztg;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/DeadObjectException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/ads/zztg;
+
+    return-object v0
+.end method
+
+.method public final zznd()Z
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getAvailableFeatures()[Lcom/google/android/gms/common/Feature;
+
+    move-result-object v0
+
+    .line 2
+    sget-object v1, Lcom/google/android/gms/internal/ads/zzabf;->zzcqn:Lcom/google/android/gms/internal/ads/zzaaq;
+
+    .line 3
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzwq;->zzqe()Lcom/google/android/gms/internal/ads/zzabb;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/ads/zzabb;->zzd(Lcom/google/android/gms/internal/ads/zzaaq;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 4
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lcom/google/android/gms/ads/zzc;->zzadf:Lcom/google/android/gms/common/Feature;
+
+    .line 5
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

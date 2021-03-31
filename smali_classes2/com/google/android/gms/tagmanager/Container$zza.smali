@@ -17,11 +17,11 @@
 
 
 # instance fields
-.field public final synthetic zzaej:Lcom/google/android/gms/tagmanager/Container;
+.field private final synthetic zzaej:Lcom/google/android/gms/tagmanager/Container;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/Container;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/Container;)V
     .locals 0
 
     .line 1

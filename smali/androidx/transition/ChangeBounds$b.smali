@@ -49,12 +49,12 @@
 .method public a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/PointF;
     .locals 2
 
-    .line 4
+    .line 1
     iget-object v0, p0, Landroidx/transition/ChangeBounds$b;->a:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->copyBounds(Landroid/graphics/Rect;)V
 
-    .line 5
+    .line 2
     new-instance p1, Landroid/graphics/PointF;
 
     iget-object v0, p0, Landroidx/transition/ChangeBounds$b;->a:Landroid/graphics/Rect;
@@ -72,7 +72,7 @@
     return-object p1
 .end method
 
-.method public a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PointF;)V
+.method public b(Landroid/graphics/drawable/Drawable;Landroid/graphics/PointF;)V
     .locals 2
 
     .line 1
@@ -126,7 +126,7 @@
 
     check-cast p2, Landroid/graphics/PointF;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeBounds$b;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PointF;)V
+    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeBounds$b;->b(Landroid/graphics/drawable/Drawable;Landroid/graphics/PointF;)V
 
     return-void
 .end method

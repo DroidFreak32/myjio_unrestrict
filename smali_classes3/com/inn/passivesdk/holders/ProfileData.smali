@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public kpis:Ljava/lang/String;
+.field private kpis:Ljava/lang/String;
 
-.field public operator:Ljava/lang/String;
+.field private operator:Ljava/lang/String;
 
-.field public passiveFrequency:Ljava/lang/String;
+.field private passiveFrequency:Ljava/lang/String;
 
 
 # direct methods
@@ -23,13 +23,58 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getKpis()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/ProfileData;->kpis:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getOperator()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/ProfileData;->operator:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPassiveFrequency()Ljava/lang/String;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/ProfileData;->passiveFrequency:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public setKpis(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileData;->kpis:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setOperator(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileData;->operator:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setPassiveFrequency(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileData;->passiveFrequency:Ljava/lang/String;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

@@ -11,11 +11,11 @@
 
 .field public bsize:I
 
-.field public mac:Ljavax/crypto/Mac;
+.field private mac:Ljavax/crypto/Mac;
 
 .field public name:Ljava/lang/String;
 
-.field public final tmp:[B
+.field private final tmp:[B
 
 
 # direct methods
@@ -82,6 +82,11 @@
 
 .method public init([B)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     array-length v0, p1
@@ -118,8 +123,6 @@
     iput-object p1, p0, Lcom/jcraft/jsch/jce/HMAC;->mac:Ljavax/crypto/Mac;
 
     .line 6
-    iget-object p1, p0, Lcom/jcraft/jsch/jce/HMAC;->mac:Ljavax/crypto/Mac;
-
     invoke-virtual {p1, v0}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
 
     return-void

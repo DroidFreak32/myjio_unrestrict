@@ -1,25 +1,25 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzhn;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final synthetic zza:Landroid/os/Bundle;
 
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+.field private final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzhb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhc;Ljava/util/concurrent/atomic/AtomicReference;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhb;Landroid/os/Bundle;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zzb:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Landroid/os/Bundle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,70 +29,14 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zzb:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    monitor-enter v0
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Landroid/os/Bundle;
 
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Ljava/util/concurrent/atomic/AtomicReference;
-
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzhc;->zzt()Lcom/google/android/gms/measurement/internal/zzaa;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    invoke-virtual {v3}, Lcom/google/android/gms/measurement/internal/zzhc;->zzg()Lcom/google/android/gms/measurement/internal/zzeq;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/android/gms/measurement/internal/zzeq;->zzab()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/measurement/internal/zzaa;->zzi(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 3
-    :try_start_1
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
-
-    .line 4
-    monitor-exit v0
+    invoke-static {v0, v1}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(Lcom/google/android/gms/measurement/internal/zzhb;Landroid/os/Bundle;)V
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    .line 5
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzhn;->zza:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->notify()V
-
-    .line 6
-    throw v1
-
-    :catchall_1
-    move-exception v1
-
-    .line 7
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw v1
 .end method

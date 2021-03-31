@@ -31,11 +31,11 @@
 # static fields
 .field public static final DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
 
-.field public static final DEFAULT_FIELD_VISIBILITY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+.field private static final DEFAULT_FIELD_VISIBILITY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
 .field public static final NO_OVERRIDES:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -55,22 +55,22 @@
     .locals 13
 
     .line 1
-    sget-object v3, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sget-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    sput-object v3, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->DEFAULT_FIELD_VISIBILITY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sput-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->DEFAULT_FIELD_VISIBILITY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 2
     new-instance v6, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
 
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->DEFAULT_FIELD_VISIBILITY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
     sget-object v4, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    sget-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     move-object v0, v6
 
-    move-object v2, v3
+    move-object v1, v5
+
+    move-object v2, v5
+
+    move-object v3, v5
 
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
@@ -98,7 +98,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
     .locals 0
 
     .line 1
@@ -122,7 +122,7 @@
     return-void
 .end method
 
-.method public static _equals(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;)Z
+.method private static _equals(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;)Z
     .locals 2
 
     .line 1
@@ -167,7 +167,7 @@
     return p0
 .end method
 
-.method public static _predefined(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
+.method private static _predefined(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
     .locals 1
 
     .line 1
@@ -267,20 +267,52 @@
 
     aget p0, v1, p0
 
-    packed-switch p0, :pswitch_data_0
+    const/4 v1, 0x1
 
-    goto :goto_0
+    if-eq p0, v1, :cond_5
 
-    :pswitch_0
+    const/4 v1, 0x2
+
+    if-eq p0, v1, :cond_4
+
+    const/4 v1, 0x3
+
+    if-eq p0, v1, :cond_3
+
+    const/4 v1, 0x4
+
+    if-eq p0, v1, :cond_2
+
+    const/4 v1, 0x6
+
+    if-eq p0, v1, :cond_1
+
+    const/4 v1, 0x7
+
+    if-eq p0, v1, :cond_0
+
+    move-object p0, v0
+
+    move-object p1, p0
+
+    :goto_0
+    move-object v1, p1
+
+    :goto_1
+    move-object v2, v1
+
+    goto :goto_2
+
+    :cond_0
     move-object p0, p1
 
     move-object v0, p0
 
     move-object v1, v0
 
-    goto :goto_2
+    goto :goto_1
 
-    :pswitch_1
+    :cond_1
     move-object v1, p1
 
     move-object p0, v0
@@ -289,23 +321,16 @@
 
     move-object v2, p1
 
-    goto :goto_3
+    goto :goto_2
 
-    :pswitch_2
+    :cond_2
     move-object p0, p1
 
     move-object p1, v0
 
-    goto :goto_1
+    goto :goto_0
 
-    :pswitch_3
-    move-object p0, v0
-
-    move-object v1, p0
-
-    goto :goto_2
-
-    :pswitch_4
+    :cond_3
     move-object p0, v0
 
     move-object v1, p0
@@ -316,9 +341,16 @@
 
     move-object p1, v2
 
-    goto :goto_3
+    goto :goto_2
 
-    :pswitch_5
+    :cond_4
+    move-object p0, v0
+
+    move-object v1, p0
+
+    goto :goto_1
+
+    :cond_5
     move-object v2, p1
 
     move-object p0, v0
@@ -327,40 +359,13 @@
 
     move-object v1, p1
 
-    goto :goto_3
-
-    :goto_0
-    :pswitch_6
-    move-object p0, v0
-
-    move-object p1, p0
-
-    :goto_1
-    move-object v1, p1
-
-    :goto_2
-    move-object v2, v1
-
     .line 3
-    :goto_3
-    invoke-static {v0, p1, p0, v1, v2}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->construct(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
+    :goto_2
+    invoke-static {p1, v0, p0, v1, v2}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->construct(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
 
     move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_6
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public static defaultVisibility()Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
@@ -453,7 +458,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-ne v2, v3, :cond_2
 
@@ -778,55 +785,43 @@
 
     .line 6
     :cond_2
-    iget-object v1, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_getterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v2, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_getterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+
+    if-ne v2, v1, :cond_3
 
     .line 7
-    sget-object v2, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    if-ne v1, v2, :cond_3
+    iget-object v2, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_getterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 8
-    iget-object v1, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_getterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    :cond_3
+    iget-object v3, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_isGetterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+
+    if-ne v3, v1, :cond_4
 
     .line 9
-    :cond_3
-    iget-object v2, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_isGetterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v3, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_isGetterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 10
-    sget-object v3, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    :cond_4
+    iget-object v4, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_setterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne v2, v3, :cond_4
+    if-ne v4, v1, :cond_5
 
     .line 11
-    iget-object v2, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_isGetterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v4, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_setterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 12
-    :cond_4
-    iget-object v3, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_setterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    .line 13
-    sget-object v4, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    if-ne v3, v4, :cond_5
-
-    .line 14
-    iget-object v3, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_setterVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    .line 15
     :cond_5
     iget-object p1, p1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_creatorVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    .line 16
-    sget-object v4, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    if-ne p1, v1, :cond_6
 
-    if-ne p1, v4, :cond_6
-
-    .line 17
+    .line 13
     iget-object p1, p0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->_creatorVisibility:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    .line 18
+    .line 14
     :cond_6
-    invoke-static {v0, v1, v2, v3, p1}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->construct(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
+    invoke-static {v0, v2, v3, v4, p1}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;->construct(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Value;
 
     move-result-object p1
 

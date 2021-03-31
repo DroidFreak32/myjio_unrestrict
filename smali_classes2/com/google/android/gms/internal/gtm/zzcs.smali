@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final zzace:Lcom/google/android/gms/internal/gtm/zzcq;
+.field private final zzace:Lcom/google/android/gms/internal/gtm/zzcq;
 
-.field public final zzach:Lcom/google/android/gms/internal/gtm/zzci;
+.field private final zzach:Lcom/google/android/gms/internal/gtm/zzci;
 
-.field public final zzaci:Landroid/app/job/JobParameters;
+.field private final zzaci:Landroid/app/job/JobParameters;
 
 
 # direct methods

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/service/Common;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # static fields
@@ -23,24 +24,24 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$ClientKey<",
-            "Lcom/google/android/gms/common/internal/service/zai;",
+            "Lcom/google/android/gms/common/internal/service/zaj;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public static final zaph:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.field public static final zaa:Lcom/google/android/gms/common/internal/service/zad;
+
+.field private static final zab:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-            "Lcom/google/android/gms/common/internal/service/zai;",
+            "Lcom/google/android/gms/common/internal/service/zaj;",
             "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
             ">;"
         }
     .end annotation
 .end field
-
-.field public static final zapi:Lcom/google/android/gms/common/internal/service/zac;
 
 
 # direct methods
@@ -55,31 +56,27 @@
     sput-object v0, Lcom/google/android/gms/common/internal/service/Common;->CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/common/internal/service/zab;
+    new-instance v1, Lcom/google/android/gms/common/internal/service/zab;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/internal/service/zab;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/gms/common/internal/service/zab;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/service/Common;->zaph:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    sput-object v1, Lcom/google/android/gms/common/internal/service/Common;->zab:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/common/api/Api;
-
-    sget-object v1, Lcom/google/android/gms/common/internal/service/Common;->zaph:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    sget-object v2, Lcom/google/android/gms/common/internal/service/Common;->CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
+    new-instance v2, Lcom/google/android/gms/common/api/Api;
 
     const-string v3, "Common.API"
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
+    invoke-direct {v2, v3, v1, v0}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/service/Common;->API:Lcom/google/android/gms/common/api/Api;
+    sput-object v2, Lcom/google/android/gms/common/internal/service/Common;->API:Lcom/google/android/gms/common/api/Api;
 
     .line 4
-    new-instance v0, Lcom/google/android/gms/common/internal/service/zad;
+    new-instance v0, Lcom/google/android/gms/common/internal/service/zac;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/internal/service/zad;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/internal/service/zac;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/service/Common;->zapi:Lcom/google/android/gms/common/internal/service/zac;
+    sput-object v0, Lcom/google/android/gms/common/internal/service/Common;->zaa:Lcom/google/android/gms/common/internal/service/zad;
 
     return-void
 .end method

@@ -1,143 +1,167 @@
-.class public final Lx7;
-.super Landroid/graphics/drawable/Drawable$ConstantState;
-.source "WrappedDrawableState.java"
+.class public Lx7;
+.super Ljava/lang/Object;
+.source "ShapeTrimPathParser.java"
 
 
-# instance fields
-.field public a:I
-
-.field public b:Landroid/graphics/drawable/Drawable$ConstantState;
-
-.field public c:Landroid/content/res/ColorStateList;
-
-.field public d:Landroid/graphics/PorterDuff$Mode;
+# static fields
+.field public static a:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
 
 # direct methods
-.method public constructor <init>(Lx7;)V
-    .locals 1
+.method public static constructor <clinit>()V
+    .locals 6
+
+    const-string v0, "s"
+
+    const-string v1, "e"
+
+    const-string v2, "o"
+
+    const-string v3, "nm"
+
+    const-string v4, "m"
+
+    const-string v5, "hd"
 
     .line 1
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Lx7;->c:Landroid/content/res/ColorStateList;
-
-    .line 3
-    sget-object v0, Lv7;->y:Landroid/graphics/PorterDuff$Mode;
-
-    iput-object v0, p0, Lx7;->d:Landroid/graphics/PorterDuff$Mode;
-
-    if-eqz p1, :cond_0
-
-    .line 4
-    iget v0, p1, Lx7;->a:I
-
-    iput v0, p0, Lx7;->a:I
-
-    .line 5
-    iget-object v0, p1, Lx7;->b:Landroid/graphics/drawable/Drawable$ConstantState;
-
-    iput-object v0, p0, Lx7;->b:Landroid/graphics/drawable/Drawable$ConstantState;
-
-    .line 6
-    iget-object v0, p1, Lx7;->c:Landroid/content/res/ColorStateList;
-
-    iput-object v0, p0, Lx7;->c:Landroid/content/res/ColorStateList;
-
-    .line 7
-    iget-object p1, p1, Lx7;->d:Landroid/graphics/PorterDuff$Mode;
-
-    iput-object p1, p0, Lx7;->d:Landroid/graphics/PorterDuff$Mode;
-
-    :cond_0
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lx7;->b:Landroid/graphics/drawable/Drawable$ConstantState;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public getChangingConfigurations()I
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lx7;->a:I
-
-    iget-object v1, p0, Lx7;->b:Landroid/graphics/drawable/Drawable$ConstantState;
-
-    if-eqz v1, :cond_0
-
-    .line 2
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
-
-    move-result v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    or-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public newDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    invoke-virtual {p0, v0}, Lx7;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    filled-new-array/range {v0 .. v5}, [Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    invoke-static {v0}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;->of([Ljava/lang/String;)Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+
+    move-result-object v0
+
+    sput-object v0, Lx7;->a:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+
+    return-void
 .end method
 
-.method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 2
+.method public static a(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapeTrimPath;
+    .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    move-object v3, v1
+
+    move-object v4, v3
+
+    move-object v5, v4
+
+    move-object v6, v5
+
+    move-object v7, v6
+
+    const/4 v8, 0x0
+
+    .line 1
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
 
     .line 2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget-object v1, Lx7;->a:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    const/16 v1, 0x15
+    invoke-virtual {p0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
 
-    if-lt v0, v1, :cond_0
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    const/4 v2, 0x1
+
+    if-eq v1, v2, :cond_4
+
+    const/4 v2, 0x2
+
+    if-eq v1, v2, :cond_3
+
+    const/4 v2, 0x3
+
+    if-eq v1, v2, :cond_2
+
+    const/4 v2, 0x4
+
+    if-eq v1, v2, :cond_1
+
+    const/4 v2, 0x5
+
+    if-eq v1, v2, :cond_0
 
     .line 3
-    new-instance v0, Lw7;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
-    invoke-direct {v0, p0, p1}, Lw7;-><init>(Lx7;Landroid/content/res/Resources;)V
-
-    return-object v0
+    goto :goto_0
 
     .line 4
     :cond_0
-    new-instance v0, Lv7;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextBoolean()Z
 
-    invoke-direct {v0, p0, p1}, Lv7;-><init>(Lx7;Landroid/content/res/Resources;)V
+    move-result v8
 
-    return-object v0
+    goto :goto_0
+
+    .line 5
+    :cond_1
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextInt()I
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->forId(I)Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
+
+    move-result-object v4
+
+    goto :goto_0
+
+    .line 6
+    :cond_2
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_0
+
+    .line 7
+    :cond_3
+    invoke-static {p0, p1, v0}, Lcom/airbnb/lottie/parser/AnimatableValueParser;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+
+    move-result-object v7
+
+    goto :goto_0
+
+    .line 8
+    :cond_4
+    invoke-static {p0, p1, v0}, Lcom/airbnb/lottie/parser/AnimatableValueParser;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    .line 9
+    :cond_5
+    invoke-static {p0, p1, v0}, Lcom/airbnb/lottie/parser/AnimatableValueParser;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;Z)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+
+    move-result-object v5
+
+    goto :goto_0
+
+    .line 10
+    :cond_6
+    new-instance p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;
+
+    move-object v2, p0
+
+    invoke-direct/range {v2 .. v8}, Lcom/airbnb/lottie/model/content/ShapeTrimPath;-><init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
+
+    return-object p0
 .end method

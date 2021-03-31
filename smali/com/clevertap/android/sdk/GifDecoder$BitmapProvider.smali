@@ -16,6 +16,8 @@
 
 # virtual methods
 .method public abstract obtain(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method
 
 .method public abstract obtainByteArray(I)[B

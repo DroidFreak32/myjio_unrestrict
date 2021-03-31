@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public TAG:Ljava/lang/String;
+.field private TAG:Ljava/lang/String;
 
 .field public accelerometer:Landroid/hardware/Sensor;
 
@@ -20,7 +20,7 @@
 
 .field public mGravity:[F
 
-.field public mSensorManager:Landroid/hardware/SensorManager;
+.field private mSensorManager:Landroid/hardware/SensorManager;
 
 .field public magnetometer:Landroid/hardware/Sensor;
 
@@ -30,7 +30,7 @@
 
 .field public roll:D
 
-.field public tts:Landroid/speech/tts/TextToSpeech;
+.field private tts:Landroid/speech/tts/TextToSpeech;
 
 
 # direct methods
@@ -61,11 +61,9 @@
     .line 4
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/OrientationSensorResult;->mContext:Landroid/content/Context;
 
-    .line 5
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/OrientationSensorResult;->mContext:Landroid/content/Context;
-
     const-string v0, "sensor"
 
+    .line 5
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
@@ -74,11 +72,9 @@
 
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/OrientationSensorResult;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 6
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/OrientationSensorResult;->mSensorManager:Landroid/hardware/SensorManager;
-
     const/4 v0, 0x1
 
+    .line 6
     invoke-virtual {p1, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     move-result-object p1
@@ -401,7 +397,7 @@
 
     const/4 v2, 0x0
 
-    const-string/jumbo v3, "your phone is facing down side, please turn it back"
+    const-string v3, "your phone is facing down side, please turn it back"
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/speech/tts/TextToSpeech;->speak(Ljava/lang/String;ILjava/util/HashMap;)I
 

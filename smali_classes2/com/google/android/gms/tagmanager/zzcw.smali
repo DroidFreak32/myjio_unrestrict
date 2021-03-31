@@ -11,7 +11,7 @@
 
 
 # static fields
-.field public static zzahj:Ljava/lang/String;
+.field private static zzahj:Ljava/lang/String;
 
 .field public static zzahk:Ljava/util/Map;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;

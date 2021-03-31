@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public createdTime:Ljava/lang/String;
+.field private createdTime:Ljava/lang/String;
 
-.field public modifiedTime:Ljava/lang/String;
+.field private modifiedTime:Ljava/lang/String;
 
-.field public profileConfig:Ljava/lang/String;
+.field private profileConfig:Ljava/lang/String;
 
-.field public profileData:Ljava/lang/String;
+.field private profileData:Ljava/lang/String;
 
-.field public profileDetail:Ljava/lang/String;
+.field private profileDetail:Ljava/lang/String;
 
-.field public profileName:Ljava/lang/String;
+.field private profileName:Ljava/lang/String;
 
 
 # direct methods
@@ -29,7 +29,25 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getCreatedTime()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/Profile;->createdTime:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getModifiedTime()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/Profile;->modifiedTime:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getProfileConfig()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -38,7 +56,7 @@
     return-object v0
 .end method
 
-.method public b()Ljava/lang/String;
+.method public getProfileData()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -47,13 +65,76 @@
     return-object v0
 .end method
 
-.method public c()Ljava/lang/String;
+.method public getProfileDetail()Ljava/lang/String;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/Profile;->profileDetail:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getProfileName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/Profile;->profileName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setCreatedTime(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/Profile;->createdTime:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setModifiedTime(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/Profile;->modifiedTime:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setProfileConfig(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/Profile;->profileConfig:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setProfileData(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/Profile;->profileData:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setProfileDetail(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/Profile;->profileDetail:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setProfileName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/Profile;->profileName:Ljava/lang/String;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

@@ -14,19 +14,19 @@
 
 
 # static fields
-.field public static zzalg:Lcom/google/android/gms/tagmanager/TagManager;
+.field private static zzalg:Lcom/google/android/gms/tagmanager/TagManager;
 
 
 # instance fields
-.field public final zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
+.field private final zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
 
-.field public final zzajg:Lcom/google/android/gms/tagmanager/zzal;
+.field private final zzajg:Lcom/google/android/gms/tagmanager/zzal;
 
-.field public final zzald:Lcom/google/android/gms/tagmanager/TagManager$zza;
+.field private final zzald:Lcom/google/android/gms/tagmanager/TagManager$zza;
 
-.field public final zzale:Lcom/google/android/gms/tagmanager/zzfm;
+.field private final zzale:Lcom/google/android/gms/tagmanager/zzfm;
 
-.field public final zzalf:Ljava/util/concurrent/ConcurrentMap;
+.field private final zzalf:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentMap<",
@@ -37,99 +37,88 @@
     .end annotation
 .end field
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/TagManager$zza;Lcom/google/android/gms/tagmanager/DataLayer;Lcom/google/android/gms/tagmanager/zzfm;)V
-    .locals 0
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/TagManager$zza;Lcom/google/android/gms/tagmanager/DataLayer;Lcom/google/android/gms/tagmanager/zzfm;)V
+    .locals 1
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_0
+    const-string v0, "context cannot be null"
 
     .line 2
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 3
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzrm:Landroid/content/Context;
 
-    .line 3
+    .line 4
     iput-object p4, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzale:Lcom/google/android/gms/tagmanager/zzfm;
 
-    .line 4
+    .line 5
     iput-object p2, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzald:Lcom/google/android/gms/tagmanager/TagManager$zza;
 
-    .line 5
-    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzalf:Ljava/util/concurrent/ConcurrentMap;
-
     .line 6
-    iput-object p3, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
+    new-instance p2, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {p2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object p2, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzalf:Ljava/util/concurrent/ConcurrentMap;
 
     .line 7
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
+    iput-object p3, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
 
+    .line 8
     new-instance p2, Lcom/google/android/gms/tagmanager/zzga;
 
     invoke-direct {p2, p0}, Lcom/google/android/gms/tagmanager/zzga;-><init>(Lcom/google/android/gms/tagmanager/TagManager;)V
 
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/tagmanager/DataLayer;->zza(Lcom/google/android/gms/tagmanager/DataLayer$zzb;)V
-
-    .line 8
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
-
-    new-instance p2, Lcom/google/android/gms/tagmanager/zzg;
-
-    iget-object p3, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzrm:Landroid/content/Context;
-
-    invoke-direct {p2, p3}, Lcom/google/android/gms/tagmanager/zzg;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/tagmanager/DataLayer;->zza(Lcom/google/android/gms/tagmanager/DataLayer$zzb;)V
+    invoke-virtual {p3, p2}, Lcom/google/android/gms/tagmanager/DataLayer;->zza(Lcom/google/android/gms/tagmanager/DataLayer$zzb;)V
 
     .line 9
-    new-instance p1, Lcom/google/android/gms/tagmanager/zzal;
+    new-instance p2, Lcom/google/android/gms/tagmanager/zzg;
 
-    invoke-direct {p1}, Lcom/google/android/gms/tagmanager/zzal;-><init>()V
+    invoke-direct {p2, p1}, Lcom/google/android/gms/tagmanager/zzg;-><init>(Landroid/content/Context;)V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzajg:Lcom/google/android/gms/tagmanager/zzal;
+    invoke-virtual {p3, p2}, Lcom/google/android/gms/tagmanager/DataLayer;->zza(Lcom/google/android/gms/tagmanager/DataLayer$zzb;)V
 
     .line 10
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzrm:Landroid/content/Context;
+    new-instance p2, Lcom/google/android/gms/tagmanager/zzal;
 
+    invoke-direct {p2}, Lcom/google/android/gms/tagmanager/zzal;-><init>()V
+
+    iput-object p2, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzajg:Lcom/google/android/gms/tagmanager/zzal;
+
+    .line 11
     new-instance p2, Lcom/google/android/gms/tagmanager/zzgc;
 
     invoke-direct {p2, p0}, Lcom/google/android/gms/tagmanager/zzgc;-><init>(Lcom/google/android/gms/tagmanager/TagManager;)V
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 11
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/TagManager;->zzrm:Landroid/content/Context;
-
+    .line 12
     invoke-static {p1}, Lcom/google/android/gms/tagmanager/zza;->zzf(Landroid/content/Context;)Lcom/google/android/gms/tagmanager/zza;
 
     return-void
-
-    .line 12
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "context cannot be null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/google/android/gms/tagmanager/TagManager;
     .locals 5
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     const-class v0, Lcom/google/android/gms/tagmanager/TagManager;
@@ -274,6 +263,10 @@
 
 .method public loadContainerDefaultOnly(Ljava/lang/String;I)Lcom/google/android/gms/common/api/PendingResult;
     .locals 7
+    .param p2    # I
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -313,6 +306,10 @@
 
 .method public loadContainerDefaultOnly(Ljava/lang/String;ILandroid/os/Handler;)Lcom/google/android/gms/common/api/PendingResult;
     .locals 7
+    .param p2    # I
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -357,6 +354,10 @@
 
 .method public loadContainerPreferFresh(Ljava/lang/String;I)Lcom/google/android/gms/common/api/PendingResult;
     .locals 7
+    .param p2    # I
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -396,6 +397,10 @@
 
 .method public loadContainerPreferFresh(Ljava/lang/String;ILandroid/os/Handler;)Lcom/google/android/gms/common/api/PendingResult;
     .locals 7
+    .param p2    # I
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -440,6 +445,10 @@
 
 .method public loadContainerPreferNonDefault(Ljava/lang/String;I)Lcom/google/android/gms/common/api/PendingResult;
     .locals 7
+    .param p2    # I
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -479,6 +488,10 @@
 
 .method public loadContainerPreferNonDefault(Ljava/lang/String;ILandroid/os/Handler;)Lcom/google/android/gms/common/api/PendingResult;
     .locals 7
+    .param p2    # I
+        .annotation build Landroidx/annotation/RawRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

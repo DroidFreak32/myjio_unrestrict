@@ -1,3 +1,2 @@
-.class public interface abstract Ly9;
+.class public synthetic Ly9;
 .super Ljava/lang/Object;
-.source "ScrollingView.java"

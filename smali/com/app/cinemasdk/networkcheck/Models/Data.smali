@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public isIndia:Ljava/lang/Boolean;
+.field private isIndia:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public isJio:Ljava/lang/Boolean;
+.field private isJio:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

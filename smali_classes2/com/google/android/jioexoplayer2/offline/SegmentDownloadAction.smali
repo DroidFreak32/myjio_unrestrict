@@ -26,6 +26,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILandroid/net/Uri;Z[BLjava/util/List;)V
     .locals 0
+    .param p5    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,6 +86,11 @@
 
 .method private writeKey(Ljava/io/DataOutputStream;Lcom/google/android/jioexoplayer2/offline/StreamKey;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p2, Lcom/google/android/jioexoplayer2/offline/StreamKey;->periodIndex:I
@@ -105,6 +114,10 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-ne p0, p1, :cond_0
 
@@ -181,6 +194,11 @@
 
 .method public final writeToStream(Ljava/io/DataOutputStream;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->uri:Landroid/net/Uri;

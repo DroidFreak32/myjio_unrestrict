@@ -1,6 +1,5 @@
 .class public final Lcom/google/android/gms/gcm/R$string;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,14 +14,13 @@
 
 
 # static fields
-.field public static final gcm_fallback_notification_channel_label:I = 0x7f13097c
+.field public static final gcm_fallback_notification_channel_label:I = 0x7f1309a6
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzdm:Lcom/google/android/gms/internal/clearcut/zzab;
+.field private final synthetic zzdm:Lcom/google/android/gms/internal/clearcut/zzab;
 
 
 # direct methods

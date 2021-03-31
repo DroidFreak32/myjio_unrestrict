@@ -24,6 +24,9 @@
 .field public final a:Z
 
 .field public final b:Ljava/lang/Throwable;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -31,7 +34,7 @@
     .locals 3
 
     .line 1
-    sget-boolean v0, Landroidx/work/impl/utils/futures/AbstractFuture;->v:Z
+    sget-boolean v0, Landroidx/work/impl/utils/futures/AbstractFuture;->d:Z
 
     const/4 v1, 0x0
 
@@ -70,6 +73,10 @@
 
 .method public constructor <init>(ZLjava/lang/Throwable;)V
     .locals 0
+    .param p2    # Ljava/lang/Throwable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

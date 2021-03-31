@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final mAction:Ljava/lang/String;
+.field private final mAction:Ljava/lang/String;
 
-.field public final mCallback:Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;
+.field private final mCallback:Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;
 
-.field public final mExtras:Landroid/os/Bundle;
+.field private final mExtras:Landroid/os/Bundle;
 
 
 # direct methods

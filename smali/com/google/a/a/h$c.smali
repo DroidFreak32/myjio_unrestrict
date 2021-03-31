@@ -34,107 +34,95 @@
 
 .field public static final enum f:Lcom/google/a/a/h$c;
 
-.field public static final synthetic g:[Lcom/google/a/a/h$c;
+.field private static final synthetic g:[Lcom/google/a/a/h$c;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     new-instance v0, Lcom/google/a/a/h$c;
 
-    const/4 v1, 0x0
+    const-string v1, "IS_POSSIBLE"
 
-    const-string v2, "IS_POSSIBLE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/a/a/h$c;->a:Lcom/google/a/a/h$c;
 
-    new-instance v0, Lcom/google/a/a/h$c;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/a/a/h$c;
 
     const-string v3, "IS_POSSIBLE_LOCAL_ONLY"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/a/a/h$c;->b:Lcom/google/a/a/h$c;
+    invoke-direct {v1, v3, v4}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/a/a/h$c;
+    sput-object v1, Lcom/google/a/a/h$c;->b:Lcom/google/a/a/h$c;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/a/a/h$c;
 
-    const-string v4, "INVALID_COUNTRY_CODE"
+    const-string v5, "INVALID_COUNTRY_CODE"
 
-    invoke-direct {v0, v4, v3}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/a/a/h$c;->c:Lcom/google/a/a/h$c;
+    invoke-direct {v3, v5, v6}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/a/a/h$c;
+    sput-object v3, Lcom/google/a/a/h$c;->c:Lcom/google/a/a/h$c;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/google/a/a/h$c;
 
-    const-string v5, "TOO_SHORT"
+    const-string v7, "TOO_SHORT"
 
-    invoke-direct {v0, v5, v4}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/google/a/a/h$c;->d:Lcom/google/a/a/h$c;
+    invoke-direct {v5, v7, v8}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/a/a/h$c;
+    sput-object v5, Lcom/google/a/a/h$c;->d:Lcom/google/a/a/h$c;
 
-    const/4 v5, 0x4
+    new-instance v7, Lcom/google/a/a/h$c;
 
-    const-string v6, "INVALID_LENGTH"
+    const-string v9, "INVALID_LENGTH"
 
-    invoke-direct {v0, v6, v5}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
+    const/4 v10, 0x4
 
-    sput-object v0, Lcom/google/a/a/h$c;->e:Lcom/google/a/a/h$c;
+    invoke-direct {v7, v9, v10}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/a/a/h$c;
+    sput-object v7, Lcom/google/a/a/h$c;->e:Lcom/google/a/a/h$c;
 
-    const/4 v6, 0x5
+    new-instance v9, Lcom/google/a/a/h$c;
 
-    const-string v7, "TOO_LONG"
+    const-string v11, "TOO_LONG"
 
-    invoke-direct {v0, v7, v6}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
+    const/4 v12, 0x5
 
-    sput-object v0, Lcom/google/a/a/h$c;->f:Lcom/google/a/a/h$c;
+    invoke-direct {v9, v11, v12}, Lcom/google/a/a/h$c;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x6
+    sput-object v9, Lcom/google/a/a/h$c;->f:Lcom/google/a/a/h$c;
 
-    new-array v0, v0, [Lcom/google/a/a/h$c;
+    const/4 v11, 0x6
 
-    sget-object v7, Lcom/google/a/a/h$c;->a:Lcom/google/a/a/h$c;
+    new-array v11, v11, [Lcom/google/a/a/h$c;
 
-    aput-object v7, v0, v1
+    aput-object v0, v11, v2
 
-    sget-object v1, Lcom/google/a/a/h$c;->b:Lcom/google/a/a/h$c;
+    aput-object v1, v11, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v11, v6
 
-    sget-object v1, Lcom/google/a/a/h$c;->c:Lcom/google/a/a/h$c;
+    aput-object v5, v11, v8
 
-    aput-object v1, v0, v3
+    aput-object v7, v11, v10
 
-    sget-object v1, Lcom/google/a/a/h$c;->d:Lcom/google/a/a/h$c;
+    aput-object v9, v11, v12
 
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/a/a/h$c;->e:Lcom/google/a/a/h$c;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/a/a/h$c;->f:Lcom/google/a/a/h$c;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/google/a/a/h$c;->g:[Lcom/google/a/a/h$c;
+    sput-object v11, Lcom/google/a/a/h$c;->g:[Lcom/google/a/a/h$c;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

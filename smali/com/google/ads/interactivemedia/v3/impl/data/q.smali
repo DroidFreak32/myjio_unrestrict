@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public attached:Ljava/lang/Boolean;
+.field private attached:Ljava/lang/Boolean;
 
-.field public bounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
+.field private bounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
-.field public hidden:Ljava/lang/Boolean;
+.field private hidden:Ljava/lang/Boolean;
 
-.field public type:Ljava/lang/String;
+.field private type:Ljava/lang/String;
 
 
 # direct methods
@@ -41,22 +41,15 @@
 .method public final bounds(Lcom/google/ads/interactivemedia/v3/impl/data/v;)Lcom/google/ads/interactivemedia/v3/impl/data/ae;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null bounds"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/q;->bounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null bounds"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final build()Lcom/google/ads/interactivemedia/v3/impl/data/ad;
@@ -213,20 +206,13 @@
 .method public final type(Ljava/lang/String;)Lcom/google/ads/interactivemedia/v3/impl/data/ae;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null type"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/q;->type:Ljava/lang/String;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null type"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

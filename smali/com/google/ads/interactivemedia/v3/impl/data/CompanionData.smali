@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public companionId:Ljava/lang/String;
+.field private companionId:Ljava/lang/String;
 
 
 # direct methods
@@ -29,7 +29,7 @@
     return-void
 .end method
 
-.method public static create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;)Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData;
+.method private static create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;)Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData;
     .locals 1
 
     .line 3

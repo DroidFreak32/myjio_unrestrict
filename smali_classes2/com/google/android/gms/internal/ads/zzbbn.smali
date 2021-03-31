@@ -1,46 +1,34 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzbbn;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzbbn;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbew;
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<MessageType::",
-        "Lcom/google/android/gms/internal/ads/zzbel;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzbew<",
-        "TMessageType;>;"
-    }
-.end annotation
-
-
-# static fields
-.field public static final zzdsv:Lcom/google/android/gms/internal/ads/zzbcq;
+# instance fields
+.field private final zzels:Lcom/google/android/gms/internal/ads/zzbbl;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbbl;)V
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbcq;->zzaen()Lcom/google/android/gms/internal/ads/zzbcq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbbn;->zzdsv:Lcom/google/android/gms/internal/ads/zzbcq;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbn;->zzels:Lcom/google/android/gms/internal/ads/zzbbl;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbn;->zzels:Lcom/google/android/gms/internal/ads/zzbbl;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbbl;->zzabj()V
 
     return-void
 .end method

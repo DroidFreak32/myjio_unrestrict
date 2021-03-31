@@ -15,15 +15,15 @@
 
 
 # static fields
-.field public static final HASH_DELIM:Ljava/lang/String; = "|"
+.field private static final HASH_DELIM:Ljava/lang/String; = "|"
 
-.field public static final HASH_MAGIC:Ljava/lang/String; = "|1|"
+.field private static final HASH_MAGIC:Ljava/lang/String; = "|1|"
 
 
 # instance fields
 .field public hash:[B
 
-.field public hashed:Z
+.field private hashed:Z
 
 .field public salt:[B
 
@@ -33,6 +33,11 @@
 # direct methods
 .method public constructor <init>(Lcom/jcraft/jsch/KnownHosts;Ljava/lang/String;I[B)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v2, ""
 
@@ -56,6 +61,11 @@
 
 .method public constructor <init>(Lcom/jcraft/jsch/KnownHosts;Ljava/lang/String;Ljava/lang/String;I[BLjava/lang/String;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 3
     iput-object p1, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->this$0:Lcom/jcraft/jsch/KnownHosts;
@@ -91,7 +101,7 @@
     .line 8
     iget-object p3, p0, Lcom/jcraft/jsch/HostKey;->host:Ljava/lang/String;
 
-    const-string/jumbo p4, "|1|"
+    const-string p4, "|1|"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -107,7 +117,7 @@
 
     move-result-object p3
 
-    const-string/jumbo p5, "|"
+    const-string p5, "|"
 
     invoke-virtual {p3, p5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -175,19 +185,17 @@
     iput-object p1, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->hash:[B
 
     .line 14
-    iget-object p1, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->salt:[B
+    iget-object p3, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->salt:[B
+
+    array-length p3, p3
+
+    const/16 p4, 0x14
+
+    if-ne p3, p4, :cond_1
 
     array-length p1, p1
 
-    const/16 p3, 0x14
-
-    if-ne p1, p3, :cond_1
-
-    iget-object p1, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->hash:[B
-
-    array-length p1, p1
-
-    if-eq p1, p3, :cond_0
+    if-eq p1, p4, :cond_0
 
     goto :goto_0
 
@@ -212,6 +220,11 @@
 
 .method public constructor <init>(Lcom/jcraft/jsch/KnownHosts;Ljava/lang/String;[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -265,11 +278,7 @@
     iput-object v3, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->salt:[B
 
     .line 7
-    iget-object v3, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->salt:[B
-
-    iget-object v4, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->salt:[B
-
-    array-length v4, v4
+    array-length v4, v3
 
     invoke-interface {v1, v3, v2, v4}, Lcom/jcraft/jsch/Random;->fill([BII)V
 
@@ -323,8 +332,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->hash:[B
 
     .line 14
-    iget-object v1, p0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;->hash:[B
-
     invoke-interface {v0, v1, v2}, Lcom/jcraft/jsch/MAC;->doFinal([BI)V
 
     .line 15
@@ -351,7 +358,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "|1|"
+    const-string v1, "|1|"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -369,7 +376,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v1, "|"
+    const-string v1, "|"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

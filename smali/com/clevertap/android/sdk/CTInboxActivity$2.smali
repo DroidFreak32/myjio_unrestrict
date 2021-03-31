@@ -49,6 +49,7 @@
 
     iget-object v0, v0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
+    .line 2
     invoke-virtual {p1}, Lcom/google/android/material/tabs/TabLayout$Tab;->getPosition()I
 
     move-result p1
@@ -59,16 +60,14 @@
 
     check-cast p1, Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
-    if-eqz p1, :cond_0
-
-    .line 2
+    .line 3
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;->getMediaRecyclerView()Lcom/clevertap/android/sdk/MediaPlayerRecyclerView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3
+    .line 4
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;->getMediaRecyclerView()Lcom/clevertap/android/sdk/MediaPlayerRecyclerView;
 
     move-result-object p1
@@ -87,6 +86,7 @@
 
     iget-object v0, v0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
+    .line 2
     invoke-virtual {p1}, Lcom/google/android/material/tabs/TabLayout$Tab;->getPosition()I
 
     move-result p1
@@ -97,16 +97,14 @@
 
     check-cast p1, Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
-    if-eqz p1, :cond_0
-
-    .line 2
+    .line 3
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;->getMediaRecyclerView()Lcom/clevertap/android/sdk/MediaPlayerRecyclerView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3
+    .line 4
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;->getMediaRecyclerView()Lcom/clevertap/android/sdk/MediaPlayerRecyclerView;
 
     move-result-object p1

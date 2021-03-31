@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field public zzjs:Lcom/google/android/gms/internal/clearcut/zzcg;
+.field private zzjs:Lcom/google/android/gms/internal/clearcut/zzcg;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"

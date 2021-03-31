@@ -1,157 +1,124 @@
 .class public final Lcom/google/android/gms/internal/vision/zzo;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/vision/zzb;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/internal/vision/zzn;",
-        ">;"
-    }
-.end annotation
+.implements Lcom/google/android/gms/internal/vision/zzl;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector"
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/vision/zzb;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 11
+.method public final zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzu;)[Lcom/google/android/gms/vision/barcode/Barcode;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzb;->zza()Landroid/os/Parcel;
 
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const-wide/16 v2, 0x0
-
-    move-wide v8, v2
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v10, 0x0
+    move-result-object v0
 
     .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v1
-
-    if-ge v1, v0, :cond_5
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/vision/zzd;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+    invoke-static {v0, p2}, Lcom/google/android/gms/internal/vision/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    move-result v1
+    const/4 p1, 0x1
 
     .line 4
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/vision/zzb;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    move-result v2
-
-    const/4 v3, 0x2
-
-    if-eq v2, v3, :cond_4
-
-    const/4 v3, 0x3
-
-    if-eq v2, v3, :cond_3
-
-    const/4 v3, 0x4
-
-    if-eq v2, v3, :cond_2
-
-    const/4 v3, 0x5
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v3, 0x6
-
-    if-eq v2, v3, :cond_0
+    move-result-object p1
 
     .line 5
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+    sget-object p2, Lcom/google/android/gms/vision/barcode/Barcode;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    goto :goto_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, [Lcom/google/android/gms/vision/barcode/Barcode;
 
     .line 6
-    :cond_0
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
 
-    move-result v10
-
-    goto :goto_0
-
-    .line 7
-    :cond_1
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readLong(Landroid/os/Parcel;I)J
-
-    move-result-wide v8
-
-    goto :goto_0
-
-    .line 8
-    :cond_2
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v7
-
-    goto :goto_0
-
-    .line 9
-    :cond_3
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v6
-
-    goto :goto_0
-
-    .line 10
-    :cond_4
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v5
-
-    goto :goto_0
-
-    .line 11
-    :cond_5
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    .line 12
-    new-instance p1, Lcom/google/android/gms/internal/vision/zzn;
-
-    move-object v4, p1
-
-    invoke-direct/range {v4 .. v10}, Lcom/google/android/gms/internal/vision/zzn;-><init>(IIIJI)V
-
-    return-object p1
+    return-object p2
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
+.method public final zzb(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzu;)[Lcom/google/android/gms/vision/barcode/Barcode;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    new-array p1, p1, [Lcom/google/android/gms/internal/vision/zzn;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzb;->zza()Landroid/os/Parcel;
 
-    return-object p1
+    move-result-object v0
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/vision/zzd;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    .line 3
+    invoke-static {v0, p2}, Lcom/google/android/gms/internal/vision/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x2
+
+    .line 4
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/vision/zzb;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object p1
+
+    .line 5
+    sget-object p2, Lcom/google/android/gms/vision/barcode/Barcode;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, [Lcom/google/android/gms/vision/barcode/Barcode;
+
+    .line 6
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
+    return-object p2
+.end method
+
+.method public final zzo()V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzb;->zza()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    .line 2
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/vision/zzb;->zzb(ILandroid/os/Parcel;)V
+
+    return-void
 .end method

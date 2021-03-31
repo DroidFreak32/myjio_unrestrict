@@ -1,58 +1,42 @@
 .class public final Lcom/google/android/gms/internal/ads/zzwu;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapx;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzapx<",
-        "Lcom/google/android/gms/internal/ads/zzvr;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic zzbty:Lcom/google/android/gms/internal/ads/zzwp;
+.implements Lcom/google/android/gms/internal/ads/zzws;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzwt;Lcom/google/android/gms/internal/ads/zzwp;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.client.IAdClickListener"
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzwu;->zzbty:Lcom/google/android/gms/internal/ads/zzwp;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zze(Ljava/lang/Object;)V
-    .locals 1
+.method public final onAdClicked()V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzvr;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    const-string v0, "Getting a new session for JS Engine."
+    move-result-object v0
+
+    const/4 v1, 0x1
 
     .line 2
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwu;->zzbty:Lcom/google/android/gms/internal/ads/zzwp;
-
-    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzvr;->zzne()Lcom/google/android/gms/internal/ads/zzwz;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzapy;->zzl(Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
 
     return-void
 .end method

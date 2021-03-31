@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static final DEFAULT_FACTORY:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
+.field private static final DEFAULT_FACTORY:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
 
-.field public static final EMPTY_MODEL_LOADER:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private static final EMPTY_MODEL_LOADER:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader<",
@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public final alreadyUsedEntries:Ljava/util/Set;
+.field private final alreadyUsedEntries:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public final entries:Ljava/util/List;
+.field private final entries:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -49,12 +49,12 @@
     .end annotation
 .end field
 
-.field public final factory:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
+.field private final factory:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
 
-.field public final throwableListPool:Lz8;
+.field private final throwableListPool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;"
@@ -84,12 +84,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Lz8;)V
+.method public constructor <init>(Landroidx/core/util/Pools$Pool;)V
     .locals 1
+    .param p1    # Landroidx/core/util/Pools$Pool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;)V"
@@ -99,17 +103,28 @@
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->DEFAULT_FACTORY:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
 
-    invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;-><init>(Lz8;Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;)V
+    invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;-><init>(Landroidx/core/util/Pools$Pool;Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lz8;Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;)V
+.method public constructor <init>(Landroidx/core/util/Pools$Pool;Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;)V
     .locals 1
+    .param p1    # Landroidx/core/util/Pools$Pool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;",
@@ -136,7 +151,7 @@
     iput-object v0, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->alreadyUsedEntries:Ljava/util/Set;
 
     .line 5
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->throwableListPool:Lz8;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
     .line 6
     iput-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->factory:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
@@ -146,6 +161,18 @@
 
 .method private add(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;Z)V
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -189,6 +216,13 @@
 
 .method private build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Entry;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Entry;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -219,8 +253,11 @@
     return-object p1
 .end method
 
-.method public static emptyModelLoader()Lcom/bumptech/glide/load/model/ModelLoader;
+.method private static emptyModelLoader()Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -241,6 +278,13 @@
 
 .method private getFactory(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Entry;)Lcom/bumptech/glide/load/model/ModelLoaderFactory;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Entry;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -265,6 +309,18 @@
 # virtual methods
 .method public declared-synchronized append(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)V
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -306,6 +362,17 @@
 
 .method public declared-synchronized build(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 7
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -408,9 +475,9 @@
     .line 19
     iget-object p1, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->factory:Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;
 
-    iget-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->throwableListPool:Lz8;
+    iget-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-virtual {p1, v0, p2}, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;->build(Ljava/util/List;Lz8;)Lcom/bumptech/glide/load/model/MultiModelLoader;
+    invoke-virtual {p1, v0, p2}, Lcom/bumptech/glide/load/model/MultiModelLoaderFactory$Factory;->build(Ljava/util/List;Landroidx/core/util/Pools$Pool;)Lcom/bumptech/glide/load/model/MultiModelLoader;
 
     move-result-object p1
     :try_end_0
@@ -492,6 +559,13 @@
 
 .method public declared-synchronized build(Ljava/lang/Class;)Ljava/util/List;
     .locals 4
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -604,6 +678,13 @@
 
 .method public declared-synchronized getDataClasses(Ljava/lang/Class;)Ljava/util/List;
     .locals 4
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -684,6 +765,18 @@
 
 .method public declared-synchronized prepend(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)V
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -725,6 +818,17 @@
 
 .method public declared-synchronized remove(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
     .locals 4
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -809,6 +913,21 @@
 
 .method public declared-synchronized replace(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)Ljava/util/List;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",

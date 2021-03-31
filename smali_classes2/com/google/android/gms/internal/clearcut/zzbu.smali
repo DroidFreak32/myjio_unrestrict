@@ -55,6 +55,12 @@
             "**>;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzby;)V

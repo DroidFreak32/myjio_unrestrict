@@ -18,57 +18,57 @@
 
 
 # instance fields
-.field public MCC:Ljava/lang/String;
+.field private MCC:Ljava/lang/String;
 
-.field public MNC:Ljava/lang/String;
+.field private MNC:Ljava/lang/String;
 
-.field public autoJoin:Ljava/lang/String;
+.field private autoJoin:Ljava/lang/String;
 
-.field public eapType:Ljava/lang/String;
+.field private eapType:Ljava/lang/String;
 
-.field public hidden:Ljava/lang/String;
+.field private hidden:Ljava/lang/String;
 
-.field public id:I
+.field private id:I
 
-.field public isLocal:Z
+.field private isLocal:Z
 
-.field public isOutOfRange:Z
+.field private isOutOfRange:Z
 
-.field public isPreferable:Z
+.field private isPreferable:Z
 
-.field public isSMPIntegrate:Ljava/lang/String;
+.field private isSMPIntegrate:Ljava/lang/String;
 
-.field public isWisprEnabled:Z
+.field private isWisprEnabled:Z
 
-.field public networkName:Ljava/lang/String;
+.field private networkName:Ljava/lang/String;
 
-.field public notificationMessage:Ljava/lang/String;
+.field private notificationMessage:Ljava/lang/String;
 
-.field public password:Ljava/lang/String;
+.field private password:Ljava/lang/String;
 
-.field public profileId:I
+.field private profileId:I
 
-.field public protocolType:Ljava/lang/String;
+.field private protocolType:Ljava/lang/String;
 
-.field public securityType:Ljava/lang/String;
+.field private securityType:Ljava/lang/String;
 
-.field public selectedNetwork:Ljava/lang/String;
+.field private selectedNetwork:Ljava/lang/String;
 
-.field public showPassword:Z
+.field private showPassword:Z
 
-.field public sim_operator_name:Ljava/lang/String;
+.field private sim_operator_name:Ljava/lang/String;
 
-.field public ssidName:Ljava/lang/String;
+.field private ssidName:Ljava/lang/String;
 
-.field public userIdentity:Ljava/lang/String;
+.field private userIdentity:Ljava/lang/String;
 
-.field public validForAllNetwork:Ljava/lang/String;
+.field private validForAllNetwork:Ljava/lang/String;
 
-.field public wisprAuthenticationMethod:Ljava/lang/String;
+.field private wisprAuthenticationMethod:Ljava/lang/String;
 
-.field public wisprPassword:Ljava/lang/String;
+.field private wisprPassword:Ljava/lang/String;
 
-.field public wisprUsarname:Ljava/lang/String;
+.field private wisprUsarname:Ljava/lang/String;
 
 
 # direct methods

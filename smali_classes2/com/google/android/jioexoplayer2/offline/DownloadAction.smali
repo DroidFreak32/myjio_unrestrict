@@ -12,7 +12,10 @@
 
 
 # static fields
-.field public static defaultDeserializers:[Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
+.field private static defaultDeserializers:[Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # instance fields
@@ -30,6 +33,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILandroid/net/Uri;Z[B)V
     .locals 0
+    .param p5    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,6 +69,11 @@
 
 .method public static deserializeFromStream([Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;Ljava/io/InputStream;)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/DataInputStream;
@@ -152,14 +164,12 @@
     .line 1
     :try_start_0
     sget-object v1, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->defaultDeserializers:[Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v1, :cond_0
 
     .line 2
-    sget-object v1, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->defaultDeserializers:[Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     monitor-exit v0
 
     return-object v1
@@ -179,48 +189,50 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const-string v2, "com.google.android.jioexoplayer2.source.dash.offline.DashDownloadAction"
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    :try_start_2
+    const-string v3, "com.google.android.jioexoplayer2.source.dash.offline.DashDownloadAction"
 
     .line 4
-    :try_start_2
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v3
     :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     const/4 v4, 0x2
 
     .line 5
     :try_start_3
-    invoke-static {v2}, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->getDeserializer(Ljava/lang/Class;)Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
+    invoke-static {v3}, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->getDeserializer(Ljava/lang/Class;)Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
 
-    move-result-object v2
+    move-result-object v3
 
-    aput-object v2, v1, v3
+    aput-object v3, v1, v2
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_0
 
     :catch_0
-    const/4 v4, 0x1
+    const/4 v2, 0x2
 
     :catch_1
+    move v4, v2
+
     :goto_0
+    :try_start_4
     const-string v2, "com.google.android.jioexoplayer2.source.hls.offline.HlsDownloadAction"
 
     .line 6
-    :try_start_4
     invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v2
     :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     add-int/lit8 v3, v4, 0x1
@@ -233,25 +245,27 @@
 
     aput-object v2, v1, v4
     :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     goto :goto_1
 
     :catch_2
-    move v3, v4
+    move v4, v3
 
     :catch_3
+    move v3, v4
+
     :goto_1
+    :try_start_6
     const-string v2, "com.google.android.jioexoplayer2.source.smoothstreaming.offline.SsDownloadAction"
 
     .line 8
-    :try_start_6
     invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v2
     :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_4
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_5
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     add-int/lit8 v4, v3, 0x1
@@ -264,16 +278,18 @@
 
     aput-object v2, v1, v3
     :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_4
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     goto :goto_2
 
     :catch_4
+    move v3, v4
+
+    :catch_5
     move v4, v3
 
     .line 10
-    :catch_5
     :goto_2
     :try_start_8
     invoke-static {v1}, Lcom/google/android/jioexoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -289,12 +305,10 @@
     check-cast v1, [Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
 
     sput-object v1, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->defaultDeserializers:[Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
-
-    .line 11
-    sget-object v1, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->defaultDeserializers:[Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
+    .line 11
     monitor-exit v0
 
     return-object v1
@@ -307,7 +321,7 @@
     throw v1
 .end method
 
-.method public static getDeserializer(Ljava/lang/Class;)Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
+.method private static getDeserializer(Ljava/lang/Class;)Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -315,6 +329,13 @@
             "Ljava/lang/Class<",
             "*>;)",
             "Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NoSuchFieldException;,
+            Ljava/lang/IllegalAccessException;
         }
     .end annotation
 
@@ -343,6 +364,11 @@
 
 .method public static serializeToStream(Lcom/google/android/jioexoplayer2/offline/DownloadAction;Ljava/io/OutputStream;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/DataOutputStream;
@@ -375,6 +401,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -545,4 +575,9 @@
 .end method
 
 .method public abstract writeToStream(Ljava/io/DataOutputStream;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method

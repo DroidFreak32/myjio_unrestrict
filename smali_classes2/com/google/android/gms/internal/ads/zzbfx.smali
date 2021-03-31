@@ -1,163 +1,123 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbfx;
-.super Ljava/util/AbstractList;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbdu;
-.implements Ljava/util/RandomAccess;
+.implements Lcom/google/android/gms/internal/ads/zzahv;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/util/AbstractList<",
-        "Ljava/lang/String;",
-        ">;",
-        "Lcom/google/android/gms/internal/ads/zzbdu;",
-        "Ljava/util/RandomAccess;"
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzahv<",
+        "Lcom/google/android/gms/internal/ads/zzbdv;",
+        ">;"
     }
 .end annotation
 
 
 # instance fields
-.field public final zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
+.field private final synthetic zzeti:Lcom/google/android/gms/internal/ads/zzbfv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbdu;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbfv;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzeti:Lcom/google/android/gms/internal/ads/zzbfv;
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zzbfx;)Lcom/google/android/gms/internal/ads/zzbdu;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final synthetic get(I)Ljava/lang/Object;
+.method public final synthetic zza(Ljava/lang/Object;Ljava/util/Map;)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzbdv;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    if-eqz p2, :cond_1
+
+    const-string p1, "height"
+
+    .line 2
+    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
 
-    return-object p1
-.end method
+    .line 3
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Iterator<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
+    move-result p2
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbfz;
+    if-nez p2, :cond_1
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzbfz;-><init>(Lcom/google/android/gms/internal/ads/zzbfx;)V
+    .line 4
+    :try_start_0
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    return-object v0
-.end method
+    move-result p1
 
-.method public final listIterator(I)Ljava/util/ListIterator;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/ListIterator<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
+    .line 5
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzeti:Lcom/google/android/gms/internal/ads/zzbfv;
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbfy;
+    monitor-enter p2
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzbfy;-><init>(Lcom/google/android/gms/internal/ads/zzbfx;I)V
+    .line 6
+    :try_start_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzeti:Lcom/google/android/gms/internal/ads/zzbfv;
 
-    return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbfv;->zza(Lcom/google/android/gms/internal/ads/zzbfv;)I
 
     move-result v0
 
-    return v0
-.end method
+    if-eq v0, p1, :cond_0
 
-.method public final zzafy()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "*>;"
-        }
-    .end annotation
+    .line 7
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzeti:Lcom/google/android/gms/internal/ads/zzbfv;
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzbfv;->zza(Lcom/google/android/gms/internal/ads/zzbfv;I)I
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzbdu;->zzafy()Ljava/util/List;
+    .line 8
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzeti:Lcom/google/android/gms/internal/ads/zzbfv;
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/webkit/WebView;->requestLayout()V
 
-    return-object v0
-.end method
+    .line 9
+    :cond_0
+    monitor-exit p2
 
-.method public final zzafz()Lcom/google/android/gms/internal/ads/zzbdu;
-    .locals 0
+    return-void
 
-    return-object p0
-.end method
+    :catchall_0
+    move-exception p1
 
-.method public final zzap(Lcom/google/android/gms/internal/ads/zzbbu;)V
-    .locals 0
+    monitor-exit p2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
+    :try_start_2
     throw p1
-.end method
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-.method public final zzcx(I)Ljava/lang/Object;
-    .locals 1
+    :catch_0
+    move-exception p1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfx;->zzebx:Lcom/google/android/gms/internal/ads/zzbdu;
+    const-string p2, "Exception occurred while getting webview content height"
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzbdu;->zzcx(I)Ljava/lang/Object;
+    .line 10
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzd(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    move-result-object p1
-
-    return-object p1
+    :cond_1
+    return-void
 .end method

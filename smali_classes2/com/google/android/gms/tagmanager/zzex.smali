@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzaec:Ljava/lang/String;
+.field private final zzaec:Ljava/lang/String;
 
-.field public zzajf:Lcom/google/android/gms/tagmanager/zzdh;
+.field private zzajf:Lcom/google/android/gms/tagmanager/zzdh;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tagmanager/zzdh<",
@@ -18,9 +18,9 @@
     .end annotation
 .end field
 
-.field public final zzajm:Ljava/util/concurrent/ExecutorService;
+.field private final zzajm:Ljava/util/concurrent/ExecutorService;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -52,7 +52,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/io/ByteArrayOutputStream;)Lcom/google/android/gms/internal/gtm/zzov;
+.method private static zza(Ljava/io/ByteArrayOutputStream;)Lcom/google/android/gms/internal/gtm/zzov;
     .locals 2
 
     const/4 v0, 0x0
@@ -92,7 +92,7 @@
     return-object v0
 .end method
 
-.method public static zzb([B)Lcom/google/android/gms/internal/gtm/zzov;
+.method private static zzb([B)Lcom/google/android/gms/internal/gtm/zzov;
     .locals 2
 
     const/4 v0, 0x0
@@ -283,15 +283,13 @@
 
     move-result v4
 
-    new-array v4, v4, [B
+    new-array v5, v4, [B
 
     .line 9
-    array-length v5, v4
-
-    invoke-static {p1, v4, v2, v5}, Lcom/google/android/gms/internal/gtm/zzuw;->zza(Lcom/google/android/gms/internal/gtm/zzuw;[BII)V
+    invoke-static {p1, v5, v2, v4}, Lcom/google/android/gms/internal/gtm/zzuw;->zza(Lcom/google/android/gms/internal/gtm/zzuw;[BII)V
 
     .line 10
-    invoke-virtual {v3, v4}, Ljava/io/FileOutputStream;->write([B)V
+    invoke-virtual {v3, v5}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

@@ -4,19 +4,19 @@
 
 
 # instance fields
-.field public bssid:Ljava/lang/String;
+.field private bssid:Ljava/lang/String;
 
-.field public channel:Ljava/lang/Integer;
+.field private channel:Ljava/lang/Integer;
 
-.field public frequency:Ljava/lang/Integer;
+.field private frequency:Ljava/lang/Integer;
 
-.field public macAddress:Ljava/lang/String;
+.field private macAddress:Ljava/lang/String;
 
-.field public networkTypeWhenWifi:Ljava/lang/String;
+.field private networkTypeWhenWifi:Ljava/lang/String;
 
-.field public rssi:Ljava/lang/Integer;
+.field private rssi:Ljava/lang/Integer;
 
-.field public ssid:Ljava/lang/String;
+.field private ssid:Ljava/lang/String;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getBssid()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -40,52 +40,52 @@
     return-object v0
 .end method
 
-.method public a(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->channel:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->bssid:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/String;
+.method public getChannel()Ljava/lang/Integer;
     .locals 1
 
-    .line 3
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/WifiParams;->channel:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getFrequency()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/WifiParams;->frequency:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getMacAddress()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/WifiParams;->macAddress:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getNetworkTypeWhenWifi()Ljava/lang/String;
+    .locals 1
+
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/WifiParams;->networkTypeWhenWifi:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public b(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->frequency:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/String;)V
-    .locals 0
+.method public getRssi()Ljava/lang/Integer;
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->macAddress:Ljava/lang/String;
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/WifiParams;->rssi:Ljava/lang/Integer;
 
-    return-void
+    return-object v0
 .end method
 
-.method public c()Ljava/lang/String;
+.method public getSsid()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -94,25 +94,61 @@
     return-object v0
 .end method
 
-.method public c(Ljava/lang/Integer;)V
+.method public setBssid(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->rssi:Ljava/lang/Integer;
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->bssid:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public c(Ljava/lang/String;)V
+.method public setChannel(Ljava/lang/Integer;)V
     .locals 0
 
-    .line 3
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->channel:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setFrequency(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->frequency:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setMacAddress(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->macAddress:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNetworkTypeWhenWifi(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->networkTypeWhenWifi:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public d(Ljava/lang/String;)V
+.method public setRssi(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/WifiParams;->rssi:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setSsid(Ljava/lang/String;)V
     .locals 0
 
     .line 1

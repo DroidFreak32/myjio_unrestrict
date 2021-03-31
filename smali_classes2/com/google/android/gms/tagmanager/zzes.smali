@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public closed:Z
+.field private closed:Z
 
-.field public final zzaec:Ljava/lang/String;
+.field private final zzaec:Ljava/lang/String;
 
-.field public zzafd:Ljava/lang/String;
+.field private zzafd:Ljava/lang/String;
 
-.field public zzajf:Lcom/google/android/gms/tagmanager/zzdh;
+.field private zzajf:Lcom/google/android/gms/tagmanager/zzdh;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tagmanager/zzdh<",
@@ -22,13 +22,13 @@
     .end annotation
 .end field
 
-.field public zzajg:Lcom/google/android/gms/tagmanager/zzal;
+.field private zzajg:Lcom/google/android/gms/tagmanager/zzal;
 
-.field public final zzaji:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final zzaji:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field public final zzajj:Lcom/google/android/gms/tagmanager/zzev;
+.field private final zzajj:Lcom/google/android/gms/tagmanager/zzev;
 
-.field public zzajk:Ljava/util/concurrent/ScheduledFuture;
+.field private zzajk:Ljava/util/concurrent/ScheduledFuture;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ScheduledFuture<",
@@ -37,7 +37,7 @@
     .end annotation
 .end field
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/tagmanager/zzal;Lcom/google/android/gms/tagmanager/zzew;Lcom/google/android/gms/tagmanager/zzev;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/tagmanager/zzal;Lcom/google/android/gms/tagmanager/zzew;Lcom/google/android/gms/tagmanager/zzev;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -174,11 +174,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzes;->zzajk:Ljava/util/concurrent/ScheduledFuture;
-
     const/4 v1, 0x0
 
+    .line 3
     invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
     .line 4
@@ -261,11 +259,9 @@
 
     if-eqz v0, :cond_0
 
-    .line 8
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzes;->zzajk:Ljava/util/concurrent/ScheduledFuture;
-
     const/4 v1, 0x0
 
+    .line 8
     invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
     .line 9

@@ -21,20 +21,20 @@
 
 
 # instance fields
-.field public final zzad:Z
+.field private final zzad:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "false"
         id = 0x1
     .end annotation
 .end field
 
-.field public final zzae:J
+.field private final zzae:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x3
     .end annotation
 .end field
 
-.field public final zzaf:J
+.field private final zzaf:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x2
     .end annotation

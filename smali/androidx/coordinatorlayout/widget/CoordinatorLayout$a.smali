@@ -3,7 +3,7 @@
 .source "CoordinatorLayout.java"
 
 # interfaces
-.implements Lv9;
+.implements Landroidx/core/view/OnApplyWindowInsetsListener;
 
 
 # annotations
@@ -35,13 +35,13 @@
 
 
 # virtual methods
-.method public onApplyWindowInsets(Landroid/view/View;Lka;)Lka;
+.method public onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
     .locals 0
 
     .line 1
     iget-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$a;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    invoke-virtual {p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setWindowInsets(Lka;)Lka;
+    invoke-virtual {p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setWindowInsets(Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p1
 

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/bumptech/glide/MemoryCategory;
+.field private static final synthetic $VALUES:[Lcom/bumptech/glide/MemoryCategory;
 
 .field public static final enum HIGH:Lcom/bumptech/glide/MemoryCategory;
 
@@ -24,75 +24,69 @@
 
 
 # instance fields
-.field public final multiplier:F
+.field private final multiplier:F
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 8
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/MemoryCategory;
 
-    const/4 v1, 0x0
+    const-string v1, "LOW"
 
-    const-string v2, "LOW"
+    const/4 v2, 0x0
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    invoke-direct {v0, v2, v1, v3}, Lcom/bumptech/glide/MemoryCategory;-><init>(Ljava/lang/String;IF)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/bumptech/glide/MemoryCategory;-><init>(Ljava/lang/String;IF)V
 
     sput-object v0, Lcom/bumptech/glide/MemoryCategory;->LOW:Lcom/bumptech/glide/MemoryCategory;
 
     .line 2
-    new-instance v0, Lcom/bumptech/glide/MemoryCategory;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/bumptech/glide/MemoryCategory;
 
     const-string v3, "NORMAL"
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v3, v2, v4}, Lcom/bumptech/glide/MemoryCategory;-><init>(Ljava/lang/String;IF)V
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    sput-object v0, Lcom/bumptech/glide/MemoryCategory;->NORMAL:Lcom/bumptech/glide/MemoryCategory;
+    invoke-direct {v1, v3, v4, v5}, Lcom/bumptech/glide/MemoryCategory;-><init>(Ljava/lang/String;IF)V
+
+    sput-object v1, Lcom/bumptech/glide/MemoryCategory;->NORMAL:Lcom/bumptech/glide/MemoryCategory;
 
     .line 3
-    new-instance v0, Lcom/bumptech/glide/MemoryCategory;
+    new-instance v3, Lcom/bumptech/glide/MemoryCategory;
 
-    const/4 v3, 0x2
+    const-string v5, "HIGH"
 
-    const-string v4, "HIGH"
+    const/4 v6, 0x2
 
-    const/high16 v5, 0x3fc00000    # 1.5f
+    const/high16 v7, 0x3fc00000    # 1.5f
 
-    invoke-direct {v0, v4, v3, v5}, Lcom/bumptech/glide/MemoryCategory;-><init>(Ljava/lang/String;IF)V
+    invoke-direct {v3, v5, v6, v7}, Lcom/bumptech/glide/MemoryCategory;-><init>(Ljava/lang/String;IF)V
 
-    sput-object v0, Lcom/bumptech/glide/MemoryCategory;->HIGH:Lcom/bumptech/glide/MemoryCategory;
+    sput-object v3, Lcom/bumptech/glide/MemoryCategory;->HIGH:Lcom/bumptech/glide/MemoryCategory;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/bumptech/glide/MemoryCategory;
+    new-array v5, v5, [Lcom/bumptech/glide/MemoryCategory;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/bumptech/glide/MemoryCategory;->LOW:Lcom/bumptech/glide/MemoryCategory;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/bumptech/glide/MemoryCategory;->NORMAL:Lcom/bumptech/glide/MemoryCategory;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/bumptech/glide/MemoryCategory;->HIGH:Lcom/bumptech/glide/MemoryCategory;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/bumptech/glide/MemoryCategory;->$VALUES:[Lcom/bumptech/glide/MemoryCategory;
+    sput-object v5, Lcom/bumptech/glide/MemoryCategory;->$VALUES:[Lcom/bumptech/glide/MemoryCategory;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IF)V
+.method private constructor <init>(Ljava/lang/String;IF)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

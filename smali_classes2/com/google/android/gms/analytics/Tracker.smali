@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public zztb:Z
+.field private zztb:Z
 
-.field public final zztc:Ljava/util/Map;
+.field private final zztc:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public final zztd:Ljava/util/Map;
+.field private final zztd:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -38,13 +38,13 @@
     .end annotation
 .end field
 
-.field public final zzte:Lcom/google/android/gms/internal/gtm/zzcg;
+.field private final zzte:Lcom/google/android/gms/internal/gtm/zzcg;
 
-.field public final zztf:Lcom/google/android/gms/analytics/Tracker$zza;
+.field private final zztf:Lcom/google/android/gms/analytics/Tracker$zza;
 
-.field public zztg:Lcom/google/android/gms/analytics/ExceptionReporter;
+.field private zztg:Lcom/google/android/gms/analytics/ExceptionReporter;
 
-.field public zzth:Lcom/google/android/gms/internal/gtm/zzcy;
+.field private zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
 
 # direct methods
@@ -62,53 +62,47 @@
     iput-object p3, p0, Lcom/google/android/gms/analytics/Tracker;->zztc:Ljava/util/Map;
 
     .line 3
-    new-instance p3, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p3}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p3, p0, Lcom/google/android/gms/analytics/Tracker;->zztd:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/Tracker;->zztd:Ljava/util/Map;
 
     if-eqz p2, :cond_0
 
-    .line 4
-    iget-object p3, p0, Lcom/google/android/gms/analytics/Tracker;->zztc:Ljava/util/Map;
-
     const-string v0, "&tid"
 
+    .line 4
     invoke-interface {p3, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5
     :cond_0
-    iget-object p2, p0, Lcom/google/android/gms/analytics/Tracker;->zztc:Ljava/util/Map;
-
-    const-string p3, "useSecure"
+    const-string p2, "useSecure"
 
     const-string v0, "1"
 
-    invoke-interface {p2, p3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 5
+    invoke-interface {p3, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
-    iget-object p2, p0, Lcom/google/android/gms/analytics/Tracker;->zztc:Ljava/util/Map;
+    new-instance p2, Ljava/util/Random;
 
-    new-instance p3, Ljava/util/Random;
-
-    invoke-direct {p3}, Ljava/util/Random;-><init>()V
+    invoke-direct {p2}, Ljava/util/Random;-><init>()V
 
     const v0, 0x7fffffff
 
-    invoke-virtual {p3, v0}, Ljava/util/Random;->nextInt(I)I
+    invoke-virtual {p2, v0}, Ljava/util/Random;->nextInt(I)I
 
-    move-result p3
+    move-result p2
 
-    add-int/lit8 p3, p3, 0x1
+    add-int/lit8 p2, p2, 0x1
 
-    invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object p3
+    move-result-object p2
 
     const-string v0, "&a"
 
-    invoke-interface {p2, v0, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
     new-instance p2, Lcom/google/android/gms/internal/gtm/zzcg;
@@ -136,13 +130,13 @@
 .method public static synthetic zza(Lcom/google/android/gms/analytics/Tracker;)Lcom/google/android/gms/analytics/Tracker$zza;
     .locals 0
 
-    .line 40
+    .line 33
     iget-object p0, p0, Lcom/google/android/gms/analytics/Tracker;->zztf:Lcom/google/android/gms/analytics/Tracker$zza;
 
     return-object p0
 .end method
 
-.method public static zza(Ljava/util/Map$Entry;)Ljava/lang/String;
+.method private static zza(Ljava/util/Map$Entry;)Ljava/lang/String;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -155,7 +149,7 @@
         }
     .end annotation
 
-    .line 33
+    .line 26
     invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -164,7 +158,7 @@
 
     const-string v1, "&"
 
-    .line 34
+    .line 27
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -199,7 +193,7 @@
 
     return-object p0
 
-    .line 35
+    .line 28
     :cond_2
     invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -214,7 +208,7 @@
     return-object p0
 .end method
 
-.method public static zza(Ljava/util/Map;Ljava/util/Map;)V
+.method private static zza(Ljava/util/Map;Ljava/util/Map;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -230,14 +224,14 @@
         }
     .end annotation
 
-    .line 36
+    .line 29
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-nez p0, :cond_0
 
     return-void
 
-    .line 37
+    .line 30
     :cond_0
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -261,14 +255,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 38
+    .line 31
     invoke-static {v0}, Lcom/google/android/gms/analytics/Tracker;->zza(Ljava/util/Map$Entry;)Ljava/lang/String;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 39
+    .line 32
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -423,15 +417,15 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    if-ne v0, p1, :cond_1
+    if-ne v1, p1, :cond_1
 
     .line 3
     monitor-exit p0
@@ -459,9 +453,7 @@
     iput-object v1, p0, Lcom/google/android/gms/analytics/Tracker;->zztg:Lcom/google/android/gms/analytics/ExceptionReporter;
 
     .line 7
-    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zztg:Lcom/google/android/gms/analytics/ExceptionReporter;
-
-    invoke-static {p1}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    invoke-static {v1}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
     const-string p1, "Uncaught exceptions will be reported to Google Analytics"
 
@@ -472,9 +464,7 @@
 
     .line 9
     :cond_2
-    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zztg:Lcom/google/android/gms/analytics/ExceptionReporter;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/ExceptionReporter;->zzaf()Ljava/lang/Thread$UncaughtExceptionHandler;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/ExceptionReporter;->zzaf()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object p1
 
@@ -971,19 +961,22 @@
 
     if-lt p1, v1, :cond_6
 
-    const/4 p1, 0x1
+    goto :goto_1
+
+    :cond_6
+    move v0, p1
 
     .line 29
-    :cond_6
-    iget-object v0, p0, Lcom/google/android/gms/analytics/Tracker;->zztc:Ljava/util/Map;
+    :goto_1
+    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zztc:Ljava/util/Map;
 
     const-string v1, "&a"
 
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 30
     :cond_7
@@ -1560,9 +1553,6 @@
     iput-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
-
-    .line 4
     iget-object p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacm:Ljava/lang/String;
 
     const/4 v0, 0x0
@@ -1571,37 +1561,31 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz p1, :cond_1
-
-    .line 5
-    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
-
-    .line 6
-    iget-object p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacm:Ljava/lang/String;
+    if-eqz v2, :cond_1
 
     const-string v2, "&tid"
 
-    .line 7
+    .line 4
     invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/analytics/Tracker;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v2, "trackingId loaded"
 
-    .line 8
+    .line 5
     invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 9
+    .line 6
     :cond_1
     iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
-    .line 10
+    .line 7
     iget-wide v2, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacn:D
 
     const-wide/16 v4, 0x0
@@ -1620,58 +1604,46 @@
     :goto_1
     if-eqz p1, :cond_3
 
-    .line 11
-    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
-
-    .line 12
-    iget-wide v2, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacn:D
-
-    .line 13
+    .line 8
     invoke-static {v2, v3}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v2, "&sf"
 
-    .line 14
+    .line 9
     invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/analytics/Tracker;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v2, "Sample frequency loaded"
 
-    .line 15
+    .line 10
     invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 16
+    .line 11
     :cond_3
     iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
-    .line 17
+    .line 12
     iget p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzaco:I
 
     if-ltz p1, :cond_4
 
-    const/4 p1, 0x1
+    const/4 v2, 0x1
 
     goto :goto_2
 
     :cond_4
-    const/4 p1, 0x0
+    const/4 v2, 0x0
 
     :goto_2
-    if-eqz p1, :cond_5
-
-    .line 18
-    iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
-
-    .line 19
-    iget p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzaco:I
+    if-eqz v2, :cond_5
 
     int-to-long v2, p1
 
-    .line 20
+    .line 13
     invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/Tracker;->setSessionTimeout(J)V
 
-    .line 21
+    .line 14
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1680,11 +1652,11 @@
 
     invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 22
+    .line 15
     :cond_5
     iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
-    .line 23
+    .line 16
     iget p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacp:I
 
     const/4 v2, -0x1
@@ -1700,11 +1672,11 @@
     :cond_6
     const/4 p1, 0x0
 
-    .line 24
+    .line 17
     :goto_3
     invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/Tracker;->enableAutoActivityTracking(Z)V
 
-    .line 25
+    .line 18
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -1713,11 +1685,11 @@
 
     invoke-virtual {p0, v3, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 26
+    .line 19
     :cond_7
     iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
-    .line 27
+    .line 20
     iget p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacq:I
 
     if-eq p1, v2, :cond_a
@@ -1738,10 +1710,10 @@
 
     const-string v3, "1"
 
-    .line 28
+    .line 21
     invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/Tracker;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 29
+    .line 22
     :cond_9
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1751,18 +1723,18 @@
 
     invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 30
+    .line 23
     :cond_a
     iget-object p1, p0, Lcom/google/android/gms/analytics/Tracker;->zzth:Lcom/google/android/gms/internal/gtm/zzcy;
 
-    .line 31
+    .line 24
     iget p1, p1, Lcom/google/android/gms/internal/gtm/zzcy;->zzacr:I
 
     if-ne p1, v1, :cond_b
 
     const/4 v0, 0x1
 
-    .line 32
+    .line 25
     :cond_b
     invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/Tracker;->enableExceptionReporting(Z)V
 

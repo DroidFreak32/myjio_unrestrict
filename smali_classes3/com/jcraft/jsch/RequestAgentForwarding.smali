@@ -17,6 +17,11 @@
 # virtual methods
 .method public request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1, p2}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V

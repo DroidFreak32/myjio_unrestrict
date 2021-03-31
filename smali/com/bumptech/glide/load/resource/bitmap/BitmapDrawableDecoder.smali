@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public final decoder:Lcom/bumptech/glide/load/ResourceDecoder;
+.field private final decoder:Lcom/bumptech/glide/load/ResourceDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/ResourceDecoder<",
@@ -33,7 +33,7 @@
     .end annotation
 .end field
 
-.field public final resources:Landroid/content/res/Resources;
+.field private final resources:Landroid/content/res/Resources;
 
 
 # direct methods
@@ -62,6 +62,14 @@
 
 .method public constructor <init>(Landroid/content/res/Resources;Lcom/bumptech/glide/load/ResourceDecoder;)V
     .locals 0
+    .param p1    # Landroid/content/res/Resources;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/ResourceDecoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,6 +132,14 @@
 # virtual methods
 .method public decode(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TDataType;II",
@@ -132,6 +148,12 @@
             "Lcom/bumptech/glide/load/engine/Resource<",
             "Landroid/graphics/drawable/BitmapDrawable;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -154,11 +176,25 @@
 
 .method public handles(Ljava/lang/Object;Lcom/bumptech/glide/load/Options;)Z
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TDataType;",
             "Lcom/bumptech/glide/load/Options;",
             ")Z"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field public final animator:Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;
+.field private final animator:Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;
 
 
 # direct methods

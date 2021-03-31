@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final EMPTY:Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
+.field private static final EMPTY:Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
 
 
 # instance fields
-.field public final _disabled:I
+.field private final _disabled:I
 
-.field public final _enabled:I
+.field private final _enabled:I
 
 
 # direct methods
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public constructor <init>(II)V
+.method private constructor <init>(II)V
     .locals 0
 
     .line 1
@@ -172,7 +172,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-eq v2, v3, :cond_2
 
@@ -338,23 +340,20 @@
 
     if-nez v2, :cond_2
 
-    iget v2, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;->_disabled:I
+    iget v3, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;->_disabled:I
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
     return-object p1
 
-    .line 4
     :cond_2
-    iget p1, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;->_enabled:I
+    not-int p1, v0
 
-    not-int v2, v0
+    and-int/2addr p1, v2
 
-    and-int/2addr v2, p1
+    or-int/2addr p1, v1
 
-    or-int/2addr v2, v1
-
-    .line 5
+    .line 4
     iget v3, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;->_disabled:I
 
     not-int v1, v1
@@ -363,19 +362,19 @@
 
     or-int/2addr v0, v1
 
-    if-ne v2, p1, :cond_3
+    if-ne p1, v2, :cond_3
 
     if-ne v0, v3, :cond_3
 
     return-object p0
 
-    .line 6
+    .line 5
     :cond_3
-    new-instance p1, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
+    new-instance v1, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
 
-    invoke-direct {p1, v2, v0}, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;-><init>(II)V
+    invoke-direct {v1, p1, v0}, Lcom/fasterxml/jackson/annotation/JsonFormat$Features;-><init>(II)V
 
-    return-object p1
+    return-object v1
 .end method
 
 .method public varargs without([Lcom/fasterxml/jackson/annotation/JsonFormat$Feature;)Lcom/fasterxml/jackson/annotation/JsonFormat$Features;

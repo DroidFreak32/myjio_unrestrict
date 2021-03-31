@@ -19,9 +19,9 @@
 
 
 # instance fields
-.field public bgColor:Ljava/lang/String;
+.field private bgColor:Ljava/lang/String;
 
-.field public contents:Ljava/util/ArrayList;
+.field private contents:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public customExtras:Ljava/util/HashMap;
+.field private customExtras:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -42,13 +42,13 @@
     .end annotation
 .end field
 
-.field public error:Ljava/lang/String;
+.field private error:Ljava/lang/String;
 
-.field public jsonObject:Lorg/json/JSONObject;
+.field private jsonObject:Lorg/json/JSONObject;
 
-.field public type:Lcom/clevertap/android/sdk/displayunits/CTDisplayUnitType;
+.field private type:Lcom/clevertap/android/sdk/displayunits/CTDisplayUnitType;
 
-.field public unitID:Ljava/lang/String;
+.field private unitID:Ljava/lang/String;
 
 
 # direct methods
@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 3
 
     .line 10
@@ -120,8 +120,6 @@
     iput-object v0, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->contents:Ljava/util/ArrayList;
 
     .line 16
-    iget-object v0, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->contents:Ljava/util/ArrayList;
-
     const-class v1, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnitContent;
 
     invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -200,11 +198,9 @@
 
     iput-object p1, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->error:Ljava/lang/String;
 
-    .line 22
-    iget-object p1, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->error:Ljava/lang/String;
-
     const-string v0, "DisplayUnit : "
 
+    .line 22
     invoke-static {v0, p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_2
@@ -220,7 +216,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/json/JSONObject;Ljava/lang/String;Lcom/clevertap/android/sdk/displayunits/CTDisplayUnitType;Ljava/lang/String;Ljava/util/ArrayList;Lorg/json/JSONObject;Ljava/lang/String;)V
+.method private constructor <init>(Lorg/json/JSONObject;Ljava/lang/String;Lcom/clevertap/android/sdk/displayunits/CTDisplayUnitType;Ljava/lang/String;Ljava/util/ArrayList;Lorg/json/JSONObject;Ljava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -375,6 +371,8 @@
 
 .method public static toDisplayUnit(Lorg/json/JSONObject;)Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;
     .locals 13
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     const-string v0, "custom_kv"
 
@@ -382,9 +380,9 @@
 
     const-string v2, "bg"
 
-    const-string v3, "type"
+    const-string/jumbo v3, "type"
 
-    const-string v4, "wzrk_id"
+    const-string/jumbo v4, "wzrk_id"
 
     .line 1
     :try_start_0
@@ -394,6 +392,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 2
     invoke-virtual {p0, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -406,7 +405,7 @@
     :goto_0
     move-object v7, v4
 
-    .line 2
+    .line 3
     invoke-virtual {p0, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v4
@@ -415,6 +414,7 @@
 
     if-eqz v4, :cond_1
 
+    .line 4
     invoke-virtual {p0, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -430,7 +430,7 @@
     :cond_1
     move-object v8, v5
 
-    .line 3
+    .line 5
     :goto_1
     invoke-virtual {p0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -450,13 +450,14 @@
     :goto_2
     move-object v9, v2
 
-    .line 4
+    .line 6
     invoke-virtual {p0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
+    .line 7
     invoke-virtual {p0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
@@ -466,7 +467,7 @@
     :cond_3
     move-object v1, v5
 
-    .line 5
+    .line 8
     :goto_3
     new-instance v10, Ljava/util/ArrayList;
 
@@ -476,7 +477,7 @@
 
     const/4 v2, 0x0
 
-    .line 6
+    .line 9
     :goto_4
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
@@ -484,7 +485,7 @@
 
     if-ge v2, v3, :cond_5
 
-    .line 7
+    .line 10
     invoke-virtual {v1, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -493,7 +494,7 @@
 
     move-result-object v3
 
-    .line 8
+    .line 11
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnitContent;->getError()Ljava/lang/String;
 
     move-result-object v4
@@ -504,7 +505,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 9
+    .line 12
     invoke-virtual {v10, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_4
@@ -512,7 +513,7 @@
 
     goto :goto_4
 
-    .line 10
+    .line 13
     :cond_5
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -520,7 +521,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 11
+    .line 14
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
@@ -532,7 +533,7 @@
     :cond_6
     move-object v11, v5
 
-    .line 12
+    .line 15
     :goto_5
     new-instance v0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;
 
@@ -551,7 +552,7 @@
     :catch_0
     move-exception p0
 
-    .line 13
+    .line 16
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -560,6 +561,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 17
     invoke-virtual {p0}, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -572,9 +574,10 @@
 
     const-string v1, "DisplayUnit : "
 
+    .line 18
     invoke-static {v1, v0}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 14
+    .line 19
     new-instance v0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;
 
     const/4 v3, 0x0
@@ -595,6 +598,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 20
     invoke-virtual {p0}, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p0
@@ -714,8 +718,6 @@
     if-eqz v0, :cond_2
 
     .line 2
-    iget-object v0, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->jsonObject:Lorg/json/JSONObject;
-
     invoke-virtual {v0}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
 
     move-result-object v0
@@ -741,7 +743,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    const-string v3, "wzrk_"
+    const-string/jumbo v3, "wzrk_"
 
     .line 6
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -800,6 +802,8 @@
 
 .method public toString()Ljava/lang/String;
     .locals 4
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -830,8 +834,6 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->type:Lcom/clevertap/android/sdk/displayunits/CTDisplayUnitType;
-
     invoke-virtual {v1}, Lcom/clevertap/android/sdk/displayunits/CTDisplayUnitType;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -857,8 +859,6 @@
     iget-object v1, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->contents:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;->contents:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 

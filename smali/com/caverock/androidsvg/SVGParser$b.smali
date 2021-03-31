@@ -41,8 +41,6 @@
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
 
     .line 2
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->none:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v2, "none"
@@ -50,83 +48,65 @@
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMinYMin"
+    const-string/jumbo v2, "xMinYMin"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMidYMin"
+    const-string/jumbo v2, "xMidYMin"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMaxYMin"
+    const-string/jumbo v2, "xMaxYMin"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMinYMid"
+    const-string/jumbo v2, "xMinYMid"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMidYMid"
+    const-string/jumbo v2, "xMidYMid"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMaxYMid"
+    const-string/jumbo v2, "xMaxYMid"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 9
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMinYMax"
+    const-string/jumbo v2, "xMinYMax"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 10
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMidYMax"
+    const-string/jumbo v2, "xMidYMax"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 11
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$b;->a:Ljava/util/Map;
-
     sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    const-string v2, "xMaxYMax"
+    const-string/jumbo v2, "xMaxYMax"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

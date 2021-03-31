@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static zza([BI)I
+.method private static zza([BI)I
     .locals 2
 
     aget-byte v0, p0, p1
@@ -43,7 +43,7 @@
     return p0
 .end method
 
-.method public static zza(JJJ)J
+.method private static zza(JJJ)J
     .locals 3
 
     xor-long/2addr p0, p2
@@ -159,47 +159,45 @@
 
     if-lt v0, v1, :cond_1
 
-    shl-int/lit8 v1, v0, 0x1
+    shl-int/lit8 v2, v0, 0x1
 
-    int-to-long v1, v1
+    int-to-long v2, v2
 
-    add-long/2addr v1, v12
+    add-long v8, v2, v12
 
     invoke-static {v7, v14}, Lcom/google/android/gms/internal/clearcut/zzk;->zza([BI)I
 
-    move-result v3
+    move-result v2
 
-    int-to-long v3, v3
+    int-to-long v2, v2
 
-    const-wide v5, 0xffffffffL
+    const-wide v4, 0xffffffffL
 
-    and-long/2addr v3, v5
+    and-long/2addr v2, v4
 
-    int-to-long v5, v0
+    int-to-long v4, v0
 
-    const/4 v8, 0x3
+    const/4 v6, 0x3
 
-    shl-long/2addr v3, v8
+    shl-long/2addr v2, v6
 
-    add-long/2addr v3, v5
+    add-long/2addr v4, v2
 
     add-int/2addr v0, v14
 
-    add-int/lit8 v0, v0, -0x4
+    sub-int/2addr v0, v1
 
     invoke-static {v7, v0}, Lcom/google/android/gms/internal/clearcut/zzk;->zza([BI)I
 
     move-result v0
 
-    int-to-long v5, v0
+    int-to-long v0, v0
 
-    const-wide v7, 0xffffffffL
+    const-wide v2, 0xffffffffL
 
-    and-long/2addr v5, v7
+    and-long v6, v0, v2
 
-    move-wide v7, v1
-
-    invoke-static/range {v3 .. v8}, Lcom/google/android/gms/internal/clearcut/zzk;->zza(JJJ)J
+    invoke-static/range {v4 .. v9}, Lcom/google/android/gms/internal/clearcut/zzk;->zza(JJJ)J
 
     move-result-wide v0
 
@@ -415,29 +413,31 @@
 
     invoke-static {v7, v12}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
-    move-result-wide v12
+    move-result-wide v13
 
-    add-int/lit8 v14, v0, -0x20
+    add-int/lit8 v15, v0, -0x20
 
-    invoke-static {v7, v14}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
+    invoke-static {v7, v15}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
-    move-result-wide v14
+    move-result-wide v15
 
-    add-long v22, v22, v14
+    add-long v22, v22, v15
 
-    mul-long v14, v22, v4
+    move-wide v15, v8
 
-    add-int/lit8 v0, v0, -0x18
+    mul-long v8, v22, v4
+
+    sub-int/2addr v0, v12
 
     invoke-static {v7, v0}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
-    move-result-wide v16
+    move-result-wide v17
 
-    add-long v1, v1, v16
+    add-long v1, v1, v17
 
     mul-long v1, v1, v4
 
-    add-long v6, v10, v12
+    add-long v6, v10, v13
 
     invoke-static {v6, v7, v3}, Ljava/lang/Long;->rotateRight(JI)J
 
@@ -445,25 +445,25 @@
 
     const/16 v0, 0x1e
 
-    invoke-static {v14, v15, v0}, Ljava/lang/Long;->rotateRight(JI)J
+    invoke-static {v8, v9, v0}, Ljava/lang/Long;->rotateRight(JI)J
 
-    move-result-wide v16
+    move-result-wide v17
 
-    add-long v6, v6, v16
+    add-long v6, v6, v17
 
     add-long v0, v6, v1
 
-    add-long/2addr v12, v8
+    add-long/2addr v13, v15
 
     const/16 v2, 0x12
 
-    invoke-static {v12, v13, v2}, Ljava/lang/Long;->rotateRight(JI)J
+    invoke-static {v13, v14, v2}, Ljava/lang/Long;->rotateRight(JI)J
 
     move-result-wide v2
 
     add-long/2addr v10, v2
 
-    add-long v17, v10, v14
+    add-long v17, v10, v8
 
     move-wide v15, v0
 
@@ -545,35 +545,35 @@
 
     invoke-static {v1, v2, v0}, Ljava/lang/Long;->rotateRight(JI)J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    mul-long v0, v0, v9
+    mul-long v1, v1, v9
 
     aget-wide v16, v13, v18
 
     xor-long v14, v14, v16
 
-    const/4 v2, 0x0
+    const/16 v16, 0x0
 
-    aget-wide v16, v12, v2
+    aget-wide v21, v12, v16
 
-    add-int/lit8 v11, v20, 0x28
+    add-int/lit8 v0, v20, 0x28
 
-    invoke-static {v7, v11}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
+    invoke-static {v7, v0}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
     move-result-wide v24
 
-    add-long v16, v16, v24
+    add-long v21, v21, v24
 
-    add-long v16, v0, v16
+    add-long v21, v1, v21
 
-    aget-wide v0, v13, v2
+    aget-wide v0, v13, v16
 
     add-long/2addr v5, v0
 
-    const/16 v0, 0x21
+    const/16 v2, 0x21
 
-    invoke-static {v5, v6, v0}, Ljava/lang/Long;->rotateRight(JI)J
+    invoke-static {v5, v6, v2}, Ljava/lang/Long;->rotateRight(JI)J
 
     move-result-wide v0
 
@@ -583,11 +583,15 @@
 
     mul-long v5, v0, v9
 
-    aget-wide v0, v13, v2
+    aget-wide v0, v13, v16
 
     add-long v27, v14, v0
 
+    const/16 v1, 0x2a
+
     move-object/from16 v0, p0
+
+    const/16 v11, 0x2a
 
     move/from16 v1, v20
 
@@ -617,7 +621,7 @@
 
     move-result-wide v4
 
-    add-long v4, v16, v4
+    add-long v4, v21, v4
 
     move-object/from16 v0, p0
 
@@ -665,7 +669,7 @@
 
     aput-wide v1, v13, v0
 
-    add-long v25, v25, v16
+    add-long v25, v25, v21
 
     aget-wide v1, v12, v0
 
@@ -689,7 +693,7 @@
 
     aget-wide v2, v12, v18
 
-    add-long v16, v16, v2
+    add-long v21, v21, v2
 
     add-int/lit8 v2, v19, 0x30
 
@@ -697,7 +701,7 @@
 
     move-result-wide v2
 
-    add-long v2, v16, v2
+    add-long v2, v21, v2
 
     const/16 v4, 0x2a
 
@@ -713,25 +717,23 @@
 
     mul-long v4, v4, v10
 
-    xor-long v10, v0, v4
+    xor-long v20, v0, v4
 
     const/4 v0, 0x0
 
     aget-wide v4, v12, v0
 
-    const-wide/16 v16, 0x9
-
-    mul-long v4, v4, v16
+    mul-long v4, v4, v10
 
     add-int/lit8 v1, v19, 0x28
 
     invoke-static {v7, v1}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
-    move-result-wide v16
+    move-result-wide v10
 
-    add-long v4, v4, v16
+    add-long/2addr v4, v10
 
-    add-long v16, v2, v4
+    add-long v10, v2, v4
 
     aget-wide v1, v13, v0
 
@@ -751,7 +753,7 @@
 
     aget-wide v4, v13, v0
 
-    add-long/2addr v4, v10
+    add-long v4, v20, v4
 
     move-object/from16 v0, p0
 
@@ -775,7 +777,7 @@
 
     move-result-wide v4
 
-    add-long v4, v16, v4
+    add-long/2addr v4, v10
 
     move-object/from16 v0, p0
 
@@ -799,9 +801,9 @@
 
     const/16 v2, 0x2f
 
-    ushr-long v2, v16, v2
+    ushr-long v2, v10, v2
 
-    xor-long v2, v16, v2
+    xor-long/2addr v2, v10
 
     const-wide v4, -0x3c5a37a36834ced9L    # -7.8480313857871552E17
 
@@ -809,7 +811,7 @@
 
     add-long/2addr v0, v2
 
-    add-long/2addr v0, v10
+    add-long v0, v0, v20
 
     aget-wide v2, v12, v18
 
@@ -838,7 +840,7 @@
 
     move-wide v5, v14
 
-    move-wide/from16 v1, v16
+    move-wide/from16 v1, v21
 
     move-wide/from16 v16, v25
 
@@ -876,7 +878,7 @@
     throw v1
 .end method
 
-.method public static zza([BIJJ[J)V
+.method private static zza([BIJJ[J)V
     .locals 6
 
     invoke-static {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
@@ -940,7 +942,7 @@
     return-void
 .end method
 
-.method public static zzb([BI)J
+.method private static zzb([BI)J
     .locals 1
 
     const/16 v0, 0x8

@@ -42,7 +42,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -62,7 +62,7 @@
 
     .line 4
     :cond_0
-    invoke-virtual {v0}, Lsk;->getCount()I
+    invoke-virtual {v0}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I
 
     move-result v0
 

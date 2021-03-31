@@ -40,6 +40,18 @@
 # virtual methods
 .method public update([BLjava/lang/Object;Ljava/security/MessageDigest;)V
     .locals 0
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

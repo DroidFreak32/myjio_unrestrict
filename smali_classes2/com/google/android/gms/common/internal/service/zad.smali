@@ -1,24 +1,10 @@
-.class public final Lcom/google/android/gms/common/internal/service/zad;
+.class public interface abstract Lcom/google/android/gms/common/internal/service/zad;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/internal/service/zac;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # virtual methods
-.method public final zaa(Lcom/google/android/gms/common/api/GoogleApiClient;)Lcom/google/android/gms/common/api/PendingResult;
-    .locals 1
+.method public abstract zaa(Lcom/google/android/gms/common/api/GoogleApiClient;)Lcom/google/android/gms/common/api/PendingResult;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -29,15 +15,4 @@
             ">;"
         }
     .end annotation
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/internal/service/zae;
-
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/internal/service/zae;-><init>(Lcom/google/android/gms/common/internal/service/zad;Lcom/google/android/gms/common/api/GoogleApiClient;)V
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->execute(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
-
-    move-result-object p1
-
-    return-object p1
 .end method

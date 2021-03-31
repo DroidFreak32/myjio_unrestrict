@@ -7,25 +7,25 @@
 
 
 # static fields
-.field public static final AC3_SYNC_WORD:I = 0xb77
+.field private static final AC3_SYNC_WORD:I = 0xb77
 
 .field public static final FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
-.field public static final ID3_TAG:I
+.field private static final ID3_TAG:I
 
-.field public static final MAX_SNIFF_BYTES:I = 0x2000
+.field private static final MAX_SNIFF_BYTES:I = 0x2000
 
-.field public static final MAX_SYNC_FRAME_SIZE:I = 0xae2
+.field private static final MAX_SYNC_FRAME_SIZE:I = 0xae2
 
 
 # instance fields
-.field public final firstSampleTimestampUs:J
+.field private final firstSampleTimestampUs:J
 
-.field public final reader:Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;
+.field private final reader:Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;
 
-.field public final sampleData:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final sampleData:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public startedPacket:Z
+.field private startedPacket:Z
 
 
 # direct methods
@@ -33,7 +33,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lic0;->a:Lic0;
+    sget-object v0, Lsi;->a:Lsi;
 
     sput-object v0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Extractor;->FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
@@ -142,6 +142,12 @@
 
 .method public read(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Extractor;->sampleData:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
@@ -227,6 +233,12 @@
 
 .method public sniff(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)Z
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;

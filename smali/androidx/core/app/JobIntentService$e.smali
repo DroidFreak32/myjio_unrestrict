@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x1a
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/core/app/JobIntentService;
 .end annotation
@@ -53,7 +57,7 @@
 
 
 # virtual methods
-.method public a()Landroid/os/IBinder;
+.method public compatGetBinder()Landroid/os/IBinder;
     .locals 1
 
     .line 1
@@ -64,7 +68,7 @@
     return-object v0
 .end method
 
-.method public b()Landroidx/core/app/JobIntentService$GenericWorkItem;
+.method public dequeueWork()Landroidx/core/app/JobIntentService$GenericWorkItem;
     .locals 3
 
     .line 1
@@ -87,8 +91,6 @@
 
     .line 4
     :cond_0
-    iget-object v1, p0, Landroidx/core/app/JobIntentService$e;->c:Landroid/app/job/JobParameters;
-
     invoke-virtual {v1}, Landroid/app/job/JobParameters;->dequeueWork()Landroid/app/job/JobWorkItem;
 
     move-result-object v1

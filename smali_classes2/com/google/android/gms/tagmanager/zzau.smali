@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final synthetic zzagb:Ljava/util/List;
+.field private final synthetic zzagb:Ljava/util/List;
 
-.field public final synthetic zzagc:J
+.field private final synthetic zzagc:J
 
-.field public final synthetic zzagd:Lcom/google/android/gms/tagmanager/zzat;
+.field private final synthetic zzagd:Lcom/google/android/gms/tagmanager/zzat;
 
 
 # direct methods

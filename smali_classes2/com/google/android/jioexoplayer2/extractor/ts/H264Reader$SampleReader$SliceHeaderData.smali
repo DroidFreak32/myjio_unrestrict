@@ -15,47 +15,47 @@
 
 
 # static fields
-.field public static final SLICE_TYPE_ALL_I:I = 0x7
+.field private static final SLICE_TYPE_ALL_I:I = 0x7
 
-.field public static final SLICE_TYPE_I:I = 0x2
+.field private static final SLICE_TYPE_I:I = 0x2
 
 
 # instance fields
-.field public bottomFieldFlag:Z
+.field private bottomFieldFlag:Z
 
-.field public bottomFieldFlagPresent:Z
+.field private bottomFieldFlagPresent:Z
 
-.field public deltaPicOrderCnt0:I
+.field private deltaPicOrderCnt0:I
 
-.field public deltaPicOrderCnt1:I
+.field private deltaPicOrderCnt1:I
 
-.field public deltaPicOrderCntBottom:I
+.field private deltaPicOrderCntBottom:I
 
-.field public fieldPicFlag:Z
+.field private fieldPicFlag:Z
 
-.field public frameNum:I
+.field private frameNum:I
 
-.field public hasSliceType:Z
+.field private hasSliceType:Z
 
-.field public idrPicFlag:Z
+.field private idrPicFlag:Z
 
-.field public idrPicId:I
+.field private idrPicId:I
 
-.field public isComplete:Z
+.field private isComplete:Z
 
-.field public nalRefIdc:I
+.field private nalRefIdc:I
 
-.field public picOrderCntLsb:I
+.field private picOrderCntLsb:I
 
-.field public picParameterSetId:I
+.field private picParameterSetId:I
 
-.field public sliceType:I
+.field private sliceType:I
 
-.field public spsData:Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;
+.field private spsData:Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -85,7 +85,7 @@
 .end method
 
 .method private isFirstVclNalUnitOfPicture(Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;)Z
-    .locals 3
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->isComplete:Z
@@ -148,29 +148,25 @@
 
     if-nez v0, :cond_2
 
-    iget-object v0, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->spsData:Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;
+    iget-object v2, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->spsData:Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;
 
-    iget v0, v0, Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;->picOrderCountType:I
+    iget v2, v2, Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;->picOrderCountType:I
 
-    if-nez v0, :cond_2
+    if-nez v2, :cond_2
 
-    iget v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->picOrderCntLsb:I
+    iget v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->picOrderCntLsb:I
 
-    iget v2, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->picOrderCntLsb:I
+    iget v3, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->picOrderCntLsb:I
 
-    if-ne v0, v2, :cond_5
+    if-ne v2, v3, :cond_5
 
-    iget v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->deltaPicOrderCntBottom:I
+    iget v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->deltaPicOrderCntBottom:I
 
-    iget v2, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->deltaPicOrderCntBottom:I
+    iget v3, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->deltaPicOrderCntBottom:I
 
-    if-ne v0, v2, :cond_5
+    if-ne v2, v3, :cond_5
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->spsData:Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;
-
-    iget v0, v0, Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;->picOrderCountType:I
-
     if-ne v0, v1, :cond_3
 
     iget-object v0, p1, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->spsData:Lcom/google/android/jioexoplayer2/util/NalUnitUtil$SpsData;

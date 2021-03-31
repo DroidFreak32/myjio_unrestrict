@@ -3,17 +3,17 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "ANDSFClient"
+.field private static final MODULE:Ljava/lang/String; = "ANDSFClient"
 
-.field public static client:Lcom/elitecorelib/andsf/api/ANDSFClient;
+.field private static client:Lcom/elitecorelib/andsf/api/ANDSFClient;
 
 
 # instance fields
-.field public final connectionManagerListner:Lcom/elitecorelib/core/services/ConnectionManagerListner;
+.field private final connectionManagerListner:Lcom/elitecorelib/core/services/ConnectionManagerListner;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public final wifiListner:Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+.field private final wifiListner:Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
 
 
 # direct methods
@@ -22,15 +22,15 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lq10;
+    new-instance v0, Laa;
 
-    invoke-direct {v0, p0}, Lq10;-><init>(Lcom/elitecorelib/andsf/api/ANDSFClient;)V
+    invoke-direct {v0, p0}, Laa;-><init>(Lcom/elitecorelib/andsf/api/ANDSFClient;)V
 
     iput-object v0, p0, Lcom/elitecorelib/andsf/api/ANDSFClient;->connectionManagerListner:Lcom/elitecorelib/core/services/ConnectionManagerListner;
 
-    new-instance v0, Lr10;
+    new-instance v0, Lba;
 
-    invoke-direct {v0, p0}, Lr10;-><init>(Lcom/elitecorelib/andsf/api/ANDSFClient;)V
+    invoke-direct {v0, p0}, Lba;-><init>(Lcom/elitecorelib/andsf/api/ANDSFClient;)V
 
     iput-object v0, p0, Lcom/elitecorelib/andsf/api/ANDSFClient;->wifiListner:Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
 
@@ -215,7 +215,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-static {}, Lc20;->l0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->x()V
 
     :cond_0
     const-string v1, "is_wifi_session_continue"
@@ -445,7 +445,7 @@
 
     const-string p1, "Scheduled QOE evaluation cancelled"
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     const-string p1, "lastEvaluationTime"
 
@@ -485,7 +485,7 @@
 
     if-eqz v0, :cond_12
 
-    invoke-static {}, Le40;->a()Z
+    invoke-static {}, Lcom/elitecorelib/core/utility/z;->a()Z
 
     move-result v0
 
@@ -495,7 +495,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lk30;->a(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/f;->a(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -504,7 +504,7 @@
     return-void
 
     :cond_0
-    invoke-static {}, Lc20;->m()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->M()Z
 
     move-result v0
     :try_end_0
@@ -523,7 +523,7 @@
 
     const/16 v0, 0x395
 
-    invoke-static {v0}, Lc20;->a(I)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(I)V
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -561,8 +561,6 @@
 
     iput-object v0, v1, Lcom/elitecorelib/andsf/api/ANDSFClient;->context:Landroid/content/Context;
 
-    iget-object v0, v1, Lcom/elitecorelib/andsf/api/ANDSFClient;->context:Landroid/content/Context;
-
     invoke-static {v0}, Lcom/elitecorelib/core/EliteSession;->setELiteConnectSession(Landroid/content/Context;)V
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -573,7 +571,7 @@
 
     move-result-object v6
 
-    invoke-static {}, Lc20;->d0()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->p()Z
 
     move-result v0
     :try_end_1
@@ -602,14 +600,14 @@
 
     invoke-virtual {v2, v8}, Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;->setIsClientFirstEnable(Ljava/lang/String;)V
 
-    const-string v0, "spLastPullTime"
+    const-string/jumbo v0, "spLastPullTime"
 
     invoke-virtual {v6, v0, v9}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v2, v7}, Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;->setPolicyCall(Z)V
 
     :cond_3
-    invoke-static {}, Lc20;->e()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->E()Ljava/lang/String;
 
     move-result-object v0
 
@@ -699,7 +697,7 @@
     if-eqz v0, :cond_e
 
     :try_start_3
-    invoke-static/range {p1 .. p1}, Lc20;->a(Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
+    invoke-static/range {p1 .. p1}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
 
     invoke-virtual/range {p1 .. p1}, Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;->getNotificationKEY()Ljava/lang/String;
 
@@ -980,15 +978,15 @@
 
     if-eqz v0, :cond_a
 
-    invoke-static {v7, v15}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v15}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v14, v13}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v14, v13}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1, v8}, Lo00;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, v1, v8}, Lcom/elitecore/wifi/api/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
     :try_end_8
@@ -1001,15 +999,15 @@
     :try_start_9
     iget-object v0, v1, Lcom/elitecorelib/andsf/api/ANDSFClient;->context:Landroid/content/Context;
 
-    invoke-static {v0}, Lf30;->a(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/C;->a(Landroid/content/Context;)V
 
     const/4 v2, 0x0
 
-    invoke-static {v2}, Lk40;->a(Z)V
+    invoke-static {v2}, Lcom/elitecorelib/wifi/receiver/f;->a(Z)V
 
-    invoke-static {}, Lc20;->Z()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->l()V
 
-    invoke-static {}, Lc20;->a0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->m()V
 
     goto/16 :goto_7
 
@@ -1024,13 +1022,13 @@
 
     invoke-static {v3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v3, v17
+    move-object/from16 v5, v17
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1038,43 +1036,41 @@
 
     invoke-virtual {v0, v4, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
-
     :goto_3
-    invoke-static {v0}, Lc20;->a(Lcom/elitecorelib/andsf/a/a;)V
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/andsf/a/a;)V
 
     goto/16 :goto_7
 
     :cond_a
     move-object/from16 v1, p0
 
-    move-object/from16 v3, v17
+    move-object/from16 v5, v17
 
     iget-object v0, v1, Lcom/elitecorelib/andsf/api/ANDSFClient;->context:Landroid/content/Context;
 
-    invoke-static {v0}, Ly20;->a(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/elitecorelib/core/logger/a;->a(Landroid/content/Context;)V
 
     const-string v0, "is_logger_file_enable"
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v6, v0, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {v6, v0, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
     const-string v0, "loggerMode"
 
-    const-string v5, "info"
+    const-string v3, "info"
 
-    invoke-virtual {v6, v0, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v0, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v7, v15}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v15}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v14, v13}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v14, v13}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-static {v0, v5, v8}, Lo00;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, v3, v8}, Lcom/elitecore/wifi/api/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1100,7 +1096,7 @@
 
     iget-object v0, v1, Lcom/elitecorelib/andsf/api/ANDSFClient;->context:Landroid/content/Context;
 
-    invoke-static {v0}, Lc20;->e(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->e(Landroid/content/Context;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1156,7 +1152,7 @@
 
     const-string v5, "60"
 
-    invoke-static {v0, v5}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v5}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1213,9 +1209,9 @@
     :goto_5
     new-instance v0, Lcom/elitecorelib/core/services/InterNetAvailabilityCheckTask;
 
-    new-instance v3, Ls10;
+    new-instance v3, Lca;
 
-    invoke-direct {v3, v1, v6, v2}, Ls10;-><init>(Lcom/elitecorelib/andsf/api/ANDSFClient;Lcom/elitecorelib/core/utility/SharedPreferencesTask;Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
+    invoke-direct {v3, v1, v6, v2}, Lca;-><init>(Lcom/elitecorelib/andsf/api/ANDSFClient;Lcom/elitecorelib/core/utility/SharedPreferencesTask;Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
 
     const-string v2, "https://connectivitycheck.android.com/generate_204"
 
@@ -1242,7 +1238,7 @@
 
     sget-object v0, Lcom/elitecorelib/andsf/a/a;->ba:Lcom/elitecorelib/andsf/a/a;
 
-    invoke-static {v0}, Lc20;->a(Lcom/elitecorelib/andsf/a/a;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/andsf/a/a;)V
 
     return-void
 
@@ -1253,23 +1249,21 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
+    sget-object v3, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
 
-    invoke-static {v5}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v0, v4, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-object v0, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_5
 
@@ -1283,8 +1277,6 @@
     goto/16 :goto_6
 
     :cond_e
-    move-object v3, v5
-
     :try_start_a
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -1304,15 +1296,15 @@
 
     if-eqz v0, :cond_13
 
-    invoke-static {v7, v15}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v15}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v14, v13}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v14, v13}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v0, v2, v8}, Lo00;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, v2, v8}, Lcom/elitecore/wifi/api/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1320,15 +1312,15 @@
 
     iget-object v0, v1, Lcom/elitecorelib/andsf/api/ANDSFClient;->context:Landroid/content/Context;
 
-    invoke-static {v0}, Lf30;->a(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/C;->a(Landroid/content/Context;)V
 
     const/4 v2, 0x0
 
-    invoke-static {v2}, Lk40;->a(Z)V
+    invoke-static {v2}, Lcom/elitecorelib/wifi/receiver/f;->a(Z)V
 
-    invoke-static {}, Lc20;->Z()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->l()V
 
-    invoke-static {}, Lc20;->a0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->m()V
 
     goto :goto_7
 
@@ -1339,15 +1331,15 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
+    sget-object v3, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
 
-    invoke-static {v5}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1355,9 +1347,7 @@
 
     invoke-virtual {v0, v4, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Lcom/elitecorelib/andsf/a/a;->aJ:Lcom/elitecorelib/andsf/a/a;
-
-    invoke-static {v0}, Lc20;->a(Lcom/elitecorelib/andsf/a/a;)V
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/andsf/a/a;)V
     :try_end_a
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_4
 
@@ -1461,7 +1451,7 @@
     .locals 0
 
     :try_start_0
-    invoke-static {p1, p2}, Lc20;->a(Ljava/lang/String;Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
+    invoke-static {p1, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1911,7 +1901,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->d0()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->p()Z
 
     move-result v1
     :try_end_0
@@ -2088,7 +2078,7 @@
 .method public setANDSFServiceByFlag(ZLcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
     .locals 11
 
-    const-string v0, "spLastPullTime"
+    const-string/jumbo v0, "spLastPullTime"
 
     const-string v1, "isWifiDesibleByUs"
 
@@ -2181,7 +2171,7 @@
 
     const-string v0, "ANDSF client resume by user preference."
 
-    invoke-static {v0}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     invoke-virtual {v3, v6, v10}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
@@ -2198,7 +2188,7 @@
 
     :goto_0
     :try_start_2
-    invoke-static {v0}, Lc20;->a(I)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(I)V
 
     invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
@@ -2241,11 +2231,11 @@
     :cond_2
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->ANALYTIC_DATAUSAGE_RESETBY_TIME:Ljava/lang/String;
 
-    invoke-static {p2}, Lc20;->m(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->m(Ljava/lang/String;)V
 
     const-string p2, "ANDSF client stopped by user preference."
 
-    invoke-static {p2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     const-string p2, "isANDSFPolicyConnected"
 
@@ -2269,7 +2259,7 @@
 
     invoke-virtual {v3, p2, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    const-string p2, "wifiscanresult_store_interval"
+    const-string/jumbo p2, "wifiscanresult_store_interval"
 
     invoke-virtual {v3, p2, v8, v9}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveLong(Ljava/lang/String;J)V
 
@@ -2297,15 +2287,15 @@
 
     invoke-virtual {v3, p2, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    sput-object v10, Lc20;->c:Ljava/lang/String;
+    sput-object v10, Lcom/elitecorelib/andsf/utility/a;->c:Ljava/lang/String;
 
-    sput-object v10, Lc20;->a:Ljava/lang/String;
+    sput-object v10, Lcom/elitecorelib/andsf/utility/a;->a:Ljava/lang/String;
 
-    sput-object v10, Lc20;->b:Ljava/lang/String;
+    sput-object v10, Lcom/elitecorelib/andsf/utility/a;->b:Ljava/lang/String;
 
-    sput-object v10, Lc20;->c:Ljava/lang/String;
+    sput-object v10, Lcom/elitecorelib/andsf/utility/a;->c:Ljava/lang/String;
 
-    sput-object v10, Lc20;->d:Ljava/lang/String;
+    sput-object v10, Lcom/elitecorelib/andsf/utility/a;->d:Ljava/lang/String;
 
     invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
@@ -2489,7 +2479,7 @@
 
     invoke-static {p2}, Lcom/elitecorelib/etech/AppUtils;->cancelJob(Landroid/content/Context;)V
 
-    invoke-static {v5}, Lk40;->b(Z)V
+    invoke-static {v5}, Lcom/elitecorelib/wifi/receiver/f;->b(Z)V
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -2499,7 +2489,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lg30;->b(Landroid/content/Context;)V
+    invoke-static {p2}, Lcom/elitecorelib/core/utility/a;->b(Landroid/content/Context;)V
 
     const-string p2, "is_logger_file_enable"
 
@@ -2528,7 +2518,7 @@
     const/16 p2, 0x38b
 
     :goto_2
-    invoke-static {p2}, Lc20;->a(I)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->a(I)V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
@@ -2543,7 +2533,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Ly20;->a(Landroid/content/Context;)V
+    invoke-static {p2}, Lcom/elitecorelib/core/logger/a;->a(Landroid/content/Context;)V
 
     const-string p2, "ENABLE_ANDSF"
 
@@ -2582,7 +2572,7 @@
     .locals 0
 
     :try_start_0
-    invoke-static {p1}, Lc20;->b(Landroid/app/Activity;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->b(Landroid/app/Activity;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2601,7 +2591,7 @@
     .locals 0
 
     :try_start_0
-    invoke-static {p1}, Lc20;->a(Landroid/app/Activity;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/app/Activity;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

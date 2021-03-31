@@ -7,13 +7,13 @@
 
 
 # static fields
-.field public static final pUseSubjectCredsOnly:Ljava/lang/String; = "javax.security.auth.useSubjectCredsOnly"
+.field private static final pUseSubjectCredsOnly:Ljava/lang/String; = "javax.security.auth.useSubjectCredsOnly"
 
-.field public static useSubjectCredsOnly:Ljava/lang/String;
+.field private static useSubjectCredsOnly:Ljava/lang/String;
 
 
 # instance fields
-.field public context:Lorg/ietf/jgss/GSSContext;
+.field private context:Lorg/ietf/jgss/GSSContext;
 
 
 # direct methods
@@ -46,7 +46,7 @@
     return-void
 .end method
 
-.method public static getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
+.method private static getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
     .line 1
@@ -65,7 +65,7 @@
     return-object p0
 .end method
 
-.method public static setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+.method private static setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -82,6 +82,11 @@
 # virtual methods
 .method public create(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -150,11 +155,9 @@
 
     iput-object p1, p0, Lcom/jcraft/jsch/jgss/GSSContextKrb5;->context:Lorg/ietf/jgss/GSSContext;
 
-    .line 7
-    iget-object p1, p0, Lcom/jcraft/jsch/jgss/GSSContextKrb5;->context:Lorg/ietf/jgss/GSSContext;
-
     const/4 p2, 0x1
 
+    .line 7
     invoke-interface {p1, p2}, Lorg/ietf/jgss/GSSContext;->requestMutualAuth(Z)V
 
     .line 8
@@ -243,8 +246,13 @@
 
 .method public init([BII)[B
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
-    const-string/jumbo p2, "true"
+    const-string p2, "true"
 
     const-string v0, "javax.security.auth.useSubjectCredsOnly"
 

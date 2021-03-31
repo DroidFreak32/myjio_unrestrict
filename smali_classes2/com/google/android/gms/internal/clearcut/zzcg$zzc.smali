@@ -81,7 +81,7 @@
 .method public final synthetic zzbg()Lcom/google/android/gms/internal/clearcut/zzcg;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzcg$zzc;->zzbi()Lcom/google/android/gms/internal/clearcut/zzdo;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzcg$zza;->zzbi()Lcom/google/android/gms/internal/clearcut/zzdo;
 
     move-result-object v0
 

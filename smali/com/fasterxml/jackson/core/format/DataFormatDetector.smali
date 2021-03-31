@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method public constructor <init>([Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
+.method private constructor <init>([Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
     .locals 0
 
     .line 3
@@ -85,6 +85,11 @@
 
 .method private _findFormat(Lcom/fasterxml/jackson/core/format/InputAccessor$Std;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
@@ -95,12 +100,14 @@
 
     const/4 v3, 0x0
 
-    move-object v4, v2
+    move-object v3, v2
+
+    const/4 v4, 0x0
 
     :goto_0
-    if-ge v3, v1, :cond_4
+    if-ge v4, v1, :cond_4
 
-    aget-object v5, v0, v3
+    aget-object v5, v0, v4
 
     .line 2
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->reset()V
@@ -131,7 +138,7 @@
     if-eqz v2, :cond_1
 
     .line 5
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v7
 
@@ -149,35 +156,35 @@
 
     move-result v2
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v4
+    move-result v3
 
-    if-lt v2, v4, :cond_2
+    if-lt v2, v3, :cond_2
 
     move-object v2, v5
 
-    move-object v4, v6
+    move-object v3, v6
 
     goto :goto_2
 
     :cond_2
     move-object v2, v5
 
-    move-object v4, v6
+    move-object v3, v6
 
     :cond_3
     :goto_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 7
     :cond_4
     :goto_2
-    invoke-virtual {p1, v2, v4}, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->createMatcher(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
+    invoke-virtual {p1, v2, v3}, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->createMatcher(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
 
     move-result-object p1
 
@@ -188,6 +195,11 @@
 # virtual methods
 .method public findFormat(Ljava/io/InputStream;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;
@@ -207,6 +219,11 @@
 
 .method public findFormat([B)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;
@@ -222,6 +239,11 @@
 
 .method public findFormat([BII)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     new-instance v0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;

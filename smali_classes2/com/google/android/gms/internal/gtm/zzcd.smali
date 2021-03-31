@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzaaz:Ljava/util/List;
+.field private final zzaaz:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -13,17 +13,17 @@
     .end annotation
 .end field
 
-.field public final zzaba:J
+.field private final zzaba:J
 
-.field public final zzabb:J
+.field private final zzabb:J
 
-.field public final zzabc:I
+.field private final zzabc:I
 
-.field public final zzabd:Z
+.field private final zzabd:Z
 
-.field public final zzabe:Ljava/lang/String;
+.field private final zzabe:Ljava/lang/String;
 
-.field public final zztc:Ljava/util/Map;
+.field private final zztc:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -399,7 +399,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/gtm/zzam;Ljava/lang/Object;)Ljava/lang/String;
+.method private static zza(Lcom/google/android/gms/internal/gtm/zzam;Ljava/lang/Object;)Ljava/lang/String;
     .locals 4
 
     const/4 v0, 0x0
@@ -469,7 +469,7 @@
     return-object p1
 .end method
 
-.method public static zzb(Lcom/google/android/gms/internal/gtm/zzam;Ljava/lang/Object;)Ljava/lang/String;
+.method private static zzb(Lcom/google/android/gms/internal/gtm/zzam;Ljava/lang/Object;)Ljava/lang/String;
     .locals 3
 
     if-nez p1, :cond_0
@@ -514,7 +514,7 @@
     return-object p1
 .end method
 
-.method public static zzc(Ljava/lang/Object;)Z
+.method private static zzc(Ljava/lang/Object;)Z
     .locals 1
 
     if-nez p0, :cond_0

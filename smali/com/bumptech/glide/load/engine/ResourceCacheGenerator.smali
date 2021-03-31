@@ -20,13 +20,13 @@
 
 
 # instance fields
-.field public cacheFile:Ljava/io/File;
+.field private cacheFile:Ljava/io/File;
 
-.field public final cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
+.field private final cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
 
-.field public currentKey:Lcom/bumptech/glide/load/engine/ResourceCacheKey;
+.field private currentKey:Lcom/bumptech/glide/load/engine/ResourceCacheKey;
 
-.field public final helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
+.field private final helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/DecodeHelper<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public volatile loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
+.field private volatile loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader$LoadData<",
@@ -44,9 +44,9 @@
     .end annotation
 .end field
 
-.field public modelLoaderIndex:I
+.field private modelLoaderIndex:I
 
-.field public modelLoaders:Ljava/util/List;
+.field private modelLoaders:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -57,11 +57,11 @@
     .end annotation
 .end field
 
-.field public resourceClassIndex:I
+.field private resourceClassIndex:I
 
-.field public sourceIdIndex:I
+.field private sourceIdIndex:I
 
-.field public sourceKey:Lcom/bumptech/glide/load/Key;
+.field private sourceKey:Lcom/bumptech/glide/load/Key;
 
 
 # direct methods
@@ -163,6 +163,10 @@
 
 .method public onLoadFailed(Ljava/lang/Exception;)V
     .locals 4
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
@@ -404,8 +408,6 @@
     iput v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->resourceClassIndex:I
 
     .line 19
-    iget v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->resourceClassIndex:I
-
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v5
@@ -420,8 +422,6 @@
     iput v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->sourceIdIndex:I
 
     .line 21
-    iget v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->sourceIdIndex:I
-
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v4
@@ -523,15 +523,12 @@
 
     iput-object v4, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->cacheFile:Ljava/io/File;
 
-    .line 33
-    iget-object v4, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->cacheFile:Ljava/io/File;
-
     if-eqz v4, :cond_2
 
-    .line 34
+    .line 33
     iput-object v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->sourceKey:Lcom/bumptech/glide/load/Key;
 
-    .line 35
+    .line 34
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
 
     invoke-virtual {v3, v4}, Lcom/bumptech/glide/load/engine/DecodeHelper;->getModelLoaders(Ljava/io/File;)Ljava/util/List;
@@ -540,7 +537,7 @@
 
     iput-object v3, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->modelLoaders:Ljava/util/List;
 
-    .line 36
+    .line 35
     iput v2, p0, Lcom/bumptech/glide/load/engine/ResourceCacheGenerator;->modelLoaderIndex:I
 
     goto/16 :goto_0

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/DeviceProperties;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,25 +9,49 @@
 
 
 # static fields
-.field public static zzgn:Ljava/lang/Boolean;
+.field private static zza:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgo:Ljava/lang/Boolean;
+.field private static zzb:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgp:Ljava/lang/Boolean;
+.field private static zzc:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgq:Ljava/lang/Boolean;
+.field private static zzd:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgr:Ljava/lang/Boolean;
+.field private static zze:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgs:Ljava/lang/Boolean;
+.field private static zzf:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgt:Ljava/lang/Boolean;
+.field private static zzg:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgu:Ljava/lang/Boolean;
+.field private static zzh:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -36,26 +61,52 @@
 .end method
 
 .method public static isAuto(Landroid/content/Context;)Z
-    .locals 1
+    .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgt:Ljava/lang/Boolean;
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/gms/common/util/DeviceProperties;->isAuto(Landroid/content/pm/PackageManager;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static isAuto(Landroid/content/pm/PackageManager;)Z
+    .locals 1
+    .param p0    # Landroid/content/pm/PackageManager;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .line 2
+    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzg:Ljava/lang/Boolean;
 
     if-nez v0, :cond_1
 
-    .line 2
+    .line 3
     invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastO()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
-
-    .line 3
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object p0
 
     const-string v0, "android.hardware.type.automotive"
 
@@ -72,17 +123,16 @@
     :cond_0
     const/4 p0, 0x0
 
-    .line 4
     :goto_0
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgt:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzg:Ljava/lang/Boolean;
 
-    .line 5
+    .line 4
     :cond_1
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgt:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzg:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -91,13 +141,40 @@
     return p0
 .end method
 
+.method public static isFeaturePhone(Landroid/content/Context;)Z
+    .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public static isLatchsky(Landroid/content/Context;)Z
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgr:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zze:Ljava/lang/Boolean;
 
     if-nez v0, :cond_1
 
@@ -137,11 +214,11 @@
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgr:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zze:Ljava/lang/Boolean;
 
     .line 6
     :cond_1
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgr:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zze:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -151,59 +228,23 @@
 .end method
 
 .method public static isSidewinder(Landroid/content/Context;)Z
-    .locals 1
+    .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x15
+    .end annotation
+
+    .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgq:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_1
-
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastLollipop()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object p0
-
-    const-string v0, "cn.google"
-
-    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 4
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgq:Ljava/lang/Boolean;
-
-    .line 5
-    :cond_1
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgq:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {p0}, Lcom/google/android/gms/common/util/DeviceProperties;->zzb(Landroid/content/Context;)Z
 
     move-result p0
 
@@ -212,6 +253,13 @@
 
 .method public static isTablet(Landroid/content/res/Resources;)Z
     .locals 4
+    .param p0    # Landroid/content/res/Resources;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -223,7 +271,7 @@
 
     .line 1
     :cond_0
-    sget-object v1, Lcom/google/android/gms/common/util/DeviceProperties;->zzgn:Ljava/lang/Boolean;
+    sget-object v1, Lcom/google/android/gms/common/util/DeviceProperties;->zza:Ljava/lang/Boolean;
 
     if-nez v1, :cond_6
 
@@ -253,7 +301,7 @@
     if-nez v1, :cond_4
 
     .line 3
-    sget-object v1, Lcom/google/android/gms/common/util/DeviceProperties;->zzgo:Ljava/lang/Boolean;
+    sget-object v1, Lcom/google/android/gms/common/util/DeviceProperties;->zzb:Ljava/lang/Boolean;
 
     if-nez v1, :cond_3
 
@@ -288,11 +336,11 @@
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgo:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzb:Ljava/lang/Boolean;
 
     .line 7
     :cond_3
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgo:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzb:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -309,11 +357,11 @@
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgn:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zza:Ljava/lang/Boolean;
 
     .line 9
     :cond_6
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgn:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zza:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -323,19 +371,45 @@
 .end method
 
 .method public static isTv(Landroid/content/Context;)Z
-    .locals 1
+    .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgu:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_2
-
-    .line 2
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/gms/common/util/DeviceProperties;->isTv(Landroid/content/pm/PackageManager;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static isTv(Landroid/content/pm/PackageManager;)Z
+    .locals 1
+    .param p0    # Landroid/content/pm/PackageManager;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .line 2
+    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzh:Ljava/lang/Boolean;
+
+    if-nez v0, :cond_2
 
     const-string v0, "com.google.android.tv"
 
@@ -381,11 +455,11 @@
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgu:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzh:Ljava/lang/Boolean;
 
     .line 7
     :cond_2
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgu:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzh:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -396,6 +470,9 @@
 
 .method public static isUserBuild()Z
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -412,33 +489,64 @@
 .end method
 
 .method public static isWearable(Landroid/content/Context;)Z
-    .locals 1
+    .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x14
+    .end annotation
+
+    .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgp:Ljava/lang/Boolean;
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/gms/common/util/DeviceProperties;->isWearable(Landroid/content/pm/PackageManager;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static isWearable(Landroid/content/pm/PackageManager;)Z
+    .locals 1
+    .param p0    # Landroid/content/pm/PackageManager;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x14
+    .end annotation
+
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .line 2
+    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzc:Ljava/lang/Boolean;
 
     if-nez v0, :cond_1
 
-    .line 2
+    .line 3
     invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastKitKatWatch()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object p0
-
     const-string v0, "android.hardware.type.watch"
 
+    .line 4
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result p0
@@ -452,17 +560,17 @@
     :cond_0
     const/4 p0, 0x0
 
-    .line 4
+    .line 5
     :goto_0
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgp:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzc:Ljava/lang/Boolean;
 
-    .line 5
+    .line 6
     :cond_1
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgp:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzc:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -473,8 +581,15 @@
 
 .method public static isWearableWithoutPlayStore(Landroid/content/Context;)Z
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x1a
+    .end annotation
+
+    .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
@@ -495,7 +610,7 @@
     if-eqz v0, :cond_0
 
     .line 3
-    invoke-static {p0}, Lcom/google/android/gms/common/util/DeviceProperties;->isSidewinder(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/gms/common/util/DeviceProperties;->zzb(Landroid/content/Context;)Z
 
     move-result p0
 
@@ -518,11 +633,17 @@
     return p0
 .end method
 
-.method public static zzf(Landroid/content/Context;)Z
+.method public static zza(Landroid/content/Context;)Z
     .locals 2
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgs:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzf:Ljava/lang/Boolean;
 
     if-nez v0, :cond_2
 
@@ -569,11 +690,68 @@
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgs:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzf:Ljava/lang/Boolean;
 
     .line 5
     :cond_2
-    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzgs:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzf:Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static zzb(Landroid/content/Context;)Z
+    .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x15
+    .end annotation
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/common/util/DeviceProperties;->zzd:Ljava/lang/Boolean;
+
+    if-nez v0, :cond_1
+
+    .line 2
+    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastLollipop()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    const-string v0, "cn.google"
+
+    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 4
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    sput-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzd:Ljava/lang/Boolean;
+
+    .line 5
+    :cond_1
+    sget-object p0, Lcom/google/android/gms/common/util/DeviceProperties;->zzd:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 

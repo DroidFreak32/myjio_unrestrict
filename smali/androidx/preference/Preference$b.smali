@@ -15,5 +15,11 @@
 
 
 # virtual methods
-.method public abstract a(Landroidx/preference/Preference;)V
+.method public abstract onPreferenceChange(Landroidx/preference/Preference;)V
+.end method
+
+.method public abstract onPreferenceHierarchyChange(Landroidx/preference/Preference;)V
+.end method
+
+.method public abstract onPreferenceVisibilityChange(Landroidx/preference/Preference;)V
 .end method

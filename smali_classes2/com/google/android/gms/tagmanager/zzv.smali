@@ -11,21 +11,21 @@
 
 
 # instance fields
-.field public final zzaek:Landroid/os/Looper;
+.field private final zzaek:Landroid/os/Looper;
 
-.field public zzael:Lcom/google/android/gms/tagmanager/Container;
+.field private zzael:Lcom/google/android/gms/tagmanager/Container;
 
-.field public zzaem:Lcom/google/android/gms/tagmanager/Container;
+.field private zzaem:Lcom/google/android/gms/tagmanager/Container;
 
-.field public zzaen:Lcom/google/android/gms/common/api/Status;
+.field private zzaen:Lcom/google/android/gms/common/api/Status;
 
-.field public zzaeo:Lcom/google/android/gms/tagmanager/zzx;
+.field private zzaeo:Lcom/google/android/gms/tagmanager/zzx;
 
-.field public zzaep:Lcom/google/android/gms/tagmanager/zzw;
+.field private zzaep:Lcom/google/android/gms/tagmanager/zzw;
 
-.field public zzaeq:Z
+.field private zzaeq:Z
 
-.field public zzaer:Lcom/google/android/gms/tagmanager/TagManager;
+.field private zzaer:Lcom/google/android/gms/tagmanager/TagManager;
 
 
 # direct methods
@@ -148,8 +148,6 @@
     if-eqz v0, :cond_1
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzv;->zzaem:Lcom/google/android/gms/tagmanager/Container;
-
     iput-object v0, p0, Lcom/google/android/gms/tagmanager/zzv;->zzael:Lcom/google/android/gms/tagmanager/Container;
 
     .line 6

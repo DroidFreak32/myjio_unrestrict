@@ -1,30 +1,24 @@
-.class public final Lcom/google/android/gms/internal/ads/zzyd;
-.super Lcom/google/android/gms/internal/ads/zzyx;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzyd;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-
-# instance fields
-.field public final synthetic zzbxd:I
-
-
-# direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    .line 1
-    iput p1, p0, Lcom/google/android/gms/internal/ads/zzyd;->zzbxd:I
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzyx;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zznv()I
-    .locals 1
+.method public abstract getDescription()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzyd;->zzbxd:I
-
-    return v0
+.method public abstract zzqo()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

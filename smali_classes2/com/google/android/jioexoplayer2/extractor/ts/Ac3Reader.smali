@@ -7,39 +7,39 @@
 
 
 # static fields
-.field public static final HEADER_SIZE:I = 0x80
+.field private static final HEADER_SIZE:I = 0x80
 
-.field public static final STATE_FINDING_SYNC:I = 0x0
+.field private static final STATE_FINDING_SYNC:I = 0x0
 
-.field public static final STATE_READING_HEADER:I = 0x1
+.field private static final STATE_READING_HEADER:I = 0x1
 
-.field public static final STATE_READING_SAMPLE:I = 0x2
+.field private static final STATE_READING_SAMPLE:I = 0x2
 
 
 # instance fields
-.field public bytesRead:I
+.field private bytesRead:I
 
-.field public format:Lcom/google/android/jioexoplayer2/Format;
+.field private format:Lcom/google/android/jioexoplayer2/Format;
 
-.field public final headerScratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final headerScratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-.field public final headerScratchBytes:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final headerScratchBytes:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final language:Ljava/lang/String;
+.field private final language:Ljava/lang/String;
 
-.field public lastByteWas0B:Z
+.field private lastByteWas0B:Z
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public sampleDurationUs:J
+.field private sampleDurationUs:J
 
-.field public sampleSize:I
+.field private sampleSize:I
 
-.field public state:I
+.field private state:I
 
-.field public timeUs:J
+.field private timeUs:J
 
-.field public trackFormatId:Ljava/lang/String;
+.field private trackFormatId:Ljava/lang/String;
 
 
 # direct methods
@@ -72,15 +72,13 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->headerScratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
     .line 4
-    new-instance v0, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+    new-instance v1, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->headerScratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+    iget-object v0, v0, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;->data:[B
 
-    iget-object v1, v1, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;->data:[B
+    invoke-direct {v1, v0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;-><init>([B)V
 
-    invoke-direct {v0, v1}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;-><init>([B)V
-
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->headerScratchBytes:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+    iput-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->headerScratchBytes:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
     const/4 v0, 0x0
 
@@ -120,9 +118,6 @@
     add-int/2addr p1, v0
 
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->bytesRead:I
-
-    .line 4
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->bytesRead:I
 
     if-ne p1, p3, :cond_0
 
@@ -208,11 +203,9 @@
     iput-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->format:Lcom/google/android/jioexoplayer2/Format;
 
     .line 5
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+    iget-object v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->format:Lcom/google/android/jioexoplayer2/Format;
-
-    invoke-interface {v1, v2}, Lcom/google/android/jioexoplayer2/extractor/TrackOutput;->format(Lcom/google/android/jioexoplayer2/Format;)V
+    invoke-interface {v2, v1}, Lcom/google/android/jioexoplayer2/extractor/TrackOutput;->format(Lcom/google/android/jioexoplayer2/Format;)V
 
     .line 6
     :cond_1
@@ -311,7 +304,7 @@
 
 # virtual methods
 .method public consume(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)V
-    .locals 9
+    .locals 10
 
     .line 1
     :cond_0
@@ -368,24 +361,22 @@
     iput v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->bytesRead:I
 
     .line 6
-    iget v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->bytesRead:I
+    iget v7, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->sampleSize:I
 
-    iget v6, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->sampleSize:I
-
-    if-ne v0, v6, :cond_0
+    if-ne v2, v7, :cond_0
 
     .line 7
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+    iget-object v3, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-    iget-wide v3, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->timeUs:J
+    iget-wide v4, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->timeUs:J
 
-    const/4 v5, 0x1
-
-    const/4 v7, 0x0
+    const/4 v6, 0x1
 
     const/4 v8, 0x0
 
-    invoke-interface/range {v2 .. v8}, Lcom/google/android/jioexoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/jioexoplayer2/extractor/TrackOutput$CryptoData;)V
+    const/4 v9, 0x0
+
+    invoke-interface/range {v3 .. v9}, Lcom/google/android/jioexoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/jioexoplayer2/extractor/TrackOutput$CryptoData;)V
 
     .line 8
     iget-wide v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Ac3Reader;->timeUs:J

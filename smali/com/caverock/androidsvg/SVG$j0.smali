@@ -63,5 +63,5 @@
 
 
 # virtual methods
-.method public abstract g()Ljava/lang/String;
+.method public abstract m()Ljava/lang/String;
 .end method

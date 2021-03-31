@@ -17,13 +17,13 @@
 
 
 # static fields
-.field public static final MAX_BYTE_I:I = 0xff
+.field private static final MAX_BYTE_I:I = 0xff
 
-.field public static final MAX_SHORT_I:I = 0x7fff
+.field private static final MAX_SHORT_I:I = 0x7fff
 
-.field public static final MIN_BYTE_I:I = -0x80
+.field private static final MIN_BYTE_I:I = -0x80
 
-.field public static final MIN_SHORT_I:I = -0x8000
+.field private static final MIN_SHORT_I:I = -0x8000
 
 
 # instance fields
@@ -164,6 +164,11 @@
 .end method
 
 .method public abstract close()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public configure(Lcom/fasterxml/jackson/core/JsonParser$Feature;Z)Lcom/fasterxml/jackson/core/JsonParser;
@@ -243,15 +248,30 @@
 
 .method public finishToken()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public abstract getBigIntegerValue()Ljava/math/BigInteger;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getBinaryValue()[B
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Lcom/fasterxml/jackson/core/Base64Variants;->getDefaultVariant()Lcom/fasterxml/jackson/core/Base64Variant;
@@ -266,10 +286,20 @@
 .end method
 
 .method public abstract getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getBooleanValue()Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->currentToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -322,6 +352,11 @@
 
 .method public getByteValue()B
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getIntValue()I
@@ -378,6 +413,11 @@
 .end method
 
 .method public abstract getCurrentName()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getCurrentToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -411,13 +451,28 @@
 .end method
 
 .method public abstract getDecimalValue()Ljava/math/BigDecimal;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getDoubleValue()D
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getEmbeddedObject()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -434,6 +489,11 @@
 .end method
 
 .method public abstract getFloatValue()F
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getFormatFeatures()I
@@ -453,12 +513,22 @@
 .end method
 
 .method public abstract getIntValue()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getLastClearedToken()Lcom/fasterxml/jackson/core/JsonToken;
 .end method
 
 .method public abstract getLongValue()J
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getNonBlockingInputFeeder()Lcom/fasterxml/jackson/core/async/NonBlockingInputFeeder;
@@ -470,13 +540,28 @@
 .end method
 
 .method public abstract getNumberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getNumberValue()Ljava/lang/Number;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getObjectId()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -496,6 +581,11 @@
 
 .method public getShortValue()S
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getIntValue()I
@@ -547,6 +637,12 @@
 
 .method public getText(Ljava/io/Writer;)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/UnsupportedOperationException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
@@ -572,15 +668,35 @@
 .end method
 
 .method public abstract getText()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getTextCharacters()[C
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getTextLength()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getTextOffset()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getTokenLocation()Lcom/fasterxml/jackson/core/JsonLocation;
@@ -588,6 +704,11 @@
 
 .method public getTypeId()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -596,6 +717,11 @@
 
 .method public getValueAsBoolean()Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -609,12 +735,22 @@
 
 .method public getValueAsBoolean(Z)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return p1
 .end method
 
 .method public getValueAsDouble()D
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -628,12 +764,22 @@
 
 .method public getValueAsDouble(D)D
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-wide p1
 .end method
 
 .method public getValueAsInt()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -647,12 +793,22 @@
 
 .method public getValueAsInt(I)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return p1
 .end method
 
 .method public getValueAsLong()J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -666,12 +822,22 @@
 
 .method public getValueAsLong(J)J
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-wide p1
 .end method
 
 .method public getValueAsString()Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -684,6 +850,11 @@
 .end method
 
 .method public abstract getValueAsString(Ljava/lang/String;)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract hasCurrentToken()Z
@@ -762,6 +933,11 @@
 
 .method public isNaN()Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -770,6 +946,11 @@
 
 .method public nextBooleanValue()Ljava/lang/Boolean;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -803,6 +984,11 @@
 
 .method public nextFieldName()Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -828,6 +1014,11 @@
 
 .method public nextFieldName(Lcom/fasterxml/jackson/core/SerializableString;)Z
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -865,6 +1056,11 @@
 
 .method public nextIntValue(I)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -885,6 +1081,11 @@
 
 .method public nextLongValue(J)J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -905,6 +1106,11 @@
 
 .method public nextTextValue()Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -929,9 +1135,19 @@
 .end method
 
 .method public abstract nextToken()Lcom/fasterxml/jackson/core/JsonToken;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract nextValue()Lcom/fasterxml/jackson/core/JsonToken;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract overrideCurrentName(Ljava/lang/String;)V
@@ -994,6 +1210,11 @@
 
 .method public readBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->_reportUnsupportedOperation()V
@@ -1005,6 +1226,11 @@
 
 .method public readBinaryValue(Ljava/io/OutputStream;)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Lcom/fasterxml/jackson/core/Base64Variants;->getDefaultVariant()Lcom/fasterxml/jackson/core/Base64Variant;
@@ -1027,6 +1253,12 @@
             ">(",
             "Lcom/fasterxml/jackson/core/type/TypeReference<",
             "*>;)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1054,6 +1286,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->_codec()Lcom/fasterxml/jackson/core/ObjectCodec;
 
@@ -1073,6 +1311,12 @@
             "<T::",
             "Lcom/fasterxml/jackson/core/TreeNode;",
             ">()TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1102,6 +1346,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 2
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->_codec()Lcom/fasterxml/jackson/core/ObjectCodec;
 
@@ -1128,6 +1378,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->_codec()Lcom/fasterxml/jackson/core/ObjectCodec;
 
@@ -1142,6 +1398,11 @@
 
 .method public releaseBuffered(Ljava/io/OutputStream;)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 p1, -0x1
 
@@ -1150,6 +1411,11 @@
 
 .method public releaseBuffered(Ljava/io/Writer;)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 p1, -0x1
 
@@ -1298,6 +1564,11 @@
 .end method
 
 .method public abstract skipChildren()Lcom/fasterxml/jackson/core/JsonParser;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract version()Lcom/fasterxml/jackson/core/Version;

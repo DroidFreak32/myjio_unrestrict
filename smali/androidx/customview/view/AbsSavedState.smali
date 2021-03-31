@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public final mSuperState:Landroid/os/Parcelable;
+.field private final mSuperState:Landroid/os/Parcelable;
 
 
 # direct methods
@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 2
@@ -61,6 +61,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -72,6 +76,14 @@
 
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
     .locals 0
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/ClassLoader;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,6 +109,10 @@
 
 .method public constructor <init>(Landroid/os/Parcelable;)V
     .locals 1
+    .param p1    # Landroid/os/Parcelable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -122,7 +138,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "superState must not be null"
+    const-string/jumbo v0, "superState must not be null"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -150,6 +166,8 @@
 
 .method public final getSuperState()Landroid/os/Parcelable;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;

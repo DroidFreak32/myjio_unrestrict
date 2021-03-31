@@ -3,12 +3,12 @@
 .source "HelloJioActivity.kt"
 
 # interfaces
-.implements Lce;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onCreate(Landroid/os/Bundle;)V
+    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,28 +16,26 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lce<",
-        "Landroid/content/Intent;",
-        ">;"
-    }
-.end annotation
 
-
-# instance fields
-.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+# static fields
+.field public static final a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;
 
 
 # direct methods
-.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    new-instance v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;
+
+    invoke-direct {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;-><init>()V
+
+    sput-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,28 +44,16 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Intent;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
-
-    const-string v1, "it"
-
-    invoke-static {p1, v1}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0, p1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->a(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic onChanged(Ljava/lang/Object;)V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
     .line 1
-    check-cast p1, Landroid/content/Intent;
+    sget-object p2, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
 
-    invoke-virtual {p0, p1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$h;->a(Landroid/content/Intent;)V
+    invoke-virtual {p2}, Lcom/jio/jioml/hellojio/utils/Utility;->gotoAppPermissionScreen()V
+
+    .line 2
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method

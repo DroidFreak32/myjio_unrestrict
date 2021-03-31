@@ -22,8 +22,6 @@
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzqi;->zzaws:[I
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzqi;->zzaws:[I
-
     sget-object v1, Lcom/google/android/gms/internal/gtm/zzug;->zzbfw:Lcom/google/android/gms/internal/gtm/zzug;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

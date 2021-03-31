@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final queue:Ljava/util/Queue;
+.field private final queue:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",

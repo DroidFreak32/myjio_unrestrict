@@ -1,25 +1,26 @@
 .class public final Lcom/google/android/gms/internal/vision/zzcv;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/vision/zzcy;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# instance fields
-.field public final zzlt:Ljava/util/concurrent/ConcurrentHashMap;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lcom/google/android/gms/internal/vision/zzcy<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final zzly:Lcom/google/android/gms/internal/vision/zzcv;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/concurrent/ConcurrentHashMap<",
-            "Lcom/google/android/gms/internal/vision/zzcw;",
-            "Ljava/util/List<",
-            "Ljava/lang/Throwable;",
-            ">;>;"
-        }
-    .end annotation
-.end field
-
-.field public final zzlu:Ljava/lang/ref/ReferenceQueue;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/ReferenceQueue<",
-            "Ljava/lang/Throwable;",
+            "Lcom/google/android/gms/internal/vision/zzcv<",
+            "Ljava/lang/Object;",
             ">;"
         }
     .end annotation
@@ -27,90 +28,87 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzcv;
 
-    .line 2
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzcv;-><init>()V
 
-    const/16 v1, 0x10
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzcv;->zzly:Lcom/google/android/gms/internal/vision/zzcv;
 
-    const/high16 v2, 0x3f400000    # 0.75f
+    return-void
+.end method
 
-    const/16 v3, 0xa
+.method private constructor <init>()V
+    .locals 0
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(IFI)V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzcv;->zzlt:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 3
-    new-instance v0, Ljava/lang/ref/ReferenceQueue;
-
-    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzcv;->zzlu:Ljava/lang/ref/ReferenceQueue;
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzcy;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Ljava/lang/Throwable;Z)Ljava/util/List;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-ne p1, p0, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final get()Ljava/lang/Object;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/Throwable;",
-            "Z)",
-            "Ljava/util/List<",
-            "Ljava/lang/Throwable;",
-            ">;"
+            "()TT;"
         }
     .end annotation
 
     .line 1
-    iget-object p2, p0, Lcom/google/android/gms/internal/vision/zzcv;->zzlu:Ljava/lang/ref/ReferenceQueue;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
+    const-string v1, "Optional.get() cannot be called on an absent value"
 
-    move-result-object p2
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    :goto_0
-    if-eqz p2, :cond_0
+    throw v0
+.end method
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzcv;->zzlt:Ljava/util/concurrent/ConcurrentHashMap;
+.method public final hashCode()I
+    .locals 1
 
-    invoke-virtual {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    const v0, 0x79a31aac
 
-    .line 3
-    iget-object p2, p0, Lcom/google/android/gms/internal/vision/zzcv;->zzlu:Ljava/lang/ref/ReferenceQueue;
+    return v0
+.end method
 
-    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    new-instance p2, Lcom/google/android/gms/internal/vision/zzcw;
+.method public final isPresent()Z
+    .locals 1
 
     const/4 v0, 0x0
 
-    invoke-direct {p2, p1, v0}, Lcom/google/android/gms/internal/vision/zzcw;-><init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+    return v0
+.end method
 
-    .line 5
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzcv;->zzlt:Ljava/util/concurrent/ConcurrentHashMap;
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    invoke-virtual {p1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "Optional.absent()"
 
-    move-result-object p1
-
-    check-cast p1, Ljava/util/List;
-
-    return-object p1
+    return-object v0
 .end method

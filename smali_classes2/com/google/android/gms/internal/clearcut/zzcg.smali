@@ -29,7 +29,7 @@
 
 
 # static fields
-.field public static zzjr:Ljava/util/Map;
+.field private static zzjr:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -44,7 +44,7 @@
 # instance fields
 .field public zzjp:Lcom/google/android/gms/internal/clearcut/zzey;
 
-.field public zzjq:I
+.field private zzjq:I
 
 
 # direct methods
@@ -133,13 +133,19 @@
     return-object p3
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzcg;[B)Lcom/google/android/gms/internal/clearcut/zzcg;
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzcg;[B)Lcom/google/android/gms/internal/clearcut/zzcg;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Lcom/google/android/gms/internal/clearcut/zzcg<",
             "TT;*>;>(TT;[B)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/clearcut/zzco;
         }
     .end annotation
 
@@ -408,81 +414,78 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/clearcut/zzco;
+        }
+    .end annotation
+
     invoke-static {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzcg;[B)Lcom/google/android/gms/internal/clearcut/zzcg;
 
     move-result-object p0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_4
 
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget p1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkd:I
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0, v0}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Byte;
+
+    invoke-virtual {p1}, Ljava/lang/Byte;->byteValue()B
 
     move-result p1
 
-    sget v0, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkd:I
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Byte;
-
-    invoke-virtual {v0}, Ljava/lang/Byte;->byteValue()B
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_0
+    if-ne p1, v1, :cond_0
 
     goto :goto_1
 
     :cond_0
-    if-nez v0, :cond_1
+    if-nez p1, :cond_1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     goto :goto_1
 
     :cond_1
     invoke-static {}, Lcom/google/android/gms/internal/clearcut/zzea;->zzcm()Lcom/google/android/gms/internal/clearcut/zzea;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/internal/clearcut/zzea;->zzp(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzef;
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/internal/clearcut/zzea;->zzp(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzef;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0, p0}, Lcom/google/android/gms/internal/clearcut/zzef;->zzo(Ljava/lang/Object;)Z
+    invoke-interface {p1, p0}, Lcom/google/android/gms/internal/clearcut/zzef;->zzo(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-eqz p1, :cond_3
+    move-result v1
 
     sget p1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzke:I
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    move-object v0, p0
+    move-object v2, p0
 
     goto :goto_0
 
     :cond_2
-    move-object v0, v1
+    move-object v2, v0
 
     :goto_0
-    invoke-virtual {p0, p1, v0, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, v2, v0}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_3
     :goto_1
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_3
 
     goto :goto_2
 
-    :cond_4
+    :cond_3
     new-instance p1, Lcom/google/android/gms/internal/clearcut/zzew;
 
     invoke-direct {p1, p0}, Lcom/google/android/gms/internal/clearcut/zzew;-><init>(Lcom/google/android/gms/internal/clearcut/zzdo;)V
@@ -501,7 +504,7 @@
 
     throw p0
 
-    :cond_5
+    :cond_4
     :goto_2
     return-object p0
 .end method
@@ -713,42 +716,34 @@
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzas;->zzex:I
 
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzas;->zzex:I
-
     return v0
 .end method
 
 .method public final isInitialized()Z
     .locals 4
 
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget v0, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkd:I
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Byte;
+
+    invoke-virtual {v0}, Ljava/lang/Byte;->byteValue()B
 
     move-result v0
 
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkd:I
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    if-ne v0, v2, :cond_0
 
-    invoke-virtual {p0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Byte;
-
-    invoke-virtual {v1}, Ljava/lang/Byte;->byteValue()B
-
-    move-result v1
-
-    const/4 v3, 0x1
-
-    if-ne v1, v3, :cond_0
-
-    return v3
+    return v2
 
     :cond_0
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
@@ -757,34 +752,31 @@
     :cond_1
     invoke-static {}, Lcom/google/android/gms/internal/clearcut/zzea;->zzcm()Lcom/google/android/gms/internal/clearcut/zzea;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Lcom/google/android/gms/internal/clearcut/zzea;->zzp(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzef;
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/internal/clearcut/zzea;->zzp(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzef;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1, p0}, Lcom/google/android/gms/internal/clearcut/zzef;->zzo(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Lcom/google/android/gms/internal/clearcut/zzef;->zzo(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v0, :cond_3
+    sget v2, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzke:I
 
-    sget v0, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzke:I
-
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     move-object v3, p0
 
     goto :goto_0
 
     :cond_2
-    move-object v3, v2
+    move-object v3, v1
 
     :goto_0
-    invoke-virtual {p0, v0, v3, v2}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v2, v3, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_3
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -835,6 +827,11 @@
 
 .method public final zzb(Lcom/google/android/gms/internal/clearcut/zzbn;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-static {}, Lcom/google/android/gms/internal/clearcut/zzea;->zzcm()Lcom/google/android/gms/internal/clearcut/zzea;
 

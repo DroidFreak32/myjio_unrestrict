@@ -1,36 +1,46 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzanf;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzanf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzazc;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# static fields
+.field public static final zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
 
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzanf;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzanf;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzanf;->zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zze(Ljava/io/InputStream;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/InputStream;",
-            ")TT;"
-        }
-    .end annotation
-.end method
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-.method public abstract zzpj()Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+    check-cast p1, Landroid/os/IBinder;
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzbgg;->zzau(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzbgh;
+
+    move-result-object p1
+
+    return-object p1
 .end method

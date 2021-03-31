@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+.field public final synthetic a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete$a;->s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+    iput-object p1, p0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete$a;->a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete$a;->s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete$a;->a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->b()V
+    invoke-virtual {v0}, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->c()V
 
     return-void
 .end method

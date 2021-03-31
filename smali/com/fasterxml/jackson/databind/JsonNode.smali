@@ -145,6 +145,11 @@
 
 .method public bridge synthetic at(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/JsonNode;->at(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
@@ -220,6 +225,11 @@
 
 .method public binaryValue()[B
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

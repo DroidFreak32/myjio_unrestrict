@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -53,6 +53,11 @@
 
 .method public _deserialize(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Lorg/w3c/dom/Node;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ext/DOMDeserializer;->parse(Ljava/lang/String;)Lorg/w3c/dom/Document;

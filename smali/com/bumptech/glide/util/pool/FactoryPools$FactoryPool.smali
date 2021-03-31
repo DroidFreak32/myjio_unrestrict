@@ -3,7 +3,7 @@
 .source "FactoryPools.java"
 
 # interfaces
-.implements Lz8;
+.implements Landroidx/core/util/Pools$Pool;
 
 
 # annotations
@@ -22,14 +22,14 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lz8<",
+        "Landroidx/core/util/Pools$Pool<",
         "TT;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public final factory:Lcom/bumptech/glide/util/pool/FactoryPools$Factory;
+.field private final factory:Lcom/bumptech/glide/util/pool/FactoryPools$Factory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/util/pool/FactoryPools$Factory<",
@@ -38,16 +38,16 @@
     .end annotation
 .end field
 
-.field public final pool:Lz8;
+.field private final pool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "TT;>;"
         }
     .end annotation
 .end field
 
-.field public final resetter:Lcom/bumptech/glide/util/pool/FactoryPools$Resetter;
+.field private final resetter:Lcom/bumptech/glide/util/pool/FactoryPools$Resetter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/util/pool/FactoryPools$Resetter<",
@@ -58,12 +58,24 @@
 
 
 # direct methods
-.method public constructor <init>(Lz8;Lcom/bumptech/glide/util/pool/FactoryPools$Factory;Lcom/bumptech/glide/util/pool/FactoryPools$Resetter;)V
+.method public constructor <init>(Landroidx/core/util/Pools$Pool;Lcom/bumptech/glide/util/pool/FactoryPools$Factory;Lcom/bumptech/glide/util/pool/FactoryPools$Resetter;)V
     .locals 0
+    .param p1    # Landroidx/core/util/Pools$Pool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/util/pool/FactoryPools$Factory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/util/pool/FactoryPools$Resetter;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "TT;>;",
             "Lcom/bumptech/glide/util/pool/FactoryPools$Factory<",
             "TT;>;",
@@ -76,7 +88,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->pool:Lz8;
+    iput-object p1, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->pool:Landroidx/core/util/Pools$Pool;
 
     .line 3
     iput-object p2, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->factory:Lcom/bumptech/glide/util/pool/FactoryPools$Factory;
@@ -98,9 +110,9 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->pool:Lz8;
+    iget-object v0, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->pool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0}, Lz8;->acquire()Ljava/lang/Object;
+    invoke-interface {v0}, Landroidx/core/util/Pools$Pool;->acquire()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -166,6 +178,10 @@
 
 .method public release(Ljava/lang/Object;)Z
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -197,9 +213,9 @@
     invoke-interface {v0, p1}, Lcom/bumptech/glide/util/pool/FactoryPools$Resetter;->reset(Ljava/lang/Object;)V
 
     .line 4
-    iget-object v0, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->pool:Lz8;
+    iget-object v0, p0, Lcom/bumptech/glide/util/pool/FactoryPools$FactoryPool;->pool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0, p1}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     move-result p1
 

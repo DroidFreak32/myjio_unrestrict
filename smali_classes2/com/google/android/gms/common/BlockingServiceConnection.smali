@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/BlockingServiceConnection;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Landroid/content/ServiceConnection;
@@ -11,9 +12,9 @@
 
 
 # instance fields
-.field public zze:Z
+.field private zza:Z
 
-.field public final zzf:Ljava/util/concurrent/BlockingQueue;
+.field private final zzb:Ljava/util/concurrent/BlockingQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/BlockingQueue<",
@@ -34,14 +35,14 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zze:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zza:Z
 
     .line 3
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzf:Ljava/util/concurrent/BlockingQueue;
+    iput-object v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzb:Ljava/util/concurrent/BlockingQueue;
 
     return-void
 .end method
@@ -50,7 +51,16 @@
 # virtual methods
 .method public getService()Landroid/os/IBinder;
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
     .end annotation
 
     const-string v0, "BlockingServiceConnection.getService() called on main thread"
@@ -59,17 +69,17 @@
     invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotMainThread(Ljava/lang/String;)V
 
     .line 2
-    iget-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zze:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zza:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 3
-    iput-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zze:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zza:Z
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzf:Ljava/util/concurrent/BlockingQueue;
+    iget-object v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzb:Ljava/util/concurrent/BlockingQueue;
 
     invoke-interface {v0}, Ljava/util/concurrent/BlockingQueue;->take()Ljava/lang/Object;
 
@@ -92,7 +102,25 @@
 
 .method public getServiceWithTimeout(JLjava/util/concurrent/TimeUnit;)Landroid/os/IBinder;
     .locals 1
+    .param p1    # J
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/TimeoutException;
+        }
     .end annotation
 
     const-string v0, "BlockingServiceConnection.getServiceWithTimeout() called on main thread"
@@ -101,17 +129,17 @@
     invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotMainThread(Ljava/lang/String;)V
 
     .line 2
-    iget-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zze:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zza:Z
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
     .line 3
-    iput-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zze:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zza:Z
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzf:Ljava/util/concurrent/BlockingQueue;
+    iget-object v0, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzb:Ljava/util/concurrent/BlockingQueue;
 
     invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/BlockingQueue;->poll(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
@@ -146,9 +174,17 @@
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 0
+    .param p1    # Landroid/content/ComponentName;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzf:Ljava/util/concurrent/BlockingQueue;
+    iget-object p1, p0, Lcom/google/android/gms/common/BlockingServiceConnection;->zzb:Ljava/util/concurrent/BlockingQueue;
 
     invoke-interface {p1, p2}, Ljava/util/concurrent/BlockingQueue;->add(Ljava/lang/Object;)Z
 
@@ -157,6 +193,10 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 0
+    .param p1    # Landroid/content/ComponentName;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

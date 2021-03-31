@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method public constructor <init>(IJJ)V
+.method private constructor <init>(IJJ)V
     .locals 0
 
     .line 2

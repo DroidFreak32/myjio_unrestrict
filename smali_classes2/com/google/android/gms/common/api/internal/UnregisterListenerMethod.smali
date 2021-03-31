@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -18,7 +19,7 @@
 
 
 # instance fields
-.field public final zajl:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+.field private final zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey<",
@@ -50,7 +51,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;->zajl:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
     return-void
 .end method
@@ -73,7 +74,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;->zajl:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
     return-object v0
 .end method
@@ -88,6 +89,12 @@
             "Lcom/google/android/gms/tasks/TaskCompletionSource<",
             "Ljava/lang/Boolean;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
         }
     .end annotation
 .end method

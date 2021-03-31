@@ -32,7 +32,7 @@
 
 
 # instance fields
-.field public final contentResolver:Landroid/content/ContentResolver;
+.field private final contentResolver:Landroid/content/ContentResolver;
 
 
 # direct methods
@@ -75,6 +75,9 @@
 
 .method public build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

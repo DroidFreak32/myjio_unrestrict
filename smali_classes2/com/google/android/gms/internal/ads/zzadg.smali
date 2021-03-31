@@ -1,63 +1,156 @@
 .class public final Lcom/google/android/gms/internal/ads/zzadg;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final synthetic zzcds:Lcom/google/android/gms/internal/ads/zzaps;
+# static fields
+.field public static zzddd:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final synthetic zzcdt:Ljava/lang/String;
+.field public static zzdde:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final synthetic zzcdu:Lcom/google/android/gms/internal/ads/zzadd;
+.field public static zzddf:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static zzddg:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static zzddh:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static zzddi:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static zzddj:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzadd;Lcom/google/android/gms/internal/ads/zzaps;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzadg;->zzcdu:Lcom/google/android/gms/internal/ads/zzadd;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzadg;->zzcds:Lcom/google/android/gms/internal/ads/zzaps;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzadg;->zzcdt:Ljava/lang/String;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
+.method public static constructor <clinit>()V
     .locals 3
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzadg;->zzcds:Lcom/google/android/gms/internal/ads/zzaps;
+    const-string v0, "gads:dynamite_load:fail:sample_rate"
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzadg;->zzcdu:Lcom/google/android/gms/internal/ads/zzadd;
+    const-wide/16 v1, 0x2710
+
+    .line 1
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzb(Ljava/lang/String;J)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzddd:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:report_dynamite_crash_in_background_thread"
+
+    const/4 v1, 0x0
 
     .line 2
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzadd;->zza(Lcom/google/android/gms/internal/ads/zzadd;)Lcom/google/android/gms/ads/internal/zzbb;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/android/gms/ads/internal/zzbb;->zzdw()Ls4;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzdde:Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object v1
+    const-string v0, "gads:public_beta:traffic_multiplier"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzadg;->zzcdt:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ls4;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/ads/zzrt;
+    const-string v2, "1.0"
 
     .line 3
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzaps;->set(Ljava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzi(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzddf:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:sdk_crash_report_class_prefix"
+
+    const-string v2, "com.google."
+
+    .line 4
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzi(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzddg:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:sdk_crash_report_enabled"
+
+    .line 5
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzddh:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:sdk_crash_report_full_stacktrace"
+
+    .line 6
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzddi:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:trapped_exception_sample_rate"
+
+    const-wide v1, 0x3f847ae147ae147bL    # 0.01
+
+    .line 7
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzb(Ljava/lang/String;D)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadg;->zzddj:Lcom/google/android/gms/internal/ads/zzacn;
 
     return-void
 .end method

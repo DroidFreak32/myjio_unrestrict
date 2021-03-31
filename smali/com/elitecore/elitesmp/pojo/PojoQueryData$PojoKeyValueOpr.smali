@@ -6,15 +6,15 @@
 
 
 # instance fields
-.field public key:Ljava/lang/String;
+.field private key:Ljava/lang/String;
 
-.field public opr:Ljava/lang/String;
+.field private opr:Ljava/lang/String;
 
-.field public ordertype:Ljava/lang/String;
+.field private ordertype:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/elitecore/elitesmp/pojo/PojoQueryData;
 
-.field public value:Ljava/lang/String;
+.field private value:Ljava/lang/String;
 
 
 # direct methods

@@ -4,18 +4,29 @@
 
 
 # instance fields
-.field public arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+.field private arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-.field public buffer:[B
+.field private buffer:[B
 
-.field public index:I
+.field private index:I
 
-.field public final out:Ljava/io/OutputStream;
+.field private final out:Ljava/io/OutputStream;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)V
     .locals 1
+    .param p1    # Ljava/io/OutputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/high16 v0, 0x10000
 
@@ -27,6 +38,12 @@
 
 .method public constructor <init>(Ljava/io/OutputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;I)V
     .locals 0
+    .param p1    # Ljava/io/OutputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 2
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -53,6 +70,11 @@
 
 .method private flushBuffer()V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->index:I
@@ -77,6 +99,11 @@
 
 .method private maybeFlushBuffer()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->index:I
@@ -120,6 +147,11 @@
 # virtual methods
 .method public close()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -150,6 +182,11 @@
 
 .method public flush()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/load/data/BufferedOutputStream;->flushBuffer()V
@@ -164,6 +201,11 @@
 
 .method public write(I)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->buffer:[B
@@ -186,6 +228,15 @@
 
 .method public write([B)V
     .locals 2
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     array-length v0, p1
@@ -199,6 +250,15 @@
 
 .method public write([BII)V
     .locals 5
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -212,11 +272,11 @@
 
     if-nez v3, :cond_1
 
-    iget-object v3, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->buffer:[B
+    iget-object v4, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->buffer:[B
 
-    array-length v3, v3
+    array-length v4, v4
 
-    if-lt v1, v3, :cond_1
+    if-lt v1, v4, :cond_1
 
     .line 5
     iget-object p2, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->out:Ljava/io/OutputStream;
@@ -227,16 +287,14 @@
 
     .line 6
     :cond_1
-    iget-object v3, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->buffer:[B
+    iget-object v4, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->buffer:[B
 
-    array-length v3, v3
+    array-length v4, v4
 
-    iget v4, p0, Lcom/bumptech/glide/load/data/BufferedOutputStream;->index:I
-
-    sub-int/2addr v3, v4
+    sub-int/2addr v4, v3
 
     .line 7
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+    invoke-static {v1, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 

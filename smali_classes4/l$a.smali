@@ -34,8 +34,6 @@
     sput-object v0, Ll$a;->a:[I
 
     :try_start_0
-    sget-object v0, Ll$a;->a:[I
-
     sget-object v1, Ll$b;->TYPE_NATIVE:Ll$b;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

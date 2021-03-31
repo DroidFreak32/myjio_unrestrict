@@ -1,79 +1,106 @@
 .class public final Lcom/google/android/gms/internal/ads/zzavu;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzavl;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # instance fields
-.field public zzdkw:Lcom/google/android/gms/internal/ads/zzaze;
+.field private final zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaze;)V
+.method public constructor <init>(Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzavl;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdkw:Lcom/google/android/gms/internal/ads/zzaze;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
 
     return-void
 .end method
 
-.method public static final zza(Lcom/google/android/gms/internal/ads/zzaze;)Lcom/google/android/gms/internal/ads/zzavu;
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaze;->zzabg()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzavu;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzavu;-><init>(Lcom/google/android/gms/internal/ads/zzaze;)V
-
-    return-object v0
-
-    .line 3
-    :cond_0
-    new-instance p0, Ljava/security/GeneralSecurityException;
-
-    const-string v0, "empty keyset"
-
-    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final onRewardedAdClosed()V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdkw:Lcom/google/android/gms/internal/ads/zzaze;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzawc;->zzb(Lcom/google/android/gms/internal/ads/zzaze;)Lcom/google/android/gms/internal/ads/zzazg;
-
-    move-result-object v0
+    if-eqz v0, :cond_0
 
     .line 2
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbdd;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;->onRewardedAdClosed()V
 
-    move-result-object v0
-
-    return-object v0
+    :cond_0
+    return-void
 .end method
 
-.method public final zzxz()Lcom/google/android/gms/internal/ads/zzaze;
+.method public final onRewardedAdFailedToShow(I)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdkw:Lcom/google/android/gms/internal/ads/zzaze;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;->onRewardedAdFailedToShow(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onRewardedAdOpened()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;->onRewardedAdOpened()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/ads/zzavc;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzavv;
+
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/ads/zzavv;-><init>(Lcom/google/android/gms/internal/ads/zzavc;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;->onUserEarnedReward(Lcom/google/android/gms/ads/rewarded/RewardItem;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final zzh(Lcom/google/android/gms/internal/ads/zzve;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavu;->zzdyc:Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzve;->zzpl()Lcom/google/android/gms/ads/AdError;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/rewarded/RewardedAdCallback;->onRewardedAdFailedToShow(Lcom/google/android/gms/ads/AdError;)V
+
+    :cond_0
+    return-void
 .end method

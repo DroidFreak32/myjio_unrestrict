@@ -6,19 +6,19 @@
 
 
 # static fields
-.field public static final zzafx:Ljava/lang/String;
+.field private static final zzafx:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzafy:Ljava/util/concurrent/Executor;
+.field private final zzafy:Ljava/util/concurrent/Executor;
 
-.field public zzafz:Lcom/google/android/gms/tagmanager/zzax;
+.field private zzafz:Lcom/google/android/gms/tagmanager/zzax;
 
-.field public zzaga:I
+.field private zzaga:I
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private zzsd:Lcom/google/android/gms/common/util/Clock;
 
 
 # direct methods
@@ -104,7 +104,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/common/util/Clock;Ljava/lang/String;ILjava/util/concurrent/Executor;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/common/util/Clock;Ljava/lang/String;ILjava/util/concurrent/Executor;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -118,27 +118,25 @@
     .line 6
     iput-object p2, p0, Lcom/google/android/gms/tagmanager/zzat;->zzsd:Lcom/google/android/gms/common/util/Clock;
 
-    const/16 p1, 0x7d0
+    const/16 p2, 0x7d0
 
     .line 7
-    iput p1, p0, Lcom/google/android/gms/tagmanager/zzat;->zzaga:I
+    iput p2, p0, Lcom/google/android/gms/tagmanager/zzat;->zzaga:I
 
     .line 8
     iput-object p5, p0, Lcom/google/android/gms/tagmanager/zzat;->zzafy:Ljava/util/concurrent/Executor;
 
     .line 9
-    new-instance p1, Lcom/google/android/gms/tagmanager/zzax;
+    new-instance p2, Lcom/google/android/gms/tagmanager/zzax;
 
-    iget-object p2, p0, Lcom/google/android/gms/tagmanager/zzat;->zzrm:Landroid/content/Context;
+    invoke-direct {p2, p0, p1, p3}, Lcom/google/android/gms/tagmanager/zzax;-><init>(Lcom/google/android/gms/tagmanager/zzat;Landroid/content/Context;Ljava/lang/String;)V
 
-    invoke-direct {p1, p0, p2, p3}, Lcom/google/android/gms/tagmanager/zzax;-><init>(Lcom/google/android/gms/tagmanager/zzat;Landroid/content/Context;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/zzat;->zzafz:Lcom/google/android/gms/tagmanager/zzax;
+    iput-object p2, p0, Lcom/google/android/gms/tagmanager/zzat;->zzafz:Lcom/google/android/gms/tagmanager/zzax;
 
     return-void
 .end method
 
-.method public static zza([B)Ljava/lang/Object;
+.method private static zza([B)Ljava/lang/Object;
     .locals 3
 
     .line 6
@@ -183,23 +181,23 @@
     :catchall_0
     move-exception p0
 
+    goto :goto_0
+
+    :catchall_1
+    move-exception v1
+
     move-object v2, v1
 
     move-object v1, p0
 
     move-object p0, v2
 
-    goto :goto_0
-
-    :catchall_1
-    move-exception v1
-
     :goto_0
-    if-eqz p0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 11
     :try_start_3
-    invoke-virtual {p0}, Ljava/io/ObjectInputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/ObjectInputStream;->close()V
 
     .line 12
     :cond_0
@@ -209,7 +207,7 @@
 
     .line 13
     :catch_1
-    throw v1
+    throw p0
 
     :catch_2
     move-object v1, p0
@@ -751,7 +749,7 @@
     throw p1
 .end method
 
-.method public static zzf(Ljava/lang/Object;)[B
+.method private static zzf(Ljava/lang/Object;)[B
     .locals 3
 
     .line 1

@@ -78,11 +78,9 @@
 
     iput-object v0, p0, Landroidx/core/app/JobIntentService$c;->e:Landroid/os/PowerManager$WakeLock;
 
-    .line 7
-    iget-object v0, p0, Landroidx/core/app/JobIntentService$c;->e:Landroid/os/PowerManager$WakeLock;
-
     const/4 v2, 0x0
 
+    .line 7
     invoke-virtual {v0, v2}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
     .line 8
@@ -113,8 +111,6 @@
     iput-object p1, p0, Landroidx/core/app/JobIntentService$c;->f:Landroid/os/PowerManager$WakeLock;
 
     .line 11
-    iget-object p1, p0, Landroidx/core/app/JobIntentService$c;->f:Landroid/os/PowerManager$WakeLock;
-
     invoke-virtual {p1, v2}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
     return-void
@@ -122,57 +118,6 @@
 
 
 # virtual methods
-.method public a()V
-    .locals 3
-
-    .line 10
-    monitor-enter p0
-
-    .line 11
-    :try_start_0
-    iget-boolean v0, p0, Landroidx/core/app/JobIntentService$c;->h:Z
-
-    if-eqz v0, :cond_1
-
-    .line 12
-    iget-boolean v0, p0, Landroidx/core/app/JobIntentService$c;->g:Z
-
-    if-eqz v0, :cond_0
-
-    .line 13
-    iget-object v0, p0, Landroidx/core/app/JobIntentService$c;->e:Landroid/os/PowerManager$WakeLock;
-
-    const-wide/32 v1, 0xea60
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 14
-    iput-boolean v0, p0, Landroidx/core/app/JobIntentService$c;->h:Z
-
-    .line 15
-    iget-object v0, p0, Landroidx/core/app/JobIntentService$c;->f:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    .line 16
-    :cond_1
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
 .method public a(Landroid/content/Intent;)V
     .locals 2
 
@@ -241,7 +186,58 @@
     return-void
 .end method
 
-.method public b()V
+.method public c()V
+    .locals 3
+
+    .line 1
+    monitor-enter p0
+
+    .line 2
+    :try_start_0
+    iget-boolean v0, p0, Landroidx/core/app/JobIntentService$c;->h:Z
+
+    if-eqz v0, :cond_1
+
+    .line 3
+    iget-boolean v0, p0, Landroidx/core/app/JobIntentService$c;->g:Z
+
+    if-eqz v0, :cond_0
+
+    .line 4
+    iget-object v0, p0, Landroidx/core/app/JobIntentService$c;->e:Landroid/os/PowerManager$WakeLock;
+
+    const-wide/32 v1, 0xea60
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 5
+    iput-boolean v0, p0, Landroidx/core/app/JobIntentService$c;->h:Z
+
+    .line 6
+    iget-object v0, p0, Landroidx/core/app/JobIntentService$c;->f:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    .line 7
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public d()V
     .locals 3
 
     .line 1
@@ -286,7 +282,7 @@
     throw v0
 .end method
 
-.method public c()V
+.method public e()V
     .locals 1
 
     .line 1

@@ -216,6 +216,11 @@
 
 .method public includeValue(Lcom/fasterxml/jackson/core/JsonParser;)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/filter/TokenFilter;->_includeScalar()Z

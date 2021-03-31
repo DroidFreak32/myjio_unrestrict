@@ -1,10 +1,18 @@
 .class public synthetic Lcom/google/android/gms/common/util/Clock$$CC;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # direct methods
-.method public static currentThreadTimeMillis(Lcom/google/android/gms/common/util/Clock;)J
+.method public static currentThreadTimeMillis$$dflt$$(Lcom/google/android/gms/common/util/Clock;)J
     .locals 2
+    .param p0    # Lcom/google/android/gms/common/util/Clock;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

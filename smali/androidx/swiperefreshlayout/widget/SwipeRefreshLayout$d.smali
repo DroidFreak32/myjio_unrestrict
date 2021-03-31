@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->a(II)Landroid/view/animation/Animation;
+    value = Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->l(II)Landroid/view/animation/Animation;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final synthetic s:I
+.field public final synthetic a:I
 
-.field public final synthetic t:I
+.field public final synthetic b:I
 
-.field public final synthetic u:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+.field public final synthetic c:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
 
 # direct methods
@@ -27,11 +27,11 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->u:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->c:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    iput p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->s:I
+    iput p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->a:I
 
-    iput p3, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->t:I
+    iput p3, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->b:I
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
@@ -44,15 +44,15 @@
     .locals 3
 
     .line 1
-    iget-object p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->u:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iget-object p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->c:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    iget-object p2, p2, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->T:Lmi;
+    iget-object p2, p2, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->S:Landroidx/swiperefreshlayout/widget/CircularProgressDrawable;
 
-    iget v0, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->s:I
+    iget v0, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->a:I
 
     int-to-float v1, v0
 
-    iget v2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->t:I
+    iget v2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$d;->b:I
 
     sub-int/2addr v2, v0
 
@@ -64,7 +64,7 @@
 
     float-to-int p1, v1
 
-    invoke-virtual {p2, p1}, Lmi;->setAlpha(I)V
+    invoke-virtual {p2, p1}, Landroidx/swiperefreshlayout/widget/CircularProgressDrawable;->setAlpha(I)V
 
     return-void
 .end method

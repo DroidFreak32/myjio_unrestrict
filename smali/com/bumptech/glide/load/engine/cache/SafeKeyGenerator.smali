@@ -12,17 +12,17 @@
 
 
 # instance fields
-.field public final digestPool:Lz8;
+.field private final digestPool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator$PoolableDigestContainer;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final loadIdToSafeHash:Lcom/bumptech/glide/util/LruCache;
+.field private final loadIdToSafeHash:Lcom/bumptech/glide/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/util/LruCache<",
@@ -57,11 +57,11 @@
 
     const/16 v1, 0xa
 
-    invoke-static {v1, v0}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafe(ILcom/bumptech/glide/util/pool/FactoryPools$Factory;)Lz8;
+    invoke-static {v1, v0}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafe(ILcom/bumptech/glide/util/pool/FactoryPools$Factory;)Landroidx/core/util/Pools$Pool;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Lz8;
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Landroidx/core/util/Pools$Pool;
 
     return-void
 .end method
@@ -70,9 +70,9 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Lz8;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0}, Lz8;->acquire()Ljava/lang/Object;
+    invoke-interface {v0}, Landroidx/core/util/Pools$Pool;->acquire()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -102,18 +102,18 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Lz8;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v1, v0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     return-object p1
 
     :catchall_0
     move-exception p1
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Lz8;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;->digestPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v1, v0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     throw p1
 .end method

@@ -57,7 +57,7 @@
 
     iget-object v0, v0, Landroidx/loader/content/ModernAsyncTask$e;->b:[Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Landroidx/loader/content/ModernAsyncTask;->b([Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Landroidx/loader/content/ModernAsyncTask;->k([Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -71,7 +71,7 @@
 
     aget-object v0, v0, v1
 
-    invoke-virtual {p1, v0}, Landroidx/loader/content/ModernAsyncTask;->a(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Landroidx/loader/content/ModernAsyncTask;->d(Ljava/lang/Object;)V
 
     :goto_0
     return-void

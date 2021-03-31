@@ -14,21 +14,21 @@
 
 
 # static fields
-.field public static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
+.field private static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
 
-.field public static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
+.field private static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
 
-.field public static final TIMEOUT:I = 0x2710
+.field private static final TIMEOUT:I = 0x2710
 
-.field public static pool:Ljava/util/Vector;
+.field private static pool:Ljava/util/Vector;
 
 
 # instance fields
-.field public config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
+.field private config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
 
-.field public daemon:Lcom/jcraft/jsch/ForwardedTCPIPDaemon;
+.field private daemon:Lcom/jcraft/jsch/ForwardedTCPIPDaemon;
 
-.field public socket:Ljava/net/Socket;
+.field private socket:Ljava/net/Socket;
 
 
 # direct methods
@@ -92,6 +92,11 @@
 
 .method public static addPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;IILjava/lang/String;ILcom/jcraft/jsch/SocketFactory;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1}, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->normalize(Ljava/lang/String;)Ljava/lang/String;
@@ -186,6 +191,11 @@
 
 .method public static addPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;IILjava/lang/String;[Ljava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 16
     invoke-static {p1}, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->normalize(Ljava/lang/String;)Ljava/lang/String;
@@ -536,7 +546,7 @@
     throw p0
 .end method
 
-.method public static getPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
+.method private static getPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
     .locals 4
 
     .line 1
@@ -579,11 +589,9 @@
 
     if-eq v3, p2, :cond_1
 
-    .line 6
-    iget v3, v2, Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;->rport:I
-
     if-nez v3, :cond_2
 
+    .line 6
     iget v3, v2, Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;->allocated_rport:I
 
     if-eq v3, p2, :cond_1
@@ -919,25 +927,22 @@
 
     iput-object v3, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
 
-    .line 10
-    iget-object v3, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
-
     if-nez v3, :cond_0
 
-    .line 11
+    .line 10
     invoke-static {v2, p1, v1}, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->getPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
 
-    .line 12
+    .line 11
     :cond_0
     iget-object p1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
 
     if-nez p1, :cond_1
 
-    .line 13
+    .line 12
     invoke-static {}, Lcom/jcraft/jsch/JSch;->getLogger()Lcom/jcraft/jsch/Logger;
 
     move-result-object p1
@@ -950,7 +955,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 14
+    .line 13
     invoke-static {}, Lcom/jcraft/jsch/JSch;->getLogger()Lcom/jcraft/jsch/Logger;
 
     move-result-object p1
@@ -1017,13 +1022,11 @@
     :try_start_0
     iget-object v1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
 
-    instance-of v1, v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$ConfigDaemon;
+    instance-of v2, v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$ConfigDaemon;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     .line 2
-    iget-object v1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
-
     check-cast v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$ConfigDaemon;
 
     .line 3
@@ -1089,8 +1092,6 @@
 
     .line 10
     :cond_0
-    iget-object v1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->config:Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;
-
     check-cast v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$ConfigLHost;
 
     .line 11
@@ -1111,8 +1112,6 @@
     goto :goto_0
 
     :cond_1
-    iget-object v2, v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$ConfigLHost;->factory:Lcom/jcraft/jsch/SocketFactory;
-
     iget-object v3, v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$Config;->target:Ljava/lang/String;
 
     iget v1, v1, Lcom/jcraft/jsch/ChannelForwardedTCPIP$ConfigLHost;->lport:I
@@ -1125,8 +1124,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->socket:Ljava/net/Socket;
 
     .line 12
-    iget-object v1, p0, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->socket:Ljava/net/Socket;
-
     invoke-virtual {v1, v0}, Ljava/net/Socket;->setTcpNoDelay(Z)V
 
     .line 13
@@ -1192,22 +1189,14 @@
 
     if-eqz v3, :cond_4
 
-    iget-object v3, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
     iget-object v3, v3, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
 
     if-eqz v3, :cond_4
 
     .line 21
-    iget-object v3, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v3, v3, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
-
     iget-object v4, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v5, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v5, v5
+    array-length v5, v4
 
     const/16 v6, 0xe
 

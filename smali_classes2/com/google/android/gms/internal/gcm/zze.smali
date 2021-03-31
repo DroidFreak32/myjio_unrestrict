@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzf:Ljava/lang/ClassLoader;
+.field private static final zzf:Ljava/lang/ClassLoader;
 
 
 # direct methods
@@ -22,7 +22,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

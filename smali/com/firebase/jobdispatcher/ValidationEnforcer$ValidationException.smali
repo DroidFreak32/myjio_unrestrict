@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final errors:Ljava/util/List;
+.field private final errors:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -29,6 +29,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
     .locals 1
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

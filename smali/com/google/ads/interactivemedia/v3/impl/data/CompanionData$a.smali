@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+.field private static final synthetic $VALUES:[Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
 .field public static final enum Html:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
@@ -34,62 +34,56 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
-    const/4 v1, 0x0
+    const-string v1, "Html"
 
-    const-string v2, "Html"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->Html:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
     const-string v3, "Static"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->Static:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+    invoke-direct {v1, v3, v4}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+    sput-object v1, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->Static:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
-    const-string v4, "IFrame"
+    const-string v5, "IFrame"
 
-    invoke-direct {v0, v4, v3}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->IFrame:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+    invoke-direct {v3, v5, v6}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x3
+    sput-object v3, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->IFrame:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
-    new-array v0, v0, [Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 2
-    sget-object v4, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->Html:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->Static:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->IFrame:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->$VALUES:[Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+    sput-object v5, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;->$VALUES:[Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

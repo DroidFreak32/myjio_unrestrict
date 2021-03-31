@@ -1,277 +1,121 @@
-.class public Lcom/google/android/gms/internal/ads/zzaf;
-.super Ljava/lang/Object;
+.class public final enum Lcom/google/android/gms/internal/ads/zzaf;
+.super Ljava/lang/Enum;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lcom/google/android/gms/internal/ads/zzaf$zza;
+        "Ljava/lang/Enum<",
+        "Lcom/google/android/gms/internal/ads/zzaf;",
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final CLASS_NAME:Ljava/lang/String;
+.field private static final enum zzbl:Lcom/google/android/gms/internal/ads/zzaf;
 
-.field public static DEBUG:Z = false
+.field public static final enum zzbm:Lcom/google/android/gms/internal/ads/zzaf;
 
-.field public static TAG:Ljava/lang/String; = "Volley"
+.field private static final enum zzbn:Lcom/google/android/gms/internal/ads/zzaf;
+
+.field private static final enum zzbo:Lcom/google/android/gms/internal/ads/zzaf;
+
+.field private static final synthetic zzbp:[Lcom/google/android/gms/internal/ads/zzaf;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
-
-    const-string v0, "Volley"
-
-    const/4 v1, 0x2
+    .locals 9
 
     .line 1
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzaf;
 
-    move-result v0
+    const-string v1, "LOW"
 
-    sput-boolean v0, Lcom/google/android/gms/internal/ads/zzaf;->DEBUG:Z
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzaf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzaf;->zzbl:Lcom/google/android/gms/internal/ads/zzaf;
 
     .line 2
-    const-class v0, Lcom/google/android/gms/internal/ads/zzaf;
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzaf;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-string v3, "NORMAL"
 
-    move-result-object v0
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzaf;->CLASS_NAME:Ljava/lang/String;
+    invoke-direct {v1, v3, v4}, Lcom/google/android/gms/internal/ads/zzaf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/google/android/gms/internal/ads/zzaf;->zzbm:Lcom/google/android/gms/internal/ads/zzaf;
+
+    .line 3
+    new-instance v3, Lcom/google/android/gms/internal/ads/zzaf;
+
+    const-string v5, "HIGH"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lcom/google/android/gms/internal/ads/zzaf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lcom/google/android/gms/internal/ads/zzaf;->zzbn:Lcom/google/android/gms/internal/ads/zzaf;
+
+    .line 4
+    new-instance v5, Lcom/google/android/gms/internal/ads/zzaf;
+
+    const-string v7, "IMMEDIATE"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lcom/google/android/gms/internal/ads/zzaf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lcom/google/android/gms/internal/ads/zzaf;->zzbo:Lcom/google/android/gms/internal/ads/zzaf;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lcom/google/android/gms/internal/ads/zzaf;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    .line 5
+    sput-object v7, Lcom/google/android/gms/internal/ads/zzaf;->zzbp:[Lcom/google/android/gms/internal/ads/zzaf;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public static varargs d(Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ads/zzaf;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static varargs e(Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ads/zzaf;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static varargs v(Ljava/lang/String;[Ljava/lang/Object;)V
+.method public static values()[Lcom/google/android/gms/internal/ads/zzaf;
     .locals 1
 
     .line 1
-    sget-boolean v0, Lcom/google/android/gms/internal/ads/zzaf;->DEBUG:Z
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzaf;->zzbp:[Lcom/google/android/gms/internal/ads/zzaf;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, [Lcom/google/android/gms/internal/ads/zzaf;->clone()Ljava/lang/Object;
 
-    .line 2
-    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ads/zzaf;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
 
-    :cond_0
-    return-void
-.end method
+    check-cast v0, [Lcom/google/android/gms/internal/ads/zzaf;
 
-.method public static varargs zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-    .locals 7
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-static {v0, p0, p1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 3
-    :goto_0
-    new-instance p1, Ljava/lang/Throwable;
-
-    invoke-direct {p1}, Ljava/lang/Throwable;-><init>()V
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object p1
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x2
-
-    .line 4
-    :goto_1
-    array-length v2, p1
-
-    const/4 v3, 0x1
-
-    if-ge v1, v2, :cond_2
-
-    .line 5
-    aget-object v2, p1, v1
-
-    invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 6
-    sget-object v4, Lcom/google/android/gms/internal/ads/zzaf;->CLASS_NAME:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 7
-    aget-object v2, p1, v1
-
-    invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/16 v4, 0x2e
-
-    .line 8
-    invoke-virtual {v2, v4}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v4
-
-    add-int/2addr v4, v3
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/16 v4, 0x24
-
-    .line 9
-    invoke-virtual {v2, v4}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v4
-
-    add-int/2addr v4, v3
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 10
-    aget-object p1, p1, v1
-
-    invoke-virtual {p1}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/2addr v1, v3
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v1, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "."
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const-string p1, "<unknown>"
-
-    .line 11
-    :goto_2
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Thread;->getId()J
-
-    move-result-wide v5
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    aput-object v5, v2, v4
-
-    aput-object p1, v2, v3
-
-    aput-object p0, v2, v0
-
-    const-string p0, "[%d] %s: %s"
-
-    invoke-static {v1, p0, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static varargs zza(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    invoke-static {p1, p2}, Lcom/google/android/gms/internal/ads/zzaf;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    return-void
+    return-object v0
 .end method

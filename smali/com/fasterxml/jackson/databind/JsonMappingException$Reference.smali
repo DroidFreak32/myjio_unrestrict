@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x2L
+.field private static final serialVersionUID:J = 0x2L
 
 
 # instance fields
@@ -97,22 +97,15 @@
     .line 8
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
 
-    if-eqz p2, :cond_0
+    const-string p1, "Cannot pass null fieldName"
 
     .line 9
+    invoke-static {p2, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 10
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_fieldName:Ljava/lang/String;
 
     return-void
-
-    .line 10
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Cannot pass null fieldName"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 

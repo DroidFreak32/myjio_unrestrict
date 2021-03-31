@@ -1,9 +1,9 @@
-.class public final Lr4$a;
+.class public Lr4$a;
 .super Ljava/lang/Object;
-.source "MapCollections.java"
+.source "RoomTrackingLiveData.java"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -12,174 +12,174 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x11
-    name = "a"
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljava/util/Iterator<",
-        "TT;>;"
-    }
+    accessFlags = 0x1
+    name = null
 .end annotation
 
 
 # instance fields
-.field public final s:I
-
-.field public t:I
-
-.field public u:I
-
-.field public v:Z
-
-.field public final synthetic w:Lr4;
+.field public final synthetic a:Lr4;
 
 
 # direct methods
-.method public constructor <init>(Lr4;I)V
-    .locals 1
+.method public constructor <init>(Lr4;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lr4$a;->w:Lr4;
+    iput-object p1, p0, Lr4$a;->a:Lr4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput-boolean v0, p0, Lr4$a;->v:Z
-
-    .line 3
-    iput p2, p0, Lr4$a;->s:I
-
-    .line 4
-    invoke-virtual {p1}, Lr4;->c()I
-
-    move-result p1
-
-    iput p1, p0, Lr4$a;->t:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public hasNext()Z
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lr4$a;->u:I
-
-    iget v1, p0, Lr4$a;->t:I
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public next()Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
+.method public run()V
+    .locals 5
+    .annotation build Landroidx/annotation/WorkerThread;
     .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lr4$a;->hasNext()Z
+    iget-object v0, p0, Lr4$a;->a:Lr4;
+
+    iget-object v0, v0, Lr4;->s:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lr4$a;->w:Lr4;
+    iget-object v0, p0, Lr4$a;->a:Lr4;
 
-    iget v1, p0, Lr4$a;->u:I
+    iget-object v0, v0, Lr4;->l:Landroidx/room/RoomDatabase;
 
-    iget v2, p0, Lr4$a;->s:I
-
-    invoke-virtual {v0, v1, v2}, Lr4;->a(II)Ljava/lang/Object;
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->getInvalidationTracker()Landroidx/room/InvalidationTracker;
 
     move-result-object v0
 
+    iget-object v3, p0, Lr4$a;->a:Lr4;
+
+    iget-object v3, v3, Lr4;->p:Landroidx/room/InvalidationTracker$Observer;
+
+    invoke-virtual {v0, v3}, Landroidx/room/InvalidationTracker;->addWeakObserver(Landroidx/room/InvalidationTracker$Observer;)V
+
     .line 3
-    iget v1, p0, Lr4$a;->u:I
-
-    const/4 v2, 0x1
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lr4$a;->u:I
-
-    .line 4
-    iput-boolean v2, p0, Lr4$a;->v:Z
-
-    return-object v0
-
-    .line 5
     :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
+    iget-object v0, p0, Lr4$a;->a:Lr4;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    iget-object v0, v0, Lr4;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    throw v0
-.end method
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-.method public remove()V
-    .locals 2
+    move-result v0
 
-    .line 1
-    iget-boolean v0, p0, Lr4$a;->v:Z
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget v0, p0, Lr4$a;->u:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lr4$a;->u:I
-
-    .line 3
-    iget v0, p0, Lr4$a;->t:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lr4$a;->t:I
+    if-eqz v0, :cond_3
 
     const/4 v0, 0x0
 
+    const/4 v3, 0x0
+
     .line 4
-    iput-boolean v0, p0, Lr4$a;->v:Z
+    :goto_0
+    :try_start_0
+    iget-object v4, p0, Lr4$a;->a:Lr4;
+
+    iget-object v4, v4, Lr4;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v4, v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+
+    move-result v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v4, :cond_1
 
     .line 5
-    iget-object v0, p0, Lr4$a;->w:Lr4;
+    :try_start_1
+    iget-object v0, p0, Lr4$a;->a:Lr4;
 
-    iget v1, p0, Lr4$a;->u:I
+    iget-object v0, v0, Lr4;->n:Ljava/util/concurrent/Callable;
 
-    invoke-virtual {v0, v1}, Lr4;->a(I)V
+    invoke-interface {v0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 v3, 0x1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
 
     .line 6
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    :try_start_2
+    new-instance v2, Ljava/lang/RuntimeException;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string v3, "Exception while computing database live data."
 
+    invoke-direct {v2, v3, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v2
+
+    :cond_1
+    if-eqz v3, :cond_2
+
+    .line 7
+    iget-object v4, p0, Lr4$a;->a:Lr4;
+
+    invoke-static {v4, v0}, Lr4;->f(Lr4;Ljava/lang/Object;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 8
+    :cond_2
+    iget-object v0, p0, Lr4$a;->a:Lr4;
+
+    iget-object v0, v0, Lr4;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v2, p0, Lr4$a;->a:Lr4;
+
+    iget-object v2, v2, Lr4;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 9
     throw v0
+
+    :cond_3
+    const/4 v3, 0x0
+
+    :goto_1
+    if-eqz v3, :cond_4
+
+    .line 10
+    iget-object v0, p0, Lr4$a;->a:Lr4;
+
+    iget-object v0, v0, Lr4;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :cond_4
+    return-void
 .end method

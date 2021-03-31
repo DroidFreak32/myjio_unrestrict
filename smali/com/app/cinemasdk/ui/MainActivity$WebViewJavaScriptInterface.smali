@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
 .field public final synthetic this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
@@ -70,25 +70,25 @@
     .line 4
     iget-object p1, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
-    new-instance v0, Lcom/app/cinemasdk/dialog/CustomErrorDialog;
+    new-instance v6, Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
-    const-string v3, "This might be because of intermittent failure of Network connectivity. (1003) "
+    iget-object v5, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
-    const/4 v4, 0x1
+    const-string v2, "This might be because of intermittent failure of Network connectivity. (1003) "
 
-    const/16 v5, 0x6a
+    const/4 v3, 0x1
 
-    move-object v1, v0
+    const/16 v4, 0x6a
 
-    move-object v2, p1
+    move-object v0, v6
 
-    move-object v6, p1
+    move-object v1, v5
 
-    invoke-direct/range {v1 .. v6}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;-><init>(Landroid/app/Activity;Ljava/lang/String;ZILcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;)V
+    invoke-direct/range {v0 .. v5}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;-><init>(Landroid/app/Activity;Ljava/lang/String;ZILcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;)V
 
-    iget-object v1, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
+    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
-    invoke-virtual {v0, v1}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;->setRetryListener(Lcom/app/cinemasdk/dialog/CustomErrorDialog$CustomRetryListener;)Lcom/app/cinemasdk/dialog/CustomErrorDialog;
+    invoke-virtual {v6, v0}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;->setRetryListener(Lcom/app/cinemasdk/dialog/CustomErrorDialog$CustomRetryListener;)Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
     move-result-object v0
 
@@ -129,7 +129,7 @@
 .end method
 
 .method public apiErrorOnSuccess(Ljava/lang/String;)V
-    .locals 9
+    .locals 7
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -175,23 +175,23 @@
     .line 4
     iget-object p1, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
-    new-instance v0, Lcom/app/cinemasdk/dialog/CustomErrorDialog;
+    new-instance v6, Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
-    const/4 v6, 0x0
+    iget-object v5, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
-    const/16 v7, 0x69
+    const/4 v3, 0x0
 
-    const-string v5, "This might be because of intermittent failure of Network connectivity."
+    const/16 v4, 0x69
 
-    move-object v3, v0
+    const-string v2, "This might be because of intermittent failure of Network connectivity."
 
-    move-object v4, p1
+    move-object v0, v6
 
-    move-object v8, p1
+    move-object v1, v5
 
-    invoke-direct/range {v3 .. v8}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;-><init>(Landroid/app/Activity;Ljava/lang/String;ZILcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;)V
+    invoke-direct/range {v0 .. v5}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;-><init>(Landroid/app/Activity;Ljava/lang/String;ZILcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;)V
 
-    invoke-static {p1, v0}, Lcom/app/cinemasdk/ui/MainActivity;->access$202(Lcom/app/cinemasdk/ui/MainActivity;Lcom/app/cinemasdk/dialog/CustomErrorDialog;)Lcom/app/cinemasdk/dialog/CustomErrorDialog;
+    invoke-static {p1, v6}, Lcom/app/cinemasdk/ui/MainActivity;->access$202(Lcom/app/cinemasdk/ui/MainActivity;Lcom/app/cinemasdk/dialog/CustomErrorDialog;)Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
     .line 5
     iget-object p1, p0, Lcom/app/cinemasdk/ui/MainActivity$WebViewJavaScriptInterface;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
@@ -260,7 +260,7 @@
 
     const/4 v0, 0x1
 
-    const-string v1, "success"
+    const-string/jumbo v1, "success"
 
     const/16 v2, 0xc8
 
@@ -549,7 +549,7 @@
 
     invoke-virtual {v1, p1}, Lcom/app/cinemasdk/datamanager/InvokedContentData;->setContentID(Ljava/lang/String;)V
 
-    const-string p1, "type"
+    const-string/jumbo p1, "type"
 
     .line 10
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
@@ -597,7 +597,7 @@
 
     invoke-virtual {v1, p1}, Lcom/app/cinemasdk/datamanager/MainDataManager;->setDirector(Lorg/json/JSONArray;)V
 
-    const-string p1, "starcast"
+    const-string/jumbo p1, "starcast"
 
     .line 16
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
@@ -782,7 +782,7 @@
 
     invoke-virtual {v3, p1}, Lcom/app/cinemasdk/datamanager/InvokedContentData;->setContentID(Ljava/lang/String;)V
 
-    const-string p1, "type"
+    const-string/jumbo p1, "type"
 
     .line 7
     invoke-virtual {v2, p1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
@@ -830,7 +830,7 @@
 
     invoke-virtual {v3, p1}, Lcom/app/cinemasdk/datamanager/MainDataManager;->setDirector(Lorg/json/JSONArray;)V
 
-    const-string p1, "starcast"
+    const-string/jumbo p1, "starcast"
 
     .line 13
     invoke-virtual {v2, p1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;

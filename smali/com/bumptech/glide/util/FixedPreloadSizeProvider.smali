@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public final size:[I
+.field private final size:[I
 
 
 # direct methods
@@ -52,6 +52,13 @@
 # virtual methods
 .method public getPreloadSize(Ljava/lang/Object;II)[I
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;II)[I"

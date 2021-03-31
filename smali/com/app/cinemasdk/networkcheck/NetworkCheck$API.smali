@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+.field private static final synthetic $VALUES:[Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
 .field public static final enum SIM:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
@@ -34,62 +34,56 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
-    const/4 v1, 0x0
+    const-string v1, "VIP"
 
-    const-string v2, "VIP"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->VIP:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
-    new-instance v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
     const-string v3, "SIM"
 
-    invoke-direct {v0, v3, v2}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->SIM:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+    invoke-direct {v1, v3, v4}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+    sput-object v1, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->SIM:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
-    const-string v4, "WIFI"
+    const-string v5, "WIFI"
 
-    invoke-direct {v0, v4, v3}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->WIFI:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+    invoke-direct {v3, v5, v6}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x3
+    sput-object v3, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->WIFI:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
-    new-array v0, v0, [Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 2
-    sget-object v4, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->VIP:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->SIM:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->WIFI:Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->$VALUES:[Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
+    sput-object v5, Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;->$VALUES:[Lcom/app/cinemasdk/networkcheck/NetworkCheck$API;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

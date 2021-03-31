@@ -43,7 +43,7 @@
     return-object p1
 .end method
 
-.method public a(Landroid/view/View;Landroid/graphics/PointF;)V
+.method public b(Landroid/view/View;Landroid/graphics/PointF;)V
     .locals 3
 
     .line 1
@@ -75,7 +75,7 @@
     add-int/2addr v2, p2
 
     .line 5
-    invoke-static {p1, v0, p2, v1, v2}, Lxj;->a(Landroid/view/View;IIII)V
+    invoke-static {p1, v0, p2, v1, v2}, La6;->g(Landroid/view/View;IIII)V
 
     return-void
 .end method
@@ -101,7 +101,7 @@
 
     check-cast p2, Landroid/graphics/PointF;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeBounds$g;->a(Landroid/view/View;Landroid/graphics/PointF;)V
+    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeBounds$g;->b(Landroid/view/View;Landroid/graphics/PointF;)V
 
     return-void
 .end method

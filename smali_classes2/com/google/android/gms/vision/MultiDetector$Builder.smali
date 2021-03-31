@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/MultiDetector$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public zzay:Lcom/google/android/gms/vision/MultiDetector;
+.field private zzbg:Lcom/google/android/gms/vision/MultiDetector;
 
 
 # direct methods
@@ -31,7 +32,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/vision/MultiDetector;-><init>(Lcom/google/android/gms/vision/zzd;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzay:Lcom/google/android/gms/vision/MultiDetector;
+    iput-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzbg:Lcom/google/android/gms/vision/MultiDetector;
 
     return-void
 .end method
@@ -52,7 +53,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzay:Lcom/google/android/gms/vision/MultiDetector;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzbg:Lcom/google/android/gms/vision/MultiDetector;
 
     invoke-static {v0}, Lcom/google/android/gms/vision/MultiDetector;->zza(Lcom/google/android/gms/vision/MultiDetector;)Ljava/util/List;
 
@@ -67,7 +68,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzay:Lcom/google/android/gms/vision/MultiDetector;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzbg:Lcom/google/android/gms/vision/MultiDetector;
 
     invoke-static {v0}, Lcom/google/android/gms/vision/MultiDetector;->zza(Lcom/google/android/gms/vision/MultiDetector;)Ljava/util/List;
 
@@ -80,7 +81,7 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzay:Lcom/google/android/gms/vision/MultiDetector;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector$Builder;->zzbg:Lcom/google/android/gms/vision/MultiDetector;
 
     return-object v0
 

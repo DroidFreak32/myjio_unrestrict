@@ -45,25 +45,25 @@
 
 
 # instance fields
-.field public final zzc:I
+.field private final zzc:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x2
     .end annotation
 .end field
 
-.field public final zzd:[Lcom/google/android/gms/phenotype/zzi;
+.field private final zzd:[Lcom/google/android/gms/phenotype/zzi;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x3
     .end annotation
 .end field
 
-.field public final zze:[Ljava/lang/String;
+.field private final zze:[Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x4
     .end annotation
 .end field
 
-.field public final zzf:Ljava/util/Map;
+.field private final zzf:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -142,11 +142,9 @@
     :cond_0
     iput-object p3, p0, Lcom/google/android/gms/phenotype/Configuration;->zze:[Ljava/lang/String;
 
-    iget-object p1, p0, Lcom/google/android/gms/phenotype/Configuration;->zze:[Ljava/lang/String;
+    if-eqz p3, :cond_1
 
-    if-eqz p1, :cond_1
-
-    invoke-static {p1}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
+    invoke-static {p3}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
 
     :cond_1
     return-void
@@ -325,17 +323,17 @@
 
     iget-object v1, p0, Lcom/google/android/gms/phenotype/Configuration;->zzd:[Lcom/google/android/gms/phenotype/zzi;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x3
 
-    const/4 v3, 0x3
+    const/4 v3, 0x0
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
     iget-object p2, p0, Lcom/google/android/gms/phenotype/Configuration;->zze:[Ljava/lang/String;
 
     const/4 v1, 0x4
 
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
+    invoke-static {p1, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/transition/ChangeBounds;->createAnimator(Landroid/view/ViewGroup;Llj;Llj;)Landroid/animation/Animator;
+    value = Landroidx/transition/ChangeBounds;->createAnimator(Landroid/view/ViewGroup;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public mViewBounds:Landroidx/transition/ChangeBounds$k;
+.field public final synthetic a:Landroidx/transition/ChangeBounds$k;
 
-.field public final synthetic s:Landroidx/transition/ChangeBounds$k;
+.field private mViewBounds:Landroidx/transition/ChangeBounds$k;
 
 
 # direct methods
@@ -25,14 +25,12 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Landroidx/transition/ChangeBounds$h;->s:Landroidx/transition/ChangeBounds$k;
+    iput-object p2, p0, Landroidx/transition/ChangeBounds$h;->a:Landroidx/transition/ChangeBounds$k;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 2
-    iget-object p1, p0, Landroidx/transition/ChangeBounds$h;->s:Landroidx/transition/ChangeBounds$k;
-
-    iput-object p1, p0, Landroidx/transition/ChangeBounds$h;->mViewBounds:Landroidx/transition/ChangeBounds$k;
+    iput-object p2, p0, Landroidx/transition/ChangeBounds$h;->mViewBounds:Landroidx/transition/ChangeBounds$k;
 
     return-void
 .end method

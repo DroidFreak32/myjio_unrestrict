@@ -1,1407 +1,863 @@
 .class public Lv4;
 .super Ljava/lang/Object;
-.source "ArrayRow.java"
+.source "FrameworkSQLiteDatabase.java"
 
 # interfaces
-.implements Ly4$a;
+.implements Landroidx/sqlite/db/SupportSQLiteDatabase;
+
+
+# static fields
+.field public static final b:[Ljava/lang/String;
+
+.field public static final c:[Ljava/lang/String;
 
 
 # instance fields
-.field public a:Landroidx/constraintlayout/solver/SolverVariable;
-
-.field public b:F
-
-.field public c:Z
-
-.field public final d:Lu4;
-
-.field public e:Z
+.field public final a:Landroid/database/sqlite/SQLiteDatabase;
 
 
 # direct methods
-.method public constructor <init>(Lw4;)V
-    .locals 1
+.method public static constructor <clinit>()V
+    .locals 6
+
+    const-string v0, ""
+
+    const-string v1, " OR ROLLBACK "
+
+    const-string v2, " OR ABORT "
+
+    const-string v3, " OR FAIL "
+
+    const-string v4, " OR IGNORE "
+
+    const-string v5, " OR REPLACE "
+
+    .line 1
+    filled-new-array/range {v0 .. v5}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lv4;->b:[Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    .line 2
+    sput-object v0, Lv4;->c:[Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/database/sqlite/SQLiteDatabase;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
     .line 2
-    iput-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    const/4 v0, 0x0
-
-    .line 3
-    iput v0, p0, Lv4;->b:F
-
-    const/4 v0, 0x0
-
-    .line 4
-    iput-boolean v0, p0, Lv4;->e:Z
-
-    .line 5
-    new-instance v0, Lu4;
-
-    invoke-direct {v0, p0, p1}, Lu4;-><init>(Lv4;Lw4;)V
-
-    iput-object v0, p0, Lv4;->d:Lu4;
+    iput-object p1, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ly4;[Z)Landroidx/constraintlayout/solver/SolverVariable;
+.method public a(Landroid/database/sqlite/SQLiteDatabase;)Z
     .locals 1
-
-    .line 62
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, v0}, Lu4;->a([ZLandroidx/constraintlayout/solver/SolverVariable;)Landroidx/constraintlayout/solver/SolverVariable;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(FFFLandroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;)Lv4;
-    .locals 4
-
-    const/4 v0, 0x0
-
-    .line 14
-    iput v0, p0, Lv4;->b:F
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    cmpl-float v3, p2, v0
-
-    if-eqz v3, :cond_3
-
-    cmpl-float v3, p1, p3
-
-    if-nez v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    cmpl-float v3, p1, v0
-
-    if-nez v3, :cond_1
-
-    .line 15
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p4, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 16
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p5, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_1
-
-    :cond_1
-    cmpl-float v0, p3, v0
-
-    if-nez v0, :cond_2
-
-    .line 17
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p6, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 18
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p7, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_1
-
-    :cond_2
-    div-float/2addr p1, p2
-
-    div-float/2addr p3, p2
-
-    div-float/2addr p1, p3
-
-    .line 19
-    iget-object p2, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p2, p4, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 20
-    iget-object p2, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p2, p5, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 21
-    iget-object p2, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p2, p7, p1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 22
-    iget-object p2, p0, Lv4;->d:Lu4;
-
-    neg-float p1, p1
-
-    invoke-virtual {p2, p6, p1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_1
-
-    .line 23
-    :cond_3
-    :goto_0
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p4, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 24
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p5, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 25
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p7, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 26
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p6, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    :goto_1
-    return-object p0
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 1
-
-    .line 6
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    int-to-float p2, p2
-
-    invoke-virtual {v0, p1, p2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    return-object p0
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-eqz p3, :cond_1
-
-    if-gez p3, :cond_0
-
-    mul-int/lit8 p3, p3, -0x1
-
-    const/4 v0, 0x1
-
-    :cond_0
-    int-to-float p3, p3
 
     .line 1
-    iput p3, p0, Lv4;->b:F
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    :cond_1
-    const/high16 p3, -0x40800000    # -1.0f
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    if-nez v0, :cond_2
-
-    .line 2
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, p3}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 3
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_0
-
-    .line 4
-    :cond_2
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 5
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, p3}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;IFLandroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 5
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    if-ne p2, p5, :cond_0
-
-    .line 27
-    iget-object p3, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p3, p1, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 28
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p6, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 29
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    const/high16 p3, -0x40000000    # -2.0f
-
-    invoke-virtual {p1, p2, p3}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    return-object p0
-
-    :cond_0
-    const/high16 v1, 0x3f000000    # 0.5f
-
-    const/high16 v2, -0x40800000    # -1.0f
-
-    cmpl-float v1, p4, v1
-
-    if-nez v1, :cond_2
-
-    .line 30
-    iget-object p4, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p4, p1, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 31
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 32
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p5, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 33
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p6, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    if-gtz p3, :cond_1
-
-    if-lez p7, :cond_6
-
-    :cond_1
-    neg-int p1, p3
-
-    add-int/2addr p1, p7
-
-    int-to-float p1, p1
-
-    .line 34
-    iput p1, p0, Lv4;->b:F
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v1, 0x0
-
-    cmpg-float v1, p4, v1
-
-    if-gtz v1, :cond_3
-
-    .line 35
-    iget-object p4, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p4, p1, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 36
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    int-to-float p1, p3
-
-    .line 37
-    iput p1, p0, Lv4;->b:F
-
-    goto :goto_0
-
-    :cond_3
-    cmpl-float v1, p4, v0
-
-    if-ltz v1, :cond_4
-
-    .line 38
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p5, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 39
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p6, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    int-to-float p1, p7
-
-    .line 40
-    iput p1, p0, Lv4;->b:F
-
-    goto :goto_0
-
-    .line 41
-    :cond_4
-    iget-object v1, p0, Lv4;->d:Lu4;
-
-    sub-float v3, v0, p4
-
-    mul-float v4, v3, v0
-
-    invoke-virtual {v1, p1, v4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 42
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    mul-float v1, v3, v2
-
-    invoke-virtual {p1, p2, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 43
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    mul-float v2, v2, p4
-
-    invoke-virtual {p1, p5, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 44
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    mul-float v0, v0, p4
-
-    invoke-virtual {p1, p6, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    if-gtz p3, :cond_5
-
-    if-lez p7, :cond_6
-
-    :cond_5
-    neg-int p1, p3
-
-    int-to-float p1, p1
-
-    mul-float p1, p1, v3
-
-    int-to-float p2, p7
-
-    mul-float p2, p2, p4
-
-    add-float/2addr p1, p2
-
-    .line 45
-    iput p1, p0, Lv4;->b:F
-
-    :cond_6
-    :goto_0
-    return-object p0
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;F)Lv4;
-    .locals 2
-
-    .line 48
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    invoke-virtual {v0, p1, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 49
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    sub-float/2addr v0, p4
-
-    invoke-virtual {p1, p2, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 50
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p3, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    return-object p0
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-eqz p4, :cond_1
-
-    if-gez p4, :cond_0
-
-    mul-int/lit8 p4, p4, -0x1
-
-    const/4 v0, 0x1
-
-    :cond_0
-    int-to-float p4, p4
-
-    .line 7
-    iput p4, p0, Lv4;->b:F
-
-    :cond_1
-    const/high16 p4, -0x40800000    # -1.0f
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    if-nez v0, :cond_2
-
-    .line 8
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 9
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 10
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p3, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_0
-
-    .line 11
-    :cond_2
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 12
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 13
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p3, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;F)Lv4;
-    .locals 2
-
-    .line 51
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    invoke-virtual {v0, p1, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 52
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, p2, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 53
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p3, p5}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 54
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    neg-float p2, p5
-
-    invoke-virtual {p1, p4, p2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    return-object p0
-.end method
-
-.method public a(Ly4;I)Lv4;
-    .locals 3
-
-    .line 46
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    const-string v1, "ep"
-
-    invoke-virtual {p1, p2, v1}, Ly4;->a(ILjava/lang/String;)Landroidx/constraintlayout/solver/SolverVariable;
-
-    move-result-object v1
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 47
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    const-string v1, "em"
-
-    invoke-virtual {p1, p2, v1}, Ly4;->a(ILjava/lang/String;)Landroidx/constraintlayout/solver/SolverVariable;
-
-    move-result-object p1
-
-    const/high16 p2, -0x40800000    # -1.0f
-
-    invoke-virtual {v0, p1, p2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    return-object p0
-.end method
-
-.method public a()V
-    .locals 2
-
-    .line 55
-    iget v0, p0, Lv4;->b:F
-
-    const/4 v1, 0x0
-
-    cmpg-float v1, v0, v1
-
-    if-gez v1, :cond_0
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    mul-float v0, v0, v1
-
-    .line 56
-    iput v0, p0, Lv4;->b:F
-
-    .line 57
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0}, Lu4;->b()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Landroidx/constraintlayout/solver/SolverVariable;)V
-    .locals 3
-
-    .line 71
-    iget v0, p1, Landroidx/constraintlayout/solver/SolverVariable;->d:I
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_1
-
-    const/high16 v1, 0x447a0000    # 1000.0f
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x3
-
-    if-ne v0, v2, :cond_2
-
-    const v1, 0x49742400    # 1000000.0f
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v2, 0x4
-
-    if-ne v0, v2, :cond_3
-
-    const v1, 0x4e6e6b28    # 1.0E9f
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v2, 0x5
-
-    if-ne v0, v2, :cond_4
-
-    const v1, 0x5368d4a5    # 1.0E12f
-
-    .line 72
-    :cond_4
-    :goto_0
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    return-void
-.end method
-
-.method public a(Ly4$a;)V
-    .locals 5
-
-    .line 63
-    instance-of v0, p1, Lv4;
-
-    if-eqz v0, :cond_0
-
-    .line 64
-    check-cast p1, Lv4;
-
-    const/4 v0, 0x0
-
-    .line 65
-    iput-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    .line 66
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0}, Lu4;->a()V
-
-    const/4 v0, 0x0
-
-    .line 67
-    :goto_0
-    iget-object v1, p1, Lv4;->d:Lu4;
-
-    iget v2, v1, Lu4;->a:I
-
-    if-ge v0, v2, :cond_0
-
-    .line 68
-    invoke-virtual {v1, v0}, Lu4;->a(I)Landroidx/constraintlayout/solver/SolverVariable;
-
-    move-result-object v1
-
-    .line 69
-    iget-object v2, p1, Lv4;->d:Lu4;
-
-    invoke-virtual {v2, v0}, Lu4;->b(I)F
-
-    move-result v2
-
-    .line 70
-    iget-object v3, p0, Lv4;->d:Lu4;
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v1, v2, v4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;FZ)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Ly4;)Z
-    .locals 2
-
-    .line 58
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1}, Lu4;->a(Ly4;)Landroidx/constraintlayout/solver/SolverVariable;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    if-nez p1, :cond_0
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x1
 
     goto :goto_0
 
-    .line 59
     :cond_0
-    invoke-virtual {p0, p1}, Lv4;->d(Landroidx/constraintlayout/solver/SolverVariable;)V
-
     const/4 p1, 0x0
 
-    .line 60
     :goto_0
-    iget-object v1, p0, Lv4;->d:Lu4;
-
-    iget v1, v1, Lu4;->a:I
-
-    if-nez v1, :cond_1
-
-    .line 61
-    iput-boolean v0, p0, Lv4;->e:Z
-
-    :cond_1
     return p1
 .end method
 
-.method public b(Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 0
+.method public beginTransaction()V
+    .locals 1
 
-    .line 3
-    iput-object p1, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    int-to-float p2, p2
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 4
-    iput p2, p1, Landroidx/constraintlayout/solver/SolverVariable;->e:F
-
-    .line 5
-    iput p2, p0, Lv4;->b:F
-
-    const/4 p1, 0x1
-
-    .line 6
-    iput-boolean p1, p0, Lv4;->e:Z
-
-    return-object p0
+    return-void
 .end method
 
-.method public b(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 2
+.method public beginTransactionNonExclusive()V
+    .locals 1
 
-    const/4 v0, 0x0
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    if-eqz p4, :cond_1
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
 
-    if-gez p4, :cond_0
-
-    mul-int/lit8 p4, p4, -0x1
-
-    const/4 v0, 0x1
-
-    :cond_0
-    int-to-float p4, p4
-
-    .line 7
-    iput p4, p0, Lv4;->b:F
-
-    :cond_1
-    const/high16 p4, -0x40800000    # -1.0f
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    if-nez v0, :cond_2
-
-    .line 8
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 9
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 10
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p3, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_0
-
-    .line 11
-    :cond_2
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0, p1, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 12
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 13
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p3, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    :goto_0
-    return-object p0
+    return-void
 .end method
 
-.method public b(Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;Landroidx/constraintlayout/solver/SolverVariable;F)Lv4;
-    .locals 2
+.method public beginTransactionWithListener(Landroid/database/sqlite/SQLiteTransactionListener;)V
+    .locals 1
 
-    .line 14
-    iget-object v0, p0, Lv4;->d:Lu4;
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionWithListener(Landroid/database/sqlite/SQLiteTransactionListener;)V
 
-    invoke-virtual {v0, p3, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 15
-    iget-object p3, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p3, p4, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 16
-    iget-object p3, p0, Lv4;->d:Lu4;
-
-    const/high16 p4, -0x41000000    # -0.5f
-
-    invoke-virtual {p3, p1, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    .line 17
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, p2, p4}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    neg-float p1, p5
-
-    .line 18
-    iput p1, p0, Lv4;->b:F
-
-    return-object p0
+    return-void
 .end method
 
-.method public b()Z
+.method public beginTransactionWithListenerNonExclusive(Landroid/database/sqlite/SQLiteTransactionListener;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionWithListenerNonExclusive(Landroid/database/sqlite/SQLiteTransactionListener;)V
+
+    return-void
+.end method
+
+.method public close()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+
+    return-void
+.end method
+
+.method public compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
+    new-instance v0, Ly4;
 
-    if-eqz v0, :cond_1
+    iget-object v1, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    iget-object v0, v0, Landroidx/constraintlayout/solver/SolverVariable;->g:Landroidx/constraintlayout/solver/SolverVariable$Type;
+    invoke-virtual {v1, p1}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
-    sget-object v1, Landroidx/constraintlayout/solver/SolverVariable$Type;->UNRESTRICTED:Landroidx/constraintlayout/solver/SolverVariable$Type;
+    move-result-object p1
 
-    if-eq v0, v1, :cond_0
+    invoke-direct {v0, p1}, Ly4;-><init>(Landroid/database/sqlite/SQLiteStatement;)V
 
-    iget v0, p0, Lv4;->b:F
+    return-object v0
+.end method
 
-    const/4 v1, 0x0
+.method public delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)I
+    .locals 2
 
-    cmpg-float v0, v0, v1
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-ltz v0, :cond_1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_0
-    const/4 v0, 0x1
+    const-string v1, "DELETE FROM "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 2
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const-string p1, ""
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x0
+    :cond_0
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, " WHERE "
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
 
     :goto_0
-    return v0
-.end method
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public b(Landroidx/constraintlayout/solver/SolverVariable;)Z
-    .locals 1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 2
-    iget-object v0, p0, Lv4;->d:Lu4;
+    move-result-object p1
 
-    invoke-virtual {v0, p1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;)Z
+    .line 3
+    invoke-virtual {p0, p1}, Lv4;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+
+    move-result-object p1
+
+    .line 4
+    invoke-static {p1, p3}, Landroidx/sqlite/db/SimpleSQLiteQuery;->bind(Landroidx/sqlite/db/SupportSQLiteProgram;[Ljava/lang/Object;)V
+
+    .line 5
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
 
     move-result p1
 
     return p1
 .end method
 
-.method public c(Landroidx/constraintlayout/solver/SolverVariable;)Landroidx/constraintlayout/solver/SolverVariable;
+.method public disableWriteAheadLogging()V
+    .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x10
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->disableWriteAheadLogging()V
+
+    return-void
+.end method
+
+.method public enableWriteAheadLogging()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->enableWriteAheadLogging()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public endTransaction()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    return-void
+.end method
+
+.method public execSQL(Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/database/SQLException;
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/database/SQLException;
+        }
+    .end annotation
+
+    .line 2
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public getAttachedDbs()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Landroid/util/Pair<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getAttachedDbs()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getMaximumSize()J
     .locals 2
 
-    .line 5
-    iget-object v0, p0, Lv4;->d:Lu4;
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getMaximumSize()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getPageSize()J
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getPageSize()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getPath()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getVersion()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getVersion()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public inTransaction()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public insert(Ljava/lang/String;ILandroid/content/ContentValues;)J
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/database/SQLException;
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1, p1}, Lu4;->a([ZLandroidx/constraintlayout/solver/SolverVariable;)Landroidx/constraintlayout/solver/SolverVariable;
+    invoke-virtual {v0, p1, v1, p3, p2}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
+.method public isDatabaseIntegrityOk()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isDatabaseIntegrityOk()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isDbLockedByCurrentThread()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isDbLockedByCurrentThread()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isOpen()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isOpen()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isReadOnly()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isReadOnly()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isWriteAheadLoggingEnabled()Z
+    .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x10
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isWriteAheadLoggingEnabled()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public needUpgrade(I)Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->needUpgrade(I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
+    .locals 4
+
+    .line 3
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    new-instance v1, Lv4$a;
+
+    invoke-direct {v1, p0, p1}, Lv4$a;-><init>(Lv4;Landroidx/sqlite/db/SupportSQLiteQuery;)V
+
+    .line 4
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteQuery;->getSql()Ljava/lang/String;
+
+    move-result-object p1
+
+    sget-object v2, Lv4;->c:[Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    .line 5
+    invoke-virtual {v0, v1, p1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->rawQueryWithFactory(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public c(Landroidx/constraintlayout/solver/SolverVariable;I)Lv4;
-    .locals 1
-
-    if-gez p2, :cond_0
-
-    mul-int/lit8 p2, p2, -0x1
-
-    int-to-float p2, p2
-
-    .line 1
-    iput p2, p0, Lv4;->b:F
-
-    .line 2
-    iget-object p2, p0, Lv4;->d:Lu4;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    invoke-virtual {p2, p1, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    goto :goto_0
-
-    :cond_0
-    int-to-float p2, p2
-
-    .line 3
-    iput p2, p0, Lv4;->b:F
-
-    .line 4
-    iget-object p2, p0, Lv4;->d:Lu4;
-
-    const/high16 v0, -0x40800000    # -1.0f
-
-    invoke-virtual {p2, p1, v0}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public c()Z
-    .locals 2
+.method public query(Landroidx/sqlite/db/SupportSQLiteQuery;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    .locals 6
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x10
+    .end annotation
 
     .line 6
-    iget-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    if-nez v0, :cond_0
+    new-instance v1, Lv4$b;
 
-    iget v0, p0, Lv4;->b:F
-
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    iget v0, v0, Lu4;->a:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public clear()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0}, Lu4;->a()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    const/4 v0, 0x0
-
-    .line 3
-    iput v0, p0, Lv4;->b:F
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    iput-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    .line 2
-    iget-object v0, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v0}, Lu4;->a()V
-
-    const/4 v0, 0x0
-
-    .line 3
-    iput v0, p0, Lv4;->b:F
-
-    const/4 v0, 0x0
-
-    .line 4
-    iput-boolean v0, p0, Lv4;->e:Z
-
-    return-void
-.end method
-
-.method public d(Landroidx/constraintlayout/solver/SolverVariable;)V
-    .locals 3
-
-    .line 5
-    iget-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    if-eqz v0, :cond_0
-
-    .line 6
-    iget-object v2, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v2, v0, v1}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;F)V
-
-    const/4 v0, 0x0
+    invoke-direct {v1, p0, p1}, Lv4$b;-><init>(Lv4;Landroidx/sqlite/db/SupportSQLiteQuery;)V
 
     .line 7
-    iput-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteQuery;->getSql()Ljava/lang/String;
 
-    .line 8
-    :cond_0
-    iget-object v0, p0, Lv4;->d:Lu4;
+    move-result-object v2
 
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, p1, v2}, Lu4;->a(Landroidx/constraintlayout/solver/SolverVariable;Z)F
-
-    move-result v0
-
-    mul-float v0, v0, v1
-
-    .line 9
-    iput-object p1, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    cmpl-float p1, v0, p1
-
-    if-nez p1, :cond_1
-
-    return-void
-
-    .line 10
-    :cond_1
-    iget p1, p0, Lv4;->b:F
-
-    div-float/2addr p1, v0
-
-    iput p1, p0, Lv4;->b:F
-
-    .line 11
-    iget-object p1, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {p1, v0}, Lu4;->a(F)V
-
-    return-void
-.end method
-
-.method public e()Ljava/lang/String;
-    .locals 10
-
-    .line 1
-    iget-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    const-string v1, ""
-
-    if-nez v0, :cond_0
-
-    .line 2
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "0"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 4
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " = "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 5
-    iget v1, p0, Lv4;->b:F
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
+    sget-object v3, Lv4;->c:[Ljava/lang/String;
 
     const/4 v4, 0x0
 
-    cmpl-float v1, v1, v4
+    move-object v5, p2
 
-    if-eqz v1, :cond_1
+    .line 8
+    invoke-virtual/range {v0 .. v5}, Landroid/database/sqlite/SQLiteDatabase;->rawQueryWithFactory(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public query(Ljava/lang/String;)Landroid/database/Cursor;
+    .locals 1
+
+    .line 1
+    new-instance v0, Landroidx/sqlite/db/SimpleSQLiteQuery;
+
+    invoke-direct {v0, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Lv4;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public query(Ljava/lang/String;[Ljava/lang/Object;)Landroid/database/Cursor;
+    .locals 1
+
+    .line 2
+    new-instance v0, Landroidx/sqlite/db/SimpleSQLiteQuery;
+
+    invoke-direct {v0, p1, p2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {p0, v0}, Lv4;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public setForeignKeyConstraintsEnabled(Z)V
+    .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x10
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->setForeignKeyConstraintsEnabled(Z)V
+
+    return-void
+.end method
+
+.method public setLocale(Ljava/util/Locale;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->setLocale(Ljava/util/Locale;)V
+
+    return-void
+.end method
+
+.method public setMaxSqlCacheSize(I)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->setMaxSqlCacheSize(I)V
+
+    return-void
+.end method
+
+.method public setMaximumSize(J)J
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->setMaximumSize(J)J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
+.method public setPageSize(J)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->setPageSize(J)V
+
+    return-void
+.end method
+
+.method public setTransactionSuccessful()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+
+    return-void
+.end method
+
+.method public setVersion(I)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->setVersion(I)V
+
+    return-void
+.end method
+
+.method public update(Ljava/lang/String;ILandroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/Object;)I
+    .locals 6
+
+    if-eqz p3, :cond_5
+
+    .line 1
+    invoke-virtual {p3}, Landroid/content/ContentValues;->size()I
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x78
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "UPDATE "
+
+    .line 3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 4
+    sget-object v1, Lv4;->b:[Ljava/lang/String;
+
+    aget-object p2, v1, p2
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 5
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " SET "
 
     .line 6
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 7
+    invoke-virtual {p3}, Landroid/content/ContentValues;->size()I
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p1
 
-    iget v0, p0, Lv4;->b:F
+    if-nez p5, :cond_0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    move p2, p1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object v0
+    .line 8
+    :cond_0
+    array-length p2, p5
 
-    const/4 v1, 0x1
+    add-int/2addr p2, p1
+
+    .line 9
+    :goto_0
+    new-array v1, p2, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    .line 10
+    invoke-virtual {p3}, Landroid/content/ContentValues;->keySet()Ljava/util/Set;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    if-lez v2, :cond_1
+
+    const-string v5, ","
+
+    goto :goto_2
+
+    :cond_1
+    const-string v5, ""
+
+    .line 11
+    :goto_2
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 12
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v5, v2, 0x1
+
+    .line 13
+    invoke-virtual {p3, v4}, Landroid/content/ContentValues;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    aput-object v4, v1, v2
+
+    const-string v2, "=?"
+
+    .line 14
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move v2, v5
 
     goto :goto_1
 
-    :cond_1
-    const/4 v1, 0x0
-
-    .line 7
-    :goto_1
-    iget-object v5, p0, Lv4;->d:Lu4;
-
-    iget v5, v5, Lu4;->a:I
-
-    :goto_2
-    if-ge v2, v5, :cond_8
-
-    .line 8
-    iget-object v6, p0, Lv4;->d:Lu4;
-
-    invoke-virtual {v6, v2}, Lu4;->a(I)Landroidx/constraintlayout/solver/SolverVariable;
-
-    move-result-object v6
-
-    if-nez v6, :cond_2
-
-    goto/16 :goto_6
-
-    .line 9
     :cond_2
-    iget-object v7, p0, Lv4;->d:Lu4;
+    if-eqz p5, :cond_3
 
-    invoke-virtual {v7, v2}, Lu4;->b(I)F
+    move p3, p1
 
-    move-result v7
+    :goto_3
+    if-ge p3, p2, :cond_3
 
-    cmpl-float v8, v7, v4
+    sub-int v2, p3, p1
 
-    if-nez v8, :cond_3
+    .line 15
+    aget-object v2, p5, v2
 
-    goto/16 :goto_6
+    aput-object v2, v1, p3
 
-    .line 10
-    :cond_3
-    invoke-virtual {v6}, Landroidx/constraintlayout/solver/SolverVariable;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    const/high16 v9, -0x40800000    # -1.0f
-
-    if-nez v1, :cond_4
-
-    cmpg-float v1, v7, v4
-
-    if-gez v1, :cond_6
-
-    .line 11
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "- "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    add-int/lit8 p3, p3, 0x1
 
     goto :goto_3
 
-    :cond_4
-    if-lez v8, :cond_5
-
-    .line 12
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " + "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_4
-
-    .line 13
-    :cond_5
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " - "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_3
-    mul-float v7, v7, v9
-
-    :cond_6
-    :goto_4
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    cmpl-float v1, v7, v1
-
-    if-nez v1, :cond_7
-
-    .line 14
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_5
-
-    .line 15
-    :cond_7
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, " "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_5
-    const/4 v1, 0x1
-
-    :goto_6
-    add-int/lit8 v2, v2, 0x1
-
-    goto/16 :goto_2
-
-    :cond_8
-    if-nez v1, :cond_9
-
     .line 16
-    new-instance v1, Ljava/lang/StringBuilder;
+    :cond_3
+    invoke-static {p4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result p1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez p1, :cond_4
 
-    const-string v0, "0.0"
+    const-string p1, " WHERE "
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 17
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 18
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    .line 19
+    :cond_4
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_9
-    return-object v0
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lv4;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+
+    move-result-object p1
+
+    .line 20
+    invoke-static {p1, v1}, Landroidx/sqlite/db/SimpleSQLiteQuery;->bind(Landroidx/sqlite/db/SupportSQLiteProgram;[Ljava/lang/Object;)V
+
+    .line 21
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+
+    move-result p1
+
+    return p1
+
+    .line 22
+    :cond_5
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "Empty values"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method public getKey()Landroidx/constraintlayout/solver/SolverVariable;
+.method public yieldIfContendedSafely()Z
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lv4;->a:Landroidx/constraintlayout/solver/SolverVariable;
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    return-object v0
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->yieldIfContendedSafely()Z
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public yieldIfContendedSafely(J)Z
     .locals 1
 
-    .line 1
-    invoke-virtual {p0}, Lv4;->e()Ljava/lang/String;
+    .line 2
+    iget-object v0, p0, Lv4;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v0
+    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->yieldIfContendedSafely(J)Z
 
-    return-object v0
+    move-result p1
+
+    return p1
 .end method

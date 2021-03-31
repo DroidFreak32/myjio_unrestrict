@@ -22,9 +22,9 @@
 
 
 # instance fields
-.field public final codecKind:I
+.field private final codecKind:I
 
-.field public mediaCodecInfos:[Landroid/media/MediaCodecInfo;
+.field private mediaCodecInfos:[Landroid/media/MediaCodecInfo;
 
 
 # direct methods

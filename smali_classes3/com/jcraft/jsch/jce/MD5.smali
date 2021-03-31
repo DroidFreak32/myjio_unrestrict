@@ -24,6 +24,11 @@
 # virtual methods
 .method public digest()[B
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/MD5;->md:Ljava/security/MessageDigest;
@@ -45,6 +50,11 @@
 
 .method public init()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     :try_start_0
     const-string v0, "MD5"
@@ -74,6 +84,11 @@
 
 .method public update([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/MD5;->md:Ljava/security/MessageDigest;

@@ -1,133 +1,176 @@
-.class public final Lcom/google/android/gms/internal/ads/zzanv;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzanv;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic val$context:Landroid/content/Context;
-
-.field public final synthetic zzcxy:Landroid/content/Context;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzant;Landroid/content/Context;Landroid/content/Context;)V
-    .locals 0
-
-    .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzanv;->zzcxy:Landroid/content/Context;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzanv;->val$context:Landroid/content/Context;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 5
+.method public abstract getBody()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzanv;->zzcxy:Landroid/content/Context;
+.method public abstract getCallToAction()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const-string v1, "admob_user_agent"
+.method public abstract getExtras()Landroid/os/Bundle;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const/4 v2, 0x0
+.method public abstract getHeadline()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    if-eqz v0, :cond_0
+.method public abstract getImages()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const-string v0, "Attempting to read user agent from Google Play Services."
+.method public abstract getOverrideClickHandling()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 2
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+.method public abstract getOverrideImpressionRecording()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzanv;->zzcxy:Landroid/content/Context;
+.method public abstract getPrice()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 4
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+.method public abstract getStarRating()D
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object v0
+.method public abstract getStore()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    goto :goto_0
+.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzys;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    :cond_0
-    const-string v0, "Attempting to read user agent from local cache."
+.method public abstract recordImpression()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 5
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+.method public abstract zzc(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 6
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzanv;->val$context:Landroid/content/Context;
+.method public abstract zzsw()Lcom/google/android/gms/internal/ads/zzaej;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 7
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+.method public abstract zzsx()Lcom/google/android/gms/internal/ads/zzaeb;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object v0
+.method public abstract zzsy()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const/4 v2, 0x1
+.method public abstract zzu(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    :goto_0
-    const-string v1, "user_agent"
+.method public abstract zzup()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const-string v3, ""
+.method public abstract zzuq()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 8
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method public abstract zzv(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object v3
-
-    .line 9
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    const-string v3, "Reading user agent from WebSettings"
-
-    .line 10
-    invoke-static {v3}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
-
-    .line 11
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzanv;->val$context:Landroid/content/Context;
-
-    invoke-static {v3}, Landroid/webkit/WebSettings;->getDefaultUserAgent(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v3
-
-    if-eqz v2, :cond_1
-
-    .line 12
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    const-string v0, "Persisting user agent."
-
-    .line 13
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
-
-    :cond_1
-    return-object v3
+.method public abstract zzw(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

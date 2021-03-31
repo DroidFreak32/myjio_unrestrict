@@ -1,30 +1,32 @@
-.class public final Lcom/google/android/gms/internal/ads/zzaeq;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaeq;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaep;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zza(Ljava/lang/Throwable;Ljava/lang/String;)V
-    .locals 0
-
-    return-void
+.method public abstract unregisterNativeAd()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public final zza(Ljava/lang/Throwable;Ljava/lang/String;F)V
-    .locals 0
+.method public abstract zza(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    return-void
+.method public abstract zze(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

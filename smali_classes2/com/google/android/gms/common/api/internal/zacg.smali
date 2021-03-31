@@ -1,41 +1,40 @@
-.class public final Lcom/google/android/gms/common/api/internal/zacg;
+.class public final synthetic Lcom/google/android/gms/common/api/internal/zacg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
 # instance fields
-.field public final synthetic zagr:Lcom/google/android/gms/signin/internal/zaj;
-
-.field public final synthetic zakk:Lcom/google/android/gms/common/api/internal/zace;
+.field private final zaa:Lcom/google/android/gms/common/util/BiConsumer;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zace;Lcom/google/android/gms/signin/internal/zaj;)V
+.method public constructor <init>(Lcom/google/android/gms/common/util/BiConsumer;)V
     .locals 0
 
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zacg;->zakk:Lcom/google/android/gms/common/api/internal/zace;
-
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zacg;->zagr:Lcom/google/android/gms/signin/internal/zaj;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zacg;->zaa:Lcom/google/android/gms/common/util/BiConsumer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zacg;->zakk:Lcom/google/android/gms/common/api/internal/zace;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zacg;->zaa:Lcom/google/android/gms/common/util/BiConsumer;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zacg;->zagr:Lcom/google/android/gms/signin/internal/zaj;
+    check-cast p1, Lcom/google/android/gms/common/api/Api$AnyClient;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/api/internal/zace;->zaa(Lcom/google/android/gms/common/api/internal/zace;Lcom/google/android/gms/signin/internal/zaj;)V
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    .line 2
+    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/common/util/BiConsumer;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

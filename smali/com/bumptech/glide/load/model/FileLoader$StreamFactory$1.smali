@@ -40,6 +40,11 @@
 # virtual methods
 .method public close(Ljava/io/InputStream;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
@@ -49,6 +54,11 @@
 
 .method public bridge synthetic close(Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Ljava/io/InputStream;
@@ -77,6 +87,11 @@
 
 .method public open(Ljava/io/File;)Ljava/io/InputStream;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 2
     new-instance v0, Ljava/io/FileInputStream;
@@ -88,6 +103,11 @@
 
 .method public bridge synthetic open(Ljava/io/File;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/model/FileLoader$StreamFactory$1;->open(Ljava/io/File;)Ljava/io/InputStream;

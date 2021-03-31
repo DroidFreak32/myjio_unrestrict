@@ -24,6 +24,9 @@
 .field public static final MAX_SIZE_MULTIPLIER:F = 0.4f
 
 .field public static final MEMORY_CACHE_TARGET_SCREENS:I = 0x2
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+.end field
 
 
 # instance fields
@@ -170,6 +173,8 @@
 
 .method public setActivityManager(Landroid/app/ActivityManager;)Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;->activityManager:Landroid/app/ActivityManager;
@@ -312,6 +317,8 @@
 
 .method public setScreenDimensions(Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$ScreenDimensions;)Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;->screenDimensions:Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$ScreenDimensions;

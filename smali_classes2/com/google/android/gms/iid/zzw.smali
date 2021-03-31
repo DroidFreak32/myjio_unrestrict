@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final zzcm:Lcom/google/android/gms/iid/zzt;
+.field private final zzcm:Lcom/google/android/gms/iid/zzt;
 
 
 # direct methods
@@ -103,12 +103,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v3, 0x3
+    const-string v3, "MessengerIpcClient"
 
-    const-string v4, "MessengerIpcClient"
+    const/4 v4, 0x3
 
     .line 13
-    invoke-static {v4, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v3, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v3
 
@@ -174,28 +174,28 @@
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
+    const-string v6, "oneWay"
+
     .line 21
     invoke-virtual {v1}, Lcom/google/android/gms/iid/zzz;->zzw()Z
 
-    move-result v6
+    move-result v7
 
-    const-string v7, "oneWay"
+    invoke-virtual {v4, v6, v7}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v4, v7, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    const-string v6, "pkg"
 
     .line 22
     invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v6, "pkg"
-
     invoke-virtual {v4, v6, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v3, "data"
 
     .line 23
     iget-object v1, v1, Lcom/google/android/gms/iid/zzz;->zzcr:Landroid/os/Bundle;
-
-    const-string v3, "data"
 
     invoke-virtual {v4, v3, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
@@ -212,21 +212,17 @@
     if-eqz v3, :cond_3
 
     .line 27
-    iget-object v1, v1, Lcom/google/android/gms/iid/zzy;->zzad:Landroid/os/Messenger;
-
-    invoke-virtual {v1, v5}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
+    invoke-virtual {v3, v5}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
 
     goto/16 :goto_0
 
     .line 28
     :cond_3
-    iget-object v3, v1, Lcom/google/android/gms/iid/zzy;->zzco:Lcom/google/android/gms/iid/MessengerCompat;
-
-    if-eqz v3, :cond_4
-
-    .line 29
     iget-object v1, v1, Lcom/google/android/gms/iid/zzy;->zzco:Lcom/google/android/gms/iid/MessengerCompat;
 
+    if-eqz v1, :cond_4
+
+    .line 29
     invoke-virtual {v1, v5}, Lcom/google/android/gms/iid/MessengerCompat;->send(Landroid/os/Message;)V
 
     goto/16 :goto_0

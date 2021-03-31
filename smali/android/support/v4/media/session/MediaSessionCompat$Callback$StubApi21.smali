@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x15
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 .end annotation
@@ -92,7 +96,7 @@
 
     .line 7
     :goto_0
-    invoke-static {p2, v2, v1}, Lm6;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+    invoke-static {p2, v2, v1}, Landroidx/core/app/BundleCompat;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 
     .line 8
     invoke-virtual {p1}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getSessionToken2Bundle()Landroid/os/Bundle;

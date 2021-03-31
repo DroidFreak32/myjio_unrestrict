@@ -1,22 +1,28 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzcg;
+.class public final Lcom/google/android/gms/internal/ads/zzcg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-gass@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzekm;
 
 
-# virtual methods
-.method public abstract zza(Landroid/content/Context;)Ljava/lang/String;
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzekm<",
+        "Lcom/google/android/gms/internal/ads/zzcf$zza$zzb;",
+        ">;"
+    }
+.end annotation
 
-.method public abstract zza(Landroid/content/Context;Ljava/lang/String;Landroid/view/View;)Ljava/lang/String;
-.end method
 
-.method public abstract zza(Landroid/content/Context;Ljava/lang/String;Landroid/view/View;Landroid/app/Activity;)Ljava/lang/String;
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract zza(III)V
-.end method
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract zza(Landroid/view/MotionEvent;)V
-.end method
-
-.method public abstract zzb(Landroid/view/View;)V
+    return-void
 .end method

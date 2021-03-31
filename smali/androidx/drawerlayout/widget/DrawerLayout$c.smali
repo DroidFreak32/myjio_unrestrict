@@ -1,5 +1,5 @@
 .class public final Landroidx/drawerlayout/widget/DrawerLayout$c;
-.super Le9;
+.super Landroidx/core/view/AccessibilityDelegateCompat;
 .source "DrawerLayout.java"
 
 
@@ -19,21 +19,21 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Le9;-><init>()V
+    invoke-direct {p0}, Landroidx/core/view/AccessibilityDelegateCompat;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Loa;)V
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 0
 
     .line 1
-    invoke-super {p0, p1, p2}, Le9;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Loa;)V
+    invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 
     .line 2
-    invoke-static {p1}, Landroidx/drawerlayout/widget/DrawerLayout;->m(Landroid/view/View;)Z
+    invoke-static {p1}, Landroidx/drawerlayout/widget/DrawerLayout;->r(Landroid/view/View;)Z
 
     move-result p1
 
@@ -42,7 +42,7 @@
     const/4 p1, 0x0
 
     .line 3
-    invoke-virtual {p2, p1}, Loa;->e(Landroid/view/View;)V
+    invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setParent(Landroid/view/View;)V
 
     :cond_0
     return-void

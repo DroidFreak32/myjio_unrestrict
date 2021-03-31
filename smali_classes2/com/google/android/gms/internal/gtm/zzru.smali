@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzbch:Lcom/google/android/gms/internal/gtm/zzru;
+.field private static final zzbch:Lcom/google/android/gms/internal/gtm/zzru;
 
-.field public static final zzbci:Lcom/google/android/gms/internal/gtm/zzru;
+.field private static final zzbci:Lcom/google/android/gms/internal/gtm/zzru;
 
 
 # direct methods
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

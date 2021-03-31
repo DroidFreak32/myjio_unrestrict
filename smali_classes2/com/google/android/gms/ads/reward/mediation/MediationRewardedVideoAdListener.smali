@@ -1,5 +1,11 @@
 .class public interface abstract Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdListener;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # virtual methods
@@ -36,5 +42,5 @@
 .method public abstract onVideoStarted(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
 .end method
 
-.method public abstract zzc(Landroid/os/Bundle;)V
+.method public abstract zzb(Landroid/os/Bundle;)V
 .end method

@@ -73,423 +73,421 @@
 
 .field public static final enum THIRD_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-.field public static final synthetic a:[Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+.field private static final synthetic a:[Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 16
+    .locals 27
 
     .line 1
     new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v1, 0x0
+    const-string v1, "ALL_ADS_COMPLETED"
 
-    const-string v2, "ALL_ADS_COMPLETED"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->ALL_ADS_COMPLETED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 2
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     const-string v3, "CLICKED"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CLICKED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    invoke-direct {v1, v3, v4}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CLICKED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 3
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v3, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v3, 0x2
+    const-string v5, "COMPLETED"
 
-    const-string v4, "COMPLETED"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->COMPLETED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v3, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->COMPLETED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 4
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v5, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v4, 0x3
+    const-string v7, "CUEPOINTS_CHANGED"
 
-    const-string v5, "CUEPOINTS_CHANGED"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CUEPOINTS_CHANGED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v5, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CUEPOINTS_CHANGED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 5
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v7, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v5, 0x4
+    const-string v9, "CONTENT_PAUSE_REQUESTED"
 
-    const-string v6, "CONTENT_PAUSE_REQUESTED"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CONTENT_PAUSE_REQUESTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v7, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CONTENT_PAUSE_REQUESTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 6
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v9, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v6, 0x5
+    const-string v11, "CONTENT_RESUME_REQUESTED"
 
-    const-string v7, "CONTENT_RESUME_REQUESTED"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CONTENT_RESUME_REQUESTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v9, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CONTENT_RESUME_REQUESTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 7
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v11, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v7, 0x6
+    const-string v13, "FIRST_QUARTILE"
 
-    const-string v8, "FIRST_QUARTILE"
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v8, v7}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v11, v13, v14}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->FIRST_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v11, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->FIRST_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 8
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v13, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/4 v8, 0x7
+    const-string v15, "LOG"
 
-    const-string v9, "LOG"
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v9, v8}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v13, v15, v14}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->LOG:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v13, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->LOG:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 9
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v15, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v9, 0x8
+    const-string v14, "AD_BREAK_READY"
 
-    const-string v10, "AD_BREAK_READY"
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v10, v9}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v15, v14, v12}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_READY:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v15, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_READY:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 10
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v14, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v12, "MIDPOINT"
 
     const/16 v10, 0x9
 
-    const-string v11, "MIDPOINT"
+    invoke-direct {v14, v12, v10}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v11, v10}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->MIDPOINT:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v14, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->MIDPOINT:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 11
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v12, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v11, 0xa
+    const-string v10, "PAUSED"
 
-    const-string v12, "PAUSED"
+    const/16 v8, 0xa
 
-    invoke-direct {v0, v12, v11}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v12, v10, v8}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->PAUSED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v12, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->PAUSED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 12
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v10, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v12, 0xb
+    const-string v8, "RESUMED"
 
-    const-string v13, "RESUMED"
+    const/16 v6, 0xb
 
-    invoke-direct {v0, v13, v12}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v10, v8, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->RESUMED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v10, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->RESUMED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 13
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v8, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v13, 0xc
+    const-string v6, "SKIPPABLE_STATE_CHANGED"
 
-    const-string v14, "SKIPPABLE_STATE_CHANGED"
+    const/16 v4, 0xc
 
-    invoke-direct {v0, v14, v13}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v8, v6, v4}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->SKIPPABLE_STATE_CHANGED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v8, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->SKIPPABLE_STATE_CHANGED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     .line 14
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    new-instance v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v14, 0xd
-
-    const-string v15, "SKIPPED"
-
-    invoke-direct {v0, v15, v14}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->SKIPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 15
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const/16 v15, 0xe
-
-    const-string v14, "STARTED"
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 16
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "TAPPED"
-
-    const/16 v15, 0xf
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->TAPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 17
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "ICON_TAPPED"
-
-    const/16 v15, 0x10
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->ICON_TAPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 18
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "THIRD_QUARTILE"
-
-    const/16 v15, 0x11
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->THIRD_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 19
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "LOADED"
-
-    const/16 v15, 0x12
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->LOADED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 20
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "AD_PROGRESS"
-
-    const/16 v15, 0x13
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PROGRESS:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 21
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "AD_BUFFERING"
-
-    const/16 v15, 0x14
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BUFFERING:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 22
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "AD_BREAK_STARTED"
-
-    const/16 v15, 0x15
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 23
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "AD_BREAK_ENDED"
-
-    const/16 v15, 0x16
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_ENDED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 24
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "AD_PERIOD_STARTED"
-
-    const/16 v15, 0x17
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PERIOD_STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 25
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const-string v14, "AD_PERIOD_ENDED"
-
-    const/16 v15, 0x18
-
-    invoke-direct {v0, v14, v15}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PERIOD_ENDED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    const/16 v0, 0x19
-
-    new-array v0, v0, [Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    .line 26
-    sget-object v14, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->ALL_ADS_COMPLETED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v14, v0, v1
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CLICKED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->COMPLETED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CUEPOINTS_CHANGED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CONTENT_PAUSE_REQUESTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->CONTENT_RESUME_REQUESTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->FIRST_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->LOG:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_READY:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->MIDPOINT:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v10
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->PAUSED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v11
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->RESUMED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v12
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->SKIPPABLE_STATE_CHANGED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
-
-    aput-object v1, v0, v13
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->SKIPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    const-string v4, "SKIPPED"
 
     const/16 v2, 0xd
 
-    aput-object v1, v0, v2
+    invoke-direct {v6, v4, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->SKIPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v2, 0xe
+    .line 15
+    new-instance v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    aput-object v1, v0, v2
+    const-string v2, "STARTED"
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->TAPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    move-object/from16 v16, v6
 
-    const/16 v2, 0xf
+    const/16 v6, 0xe
 
-    aput-object v1, v0, v2
+    invoke-direct {v4, v2, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->ICON_TAPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 16
+    new-instance v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v6, "TAPPED"
+
+    move-object/from16 v17, v4
+
+    const/16 v4, 0xf
+
+    invoke-direct {v2, v6, v4}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->TAPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 17
+    new-instance v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v4, "ICON_TAPPED"
+
+    move-object/from16 v18, v2
 
     const/16 v2, 0x10
 
-    aput-object v1, v0, v2
+    invoke-direct {v6, v4, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->THIRD_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->ICON_TAPPED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v2, 0x11
+    .line 18
+    new-instance v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    aput-object v1, v0, v2
+    const-string v2, "THIRD_QUARTILE"
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->LOADED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    move-object/from16 v19, v6
 
-    const/16 v2, 0x12
+    const/16 v6, 0x11
 
-    aput-object v1, v0, v2
+    invoke-direct {v4, v2, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PROGRESS:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->THIRD_QUARTILE:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 19
+    new-instance v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v6, "LOADED"
+
+    move-object/from16 v20, v4
+
+    const/16 v4, 0x12
+
+    invoke-direct {v2, v6, v4}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->LOADED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 20
+    new-instance v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v4, "AD_PROGRESS"
+
+    move-object/from16 v21, v2
 
     const/16 v2, 0x13
 
-    aput-object v1, v0, v2
+    invoke-direct {v6, v4, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BUFFERING:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PROGRESS:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v2, 0x14
+    .line 21
+    new-instance v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    aput-object v1, v0, v2
+    const-string v2, "AD_BUFFERING"
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    move-object/from16 v22, v6
 
-    const/16 v2, 0x15
+    const/16 v6, 0x14
 
-    aput-object v1, v0, v2
+    invoke-direct {v4, v2, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_ENDED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BUFFERING:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 22
+    new-instance v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v6, "AD_BREAK_STARTED"
+
+    move-object/from16 v23, v4
+
+    const/16 v4, 0x15
+
+    invoke-direct {v2, v6, v4}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 23
+    new-instance v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v4, "AD_BREAK_ENDED"
+
+    move-object/from16 v24, v2
 
     const/16 v2, 0x16
 
-    aput-object v1, v0, v2
+    invoke-direct {v6, v4, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PERIOD_STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v6, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_BREAK_ENDED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    const/16 v2, 0x17
+    .line 24
+    new-instance v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
-    aput-object v1, v0, v2
+    const-string v4, "AD_PERIOD_STARTED"
 
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PERIOD_ENDED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    move-object/from16 v25, v6
+
+    const/16 v6, 0x17
+
+    invoke-direct {v2, v4, v6}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PERIOD_STARTED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    .line 25
+    new-instance v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const-string v6, "AD_PERIOD_ENDED"
+
+    move-object/from16 v26, v2
 
     const/16 v2, 0x18
 
-    aput-object v1, v0, v2
+    invoke-direct {v4, v6, v2}, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->a:[Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+    sput-object v4, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->AD_PERIOD_ENDED:Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const/16 v2, 0x19
+
+    new-array v2, v2, [Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
+
+    const/4 v6, 0x0
+
+    aput-object v0, v2, v6
+
+    const/4 v0, 0x1
+
+    aput-object v1, v2, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v2, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v2, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v2, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v2, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v2, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v2, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v2, v0
+
+    const/16 v0, 0x9
+
+    aput-object v14, v2, v0
+
+    const/16 v0, 0xa
+
+    aput-object v12, v2, v0
+
+    const/16 v0, 0xb
+
+    aput-object v10, v2, v0
+
+    const/16 v0, 0xc
+
+    aput-object v8, v2, v0
+
+    const/16 v0, 0xd
+
+    aput-object v16, v2, v0
+
+    const/16 v0, 0xe
+
+    aput-object v17, v2, v0
+
+    const/16 v0, 0xf
+
+    aput-object v18, v2, v0
+
+    const/16 v0, 0x10
+
+    aput-object v19, v2, v0
+
+    const/16 v0, 0x11
+
+    aput-object v20, v2, v0
+
+    const/16 v0, 0x12
+
+    aput-object v21, v2, v0
+
+    const/16 v0, 0x13
+
+    aput-object v22, v2, v0
+
+    const/16 v0, 0x14
+
+    aput-object v23, v2, v0
+
+    const/16 v0, 0x15
+
+    aput-object v24, v2, v0
+
+    const/16 v0, 0x16
+
+    aput-object v25, v2, v0
+
+    const/16 v0, 0x17
+
+    aput-object v26, v2, v0
+
+    const/16 v0, 0x18
+
+    aput-object v4, v2, v0
+
+    .line 26
+    sput-object v2, Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;->a:[Lcom/google/ads/interactivemedia/v3/api/AdEvent$AdEventType;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

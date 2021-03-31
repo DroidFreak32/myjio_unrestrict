@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static final DESCRIPTOR:Ljava/lang/String; = "android.support.customtabs.ICustomTabsService"
+.field private static final DESCRIPTOR:Ljava/lang/String; = "android.support.customtabs.ICustomTabsService"
 
 .field public static final TRANSACTION_extraCommand:I = 0x5
 
@@ -106,6 +106,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const v0, 0x5f4e5446
 

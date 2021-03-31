@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final NO_RECYCLE_BITMAP_POOL:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private static final NO_RECYCLE_BITMAP_POOL:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-.field public static final TAG:Ljava/lang/String; = "DrawableToBitmap"
+.field private static final TAG:Ljava/lang/String; = "DrawableToBitmap"
 
 
 # direct methods
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -34,6 +34,9 @@
 
 .method public static convert(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/drawable/Drawable;II)Lcom/bumptech/glide/load/engine/Resource;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,8 +106,10 @@
     return-object p0
 .end method
 
-.method public static drawToBitmap(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/drawable/Drawable;II)Landroid/graphics/Bitmap;
+.method private static drawToBitmap(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/drawable/Drawable;II)Landroid/graphics/Bitmap;
     .locals 6
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     const-string v0, "Unable to draw "
 

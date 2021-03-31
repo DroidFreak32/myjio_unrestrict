@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -21,23 +22,23 @@
 
 
 # instance fields
-.field public mBundle:Landroid/os/Bundle;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        getter = "getBundle"
-        id = 0x3
+.field private final zaa:I
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$VersionField;
+        id = 0x1
     .end annotation
 .end field
 
-.field public mType:I
+.field private zab:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getType"
         id = 0x2
     .end annotation
 .end field
 
-.field public final versionCode:I
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$VersionField;
-        id = 0x1
+.field private zac:Landroid/os/Bundle;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        getter = "getBundle"
+        id = 0x3
     .end annotation
 .end field
 
@@ -80,13 +81,13 @@
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->versionCode:I
+    iput p1, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->zaa:I
 
     .line 3
-    iput p2, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->mType:I
+    iput p2, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->zab:I
 
     .line 4
-    iput-object p3, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->mBundle:Landroid/os/Bundle;
+    iput-object p3, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->zac:Landroid/os/Bundle;
 
     return-void
 .end method
@@ -118,7 +119,7 @@
     .end annotation
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->mType:I
+    iget v0, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->zab:I
 
     return v0
 .end method
@@ -132,7 +133,7 @@
     move-result p2
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->versionCode:I
+    iget v0, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->zaa:I
 
     const/4 v1, 0x1
 
@@ -149,7 +150,7 @@
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->mBundle:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/internal/GoogleSignInOptionsExtensionParcelable;->zac:Landroid/os/Bundle;
 
     const/4 v1, 0x3
 

@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "MyFirebaseMessagingService"
+.field private static final MODULE:Ljava/lang/String; = "MyFirebaseMessagingService"
 
 
 # direct methods
@@ -152,7 +152,7 @@
 
     const-string v0, "SecretKey"
 
-    const-string v1, "userIdentity"
+    const-string/jumbo v1, "userIdentity"
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -236,7 +236,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lc20;->e(Z)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->e(Z)Ljava/lang/String;
 
     move-result-object v5
 
@@ -244,7 +244,7 @@
 
     const-string p1, "imei"
 
-    invoke-static {v0}, Lc20;->d(Z)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->d(Z)Ljava/lang/String;
 
     move-result-object v5
 
@@ -292,7 +292,7 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, "updateDeviceToken"
+    const-string/jumbo v5, "updateDeviceToken"
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

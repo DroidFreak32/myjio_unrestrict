@@ -29,23 +29,32 @@
 
 
 # static fields
-.field public static final DEFAULT_WAITER:Lcom/bumptech/glide/request/RequestFutureTarget$Waiter;
+.field private static final DEFAULT_WAITER:Lcom/bumptech/glide/request/RequestFutureTarget$Waiter;
 
 
 # instance fields
-.field public final assertBackgroundThread:Z
+.field private final assertBackgroundThread:Z
 
-.field public exception:Lcom/bumptech/glide/load/engine/GlideException;
+.field private exception:Lcom/bumptech/glide/load/engine/GlideException;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final height:I
+.field private final height:I
 
-.field public isCancelled:Z
+.field private isCancelled:Z
 
-.field public loadFailed:Z
+.field private loadFailed:Z
 
-.field public request:Lcom/bumptech/glide/request/Request;
+.field private request:Lcom/bumptech/glide/request/Request;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public resource:Ljava/lang/Object;
+.field private resource:Ljava/lang/Object;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TR;"
@@ -53,11 +62,11 @@
     .end annotation
 .end field
 
-.field public resultReceived:Z
+.field private resultReceived:Z
 
-.field public final waiter:Lcom/bumptech/glide/request/RequestFutureTarget$Waiter;
+.field private final waiter:Lcom/bumptech/glide/request/RequestFutureTarget$Waiter;
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
@@ -115,6 +124,14 @@
             "(",
             "Ljava/lang/Long;",
             ")TR;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 
@@ -361,8 +378,6 @@
     if-eqz p1, :cond_1
 
     .line 6
-    iget-object p1, p0, Lcom/bumptech/glide/request/RequestFutureTarget;->request:Lcom/bumptech/glide/request/Request;
-
     invoke-interface {p1}, Lcom/bumptech/glide/request/Request;->clear()V
 
     const/4 p1, 0x0
@@ -394,6 +409,13 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     .line 1
@@ -419,11 +441,23 @@
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
     .locals 0
+    .param p3    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/util/concurrent/TimeUnit;",
             ")TR;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 
@@ -445,6 +479,8 @@
 
 .method public declared-synchronized getRequest()Lcom/bumptech/glide/request/Request;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     monitor-enter p0
 
@@ -468,6 +504,10 @@
 
 .method public getSize(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/request/RequestFutureTarget;->width:I
@@ -555,12 +595,20 @@
 
 .method public onLoadCleared(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public declared-synchronized onLoadFailed(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -572,6 +620,10 @@
 
 .method public declared-synchronized onLoadFailed(Lcom/bumptech/glide/load/engine/GlideException;Ljava/lang/Object;Lcom/bumptech/glide/request/target/Target;Z)Z
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/GlideException;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -617,12 +669,24 @@
 
 .method public onLoadStarted(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public declared-synchronized onResourceReady(Ljava/lang/Object;Lcom/bumptech/glide/request/transition/Transition;)V
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/transition/Transition;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;",
@@ -699,12 +763,20 @@
 
 .method public removeCallback(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public declared-synchronized setRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     monitor-enter p0
 

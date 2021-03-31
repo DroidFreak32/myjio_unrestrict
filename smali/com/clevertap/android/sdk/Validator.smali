@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/clevertap/android/sdk/Validator$ValidationContext;,
-        Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+        Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;,
+        Lcom/clevertap/android/sdk/Validator$ValidationContext;
     }
 .end annotation
 
@@ -17,18 +17,30 @@
 
 .field public static final REMOVE_VALUES_OPERATION:Ljava/lang/String; = "multiValuePropertyRemoveValues"
 
-.field public static final eventNameCharsNotAllowed:[Ljava/lang/String;
+.field private static final eventNameCharsNotAllowed:[Ljava/lang/String;
 
-.field public static final objectKeyCharsNotAllowed:[Ljava/lang/String;
+.field private static final objectKeyCharsNotAllowed:[Ljava/lang/String;
 
-.field public static final objectValueCharsNotAllowed:[Ljava/lang/String;
+.field private static final objectValueCharsNotAllowed:[Ljava/lang/String;
 
-.field public static final restrictedNames:[Ljava/lang/String;
+.field private static final restrictedNames:[Ljava/lang/String;
+
+
+# instance fields
+.field private discardedEvents:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 10
+    .locals 12
 
     const-string v0, "."
 
@@ -93,14 +105,18 @@
 
     const-string v6, "App Launched"
 
-    const-string v7, "wzrk_d"
+    const-string/jumbo v7, "wzrk_d"
 
     const-string v8, "App Uninstalled"
 
     const-string v9, "Notification Bounced"
 
+    const-string v10, "Geocluster Entered"
+
+    const-string v11, "Geocluster Exited"
+
     .line 4
-    filled-new-array/range {v1 .. v9}, [Ljava/lang/String;
+    filled-new-array/range {v1 .. v11}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -119,9 +135,9 @@
 .end method
 
 .method private _mergeListInternalForKey(Ljava/lang/String;Lorg/json/JSONArray;Lorg/json/JSONArray;ZLcom/clevertap/android/sdk/ValidationResult;)Lcom/clevertap/android/sdk/ValidationResult;
-    .locals 15
+    .locals 16
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
     move-object/from16 v1, p2
 
@@ -179,7 +195,7 @@
 
     .line 7
     :cond_2
-    invoke-direct {p0, v2, v7, v4, v8}, Lcom/clevertap/android/sdk/Validator;->scan(Lorg/json/JSONArray;Ljava/util/Set;Ljava/util/BitSet;I)I
+    invoke-direct {v0, v2, v7, v4, v8}, Lcom/clevertap/android/sdk/Validator;->scan(Lorg/json/JSONArray;Ljava/util/Set;Ljava/util/BitSet;I)I
 
     move-result v10
 
@@ -195,61 +211,66 @@
     if-ge v12, v5, :cond_3
 
     .line 9
-    invoke-direct {p0, v1, v7, v4, v11}, Lcom/clevertap/android/sdk/Validator;->scan(Lorg/json/JSONArray;Ljava/util/Set;Ljava/util/BitSet;I)I
+    invoke-direct {v0, v1, v7, v4, v11}, Lcom/clevertap/android/sdk/Validator;->scan(Lorg/json/JSONArray;Ljava/util/Set;Ljava/util/BitSet;I)I
 
-    move-result v11
+    move-result v12
+
+    goto :goto_0
 
     :cond_3
-    move v12, v11
+    const/4 v12, 0x0
 
     :goto_0
-    if-ge v12, v8, :cond_6
+    move v13, v12
+
+    :goto_1
+    if-ge v13, v8, :cond_6
 
     if-eqz p4, :cond_4
 
     .line 10
     :try_start_0
-    invoke-virtual {v1, v12}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v13}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v14
 
-    check-cast v13, Ljava/lang/String;
+    check-cast v14, Ljava/lang/String;
 
     .line 11
-    invoke-virtual {v7, v13}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v14}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v15
+
+    if-nez v15, :cond_5
+
+    .line 12
+    invoke-virtual {v6, v14}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    goto :goto_2
+
+    .line 13
+    :cond_4
+    invoke-virtual {v4, v13}, Ljava/util/BitSet;->get(I)Z
 
     move-result v14
 
     if-nez v14, :cond_5
 
-    .line 12
-    invoke-virtual {v6, v13}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
-
-    goto :goto_1
-
-    .line 13
-    :cond_4
-    invoke-virtual {v4, v12}, Ljava/util/BitSet;->get(I)Z
-
-    move-result v13
-
-    if-nez v13, :cond_5
-
     .line 14
-    invoke-virtual {v1, v12}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v13}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v6, v13}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v6, v14}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :catchall_0
     :cond_5
-    :goto_1
-    add-int/lit8 v12, v12, 0x1
+    :goto_2
+    add-int/lit8 v13, v13, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_6
     if-nez p4, :cond_8
@@ -263,7 +284,7 @@
 
     move v1, v10
 
-    :goto_2
+    :goto_3
     if-ge v1, v9, :cond_8
 
     add-int v7, v1, v8
@@ -289,53 +310,84 @@
     :cond_7
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_8
     if-gtz v10, :cond_9
 
-    if-lez v11, :cond_a
+    if-lez v12, :cond_a
+
+    :cond_9
+    const/16 v1, 0x209
+
+    const/16 v2, 0xc
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    aput-object p1, v4, v11
 
     .line 18
-    :cond_9
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Multi value property for key "
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, ""
 
-    move-object/from16 v2, p1
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v2, " exceeds the limit of "
+    move-result-object v5
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v7, 0x1
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    aput-object v5, v4, v7
 
-    const-string v2, " items. Trimmed"
+    .line 19
+    invoke-static {v1, v2, v4}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 20
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v2
+
+    invoke-virtual {v3, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 21
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v3, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
 
-    const/16 v1, 0x209
-
-    .line 19
-    invoke-virtual {v3, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
-
-    .line 20
+    .line 22
     :cond_a
     invoke-virtual {v3, v6}, Lcom/clevertap/android/sdk/ValidationResult;->setObject(Ljava/lang/Object;)V
 
     return-object v3
+.end method
+
+.method private getDiscardedEvents()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/clevertap/android/sdk/Validator;->discardedEvents:Ljava/util/ArrayList;
+
+    return-object v0
 .end method
 
 .method private scan(Lorg/json/JSONArray;Ljava/util/Set;Ljava/util/BitSet;I)I
@@ -465,78 +517,83 @@
 
     const/4 v3, 0x0
 
-    move-object v4, p1
-
-    const/4 p1, 0x0
+    const/4 v4, 0x0
 
     :goto_0
-    if-ge p1, v2, :cond_0
+    if-ge v4, v2, :cond_0
 
-    aget-object v5, v1, p1
+    aget-object v5, v1, v4
 
     const-string v6, ""
 
     .line 4
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p1, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object p1
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 5
     :cond_0
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result p1
+    move-result v1
 
-    const/16 v1, 0x200
+    const/16 v2, 0x200
 
-    if-le p1, v1, :cond_1
+    if-le v1, v2, :cond_1
 
-    const/16 p1, 0x1ff
+    const/16 v1, 0x1ff
 
     .line 6
-    invoke-virtual {v4, v3, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 7
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "... exceeds the limit of "
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " characters. Trimmed"
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+    const/16 v1, 0x1fe
 
-    const/16 p1, 0x1fe
+    const/16 v2, 0xb
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    .line 7
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v4, v3
+
+    const-string v3, "512"
+
+    const/4 v5, 0x1
+
+    aput-object v3, v4, v5
+
+    invoke-static {v1, v2, v4}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object v1
 
     .line 8
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
 
     .line 9
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 10
     :cond_1
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
@@ -546,7 +603,7 @@
 .end method
 
 .method public cleanMultiValuePropertyKey(Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
-    .locals 2
+    .locals 5
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/clevertap/android/sdk/Validator;->cleanObjectKey(Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
@@ -568,31 +625,40 @@
 
     if-eqz v1, :cond_0
 
+    const/16 v1, 0x20b
+
+    const/16 v2, 0x18
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/String;
+
+    const/4 v4, 0x0
+
+    aput-object v0, v3, v4
+
     .line 4
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "... is a restricted key for multi-value properties. Operation aborted."
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v2, v3}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
-
-    const/16 v0, 0x20b
-
     .line 5
+    invoke-virtual {v0}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+
+    .line 6
+    invoke-virtual {v0}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v0
+
     invoke-virtual {p1, v0}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
 
     const/4 v0, 0x0
 
-    .line 6
+    .line 7
     invoke-virtual {p1, v0}, Lcom/clevertap/android/sdk/ValidationResult;->setObject(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -626,78 +692,83 @@
 
     const/4 v3, 0x0
 
-    move-object v4, p1
-
-    const/4 p1, 0x0
+    const/4 v4, 0x0
 
     :goto_0
-    if-ge p1, v2, :cond_0
+    if-ge v4, v2, :cond_0
 
-    aget-object v5, v1, p1
+    aget-object v5, v1, v4
 
     const-string v6, ""
 
     .line 4
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p1, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object p1
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 5
     :cond_0
     :try_start_0
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result p1
+    move-result v1
 
-    const/16 v1, 0x200
+    const/16 v2, 0x200
 
-    if-le p1, v1, :cond_1
+    if-le v1, v2, :cond_1
 
-    const/16 p1, 0x1ff
+    const/16 v1, 0x1ff
 
     .line 6
-    invoke-virtual {v4, v3, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 7
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "... exceeds the limit of "
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " chars. Trimmed"
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+    const/16 v1, 0x209
 
-    const/16 p1, 0x209
+    const/16 v2, 0xb
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    aput-object p1, v4, v3
+
+    const-string v3, "512"
+
+    const/4 v5, 0x1
+
+    aput-object v3, v4, v5
+
+    .line 7
+    invoke-static {v1, v2, v4}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object v1
 
     .line 8
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+
+    .line 9
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 9
+    .line 10
     :catch_0
     :cond_1
-    invoke-virtual {v0, v4}, Lcom/clevertap/android/sdk/ValidationResult;->setObject(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setObject(Ljava/lang/Object;)V
 
     return-object v0
 .end method
@@ -722,78 +793,83 @@
 
     const/4 v3, 0x0
 
-    move-object v4, p1
-
-    const/4 p1, 0x0
+    const/4 v4, 0x0
 
     :goto_0
-    if-ge p1, v2, :cond_0
+    if-ge v4, v2, :cond_0
 
-    aget-object v5, v1, p1
+    aget-object v5, v1, v4
 
     const-string v6, ""
 
     .line 4
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p1, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object p1
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 5
     :cond_0
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result p1
+    move-result v1
 
-    const/16 v1, 0x78
+    const/16 v2, 0x78
 
-    if-le p1, v1, :cond_1
+    if-le v1, v2, :cond_1
 
-    const/16 p1, 0x77
+    const/16 v1, 0x77
 
     .line 6
-    invoke-virtual {v4, v3, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 7
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "... exceeds the limit of "
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " characters. Trimmed"
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+    const/16 v1, 0x208
 
-    const/16 p1, 0x208
+    const/16 v2, 0xb
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    .line 7
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v4, v3
+
+    const-string v3, "120"
+
+    const/4 v5, 0x1
+
+    aput-object v3, v4, v5
+
+    invoke-static {v1, v2, v4}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object v1
 
     .line 8
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
 
     .line 9
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 10
     :cond_1
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
@@ -803,7 +879,12 @@
 .end method
 
 .method public cleanObjectValue(Ljava/lang/Object;Lcom/clevertap/android/sdk/Validator$ValidationContext;)Lcom/clevertap/android/sdk/ValidationResult;
-    .locals 7
+    .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/clevertap/android/sdk/ValidationResult;
@@ -837,9 +918,15 @@
     :cond_0
     instance-of v1, p1, Ljava/lang/String;
 
-    const/16 v2, 0x209
+    const/4 v2, 0x2
 
-    const/4 v3, 0x0
+    const/16 v3, 0x209
+
+    const-string v4, ""
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
 
     if-nez v1, :cond_b
 
@@ -891,27 +978,28 @@
 
     if-nez v1, :cond_3
 
-    instance-of v4, p1, Ljava/util/ArrayList;
+    instance-of v7, p1, Ljava/util/ArrayList;
 
-    if-eqz v4, :cond_a
+    if-eqz v7, :cond_a
 
     :cond_3
-    sget-object v4, Lcom/clevertap/android/sdk/Validator$ValidationContext;->Profile:Lcom/clevertap/android/sdk/Validator$ValidationContext;
+    sget-object v7, Lcom/clevertap/android/sdk/Validator$ValidationContext;->Profile:Lcom/clevertap/android/sdk/Validator$ValidationContext;
 
-    invoke-virtual {p2, v4}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
+    .line 8
+    invoke-virtual {p2, v7}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
 
     move-result p2
 
     if-eqz p2, :cond_a
 
-    .line 8
+    .line 9
     instance-of p2, p1, Ljava/util/ArrayList;
 
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
     if-eqz p2, :cond_4
 
-    .line 9
+    .line 10
     move-object p2, p1
 
     check-cast p2, Ljava/util/ArrayList;
@@ -919,37 +1007,37 @@
     goto :goto_0
 
     :cond_4
-    move-object p2, v4
+    move-object p2, v7
 
     :goto_0
     if-eqz v1, :cond_5
 
-    .line 10
-    move-object v4, p1
-
-    check-cast v4, [Ljava/lang/String;
-
     .line 11
+    move-object v7, p1
+
+    check-cast v7, [Ljava/lang/String;
+
+    .line 12
     :cond_5
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v4, :cond_6
+    if-eqz v7, :cond_6
 
-    .line 12
-    array-length p2, v4
+    .line 13
+    array-length p2, v7
 
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, p2, :cond_7
 
-    aget-object v5, v4, v1
+    aget-object v8, v7, v1
 
-    .line 13
+    .line 14
     :try_start_0
-    invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -958,7 +1046,7 @@
 
     goto :goto_1
 
-    .line 14
+    .line 15
     :cond_6
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -977,7 +1065,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 15
+    .line 16
     :try_start_1
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_1
@@ -991,48 +1079,48 @@
     goto :goto_2
 
     :cond_7
-    new-array p2, v3, [Ljava/lang/String;
+    new-array p2, v6, [Ljava/lang/String;
 
-    .line 16
+    .line 17
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, [Ljava/lang/String;
 
-    .line 17
+    .line 18
     array-length p2, p1
-
-    const/16 v1, 0x64
 
     if-lez p2, :cond_9
 
     array-length p2, p1
 
+    const/16 v1, 0x64
+
     if-gt p2, v1, :cond_9
 
-    .line 18
+    .line 19
     new-instance p2, Lorg/json/JSONArray;
 
     invoke-direct {p2}, Lorg/json/JSONArray;-><init>()V
 
-    .line 19
+    .line 20
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    .line 20
+    .line 21
     array-length v2, p1
 
     :goto_3
-    if-ge v3, v2, :cond_8
+    if-ge v6, v2, :cond_8
 
-    aget-object v4, p1, v3
+    aget-object v3, p1, v6
 
-    .line 21
-    invoke-virtual {p2, v4}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    .line 22
+    invoke-virtual {p2, v3}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
@@ -1040,50 +1128,66 @@
     :try_start_2
     const-string p1, "$set"
 
-    .line 22
+    .line 23
     invoke-virtual {v1, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_2
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 23
+    .line 24
     :catch_2
     invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setObject(Ljava/lang/Object;)V
 
     goto :goto_4
 
-    .line 24
     :cond_9
-    new-instance p2, Ljava/lang/StringBuilder;
+    const/16 p2, 0xd
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    new-array v1, v2, [Ljava/lang/String;
 
-    const-string v3, "Invalid user profile property array count - "
+    .line 25
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     array-length p1, p1
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p1, " max is - "
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+    aput-object p1, v1, v6
 
-    .line 25
-    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    const-string p1, "100"
+
+    aput-object p1, v1, v5
+
+    .line 26
+    invoke-static {v3, p2, v1}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object p1
+
+    .line 27
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+
+    .line 28
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
 
     :goto_4
     return-object v0
 
-    .line 26
+    .line 29
     :cond_a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -1093,109 +1197,108 @@
 
     throw p1
 
-    .line 27
+    .line 30
     :cond_b
     :goto_5
     instance-of p2, p1, Ljava/lang/Character;
 
     if-eqz p2, :cond_c
 
-    .line 28
+    .line 31
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_6
 
-    .line 29
+    .line 32
     :cond_c
     check-cast p1, Ljava/lang/String;
 
-    .line 30
+    .line 33
     :goto_6
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 31
+    .line 34
     sget-object p2, Lcom/clevertap/android/sdk/Validator;->objectValueCharsNotAllowed:[Ljava/lang/String;
 
     array-length v1, p2
 
-    move-object v4, p1
-
-    const/4 p1, 0x0
+    const/4 v7, 0x0
 
     :goto_7
-    if-ge p1, v1, :cond_d
+    if-ge v7, v1, :cond_d
 
-    aget-object v5, p2, p1
-
-    const-string v6, ""
-
-    .line 32
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_7
-
-    .line 33
-    :cond_d
-    :try_start_3
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    const/16 p2, 0x200
-
-    if-le p1, p2, :cond_e
-
-    const/16 p1, 0x1ff
-
-    .line 34
-    invoke-virtual {v4, v3, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v4
+    aget-object v8, p2, v7
 
     .line 35
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "... exceeds the limit of "
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p2, " chars. Trimmed"
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v8, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_7
 
     .line 36
-    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    :cond_d
+    :try_start_3
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    const/16 v1, 0x200
+
+    if-le p2, v1, :cond_e
+
+    const/16 p2, 0x1ff
+
+    .line 37
+    invoke-virtual {p1, v6, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/16 p2, 0xb
+
+    new-array v1, v2, [Ljava/lang/String;
+
+    .line 38
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v6
+
+    const-string v2, "512"
+
+    aput-object v2, v1, v5
+
+    invoke-static {v3, p2, v1}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object p2
+
+    .line 39
+    invoke-virtual {p2}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+
+    .line 40
+    invoke-virtual {p2}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result p2
+
+    invoke-virtual {v0, p2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 37
+    .line 41
     :catch_3
     :cond_e
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
@@ -1203,7 +1306,7 @@
 
     return-object v0
 
-    .line 38
+    .line 42
     :cond_f
     :goto_8
     invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setObject(Ljava/lang/Object;)V
@@ -1211,7 +1314,7 @@
     return-object v0
 .end method
 
-.method public isRestrictedEventName(Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+.method public isEventDiscarded(Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
     .locals 5
 
     .line 1
@@ -1219,74 +1322,214 @@
 
     invoke-direct {v0}, Lcom/clevertap/android/sdk/ValidationResult;-><init>()V
 
+    const/4 v1, 0x0
+
     if-nez p1, :cond_0
 
     const/16 p1, 0x1fe
 
-    .line 2
-    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    const/16 v2, 0xe
 
-    const-string p1, "Event Name is null"
+    new-array v1, v1, [Ljava/lang/String;
+
+    .line 2
+    invoke-static {p1, v2, v1}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object p1
 
     .line 3
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 4
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object p1
+
     invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
 
     return-object v0
 
-    .line 4
-    :cond_0
-    sget-object v1, Lcom/clevertap/android/sdk/Validator;->restrictedNames:[Ljava/lang/String;
-
-    array-length v2, v1
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v2, :cond_2
-
-    aget-object v4, v1, v3
-
     .line 5
-    invoke-virtual {p1, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    :cond_0
+    invoke-direct {p0}, Lcom/clevertap/android/sdk/Validator;->getDiscardedEvents()Ljava/util/ArrayList;
 
-    move-result v4
+    move-result-object v2
 
-    if-eqz v4, :cond_1
-
-    const/16 v1, 0x201
+    if-eqz v2, :cond_2
 
     .line 6
-    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+    invoke-direct {p0}, Lcom/clevertap/android/sdk/Validator;->getDiscardedEvents()Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
 
     .line 7
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v3
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v3, :cond_1
 
-    const-string v2, " is a restricted event name. Last event aborted."
+    const/16 v2, 0x201
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v3, 0x11
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v4, 0x1
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    aput-object p1, v4, v1
+
+    .line 8
+    invoke-static {v2, v3, v4}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object v1
+
+    .line 9
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 10
+    invoke-virtual {v1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
 
-    .line 8
+    .line 11
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p1, " is a restricted system event name. Last event aborted."
+    const-string p1, " s a discarded event name as per CleverTap. Dropping event at SDK level. Check discarded events in CleverTap Dashboard settings."
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
+
+    :cond_2
+    return-object v0
+.end method
+
+.method public isRestrictedEventName(Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+    .locals 6
+
+    .line 1
+    new-instance v0, Lcom/clevertap/android/sdk/ValidationResult;
+
+    invoke-direct {v0}, Lcom/clevertap/android/sdk/ValidationResult;-><init>()V
+
+    const/4 v1, 0x0
+
+    if-nez p1, :cond_0
+
+    const/16 p1, 0x1fe
+
+    const/16 v2, 0xe
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    .line 2
+    invoke-static {p1, v2, v1}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object p1
+
+    .line 3
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 4
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+
+    return-object v0
+
+    .line 5
+    :cond_0
+    sget-object v2, Lcom/clevertap/android/sdk/Validator;->restrictedNames:[Ljava/lang/String;
+
+    array-length v3, v2
+
+    const/4 v4, 0x0
+
+    :goto_0
+    if-ge v4, v3, :cond_2
+
+    aget-object v5, v2, v4
+
+    .line 6
+    invoke-virtual {p1, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/16 v2, 0x201
+
+    const/16 v3, 0x10
+
+    const/4 v4, 0x1
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    aput-object p1, v4, v1
+
+    .line 7
+    invoke-static {v2, v3, v4}, Lcom/clevertap/android/sdk/ValidationResultFactory;->create(II[Ljava/lang/String;)Lcom/clevertap/android/sdk/ValidationResult;
+
+    move-result-object p1
+
+    .line 8
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorCode(I)V
+
+    .line 9
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/ValidationResult;->setErrorDesc(Ljava/lang/String;)V
+
+    .line 10
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/ValidationResult;->getErrorDesc()Ljava/lang/String;
 
     move-result-object p1
 
@@ -1295,7 +1538,7 @@
     return-object v0
 
     :cond_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
@@ -1332,4 +1575,21 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public setDiscardedEvents(Ljava/util/ArrayList;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/clevertap/android/sdk/Validator;->discardedEvents:Ljava/util/ArrayList;
+
+    return-void
 .end method

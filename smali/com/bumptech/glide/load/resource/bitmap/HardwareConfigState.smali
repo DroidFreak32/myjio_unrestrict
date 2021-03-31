@@ -4,21 +4,21 @@
 
 
 # static fields
-.field public static final FD_SIZE_LIST:Ljava/io/File;
+.field private static final FD_SIZE_LIST:Ljava/io/File;
 
-.field public static final MAXIMUM_FDS_FOR_HARDWARE_CONFIGS:I = 0x2bc
+.field private static final MAXIMUM_FDS_FOR_HARDWARE_CONFIGS:I = 0x2bc
 
-.field public static final MINIMUM_DECODES_BETWEEN_FD_CHECKS:I = 0x32
+.field private static final MINIMUM_DECODES_BETWEEN_FD_CHECKS:I = 0x32
 
-.field public static final MIN_HARDWARE_DIMENSION:I = 0x80
+.field private static final MIN_HARDWARE_DIMENSION:I = 0x80
 
-.field public static volatile instance:Lcom/bumptech/glide/load/resource/bitmap/HardwareConfigState;
+.field private static volatile instance:Lcom/bumptech/glide/load/resource/bitmap/HardwareConfigState;
 
 
 # instance fields
-.field public volatile decodesSinceLastFdCheck:I
+.field private volatile decodesSinceLastFdCheck:I
 
-.field public volatile isHardwareConfigAllowed:Z
+.field private volatile isHardwareConfigAllowed:Z
 
 
 # direct methods
@@ -37,7 +37,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -137,11 +137,14 @@
 
     if-ge v2, v3, :cond_0
 
-    const/4 v0, 0x1
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
 
     .line 4
-    :cond_0
-    iput-boolean v0, p0, Lcom/bumptech/glide/load/resource/bitmap/HardwareConfigState;->isHardwareConfigAllowed:Z
+    :goto_0
+    iput-boolean v1, p0, Lcom/bumptech/glide/load/resource/bitmap/HardwareConfigState;->isHardwareConfigAllowed:Z
 
     .line 5
     iget-boolean v0, p0, Lcom/bumptech/glide/load/resource/bitmap/HardwareConfigState;->isHardwareConfigAllowed:Z

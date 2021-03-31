@@ -17,6 +17,11 @@
 # virtual methods
 .method public start(Lcom/jcraft/jsch/Session;)Z
     .locals 17
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -130,7 +135,7 @@
     .line 12
     iget-object v6, v0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    const-string/jumbo v7, "ssh-connection"
+    const-string v7, "ssh-connection"
 
     invoke-static {v7}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
@@ -159,8 +164,6 @@
     .line 15
     iget-object v6, v0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    sget-object v7, Lcom/jcraft/jsch/Util;->empty:[B
-
     invoke-virtual {v6, v7}, Lcom/jcraft/jsch/Buffer;->putString([B)V
 
     .line 16
@@ -170,9 +173,9 @@
 
     const/4 v12, 0x1
 
-    move-object v14, v4
+    move-object v13, v4
 
-    move v13, v5
+    move v14, v5
 
     const/4 v4, 0x1
 
@@ -188,8 +191,6 @@
     iput-object v5, v0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 18
-    iget-object v5, v0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v5
@@ -293,11 +294,11 @@
 
     iput v4, v1, Lcom/jcraft/jsch/Session;->auth_failures:I
 
-    if-nez v13, :cond_7
+    if-nez v14, :cond_7
 
-    move v5, v13
+    move-object v4, v13
 
-    move-object v4, v14
+    move v5, v14
 
     goto/16 :goto_0
 
@@ -427,13 +428,11 @@
     :cond_b
     const/16 v16, 0x0
 
-    if-eqz v14, :cond_c
+    if-eqz v13, :cond_c
+
+    if-ne v15, v12, :cond_c
 
     .line 40
-    array-length v4, v8
-
-    if-ne v4, v12, :cond_c
-
     aget-boolean v4, v9, v3
 
     if-nez v4, :cond_c
@@ -454,9 +453,9 @@
 
     new-array v4, v12, [[B
 
-    aput-object v14, v4, v3
+    aput-object v13, v4, v3
 
-    move-object/from16 v14, v16
+    move-object/from16 v13, v16
 
     goto :goto_5
 
@@ -583,7 +582,7 @@
     :cond_12
     if-nez v4, :cond_14
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
     goto :goto_8
 

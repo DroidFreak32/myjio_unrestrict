@@ -73,7 +73,7 @@
     return-void
 .end method
 
-.method public constructor <init>(JZZZZJJLjava/util/List;ZJIII)V
+.method private constructor <init>(JZZZZJJLjava/util/List;ZJIII)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -159,7 +159,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 6
 
     .line 16
@@ -345,7 +345,7 @@
 .end method
 
 .method public static parseFromSection(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;JLcom/google/android/jioexoplayer2/util/TimestampAdjuster;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceInsertCommand;
-    .locals 28
+    .locals 27
 
     move-object/from16 v0, p3
 
@@ -446,7 +446,7 @@
     const-wide v13, -0x7fffffffffffffffL    # -4.9E-324
 
     :goto_5
-    if-nez v11, :cond_7
+    if-nez v11, :cond_8
 
     .line 6
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -461,7 +461,7 @@
     const/4 v4, 0x0
 
     :goto_6
-    if-ge v4, v1, :cond_8
+    if-ge v4, v1, :cond_7
 
     .line 8
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -507,7 +507,7 @@
     goto :goto_6
 
     :cond_7
-    move-object v15, v1
+    move-object v1, v15
 
     :cond_8
     if-eqz v12, :cond_a
@@ -515,9 +515,9 @@
     .line 13
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v1
+    move-result v4
 
-    int-to-long v4, v1
+    int-to-long v4, v4
 
     const-wide/16 v7, 0x80
 
@@ -525,9 +525,9 @@
 
     const-wide/16 v17, 0x0
 
-    cmp-long v1, v7, v17
+    cmp-long v12, v7, v17
 
-    if-eqz v1, :cond_9
+    if-eqz v12, :cond_9
 
     const/16 v16, 0x1
 
@@ -541,9 +541,9 @@
 
     and-long/2addr v4, v7
 
-    const/16 v1, 0x20
+    const/16 v7, 0x20
 
-    shl-long/2addr v4, v1
+    shl-long/2addr v4, v7
 
     .line 14
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedInt()J
@@ -561,52 +561,52 @@
     .line 15
     div-long v7, v4, v7
 
+    move/from16 v5, v16
+
     goto :goto_9
 
     :cond_a
-    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
+    const/4 v5, 0x0
 
-    const/16 v16, 0x0
+    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 16
     :goto_9
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
-    move-result v1
+    move-result v4
 
     .line 17
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v4
+    move-result v12
 
     .line 18
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v5
+    move-result v15
 
-    move/from16 v17, v4
-
-    move/from16 v18, v5
-
-    move v5, v10
+    move/from16 v16, v4
 
     move/from16 v24, v11
 
-    move-object v12, v15
+    move/from16 v17, v12
 
-    move/from16 v25, v16
+    move/from16 v18, v15
 
-    move/from16 v16, v1
+    move-object v12, v1
 
-    move-wide/from16 v26, v7
+    move-wide/from16 v25, v13
+
+    move v13, v5
+
+    move-wide v14, v7
 
     move v7, v9
 
-    move-wide v8, v13
+    move v5, v10
 
-    move/from16 v13, v25
-
-    move-wide/from16 v14, v26
+    move-wide/from16 v8, v25
 
     goto :goto_a
 

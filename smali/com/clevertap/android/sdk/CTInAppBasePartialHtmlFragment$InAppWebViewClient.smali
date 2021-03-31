@@ -36,7 +36,7 @@
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 6
 
-    const-string p1, "wzrk_c2a"
+    const-string/jumbo p1, "wzrk_c2a"
 
     const/4 v0, 0x1
 
@@ -47,8 +47,6 @@
     invoke-static {p2, v1}, Lcom/clevertap/android/sdk/UriHelper;->getAllKeyValuePairs(Ljava/lang/String;Z)Landroid/os/Bundle;
 
     move-result-object v2
-
-    if-eqz v2, :cond_0
 
     .line 2
     invoke-virtual {v2, p1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z

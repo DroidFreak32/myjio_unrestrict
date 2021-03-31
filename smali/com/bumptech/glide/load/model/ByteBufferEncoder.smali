@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "ByteBufferEncoder"
+.field private static final TAG:Ljava/lang/String; = "ByteBufferEncoder"
 
 
 # direct methods
@@ -35,6 +35,18 @@
 # virtual methods
 .method public bridge synthetic encode(Ljava/lang/Object;Ljava/io/File;Lcom/bumptech/glide/load/Options;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/io/File;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Ljava/nio/ByteBuffer;
@@ -48,6 +60,18 @@
 
 .method public encode(Ljava/nio/ByteBuffer;Ljava/io/File;Lcom/bumptech/glide/load/Options;)Z
     .locals 0
+    .param p1    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/io/File;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     :try_start_0

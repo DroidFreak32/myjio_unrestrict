@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzadu:Ljava/lang/String;
+.field private static final zzadu:Ljava/lang/String;
 
-.field public static final zzadv:Ljava/lang/String;
+.field private static final zzadv:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods

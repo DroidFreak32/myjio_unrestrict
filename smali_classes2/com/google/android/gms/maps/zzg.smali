@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzo:Lcom/google/android/gms/maps/GoogleMap$InfoWindowAdapter;
+.field private final synthetic zzo:Lcom/google/android/gms/maps/GoogleMap$InfoWindowAdapter;
 
 
 # direct methods

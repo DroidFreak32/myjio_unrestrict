@@ -1,9 +1,10 @@
 .class public Lcom/google/android/gms/tasks/CancellationTokenSource;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # instance fields
-.field public final zzc:Lcom/google/android/gms/tasks/zza;
+.field private final zza:Lcom/google/android/gms/tasks/zza;
 
 
 # direct methods
@@ -18,7 +19,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/tasks/zza;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/tasks/CancellationTokenSource;->zzc:Lcom/google/android/gms/tasks/zza;
+    iput-object v0, p0, Lcom/google/android/gms/tasks/CancellationTokenSource;->zza:Lcom/google/android/gms/tasks/zza;
 
     return-void
 .end method
@@ -29,18 +30,20 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/CancellationTokenSource;->zzc:Lcom/google/android/gms/tasks/zza;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/CancellationTokenSource;->zza:Lcom/google/android/gms/tasks/zza;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/tasks/zza;->cancel()V
+    invoke-virtual {v0}, Lcom/google/android/gms/tasks/zza;->zza()V
 
     return-void
 .end method
 
 .method public getToken()Lcom/google/android/gms/tasks/CancellationToken;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/CancellationTokenSource;->zzc:Lcom/google/android/gms/tasks/zza;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/CancellationTokenSource;->zza:Lcom/google/android/gms/tasks/zza;
 
     return-object v0
 .end method

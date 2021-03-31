@@ -15,19 +15,19 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "ConnectionManagerTaskNew"
+.field private static final MODULE:Ljava/lang/String; = "ConnectionManagerTaskNew"
 
 
 # instance fields
-.field public final JSON:Lokhttp3/MediaType;
+.field private final JSON:Lokhttp3/MediaType;
 
-.field public final TEXT:Lokhttp3/MediaType;
+.field private final TEXT:Lokhttp3/MediaType;
 
-.field public callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
+.field private callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
-.field public contentType:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
 
-.field public headers:Ljava/util/Map;
+.field private headers:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -38,13 +38,13 @@
     .end annotation
 .end field
 
-.field public httpConnectionCheckListner:Lcom/elitecore/wifi/listener/HttpConnectionCheckListner;
+.field private httpConnectionCheckListner:Lcom/elitecore/wifi/listener/HttpConnectionCheckListner;
 
-.field public final requestId:I
+.field private final requestId:I
 
-.field public requestType:Ljava/lang/String;
+.field private requestType:Ljava/lang/String;
 
-.field public responseCode:I
+.field private responseCode:I
 
 
 # direct methods
@@ -61,7 +61,7 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->JSON:Lokhttp3/MediaType;
 
-    const-string v0, "text/plain"
+    const-string/jumbo v0, "text/plain"
 
     invoke-static {v0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -97,7 +97,7 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->JSON:Lokhttp3/MediaType;
 
-    const-string v0, "text/plain"
+    const-string/jumbo v0, "text/plain"
 
     invoke-static {v0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -140,7 +140,7 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->JSON:Lokhttp3/MediaType;
 
-    const-string v0, "text/plain"
+    const-string/jumbo v0, "text/plain"
 
     invoke-static {v0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -210,7 +210,7 @@
 
     int-to-long v0, p1
 
-    invoke-static {v0, v1}, Lc20;->f(J)V
+    invoke-static {v0, v1}, Lcom/elitecorelib/andsf/utility/a;->f(J)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_6
@@ -240,15 +240,13 @@
     move-result-object p1
 
     invoke-virtual {v0, v8, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_6
 
     goto/16 :goto_7
 
     :cond_0
-    const/16 v5, 0x1c
-
-    iget v9, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_6
+    const/16 v9, 0x1c
 
     const/16 v10, 0xc8
 
@@ -256,24 +254,20 @@
 
     const-string v12, "responseCode"
 
-    if-eq v5, v9, :cond_5
+    if-eq v9, v5, :cond_5
 
-    const/16 v5, 0x9
+    const/16 v9, 0x9
 
-    :try_start_3
-    iget v9, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
-
-    if-ne v5, v9, :cond_1
+    if-ne v9, v5, :cond_1
 
     goto/16 :goto_3
 
     :cond_1
-    const/16 v5, 0x5b0
+    const/16 v6, 0x5b0
 
-    iget v6, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    if-ne v6, v5, :cond_2
 
-    if-ne v5, v6, :cond_2
-
+    :try_start_3
     invoke-virtual {p1}, Lokhttp3/Response;->body()Lokhttp3/ResponseBody;
 
     move-result-object v0
@@ -282,7 +276,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lc20;->f(J)V
+    invoke-static {v0, v1}, Lcom/elitecorelib/andsf/utility/a;->f(J)V
 
     new-instance v0, Lorg/json/JSONObject;
 
@@ -332,11 +326,9 @@
     goto/16 :goto_7
 
     :cond_2
-    const/16 v5, 0x6f6
+    const/16 v6, 0x6f6
 
-    iget v6, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
-
-    if-ne v5, v6, :cond_8
+    if-ne v6, v5, :cond_8
 
     invoke-virtual {p1}, Lokhttp3/Response;->body()Lokhttp3/ResponseBody;
 
@@ -346,7 +338,7 @@
 
     move-result-wide v5
 
-    invoke-static {v5, v6}, Lc20;->f(J)V
+    invoke-static {v5, v6}, Lcom/elitecorelib/andsf/utility/a;->f(J)V
 
     new-instance v5, Lorg/json/JSONObject;
 
@@ -408,25 +400,23 @@
 
     iput p1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->responseCode:I
 
-    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v10, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v10, "ResponseCode: %s : HTTP Connection checked successfully"
+    const-string v11, "ResponseCode: %s : HTTP Connection checked successfully"
 
-    new-array v11, v7, [Ljava/lang/Object;
+    new-array v12, v7, [Ljava/lang/Object;
 
-    iget v12, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->responseCode:I
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object p1
 
-    move-result-object v12
+    aput-object p1, v12, v9
 
-    aput-object v12, v11, v9
+    invoke-static {v11, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v10, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v10
-
-    invoke-virtual {p1, v8, v10}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v10, v8, p1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string p1, "Success on Jio Specific Network Check"
 
@@ -490,7 +480,7 @@
 
     move-result-wide v1
 
-    invoke-static {v1, v2}, Lc20;->f(J)V
+    invoke-static {v1, v2}, Lcom/elitecorelib/andsf/utility/a;->f(J)V
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_6
 
@@ -814,690 +804,684 @@
 .end method
 
 .method public varargs doInBackground([Ljava/lang/String;)Ljava/lang/String;
-    .locals 14
+    .locals 16
 
-    const-string v0, "Date"
+    move-object/from16 v1, p0
 
-    const-string v1, " ]"
+    move-object/from16 v0, p1
 
-    const-string v2, "ConnectionManagerTaskNew"
+    const-string v2, "Date"
 
-    const/4 v3, 0x1
+    const-string v3, " ]"
+
+    const-string v4, "ConnectionManagerTaskNew"
+
+    const/4 v5, 0x1
 
     :try_start_0
-    aget-object v4, p1, v3
+    aget-object v6, v0, v5
 
-    if-nez v4, :cond_0
+    if-nez v6, :cond_0
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    return-object p1
+    return-object v0
 
     :cond_0
-    sget-object v5, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v7, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "Monetization Service URL [ "
+    const-string v9, "Monetization Service URL [ "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v5, v2, v6}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v7, v4, v8}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v5, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v7, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, " WS Param(s):  "
+    const-string v9, " WS Param(s):  "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    aget-object v8, p1, v7
+    aget-object v10, v0, v9
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v5, v2, v6}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v7, v4, v8}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v5, Lokhttp3/OkHttpClient$Builder;
+    new-instance v7, Lokhttp3/OkHttpClient$Builder;
 
-    invoke-direct {v5}, Lokhttp3/OkHttpClient$Builder;-><init>()V
+    invoke-direct {v7}, Lokhttp3/OkHttpClient$Builder;-><init>()V
 
-    invoke-virtual {v5, v3}, Lokhttp3/OkHttpClient$Builder;->retryOnConnectionFailure(Z)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v7, v5}, Lokhttp3/OkHttpClient$Builder;->retryOnConnectionFailure(Z)Lokhttp3/OkHttpClient$Builder;
 
-    move-result-object v5
+    move-result-object v7
 
     invoke-static {}, Lcom/elitecorelib/core/services/SecureUtility;->hostVerifiy()Ljavax/net/ssl/HostnameVerifier;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v5, v6}, Lokhttp3/OkHttpClient$Builder;->hostnameVerifier(Ljavax/net/ssl/HostnameVerifier;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v7, v8}, Lokhttp3/OkHttpClient$Builder;->hostnameVerifier(Ljavax/net/ssl/HostnameVerifier;)Lokhttp3/OkHttpClient$Builder;
 
-    move-result-object v5
+    move-result-object v7
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v8, 0x4e20
+    const-wide/16 v10, 0x4e20
 
-    invoke-virtual {v5, v8, v9, v6}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v7, v10, v11, v8}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    move-result-object v5
+    move-result-object v7
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v12, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v10, 0x5
+    const-wide/16 v13, 0x5
 
-    invoke-virtual {v5, v10, v11, v6}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v7, v13, v14, v12}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    move-result-object v5
+    move-result-object v7
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    const-wide/16 v13, 0xa
 
-    const-wide/16 v12, 0xa
+    invoke-virtual {v7, v13, v14, v12}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    invoke-virtual {v5, v12, v13, v6}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    move-result-object v7
 
-    move-result-object v5
+    iget-object v15, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->headers:Ljava/util/Map;
 
-    iget-object v6, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->headers:Ljava/util/Map;
+    if-eqz v15, :cond_1
 
-    if-eqz v6, :cond_1
+    invoke-interface {v15}, Ljava/util/Map;->isEmpty()Z
 
-    iget-object v6, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->headers:Ljava/util/Map;
+    move-result v15
 
-    invoke-interface {v6}, Ljava/util/Map;->isEmpty()Z
+    if-nez v15, :cond_1
 
-    move-result v6
+    new-instance v15, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew$1;
 
-    if-nez v6, :cond_1
+    invoke-direct {v15, v1}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew$1;-><init>(Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;)V
 
-    new-instance v6, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew$1;
-
-    invoke-direct {v6, p0}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew$1;-><init>(Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;)V
-
-    invoke-virtual {v5, v6}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v7, v15}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;
 
     :cond_1
-    iget v6, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    iget v15, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
 
-    if-ne v3, v6, :cond_2
+    if-ne v5, v15, :cond_2
 
-    sget-object v5, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v7, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v6, "analytic Compression enable"
+    const-string v15, "analytic Compression enable"
 
-    invoke-virtual {v5, v2, v6}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v7, v4, v15}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v5, Lokhttp3/OkHttpClient$Builder;
+    new-instance v7, Lokhttp3/OkHttpClient$Builder;
 
-    invoke-direct {v5}, Lokhttp3/OkHttpClient$Builder;-><init>()V
+    invoke-direct {v7}, Lokhttp3/OkHttpClient$Builder;-><init>()V
 
-    new-instance v6, Lcom/elitecorelib/analytics/webservice/GzipRequestInterceptor;
+    new-instance v15, Lcom/elitecorelib/analytics/webservice/GzipRequestInterceptor;
 
-    invoke-direct {v6}, Lcom/elitecorelib/analytics/webservice/GzipRequestInterceptor;-><init>()V
+    invoke-direct {v15}, Lcom/elitecorelib/analytics/webservice/GzipRequestInterceptor;-><init>()V
 
-    invoke-virtual {v5, v6}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v7, v15}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5}, Lokhttp3/OkHttpClient$Builder;->retryOnConnectionFailure(Z)Lokhttp3/OkHttpClient$Builder;
 
     move-result-object v5
-
-    invoke-virtual {v5, v3}, Lokhttp3/OkHttpClient$Builder;->retryOnConnectionFailure(Z)Lokhttp3/OkHttpClient$Builder;
-
-    move-result-object v3
 
     invoke-static {}, Lcom/elitecorelib/core/services/SecureUtility;->hostVerifiy()Ljavax/net/ssl/HostnameVerifier;
 
+    move-result-object v7
+
+    invoke-virtual {v5, v7}, Lokhttp3/OkHttpClient$Builder;->hostnameVerifier(Ljavax/net/ssl/HostnameVerifier;)Lokhttp3/OkHttpClient$Builder;
+
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Lokhttp3/OkHttpClient$Builder;->hostnameVerifier(Ljavax/net/ssl/HostnameVerifier;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v5, v10, v11, v8}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    move-result-object v3
+    move-result-object v5
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    const-wide/16 v7, 0x5
 
-    invoke-virtual {v3, v8, v9, v5}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    invoke-virtual {v5, v7, v8, v12}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    move-result-object v3
+    move-result-object v5
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    invoke-virtual {v5, v13, v14, v12}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
-    invoke-virtual {v3, v10, v11, v5}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
+    move-result-object v5
 
-    move-result-object v3
+    invoke-virtual {v5}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v3, v12, v13, v5}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;
-
-    move-result-object v3
+    move-result-object v5
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v5}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;
+    invoke-virtual {v7}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;
 
-    move-result-object v3
+    move-result-object v5
 
     :goto_0
-    iget v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    iget v7, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
 
-    const/16 v6, 0x5b0
+    const/16 v8, 0x5b0
 
-    const/16 v8, 0x6f6
+    const/16 v10, 0x6f6
 
-    if-ne v5, v6, :cond_5
+    if-ne v7, v8, :cond_5
 
-    new-instance v5, Lorg/json/JSONObject;
+    new-instance v7, Lorg/json/JSONObject;
 
-    aget-object p1, p1, v7
+    aget-object v0, v0, v9
 
-    invoke-direct {v5, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    new-instance p1, Lokhttp3/MultipartBody$Builder;
+    new-instance v0, Lokhttp3/MultipartBody$Builder;
 
-    invoke-direct {p1}, Lokhttp3/MultipartBody$Builder;-><init>()V
+    invoke-direct {v0}, Lokhttp3/MultipartBody$Builder;-><init>()V
 
-    invoke-virtual {v5}, Lorg/json/JSONObject;->length()I
+    invoke-virtual {v7}, Lorg/json/JSONObject;->length()I
 
-    move-result v6
+    move-result v8
 
-    if-lez v6, :cond_4
+    if-lez v8, :cond_4
 
-    invoke-virtual {v5}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
+    invoke-virtual {v7}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
 
-    move-result-object v6
+    move-result-object v8
 
     :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v9
 
-    if-eqz v7, :cond_4
+    if-eqz v9, :cond_4
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/String;
-
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v9
 
-    new-instance v10, Ljava/io/File;
+    check-cast v9, Ljava/lang/String;
 
-    invoke-direct {v10, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v10}, Ljava/io/File;->exists()Z
-
-    move-result v11
-
-    if-eqz v11, :cond_3
-
-    invoke-virtual {v10}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v11, "application/octet-stream"
-
-    invoke-static {v11}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
+    invoke-virtual {v7, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-static {v11, v10}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;Ljava/io/File;)Lokhttp3/RequestBody;
+    new-instance v12, Ljava/io/File;
 
-    move-result-object v10
+    invoke-direct {v12, v11}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v7, v9, v10}, Lokhttp3/MultipartBody$Builder;->addFormDataPart(Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody$Builder;
+    invoke-virtual {v12}, Ljava/io/File;->exists()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_3
+
+    invoke-virtual {v12}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v11
+
+    const-string v13, "application/octet-stream"
+
+    invoke-static {v13}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
+
+    move-result-object v13
+
+    invoke-static {v13, v12}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;Ljava/io/File;)Lokhttp3/RequestBody;
+
+    move-result-object v12
+
+    invoke-virtual {v0, v9, v11, v12}, Lokhttp3/MultipartBody$Builder;->addFormDataPart(Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody$Builder;
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p1, v7, v9}, Lokhttp3/MultipartBody$Builder;->addFormDataPart(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/MultipartBody$Builder;
+    invoke-virtual {v0, v9, v11}, Lokhttp3/MultipartBody$Builder;->addFormDataPart(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/MultipartBody$Builder;
 
     goto :goto_1
 
     :cond_4
-    sget-object v5, Lokhttp3/MultipartBody;->FORM:Lokhttp3/MediaType;
+    sget-object v7, Lokhttp3/MultipartBody;->FORM:Lokhttp3/MediaType;
 
-    invoke-virtual {p1, v5}, Lokhttp3/MultipartBody$Builder;->setType(Lokhttp3/MediaType;)Lokhttp3/MultipartBody$Builder;
+    invoke-virtual {v0, v7}, Lokhttp3/MultipartBody$Builder;->setType(Lokhttp3/MediaType;)Lokhttp3/MultipartBody$Builder;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1}, Lokhttp3/MultipartBody$Builder;->build()Lokhttp3/MultipartBody;
+    invoke-virtual {v0}, Lokhttp3/MultipartBody$Builder;->build()Lokhttp3/MultipartBody;
 
-    move-result-object p1
+    move-result-object v0
 
     goto :goto_3
 
     :cond_5
-    iget v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    if-ne v10, v7, :cond_6
 
-    if-ne v8, v5, :cond_6
+    iget-object v7, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->contentType:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->contentType:Ljava/lang/String;
+    invoke-static {v7}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
-    invoke-static {v5}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
+    move-result-object v7
 
-    move-result-object v5
-
-    aget-object p1, p1, v7
+    aget-object v0, v0, v9
 
     :goto_2
-    invoke-static {v5, p1}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/RequestBody;
+    invoke-static {v7, v0}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/RequestBody;
 
-    move-result-object p1
+    move-result-object v0
 
     goto :goto_3
 
     :cond_6
-    array-length v5, p1
+    array-length v7, v0
 
-    const/4 v6, 0x2
+    const/4 v8, 0x2
 
-    if-le v5, v6, :cond_7
+    if-le v7, v8, :cond_7
 
-    aget-object v5, p1, v6
+    aget-object v7, v0, v8
 
-    if-eqz v5, :cond_7
+    if-eqz v7, :cond_7
 
-    aget-object v5, p1, v6
+    aget-object v7, v0, v8
 
-    invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
-    move-result v5
+    move-result v7
 
-    if-lez v5, :cond_7
+    if-lez v7, :cond_7
 
-    iget-object v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->TEXT:Lokhttp3/MediaType;
+    iget-object v7, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->TEXT:Lokhttp3/MediaType;
 
-    aget-object p1, p1, v7
+    aget-object v0, v0, v9
 
     goto :goto_2
 
     :cond_7
-    iget-object v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->JSON:Lokhttp3/MediaType;
+    iget-object v7, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->JSON:Lokhttp3/MediaType;
 
-    aget-object p1, p1, v7
+    aget-object v0, v0, v9
 
     goto :goto_2
 
     :goto_3
-    iget v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    iget v7, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
 
-    if-ne v8, v5, :cond_8
+    if-ne v10, v7, :cond_8
 
-    iget-object v5, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestType:Ljava/lang/String;
+    iget-object v7, v1, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestType:Ljava/lang/String;
 
-    const-string v6, "GET"
+    const-string v8, "GET"
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_8
+    if-eqz v7, :cond_8
 
-    new-instance p1, Lokhttp3/Request$Builder;
+    new-instance v0, Lokhttp3/Request$Builder;
 
-    invoke-direct {p1}, Lokhttp3/Request$Builder;-><init>()V
+    invoke-direct {v0}, Lokhttp3/Request$Builder;-><init>()V
 
-    invoke-virtual {p1, v4}, Lokhttp3/Request$Builder;->url(Ljava/lang/String;)Lokhttp3/Request$Builder;
+    invoke-virtual {v0, v6}, Lokhttp3/Request$Builder;->url(Ljava/lang/String;)Lokhttp3/Request$Builder;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1}, Lokhttp3/Request$Builder;->get()Lokhttp3/Request$Builder;
+    invoke-virtual {v0}, Lokhttp3/Request$Builder;->get()Lokhttp3/Request$Builder;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1}, Lokhttp3/Request$Builder;->build()Lokhttp3/Request;
+    invoke-virtual {v0}, Lokhttp3/Request$Builder;->build()Lokhttp3/Request;
 
-    move-result-object p1
+    move-result-object v0
 
     goto :goto_4
 
     :cond_8
-    new-instance v5, Lokhttp3/Request$Builder;
+    new-instance v7, Lokhttp3/Request$Builder;
 
-    invoke-direct {v5}, Lokhttp3/Request$Builder;-><init>()V
+    invoke-direct {v7}, Lokhttp3/Request$Builder;-><init>()V
 
-    invoke-virtual {v5, v4}, Lokhttp3/Request$Builder;->url(Ljava/lang/String;)Lokhttp3/Request$Builder;
+    invoke-virtual {v7, v6}, Lokhttp3/Request$Builder;->url(Ljava/lang/String;)Lokhttp3/Request$Builder;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4, p1}, Lokhttp3/Request$Builder;->post(Lokhttp3/RequestBody;)Lokhttp3/Request$Builder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lokhttp3/Request$Builder;->build()Lokhttp3/Request;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lokhttp3/Request;->body()Lokhttp3/RequestBody;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lokhttp3/RequestBody;->contentLength()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Lc20;->f(J)V
-
-    :goto_4
-    invoke-virtual {v3, p1}, Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lokhttp3/Call;->execute()Lokhttp3/Response;
-
-    move-result-object p1
-
-    sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, " WS Response code [ "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Lokhttp3/Response;->code()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v5, " ] and message [ "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Lokhttp3/Response;->message()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, " WS Response time:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v0}, Lokhttp3/Response;->header(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
-
-    move-result-object v1
-
-    const-string v3, "header_date"
-
-    invoke-virtual {p1, v0}, Lokhttp3/Response;->header(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v6, v0}, Lokhttp3/Request$Builder;->post(Lokhttp3/RequestBody;)Lokhttp3/Request$Builder;
 
     move-result-object v0
 
-    invoke-virtual {v1, v3, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0}, Lokhttp3/Request$Builder;->build()Lokhttp3/Request;
 
-    invoke-direct {p0, p1}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->getResponse(Lokhttp3/Response;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-virtual {v0}, Lokhttp3/Request;->body()Lokhttp3/RequestBody;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lokhttp3/RequestBody;->contentLength()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Lcom/elitecorelib/andsf/utility/a;->f(J)V
+
+    :goto_4
+    invoke-virtual {v5, v0}, Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lokhttp3/Call;->execute()Lokhttp3/Response;
+
+    move-result-object v0
+
+    sget-object v5, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, " WS Response code [ "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lokhttp3/Response;->code()I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v7, " ] and message [ "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lokhttp3/Response;->message()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v5, v4, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, " WS Response time:  "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Lokhttp3/Response;->header(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    move-result-object v3
+
+    const-string v5, "header_date"
+
+    invoke-virtual {v0, v2}, Lokhttp3/Response;->header(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v5, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-direct {v1, v0}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->getResponse(Lokhttp3/Response;)Ljava/lang/String;
+
+    move-result-object v0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto/16 :goto_7
 
     :catch_0
-    move-exception p1
+    move-exception v0
 
     :try_start_1
-    instance-of v0, p1, Ljava/net/SocketTimeoutException;
+    instance-of v2, v0, Ljava/net/SocketTimeoutException;
 
-    if-eqz v0, :cond_9
+    if-eqz v2, :cond_9
 
-    const/16 v0, 0x198
+    const/16 v2, 0x198
 
-    const-string v1, "Request timeout"
+    const-string v3, "Request timeout"
 
-    invoke-direct {p0, p1, v0, v1}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->handleOkHttpException(Ljava/lang/Exception;ILjava/lang/String;)Ljava/lang/String;
+    invoke-direct {v1, v0, v2, v3}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->handleOkHttpException(Ljava/lang/Exception;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
     goto/16 :goto_7
 
     :cond_9
-    instance-of v0, p1, Ljava/io/IOException;
+    instance-of v2, v0, Ljava/io/IOException;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    const-string v1, "IOException Occurred"
+    const-string v3, "IOException Occurred"
 
-    const/16 v3, 0x199
+    const/16 v5, 0x199
 
-    if-eqz v0, :cond_a
+    if-eqz v2, :cond_a
 
     :goto_5
     :try_start_2
-    invoke-direct {p0, p1, v3, v1}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->handleOkHttpException(Ljava/lang/Exception;ILjava/lang/String;)Ljava/lang/String;
+    invoke-direct {v1, v0, v5, v3}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->handleOkHttpException(Ljava/lang/Exception;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
     goto/16 :goto_7
 
     :cond_a
-    instance-of v0, p1, Ljava/lang/IllegalStateException;
+    instance-of v2, v0, Ljava/lang/IllegalStateException;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    const-string v4, "Exception : "
+    const-string v6, "Exception : "
 
-    if-eqz v0, :cond_b
+    if-eqz v2, :cond_b
 
     :try_start_3
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v5, "Error while performing . Reason : Request Executed but Cancelled by user"
+    const-string v7, "Error while performing . Reason : Request Executed but Cancelled by user"
 
-    invoke-virtual {v0, v2, v5}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v4, v7}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v6, Lcom/elitecorelib/andsf/a/a;->aQ:Lcom/elitecorelib/andsf/a/a;
+
+    invoke-static {v6}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v0}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v4, v6}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_5
+
+    :cond_b
+    instance-of v2, v0, Ljava/lang/IllegalArgumentException;
+
+    const/16 v3, 0x19a
+
+    if-eqz v2, :cond_c
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v5, "Error while performing . Reason : Url or Request body is not valid"
+
+    invoke-virtual {v2, v4, v5}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v4, Lcom/elitecorelib/andsf/a/a;->aQ:Lcom/elitecorelib/andsf/a/a;
+    sget-object v6, Lcom/elitecorelib/andsf/a/a;->aQ:Lcom/elitecorelib/andsf/a/a;
 
-    invoke-static {v4}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+    invoke-static {v6}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+    invoke-static {v0}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v0, v2, v4}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v4, v5}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_5
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    :cond_b
-    instance-of v0, p1, Ljava/lang/IllegalArgumentException;
-
-    const/16 v1, 0x19a
-
-    if-eqz v0, :cond_c
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v3, "Error while performing . Reason : Url or Request body is not valid"
-
-    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v4, Lcom/elitecorelib/andsf/a/a;->aQ:Lcom/elitecorelib/andsf/a/a;
-
-    invoke-static {v4}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object v2
 
     :goto_6
-    invoke-direct {p0, p1, v1, v0}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->handleOkHttpException(Ljava/lang/Exception;ILjava/lang/String;)Ljava/lang/String;
+    invoke-direct {v1, v0, v3, v2}, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->handleOkHttpException(Ljava/lang/Exception;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
     goto :goto_7
 
     :cond_c
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Error while performing . Reason : "
+    const-string v7, "Error while performing . Reason : "
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    move-result-object v3
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    sget-object v6, Lcom/elitecorelib/andsf/a/a;->aQ:Lcom/elitecorelib/andsf/a/a;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v6}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    sget-object v4, Lcom/elitecorelib/andsf/a/a;->aQ:Lcom/elitecorelib/andsf/a/a;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+    invoke-static {v0}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object v2
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     goto :goto_6
 
     :catch_1
-    move-exception p1
+    move-exception v0
 
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    const-string p1, ""
+    const-string v0, ""
 
     :goto_7
-    return-object p1
+    return-object v0
 .end method
 
 .method public bridge synthetic onPostExecute(Ljava/lang/Object;)V
@@ -1513,22 +1497,18 @@
 .method public onPostExecute(Ljava/lang/String;)V
     .locals 4
 
-    const-string v0, "ConnectionManagerTaskNew"
-
     :try_start_0
     invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 
-    const/16 v1, 0x6f6
+    const/16 v0, 0x6f6
 
-    iget v2, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    iget v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->httpConnectionCheckListner:Lcom/elitecore/wifi/listener/HttpConnectionCheckListner;
 
     if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->httpConnectionCheckListner:Lcom/elitecore/wifi/listener/HttpConnectionCheckListner;
 
     iget v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->responseCode:I
 
@@ -1537,49 +1517,47 @@
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
+    iget-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
+
+    const/16 v0, 0x1c
+
+    const-string v2, "ConnectionManagerTaskNew"
+
+    if-eq v1, v0, :cond_1
+
+    const/16 v0, 0x1a
+
+    if-eq v1, v0, :cond_1
 
     :try_start_1
-    iget v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const/16 v2, 0x1c
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    if-eq v1, v2, :cond_1
-
-    iget v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
-
-    const/16 v2, 0x1a
-
-    if-eq v1, v2, :cond_1
-
-    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "Received response of  WS call: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    iget-object v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
+    iget-object v0, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
-    iget v2, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
+    iget v1, p0, Lcom/elitecorelib/core/services/ConnectionManagerTaskNew;->requestId:I
 
-    invoke-interface {v1, p1, v2}, Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;->onConnnectionManagerTaskComplete(Ljava/lang/String;I)V
+    invoke-interface {v0, p1, v1}, Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;->onConnnectionManagerTaskComplete(Ljava/lang/String;I)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -1589,33 +1567,33 @@
     move-exception p1
 
     :try_start_2
-    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "Error while call back on completion of task. Reason : "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     sget-object v3, Lcom/elitecorelib/andsf/a/a;->aF:Lcom/elitecorelib/andsf/a/a;
 
@@ -1623,19 +1601,19 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, v0, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v2, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 

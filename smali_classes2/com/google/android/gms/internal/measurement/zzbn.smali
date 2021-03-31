@@ -1,30 +1,44 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzbn;
-.super Lcom/google/android/gms/internal/measurement/zzac$zza;
-.source "com.google.android.gms:play-services-measurement-sdk-api@@17.4.2"
+.super Lcom/google/android/gms/internal/measurement/zzag$zzb;
+.source "com.google.android.gms:play-services-measurement-sdk-api@@18.0.0"
 
 
 # instance fields
-.field public final synthetic zzc:Landroid/app/Activity;
+.field private final synthetic zzc:Ljava/lang/Long;
 
-.field public final synthetic zzd:Lcom/google/android/gms/internal/measurement/zzp;
+.field private final synthetic zzd:Ljava/lang/String;
 
-.field public final synthetic zze:Lcom/google/android/gms/internal/measurement/zzac$zzd;
+.field private final synthetic zze:Ljava/lang/String;
+
+.field private final synthetic zzf:Landroid/os/Bundle;
+
+.field private final synthetic zzg:Z
+
+.field private final synthetic zzh:Z
+
+.field private final synthetic zzi:Lcom/google/android/gms/internal/measurement/zzag;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzac$zzd;Landroid/app/Activity;Lcom/google/android/gms/internal/measurement/zzp;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzag;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;ZZ)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zze:Lcom/google/android/gms/internal/measurement/zzac$zzd;
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzi:Lcom/google/android/gms/internal/measurement/zzag;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzc:Landroid/app/Activity;
+    iput-object p2, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzc:Ljava/lang/Long;
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzd:Lcom/google/android/gms/internal/measurement/zzp;
+    iput-object p3, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzd:Ljava/lang/String;
 
-    iget-object p1, p1, Lcom/google/android/gms/internal/measurement/zzac$zzd;->zza:Lcom/google/android/gms/internal/measurement/zzac;
+    iput-object p4, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zze:Ljava/lang/String;
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzac$zza;-><init>(Lcom/google/android/gms/internal/measurement/zzac;)V
+    iput-object p5, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzf:Landroid/os/Bundle;
+
+    iput-boolean p6, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzg:Z
+
+    iput-boolean p7, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzh:Z
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzag$zzb;-><init>(Lcom/google/android/gms/internal/measurement/zzag;)V
 
     return-void
 .end method
@@ -32,30 +46,48 @@
 
 # virtual methods
 .method public final zza()V
-    .locals 5
+    .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zze:Lcom/google/android/gms/internal/measurement/zzac$zzd;
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzc:Ljava/lang/Long;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/measurement/zzac$zzd;->zza:Lcom/google/android/gms/internal/measurement/zzac;
+    if-nez v0, :cond_0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzac;->zzc(Lcom/google/android/gms/internal/measurement/zzac;)Lcom/google/android/gms/internal/measurement/zzr;
+    iget-wide v0, p0, Lcom/google/android/gms/internal/measurement/zzag$zzb;->zza:J
 
-    move-result-object v0
+    goto :goto_0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzc:Landroid/app/Activity;
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    :goto_0
+    move-wide v8, v0
 
     .line 2
-    invoke-static {v1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzi:Lcom/google/android/gms/internal/measurement/zzag;
 
-    move-result-object v1
+    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzag;->zzc(Lcom/google/android/gms/internal/measurement/zzag;)Lcom/google/android/gms/internal/measurement/zzv;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzd:Lcom/google/android/gms/internal/measurement/zzp;
+    move-result-object v2
 
-    iget-wide v3, p0, Lcom/google/android/gms/internal/measurement/zzac$zza;->zzb:J
+    iget-object v3, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzd:Ljava/lang/String;
 
-    .line 3
-    invoke-interface {v0, v1, v2, v3, v4}, Lcom/google/android/gms/internal/measurement/zzr;->onActivitySaveInstanceState(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/measurement/zzs;J)V
+    iget-object v4, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zze:Ljava/lang/String;
+
+    iget-object v5, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzf:Landroid/os/Bundle;
+
+    iget-boolean v6, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzg:Z
+
+    iget-boolean v7, p0, Lcom/google/android/gms/internal/measurement/zzbn;->zzh:Z
+
+    invoke-interface/range {v2 .. v9}, Lcom/google/android/gms/internal/measurement/zzv;->logEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;ZZJ)V
 
     return-void
 .end method

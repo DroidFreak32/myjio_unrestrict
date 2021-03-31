@@ -38,7 +38,7 @@
 .method public synthetic onLoadingChanged(Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onLoadingChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
+    invoke-static {p0, p1}, Lph;->$default$onLoadingChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
 
     return-void
 .end method
@@ -54,19 +54,19 @@
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, p1
+    const-string v1, "There is no network connection right now."
 
-    const-string v2, "There is no network connection right now."
+    const-string v2, ""
 
-    const-string v3, ""
+    const-string v3, "Oops! It looks like something went wrong and an unknown error has occurred. Please try again later."
 
-    const-string v4, "Oops! It looks like something went wrong and an unknown error has occurred. Please try again later."
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move-object/from16 v5, p1
 
     .line 1
     :try_start_0
-    iget v6, v1, Lcom/google/android/jioexoplayer2/ExoPlaybackException;->type:I
+    iget v6, v5, Lcom/google/android/jioexoplayer2/ExoPlaybackException;->type:I
 
     const/4 v7, 0x2
 
@@ -92,61 +92,55 @@
 
     if-eqz v7, :cond_0
 
-    move-object v4, v2
+    move-object v3, v1
 
     :cond_0
-    move-object v2, v6
+    move-object v1, v6
 
     goto :goto_0
 
-    .line 4
     :cond_1
-    iget v6, v1, Lcom/google/android/jioexoplayer2/ExoPlaybackException;->type:I
-
     if-ne v6, v8, :cond_2
 
-    .line 5
+    .line 4
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/jioexoplayer2/ExoPlaybackException;->getRendererException()Ljava/lang/Exception;
 
     move-result-object v6
 
     invoke-virtual {v6}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     const/4 v7, 0x1
 
     goto :goto_1
 
-    .line 6
     :cond_2
-    iget v6, v1, Lcom/google/android/jioexoplayer2/ExoPlaybackException;->type:I
-
     if-ne v6, v7, :cond_3
 
-    .line 7
+    .line 5
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/jioexoplayer2/ExoPlaybackException;->getUnexpectedException()Ljava/lang/RuntimeException;
 
     move-result-object v6
 
     invoke-virtual {v6}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
     :cond_3
-    move-object v2, v3
+    move-object v1, v2
 
     :goto_0
     const/4 v7, 0x0
 
     :goto_1
-    move-object v15, v2
+    move-object v15, v1
 
-    move-object v14, v4
+    move-object v14, v3
 
     move v13, v7
 
@@ -155,125 +149,125 @@
     :catch_0
     const/16 v7, 0x3f3
 
-    move-object v15, v2
+    move-object v15, v1
 
-    move-object v14, v4
+    move-object v14, v3
 
     const/16 v13, 0x3f3
 
-    .line 8
+    .line 6
     :goto_2
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$100(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$100(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/TextView;
 
-    move-result-object v2
+    move-result-object v1
 
-    sget v4, Lcom/app/cinemasdk/R$string;->d_play:I
+    sget v3, Lcom/app/cinemasdk/R$string;->d_play:I
 
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
-    .line 9
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    .line 7
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    iget-object v4, v2, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
+    iget-object v3, v1, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
-    invoke-virtual {v4}, Lcom/google/android/jioexoplayer2/SimpleExoPlayer;->getPlayWhenReady()Z
+    invoke-virtual {v3}, Lcom/google/android/jioexoplayer2/SimpleExoPlayer;->getPlayWhenReady()Z
 
-    move-result v4
+    move-result v3
 
-    invoke-static {v2, v4}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$602(Lcom/app/cinemasdk/ui/PlayerActivity;Z)Z
+    invoke-static {v1, v3}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$602(Lcom/app/cinemasdk/ui/PlayerActivity;Z)Z
 
-    .line 10
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    .line 8
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    iget-object v4, v2, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
+    iget-object v3, v1, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
-    invoke-virtual {v4}, Lcom/google/android/jioexoplayer2/SimpleExoPlayer;->getCurrentPosition()J
+    invoke-virtual {v3}, Lcom/google/android/jioexoplayer2/SimpleExoPlayer;->getCurrentPosition()J
 
     move-result-wide v6
 
-    invoke-static {v2, v6, v7}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1502(Lcom/app/cinemasdk/ui/PlayerActivity;J)J
+    invoke-static {v1, v6, v7}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1502(Lcom/app/cinemasdk/ui/PlayerActivity;J)J
+
+    .line 9
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+
+    iget-object v3, v1, Lcom/app/cinemasdk/ui/PlayerActivity;->playerParent:Landroid/widget/FrameLayout;
+
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1600(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
+
+    .line 10
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+
+    iget-object v1, v1, Lcom/app/cinemasdk/ui/PlayerActivity;->relativeLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v1, v4}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 11
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    iget-object v4, v2, Lcom/app/cinemasdk/ui/PlayerActivity;->playerParent:Landroid/widget/FrameLayout;
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1700(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/TextView;
 
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1600(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/view/View;
+    move-result-object v1
 
-    move-result-object v2
+    if-eqz v1, :cond_4
 
-    invoke-virtual {v4, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1800(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/Button;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_4
 
     .line 12
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    iget-object v2, v2, Lcom/app/cinemasdk/ui/PlayerActivity;->relativeLayout:Landroid/widget/RelativeLayout;
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1700(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/TextView;
 
-    invoke-virtual {v2, v5}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    move-result-object v1
+
+    invoke-virtual {v1, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 13
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
-
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1700(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/TextView;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
-
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1800(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/Button;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_4
-
-    .line 14
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
-
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1700(Lcom/app/cinemasdk/ui/PlayerActivity;)Landroid/widget/TextView;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 15
     :cond_4
     invoke-static {}, Lcom/app/cinemasdk/analytics/AnalyticsEvent;->getInstance()Lcom/app/cinemasdk/analytics/AnalyticsEvent;
 
     move-result-object v8
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v4, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    iget-object v3, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    invoke-static {v4}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1900(Lcom/app/cinemasdk/ui/PlayerActivity;)I
+    invoke-static {v3}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1900(Lcom/app/cinemasdk/ui/PlayerActivity;)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v9
 
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$2000(Lcom/app/cinemasdk/ui/PlayerActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$2000(Lcom/app/cinemasdk/ui/PlayerActivity;)Ljava/lang/String;
 
     move-result-object v10
 
-    iget-object v2, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
+    iget-object v1, v0, Lcom/app/cinemasdk/ui/PlayerActivity$3;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;
 
-    iget v11, v2, Lcom/app/cinemasdk/ui/PlayerActivity;->contentType:I
+    iget v11, v1, Lcom/app/cinemasdk/ui/PlayerActivity;->contentType:I
 
-    invoke-static {v2}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1300(Lcom/app/cinemasdk/ui/PlayerActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->access$1300(Lcom/app/cinemasdk/ui/PlayerActivity;)Ljava/lang/String;
 
     move-result-object v12
 
@@ -553,7 +547,7 @@
 .method public synthetic onPositionDiscontinuity(I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onPositionDiscontinuity(Lcom/google/android/jioexoplayer2/Player$EventListener;I)V
+    invoke-static {p0, p1}, Lph;->$default$onPositionDiscontinuity(Lcom/google/android/jioexoplayer2/Player$EventListener;I)V
 
     return-void
 .end method
@@ -561,7 +555,7 @@
 .method public synthetic onRepeatModeChanged(I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onRepeatModeChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;I)V
+    invoke-static {p0, p1}, Lph;->$default$onRepeatModeChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;I)V
 
     return-void
 .end method
@@ -569,7 +563,7 @@
 .method public synthetic onSeekProcessed()V
     .locals 0
 
-    invoke-static {p0}, Lfb0;->$default$onSeekProcessed(Lcom/google/android/jioexoplayer2/Player$EventListener;)V
+    invoke-static {p0}, Lph;->$default$onSeekProcessed(Lcom/google/android/jioexoplayer2/Player$EventListener;)V
 
     return-void
 .end method
@@ -577,7 +571,7 @@
 .method public synthetic onShuffleModeEnabledChanged(Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onShuffleModeEnabledChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
+    invoke-static {p0, p1}, Lph;->$default$onShuffleModeEnabledChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
 
     return-void
 .end method
@@ -585,7 +579,7 @@
 .method public synthetic onTimelineChanged(Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lfb0;->$default$onTimelineChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
+    invoke-static {p0, p1, p2, p3}, Lph;->$default$onTimelineChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
 
     return-void
 .end method
@@ -593,7 +587,7 @@
 .method public synthetic onTracksChanged(Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lfb0;->$default$onTracksChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
+    invoke-static {p0, p1, p2}, Lph;->$default$onTracksChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
 
     return-void
 .end method

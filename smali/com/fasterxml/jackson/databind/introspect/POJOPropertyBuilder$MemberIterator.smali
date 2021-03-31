@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public next:Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;
+.field private next:Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked<",

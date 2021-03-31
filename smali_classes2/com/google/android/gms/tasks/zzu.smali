@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/tasks/zzu;
 .super Lcom/google/android/gms/tasks/Task;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # annotations
@@ -21,30 +22,45 @@
 
 
 # instance fields
-.field public final mLock:Ljava/lang/Object;
+.field private final zza:Ljava/lang/Object;
 
-.field public zzaa:Ljava/lang/Object;
+.field private final zzb:Lcom/google/android/gms/tasks/zzq;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "TTResult;"
-        }
-    .end annotation
-.end field
-
-.field public zzab:Ljava/lang/Exception;
-
-.field public final zzx:Lcom/google/android/gms/tasks/zzr;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/tasks/zzr<",
+            "Lcom/google/android/gms/tasks/zzq<",
             "TTResult;>;"
         }
     .end annotation
 .end field
 
-.field public zzy:Z
+.field private zzc:Z
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public volatile zzz:Z
+.field private volatile zzd:Z
+
+.field private zze:Ljava/lang/Object;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TTResult;"
+        }
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
+
+.field private zzf:Ljava/lang/Exception;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -59,23 +75,26 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/tasks/zzr;
+    new-instance v0, Lcom/google/android/gms/tasks/zzq;
 
-    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzr;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzq;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iput-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
     return-void
 .end method
 
 .method private final zzb()V
     .locals 2
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    .line 18
+    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     const-string v1, "Task is not yet complete"
 
@@ -85,25 +104,35 @@
 .end method
 
 .method private final zzc()V
-    .locals 2
+    .locals 1
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
-    xor-int/lit8 v0, v0, 0x1
-
-    const-string v1, "Task is already complete"
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(ZLjava/lang/Object;)V
+    if-nez v0, :cond_0
 
     return-void
+
+    .line 2
+    :cond_0
+    invoke-static {p0}, Lcom/google/android/gms/tasks/DuplicateTaskCompletionException;->of(Lcom/google/android/gms/tasks/Task;)Ljava/lang/IllegalStateException;
+
+    move-result-object v0
+
+    throw v0
 .end method
 
 .method private final zzd()V
     .locals 2
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzz:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
 
     if-nez v0, :cond_0
 
@@ -124,13 +153,13 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     if-nez v1, :cond_0
 
@@ -146,9 +175,9 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/Task;)V
 
     return-void
 
@@ -168,6 +197,17 @@
 # virtual methods
 .method public final addOnCanceledListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnCanceledListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,26 +219,31 @@
         }
     .end annotation
 
-    .line 4
-    new-instance v0, Lcom/google/android/gms/tasks/zzg;
+    .line 6
+    new-instance v0, Lcom/google/android/gms/tasks/zzh;
 
     sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-direct {v0, v1, p2}, Lcom/google/android/gms/tasks/zzg;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)V
+    .line 7
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
 
-    .line 5
-    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    move-result-object v1
 
-    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-direct {v0, v1, p2}, Lcom/google/android/gms/tasks/zzh;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)V
 
-    .line 6
+    .line 8
+    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+
+    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    .line 9
     invoke-static {p1}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Landroid/app/Activity;)Lcom/google/android/gms/tasks/zzu$zza;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zzb(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 7
+    .line 10
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -206,6 +251,13 @@
 
 .method public final addOnCanceledListener(Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/OnCanceledListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -219,7 +271,7 @@
     .line 1
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->addOnCanceledListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->addOnCanceledListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -228,6 +280,17 @@
 
 .method public final addOnCanceledListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnCanceledListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -240,15 +303,21 @@
     .end annotation
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    new-instance v1, Lcom/google/android/gms/tasks/zzg;
-
-    invoke-direct {v1, p1, p2}, Lcom/google/android/gms/tasks/zzg;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    new-instance v1, Lcom/google/android/gms/tasks/zzh;
 
     .line 3
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1, p2}, Lcom/google/android/gms/tasks/zzh;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)V
+
+    .line 4
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    .line 5
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -256,6 +325,17 @@
 
 .method public final addOnCompleteListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnCompleteListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -267,26 +347,31 @@
         }
     .end annotation
 
-    .line 4
+    .line 6
     new-instance v0, Lcom/google/android/gms/tasks/zzi;
 
     sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
+    .line 7
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object v1
+
     invoke-direct {v0, v1, p2}, Lcom/google/android/gms/tasks/zzi;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)V
 
-    .line 5
-    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    .line 8
+    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 6
+    .line 9
     invoke-static {p1}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Landroid/app/Activity;)Lcom/google/android/gms/tasks/zzu$zza;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zzb(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 7
+    .line 10
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -294,6 +379,13 @@
 
 .method public final addOnCompleteListener(Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/OnCompleteListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -307,7 +399,7 @@
     .line 1
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->addOnCompleteListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->addOnCompleteListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -316,6 +408,17 @@
 
 .method public final addOnCompleteListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnCompleteListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -328,15 +431,21 @@
     .end annotation
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
     new-instance v1, Lcom/google/android/gms/tasks/zzi;
 
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
     invoke-direct {v1, p1, p2}, Lcom/google/android/gms/tasks/zzi;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    .line 4
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 3
+    .line 5
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -344,6 +453,17 @@
 
 .method public final addOnFailureListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnFailureListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -355,26 +475,31 @@
         }
     .end annotation
 
-    .line 4
-    new-instance v0, Lcom/google/android/gms/tasks/zzk;
+    .line 6
+    new-instance v0, Lcom/google/android/gms/tasks/zzl;
 
     sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-direct {v0, v1, p2}, Lcom/google/android/gms/tasks/zzk;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)V
+    .line 7
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
 
-    .line 5
-    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    move-result-object v1
 
-    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-direct {v0, v1, p2}, Lcom/google/android/gms/tasks/zzl;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)V
 
-    .line 6
+    .line 8
+    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+
+    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    .line 9
     invoke-static {p1}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Landroid/app/Activity;)Lcom/google/android/gms/tasks/zzu$zza;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zzb(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 7
+    .line 10
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -382,6 +507,13 @@
 
 .method public final addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/OnFailureListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -395,7 +527,7 @@
     .line 1
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->addOnFailureListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -404,6 +536,17 @@
 
 .method public final addOnFailureListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnFailureListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -416,15 +559,21 @@
     .end annotation
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    new-instance v1, Lcom/google/android/gms/tasks/zzk;
-
-    invoke-direct {v1, p1, p2}, Lcom/google/android/gms/tasks/zzk;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    new-instance v1, Lcom/google/android/gms/tasks/zzl;
 
     .line 3
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1, p2}, Lcom/google/android/gms/tasks/zzl;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)V
+
+    .line 4
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    .line 5
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -432,6 +581,17 @@
 
 .method public final addOnSuccessListener(Landroid/app/Activity;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnSuccessListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -443,26 +603,31 @@
         }
     .end annotation
 
-    .line 4
+    .line 6
     new-instance v0, Lcom/google/android/gms/tasks/zzm;
 
     sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
+    .line 7
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object v1
+
     invoke-direct {v0, v1, p2}, Lcom/google/android/gms/tasks/zzm;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)V
 
-    .line 5
-    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    .line 8
+    iget-object p2, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {p2, v0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 6
+    .line 9
     invoke-static {p1}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Landroid/app/Activity;)Lcom/google/android/gms/tasks/zzu$zza;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zzb(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/zzu$zza;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 7
+    .line 10
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -470,6 +635,13 @@
 
 .method public final addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/OnSuccessListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -483,7 +655,7 @@
     .line 1
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->addOnSuccessListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -492,6 +664,17 @@
 
 .method public final addOnSuccessListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnSuccessListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -504,15 +687,21 @@
     .end annotation
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
     new-instance v1, Lcom/google/android/gms/tasks/zzm;
 
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
     invoke-direct {v1, p1, p2}, Lcom/google/android/gms/tasks/zzm;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    .line 4
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 3
+    .line 5
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object p0
@@ -520,6 +709,13 @@
 
 .method public final continueWith(Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/Continuation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TContinuationResult:",
@@ -535,7 +731,7 @@
     .line 1
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->continueWith(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->continueWith(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -544,6 +740,17 @@
 
 .method public final continueWith(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
     .locals 3
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/Continuation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TContinuationResult:",
@@ -563,15 +770,21 @@
     invoke-direct {v0}, Lcom/google/android/gms/tasks/zzu;-><init>()V
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
     new-instance v2, Lcom/google/android/gms/tasks/zzc;
 
+    .line 4
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
     invoke-direct {v2, p1, p2, v0}, Lcom/google/android/gms/tasks/zzc;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;Lcom/google/android/gms/tasks/zzu;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    .line 5
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
 
-    .line 4
+    .line 6
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object v0
@@ -579,6 +792,13 @@
 
 .method public final continueWithTask(Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/Continuation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TContinuationResult:",
@@ -596,7 +816,7 @@
     .line 1
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->continueWithTask(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->continueWithTask(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -605,6 +825,17 @@
 
 .method public final continueWithTask(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
     .locals 3
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/Continuation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TContinuationResult:",
@@ -626,15 +857,21 @@
     invoke-direct {v0}, Lcom/google/android/gms/tasks/zzu;-><init>()V
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    new-instance v2, Lcom/google/android/gms/tasks/zze;
-
-    invoke-direct {v2, p1, p2, v0}, Lcom/google/android/gms/tasks/zze;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;Lcom/google/android/gms/tasks/zzu;)V
-
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    new-instance v2, Lcom/google/android/gms/tasks/zzd;
 
     .line 4
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
+    invoke-direct {v2, p1, p2, v0}, Lcom/google/android/gms/tasks/zzd;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;Lcom/google/android/gms/tasks/zzu;)V
+
+    .line 5
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    .line 6
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object v0
@@ -642,15 +879,17 @@
 
 .method public final getException()Ljava/lang/Exception;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     monitor-exit v0
 
@@ -676,7 +915,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -688,12 +927,12 @@
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zzd()V
 
     .line 4
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     if-nez v1, :cond_0
 
     .line 5
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzaa:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zze:Ljava/lang/Object;
 
     monitor-exit v0
 
@@ -703,7 +942,7 @@
     :cond_0
     new-instance v1, Lcom/google/android/gms/tasks/RuntimeExecutionException;
 
-    iget-object v2, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     invoke-direct {v1, v2}, Lcom/google/android/gms/tasks/RuntimeExecutionException;-><init>(Ljava/lang/Throwable;)V
 
@@ -722,6 +961,10 @@
 
 .method public final getResult(Ljava/lang/Class;)Ljava/lang/Object;
     .locals 2
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -732,8 +975,14 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Throwable;
+        }
+    .end annotation
+
     .line 8
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -745,7 +994,7 @@
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zzd()V
 
     .line 11
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     invoke-virtual {p1, v1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
@@ -754,12 +1003,12 @@
     if-nez v1, :cond_1
 
     .line 12
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     if-nez p1, :cond_0
 
     .line 13
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzaa:Ljava/lang/Object;
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zze:Ljava/lang/Object;
 
     monitor-exit v0
 
@@ -769,7 +1018,7 @@
     :cond_0
     new-instance p1, Lcom/google/android/gms/tasks/RuntimeExecutionException;
 
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     invoke-direct {p1, v1}, Lcom/google/android/gms/tasks/RuntimeExecutionException;-><init>(Ljava/lang/Throwable;)V
 
@@ -777,7 +1026,7 @@
 
     .line 15
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     invoke-virtual {p1, v1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -802,7 +1051,7 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzz:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
 
     return v0
 .end method
@@ -811,13 +1060,13 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     monitor-exit v0
 
@@ -838,21 +1087,21 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     if-eqz v1, :cond_0
 
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzz:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
 
     if-nez v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
     if-nez v1, :cond_0
 
@@ -881,6 +1130,13 @@
 
 .method public final onSuccessTask(Lcom/google/android/gms/tasks/SuccessContinuation;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/SuccessContinuation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TContinuationResult:",
@@ -893,10 +1149,10 @@
         }
     .end annotation
 
-    .line 4
+    .line 6
     sget-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/zzu;->onSuccessTask(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/SuccessContinuation;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/tasks/Task;->onSuccessTask(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/SuccessContinuation;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -905,6 +1161,9 @@
 
 .method public final onSuccessTask(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/SuccessContinuation;)Lcom/google/android/gms/tasks/Task;
     .locals 3
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TContinuationResult:",
@@ -924,61 +1183,71 @@
     invoke-direct {v0}, Lcom/google/android/gms/tasks/zzu;-><init>()V
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    new-instance v2, Lcom/google/android/gms/tasks/zzo;
-
-    invoke-direct {v2, p1, p2, v0}, Lcom/google/android/gms/tasks/zzo;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/SuccessContinuation;Lcom/google/android/gms/tasks/zzu;)V
-
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    new-instance v2, Lcom/google/android/gms/tasks/zzp;
 
     .line 3
+    invoke-static {p1}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
+    invoke-direct {v2, p1, p2, v0}, Lcom/google/android/gms/tasks/zzp;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/SuccessContinuation;Lcom/google/android/gms/tasks/zzu;)V
+
+    .line 4
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+
+    .line 5
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zze()V
 
     return-object v0
 .end method
 
-.method public final setException(Ljava/lang/Exception;)V
+.method public final zza(Ljava/lang/Exception;)V
     .locals 2
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "Exception must not be null"
 
-    .line 1
+    .line 8
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    .line 9
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 3
+    .line 10
     :try_start_0
     invoke-direct {p0}, Lcom/google/android/gms/tasks/zzu;->zzc()V
 
     const/4 v1, 0x1
 
-    .line 4
-    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    .line 11
+    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
-    .line 5
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
+    .line 12
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
 
-    .line 6
+    .line 13
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 7
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    .line 14
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/Task;)V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    .line 8
+    .line 15
     :try_start_1
     monitor-exit v0
     :try_end_1
@@ -987,8 +1256,12 @@
     throw p1
 .end method
 
-.method public final setResult(Ljava/lang/Object;)V
+.method public final zza(Ljava/lang/Object;)V
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TTResult;)V"
@@ -996,7 +1269,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -1007,10 +1280,10 @@
     const/4 v1, 0x1
 
     .line 3
-    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     .line 4
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzaa:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zze:Ljava/lang/Object;
 
     .line 5
     monitor-exit v0
@@ -1018,9 +1291,9 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/Task;)V
 
     return-void
 
@@ -1028,124 +1301,6 @@
     move-exception p1
 
     .line 7
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final trySetException(Ljava/lang/Exception;)Z
-    .locals 2
-
-    const-string v0, "Exception must not be null"
-
-    .line 1
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 p1, 0x0
-
-    .line 4
-    monitor-exit v0
-
-    return p1
-
-    :cond_0
-    const/4 v1, 0x1
-
-    .line 5
-    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
-
-    .line 6
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzab:Ljava/lang/Exception;
-
-    .line 7
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 8
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
-
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
-
-    return v1
-
-    :catchall_0
-    move-exception p1
-
-    .line 9
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final trySetResult(Ljava/lang/Object;)Z
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TTResult;)Z"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 2
-    :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 p1, 0x0
-
-    .line 3
-    monitor-exit v0
-
-    return p1
-
-    :cond_0
-    const/4 v1, 0x1
-
-    .line 4
-    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
-
-    .line 5
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzaa:Ljava/lang/Object;
-
-    .line 6
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 7
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
-
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
-
-    return v1
-
-    :catchall_0
-    move-exception p1
-
-    .line 8
     :try_start_1
     monitor-exit v0
     :try_end_1
@@ -1157,20 +1312,20 @@
 .method public final zza()Z
     .locals 2
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->mLock:Ljava/lang/Object;
+    .line 16
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 2
+    .line 17
     :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
-    .line 3
+    .line 18
     monitor-exit v0
 
     return v1
@@ -1178,11 +1333,137 @@
     :cond_0
     const/4 v1, 0x1
 
+    .line 19
+    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
+
+    .line 20
+    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
+
+    .line 21
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 22
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/Task;)V
+
+    return v1
+
+    :catchall_0
+    move-exception v1
+
+    .line 23
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+.end method
+
+.method public final zzb(Ljava/lang/Exception;)Z
+    .locals 2
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    const-string v0, "Exception must not be null"
+
+    .line 9
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 10
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 11
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
+
+    if-eqz v1, :cond_0
+
+    const/4 p1, 0x0
+
+    .line 12
+    monitor-exit v0
+
+    return p1
+
+    :cond_0
+    const/4 v1, 0x1
+
+    .line 13
+    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
+
+    .line 14
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzf:Ljava/lang/Exception;
+
+    .line 15
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 16
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/Task;)V
+
+    return v1
+
+    :catchall_0
+    move-exception p1
+
+    .line 17
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public final zzb(Ljava/lang/Object;)Z
+    .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TTResult;)Z"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zza:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 2
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
+
+    if-eqz v1, :cond_0
+
+    const/4 p1, 0x0
+
+    .line 3
+    monitor-exit v0
+
+    return p1
+
+    :cond_0
+    const/4 v1, 0x1
+
     .line 4
-    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzy:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzc:Z
 
     .line 5
-    iput-boolean v1, p0, Lcom/google/android/gms/tasks/zzu;->zzz:Z
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zze:Ljava/lang/Object;
 
     .line 6
     monitor-exit v0
@@ -1190,14 +1471,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzu;->zzx:Lcom/google/android/gms/tasks/zzr;
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/Task;)V
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/Task;)V
 
     return v1
 
     :catchall_0
-    move-exception v1
+    move-exception p1
 
     .line 8
     :try_start_1
@@ -1205,5 +1486,5 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v1
+    throw p1
 .end method

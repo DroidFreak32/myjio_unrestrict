@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public config:Landroid/graphics/Bitmap$Config;
+.field private config:Landroid/graphics/Bitmap$Config;
 
-.field public final height:I
+.field private final height:I
 
-.field public weight:I
+.field private weight:I
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
@@ -110,6 +110,10 @@
 
 .method public setConfig(Landroid/graphics/Bitmap$Config;)Lcom/bumptech/glide/load/engine/prefill/PreFillType$Builder;
     .locals 0
+    .param p1    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/prefill/PreFillType$Builder;->config:Landroid/graphics/Bitmap$Config;

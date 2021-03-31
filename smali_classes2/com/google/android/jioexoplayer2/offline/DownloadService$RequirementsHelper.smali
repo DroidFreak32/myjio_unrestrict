@@ -18,15 +18,18 @@
 
 
 # instance fields
-.field public final context:Landroid/content/Context;
+.field private final context:Landroid/content/Context;
 
-.field public final requirements:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
+.field private final requirements:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
 
-.field public final requirementsWatcher:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;
+.field private final requirementsWatcher:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;
 
-.field public final scheduler:Lcom/google/android/jioexoplayer2/scheduler/Scheduler;
+.field private final scheduler:Lcom/google/android/jioexoplayer2/scheduler/Scheduler;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final serviceClass:Ljava/lang/Class;
+.field private final serviceClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -39,8 +42,12 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/jioexoplayer2/scheduler/Requirements;Lcom/google/android/jioexoplayer2/scheduler/Scheduler;Ljava/lang/Class;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/jioexoplayer2/scheduler/Requirements;Lcom/google/android/jioexoplayer2/scheduler/Scheduler;Ljava/lang/Class;)V
     .locals 0
+    .param p3    # Lcom/google/android/jioexoplayer2/scheduler/Scheduler;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -90,6 +97,11 @@
 
 .method private notifyService()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService$RequirementsHelper;->context:Landroid/content/Context;

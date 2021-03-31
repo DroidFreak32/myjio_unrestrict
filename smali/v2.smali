@@ -1,174 +1,286 @@
 .class public Lv2;
 .super Ljava/lang/Object;
-.source "PopupMenu.java"
+.source "PathInterpolatorApi14.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lv2$c;,
-        Lv2$d;
-    }
-.end annotation
+# interfaces
+.implements Landroid/view/animation/Interpolator;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:[F
 
-.field public final b:Ln1;
-
-.field public final c:Lt1;
-
-.field public d:Lv2$d;
-
-.field public e:Lv2$c;
+.field public final b:[F
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;)V
-    .locals 1
+.method public constructor <init>(FF)V
+    .locals 0
 
-    const/4 v0, 0x0
+    .line 9
+    invoke-static {p1, p2}, Lv2;->b(FF)Landroid/graphics/Path;
 
-    .line 1
-    invoke-direct {p0, p1, p2, v0}, Lv2;-><init>(Landroid/content/Context;Landroid/view/View;I)V
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lv2;-><init>(Landroid/graphics/Path;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;I)V
-    .locals 6
+.method public constructor <init>(FFFF)V
+    .locals 0
+
+    .line 10
+    invoke-static {p1, p2, p3, p4}, Lv2;->a(FFFF)Landroid/graphics/Path;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lv2;-><init>(Landroid/graphics/Path;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/graphics/Path;)V
+    .locals 8
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    sget v4, Lo;->popupMenuStyle:I
+    new-instance v0, Landroid/graphics/PathMeasure;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Landroid/graphics/PathMeasure;-><init>(Landroid/graphics/Path;Z)V
+
+    .line 3
+    invoke-virtual {v0}, Landroid/graphics/PathMeasure;->getLength()F
+
+    move-result p1
+
+    const v2, 0x3b03126f    # 0.002f
+
+    div-float v2, p1, v2
+
+    float-to-int v2, v2
+
+    const/4 v3, 0x1
+
+    add-int/2addr v2, v3
+
+    .line 4
+    new-array v4, v2, [F
+
+    iput-object v4, p0, Lv2;->a:[F
+
+    .line 5
+    new-array v4, v2, [F
+
+    iput-object v4, p0, Lv2;->b:[F
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [F
 
     const/4 v5, 0x0
 
-    move-object v0, p0
+    :goto_0
+    if-ge v5, v2, :cond_0
 
-    move-object v1, p1
+    int-to-float v6, v5
 
-    move-object v2, p2
+    mul-float v6, v6, p1
 
-    move v3, p3
+    add-int/lit8 v7, v2, -0x1
 
-    invoke-direct/range {v0 .. v5}, Lv2;-><init>(Landroid/content/Context;Landroid/view/View;III)V
+    int-to-float v7, v7
 
+    div-float/2addr v6, v7
+
+    const/4 v7, 0x0
+
+    .line 6
+    invoke-virtual {v0, v6, v4, v7}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
+
+    .line 7
+    iget-object v6, p0, Lv2;->a:[F
+
+    aget v7, v4, v1
+
+    aput v7, v6, v5
+
+    .line 8
+    iget-object v6, p0, Lv2;->b:[F
+
+    aget v7, v4, v3
+
+    aput v7, v6, v5
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;III)V
-    .locals 9
+.method public static a(FFFF)Landroid/graphics/Path;
+    .locals 8
+
+    .line 1
+    new-instance v7, Landroid/graphics/Path;
+
+    invoke-direct {v7}, Landroid/graphics/Path;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-virtual {v7, v0, v0}, Landroid/graphics/Path;->moveTo(FF)V
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    move-object v0, v7
+
+    move v1, p0
+
+    move v2, p1
+
+    move v3, p2
+
+    move v4, p3
 
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 4
-    iput-object p1, p0, Lv2;->a:Landroid/content/Context;
+    return-object v7
+.end method
 
-    .line 5
-    new-instance v0, Ln1;
+.method public static b(FF)Landroid/graphics/Path;
+    .locals 2
 
-    invoke-direct {v0, p1}, Ln1;-><init>(Landroid/content/Context;)V
+    .line 1
+    new-instance v0, Landroid/graphics/Path;
 
-    iput-object v0, p0, Lv2;->b:Ln1;
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    .line 6
-    iget-object v0, p0, Lv2;->b:Ln1;
+    const/4 v1, 0x0
 
-    new-instance v1, Lv2$a;
+    .line 2
+    invoke-virtual {v0, v1, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    invoke-direct {v1, p0}, Lv2$a;-><init>(Lv2;)V
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v1}, Ln1;->setCallback(Ln1$a;)V
+    .line 3
+    invoke-virtual {v0, p0, p1, v1, v1}, Landroid/graphics/Path;->quadTo(FFFF)V
 
-    .line 7
-    new-instance v0, Lt1;
-
-    iget-object v4, p0, Lv2;->b:Ln1;
-
-    const/4 v6, 0x0
-
-    move-object v2, v0
-
-    move-object v3, p1
-
-    move-object v5, p2
-
-    move v7, p4
-
-    move v8, p5
-
-    invoke-direct/range {v2 .. v8}, Lt1;-><init>(Landroid/content/Context;Ln1;Landroid/view/View;ZII)V
-
-    iput-object v0, p0, Lv2;->c:Lt1;
-
-    .line 8
-    iget-object p1, p0, Lv2;->c:Lt1;
-
-    invoke-virtual {p1, p3}, Lt1;->a(I)V
-
-    .line 9
-    iget-object p1, p0, Lv2;->c:Lt1;
-
-    new-instance p2, Lv2$b;
-
-    invoke-direct {p2, p0}, Lv2$b;-><init>(Lv2;)V
-
-    invoke-virtual {p1, p2}, Lt1;->a(Landroid/widget/PopupWindow$OnDismissListener;)V
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()Landroid/view/Menu;
-    .locals 1
+.method public getInterpolation(F)F
+    .locals 6
+
+    const/4 v0, 0x0
+
+    cmpg-float v1, p1, v0
+
+    if-gtz v1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    cmpl-float v2, p1, v1
+
+    if-ltz v2, :cond_1
+
+    return v1
+
+    :cond_1
+    const/4 v1, 0x0
 
     .line 1
-    iget-object v0, p0, Lv2;->b:Ln1;
+    iget-object v2, p0, Lv2;->a:[F
 
-    return-object v0
-.end method
+    array-length v2, v2
 
-.method public a(Lv2$c;)V
-    .locals 0
+    const/4 v3, 0x1
 
-    .line 3
-    iput-object p1, p0, Lv2;->e:Lv2$c;
+    sub-int/2addr v2, v3
 
-    return-void
-.end method
+    :goto_0
+    sub-int v4, v2, v1
 
-.method public a(Lv2$d;)V
-    .locals 0
+    if-le v4, v3, :cond_3
+
+    add-int v4, v1, v2
 
     .line 2
-    iput-object p1, p0, Lv2;->d:Lv2$d;
+    div-int/lit8 v4, v4, 0x2
 
-    return-void
-.end method
+    .line 3
+    iget-object v5, p0, Lv2;->a:[F
 
-.method public b()Landroid/view/MenuInflater;
-    .locals 2
+    aget v5, v5, v4
 
-    .line 1
-    new-instance v0, Le1;
+    cmpg-float v5, p1, v5
 
-    iget-object v1, p0, Lv2;->a:Landroid/content/Context;
+    if-gez v5, :cond_2
 
-    invoke-direct {v0, v1}, Le1;-><init>(Landroid/content/Context;)V
+    move v2, v4
 
-    return-object v0
-.end method
+    goto :goto_0
 
-.method public c()V
-    .locals 1
+    :cond_2
+    move v1, v4
 
-    .line 1
-    iget-object v0, p0, Lv2;->c:Lt1;
+    goto :goto_0
 
-    invoke-virtual {v0}, Lt1;->f()V
+    .line 4
+    :cond_3
+    iget-object v3, p0, Lv2;->a:[F
 
-    return-void
+    aget v4, v3, v2
+
+    aget v5, v3, v1
+
+    sub-float/2addr v4, v5
+
+    cmpl-float v0, v4, v0
+
+    if-nez v0, :cond_4
+
+    .line 5
+    iget-object p1, p0, Lv2;->b:[F
+
+    aget p1, p1, v1
+
+    return p1
+
+    .line 6
+    :cond_4
+    aget v0, v3, v1
+
+    sub-float/2addr p1, v0
+
+    div-float/2addr p1, v4
+
+    .line 7
+    iget-object v0, p0, Lv2;->b:[F
+
+    aget v1, v0, v1
+
+    .line 8
+    aget v0, v0, v2
+
+    sub-float/2addr v0, v1
+
+    mul-float p1, p1, v0
+
+    add-float/2addr v1, p1
+
+    return v1
 .end method

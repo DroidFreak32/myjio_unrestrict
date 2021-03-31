@@ -6,19 +6,19 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x2d864da735a2f2f5L
+.field private static final serialVersionUID:J = 0x2d864da735a2f2f5L
 
 
 # instance fields
-.field public requestType:Ljava/lang/String;
+.field private requestType:Ljava/lang/String;
 
-.field public responseCode:I
+.field private responseCode:I
 
-.field public responseData:Lcom/elitecorelib/core/pojo/PojoConfigModel;
+.field private responseData:Lcom/elitecorelib/core/pojo/PojoConfigModel;
 
-.field public responseMessage:Ljava/lang/String;
+.field private responseMessage:Ljava/lang/String;
 
-.field public resumeRegistrationOn:Ljava/lang/String;
+.field private resumeRegistrationOn:Ljava/lang/String;
 
 
 # direct methods

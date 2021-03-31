@@ -15,15 +15,15 @@
 
 
 # static fields
-.field public static isAlertVisible:Z = false
+.field private static isAlertVisible:Z = false
 
 
 # instance fields
-.field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.field private config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-.field public inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
+.field private inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-.field public listenerWeakReference:Ljava/lang/ref/WeakReference;
+.field private listenerWeakReference:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -216,6 +216,7 @@
     .line 13
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 14
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getButtons()Ljava/util/ArrayList;
 
     move-result-object v3
@@ -234,24 +235,25 @@
 
     invoke-direct {v6, p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity$2;-><init>(Lcom/clevertap/android/sdk/InAppNotificationActivity;)V
 
+    .line 15
     invoke-virtual {v0, v4, v3, v6}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     goto :goto_0
 
-    .line 14
+    .line 16
     :cond_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 15
+    .line 17
     invoke-virtual {v0, v6}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-    .line 16
+    .line 18
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getTitle()Ljava/lang/String;
 
     move-result-object v3
@@ -262,7 +264,7 @@
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-    .line 17
+    .line 19
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getMessage()Ljava/lang/String;
 
     move-result-object v3
@@ -273,7 +275,7 @@
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-    .line 18
+    .line 20
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getButtons()Ljava/util/ArrayList;
 
     move-result-object v3
@@ -296,12 +298,12 @@
 
     move-result-object v0
 
-    .line 19
+    .line 21
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 20
+    .line 22
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getButtons()Ljava/util/ArrayList;
@@ -314,9 +316,10 @@
 
     if-ne v3, v5, :cond_1
 
-    .line 21
+    .line 23
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 24
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->getButtons()Ljava/util/ArrayList;
 
     move-result-object v3
@@ -335,9 +338,10 @@
 
     invoke-direct {v6, p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity$4;-><init>(Lcom/clevertap/android/sdk/InAppNotificationActivity;)V
 
+    .line 25
     invoke-virtual {v0, v4, v3, v6}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 22
+    .line 26
     :cond_1
     :goto_0
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
@@ -354,9 +358,10 @@
 
     const/4 v3, -0x3
 
-    .line 23
+    .line 27
     iget-object v4, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 28
     invoke-virtual {v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->getButtons()Ljava/util/ArrayList;
 
     move-result-object v4
@@ -375,6 +380,7 @@
 
     invoke-direct {v5, p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity$5;-><init>(Lcom/clevertap/android/sdk/InAppNotificationActivity;)V
 
+    .line 29
     invoke-virtual {v0, v3, v4, v5}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     goto :goto_1
@@ -382,20 +388,20 @@
     :cond_2
     move-object v0, v2
 
-    .line 24
+    .line 30
     :cond_3
     :goto_1
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 25
+    .line 31
     sput-boolean v1, Lcom/clevertap/android/sdk/InAppNotificationActivity;->isAlertVisible:Z
 
-    .line 26
+    .line 32
     invoke-virtual {p0, v2}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->didShow(Landroid/os/Bundle;)V
 
     goto :goto_2
 
-    .line 27
+    .line 33
     :pswitch_1
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;
 
@@ -403,7 +409,7 @@
 
     goto :goto_2
 
-    .line 28
+    .line 34
     :pswitch_2
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;
 
@@ -411,7 +417,7 @@
 
     goto :goto_2
 
-    .line 29
+    .line 35
     :pswitch_3
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppNativeCoverImageFragment;
 
@@ -419,7 +425,7 @@
 
     goto :goto_2
 
-    .line 30
+    .line 36
     :pswitch_4
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialFragment;
 
@@ -427,7 +433,7 @@
 
     goto :goto_2
 
-    .line 31
+    .line 37
     :pswitch_5
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
@@ -435,7 +441,7 @@
 
     goto :goto_2
 
-    .line 32
+    .line 38
     :pswitch_6
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppNativeCoverFragment;
 
@@ -443,7 +449,7 @@
 
     goto :goto_2
 
-    .line 33
+    .line 39
     :pswitch_7
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppHtmlHalfInterstitialFragment;
 
@@ -451,7 +457,7 @@
 
     goto :goto_2
 
-    .line 34
+    .line 40
     :pswitch_8
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppHtmlInterstitialFragment;
 
@@ -459,7 +465,7 @@
 
     goto :goto_2
 
-    .line 35
+    .line 41
     :pswitch_9
     new-instance v2, Lcom/clevertap/android/sdk/CTInAppHtmlCoverFragment;
 
@@ -707,6 +713,7 @@
 
     iget-object v4, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 3
     invoke-virtual {v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->getJsonDescription()Lorg/json/JSONObject;
 
     move-result-object v4
@@ -717,6 +724,7 @@
 
     move-result-object v3
 
+    .line 4
     invoke-virtual {v1, v2, v3}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
@@ -828,7 +836,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_9
 
     .line 5
     invoke-virtual {v3, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -881,13 +889,22 @@
     .line 9
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    if-nez v3, :cond_2
+
+    .line 10
+    invoke-virtual {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->finish()V
+
+    return-void
+
+    .line 11
+    :cond_2
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->isPortrait()Z
 
     move-result v3
 
     const/4 v5, 0x0
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
@@ -895,38 +912,38 @@
 
     move-result v3
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_4
 
-    if-ne v1, v2, :cond_2
+    if-ne v1, v2, :cond_3
 
     const-string p1, "App in Landscape, dismissing portrait InApp Notification"
 
-    .line 10
+    .line 12
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 11
+    .line 13
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->finish()V
 
-    .line 12
+    .line 14
     invoke-virtual {p0, v5}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->didDismiss(Landroid/os/Bundle;)V
 
     return-void
 
-    :cond_2
+    :cond_3
     const-string v2, "App in Portrait, displaying InApp Notification anyway"
 
-    .line 13
+    .line 15
     invoke-static {v2}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 14
-    :cond_3
+    .line 16
+    :cond_4
     iget-object v2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->isPortrait()Z
 
     move-result v2
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_6
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
@@ -934,65 +951,65 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v2, :cond_5
 
     const-string p1, "App in Portrait, dismissing landscape InApp Notification"
 
-    .line 15
+    .line 17
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 16
+    .line 18
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->finish()V
 
-    .line 17
+    .line 19
     invoke-virtual {p0, v5}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->didDismiss(Landroid/os/Bundle;)V
 
     return-void
 
-    :cond_4
+    :cond_5
     const-string v1, "App in Landscape, displaying InApp Notification anyway"
 
-    .line 18
+    .line 20
     invoke-static {v1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    :cond_5
-    if-nez p1, :cond_6
+    :cond_6
+    if-nez p1, :cond_7
 
-    .line 19
+    .line 21
     invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->createContentFragment()Lcom/clevertap/android/sdk/CTInAppBaseFullFragment;
 
     move-result-object p1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_8
 
-    .line 20
+    .line 22
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 21
+    .line 23
     iget-object v2, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 22
+    .line 24
     iget-object v0, p0, Lcom/clevertap/android/sdk/InAppNotificationActivity;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     invoke-virtual {v1, v4, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 23
-    invoke-virtual {p1, v1}, Landroid/app/Fragment;->setArguments(Landroid/os/Bundle;)V
+    .line 25
+    invoke-virtual {p1, v1}, Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 24
-    invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
+    .line 26
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v0
 
@@ -1000,42 +1017,42 @@
 
     const v2, 0x10b0001
 
-    .line 25
-    invoke-virtual {v0, v1, v2}, Landroid/app/FragmentTransaction;->setCustomAnimations(II)Landroid/app/FragmentTransaction;
+    .line 27
+    invoke-virtual {v0, v1, v2}, Landroidx/fragment/app/FragmentTransaction;->setCustomAnimations(II)Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v0
 
     const v1, 0x1020002
 
-    .line 26
+    .line 28
     invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->getFragmentTag()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, p1, v2}, Landroid/app/FragmentTransaction;->add(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
+    invoke-virtual {v0, v1, p1, v2}, Landroidx/fragment/app/FragmentTransaction;->add(ILandroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object p1
 
-    .line 27
-    invoke-virtual {p1}, Landroid/app/FragmentTransaction;->commit()I
+    .line 29
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentTransaction;->commit()I
 
     goto :goto_0
 
-    .line 28
-    :cond_6
+    .line 30
+    :cond_7
     sget-boolean p1, Lcom/clevertap/android/sdk/InAppNotificationActivity;->isAlertVisible:Z
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_8
 
-    .line 29
+    .line 31
     invoke-direct {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->createContentFragment()Lcom/clevertap/android/sdk/CTInAppBaseFullFragment;
 
-    :cond_7
+    :cond_8
     :goto_0
     return-void
 
-    .line 30
-    :cond_8
+    .line 32
+    :cond_9
     :try_start_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -1050,8 +1067,11 @@
 
     const-string v0, "Cannot find a valid notification bundle to show!"
 
-    .line 31
+    .line 33
     invoke-static {v0, p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 34
+    invoke-virtual {p0}, Lcom/clevertap/android/sdk/InAppNotificationActivity;->finish()V
 
     return-void
 .end method

@@ -1,77 +1,143 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzla;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.class public final Lcom/google/android/gms/internal/ads/zzla;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/internal/ads/zzkz;
 
 
+# instance fields
+.field private final zzawg:Lcom/google/android/gms/internal/ads/zzpn;
+
+.field private final zzaxa:I
+
+.field private final zzaxb:I
+
+.field private zzaxc:I
+
+.field private zzaxd:I
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzku;)V
     .locals 1
 
-    const-string v0, "com.google.android.gms.ads.internal.client.IAdMetadataListener"
-
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzku;->zzawg:Lcom/google/android/gms/internal/ads/zzpn;
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzla;->zzawg:Lcom/google/android/gms/internal/ads/zzpn;
+
+    const/16 v0, 0xc
+
+    .line 3
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/ads/zzpn;->zzbl(I)V
+
+    .line 4
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzpn;->zzjf()I
+
+    move-result v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxb:I
+
+    .line 5
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzpn;->zzjf()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxa:I
 
     return-void
 .end method
 
-.method public static zzc(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzkz;
-    .locals 2
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.client.IAdMetadataListener"
+# virtual methods
+.method public final zzgy()I
+    .locals 1
 
     .line 1
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxa:I
 
-    move-result-object v0
+    return v0
+.end method
+
+.method public final zzgz()I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxb:I
+
+    const/16 v1, 0x8
+
+    if-ne v0, v1, :cond_0
 
     .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzkz;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzawg:Lcom/google/android/gms/internal/ads/zzpn;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzpn;->readUnsignedByte()I
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    const/16 v1, 0x10
+
+    if-ne v0, v1, :cond_1
 
     .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzkz;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzawg:Lcom/google/android/gms/internal/ads/zzpn;
 
-    return-object v0
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzpn;->readUnsignedShort()I
+
+    move-result v0
+
+    return v0
 
     .line 4
     :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzlb;
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxc:I
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzlb;-><init>(Landroid/os/IBinder;)V
+    add-int/lit8 v1, v0, 0x1
 
-    return-object v0
+    iput v1, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxc:I
+
+    rem-int/lit8 v0, v0, 0x2
+
+    if-nez v0, :cond_2
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzawg:Lcom/google/android/gms/internal/ads/zzpn;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzpn;->readUnsignedByte()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxd:I
+
+    and-int/lit16 v0, v0, 0xf0
+
+    shr-int/lit8 v0, v0, 0x4
+
+    return v0
+
+    .line 6
+    :cond_2
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzla;->zzaxd:I
+
+    and-int/lit8 v0, v0, 0xf
+
+    return v0
 .end method
 
+.method public final zzha()Z
+    .locals 1
 
-# virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
+    const/4 v0, 0x0
 
-    const/4 p2, 0x1
-
-    if-ne p1, p2, :cond_0
-
-    .line 1
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzkz;->onAdMetadataChanged()V
-
-    .line 2
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return p2
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return v0
 .end method

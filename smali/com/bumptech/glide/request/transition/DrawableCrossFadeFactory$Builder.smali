@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final DEFAULT_DURATION_MS:I = 0x12c
+.field private static final DEFAULT_DURATION_MS:I = 0x12c
 
 
 # instance fields
-.field public final durationMillis:I
+.field private final durationMillis:I
 
-.field public isCrossFadeEnabled:Z
+.field private isCrossFadeEnabled:Z
 
 
 # direct methods

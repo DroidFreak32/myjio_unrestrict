@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field public zzyr:I
+.field private zzyr:I
 
 
 # direct methods

@@ -3,17 +3,17 @@
 
 
 # static fields
-.field public static MODULE:Ljava/lang/String; = "LibraryApplication"
+.field private static MODULE:Ljava/lang/String; = "LibraryApplication"
 
-.field public static getterSetterObj:Lcom/elitecorelib/core/pojo/PojoSecure;
+.field private static getterSetterObj:Lcom/elitecorelib/core/pojo/PojoSecure;
 
-.field public static libraryApplication:Lcom/elitecorelib/core/LibraryApplication;
+.field private static libraryApplication:Lcom/elitecorelib/core/LibraryApplication;
 
 
 # instance fields
-.field public activity:Landroid/app/Activity;
+.field private activity:Landroid/app/Activity;
 
-.field public adMappingHashMap:Ljava/util/HashMap;
+.field private adMappingHashMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -24,35 +24,35 @@
     .end annotation
 .end field
 
-.field public analyticsDevInfo:Lcom/elitecorelib/core/room/pojo/AnalyticsDevInfo;
+.field private analyticsDevInfo:Lcom/elitecorelib/core/room/pojo/AnalyticsDevInfo;
 
-.field public eliteAnalytics:Li30;
+.field private eliteAnalytics:Lcom/elitecorelib/core/utility/d;
 
-.field public faceBookUser:Lorg/json/JSONObject;
+.field private faceBookUser:Lorg/json/JSONObject;
 
-.field public googleUser:Landroid/app/Person;
+.field private googleUser:Landroid/app/Person;
 
-.field public isToggleByCode:Z
+.field private isToggleByCode:Z
 
-.field public libraryContext:Landroid/content/Context;
+.field private libraryContext:Landroid/content/Context;
 
-.field public librarySharedPreferences:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private librarySharedPreferences:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-.field public licenseMechanism:Ljava/lang/String;
+.field private licenseMechanism:Ljava/lang/String;
 
-.field public locationToCheckDistanceWith:Landroid/location/Location;
+.field private locationToCheckDistanceWith:Landroid/location/Location;
 
-.field public loggedInUserName:Ljava/lang/String;
+.field private loggedInUserName:Ljava/lang/String;
 
-.field public mAnalyticsPolicyDetails:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+.field private mAnalyticsPolicyDetails:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
-.field public mAnalyticsPolicyEvolution:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+.field private mAnalyticsPolicyEvolution:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-.field public mGoogleSignInAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.field private mGoogleSignInAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-.field public mPojoSubscriberAnalytics:Lcom/elitecorelib/core/pojo/PojoSubscriber;
+.field private mPojoSubscriberAnalytics:Lcom/elitecorelib/core/pojo/PojoSubscriber;
 
-.field public notificationClass:Lcom/elitecorelib/core/fcm/NotificationClass;
+.field private notificationClass:Lcom/elitecorelib/core/fcm/NotificationClass;
 
 
 # direct methods
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lk30;->b(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/f;->b(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -125,19 +125,17 @@
 
     sput-object v0, Lcom/elitecorelib/core/LibraryApplication;->libraryApplication:Lcom/elitecorelib/core/LibraryApplication;
 
-    sget-object v0, Lcom/elitecorelib/core/LibraryApplication;->libraryApplication:Lcom/elitecorelib/core/LibraryApplication;
-
     :cond_0
     return-object v0
 .end method
 
-.method public static getSerialKey()Ljava/lang/String;
+.method private static getSerialKey()Ljava/lang/String;
     .locals 4
 
     :try_start_0
     const-string v0, "GRADLE_MONETIZATION_SERVER_URL"
 
-    invoke-static {v0}, Lk30;->j(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/f;->j(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -197,11 +195,11 @@
     .locals 1
 
     :try_start_0
-    new-instance v0, Ln20;
+    new-instance v0, Lma;
 
-    invoke-direct {v0}, Ln20;-><init>()V
+    invoke-direct {v0}, Lma;-><init>()V
 
-    invoke-virtual {v0, p0}, Ln20;->a(Landroid/content/Context;)Z
+    invoke-virtual {v0, p0}, Lma;->a(Landroid/content/Context;)Z
 
     move-result p0
     :try_end_0
@@ -222,6 +220,7 @@
 .method public static reInitApplicationResourceIfNeeded(Landroid/content/Context;)V
     .locals 2
 
+    :try_start_0
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
     move-result-object v0
@@ -249,7 +248,7 @@
     invoke-static {v0}, Lcom/elitecorelib/core/EliteSession;->setELiteConnectSession(Landroid/content/Context;)V
 
     :cond_0
-    invoke-static {}, Lc20;->m()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->M()Z
 
     move-result v0
 
@@ -266,7 +265,10 @@
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/elitecorelib/andsf/api/ANDSFClient;->setANDSFServiceByFlag(ZLcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    :catch_0
     :cond_1
     return-void
 .end method
@@ -310,7 +312,7 @@
     .locals 0
 
     :try_start_0
-    invoke-static {p1}, Lx20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lqa;->c(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
     :try_end_0
@@ -329,14 +331,14 @@
     return-object p1
 .end method
 
-.method public getEliteAnalytics()Li30;
+.method public getEliteAnalytics()Lcom/elitecorelib/core/utility/d;
     .locals 2
 
-    iget-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->eliteAnalytics:Li30;
+    iget-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->eliteAnalytics:Lcom/elitecorelib/core/utility/d;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Li30;
+    new-instance v0, Lcom/elitecorelib/core/utility/d;
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -346,11 +348,9 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Li30;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lcom/elitecorelib/core/utility/d;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->eliteAnalytics:Li30;
-
-    iget-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->eliteAnalytics:Li30;
+    iput-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->eliteAnalytics:Lcom/elitecorelib/core/utility/d;
 
     :cond_0
     return-object v0
@@ -416,29 +416,22 @@
     .locals 0
 
     :try_start_0
-    invoke-static {p1}, Lx20;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lqa;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
     :try_end_0
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception p1
 
-    goto :goto_0
-
-    :catch_1
-    move-exception p1
-
-    :goto_0
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     const-string p1, ""
 
-    :goto_1
+    :goto_0
     return-object p1
 .end method
 
@@ -457,7 +450,7 @@
 
     move-result-object v0
 
-    const-string v1, "wifi"
+    const-string/jumbo v1, "wifi"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -471,6 +464,19 @@
 .method public getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
     .locals 1
 
+    iget-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->librarySharedPreferences:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    invoke-direct {v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;-><init>()V
+
+    iput-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->librarySharedPreferences:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    invoke-virtual {p0, v0}, Lcom/elitecorelib/core/LibraryApplication;->setlibrarySharedPreferences(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+
+    :cond_0
     iget-object v0, p0, Lcom/elitecorelib/core/LibraryApplication;->librarySharedPreferences:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
     return-object v0
@@ -669,7 +675,7 @@
     .locals 0
 
     :try_start_0
-    invoke-static {p1}, Lx20;->c(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lqa;->d(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
     :try_end_0

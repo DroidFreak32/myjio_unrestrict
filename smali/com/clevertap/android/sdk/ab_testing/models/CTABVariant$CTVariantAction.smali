@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public activityName:Ljava/lang/String;
+.field private activityName:Ljava/lang/String;
 
-.field public change:Lorg/json/JSONObject;
+.field private change:Lorg/json/JSONObject;
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/ab_testing/models/CTABVariant;
 

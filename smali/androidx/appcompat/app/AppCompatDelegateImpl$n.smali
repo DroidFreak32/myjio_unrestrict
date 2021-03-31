@@ -23,6 +23,10 @@
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;Lo0;)V
     .locals 0
+    .param p1    # Landroidx/appcompat/app/AppCompatDelegateImpl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$n;->d:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -69,7 +73,7 @@
     .line 1
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$n;->c:Lo0;
 
-    invoke-virtual {v0}, Lo0;->b()Z
+    invoke-virtual {v0}, Lo0;->d()Z
 
     move-result v0
 
@@ -92,7 +96,7 @@
     .line 1
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$n;->d:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->l()Z
+    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->applyDayNight()Z
 
     return-void
 .end method

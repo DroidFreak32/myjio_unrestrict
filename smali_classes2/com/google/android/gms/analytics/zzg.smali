@@ -8,25 +8,25 @@
 
 
 # instance fields
-.field public final zzsc:Lcom/google/android/gms/analytics/zzj;
+.field private final zzsc:Lcom/google/android/gms/analytics/zzj;
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
-.field public zzse:Z
+.field private zzse:Z
 
-.field public zzsf:J
+.field private zzsf:J
 
-.field public zzsg:J
+.field private zzsg:J
 
-.field public zzsh:J
+.field private zzsh:J
 
-.field public zzsi:J
+.field private zzsi:J
 
-.field public zzsj:J
+.field private zzsj:J
 
-.field public zzsk:Z
+.field private zzsk:Z
 
-.field public final zzsl:Ljava/util/Map;
+.field private final zzsl:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public final zzsm:Ljava/util/List;
+.field private final zzsm:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -52,7 +52,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/analytics/zzg;)V
+.method private constructor <init>(Lcom/google/android/gms/analytics/zzg;)V
     .locals 3
 
     .line 10
@@ -223,7 +223,7 @@
     return-void
 .end method
 
-.method public static zzc(Ljava/lang/Class;)Lcom/google/android/gms/analytics/zzi;
+.method private static zzc(Ljava/lang/Class;)Lcom/google/android/gms/analytics/zzi;
     .locals 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0x13

@@ -15,8 +15,8 @@
 
 
 # virtual methods
-.method public abstract a()Landroid/os/IBinder;
+.method public abstract compatGetBinder()Landroid/os/IBinder;
 .end method
 
-.method public abstract b()Landroidx/core/app/JobIntentService$GenericWorkItem;
+.method public abstract dequeueWork()Landroidx/core/app/JobIntentService$GenericWorkItem;
 .end method

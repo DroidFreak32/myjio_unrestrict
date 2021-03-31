@@ -4,20 +4,24 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "ContentLengthStream"
+.field private static final TAG:Ljava/lang/String; = "ContentLengthStream"
 
-.field public static final UNKNOWN:I = -0x1
+.field private static final UNKNOWN:I = -0x1
 
 
 # instance fields
-.field public final contentLength:J
+.field private final contentLength:J
 
-.field public readSoFar:I
+.field private readSoFar:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;J)V
+.method private constructor <init>(Ljava/io/InputStream;J)V
     .locals 0
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
@@ -30,6 +34,11 @@
 
 .method private checkReadSoFarOrThrow(I)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-ltz p1, :cond_0
 
@@ -96,6 +105,12 @@
 
 .method public static obtain(Ljava/io/InputStream;J)Ljava/io/InputStream;
     .locals 1
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/bumptech/glide/util/ContentLengthInputStream;
@@ -107,6 +122,16 @@
 
 .method public static obtain(Ljava/io/InputStream;Ljava/lang/String;)Ljava/io/InputStream;
     .locals 2
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-static {p1}, Lcom/bumptech/glide/util/ContentLengthInputStream;->parseContentLength(Ljava/lang/String;)I
@@ -122,8 +147,12 @@
     return-object p0
 .end method
 
-.method public static parseContentLength(Ljava/lang/String;)I
+.method private static parseContentLength(Ljava/lang/String;)I
     .locals 2
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -178,6 +207,11 @@
 # virtual methods
 .method public declared-synchronized available()I
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -221,6 +255,11 @@
 
 .method public declared-synchronized read()I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -260,6 +299,11 @@
 
 .method public read([B)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 4
     array-length v0, p1
@@ -275,6 +319,11 @@
 
 .method public declared-synchronized read([BII)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 

@@ -39,6 +39,8 @@
 
 .method private getInternalCacheDirectory()Ljava/io/File;
     .locals 3
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/cache/ExternalPreferredCacheDiskCacheFactory$1;->val$context:Landroid/content/Context;
@@ -60,11 +62,13 @@
     if-eqz v1, :cond_1
 
     .line 3
-    new-instance v2, Ljava/io/File;
+    new-instance v1, Ljava/io/File;
 
-    invoke-direct {v2, v0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/cache/ExternalPreferredCacheDiskCacheFactory$1;->val$diskCacheName:Ljava/lang/String;
 
-    return-object v2
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    return-object v1
 
     :cond_1
     return-object v0
@@ -117,11 +121,13 @@
     if-eqz v0, :cond_2
 
     .line 6
-    new-instance v2, Ljava/io/File;
+    new-instance v0, Ljava/io/File;
 
-    invoke-direct {v2, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/cache/ExternalPreferredCacheDiskCacheFactory$1;->val$diskCacheName:Ljava/lang/String;
 
-    return-object v2
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    return-object v0
 
     :cond_2
     return-object v1

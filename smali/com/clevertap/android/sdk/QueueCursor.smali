@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public data:Lorg/json/JSONArray;
+.field private data:Lorg/json/JSONArray;
 
-.field public lastId:Ljava/lang/String;
+.field private lastId:Ljava/lang/String;
 
-.field public tableName:Lcom/clevertap/android/sdk/DBAdapter$Table;
+.field private tableName:Lcom/clevertap/android/sdk/DBAdapter$Table;
 
 
 # direct methods
@@ -143,7 +143,7 @@
 
     move-result v0
 
-    const-string v1, "tableName: "
+    const-string/jumbo v1, "tableName: "
 
     if-eqz v0, :cond_0
 
@@ -205,6 +205,7 @@
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/QueueCursor;->data:Lorg/json/JSONArray;
 
+    .line 3
     invoke-virtual {v1}, Lorg/json/JSONArray;->toString()Ljava/lang/String;
 
     move-result-object v1

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final DEVNULL:Lcom/jcraft/jsch/Logger;
+.field private static final DEVNULL:Lcom/jcraft/jsch/Logger;
 
 .field public static final VERSION:Ljava/lang/String; = "0.1.51"
 
@@ -14,15 +14,15 @@
 
 
 # instance fields
-.field public configRepository:Lcom/jcraft/jsch/ConfigRepository;
+.field private configRepository:Lcom/jcraft/jsch/ConfigRepository;
 
-.field public defaultIdentityRepository:Lcom/jcraft/jsch/IdentityRepository;
+.field private defaultIdentityRepository:Lcom/jcraft/jsch/IdentityRepository;
 
-.field public identityRepository:Lcom/jcraft/jsch/IdentityRepository;
+.field private identityRepository:Lcom/jcraft/jsch/IdentityRepository;
 
-.field public known_hosts:Lcom/jcraft/jsch/HostKeyRepository;
+.field private known_hosts:Lcom/jcraft/jsch/HostKeyRepository;
 
-.field public sessionPool:Ljava/util/Vector;
+.field private sessionPool:Ljava/util/Vector;
 
 
 # direct methods
@@ -36,13 +36,11 @@
 
     sput-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    .line 2
-    sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
-
     const-string v1, "kex"
 
     const-string v2, "diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1"
 
+    .line 2
     invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
@@ -50,109 +48,109 @@
 
     const-string v1, "server_host_key"
 
-    const-string/jumbo v2, "ssh-rsa,ssh-dss"
+    const-string v2, "ssh-rsa,ssh-dss"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes128-ctr,aes128-cbc,3des-ctr,3des-cbc,blowfish-cbc,aes192-cbc,aes256-cbc"
+    const-string v1, "cipher.s2c"
 
-    const-string v2, "cipher.s2c"
+    const-string v2, "aes128-ctr,aes128-cbc,3des-ctr,3des-cbc,blowfish-cbc,aes192-cbc,aes256-cbc"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v2, "cipher.c2s"
+    const-string v1, "cipher.c2s"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "hmac-md5,hmac-sha1,hmac-sha2-256,hmac-sha1-96,hmac-md5-96"
+    const-string v1, "mac.s2c"
 
-    const-string v2, "mac.s2c"
+    const-string v2, "hmac-md5,hmac-sha1,hmac-sha2-256,hmac-sha1-96,hmac-md5-96"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v2, "mac.c2s"
+    const-string v1, "mac.c2s"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "none"
+    const-string v1, "compression.s2c"
 
-    const-string v2, "compression.s2c"
+    const-string v2, "none"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 9
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v2, "compression.c2s"
+    const-string v1, "compression.c2s"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 10
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v2, ""
+    const-string v1, "lang.s2c"
 
-    const-string v3, "lang.s2c"
+    const-string v3, ""
 
-    invoke-virtual {v0, v3, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 11
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v3, "lang.c2s"
+    const-string v1, "lang.c2s"
 
-    invoke-virtual {v0, v3, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 12
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v2, "6"
+    const-string v1, "compression_level"
 
-    const-string v3, "compression_level"
+    const-string v3, "6"
 
-    invoke-virtual {v0, v3, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 13
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v3, "diffie-hellman-group-exchange-sha1"
+    const-string v1, "diffie-hellman-group-exchange-sha1"
 
     const-string v4, "com.jcraft.jsch.DHGEX"
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v3, "diffie-hellman-group1-sha1"
+    const-string v1, "diffie-hellman-group1-sha1"
 
     const-string v4, "com.jcraft.jsch.DHG1"
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 15
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v3, "diffie-hellman-group14-sha1"
+    const-string v1, "diffie-hellman-group14-sha1"
 
     const-string v4, "com.jcraft.jsch.DHG14"
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 16
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
@@ -238,7 +236,7 @@
     .line 25
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v4, "sha-1"
+    const-string v4, "sha-1"
 
     const-string v5, "com.jcraft.jsch.jce.SHA1"
 
@@ -247,7 +245,7 @@
     .line 26
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v4, "sha-256"
+    const-string v4, "sha-256"
 
     const-string v5, "com.jcraft.jsch.jce.SHA256"
 
@@ -265,7 +263,7 @@
     .line 28
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v4, "signature.dss"
+    const-string v4, "signature.dss"
 
     const-string v5, "com.jcraft.jsch.jce.SignatureDSA"
 
@@ -274,7 +272,7 @@
     .line 29
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v4, "signature.rsa"
+    const-string v4, "signature.rsa"
 
     const-string v5, "com.jcraft.jsch.jce.SignatureRSA"
 
@@ -312,233 +310,233 @@
 
     const-string v4, "com.jcraft.jsch.CipherNone"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 34
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes128-cbc"
+    const-string v2, "aes128-cbc"
 
     const-string v4, "com.jcraft.jsch.jce.AES128CBC"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 35
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes192-cbc"
+    const-string v2, "aes192-cbc"
 
     const-string v4, "com.jcraft.jsch.jce.AES192CBC"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 36
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes256-cbc"
+    const-string v2, "aes256-cbc"
 
     const-string v4, "com.jcraft.jsch.jce.AES256CBC"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 37
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes128-ctr"
+    const-string v2, "aes128-ctr"
 
     const-string v4, "com.jcraft.jsch.jce.AES128CTR"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 38
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes192-ctr"
+    const-string v2, "aes192-ctr"
 
     const-string v4, "com.jcraft.jsch.jce.AES192CTR"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 39
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "aes256-ctr"
+    const-string v2, "aes256-ctr"
 
     const-string v4, "com.jcraft.jsch.jce.AES256CTR"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 40
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "3des-ctr"
+    const-string v2, "3des-ctr"
 
     const-string v4, "com.jcraft.jsch.jce.TripleDESCTR"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 41
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "arcfour"
+    const-string v2, "arcfour"
 
     const-string v4, "com.jcraft.jsch.jce.ARCFOUR"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 42
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "arcfour128"
+    const-string v2, "arcfour128"
 
     const-string v4, "com.jcraft.jsch.jce.ARCFOUR128"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 43
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "arcfour256"
+    const-string v2, "arcfour256"
 
     const-string v4, "com.jcraft.jsch.jce.ARCFOUR256"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 44
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v1, "userauth.none"
+    const-string v2, "userauth.none"
 
     const-string v4, "com.jcraft.jsch.UserAuthNone"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 45
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v1, "userauth.password"
+    const-string v2, "userauth.password"
 
     const-string v4, "com.jcraft.jsch.UserAuthPassword"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 46
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v1, "userauth.keyboard-interactive"
+    const-string v2, "userauth.keyboard-interactive"
 
     const-string v4, "com.jcraft.jsch.UserAuthKeyboardInteractive"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 47
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v1, "userauth.publickey"
+    const-string v2, "userauth.publickey"
 
     const-string v4, "com.jcraft.jsch.UserAuthPublicKey"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 48
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v1, "userauth.gssapi-with-mic"
+    const-string v2, "userauth.gssapi-with-mic"
 
     const-string v4, "com.jcraft.jsch.UserAuthGSSAPIWithMIC"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 49
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "gssapi-with-mic.krb5"
+    const-string v2, "gssapi-with-mic.krb5"
 
     const-string v4, "com.jcraft.jsch.jgss.GSSContextKrb5"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 50
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "com.jcraft.jsch.jcraft.Compression"
+    const-string v2, "zlib"
 
-    const-string/jumbo v4, "zlib"
+    const-string v4, "com.jcraft.jsch.jcraft.Compression"
 
-    invoke-virtual {v0, v4, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 51
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string/jumbo v4, "zlib@openssh.com"
+    const-string v2, "zlib@openssh.com"
 
-    invoke-virtual {v0, v4, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 52
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "pbkdf"
+    const-string v2, "pbkdf"
 
     const-string v4, "com.jcraft.jsch.jce.PBKDF"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 53
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "StrictHostKeyChecking"
+    const-string v2, "StrictHostKeyChecking"
 
     const-string v4, "ask"
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 54
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v1, "no"
+    const-string v2, "HashKnownHosts"
 
-    const-string v4, "HashKnownHosts"
+    const-string v4, "no"
 
-    invoke-virtual {v0, v4, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 55
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v4, "PreferredAuthentications"
+    const-string v2, "PreferredAuthentications"
 
     const-string v5, "gssapi-with-mic,publickey,keyboard-interactive,password"
 
-    invoke-virtual {v0, v4, v5}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v5}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 56
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v4, "CheckCiphers"
+    const-string v2, "CheckCiphers"
 
     const-string v5, "aes256-ctr,aes192-ctr,aes128-ctr,aes256-cbc,aes192-cbc,aes128-cbc,3des-ctr,arcfour,arcfour128,arcfour256"
 
-    invoke-virtual {v0, v4, v5}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v5}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 57
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v4, "CheckKexes"
+    const-string v2, "CheckKexes"
 
-    invoke-virtual {v0, v4, v3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 58
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v3, "MaxAuthTries"
+    const-string v1, "MaxAuthTries"
 
-    invoke-virtual {v0, v3, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 59
     sget-object v0, Lcom/jcraft/jsch/JSch;->config:Ljava/util/Hashtable;
 
-    const-string v2, "ClearAllForwardings"
+    const-string v1, "ClearAllForwardings"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 60
     new-instance v0, Lcom/jcraft/jsch/JSch$1;
@@ -548,8 +546,6 @@
     sput-object v0, Lcom/jcraft/jsch/JSch;->DEVNULL:Lcom/jcraft/jsch/Logger;
 
     .line 61
-    sget-object v0, Lcom/jcraft/jsch/JSch;->DEVNULL:Lcom/jcraft/jsch/Logger;
-
     sput-object v0, Lcom/jcraft/jsch/JSch;->logger:Lcom/jcraft/jsch/Logger;
 
     return-void
@@ -576,8 +572,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/JSch;->defaultIdentityRepository:Lcom/jcraft/jsch/IdentityRepository;
 
     .line 4
-    iget-object v0, p0, Lcom/jcraft/jsch/JSch;->defaultIdentityRepository:Lcom/jcraft/jsch/IdentityRepository;
-
     iput-object v0, p0, Lcom/jcraft/jsch/JSch;->identityRepository:Lcom/jcraft/jsch/IdentityRepository;
 
     const/4 v0, 0x0
@@ -720,6 +714,11 @@
 # virtual methods
 .method public addIdentity(Lcom/jcraft/jsch/Identity;[B)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 
@@ -817,18 +816,16 @@
     :try_start_2
     iget-object p2, p0, Lcom/jcraft/jsch/JSch;->identityRepository:Lcom/jcraft/jsch/IdentityRepository;
 
-    instance-of p2, p2, Lcom/jcraft/jsch/IdentityRepository$Wrapper;
+    instance-of v0, p2, Lcom/jcraft/jsch/IdentityRepository$Wrapper;
 
-    if-nez p2, :cond_3
+    if-nez v0, :cond_3
 
     .line 21
-    new-instance p2, Lcom/jcraft/jsch/IdentityRepository$Wrapper;
+    new-instance v0, Lcom/jcraft/jsch/IdentityRepository$Wrapper;
 
-    iget-object v0, p0, Lcom/jcraft/jsch/JSch;->identityRepository:Lcom/jcraft/jsch/IdentityRepository;
+    invoke-direct {v0, p2}, Lcom/jcraft/jsch/IdentityRepository$Wrapper;-><init>(Lcom/jcraft/jsch/IdentityRepository;)V
 
-    invoke-direct {p2, v0}, Lcom/jcraft/jsch/IdentityRepository$Wrapper;-><init>(Lcom/jcraft/jsch/IdentityRepository;)V
-
-    invoke-virtual {p0, p2}, Lcom/jcraft/jsch/JSch;->setIdentityRepository(Lcom/jcraft/jsch/IdentityRepository;)V
+    invoke-virtual {p0, v0}, Lcom/jcraft/jsch/JSch;->setIdentityRepository(Lcom/jcraft/jsch/IdentityRepository;)V
 
     .line 22
     :cond_3
@@ -860,6 +857,11 @@
 
 .method public addIdentity(Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -871,6 +873,11 @@
 
 .method public addIdentity(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 
@@ -899,6 +906,11 @@
 
 .method public addIdentity(Ljava/lang/String;Ljava/lang/String;[B)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 7
     invoke-static {p1, p2, p0}, Lcom/jcraft/jsch/IdentityFile;->newInstance(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/JSch;)Lcom/jcraft/jsch/IdentityFile;
@@ -913,6 +925,11 @@
 
 .method public addIdentity(Ljava/lang/String;[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -929,6 +946,11 @@
 
 .method public addIdentity(Ljava/lang/String;[B[B[B)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 9
     invoke-static {p1, p2, p3, p0}, Lcom/jcraft/jsch/IdentityFile;->newInstance(Ljava/lang/String;[B[BLcom/jcraft/jsch/JSch;)Lcom/jcraft/jsch/IdentityFile;
@@ -1002,6 +1024,11 @@
 
 .method public getIdentityNames()Ljava/util/Vector;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/util/Vector;
@@ -1072,6 +1099,11 @@
 
 .method public getSession(Ljava/lang/String;)Lcom/jcraft/jsch/Session;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -1087,6 +1119,11 @@
 
 .method public getSession(Ljava/lang/String;Ljava/lang/String;)Lcom/jcraft/jsch/Session;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/16 v0, 0x16
 
@@ -1100,6 +1137,11 @@
 
 .method public getSession(Ljava/lang/String;Ljava/lang/String;I)Lcom/jcraft/jsch/Session;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 
@@ -1123,6 +1165,11 @@
 
 .method public removeAllIdentity()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/JSch;->identityRepository:Lcom/jcraft/jsch/IdentityRepository;
@@ -1134,6 +1181,11 @@
 
 .method public removeIdentity(Lcom/jcraft/jsch/Identity;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 8
     iget-object v0, p0, Lcom/jcraft/jsch/JSch;->identityRepository:Lcom/jcraft/jsch/IdentityRepository;
@@ -1149,6 +1201,11 @@
 
 .method public removeIdentity(Ljava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/JSch;->identityRepository:Lcom/jcraft/jsch/IdentityRepository;
@@ -1305,6 +1362,11 @@
 
 .method public setKnownHosts(Ljava/io/InputStream;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 6
     iget-object v0, p0, Lcom/jcraft/jsch/JSch;->known_hosts:Lcom/jcraft/jsch/HostKeyRepository;
@@ -1357,6 +1419,11 @@
 
 .method public setKnownHosts(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/JSch;->known_hosts:Lcom/jcraft/jsch/HostKeyRepository;

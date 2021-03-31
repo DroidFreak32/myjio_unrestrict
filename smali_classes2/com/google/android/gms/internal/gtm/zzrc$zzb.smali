@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field public final zzban:Lcom/google/android/gms/internal/gtm/zzrc;
+.field private final zzban:Lcom/google/android/gms/internal/gtm/zzrc;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -55,6 +55,11 @@
 # virtual methods
 .method public final synthetic zza(Lcom/google/android/gms/internal/gtm/zzqe;Lcom/google/android/gms/internal/gtm/zzqp;)Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzrc$zzb;->zzban:Lcom/google/android/gms/internal/gtm/zzrc;

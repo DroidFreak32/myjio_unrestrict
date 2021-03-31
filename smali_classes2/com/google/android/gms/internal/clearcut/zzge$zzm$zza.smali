@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-static {}, Lcom/google/android/gms/internal/clearcut/zzge$zzm;->zzff()Lcom/google/android/gms/internal/clearcut/zzge$zzm;

@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public s:Landroid/graphics/Paint;
+.field public a:Landroid/graphics/Paint;
 
-.field public t:F
+.field public b:F
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object p2, p0, Lcom/jiny/android/ui/custom/RippleView;->s:Landroid/graphics/Paint;
+    iput-object p2, p0, Lcom/jiny/android/ui/custom/RippleView;->a:Landroid/graphics/Paint;
 
     return-void
 .end method
@@ -24,7 +24,7 @@
 .method public getRadius()F
     .locals 1
 
-    iget v0, p0, Lcom/jiny/android/ui/custom/RippleView;->t:F
+    iget v0, p0, Lcom/jiny/android/ui/custom/RippleView;->b:F
 
     return v0
 .end method
@@ -48,9 +48,9 @@
 
     int-to-float v1, v1
 
-    iget v2, p0, Lcom/jiny/android/ui/custom/RippleView;->t:F
+    iget v2, p0, Lcom/jiny/android/ui/custom/RippleView;->b:F
 
-    iget-object v3, p0, Lcom/jiny/android/ui/custom/RippleView;->s:Landroid/graphics/Paint;
+    iget-object v3, p0, Lcom/jiny/android/ui/custom/RippleView;->a:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
@@ -62,7 +62,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleView;->t:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleView;->b:F
 
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 

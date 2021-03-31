@@ -19,9 +19,9 @@
 
 .field public g:Ljava/math/BigInteger;
 
-.field public myKeyAgree:Ljavax/crypto/KeyAgreement;
+.field private myKeyAgree:Ljavax/crypto/KeyAgreement;
 
-.field public myKpairGen:Ljava/security/KeyPairGenerator;
+.field private myKpairGen:Ljava/security/KeyPairGenerator;
 
 .field public p:Ljava/math/BigInteger;
 
@@ -40,6 +40,11 @@
 # virtual methods
 .method public getE()[B
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/DH;->e:Ljava/math/BigInteger;
@@ -97,8 +102,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/jce/DH;->e:Ljava/math/BigInteger;
 
     .line 8
-    iget-object v0, p0, Lcom/jcraft/jsch/jce/DH;->e:Ljava/math/BigInteger;
-
     invoke-virtual {v0}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v0
@@ -114,6 +117,11 @@
 
 .method public getK()[B
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/DH;->K:Ljava/math/BigInteger;
@@ -165,8 +173,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/jce/DH;->K:Ljava/math/BigInteger;
 
     .line 8
-    iget-object v1, p0, Lcom/jcraft/jsch/jce/DH;->K:Ljava/math/BigInteger;
-
     invoke-virtual {v1}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v1
@@ -185,6 +191,11 @@
 
 .method public init()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const-string v0, "DH"
 

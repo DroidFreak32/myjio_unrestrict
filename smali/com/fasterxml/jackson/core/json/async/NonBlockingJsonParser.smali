@@ -9,7 +9,7 @@
 # static fields
 .field public static final _icLatin1:[I
 
-.field public static final _icUTF8:[I
+.field private static final _icUTF8:[I
 
 
 # instance fields
@@ -55,6 +55,11 @@
 
 .method private final _decodeCharEscape()I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputEnd:I
@@ -89,6 +94,11 @@
 
 .method private final _decodeFastCharEscape()I
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
@@ -101,41 +111,41 @@
 
     aget-byte v1, v0, v1
 
-    const/16 v2, 0x22
+    const/16 v3, 0x22
 
-    if-eq v1, v2, :cond_8
+    if-eq v1, v3, :cond_8
 
-    const/16 v2, 0x2f
+    const/16 v3, 0x2f
 
-    if-eq v1, v2, :cond_8
+    if-eq v1, v3, :cond_8
 
-    const/16 v2, 0x5c
+    const/16 v3, 0x5c
 
-    if-eq v1, v2, :cond_8
+    if-eq v1, v3, :cond_8
 
-    const/16 v2, 0x62
+    const/16 v3, 0x62
 
-    if-eq v1, v2, :cond_7
+    if-eq v1, v3, :cond_7
 
-    const/16 v2, 0x66
+    const/16 v3, 0x66
 
-    if-eq v1, v2, :cond_6
+    if-eq v1, v3, :cond_6
 
-    const/16 v2, 0x6e
+    const/16 v3, 0x6e
 
-    if-eq v1, v2, :cond_5
+    if-eq v1, v3, :cond_5
 
-    const/16 v2, 0x72
+    const/16 v3, 0x72
 
-    if-eq v1, v2, :cond_4
+    if-eq v1, v3, :cond_4
 
-    const/16 v2, 0x74
+    const/16 v3, 0x74
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v3, :cond_3
 
-    const/16 v2, 0x75
+    const/16 v3, 0x75
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v3, :cond_0
 
     int-to-char v0, v1
 
@@ -146,15 +156,13 @@
 
     return v0
 
-    .line 3
     :cond_0
-    iget v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    add-int/lit8 v1, v2, 0x1
 
-    add-int/lit8 v2, v1, 0x1
+    .line 3
+    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
-    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    aget-byte v0, v0, v1
+    aget-byte v0, v0, v2
 
     .line 4
     invoke-static {v0}, Lcom/fasterxml/jackson/core/io/CharTypes;->charToHex(I)I
@@ -278,7 +286,12 @@
 .end method
 
 .method private _decodeSplitEscaped(II)I
-    .locals 5
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -307,7 +320,7 @@
 
     aget-byte v0, v3, v0
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     if-ne p2, v2, :cond_9
 
@@ -356,27 +369,24 @@
 
     return p1
 
-    .line 6
     :cond_1
-    iget p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    if-lt v4, v1, :cond_2
 
-    if-lt p2, v1, :cond_2
+    .line 6
+    iput v5, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quotedDigits:I
 
     .line 7
-    iput v4, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quotedDigits:I
-
-    .line 8
-    iput v4, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quoted32:I
+    iput v5, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quoted32:I
 
     return v2
 
     :cond_2
-    add-int/lit8 v0, p2, 0x1
+    add-int/lit8 p2, v4, 0x1
 
-    .line 9
-    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    .line 8
+    iput p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
-    aget-byte v0, v3, p2
+    aget-byte v0, v3, v4
 
     const/4 p2, 0x0
 
@@ -414,7 +424,7 @@
     :goto_0
     and-int/lit16 v0, v0, 0xff
 
-    .line 10
+    .line 9
     invoke-static {v0}, Lcom/fasterxml/jackson/core/io/CharTypes;->charToHex(I)I
 
     move-result v1
@@ -423,7 +433,7 @@
 
     const-string v3, "expected a hex-digit for character escape sequence"
 
-    .line 11
+    .line 10
     invoke-virtual {p0, v0, v3}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_reportUnexpectedChar(ILjava/lang/String;)V
 
     :cond_a
@@ -439,7 +449,7 @@
 
     return p1
 
-    .line 12
+    .line 11
     :cond_b
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
@@ -447,15 +457,15 @@
 
     if-lt v0, v1, :cond_c
 
-    .line 13
+    .line 12
     iput p2, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quotedDigits:I
 
-    .line 14
+    .line 13
     iput p1, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quoted32:I
 
     return v2
 
-    .line 15
+    .line 14
     :cond_c
     iget-object v1, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
 
@@ -470,6 +480,11 @@
 
 .method private final _decodeSplitMultiByte(IIZ)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -493,7 +508,7 @@
 
     if-ge p1, p2, :cond_0
 
-    const-string p2, "string value"
+    const-string/jumbo p2, "string value"
 
     .line 1
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_throwUnquotedSpace(ILjava/lang/String;)V
@@ -654,6 +669,11 @@
 
 .method private final _decodeSplitUTF8_3(III)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x80
 
@@ -744,6 +764,11 @@
 
 .method private final _decodeSplitUTF8_4(III)Z
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -910,6 +935,11 @@
 
 .method private final _decodeUTF8_2(II)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     and-int/lit16 v0, p2, 0xc0
 
@@ -938,6 +968,11 @@
 
 .method private final _decodeUTF8_3(III)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     and-int/lit8 p1, p1, 0xf
 
@@ -984,6 +1019,11 @@
 
 .method private final _decodeUTF8_4(IIII)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     and-int/lit16 v0, p2, 0xc0
 
@@ -1052,6 +1092,11 @@
 
 .method private final _fastParseName()Ljava/lang/String;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
@@ -1236,6 +1281,11 @@
 
 .method private _finishAposName(III)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quadBuffer:[I
@@ -1462,7 +1512,7 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_a
     shl-int/lit8 p2, p2, 0x8
@@ -1501,12 +1551,15 @@
 
     move p1, p3
 
-    const/4 p2, 0x0
-
     const/4 p3, 0x0
 
+    goto :goto_3
+
     :cond_c
-    shl-int/2addr p2, v7
+    move v3, p2
+
+    :goto_3
+    shl-int/lit8 p2, v3, 0x8
 
     shr-int/lit8 v3, v2, 0x6
 
@@ -1518,7 +1571,7 @@
 
     add-int/2addr p3, v6
 
-    :goto_3
+    :goto_4
     and-int/lit8 v2, v2, 0x3f
 
     or-int/lit16 v2, v2, 0x80
@@ -1566,6 +1619,11 @@
 
 .method private final _finishAposString()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_icUTF8:[I
@@ -1691,13 +1749,10 @@
 
     if-ge v9, v3, :cond_3
 
-    goto :goto_2
+    const/4 v8, 0x1
 
     :cond_3
-    const/4 v6, 0x0
-
-    :goto_2
-    invoke-direct {p0, v4, v2, v6}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_decodeSplitMultiByte(IIZ)Z
+    invoke-direct {p0, v4, v2, v8}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_decodeSplitMultiByte(IIZ)Z
 
     move-result v2
 
@@ -1755,18 +1810,18 @@
 
     if-ge v4, v6, :cond_6
 
-    const-string v6, "string value"
+    const-string/jumbo v6, "string value"
 
     .line 26
     invoke-virtual {p0, v4, v6}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_throwUnquotedSpace(ILjava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 27
     :cond_6
     invoke-virtual {p0, v4}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_reportInvalidChar(I)V
 
-    :goto_3
+    :goto_2
     move v6, v9
 
     goto :goto_4
@@ -1816,16 +1871,19 @@
 
     move-result-object v2
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
+
+    goto :goto_3
 
     :cond_8
-    const v3, 0xdc00
+    move v3, v6
+
+    :goto_3
+    const v6, 0xdc00
 
     and-int/lit16 v4, v4, 0x3ff
 
-    or-int/2addr v4, v3
-
-    move v3, v6
+    or-int/2addr v4, v6
 
     move v6, v11
 
@@ -1892,19 +1950,20 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    goto :goto_5
 
     :cond_c
-    add-int/lit8 v7, v3, 0x1
+    move v8, v3
+
+    :goto_5
+    add-int/lit8 v3, v8, 0x1
 
     int-to-char v4, v4
 
     .line 39
-    aput-char v4, v2, v3
+    aput-char v4, v2, v8
 
     move v4, v6
-
-    move v3, v7
 
     goto/16 :goto_0
 
@@ -1947,6 +2006,11 @@
 
 .method private final _finishBOM(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0
@@ -2051,6 +2115,11 @@
 
 .method private final _finishCComment(IZ)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -2113,9 +2182,7 @@
     iput p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRow:I
 
     .line 7
-    iget p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    iput p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
+    iput v3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
 
     goto :goto_2
 
@@ -2132,9 +2199,7 @@
     iput p2, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_currInputRowAlt:I
 
     .line 9
-    iget p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    iput p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
+    iput v3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
 
     goto :goto_2
 
@@ -2180,6 +2245,11 @@
 
 .method private final _finishCppComment(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :cond_0
@@ -2233,9 +2303,7 @@
     iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRow:I
 
     .line 7
-    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
 
     goto :goto_1
 
@@ -2252,9 +2320,7 @@
     iput v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_currInputRowAlt:I
 
     .line 9
-    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
 
     .line 10
     :goto_1
@@ -2277,6 +2343,11 @@
 
 .method private final _finishHashComment(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$Feature;->ALLOW_YAML_COMMENTS:Lcom/fasterxml/jackson/core/JsonParser$Feature;
@@ -2348,9 +2419,7 @@
     iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRow:I
 
     .line 9
-    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
 
     goto :goto_1
 
@@ -2367,9 +2436,7 @@
     iput v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_currInputRowAlt:I
 
     .line 11
-    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currInputRowStart:I
 
     .line 12
     :goto_1
@@ -2392,6 +2459,11 @@
 
 .method private final _finishRegularString()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_icUTF8:[I
@@ -2535,13 +2607,10 @@
 
     if-ge v9, v3, :cond_4
 
-    goto :goto_2
+    const/4 v8, 0x1
 
     :cond_4
-    const/4 v6, 0x0
-
-    :goto_2
-    invoke-direct {p0, v4, v2, v6}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_decodeSplitMultiByte(IIZ)Z
+    invoke-direct {p0, v4, v2, v8}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_decodeSplitMultiByte(IIZ)Z
 
     move-result v2
 
@@ -2599,18 +2668,18 @@
 
     if-ge v4, v6, :cond_7
 
-    const-string v6, "string value"
+    const-string/jumbo v6, "string value"
 
     .line 29
     invoke-virtual {p0, v4, v6}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_throwUnquotedSpace(ILjava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 30
     :cond_7
     invoke-virtual {p0, v4}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_reportInvalidChar(I)V
 
-    :goto_3
+    :goto_2
     move v6, v9
 
     goto :goto_4
@@ -2660,16 +2729,19 @@
 
     move-result-object v2
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
+
+    goto :goto_3
 
     :cond_9
-    const v3, 0xdc00
+    move v3, v6
+
+    :goto_3
+    const v6, 0xdc00
 
     and-int/lit16 v4, v4, 0x3ff
 
-    or-int/2addr v4, v3
-
-    move v3, v6
+    or-int/2addr v4, v6
 
     move v6, v11
 
@@ -2736,19 +2808,20 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    goto :goto_5
 
     :cond_d
-    add-int/lit8 v7, v3, 0x1
+    move v8, v3
+
+    :goto_5
+    add-int/lit8 v3, v8, 0x1
 
     int-to-char v4, v4
 
     .line 42
-    aput-char v4, v2, v3
+    aput-char v4, v2, v8
 
     move v4, v6
-
-    move v3, v7
 
     goto/16 :goto_0
 
@@ -2769,6 +2842,11 @@
 
 .method private _finishUnquotedName(III)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quadBuffer:[I
@@ -2919,6 +2997,11 @@
 
 .method private _handleOddName(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x23
 
@@ -3007,7 +3090,7 @@
 
     int-to-char v0, p1
 
-    const-string v1, "was expecting double-quote to start field name"
+    const-string/jumbo v1, "was expecting double-quote to start field name"
 
     .line 8
     invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_reportUnexpectedChar(ILjava/lang/String;)V
@@ -3023,7 +3106,7 @@
 
     if-eqz v0, :cond_6
 
-    const-string v0, "was expecting either valid name character (for unquoted name) or double-quote (for quoted) to start field name"
+    const-string/jumbo v0, "was expecting either valid name character (for unquoted name) or double-quote (for quoted) to start field name"
 
     .line 11
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_reportUnexpectedChar(ILjava/lang/String;)V
@@ -3041,6 +3124,11 @@
 
 .method private final _parseEscapedName(III)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quadBuffer:[I
@@ -3307,7 +3395,7 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_d
     shl-int/lit8 p2, p2, 0x8
@@ -3329,12 +3417,15 @@
 
     move p1, p3
 
-    const/4 p2, 0x0
-
     const/4 p3, 0x0
 
+    goto :goto_5
+
     :cond_e
-    shl-int/2addr p2, v7
+    move v4, p2
+
+    :goto_5
+    shl-int/lit8 p2, v4, 0x8
 
     shr-int/lit8 v4, v3, 0x6
 
@@ -3346,7 +3437,7 @@
 
     add-int/2addr p3, v2
 
-    :goto_5
+    :goto_6
     and-int/lit8 v3, v3, 0x3f
 
     or-int/lit16 v3, v3, 0x80
@@ -3367,6 +3458,11 @@
 
 .method private final _parseMediumName(II)Ljava/lang/String;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
@@ -3528,6 +3624,11 @@
 
 .method private final _parseMediumName2(III)Ljava/lang/String;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
@@ -3676,6 +3777,11 @@
 
 .method private final _skipWS(I)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     :cond_0
     const/16 v0, 0x20
@@ -3764,6 +3870,11 @@
 
 .method private final _startAfterComment(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -3872,6 +3983,11 @@
 
 .method private final _startDocument(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     and-int/lit16 p1, p1, 0xff
 
@@ -4013,6 +4129,11 @@
 
 .method private final _startFieldName(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x20
 
@@ -4099,6 +4220,11 @@
 
 .method private final _startFieldNameAfterComma(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x20
 
@@ -4167,7 +4293,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "was expecting comma to separate "
+    const-string/jumbo v2, "was expecting comma to separate "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4311,6 +4437,11 @@
 
 .method private final _startSlashComment(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$Feature;->ALLOW_COMMENTS:Lcom/fasterxml/jackson/core/JsonParser$Feature;
@@ -4389,7 +4520,7 @@
     :cond_3
     and-int/lit16 p1, v0, 0xff
 
-    const-string v0, "was expecting either \'*\' or \'/\' for a comment"
+    const-string/jumbo v0, "was expecting either \'*\' or \'/\' for a comment"
 
     .line 10
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_reportUnexpectedChar(ILjava/lang/String;)V
@@ -4401,6 +4532,11 @@
 
 .method private final _startValue(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0xc
 
@@ -4600,6 +4736,11 @@
 
 .method private final _startValueAfterComma(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0xf
 
@@ -4823,6 +4964,11 @@
 
 .method private final _startValueExpectColon(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x20
 
@@ -4874,7 +5020,7 @@
     return-object p1
 
     :cond_2
-    const-string v1, "was expecting a colon to separate field name and value"
+    const-string/jumbo v1, "was expecting a colon to separate field name and value"
 
     .line 6
     invoke-virtual {p0, p1, v1}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_reportUnexpectedChar(ILjava/lang/String;)V
@@ -5061,8 +5207,6 @@
 
     return-object p1
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x2f
         :pswitch_2
@@ -5081,6 +5225,11 @@
 
 .method private final _startValueExpectComma(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x20
 
@@ -5161,7 +5310,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "was expecting comma to separate "
+    const-string/jumbo v2, "was expecting comma to separate "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5407,8 +5556,6 @@
 
     return-object p1
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x2f
         :pswitch_2
@@ -5429,6 +5576,11 @@
 # virtual methods
 .method public _decodeEscaped()C
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Lcom/fasterxml/jackson/core/util/VersionUtil;->throwInternal()V
@@ -5440,6 +5592,11 @@
 
 .method public _finishErrorToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0
@@ -5510,6 +5667,11 @@
 
 .method public _finishErrorTokenWithEOF()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
@@ -5527,6 +5689,11 @@
 
 .method public final _finishFieldWithEscape()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_quoted32:I
@@ -5618,7 +5785,7 @@
 
     add-int/2addr v3, v6
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     shl-int/2addr v2, v1
@@ -5644,12 +5811,15 @@
 
     aput v2, v3, v7
 
-    const/4 v2, 0x0
-
     const/4 v3, 0x0
 
+    goto :goto_1
+
     :cond_4
-    shl-int/2addr v2, v1
+    move v4, v2
+
+    :goto_1
+    shl-int/lit8 v2, v4, 0x8
 
     shr-int/lit8 v4, v0, 0x6
 
@@ -5659,7 +5829,7 @@
 
     goto :goto_0
 
-    :goto_1
+    :goto_2
     and-int/lit8 v0, v0, 0x3f
 
     or-int/lit16 v0, v0, 0x80
@@ -5673,7 +5843,7 @@
 
     or-int/2addr v0, v1
 
-    goto :goto_2
+    goto :goto_3
 
     .line 10
     :cond_6
@@ -5688,7 +5858,7 @@
     aput v2, v1, v3
 
     .line 11
-    :goto_2
+    :goto_3
     iget v1, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_minorStateAfterSplit:I
 
     const/16 v2, 0x9
@@ -5717,6 +5887,11 @@
 
 .method public _finishFloatExponent(ZI)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_2
 
@@ -5892,6 +6067,11 @@
 
 .method public _finishFloatFraction()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_fractLength:I
@@ -6088,6 +6268,11 @@
 
 .method public _finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -6183,6 +6368,11 @@
 
 .method public _finishKeywordTokenWithEOF(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -6214,6 +6404,11 @@
 
 .method public _finishNonStdToken(II)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_nonStdToken(I)Ljava/lang/String;
@@ -6322,6 +6517,11 @@
 
 .method public _finishNonStdTokenWithEOF(II)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_nonStdToken(I)Ljava/lang/String;
@@ -6360,6 +6560,11 @@
 
 .method public _finishNumberIntegralPart([CI)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
@@ -6436,13 +6641,13 @@
 
     if-le v2, v3, :cond_5
 
-    const/16 v1, 0x65
+    const/16 v3, 0x65
 
-    if-eq v2, v1, :cond_4
+    if-eq v2, v3, :cond_4
 
-    const/16 v1, 0x45
+    const/16 v3, 0x45
 
-    if-ne v2, v1, :cond_3
+    if-ne v2, v3, :cond_3
 
     goto :goto_1
 
@@ -6473,12 +6678,10 @@
     .line 13
     iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_intLength:I
 
+    add-int/lit8 v1, v1, 0x1
+
     .line 14
-    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
     .line 15
     invoke-virtual {p0, p1, p2, v2}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_startFloat([CII)Lcom/fasterxml/jackson/core/JsonToken;
@@ -6520,6 +6723,11 @@
 
 .method public _finishNumberLeadingNegZeroes()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0
@@ -6712,6 +6920,11 @@
 
 .method public _finishNumberLeadingZeroes()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0
@@ -6891,6 +7104,11 @@
 
 .method public _finishNumberMinus(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-string v0, "expected digit (0-9) to follow minus sign, for valid numeric value"
 
@@ -6973,6 +7191,11 @@
 
 .method public final _finishToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_minorState:I
@@ -7407,7 +7630,7 @@
 
     sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_TRUE:Lcom/fasterxml/jackson/core/JsonToken;
 
-    const-string v2, "true"
+    const-string/jumbo v2, "true"
 
     invoke-virtual {p0, v2, v0, v1}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
 
@@ -7609,6 +7832,8 @@
 
     return-object v0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x7
         :pswitch_1e
@@ -7667,6 +7892,11 @@
 
 .method public final _finishTokenWithEOF()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
@@ -7831,7 +8061,7 @@
 
     sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_TRUE:Lcom/fasterxml/jackson/core/JsonToken;
 
-    const-string v2, "true"
+    const-string/jumbo v2, "true"
 
     invoke-virtual {p0, v2, v0, v1}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordTokenWithEOF(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
 
@@ -7877,8 +8107,6 @@
 
     return-object v0
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x10
         :pswitch_a
@@ -7912,6 +8140,11 @@
 
 .method public _reportErrorToken(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
@@ -7934,6 +8167,11 @@
 
 .method public _startAposString()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -8037,6 +8275,11 @@
 
 .method public _startFalseToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -8123,11 +8366,11 @@
     .line 9
     sget-object v0, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_FALSE:Lcom/fasterxml/jackson/core/JsonToken;
 
-    const/4 v1, 0x1
+    const-string v1, "false"
 
-    const-string v2, "false"
+    const/4 v2, 0x1
 
-    invoke-virtual {p0, v2, v1, v0}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
+    invoke-virtual {p0, v1, v2, v0}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
 
     move-result-object v0
 
@@ -8135,7 +8378,12 @@
 .end method
 
 .method public _startFloat([CII)Lcom/fasterxml/jackson/core/JsonToken;
-    .locals 7
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x39
 
@@ -8145,7 +8393,7 @@
 
     const/4 v3, 0x0
 
-    if-ne p3, v2, :cond_6
+    if-ne p3, v2, :cond_5
 
     .line 1
     array-length p3, p1
@@ -8167,9 +8415,7 @@
 
     move p2, p3
 
-    move-object p3, p1
-
-    const/4 p1, 0x0
+    const/4 p3, 0x0
 
     .line 4
     :goto_0
@@ -8180,17 +8426,17 @@
     if-lt v2, v4, :cond_1
 
     .line 5
-    iget-object p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {p3, p2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
+    invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
 
-    const/16 p2, 0x1e
+    const/16 p1, 0x1e
 
     .line 6
-    iput p2, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_minorState:I
+    iput p1, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_minorState:I
 
     .line 7
-    iput p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_fractLength:I
+    iput p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_fractLength:I
 
     .line 8
     sget-object p1, Lcom/fasterxml/jackson/core/JsonToken;->NOT_AVAILABLE:Lcom/fasterxml/jackson/core/JsonToken;
@@ -8217,16 +8463,16 @@
 
     .line 10
     :cond_2
-    array-length v4, p3
+    array-length v4, p1
 
     if-lt p2, v4, :cond_3
 
     .line 11
-    iget-object p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {p3}, Lcom/fasterxml/jackson/core/util/TextBuffer;->expandCurrentSegment()[C
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->expandCurrentSegment()[C
 
-    move-result-object p3
+    move-result-object p1
 
     :cond_3
     add-int/lit8 v4, p2, 0x1
@@ -8234,9 +8480,9 @@
     int-to-char v2, v2
 
     .line 12
-    aput-char v2, p3, p2
+    aput-char v2, p1, p2
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 p3, p3, 0x1
 
     move p2, v4
 
@@ -8246,75 +8492,65 @@
     :goto_1
     and-int/lit16 v2, v2, 0xff
 
-    if-nez p1, :cond_5
+    if-nez p3, :cond_6
 
     const-string v4, "Decimal point not followed by a digit"
 
     .line 13
     invoke-virtual {p0, v2, v4}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->reportUnexpectedNumberChar(ILjava/lang/String;)V
 
-    :cond_5
-    move v6, v2
-
-    move v2, p2
-
-    move-object p2, p3
-
-    move p3, v6
-
     goto :goto_2
 
-    :cond_6
-    move v2, p2
+    :cond_5
+    move v2, p3
 
-    move-object p2, p1
-
-    const/4 p1, 0x0
+    const/4 p3, 0x0
 
     .line 14
+    :cond_6
     :goto_2
-    iput p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_fractLength:I
+    iput p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_fractLength:I
 
-    const/16 p1, 0x65
+    const/16 p3, 0x65
 
-    if-eq p3, p1, :cond_7
+    if-eq v2, p3, :cond_7
 
-    const/16 p1, 0x45
+    const/16 p3, 0x45
 
-    if-ne p3, p1, :cond_11
+    if-ne v2, p3, :cond_12
 
     .line 15
     :cond_7
-    array-length p1, p2
+    array-length p3, p1
 
-    if-lt v2, p1, :cond_8
+    if-lt p2, p3, :cond_8
 
     .line 16
     iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->expandCurrentSegment()[C
 
-    move-result-object p2
+    move-result-object p1
 
     :cond_8
-    add-int/lit8 p1, v2, 0x1
+    add-int/lit8 p3, p2, 0x1
 
-    int-to-char p3, p3
+    int-to-char v2, v2
 
     .line 17
-    aput-char p3, p2, v2
+    aput-char v2, p1, p2
 
     .line 18
-    iget p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    iget p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
     iget v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputEnd:I
 
-    if-lt p3, v2, :cond_9
+    if-lt p2, v2, :cond_9
 
     .line 19
-    iget-object p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
+    invoke-virtual {p1, p3}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
 
     const/16 p1, 0x1f
 
@@ -8335,58 +8571,49 @@
     :cond_9
     iget-object v2, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
 
-    add-int/lit8 v4, p3, 0x1
+    add-int/lit8 v4, p2, 0x1
 
     iput v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
-    aget-byte p3, v2, p3
+    aget-byte p2, v2, p2
 
     const/16 v2, 0x2d
 
     const/16 v4, 0x20
 
-    if-eq p3, v2, :cond_b
+    if-eq p2, v2, :cond_a
 
     const/16 v2, 0x2b
 
-    if-ne p3, v2, :cond_a
-
-    goto :goto_4
-
-    :cond_a
-    :goto_3
-    move v2, p1
-
-    goto :goto_5
+    if-ne p2, v2, :cond_d
 
     .line 24
-    :cond_b
-    :goto_4
-    array-length v2, p2
+    :cond_a
+    array-length v2, p1
 
-    if-lt p1, v2, :cond_c
+    if-lt p3, v2, :cond_b
 
     .line 25
-    iget-object p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->expandCurrentSegment()[C
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->expandCurrentSegment()[C
 
-    move-result-object p2
+    move-result-object p1
 
-    :cond_c
-    add-int/lit8 v2, p1, 0x1
+    :cond_b
+    add-int/lit8 v2, p3, 0x1
 
-    int-to-char p3, p3
+    int-to-char p2, p2
 
     .line 26
-    aput-char p3, p2, p1
+    aput-char p2, p1, p3
 
     .line 27
-    iget p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    iget p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
     iget p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputEnd:I
 
-    if-lt p1, p3, :cond_d
+    if-lt p2, p3, :cond_c
 
     .line 28
     iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
@@ -8407,26 +8634,29 @@
     return-object p1
 
     .line 32
-    :cond_d
+    :cond_c
     iget-object p3, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
 
-    add-int/lit8 v5, p1, 0x1
+    add-int/lit8 v5, p2, 0x1
 
     iput v5, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
-    aget-byte p3, p3, p1
+    aget-byte p2, p3, p2
 
-    :goto_5
-    if-lt p3, v1, :cond_10
+    :goto_3
+    move p3, v2
 
-    if-gt p3, v0, :cond_10
+    :cond_d
+    if-lt p2, v1, :cond_10
+
+    if-gt p2, v0, :cond_10
 
     add-int/lit8 v3, v3, 0x1
 
     .line 33
-    array-length p1, p2
+    array-length v2, p1
 
-    if-lt v2, p1, :cond_e
+    if-lt p3, v2, :cond_e
 
     .line 34
     iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
@@ -8435,27 +8665,25 @@
 
     move-result-object p1
 
-    move-object p2, p1
-
     :cond_e
-    add-int/lit8 p1, v2, 0x1
+    add-int/lit8 v2, p3, 0x1
 
-    int-to-char p3, p3
+    int-to-char p2, p2
 
     .line 35
-    aput-char p3, p2, v2
+    aput-char p2, p1, p3
 
     .line 36
-    iget p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
+    iget p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
-    iget v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputEnd:I
+    iget p3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputEnd:I
 
-    if-lt p3, v2, :cond_f
+    if-lt p2, p3, :cond_f
 
     .line 37
-    iget-object p2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
+    invoke-virtual {p1, v2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
 
     .line 38
     iput v4, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParserBase;->_minorState:I
@@ -8472,18 +8700,18 @@
 
     .line 41
     :cond_f
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
+    iget-object p3, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
 
-    add-int/lit8 v5, p3, 0x1
+    add-int/lit8 v5, p2, 0x1
 
     iput v5, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
-    aget-byte p3, v2, p3
+    aget-byte p2, p3, p2
 
     goto :goto_3
 
     :cond_10
-    and-int/lit16 p1, p3, 0xff
+    and-int/lit16 p1, p2, 0xff
 
     if-nez v3, :cond_11
 
@@ -8492,8 +8720,11 @@
     .line 42
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->reportUnexpectedNumberChar(ILjava/lang/String;)V
 
-    .line 43
     :cond_11
+    move p2, p3
+
+    .line 43
+    :cond_12
     iget p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
 
     add-int/lit8 p1, p1, -0x1
@@ -8503,7 +8734,7 @@
     .line 44
     iget-object p1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {p1, v2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
+    invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
 
     .line 45
     iput v3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_expLength:I
@@ -8520,6 +8751,11 @@
 
 .method public _startNegativeNumber()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -8785,11 +9021,9 @@
 
     .line 35
     :cond_b
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
 
-    iget v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    aget-byte v1, v1, v4
+    aget-byte v1, v4, v1
 
     and-int/lit16 v1, v1, 0xff
 
@@ -8800,6 +9034,11 @@
 
 .method public _startNullToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -8876,11 +9115,11 @@
     .line 9
     sget-object v0, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NULL:Lcom/fasterxml/jackson/core/JsonToken;
 
-    const/4 v1, 0x1
+    const-string v1, "null"
 
-    const-string v2, "null"
+    const/4 v2, 0x1
 
-    invoke-virtual {p0, v2, v1, v0}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
+    invoke-virtual {p0, v1, v2, v0}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
 
     move-result-object v0
 
@@ -8889,6 +9128,11 @@
 
 .method public _startNumberLeadingZero()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -9030,6 +9274,11 @@
 
 .method public _startPositiveNumber(I)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -9211,11 +9460,9 @@
 
     .line 25
     :cond_6
-    iget-object p1, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_inputBuffer:[B
 
-    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
-
-    aget-byte p1, p1, v0
+    aget-byte p1, v0, p1
 
     and-int/lit16 p1, p1, 0xff
 
@@ -9226,6 +9473,11 @@
 
 .method public _startString()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -9325,6 +9577,11 @@
 
 .method public _startTrueToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -9403,11 +9660,11 @@
     .line 9
     sget-object v0, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_TRUE:Lcom/fasterxml/jackson/core/JsonToken;
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "true"
 
-    const-string v2, "true"
+    const/4 v2, 0x1
 
-    invoke-virtual {p0, v2, v1, v0}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
+    invoke-virtual {p0, v1, v2, v0}, Lcom/fasterxml/jackson/core/json/async/NonBlockingJsonParser;->_finishKeywordToken(Ljava/lang/String;ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/core/JsonToken;
 
     move-result-object v0
 
@@ -9416,6 +9673,11 @@
 
 .method public _startUnexpectedValue(ZI)Lcom/fasterxml/jackson/core/JsonToken;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 p1, 0x27
 
@@ -9557,6 +9819,11 @@
 
 .method public feedInput([BII)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -9687,6 +9954,11 @@
 
 .method public nextToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputPtr:I
@@ -9864,6 +10136,11 @@
 
 .method public releaseBuffered(Ljava/io/OutputStream;)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_inputEnd:I

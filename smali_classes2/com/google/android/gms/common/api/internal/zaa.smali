@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaa;
 .super Lcom/google/android/gms/common/api/internal/ActivityLifecycleObserver;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -11,7 +12,7 @@
 
 
 # instance fields
-.field public final zacl:Ljava/lang/ref/WeakReference;
+.field private final zaa:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -27,7 +28,7 @@
     .locals 0
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zab(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
 
     move-result-object p1
 
@@ -36,8 +37,11 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaa$zaa;)V
+.method private constructor <init>(Lcom/google/android/gms/common/api/internal/zaa$zaa;)V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+        otherwise = 0x2
+    .end annotation
 
     .line 2
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/ActivityLifecycleObserver;-><init>()V
@@ -47,7 +51,7 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa;->zacl:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa;->zaa:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
@@ -58,7 +62,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa;->zacl:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa;->zaa:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 

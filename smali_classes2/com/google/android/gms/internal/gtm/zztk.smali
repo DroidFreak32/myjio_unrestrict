@@ -17,9 +17,9 @@
 
 
 # instance fields
-.field public pos:I
+.field private pos:I
 
-.field public zzbee:Ljava/util/Iterator;
+.field private zzbee:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -29,13 +29,13 @@
     .end annotation
 .end field
 
-.field public final synthetic zzbef:Lcom/google/android/gms/internal/gtm/zztc;
+.field private final synthetic zzbef:Lcom/google/android/gms/internal/gtm/zztc;
 
-.field public zzbej:Z
+.field private zzbej:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zztc;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zztc;)V
     .locals 0
 
     .line 1

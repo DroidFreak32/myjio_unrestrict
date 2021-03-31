@@ -17,39 +17,39 @@
 
 
 # static fields
-.field public static final FRAGMENT_SHADER_CODE:[Ljava/lang/String;
+.field private static final FRAGMENT_SHADER_CODE:[Ljava/lang/String;
 
-.field public static final TEX_MATRIX_BOTTOM:[F
+.field private static final TEX_MATRIX_BOTTOM:[F
 
-.field public static final TEX_MATRIX_LEFT:[F
+.field private static final TEX_MATRIX_LEFT:[F
 
-.field public static final TEX_MATRIX_RIGHT:[F
+.field private static final TEX_MATRIX_RIGHT:[F
 
-.field public static final TEX_MATRIX_TOP:[F
+.field private static final TEX_MATRIX_TOP:[F
 
-.field public static final TEX_MATRIX_WHOLE:[F
+.field private static final TEX_MATRIX_WHOLE:[F
 
-.field public static final VERTEX_SHADER_CODE:[Ljava/lang/String;
+.field private static final VERTEX_SHADER_CODE:[Ljava/lang/String;
 
 
 # instance fields
-.field public leftMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
+.field private leftMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
 
-.field public mvpMatrixHandle:I
+.field private mvpMatrixHandle:I
 
-.field public positionHandle:I
+.field private positionHandle:I
 
-.field public program:I
+.field private program:I
 
-.field public rightMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
+.field private rightMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
 
-.field public stereoMode:I
+.field private stereoMode:I
 
-.field public texCoordsHandle:I
+.field private texCoordsHandle:I
 
-.field public textureHandle:I
+.field private textureHandle:I
 
-.field public uTexMatrixHandle:I
+.field private uTexMatrixHandle:I
 
 
 # direct methods
@@ -473,11 +473,9 @@
 
     iput v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;->program:I
 
-    .line 2
-    iget v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;->program:I
-
     const-string v1, "uMvpMatrix"
 
+    .line 2
     invoke-static {v0, v1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 
     move-result v0
@@ -565,11 +563,9 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;->leftMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
 
     .line 4
-    iget-boolean v0, p1, Lcom/google/android/jioexoplayer2/video/spherical/Projection;->singleMesh:Z
+    iget-boolean v1, p1, Lcom/google/android/jioexoplayer2/video/spherical/Projection;->singleMesh:Z
 
-    if-eqz v0, :cond_1
-
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;->leftMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
+    if-eqz v1, :cond_1
 
     goto :goto_0
 
@@ -585,10 +581,8 @@
 
     invoke-direct {v0, p1}, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;-><init>(Lcom/google/android/jioexoplayer2/video/spherical/Projection$SubMesh;)V
 
-    move-object p1, v0
-
     :goto_0
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;->rightMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
+    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;->rightMeshData:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer$MeshData;
 
     return-void
 .end method

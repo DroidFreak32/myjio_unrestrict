@@ -12,11 +12,11 @@
 
 
 # static fields
-.field public static final MINIMUM_SEARCH_RANGE_BYTES:I = 0x3ac
+.field private static final MINIMUM_SEARCH_RANGE_BYTES:I = 0x3ac
 
-.field public static final SEEK_TOLERANCE_US:J = 0x186a0L
+.field private static final SEEK_TOLERANCE_US:J = 0x186a0L
 
-.field public static final TIMESTAMP_SEARCH_BYTES:I = 0x1b8a0
+.field private static final TIMESTAMP_SEARCH_BYTES:I = 0x1b8a0
 
 
 # direct methods

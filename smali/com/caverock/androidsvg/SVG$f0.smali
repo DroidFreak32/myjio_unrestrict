@@ -111,78 +111,7 @@
     return-object v0
 .end method
 
-.method public a(Lcom/caverock/androidsvg/SVG$l0;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->i:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->k:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public a(Ljava/util/Set;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 3
-    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->m:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public b()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Lcom/caverock/androidsvg/SVG$l0;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->i:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public b(Ljava/util/Set;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 2
-    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->j:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/String;
+.method public b()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -202,10 +131,13 @@
         }
     .end annotation
 
+    .line 1
+    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->m:Ljava/util/Set;
+
     return-void
 .end method
 
-.method public d(Ljava/util/Set;)V
+.method public e(Ljava/util/Set;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -217,41 +149,54 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->l:Ljava/util/Set;
+    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->j:Ljava/util/Set;
 
     return-void
 .end method
 
-.method public e()Ljava/util/Set;
-    .locals 1
+.method public f(Ljava/util/Set;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "(",
             "Ljava/util/Set<",
             "Ljava/lang/String;",
-            ">;"
+            ">;)V"
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->l:Ljava/util/Set;
-
-    return-object v0
+    return-void
 .end method
 
-.method public f()Ljava/util/Set;
+.method public g(Lcom/caverock/androidsvg/SVG$l0;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/caverock/androidsvg/SVGParseException;
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->i:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public getChildren()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/caverock/androidsvg/SVG$l0;",
             ">;"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->m:Ljava/util/Set;
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->i:Ljava/util/List;
 
     return-object v0
 .end method
@@ -269,6 +214,66 @@
 
     .line 1
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->j:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public h(Ljava/util/Set;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->l:Ljava/util/Set;
+
+    return-void
+.end method
+
+.method public i(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$f0;->k:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public k()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->l:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public l()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$f0;->m:Ljava/util/Set;
 
     return-object v0
 .end method

@@ -33,15 +33,6 @@
 
 
 # virtual methods
-.method public a(Lcom/caverock/androidsvg/SVG$z0;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$t0;->r:Lcom/caverock/androidsvg/SVG$z0;
-
-    return-void
-.end method
-
 .method public d()Lcom/caverock/androidsvg/SVG$z0;
     .locals 1
 
@@ -51,10 +42,19 @@
     return-object v0
 .end method
 
-.method public g()Ljava/lang/String;
+.method public m()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "tspan"
+    const-string/jumbo v0, "tspan"
 
     return-object v0
+.end method
+
+.method public n(Lcom/caverock/androidsvg/SVG$z0;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/caverock/androidsvg/SVG$t0;->r:Lcom/caverock/androidsvg/SVG$z0;
+
+    return-void
 .end method

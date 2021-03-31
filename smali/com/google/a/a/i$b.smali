@@ -17,61 +17,61 @@
 
 
 # instance fields
-.field public A:Z
+.field private A:Z
 
-.field public B:Lcom/google/a/a/i$d;
+.field private B:Lcom/google/a/a/i$d;
 
-.field public C:Z
+.field private C:Z
 
-.field public D:Lcom/google/a/a/i$d;
+.field private D:Lcom/google/a/a/i$d;
 
-.field public E:Z
+.field private E:Z
 
-.field public F:Lcom/google/a/a/i$d;
+.field private F:Lcom/google/a/a/i$d;
 
-.field public G:Z
+.field private G:Z
 
-.field public H:Lcom/google/a/a/i$d;
+.field private H:Lcom/google/a/a/i$d;
 
-.field public I:Z
+.field private I:Z
 
-.field public J:Ljava/lang/String;
+.field private J:Ljava/lang/String;
 
-.field public K:Z
+.field private K:Z
 
-.field public L:I
+.field private L:I
 
-.field public M:Z
+.field private M:Z
 
-.field public N:Ljava/lang/String;
+.field private N:Ljava/lang/String;
 
-.field public O:Z
+.field private O:Z
 
-.field public P:Ljava/lang/String;
+.field private P:Ljava/lang/String;
 
-.field public Q:Z
+.field private Q:Z
 
-.field public R:Ljava/lang/String;
+.field private R:Ljava/lang/String;
 
-.field public S:Z
+.field private S:Z
 
-.field public T:Ljava/lang/String;
+.field private T:Ljava/lang/String;
 
-.field public U:Z
+.field private U:Z
 
-.field public V:Ljava/lang/String;
+.field private V:Ljava/lang/String;
 
-.field public W:Z
+.field private W:Z
 
-.field public X:Ljava/lang/String;
+.field private X:Ljava/lang/String;
 
-.field public Y:Z
+.field private Y:Z
 
-.field public Z:Z
+.field private Z:Z
 
-.field public a:Z
+.field private a:Z
 
-.field public aa:Ljava/util/List;
+.field private aa:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -81,7 +81,7 @@
     .end annotation
 .end field
 
-.field public ab:Ljava/util/List;
+.field private ab:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -91,71 +91,71 @@
     .end annotation
 .end field
 
-.field public ac:Z
+.field private ac:Z
 
-.field public ad:Z
+.field private ad:Z
 
-.field public ae:Z
+.field private ae:Z
 
-.field public af:Ljava/lang/String;
+.field private af:Ljava/lang/String;
 
-.field public ag:Z
+.field private ag:Z
 
-.field public ah:Z
+.field private ah:Z
 
-.field public ai:Z
+.field private ai:Z
 
-.field public aj:Z
+.field private aj:Z
 
-.field public b:Lcom/google/a/a/i$d;
+.field private b:Lcom/google/a/a/i$d;
 
-.field public c:Z
+.field private c:Z
 
-.field public d:Lcom/google/a/a/i$d;
+.field private d:Lcom/google/a/a/i$d;
 
-.field public e:Z
+.field private e:Z
 
-.field public f:Lcom/google/a/a/i$d;
+.field private f:Lcom/google/a/a/i$d;
 
-.field public g:Z
+.field private g:Z
 
-.field public h:Lcom/google/a/a/i$d;
+.field private h:Lcom/google/a/a/i$d;
 
-.field public i:Z
+.field private i:Z
 
-.field public j:Lcom/google/a/a/i$d;
+.field private j:Lcom/google/a/a/i$d;
 
-.field public k:Z
+.field private k:Z
 
-.field public l:Lcom/google/a/a/i$d;
+.field private l:Lcom/google/a/a/i$d;
 
-.field public m:Z
+.field private m:Z
 
-.field public n:Lcom/google/a/a/i$d;
+.field private n:Lcom/google/a/a/i$d;
 
-.field public o:Z
+.field private o:Z
 
-.field public p:Lcom/google/a/a/i$d;
+.field private p:Lcom/google/a/a/i$d;
 
-.field public q:Z
+.field private q:Z
 
-.field public r:Lcom/google/a/a/i$d;
+.field private r:Lcom/google/a/a/i$d;
 
-.field public s:Z
+.field private s:Z
 
-.field public t:Lcom/google/a/a/i$d;
+.field private t:Lcom/google/a/a/i$d;
 
-.field public u:Z
+.field private u:Z
 
-.field public v:Lcom/google/a/a/i$d;
+.field private v:Lcom/google/a/a/i$d;
 
-.field public w:Z
+.field private w:Z
 
-.field public x:Lcom/google/a/a/i$d;
+.field private x:Lcom/google/a/a/i$d;
 
-.field public y:Z
+.field private y:Z
 
-.field public z:Lcom/google/a/a/i$d;
+.field private z:Lcom/google/a/a/i$d;
 
 
 # direct methods
@@ -262,7 +262,7 @@
 .method public a(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -271,13 +271,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->b:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public a(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -315,7 +308,7 @@
 .method public b(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -324,13 +317,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->d:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public b(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -368,7 +354,7 @@
 .method public c(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -377,13 +363,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->f:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public c(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -421,7 +400,7 @@
 .method public d(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -430,13 +409,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->h:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public d(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -474,7 +446,7 @@
 .method public e(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -483,13 +455,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->j:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public e(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -515,7 +480,7 @@
 .method public f(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -524,13 +489,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->l:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public f(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -556,7 +514,7 @@
 .method public g(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -565,13 +523,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->n:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public g(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -597,7 +548,7 @@
 .method public h(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -606,13 +557,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->p:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public h(Ljava/lang/String;)Lcom/google/a/a/i$b;
@@ -638,7 +582,7 @@
 .method public i(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -647,13 +591,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->r:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public i()Lcom/google/a/a/i$d;
@@ -667,7 +604,7 @@
 .method public j(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -676,13 +613,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->t:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public j()Lcom/google/a/a/i$d;
@@ -696,7 +626,7 @@
 .method public k(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -705,13 +635,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->v:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public k()Lcom/google/a/a/i$d;
@@ -733,7 +656,7 @@
 .method public l(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -742,19 +665,12 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->x:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public m(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -763,13 +679,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->z:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public m()Ljava/lang/String;
@@ -783,7 +692,7 @@
 .method public n(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -792,13 +701,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->B:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public n()Ljava/lang/String;
@@ -812,7 +714,7 @@
 .method public o(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -821,13 +723,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->D:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public o()Ljava/lang/String;
@@ -853,7 +748,7 @@
 .method public p(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -862,13 +757,6 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->F:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public q()I
@@ -886,7 +774,7 @@
 .method public q(Lcom/google/a/a/i$d;)Lcom/google/a/a/i$b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -895,17 +783,15 @@
     iput-object p1, p0, Lcom/google/a/a/i$b;->H:Lcom/google/a/a/i$d;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public readExternal(Ljava/io/ObjectInput;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-interface {p1}, Ljava/io/ObjectInput;->readBoolean()Z
 
@@ -1335,6 +1221,11 @@
 
 .method public writeExternal(Ljava/io/ObjectOutput;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-boolean v0, p0, Lcom/google/a/a/i$b;->a:Z
 

@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final MARK_POSITION:I = 0x500000
+.field private static final MARK_POSITION:I = 0x500000
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -19,6 +19,18 @@
 
 .method public static getOrientation(Ljava/util/List;Ljava/io/InputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)I
     .locals 4
+    .param p0    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -28,6 +40,12 @@
             "Ljava/io/InputStream;",
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;",
             ")I"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -110,6 +128,21 @@
 
 .method public static getType(Ljava/util/List;Ljava/io/InputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .locals 3
+    .param p0    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -120,6 +153,12 @@
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;",
             ")",
             "Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -209,6 +248,17 @@
 
 .method public static getType(Ljava/util/List;Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .locals 4
+    .param p0    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -218,6 +268,12 @@
             "Ljava/nio/ByteBuffer;",
             ")",
             "Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

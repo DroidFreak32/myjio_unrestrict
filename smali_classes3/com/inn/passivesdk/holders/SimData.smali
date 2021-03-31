@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field public Rsrp:Ljava/lang/Integer;
+.field private Rsrp:Ljava/lang/Integer;
 
-.field public Rsrq:Ljava/lang/Integer;
+.field private Rsrq:Ljava/lang/Integer;
 
-.field public Rssi:Ljava/lang/Integer;
+.field private Rssi:Ljava/lang/Integer;
 
-.field public Sinr:Ljava/lang/Double;
+.field private Sinr:Ljava/lang/Double;
 
-.field public networkType:Ljava/lang/String;
+.field private networkType:Ljava/lang/String;
 
-.field public networkVoiceType:Ljava/lang/String;
+.field private networkVoiceType:Ljava/lang/String;
 
-.field public operatorName:Ljava/lang/String;
+.field private operatorName:Ljava/lang/String;
 
-.field public operatorVoiceName:Ljava/lang/String;
+.field private operatorVoiceName:Ljava/lang/String;
 
 
 # direct methods
@@ -33,6 +33,150 @@
 
 
 # virtual methods
+.method public getNetworkType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->networkType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getNetworkVoiceType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->networkVoiceType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getOperatorName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->operatorName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getOperatorVoiceName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->operatorVoiceName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getRsrp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->Rsrp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRsrq()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->Rsrq:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRssi()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->Rssi:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getSinr()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SimData;->Sinr:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public setNetworkType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->networkType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNetworkVoiceType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->networkVoiceType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setOperatorName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->operatorName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setOperatorVoiceName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->operatorVoiceName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setRsrp(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->Rsrp:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRsrq(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->Rsrq:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRssi(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->Rssi:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setSinr(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SimData;->Sinr:Ljava/lang/Double;
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 

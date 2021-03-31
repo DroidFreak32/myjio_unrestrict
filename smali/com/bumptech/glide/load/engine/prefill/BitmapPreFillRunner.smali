@@ -18,7 +18,7 @@
 # static fields
 .field public static final BACKOFF_RATIO:I = 0x4
 
-.field public static final DEFAULT_CLOCK:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock;
+.field private static final DEFAULT_CLOCK:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock;
 
 .field public static final INITIAL_BACKOFF_MS:J = 0x28L
 
@@ -27,22 +27,25 @@
 .field public static final MAX_DURATION_MS:J = 0x20L
 
 .field public static final TAG:Ljava/lang/String; = "PreFillRunner"
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-.field public final clock:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock;
+.field private final clock:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock;
 
-.field public currentDelay:J
+.field private currentDelay:J
 
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public isCancelled:Z
+.field private isCancelled:Z
 
-.field public final memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
+.field private final memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
 
-.field public final seenTypes:Ljava/util/Set;
+.field private final seenTypes:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -52,7 +55,7 @@
     .end annotation
 .end field
 
-.field public final toPrefill:Lcom/bumptech/glide/load/engine/prefill/PreFillQueue;
+.field private final toPrefill:Lcom/bumptech/glide/load/engine/prefill/PreFillQueue;
 
 
 # direct methods
@@ -111,6 +114,8 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Lcom/bumptech/glide/load/engine/cache/MemoryCache;Lcom/bumptech/glide/load/engine/prefill/PreFillQueue;Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock;Landroid/os/Handler;)V
     .locals 2
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -221,6 +226,8 @@
 # virtual methods
 .method public allocate()Z
     .locals 10
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner;->clock:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock;
@@ -378,7 +385,7 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, "x"
+    const-string/jumbo v5, "x"
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

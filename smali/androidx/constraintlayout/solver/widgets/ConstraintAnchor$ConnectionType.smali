@@ -27,47 +27,43 @@
 
 .field public static final enum STRICT:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
-.field public static final synthetic s:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+.field public static final synthetic a:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
-    const/4 v1, 0x0
+    const-string v1, "RELAXED"
 
-    const-string v2, "RELAXED"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->RELAXED:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
-    new-instance v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
-
-    const/4 v2, 0x1
+    new-instance v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
     const-string v3, "STRICT"
 
-    invoke-direct {v0, v3, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->STRICT:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+    invoke-direct {v1, v3, v4}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->STRICT:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
-    new-array v0, v0, [Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+    const/4 v3, 0x2
 
-    sget-object v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->RELAXED:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+    new-array v3, v3, [Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
-    aput-object v3, v0, v1
+    aput-object v0, v3, v2
 
-    sget-object v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->STRICT:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+    aput-object v1, v3, v4
 
-    aput-object v1, v0, v2
-
-    sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->s:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+    sput-object v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->a:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
     return-void
 .end method
@@ -105,7 +101,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->s:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
+    sget-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->a:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;
 
     invoke-virtual {v0}, [Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$ConnectionType;->clone()Ljava/lang/Object;
 

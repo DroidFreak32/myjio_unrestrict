@@ -1,42 +1,88 @@
 .class public final Lcom/google/android/gms/internal/ads/zztb;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzta;
+.implements Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
+
+
+# instance fields
+.field private final synthetic zzbup:Lcom/google/android/gms/internal/ads/zzsx;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.httpcache.IHttpAssetsCacheService"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzsx;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zztb;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/internal/ads/zzsu;Lcom/google/android/gms/internal/ads/zzsy;)V
-    .locals 1
+.method public final onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
+    .locals 2
+    .param p1    # Lcom/google/android/gms/common/ConnectionResult;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zztb;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzsx;->zzc(Lcom/google/android/gms/internal/ads/zzsx;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    monitor-enter p1
+
+    .line 2
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztb;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzsx;->zza(Lcom/google/android/gms/internal/ads/zzsx;Lcom/google/android/gms/internal/ads/zztg;)Lcom/google/android/gms/internal/ads/zztg;
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztb;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzsx;->zzd(Lcom/google/android/gms/internal/ads/zzsx;)Lcom/google/android/gms/internal/ads/zztc;
 
     move-result-object v0
 
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    .line 3
-    invoke-static {v0, p2}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x2
+    if-eqz v0, :cond_0
 
     .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zzb(ILandroid/os/Parcel;)V
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztb;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzsx;->zza(Lcom/google/android/gms/internal/ads/zzsx;Lcom/google/android/gms/internal/ads/zztc;)Lcom/google/android/gms/internal/ads/zztc;
+
+    .line 5
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztb;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzsx;->zzc(Lcom/google/android/gms/internal/ads/zzsx;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 6
+    monitor-exit p1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

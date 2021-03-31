@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/clearcut/LoggingConnectionCallbacks;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;

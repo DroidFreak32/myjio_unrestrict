@@ -8,22 +8,22 @@
 
 
 # static fields
-.field public static final decimalsAsIs:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
+.field private static final decimalsAsIs:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
-.field public static final decimalsNormalized:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
+.field private static final decimalsNormalized:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
 .field public static final instance:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final _cfgBigDecimalExact:Z
+.field private final _cfgBigDecimalExact:Z
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
@@ -35,17 +35,15 @@
     sput-object v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->decimalsNormalized:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
+    new-instance v1, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1}, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;-><init>(Z)V
+    invoke-direct {v1, v2}, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;-><init>(Z)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->decimalsAsIs:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
+    sput-object v1, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->decimalsAsIs:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
     .line 3
-    sget-object v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->decimalsNormalized:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
-
     sput-object v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->instance:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
     return-void

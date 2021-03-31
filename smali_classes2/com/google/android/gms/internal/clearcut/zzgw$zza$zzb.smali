@@ -33,7 +33,7 @@
 
 
 # static fields
-.field public static volatile zzbg:Lcom/google/android/gms/internal/clearcut/zzdz;
+.field private static volatile zzbg:Lcom/google/android/gms/internal/clearcut/zzdz;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzdz<",
@@ -43,19 +43,19 @@
     .end annotation
 .end field
 
-.field public static final zzbiv:Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
+.field private static final zzbiv:Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
 
 
 # instance fields
-.field public zzbb:I
+.field private zzbb:I
 
-.field public zzbis:Ljava/lang/String;
+.field private zzbis:Ljava/lang/String;
 
-.field public zzbit:J
+.field private zzbit:J
 
-.field public zzbiu:J
+.field private zzbiu:J
 
-.field public zzya:I
+.field private zzya:I
 
 
 # direct methods
@@ -68,16 +68,14 @@
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zzbiv:Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
 
-    const-class v0, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
+    const-class v1, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zzbiv:Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/clearcut/zzcg;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/clearcut/zzcg;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzcg;-><init>()V
@@ -122,9 +120,11 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/clearcut/zzcg$zza;
 
     check-cast v0, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;
 
@@ -142,7 +142,7 @@
 .method private final zzm(Ljava/lang/String;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zzbb:I
 
@@ -153,13 +153,6 @@
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zzbis:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method private final zzp(J)V
@@ -309,11 +302,11 @@
 
     aput-object p3, p1, p2
 
-    sget-object p2, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zzbiv:Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
+    const-string p2, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0005\u0000\u0000\u0000\u0001\u0004\u0000\u0002\u0008\u0001\u0003\u0002\u0002\u0004\u0002\u0003"
 
-    const-string p3, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0005\u0000\u0000\u0000\u0001\u0004\u0000\u0002\u0008\u0001\u0003\u0002\u0002\u0004\u0002\u0003"
+    sget-object p3, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;->zzbiv:Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
 
-    invoke-static {p2, p3, p1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, p2, p1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/CrashUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,17 +9,28 @@
 
 
 # static fields
-.field public static final zzgg:[Ljava/lang/String;
+.field private static final zza:[Ljava/lang/String;
 
-.field public static zzgh:Landroid/os/DropBoxManager;
+.field private static zzb:Landroid/os/DropBoxManager; = null
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzgi:Z
+.field private static zzc:Z = false
 
-.field public static zzgj:I
+.field private static zzd:I = -0x1
 
-.field public static zzgk:I
+.field private static zze:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "CrashUtils.class"
+    .end annotation
+.end field
 
-.field public static zzgl:I
+.field private static zzf:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "CrashUtils.class"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -40,28 +52,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/CrashUtils;->zzgg:[Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    .line 2
-    sput-object v0, Lcom/google/android/gms/common/util/CrashUtils;->zzgh:Landroid/os/DropBoxManager;
-
-    const/4 v0, 0x0
-
-    .line 3
-    sput-boolean v0, Lcom/google/android/gms/common/util/CrashUtils;->zzgi:Z
-
-    const/4 v1, -0x1
-
-    .line 4
-    sput v1, Lcom/google/android/gms/common/util/CrashUtils;->zzgj:I
-
-    .line 5
-    sput v0, Lcom/google/android/gms/common/util/CrashUtils;->zzgk:I
-
-    .line 6
-    sput v0, Lcom/google/android/gms/common/util/CrashUtils;->zzgl:I
+    sput-object v0, Lcom/google/android/gms/common/util/CrashUtils;->zza:[Ljava/lang/String;
 
     return-void
 .end method
@@ -77,6 +68,17 @@
 
 .method public static addDynamiteErrorToDropBox(Landroid/content/Context;Ljava/lang/Throwable;)Z
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Throwable;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -90,7 +92,7 @@
     return p0
 .end method
 
-.method public static zza(Landroid/content/Context;Ljava/lang/Throwable;I)Z
+.method private static zza(Landroid/content/Context;Ljava/lang/Throwable;I)Z
     .locals 0
 
     const/4 p2, 0x0

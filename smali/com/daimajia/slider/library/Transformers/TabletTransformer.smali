@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final OFFSET_CAMERA:Landroid/graphics/Camera;
+.field private static final OFFSET_CAMERA:Landroid/graphics/Camera;
 
-.field public static final OFFSET_MATRIX:Landroid/graphics/Matrix;
+.field private static final OFFSET_MATRIX:Landroid/graphics/Matrix;
 
-.field public static final OFFSET_TEMP_FLOAT:[F
+.field private static final OFFSET_TEMP_FLOAT:[F
 
 
 # direct methods
@@ -57,33 +57,22 @@
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
     .line 2
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_CAMERA:Landroid/graphics/Camera;
+    sget-object v1, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_CAMERA:Landroid/graphics/Camera;
 
-    invoke-virtual {v0}, Landroid/graphics/Camera;->save()V
+    invoke-virtual {v1}, Landroid/graphics/Camera;->save()V
 
     .line 3
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_CAMERA:Landroid/graphics/Camera;
-
     invoke-static {p0}, Ljava/lang/Math;->abs(F)F
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Camera;->rotateY(F)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Camera;->rotateY(F)V
 
     .line 4
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_CAMERA:Landroid/graphics/Camera;
-
-    sget-object v1, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_MATRIX:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Camera;->getMatrix(Landroid/graphics/Matrix;)V
+    invoke-virtual {v1, v0}, Landroid/graphics/Camera;->getMatrix(Landroid/graphics/Matrix;)V
 
     .line 5
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_CAMERA:Landroid/graphics/Camera;
-
-    invoke-virtual {v0}, Landroid/graphics/Camera;->restore()V
-
-    .line 6
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_MATRIX:Landroid/graphics/Matrix;
+    invoke-virtual {v1}, Landroid/graphics/Camera;->restore()V
 
     neg-int v1, p1
 
@@ -99,10 +88,8 @@
 
     mul-float v3, v3, v2
 
+    .line 6
     invoke-virtual {v0, v1, v3}, Landroid/graphics/Matrix;->preTranslate(FF)Z
-
-    .line 7
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_MATRIX:Landroid/graphics/Matrix;
 
     int-to-float p1, p1
 
@@ -112,29 +99,26 @@
 
     mul-float v2, v2, p2
 
+    .line 7
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     .line 8
-    sget-object v0, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_TEMP_FLOAT:[F
+    sget-object v1, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_TEMP_FLOAT:[F
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    aput p1, v0, v1
+    aput p1, v1, v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     .line 9
-    aput p2, v0, v2
+    aput p2, v1, v3
 
     .line 10
-    sget-object p2, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_MATRIX:Landroid/graphics/Matrix;
-
-    invoke-virtual {p2, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->mapPoints([F)V
 
     .line 11
-    sget-object p2, Lcom/daimajia/slider/library/Transformers/TabletTransformer;->OFFSET_TEMP_FLOAT:[F
-
-    aget p2, p2, v1
+    aget p2, v1, v2
 
     sub-float/2addr p1, p2
 
@@ -196,7 +180,7 @@
 
     move-result p2
 
-    invoke-static {p1, p2}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     .line 3
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -209,13 +193,13 @@
 
     mul-float p2, p2, v2
 
-    invoke-static {p1, p2}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     .line 4
-    invoke-static {p1, v0}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     .line 5
-    invoke-static {p1, v1}, La53;->f(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 
     return-void
 .end method

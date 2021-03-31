@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/squareup/moshi/LinkedHashTreeMap;
+.field public final synthetic a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
 
 # direct methods
@@ -31,7 +31,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
@@ -44,7 +44,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-virtual {v0}, Lcom/squareup/moshi/LinkedHashTreeMap;->clear()V
 
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     check-cast p1, Ljava/util/Map$Entry;
 
@@ -113,7 +113,7 @@
 
     .line 2
     :cond_0
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     check-cast p1, Ljava/util/Map$Entry;
 
@@ -127,7 +127,7 @@
 
     .line 3
     :cond_1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     const/4 v1, 0x1
 
@@ -140,7 +140,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     iget v0, v0, Lcom/squareup/moshi/LinkedHashTreeMap;->size:I
 

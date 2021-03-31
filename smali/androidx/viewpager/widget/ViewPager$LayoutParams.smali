@@ -15,17 +15,17 @@
 
 
 # instance fields
-.field public a:Z
+.field public a:F
 
-.field public b:I
+.field public b:Z
 
-.field public c:F
+.field public c:I
 
-.field public d:Z
+.field public d:I
 
-.field public e:I
+.field public gravity:I
 
-.field public f:I
+.field public isDecor:Z
 
 
 # direct methods
@@ -40,7 +40,7 @@
     const/4 v0, 0x0
 
     .line 2
-    iput v0, p0, Landroidx/viewpager/widget/ViewPager$LayoutParams;->c:F
+    iput v0, p0, Landroidx/viewpager/widget/ViewPager$LayoutParams;->a:F
 
     return-void
 .end method
@@ -54,7 +54,7 @@
     const/4 v0, 0x0
 
     .line 4
-    iput v0, p0, Landroidx/viewpager/widget/ViewPager$LayoutParams;->c:F
+    iput v0, p0, Landroidx/viewpager/widget/ViewPager$LayoutParams;->a:F
 
     .line 5
     sget-object v0, Landroidx/viewpager/widget/ViewPager;->LAYOUT_ATTRS:[I
@@ -72,7 +72,7 @@
 
     move-result p2
 
-    iput p2, p0, Landroidx/viewpager/widget/ViewPager$LayoutParams;->b:I
+    iput p2, p0, Landroidx/viewpager/widget/ViewPager$LayoutParams;->gravity:I
 
     .line 7
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V

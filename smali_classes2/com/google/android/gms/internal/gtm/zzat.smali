@@ -8,13 +8,13 @@
 
 
 # instance fields
-.field public final zzxa:Lcom/google/android/gms/internal/gtm/zzav;
+.field private final zzxa:Lcom/google/android/gms/internal/gtm/zzav;
 
-.field public zzxb:Lcom/google/android/gms/internal/gtm/zzce;
+.field private zzxb:Lcom/google/android/gms/internal/gtm/zzce;
 
-.field public final zzxc:Lcom/google/android/gms/internal/gtm/zzbs;
+.field private final zzxc:Lcom/google/android/gms/internal/gtm/zzbs;
 
-.field public final zzxd:Lcom/google/android/gms/internal/gtm/zzcv;
+.field private final zzxd:Lcom/google/android/gms/internal/gtm/zzcv;
 
 
 # direct methods

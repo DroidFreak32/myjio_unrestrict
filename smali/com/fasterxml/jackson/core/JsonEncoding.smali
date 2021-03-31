@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/core/JsonEncoding;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/core/JsonEncoding;
 
 .field public static final enum UTF16_BE:Lcom/fasterxml/jackson/core/JsonEncoding;
 
@@ -28,16 +28,16 @@
 
 
 # instance fields
-.field public final _bigEndian:Z
+.field private final _bigEndian:Z
 
-.field public final _bits:I
+.field private final _bits:I
 
-.field public final _javaName:Ljava/lang/String;
+.field private final _javaName:Ljava/lang/String;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 13
+    .locals 19
 
     .line 1
     new-instance v6, Lcom/fasterxml/jackson/core/JsonEncoding;
@@ -78,26 +78,26 @@
     sput-object v0, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF16_BE:Lcom/fasterxml/jackson/core/JsonEncoding;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/core/JsonEncoding;
+    new-instance v1, Lcom/fasterxml/jackson/core/JsonEncoding;
 
-    const-string v2, "UTF16_LE"
+    const-string v14, "UTF16_LE"
 
-    const/4 v3, 0x2
+    const/4 v15, 0x2
 
-    const-string v4, "UTF-16LE"
+    const-string v16, "UTF-16LE"
 
-    const/4 v5, 0x0
+    const/16 v17, 0x0
 
-    const/16 v6, 0x10
+    const/16 v18, 0x10
 
-    move-object v1, v0
+    move-object v13, v1
 
-    invoke-direct/range {v1 .. v6}, Lcom/fasterxml/jackson/core/JsonEncoding;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    invoke-direct/range {v13 .. v18}, Lcom/fasterxml/jackson/core/JsonEncoding;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF16_LE:Lcom/fasterxml/jackson/core/JsonEncoding;
+    sput-object v1, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF16_LE:Lcom/fasterxml/jackson/core/JsonEncoding;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/core/JsonEncoding;
+    new-instance v2, Lcom/fasterxml/jackson/core/JsonEncoding;
 
     const-string v8, "UTF32_BE"
 
@@ -107,70 +107,60 @@
 
     const/16 v12, 0x20
 
-    move-object v7, v0
+    move-object v7, v2
 
     invoke-direct/range {v7 .. v12}, Lcom/fasterxml/jackson/core/JsonEncoding;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF32_BE:Lcom/fasterxml/jackson/core/JsonEncoding;
+    sput-object v2, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF32_BE:Lcom/fasterxml/jackson/core/JsonEncoding;
 
     .line 5
-    new-instance v0, Lcom/fasterxml/jackson/core/JsonEncoding;
+    new-instance v3, Lcom/fasterxml/jackson/core/JsonEncoding;
 
-    const-string v2, "UTF32_LE"
+    const-string v14, "UTF32_LE"
 
-    const/4 v3, 0x4
+    const/4 v15, 0x4
 
-    const-string v4, "UTF-32LE"
+    const-string v16, "UTF-32LE"
 
-    const/16 v6, 0x20
+    const/16 v18, 0x20
 
-    move-object v1, v0
+    move-object v13, v3
 
-    invoke-direct/range {v1 .. v6}, Lcom/fasterxml/jackson/core/JsonEncoding;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    invoke-direct/range {v13 .. v18}, Lcom/fasterxml/jackson/core/JsonEncoding;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF32_LE:Lcom/fasterxml/jackson/core/JsonEncoding;
+    sput-object v3, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF32_LE:Lcom/fasterxml/jackson/core/JsonEncoding;
 
-    const/4 v0, 0x5
+    const/4 v4, 0x5
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/core/JsonEncoding;
+    new-array v4, v4, [Lcom/fasterxml/jackson/core/JsonEncoding;
+
+    const/4 v5, 0x0
+
+    aput-object v6, v4, v5
+
+    const/4 v5, 0x1
+
+    aput-object v0, v4, v5
+
+    const/4 v0, 0x2
+
+    aput-object v1, v4, v0
+
+    const/4 v0, 0x3
+
+    aput-object v2, v4, v0
+
+    const/4 v0, 0x4
+
+    aput-object v3, v4, v0
 
     .line 6
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF8:Lcom/fasterxml/jackson/core/JsonEncoding;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF16_BE:Lcom/fasterxml/jackson/core/JsonEncoding;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF16_LE:Lcom/fasterxml/jackson/core/JsonEncoding;
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF32_BE:Lcom/fasterxml/jackson/core/JsonEncoding;
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonEncoding;->UTF32_LE:Lcom/fasterxml/jackson/core/JsonEncoding;
-
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonEncoding;->$VALUES:[Lcom/fasterxml/jackson/core/JsonEncoding;
+    sput-object v4, Lcom/fasterxml/jackson/core/JsonEncoding;->$VALUES:[Lcom/fasterxml/jackson/core/JsonEncoding;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;ZI)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

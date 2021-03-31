@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public cellId:Ljava/lang/String;
+.field private cellId:Ljava/lang/String;
 
-.field public operator:Ljava/lang/String;
+.field private operator:Ljava/lang/String;
 
-.field public pci:Ljava/lang/String;
+.field private pci:Ljava/lang/String;
 
-.field public result:Ljava/lang/String;
+.field private result:Ljava/lang/String;
 
-.field public technology:Ljava/lang/String;
+.field private technology:Ljava/lang/String;
 
-.field public time:Ljava/lang/String;
+.field private time:Ljava/lang/String;
 
 
 # direct methods

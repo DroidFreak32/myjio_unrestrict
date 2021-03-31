@@ -1,55 +1,36 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzrc;
+.class public final Lcom/google/android/gms/internal/ads/zzrc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lcom/google/android/gms/internal/ads/zzrf;
+
+
+# instance fields
+.field private final synthetic val$activity:Landroid/app/Activity;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzqx;Landroid/app/Activity;)V
+    .locals 0
+
+    .line 1
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzrc;->val$activity:Landroid/app/Activity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract destroy()V
-.end method
+.method public final zza(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    .locals 1
 
-.method public abstract getAdvertiser()Ljava/lang/String;
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzrc;->val$activity:Landroid/app/Activity;
 
-.method public abstract getBody()Ljava/lang/String;
-.end method
+    invoke-interface {p1, v0}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityDestroyed(Landroid/app/Activity;)V
 
-.method public abstract getCallToAction()Ljava/lang/String;
-.end method
-
-.method public abstract getExtras()Landroid/os/Bundle;
-.end method
-
-.method public abstract getHeadline()Ljava/lang/String;
-.end method
-
-.method public abstract getImages()Ljava/util/List;
-.end method
-
-.method public abstract getMediationAdapterClassName()Ljava/lang/String;
-.end method
-
-.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzly;
-.end method
-
-.method public abstract performClick(Landroid/os/Bundle;)V
-.end method
-
-.method public abstract recordImpression(Landroid/os/Bundle;)Z
-.end method
-
-.method public abstract reportTouchEvent(Landroid/os/Bundle;)V
-.end method
-
-.method public abstract zzlf()Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
-
-.method public abstract zzlg()Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
-
-.method public abstract zzlh()Lcom/google/android/gms/internal/ads/zzqg;
-.end method
-
-.method public abstract zzli()Lcom/google/android/gms/internal/ads/zzqk;
+    return-void
 .end method

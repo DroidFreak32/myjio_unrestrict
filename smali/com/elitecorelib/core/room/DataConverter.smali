@@ -15,6 +15,9 @@
 # virtual methods
 .method public from3gppLocation(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,6 +56,9 @@
 
 .method public fromAcessArea(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,6 +97,9 @@
 
 .method public fromCircular(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -129,6 +138,9 @@
 
 .method public fromGeoLocation(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -167,6 +179,9 @@
 
 .method public fromPAccess(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -205,6 +220,9 @@
 
 .method public fromValidityArea(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -243,6 +261,9 @@
 
 .method public fromWifiProfile(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -281,6 +302,9 @@
 
 .method public fromwifmaxLocation(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -319,6 +343,9 @@
 
 .method public fromwlanLocation(Ljava/util/List;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -357,6 +384,9 @@
 
 .method public to3gppLocation(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -398,6 +428,9 @@
 
 .method public toAccessArea(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -439,6 +472,9 @@
 
 .method public toCircular(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -480,6 +516,9 @@
 
 .method public toGeoLocation(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -521,6 +560,9 @@
 
 .method public toPAccessList(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -562,6 +604,9 @@
 
 .method public toValidityAreaList(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -603,6 +648,9 @@
 
 .method public toWifiProfile(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -644,6 +692,9 @@
 
 .method public toWlanLocation(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -685,6 +736,9 @@
 
 .method public towimaxLocation(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/room/TypeConverter;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

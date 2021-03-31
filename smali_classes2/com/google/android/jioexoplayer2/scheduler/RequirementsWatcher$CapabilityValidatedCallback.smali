@@ -4,6 +4,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    api = 0x15
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;
 .end annotation
@@ -19,7 +23,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;)V
     .locals 0
 
     .line 1

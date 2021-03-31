@@ -40,7 +40,9 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v1
+    move-object v2, v1
+
+    const/4 v3, 0x0
 
     .line 2
     :goto_0
@@ -81,7 +83,7 @@
     :cond_0
     invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloatObject(Landroid/os/Parcel;I)Ljava/lang/Float;
 
-    move-result-object v3
+    move-result-object v2
 
     goto :goto_0
 
@@ -97,7 +99,7 @@
     :cond_2
     invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v2
+    move-result v3
 
     goto :goto_0
 
@@ -108,7 +110,7 @@
     .line 10
     new-instance p1, Lcom/google/android/gms/maps/model/Cap;
 
-    invoke-direct {p1, v2, v1, v3}, Lcom/google/android/gms/maps/model/Cap;-><init>(ILandroid/os/IBinder;Ljava/lang/Float;)V
+    invoke-direct {p1, v3, v1, v2}, Lcom/google/android/gms/maps/model/Cap;-><init>(ILandroid/os/IBinder;Ljava/lang/Float;)V
 
     return-object p1
 .end method

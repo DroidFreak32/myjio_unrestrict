@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final zzbp:Landroid/content/Intent;
+.field private final zzbp:Landroid/content/Intent;
 
-.field public final zzbq:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final zzbq:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field public final zzbr:Ljava/util/Queue;
+.field private final zzbr:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",
@@ -20,11 +20,15 @@
     .end annotation
 .end field
 
-.field public zzbs:Lcom/google/android/gms/iid/zzi;
+.field private zzbs:Lcom/google/android/gms/iid/zzi;
 
-.field public zzbt:Z
+.field private zzbt:Z
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
-.field public final zzl:Landroid/content/Context;
+.field private final zzl:Landroid/content/Context;
 
 
 # direct methods
@@ -49,8 +53,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/concurrent/ScheduledExecutorService;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/concurrent/ScheduledExecutorService;)V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,17 +81,15 @@
     iput-object p1, p0, Lcom/google/android/gms/iid/zzk;->zzl:Landroid/content/Context;
 
     .line 6
-    new-instance p1, Landroid/content/Intent;
+    new-instance v0, Landroid/content/Intent;
 
-    invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/google/android/gms/iid/zzk;->zzl:Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    invoke-virtual {p2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -133,8 +137,6 @@
     iget-object v0, p0, Lcom/google/android/gms/iid/zzk;->zzbs:Lcom/google/android/gms/iid/zzi;
 
     if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/iid/zzk;->zzbs:Lcom/google/android/gms/iid/zzi;
 
     invoke-virtual {v0}, Landroid/os/Binder;->isBinderAlive()Z
 
@@ -277,6 +279,9 @@
 
 .method private final zzn()V
     .locals 1
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
 
     .line 1
     :goto_0

@@ -16,6 +16,9 @@
 
 # virtual methods
 .method public abstract get()Ljava/lang/Object;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TZ;"
@@ -24,6 +27,9 @@
 .end method
 
 .method public abstract getResourceClass()Ljava/lang/Class;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

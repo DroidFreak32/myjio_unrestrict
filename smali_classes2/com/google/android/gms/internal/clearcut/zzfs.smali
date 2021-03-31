@@ -3,22 +3,20 @@
 
 
 # instance fields
-.field public final zzgd:Ljava/nio/ByteBuffer;
+.field private final zzgd:Ljava/nio/ByteBuffer;
 
-.field public zzrh:Lcom/google/android/gms/internal/clearcut/zzbn;
+.field private zzrh:Lcom/google/android/gms/internal/clearcut/zzbn;
 
-.field public zzri:I
+.field private zzri:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/nio/ByteBuffer;)V
+.method private constructor <init>(Ljava/nio/ByteBuffer;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzfs;->zzgd:Ljava/nio/ByteBuffer;
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzfs;->zzgd:Ljava/nio/ByteBuffer;
 
     sget-object v0, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
@@ -27,7 +25,7 @@
     return-void
 .end method
 
-.method public constructor <init>([BII)V
+.method private constructor <init>([BII)V
     .locals 0
 
     invoke-static {p1, p2, p3}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
@@ -39,7 +37,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/CharSequence;)I
+.method private static zza(Ljava/lang/CharSequence;)I
     .locals 8
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -203,6 +201,11 @@
 
 .method private final zzao(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     int-to-byte p1, p1
 
@@ -242,6 +245,11 @@
 
 .method private final zzap(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     :goto_0
     and-int/lit8 v0, p1, -0x80
@@ -334,7 +342,7 @@
     return p0
 .end method
 
-.method public static zzd(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V
+.method private static zzd(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V
     .locals 14
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isReadOnly()Z
@@ -1067,7 +1075,7 @@
     return p0
 .end method
 
-.method public static zzz(I)I
+.method private static zzz(I)I
     .locals 1
 
     and-int/lit8 v0, p0, -0x80
@@ -1119,6 +1127,11 @@
 # virtual methods
 .method public final zza(ILcom/google/android/gms/internal/clearcut/zzfz;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -1142,6 +1155,11 @@
 
 .method public final zza(ILjava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -1270,6 +1288,11 @@
 
 .method public final zza(I[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -1319,6 +1342,11 @@
 
 .method public final zzb(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     shl-int/lit8 p1, p1, 0x3
 
@@ -1331,6 +1359,11 @@
 
 .method public final zzb(IZ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 p1, 0x19
 
@@ -1376,6 +1409,11 @@
 
 .method public final zzc(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -1397,6 +1435,11 @@
 
 .method public final zze(ILcom/google/android/gms/internal/clearcut/zzdo;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzfs;->zzrh:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -1522,6 +1565,11 @@
 
 .method public final zzi(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -1534,6 +1582,11 @@
 
 .method public final zzn(J)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     :goto_0
     const-wide/16 v0, -0x80

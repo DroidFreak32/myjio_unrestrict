@@ -1,23 +1,32 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzapi;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Ljava/util/concurrent/Future;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<A:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Future<",
-        "TA;>;"
-    }
-.end annotation
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public abstract zza(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaob;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzdm(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzf(Lcom/google/android/gms/internal/ads/zzve;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

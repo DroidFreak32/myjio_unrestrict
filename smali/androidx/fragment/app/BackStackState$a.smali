@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/BackStackState$a;
+.class public Landroidx/fragment/app/BackStackState$a;
 .super Ljava/lang/Object;
 .source "BackStackState.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/BackStackState;
+.method public a(Landroid/os/Parcel;)Landroidx/fragment/app/BackStackState;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/fragment/app/BackStackState;
 
     invoke-direct {v0, p1}, Landroidx/fragment/app/BackStackState;-><init>(Landroid/os/Parcel;)V
@@ -49,22 +49,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/fragment/app/BackStackState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/BackStackState$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/BackStackState;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/fragment/app/BackStackState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/fragment/app/BackStackState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/fragment/app/BackStackState;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/BackStackState$a;->a(Landroid/os/Parcel;)Landroidx/fragment/app/BackStackState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -73,7 +73,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/BackStackState$a;->newArray(I)[Landroidx/fragment/app/BackStackState;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/BackStackState$a;->b(I)[Landroidx/fragment/app/BackStackState;
 
     move-result-object p1
 

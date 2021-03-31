@@ -1,30 +1,29 @@
-.class public final Lcom/google/android/gms/internal/ads/zzag;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzag;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# instance fields
-.field public final name:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-.field public final time:J
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
-.field public final zzbn:J
 
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;JJ)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzag;->name:Ljava/lang/String;
-
-    .line 3
-    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zzag;->zzbn:J
-
-    .line 4
-    iput-wide p4, p0, Lcom/google/android/gms/internal/ads/zzag;->time:J
-
-    return-void
+# virtual methods
+.method public abstract zzg(Lcom/google/android/gms/internal/ads/zzaa;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/internal/ads/zzaa<",
+            "TT;>;)V"
+        }
+    .end annotation
 .end method

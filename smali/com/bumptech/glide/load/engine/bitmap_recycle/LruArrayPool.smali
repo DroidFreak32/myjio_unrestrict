@@ -16,15 +16,18 @@
 
 
 # static fields
-.field public static final DEFAULT_SIZE:I = 0x400000
+.field private static final DEFAULT_SIZE:I = 0x400000
 
 .field public static final MAX_OVER_SIZE_MULTIPLE:I = 0x8
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+.end field
 
-.field public static final SINGLE_ARRAY_MAX_SIZE_DIVISOR:I = 0x2
+.field private static final SINGLE_ARRAY_MAX_SIZE_DIVISOR:I = 0x2
 
 
 # instance fields
-.field public final adapters:Ljava/util/Map;
+.field private final adapters:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -36,9 +39,9 @@
     .end annotation
 .end field
 
-.field public currentSize:I
+.field private currentSize:I
 
-.field public final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
+.field private final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap<",
@@ -49,11 +52,11 @@
     .end annotation
 .end field
 
-.field public final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruArrayPool$KeyPool;
+.field private final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruArrayPool$KeyPool;
 
-.field public final maxSize:I
+.field private final maxSize:I
 
-.field public final sortedSizes:Ljava/util/Map;
+.field private final sortedSizes:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -71,6 +74,8 @@
 # direct methods
 .method public constructor <init>()V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -471,6 +476,9 @@
 
 .method private getArrayForKey(Lcom/bumptech/glide/load/engine/bitmap_recycle/LruArrayPool$Key;)Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

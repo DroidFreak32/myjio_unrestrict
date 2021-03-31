@@ -4,61 +4,61 @@
 
 
 # instance fields
-.field public GPSEnabled:Ljava/lang/Boolean;
+.field private GPSEnabled:Ljava/lang/Boolean;
 
-.field public IpV4:Ljava/lang/String;
+.field private IpV4:Ljava/lang/String;
 
-.field public IpV6:Ljava/lang/String;
+.field private IpV6:Ljava/lang/String;
 
-.field public band:Ljava/lang/String;
+.field private band:Ljava/lang/String;
 
-.field public capturedOn:Ljava/lang/Long;
+.field private capturedOn:Ljava/lang/Long;
 
-.field public cellId:Ljava/lang/Integer;
+.field private cellId:Ljava/lang/Integer;
 
-.field public connectionType:Ljava/lang/String;
+.field private connectionType:Ljava/lang/String;
 
-.field public isCellInfoLte:Ljava/lang/Boolean;
+.field private isCellInfoLte:Ljava/lang/Boolean;
 
-.field public lac:Ljava/lang/Integer;
+.field private lac:Ljava/lang/Integer;
 
-.field public mcc:Ljava/lang/Integer;
+.field private mcc:Ljava/lang/Integer;
 
-.field public mnc:Ljava/lang/Integer;
+.field private mnc:Ljava/lang/Integer;
 
-.field public mobileNumber:Ljava/lang/String;
+.field private mobileNumber:Ljava/lang/String;
 
-.field public networkSubtype:Ljava/lang/String;
+.field private networkSubtype:Ljava/lang/String;
 
-.field public networkType:Ljava/lang/String;
+.field private networkType:Ljava/lang/String;
 
-.field public operatorName:Ljava/lang/String;
+.field private operatorName:Ljava/lang/String;
 
-.field public pci:Ljava/lang/Integer;
+.field private pci:Ljava/lang/Integer;
 
-.field public psc:Ljava/lang/Integer;
+.field private psc:Ljava/lang/Integer;
 
-.field public tac:Ljava/lang/Integer;
+.field private tac:Ljava/lang/Integer;
 
-.field public voiceCellId:Ljava/lang/Integer;
+.field private voiceCellId:Ljava/lang/Integer;
 
-.field public voiceLac:Ljava/lang/Integer;
+.field private voiceLac:Ljava/lang/Integer;
 
-.field public voiceMcc:Ljava/lang/Integer;
+.field private voiceMcc:Ljava/lang/Integer;
 
-.field public voiceMnc:Ljava/lang/Integer;
+.field private voiceMnc:Ljava/lang/Integer;
 
-.field public voiceNetworkSubType:Ljava/lang/String;
+.field private voiceNetworkSubType:Ljava/lang/String;
 
-.field public voiceNetworkType:Ljava/lang/String;
+.field private voiceNetworkType:Ljava/lang/String;
 
-.field public voiceOperatorName:Ljava/lang/String;
+.field private voiceOperatorName:Ljava/lang/String;
 
-.field public voicePci:Ljava/lang/Integer;
+.field private voicePci:Ljava/lang/Integer;
 
-.field public voicePsc:Ljava/lang/Integer;
+.field private voicePsc:Ljava/lang/Integer;
 
-.field public voiceTac:Ljava/lang/Integer;
+.field private voiceTac:Ljava/lang/Integer;
 
 
 # direct methods
@@ -73,61 +73,16 @@
 
 
 # virtual methods
-.method public A()Ljava/lang/Integer;
+.method public getBand()Ljava/lang/String;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceTac:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public a()Ljava/lang/String;
-    .locals 1
-
-    .line 2
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->band:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public a(Ljava/lang/Boolean;)V
-    .locals 0
-
-    .line 5
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->GPSEnabled:Ljava/lang/Boolean;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 4
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->cellId:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Long;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->capturedOn:Ljava/lang/Long;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->band:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/Long;
+.method public getCapturedOn()Ljava/lang/Long;
     .locals 1
 
     .line 1
@@ -136,61 +91,16 @@
     return-object v0
 .end method
 
-.method public b(Ljava/lang/Boolean;)V
-    .locals 0
-
-    .line 4
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->isCellInfoLte:Ljava/lang/Boolean;
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->lac:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->connectionType:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/Integer;
+.method public getCellId()Ljava/lang/Integer;
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->cellId:Ljava/lang/Integer;
 
     return-object v0
 .end method
 
-.method public c(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mcc:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public c(Ljava/lang/String;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->IpV4:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public d()Ljava/lang/String;
+.method public getConnectionType()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -199,133 +109,43 @@
     return-object v0
 .end method
 
-.method public d(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mnc:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->IpV6:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public e()Ljava/lang/Boolean;
+.method public getGPSEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 3
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->GPSEnabled:Ljava/lang/Boolean;
 
     return-object v0
 .end method
 
-.method public e(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->pci:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public e(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mobileNumber:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public f()Ljava/lang/String;
+.method public getIpV4()Ljava/lang/String;
     .locals 1
 
-    .line 3
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->IpV4:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public f(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->psc:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public f(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->networkSubtype:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public g()Ljava/lang/String;
+.method public getIpV6()Ljava/lang/String;
     .locals 1
 
-    .line 3
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->IpV6:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public g(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->tac:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public g(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->networkType:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public h()Ljava/lang/Boolean;
+.method public getIsCellInfoLte()Ljava/lang/Boolean;
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->isCellInfoLte:Ljava/lang/Boolean;
 
     return-object v0
 .end method
 
-.method public h(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceCellId:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public h(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->operatorName:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public i()Ljava/lang/Integer;
+.method public getLac()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -334,25 +154,7 @@
     return-object v0
 .end method
 
-.method public i(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceLac:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public i(Ljava/lang/String;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkSubType:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public j()Ljava/lang/Integer;
+.method public getMcc()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -361,25 +163,7 @@
     return-object v0
 .end method
 
-.method public j(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMcc:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public j(Ljava/lang/String;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkType:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public k()Ljava/lang/Integer;
+.method public getMnc()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -388,25 +172,16 @@
     return-object v0
 .end method
 
-.method public k(Ljava/lang/Integer;)V
-    .locals 0
+.method public getMobileNumber()Ljava/lang/String;
+    .locals 1
 
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMnc:Ljava/lang/Integer;
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mobileNumber:Ljava/lang/String;
 
-    return-void
+    return-object v0
 .end method
 
-.method public k(Ljava/lang/String;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceOperatorName:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public l()Ljava/lang/String;
+.method public getNetworkSubtype()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -415,16 +190,7 @@
     return-object v0
 .end method
 
-.method public l(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePci:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public m()Ljava/lang/String;
+.method public getNetworkType()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -433,16 +199,7 @@
     return-object v0
 .end method
 
-.method public m(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePsc:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public n()Ljava/lang/String;
+.method public getOperatorName()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -451,16 +208,7 @@
     return-object v0
 .end method
 
-.method public n(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceTac:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public o()Ljava/lang/Integer;
+.method public getPci()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -469,7 +217,7 @@
     return-object v0
 .end method
 
-.method public p()Ljava/lang/Integer;
+.method public getPsc()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -478,7 +226,7 @@
     return-object v0
 .end method
 
-.method public q()Ljava/lang/Integer;
+.method public getTac()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -487,7 +235,7 @@
     return-object v0
 .end method
 
-.method public r()Ljava/lang/Integer;
+.method public getVoiceCellId()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -496,7 +244,7 @@
     return-object v0
 .end method
 
-.method public s()Ljava/lang/Integer;
+.method public getVoiceLac()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -505,13 +253,328 @@
     return-object v0
 .end method
 
-.method public t()Ljava/lang/Integer;
+.method public getVoiceMcc()Ljava/lang/Integer;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMcc:Ljava/lang/Integer;
 
     return-object v0
+.end method
+
+.method public getVoiceMnc()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMnc:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceNetworkSubType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkSubType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getVoiceNetworkType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getVoiceOperatorName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceOperatorName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getVoicePci()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePci:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoicePsc()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePsc:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceTac()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceTac:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public setBand(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->band:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setCapturedOn(Ljava/lang/Long;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->capturedOn:Ljava/lang/Long;
+
+    return-void
+.end method
+
+.method public setCellId(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->cellId:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setConnectionType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->connectionType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setGPSEnabled(Ljava/lang/Boolean;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->GPSEnabled:Ljava/lang/Boolean;
+
+    return-void
+.end method
+
+.method public setIpV4(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->IpV4:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setIpV6(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->IpV6:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setIsCellInfoLte(Ljava/lang/Boolean;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->isCellInfoLte:Ljava/lang/Boolean;
+
+    return-void
+.end method
+
+.method public setLac(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->lac:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setMcc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mcc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setMnc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mnc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setMobileNumber(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->mobileNumber:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNetworkSubtype(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->networkSubtype:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNetworkType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->networkType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setOperatorName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->operatorName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setPci(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->pci:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setPsc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->psc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setTac(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->tac:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceCellId(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceCellId:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceLac(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceLac:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceMcc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMcc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceMnc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMnc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceNetworkSubType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkSubType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setVoiceNetworkType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setVoiceOperatorName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceOperatorName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setVoicePci(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePci:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoicePsc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePsc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceTac(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceTac:Ljava/lang/Integer;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -777,60 +840,6 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
-
-    return-object v0
-.end method
-
-.method public u()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceMnc:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public v()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkSubType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public w()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceNetworkType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public x()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voiceOperatorName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public y()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePci:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public z()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParamHolder;->voicePsc:Ljava/lang/Integer;
 
     return-object v0
 .end method

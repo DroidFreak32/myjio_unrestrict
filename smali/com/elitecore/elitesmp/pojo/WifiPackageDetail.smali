@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public id:Ljava/lang/String;
+.field private id:Ljava/lang/String;
 
-.field public price:Ljava/lang/String;
+.field private price:Ljava/lang/String;
 
-.field public validity:Ljava/lang/String;
+.field private validity:Ljava/lang/String;
 
 
 # direct methods

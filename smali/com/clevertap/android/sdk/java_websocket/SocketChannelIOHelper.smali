@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .line 1
@@ -22,6 +22,11 @@
 
 .method public static batch(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Ljava/nio/channels/ByteChannel;)Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -128,6 +133,7 @@
 
     if-eqz v1, :cond_4
 
+    .line 11
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->getDraft()Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
     move-result-object v1
@@ -140,13 +146,13 @@
 
     if-ne v1, v3, :cond_4
 
-    .line 11
+    .line 12
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closeConnection()V
 
     :cond_4
     if-eqz v2, :cond_5
 
-    .line 12
+    .line 13
     check-cast p1, Lcom/clevertap/android/sdk/java_websocket/WrappedByteChannel;
 
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/WrappedByteChannel;->isNeedWrite()Z
@@ -164,6 +170,11 @@
 
 .method public static read(Ljava/nio/ByteBuffer;Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Ljava/nio/channels/ByteChannel;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
@@ -198,6 +209,11 @@
 
 .method public static readMore(Ljava/nio/ByteBuffer;Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/WrappedByteChannel;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;

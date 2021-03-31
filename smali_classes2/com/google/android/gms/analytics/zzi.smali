@@ -39,7 +39,7 @@
     return-object p0
 .end method
 
-.method public static zza(Ljava/lang/Object;I)Ljava/lang/String;
+.method private static zza(Ljava/lang/Object;I)Ljava/lang/String;
     .locals 7
 
     const/16 v0, 0xa

@@ -30,7 +30,7 @@
 
 
 # instance fields
-.field public final opener:Lcom/bumptech/glide/load/model/FileLoader$FileOpener;
+.field private final opener:Lcom/bumptech/glide/load/model/FileLoader$FileOpener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/FileLoader$FileOpener<",
@@ -64,6 +64,13 @@
 # virtual methods
 .method public final build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

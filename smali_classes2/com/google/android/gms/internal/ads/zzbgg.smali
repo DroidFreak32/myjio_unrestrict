@@ -1,35 +1,44 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbgg;
-.super Ljava/lang/IllegalArgumentException;
+.class public abstract Lcom/google/android/gms/internal/ads/zzbgg;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzbgh;
 
 
 # direct methods
-.method public constructor <init>(II)V
+.method public static zzau(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzbgh;
     .locals 2
 
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.ads.measurement.IMeasurementManager"
+
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    const/16 v1, 0x36
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    .line 2
+    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzbgh;
 
-    const-string v1, "Unpaired surrogate at index "
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 3
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzbgh;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    return-object v0
 
-    const-string p1, " of "
+    .line 4
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzbgi;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzbgi;-><init>(Landroid/os/IBinder;)V
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    return-void
+    return-object v0
 .end method

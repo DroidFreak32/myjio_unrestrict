@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final synthetic zzacj:Ljava/lang/Runnable;
+.field private final synthetic zzacj:Ljava/lang/Runnable;
 
-.field public final synthetic zzack:Lcom/google/android/gms/internal/gtm/zzcq;
+.field private final synthetic zzack:Lcom/google/android/gms/internal/gtm/zzcq;
 
 
 # direct methods

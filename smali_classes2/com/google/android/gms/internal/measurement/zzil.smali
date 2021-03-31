@@ -1,341 +1,380 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzil;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.class public final enum Lcom/google/android/gms/internal/measurement/zzil;
+.super Ljava/lang/Enum;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum<",
+        "Lcom/google/android/gms/internal/measurement/zzil;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum zza:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzb:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzc:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzd:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zze:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzf:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzg:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzh:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzi:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field public static final enum zzj:Lcom/google/android/gms/internal/measurement/zzil;
+
+.field private static final synthetic zzn:[Lcom/google/android/gms/internal/measurement/zzil;
+
+
+# instance fields
+.field private final zzk:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
+.end field
+
+.field private final zzl:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
+.end field
+
+.field private final zzm:Ljava/lang/Object;
 
 
 # direct methods
-.method public static synthetic zza(BBBB[CI)V
-    .locals 0
-
-    .line 5
-    invoke-static/range {p0 .. p5}, Lcom/google/android/gms/internal/measurement/zzil;->zzb(BBBB[CI)V
-
-    return-void
-.end method
-
-.method public static synthetic zza(BBB[CI)V
-    .locals 0
-
-    .line 4
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/google/android/gms/internal/measurement/zzil;->zzb(BBB[CI)V
-
-    return-void
-.end method
-
-.method public static synthetic zza(BB[CI)V
-    .locals 0
-
-    .line 3
-    invoke-static {p0, p1, p2, p3}, Lcom/google/android/gms/internal/measurement/zzil;->zzb(BB[CI)V
-
-    return-void
-.end method
-
-.method public static synthetic zza(B[CI)V
-    .locals 0
-
-    .line 2
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/internal/measurement/zzil;->zzb(B[CI)V
-
-    return-void
-.end method
-
-.method public static synthetic zza(B)Z
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 27
 
     .line 1
-    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzil;->zzd(B)Z
+    new-instance v6, Lcom/google/android/gms/internal/measurement/zzil;
 
-    move-result p0
+    const-class v3, Ljava/lang/Void;
 
-    return p0
-.end method
+    const-class v4, Ljava/lang/Void;
 
-.method public static zzb(BBBB[CI)V
-    .locals 2
+    const-string v1, "VOID"
 
-    .line 9
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzil;->zzg(B)Z
+    const/4 v2, 0x0
 
-    move-result v0
+    const/4 v5, 0x0
 
-    if-nez v0, :cond_0
+    move-object v0, v6
 
-    shl-int/lit8 v0, p0, 0x1c
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    add-int/lit8 v1, p1, 0x70
+    sput-object v6, Lcom/google/android/gms/internal/measurement/zzil;->zza:Lcom/google/android/gms/internal/measurement/zzil;
 
-    add-int/2addr v0, v1
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzil;
 
-    shr-int/lit8 v0, v0, 0x1e
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    if-nez v0, :cond_0
+    const-class v11, Ljava/lang/Integer;
 
-    .line 10
-    invoke-static {p2}, Lcom/google/android/gms/internal/measurement/zzil;->zzg(B)Z
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v0
+    move-result-object v12
 
-    if-nez v0, :cond_0
+    const-string v8, "INT"
 
-    .line 11
-    invoke-static {p3}, Lcom/google/android/gms/internal/measurement/zzil;->zzg(B)Z
+    const/4 v9, 0x1
 
-    move-result v0
+    move-object v7, v0
 
-    if-nez v0, :cond_0
+    move-object v10, v1
 
-    and-int/lit8 p0, p0, 0x7
+    invoke-direct/range {v7 .. v12}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    shl-int/lit8 p0, p0, 0x12
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzil;->zzb:Lcom/google/android/gms/internal/measurement/zzil;
 
-    and-int/lit8 p1, p1, 0x3f
+    .line 3
+    new-instance v3, Lcom/google/android/gms/internal/measurement/zzil;
 
-    shl-int/lit8 p1, p1, 0xc
+    sget-object v16, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    or-int/2addr p0, p1
+    const-class v17, Ljava/lang/Long;
 
-    and-int/lit8 p1, p2, 0x3f
+    const-wide/16 v4, 0x0
 
-    shl-int/lit8 p1, p1, 0x6
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    or-int/2addr p0, p1
+    move-result-object v18
 
-    and-int/lit8 p1, p3, 0x3f
+    const-string v14, "LONG"
 
-    or-int/2addr p0, p1
+    const/4 v15, 0x2
 
-    const p1, 0xd7c0
+    move-object v13, v3
 
-    ushr-int/lit8 p2, p0, 0xa
+    invoke-direct/range {v13 .. v18}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    add-int/2addr p2, p1
+    sput-object v3, Lcom/google/android/gms/internal/measurement/zzil;->zzc:Lcom/google/android/gms/internal/measurement/zzil;
 
-    int-to-char p1, p2
+    .line 4
+    new-instance v4, Lcom/google/android/gms/internal/measurement/zzil;
 
-    .line 12
-    aput-char p1, p4, p5
+    sget-object v10, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    add-int/lit8 p5, p5, 0x1
+    const-class v11, Ljava/lang/Float;
 
-    const p1, 0xdc00
+    const/4 v5, 0x0
 
-    and-int/lit16 p0, p0, 0x3ff
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    add-int/2addr p0, p1
+    move-result-object v12
 
-    int-to-char p0, p0
+    const-string v8, "FLOAT"
 
-    .line 13
-    aput-char p0, p4, p5
+    const/4 v9, 0x3
 
-    return-void
+    move-object v7, v4
 
-    .line 14
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzft;->zzh()Lcom/google/android/gms/internal/measurement/zzft;
+    invoke-direct/range {v7 .. v12}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    move-result-object p0
-
-    throw p0
-.end method
-
-.method public static zzb(BBB[CI)V
-    .locals 2
+    sput-object v4, Lcom/google/android/gms/internal/measurement/zzil;->zzd:Lcom/google/android/gms/internal/measurement/zzil;
 
     .line 5
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzil;->zzg(B)Z
+    new-instance v5, Lcom/google/android/gms/internal/measurement/zzil;
 
-    move-result v0
+    sget-object v16, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    if-nez v0, :cond_2
+    const-class v17, Ljava/lang/Double;
 
-    const/16 v0, -0x20
+    const-wide/16 v7, 0x0
 
-    const/16 v1, -0x60
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    if-ne p0, v0, :cond_0
+    move-result-object v18
 
-    if-lt p1, v1, :cond_2
+    const-string v14, "DOUBLE"
 
-    :cond_0
-    const/16 v0, -0x13
+    const/4 v15, 0x4
 
-    if-ne p0, v0, :cond_1
+    move-object v13, v5
 
-    if-ge p1, v1, :cond_2
+    invoke-direct/range {v13 .. v18}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+
+    sput-object v5, Lcom/google/android/gms/internal/measurement/zzil;->zze:Lcom/google/android/gms/internal/measurement/zzil;
 
     .line 6
-    :cond_1
-    invoke-static {p2}, Lcom/google/android/gms/internal/measurement/zzil;->zzg(B)Z
+    new-instance v13, Lcom/google/android/gms/internal/measurement/zzil;
 
-    move-result v0
+    sget-object v10, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    if-nez v0, :cond_2
+    const-class v11, Ljava/lang/Boolean;
 
-    and-int/lit8 p0, p0, 0xf
+    sget-object v12, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    shl-int/lit8 p0, p0, 0xc
+    const-string v8, "BOOLEAN"
 
-    and-int/lit8 p1, p1, 0x3f
+    const/4 v9, 0x5
 
-    shl-int/lit8 p1, p1, 0x6
+    move-object v7, v13
 
-    or-int/2addr p0, p1
+    invoke-direct/range {v7 .. v12}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    and-int/lit8 p1, p2, 0x3f
-
-    or-int/2addr p0, p1
-
-    int-to-char p0, p0
+    sput-object v13, Lcom/google/android/gms/internal/measurement/zzil;->zzf:Lcom/google/android/gms/internal/measurement/zzil;
 
     .line 7
-    aput-char p0, p3, p4
+    new-instance v20, Lcom/google/android/gms/internal/measurement/zzil;
 
-    return-void
+    const-class v17, Ljava/lang/String;
+
+    const-class v18, Ljava/lang/String;
+
+    const-string v15, "STRING"
+
+    const/16 v16, 0x6
+
+    const-string v19, ""
+
+    move-object/from16 v14, v20
+
+    invoke-direct/range {v14 .. v19}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+
+    sput-object v20, Lcom/google/android/gms/internal/measurement/zzil;->zzg:Lcom/google/android/gms/internal/measurement/zzil;
 
     .line 8
-    :cond_2
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzft;->zzh()Lcom/google/android/gms/internal/measurement/zzft;
+    new-instance v14, Lcom/google/android/gms/internal/measurement/zzil;
 
-    move-result-object p0
+    const-class v10, Lcom/google/android/gms/internal/measurement/zzgp;
 
-    throw p0
+    const-class v11, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    sget-object v12, Lcom/google/android/gms/internal/measurement/zzgp;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    const-string v8, "BYTE_STRING"
+
+    const/4 v9, 0x7
+
+    move-object v7, v14
+
+    invoke-direct/range {v7 .. v12}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+
+    sput-object v14, Lcom/google/android/gms/internal/measurement/zzil;->zzh:Lcom/google/android/gms/internal/measurement/zzil;
+
+    .line 9
+    new-instance v15, Lcom/google/android/gms/internal/measurement/zzil;
+
+    const-class v11, Ljava/lang/Integer;
+
+    const-string v8, "ENUM"
+
+    const/16 v9, 0x8
+
+    const/4 v12, 0x0
+
+    move-object v7, v15
+
+    move-object v10, v1
+
+    invoke-direct/range {v7 .. v12}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+
+    sput-object v15, Lcom/google/android/gms/internal/measurement/zzil;->zzi:Lcom/google/android/gms/internal/measurement/zzil;
+
+    .line 10
+    new-instance v1, Lcom/google/android/gms/internal/measurement/zzil;
+
+    const-class v24, Ljava/lang/Object;
+
+    const-class v25, Ljava/lang/Object;
+
+    const-string v22, "MESSAGE"
+
+    const/16 v23, 0x9
+
+    const/16 v26, 0x0
+
+    move-object/from16 v21, v1
+
+    invoke-direct/range {v21 .. v26}, Lcom/google/android/gms/internal/measurement/zzil;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+
+    sput-object v1, Lcom/google/android/gms/internal/measurement/zzil;->zzj:Lcom/google/android/gms/internal/measurement/zzil;
+
+    const/16 v7, 0xa
+
+    new-array v7, v7, [Lcom/google/android/gms/internal/measurement/zzil;
+
+    aput-object v6, v7, v2
+
+    const/4 v2, 0x1
+
+    aput-object v0, v7, v2
+
+    const/4 v0, 0x2
+
+    aput-object v3, v7, v0
+
+    const/4 v0, 0x3
+
+    aput-object v4, v7, v0
+
+    const/4 v0, 0x4
+
+    aput-object v5, v7, v0
+
+    const/4 v0, 0x5
+
+    aput-object v13, v7, v0
+
+    const/4 v0, 0x6
+
+    aput-object v20, v7, v0
+
+    const/4 v0, 0x7
+
+    aput-object v14, v7, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v7, v0
+
+    const/16 v0, 0x9
+
+    aput-object v1, v7, v0
+
+    .line 11
+    sput-object v7, Lcom/google/android/gms/internal/measurement/zzil;->zzn:[Lcom/google/android/gms/internal/measurement/zzil;
+
+    return-void
 .end method
 
-.method public static zzb(BB[CI)V
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;",
+            "Ljava/lang/Class<",
+            "*>;",
+            "Ljava/lang/Object;",
+            ")V"
+        }
+    .end annotation
 
-    const/16 v0, -0x3e
-
-    if-lt p0, v0, :cond_0
+    .line 1
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzil;->zzg(B)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    and-int/lit8 p0, p0, 0x1f
-
-    shl-int/lit8 p0, p0, 0x6
-
-    and-int/lit8 p1, p1, 0x3f
-
-    or-int/2addr p0, p1
-
-    int-to-char p0, p0
+    iput-object p3, p0, Lcom/google/android/gms/internal/measurement/zzil;->zzk:Ljava/lang/Class;
 
     .line 3
-    aput-char p0, p2, p3
-
-    return-void
+    iput-object p4, p0, Lcom/google/android/gms/internal/measurement/zzil;->zzl:Ljava/lang/Class;
 
     .line 4
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzft;->zzh()Lcom/google/android/gms/internal/measurement/zzft;
-
-    move-result-object p0
-
-    throw p0
-.end method
-
-.method public static zzb(B[CI)V
-    .locals 0
-
-    int-to-char p0, p0
-
-    .line 1
-    aput-char p0, p1, p2
+    iput-object p5, p0, Lcom/google/android/gms/internal/measurement/zzil;->zzm:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static synthetic zzb(B)Z
-    .locals 0
-
-    .line 15
-    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzil;->zze(B)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic zzc(B)Z
-    .locals 0
+.method public static values()[Lcom/google/android/gms/internal/measurement/zzil;
+    .locals 1
 
     .line 1
-    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzil;->zzf(B)Z
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzil;->zzn:[Lcom/google/android/gms/internal/measurement/zzil;
 
-    move-result p0
+    invoke-virtual {v0}, [Lcom/google/android/gms/internal/measurement/zzil;->clone()Ljava/lang/Object;
 
-    return p0
+    move-result-object v0
+
+    check-cast v0, [Lcom/google/android/gms/internal/measurement/zzil;
+
+    return-object v0
 .end method
 
-.method public static zzd(B)Z
-    .locals 0
 
-    if-ltz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static zze(B)Z
+# virtual methods
+.method public final zza()Ljava/lang/Class;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
 
-    const/16 v0, -0x20
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzil;->zzl:Ljava/lang/Class;
 
-    if-ge p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static zzf(B)Z
-    .locals 1
-
-    const/16 v0, -0x10
-
-    if-ge p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static zzg(B)Z
-    .locals 1
-
-    const/16 v0, -0x41
-
-    if-le p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
+    return-object v0
 .end method

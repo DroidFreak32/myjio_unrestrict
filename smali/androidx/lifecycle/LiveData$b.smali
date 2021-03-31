@@ -22,25 +22,25 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/lifecycle/LiveData;Lce;)V
+.method public constructor <init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lce<",
+            "Landroidx/lifecycle/Observer<",
             "-TT;>;)V"
         }
     .end annotation
 
     .line 1
-    invoke-direct {p0, p1, p2}, Landroidx/lifecycle/LiveData$c;-><init>(Landroidx/lifecycle/LiveData;Lce;)V
+    invoke-direct {p0, p1, p2}, Landroidx/lifecycle/LiveData$c;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()Z
+.method public j()Z
     .locals 1
 
     const/4 v0, 0x1

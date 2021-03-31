@@ -7,39 +7,39 @@
 
 
 # static fields
-.field public static final HEADER_SIZE:I = 0x4
+.field private static final HEADER_SIZE:I = 0x4
 
-.field public static final STATE_FINDING_HEADER:I = 0x0
+.field private static final STATE_FINDING_HEADER:I = 0x0
 
-.field public static final STATE_READING_FRAME:I = 0x2
+.field private static final STATE_READING_FRAME:I = 0x2
 
-.field public static final STATE_READING_HEADER:I = 0x1
+.field private static final STATE_READING_HEADER:I = 0x1
 
 
 # instance fields
-.field public formatId:Ljava/lang/String;
+.field private formatId:Ljava/lang/String;
 
-.field public frameBytesRead:I
+.field private frameBytesRead:I
 
-.field public frameDurationUs:J
+.field private frameDurationUs:J
 
-.field public frameSize:I
+.field private frameSize:I
 
-.field public hasOutputFormat:Z
+.field private hasOutputFormat:Z
 
-.field public final header:Lcom/google/android/jioexoplayer2/extractor/MpegAudioHeader;
+.field private final header:Lcom/google/android/jioexoplayer2/extractor/MpegAudioHeader;
 
-.field public final headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final language:Ljava/lang/String;
+.field private final language:Ljava/lang/String;
 
-.field public lastByteWasFF:Z
+.field private lastByteWasFF:Z
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public state:I
+.field private state:I
 
-.field public timeUs:J
+.field private timeUs:J
 
 
 # direct methods
@@ -75,8 +75,6 @@
     iput-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
     .line 5
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
-
     iget-object v1, v1, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->data:[B
 
     const/4 v2, -0x1
@@ -232,8 +230,6 @@
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
     .line 4
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
-
     iget v4, p0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameSize:I
 
     if-ge p1, v4, :cond_0
@@ -312,14 +308,11 @@
 
     iput v2, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 4
-    iget v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
-
-    if-ge v1, v3, :cond_0
+    if-ge v2, v3, :cond_0
 
     return-void
 
-    .line 5
+    .line 4
     :cond_0
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
@@ -327,7 +320,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 6
+    .line 5
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v1}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readInt()I
@@ -344,15 +337,15 @@
 
     if-nez v1, :cond_1
 
-    .line 7
+    .line 6
     iput v2, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 8
+    .line 7
     iput v4, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     return-void
 
-    .line 9
+    .line 8
     :cond_1
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/jioexoplayer2/extractor/MpegAudioHeader;
 
@@ -360,14 +353,14 @@
 
     iput v5, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameSize:I
 
-    .line 10
+    .line 9
     iget-boolean v5, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->hasOutputFormat:Z
 
     if-nez v5, :cond_2
 
     const-wide/32 v5, 0xf4240
 
-    .line 11
+    .line 10
     iget v7, v1, Lcom/google/android/jioexoplayer2/extractor/MpegAudioHeader;->samplesPerFrame:I
 
     int-to-long v7, v7
@@ -382,7 +375,7 @@
 
     iput-wide v7, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->frameDurationUs:J
 
-    .line 12
+    .line 11
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->formatId:Ljava/lang/String;
 
     iget-object v10, v1, Lcom/google/android/jioexoplayer2/extractor/MpegAudioHeader;->mimeType:Ljava/lang/String;
@@ -409,21 +402,21 @@
 
     move-result-object v1
 
-    .line 13
+    .line 12
     iget-object v5, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
     invoke-interface {v5, v1}, Lcom/google/android/jioexoplayer2/extractor/TrackOutput;->format(Lcom/google/android/jioexoplayer2/Format;)V
 
-    .line 14
+    .line 13
     iput-boolean v4, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->hasOutputFormat:Z
 
-    .line 15
+    .line 14
     :cond_2
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v1, v2}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 16
+    .line 15
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
     iget-object v2, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
@@ -432,7 +425,7 @@
 
     const/4 v1, 0x2
 
-    .line 17
+    .line 16
     iput v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     return-void

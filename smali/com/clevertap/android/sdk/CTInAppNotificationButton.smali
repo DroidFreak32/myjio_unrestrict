@@ -19,19 +19,19 @@
 
 
 # instance fields
-.field public actionUrl:Ljava/lang/String;
+.field private actionUrl:Ljava/lang/String;
 
-.field public backgroundColor:Ljava/lang/String;
+.field private backgroundColor:Ljava/lang/String;
 
-.field public borderColor:Ljava/lang/String;
+.field private borderColor:Ljava/lang/String;
 
-.field public borderRadius:Ljava/lang/String;
+.field private borderRadius:Ljava/lang/String;
 
-.field public error:Ljava/lang/String;
+.field private error:Ljava/lang/String;
 
-.field public jsonDescription:Lorg/json/JSONObject;
+.field private jsonDescription:Lorg/json/JSONObject;
 
-.field public keyValues:Ljava/util/HashMap;
+.field private keyValues:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -42,9 +42,9 @@
     .end annotation
 .end field
 
-.field public text:Ljava/lang/String;
+.field private text:Ljava/lang/String;
 
-.field public textColor:Ljava/lang/String;
+.field private textColor:Ljava/lang/String;
 
 
 # direct methods
@@ -174,10 +174,15 @@
 
 .method private isKVAction(Lorg/json/JSONObject;)Z
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_0
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     .line 1
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -186,6 +191,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 2
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -330,7 +336,7 @@
 
     const-string v5, "color"
 
-    const-string v6, "text"
+    const-string/jumbo v6, "text"
 
     .line 1
     :try_start_0
@@ -443,6 +449,7 @@
 
     if-eqz v2, :cond_5
 
+    .line 8
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object p1
@@ -455,7 +462,7 @@
     :goto_4
     if-eqz p1, :cond_7
 
-    .line 8
+    .line 9
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
@@ -466,7 +473,7 @@
 
     move-result-object v8
 
-    .line 9
+    .line 10
     :cond_6
     invoke-virtual {v8}, Ljava/lang/String;->isEmpty()Z
 
@@ -474,10 +481,10 @@
 
     if-nez v0, :cond_7
 
-    .line 10
+    .line 11
     iput-object v8, p0, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->actionUrl:Ljava/lang/String;
 
-    .line 11
+    .line 12
     :cond_7
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->isKVAction(Lorg/json/JSONObject;)Z
 
@@ -487,21 +494,21 @@
 
     const-string v0, "kv"
 
-    .line 12
+    .line 13
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object p1
 
     if-eqz p1, :cond_a
 
-    .line 13
+    .line 14
     invoke-virtual {p1}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
 
     move-result-object v0
 
     if-eqz v0, :cond_a
 
-    .line 14
+    .line 15
     :cond_8
     :goto_5
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -510,38 +517,38 @@
 
     if-eqz v1, :cond_a
 
-    .line 15
+    .line 16
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 16
+    .line 17
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 17
+    .line 18
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-nez v3, :cond_8
 
-    .line 18
+    .line 19
     iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->keyValues:Ljava/util/HashMap;
 
     if-nez v3, :cond_9
 
-    .line 19
+    .line 20
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     iput-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->keyValues:Ljava/util/HashMap;
 
-    .line 20
+    .line 21
     :cond_9
     iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->keyValues:Ljava/util/HashMap;
 
@@ -554,7 +561,7 @@
     :catch_0
     const-string p1, "Invalid JSON"
 
-    .line 21
+    .line 22
     iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->error:Ljava/lang/String;
 
     :cond_a

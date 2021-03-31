@@ -236,7 +236,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/databind/util/TypeKey;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-eq v2, v3, :cond_2
 
@@ -451,7 +453,7 @@
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TypeKey;->_class:Ljava/lang/Class;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     const-string v2, ", typed? "
 
@@ -462,7 +464,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "{class: "
+    const-string/jumbo v3, "{class: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -494,7 +496,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "{type: "
+    const-string/jumbo v3, "{type: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

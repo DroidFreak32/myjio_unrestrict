@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+.field private static final synthetic $VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
 .field public static final enum DATA_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
@@ -40,109 +40,97 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-    const/4 v1, 0x0
+    const-string v1, "INITIALIZE"
 
-    const-string v2, "INITIALIZE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->INITIALIZE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     .line 2
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     const-string v3, "RESOURCE_CACHE"
 
-    invoke-direct {v0, v3, v2}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->RESOURCE_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    invoke-direct {v1, v3, v4}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->RESOURCE_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     .line 3
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    new-instance v3, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-    const/4 v3, 0x2
+    const-string v5, "DATA_CACHE"
 
-    const-string v4, "DATA_CACHE"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->DATA_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    sput-object v3, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->DATA_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     .line 4
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    new-instance v5, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-    const/4 v4, 0x3
+    const-string v7, "SOURCE"
 
-    const-string v5, "SOURCE"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->SOURCE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    sput-object v5, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->SOURCE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     .line 5
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    new-instance v7, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-    const/4 v5, 0x4
+    const-string v9, "ENCODE"
 
-    const-string v6, "ENCODE"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->ENCODE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    sput-object v7, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->ENCODE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     .line 6
-    new-instance v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    new-instance v9, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-    const/4 v6, 0x5
+    const-string v11, "FINISHED"
 
-    const-string v7, "FINISHED"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->FINISHED:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    sput-object v9, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->FINISHED:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-    const/4 v0, 0x6
+    const/4 v11, 0x6
 
-    new-array v0, v0, [Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    new-array v11, v11, [Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+
+    aput-object v0, v11, v2
+
+    aput-object v1, v11, v4
+
+    aput-object v3, v11, v6
+
+    aput-object v5, v11, v8
+
+    aput-object v7, v11, v10
+
+    aput-object v9, v11, v12
 
     .line 7
-    sget-object v7, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->INITIALIZE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    aput-object v7, v0, v1
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->RESOURCE_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->DATA_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->SOURCE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->ENCODE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->FINISHED:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->$VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+    sput-object v11, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->$VALUES:[Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

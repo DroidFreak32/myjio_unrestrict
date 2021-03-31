@@ -6,15 +6,15 @@
 
 
 # instance fields
-.field public final zzaec:Ljava/lang/String;
+.field private final zzaec:Ljava/lang/String;
 
-.field public volatile zzafd:Ljava/lang/String;
+.field private volatile zzafd:Ljava/lang/String;
 
-.field public final zzajd:Lcom/google/android/gms/internal/gtm/zzpd;
+.field private final zzajd:Lcom/google/android/gms/internal/gtm/zzpd;
 
-.field public final zzaje:Ljava/lang/String;
+.field private final zzaje:Ljava/lang/String;
 
-.field public zzajf:Lcom/google/android/gms/tagmanager/zzdh;
+.field private zzajf:Lcom/google/android/gms/tagmanager/zzdh;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tagmanager/zzdh<",
@@ -24,15 +24,15 @@
     .end annotation
 .end field
 
-.field public volatile zzajg:Lcom/google/android/gms/tagmanager/zzal;
+.field private volatile zzajg:Lcom/google/android/gms/tagmanager/zzal;
 
-.field public volatile zzajh:Ljava/lang/String;
+.field private volatile zzajh:Ljava/lang/String;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/internal/gtm/zzpd;Lcom/google/android/gms/tagmanager/zzal;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/internal/gtm/zzpd;Lcom/google/android/gms/tagmanager/zzal;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -80,8 +80,6 @@
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/zzer;->zzaje:Ljava/lang/String;
 
     .line 8
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/zzer;->zzaje:Ljava/lang/String;
-
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/zzer;->zzafd:Ljava/lang/String;
 
     const/4 p1, 0x0

@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzel:Lcom/google/android/gms/internal/maps/zzaf;
+.field private final zzel:Lcom/google/android/gms/internal/maps/zzaf;
 
-.field public final synthetic zzem:Lcom/google/android/gms/maps/model/TileOverlayOptions;
+.field private final synthetic zzem:Lcom/google/android/gms/maps/model/TileOverlayOptions;
 
 
 # direct methods
@@ -21,8 +21,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/maps/model/zzs;->zzem:Lcom/google/android/gms/maps/model/TileOverlayOptions;
-
     invoke-static {p1}, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zza(Lcom/google/android/gms/maps/model/TileOverlayOptions;)Lcom/google/android/gms/internal/maps/zzaf;
 
     move-result-object p1

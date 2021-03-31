@@ -1,10 +1,11 @@
 .class public final Lcom/google/android/gms/internal/vision/zzal;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
 .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "TextRecognizerOptionsCreator"
+    creator = "SymbolBoxParcelCreator"
 .end annotation
 
 .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
@@ -31,9 +32,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzam;
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzak;
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzam;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzak;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/internal/vision/zzal;->CREATOR:Landroid/os/Parcelable$Creator;
 

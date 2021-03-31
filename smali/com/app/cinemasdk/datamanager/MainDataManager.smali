@@ -4,19 +4,19 @@
 
 
 # static fields
-.field public static ourInstance:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private static ourInstance:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
 
 # instance fields
-.field public director:Lorg/json/JSONArray;
+.field private director:Lorg/json/JSONArray;
 
-.field public genres:Lorg/json/JSONArray;
+.field private genres:Lorg/json/JSONArray;
 
-.field public invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+.field private invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
-.field public isLoginDetailAvailable:Z
+.field private isLoginDetailAvailable:Z
 
-.field public languageAndCode:Ljava/util/ArrayList;
+.field private languageAndCode:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -26,23 +26,23 @@
     .end annotation
 .end field
 
-.field public loginData:Lcom/app/cinemasdk/model/LoginData;
+.field private loginData:Lcom/app/cinemasdk/model/LoginData;
 
-.field public loginDetail:Lcom/app/cinemasdk/responsepojo/loginviasubid/LoginDetail;
+.field private loginDetail:Lcom/app/cinemasdk/responsepojo/loginviasubid/LoginDetail;
 
-.field public networkCheckTime:I
+.field private networkCheckTime:I
 
-.field public starcast:Lorg/json/JSONArray;
+.field private starcast:Lorg/json/JSONArray;
 
-.field public type:I
+.field private type:I
 
-.field public zlaResPojo:Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;
+.field private zlaResPojo:Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;
 
-.field public zlaStateEnum:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+.field private zlaStateEnum:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1

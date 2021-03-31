@@ -1,56 +1,48 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzas;
-.super Lcom/google/android/gms/internal/measurement/zzac$zza;
-.source "com.google.android.gms:play-services-measurement-sdk-api@@17.4.2"
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-sdk-api@@18.0.0"
+
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field public final synthetic zzc:Lcom/google/android/gms/internal/measurement/zzp;
-
-.field public final synthetic zzd:Lcom/google/android/gms/internal/measurement/zzac;
+.field private zza:Ljava/util/concurrent/ThreadFactory;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzac;Lcom/google/android/gms/internal/measurement/zzp;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzag;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzas;->zzd:Lcom/google/android/gms/internal/measurement/zzac;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/measurement/zzas;->zzc:Lcom/google/android/gms/internal/measurement/zzp;
+    .line 2
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzac$zza;-><init>(Lcom/google/android/gms/internal/measurement/zzac;)V
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzas;->zza:Ljava/util/concurrent/ThreadFactory;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza()V
-    .locals 2
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzas;->zzd:Lcom/google/android/gms/internal/measurement/zzac;
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzas;->zza:Ljava/util/concurrent/ThreadFactory;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzac;->zzc(Lcom/google/android/gms/internal/measurement/zzac;)Lcom/google/android/gms/internal/measurement/zzr;
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzas;->zzc:Lcom/google/android/gms/internal/measurement/zzp;
+    const-string v0, "ScionFrontendApi"
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/measurement/zzr;->getCurrentScreenName(Lcom/google/android/gms/internal/measurement/zzs;)V
+    .line 2
+    invoke-virtual {p1, v0}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    return-void
-.end method
-
-.method public final zzb()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzas;->zzc:Lcom/google/android/gms/internal/measurement/zzp;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/measurement/zzp;->zza(Landroid/os/Bundle;)V
-
-    return-void
+    return-object p1
 .end method

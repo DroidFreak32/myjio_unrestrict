@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -40,11 +41,11 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v1
+    move-object v2, v1
 
-    move-object v4, v3
+    const/4 v3, 0x0
 
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     .line 2
     :goto_0
@@ -89,20 +90,20 @@
     :cond_0
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
     goto :goto_0
 
     .line 7
     :cond_1
-    sget-object v3, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v1, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 8
-    invoke-static {p1, v5, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v5, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Landroid/app/PendingIntent;
+    check-cast v1, Landroid/app/PendingIntent;
 
     goto :goto_0
 
@@ -110,7 +111,7 @@
     :cond_2
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v1
+    move-result v4
 
     goto :goto_0
 
@@ -118,7 +119,7 @@
     :cond_3
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v2
+    move-result v3
 
     goto :goto_0
 
@@ -129,7 +130,7 @@
     .line 12
     new-instance p1, Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-direct {p1, v2, v1, v3, v4}, Lcom/google/android/gms/common/ConnectionResult;-><init>(IILandroid/app/PendingIntent;Ljava/lang/String;)V
+    invoke-direct {p1, v3, v4, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(IILandroid/app/PendingIntent;Ljava/lang/String;)V
 
     return-object p1
 .end method

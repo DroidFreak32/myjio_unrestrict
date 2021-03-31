@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public auto:Ljava/lang/String;
+.field private auto:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public cast:Ljava/lang/String;
+.field private cast:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public high:Ljava/lang/String;
+.field private high:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public isDRM:Ljava/lang/String;
+.field private isDRM:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public low:Ljava/lang/String;
+.field private low:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -49,7 +49,7 @@
     .end annotation
 .end field
 
-.field public medium:Ljava/lang/String;
+.field private medium:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -58,7 +58,7 @@
     .end annotation
 .end field
 
-.field public videoId:Ljava/lang/Integer;
+.field private videoId:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

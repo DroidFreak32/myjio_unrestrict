@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public contentID:Ljava/lang/String;
+.field private contentID:Ljava/lang/String;
 
-.field public contentType:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
 
-.field public tvShowID:Ljava/lang/String;
+.field private tvShowID:Ljava/lang/String;
 
 
 # direct methods

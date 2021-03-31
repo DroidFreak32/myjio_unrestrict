@@ -6,26 +6,24 @@
 
 
 # instance fields
-.field public final limit:I
+.field private final limit:I
 
-.field public position:I
+.field private position:I
 
-.field public final synthetic zzfl:Lcom/google/android/gms/internal/clearcut/zzbb;
+.field private final synthetic zzfl:Lcom/google/android/gms/internal/clearcut/zzbb;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/internal/clearcut/zzbb;)V
-    .locals 0
+    .locals 1
 
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzbc;->zzfl:Lcom/google/android/gms/internal/clearcut/zzbb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzbc;->position:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzbc;->zzfl:Lcom/google/android/gms/internal/clearcut/zzbb;
+    iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzbc;->position:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 

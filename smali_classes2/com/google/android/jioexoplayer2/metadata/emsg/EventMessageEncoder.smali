@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final byteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
+.field private final byteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
 
-.field public final dataOutputStream:Ljava/io/DataOutputStream;
+.field private final dataOutputStream:Ljava/io/DataOutputStream;
 
 
 # direct methods
@@ -26,19 +26,22 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessageEncoder;->byteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
 
     .line 3
-    new-instance v0, Ljava/io/DataOutputStream;
+    new-instance v1, Ljava/io/DataOutputStream;
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessageEncoder;->byteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
+    invoke-direct {v1, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessageEncoder;->dataOutputStream:Ljava/io/DataOutputStream;
+    iput-object v1, p0, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessageEncoder;->dataOutputStream:Ljava/io/DataOutputStream;
 
     return-void
 .end method
 
-.method public static writeNullTerminatedString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
+.method private static writeNullTerminatedString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
@@ -51,8 +54,13 @@
     return-void
 .end method
 
-.method public static writeUnsignedInt(Ljava/io/DataOutputStream;J)V
+.method private static writeUnsignedInt(Ljava/io/DataOutputStream;J)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x18
 
@@ -101,6 +109,8 @@
 # virtual methods
 .method public encode(Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessage;)[B
     .locals 3
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessageEncoder;->byteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
@@ -119,8 +129,6 @@
     iget-object v0, p1, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
     if-eqz v0, :cond_0
-
-    iget-object v0, p1, Lcom/google/android/jioexoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
     goto :goto_0
 

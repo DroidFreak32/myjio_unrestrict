@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final zzawb:I
+.field private final zzawb:I
 
-.field public final zzawc:I
+.field private final zzawc:I
 
 
 # direct methods
@@ -46,7 +46,7 @@
     .locals 4
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzpx;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzps;->size()I
 
     move-result v0
 

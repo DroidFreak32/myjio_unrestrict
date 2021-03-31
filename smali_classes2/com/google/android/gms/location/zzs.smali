@@ -1,51 +1,50 @@
-.class public Lcom/google/android/gms/location/zzs;
-.super Lcom/google/android/gms/internal/location/zzb;
+.class public final synthetic Lcom/google/android/gms/location/zzs;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Lcom/google/android/gms/location/zzr;
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+
+# instance fields
+.field private final zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+.field private final zzb:Lcom/google/android/gms/tasks/CancellationToken;
+
+.field private final zzc:Lcom/google/android/gms/internal/location/zzbc;
 
 
 # direct methods
-.method public static zza(Landroid/os/IBinder;)Lcom/google/android/gms/location/zzr;
-    .locals 2
+.method public constructor <init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/CancellationToken;Lcom/google/android/gms/internal/location/zzbc;)V
+    .locals 0
 
-    if-nez p0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p0, 0x0
+    iput-object p1, p0, Lcom/google/android/gms/location/zzs;->zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
-    return-object p0
+    iput-object p2, p0, Lcom/google/android/gms/location/zzs;->zzb:Lcom/google/android/gms/tasks/CancellationToken;
 
-    :cond_0
-    const-string v0, "com.google.android.gms.location.IDeviceOrientationListener"
+    iput-object p3, p0, Lcom/google/android/gms/location/zzs;->zzc:Lcom/google/android/gms/internal/location/zzbc;
 
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lcom/google/android/gms/location/zzr;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lcom/google/android/gms/location/zzr;
-
-    return-object v0
-
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/location/zzt;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/location/zzt;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
 
-    new-instance p1, Ljava/lang/NoSuchMethodError;
+    iget-object v0, p0, Lcom/google/android/gms/location/zzs;->zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
+    iget-object v1, p0, Lcom/google/android/gms/location/zzs;->zzb:Lcom/google/android/gms/tasks/CancellationToken;
 
-    throw p1
+    iget-object v2, p0, Lcom/google/android/gms/location/zzs;->zzc:Lcom/google/android/gms/internal/location/zzbc;
+
+    check-cast p1, Lcom/google/android/gms/internal/location/zzay;
+
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-virtual {v0, v1, v2, p1, p2}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/tasks/CancellationToken;Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/internal/location/zzay;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+
+    return-void
 .end method

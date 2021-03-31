@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public avg:D
+.field private avg:D
 
-.field public max:D
+.field private max:D
 
-.field public min:D
+.field private min:D
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public a()D
+.method public getAvg()D
     .locals 2
 
     .line 1
@@ -32,16 +32,7 @@
     return-wide v0
 .end method
 
-.method public a(D)V
-    .locals 0
-
-    .line 2
-    iput-wide p1, p0, Lcom/inn/passivesdk/holders/TransferRateHolder;->avg:D
-
-    return-void
-.end method
-
-.method public b()D
+.method public getMax()D
     .locals 2
 
     .line 1
@@ -50,16 +41,7 @@
     return-wide v0
 .end method
 
-.method public b(D)V
-    .locals 0
-
-    .line 2
-    iput-wide p1, p0, Lcom/inn/passivesdk/holders/TransferRateHolder;->max:D
-
-    return-void
-.end method
-
-.method public c()D
+.method public getMin()D
     .locals 2
 
     .line 1
@@ -68,10 +50,28 @@
     return-wide v0
 .end method
 
-.method public c(D)V
+.method public setAvg(D)V
     .locals 0
 
-    .line 2
+    .line 1
+    iput-wide p1, p0, Lcom/inn/passivesdk/holders/TransferRateHolder;->avg:D
+
+    return-void
+.end method
+
+.method public setMax(D)V
+    .locals 0
+
+    .line 1
+    iput-wide p1, p0, Lcom/inn/passivesdk/holders/TransferRateHolder;->max:D
+
+    return-void
+.end method
+
+.method public setMin(D)V
+    .locals 0
+
+    .line 1
     iput-wide p1, p0, Lcom/inn/passivesdk/holders/TransferRateHolder;->min:D
 
     return-void

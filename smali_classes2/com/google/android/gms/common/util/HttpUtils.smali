@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/HttpUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,11 +9,11 @@
 
 
 # static fields
-.field public static final zzha:Ljava/util/regex/Pattern;
+.field private static final zza:Ljava/util/regex/Pattern;
 
-.field public static final zzhb:Ljava/util/regex/Pattern;
+.field private static final zzb:Ljava/util/regex/Pattern;
 
-.field public static final zzhc:Ljava/util/regex/Pattern;
+.field private static final zzc:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -26,7 +27,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/HttpUtils;->zzha:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/util/HttpUtils;->zza:Ljava/util/regex/Pattern;
 
     const-string v0, "^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$"
 
@@ -35,7 +36,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/HttpUtils;->zzhb:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/util/HttpUtils;->zzb:Ljava/util/regex/Pattern;
 
     const-string v0, "^((?:[0-9A-Fa-f]{1,4}(?::[0-9A-Fa-f]{1,4})*)?)::((?:[0-9A-Fa-f]{1,4}(?::[0-9A-Fa-f]{1,4})*)?)$"
 
@@ -44,12 +45,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/HttpUtils;->zzhc:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/util/HttpUtils;->zzc:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -58,40 +59,19 @@
     return-void
 .end method
 
-.method public static decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_0
-    const-string p1, "ISO-8859-1"
-
-    .line 1
-    :goto_0
-    invoke-static {p0, p1}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    .line 2
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p1
-.end method
-
 .method public static parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/Map;
     .locals 6
+    .param p0    # Ljava/net/URI;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -177,7 +157,7 @@
     .line 10
     aget-object v2, p0, v2
 
-    invoke-static {v2, p1}, Lcom/google/android/gms/common/util/HttpUtils;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1}, Lcom/google/android/gms/common/util/HttpUtils;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -193,7 +173,7 @@
     .line 12
     aget-object p0, p0, v3
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/util/HttpUtils;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/util/HttpUtils;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -215,4 +195,36 @@
 
     :cond_2
     return-object v0
+.end method
+
+.method private static zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    :try_start_0
+    const-string p1, "ISO-8859-1"
+
+    .line 1
+    :goto_0
+    invoke-static {p0, p1}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    .line 2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
 .end method

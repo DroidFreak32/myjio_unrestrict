@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/internal/Flags;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # static fields
-.field public static final zzdg:Lcom/google/android/gms/flags/Flag;
+.field private static final zzdr:Lcom/google/android/gms/flags/Flag;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/flags/Flag<",
@@ -23,12 +24,8 @@
 .method public static constructor <clinit>()V
     .locals 3
 
-    const/4 v0, 0x1
-
     .line 1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     const/4 v1, 0x0
 
@@ -38,12 +35,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/vision/internal/Flags;->zzdg:Lcom/google/android/gms/flags/Flag;
+    sput-object v0, Lcom/google/android/gms/vision/internal/Flags;->zzdr:Lcom/google/android/gms/flags/Flag;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

@@ -6,7 +6,7 @@
 # static fields
 .field public static final PROP_NAME_MESSAGE:Ljava/lang/String; = "message"
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -37,6 +37,11 @@
 # virtual methods
 .method public deserializeFromObject(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_propertyBasedCreator:Lcom/fasterxml/jackson/databind/deser/impl/PropertyBasedCreator;
@@ -375,7 +380,9 @@
     .end annotation
 
     .line 1
-    const-class v0, Lcom/fasterxml/jackson/databind/deser/std/ThrowableDeserializer;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     const-class v1, Lcom/fasterxml/jackson/databind/deser/std/ThrowableDeserializer;
 

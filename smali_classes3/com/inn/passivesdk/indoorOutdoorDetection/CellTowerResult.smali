@@ -17,49 +17,49 @@
 
 
 # instance fields
-.field public band:Ljava/lang/String;
+.field private band:Ljava/lang/String;
 
-.field public cellArray:Landroid/util/SparseIntArray;
+.field private cellArray:Landroid/util/SparseIntArray;
 
-.field public cellId:I
+.field private cellId:I
 
 .field public cellLocation:Landroid/telephony/gsm/GsmCellLocation;
 
-.field public currentCID:I
+.field private currentCID:I
 
-.field public currentSignalStrength:I
+.field private currentSignalStrength:I
 
-.field public indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
 .field public networkCategory:Ljava/lang/String;
 
-.field public operator:Ljava/lang/String;
+.field private operator:Ljava/lang/String;
 
-.field public outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public pci:I
+.field private pci:I
 
 .field public phoneStateListener:Landroid/telephony/PhoneStateListener;
 
-.field public prevStatus:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+.field private prevStatus:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
-.field public previousCellId:I
+.field private previousCellId:I
 
-.field public previousOperator:Ljava/lang/String;
+.field private previousOperator:Ljava/lang/String;
 
-.field public previousPci:I
+.field private previousPci:I
 
-.field public previousTechnology:Ljava/lang/String;
+.field private previousTechnology:Ljava/lang/String;
 
-.field public semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
 .field public signalStrength:Ljava/lang/Integer;
 
-.field public technology:Ljava/lang/String;
+.field private technology:Ljava/lang/String;
 
 .field public telephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -94,11 +94,9 @@
     .line 6
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->mContext:Landroid/content/Context;
 
-    .line 7
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->mContext:Landroid/content/Context;
-
     const-string v1, "phone"
 
+    .line 7
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
@@ -155,25 +153,23 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 15
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    aput-object v1, p1, v0
+    aput-object v2, v1, v0
 
     .line 16
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    aput-object v0, p1, v1
+    aput-object v0, v1, v2
+
+    const/4 v0, 0x2
 
     .line 17
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
-    const/4 v2, 0x2
-
-    aput-object v0, p1, v2
+    aput-object p1, v1, v0
 
     .line 18
     iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->telephonyManager:Landroid/telephony/TelephonyManager;
@@ -182,7 +178,7 @@
 
     move-result p1
 
-    if-eq p1, v1, :cond_0
+    if-eq p1, v2, :cond_0
 
     .line 19
     iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->telephonyManager:Landroid/telephony/TelephonyManager;
@@ -195,12 +191,9 @@
 
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->cellLocation:Landroid/telephony/gsm/GsmCellLocation;
 
-    .line 20
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->cellLocation:Landroid/telephony/gsm/GsmCellLocation;
-
     if-eqz p1, :cond_0
 
-    .line 21
+    .line 20
     invoke-virtual {p1}, Landroid/telephony/gsm/GsmCellLocation;->getCid()I
 
     move-result p1
@@ -514,10 +507,7 @@
     :cond_0
     if-ne p1, v4, :cond_1
 
-    :goto_0
-    move-object v2, v0
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     if-ne p1, v6, :cond_2
@@ -559,7 +549,14 @@
     .line 8
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
+    goto :goto_1
+
     :cond_5
+    move-object v0, v2
+
+    :goto_0
+    move-object v2, v0
+
     :goto_1
     return-object v2
 .end method
@@ -879,7 +876,7 @@
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -891,7 +888,7 @@
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
     :goto_1
@@ -1010,8 +1007,6 @@
     iput-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->signalStrength:Ljava/lang/Integer;
 
     .line 4
-    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->signalStrength:Ljava/lang/Integer;
-
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -1021,11 +1016,11 @@
     .line 5
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->mContext:Landroid/content/Context;
 
-    invoke-static {v2}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {v2}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Log0;->n()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getNetworkTypeFromHiddenApi()Ljava/lang/String;
 
     .line 6
     :cond_0
@@ -1324,8 +1319,6 @@
     iput-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->signalStrength:Ljava/lang/Integer;
 
     .line 33
-    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->signalStrength:Ljava/lang/Integer;
-
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -1335,11 +1328,11 @@
     .line 34
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult;->mContext:Landroid/content/Context;
 
-    invoke-static {v2}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {v2}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Log0;->n()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getNetworkTypeFromHiddenApi()Ljava/lang/String;
 
     .line 35
     :cond_9
@@ -1521,26 +1514,25 @@
 
     move-object v1, v3
 
-    :goto_0
     :pswitch_0
-    move-object v5, v1
+    move-object v2, v1
 
     goto :goto_2
 
     :pswitch_1
     const-string v1, "HSPA+"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_2
     const-string v1, "eHRPD"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_3
     const-string v1, "EVDO rev. B"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_4
     const-string v1, "iDen"
@@ -1550,17 +1542,17 @@
     :pswitch_5
     const-string v1, "HSPA"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_6
     const-string v1, "HSUPA"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_7
     const-string v1, "HSDPA"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_8
     const-string v1, "1xRTT"
@@ -1570,12 +1562,12 @@
     :pswitch_9
     const-string v1, "EVDO rev. A"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_a
     const-string v1, "EVDO rev. 0"
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_b
     const-string v1, "CDMA"
@@ -1584,6 +1576,11 @@
 
     :pswitch_c
     const-string v1, "UMTS"
+
+    :goto_0
+    move-object v2, v1
+
+    move-object v1, v5
 
     goto :goto_2
 
@@ -1596,27 +1593,27 @@
     const-string v1, "GPRS"
 
     :goto_1
-    move-object v5, v4
+    move-object v2, v1
+
+    move-object v1, v4
 
     goto :goto_2
 
     :pswitch_f
     move-object v1, v2
 
-    goto :goto_0
-
     :goto_2
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    aput-object v5, v0, v2
+    aput-object v1, v0, v3
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     return-object v0
 
@@ -1774,7 +1771,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "sevenDigitCellIdToHexadecimal : "
+    const-string v1, "sevenDigitCellIdToHexadecimal : "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

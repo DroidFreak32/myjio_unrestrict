@@ -5,6 +5,11 @@
 # direct methods
 .method public static zzbf(Ljava/lang/String;)Lcom/google/android/gms/internal/gtm/zzov;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lorg/json/JSONObject;
@@ -109,9 +114,15 @@
     return-object p0
 .end method
 
-.method public static zzg(Ljava/lang/Object;)Ljava/lang/Object;
+.method private static zzg(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
     .end annotation
 
     .line 1

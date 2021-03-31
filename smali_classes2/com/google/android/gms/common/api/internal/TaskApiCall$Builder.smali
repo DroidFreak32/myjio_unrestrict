@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -28,11 +29,7 @@
 
 
 # instance fields
-.field public zake:[Lcom/google/android/gms/common/Feature;
-
-.field public zakl:Z
-
-.field public zakm:Lcom/google/android/gms/common/api/internal/RemoteCall;
+.field private zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/RemoteCall<",
@@ -43,9 +40,13 @@
     .end annotation
 .end field
 
+.field private zab:Z
+
+.field private zac:[Lcom/google/android/gms/common/Feature;
+
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -54,12 +55,12 @@
     const/4 v0, 0x1
 
     .line 2
-    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakl:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/common/api/internal/zaci;)V
+.method public synthetic constructor <init>(Lcom/google/android/gms/common/api/internal/zacf;)V
     .locals 0
 
     .line 3
@@ -72,7 +73,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakm:Lcom/google/android/gms/common/api/internal/RemoteCall;
+    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
     return-object p0
 .end method
@@ -93,7 +94,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakm:Lcom/google/android/gms/common/api/internal/RemoteCall;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
     if-eqz v0, :cond_0
 
@@ -110,13 +111,13 @@
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/common/api/internal/zack;
+    new-instance v0, Lcom/google/android/gms/common/api/internal/zach;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zake:[Lcom/google/android/gms/common/Feature;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
-    iget-boolean v2, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakl:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/google/android/gms/common/api/internal/zack;-><init>(Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;[Lcom/google/android/gms/common/Feature;Z)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/android/gms/common/api/internal/zach;-><init>(Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;[Lcom/google/android/gms/common/Feature;Z)V
 
     return-object v0
 .end method
@@ -142,11 +143,11 @@
     .end annotation
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/common/api/internal/zacj;
+    new-instance v0, Lcom/google/android/gms/common/api/internal/zacg;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/common/api/internal/zacj;-><init>(Lcom/google/android/gms/common/util/BiConsumer;)V
+    invoke-direct {v0, p1}, Lcom/google/android/gms/common/api/internal/zacg;-><init>(Lcom/google/android/gms/common/util/BiConsumer;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakm:Lcom/google/android/gms/common/api/internal/RemoteCall;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
     return-object p0
 .end method
@@ -169,7 +170,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakm:Lcom/google/android/gms/common/api/internal/RemoteCall;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
     return-object p0
 .end method
@@ -188,7 +189,7 @@
     .end annotation
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zakl:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
 
     return-object p0
 .end method
@@ -209,7 +210,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zake:[Lcom/google/android/gms/common/Feature;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
     return-object p0
 .end method

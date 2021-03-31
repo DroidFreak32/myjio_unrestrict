@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -61,6 +62,10 @@
 # virtual methods
 .method public getImpliedScopes(Ljava/lang/Object;)Ljava/util/List;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

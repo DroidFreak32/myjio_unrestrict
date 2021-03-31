@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/FragmentTabHost$SavedState$a;
+.class public Landroidx/fragment/app/FragmentTabHost$SavedState$a;
 .super Ljava/lang/Object;
 .source "FragmentTabHost.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentTabHost$SavedState;
+.method public a(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentTabHost$SavedState;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/fragment/app/FragmentTabHost$SavedState;
 
     invoke-direct {v0, p1}, Landroidx/fragment/app/FragmentTabHost$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -49,22 +49,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/fragment/app/FragmentTabHost$SavedState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentTabHost$SavedState$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentTabHost$SavedState;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/fragment/app/FragmentTabHost$SavedState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/fragment/app/FragmentTabHost$SavedState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/fragment/app/FragmentTabHost$SavedState;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentTabHost$SavedState$a;->a(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentTabHost$SavedState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -73,7 +73,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentTabHost$SavedState$a;->newArray(I)[Landroidx/fragment/app/FragmentTabHost$SavedState;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentTabHost$SavedState$a;->b(I)[Landroidx/fragment/app/FragmentTabHost$SavedState;
 
     move-result-object p1
 

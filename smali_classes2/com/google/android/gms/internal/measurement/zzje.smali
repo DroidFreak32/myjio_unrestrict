@@ -1,79 +1,87 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzje;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzjf;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzcq;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/measurement/zzcq<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private static final zza:Lcom/google/android/gms/internal/measurement/zzjc;
+
+.field private static final zzb:Lcom/google/android/gms/internal/measurement/zzjc;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzcw;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lcom/google/android/gms/internal/measurement/zzcr;->zza(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzcw;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.sampling.calculate_bundle_timestamp_before_sampling"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/measurement/zzcw;->zza(Ljava/lang/String;Z)Lcom/google/android/gms/internal/measurement/zzcq;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzje;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final zza()Z
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzje;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzcq;->zzc()Ljava/lang/Object;
+    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzje;->zzc()Lcom/google/android/gms/internal/measurement/zzjc;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzje;->zza:Lcom/google/android/gms/internal/measurement/zzjc;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzjf;
 
-    move-result v0
+    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzjf;-><init>()V
 
-    return v0
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzje;->zzb:Lcom/google/android/gms/internal/measurement/zzjc;
+
+    return-void
+.end method
+
+.method public static zza()Lcom/google/android/gms/internal/measurement/zzjc;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzje;->zza:Lcom/google/android/gms/internal/measurement/zzjc;
+
+    return-object v0
+.end method
+
+.method public static zzb()Lcom/google/android/gms/internal/measurement/zzjc;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzje;->zzb:Lcom/google/android/gms/internal/measurement/zzjc;
+
+    return-object v0
+.end method
+
+.method private static zzc()Lcom/google/android/gms/internal/measurement/zzjc;
+    .locals 3
+
+    :try_start_0
+    const-string v0, "com.google.protobuf.MapFieldSchemaFull"
+
+    .line 1
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
+
+    .line 2
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/measurement/zzjc;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

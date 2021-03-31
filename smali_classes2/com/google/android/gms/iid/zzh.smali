@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final synthetic zzbf:Landroid/content/Intent;
+.field private final synthetic zzbf:Landroid/content/Intent;
 
-.field public final synthetic zzbl:Lcom/google/android/gms/iid/zzg;
+.field private final synthetic zzbl:Lcom/google/android/gms/iid/zzg;
 
 
 # direct methods

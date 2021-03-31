@@ -1,85 +1,42 @@
-.class public abstract Lcom/google/android/gms/common/api/internal/zabf;
+.class public final Lcom/google/android/gms/common/api/internal/zabf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zahu:Lcom/google/android/gms/common/api/internal/zabd;
+.field private final synthetic zaa:I
+
+.field private final synthetic zab:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zabd;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;I)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zab:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zahu:Lcom/google/android/gms/common/api/internal/zabd;
+    iput p2, p0, Lcom/google/android/gms/common/api/internal/zabf;->zaa:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract zaan()V
-.end method
-
-.method public final zac(Lcom/google/android/gms/common/api/internal/zabe;)V
+.method public final run()V
     .locals 2
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabe;->zaa(Lcom/google/android/gms/common/api/internal/zabe;)Ljava/util/concurrent/locks/Lock;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabf;->zab:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
-    move-result-object v0
+    iget v1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zaa:I
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    .line 2
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabe;->zab(Lcom/google/android/gms/common/api/internal/zabe;)Lcom/google/android/gms/common/api/internal/zabd;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zabf;->zahu:Lcom/google/android/gms/common/api/internal/zabd;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eq v0, v1, :cond_0
-
-    .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabe;->zaa(Lcom/google/android/gms/common/api/internal/zabe;)Ljava/util/concurrent/locks/Lock;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;I)V
 
     return-void
-
-    .line 4
-    :cond_0
-    :try_start_1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/zabf;->zaan()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 5
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabe;->zaa(Lcom/google/android/gms/common/api/internal/zabe;)Ljava/util/concurrent/locks/Lock;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    .line 6
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zabe;->zaa(Lcom/google/android/gms/common/api/internal/zabe;)Ljava/util/concurrent/locks/Lock;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    throw v0
 .end method

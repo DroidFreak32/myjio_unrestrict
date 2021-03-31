@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+.field private static final synthetic $VALUES:[Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
 .field public static final enum ERROR:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
@@ -27,76 +27,68 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    const/4 v1, 0x0
+    const-string v1, "ERROR"
 
-    const-string v2, "ERROR"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->ERROR:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    new-instance v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
     const-string v3, "RETRY"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->RETRY:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    invoke-direct {v1, v3, v4, v4}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    sput-object v1, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->RETRY:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    const-string v4, "SUCCESS"
+    const-string v5, "SUCCESS"
 
-    invoke-direct {v0, v4, v3, v3}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->SUCCESS:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    invoke-direct {v3, v5, v6, v6}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    sput-object v3, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->SUCCESS:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    const-string v5, "FAILED"
+    const-string v7, "FAILED"
 
-    invoke-direct {v0, v5, v4, v4}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->FAILED:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    invoke-direct {v5, v7, v8, v8}, Lcom/app/cinemasdk/Constant/ZLAStateEnum;-><init>(Ljava/lang/String;II)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->FAILED:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
-    new-array v0, v0, [Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 2
-    sget-object v5, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->ERROR:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->RETRY:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->SUCCESS:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->FAILED:Lcom/app/cinemasdk/Constant/ZLAStateEnum;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->$VALUES:[Lcom/app/cinemasdk/Constant/ZLAStateEnum;
+    sput-object v7, Lcom/app/cinemasdk/Constant/ZLAStateEnum;->$VALUES:[Lcom/app/cinemasdk/Constant/ZLAStateEnum;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public connected:Z
+.field private connected:Z
 
 
 # direct methods

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final CANONICALS:[Lcom/fasterxml/jackson/databind/node/IntNode;
+.field private static final CANONICALS:[Lcom/fasterxml/jackson/databind/node/IntNode;
 
 .field public static final MAX_CANONICAL:I = 0xa
 
@@ -317,6 +317,12 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     iget p2, p0, Lcom/fasterxml/jackson/databind/node/IntNode;->_value:I

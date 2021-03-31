@@ -19,11 +19,12 @@
         0x3
     }
     d1 = {
-        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0004\u0008\u0086\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002j\u0002\u0008\u0003j\u0002\u0008\u0004\u00a8\u0006\u0005"
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0005\u0008\u0086\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\t\u0008\u0002\u00a2\u0006\u0004\u0008\u0002\u0010\u0003j\u0002\u0008\u0004j\u0002\u0008\u0005\u00a8\u0006\u0006"
     }
     d2 = {
         "Lcom/jio/jioml/hellojio/core/MODE;",
         "",
+        "<init>",
         "(Ljava/lang/String;I)V",
         "HOME",
         "CHAT",
@@ -33,7 +34,7 @@
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
@@ -43,7 +44,7 @@
 
 .field public static final enum HOME:Lcom/jio/jioml/hellojio/core/MODE;
 
-.field public static final synthetic s:[Lcom/jio/jioml/hellojio/core/MODE;
+.field public static final synthetic a:[Lcom/jio/jioml/hellojio/core/MODE;
 
 
 # direct methods
@@ -56,29 +57,29 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/core/MODE;
 
-    const/4 v2, 0x0
+    const-string v2, "HOME"
 
-    const-string v3, "HOME"
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/core/MODE;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/core/MODE;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/core/MODE;->HOME:Lcom/jio/jioml/hellojio/core/MODE;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/core/MODE;
 
-    const/4 v2, 0x1
+    const-string v2, "CHAT"
 
-    const-string v3, "CHAT"
+    const/4 v3, 0x1
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/core/MODE;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/core/MODE;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/core/MODE;->CHAT:Lcom/jio/jioml/hellojio/core/MODE;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
-    sput-object v0, Lcom/jio/jioml/hellojio/core/MODE;->s:[Lcom/jio/jioml/hellojio/core/MODE;
+    sput-object v0, Lcom/jio/jioml/hellojio/core/MODE;->a:[Lcom/jio/jioml/hellojio/core/MODE;
 
     return-void
 .end method
@@ -114,7 +115,7 @@
 .method public static values()[Lcom/jio/jioml/hellojio/core/MODE;
     .locals 1
 
-    sget-object v0, Lcom/jio/jioml/hellojio/core/MODE;->s:[Lcom/jio/jioml/hellojio/core/MODE;
+    sget-object v0, Lcom/jio/jioml/hellojio/core/MODE;->a:[Lcom/jio/jioml/hellojio/core/MODE;
 
     invoke-virtual {v0}, [Lcom/jio/jioml/hellojio/core/MODE;->clone()Ljava/lang/Object;
 

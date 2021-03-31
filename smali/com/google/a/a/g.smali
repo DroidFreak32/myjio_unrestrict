@@ -11,9 +11,9 @@
 
 
 # instance fields
-.field public a:Lcom/google/a/a/g$a;
+.field private a:Lcom/google/a/a/g$a;
 
-.field public b:Ljava/lang/String;
+.field private b:Ljava/lang/String;
 
 
 # direct methods

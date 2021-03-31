@@ -47,7 +47,7 @@
 
 
 # direct methods
-.method public constructor <init>(JZZZLjava/util/List;JZJIII)V
+.method private constructor <init>(JZZZLjava/util/List;JZJIII)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,7 +101,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 6
 
     .line 13
@@ -284,7 +284,7 @@
     return-void
 .end method
 
-.method public static createFromParcel(Landroid/os/Parcel;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
+.method private static createFromParcel(Landroid/os/Parcel;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
     .locals 1
 
     .line 1
@@ -295,8 +295,8 @@
     return-object v0
 .end method
 
-.method public static parseFromSection(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
-    .locals 20
+.method private static parseFromSection(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
+    .locals 21
 
     .line 1
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedInt()J
@@ -480,14 +480,14 @@
     .line 13
     div-long v6, v3, v6
 
-    move-wide/from16 v17, v6
+    move/from16 v4, v16
 
     goto :goto_7
 
     :cond_8
-    const/16 v16, 0x0
+    const/4 v4, 0x0
 
-    const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 14
     :goto_7
@@ -498,30 +498,34 @@
     .line 15
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v4
+    move-result v8
 
     .line 16
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v6
+    move-result v11
 
-    move v14, v6
+    move/from16 v17, v10
 
-    move/from16 v19, v10
+    move v14, v11
 
-    move-wide v7, v12
-
-    move-wide/from16 v10, v17
+    move-wide v10, v6
 
     move-object v6, v0
 
+    move-wide/from16 v18, v12
+
     move v12, v3
 
-    move v13, v4
+    move v13, v8
 
-    move v4, v9
+    move-wide/from16 v7, v18
 
-    move/from16 v9, v16
+    move/from16 v20, v9
+
+    move v9, v4
+
+    move/from16 v4, v20
 
     goto :goto_8
 
@@ -542,7 +546,7 @@
 
     const/4 v14, 0x0
 
-    const/16 v19, 0x0
+    const/16 v17, 0x0
 
     .line 17
     :goto_8
@@ -552,7 +556,7 @@
 
     move v3, v5
 
-    move/from16 v5, v19
+    move/from16 v5, v17
 
     invoke-direct/range {v0 .. v14}, Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceScheduleCommand$Event;-><init>(JZZZLjava/util/List;JZJIII)V
 

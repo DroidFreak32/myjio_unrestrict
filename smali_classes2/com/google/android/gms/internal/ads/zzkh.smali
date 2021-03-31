@@ -1,41 +1,23 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzkh;
-.super Lcom/google/android/gms/internal/ads/zzen;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzkg;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.client.IAdClickListener"
-
-    .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Ljava/lang/String;)V
-
-    return-void
-.end method
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzkh;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzjz;IZ)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+.end method
 
-    const/4 p2, 0x1
+.method public abstract zza(JIIILcom/google/android/gms/internal/ads/zzkg;)V
+.end method
 
-    if-ne p1, p2, :cond_0
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzpn;I)V
+.end method
 
-    .line 1
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzkg;->onAdClicked()V
-
-    .line 2
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return p2
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+.method public abstract zze(Lcom/google/android/gms/internal/ads/zzhp;)V
 .end method

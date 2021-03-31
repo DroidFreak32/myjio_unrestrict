@@ -25,10 +25,10 @@
 
 
 # instance fields
-.field public a:Lcv;
+.field public a:Lcom/allstar/https/e;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcv<",
+            "Lcom/allstar/https/e<",
             "TT;>;"
         }
     .end annotation
@@ -40,21 +40,21 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lzu;
+    new-instance v0, Lh8;
 
-    invoke-direct {v0}, Lzu;-><init>()V
+    invoke-direct {v0}, Lh8;-><init>()V
 
     sput-object v0, Lcom/allstar/https/Connection;->b:Ljavax/net/ssl/HostnameVerifier;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcv;)V
+.method public constructor <init>(Lcom/allstar/https/e;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcv<",
+            "Lcom/allstar/https/e<",
             "TT;>;)V"
         }
     .end annotation
@@ -63,29 +63,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iput-object p1, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcv;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcv<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/allstar/https/Connection;->a:Lcv;
-
-    return-object v0
-.end method
-
 .method public final a(Ljava/io/InputStream;)[B
     .locals 4
 
@@ -93,12 +77,12 @@
 
     new-array v0, v0, [B
 
-    .line 2
+    .line 1
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 3
+    .line 2
     :goto_0
     invoke-virtual {p1, v0}, Ljava/io/InputStream;->read([B)I
 
@@ -108,10 +92,10 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 4
-    iget-object v3, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    .line 3
+    iget-object v3, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v3}, Lcv;->j()Z
+    invoke-virtual {v3}, Lcom/allstar/https/e;->isCancel()Z
 
     move-result v3
 
@@ -119,12 +103,12 @@
 
     const/4 v3, 0x0
 
-    .line 5
+    .line 4
     invoke-virtual {v1, v0, v3, v2}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_0
 
-    .line 6
+    .line 5
     :cond_0
     new-instance p1, Lcom/allstar/https/Connection$UserCanceledException;
 
@@ -132,24 +116,40 @@
 
     throw p1
 
-    .line 7
+    .line 6
     :cond_1
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p1
 
-    .line 8
+    .line 7
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
 
     return-object p1
 .end method
 
-.method public final b()Lev;
+.method public final getRequest()Lcom/allstar/https/e;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/allstar/https/e<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
+
+    return-object v0
+.end method
+
+.method public final load()Lcom/allstar/https/g;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lev<",
+            "Lcom/allstar/https/g<",
             "TT;>;"
         }
     .end annotation
@@ -157,19 +157,19 @@
     const-string v0, "POST"
 
     .line 1
-    new-instance v1, Lev;
+    new-instance v1, Lcom/allstar/https/g;
 
-    invoke-direct {v1}, Lev;-><init>()V
+    invoke-direct {v1}, Lcom/allstar/https/g;-><init>()V
 
     .line 2
-    iget-object v2, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v2, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v2, v1}, Lcv;->a(Lev;)V
+    invoke-virtual {v2, v1}, Lcom/allstar/https/e;->setResponse(Lcom/allstar/https/g;)V
 
     .line 3
-    iget-object v2, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v2, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v1, v2}, Lev;->a(Lcv;)V
+    invoke-virtual {v1, v2}, Lcom/allstar/https/g;->setRequest(Lcom/allstar/https/e;)V
 
     const/4 v2, 0x0
 
@@ -177,9 +177,9 @@
     :try_start_0
     new-instance v3, Ljava/net/URL;
 
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4}, Lcv;->i()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/allstar/https/e;->getUrl()Ljava/lang/String;
 
     move-result-object v4
 
@@ -210,9 +210,9 @@
     check-cast v3, Ljavax/net/ssl/HttpsURLConnection;
 
     .line 7
-    new-instance v4, Lfv;
+    new-instance v4, Lcom/allstar/https/h;
 
-    invoke-direct {v4}, Lfv;-><init>()V
+    invoke-direct {v4}, Lcom/allstar/https/h;-><init>()V
 
     invoke-virtual {v3, v4}, Ljavax/net/ssl/HttpsURLConnection;->setSSLSocketFactory(Ljavax/net/ssl/SSLSocketFactory;)V
 
@@ -233,18 +233,18 @@
 
     .line 10
     :goto_0
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4}, Lcv;->g()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/allstar/https/e;->getMethod()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
     .line 11
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4}, Lcv;->g()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/allstar/https/e;->getMethod()Ljava/lang/String;
 
     move-result-object v4
 
@@ -264,9 +264,9 @@
 
     .line 14
     :cond_1
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4}, Lcv;->f()Ljava/util/HashMap;
+    invoke-virtual {v4}, Lcom/allstar/https/e;->getHeaders()Ljava/util/HashMap;
 
     move-result-object v4
 
@@ -327,9 +327,9 @@
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->connect()V
 
     .line 23
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4}, Lcv;->g()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/allstar/https/e;->getMethod()Ljava/lang/String;
 
     move-result-object v4
 
@@ -340,9 +340,9 @@
     if-eqz v0, :cond_3
 
     .line 24
-    iget-object v0, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v0, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v0}, Lcv;->d()[B
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getData()[B
 
     move-result-object v0
 
@@ -374,7 +374,7 @@
     move-result v0
 
     .line 31
-    invoke-virtual {v1, v0}, Lev;->a(I)V
+    invoke-virtual {v1, v0}, Lcom/allstar/https/g;->setResponseCode(I)V
 
     const/16 v4, 0xc8
 
@@ -391,26 +391,28 @@
     move-result-object v3
 
     .line 34
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4}, Lcv;->j()Z
+    invoke-virtual {v4}, Lcom/allstar/https/e;->isCancel()Z
 
     move-result v4
 
     if-nez v4, :cond_4
 
     .line 35
-    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcv;
+    iget-object v4, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
 
-    invoke-virtual {v4, v1, v3}, Lcv;->a(Lev;[B)Lev;
+    invoke-virtual {v4, v1, v3}, Lcom/allstar/https/e;->handleResponse(Lcom/allstar/https/g;[B)Lcom/allstar/https/g;
+
+    move-result-object v1
 
     .line 36
-    invoke-virtual {v1, v0}, Lev;->a(I)V
+    invoke-virtual {v1, v0}, Lcom/allstar/https/g;->setResponseCode(I)V
 
     .line 37
     sget-object v0, Lcom/allstar/https/RespStatus;->a:Lcom/allstar/https/RespStatus;
 
-    invoke-virtual {v1, v0}, Lev;->a(Lcom/allstar/https/RespStatus;)V
+    invoke-virtual {v1, v0}, Lcom/allstar/https/g;->update(Lcom/allstar/https/RespStatus;)V
 
     goto :goto_2
 
@@ -426,18 +428,18 @@
     :cond_5
     sget-object v0, Lcom/allstar/https/RespStatus;->f:Lcom/allstar/https/RespStatus;
 
-    invoke-virtual {v1, v0}, Lev;->a(Lcom/allstar/https/RespStatus;)V
+    invoke-virtual {v1, v0}, Lcom/allstar/https/g;->update(Lcom/allstar/https/RespStatus;)V
 
     .line 40
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcv;->c()Lav$a;
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v0
 
-    invoke-interface {v0, v2}, Lav$a;->b(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lcom/allstar/https/c$a;->requestFail(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_5
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_4
@@ -452,91 +454,107 @@
     move-exception v0
 
     .line 41
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcv;->c()Lav$a;
+    invoke-virtual {v3}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v3
 
-    invoke-interface {v3, v2}, Lav$a;->b(Ljava/lang/String;)V
+    invoke-interface {v3, v2}, Lcom/allstar/https/c$a;->requestFail(Ljava/lang/String;)V
 
     .line 42
-    invoke-static {v0}, Lou;->a(Ljava/lang/Exception;)V
+    invoke-static {v0}, Lcom/allstar/b/c;->cinLogException(Ljava/lang/Exception;)V
 
     goto :goto_2
 
     .line 43
     :catch_1
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcv;->c()Lav$a;
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v0
 
-    invoke-interface {v0, v2}, Lav$a;->b(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lcom/allstar/https/c$a;->requestFail(Ljava/lang/String;)V
 
     goto :goto_2
 
     .line 44
     :catch_2
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcv;->c()Lav$a;
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v0
 
-    invoke-interface {v0, v2}, Lav$a;->b(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lcom/allstar/https/c$a;->requestFail(Ljava/lang/String;)V
 
     goto :goto_2
 
     .line 45
     :catch_3
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcv;->c()Lav$a;
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v0
 
-    const-string v2, "verify certificate failed!"
+    const-string/jumbo v2, "verify certificate failed!"
 
-    invoke-interface {v0, v2}, Lav$a;->b(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lcom/allstar/https/c$a;->requestFail(Ljava/lang/String;)V
 
     goto :goto_2
 
     .line 46
     :catch_4
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcv;->c()Lav$a;
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v0
 
-    invoke-interface {v0, v2}, Lav$a;->a(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lcom/allstar/https/c$a;->timeOut(Ljava/lang/String;)V
 
     goto :goto_2
 
     .line 47
     :catch_5
-    invoke-virtual {v1}, Lev;->b()Lcv;
+    invoke-virtual {v1}, Lcom/allstar/https/g;->getRequest()Lcom/allstar/https/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcv;->c()Lav$a;
+    invoke-virtual {v0}, Lcom/allstar/https/e;->getCallback()Lcom/allstar/https/c$a;
 
     move-result-object v0
 
-    invoke-interface {v0, v2}, Lav$a;->b(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lcom/allstar/https/c$a;->requestFail(Ljava/lang/String;)V
 
     :goto_2
     return-object v1
+.end method
+
+.method public final setRequest(Lcom/allstar/https/e;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/allstar/https/e<",
+            "TT;>;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/allstar/https/Connection;->a:Lcom/allstar/https/e;
+
+    return-void
 .end method

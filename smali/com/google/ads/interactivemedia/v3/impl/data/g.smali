@@ -7,25 +7,25 @@
 
 
 # instance fields
-.field public appState:Ljava/lang/String;
+.field private appState:Ljava/lang/String;
 
-.field public eventId:Ljava/lang/String;
+.field private eventId:Ljava/lang/String;
 
-.field public nativeTime:Ljava/lang/Long;
+.field private nativeTime:Ljava/lang/Long;
 
-.field public nativeViewAttached:Ljava/lang/Boolean;
+.field private nativeViewAttached:Ljava/lang/Boolean;
 
-.field public nativeViewBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
+.field private nativeViewBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
-.field public nativeViewHidden:Ljava/lang/Boolean;
+.field private nativeViewHidden:Ljava/lang/Boolean;
 
-.field public nativeViewVisibleBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
+.field private nativeViewVisibleBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
-.field public nativeVolume:Ljava/lang/Double;
+.field private nativeVolume:Ljava/lang/Double;
 
-.field public queryId:Ljava/lang/String;
+.field private queryId:Ljava/lang/String;
 
-.field public vastEvent:Ljava/lang/String;
+.field private vastEvent:Ljava/lang/String;
 
 
 # direct methods
@@ -43,22 +43,15 @@
 .method public final appState(Ljava/lang/String;)Lcom/google/ads/interactivemedia/v3/impl/data/b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null appState"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/g;->appState:Ljava/lang/String;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null appState"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final build()Lcom/google/ads/interactivemedia/v3/impl/data/a;
@@ -328,22 +321,15 @@
 .method public final eventId(Ljava/lang/String;)Lcom/google/ads/interactivemedia/v3/impl/data/b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null eventId"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/g;->eventId:Ljava/lang/String;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null eventId"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final nativeTime(J)Lcom/google/ads/interactivemedia/v3/impl/data/b;
@@ -375,22 +361,15 @@
 .method public final nativeViewBounds(Lcom/google/ads/interactivemedia/v3/impl/data/v;)Lcom/google/ads/interactivemedia/v3/impl/data/b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null nativeViewBounds"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/g;->nativeViewBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null nativeViewBounds"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final nativeViewHidden(Z)Lcom/google/ads/interactivemedia/v3/impl/data/b;
@@ -409,22 +388,15 @@
 .method public final nativeViewVisibleBounds(Lcom/google/ads/interactivemedia/v3/impl/data/v;)Lcom/google/ads/interactivemedia/v3/impl/data/b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null nativeViewVisibleBounds"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/g;->nativeViewVisibleBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null nativeViewVisibleBounds"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final nativeVolume(D)Lcom/google/ads/interactivemedia/v3/impl/data/b;
@@ -443,41 +415,27 @@
 .method public final queryId(Ljava/lang/String;)Lcom/google/ads/interactivemedia/v3/impl/data/b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null queryId"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/g;->queryId:Ljava/lang/String;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null queryId"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final vastEvent(Ljava/lang/String;)Lcom/google/ads/interactivemedia/v3/impl/data/b;
     .locals 1
 
-    if-eqz p1, :cond_0
+    const-string v0, "Null vastEvent"
 
     .line 1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/g;->vastEvent:Ljava/lang/String;
 
     return-object p0
-
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null vastEvent"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

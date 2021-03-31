@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/MultiDetector;
 .super Lcom/google/android/gms/vision/Detector;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -19,7 +20,7 @@
 
 
 # instance fields
-.field public zzax:Ljava/util/List;
+.field private zzbd:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -33,7 +34,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -44,7 +45,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     return-void
 .end method
@@ -62,7 +63,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iget-object p0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     return-object p0
 .end method
@@ -88,7 +89,7 @@
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -182,7 +183,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -222,7 +223,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -254,7 +255,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -280,7 +281,7 @@
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzax:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiDetector;->zzbd:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 

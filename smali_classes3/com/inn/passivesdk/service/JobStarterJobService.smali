@@ -10,7 +10,7 @@
 
 
 # static fields
-.field public static final s:Ljava/lang/String;
+.field public static final a:Ljava/lang/String;
 
 
 # direct methods
@@ -24,7 +24,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/inn/passivesdk/service/JobStarterJobService;->s:Ljava/lang/String;
+    sput-object v0, Lcom/inn/passivesdk/service/JobStarterJobService;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -44,11 +44,11 @@
     .locals 0
 
     .line 1
-    invoke-static {p0}, Lff0;->a(Landroid/content/Context;)Lff0;
+    invoke-static {p0}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lff0;->i()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/PassiveManager;->startMonitoring()V
 
     const/4 p1, 0x0
 

@@ -26,4 +26,9 @@
 .end method
 
 .method public abstract setPassphrase([B)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 .end method

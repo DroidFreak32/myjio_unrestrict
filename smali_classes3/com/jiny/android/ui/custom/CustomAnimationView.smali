@@ -3,7 +3,9 @@
 
 
 # static fields
-.field public static volatile u:Lcom/jiny/android/ui/custom/CustomAnimationView;
+.field public static final a:Ljava/lang/String;
+
+.field public static volatile d:Lcom/jiny/android/ui/custom/CustomAnimationView;
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "StaticFieldLeak"
@@ -13,9 +15,9 @@
 
 
 # instance fields
-.field public s:Lcom/jiny/android/ui/custom/CustomPointerView;
+.field public b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
-.field public t:Lcom/jiny/android/ui/custom/CustomPointerView;
+.field public c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
 
 # direct methods
@@ -23,6 +25,12 @@
     .locals 1
 
     const-class v0, Lcom/jiny/android/ui/custom/CustomAnimationView;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/jiny/android/ui/custom/CustomAnimationView;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -65,7 +73,7 @@
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Lcom/jiny/android/ui/custom/CustomAnimationView;->u:Lcom/jiny/android/ui/custom/CustomAnimationView;
+    sget-object v1, Lcom/jiny/android/ui/custom/CustomAnimationView;->d:Lcom/jiny/android/ui/custom/CustomAnimationView;
 
     if-nez v1, :cond_0
 
@@ -78,17 +86,17 @@
     :try_start_1
     new-instance v2, Lcom/jiny/android/ui/custom/CustomAnimationView;
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v3}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v3
 
     invoke-direct {v2, v3}, Lcom/jiny/android/ui/custom/CustomAnimationView;-><init>(Landroid/content/Context;)V
 
-    sput-object v2, Lcom/jiny/android/ui/custom/CustomAnimationView;->u:Lcom/jiny/android/ui/custom/CustomAnimationView;
+    sput-object v2, Lcom/jiny/android/ui/custom/CustomAnimationView;->d:Lcom/jiny/android/ui/custom/CustomAnimationView;
 
     monitor-exit v1
 
@@ -106,7 +114,7 @@
 
     :cond_0
     :goto_0
-    sget-object v1, Lcom/jiny/android/ui/custom/CustomAnimationView;->u:Lcom/jiny/android/ui/custom/CustomAnimationView;
+    sget-object v1, Lcom/jiny/android/ui/custom/CustomAnimationView;->d:Lcom/jiny/android/ui/custom/CustomAnimationView;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -127,15 +135,15 @@
 .method public a()V
     .locals 3
 
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/jiny/android/data/a;->K()I
+    invoke-virtual {v0}, Lcom/jiny/android/data/a;->r()I
 
     move-result v1
 
-    invoke-virtual {v0}, Lcom/jiny/android/data/a;->L()I
+    invoke-virtual {v0}, Lcom/jiny/android/data/a;->s()I
 
     move-result v0
 
@@ -146,23 +154,23 @@
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v2, v1}, Lcom/jiny/android/ui/custom/CustomPointerView;->setCircleColor(I)V
 
-    iget-object v1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v1, v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->setCircleColor(I)V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->a()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->a()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     const-wide/16 v1, 0x258
 
@@ -184,11 +192,11 @@
 
     move-result-object p1
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->a()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->c()Landroid/content/Context;
 
     move-result-object v0
 
@@ -196,7 +204,7 @@
 
     move-result-object p1
 
-    sget v0, Lph0;->jiny_layout_pointer:I
+    sget v0, Lcom/jiny/android/R$layout;->jiny_layout_pointer:I
 
     const/4 v1, 0x0
 
@@ -204,7 +212,7 @@
 
     move-result-object p1
 
-    sget v0, Loh0;->custom_view1:I
+    sget v0, Lcom/jiny/android/R$id;->custom_view1:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -212,9 +220,9 @@
 
     check-cast v0, Lcom/jiny/android/ui/custom/CustomPointerView;
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
-    sget v0, Loh0;->custom_view2:I
+    sget v0, Lcom/jiny/android/R$id;->custom_view2:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +230,7 @@
 
     check-cast v0, Lcom/jiny/android/ui/custom/CustomPointerView;
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
@@ -234,21 +242,21 @@
 
     if-eqz p1, :cond_0
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     const/4 v0, 0x4
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     const/4 v0, 0x0
 
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
@@ -262,7 +270,7 @@
 
     invoke-virtual {p0, v0}, Lcom/jiny/android/ui/custom/CustomAnimationView;->a(Z)V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->d()Z
 
@@ -270,7 +278,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->d()Z
 
@@ -279,16 +287,16 @@
     if-nez v0, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->e()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->e()V
 
     :cond_1
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->c()Z
 
@@ -296,11 +304,11 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->g()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->g()V
 
@@ -311,7 +319,7 @@
 .method public c()V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->b()Z
 
@@ -319,7 +327,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->b()Z
 
@@ -328,11 +336,11 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->s:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->b:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->f()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->t:Lcom/jiny/android/ui/custom/CustomPointerView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomAnimationView;->c:Lcom/jiny/android/ui/custom/CustomPointerView;
 
     invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomPointerView;->f()V
 

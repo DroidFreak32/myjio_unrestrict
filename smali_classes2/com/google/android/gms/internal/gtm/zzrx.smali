@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     const/4 v0, 0x0
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method public static zzd(Ljava/lang/Object;J)Lcom/google/android/gms/internal/gtm/zzrj;
+.method private static zzd(Ljava/lang/Object;J)Lcom/google/android/gms/internal/gtm/zzrj;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

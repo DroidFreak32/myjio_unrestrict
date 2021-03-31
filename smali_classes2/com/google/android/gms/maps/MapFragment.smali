@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public final zzaz:Lcom/google/android/gms/maps/MapFragment$zzb;
+.field private final zzaz:Lcom/google/android/gms/maps/MapFragment$zzb;
 
 
 # direct methods

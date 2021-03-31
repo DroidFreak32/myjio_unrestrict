@@ -13,7 +13,7 @@
 
 
 # static fields
-.field public static volatile zzqm:[Lcom/google/android/gms/internal/gtm/zzl;
+.field private static volatile zzqm:[Lcom/google/android/gms/internal/gtm/zzl;
 
 
 # instance fields
@@ -175,6 +175,11 @@
 
 .method private final zzb(Lcom/google/android/gms/internal/gtm/zzun;)Lcom/google/android/gms/internal/gtm/zzl;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :cond_0
@@ -221,91 +226,86 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     goto :goto_1
 
     :cond_1
-    array-length v1, v1
+    array-length v3, v1
 
     :goto_1
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
     .line 6
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzl;
+    new-array v4, v0, [Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_2
+    if-eqz v3, :cond_2
 
     .line 7
-    iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqu:[Lcom/google/android/gms/internal/gtm/zzl;
+    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 8
     :cond_2
     :goto_2
-    array-length v2, v0
+    add-int/lit8 v1, v0, -0x1
 
-    add-int/lit8 v2, v2, -0x1
+    if-ge v3, v1, :cond_3
 
-    if-ge v1, v2, :cond_3
+    .line 8
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzl;
+
+    invoke-direct {v1}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+
+    aput-object v1, v4, v3
 
     .line 9
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 10
-    aget-object v2, v0, v1
-
-    invoke-virtual {p1, v2}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
-
-    .line 11
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    .line 12
-    :cond_3
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 13
-    aget-object v1, v0, v1
+    aget-object v1, v4, v3
 
     invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
 
-    .line 14
-    iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqu:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 10
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    .line 11
+    :cond_3
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzl;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+
+    aput-object v0, v4, v3
+
+    .line 12
+    aget-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
+
+    .line 13
+    iput-object v4, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqu:[Lcom/google/android/gms/internal/gtm/zzl;
 
     goto :goto_0
 
-    .line 15
+    .line 14
     :sswitch_2
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzoa()I
 
     move-result v0
 
-    .line 16
+    .line 15
     invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zzaq(I)I
 
     move-result v0
 
-    .line 17
+    .line 16
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->getPosition()I
 
     move-result v3
 
     const/4 v4, 0x0
 
-    .line 18
+    .line 17
     :goto_3
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzrv()I
 
@@ -313,13 +313,13 @@
 
     if-lez v5, :cond_4
 
-    .line 19
+    .line 18
     :try_start_0
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzoa()I
 
     move-result v5
 
-    .line 20
+    .line 19
     invoke-static {v5}, Lcom/google/android/gms/internal/gtm/zzl;->zzc(I)I
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
@@ -336,35 +336,33 @@
     :cond_4
     if-eqz v4, :cond_8
 
-    .line 21
+    .line 20
     invoke-virtual {p1, v3}, Lcom/google/android/gms/internal/gtm/zzun;->zzbz(I)V
 
-    .line 22
+    .line 21
     iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
 
     if-nez v3, :cond_5
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     goto :goto_4
 
     :cond_5
-    array-length v3, v3
+    array-length v5, v3
 
     :goto_4
-    add-int/2addr v4, v3
+    add-int/2addr v4, v5
 
-    .line 23
+    .line 22
     new-array v4, v4, [I
 
-    if-eqz v3, :cond_6
+    if-eqz v5, :cond_6
+
+    .line 23
+    invoke-static {v3, v2, v4, v2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 24
-    iget-object v5, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
-
-    invoke-static {v5, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 25
     :cond_6
     :goto_5
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzrv()I
@@ -373,56 +371,56 @@
 
     if-lez v2, :cond_7
 
-    .line 26
+    .line 25
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->getPosition()I
 
     move-result v2
 
-    .line 27
+    .line 26
     :try_start_1
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzoa()I
 
-    move-result v5
+    move-result v3
 
-    .line 28
-    invoke-static {v5}, Lcom/google/android/gms/internal/gtm/zzl;->zzc(I)I
+    .line 27
+    invoke-static {v3}, Lcom/google/android/gms/internal/gtm/zzl;->zzc(I)I
 
-    move-result v5
+    move-result v3
 
-    aput v5, v4, v3
+    aput v3, v4, v5
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_5
 
-    .line 29
+    .line 28
     :catch_1
     invoke-virtual {p1, v2}, Lcom/google/android/gms/internal/gtm/zzun;->zzbz(I)V
 
-    .line 30
+    .line 29
     invoke-virtual {p0, p1, v1}, Lcom/google/android/gms/internal/gtm/zzuq;->zza(Lcom/google/android/gms/internal/gtm/zzun;I)Z
 
     goto :goto_5
 
-    .line 31
+    .line 30
     :cond_7
     iput-object v4, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
 
-    .line 32
+    .line 31
     :cond_8
     invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zzar(I)V
 
     goto/16 :goto_0
 
-    .line 33
+    .line 32
     :sswitch_3
     invoke-static {p1, v1}, Lcom/google/android/gms/internal/gtm/zzuz;->zzb(Lcom/google/android/gms/internal/gtm/zzun;I)I
 
     move-result v1
 
-    .line 34
+    .line 33
     new-array v3, v1, [I
 
     const/4 v4, 0x0
@@ -434,22 +432,22 @@
 
     if-eqz v4, :cond_9
 
-    .line 35
+    .line 34
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
 
-    .line 36
+    .line 35
     :cond_9
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->getPosition()I
 
     move-result v6
 
-    .line 37
+    .line 36
     :try_start_2
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzoa()I
 
     move-result v7
 
-    .line 38
+    .line 37
     invoke-static {v7}, Lcom/google/android/gms/internal/gtm/zzl;->zzc(I)I
 
     move-result v7
@@ -462,11 +460,11 @@
 
     goto :goto_7
 
-    .line 39
+    .line 38
     :catch_2
     invoke-virtual {p1, v6}, Lcom/google/android/gms/internal/gtm/zzun;->zzbz(I)V
 
-    .line 40
+    .line 39
     invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/gtm/zzuq;->zza(Lcom/google/android/gms/internal/gtm/zzun;I)Z
 
     :goto_7
@@ -477,54 +475,49 @@
     :cond_a
     if-eqz v5, :cond_0
 
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
 
     if-nez v0, :cond_b
 
-    const/4 v0, 0x0
+    const/4 v4, 0x0
 
     goto :goto_8
 
     :cond_b
-    array-length v0, v0
+    array-length v4, v0
 
     :goto_8
-    if-nez v0, :cond_c
-
-    .line 42
-    array-length v1, v3
+    if-nez v4, :cond_c
 
     if-ne v5, v1, :cond_c
 
-    .line 43
+    .line 41
     iput-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
 
     goto/16 :goto_0
 
     :cond_c
-    add-int v1, v0, v5
+    add-int v1, v4, v5
 
-    .line 44
+    .line 42
     new-array v1, v1, [I
 
-    if-eqz v0, :cond_d
+    if-eqz v4, :cond_d
+
+    .line 43
+    invoke-static {v0, v2, v1, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 44
+    :cond_d
+    invoke-static {v3, v2, v1, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 45
-    iget-object v4, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
-
-    invoke-static {v4, v2, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 46
-    :cond_d
-    invoke-static {v3, v2, v1, v0, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 47
     iput-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
 
     goto/16 :goto_0
 
-    .line 48
+    .line 46
     :sswitch_4
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzno()Z
 
@@ -534,18 +527,18 @@
 
     goto/16 :goto_0
 
-    .line 49
+    .line 47
     :sswitch_5
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzob()J
 
     move-result-wide v0
 
-    .line 50
+    .line 48
     iput-wide v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqs:J
 
     goto/16 :goto_0
 
-    .line 51
+    .line 49
     :sswitch_6
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->readString()Ljava/lang/String;
 
@@ -555,7 +548,7 @@
 
     goto/16 :goto_0
 
-    .line 52
+    .line 50
     :sswitch_7
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->readString()Ljava/lang/String;
 
@@ -568,241 +561,226 @@
     :sswitch_8
     const/16 v0, 0x2a
 
-    .line 53
+    .line 51
     invoke-static {p1, v0}, Lcom/google/android/gms/internal/gtm/zzuz;->zzb(Lcom/google/android/gms/internal/gtm/zzun;I)I
 
     move-result v0
 
-    .line 54
+    .line 52
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
 
     if-nez v1, :cond_e
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     goto :goto_9
 
     :cond_e
-    array-length v1, v1
+    array-length v3, v1
 
     :goto_9
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
-    .line 55
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzl;
+    .line 53
+    new-array v4, v0, [Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_f
+    if-eqz v3, :cond_f
 
-    .line 56
-    iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 54
+    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 57
     :cond_f
     :goto_a
-    array-length v2, v0
+    add-int/lit8 v1, v0, -0x1
 
-    add-int/lit8 v2, v2, -0x1
+    if-ge v3, v1, :cond_10
 
-    if-ge v1, v2, :cond_10
+    .line 55
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzl;
 
-    .line 58
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
+    invoke-direct {v1}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+    aput-object v1, v4, v3
 
-    aput-object v2, v0, v1
-
-    .line 59
-    aget-object v2, v0, v1
-
-    invoke-virtual {p1, v2}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
-
-    .line 60
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_a
-
-    .line 61
-    :cond_10
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 62
-    aget-object v1, v0, v1
+    .line 56
+    aget-object v1, v4, v3
 
     invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
 
-    .line 63
-    iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 57
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_a
+
+    .line 58
+    :cond_10
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzl;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+
+    aput-object v0, v4, v3
+
+    .line 59
+    aget-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
+
+    .line 60
+    iput-object v4, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
 
     goto/16 :goto_0
 
     :sswitch_9
     const/16 v0, 0x22
 
-    .line 64
+    .line 61
     invoke-static {p1, v0}, Lcom/google/android/gms/internal/gtm/zzuz;->zzb(Lcom/google/android/gms/internal/gtm/zzun;I)I
 
     move-result v0
 
-    .line 65
+    .line 62
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqo:[Lcom/google/android/gms/internal/gtm/zzl;
 
     if-nez v1, :cond_11
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     goto :goto_b
 
     :cond_11
-    array-length v1, v1
+    array-length v3, v1
 
     :goto_b
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
-    .line 66
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzl;
+    .line 63
+    new-array v4, v0, [Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_12
+    if-eqz v3, :cond_12
 
-    .line 67
-    iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqo:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 64
+    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 68
     :cond_12
     :goto_c
-    array-length v2, v0
+    add-int/lit8 v1, v0, -0x1
 
-    add-int/lit8 v2, v2, -0x1
+    if-ge v3, v1, :cond_13
 
-    if-ge v1, v2, :cond_13
+    .line 65
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzl;
 
-    .line 69
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
+    invoke-direct {v1}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+    aput-object v1, v4, v3
 
-    aput-object v2, v0, v1
-
-    .line 70
-    aget-object v2, v0, v1
-
-    invoke-virtual {p1, v2}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
-
-    .line 71
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_c
-
-    .line 72
-    :cond_13
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 73
-    aget-object v1, v0, v1
+    .line 66
+    aget-object v1, v4, v3
 
     invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
 
-    .line 74
-    iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqo:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 67
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_c
+
+    .line 68
+    :cond_13
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzl;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+
+    aput-object v0, v4, v3
+
+    .line 69
+    aget-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
+
+    .line 70
+    iput-object v4, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqo:[Lcom/google/android/gms/internal/gtm/zzl;
 
     goto/16 :goto_0
 
     :sswitch_a
     const/16 v0, 0x1a
 
-    .line 75
+    .line 71
     invoke-static {p1, v0}, Lcom/google/android/gms/internal/gtm/zzuz;->zzb(Lcom/google/android/gms/internal/gtm/zzun;I)I
 
     move-result v0
 
-    .line 76
+    .line 72
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqn:[Lcom/google/android/gms/internal/gtm/zzl;
 
     if-nez v1, :cond_14
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     goto :goto_d
 
     :cond_14
-    array-length v1, v1
+    array-length v3, v1
 
     :goto_d
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
-    .line 77
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzl;
+    .line 73
+    new-array v4, v0, [Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_15
+    if-eqz v3, :cond_15
 
-    .line 78
-    iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqn:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 74
+    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 79
     :cond_15
     :goto_e
-    array-length v2, v0
+    add-int/lit8 v1, v0, -0x1
 
-    add-int/lit8 v2, v2, -0x1
+    if-ge v3, v1, :cond_16
 
-    if-ge v1, v2, :cond_16
+    .line 75
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzl;
 
-    .line 80
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
+    invoke-direct {v1}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+    aput-object v1, v4, v3
 
-    aput-object v2, v0, v1
-
-    .line 81
-    aget-object v2, v0, v1
-
-    invoke-virtual {p1, v2}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
-
-    .line 82
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_e
-
-    .line 83
-    :cond_16
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzl;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 84
-    aget-object v1, v0, v1
+    .line 76
+    aget-object v1, v4, v3
 
     invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
 
-    .line 85
-    iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqn:[Lcom/google/android/gms/internal/gtm/zzl;
+    .line 77
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_e
+
+    .line 78
+    :cond_16
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzl;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/gtm/zzl;-><init>()V
+
+    aput-object v0, v4, v3
+
+    .line 79
+    aget-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
+
+    .line 80
+    iput-object v4, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqn:[Lcom/google/android/gms/internal/gtm/zzl;
 
     goto/16 :goto_0
 
-    .line 86
+    .line 81
     :sswitch_b
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->readString()Ljava/lang/String;
 
@@ -812,13 +790,13 @@
 
     goto/16 :goto_0
 
-    .line 87
+    .line 82
     :sswitch_c
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->getPosition()I
 
     move-result v1
 
-    .line 88
+    .line 83
     :try_start_3
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzoa()I
 
@@ -830,12 +808,12 @@
 
     if-gt v2, v3, :cond_17
 
-    .line 89
+    .line 84
     iput v2, p0, Lcom/google/android/gms/internal/gtm/zzl;->type:I
 
     goto/16 :goto_0
 
-    .line 90
+    .line 85
     :cond_17
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -861,17 +839,19 @@
     :try_end_3
     .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 91
+    .line 86
     :catch_3
     invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/gtm/zzun;->zzbz(I)V
 
-    .line 92
+    .line 87
     invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/gtm/zzuq;->zza(Lcom/google/android/gms/internal/gtm/zzun;I)Z
 
     goto/16 :goto_0
 
     :sswitch_d
     return-object p0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -892,7 +872,7 @@
     .end sparse-switch
 .end method
 
-.method public static zzc(I)I
+.method private static zzc(I)I
     .locals 3
 
     if-lez p0, :cond_0
@@ -1413,6 +1393,11 @@
 
 .method public final synthetic zza(Lcom/google/android/gms/internal/gtm/zzun;)Lcom/google/android/gms/internal/gtm/zzuw;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 34
     invoke-direct {p0, p1}, Lcom/google/android/gms/internal/gtm/zzl;->zzb(Lcom/google/android/gms/internal/gtm/zzun;)Lcom/google/android/gms/internal/gtm/zzl;
@@ -1424,6 +1409,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/gtm/zzuo;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzl;->type:I
@@ -1756,15 +1746,13 @@
 
     const/4 v4, 0x0
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     array-length v1, v1
 
-    if-lez v1, :cond_3
+    if-lez v1, :cond_2
 
-    move v1, v0
-
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 8
     :goto_0
@@ -1772,10 +1760,10 @@
 
     array-length v6, v5
 
-    if-ge v0, v6, :cond_2
+    if-ge v1, v6, :cond_2
 
     .line 9
-    aget-object v5, v5, v0
+    aget-object v5, v5, v1
 
     if-eqz v5, :cond_1
 
@@ -1786,29 +1774,24 @@
 
     move-result v5
 
-    add-int/2addr v1, v5
+    add-int/2addr v0, v5
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_2
-    move v0, v1
-
     .line 11
-    :cond_3
+    :cond_2
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqo:[Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_4
 
     array-length v1, v1
 
-    if-lez v1, :cond_6
+    if-lez v1, :cond_4
 
-    move v1, v0
-
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 12
     :goto_1
@@ -1816,12 +1799,12 @@
 
     array-length v6, v5
 
-    if-ge v0, v6, :cond_5
+    if-ge v1, v6, :cond_4
 
     .line 13
-    aget-object v5, v5, v0
+    aget-object v5, v5, v1
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_3
 
     const/4 v6, 0x4
 
@@ -1830,29 +1813,24 @@
 
     move-result v5
 
-    add-int/2addr v1, v5
+    add-int/2addr v0, v5
 
-    :cond_4
-    add-int/lit8 v0, v0, 0x1
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    :cond_5
-    move v0, v1
-
     .line 15
-    :cond_6
+    :cond_4
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_6
 
     array-length v1, v1
 
-    if-lez v1, :cond_9
+    if-lez v1, :cond_6
 
-    move v1, v0
-
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 16
     :goto_2
@@ -1860,12 +1838,12 @@
 
     array-length v6, v5
 
-    if-ge v0, v6, :cond_8
+    if-ge v1, v6, :cond_6
 
     .line 17
-    aget-object v5, v5, v0
+    aget-object v5, v5, v1
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_5
 
     const/4 v6, 0x5
 
@@ -1874,27 +1852,24 @@
 
     move-result v5
 
-    add-int/2addr v1, v5
+    add-int/2addr v0, v5
 
-    :cond_7
-    add-int/lit8 v0, v0, 0x1
+    :cond_5
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    :cond_8
-    move v0, v1
-
     .line 19
-    :cond_9
+    :cond_6
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqq:Ljava/lang/String;
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_7
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_7
 
     const/4 v1, 0x6
 
@@ -1909,16 +1884,16 @@
     add-int/2addr v0, v1
 
     .line 22
-    :cond_a
+    :cond_7
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqr:Ljava/lang/String;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_8
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_8
 
     const/4 v1, 0x7
 
@@ -1933,14 +1908,14 @@
     add-int/2addr v0, v1
 
     .line 25
-    :cond_b
+    :cond_8
     iget-wide v5, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqs:J
 
     const-wide/16 v7, 0x0
 
     cmp-long v1, v5, v7
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_9
 
     const/16 v1, 0x8
 
@@ -1952,10 +1927,10 @@
     add-int/2addr v0, v1
 
     .line 27
-    :cond_c
+    :cond_9
     iget-boolean v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqw:Z
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_a
 
     const/16 v1, 0x9
 
@@ -1969,14 +1944,14 @@
     add-int/2addr v0, v1
 
     .line 29
-    :cond_d
+    :cond_a
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqv:[I
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_c
 
     array-length v1, v1
 
-    if-lez v1, :cond_f
+    if-lez v1, :cond_c
 
     const/4 v1, 0x0
 
@@ -1988,7 +1963,7 @@
 
     array-length v6, v5
 
-    if-ge v1, v6, :cond_e
+    if-ge v1, v6, :cond_b
 
     .line 31
     aget v5, v5, v1
@@ -2004,7 +1979,7 @@
 
     goto :goto_3
 
-    :cond_e
+    :cond_b
     add-int/2addr v0, v3
 
     .line 33
@@ -2015,14 +1990,14 @@
     add-int/2addr v0, v1
 
     .line 34
-    :cond_f
+    :cond_c
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqu:[Lcom/google/android/gms/internal/gtm/zzl;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_e
 
     array-length v1, v1
 
-    if-lez v1, :cond_11
+    if-lez v1, :cond_e
 
     .line 35
     :goto_4
@@ -2030,12 +2005,12 @@
 
     array-length v3, v1
 
-    if-ge v4, v3, :cond_11
+    if-ge v4, v3, :cond_e
 
     .line 36
     aget-object v1, v1, v4
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_d
 
     const/16 v3, 0xb
 
@@ -2046,16 +2021,16 @@
 
     add-int/2addr v0, v1
 
-    :cond_10
+    :cond_d
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_4
 
     .line 38
-    :cond_11
+    :cond_e
     iget-boolean v1, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqt:Z
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_f
 
     const/16 v1, 0xc
 
@@ -2068,6 +2043,6 @@
 
     add-int/2addr v0, v1
 
-    :cond_12
+    :cond_f
     return v0
 .end method

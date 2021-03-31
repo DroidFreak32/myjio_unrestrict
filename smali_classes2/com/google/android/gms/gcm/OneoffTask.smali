@@ -23,9 +23,9 @@
 
 
 # instance fields
-.field public final zzal:J
+.field private final zzal:J
 
-.field public final zzam:J
+.field private final zzam:J
 
 
 # direct methods
@@ -42,7 +42,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/gcm/OneoffTask$Builder;)V
+.method private constructor <init>(Lcom/google/android/gms/gcm/OneoffTask$Builder;)V
     .locals 2
 
     .line 1

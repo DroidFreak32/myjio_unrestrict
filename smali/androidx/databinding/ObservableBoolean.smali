@@ -1,5 +1,5 @@
 .class public Landroidx/databinding/ObservableBoolean;
-.super Lob;
+.super Lx2;
 .source "ObservableBoolean.java"
 
 # interfaces
@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public mValue:Z
+.field private mValue:Z
 
 
 # direct methods
@@ -43,7 +43,7 @@
     .locals 0
 
     .line 3
-    invoke-direct {p0}, Lob;-><init>()V
+    invoke-direct {p0}, Lx2;-><init>()V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lob;-><init>()V
+    invoke-direct {p0}, Lx2;-><init>()V
 
     .line 2
     iput-boolean p1, p0, Landroidx/databinding/ObservableBoolean;->mValue:Z
@@ -60,11 +60,11 @@
     return-void
 .end method
 
-.method public varargs constructor <init>([Lwb;)V
+.method public varargs constructor <init>([Landroidx/databinding/Observable;)V
     .locals 0
 
     .line 4
-    invoke-direct {p0, p1}, Lob;-><init>([Lwb;)V
+    invoke-direct {p0, p1}, Lx2;-><init>([Landroidx/databinding/Observable;)V
 
     return-void
 .end method
@@ -100,7 +100,7 @@
     iput-boolean p1, p0, Landroidx/databinding/ObservableBoolean;->mValue:Z
 
     .line 3
-    invoke-virtual {p0}, Lnb;->notifyChange()V
+    invoke-virtual {p0}, Landroidx/databinding/BaseObservable;->notifyChange()V
 
     :cond_0
     return-void

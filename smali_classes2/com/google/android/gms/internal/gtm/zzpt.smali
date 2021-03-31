@@ -3,30 +3,28 @@
 
 
 # instance fields
-.field public final limit:I
+.field private final limit:I
 
-.field public position:I
+.field private position:I
 
-.field public final synthetic zzawa:Lcom/google/android/gms/internal/gtm/zzps;
+.field private final synthetic zzawa:Lcom/google/android/gms/internal/gtm/zzps;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/internal/gtm/zzps;)V
-    .locals 0
+    .locals 1
 
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/internal/gtm/zzpt;->zzawa:Lcom/google/android/gms/internal/gtm/zzps;
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/gtm/zzpv;-><init>()V
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/internal/gtm/zzpt;->position:I
+    iput v0, p0, Lcom/google/android/gms/internal/gtm/zzpt;->position:I
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzpt;->zzawa:Lcom/google/android/gms/internal/gtm/zzps;
-
     invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzps;->size()I
 
     move-result p1

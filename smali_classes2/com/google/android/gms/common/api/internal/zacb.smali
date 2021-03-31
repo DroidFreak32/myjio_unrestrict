@@ -1,55 +1,46 @@
 .class public final Lcom/google/android/gms/common/api/internal/zacb;
-.super Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod<",
-        "TA;T",
-        "L;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zakh:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/internal/zacc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zacc;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zacb;->zakh:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zacb;->zaa:Lcom/google/android/gms/common/api/internal/zacc;
 
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;-><init>(Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final unregisterListener(Lcom/google/android/gms/common/api/Api$AnyClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TA;",
-            "Lcom/google/android/gms/tasks/TaskCompletionSource<",
-            "Ljava/lang/Boolean;",
-            ">;)V"
-        }
-    .end annotation
+.method public final run()V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zacb;->zakh:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zacb;->zaa:Lcom/google/android/gms/common/api/internal/zacc;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->zab(Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;)Lcom/google/android/gms/common/api/internal/RemoteCall;
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/zacc;->zaa(Lcom/google/android/gms/common/api/internal/zacc;)Lcom/google/android/gms/common/api/internal/zacd;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/common/api/internal/RemoteCall;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
+
+    const/4 v2, 0x4
+
+    invoke-direct {v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(I)V
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/internal/zacd;->zaa(Lcom/google/android/gms/common/ConnectionResult;)V
 
     return-void
 .end method

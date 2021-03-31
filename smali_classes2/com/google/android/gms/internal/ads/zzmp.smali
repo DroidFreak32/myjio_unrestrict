@@ -1,141 +1,140 @@
 .class public final Lcom/google/android/gms/internal/ads/zzmp;
-.super Lcom/google/android/gms/dynamic/RemoteCreator;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zznm;
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/dynamic/RemoteCreator<",
-        "Lcom/google/android/gms/internal/ads/zzlo;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final zzbeh:[Lcom/google/android/gms/internal/ads/zznm;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.MobileAdsSettingManagerCreatorImpl"
+.method public constructor <init>([Lcom/google/android/gms/internal/ads/zznm;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/dynamic/RemoteCreator;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzmp;->zzbeh:[Lcom/google/android/gms/internal/ads/zznm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic getRemoteCreator(Landroid/os/IBinder;)Ljava/lang/Object;
-    .locals 2
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.client.IMobileAdsSettingManagerCreator"
-
-    .line 1
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzlo;
-
-    if-eqz v1, :cond_1
-
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzlo;
-
-    return-object v0
-
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzlp;
-
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzlp;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
-.end method
-
-.method public final zzh(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzll;
-    .locals 3
+.method public final zzef(J)Z
+    .locals 12
 
     const/4 v0, 0x0
 
-    .line 1
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    .line 1
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzmp;->zzhp()J
+
+    move-result-wide v2
+
+    const-wide/high16 v4, -0x8000000000000000L
+
+    cmp-long v6, v2, v4
+
+    if-eqz v6, :cond_3
 
     .line 2
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/dynamic/RemoteCreator;->getRemoteCreatorInstance(Landroid/content/Context;)Ljava/lang/Object;
+    iget-object v4, p0, Lcom/google/android/gms/internal/ads/zzmp;->zzbeh:[Lcom/google/android/gms/internal/ads/zznm;
 
-    move-result-object p1
+    array-length v5, v4
 
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzlo;
+    const/4 v6, 0x0
 
-    const v2, 0xc65d40
+    const/4 v7, 0x0
+
+    :goto_0
+    if-ge v6, v5, :cond_2
+
+    aget-object v8, v4, v6
 
     .line 3
-    invoke-interface {p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzlo;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;I)Landroid/os/IBinder;
+    invoke-interface {v8}, Lcom/google/android/gms/internal/ads/zznm;->zzhp()J
 
-    move-result-object p1
+    move-result-wide v9
 
-    if-nez p1, :cond_0
+    cmp-long v11, v9, v2
 
-    return-object v0
-
-    :cond_0
-    const-string v1, "com.google.android.gms.ads.internal.client.IMobileAdsSettingManager"
+    if-nez v11, :cond_1
 
     .line 4
-    invoke-interface {p1, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-interface {v8, p1, p2}, Lcom/google/android/gms/internal/ads/zznm;->zzef(J)Z
 
-    move-result-object v1
+    move-result v8
 
-    .line 5
-    instance-of v2, v1, Lcom/google/android/gms/internal/ads/zzll;
+    or-int/2addr v7, v8
 
-    if-eqz v2, :cond_1
-
-    .line 6
-    check-cast v1, Lcom/google/android/gms/internal/ads/zzll;
-
-    return-object v1
-
-    .line 7
     :cond_1
-    new-instance v1, Lcom/google/android/gms/internal/ads/zzln;
-
-    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/ads/zzln;-><init>(Landroid/os/IBinder;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lcom/google/android/gms/dynamic/RemoteCreator$RemoteCreatorException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v1
-
-    :catch_0
-    move-exception p1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    :catch_1
-    move-exception p1
+    :cond_2
+    or-int/2addr v1, v7
+
+    if-nez v7, :cond_0
+
+    :cond_3
+    return v1
+.end method
+
+.method public final zzhp()J
+    .locals 12
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzmp;->zzbeh:[Lcom/google/android/gms/internal/ads/zznm;
+
+    array-length v1, v0
+
+    const-wide v2, 0x7fffffffffffffffL
+
+    const/4 v4, 0x0
+
+    move-wide v5, v2
 
     :goto_0
-    const-string v1, "Could not get remote MobileAdsSettingManager."
+    const-wide/high16 v7, -0x8000000000000000L
 
-    .line 8
-    invoke-static {v1, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+    if-ge v4, v1, :cond_1
 
-    return-object v0
+    aget-object v9, v0, v4
+
+    .line 2
+    invoke-interface {v9}, Lcom/google/android/gms/internal/ads/zznm;->zzhp()J
+
+    move-result-wide v9
+
+    cmp-long v11, v9, v7
+
+    if-eqz v11, :cond_0
+
+    .line 3
+    invoke-static {v5, v6, v9, v10}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v5
+
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    cmp-long v0, v5, v2
+
+    if-nez v0, :cond_2
+
+    return-wide v7
+
+    :cond_2
+    return-wide v5
 .end method

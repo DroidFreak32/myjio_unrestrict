@@ -61,7 +61,7 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {p0}, Lc20;->l(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/elitecorelib/andsf/utility/a;->l(Landroid/content/Context;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -142,15 +142,15 @@
 
     move-result-object p0
 
-    const-string v1, "wifiDisconnectionCategory"
+    const-string/jumbo v1, "wifiDisconnectionCategory"
 
     sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CDR_SESSION:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lc20;->e0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->q()V
 
-    sput-boolean v2, Lc20;->e:Z
+    sput-boolean v2, Lcom/elitecorelib/andsf/utility/a;->e:Z
 
     goto :goto_0
 
@@ -161,9 +161,9 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->k0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->w()V
 
-    sput-boolean v2, Lc20;->f:Z
+    sput-boolean v2, Lcom/elitecorelib/andsf/utility/a;->f:Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -288,13 +288,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :goto_0
     return-void
 .end method

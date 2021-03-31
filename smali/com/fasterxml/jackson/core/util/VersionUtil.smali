@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final V_SEP:Ljava/util/regex/Pattern;
+.field private static final V_SEP:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method public static final _close(Ljava/io/Closeable;)V
+.method private static final _close(Ljava/io/Closeable;)V
     .locals 0
 
     .line 1
@@ -59,17 +59,17 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "/"
+    const-string v1, "\\."
 
-    const-string v2, "\\."
+    const-string v2, "/"
 
-    invoke-virtual {p1, v2, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -96,7 +96,7 @@
     .line 3
     invoke-virtual {p1, p0}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
 
-    const-string p2, "version"
+    const-string/jumbo p2, "version"
 
     .line 4
     invoke-virtual {p1, p2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;

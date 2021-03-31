@@ -29,64 +29,58 @@
 
 .field public static final enum RIGHT_ALIGN:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
-.field public static final synthetic s:[Lcom/airbnb/lottie/model/DocumentData$Justification;
+.field public static final synthetic a:[Lcom/airbnb/lottie/model/DocumentData$Justification;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/airbnb/lottie/model/DocumentData$Justification;
 
-    const/4 v1, 0x0
+    const-string v1, "LEFT_ALIGN"
 
-    const-string v2, "LEFT_ALIGN"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/airbnb/lottie/model/DocumentData$Justification;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/airbnb/lottie/model/DocumentData$Justification;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->LEFT_ALIGN:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     .line 2
-    new-instance v0, Lcom/airbnb/lottie/model/DocumentData$Justification;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     const-string v3, "RIGHT_ALIGN"
 
-    invoke-direct {v0, v3, v2}, Lcom/airbnb/lottie/model/DocumentData$Justification;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->RIGHT_ALIGN:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    invoke-direct {v1, v3, v4}, Lcom/airbnb/lottie/model/DocumentData$Justification;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/airbnb/lottie/model/DocumentData$Justification;->RIGHT_ALIGN:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     .line 3
-    new-instance v0, Lcom/airbnb/lottie/model/DocumentData$Justification;
+    new-instance v3, Lcom/airbnb/lottie/model/DocumentData$Justification;
 
-    const/4 v3, 0x2
+    const-string v5, "CENTER"
 
-    const-string v4, "CENTER"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/airbnb/lottie/model/DocumentData$Justification;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/airbnb/lottie/model/DocumentData$Justification;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->CENTER:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    sput-object v3, Lcom/airbnb/lottie/model/DocumentData$Justification;->CENTER:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/airbnb/lottie/model/DocumentData$Justification;
+    new-array v5, v5, [Lcom/airbnb/lottie/model/DocumentData$Justification;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/airbnb/lottie/model/DocumentData$Justification;->LEFT_ALIGN:Lcom/airbnb/lottie/model/DocumentData$Justification;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/airbnb/lottie/model/DocumentData$Justification;->RIGHT_ALIGN:Lcom/airbnb/lottie/model/DocumentData$Justification;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/airbnb/lottie/model/DocumentData$Justification;->CENTER:Lcom/airbnb/lottie/model/DocumentData$Justification;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->s:[Lcom/airbnb/lottie/model/DocumentData$Justification;
+    sput-object v5, Lcom/airbnb/lottie/model/DocumentData$Justification;->a:[Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     return-void
 .end method
@@ -124,7 +118,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->s:[Lcom/airbnb/lottie/model/DocumentData$Justification;
+    sget-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->a:[Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/DocumentData$Justification;->clone()Ljava/lang/Object;
 

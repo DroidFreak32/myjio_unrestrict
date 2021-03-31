@@ -1,5 +1,5 @@
 {
-  "version": 45,
+  "version": 48,
   "name": "MyJio",
   "features": [
     {
@@ -169,8 +169,7 @@
         "CP_Z0003_2",
         "Z0003_1",
         "Z0003_2",
-        "NonJio_5",
-        "HATHWAY001_7"
+        "NonJio_5"
       ],
       "questions": [
         "What is MyJio UPI?",
@@ -223,8 +222,7 @@
         "CP_Z0003_2",
         "Z0003_1",
         "Z0003_2",
-        "NonJio_5",
-        "HATHWAY001_7"
+        "NonJio_5"
       ],
       "questions": [
         "How do I change m-pin?",
@@ -309,8 +307,8 @@
       "position": 8,
       "questions": [
         "What is JioCinema?",
-        "Play Shahrukh Khan Movie.",
-        "Play Movie Andhadhun."
+        "Play top movies.",
+        "Play latest movies."
       ]
     },
     {
@@ -348,6 +346,17 @@
       "isVisibleForVersion": 1,
       "supportedVersion": "6.0.20",
       "filterType": "default",
+      "servicesTypeApplicable": [
+        "CP_Z0003_1",
+        "CP_Z0003_2",
+        "Z0003_1",
+        "Z0003_2",
+        "CP_Z0005_1",
+        "CP_Z0005_2",
+        "Z0005_1",
+        "Z0005_2",
+        "HATHWAY001_7"
+      ],
       "position": 10,
       "questions": [
         "What is JioCloud?",

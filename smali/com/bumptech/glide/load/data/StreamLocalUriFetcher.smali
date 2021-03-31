@@ -14,17 +14,17 @@
 
 
 # static fields
-.field public static final ID_CONTACTS_CONTACT:I = 0x3
+.field private static final ID_CONTACTS_CONTACT:I = 0x3
 
-.field public static final ID_CONTACTS_LOOKUP:I = 0x1
+.field private static final ID_CONTACTS_LOOKUP:I = 0x1
 
-.field public static final ID_CONTACTS_PHOTO:I = 0x4
+.field private static final ID_CONTACTS_PHOTO:I = 0x4
 
-.field public static final ID_CONTACTS_THUMBNAIL:I = 0x2
+.field private static final ID_CONTACTS_THUMBNAIL:I = 0x2
 
-.field public static final ID_LOOKUP_BY_PHONE:I = 0x5
+.field private static final ID_LOOKUP_BY_PHONE:I = 0x5
 
-.field public static final URI_MATCHER:Landroid/content/UriMatcher;
+.field private static final URI_MATCHER:Landroid/content/UriMatcher;
 
 
 # direct methods
@@ -40,59 +40,47 @@
 
     sput-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
 
+    const-string v1, "com.android.contacts"
+
+    const-string v2, "contacts/lookup/*/#"
+
+    const/4 v3, 0x1
+
     .line 2
-    sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    const/4 v1, 0x1
-
-    const-string v2, "com.android.contacts"
-
-    const-string v3, "contacts/lookup/*/#"
-
-    invoke-virtual {v0, v2, v3, v1}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+    const-string v2, "contacts/lookup/*"
 
     .line 3
-    sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    const-string v3, "contacts/lookup/*"
-
-    invoke-virtual {v0, v2, v3, v1}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 4
-    sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
-
-    const-string v1, "contacts/#/photo"
+    const-string v2, "contacts/#/photo"
 
     const/4 v3, 0x2
 
-    invoke-virtual {v0, v2, v1, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+    .line 4
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 5
-    sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
-
-    const-string v1, "contacts/#"
+    const-string v2, "contacts/#"
 
     const/4 v3, 0x3
 
-    invoke-virtual {v0, v2, v1, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+    .line 5
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 6
-    sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
-
-    const-string v1, "contacts/#/display_photo"
+    const-string v2, "contacts/#/display_photo"
 
     const/4 v3, 0x4
 
-    invoke-virtual {v0, v2, v1, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+    .line 6
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 7
-    sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
-
-    const-string v1, "phone_lookup/*"
+    const-string v2, "phone_lookup/*"
 
     const/4 v3, 0x5
 
-    invoke-virtual {v0, v2, v1, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+    .line 7
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -108,6 +96,11 @@
 
 .method private loadResourceFromUri(Landroid/net/Uri;Landroid/content/ContentResolver;)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->URI_MATCHER:Landroid/content/UriMatcher;
@@ -186,6 +179,11 @@
 # virtual methods
 .method public close(Ljava/io/InputStream;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
@@ -195,6 +193,11 @@
 
 .method public bridge synthetic close(Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Ljava/io/InputStream;
@@ -206,6 +209,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -223,6 +229,11 @@
 
 .method public loadResource(Landroid/net/Uri;Landroid/content/ContentResolver;)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 2
     invoke-direct {p0, p1, p2}, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->loadResourceFromUri(Landroid/net/Uri;Landroid/content/ContentResolver;)Ljava/io/InputStream;
@@ -258,6 +269,11 @@
 
 .method public bridge synthetic loadResource(Landroid/net/Uri;Landroid/content/ContentResolver;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/data/StreamLocalUriFetcher;->loadResource(Landroid/net/Uri;Landroid/content/ContentResolver;)Ljava/io/InputStream;

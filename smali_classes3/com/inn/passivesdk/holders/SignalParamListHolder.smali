@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public cqiList:Ljava/util/List;
+.field private cqiList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -14,7 +14,7 @@
     .end annotation
 .end field
 
-.field public ecioList:Ljava/util/List;
+.field private ecioList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public ecnoList:Ljava/util/List;
+.field private ecnoList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -34,7 +34,7 @@
     .end annotation
 .end field
 
-.field public linkspeedList:Ljava/util/List;
+.field private linkspeedList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -44,7 +44,7 @@
     .end annotation
 .end field
 
-.field public noiseList:Ljava/util/List;
+.field private noiseList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -54,7 +54,7 @@
     .end annotation
 .end field
 
-.field public rscpList:Ljava/util/List;
+.field private rscpList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -64,7 +64,7 @@
     .end annotation
 .end field
 
-.field public rsrpList:Ljava/util/List;
+.field private rsrpList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -74,7 +74,7 @@
     .end annotation
 .end field
 
-.field public rsrqList:Ljava/util/List;
+.field private rsrqList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -84,7 +84,7 @@
     .end annotation
 .end field
 
-.field public rssiList:Ljava/util/List;
+.field private rssiList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -94,7 +94,7 @@
     .end annotation
 .end field
 
-.field public rssiWifiList:Ljava/util/List;
+.field private rssiWifiList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -104,7 +104,7 @@
     .end annotation
 .end field
 
-.field public rxList:Ljava/util/List;
+.field private rxList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -114,7 +114,7 @@
     .end annotation
 .end field
 
-.field public rxQlList:Ljava/util/List;
+.field private rxQlList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -124,7 +124,7 @@
     .end annotation
 .end field
 
-.field public signalList:Ljava/util/List;
+.field private signalList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -134,7 +134,7 @@
     .end annotation
 .end field
 
-.field public sinrList:Ljava/util/List;
+.field private sinrList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -144,7 +144,7 @@
     .end annotation
 .end field
 
-.field public snrList:Ljava/util/List;
+.field private snrList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -319,24 +319,139 @@
 
 
 # virtual methods
-.method public a()Ljava/util/List;
+.method public addCQIValue(Ljava/lang/Integer;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Ljava/lang/Double;",
-            ">;"
-        }
-    .end annotation
 
-    .line 3
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->linkspeedList:Ljava/util/List;
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->cqiList:Ljava/util/List;
 
-    return-object v0
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
 .end method
 
-.method public a(Ljava/lang/Double;)V
+.method public addECIOValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecioList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addECNOValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecnoList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addLinkSpeedValue(Ljava/lang/Double;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->linkspeedList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addNoiseValue(Ljava/lang/Double;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->noiseList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRSCPValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rscpList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRSRPValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrpList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRSRQValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrqList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRSSIValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRssiValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiWifiList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRxQlValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxQlList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addRxValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addSINRValue(Ljava/lang/Double;)V
     .locals 1
 
     .line 1
@@ -347,18 +462,218 @@
     return-void
 .end method
 
-.method public a(Ljava/lang/Integer;)V
+.method public addSignalValue(Ljava/lang/Double;)V
     .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->signalList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public addSnrValue(Ljava/lang/Integer;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->snrList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public clearAllSignalParams()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->sinrList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
     .line 2
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrpList:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 3
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrqList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 4
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 5
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 6
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxQlList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 7
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecnoList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 8
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecioList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 9
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->cqiList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 10
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rscpList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
     return-void
 .end method
 
-.method public b()Ljava/util/List;
+.method public clearAllWifiSignalParams()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiWifiList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 2
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->snrList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 3
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->noiseList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 4
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->signalList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 5
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->linkspeedList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    return-void
+.end method
+
+.method public getCqiList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->cqiList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getEcioList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecioList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getEcnoList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecnoList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getLinkspeedList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->linkspeedList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getNoiseList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->noiseList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getRscpList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rscpList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getRsrpList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -375,18 +690,7 @@
     return-object v0
 .end method
 
-.method public b(Ljava/lang/Integer;)V
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrqList:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public c()Ljava/util/List;
+.method public getRsrqList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -403,18 +707,7 @@
     return-object v0
 .end method
 
-.method public c(Ljava/lang/Integer;)V
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiList:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public d()Ljava/util/List;
+.method public getRssiList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -431,7 +724,7 @@
     return-object v0
 .end method
 
-.method public e()Ljava/util/List;
+.method public getRssiWifiList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -448,7 +741,58 @@
     return-object v0
 .end method
 
-.method public f()Ljava/util/List;
+.method public getRxList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getRxQlList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxQlList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getSignalList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->signalList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getSinrList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -465,7 +809,7 @@
     return-object v0
 .end method
 
-.method public g()Ljava/util/List;
+.method public getSnrList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -480,4 +824,259 @@
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->snrList:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public setCqiList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->cqiList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setEcioList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecioList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setEcnoList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->ecnoList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setLinkspeedList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->linkspeedList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setNoiseList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->noiseList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRscpList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rscpList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRsrpList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrpList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRsrqList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rsrqList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRssiList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRssiWifiList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rssiWifiList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRxList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setRxQlList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->rxQlList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setSignalList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->signalList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setSinrList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Double;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->sinrList:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setSnrList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SignalParamListHolder;->snrList:Ljava/util/List;
+
+    return-void
 .end method

@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final animationId:I
+.field private final animationId:I
 
 
 # direct methods

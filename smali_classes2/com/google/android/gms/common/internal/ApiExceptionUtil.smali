@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/internal/ApiExceptionUtil;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -19,6 +20,13 @@
 
 .method public static fromStatus(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
     .locals 1
+    .param p0    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

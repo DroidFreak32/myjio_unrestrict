@@ -20,9 +20,9 @@
 
 
 # instance fields
-.field public final fragment:Landroidx/fragment/app/Fragment;
+.field private final fragment:Landroidx/fragment/app/Fragment;
 
-.field public final zzbu:Lcom/google/android/gms/maps/internal/IStreetViewPanoramaFragmentDelegate;
+.field private final zzbu:Lcom/google/android/gms/maps/internal/IStreetViewPanoramaFragmentDelegate;
 
 
 # direct methods

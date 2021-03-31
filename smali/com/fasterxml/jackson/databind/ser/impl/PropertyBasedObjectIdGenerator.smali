@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -63,7 +63,9 @@
 
     move-result-object v0
 
-    const-class v1, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     const/4 v2, 0x0
 
@@ -203,7 +205,9 @@
     :cond_0
     new-instance v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
 
-    const-class v1, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;->_scope:Ljava/lang/Class;
 

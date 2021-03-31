@@ -1,18 +1,24 @@
-.class public final Lcom/google/android/gms/internal/ads/zzage;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzage;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzagd;
+.implements Landroid/os/IInterface;
 
 
-# direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+# virtual methods
+.method public abstract onUnconfirmedClickCancelled()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const-string v0, "com.google.android.gms.ads.internal.request.INonagonStreamingResponseListener"
-
-    .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    return-void
+.method public abstract onUnconfirmedClickReceived(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

@@ -4,29 +4,29 @@
 
 
 # static fields
-.field public static final aes128cbc:[B
+.field private static final aes128cbc:[B
 
-.field public static final aes192cbc:[B
+.field private static final aes192cbc:[B
 
-.field public static final aes256cbc:[B
+.field private static final aes256cbc:[B
 
-.field public static final begin:[B
+.field private static final begin:[B
 
-.field public static final dsaEncryption:[B
+.field private static final dsaEncryption:[B
 
-.field public static final end:[B
+.field private static final end:[B
 
-.field public static final pbeWithMD5AndDESCBC:[B
+.field private static final pbeWithMD5AndDESCBC:[B
 
-.field public static final pbes2:[B
+.field private static final pbes2:[B
 
-.field public static final pbkdf2:[B
+.field private static final pbkdf2:[B
 
-.field public static final rsaEncryption:[B
+.field private static final rsaEncryption:[B
 
 
 # instance fields
-.field public kpair:Lcom/jcraft/jsch/KeyPair;
+.field private kpair:Lcom/jcraft/jsch/KeyPair;
 
 
 # direct methods
@@ -509,6 +509,11 @@
 
 .method public forSSHAgent()[B
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/KeyPairPKCS8;->kpair:Lcom/jcraft/jsch/KeyPair;
@@ -522,6 +527,11 @@
 
 .method public generate(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -640,7 +650,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "unknown oid: "
+    const-string v2, "unknown oid: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -900,7 +910,7 @@
     invoke-virtual {v1, p0}, Lcom/jcraft/jsch/KeyPair;->copy(Lcom/jcraft/jsch/KeyPair;)V
 
     .line 16
-    invoke-virtual {v1, p1}, Lcom/jcraft/jsch/KeyPairRSA;->parse([B)Z
+    invoke-virtual {v1, p1}, Lcom/jcraft/jsch/KeyPair;->parse([B)Z
 
     move-result p1
 
@@ -1072,7 +1082,7 @@
     invoke-virtual {v1, p0}, Lcom/jcraft/jsch/KeyPair;->copy(Lcom/jcraft/jsch/KeyPair;)V
 
     .line 37
-    invoke-virtual {v1, p1}, Lcom/jcraft/jsch/KeyPairDSA;->parse([B)Z
+    invoke-virtual {v1, p1}, Lcom/jcraft/jsch/KeyPair;->parse([B)Z
 
     move-result p1
 

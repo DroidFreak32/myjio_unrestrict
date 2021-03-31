@@ -53,7 +53,7 @@
 
     if-nez p1, :cond_0
 
-    invoke-virtual {p2}, Lcom/caverock/androidsvg/SVG$j0;->g()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/caverock/androidsvg/SVG$j0;->m()Ljava/lang/String;
 
     move-result-object p1
 
@@ -73,7 +73,7 @@
     if-eqz p2, :cond_3
 
     .line 3
-    invoke-interface {p2}, Lcom/caverock/androidsvg/SVG$h0;->b()Ljava/util/List;
+    invoke-interface {p2}, Lcom/caverock/androidsvg/SVG$h0;->getChildren()Ljava/util/List;
 
     move-result-object p2
 
@@ -95,13 +95,15 @@
 
     move-result-object v3
 
+    check-cast v3, Lcom/caverock/androidsvg/SVG$l0;
+
     .line 4
     check-cast v3, Lcom/caverock/androidsvg/SVG$j0;
 
     if-eqz p1, :cond_2
 
     .line 5
-    invoke-virtual {v3}, Lcom/caverock/androidsvg/SVG$j0;->g()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/caverock/androidsvg/SVG$j0;->m()Ljava/lang/String;
 
     move-result-object v3
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final jobs:Ljava/util/Map;
+.field private final jobs:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public final onlyCacheJobs:Ljava/util/Map;
+.field private final onlyCacheJobs:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -107,6 +107,9 @@
 
 .method public getAll()Ljava/util/Map;
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "AnalyticsDBRep"
+.field private static final MODULE:Ljava/lang/String; = "AnalyticsDBRep"
 
 
 # instance fields
-.field public callback:Lcom/elitecorelib/core/room/DBTaskComplete;
+.field private callback:Lcom/elitecorelib/core/room/DBTaskComplete;
 
 .field public classes:[Ljava/lang/Class;
 
-.field public requestId:I
+.field private requestId:I
 
 
 # direct methods
@@ -24,47 +24,47 @@
 
     new-array v0, v0, [Ljava/lang/Class;
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const-class v2, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const-class v2, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const-class v2, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
+    const/4 v1, 0x5
 
-    const/4 v2, 0x5
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
+    const/4 v1, 0x6
 
-    const/4 v2, 0x6
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     iput-object v0, p0, Lcom/elitecorelib/core/room/AnalyticsDBRep;->classes:[Ljava/lang/Class;
 
@@ -80,47 +80,47 @@
 
     new-array v0, v0, [Ljava/lang/Class;
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const-class v2, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const-class v2, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const-class v2, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
+    const/4 v1, 0x5
 
-    const/4 v2, 0x5
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
+    const/4 v1, 0x6
 
-    const/4 v2, 0x6
+    const-class v2, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     iput-object v0, p0, Lcom/elitecorelib/core/room/AnalyticsDBRep;->classes:[Ljava/lang/Class;
 

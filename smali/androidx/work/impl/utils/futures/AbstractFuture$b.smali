@@ -35,12 +35,6 @@
 
 
 # virtual methods
-.method public abstract a(Landroidx/work/impl/utils/futures/AbstractFuture$h;Landroidx/work/impl/utils/futures/AbstractFuture$h;)V
-.end method
-
-.method public abstract a(Landroidx/work/impl/utils/futures/AbstractFuture$h;Ljava/lang/Thread;)V
-.end method
-
 .method public abstract a(Landroidx/work/impl/utils/futures/AbstractFuture;Landroidx/work/impl/utils/futures/AbstractFuture$d;Landroidx/work/impl/utils/futures/AbstractFuture$d;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -54,7 +48,20 @@
     .end annotation
 .end method
 
-.method public abstract a(Landroidx/work/impl/utils/futures/AbstractFuture;Landroidx/work/impl/utils/futures/AbstractFuture$h;Landroidx/work/impl/utils/futures/AbstractFuture$h;)Z
+.method public abstract b(Landroidx/work/impl/utils/futures/AbstractFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/work/impl/utils/futures/AbstractFuture<",
+            "*>;",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ")Z"
+        }
+    .end annotation
+.end method
+
+.method public abstract c(Landroidx/work/impl/utils/futures/AbstractFuture;Landroidx/work/impl/utils/futures/AbstractFuture$h;Landroidx/work/impl/utils/futures/AbstractFuture$h;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,15 +74,8 @@
     .end annotation
 .end method
 
-.method public abstract a(Landroidx/work/impl/utils/futures/AbstractFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/work/impl/utils/futures/AbstractFuture<",
-            "*>;",
-            "Ljava/lang/Object;",
-            "Ljava/lang/Object;",
-            ")Z"
-        }
-    .end annotation
+.method public abstract d(Landroidx/work/impl/utils/futures/AbstractFuture$h;Landroidx/work/impl/utils/futures/AbstractFuture$h;)V
+.end method
+
+.method public abstract e(Landroidx/work/impl/utils/futures/AbstractFuture$h;Ljava/lang/Thread;)V
 .end method

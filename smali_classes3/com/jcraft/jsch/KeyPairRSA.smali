@@ -4,31 +4,31 @@
 
 
 # static fields
-.field public static final begin:[B
+.field private static final begin:[B
 
-.field public static final end:[B
+.field private static final end:[B
 
-.field public static final sshrsa:[B
+.field private static final sshrsa:[B
 
 
 # instance fields
-.field public c_array:[B
+.field private c_array:[B
 
-.field public ep_array:[B
+.field private ep_array:[B
 
-.field public eq_array:[B
+.field private eq_array:[B
 
-.field public key_size:I
+.field private key_size:I
 
-.field public n_array:[B
+.field private n_array:[B
 
-.field public p_array:[B
+.field private p_array:[B
 
-.field public prv_array:[B
+.field private prv_array:[B
 
-.field public pub_array:[B
+.field private pub_array:[B
 
-.field public q_array:[B
+.field private q_array:[B
 
 
 # direct methods
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/jcraft/jsch/KeyPairRSA;->end:[B
 
-    const-string/jumbo v0, "ssh-rsa"
+    const-string v0, "ssh-rsa"
 
     .line 3
     invoke-static {v0}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
@@ -115,6 +115,11 @@
 
 .method public static fromSSHAgent(Lcom/jcraft/jsch/JSch;Lcom/jcraft/jsch/Buffer;)Lcom/jcraft/jsch/KeyPair;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/16 v0, 0x8
 
@@ -329,6 +334,11 @@
 
 .method public forSSHAgent()[B
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/KeyPair;->isEncrypted()Z
@@ -393,16 +403,14 @@
 
     move-result v1
 
-    new-array v1, v1, [B
+    new-array v2, v1, [B
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 12
-    array-length v3, v1
+    invoke-virtual {v0, v2, v3, v1}, Lcom/jcraft/jsch/Buffer;->getByte([BII)V
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/jcraft/jsch/Buffer;->getByte([BII)V
-
-    return-object v1
+    return-object v2
 
     .line 13
     :cond_0
@@ -417,6 +425,11 @@
 
 .method public generate(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iput p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->key_size:I
@@ -862,7 +875,7 @@
     .locals 3
 
     :try_start_0
-    const-string/jumbo v0, "signature.rsa"
+    const-string v0, "signature.rsa"
 
     .line 1
     invoke-static {v0}, Lcom/jcraft/jsch/JSch;->getConfig(Ljava/lang/String;)Ljava/lang/String;
@@ -934,7 +947,7 @@
     .locals 3
 
     :try_start_0
-    const-string/jumbo v0, "signature.rsa"
+    const-string v0, "signature.rsa"
 
     .line 1
     invoke-static {v0}, Lcom/jcraft/jsch/JSch;->getConfig(Ljava/lang/String;)Ljava/lang/String;
@@ -1088,68 +1101,65 @@
     :catch_0
     return v0
 
-    .line 11
     :cond_0
-    iget v1, p0, Lcom/jcraft/jsch/KeyPair;->vendor:I
-
     if-ne v1, v3, :cond_3
 
-    .line 12
+    .line 11
     aget-byte v1, p1, v0
 
     const/16 v2, 0x30
 
     if-eq v1, v2, :cond_2
 
-    .line 13
+    .line 12
     new-instance v1, Lcom/jcraft/jsch/Buffer;
 
     invoke-direct {v1, p1}, Lcom/jcraft/jsch/Buffer;-><init>([B)V
 
-    .line 14
+    .line 13
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->getMPIntBits()[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->pub_array:[B
 
-    .line 15
+    .line 14
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->getMPIntBits()[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->prv_array:[B
 
-    .line 16
+    .line 15
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->getMPIntBits()[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B
 
-    .line 17
+    .line 16
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->getMPIntBits()[B
 
-    .line 18
+    .line 17
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->getMPIntBits()[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->p_array:[B
 
-    .line 19
+    .line 18
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->getMPIntBits()[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->q_array:[B
 
-    .line 20
+    .line 19
     iget-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B
 
     if-eqz p1, :cond_1
 
-    .line 21
+    .line 20
     new-instance p1, Ljava/math/BigInteger;
 
     iget-object v1, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B
@@ -1162,14 +1172,14 @@
 
     iput p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->key_size:I
 
-    .line 22
+    .line 21
     :cond_1
     invoke-direct {p0}, Lcom/jcraft/jsch/KeyPairRSA;->getEPArray()[B
 
-    .line 23
+    .line 22
     invoke-direct {p0}, Lcom/jcraft/jsch/KeyPairRSA;->getEQArray()[B
 
-    .line 24
+    .line 23
     invoke-direct {p0}, Lcom/jcraft/jsch/KeyPairRSA;->getCArray()[B
 
     return v3
@@ -1177,7 +1187,7 @@
     :cond_2
     return v0
 
-    .line 25
+    .line 24
     :cond_3
     aget-byte v1, p1, v3
 
@@ -1198,7 +1208,7 @@
 
     add-int/lit8 v1, v4, 0x1
 
-    .line 26
+    .line 25
     aget-byte v4, p1, v4
 
     move v4, v1
@@ -1210,7 +1220,7 @@
     :cond_4
     const/4 v4, 0x2
 
-    .line 27
+    .line 26
     :cond_5
     aget-byte v1, p1, v4
 
@@ -1223,7 +1233,7 @@
 
     add-int/lit8 v1, v4, 0x1
 
-    .line 28
+    .line 27
     aget-byte v2, p1, v4
 
     and-int/lit16 v2, v2, 0xff
@@ -1245,7 +1255,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    .line 29
+    .line 28
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1272,7 +1282,7 @@
 
     add-int/lit8 v2, v1, 0x1
 
-    .line 30
+    .line 29
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1283,44 +1293,46 @@
 
     and-int/lit8 v1, v1, 0x7f
 
-    const/4 v4, 0x0
+    move v4, v2
+
+    const/4 v2, 0x0
 
     :goto_2
     add-int/lit8 v5, v1, -0x1
 
     if-lez v1, :cond_9
 
-    shl-int/lit8 v1, v4, 0x8
+    shl-int/lit8 v1, v2, 0x8
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    .line 31
-    aget-byte v2, p1, v2
+    .line 30
+    aget-byte v4, p1, v4
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    add-int/2addr v1, v2
+    add-int/2addr v1, v4
 
-    move v2, v4
+    move v4, v2
 
-    move v4, v1
+    move v2, v1
 
     move v1, v5
 
     goto :goto_2
 
     :cond_9
-    move v1, v4
+    move v1, v2
 
-    .line 32
+    move v2, v4
+
+    .line 31
     :cond_a
     new-array v4, v1, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B
 
-    .line 33
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B
-
+    .line 32
     invoke-static {p1, v2, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v2, v1
@@ -1329,7 +1341,7 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 34
+    .line 33
     aget-byte v2, p1, v2
 
     and-int/lit16 v2, v2, 0xff
@@ -1351,7 +1363,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    .line 35
+    .line 34
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1371,15 +1383,13 @@
     :cond_b
     move v2, v4
 
-    .line 36
+    .line 35
     :cond_c
     new-array v4, v2, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->pub_array:[B
 
-    .line 37
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->pub_array:[B
-
+    .line 36
     invoke-static {p1, v1, v4, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v1, v2
@@ -1388,7 +1398,7 @@
 
     add-int/lit8 v2, v1, 0x1
 
-    .line 38
+    .line 37
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1399,44 +1409,46 @@
 
     and-int/lit8 v1, v1, 0x7f
 
-    const/4 v4, 0x0
+    move v4, v2
+
+    const/4 v2, 0x0
 
     :goto_4
     add-int/lit8 v5, v1, -0x1
 
     if-lez v1, :cond_d
 
-    shl-int/lit8 v1, v4, 0x8
+    shl-int/lit8 v1, v2, 0x8
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    .line 39
-    aget-byte v2, p1, v2
+    .line 38
+    aget-byte v4, p1, v4
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    add-int/2addr v1, v2
+    add-int/2addr v1, v4
 
-    move v2, v4
+    move v4, v2
 
-    move v4, v1
+    move v2, v1
 
     move v1, v5
 
     goto :goto_4
 
     :cond_d
-    move v1, v4
+    move v1, v2
 
-    .line 40
+    move v2, v4
+
+    .line 39
     :cond_e
     new-array v4, v1, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->prv_array:[B
 
-    .line 41
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->prv_array:[B
-
+    .line 40
     invoke-static {p1, v2, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v2, v1
@@ -1445,7 +1457,7 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 42
+    .line 41
     aget-byte v2, p1, v2
 
     and-int/lit16 v2, v2, 0xff
@@ -1467,7 +1479,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    .line 43
+    .line 42
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1487,15 +1499,13 @@
     :cond_f
     move v2, v4
 
-    .line 44
+    .line 43
     :cond_10
     new-array v4, v2, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->p_array:[B
 
-    .line 45
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->p_array:[B
-
+    .line 44
     invoke-static {p1, v1, v4, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v1, v2
@@ -1504,7 +1514,7 @@
 
     add-int/lit8 v2, v1, 0x1
 
-    .line 46
+    .line 45
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1515,44 +1525,46 @@
 
     and-int/lit8 v1, v1, 0x7f
 
-    const/4 v4, 0x0
+    move v4, v2
+
+    const/4 v2, 0x0
 
     :goto_6
     add-int/lit8 v5, v1, -0x1
 
     if-lez v1, :cond_11
 
-    shl-int/lit8 v1, v4, 0x8
+    shl-int/lit8 v1, v2, 0x8
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    .line 47
-    aget-byte v2, p1, v2
+    .line 46
+    aget-byte v4, p1, v4
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    add-int/2addr v1, v2
+    add-int/2addr v1, v4
 
-    move v2, v4
+    move v4, v2
 
-    move v4, v1
+    move v2, v1
 
     move v1, v5
 
     goto :goto_6
 
     :cond_11
-    move v1, v4
+    move v1, v2
 
-    .line 48
+    move v2, v4
+
+    .line 47
     :cond_12
     new-array v4, v1, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->q_array:[B
 
-    .line 49
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->q_array:[B
-
+    .line 48
     invoke-static {p1, v2, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v2, v1
@@ -1561,7 +1573,7 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 50
+    .line 49
     aget-byte v2, p1, v2
 
     and-int/lit16 v2, v2, 0xff
@@ -1583,7 +1595,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    .line 51
+    .line 50
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1603,15 +1615,13 @@
     :cond_13
     move v2, v4
 
-    .line 52
+    .line 51
     :cond_14
     new-array v4, v2, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->ep_array:[B
 
-    .line 53
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->ep_array:[B
-
+    .line 52
     invoke-static {p1, v1, v4, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v1, v2
@@ -1620,7 +1630,7 @@
 
     add-int/lit8 v2, v1, 0x1
 
-    .line 54
+    .line 53
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1631,44 +1641,46 @@
 
     and-int/lit8 v1, v1, 0x7f
 
-    const/4 v4, 0x0
+    move v4, v2
+
+    const/4 v2, 0x0
 
     :goto_8
     add-int/lit8 v5, v1, -0x1
 
     if-lez v1, :cond_15
 
-    shl-int/lit8 v1, v4, 0x8
+    shl-int/lit8 v1, v2, 0x8
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    .line 55
-    aget-byte v2, p1, v2
+    .line 54
+    aget-byte v4, p1, v4
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    add-int/2addr v1, v2
+    add-int/2addr v1, v4
 
-    move v2, v4
+    move v4, v2
 
-    move v4, v1
+    move v2, v1
 
     move v1, v5
 
     goto :goto_8
 
     :cond_15
-    move v1, v4
+    move v1, v2
 
-    .line 56
+    move v2, v4
+
+    .line 55
     :cond_16
     new-array v4, v1, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->eq_array:[B
 
-    .line 57
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->eq_array:[B
-
+    .line 56
     invoke-static {p1, v2, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v2, v1
@@ -1677,7 +1689,7 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 58
+    .line 57
     aget-byte v2, p1, v2
 
     and-int/lit16 v2, v2, 0xff
@@ -1699,7 +1711,7 @@
 
     add-int/lit8 v4, v1, 0x1
 
-    .line 59
+    .line 58
     aget-byte v1, p1, v1
 
     and-int/lit16 v1, v1, 0xff
@@ -1719,23 +1731,21 @@
     :cond_17
     move v2, v4
 
-    .line 60
+    .line 59
     :cond_18
     new-array v4, v2, [B
 
     iput-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->c_array:[B
 
-    .line 61
-    iget-object v4, p0, Lcom/jcraft/jsch/KeyPairRSA;->c_array:[B
-
+    .line 60
     invoke-static {p1, v1, v4, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 62
+    .line 61
     iget-object p1, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B
 
     if-eqz p1, :cond_19
 
-    .line 63
+    .line 62
     new-instance p1, Ljava/math/BigInteger;
 
     iget-object v1, p0, Lcom/jcraft/jsch/KeyPairRSA;->n_array:[B

@@ -1,38 +1,46 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaas;
-.super Lcom/google/android/gms/common/api/internal/zabf;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
 
 
 # instance fields
-.field public final synthetic zagq:Lcom/google/android/gms/common/api/internal/zaak;
-
-.field public final synthetic zagr:Lcom/google/android/gms/signin/internal/zaj;
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/internal/StatusPendingResult;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaar;Lcom/google/android/gms/common/api/internal/zabd;Lcom/google/android/gms/common/api/internal/zaak;Lcom/google/android/gms/signin/internal/zaj;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaar;Lcom/google/android/gms/common/api/internal/StatusPendingResult;)V
     .locals 0
 
     .line 1
-    iput-object p3, p0, Lcom/google/android/gms/common/api/internal/zaas;->zagq:Lcom/google/android/gms/common/api/internal/zaak;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zaas;->zaa:Lcom/google/android/gms/common/api/internal/StatusPendingResult;
 
-    iput-object p4, p0, Lcom/google/android/gms/common/api/internal/zaas;->zagr:Lcom/google/android/gms/signin/internal/zaj;
-
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/zabf;-><init>(Lcom/google/android/gms/common/api/internal/zabd;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zaan()V
+.method public final onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/common/ConnectionResult;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaas;->zagq:Lcom/google/android/gms/common/api/internal/zaak;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zaas;->zaa:Lcom/google/android/gms/common/api/internal/StatusPendingResult;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaas;->zagr:Lcom/google/android/gms/signin/internal/zaj;
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/api/internal/zaak;->zaa(Lcom/google/android/gms/common/api/internal/zaak;Lcom/google/android/gms/signin/internal/zaj;)V
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
 
     return-void
 .end method

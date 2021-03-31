@@ -17,15 +17,15 @@
 
 
 # instance fields
-.field public zzall:D
+.field private zzall:D
 
-.field public zzalm:J
+.field private zzalm:J
 
-.field public zzaln:Z
+.field private zzaln:Z
 
 
 # direct methods
-.method public constructor <init>(D)V
+.method private constructor <init>(D)V
     .locals 0
 
     .line 1
@@ -42,7 +42,7 @@
     return-void
 .end method
 
-.method public constructor <init>(J)V
+.method private constructor <init>(J)V
     .locals 0
 
     .line 4
@@ -76,6 +76,11 @@
 
 .method public static zzbo(Ljava/lang/String;)Lcom/google/android/gms/tagmanager/zzgi;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0

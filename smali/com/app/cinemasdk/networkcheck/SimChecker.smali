@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public _context:Landroid/content/Context;
+.field private _context:Landroid/content/Context;
 
 
 # direct methods

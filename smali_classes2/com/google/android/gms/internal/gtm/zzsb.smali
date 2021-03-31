@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public zzbco:[Lcom/google/android/gms/internal/gtm/zzsj;
+.field private zzbco:[Lcom/google/android/gms/internal/gtm/zzsj;
 
 
 # direct methods

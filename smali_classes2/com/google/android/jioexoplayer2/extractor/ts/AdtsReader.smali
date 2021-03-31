@@ -7,83 +7,83 @@
 
 
 # static fields
-.field public static final CRC_SIZE:I = 0x2
+.field private static final CRC_SIZE:I = 0x2
 
-.field public static final HEADER_SIZE:I = 0x5
+.field private static final HEADER_SIZE:I = 0x5
 
-.field public static final ID3_HEADER_SIZE:I = 0xa
+.field private static final ID3_HEADER_SIZE:I = 0xa
 
-.field public static final ID3_IDENTIFIER:[B
+.field private static final ID3_IDENTIFIER:[B
 
-.field public static final ID3_SIZE_OFFSET:I = 0x6
+.field private static final ID3_SIZE_OFFSET:I = 0x6
 
-.field public static final MATCH_STATE_FF:I = 0x200
+.field private static final MATCH_STATE_FF:I = 0x200
 
-.field public static final MATCH_STATE_I:I = 0x300
+.field private static final MATCH_STATE_I:I = 0x300
 
-.field public static final MATCH_STATE_ID:I = 0x400
+.field private static final MATCH_STATE_ID:I = 0x400
 
-.field public static final MATCH_STATE_START:I = 0x100
+.field private static final MATCH_STATE_START:I = 0x100
 
-.field public static final MATCH_STATE_VALUE_SHIFT:I = 0x8
+.field private static final MATCH_STATE_VALUE_SHIFT:I = 0x8
 
-.field public static final STATE_CHECKING_ADTS_HEADER:I = 0x1
+.field private static final STATE_CHECKING_ADTS_HEADER:I = 0x1
 
-.field public static final STATE_FINDING_SAMPLE:I = 0x0
+.field private static final STATE_FINDING_SAMPLE:I = 0x0
 
-.field public static final STATE_READING_ADTS_HEADER:I = 0x3
+.field private static final STATE_READING_ADTS_HEADER:I = 0x3
 
-.field public static final STATE_READING_ID3_HEADER:I = 0x2
+.field private static final STATE_READING_ID3_HEADER:I = 0x2
 
-.field public static final STATE_READING_SAMPLE:I = 0x4
+.field private static final STATE_READING_SAMPLE:I = 0x4
 
-.field public static final TAG:Ljava/lang/String; = "AdtsReader"
+.field private static final TAG:Ljava/lang/String; = "AdtsReader"
 
-.field public static final VERSION_UNSET:I = -0x1
+.field private static final VERSION_UNSET:I = -0x1
 
 
 # instance fields
-.field public final adtsScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final adtsScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-.field public bytesRead:I
+.field private bytesRead:I
 
-.field public currentFrameVersion:I
+.field private currentFrameVersion:I
 
-.field public currentOutput:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private currentOutput:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public currentSampleDuration:J
+.field private currentSampleDuration:J
 
-.field public final exposeId3:Z
+.field private final exposeId3:Z
 
-.field public firstFrameSampleRateIndex:I
+.field private firstFrameSampleRateIndex:I
 
-.field public firstFrameVersion:I
+.field private firstFrameVersion:I
 
-.field public formatId:Ljava/lang/String;
+.field private formatId:Ljava/lang/String;
 
-.field public foundFirstFrame:Z
+.field private foundFirstFrame:Z
 
-.field public hasCrc:Z
+.field private hasCrc:Z
 
-.field public hasOutputFormat:Z
+.field private hasOutputFormat:Z
 
-.field public final id3HeaderBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final id3HeaderBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public id3Output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private id3Output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public final language:Ljava/lang/String;
+.field private final language:Ljava/lang/String;
 
-.field public matchState:I
+.field private matchState:I
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public sampleDurationUs:J
+.field private sampleDurationUs:J
 
-.field public sampleSize:I
+.field private sampleSize:I
 
-.field public state:I
+.field private state:I
 
-.field public timeUs:J
+.field private timeUs:J
 
 
 # direct methods
@@ -480,9 +480,6 @@
 
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->bytesRead:I
 
-    .line 4
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->bytesRead:I
-
     if-ne p1, p3, :cond_0
 
     const/4 p1, 0x1
@@ -714,6 +711,11 @@
 
 .method private parseAdtsHeader()V
     .locals 18
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ParserException;
+        }
+    .end annotation
 
     move-object/from16 v6, p0
 
@@ -993,8 +995,6 @@
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->bytesRead:I
 
     .line 4
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->bytesRead:I
-
     iget v4, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->sampleSize:I
 
     if-ne p1, v4, :cond_0
@@ -1171,6 +1171,11 @@
 # virtual methods
 .method public consume(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ParserException;
+        }
+    .end annotation
 
     .line 1
     :cond_0
@@ -1328,19 +1333,17 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->id3Output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
     .line 7
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;->id3Output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
-
     invoke-virtual {p2}, Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->getFormatId()Ljava/lang/String;
 
     move-result-object p2
 
     const/4 v0, -0x1
 
-    const/4 v1, 0x0
+    const-string v1, "application/id3"
 
-    const-string v2, "application/id3"
+    const/4 v2, 0x0
 
-    invoke-static {p2, v2, v1, v0, v1}, Lcom/google/android/jioexoplayer2/Format;->createSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILcom/google/android/jioexoplayer2/drm/DrmInitData;)Lcom/google/android/jioexoplayer2/Format;
+    invoke-static {p2, v1, v2, v0, v2}, Lcom/google/android/jioexoplayer2/Format;->createSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILcom/google/android/jioexoplayer2/drm/DrmInitData;)Lcom/google/android/jioexoplayer2/Format;
 
     move-result-object p2
 

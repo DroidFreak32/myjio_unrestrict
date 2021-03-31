@@ -1,120 +1,68 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzfz;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
-
-# interfaces
-.implements Ljava/util/Iterator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljava/util/Iterator<",
-        "Ljava/util/Map$Entry<",
-        "TK;",
-        "Ljava/lang/Object;",
-        ">;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field public zza:Ljava/util/Iterator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Iterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;",
-            "Ljava/lang/Object;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.super Lcom/google/android/gms/internal/measurement/zzfy;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Iterator;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Iterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;",
-            "Ljava/lang/Object;",
-            ">;>;)V"
-        }
-    .end annotation
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzfz;->zza:Ljava/util/Iterator;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzfz;->zza:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
+.method public static zza(III)I
     .locals 3
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzfz;->zza:Ljava/util/Iterator;
+    const/4 p2, 0x1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    const v1, 0x3fffffff    # 1.9999999f
 
-    check-cast v0, Ljava/util/Map$Entry;
+    if-gt p1, v1, :cond_0
 
-    .line 2
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    move-result-object v1
-
-    instance-of v1, v1, Lcom/google/android/gms/internal/measurement/zzfu;
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    new-instance v1, Lcom/google/android/gms/internal/measurement/zzfw;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Lcom/google/android/gms/internal/measurement/zzfw;-><init>(Ljava/util/Map$Entry;Lcom/google/android/gms/internal/measurement/zzfx;)V
-
-    return-object v1
+    goto :goto_0
 
     :cond_0
-    return-object v0
-.end method
+    const/4 v2, 0x0
 
-.method public final remove()V
-    .locals 1
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzfz;->zza:Ljava/util/Iterator;
+    invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    move-result p0
 
-    return-void
+    invoke-static {p0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result p0
+
+    return p0
+
+    .line 2
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, v2, v0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, v2, p2
+
+    const-string p1, "min (%s) must be less than or equal to max (%s)"
+
+    invoke-static {p1, v2}, Lcom/google/android/gms/internal/measurement/zzed;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

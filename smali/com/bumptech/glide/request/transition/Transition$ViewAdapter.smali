@@ -16,6 +16,8 @@
 
 # virtual methods
 .method public abstract getCurrentDrawable()Landroid/graphics/drawable/Drawable;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getView()Landroid/view/View;

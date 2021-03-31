@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public _roid:Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
+.field private _roid:Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
 
-.field public _unresolvedIds:Ljava/util/List;
+.field private _unresolvedIds:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

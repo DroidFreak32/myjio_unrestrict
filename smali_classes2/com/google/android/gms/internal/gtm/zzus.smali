@@ -6,17 +6,17 @@
 
 
 # static fields
-.field public static final zzbhe:Lcom/google/android/gms/internal/gtm/zzut;
+.field private static final zzbhe:Lcom/google/android/gms/internal/gtm/zzut;
 
 
 # instance fields
-.field public mSize:I
+.field private mSize:I
 
-.field public zzbhf:Z
+.field private zzbhf:Z
 
-.field public zzbhg:[I
+.field private zzbhg:[I
 
-.field public zzbhh:[Lcom/google/android/gms/internal/gtm/zzut;
+.field private zzbhh:[Lcom/google/android/gms/internal/gtm/zzut;
 
 
 # direct methods
@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 2
 
     .line 2
@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method public static idealIntArraySize(I)I
+.method private static idealIntArraySize(I)I
     .locals 3
 
     shl-int/lit8 p0, p0, 0x2
@@ -163,6 +163,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzus;->mSize:I
@@ -421,28 +426,26 @@
 
     if-ge v0, v1, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzus;->zzbhh:[Lcom/google/android/gms/internal/gtm/zzut;
+    iget-object v2, p0, Lcom/google/android/gms/internal/gtm/zzus;->zzbhh:[Lcom/google/android/gms/internal/gtm/zzut;
 
-    aget-object v2, v1, v0
+    aget-object v3, v2, v0
 
-    sget-object v3, Lcom/google/android/gms/internal/gtm/zzus;->zzbhe:Lcom/google/android/gms/internal/gtm/zzut;
+    sget-object v4, Lcom/google/android/gms/internal/gtm/zzus;->zzbhe:Lcom/google/android/gms/internal/gtm/zzut;
 
-    if-ne v2, v3, :cond_1
+    if-ne v3, v4, :cond_1
 
     .line 4
-    iget-object v2, p0, Lcom/google/android/gms/internal/gtm/zzus;->zzbhg:[I
+    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzus;->zzbhg:[I
 
-    aput p1, v2, v0
+    aput p1, v1, v0
 
     .line 5
-    aput-object p2, v1, v0
+    aput-object p2, v2, v0
 
     return-void
 
     .line 6
     :cond_1
-    iget v1, p0, Lcom/google/android/gms/internal/gtm/zzus;->mSize:I
-
     iget-object v2, p0, Lcom/google/android/gms/internal/gtm/zzus;->zzbhg:[I
 
     array-length v2, v2

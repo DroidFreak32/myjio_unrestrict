@@ -60,7 +60,7 @@
 
     iget-object v0, v0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$1;->this$0:Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$000(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$200(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -88,7 +88,7 @@
 
     iget-object v0, v0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$1;->this$0:Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$000(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$200(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -102,7 +102,7 @@
 
     iget-object v0, v0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$1;->this$0:Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$100(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$300(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -130,7 +130,7 @@
 
     iget-object v0, v0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$1;->this$0:Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$100(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->access$300(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
 
     move-result-object v0
 

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/server/response/zaj;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -10,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/common/server/response/zam;",
+        "Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;",
         ">;"
     }
 .end annotation
@@ -29,7 +30,7 @@
 
 # virtual methods
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 7
+    .locals 13
 
     .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
@@ -40,89 +41,160 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v1
+    move-object v9, v1
+
+    move-object v11, v9
+
+    move-object v12, v11
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v10, 0x0
 
     .line 2
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v4
+    move-result v1
 
-    if-ge v4, v0, :cond_3
+    if-ge v1, v0, :cond_0
 
     .line 3
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
 
-    move-result v4
+    move-result v1
 
     .line 4
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
 
-    move-result v5
+    move-result v2
 
-    const/4 v6, 0x1
-
-    if-eq v5, v6, :cond_2
-
-    const/4 v6, 0x2
-
-    if-eq v5, v6, :cond_1
-
-    const/4 v6, 0x3
-
-    if-eq v5, v6, :cond_0
+    packed-switch v2, :pswitch_data_0
 
     .line 5
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     .line 6
-    :cond_0
-    sget-object v3, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->CREATOR:Lcom/google/android/gms/common/server/response/zai;
+    :pswitch_0
+    sget-object v2, Lcom/google/android/gms/common/server/converter/zaa;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 7
-    invoke-static {p1, v4, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
+    move-object v12, v1
+
+    check-cast v12, Lcom/google/android/gms/common/server/converter/zaa;
 
     goto :goto_0
 
     .line 8
-    :cond_1
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    :pswitch_1
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v11
 
     goto :goto_0
 
     .line 9
-    :cond_2
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+    :pswitch_2
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v2
+    move-result v10
 
     goto :goto_0
 
     .line 10
-    :cond_3
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+    :pswitch_3
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v9
+
+    goto :goto_0
 
     .line 11
-    new-instance p1, Lcom/google/android/gms/common/server/response/zam;
+    :pswitch_4
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
 
-    invoke-direct {p1, v2, v1, v3}, Lcom/google/android/gms/common/server/response/zam;-><init>(ILjava/lang/String;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;)V
+    move-result v8
+
+    goto :goto_0
+
+    .line 12
+    :pswitch_5
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v7
+
+    goto :goto_0
+
+    .line 13
+    :pswitch_6
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v6
+
+    goto :goto_0
+
+    .line 14
+    :pswitch_7
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v5
+
+    goto :goto_0
+
+    .line 15
+    :pswitch_8
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v4
+
+    goto :goto_0
+
+    .line 16
+    :cond_0
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    .line 17
+    new-instance p1, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
+
+    move-object v3, p1
+
+    invoke-direct/range {v3 .. v12}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;-><init>(IIZIZLjava/lang/String;ILjava/lang/String;Lcom/google/android/gms/common/server/converter/zaa;)V
 
     return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
     .line 1
-    new-array p1, p1, [Lcom/google/android/gms/common/server/response/zam;
+    new-array p1, p1, [Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
 
     return-object p1
 .end method

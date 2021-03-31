@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final MILLIS_MULTIPLIER:D
+.field private static final MILLIS_MULTIPLIER:D
 
 
 # direct methods
@@ -36,7 +36,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

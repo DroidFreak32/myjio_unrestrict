@@ -19,15 +19,15 @@
 
 
 # instance fields
-.field public alive:Z
+.field private alive:Z
 
-.field public volatile dying:Z
+.field private volatile dying:Z
 
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public final viewEdit:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit;
+.field private final viewEdit:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit;
 
-.field public final viewRoot:Ljava/lang/ref/WeakReference;
+.field private final viewRoot:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",

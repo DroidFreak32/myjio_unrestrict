@@ -2,10 +2,28 @@
 .super Landroidx/room/RoomDatabase;
 
 
-# static fields
-.field public static INSTANCE:Lcom/elitecorelib/core/room/AnalyticsDB; = null
+# annotations
+.annotation build Landroidx/room/Database;
+    entities = {
+        Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;,
+        Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;,
+        Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;,
+        Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;,
+        Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;,
+        Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;,
+        Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;,
+        Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;,
+        Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;
+    }
+    exportSchema = false
+    version = 0x2
+.end annotation
 
-.field public static final MIGRATION_1_2:Lqh;
+
+# static fields
+.field private static INSTANCE:Lcom/elitecorelib/core/room/AnalyticsDB; = null
+
+.field private static final MIGRATION_1_2:Landroidx/room/migration/Migration;
 
 .field public static MODULE:Ljava/lang/String; = "[AnalyticsDB] "
 
@@ -22,7 +40,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/room/AnalyticsDB$1;-><init>(II)V
 
-    sput-object v0, Lcom/elitecorelib/core/room/AnalyticsDB;->MIGRATION_1_2:Lqh;
+    sput-object v0, Lcom/elitecorelib/core/room/AnalyticsDB;->MIGRATION_1_2:Landroidx/room/migration/Migration;
 
     return-void
 .end method
@@ -64,27 +82,33 @@
 
     const-string v2, "Analytics"
 
-    invoke-static {v0, v1, v2}, Lgh;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$a;
+    invoke-static {v0, v1, v2}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase$a;->a()Landroidx/room/RoomDatabase$a;
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->allowMainThreadQueries()Landroidx/room/RoomDatabase$Builder;
+
+    move-result-object v0
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lqh;
+    new-array v1, v1, [Landroidx/room/migration/Migration;
 
     const/4 v2, 0x0
 
-    sget-object v3, Lcom/elitecorelib/core/room/AnalyticsDB;->MIGRATION_1_2:Lqh;
+    sget-object v3, Lcom/elitecorelib/core/room/AnalyticsDB;->MIGRATION_1_2:Landroidx/room/migration/Migration;
 
     aput-object v3, v1, v2
 
-    invoke-virtual {v0, v1}, Landroidx/room/RoomDatabase$a;->a([Lqh;)Landroidx/room/RoomDatabase$a;
+    invoke-virtual {v0, v1}, Landroidx/room/RoomDatabase$Builder;->addMigrations([Landroidx/room/migration/Migration;)Landroidx/room/RoomDatabase$Builder;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase$a;->d()Landroidx/room/RoomDatabase$a;
+    move-result-object v0
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase$a;->b()Landroidx/room/RoomDatabase;
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->fallbackToDestructiveMigration()Landroidx/room/RoomDatabase$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->build()Landroidx/room/RoomDatabase;
 
     move-result-object v0
 
@@ -123,7 +147,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;)",
@@ -137,135 +161,77 @@
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
+    const-string v0, "PojoOffloadSpeed"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
     move-result v0
 
-    sparse-switch v0, :sswitch_data_0
+    if-nez v0, :cond_8
 
-    goto :goto_0
+    const-string v0, "AnalyticsUsageDetail"
 
-    :sswitch_0
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    const-string v0, "PojoRamUsageData"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    const-string v0, "AnalyticsDataUsageOver"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    const-string v0, "PojoUptimeDetails"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    const-string v0, "AnalyticsPolicyEvolution"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    const-string v0, "AnalyticsPolicyDetails"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const-string v0, "PojoTempUptimeDetails"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     const-string v0, "PojoDeviceInfo"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    :sswitch_1
-    const-string v0, "PojoTempUptimeDetails"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x3
-
-    goto :goto_1
-
-    :sswitch_2
-    const-string v0, "AnalyticsPolicyDetails"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x4
-
-    goto :goto_1
-
-    :sswitch_3
-    const-string v0, "AnalyticsPolicyEvolution"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x5
-
-    goto :goto_1
-
-    :sswitch_4
-    const-string v0, "PojoUptimeDetails"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x2
-
-    goto :goto_1
-
-    :sswitch_5
-    const-string v0, "AnalyticsDataUsageOver"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/16 p1, 0x8
-
-    goto :goto_1
-
-    :sswitch_6
-    const-string v0, "PojoRamUsageData"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_1
-
-    :sswitch_7
-    const-string v0, "AnalyticsUsageDetail"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x7
-
-    goto :goto_1
-
-    :sswitch_8
-    const-string v0, "PojoOffloadSpeed"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x6
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    const/4 p1, -0x1
-
-    :goto_1
-    packed-switch p1, :pswitch_data_0
+    if-nez p1, :cond_0
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -277,99 +243,71 @@
 
     const/4 p1, 0x0
 
-    goto :goto_2
+    goto :goto_0
 
-    :pswitch_0
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsDataUsageOverDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsDataUsageOverDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_1
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsUsageDetailDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsUsageDetailDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_2
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticOffloadSpeedDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_3
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsPolicyEvaluationDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsPolicyEvaluationDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_4
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsPolicyDetailsDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsPolicyDetailsDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_5
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getPojoTempUptimeDetailsDao()Lcom/elitecorelib/core/room/dao/analyticdao/PojoTempUptimeDetailsDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_6
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getPojoUptimeDetailsDao()Lcom/elitecorelib/core/room/dao/analyticdao/PojoUptimeDetailsDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_7
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getPojoRamUsageDataDao()Lcom/elitecorelib/core/room/dao/analyticdao/PojoRamUsageDataDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :pswitch_8
+    :cond_0
     invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticDeviceInfoDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao;
 
     move-result-object p1
 
-    :goto_2
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getPojoTempUptimeDetailsDao()Lcom/elitecorelib/core/room/dao/analyticdao/PojoTempUptimeDetailsDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsPolicyDetailsDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsPolicyDetailsDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsPolicyEvaluationDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsPolicyEvaluationDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getPojoUptimeDetailsDao()Lcom/elitecorelib/core/room/dao/analyticdao/PojoUptimeDetailsDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_5
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsDataUsageOverDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsDataUsageOverDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_6
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getPojoRamUsageDataDao()Lcom/elitecorelib/core/room/dao/analyticdao/PojoRamUsageDataDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_7
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticsUsageDetailDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticsUsageDetailDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_8
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/AnalyticsDB;->getAnalyticOffloadSpeedDao()Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao;
+
+    move-result-object p1
+
+    :goto_0
     return-object p1
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x41458bca -> :sswitch_8
-        -0x23db09f4 -> :sswitch_7
-        -0x113f23cf -> :sswitch_6
-        0x3d444fc5 -> :sswitch_5
-        0x3d5e67f6 -> :sswitch_4
-        0x56b1d623 -> :sswitch_3
-        0x5ca7b2ea -> :sswitch_2
-        0x62896e82 -> :sswitch_1
-        0x643386e8 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public getDatabasePath()Ljava/lang/String;

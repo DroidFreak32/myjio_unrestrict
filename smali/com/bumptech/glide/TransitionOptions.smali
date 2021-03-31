@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field public transitionFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
+.field private transitionFactory:Lcom/bumptech/glide/request/transition/TransitionFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/transition/TransitionFactory<",
@@ -98,6 +98,11 @@
 
 .method public bridge synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/TransitionOptions;->clone()Lcom/bumptech/glide/TransitionOptions;
@@ -109,6 +114,9 @@
 
 .method public final dontTransition()Lcom/bumptech/glide/TransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TCHI",
@@ -146,6 +154,9 @@
 
 .method public final transition(I)Lcom/bumptech/glide/TransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TCHI",
@@ -167,6 +178,13 @@
 
 .method public final transition(Lcom/bumptech/glide/request/transition/TransitionFactory;)Lcom/bumptech/glide/TransitionOptions;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/transition/TransitionFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -195,6 +213,13 @@
 
 .method public final transition(Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;)Lcom/bumptech/glide/TransitionOptions;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

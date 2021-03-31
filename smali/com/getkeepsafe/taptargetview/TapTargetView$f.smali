@@ -3,7 +3,7 @@
 .source "TapTargetView.java"
 
 # interfaces
-.implements Lw50$d;
+.implements Lgc$d;
 
 
 # annotations
@@ -41,9 +41,9 @@
     .line 1
     iget-object v0, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$f;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, v0, Lcom/getkeepsafe/taptargetview/TapTargetView;->G0:Lw50$d;
+    iget-object v0, v0, Lcom/getkeepsafe/taptargetview/TapTargetView;->C0:Lgc$d;
 
-    invoke-interface {v0, p1}, Lw50$d;->a(F)V
+    invoke-interface {v0, p1}, Lgc$d;->a(F)V
 
     return-void
 .end method

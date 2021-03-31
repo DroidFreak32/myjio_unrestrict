@@ -17,17 +17,17 @@
 
 
 # static fields
-.field public static final AC3_FORMAT_IDENTIFIER:J
+.field private static final AC3_FORMAT_IDENTIFIER:J
 
-.field public static final BUFFER_SIZE:I = 0x24b8
+.field private static final BUFFER_SIZE:I = 0x24b8
 
-.field public static final E_AC3_FORMAT_IDENTIFIER:J
+.field private static final E_AC3_FORMAT_IDENTIFIER:J
 
 .field public static final FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
-.field public static final HEVC_FORMAT_IDENTIFIER:J
+.field private static final HEVC_FORMAT_IDENTIFIER:J
 
-.field public static final MAX_PID_PLUS_ONE:I = 0x2000
+.field private static final MAX_PID_PLUS_ONE:I = 0x2000
 
 .field public static final MODE_HLS:I = 0x2
 
@@ -35,11 +35,11 @@
 
 .field public static final MODE_SINGLE_PMT:I = 0x1
 
-.field public static final SNIFF_TS_PACKET_COUNT:I = 0x5
+.field private static final SNIFF_TS_PACKET_COUNT:I = 0x5
 
 .field public static final TS_PACKET_SIZE:I = 0xbc
 
-.field public static final TS_PAT_PID:I = 0x0
+.field private static final TS_PAT_PID:I = 0x0
 
 .field public static final TS_STREAM_TYPE_AAC_ADTS:I = 0xf
 
@@ -73,29 +73,29 @@
 
 
 # instance fields
-.field public bytesSinceLastSync:I
+.field private bytesSinceLastSync:I
 
-.field public final continuityCounters:Landroid/util/SparseIntArray;
+.field private final continuityCounters:Landroid/util/SparseIntArray;
 
-.field public final durationReader:Lcom/google/android/jioexoplayer2/extractor/ts/TsDurationReader;
+.field private final durationReader:Lcom/google/android/jioexoplayer2/extractor/ts/TsDurationReader;
 
-.field public hasOutputSeekMap:Z
+.field private hasOutputSeekMap:Z
 
-.field public id3Reader:Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader;
+.field private id3Reader:Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader;
 
-.field public final mode:I
+.field private final mode:I
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
 
-.field public final payloadReaderFactory:Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$Factory;
+.field private final payloadReaderFactory:Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$Factory;
 
-.field public pcrPid:I
+.field private pcrPid:I
 
-.field public pendingSeekToStart:Z
+.field private pendingSeekToStart:Z
 
-.field public remainingPmts:I
+.field private remainingPmts:I
 
-.field public final timestampAdjusters:Ljava/util/List;
+.field private final timestampAdjusters:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -105,17 +105,17 @@
     .end annotation
 .end field
 
-.field public final trackIds:Landroid/util/SparseBooleanArray;
+.field private final trackIds:Landroid/util/SparseBooleanArray;
 
-.field public final trackPids:Landroid/util/SparseBooleanArray;
+.field private final trackPids:Landroid/util/SparseBooleanArray;
 
-.field public tracksEnded:Z
+.field private tracksEnded:Z
 
-.field public tsBinarySearchSeeker:Lcom/google/android/jioexoplayer2/extractor/ts/TsBinarySearchSeeker;
+.field private tsBinarySearchSeeker:Lcom/google/android/jioexoplayer2/extractor/ts/TsBinarySearchSeeker;
 
-.field public final tsPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final tsPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final tsPayloadReaders:Landroid/util/SparseArray;
+.field private final tsPayloadReaders:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -131,7 +131,7 @@
     .locals 2
 
     .line 1
-    sget-object v0, Llc0;->a:Llc0;
+    sget-object v0, Lvi;->a:Lvi;
 
     sput-object v0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
@@ -249,8 +249,6 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->timestampAdjusters:Ljava/util/List;
 
     .line 8
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->timestampAdjusters:Ljava/util/List;
-
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -511,6 +509,12 @@
 
 .method private fillBufferWithAtLeastOnePacket(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)Z
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->tsPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
@@ -603,6 +607,11 @@
 
 .method private findEndOfFirstTsPacketInBuffer()I
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ParserException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->tsPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
@@ -648,15 +657,13 @@
     .line 6
     iget v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->mode:I
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v2, :cond_2
 
-    iget v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->bytesSinceLastSync:I
+    const/16 v0, 0x178
 
-    const/16 v1, 0x178
-
-    if-gt v0, v1, :cond_0
+    if-gt v1, v0, :cond_0
 
     goto :goto_0
 
@@ -737,9 +744,7 @@
     .line 7
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->output:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
 
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->tsBinarySearchSeeker:Lcom/google/android/jioexoplayer2/extractor/ts/TsBinarySearchSeeker;
-
-    invoke-virtual {p2}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker;->getSeekMap()Lcom/google/android/jioexoplayer2/extractor/SeekMap;
+    invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker;->getSeekMap()Lcom/google/android/jioexoplayer2/extractor/SeekMap;
 
     move-result-object p2
 
@@ -885,6 +890,12 @@
 
 .method public read(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 16
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -1420,6 +1431,12 @@
 
 .method public sniff(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)Z
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;->tsPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;

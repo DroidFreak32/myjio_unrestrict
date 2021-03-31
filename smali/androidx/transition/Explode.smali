@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final v:Landroid/animation/TimeInterpolator;
+.field public static final b:Landroid/animation/TimeInterpolator;
 
-.field public static final w:Landroid/animation/TimeInterpolator;
+.field public static final c:Landroid/animation/TimeInterpolator;
 
 
 # instance fields
-.field public u:[I
+.field public a:[I
 
 
 # direct methods
@@ -22,14 +22,14 @@
 
     invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    sput-object v0, Landroidx/transition/Explode;->v:Landroid/animation/TimeInterpolator;
+    sput-object v0, Landroidx/transition/Explode;->b:Landroid/animation/TimeInterpolator;
 
     .line 2
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
-    sput-object v0, Landroidx/transition/Explode;->w:Landroid/animation/TimeInterpolator;
+    sput-object v0, Landroidx/transition/Explode;->c:Landroid/animation/TimeInterpolator;
 
     return-void
 .end method
@@ -45,14 +45,14 @@
     new-array v0, v0, [I
 
     .line 2
-    iput-object v0, p0, Landroidx/transition/Explode;->u:[I
+    iput-object v0, p0, Landroidx/transition/Explode;->a:[I
 
     .line 3
-    new-instance v0, Lpi;
+    new-instance v0, Landroidx/transition/CircularPropagation;
 
-    invoke-direct {v0}, Lpi;-><init>()V
+    invoke-direct {v0}, Landroidx/transition/CircularPropagation;-><init>()V
 
-    invoke-virtual {p0, v0}, Landroidx/transition/Transition;->setPropagation(Ljj;)V
+    invoke-virtual {p0, v0}, Landroidx/transition/Transition;->setPropagation(Landroidx/transition/TransitionPropagation;)V
 
     return-void
 .end method
@@ -68,14 +68,14 @@
     new-array p1, p1, [I
 
     .line 5
-    iput-object p1, p0, Landroidx/transition/Explode;->u:[I
+    iput-object p1, p0, Landroidx/transition/Explode;->a:[I
 
     .line 6
-    new-instance p1, Lpi;
+    new-instance p1, Landroidx/transition/CircularPropagation;
 
-    invoke-direct {p1}, Lpi;-><init>()V
+    invoke-direct {p1}, Landroidx/transition/CircularPropagation;-><init>()V
 
-    invoke-virtual {p0, p1}, Landroidx/transition/Transition;->setPropagation(Ljj;)V
+    invoke-virtual {p0, p1}, Landroidx/transition/Transition;->setPropagation(Landroidx/transition/TransitionPropagation;)V
 
     return-void
 .end method
@@ -91,7 +91,7 @@
 
     float-to-double p0, p0
 
-    .line 29
+    .line 1
     invoke-static {p0, p1}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide p0
@@ -101,10 +101,10 @@
     return p0
 .end method
 
-.method public static a(Landroid/view/View;II)F
+.method public static b(Landroid/view/View;II)F
     .locals 1
 
-    .line 26
+    .line 1
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -115,7 +115,7 @@
 
     move-result p1
 
-    .line 27
+    .line 2
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
@@ -130,7 +130,7 @@
 
     int-to-float p0, p0
 
-    .line 28
+    .line 3
     invoke-static {p1, p0}, Landroidx/transition/Explode;->a(FF)F
 
     move-result p0
@@ -138,19 +138,238 @@
     return p0
 .end method
 
-.method private captureValues(Llj;)V
+
+# virtual methods
+.method public final c(Landroid/view/View;Landroid/graphics/Rect;[I)V
+    .locals 15
+
+    move-object v0, p0
+
+    move-object/from16 v1, p1
+
+    .line 1
+    iget-object v2, v0, Landroidx/transition/Explode;->a:[I
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 2
+    iget-object v2, v0, Landroidx/transition/Explode;->a:[I
+
+    const/4 v3, 0x0
+
+    aget v4, v2, v3
+
+    const/4 v5, 0x1
+
+    .line 3
+    aget v2, v2, v5
+
+    .line 4
+    invoke-virtual {p0}, Landroidx/transition/Transition;->getEpicenter()Landroid/graphics/Rect;
+
+    move-result-object v6
+
+    if-nez v6, :cond_0
+
+    .line 5
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getWidth()I
+
+    move-result v6
+
+    div-int/lit8 v6, v6, 0x2
+
+    add-int/2addr v6, v4
+
+    .line 6
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTranslationX()F
+
+    move-result v7
+
+    invoke-static {v7}, Ljava/lang/Math;->round(F)I
+
+    move-result v7
+
+    add-int/2addr v6, v7
+
+    .line 7
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getHeight()I
+
+    move-result v7
+
+    div-int/lit8 v7, v7, 0x2
+
+    add-int/2addr v7, v2
+
+    .line 8
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTranslationY()F
+
+    move-result v8
+
+    invoke-static {v8}, Ljava/lang/Math;->round(F)I
+
+    move-result v8
+
+    add-int/2addr v7, v8
+
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v7
+
+    .line 10
+    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v6
+
+    move v14, v7
+
+    move v7, v6
+
+    move v6, v14
+
+    .line 11
+    :goto_0
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v8
+
+    .line 12
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v9
+
+    sub-int/2addr v8, v6
+
+    int-to-float v8, v8
+
+    sub-int/2addr v9, v7
+
+    int-to-float v9, v9
+
+    const/4 v10, 0x0
+
+    cmpl-float v11, v8, v10
+
+    if-nez v11, :cond_1
+
+    cmpl-float v10, v9, v10
+
+    if-nez v10, :cond_1
+
+    .line 13
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v8
+
+    const-wide/high16 v10, 0x4000000000000000L    # 2.0
+
+    mul-double v8, v8, v10
+
+    double-to-float v8, v8
+
+    const/high16 v9, 0x3f800000    # 1.0f
+
+    sub-float/2addr v8, v9
+
+    .line 14
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v12
+
+    mul-double v12, v12, v10
+
+    double-to-float v10, v12
+
+    sub-float v9, v10, v9
+
+    .line 15
+    :cond_1
+    invoke-static {v8, v9}, Landroidx/transition/Explode;->a(FF)F
+
+    move-result v10
+
+    div-float/2addr v8, v10
+
+    div-float/2addr v9, v10
+
+    sub-int/2addr v6, v4
+
+    sub-int/2addr v7, v2
+
+    .line 16
+    invoke-static {v1, v6, v7}, Landroidx/transition/Explode;->b(Landroid/view/View;II)F
+
+    move-result v1
+
+    mul-float v8, v8, v1
+
+    .line 17
+    invoke-static {v8}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    aput v2, p3, v3
+
+    mul-float v1, v1, v9
+
+    .line 18
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    aput v1, p3, v5
+
+    return-void
+.end method
+
+.method public captureEndValues(Landroidx/transition/TransitionValues;)V
+    .locals 0
+    .param p1    # Landroidx/transition/TransitionValues;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/transition/Visibility;->captureEndValues(Landroidx/transition/TransitionValues;)V
+
+    .line 2
+    invoke-virtual {p0, p1}, Landroidx/transition/Explode;->captureValues(Landroidx/transition/TransitionValues;)V
+
+    return-void
+.end method
+
+.method public captureStartValues(Landroidx/transition/TransitionValues;)V
+    .locals 0
+    .param p1    # Landroidx/transition/TransitionValues;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/transition/Visibility;->captureStartValues(Landroidx/transition/TransitionValues;)V
+
+    .line 2
+    invoke-virtual {p0, p1}, Landroidx/transition/Explode;->captureValues(Landroidx/transition/TransitionValues;)V
+
+    return-void
+.end method
+
+.method public final captureValues(Landroidx/transition/TransitionValues;)V
     .locals 5
 
     .line 1
-    iget-object v0, p1, Llj;->b:Landroid/view/View;
+    iget-object v0, p1, Landroidx/transition/TransitionValues;->view:Landroid/view/View;
 
     .line 2
-    iget-object v1, p0, Landroidx/transition/Explode;->u:[I
+    iget-object v1, p0, Landroidx/transition/Explode;->a:[I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
     .line 3
-    iget-object v1, p0, Landroidx/transition/Explode;->u:[I
+    iget-object v1, p0, Landroidx/transition/Explode;->a:[I
 
     const/4 v2, 0x0
 
@@ -176,7 +395,7 @@
     add-int/2addr v0, v1
 
     .line 7
-    iget-object p1, p1, Llj;->a:Ljava/util/Map;
+    iget-object p1, p1, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     new-instance v4, Landroid/graphics/Rect;
 
@@ -189,9 +408,7 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public a(Landroid/view/ViewGroup;Landroid/view/View;Llj;Llj;)Landroid/animation/Animator;
+.method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 10
 
     if-nez p4, :cond_0
@@ -202,7 +419,7 @@
 
     .line 1
     :cond_0
-    iget-object p3, p4, Llj;->a:Ljava/util/Map;
+    iget-object p3, p4, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v0, "android:explode:screenBounds"
 
@@ -223,12 +440,12 @@
     move-result v7
 
     .line 4
-    iget-object v0, p0, Landroidx/transition/Explode;->u:[I
+    iget-object v0, p0, Landroidx/transition/Explode;->a:[I
 
-    invoke-virtual {p0, p1, p3, v0}, Landroidx/transition/Explode;->a(Landroid/view/View;Landroid/graphics/Rect;[I)V
+    invoke-virtual {p0, p1, p3, v0}, Landroidx/transition/Explode;->c(Landroid/view/View;Landroid/graphics/Rect;[I)V
 
     .line 5
-    iget-object p1, p0, Landroidx/transition/Explode;->u:[I
+    iget-object p1, p0, Landroidx/transition/Explode;->a:[I
 
     const/4 v0, 0x0
 
@@ -252,7 +469,7 @@
 
     iget v3, p3, Landroid/graphics/Rect;->top:I
 
-    sget-object v8, Landroidx/transition/Explode;->v:Landroid/animation/TimeInterpolator;
+    sget-object v8, Landroidx/transition/Explode;->b:Landroid/animation/TimeInterpolator;
 
     move-object v0, p2
 
@@ -260,199 +477,14 @@
 
     move-object v9, p0
 
-    invoke-static/range {v0 .. v9}, Lnj;->a(Landroid/view/View;Llj;IIFFFFLandroid/animation/TimeInterpolator;Landroidx/transition/Transition;)Landroid/animation/Animator;
+    invoke-static/range {v0 .. v9}, Lr5;->a(Landroid/view/View;Landroidx/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroidx/transition/Transition;)Landroid/animation/Animator;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final a(Landroid/view/View;Landroid/graphics/Rect;[I)V
-    .locals 15
-
-    move-object v0, p0
-
-    move-object/from16 v1, p1
-
-    .line 8
-    iget-object v2, v0, Landroidx/transition/Explode;->u:[I
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 9
-    iget-object v2, v0, Landroidx/transition/Explode;->u:[I
-
-    const/4 v3, 0x0
-
-    aget v4, v2, v3
-
-    const/4 v5, 0x1
-
-    .line 10
-    aget v2, v2, v5
-
-    .line 11
-    invoke-virtual {p0}, Landroidx/transition/Transition;->getEpicenter()Landroid/graphics/Rect;
-
-    move-result-object v6
-
-    if-nez v6, :cond_0
-
-    .line 12
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getWidth()I
-
-    move-result v6
-
-    div-int/lit8 v6, v6, 0x2
-
-    add-int/2addr v6, v4
-
-    .line 13
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTranslationX()F
-
-    move-result v7
-
-    invoke-static {v7}, Ljava/lang/Math;->round(F)I
-
-    move-result v7
-
-    add-int/2addr v6, v7
-
-    .line 14
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getHeight()I
-
-    move-result v7
-
-    div-int/lit8 v7, v7, 0x2
-
-    add-int/2addr v7, v2
-
-    .line 15
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTranslationY()F
-
-    move-result v8
-
-    invoke-static {v8}, Ljava/lang/Math;->round(F)I
-
-    move-result v8
-
-    add-int/2addr v7, v8
-
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
-
-    move-result v7
-
-    .line 17
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v6
-
-    move v14, v7
-
-    move v7, v6
-
-    move v6, v14
-
-    .line 18
-    :goto_0
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerX()I
-
-    move-result v8
-
-    .line 19
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v9
-
-    sub-int/2addr v8, v6
-
-    int-to-float v8, v8
-
-    sub-int/2addr v9, v7
-
-    int-to-float v9, v9
-
-    const/4 v10, 0x0
-
-    cmpl-float v11, v8, v10
-
-    if-nez v11, :cond_1
-
-    cmpl-float v10, v9, v10
-
-    if-nez v10, :cond_1
-
-    .line 20
-    invoke-static {}, Ljava/lang/Math;->random()D
-
-    move-result-wide v8
-
-    const-wide/high16 v10, 0x4000000000000000L    # 2.0
-
-    mul-double v8, v8, v10
-
-    double-to-float v8, v8
-
-    const/high16 v9, 0x3f800000    # 1.0f
-
-    sub-float/2addr v8, v9
-
-    .line 21
-    invoke-static {}, Ljava/lang/Math;->random()D
-
-    move-result-wide v12
-
-    mul-double v12, v12, v10
-
-    double-to-float v10, v12
-
-    sub-float v9, v10, v9
-
-    .line 22
-    :cond_1
-    invoke-static {v8, v9}, Landroidx/transition/Explode;->a(FF)F
-
-    move-result v10
-
-    div-float/2addr v8, v10
-
-    div-float/2addr v9, v10
-
-    sub-int/2addr v6, v4
-
-    sub-int/2addr v7, v2
-
-    .line 23
-    invoke-static {v1, v6, v7}, Landroidx/transition/Explode;->a(Landroid/view/View;II)F
-
-    move-result v1
-
-    mul-float v8, v8, v1
-
-    .line 24
-    invoke-static {v8}, Ljava/lang/Math;->round(F)I
-
-    move-result v2
-
-    aput v2, p3, v3
-
-    mul-float v1, v1, v9
-
-    .line 25
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
-
-    move-result v1
-
-    aput v1, p3, v5
-
-    return-void
-.end method
-
-.method public b(Landroid/view/ViewGroup;Landroid/view/View;Llj;Llj;)Landroid/animation/Animator;
+.method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 10
 
     if-nez p3, :cond_0
@@ -463,7 +495,7 @@
 
     .line 1
     :cond_0
-    iget-object p4, p3, Llj;->a:Ljava/util/Map;
+    iget-object p4, p3, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v0, "android:explode:screenBounds"
 
@@ -490,9 +522,9 @@
     move-result v5
 
     .line 6
-    iget-object v0, p3, Llj;->b:Landroid/view/View;
+    iget-object v0, p3, Landroidx/transition/TransitionValues;->view:Landroid/view/View;
 
-    sget v1, Lcj;->transition_position:I
+    sget v1, Landroidx/transition/R$id;->transition_position:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -544,12 +576,12 @@
 
     .line 10
     :goto_0
-    iget-object v0, p0, Landroidx/transition/Explode;->u:[I
+    iget-object v0, p0, Landroidx/transition/Explode;->a:[I
 
-    invoke-virtual {p0, p1, p4, v0}, Landroidx/transition/Explode;->a(Landroid/view/View;Landroid/graphics/Rect;[I)V
+    invoke-virtual {p0, p1, p4, v0}, Landroidx/transition/Explode;->c(Landroid/view/View;Landroid/graphics/Rect;[I)V
 
     .line 11
-    iget-object p1, p0, Landroidx/transition/Explode;->u:[I
+    iget-object p1, p0, Landroidx/transition/Explode;->a:[I
 
     aget p4, p1, v6
 
@@ -565,7 +597,7 @@
     add-float v7, v8, p1
 
     .line 13
-    sget-object v8, Landroidx/transition/Explode;->w:Landroid/animation/TimeInterpolator;
+    sget-object v8, Landroidx/transition/Explode;->c:Landroid/animation/TimeInterpolator;
 
     move-object v0, p2
 
@@ -573,33 +605,9 @@
 
     move-object v9, p0
 
-    invoke-static/range {v0 .. v9}, Lnj;->a(Landroid/view/View;Llj;IIFFFFLandroid/animation/TimeInterpolator;Landroidx/transition/Transition;)Landroid/animation/Animator;
+    invoke-static/range {v0 .. v9}, Lr5;->a(Landroid/view/View;Landroidx/transition/TransitionValues;IIFFFFLandroid/animation/TimeInterpolator;Landroidx/transition/Transition;)Landroid/animation/Animator;
 
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public captureEndValues(Llj;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroidx/transition/Visibility;->captureEndValues(Llj;)V
-
-    .line 2
-    invoke-direct {p0, p1}, Landroidx/transition/Explode;->captureValues(Llj;)V
-
-    return-void
-.end method
-
-.method public captureStartValues(Llj;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroidx/transition/Visibility;->captureStartValues(Llj;)V
-
-    .line 2
-    invoke-direct {p0, p1}, Landroidx/transition/Explode;->captureValues(Llj;)V
-
-    return-void
 .end method

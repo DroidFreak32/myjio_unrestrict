@@ -3,16 +3,28 @@
 .source "FitWindowsLinearLayout.java"
 
 # interfaces
-.implements Ls2;
+.implements Landroidx/appcompat/widget/FitWindowsViewGroup;
+
+
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
 
 
 # instance fields
-.field public s:Ls2$a;
+.field public a:Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -22,6 +34,14 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -35,12 +55,12 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/FitWindowsLinearLayout;->s:Ls2$a;
+    iget-object v0, p0, Landroidx/appcompat/widget/FitWindowsLinearLayout;->a:Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;
 
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-interface {v0, p1}, Ls2$a;->a(Landroid/graphics/Rect;)V
+    invoke-interface {v0, p1}, Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;->onFitSystemWindows(Landroid/graphics/Rect;)V
 
     .line 3
     :cond_0
@@ -51,11 +71,11 @@
     return p1
 .end method
 
-.method public setOnFitSystemWindowsListener(Ls2$a;)V
+.method public setOnFitSystemWindowsListener(Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/FitWindowsLinearLayout;->s:Ls2$a;
+    iput-object p1, p0, Landroidx/appcompat/widget/FitWindowsLinearLayout;->a:Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;
 
     return-void
 .end method

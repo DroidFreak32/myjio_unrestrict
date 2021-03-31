@@ -7,13 +7,13 @@
 
 
 # static fields
-.field public static analyticsEvent:Lcom/app/cinemasdk/analytics/AnalyticsEvent;
+.field private static analyticsEvent:Lcom/app/cinemasdk/analytics/AnalyticsEvent;
 
 
 # instance fields
 .field public currentTime:J
 
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .line 1
@@ -239,7 +239,7 @@
     .line 7
     invoke-virtual {v1, v3, p7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "source"
+    const-string/jumbo v3, "source"
 
     move-object v4, p8
 
@@ -251,7 +251,7 @@
 
     move-result-object v3
 
-    const-string v4, "ts"
+    const-string/jumbo v4, "ts"
 
     invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -298,11 +298,11 @@
 
     move-result-object v3
 
-    const-string v4, "starcast"
+    const-string/jumbo v4, "starcast"
 
     invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "title"
+    const-string/jumbo v3, "title"
 
     move-object/from16 v4, p15
 
@@ -314,7 +314,7 @@
 
     move-result-object v3
 
-    const-string v4, "type"
+    const-string/jumbo v4, "type"
 
     invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -693,7 +693,7 @@
 
     move-result v1
 
-    const-string v2, "username"
+    const-string/jumbo v2, "username"
 
     if-nez v1, :cond_3
 
@@ -720,7 +720,7 @@
 
     move-result v1
 
-    const-string v2, "uid"
+    const-string/jumbo v2, "uid"
 
     if-nez v1, :cond_4
 
@@ -885,7 +885,7 @@
     .line 5
     invoke-virtual {v1, v2, p5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "title"
+    const-string/jumbo v2, "title"
 
     move-object v3, p6
 
@@ -897,7 +897,7 @@
 
     move-result-object v2
 
-    const-string v3, "type"
+    const-string/jumbo v3, "type"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -966,7 +966,7 @@
     .line 15
     invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "source"
+    const-string/jumbo v2, "source"
 
     move-object/from16 v3, p15
 
@@ -978,7 +978,7 @@
 
     move-result-object v2
 
-    const-string v3, "ts"
+    const-string/jumbo v3, "ts"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -996,11 +996,11 @@
 
     move-result-object v2
 
-    const-string v3, "subtitlechanged"
+    const-string/jumbo v3, "subtitlechanged"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "subtitleviewed"
+    const-string/jumbo v2, "subtitleviewed"
 
     move-object/from16 v3, p19
 
@@ -1086,7 +1086,7 @@
 
     move-result-object p1
 
-    const-string p2, "type"
+    const-string/jumbo p2, "type"
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1185,7 +1185,7 @@
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string p1, "source"
+    const-string/jumbo p1, "source"
 
     .line 4
     invoke-virtual {v0, p1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1424,7 +1424,7 @@
 
     move-result-object p1
 
-    const-string v1, "state"
+    const-string/jumbo v1, "state"
 
     invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1447,7 +1447,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "webPage_event"
+    const-string/jumbo p2, "webPage_event"
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1463,7 +1463,7 @@
 
     invoke-static {p1}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
 
-    const-string p1, "webpageload"
+    const-string/jumbo p1, "webpageload"
 
     .line 6
     invoke-virtual {p0, v0, p1}, Lcom/app/cinemasdk/analytics/AnalyticsEvent;->getFinalEventHashMap(Ljava/util/HashMap;Ljava/lang/String;)Ljava/util/HashMap;
@@ -1523,7 +1523,7 @@
 
     move-result-object p1
 
-    const-string p2, "startTime"
+    const-string/jumbo p2, "startTime"
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1532,11 +1532,11 @@
 
     move-result-object p1
 
-    const-string p2, "statusCode"
+    const-string/jumbo p2, "statusCode"
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string p1, "success"
+    const-string/jumbo p1, "success"
 
     .line 7
     invoke-virtual {v0, p1, p9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1550,7 +1550,7 @@
 
     move-result-object p1
 
-    const-string p2, "url"
+    const-string/jumbo p2, "url"
 
     invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1559,7 +1559,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "web_services_event"
+    const-string/jumbo p2, "web_services_event"
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1575,7 +1575,7 @@
 
     invoke-static {p1}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
 
-    const-string p1, "web_services"
+    const-string/jumbo p1, "web_services"
 
     .line 10
     invoke-virtual {p0, v0, p1}, Lcom/app/cinemasdk/analytics/AnalyticsEvent;->getFinalEventHashMap(Ljava/util/HashMap;Ljava/lang/String;)Ljava/util/HashMap;

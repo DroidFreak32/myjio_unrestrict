@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzae:Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveCanceledListener;
+.field private final synthetic zzae:Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveCanceledListener;
 
 
 # direct methods

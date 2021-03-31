@@ -17,7 +17,7 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "IntegerArrayPool"
+.field private static final TAG:Ljava/lang/String; = "IntegerArrayPool"
 
 
 # direct methods

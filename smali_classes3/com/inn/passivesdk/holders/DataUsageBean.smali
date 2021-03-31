@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public lastBootTime:Ljava/lang/Long;
+.field private lastBootTime:Ljava/lang/Long;
 
-.field public rxMobileByte:Ljava/lang/Long;
+.field private rxMobileByte:Ljava/lang/Long;
 
-.field public rxWifiByte:Ljava/lang/Long;
+.field private rxWifiByte:Ljava/lang/Long;
 
-.field public txMobileByte:Ljava/lang/Long;
+.field private txMobileByte:Ljava/lang/Long;
 
-.field public txWifiByte:Ljava/lang/Long;
+.field private txWifiByte:Ljava/lang/Long;
 
 
 # direct methods
@@ -27,7 +27,52 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/Long;)V
+.method public getLastBootTime()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DataUsageBean;->lastBootTime:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public getRxMobileByte()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DataUsageBean;->rxMobileByte:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public getRxWifiByte()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DataUsageBean;->rxWifiByte:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public getTxMobileByte()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DataUsageBean;->txMobileByte:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public getTxWifiByte()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DataUsageBean;->txWifiByte:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public setLastBootTime(Ljava/lang/Long;)V
     .locals 0
 
     .line 1
@@ -36,7 +81,7 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/Long;)V
+.method public setRxMobileByte(Ljava/lang/Long;)V
     .locals 0
 
     .line 1
@@ -45,7 +90,7 @@
     return-void
 .end method
 
-.method public c(Ljava/lang/Long;)V
+.method public setRxWifiByte(Ljava/lang/Long;)V
     .locals 0
 
     .line 1
@@ -54,7 +99,7 @@
     return-void
 .end method
 
-.method public d(Ljava/lang/Long;)V
+.method public setTxMobileByte(Ljava/lang/Long;)V
     .locals 0
 
     .line 1
@@ -63,7 +108,7 @@
     return-void
 .end method
 
-.method public e(Ljava/lang/Long;)V
+.method public setTxWifiByte(Ljava/lang/Long;)V
     .locals 0
 
     .line 1

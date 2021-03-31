@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/commands/CommandManager;->a()Z
+    value = Lcom/jio/jioml/hellojio/commands/CommandManager;->b()Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final s:Lcom/jio/jioml/hellojio/commands/CommandManager$a;
+.field public static final a:Lcom/jio/jioml/hellojio/commands/CommandManager$a;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     invoke-direct {v0}, Lcom/jio/jioml/hellojio/commands/CommandManager$a;-><init>()V
 
-    sput-object v0, Lcom/jio/jioml/hellojio/commands/CommandManager$a;->s:Lcom/jio/jioml/hellojio/commands/CommandManager$a;
+    sput-object v0, Lcom/jio/jioml/hellojio/commands/CommandManager$a;->a:Lcom/jio/jioml/hellojio/commands/CommandManager$a;
 
     return-void
 .end method
@@ -48,30 +48,31 @@
     .locals 4
 
     .line 1
-    sget-object v0, Ldr0;->c:Ldr0$a;
+    sget-object v0, Lcom/jio/jioml/hellojio/viewmodels/CommonEventBus;->Companion:Lcom/jio/jioml/hellojio/viewmodels/CommonEventBus$Companion;
 
-    invoke-virtual {v0}, Ldr0$a;->a()Ldr0;
+    invoke-virtual {v0}, Lcom/jio/jioml/hellojio/viewmodels/CommonEventBus$Companion;->getInstance()Lcom/jio/jioml/hellojio/viewmodels/CommonEventBus;
 
     move-result-object v0
 
+    .line 2
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    const-string v2, "CANCEL_ALARM"
+    const-string v2, "action"
 
-    const-string v3, "action"
-
-    .line 2
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v3, "data"
+    const-string v3, "CANCEL_ALARM"
 
     .line 3
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v2, "data"
 
     .line 4
-    invoke-virtual {v0, v1}, Ldr0;->a(Landroid/content/Intent;)V
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 5
+    invoke-virtual {v0, v1}, Lcom/jio/jioml/hellojio/viewmodels/CommonEventBus;->pushData(Landroid/content/Intent;)V
 
     return-void
 .end method

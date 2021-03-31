@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field public final b:Lcom/google/a/a/c;
+.field private final b:Lcom/google/a/a/c;
 
-.field public final c:Ljava/util/concurrent/ConcurrentHashMap;
+.field private final c:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -21,7 +21,7 @@
     .end annotation
 .end field
 
-.field public final d:Ljava/util/concurrent/ConcurrentHashMap;
+.field private final d:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",

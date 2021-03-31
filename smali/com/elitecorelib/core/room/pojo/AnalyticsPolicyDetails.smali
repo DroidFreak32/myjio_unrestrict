@@ -1,33 +1,71 @@
 .class public Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "AnalyticsPolicyDetails"
+.end annotation
+
+
 # instance fields
 .field public cat:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "cat"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public name:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "name"
+    .end annotation
+.end field
 
 .field public pid:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "pid"
+    .end annotation
+.end field
 
 .field public plmn:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "plmn"
+    .end annotation
+.end field
 
 .field public rsn:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "rsn"
+    .end annotation
+.end field
 
 .field public sts:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "sts"
+    .end annotation
+.end field
 
 .field public time:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "time"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method
@@ -37,7 +75,7 @@
 
     move-object v0, p0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     move-object v1, p3
 

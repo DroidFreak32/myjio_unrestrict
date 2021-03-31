@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public _b:[B
+.field private _b:[B
 
-.field public final _ctxt:Lcom/fasterxml/jackson/core/io/IOContext;
+.field private final _ctxt:Lcom/fasterxml/jackson/core/io/IOContext;
 
-.field public final _end:I
+.field private final _end:I
 
-.field public final _in:Ljava/io/InputStream;
+.field private final _in:Ljava/io/InputStream;
 
-.field public _ptr:I
+.field private _ptr:I
 
 
 # direct methods
@@ -69,6 +69,11 @@
 # virtual methods
 .method public available()I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
@@ -97,6 +102,11 @@
 
 .method public close()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/io/MergedStream;->_free()V
@@ -154,6 +164,11 @@
 
 .method public read()I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
@@ -172,11 +187,9 @@
     and-int/lit16 v0, v0, 0xff
 
     .line 3
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
 
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
-
-    if-lt v1, v2, :cond_0
+    if-lt v2, v1, :cond_0
 
     .line 4
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/io/MergedStream;->_free()V
@@ -197,6 +210,11 @@
 
 .method public read([B)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 6
     array-length v0, p1
@@ -211,7 +229,12 @@
 .end method
 
 .method public read([BII)I
-    .locals 2
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 7
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
@@ -219,23 +242,19 @@
     if-eqz v0, :cond_2
 
     .line 8
-    iget v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
 
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    sub-int/2addr v0, v1
+    sub-int/2addr v1, v2
 
-    if-le p3, v0, :cond_0
+    if-le p3, v1, :cond_0
 
-    move p3, v0
+    move p3, v1
 
     .line 9
     :cond_0
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
-
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
-
-    invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v2, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 10
     iget p1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
@@ -245,8 +264,6 @@
     iput p1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
     .line 11
-    iget p1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
-
     iget p2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
 
     if-lt p1, p2, :cond_1
@@ -270,6 +287,11 @@
 
 .method public reset()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
@@ -286,6 +308,11 @@
 
 .method public skip(J)J
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B

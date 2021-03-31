@@ -9,7 +9,7 @@
 # static fields
 .field public static final instance:Lcom/fasterxml/jackson/databind/introspect/NopAnnotationIntrospector;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods

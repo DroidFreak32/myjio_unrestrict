@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/CameraSource$zze;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -17,14 +18,18 @@
 
 
 # instance fields
-.field public zzab:Lcom/google/android/gms/common/images/Size;
+.field private zzaj:Lcom/google/android/gms/common/images/Size;
 
-.field public zzac:Lcom/google/android/gms/common/images/Size;
+.field private zzak:Lcom/google/android/gms/common/images/Size;
 
 
 # direct methods
 .method public constructor <init>(Landroid/hardware/Camera$Size;Landroid/hardware/Camera$Size;)V
     .locals 2
+    .param p2    # Landroid/hardware/Camera$Size;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +43,7 @@
 
     invoke-direct {v0, v1, p1}, Lcom/google/android/gms/common/images/Size;-><init>(II)V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzab:Lcom/google/android/gms/common/images/Size;
+    iput-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzaj:Lcom/google/android/gms/common/images/Size;
 
     if-eqz p2, :cond_0
 
@@ -51,7 +56,7 @@
 
     invoke-direct {p1, v0, p2}, Lcom/google/android/gms/common/images/Size;-><init>(II)V
 
-    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzac:Lcom/google/android/gms/common/images/Size;
+    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzak:Lcom/google/android/gms/common/images/Size;
 
     :cond_0
     return-void
@@ -59,20 +64,22 @@
 
 
 # virtual methods
-.method public final zzb()Lcom/google/android/gms/common/images/Size;
+.method public final zzd()Lcom/google/android/gms/common/images/Size;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzab:Lcom/google/android/gms/common/images/Size;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzaj:Lcom/google/android/gms/common/images/Size;
 
     return-object v0
 .end method
 
-.method public final zzc()Lcom/google/android/gms/common/images/Size;
+.method public final zze()Lcom/google/android/gms/common/images/Size;
     .locals 1
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzac:Lcom/google/android/gms/common/images/Size;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zze;->zzak:Lcom/google/android/gms/common/images/Size;
 
     return-object v0
 .end method

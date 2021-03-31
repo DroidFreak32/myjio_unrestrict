@@ -46,7 +46,7 @@
     return-object v0
 .end method
 
-.method public a(I)[Lcom/jiny/android/data/models/d/a;
+.method public b(I)[Lcom/jiny/android/data/models/d/a;
     .locals 0
 
     new-array p1, p1, [Lcom/jiny/android/data/models/d/a;
@@ -67,7 +67,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/data/models/d/a$a;->a(I)[Lcom/jiny/android/data/models/d/a;
+    invoke-virtual {p0, p1}, Lcom/jiny/android/data/models/d/a$a;->b(I)[Lcom/jiny/android/data/models/d/a;
 
     move-result-object p1
 

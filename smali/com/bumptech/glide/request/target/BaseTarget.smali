@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field public request:Lcom/bumptech/glide/request/Request;
+.field private request:Lcom/bumptech/glide/request/Request;
 
 
 # direct methods
@@ -40,6 +40,8 @@
 # virtual methods
 .method public getRequest()Lcom/bumptech/glide/request/Request;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/BaseTarget;->request:Lcom/bumptech/glide/request/Request;
@@ -55,18 +57,30 @@
 
 .method public onLoadCleared(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public onLoadFailed(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public onLoadStarted(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
@@ -85,6 +99,10 @@
 
 .method public setRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/request/target/BaseTarget;->request:Lcom/bumptech/glide/request/Request;

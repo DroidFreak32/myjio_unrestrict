@@ -3,6 +3,14 @@
 .source "AudioAttributesImplApi21Parcelizer.java"
 
 
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -13,62 +21,62 @@
     return-void
 .end method
 
-.method public static read(Lpk;)Lve;
+.method public static read(Landroidx/versionedparcelable/VersionedParcel;)Lx3;
     .locals 3
 
     .line 1
-    new-instance v0, Lve;
+    new-instance v0, Lx3;
 
-    invoke-direct {v0}, Lve;-><init>()V
+    invoke-direct {v0}, Lx3;-><init>()V
 
     .line 2
-    iget-object v1, v0, Lve;->a:Landroid/media/AudioAttributes;
+    iget-object v1, v0, Lx3;->a:Landroid/media/AudioAttributes;
 
     const/4 v2, 0x1
 
-    invoke-virtual {p0, v1, v2}, Lpk;->a(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
+    invoke-virtual {p0, v1, v2}, Landroidx/versionedparcelable/VersionedParcel;->readParcelable(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
 
     move-result-object v1
 
     check-cast v1, Landroid/media/AudioAttributes;
 
-    iput-object v1, v0, Lve;->a:Landroid/media/AudioAttributes;
+    iput-object v1, v0, Lx3;->a:Landroid/media/AudioAttributes;
 
     .line 3
-    iget v1, v0, Lve;->b:I
+    iget v1, v0, Lx3;->b:I
 
     const/4 v2, 0x2
 
-    invoke-virtual {p0, v1, v2}, Lpk;->a(II)I
+    invoke-virtual {p0, v1, v2}, Landroidx/versionedparcelable/VersionedParcel;->readInt(II)I
 
     move-result p0
 
-    iput p0, v0, Lve;->b:I
+    iput p0, v0, Lx3;->b:I
 
     return-object v0
 .end method
 
-.method public static write(Lve;Lpk;)V
+.method public static write(Lx3;Landroidx/versionedparcelable/VersionedParcel;)V
     .locals 2
 
     const/4 v0, 0x0
 
     .line 1
-    invoke-virtual {p1, v0, v0}, Lpk;->a(ZZ)V
+    invoke-virtual {p1, v0, v0}, Landroidx/versionedparcelable/VersionedParcel;->setSerializationFlags(ZZ)V
 
     .line 2
-    iget-object v0, p0, Lve;->a:Landroid/media/AudioAttributes;
+    iget-object v0, p0, Lx3;->a:Landroid/media/AudioAttributes;
 
     const/4 v1, 0x1
 
-    invoke-virtual {p1, v0, v1}, Lpk;->b(Landroid/os/Parcelable;I)V
+    invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     .line 3
-    iget p0, p0, Lve;->b:I
+    iget p0, p0, Lx3;->b:I
 
     const/4 v0, 0x2
 
-    invoke-virtual {p1, p0, v0}, Lpk;->b(II)V
+    invoke-virtual {p1, p0, v0}, Landroidx/versionedparcelable/VersionedParcel;->writeInt(II)V
 
     return-void
 .end method

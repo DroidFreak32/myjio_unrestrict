@@ -4,6 +4,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/bumptech/glide/load/resource/gif/ByteBufferGifDecoder;
 .end annotation
@@ -15,7 +18,7 @@
 
 
 # instance fields
-.field public final pool:Ljava/util/Queue;
+.field private final pool:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",

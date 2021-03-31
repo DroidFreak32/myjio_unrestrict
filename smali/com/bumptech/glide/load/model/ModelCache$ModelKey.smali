@@ -4,6 +4,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/bumptech/glide/load/model/ModelCache;
 .end annotation
@@ -24,7 +27,7 @@
 
 
 # static fields
-.field public static final KEY_QUEUE:Ljava/util/Queue;
+.field private static final KEY_QUEUE:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",
@@ -36,9 +39,9 @@
 
 
 # instance fields
-.field public height:I
+.field private height:I
 
-.field public model:Ljava/lang/Object;
+.field private model:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TA;"
@@ -46,7 +49,7 @@
     .end annotation
 .end field
 
-.field public width:I
+.field private width:I
 
 
 # direct methods
@@ -65,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -93,9 +96,7 @@
 
     .line 2
     :try_start_0
-    sget-object v1, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->KEY_QUEUE:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -232,9 +233,7 @@
 
     .line 2
     :try_start_0
-    sget-object v1, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->KEY_QUEUE:Ljava/util/Queue;
-
-    invoke-interface {v1, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
     .line 3
     monitor-exit v0

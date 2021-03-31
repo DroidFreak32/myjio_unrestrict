@@ -41,40 +41,26 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView$1;->this$0:Lcom/clevertap/android/sdk/GifImageView;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/GifImageView;->access$000(Lcom/clevertap/android/sdk/GifImageView;)Landroid/graphics/Bitmap;
+    const/4 v1, 0x0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView$1;->this$0:Lcom/clevertap/android/sdk/GifImageView;
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/GifImageView;->access$000(Lcom/clevertap/android/sdk/GifImageView;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/GifImageView;->access$002(Lcom/clevertap/android/sdk/GifImageView;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView$1;->this$0:Lcom/clevertap/android/sdk/GifImageView;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/GifImageView;->access$000(Lcom/clevertap/android/sdk/GifImageView;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/GifImageView;->access$102(Lcom/clevertap/android/sdk/GifImageView;Lcom/clevertap/android/sdk/GifDecoder;)Lcom/clevertap/android/sdk/GifDecoder;
 
     .line 3
     iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView$1;->this$0:Lcom/clevertap/android/sdk/GifImageView;
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/GifImageView;->access$202(Lcom/clevertap/android/sdk/GifImageView;Ljava/lang/Thread;)Ljava/lang/Thread;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    .line 4
+    iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView$1;->this$0:Lcom/clevertap/android/sdk/GifImageView;
 
-    :cond_0
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/GifImageView;->access$302(Lcom/clevertap/android/sdk/GifImageView;Z)Z
+
     return-void
 .end method

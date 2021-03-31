@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader$ParseException;
 .super Ljava/lang/RuntimeException;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -16,6 +17,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Parcel;)V
     .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p2}, Landroid/os/Parcel;->dataPosition()I

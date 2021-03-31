@@ -1,43 +1,46 @@
 .class public final synthetic Lcom/google/android/gms/internal/ads/zzwg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/gms/internal/ads/zzazc;
 
 
-# instance fields
-.field public final zzbtk:Lcom/google/android/gms/internal/ads/zzvr;
+# static fields
+.field public static final zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzvr;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwg;->zzbtk:Lcom/google/android/gms/internal/ads/zzvr;
-
-    return-void
-.end method
-
-.method public static zza(Lcom/google/android/gms/internal/ads/zzvr;)Ljava/lang/Runnable;
+.method public static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lcom/google/android/gms/internal/ads/zzwg;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzwg;-><init>(Lcom/google/android/gms/internal/ads/zzvr;)V
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzwg;-><init>()V
 
-    return-object v0
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzwg;->zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwg;->zzbtk:Lcom/google/android/gms/internal/ads/zzvr;
+    check-cast p1, Landroid/os/IBinder;
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzvr;->destroy()V
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzara;->zzah(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzarb;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -8,23 +8,23 @@
 
 
 # instance fields
-.field public final zzabf:J
+.field private final zzabf:J
 
-.field public final zzabg:I
+.field private final zzabg:I
 
-.field public zzabh:D
+.field private zzabh:D
 
-.field public zzabi:J
+.field private zzabi:J
 
-.field public final zzabj:Ljava/lang/Object;
+.field private final zzabj:Ljava/lang/Object;
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
-.field public final zzup:Ljava/lang/String;
+.field private final zzup:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(IJLjava/lang/String;Lcom/google/android/gms/common/util/Clock;)V
+.method private constructor <init>(IJLjava/lang/String;Lcom/google/android/gms/common/util/Clock;)V
     .locals 0
 
     .line 1
@@ -42,11 +42,9 @@
     .line 3
     iput p1, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabg:I
 
-    .line 4
-    iget p1, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabg:I
-
     int-to-double p1, p1
 
+    .line 4
     iput-wide p1, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabh:D
 
     const-wide/16 p1, 0x7d0
@@ -85,7 +83,7 @@
 
 # virtual methods
 .method public final zzfm()Z
-    .locals 9
+    .locals 11
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabj:Ljava/lang/Object;
@@ -105,42 +103,38 @@
 
     iget v5, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabg:I
 
-    int-to-double v5, v5
+    int-to-double v6, v5
 
-    cmpg-double v7, v3, v5
+    cmpg-double v8, v3, v6
 
-    if-gez v7, :cond_0
+    if-gez v8, :cond_0
 
     .line 4
-    iget-wide v3, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabi:J
+    iget-wide v6, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabi:J
 
-    sub-long v3, v1, v3
+    sub-long v6, v1, v6
 
-    long-to-double v3, v3
+    long-to-double v6, v6
 
     .line 5
-    iget-wide v5, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabf:J
+    iget-wide v8, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabf:J
 
-    long-to-double v5, v5
+    long-to-double v8, v8
 
-    div-double/2addr v3, v5
+    div-double/2addr v6, v8
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v8, 0x0
 
-    cmpl-double v7, v3, v5
+    cmpl-double v10, v6, v8
 
-    if-lez v7, :cond_0
+    if-lez v10, :cond_0
+
+    int-to-double v8, v5
+
+    add-double/2addr v3, v6
 
     .line 6
-    iget v5, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabg:I
-
-    int-to-double v5, v5
-
-    iget-wide v7, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabh:D
-
-    add-double/2addr v7, v3
-
-    invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->min(DD)D
+    invoke-static {v8, v9, v3, v4}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide v3
 
@@ -159,11 +153,9 @@
 
     if-ltz v5, :cond_1
 
-    .line 9
-    iget-wide v1, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabh:D
-
     sub-double/2addr v1, v3
 
+    .line 9
     iput-wide v1, p0, Lcom/google/android/gms/internal/gtm/zzcg;->zzabh:D
 
     const/4 v1, 0x1

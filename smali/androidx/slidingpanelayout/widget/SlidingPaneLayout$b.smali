@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final s:Landroid/view/View;
+.field public final a:Landroid/view/View;
 
-.field public final synthetic t:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
+.field public final synthetic b:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
 
 
 # direct methods
@@ -28,12 +28,12 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->t:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
+    iput-object p1, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->b:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p2, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->s:Landroid/view/View;
+    iput-object p2, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->a:Landroid/view/View;
 
     return-void
 .end method
@@ -44,18 +44,18 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->s:Landroid/view/View;
+    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->a:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->t:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
+    iget-object v1, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->b:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
 
     if-ne v0, v1, :cond_0
 
     .line 2
-    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->s:Landroid/view/View;
+    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->a:Landroid/view/View;
 
     const/4 v1, 0x0
 
@@ -64,17 +64,17 @@
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
     .line 3
-    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->t:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
+    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->b:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
 
-    iget-object v1, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->s:Landroid/view/View;
+    iget-object v1, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->a:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroidx/slidingpanelayout/widget/SlidingPaneLayout;->d(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroidx/slidingpanelayout/widget/SlidingPaneLayout;->f(Landroid/view/View;)V
 
     .line 4
     :cond_0
-    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->t:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
+    iget-object v0, p0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout$b;->b:Landroidx/slidingpanelayout/widget/SlidingPaneLayout;
 
-    iget-object v0, v0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout;->L:Ljava/util/ArrayList;
+    iget-object v0, v0, Landroidx/slidingpanelayout/widget/SlidingPaneLayout;->M:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 

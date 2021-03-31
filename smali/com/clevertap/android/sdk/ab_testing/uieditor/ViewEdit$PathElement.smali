@@ -66,6 +66,8 @@
 # virtual methods
 .method public toString()Ljava/lang/String;
     .locals 4
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -82,7 +84,7 @@
 
     const-string v1, "prefix"
 
-    const-string v2, "shortest"
+    const-string/jumbo v2, "shortest"
 
     .line 3
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -93,12 +95,10 @@
 
     if-eqz v1, :cond_1
 
-    const-string v1, "view_class"
+    const-string/jumbo v2, "view_class"
 
     .line 5
-    iget-object v2, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$PathElement;->viewClassName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 6
     :cond_1
@@ -108,12 +108,10 @@
 
     if-le v1, v2, :cond_2
 
-    const-string v1, "index"
+    const-string v3, "index"
 
     .line 7
-    iget v3, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$PathElement;->index:I
-
-    invoke-virtual {v0, v1, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v0, v3, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     .line 8
     :cond_2
@@ -121,12 +119,10 @@
 
     if-le v1, v2, :cond_3
 
-    const-string v1, "id"
+    const-string v2, "id"
 
     .line 9
-    iget v2, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$PathElement;->viewId:I
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     .line 10
     :cond_3
@@ -134,12 +130,10 @@
 
     if-eqz v1, :cond_4
 
-    const-string v1, "contentDescription"
+    const-string v2, "contentDescription"
 
     .line 11
-    iget-object v2, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$PathElement;->contentDescription:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 12
     :cond_4
@@ -147,12 +141,10 @@
 
     if-eqz v1, :cond_5
 
-    const-string v1, "tag"
+    const-string/jumbo v2, "tag"
 
     .line 13
-    iget-object v2, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$PathElement;->tag:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 14
     :cond_5

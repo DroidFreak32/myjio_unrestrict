@@ -22,8 +22,6 @@
     sput-object v0, Lcom/google/android/gms/tagmanager/zzgd;->zzali:[I
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/tagmanager/zzgd;->zzali:[I
-
     sget-object v1, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzait:Lcom/google/android/gms/tagmanager/zzeh$zza;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

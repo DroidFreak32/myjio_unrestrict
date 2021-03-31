@@ -1,46 +1,51 @@
 .class public final Lcom/google/android/gms/internal/ads/zzlw;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzlu;
+.implements Lcom/google/android/gms/internal/ads/zzlx;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.client.IMuteThisAdReason"
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getDescription()Ljava/lang/String;
-    .locals 2
+.method public final zzc(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzls;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/ads/zzma;
+        }
+    .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/ads/zzlz;->zzc(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzls;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final zzhj()Lcom/google/android/gms/internal/ads/zzls;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/ads/zzma;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzlz;->zzhj()Lcom/google/android/gms/internal/ads/zzls;
 
     move-result-object v0
 
-    const/4 v1, 0x1
-
-    .line 2
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzem;->transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 3
-    invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 4
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-object v1
+    return-object v0
 .end method

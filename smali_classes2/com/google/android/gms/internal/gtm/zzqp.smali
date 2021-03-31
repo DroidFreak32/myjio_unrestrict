@@ -11,9 +11,9 @@
 
 
 # static fields
-.field public static volatile zzaxh:Z = false
+.field private static volatile zzaxh:Z = false
 
-.field public static final zzaxi:Ljava/lang/Class;
+.field private static final zzaxi:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -22,13 +22,13 @@
     .end annotation
 .end field
 
-.field public static volatile zzaxj:Lcom/google/android/gms/internal/gtm/zzqp;
+.field private static volatile zzaxj:Lcom/google/android/gms/internal/gtm/zzqp;
 
 .field public static final zzaxk:Lcom/google/android/gms/internal/gtm/zzqp;
 
 
 # instance fields
-.field public final zzaxl:Ljava/util/Map;
+.field private final zzaxl:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -79,7 +79,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Z)V
+.method private constructor <init>(Z)V
     .locals 0
 
     .line 3
@@ -108,7 +108,7 @@
     return-object v0
 .end method
 
-.method public static zzop()Ljava/lang/Class;
+.method private static zzop()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -118,10 +118,10 @@
         }
     .end annotation
 
+    :try_start_0
     const-string v0, "com.google.protobuf.Extension"
 
     .line 1
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

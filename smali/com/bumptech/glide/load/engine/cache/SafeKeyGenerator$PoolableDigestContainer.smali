@@ -20,7 +20,7 @@
 # instance fields
 .field public final messageDigest:Ljava/security/MessageDigest;
 
-.field public final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
+.field private final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
 
 
 # direct methods
@@ -47,6 +47,8 @@
 # virtual methods
 .method public getVerifier()Lcom/bumptech/glide/util/pool/StateVerifier;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator$PoolableDigestContainer;->stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;

@@ -19,6 +19,8 @@
 # virtual methods
 .method public final zzd(Ljava/lang/String;I)Lcom/google/android/gms/internal/gcm/zzo;
     .locals 0
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -27,6 +29,8 @@
 
 .method public final zzl(Ljava/lang/String;)Lcom/google/android/gms/internal/gcm/zzo;
     .locals 0
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
     const/4 p1, 0x0
 

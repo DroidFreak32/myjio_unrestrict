@@ -1,6 +1,5 @@
 .class public final Lcom/clevertap/android/sdk/R$bool;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -21,12 +20,13 @@
 
 .field public static final abc_config_actionMenuItemAllCaps:I = 0x7f050002
 
+.field public static final mtrl_btn_textappearance_all_caps:I = 0x7f050044
+
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field public hostUrl:Ljava/lang/String;
+.field private hostUrl:Ljava/lang/String;
 
-.field public ip:Ljava/lang/String;
+.field private ip:Ljava/lang/String;
 
-.field public latitude:Ljava/lang/Double;
+.field private latitude:Ljava/lang/Double;
 
-.field public live:Z
+.field private live:Z
 
-.field public location:Ljava/lang/String;
+.field private location:Ljava/lang/String;
 
-.field public locationIndex:Ljava/lang/String;
+.field private locationIndex:Ljava/lang/String;
 
-.field public longitude:Ljava/lang/Double;
+.field private longitude:Ljava/lang/Double;
 
-.field public machine:Ljava/lang/String;
+.field private machine:Ljava/lang/String;
 
 
 # direct methods
@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getHostUrl()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -42,7 +42,7 @@
     return-object v0
 .end method
 
-.method public b()Ljava/lang/String;
+.method public getIp()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -51,7 +51,7 @@
     return-object v0
 .end method
 
-.method public c()Ljava/lang/Double;
+.method public getLatitude()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -60,7 +60,7 @@
     return-object v0
 .end method
 
-.method public d()Ljava/lang/String;
+.method public getLocation()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -69,13 +69,112 @@
     return-object v0
 .end method
 
-.method public e()Ljava/lang/Double;
+.method public getLocationIndex()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->locationIndex:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getLongitude()Ljava/lang/Double;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->longitude:Ljava/lang/Double;
 
     return-object v0
+.end method
+
+.method public getMachine()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->machine:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public isLive()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->live:Z
+
+    return v0
+.end method
+
+.method public setHostUrl(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->hostUrl:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setIp(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->ip:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setLatitude(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->latitude:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setLive(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->live:Z
+
+    return-void
+.end method
+
+.method public setLocation(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->location:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setLocationIndex(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->locationIndex:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setLongitude(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->longitude:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setMachine(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/NearestServerHolder;->machine:Ljava/lang/String;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

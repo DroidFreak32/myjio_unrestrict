@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public final synthetic zzsy:Lcom/google/android/gms/analytics/zzk$zza;
+.field private final synthetic zzsy:Lcom/google/android/gms/analytics/zzk$zza;
 
 
 # direct methods

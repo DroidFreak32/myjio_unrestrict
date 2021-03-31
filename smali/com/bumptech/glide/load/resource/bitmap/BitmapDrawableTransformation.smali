@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public final wrapped:Lcom/bumptech/glide/load/Transformation;
+.field private final wrapped:Lcom/bumptech/glide/load/Transformation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Transformation<",
@@ -66,7 +66,7 @@
     return-void
 .end method
 
-.method public static convertToBitmapDrawableResource(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
+.method private static convertToBitmapDrawableResource(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -119,7 +119,7 @@
     throw v0
 .end method
 
-.method public static convertToDrawableResource(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
+.method private static convertToDrawableResource(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -181,6 +181,17 @@
 
 .method public transform(Landroid/content/Context;Lcom/bumptech/glide/load/engine/Resource;II)Lcom/bumptech/glide/load/engine/Resource;
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -216,6 +227,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 1
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapDrawableTransformation;->wrapped:Lcom/bumptech/glide/load/Transformation;

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/data/zaa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -40,7 +41,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move-object v3, v2
+
+    const/4 v2, 0x0
 
     .line 2
     :goto_0
@@ -81,20 +84,20 @@
     :cond_0
     invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v3
+    move-result v2
 
     goto :goto_0
 
     .line 7
     :cond_1
-    sget-object v2, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v3, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 8
-    invoke-static {p1, v4, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v4, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Landroid/os/ParcelFileDescriptor;
+    check-cast v3, Landroid/os/ParcelFileDescriptor;
 
     goto :goto_0
 
@@ -113,7 +116,7 @@
     .line 11
     new-instance p1, Lcom/google/android/gms/common/data/BitmapTeleporter;
 
-    invoke-direct {p1, v1, v2, v3}, Lcom/google/android/gms/common/data/BitmapTeleporter;-><init>(ILandroid/os/ParcelFileDescriptor;I)V
+    invoke-direct {p1, v1, v3, v2}, Lcom/google/android/gms/common/data/BitmapTeleporter;-><init>(ILandroid/os/ParcelFileDescriptor;I)V
 
     return-object p1
 .end method

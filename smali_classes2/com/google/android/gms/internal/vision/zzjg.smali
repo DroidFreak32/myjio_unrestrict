@@ -1,25 +1,56 @@
-.class public final enum Lcom/google/android/gms/internal/vision/zzjg;
-.super Lcom/google/android/gms/internal/vision/zzjd;
+.class public interface abstract Lcom/google/android/gms/internal/vision/zzjg;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/vision/zzji;I)V
-    .locals 6
+# virtual methods
+.method public abstract zzb(ILjava/lang/Object;Ljava/lang/Object;)I
+.end method
 
-    const/16 v2, 0xa
+.method public abstract zzc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.end method
 
-    const/4 v4, 0x2
+.method public abstract zzn(Ljava/lang/Object;)Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/util/Map<",
+            "**>;"
+        }
+    .end annotation
+.end method
 
-    const/4 v5, 0x0
+.method public abstract zzo(Ljava/lang/Object;)Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/util/Map<",
+            "**>;"
+        }
+    .end annotation
+.end method
 
-    move-object v0, p0
+.method public abstract zzp(Ljava/lang/Object;)Z
+.end method
 
-    move-object v1, p1
+.method public abstract zzq(Ljava/lang/Object;)Ljava/lang/Object;
+.end method
 
-    move-object v3, p3
+.method public abstract zzr(Ljava/lang/Object;)Ljava/lang/Object;
+.end method
 
-    .line 1
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/vision/zzjd;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/vision/zzji;ILcom/google/android/gms/internal/vision/zzjc;)V
-
-    return-void
+.method public abstract zzs(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzje;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/google/android/gms/internal/vision/zzje<",
+            "**>;"
+        }
+    .end annotation
 .end method

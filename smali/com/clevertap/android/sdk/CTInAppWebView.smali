@@ -14,13 +14,13 @@
 # instance fields
 .field public final dim:Landroid/graphics/Point;
 
-.field public height:I
+.field private height:I
 
-.field public heightPercentage:I
+.field private heightPercentage:I
 
-.field public width:I
+.field private width:I
 
-.field public widthPercentage:I
+.field private widthPercentage:I
 
 
 # direct methods

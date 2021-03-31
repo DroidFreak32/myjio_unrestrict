@@ -13,11 +13,11 @@
 
 .field public static final ETM_PREF_WIFI_NAME:Ljava/lang/String; = "etm_wifi_name"
 
-.field public static context:Landroid/content/Context; = null
+.field private static context:Landroid/content/Context; = null
 
-.field public static prefFile:Ljava/lang/String; = "Etm_Pref"
+.field private static prefFile:Ljava/lang/String; = "Etm_Pref"
 
-.field public static prefFileApp:Ljava/lang/String; = "Etm_Pref_App"
+.field private static prefFileApp:Ljava/lang/String; = "Etm_Pref_App"
 
 
 # direct methods

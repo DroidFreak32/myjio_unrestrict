@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static serviceConnector:Lcom/app/cinemasdk/networkcall/WebServiceConnector;
+.field private static serviceConnector:Lcom/app/cinemasdk/networkcall/WebServiceConnector;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -45,13 +45,13 @@
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofit()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofit()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -60,7 +60,7 @@
     .line 2
     sget-object v1, Lcom/app/cinemasdk/networkcall/RequestUtils;->appName:Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Lcom/app/cinemasdk/networkcall/ApiInterface;->checkNetwork(Ljava/lang/String;)Ljr4;
+    invoke-interface {v0, v1}, Lcom/app/cinemasdk/networkcall/ApiInterface;->checkNetwork(Ljava/lang/String;)Lretrofit2/Call;
 
     move-result-object v0
 
@@ -68,7 +68,7 @@
 
     invoke-direct {v1, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -77,20 +77,20 @@
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitProd()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitProd()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
     .line 2
-    invoke-interface {v0}, Lcom/app/cinemasdk/networkcall/ApiInterface;->getConfig()Ljr4;
+    invoke-interface {v0}, Lcom/app/cinemasdk/networkcall/ApiInterface;->getConfig()Lretrofit2/Call;
 
     move-result-object v0
 
@@ -98,7 +98,7 @@
 
     invoke-direct {v1, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -112,7 +112,7 @@
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
     :try_start_0
-    const-string v1, "subscriberId"
+    const-string/jumbo v1, "subscriberId"
 
     .line 2
     invoke-virtual {v0, v1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -194,13 +194,13 @@
     move-result-object p2
 
     .line 7
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitProd()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitProd()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -209,7 +209,7 @@
     const-string v1, "phone"
 
     .line 8
-    invoke-interface {v0, p1, p3, v1, p2}, Lcom/app/cinemasdk/networkcall/ApiInterface;->loginViaSubIdResponse(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Ljr4;
+    invoke-interface {v0, p1, p3, v1, p2}, Lcom/app/cinemasdk/networkcall/ApiInterface;->loginViaSubIdResponse(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Lretrofit2/Call;
 
     move-result-object p1
 
@@ -217,7 +217,7 @@
 
     invoke-direct {p2, p0, p5, p4}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p1, p2}, Ljr4;->a(Llr4;)V
+    invoke-interface {p1, p2}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -258,20 +258,20 @@
     move-result-object p3
 
     .line 5
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitProd()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitProd()Lretrofit2/Retrofit;
 
     move-result-object v1
 
     const-class v2, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v1, v2}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
     .line 6
-    invoke-interface {v1, v0, p4, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->getPlayBackRightData(Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Ljr4;
+    invoke-interface {v1, v0, p4, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->getPlayBackRightData(Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Lretrofit2/Call;
 
     move-result-object p3
 
@@ -279,7 +279,7 @@
 
     invoke-direct {p4, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p3, p4}, Ljr4;->a(Llr4;)V
+    invoke-interface {p3, p4}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     :cond_0
     return-void
@@ -326,20 +326,20 @@
     move-result-object p3
 
     .line 4
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitSecure()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitSecure()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
     .line 5
-    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->refreshTokenResponse(Lokhttp3/RequestBody;)Ljr4;
+    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->refreshTokenResponse(Lokhttp3/RequestBody;)Lretrofit2/Call;
 
     move-result-object p3
 
@@ -347,16 +347,16 @@
 
     invoke-direct {v0, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p3, v0}, Ljr4;->a(Llr4;)V
+    invoke-interface {p3, v0}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
 
-.method public bridge synthetic getRetrofitAnalytics()Lyr4;
+.method public bridge synthetic getRetrofitAnalytics()Lretrofit2/Retrofit;
     .locals 1
 
     .line 1
-    invoke-super {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitAnalytics()Lyr4;
+    invoke-super {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofitAnalytics()Lretrofit2/Retrofit;
 
     move-result-object v0
 
@@ -367,13 +367,13 @@
     .locals 4
 
     .line 1
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofit()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getRetrofit()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -392,7 +392,7 @@
 
     const-string v3, "android"
 
-    invoke-interface {v0, v1, v2, v3, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->zlaLoginResponse(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljr4;
+    invoke-interface {v0, v1, v2, v3, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->zlaLoginResponse(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;
 
     move-result-object p3
 
@@ -400,7 +400,7 @@
 
     invoke-direct {v0, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p3, v0}, Ljr4;->a(Llr4;)V
+    invoke-interface {p3, v0}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -420,13 +420,13 @@
     .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceConnector;->getRetrofitAnalytics()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceConnector;->getRetrofitAnalytics()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -454,7 +454,7 @@
     move-result-object p3
 
     .line 5
-    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->analyticsAPIForBegin(Lokhttp3/RequestBody;)Ljr4;
+    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->analyticsAPIForBegin(Lokhttp3/RequestBody;)Lretrofit2/Call;
 
     move-result-object p3
 
@@ -462,7 +462,7 @@
 
     invoke-direct {v0, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p3, v0}, Ljr4;->a(Llr4;)V
+    invoke-interface {p3, v0}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -482,13 +482,13 @@
     .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceConnector;->getRetrofitAnalytics()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceConnector;->getRetrofitAnalytics()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -516,7 +516,7 @@
     move-result-object p3
 
     .line 5
-    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->analyticsAPIForEnd(Lokhttp3/RequestBody;)Ljr4;
+    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->analyticsAPIForEnd(Lokhttp3/RequestBody;)Lretrofit2/Call;
 
     move-result-object p3
 
@@ -524,7 +524,7 @@
 
     invoke-direct {v0, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p3, v0}, Ljr4;->a(Llr4;)V
+    invoke-interface {p3, v0}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -544,13 +544,13 @@
     .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceConnector;->getRetrofitAnalytics()Lyr4;
+    invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/WebServiceConnector;->getRetrofitAnalytics()Lretrofit2/Retrofit;
 
     move-result-object v0
 
     const-class v1, Lcom/app/cinemasdk/networkcall/ApiInterface;
 
-    invoke-virtual {v0, v1}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -578,7 +578,7 @@
     move-result-object p3
 
     .line 5
-    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->analyticsAPIForEvent(Lokhttp3/RequestBody;)Ljr4;
+    invoke-interface {v0, p3}, Lcom/app/cinemasdk/networkcall/ApiInterface;->analyticsAPIForEvent(Lokhttp3/RequestBody;)Lretrofit2/Call;
 
     move-result-object p3
 
@@ -586,7 +586,7 @@
 
     invoke-direct {v0, p0, p2, p1}, Lcom/app/cinemasdk/networkcall/WebServiceClient$APICallback;-><init>(Lcom/app/cinemasdk/networkcall/WebServiceClient;ILcom/app/cinemasdk/networkcall/INetworkResultListener;)V
 
-    invoke-interface {p3, v0}, Ljr4;->a(Llr4;)V
+    invoke-interface {p3, v0}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method

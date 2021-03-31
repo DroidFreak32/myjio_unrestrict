@@ -1,43 +1,72 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaee;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaee;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaos;
-
-
-# instance fields
-.field public final zzcew:Lorg/json/JSONObject;
-
-.field public final zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaea;Lorg/json/JSONObject;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaee;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaee;->zzcew:Lorg/json/JSONObject;
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
-    .locals 2
+.method public abstract getAspectRatio()F
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaee;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+.method public abstract getCurrentTime()F
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaee;->zzcew:Lorg/json/JSONObject;
+.method public abstract getDuration()F
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzasg;
+.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzys;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/internal/ads/zzaea;->zzb(Lorg/json/JSONObject;Lcom/google/android/gms/internal/ads/zzasg;)Lcom/google/android/gms/internal/ads/zzapi;
+.method public abstract hasVideoContent()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object p1
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzafv;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    return-object p1
+.method public abstract zzo(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzsu()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

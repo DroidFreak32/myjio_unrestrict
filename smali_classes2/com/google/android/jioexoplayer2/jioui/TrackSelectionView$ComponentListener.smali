@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;)V
     .locals 0
 
     .line 1

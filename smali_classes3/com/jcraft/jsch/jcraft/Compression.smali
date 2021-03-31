@@ -7,19 +7,19 @@
 
 
 # static fields
-.field public static final BUF_SIZE:I = 0x1000
+.field private static final BUF_SIZE:I = 0x1000
 
 
 # instance fields
-.field public final buffer_margin:I
+.field private final buffer_margin:I
 
-.field public inflated_buf:[B
+.field private inflated_buf:[B
 
-.field public stream:Lcom/jcraft/jzlib/ZStream;
+.field private stream:Lcom/jcraft/jzlib/ZStream;
 
-.field public tmpbuf:[B
+.field private tmpbuf:[B
 
-.field public type:I
+.field private type:I
 
 
 # direct methods
@@ -62,11 +62,15 @@
     iput-object p1, v0, Lcom/jcraft/jzlib/ZStream;->next_in:[B
 
     .line 2
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
+
     iput p2, v0, Lcom/jcraft/jzlib/ZStream;->next_in_index:I
+
+    .line 3
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
 
     const/4 v1, 0x0
 
-    .line 3
     aget v2, p3, v1
 
     sub-int/2addr v2, p2
@@ -82,16 +86,22 @@
     iput-object v2, v0, Lcom/jcraft/jzlib/ZStream;->next_out:[B
 
     .line 5
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
+
     iput v1, v0, Lcom/jcraft/jzlib/ZStream;->next_out_index:I
+
+    .line 6
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
 
     const/16 v2, 0x1000
 
-    .line 6
     iput v2, v0, Lcom/jcraft/jzlib/ZStream;->avail_out:I
+
+    .line 7
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
 
     const/4 v3, 0x1
 
-    .line 7
     invoke-virtual {v0, v3}, Lcom/jcraft/jzlib/ZStream;->deflate(I)I
 
     move-result v0
@@ -221,11 +231,15 @@
     iput-object p1, v0, Lcom/jcraft/jzlib/ZStream;->next_in:[B
 
     .line 2
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
+
     iput p2, v0, Lcom/jcraft/jzlib/ZStream;->next_in_index:I
+
+    .line 3
+    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
 
     const/4 v1, 0x0
 
-    .line 3
     aget v2, p3, v1
 
     iput v2, v0, Lcom/jcraft/jzlib/ZStream;->avail_in:I
@@ -241,16 +255,22 @@
     iput-object v3, v2, Lcom/jcraft/jzlib/ZStream;->next_out:[B
 
     .line 5
+    iget-object v2, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
+
     iput v1, v2, Lcom/jcraft/jzlib/ZStream;->next_out_index:I
+
+    .line 6
+    iget-object v2, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
 
     const/16 v3, 0x1000
 
-    .line 6
     iput v3, v2, Lcom/jcraft/jzlib/ZStream;->avail_out:I
+
+    .line 7
+    iget-object v2, p0, Lcom/jcraft/jsch/jcraft/Compression;->stream:Lcom/jcraft/jzlib/ZStream;
 
     const/4 v4, 0x1
 
-    .line 7
     invoke-virtual {v2, v4}, Lcom/jcraft/jzlib/ZStream;->inflate(I)I
 
     move-result v2
@@ -268,7 +288,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo p3, "uncompress: inflate returnd "
+    const-string p3, "uncompress: inflate returnd "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

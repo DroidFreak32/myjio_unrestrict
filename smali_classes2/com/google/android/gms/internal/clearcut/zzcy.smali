@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzlt:Lcom/google/android/gms/internal/clearcut/zzcy;
+.field private static final zzlt:Lcom/google/android/gms/internal/clearcut/zzcy;
 
-.field public static final zzlu:Lcom/google/android/gms/internal/clearcut/zzcy;
+.field private static final zzlu:Lcom/google/android/gms/internal/clearcut/zzcy;
 
 
 # direct methods
@@ -29,7 +29,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

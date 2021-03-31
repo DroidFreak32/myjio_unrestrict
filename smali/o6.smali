@@ -1,345 +1,420 @@
 .class public final Lo6;
 .super Ljava/lang/Object;
-.source "NavUtils.java"
+.source "AnimateLayoutChangeDetector.java"
+
+
+# static fields
+.field public static final b:Landroid/view/ViewGroup$MarginLayoutParams;
+
+
+# instance fields
+.field public a:Landroidx/recyclerview/widget/LinearLayoutManager;
 
 
 # direct methods
-.method public static a(Landroid/app/Activity;)Landroid/content/Intent;
-    .locals 3
-
-    .line 6
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
-
-    .line 7
-    invoke-virtual {p0}, Landroid/app/Activity;->getParentActivityIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    .line 8
-    :cond_0
-    invoke-static {p0}, Lo6;->b(Landroid/app/Activity;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
-
-    return-object v1
-
-    .line 9
-    :cond_1
-    new-instance v2, Landroid/content/ComponentName;
-
-    invoke-direct {v2, p0, v0}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 10
-    :try_start_0
-    invoke-static {p0, v2}, Lo6;->b(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p0, :cond_2
-
-    .line 11
-    invoke-static {v2}, Landroid/content/Intent;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_2
-    new-instance p0, Landroid/content/Intent;
-
-    invoke-direct {p0}, Landroid/content/Intent;-><init>()V
-
-    .line 12
-    invoke-virtual {p0, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object p0
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-object p0
-
-    .line 13
-    :catch_0
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "getParentActivityIntent: bad parentActivityName \'"
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\' in manifest"
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    return-object v1
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/content/Intent;
-    .locals 2
-
-    .line 14
-    invoke-static {p0, p1}, Lo6;->b(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    .line 15
-    :cond_0
-    new-instance v1, Landroid/content/ComponentName;
-
-    .line 16
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1, v0}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 17
-    invoke-static {p0, v1}, Lo6;->b(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p0, :cond_1
-
-    .line 18
-    invoke-static {v1}, Landroid/content/Intent;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p0, Landroid/content/Intent;
-
-    invoke-direct {p0}, Landroid/content/Intent;-><init>()V
-
-    .line 19
-    invoke-virtual {p0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object p0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public static a(Landroid/app/Activity;Landroid/content/Intent;)V
+.method public static constructor <clinit>()V
     .locals 2
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    const/16 v1, 0x10
+    const/4 v1, -0x1
 
-    if-lt v0, v1, :cond_0
+    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
+
+    sput-object v0, Lo6;->b:Landroid/view/ViewGroup$MarginLayoutParams;
+
+    const/4 v1, 0x0
 
     .line 2
-    invoke-virtual {p0, p1}, Landroid/app/Activity;->navigateUpTo(Landroid/content/Intent;)Z
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    goto :goto_0
-
-    :cond_0
-    const/high16 v0, 0x4000000
-
-    .line 3
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 4
-    invoke-virtual {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 5
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
-
-    :goto_0
     return-void
 .end method
 
-.method public static b(Landroid/app/Activity;)Ljava/lang/String;
-    .locals 1
+.method public constructor <init>(Landroidx/recyclerview/widget/LinearLayoutManager;)V
+    .locals 0
+    .param p1    # Landroidx/recyclerview/widget/LinearLayoutManager;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-    .line 5
-    :try_start_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getComponentName()Landroid/content/ComponentName;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    .line 2
+    iput-object p1, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-static {p0, v0}, Lo6;->b(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    .line 6
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
+    return-void
 .end method
 
-.method public static b(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
-    .locals 3
+.method public static c(Landroid/view/View;)Z
+    .locals 5
 
-    .line 7
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    .line 8
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x18
-
-    const/16 v1, 0x280
-
-    .line 9
-    invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->getActivityInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
-
-    move-result-object p1
-
-    .line 10
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
-
-    .line 11
-    iget-object v0, p1, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    .line 12
-    :cond_0
-    iget-object v0, p1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    .line 1
+    instance-of v0, p0, Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_2
 
-    return-object v1
+    .line 2
+    check-cast p0, Landroid/view/ViewGroup;
 
-    .line 13
-    :cond_1
-    iget-object p1, p1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    .line 3
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getLayoutTransition()Landroid/animation/LayoutTransition;
 
-    const-string v0, "android.support.PARENT_ACTIVITY"
+    move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object p1
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_2
-
-    return-object v1
-
-    :cond_2
-    const/4 v0, 0x0
-
-    .line 14
-    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
+    .line 4
+    invoke-virtual {v0}, Landroid/animation/LayoutTransition;->isChangingLayout()Z
 
     move-result v0
 
-    const/16 v1, 0x2e
+    if-eqz v0, :cond_0
 
-    if-ne v0, v1, :cond_3
+    return v2
 
-    .line 15
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 5
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object p0
+    :goto_0
+    if-ge v3, v0, :cond_2
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 6
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v4}, Lo6;->c(Landroid/view/View;)Z
 
-    move-result-object p1
+    move-result v4
 
-    :cond_3
-    return-object p1
+    if-eqz v4, :cond_1
+
+    return v2
+
+    :cond_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return v1
 .end method
 
-.method public static b(Landroid/app/Activity;Landroid/content/Intent;)Z
-    .locals 2
+
+# virtual methods
+.method public final a()Z
+    .locals 11
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iget-object v0, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    const/16 v1, 0x10
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildCount()I
 
-    if-lt v0, v1, :cond_0
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_0
+
+    return v1
 
     .line 2
-    invoke-virtual {p0, p1}, Landroid/app/Activity;->shouldUpRecreateTask(Landroid/content/Intent;)Z
-
-    move-result p0
-
-    return p0
-
-    .line 3
     :cond_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    iget-object v2, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    move-result-object p0
+    invoke-virtual {v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->getOrientation()I
 
-    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-result v2
 
-    move-result-object p0
+    const/4 v3, 0x0
 
-    if-eqz p0, :cond_1
+    if-nez v2, :cond_1
 
-    const-string p1, "android.intent.action.MAIN"
-
-    .line 4
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 p0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    return p0
+    const/4 v4, 0x2
+
+    new-array v5, v4, [I
+
+    aput v4, v5, v1
+
+    aput v0, v5, v3
+
+    .line 3
+    const-class v4, I
+
+    invoke-static {v4, v5}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [[I
+
+    const/4 v5, 0x0
+
+    :goto_1
+    if-ge v5, v0, :cond_6
+
+    .line 4
+    iget-object v6, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {v6, v5}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_5
+
+    .line 5
+    invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v7
+
+    .line 6
+    instance-of v8, v7, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    if-eqz v8, :cond_2
+
+    .line 7
+    check-cast v7, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    goto :goto_2
+
+    .line 8
+    :cond_2
+    sget-object v7, Lo6;->b:Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .line 9
+    :goto_2
+    aget-object v8, v4, v5
+
+    if-eqz v2, :cond_3
+
+    .line 10
+    invoke-virtual {v6}, Landroid/view/View;->getLeft()I
+
+    move-result v9
+
+    iget v10, v7, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    goto :goto_3
+
+    .line 11
+    :cond_3
+    invoke-virtual {v6}, Landroid/view/View;->getTop()I
+
+    move-result v9
+
+    iget v10, v7, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    :goto_3
+    sub-int/2addr v9, v10
+
+    aput v9, v8, v3
+
+    .line 12
+    aget-object v8, v4, v5
+
+    if-eqz v2, :cond_4
+
+    .line 13
+    invoke-virtual {v6}, Landroid/view/View;->getRight()I
+
+    move-result v6
+
+    iget v7, v7, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+
+    goto :goto_4
+
+    .line 14
+    :cond_4
+    invoke-virtual {v6}, Landroid/view/View;->getBottom()I
+
+    move-result v6
+
+    iget v7, v7, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    :goto_4
+    add-int/2addr v6, v7
+
+    aput v6, v8, v1
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    .line 15
+    :cond_5
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "null view contained in the view hierarchy"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 16
+    :cond_6
+    new-instance v2, Lo6$a;
+
+    invoke-direct {v2, p0}, Lo6$a;-><init>(Lo6;)V
+
+    invoke-static {v4, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+
+    const/4 v2, 0x1
+
+    :goto_5
+    if-ge v2, v0, :cond_8
+
+    add-int/lit8 v5, v2, -0x1
+
+    .line 17
+    aget-object v5, v4, v5
+
+    aget v5, v5, v1
+
+    aget-object v6, v4, v2
+
+    aget v6, v6, v3
+
+    if-eq v5, v6, :cond_7
+
+    return v3
+
+    :cond_7
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_5
+
+    .line 18
+    :cond_8
+    aget-object v2, v4, v3
+
+    aget v2, v2, v1
+
+    aget-object v5, v4, v3
+
+    aget v5, v5, v3
+
+    sub-int/2addr v2, v5
+
+    .line 19
+    aget-object v5, v4, v3
+
+    aget v5, v5, v3
+
+    if-gtz v5, :cond_a
+
+    sub-int/2addr v0, v1
+
+    aget-object v0, v4, v0
+
+    aget v0, v0, v1
+
+    if-ge v0, v2, :cond_9
+
+    goto :goto_6
+
+    :cond_9
+    return v1
+
+    :cond_a
+    :goto_6
+    return v3
+.end method
+
+.method public final b()Z
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildCount()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    .line 2
+    iget-object v3, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {v3, v2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lo6;->c(Landroid/view/View;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public d()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lo6;->a()Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lo6;->a:Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getChildCount()I
+
+    move-result v0
+
+    if-gt v0, v1, :cond_1
+
+    .line 2
+    :cond_0
+    invoke-virtual {p0}, Lo6;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
 .end method

@@ -24,6 +24,9 @@
 .field public final b:Ljava/util/concurrent/Executor;
 
 .field public c:Landroidx/work/impl/utils/futures/AbstractFuture$d;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods

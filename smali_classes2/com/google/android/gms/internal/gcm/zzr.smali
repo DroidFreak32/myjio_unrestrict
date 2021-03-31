@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzds:[Ljava/lang/Throwable;
+.field private static final zzds:[Ljava/lang/Throwable;
 
 
 # direct methods

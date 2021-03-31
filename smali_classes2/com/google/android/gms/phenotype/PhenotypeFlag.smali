@@ -27,9 +27,9 @@
 
 
 # static fields
-.field public static final zzak:Ljava/lang/Object;
+.field private static final zzak:Ljava/lang/Object;
 
-.field public static zzal:Landroid/content/Context; = null
+.field private static zzal:Landroid/content/Context; = null
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "StaticFieldLeak"
@@ -37,19 +37,19 @@
     .end annotation
 .end field
 
-.field public static zzam:Z = false
+.field private static zzam:Z = false
 
-.field public static zzan:Ljava/lang/Boolean;
+.field private static zzan:Ljava/lang/Boolean;
 
 
 # instance fields
-.field public final zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
+.field private final zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
 
 .field public final zzap:Ljava/lang/String;
 
-.field public final zzaq:Ljava/lang/String;
+.field private final zzaq:Ljava/lang/String;
 
-.field public final zzar:Ljava/lang/Object;
+.field private final zzar:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -57,7 +57,7 @@
     .end annotation
 .end field
 
-.field public zzas:Ljava/lang/Object;
+.field private zzas:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -79,7 +79,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;Ljava/lang/String;Ljava/lang/Object;)V
+.method private constructor <init>(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;Ljava/lang/String;Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -310,7 +310,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/phenotype/PhenotypeFlag;
+.method private static zza(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/phenotype/PhenotypeFlag;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -332,7 +332,7 @@
     return-object v0
 .end method
 
-.method public static zza(Lcom/google/android/gms/phenotype/PhenotypeFlag$zza;)Ljava/lang/Object;
+.method private static zza(Lcom/google/android/gms/phenotype/PhenotypeFlag$zza;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -451,25 +451,28 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
-    const-string v1, "gms:phenotype:phenotype_flag:debug_bypass_phenotype"
+    const-string v0, "gms:phenotype:phenotype_flag:debug_bypass_phenotype"
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zza(Ljava/lang/String;Z)Z
+    const/4 v1, 0x0
 
-    move-result v1
+    invoke-static {v0, v1}, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zza(Ljava/lang/String;Z)Z
+
+    move-result v0
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    iget-object v1, p0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
+    iget-object v0, p0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
 
-    invoke-static {v1}, Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;->zzb(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;)Landroid/net/Uri;
+    invoke-static {v0}, Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;->zzb(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;)Landroid/net/Uri;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     sget-object v0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
 
@@ -506,48 +509,48 @@
     return-object v0
 
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
+    iget-object v0, p0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
 
-    invoke-static {v1}, Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;->zza(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;->zza(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x18
 
-    if-lt v1, v3, :cond_1
+    if-lt v0, v3, :cond_1
 
-    sget-object v1, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->isDeviceProtectedStorage()Z
+    invoke-virtual {v0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    sget-object v1, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
 
     const-class v3, Landroid/os/UserManager;
 
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/os/UserManager;
+    check-cast v0, Landroid/os/UserManager;
 
-    invoke-virtual {v1}, Landroid/os/UserManager;->isUserUnlocked()Z
+    invoke-virtual {v0}, Landroid/os/UserManager;->isUserUnlocked()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     return-object v2
 
     :cond_1
-    sget-object v1, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzal:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
 
@@ -555,7 +558,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v3, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -610,6 +613,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     iget-object v0, p0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzao:Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;
 
     invoke-static {v0}, Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;->zzf(Lcom/google/android/gms/phenotype/PhenotypeFlag$Factory;)Z
@@ -648,7 +654,7 @@
     return-object v0
 .end method
 
-.method public static zzf()Z
+.method private static zzf()Z
     .locals 3
 
     sget-object v0, Lcom/google/android/gms/phenotype/PhenotypeFlag;->zzan:Ljava/lang/Boolean;
@@ -663,7 +669,7 @@
 
     const-string v2, "com.google.android.providers.gsf.permission.READ_GSERVICES"
 
-    invoke-static {v0, v2}, Ly6;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroidx/core/content/PermissionChecker;->checkCallingOrSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 

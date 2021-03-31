@@ -34,8 +34,6 @@
     sput-object v0, Landroidx/lifecycle/FullLifecycleObserverAdapter$a;->a:[I
 
     :try_start_0
-    sget-object v0, Landroidx/lifecycle/FullLifecycleObserverAdapter$a;->a:[I
-
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

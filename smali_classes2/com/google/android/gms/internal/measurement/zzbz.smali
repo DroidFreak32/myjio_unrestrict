@@ -1,17 +1,17 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzbz;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzfm;
+.implements Lcom/google/android/gms/internal/measurement/zzic;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/measurement/zzfm<",
-        "Lcom/google/android/gms/internal/measurement/zzbw$zzh$zza;",
+        "Lcom/google/android/gms/internal/measurement/zzic<",
+        "Lcom/google/android/gms/internal/measurement/zzbv$zzf$zzb;",
         ">;"
     }
 .end annotation

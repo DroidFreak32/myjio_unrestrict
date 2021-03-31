@@ -26,6 +26,11 @@
 # virtual methods
 .method public init()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const-string v0, "SHA1withRSA"
 
@@ -50,6 +55,11 @@
 
 .method public setPrvKey([B[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/security/spec/RSAPrivateKeySpec;
@@ -81,6 +91,11 @@
 
 .method public setPubKey([B[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/security/spec/RSAPublicKeySpec;
@@ -112,6 +127,11 @@
 
 .method public sign()[B
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/SignatureRSA;->signature:Ljava/security/Signature;
@@ -125,6 +145,11 @@
 
 .method public update([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/SignatureRSA;->signature:Ljava/security/Signature;
@@ -136,6 +161,11 @@
 
 .method public verify([B)Z
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

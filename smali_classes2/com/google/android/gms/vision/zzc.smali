@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -8,29 +9,25 @@
 
 
 # static fields
-.field public static final lock:Ljava/lang/Object;
+.field private static final lock:Ljava/lang/Object;
 
-.field public static zzau:I
-
-
-# instance fields
-.field public zzav:Landroid/util/SparseArray;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/util/SparseArray<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
+.field private static zzba:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
     .end annotation
 .end field
 
-.field public zzaw:Landroid/util/SparseArray;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/util/SparseArray<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
+
+# instance fields
+.field private final zzbb:Landroid/util/SparseIntArray;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
+    .end annotation
+.end field
+
+.field private final zzbc:Landroid/util/SparseIntArray;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
     .end annotation
 .end field
 
@@ -56,18 +53,18 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Landroid/util/SparseArray;
+    new-instance v0, Landroid/util/SparseIntArray;
 
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/zzc;->zzav:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/google/android/gms/vision/zzc;->zzbb:Landroid/util/SparseIntArray;
 
     .line 3
-    new-instance v0, Landroid/util/SparseArray;
+    new-instance v0, Landroid/util/SparseIntArray;
 
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/zzc;->zzaw:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/google/android/gms/vision/zzc;->zzbc:Landroid/util/SparseIntArray;
 
     return-void
 .end method
@@ -75,7 +72,7 @@
 
 # virtual methods
 .method public final zzb(I)I
-    .locals 4
+    .locals 3
 
     .line 1
     sget-object v0, Lcom/google/android/gms/vision/zzc;->lock:Ljava/lang/Object;
@@ -84,53 +81,39 @@
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/zzc;->zzav:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/google/android/gms/vision/zzc;->zzbb:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    const/4 v2, -0x1
 
-    move-result-object v1
+    invoke-virtual {v1, p1, v2}, Landroid/util/SparseIntArray;->get(II)I
 
-    check-cast v1, Ljava/lang/Integer;
+    move-result v1
 
-    if-eqz v1, :cond_0
+    if-eq v1, v2, :cond_0
 
     .line 3
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
     monitor-exit v0
 
-    return p1
+    return v1
 
     .line 4
     :cond_0
-    sget v1, Lcom/google/android/gms/vision/zzc;->zzau:I
+    sget v1, Lcom/google/android/gms/vision/zzc;->zzba:I
+
+    add-int/lit8 v2, v1, 0x1
 
     .line 5
-    sget v2, Lcom/google/android/gms/vision/zzc;->zzau:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    sput v2, Lcom/google/android/gms/vision/zzc;->zzau:I
+    sput v2, Lcom/google/android/gms/vision/zzc;->zzba:I
 
     .line 6
-    iget-object v2, p0, Lcom/google/android/gms/vision/zzc;->zzav:Landroid/util/SparseArray;
+    iget-object v2, p0, Lcom/google/android/gms/vision/zzc;->zzbb:Landroid/util/SparseIntArray;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v2, p1, v3}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+    invoke-virtual {v2, p1, v1}, Landroid/util/SparseIntArray;->append(II)V
 
     .line 7
-    iget-object v2, p0, Lcom/google/android/gms/vision/zzc;->zzaw:Landroid/util/SparseArray;
+    iget-object v2, p0, Lcom/google/android/gms/vision/zzc;->zzbc:Landroid/util/SparseIntArray;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v2, v1, p1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+    invoke-virtual {v2, v1, p1}, Landroid/util/SparseIntArray;->append(II)V
 
     .line 8
     monitor-exit v0
@@ -158,15 +141,9 @@
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/zzc;->zzaw:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/google/android/gms/vision/zzc;->zzbc:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1, p1}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result p1
 

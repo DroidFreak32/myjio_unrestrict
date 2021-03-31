@@ -80,30 +80,6 @@
 
 
 # virtual methods
-.method public a(Lcom/caverock/androidsvg/CSSParser$d;)V
-    .locals 1
-
-    .line 4
-    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$p;->d:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    .line 5
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/caverock/androidsvg/CSSParser$p;->d:Ljava/util/List;
-
-    .line 6
-    :cond_0
-    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$p;->d:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
 .method public a(Ljava/lang/String;Lcom/caverock/androidsvg/CSSParser$AttribOp;Ljava/lang/String;)V
     .locals 2
 
@@ -128,6 +104,30 @@
     invoke-direct {v1, p1, p2, p3}, Lcom/caverock/androidsvg/CSSParser$b;-><init>(Ljava/lang/String;Lcom/caverock/androidsvg/CSSParser$AttribOp;Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public b(Lcom/caverock/androidsvg/CSSParser$d;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$p;->d:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/caverock/androidsvg/CSSParser$p;->d:Ljava/util/List;
+
+    .line 3
+    :cond_0
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$p;->d:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -235,7 +235,7 @@
     goto :goto_2
 
     :cond_3
-    const-string v3, "|="
+    const-string/jumbo v3, "|="
 
     .line 11
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -247,7 +247,7 @@
     goto :goto_2
 
     :cond_4
-    const-string v3, "~="
+    const-string/jumbo v3, "~="
 
     .line 12
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

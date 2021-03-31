@@ -1,124 +1,109 @@
-.class public final synthetic Lcom/google/android/gms/internal/measurement/zzbp;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
+.class public final Lcom/google/android/gms/internal/measurement/zzbp;
+.super Lcom/google/android/gms/internal/measurement/zzag$zzb;
+.source "com.google.android.gms:play-services-measurement-sdk-api@@18.0.0"
 
 
-# static fields
-.field public static final synthetic zza:[I
+# instance fields
+.field private final synthetic zzc:Landroid/os/Bundle;
+
+.field private final synthetic zzd:Landroid/app/Activity;
+
+.field private final synthetic zze:Lcom/google/android/gms/internal/measurement/zzag$zzc;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzag$zzc;Landroid/os/Bundle;Landroid/app/Activity;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zza()[I
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zze:Lcom/google/android/gms/internal/measurement/zzag$zzc;
 
-    move-result-object v0
+    iput-object p2, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zzc:Landroid/os/Bundle;
 
-    array-length v0, v0
+    iput-object p3, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zzd:Landroid/app/Activity;
 
-    new-array v0, v0, [I
+    iget-object p1, p1, Lcom/google/android/gms/internal/measurement/zzag$zzc;->zza:Lcom/google/android/gms/internal/measurement/zzag;
 
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzag$zzb;-><init>(Lcom/google/android/gms/internal/measurement/zzag;)V
 
-    const/4 v0, 0x1
+    return-void
+.end method
 
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
 
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zzd:I
+# virtual methods
+.method public final zza()V
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    sub-int/2addr v2, v0
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zzc:Landroid/os/Bundle;
 
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v0, :cond_0
 
-    :catch_0
-    :try_start_1
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
+    .line 2
+    new-instance v0, Landroid/os/Bundle;
 
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zze:I
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    sub-int/2addr v2, v0
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zzc:Landroid/os/Bundle;
 
-    const/4 v3, 0x2
+    const-string v2, "com.google.app_measurement.screen_service"
 
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    :catch_1
-    :try_start_2
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
+    move-result v1
 
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zzc:I
+    if-eqz v1, :cond_1
 
-    sub-int/2addr v2, v0
+    .line 4
+    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zzc:Landroid/os/Bundle;
 
-    const/4 v3, 0x3
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    move-result-object v1
 
-    :catch_2
-    :try_start_3
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
+    .line 5
+    instance-of v3, v1, Landroid/os/Bundle;
 
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zzf:I
+    if-eqz v3, :cond_1
 
-    sub-int/2addr v2, v0
+    .line 6
+    check-cast v1, Landroid/os/Bundle;
 
-    const/4 v3, 0x4
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    goto :goto_0
 
-    :catch_3
-    :try_start_4
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
+    :cond_0
+    const/4 v0, 0x0
 
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zzg:I
+    .line 7
+    :cond_1
+    :goto_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zze:Lcom/google/android/gms/internal/measurement/zzag$zzc;
 
-    sub-int/2addr v2, v0
+    iget-object v1, v1, Lcom/google/android/gms/internal/measurement/zzag$zzc;->zza:Lcom/google/android/gms/internal/measurement/zzag;
 
-    const/4 v3, 0x5
+    invoke-static {v1}, Lcom/google/android/gms/internal/measurement/zzag;->zzc(Lcom/google/android/gms/internal/measurement/zzag;)Lcom/google/android/gms/internal/measurement/zzv;
 
-    aput v3, v1, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    move-result-object v1
 
-    :catch_4
-    :try_start_5
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
+    iget-object v2, p0, Lcom/google/android/gms/internal/measurement/zzbp;->zzd:Landroid/app/Activity;
 
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zza:I
+    .line 8
+    invoke-static {v2}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
-    sub-int/2addr v2, v0
+    move-result-object v2
 
-    const/4 v3, 0x6
+    iget-wide v3, p0, Lcom/google/android/gms/internal/measurement/zzag$zzb;->zzb:J
 
-    aput v3, v1, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+    .line 9
+    invoke-interface {v1, v2, v0, v3, v4}, Lcom/google/android/gms/internal/measurement/zzv;->onActivityCreated(Lcom/google/android/gms/dynamic/IObjectWrapper;Landroid/os/Bundle;J)V
 
-    :catch_5
-    :try_start_6
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzbp;->zza:[I
-
-    sget v2, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zzb:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v0, 0x7
-
-    aput v0, v1, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
     return-void
 .end method

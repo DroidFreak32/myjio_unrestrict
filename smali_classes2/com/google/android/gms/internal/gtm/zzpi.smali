@@ -13,7 +13,7 @@
 
 
 # instance fields
-.field public final zzavn:I
+.field private final zzavn:I
 
 
 # direct methods
@@ -34,9 +34,12 @@
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
-    if-eqz p1, :cond_0
+    const-string p2, "The referent cannot be null"
 
     .line 2
+    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 3
     invoke-static {p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result p1
@@ -44,16 +47,6 @@
     iput p1, p0, Lcom/google/android/gms/internal/gtm/zzpi;->zzavn:I
 
     return-void
-
-    .line 3
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "The referent cannot be null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 

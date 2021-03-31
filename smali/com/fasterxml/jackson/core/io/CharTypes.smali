@@ -4,30 +4,30 @@
 
 
 # static fields
-.field public static final HB:[B
+.field private static final HB:[B
 
-.field public static final HC:[C
+.field private static final HC:[C
 
-.field public static final sHexValues:[I
+.field private static final sHexValues:[I
 
-.field public static final sInputCodes:[I
+.field private static final sInputCodes:[I
 
-.field public static final sInputCodesComment:[I
+.field private static final sInputCodesComment:[I
 
-.field public static final sInputCodesJsNames:[I
+.field private static final sInputCodesJsNames:[I
 
-.field public static final sInputCodesUTF8:[I
+.field private static final sInputCodesUTF8:[I
 
-.field public static final sInputCodesUtf8JsNames:[I
+.field private static final sInputCodesUtf8JsNames:[I
 
-.field public static final sInputCodesWS:[I
+.field private static final sInputCodesWS:[I
 
-.field public static final sOutputEscapes128:[I
+.field private static final sOutputEscapes128:[I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 14
+    .locals 15
 
     const-string v0, "0123456789ABCDEF"
 
@@ -39,8 +39,6 @@
     sput-object v0, Lcom/fasterxml/jackson/core/io/CharTypes;->HC:[C
 
     .line 2
-    sget-object v0, Lcom/fasterxml/jackson/core/io/CharTypes;->HC:[C
-
     array-length v0, v0
 
     .line 3
@@ -106,25 +104,21 @@
     sput-object v2, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodes:[I
 
     .line 7
-    sget-object v2, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodes:[I
-
     array-length v8, v2
 
-    new-array v8, v8, [I
+    new-array v9, v8, [I
 
     .line 8
-    array-length v9, v8
-
-    invoke-static {v2, v1, v8, v1, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v2, v1, v9, v1, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     const/16 v2, 0x80
 
-    const/16 v9, 0x80
+    const/16 v8, 0x80
 
     :goto_2
-    if-ge v9, v0, :cond_5
+    if-ge v8, v0, :cond_5
 
-    and-int/lit16 v10, v9, 0xe0
+    and-int/lit16 v10, v8, 0xe0
 
     const/16 v11, 0xc0
 
@@ -135,7 +129,7 @@
     goto :goto_3
 
     :cond_2
-    and-int/lit16 v10, v9, 0xf0
+    and-int/lit16 v10, v8, 0xf0
 
     const/16 v11, 0xe0
 
@@ -146,7 +140,7 @@
     goto :goto_3
 
     :cond_3
-    and-int/lit16 v10, v9, 0xf8
+    and-int/lit16 v10, v8, 0xf8
 
     const/16 v11, 0xf0
 
@@ -161,15 +155,15 @@
 
     .line 9
     :goto_3
-    aput v10, v8, v9
+    aput v10, v9, v8
 
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
     .line 10
     :cond_5
-    sput-object v8, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesUTF8:[I
+    sput-object v9, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesUTF8:[I
 
     new-array v8, v0, [I
 
@@ -222,20 +216,16 @@
     .line 14
     sput-object v8, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesJsNames:[I
 
-    new-array v8, v0, [I
+    new-array v11, v0, [I
 
     .line 15
-    sget-object v11, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesJsNames:[I
-
-    array-length v12, v8
-
-    invoke-static {v11, v1, v8, v1, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v8, v1, v11, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 16
-    invoke-static {v8, v2, v2, v1}, Ljava/util/Arrays;->fill([IIII)V
+    invoke-static {v11, v2, v2, v1}, Ljava/util/Arrays;->fill([IIII)V
 
     .line 17
-    sput-object v8, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesUtf8JsNames:[I
+    sput-object v11, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesUtf8JsNames:[I
 
     new-array v8, v0, [I
 
@@ -247,17 +237,17 @@
     .line 19
     invoke-static {v8, v1, v4, v5}, Ljava/util/Arrays;->fill([IIII)V
 
-    const/16 v11, 0x9
+    const/16 v12, 0x9
 
-    aput v1, v8, v11
+    aput v1, v8, v12
 
-    const/16 v12, 0xa
-
-    aput v12, v8, v12
-
-    const/16 v13, 0xd
+    const/16 v13, 0xa
 
     aput v13, v8, v13
+
+    const/16 v14, 0xd
+
+    aput v14, v8, v14
 
     aput v10, v8, v10
 
@@ -267,26 +257,22 @@
     new-array v0, v0, [I
 
     .line 21
-    sget-object v8, Lcom/fasterxml/jackson/core/io/CharTypes;->sInputCodesUTF8:[I
-
-    invoke-static {v8, v2, v0, v2, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v11, v2, v0, v2, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 22
     invoke-static {v0, v1, v4, v5}, Ljava/util/Arrays;->fill([IIII)V
 
     aput v6, v0, v4
 
-    aput v6, v0, v11
-
-    aput v12, v0, v12
+    aput v6, v0, v12
 
     aput v13, v0, v13
 
+    aput v14, v0, v14
+
     const/16 v6, 0x2f
 
-    const/16 v8, 0x2f
-
-    aput v8, v0, v6
+    aput v6, v0, v6
 
     aput v9, v0, v9
 
@@ -320,7 +306,7 @@
 
     const/16 v3, 0x74
 
-    aput v3, v0, v11
+    aput v3, v0, v12
 
     const/16 v3, 0xc
 
@@ -330,11 +316,11 @@
 
     const/16 v3, 0x6e
 
-    aput v3, v0, v12
+    aput v3, v0, v13
 
     const/16 v3, 0x72
 
-    aput v3, v0, v13
+    aput v3, v0, v14
 
     .line 25
     sput-object v0, Lcom/fasterxml/jackson/core/io/CharTypes;->sOutputEscapes128:[I
@@ -345,14 +331,12 @@
     sput-object v0, Lcom/fasterxml/jackson/core/io/CharTypes;->sHexValues:[I
 
     .line 27
-    sget-object v0, Lcom/fasterxml/jackson/core/io/CharTypes;->sHexValues:[I
-
     invoke-static {v0, v5}, Ljava/util/Arrays;->fill([II)V
 
     const/4 v0, 0x0
 
     :goto_6
-    if-ge v0, v12, :cond_9
+    if-ge v0, v13, :cond_9
 
     .line 28
     sget-object v2, Lcom/fasterxml/jackson/core/io/CharTypes;->sHexValues:[I
@@ -464,15 +448,13 @@
 
     shr-int/lit8 v6, v4, 0x4
 
-    aget-char v5, v5, v6
+    aget-char v6, v5, v6
 
-    invoke-virtual {p0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 12
-    sget-object v5, Lcom/fasterxml/jackson/core/io/CharTypes;->HC:[C
+    invoke-virtual {p0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     and-int/lit8 v4, v4, 0xf
 
+    .line 12
     aget-char v4, v5, v4
 
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final canvasSize:I
+.field private final canvasSize:I
 
 
 # direct methods
@@ -170,11 +170,9 @@
     .line 5
     iget v1, p0, Lcom/clevertap/android/sdk/CloseImageView;->canvasSize:I
 
-    iget v2, p0, Lcom/clevertap/android/sdk/CloseImageView;->canvasSize:I
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    invoke-static {v0, v1, v2, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v1, v2}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

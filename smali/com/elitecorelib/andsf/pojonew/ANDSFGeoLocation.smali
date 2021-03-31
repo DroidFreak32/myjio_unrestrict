@@ -7,6 +7,12 @@
 
 # instance fields
 .field public circular:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

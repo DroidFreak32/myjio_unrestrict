@@ -27,21 +27,27 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "ViewTarget"
+.field private static final TAG:Ljava/lang/String; = "ViewTarget"
 
-.field public static isTagUsedAtLeastOnce:Z
+.field private static isTagUsedAtLeastOnce:Z
 
-.field public static tagId:Ljava/lang/Integer;
+.field private static tagId:Ljava/lang/Integer;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # instance fields
-.field public attachStateListener:Landroid/view/View$OnAttachStateChangeListener;
+.field private attachStateListener:Landroid/view/View$OnAttachStateChangeListener;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public isAttachStateListenerAdded:Z
+.field private isAttachStateListenerAdded:Z
 
-.field public isClearedByUs:Z
+.field private isClearedByUs:Z
 
-.field public final sizeDeterminer:Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
+.field private final sizeDeterminer:Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
 
 .field public final view:Landroid/view/View;
     .annotation system Ldalvik/annotation/Signature;
@@ -55,6 +61,10 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -85,6 +95,10 @@
 
 .method public constructor <init>(Landroid/view/View;Z)V
     .locals 0
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;Z)V"
@@ -108,6 +122,8 @@
 
 .method private getTag()Ljava/lang/Object;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/request/target/ViewTarget;->tagId:Ljava/lang/Integer;
@@ -200,6 +216,10 @@
 
 .method private setTag(Ljava/lang/Object;)V
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/request/target/ViewTarget;->tagId:Ljava/lang/Integer;
@@ -268,6 +288,9 @@
 # virtual methods
 .method public final clearOnDetach()Lcom/bumptech/glide/request/target/ViewTarget;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -299,6 +322,8 @@
 
 .method public getRequest()Lcom/bumptech/glide/request/Request;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/request/target/ViewTarget;->getTag()Ljava/lang/Object;
@@ -336,6 +361,12 @@
 
 .method public getSize(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget;->sizeDeterminer:Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
@@ -347,6 +378,9 @@
 
 .method public getView()Landroid/view/View;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -361,6 +395,12 @@
 
 .method public onLoadCleared(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     invoke-super {p0, p1}, Lcom/bumptech/glide/request/target/BaseTarget;->onLoadCleared(Landroid/graphics/drawable/Drawable;)V
@@ -384,6 +424,12 @@
 
 .method public onLoadStarted(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     invoke-super {p0, p1}, Lcom/bumptech/glide/request/target/BaseTarget;->onLoadStarted(Landroid/graphics/drawable/Drawable;)V
@@ -423,6 +469,12 @@
 
 .method public removeCallback(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget;->sizeDeterminer:Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
@@ -458,6 +510,10 @@
 
 .method public setRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Lcom/bumptech/glide/request/target/ViewTarget;->setTag(Ljava/lang/Object;)V
@@ -490,6 +546,9 @@
 
 .method public final waitForLayout()Lcom/bumptech/glide/request/target/ViewTarget;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

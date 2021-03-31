@@ -1,206 +1,162 @@
 .class public final Lcom/google/android/gms/vision/face/internal/client/zze;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "FaceSettingsParcelCreator"
-.end annotation
-
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        0x1
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/vision/face/internal/client/zzf;",
+        ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/vision/face/internal/client/zze;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public landmarkType:I
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x3
-    .end annotation
-.end field
-
-.field public mode:I
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x2
-    .end annotation
-.end field
-
-.field public proportionalMinFaceSize:F
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValue = "-1"
-        id = 0x7
-    .end annotation
-.end field
-
-.field public trackingEnabled:Z
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x6
-    .end annotation
-.end field
-
-.field public zzcm:Z
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x5
-    .end annotation
-.end field
-
-.field public zzcn:I
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x4
-    .end annotation
-.end field
-
-
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/vision/face/internal/client/zzf;
-
-    invoke-direct {v0}, Lcom/google/android/gms/vision/face/internal/client/zzf;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/vision/face/internal/client/zze;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(IIIZZF)V
-    .locals 0
-    .param p1    # I
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x2
-        .end annotation
-    .end param
-    .param p2    # I
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x3
-        .end annotation
-    .end param
-    .param p3    # I
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x4
-        .end annotation
-    .end param
-    .param p4    # Z
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x5
-        .end annotation
-    .end param
-    .param p5    # Z
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x6
-        .end annotation
-    .end param
-    .param p6    # F
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x7
-        .end annotation
-    .end param
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
-    .end annotation
-
-    .line 2
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    .line 3
-    iput p1, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->mode:I
-
-    .line 4
-    iput p2, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->landmarkType:I
-
-    .line 5
-    iput p3, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcn:I
-
-    .line 6
-    iput-boolean p4, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcm:Z
-
-    .line 7
-    iput-boolean p5, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->trackingEnabled:Z
-
-    .line 8
-    iput p6, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->proportionalMinFaceSize:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 10
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    move-result p2
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/high16 v2, -0x40800000    # -1.0f
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/high16 v9, -0x40800000    # -1.0f
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->mode:I
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    const/4 v1, 0x2
+    move-result v1
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    if-ge v1, v0, :cond_0
 
     .line 3
-    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->landmarkType:I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
 
-    const/4 v1, 0x3
-
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    move-result v1
 
     .line 4
-    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcn:I
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
 
-    const/4 v1, 0x4
+    move-result v2
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    packed-switch v2, :pswitch_data_0
 
     .line 5
-    iget-boolean v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcm:Z
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
-    const/4 v1, 0x5
-
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+    goto :goto_0
 
     .line 6
-    iget-boolean v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->trackingEnabled:Z
+    :pswitch_0
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    const/4 v1, 0x6
+    move-result v9
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+    goto :goto_0
 
     .line 7
-    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->proportionalMinFaceSize:F
+    :pswitch_1
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
 
-    const/4 v1, 0x7
+    move-result v8
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
+    goto :goto_0
 
     .line 8
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
+    :pswitch_2
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
 
-    return-void
+    move-result v7
+
+    goto :goto_0
+
+    .line 9
+    :pswitch_3
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v6
+
+    goto :goto_0
+
+    .line 10
+    :pswitch_4
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v5
+
+    goto :goto_0
+
+    .line 11
+    :pswitch_5
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v4
+
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    .line 13
+    new-instance p1, Lcom/google/android/gms/vision/face/internal/client/zzf;
+
+    move-object v3, p1
+
+    invoke-direct/range {v3 .. v9}, Lcom/google/android/gms/vision/face/internal/client/zzf;-><init>(IIIZZF)V
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-array p1, p1, [Lcom/google/android/gms/vision/face/internal/client/zzf;
+
+    return-object p1
 .end method

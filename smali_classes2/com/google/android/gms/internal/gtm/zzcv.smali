@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public startTime:J
+.field private startTime:J
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
 
 # direct methods

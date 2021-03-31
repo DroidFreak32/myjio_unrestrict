@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public northEast:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoLocation;
+.field private northEast:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoLocation;
 
-.field public southWest:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoLocation;
+.field private southWest:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoLocation;
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse;
 

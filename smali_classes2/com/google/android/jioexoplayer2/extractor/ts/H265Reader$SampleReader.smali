@@ -15,35 +15,35 @@
 
 
 # static fields
-.field public static final FIRST_SLICE_FLAG_OFFSET:I = 0x2
+.field private static final FIRST_SLICE_FLAG_OFFSET:I = 0x2
 
 
 # instance fields
-.field public isFirstParameterSet:Z
+.field private isFirstParameterSet:Z
 
-.field public isFirstSlice:Z
+.field private isFirstSlice:Z
 
-.field public lookingForFirstSliceFlag:Z
+.field private lookingForFirstSliceFlag:Z
 
-.field public nalUnitBytesRead:I
+.field private nalUnitBytesRead:I
 
-.field public nalUnitHasKeyframeData:Z
+.field private nalUnitHasKeyframeData:Z
 
-.field public nalUnitStartPosition:J
+.field private nalUnitStartPosition:J
 
-.field public nalUnitTimeUs:J
+.field private nalUnitTimeUs:J
 
-.field public final output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private final output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public readingSample:Z
+.field private readingSample:Z
 
-.field public sampleIsKeyframe:Z
+.field private sampleIsKeyframe:Z
 
-.field public samplePosition:J
+.field private samplePosition:J
 
-.field public sampleTimeUs:J
+.field private sampleTimeUs:J
 
-.field public writingParameterSets:Z
+.field private writingParameterSets:Z
 
 
 # direct methods
@@ -321,23 +321,18 @@
     :goto_0
     iput-boolean p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitHasKeyframeData:Z
 
-    .line 12
-    iget-boolean p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitHasKeyframeData:Z
-
-    if-nez p2, :cond_4
+    if-nez p2, :cond_3
 
     const/16 p2, 0x9
 
-    if-gt p4, p2, :cond_3
-
-    goto :goto_1
+    if-gt p4, p2, :cond_4
 
     :cond_3
-    const/4 p1, 0x0
+    const/4 v0, 0x1
 
+    .line 12
     :cond_4
-    :goto_1
-    iput-boolean p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;->lookingForFirstSliceFlag:Z
+    iput-boolean v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;->lookingForFirstSliceFlag:Z
 
     return-void
 .end method

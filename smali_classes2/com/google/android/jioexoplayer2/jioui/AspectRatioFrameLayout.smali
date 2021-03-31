@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final MAX_ASPECT_RATIO_DEFORMATION_FRACTION:F = 0.01f
+.field private static final MAX_ASPECT_RATIO_DEFORMATION_FRACTION:F = 0.01f
 
 .field public static final RESIZE_MODE_FILL:I = 0x3
 
@@ -28,13 +28,13 @@
 
 
 # instance fields
-.field public aspectRatioListener:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout$AspectRatioListener;
+.field private aspectRatioListener:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout$AspectRatioListener;
 
-.field public final aspectRatioUpdateDispatcher:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout$AspectRatioUpdateDispatcher;
+.field private final aspectRatioUpdateDispatcher:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout$AspectRatioUpdateDispatcher;
 
-.field public resizeMode:I
+.field private resizeMode:I
 
-.field public videoAspectRatio:F
+.field private videoAspectRatio:F
 
 
 # direct methods

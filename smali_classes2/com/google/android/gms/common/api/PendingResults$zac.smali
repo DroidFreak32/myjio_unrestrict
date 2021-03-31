@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/PendingResults$zac;
 .super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -23,12 +24,32 @@
 .end annotation
 
 
+# instance fields
+.field private final zab:Lcom/google/android/gms/common/api/Result;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TR;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/Result;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "TR;)V"
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+
+    .line 2
+    iput-object p2, p0, Lcom/google/android/gms/common/api/PendingResults$zac;->zab:Lcom/google/android/gms/common/api/Result;
 
     return-void
 .end method
@@ -36,7 +57,7 @@
 
 # virtual methods
 .method public final createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,11 +67,7 @@
     .end annotation
 
     .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/PendingResults$zac;->zab:Lcom/google/android/gms/common/api/Result;
 
-    const-string v0, "Creating failed results is not supported"
-
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object p1
 .end method

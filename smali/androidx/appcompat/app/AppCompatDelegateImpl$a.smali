@@ -1,4 +1,4 @@
-.class public final Landroidx/appcompat/app/AppCompatDelegateImpl$a;
+.class public Landroidx/appcompat/app/AppCompatDelegateImpl$a;
 .super Ljava/lang/Object;
 .source "AppCompatDelegateImpl.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -79,6 +79,14 @@
 
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 3
+    .param p1    # Ljava/lang/Thread;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Throwable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0, p2}, Landroidx/appcompat/app/AppCompatDelegateImpl$a;->a(Ljava/lang/Throwable;)Z

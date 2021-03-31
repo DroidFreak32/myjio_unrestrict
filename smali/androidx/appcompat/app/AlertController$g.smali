@@ -1,5 +1,5 @@
-.class public final Landroidx/appcompat/app/AlertController$g;
-.super Landroid/os/Handler;
+.class public Landroidx/appcompat/app/AlertController$g;
+.super Landroid/widget/ArrayAdapter;
 .source "AlertController.java"
 
 
@@ -9,94 +9,43 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x9
     name = "g"
 .end annotation
 
-
-# instance fields
-.field public a:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference<",
-            "Landroid/content/DialogInterface;",
-            ">;"
-        }
-    .end annotation
-.end field
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/widget/ArrayAdapter<",
+        "Ljava/lang/CharSequence;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;II[Ljava/lang/CharSequence;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Landroidx/appcompat/app/AlertController$g;->a:Ljava/lang/ref/WeakReference;
+    invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public getItemId(I)J
     .locals 2
 
-    .line 1
-    iget v0, p1, Landroid/os/Message;->what:I
+    int-to-long v0, p1
 
-    const/4 v1, -0x3
+    return-wide v0
+.end method
 
-    if-eq v0, v1, :cond_1
+.method public hasStableIds()Z
+    .locals 1
 
-    const/4 v1, -0x2
+    const/4 v0, 0x1
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast p1, Landroid/content/DialogInterface;
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    goto :goto_0
-
-    .line 3
-    :cond_1
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/DialogInterface$OnClickListener;
-
-    iget-object v1, p0, Landroidx/appcompat/app/AlertController$g;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/content/DialogInterface;
-
-    iget p1, p1, Landroid/os/Message;->what:I
-
-    invoke-interface {v0, v1, p1}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
-
-    :goto_0
-    return-void
+    return v0
 .end method

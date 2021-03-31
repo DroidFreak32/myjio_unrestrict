@@ -1,458 +1,583 @@
-.class public enum Lcom/google/android/gms/internal/measurement/zzir;
-.super Ljava/lang/Enum;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.class public final Lcom/google/android/gms/internal/measurement/zzir;
+.super Lcom/google/android/gms/internal/measurement/zzgj;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/measurement/zziq;
+.implements Ljava/util/RandomAccess;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Enum<",
-        "Lcom/google/android/gms/internal/measurement/zzir;",
-        ">;"
+        "Lcom/google/android/gms/internal/measurement/zzgj<",
+        "Ljava/lang/String;",
+        ">;",
+        "Lcom/google/android/gms/internal/measurement/zziq;",
+        "Ljava/util/RandomAccess;"
     }
 .end annotation
 
 
 # static fields
-.field public static final enum zza:Lcom/google/android/gms/internal/measurement/zzir;
+.field private static final zza:Lcom/google/android/gms/internal/measurement/zzir;
 
-.field public static final enum zzb:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzc:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzd:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zze:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzf:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzg:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzh:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzi:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzj:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzk:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzl:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzm:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzn:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzo:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzp:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzq:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final enum zzr:Lcom/google/android/gms/internal/measurement/zzir;
-
-.field public static final synthetic zzu:[Lcom/google/android/gms/internal/measurement/zzir;
+.field private static final zzb:Lcom/google/android/gms/internal/measurement/zziq;
 
 
 # instance fields
-.field public final zzs:Lcom/google/android/gms/internal/measurement/zziu;
-
-.field public final zzt:I
+.field private final zzc:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 16
+    .locals 1
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
 
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzd:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const-string v4, "DOUBLE"
-
-    invoke-direct {v0, v4, v3, v1, v2}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zza:Lcom/google/android/gms/internal/measurement/zzir;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzir;-><init>()V
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zza:Lcom/google/android/gms/internal/measurement/zzir;
 
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzc:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v4, 0x5
-
-    const-string v5, "FLOAT"
-
-    invoke-direct {v0, v5, v2, v1, v4}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzb:Lcom/google/android/gms/internal/measurement/zzir;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgj;->i_()V
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzb:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v5, 0x2
-
-    const-string v6, "INT64"
-
-    invoke-direct {v0, v6, v5, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 4
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzb:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v6, 0x3
-
-    const-string v7, "UINT64"
-
-    invoke-direct {v0, v7, v6, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzd:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 5
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zza:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v7, 0x4
-
-    const-string v8, "INT32"
-
-    invoke-direct {v0, v8, v7, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zze:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 6
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzb:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const-string v8, "FIXED64"
-
-    invoke-direct {v0, v8, v4, v1, v2}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzf:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 7
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zza:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v8, 0x6
-
-    const-string v9, "FIXED32"
-
-    invoke-direct {v0, v9, v8, v1, v4}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzg:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 8
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zze:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/4 v9, 0x7
-
-    const-string v10, "BOOL"
-
-    invoke-direct {v0, v10, v9, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzh:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 9
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zziq;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzf:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v10, 0x8
-
-    const-string v11, "STRING"
-
-    invoke-direct {v0, v11, v10, v1, v5}, Lcom/google/android/gms/internal/measurement/zziq;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzi:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 10
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzit;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzi:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v11, 0x9
-
-    const-string v12, "GROUP"
-
-    invoke-direct {v0, v12, v11, v1, v6}, Lcom/google/android/gms/internal/measurement/zzit;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzj:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 11
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzis;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzi:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v12, 0xa
-
-    const-string v13, "MESSAGE"
-
-    invoke-direct {v0, v13, v12, v1, v5}, Lcom/google/android/gms/internal/measurement/zzis;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzk:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 12
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zziv;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzg:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v13, 0xb
-
-    const-string v14, "BYTES"
-
-    invoke-direct {v0, v14, v13, v1, v5}, Lcom/google/android/gms/internal/measurement/zziv;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzl:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 13
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zza:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v14, 0xc
-
-    const-string v15, "UINT32"
-
-    invoke-direct {v0, v15, v14, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzm:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 14
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzh:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v15, 0xd
-
-    const-string v14, "ENUM"
-
-    invoke-direct {v0, v14, v15, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzn:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 15
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zza:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const/16 v14, 0xe
-
-    const-string v15, "SFIXED32"
-
-    invoke-direct {v0, v15, v14, v1, v4}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzo:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 16
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzb:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const-string v15, "SFIXED64"
-
-    const/16 v14, 0xf
-
-    invoke-direct {v0, v15, v14, v1, v2}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzp:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 17
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zza:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const-string v14, "SINT32"
-
-    const/16 v15, 0x10
-
-    invoke-direct {v0, v14, v15, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzq:Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 18
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzir;
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zziu;->zzb:Lcom/google/android/gms/internal/measurement/zziu;
-
-    const-string v14, "SINT64"
-
-    const/16 v15, 0x11
-
-    invoke-direct {v0, v14, v15, v1, v3}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzr:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v0, 0x12
-
-    new-array v0, v0, [Lcom/google/android/gms/internal/measurement/zzir;
-
-    .line 19
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zza:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzb:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzd:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zze:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzf:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzg:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzh:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzi:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v10
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzj:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v11
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzk:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v12
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzl:Lcom/google/android/gms/internal/measurement/zzir;
-
-    aput-object v1, v0, v13
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzm:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzn:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzo:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzp:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzq:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v2, 0x10
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzr:Lcom/google/android/gms/internal/measurement/zzir;
-
-    const/16 v2, 0x11
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzu:[Lcom/google/android/gms/internal/measurement/zzir;
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzb:Lcom/google/android/gms/internal/measurement/zziq;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
+.method public constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0xa
+
+    .line 1
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .locals 1
+
+    .line 2
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/util/ArrayList;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/internal/measurement/zziu;",
-            "I)V"
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Object;",
+            ">;)V"
         }
     .end annotation
 
-    .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    iput-object p3, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzs:Lcom/google/android/gms/internal/measurement/zziu;
-
     .line 3
-    iput p4, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzt:I
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;ILcom/google/android/gms/internal/measurement/zzio;)V
-    .locals 0
+    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzgj;-><init>()V
 
     .line 4
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
 
     return-void
 .end method
 
-.method public static values()[Lcom/google/android/gms/internal/measurement/zzir;
+.method private static zza(Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzir;->zzu:[Lcom/google/android/gms/internal/measurement/zzir;
+    .line 4
+    instance-of v0, p0, Ljava/lang/String;
 
-    invoke-virtual {v0}, [Lcom/google/android/gms/internal/measurement/zzir;->clone()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    .line 5
+    check-cast p0, Ljava/lang/String;
 
-    check-cast v0, [Lcom/google/android/gms/internal/measurement/zzir;
+    return-object p0
 
-    return-object v0
+    .line 6
+    :cond_0
+    instance-of v0, p0, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    if-eqz v0, :cond_1
+
+    .line 7
+    check-cast p0, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgp;->zzb()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 8
+    :cond_1
+    check-cast p0, [B
+
+    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzia;->zzb([B)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final zza()Lcom/google/android/gms/internal/measurement/zziu;
+.method public final synthetic add(ILjava/lang/Object;)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzs:Lcom/google/android/gms/internal/measurement/zziu;
+    check-cast p2, Ljava/lang/String;
 
-    return-object v0
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zzc()V
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    .line 4
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    return-void
 .end method
 
-.method public final zzb()I
+.method public final bridge synthetic add(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 5
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzgj;->add(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final addAll(ILjava/util/Collection;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/util/Collection<",
+            "+",
+            "Ljava/lang/String;",
+            ">;)Z"
+        }
+    .end annotation
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zzc()V
+
+    .line 3
+    instance-of v0, p2, Lcom/google/android/gms/internal/measurement/zziq;
+
+    if-eqz v0, :cond_0
+
+    check-cast p2, Lcom/google/android/gms/internal/measurement/zziq;
+
+    invoke-interface {p2}, Lcom/google/android/gms/internal/measurement/zziq;->zzb()Ljava/util/List;
+
+    move-result-object p2
+
+    .line 4
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
+
+    move-result p1
+
+    .line 5
+    iget p2, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p2, p2, 0x1
+
+    iput p2, p0, Ljava/util/AbstractList;->modCount:I
+
+    return p1
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "+",
+            "Ljava/lang/String;",
+            ">;)Z"
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzir;->size()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/measurement/zzgj;->addAll(ILjava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final clear()V
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzt:I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zzc()V
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 3
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    return-void
+.end method
+
+.method public final bridge synthetic equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzgj;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final synthetic get(I)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 2
+    instance-of v1, v0, Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    .line 3
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+
+    .line 4
+    :cond_0
+    instance-of v1, v0, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    if-eqz v1, :cond_2
+
+    .line 5
+    check-cast v0, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    .line 6
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgp;->zzb()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 7
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgp;->zzc()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 8
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-object v1
+
+    .line 9
+    :cond_2
+    check-cast v0, [B
+
+    .line 10
+    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzia;->zzb([B)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 11
+    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzia;->zza([B)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 12
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    return-object v1
+.end method
+
+.method public final h_()Lcom/google/android/gms/internal/measurement/zziq;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zza()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzku;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/measurement/zzku;-><init>(Lcom/google/android/gms/internal/measurement/zziq;)V
+
+    return-object v0
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public final bridge synthetic hashCode()I
+    .locals 1
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->hashCode()I
+
+    move-result v0
 
     return v0
+.end method
+
+.method public final synthetic remove(I)Ljava/lang/Object;
+    .locals 1
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zzc()V
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 4
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    .line 5
+    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzir;->zza(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final bridge synthetic remove(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzgj;->remove(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final bridge synthetic removeAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzgj;->removeAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final bridge synthetic retainAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzgj;->retainAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    check-cast p2, Ljava/lang/String;
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zzc()V
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 4
+    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzir;->zza(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final synthetic zza(I)Lcom/google/android/gms/internal/measurement/zzig;
+    .locals 1
+
+    .line 10
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzir;->size()I
+
+    move-result v0
+
+    if-lt p1, v0, :cond_0
+
+    .line 11
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 12
+    iget-object p1, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    .line 13
+    new-instance p1, Lcom/google/android/gms/internal/measurement/zzir;
+
+    invoke-direct {p1, v0}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/util/ArrayList;)V
+
+    return-object p1
+
+    .line 14
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/measurement/zzgp;)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zzc()V
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 3
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    return-void
+.end method
+
+.method public final bridge synthetic zza()Z
+    .locals 1
+
+    .line 9
+    invoke-super {p0}, Lcom/google/android/gms/internal/measurement/zzgj;->zza()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final zzb(I)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final zzb()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "*>;"
+        }
+    .end annotation
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Ljava/util/List;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method

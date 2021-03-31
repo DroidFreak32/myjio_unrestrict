@@ -3,7 +3,7 @@
 .source "ActionMenuPresenter.java"
 
 # interfaces
-.implements Landroidx/appcompat/widget/ActionMenuView$a;
+.implements Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/ActionMenuPresenter;
+.field public final synthetic a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
 
 # direct methods
@@ -26,10 +26,10 @@
     .locals 2
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$d;->s:Landroidx/appcompat/widget/ActionMenuPresenter;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$d;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
     .line 2
-    sget v0, Lo;->actionOverflowButtonStyle:I
+    sget v0, Landroidx/appcompat/R$attr;->actionOverflowButtonStyle:I
 
     const/4 v1, 0x0
 
@@ -56,7 +56,7 @@
 
     move-result-object p2
 
-    invoke-static {p0, p2}, Lh3;->a(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, p2}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     .line 8
     new-instance p2, Landroidx/appcompat/widget/ActionMenuPresenter$d$a;
@@ -70,7 +70,7 @@
 
 
 # virtual methods
-.method public a()Z
+.method public needsDividerAfter()Z
     .locals 1
 
     const/4 v0, 0x0
@@ -78,7 +78,7 @@
     return v0
 .end method
 
-.method public b()Z
+.method public needsDividerBefore()Z
     .locals 1
 
     const/4 v0, 0x0
@@ -107,9 +107,9 @@
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->playSoundEffect(I)V
 
     .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$d;->s:Landroidx/appcompat/widget/ActionMenuPresenter;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$d;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->h()Z
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->u()Z
 
     return v1
 .end method
@@ -194,7 +194,7 @@
     add-int/2addr p4, v0
 
     .line 11
-    invoke-static {p3, v1, v2, p2, p4}, Lp7;->a(Landroid/graphics/drawable/Drawable;IIII)V
+    invoke-static {p3, v1, v2, p2, p4}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspotBounds(Landroid/graphics/drawable/Drawable;IIII)V
 
     :cond_0
     return p1

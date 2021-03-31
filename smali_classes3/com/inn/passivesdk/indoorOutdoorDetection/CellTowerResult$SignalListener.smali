@@ -87,11 +87,11 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {v3}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Log0;->n()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getNetworkTypeFromHiddenApi()Ljava/lang/String;
 
     move-result-object v3
 
@@ -116,11 +116,11 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {v2}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Log0;->k()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getNetworkTypeByCellInfo()Ljava/lang/String;
 
     move-result-object v2
 

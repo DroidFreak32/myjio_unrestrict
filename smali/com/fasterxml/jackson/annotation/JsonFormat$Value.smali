@@ -29,25 +29,25 @@
 
 
 # static fields
-.field public static final EMPTY:Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
+.field private static final EMPTY:Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final _features:Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
+.field private final _features:Lcom/fasterxml/jackson/annotation/JsonFormat$Features;
 
-.field public final _lenient:Ljava/lang/Boolean;
+.field private final _lenient:Ljava/lang/Boolean;
 
-.field public final _locale:Ljava/util/Locale;
+.field private final _locale:Ljava/util/Locale;
 
-.field public final _pattern:Ljava/lang/String;
+.field private final _pattern:Ljava/lang/String;
 
-.field public final _shape:Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
+.field private final _shape:Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
-.field public transient _timezone:Ljava/util/TimeZone;
+.field private transient _timezone:Ljava/util/TimeZone;
 
-.field public final _timezoneStr:Ljava/lang/String;
+.field private final _timezoneStr:Ljava/lang/String;
 
 
 # direct methods
@@ -376,7 +376,7 @@
     return-void
 .end method
 
-.method public static _equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method private static _equal(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -610,7 +610,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-eq v2, v3, :cond_2
 

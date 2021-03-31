@@ -17,31 +17,33 @@
     .end annotation
 .end field
 
-.field public static final MAX_TABS:I = 0x2
-
-.field public static platformSupportsTabs:Z
+.field private static final MAX_TABS:I = 0x2
 
 
 # instance fields
-.field public backButtonColor:Ljava/lang/String;
+.field private backButtonColor:Ljava/lang/String;
 
-.field public inboxBackgroundColor:Ljava/lang/String;
+.field private inboxBackgroundColor:Ljava/lang/String;
 
-.field public navBarColor:Ljava/lang/String;
+.field private navBarColor:Ljava/lang/String;
 
-.field public navBarTitle:Ljava/lang/String;
+.field private navBarTitle:Ljava/lang/String;
 
-.field public navBarTitleColor:Ljava/lang/String;
+.field private navBarTitleColor:Ljava/lang/String;
 
-.field public selectedTabColor:Ljava/lang/String;
+.field private noMessageViewText:Ljava/lang/String;
 
-.field public selectedTabIndicatorColor:Ljava/lang/String;
+.field private noMessageViewTextColor:Ljava/lang/String;
 
-.field public tabBackgroundColor:Ljava/lang/String;
+.field private selectedTabColor:Ljava/lang/String;
 
-.field public tabs:[Ljava/lang/String;
+.field private selectedTabIndicatorColor:Ljava/lang/String;
 
-.field public unselectedTabColor:Ljava/lang/String;
+.field private tabBackgroundColor:Ljava/lang/String;
+
+.field private tabs:[Ljava/lang/String;
+
+.field private unselectedTabColor:Ljava/lang/String;
 
 
 # direct methods
@@ -49,23 +51,9 @@
     .locals 1
 
     .line 1
-    :try_start_0
     new-instance v0, Lcom/clevertap/android/sdk/CTInboxStyleConfig$1;
 
     invoke-direct {v0}, Lcom/clevertap/android/sdk/CTInboxStyleConfig$1;-><init>()V
-
-    const/4 v0, 0x1
-
-    .line 2
-    sput-boolean v0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->platformSupportsTabs:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 3
-    :catchall_0
-    new-instance v0, Lcom/clevertap/android/sdk/CTInboxStyleConfig$2;
-
-    invoke-direct {v0}, Lcom/clevertap/android/sdk/CTInboxStyleConfig$2;-><init>()V
 
     sput-object v0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -124,161 +112,195 @@
     .line 11
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
 
+    const-string v0, "No Message(s) to show"
+
+    .line 12
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    const-string v0, "#000000"
+
+    .line 13
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
+
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 23
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
+    .line 28
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarColor:Ljava/lang/String;
-
-    .line 25
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitle:Ljava/lang/String;
-
-    .line 26
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitleColor:Ljava/lang/String;
-
-    .line 27
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->inboxBackgroundColor:Ljava/lang/String;
-
-    .line 28
-    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
 
     .line 29
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->backButtonColor:Ljava/lang/String;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitle:Ljava/lang/String;
 
     .line 30
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabColor:Ljava/lang/String;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitleColor:Ljava/lang/String;
 
     .line 31
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->unselectedTabColor:Ljava/lang/String;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->inboxBackgroundColor:Ljava/lang/String;
 
     .line 32
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
+
+    .line 33
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->backButtonColor:Ljava/lang/String;
+
+    .line 34
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabColor:Ljava/lang/String;
+
+    .line 35
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->unselectedTabColor:Ljava/lang/String;
+
+    .line 36
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabIndicatorColor:Ljava/lang/String;
 
-    .line 33
+    .line 37
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabBackgroundColor:Ljava/lang/String;
+
+    .line 38
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    .line 39
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabBackgroundColor:Ljava/lang/String;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
 
     return-void
 .end method
 
 .method public constructor <init>(Lcom/clevertap/android/sdk/CTInboxStyleConfig;)V
-    .locals 1
+    .locals 2
 
-    .line 12
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 15
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarColor:Ljava/lang/String;
 
-    .line 14
+    .line 16
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitle:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitle:Ljava/lang/String;
 
-    .line 15
+    .line 17
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitleColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->navBarTitleColor:Ljava/lang/String;
 
-    .line 16
+    .line 18
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->inboxBackgroundColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->inboxBackgroundColor:Ljava/lang/String;
 
-    .line 17
+    .line 19
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->backButtonColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->backButtonColor:Ljava/lang/String;
 
-    .line 18
+    .line 20
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabColor:Ljava/lang/String;
 
-    .line 19
+    .line 21
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->unselectedTabColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->unselectedTabColor:Ljava/lang/String;
 
-    .line 20
+    .line 22
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabIndicatorColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->selectedTabIndicatorColor:Ljava/lang/String;
 
-    .line 21
+    .line 23
     iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabBackgroundColor:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabBackgroundColor:Ljava/lang/String;
 
-    .line 22
-    iget-object p1, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
+    .line 24
+    iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
 
-    if-nez p1, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    new-array p1, p1, [Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/String;
 
     goto :goto_0
 
     :cond_0
-    array-length v0, p1
+    array-length v1, v0
 
-    invoke-static {p1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, [Ljava/lang/String;
+    check-cast v0, [Ljava/lang/String;
 
     :goto_0
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
+
+    .line 25
+    iget-object v0, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    .line 26
+    iget-object p1, p1, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
+
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
 
     return-void
 .end method
@@ -338,6 +360,24 @@
     return-object v0
 .end method
 
+.method public getNoMessageViewText()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getNoMessageViewTextColor()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getSelectedTabColor()Ljava/lang/String;
     .locals 1
 
@@ -388,15 +428,15 @@
     goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
 
-    move-result-object v0
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    move-result-object v1
 
-    move-object v0, v1
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     :goto_0
     return-object v0
@@ -479,6 +519,24 @@
     return-void
 .end method
 
+.method public setNoMessageViewText(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNoMessageViewTextColor(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public setSelectedTabColor(Ljava/lang/String;)V
     .locals 0
 
@@ -517,7 +575,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     .line 1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -530,11 +588,6 @@
 
     .line 2
     :cond_0
-    sget-boolean v0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->platformSupportsTabs:Z
-
-    if-eqz v0, :cond_2
-
-    .line 3
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -545,7 +598,7 @@
 
     if-le v0, v2, :cond_1
 
-    .line 4
+    .line 3
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-virtual {p1, v1, v2}, Ljava/util/ArrayList;->subList(II)Ljava/util/List;
@@ -559,7 +612,7 @@
     :cond_1
     new-array v0, v1, [Ljava/lang/String;
 
-    .line 5
+    .line 4
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
@@ -568,15 +621,7 @@
 
     iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabs:[Ljava/lang/String;
 
-    goto :goto_0
-
     :cond_2
-    const-string p1, "Please upgrade com.android.support:design library to v28.0.0 to enable Tabs for App Inbox, dropping Tabs"
-
-    .line 6
-    invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
-
-    :cond_3
     :goto_0
     return-void
 .end method
@@ -640,6 +685,16 @@
 
     .line 10
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->tabBackgroundColor:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 11
+    iget-object p2, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewText:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 12
+    iget-object p2, p0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->noMessageViewTextColor:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 

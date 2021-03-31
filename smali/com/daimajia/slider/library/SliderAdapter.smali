@@ -1,5 +1,5 @@
 .class public Lcom/daimajia/slider/library/SliderAdapter;
-.super Lsk;
+.super Landroidx/viewpager/widget/PagerAdapter;
 .source "SliderAdapter.java"
 
 # interfaces
@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public mImageContents:Ljava/util/ArrayList;
+.field private mImageContents:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -25,7 +25,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lsk;-><init>()V
+    invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
 
     .line 2
     iput-object p1, p0, Lcom/daimajia/slider/library/SliderAdapter;->mContext:Landroid/content/Context;
@@ -61,7 +61,7 @@
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 3
-    invoke-virtual {p0}, Lsk;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroidx/viewpager/widget/PagerAdapter;->notifyDataSetChanged()V
 
     return-void
 .end method
@@ -239,7 +239,7 @@
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 2
-    invoke-virtual {p0}, Lsk;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroidx/viewpager/widget/PagerAdapter;->notifyDataSetChanged()V
 
     return-void
 .end method
@@ -269,7 +269,7 @@
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 3
-    invoke-virtual {p0}, Lsk;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroidx/viewpager/widget/PagerAdapter;->notifyDataSetChanged()V
 
     :cond_0
     return-void
@@ -293,7 +293,7 @@
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 3
-    invoke-virtual {p0}, Lsk;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroidx/viewpager/widget/PagerAdapter;->notifyDataSetChanged()V
 
     :cond_0
     return-void

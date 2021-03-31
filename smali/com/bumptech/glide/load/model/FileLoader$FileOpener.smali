@@ -30,6 +30,12 @@
             "(TData;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getDataClass()Ljava/lang/Class;
@@ -48,6 +54,12 @@
             "(",
             "Ljava/io/File;",
             ")TData;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
         }
     .end annotation
 .end method

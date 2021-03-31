@@ -16,15 +16,15 @@
     .end annotation
 .end field
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public PojoSyncDataId:I
+.field private PojoSyncDataId:I
 
-.field public modifiedDate:Ljava/lang/String;
+.field private modifiedDate:Ljava/lang/String;
 
-.field public moduleName:Ljava/lang/String;
+.field private moduleName:Ljava/lang/String;
 
 
 # direct methods

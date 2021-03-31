@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/databinding/ViewDataBinding;
+.field public final synthetic a:Landroidx/databinding/ViewDataBinding;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/databinding/ViewDataBinding$g;->s:Landroidx/databinding/ViewDataBinding;
+    iput-object p1, p0, Landroidx/databinding/ViewDataBinding$g;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,7 +43,7 @@
 
     .line 2
     :try_start_0
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->s:Landroidx/databinding/ViewDataBinding;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->a:Landroidx/databinding/ViewDataBinding;
 
     const/4 v1, 0x0
 
@@ -65,7 +65,7 @@
     if-lt v0, v1, :cond_0
 
     .line 6
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->s:Landroidx/databinding/ViewDataBinding;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-static {v0}, Landroidx/databinding/ViewDataBinding;->access$400(Landroidx/databinding/ViewDataBinding;)Landroid/view/View;
 
@@ -78,7 +78,7 @@
     if-nez v0, :cond_0
 
     .line 7
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->s:Landroidx/databinding/ViewDataBinding;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-static {v0}, Landroidx/databinding/ViewDataBinding;->access$400(Landroidx/databinding/ViewDataBinding;)Landroid/view/View;
 
@@ -91,7 +91,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     .line 8
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->s:Landroidx/databinding/ViewDataBinding;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-static {v0}, Landroidx/databinding/ViewDataBinding;->access$400(Landroidx/databinding/ViewDataBinding;)Landroid/view/View;
 
@@ -107,7 +107,7 @@
 
     .line 9
     :cond_0
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->s:Landroidx/databinding/ViewDataBinding;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$g;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executePendingBindings()V
 

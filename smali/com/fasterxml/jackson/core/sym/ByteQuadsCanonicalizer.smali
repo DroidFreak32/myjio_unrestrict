@@ -12,49 +12,49 @@
 
 
 # static fields
-.field public static final DEFAULT_T_SIZE:I = 0x40
+.field private static final DEFAULT_T_SIZE:I = 0x40
 
 .field public static final MAX_ENTRIES_FOR_REUSE:I = 0x1770
 
-.field public static final MAX_T_SIZE:I = 0x10000
+.field private static final MAX_T_SIZE:I = 0x10000
 
-.field public static final MIN_HASH_SIZE:I = 0x10
+.field private static final MIN_HASH_SIZE:I = 0x10
 
-.field public static final MULT:I = 0x21
+.field private static final MULT:I = 0x21
 
-.field public static final MULT2:I = 0x1003f
+.field private static final MULT2:I = 0x1003f
 
-.field public static final MULT3:I = 0x1f
+.field private static final MULT3:I = 0x1f
 
 
 # instance fields
-.field public _count:I
+.field private _count:I
 
-.field public final _failOnDoS:Z
+.field private final _failOnDoS:Z
 
-.field public _hashArea:[I
+.field private _hashArea:[I
 
-.field public _hashShared:Z
+.field private _hashShared:Z
 
-.field public _hashSize:I
+.field private _hashSize:I
 
-.field public _intern:Z
+.field private _intern:Z
 
-.field public _longNameOffset:I
+.field private _longNameOffset:I
 
-.field public _names:[Ljava/lang/String;
+.field private _names:[Ljava/lang/String;
 
-.field public transient _needRehash:Z
+.field private transient _needRehash:Z
 
-.field public final _parent:Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
+.field private final _parent:Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
 
-.field public _secondaryStart:I
+.field private _secondaryStart:I
 
-.field public final _seed:I
+.field private final _seed:I
 
-.field public _spilloverEnd:I
+.field private _spilloverEnd:I
 
-.field public final _tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final _tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference<",
@@ -64,13 +64,13 @@
     .end annotation
 .end field
 
-.field public _tertiaryShift:I
+.field private _tertiaryShift:I
 
-.field public _tertiaryStart:I
+.field private _tertiaryStart:I
 
 
 # direct methods
-.method public constructor <init>(IZIZ)V
+.method private constructor <init>(IZIZ)V
     .locals 1
 
     .line 1
@@ -94,6 +94,8 @@
 
     if-ge p1, p2, :cond_0
 
+    const/16 p1, 0x10
+
     goto :goto_1
 
     :cond_0
@@ -101,35 +103,35 @@
 
     and-int/2addr p3, p1
 
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_2
 
     :goto_0
-    if-ge p2, p1, :cond_2
+    if-ge p2, p1, :cond_1
 
     add-int/2addr p2, p2
 
     goto :goto_0
 
     :cond_1
-    move p2, p1
+    move p1, p2
 
     .line 6
     :cond_2
     :goto_1
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
+    new-instance p2, Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-static {p2}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;->createInitial(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;
+    invoke-static {p1}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;->createInitial(I)Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p2, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p2, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;ZIZLcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;ZIZLcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer$TableInfo;)V
     .locals 0
 
     .line 7
@@ -162,20 +164,16 @@
 
     iput p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_hashSize:I
 
-    .line 15
-    iget p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_hashSize:I
-
     shl-int/lit8 p1, p1, 0x2
 
+    .line 15
     iput p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_secondaryStart:I
-
-    .line 16
-    iget p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_secondaryStart:I
 
     shr-int/lit8 p2, p1, 0x1
 
     add-int/2addr p1, p2
 
+    .line 16
     iput p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_tertiaryStart:I
 
     .line 17
@@ -421,24 +419,21 @@
     iput v1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_spilloverEnd:I
 
     .line 10
-    iget v1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_hashSize:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_hashSize:I
 
-    shl-int/lit8 v1, v1, 0x3
+    shl-int/lit8 v2, v2, 0x3
+
+    if-lt v1, v2, :cond_5
 
     .line 11
-    iget v2, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_spilloverEnd:I
-
-    if-lt v2, v1, :cond_5
-
-    .line 12
     iget-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_failOnDoS:Z
 
     if-eqz v1, :cond_4
 
-    .line 13
+    .line 12
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_reportTooManyCollisions()V
 
-    .line 14
+    .line 13
     :cond_4
     iput-boolean p1, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_needRehash:Z
 
@@ -1102,23 +1097,21 @@
 
     const/4 v0, 0x0
 
-    move v1, p3
-
-    const/4 p3, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    add-int/lit8 v2, p3, 0x1
+    add-int/lit8 v2, v1, 0x1
 
     .line 1
-    aget p3, p1, p3
+    aget v1, p1, v1
 
     iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_hashArea:[I
 
-    add-int/lit8 v4, v1, 0x1
+    add-int/lit8 v4, p3, 0x1
 
-    aget v1, v3, v1
+    aget p3, v3, p3
 
-    if-eq p3, v1, :cond_0
+    if-eq v1, p3, :cond_0
 
     return v0
 
@@ -1130,9 +1123,9 @@
     return p1
 
     :cond_1
-    move p3, v2
+    move v1, v2
 
-    move v1, v4
+    move p3, v4
 
     goto :goto_0
 .end method
@@ -1343,11 +1336,11 @@
     .line 3
     new-instance v0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
 
-    const/4 v1, 0x1
+    const/16 v1, 0x40
 
-    const/16 v2, 0x40
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v2, v1, p0, v1}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;-><init>(IZIZ)V
+    invoke-direct {v0, v1, v2, p0, v2}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;-><init>(IZIZ)V
 
     return-object v0
 .end method
@@ -1496,13 +1489,11 @@
     .line 11
     iput v3, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_secondaryStart:I
 
-    .line 12
-    iget v3, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_secondaryStart:I
-
     shr-int/lit8 v8, v3, 0x1
 
     add-int/2addr v3, v8
 
+    .line 12
     iput v3, p0, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->_tertiaryStart:I
 
     .line 13
@@ -1528,16 +1519,14 @@
 
     new-array v3, v3, [I
 
-    move-object v8, v3
-
-    const/4 v3, 0x0
-
     const/4 v5, 0x0
 
-    :goto_0
-    if-ge v3, v6, :cond_6
+    const/4 v8, 0x0
 
-    add-int/lit8 v10, v3, 0x3
+    :goto_0
+    if-ge v5, v6, :cond_6
+
+    add-int/lit8 v10, v5, 0x3
 
     .line 16
     aget v10, v1, v10
@@ -1547,9 +1536,9 @@
     goto :goto_1
 
     :cond_1
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v8, v8, 0x1
 
-    shr-int/lit8 v11, v3, 0x2
+    shr-int/lit8 v11, v5, 0x2
 
     .line 17
     aget-object v11, v2, v11
@@ -1563,86 +1552,86 @@
     if-eq v10, v9, :cond_3
 
     .line 18
-    array-length v12, v8
+    array-length v12, v3
 
     if-le v10, v12, :cond_2
 
     .line 19
-    new-array v8, v10, [I
+    new-array v3, v10, [I
 
     :cond_2
-    add-int/lit8 v12, v3, 0x1
+    add-int/lit8 v12, v5, 0x1
 
     .line 20
     aget v12, v1, v12
 
     .line 21
-    invoke-static {v1, v12, v8, v0, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v12, v3, v0, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 22
-    invoke-virtual {p0, v11, v8, v10}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
+    invoke-virtual {p0, v11, v3, v10}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
 
     goto :goto_1
 
     .line 23
     :cond_3
-    aget v10, v1, v3
+    aget v10, v1, v5
 
-    aput v10, v8, v0
+    aput v10, v3, v0
 
-    add-int/lit8 v10, v3, 0x1
+    add-int/lit8 v10, v5, 0x1
 
     .line 24
     aget v10, v1, v10
 
-    aput v10, v8, v7
+    aput v10, v3, v7
 
-    add-int/lit8 v10, v3, 0x2
+    add-int/lit8 v10, v5, 0x2
 
     .line 25
     aget v10, v1, v10
 
-    aput v10, v8, v12
+    aput v10, v3, v12
 
     .line 26
-    invoke-virtual {p0, v11, v8, v9}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
+    invoke-virtual {p0, v11, v3, v9}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
 
     goto :goto_1
 
     .line 27
     :cond_4
-    aget v10, v1, v3
+    aget v10, v1, v5
 
-    aput v10, v8, v0
+    aput v10, v3, v0
 
-    add-int/lit8 v10, v3, 0x1
+    add-int/lit8 v10, v5, 0x1
 
     .line 28
     aget v10, v1, v10
 
-    aput v10, v8, v7
+    aput v10, v3, v7
 
     .line 29
-    invoke-virtual {p0, v11, v8, v12}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
+    invoke-virtual {p0, v11, v3, v12}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
 
     goto :goto_1
 
     .line 30
     :cond_5
-    aget v10, v1, v3
+    aget v10, v1, v5
 
-    aput v10, v8, v0
+    aput v10, v3, v0
 
     .line 31
-    invoke-virtual {p0, v11, v8, v7}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
+    invoke-virtual {p0, v11, v3, v7}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;->addName(Ljava/lang/String;[II)Ljava/lang/String;
 
     :goto_1
-    add-int/lit8 v3, v3, 0x4
+    add-int/lit8 v5, v5, 0x4
 
     goto :goto_0
 
     :cond_6
-    if-ne v5, v4, :cond_7
+    if-ne v8, v4, :cond_7
 
     return-void
 
@@ -1664,7 +1653,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

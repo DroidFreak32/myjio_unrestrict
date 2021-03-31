@@ -6,17 +6,17 @@
 # static fields
 .field public static final SAVED_TIME_STAMP:Ljava/lang/String; = "SAVED_TIME_STAMP"
 
-.field public static instance:Lcom/app/cinemasdk/utils/SharedPreferencesManager;
+.field private static instance:Lcom/app/cinemasdk/utils/SharedPreferencesManager;
 
 
 # instance fields
-.field public prefName:Ljava/lang/String;
+.field private prefName:Ljava/lang/String;
 
-.field public prefs:Landroid/content/SharedPreferences;
+.field private prefs:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 2
 
     .line 1

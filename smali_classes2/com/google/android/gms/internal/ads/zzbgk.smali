@@ -1,25 +1,11 @@
-.class public final enum Lcom/google/android/gms/internal/ads/zzbgk;
-.super Lcom/google/android/gms/internal/ads/zzbgj;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzbgk;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/ads/zzbgo;I)V
-    .locals 6
-
-    const/16 v2, 0x8
-
-    const/4 v4, 0x2
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
-
-    .line 1
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/ads/zzbgj;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/ads/zzbgo;ILcom/google/android/gms/internal/ads/zzbgi;)V
-
-    return-void
+# virtual methods
+.method public abstract zzug()Landroid/os/Bundle;
 .end method

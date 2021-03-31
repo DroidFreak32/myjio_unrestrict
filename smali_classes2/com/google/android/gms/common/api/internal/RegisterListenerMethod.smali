@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -18,7 +19,7 @@
 
 
 # instance fields
-.field public final zaju:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+.field private final zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/ListenerHolder<",
@@ -29,9 +30,12 @@
     .end annotation
 .end field
 
-.field public final zajv:[Lcom/google/android/gms/common/Feature;
+.field private final zab:[Lcom/google/android/gms/common/Feature;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final zajw:Z
+.field private final zac:Z
 
 
 # direct methods
@@ -54,17 +58,17 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaju:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
     const/4 p1, 0x0
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zajv:[Lcom/google/android/gms/common/Feature;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zab:[Lcom/google/android/gms/common/Feature;
 
     const/4 p1, 0x0
 
     .line 4
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zajw:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zac:Z
 
     return-void
 .end method
@@ -90,13 +94,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaju:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
     .line 7
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zajv:[Lcom/google/android/gms/common/Feature;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zab:[Lcom/google/android/gms/common/Feature;
 
     .line 8
-    iput-boolean p3, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zajw:Z
+    iput-boolean p3, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zac:Z
 
     return-void
 .end method
@@ -109,7 +113,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaju:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->clear()V
 
@@ -118,6 +122,9 @@
 
 .method public getListenerKey()Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -132,7 +139,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaju:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->getListenerKey()Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
@@ -143,11 +150,14 @@
 
 .method public getRequiredFeatures()[Lcom/google/android/gms/common/Feature;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zajv:[Lcom/google/android/gms/common/Feature;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zab:[Lcom/google/android/gms/common/Feature;
 
     return-object v0
 .end method
@@ -164,13 +174,19 @@
             ">;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public final shouldAutoResolveMissingFeatures()Z
+.method public final zaa()Z
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zajw:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;->zac:Z
 
     return v0
 .end method

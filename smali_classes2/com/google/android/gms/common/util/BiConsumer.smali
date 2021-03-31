@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/util/BiConsumer;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -20,6 +21,14 @@
 
 # virtual methods
 .method public abstract accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

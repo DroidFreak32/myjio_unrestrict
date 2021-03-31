@@ -2,10 +2,31 @@
 .super Landroidx/room/RoomDatabase;
 
 
-# static fields
-.field public static INSTANCE:Lcom/elitecorelib/core/room/ANDSFDB;
+# annotations
+.annotation build Landroidx/room/Database;
+    entities = {
+        Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;,
+        Lcom/elitecorelib/andsf/pojonew/ANDSFDiscoveryInformations;,
+        Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;,
+        Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;,
+        Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;,
+        Lcom/elitecorelib/andsf/pojonew/ANDSFLocation3GPP;
+    }
+    exportSchema = false
+    version = 0x2
+.end annotation
 
-.field public static final MIGRATION_1_2:Lqh;
+.annotation build Landroidx/room/TypeConverters;
+    value = {
+        Lcom/elitecorelib/core/room/DataConverter;
+    }
+.end annotation
+
+
+# static fields
+.field private static INSTANCE:Lcom/elitecorelib/core/room/ANDSFDB;
+
+.field private static final MIGRATION_1_2:Landroidx/room/migration/Migration;
 
 
 # direct methods
@@ -20,7 +41,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/room/ANDSFDB$1;-><init>(II)V
 
-    sput-object v0, Lcom/elitecorelib/core/room/ANDSFDB;->MIGRATION_1_2:Lqh;
+    sput-object v0, Lcom/elitecorelib/core/room/ANDSFDB;->MIGRATION_1_2:Landroidx/room/migration/Migration;
 
     return-void
 .end method
@@ -62,27 +83,33 @@
 
     const-string v2, "ANDSF"
 
-    invoke-static {v0, v1, v2}, Lgh;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$a;
+    invoke-static {v0, v1, v2}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase$a;->a()Landroidx/room/RoomDatabase$a;
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->allowMainThreadQueries()Landroidx/room/RoomDatabase$Builder;
+
+    move-result-object v0
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lqh;
+    new-array v1, v1, [Landroidx/room/migration/Migration;
 
     const/4 v2, 0x0
 
-    sget-object v3, Lcom/elitecorelib/core/room/ANDSFDB;->MIGRATION_1_2:Lqh;
+    sget-object v3, Lcom/elitecorelib/core/room/ANDSFDB;->MIGRATION_1_2:Landroidx/room/migration/Migration;
 
     aput-object v3, v1, v2
 
-    invoke-virtual {v0, v1}, Landroidx/room/RoomDatabase$a;->a([Lqh;)Landroidx/room/RoomDatabase$a;
+    invoke-virtual {v0, v1}, Landroidx/room/RoomDatabase$Builder;->addMigrations([Landroidx/room/migration/Migration;)Landroidx/room/RoomDatabase$Builder;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase$a;->d()Landroidx/room/RoomDatabase$a;
+    move-result-object v0
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase$a;->b()Landroidx/room/RoomDatabase;
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->fallbackToDestructiveMigration()Landroidx/room/RoomDatabase$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->build()Landroidx/room/RoomDatabase;
 
     move-result-object v0
 
@@ -105,11 +132,11 @@
 .end method
 
 .method public getDao(Ljava/lang/Class;)Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
-    .locals 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;)",
@@ -123,173 +150,100 @@
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
+    const-string v0, "ANDSFLocation3GPP"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
     move-result v0
 
-    const/4 v1, 0x5
+    if-nez v0, :cond_5
 
-    const/4 v2, 0x4
+    const-string v0, "PojoWiFiConnection"
 
-    const/4 v3, 0x3
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v4, 0x2
+    move-result v0
 
-    const/4 v5, 0x1
+    if-nez v0, :cond_4
 
-    sparse-switch v0, :sswitch_data_0
+    const-string v0, "ANDSFLocation3GPPLevel1"
 
-    goto :goto_0
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :sswitch_0
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    const-string v0, "ANDSFDiscoveryInformations"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const-string v0, "ANDSFPolicies"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     const-string v0, "PojoWiFiProfile"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x3
-
-    goto :goto_1
-
-    :sswitch_1
-    const-string v0, "ANDSFPolicies"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_1
-
-    :sswitch_2
-    const-string v0, "ANDSFDiscoveryInformations"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_1
-
-    :sswitch_3
-    const-string v0, "ANDSFLocation3GPPLevel1"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x4
-
-    goto :goto_1
-
-    :sswitch_4
-    const-string v0, "PojoWiFiConnection"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x2
-
-    goto :goto_1
-
-    :sswitch_5
-    const-string v0, "ANDSFLocation3GPP"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x5
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
-    :goto_0
-    const/4 p1, -0x1
-
-    :goto_1
-    if-eqz p1, :cond_6
-
-    if-eq p1, v5, :cond_5
-
-    if-eq p1, v4, :cond_4
-
-    if-eq p1, v3, :cond_3
-
-    if-eq p1, v2, :cond_2
-
-    if-eq p1, v1, :cond_1
-
-    const/4 p1, 0x0
-
-    goto :goto_2
-
-    :cond_1
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getANDSFLocation3GPPDao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFLocation3GPPDao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getandsfLocation3GPPLevel1Dao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_3
     invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getPojoWiFiProfileDao()Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao;
 
     move-result-object p1
 
-    goto :goto_2
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getandsfPolicyDao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFPoliciesDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getANDSFDiscoveryInformationsDao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDiscoveryInformationsDao;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getandsfLocation3GPPLevel1Dao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao;
+
+    move-result-object p1
+
+    goto :goto_0
 
     :cond_4
     invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getPojoWiFiConnectionDao()Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao;
 
     move-result-object p1
 
-    goto :goto_2
+    goto :goto_0
 
     :cond_5
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getANDSFDiscoveryInformationsDao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDiscoveryInformationsDao;
+    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getANDSFLocation3GPPDao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFLocation3GPPDao;
 
     move-result-object p1
 
-    goto :goto_2
-
-    :cond_6
-    invoke-virtual {p0}, Lcom/elitecorelib/core/room/ANDSFDB;->getandsfPolicyDao()Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFPoliciesDao;
-
-    move-result-object p1
-
-    :goto_2
+    :goto_0
     return-object p1
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x732653ed -> :sswitch_5
-        -0x31250f49 -> :sswitch_4
-        -0x158a2ce0 -> :sswitch_3
-        0x3e558e6d -> :sswitch_2
-        0x571de1ba -> :sswitch_1
-        0x5eb40e70 -> :sswitch_0
-    .end sparse-switch
 .end method
 
 .method public abstract getPojoWiFiConnectionDao()Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao;

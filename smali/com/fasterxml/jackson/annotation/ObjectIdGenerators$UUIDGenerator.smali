@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Class;)V
+.method private constructor <init>(Ljava/lang/Class;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

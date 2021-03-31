@@ -14,6 +14,11 @@
 .end method
 
 .method public abstract decodeFrame(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 .end method
 
 .method public abstract encodeFrame(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
@@ -26,6 +31,11 @@
 .end method
 
 .method public abstract isFrameValid(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 .end method
 
 .method public abstract reset()V

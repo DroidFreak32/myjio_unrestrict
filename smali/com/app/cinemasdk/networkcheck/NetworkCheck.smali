@@ -20,7 +20,7 @@
 
 .field public isVipUser:Z
 
-.field public networkListener:Lcom/app/cinemasdk/networkcheck/Listener/NetworkListener;
+.field private networkListener:Lcom/app/cinemasdk/networkcheck/Listener/NetworkListener;
 
 
 # direct methods
@@ -33,11 +33,11 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {}, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->getRetrofitRootInstance()Lyr4;
+    invoke-static {}, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->getRetrofitRootInstance()Lretrofit2/Retrofit;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -46,11 +46,11 @@
     iput-object v1, p0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->apiInterface:Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;
 
     .line 3
-    invoke-static {}, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->getretrofit1SecoInstance()Lyr4;
+    invoke-static {}, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->getretrofit1SecoInstance()Lretrofit2/Retrofit;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->apiInterfaceSeco:Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;
 
-    invoke-interface {v0}, Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;->getSimJSON()Ljr4;
+    invoke-interface {v0}, Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;->getSimJSON()Lretrofit2/Call;
 
     move-result-object v0
 
@@ -92,7 +92,7 @@
 
     invoke-direct {v1, p0}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$1;-><init>(Lcom/app/cinemasdk/networkcheck/NetworkCheck;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -108,7 +108,7 @@
     .line 2
     iget-object v1, p0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->apiInterface:Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;
 
-    invoke-interface {v1, v0}, Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;->getWifiJSON(Lcom/app/cinemasdk/networkcheck/Models/Wifi;)Ljr4;
+    invoke-interface {v1, v0}, Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;->getWifiJSON(Lcom/app/cinemasdk/networkcheck/Models/Wifi;)Lretrofit2/Call;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
 
     invoke-direct {v1, p0}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$3;-><init>(Lcom/app/cinemasdk/networkcheck/NetworkCheck;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -138,7 +138,7 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->apiInterface:Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;->getVipJSON(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljr4;
+    invoke-interface {v0, p1, p2, p3}, Lcom/app/cinemasdk/networkcheck/Interface/ApiInterface;->getVipJSON(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;
 
     move-result-object p1
 
@@ -146,7 +146,7 @@
 
     invoke-direct {p2, p0}, Lcom/app/cinemasdk/networkcheck/NetworkCheck$2;-><init>(Lcom/app/cinemasdk/networkcheck/NetworkCheck;)V
 
-    invoke-interface {p1, p2}, Ljr4;->a(Llr4;)V
+    invoke-interface {p1, p2}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method

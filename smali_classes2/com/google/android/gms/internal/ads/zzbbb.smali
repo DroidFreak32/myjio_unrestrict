@@ -1,295 +1,461 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzbbb;
+.class public final Lcom/google/android/gms/internal/ads/zzbbb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzavm;
+.implements Landroid/hardware/SensorEventListener;
 
 
 # instance fields
-.field public final key:[B
+.field private final zzejk:Landroid/hardware/SensorManager;
 
-.field public final zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
+.field private final zzejl:Ljava/lang/Object;
 
-.field public final zzdsg:Lcom/google/android/gms/internal/ads/zzbba;
+.field private final zzejm:Landroid/view/Display;
+
+.field private final zzejn:[F
+
+.field private final zzejo:[F
+
+.field private zzejp:[F
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "sensorThreadLock"
+    .end annotation
+.end field
+
+.field private zzejq:Landroid/os/Handler;
+
+.field private zzejr:Lcom/google/android/gms/internal/ads/zzbbd;
 
 
 # direct methods
-.method public constructor <init>([B)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const-string v0, "sensor"
+
     .line 2
-    invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [B
+    check-cast v0, Landroid/hardware/SensorManager;
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->key:[B
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejk:Landroid/hardware/SensorManager;
 
-    const/4 v0, 0x1
+    const-string v0, "window"
 
     .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbbb;->zzc([BI)Lcom/google/android/gms/internal/ads/zzbba;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
-
-    const/4 v0, 0x0
-
-    .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbbb;->zzc([BI)Lcom/google/android/gms/internal/ads/zzbba;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsg:Lcom/google/android/gms/internal/ads/zzbba;
+    check-cast p1, Landroid/view/WindowManager;
+
+    .line 4
+    invoke-interface {p1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejm:Landroid/view/Display;
+
+    const/16 p1, 0x9
+
+    new-array v0, p1, [F
+
+    .line 5
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejn:[F
+
+    new-array p1, p1, [F
+
+    .line 6
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
+
+    .line 7
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejl:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final zzl(II)V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
+
+    aget v1, v0, p1
+
+    .line 2
+    aget v2, v0, p2
+
+    aput v2, v0, p1
+
+    .line 3
+    aput v1, v0, p2
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract zzc([BI)Lcom/google/android/gms/internal/ads/zzbba;
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
+
+    return-void
 .end method
 
-.method public zzc([B[B)[B
-    .locals 6
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 8
 
     .line 1
-    array-length v0, p1
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzbba;->zzaci()I
-
-    const v1, 0x7fffffe3
-
-    if-gt v0, v1, :cond_4
+    const/4 v0, 0x0
 
     .line 2
-    array-length v0, p1
+    aget v1, p1, v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    cmpl-float v1, v1, v2
+
+    if-nez v1, :cond_0
+
+    aget v1, p1, v4
+
+    cmpl-float v1, v1, v2
+
+    if-nez v1, :cond_0
+
+    aget v1, p1, v3
+
+    cmpl-float v1, v1, v2
+
+    if-eqz v1, :cond_5
 
     .line 3
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzbba;->zzaci()I
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejl:Ljava/lang/Object;
 
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, 0x10
-
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
+    monitor-enter v1
 
     .line 4
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+    :try_start_0
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejp:[F
 
-    move-result v1
+    const/16 v5, 0x9
 
-    array-length v2, p1
+    if-nez v2, :cond_1
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
+    new-array v2, v5, [F
 
     .line 5
-    invoke-virtual {v3}, Lcom/google/android/gms/internal/ads/zzbba;->zzaci()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    add-int/lit8 v2, v2, 0x10
-
-    if-lt v1, v2, :cond_3
+    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejp:[F
 
     .line 6
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
-
-    move-result v1
+    :cond_1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 7
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejn:[F
 
-    invoke-virtual {v2, v0, p1}, Lcom/google/android/gms/internal/ads/zzbba;->zza(Ljava/nio/ByteBuffer;[B)V
+    invoke-static {v1, p1}, Landroid/hardware/SensorManager;->getRotationMatrixFromVector([F[F)V
 
     .line 8
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejm:Landroid/view/Display;
 
-    .line 9
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsf:Lcom/google/android/gms/internal/ads/zzbba;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbba;->zzaci()I
+    invoke-virtual {p1}, Landroid/view/Display;->getRotation()I
 
     move-result p1
 
-    new-array p1, p1, [B
+    const/16 v1, 0x81
 
-    .line 10
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
+    const/4 v2, 0x3
 
-    .line 11
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
+    if-eq p1, v4, :cond_4
 
-    move-result v1
+    const/16 v6, 0x82
 
-    add-int/lit8 v1, v1, -0x10
+    if-eq p1, v3, :cond_3
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    if-eq p1, v2, :cond_2
 
-    const/4 v1, 0x0
+    .line 9
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejn:[F
 
-    if-nez p2, :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
 
-    new-array p2, v1, [B
-
-    .line 12
-    :cond_0
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzdsg:Lcom/google/android/gms/internal/ads/zzbba;
-
-    invoke-virtual {v2, p1, v1}, Lcom/google/android/gms/internal/ads/zzbba;->zzb([BI)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    const/16 v1, 0x20
-
-    new-array v1, v1, [B
-
-    .line 13
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    .line 14
-    array-length p1, p2
-
-    rem-int/lit8 p1, p1, 0x10
-
-    if-nez p1, :cond_1
-
-    array-length p1, p2
+    invoke-static {p1, v0, v1, v0, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     goto :goto_0
 
-    :cond_1
-    array-length p1, p2
+    .line 10
+    :cond_2
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejn:[F
 
-    add-int/lit8 p1, p1, 0x10
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
 
-    array-length v2, p2
+    invoke-static {p1, v6, v4, v1}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
 
-    rem-int/lit8 v2, v2, 0x10
+    goto :goto_0
 
-    sub-int/2addr p1, v2
+    .line 11
+    :cond_3
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejn:[F
+
+    iget-object v7, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
+
+    invoke-static {p1, v1, v6, v7}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
+
+    goto :goto_0
+
+    .line 12
+    :cond_4
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejn:[F
+
+    iget-object v6, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
+
+    invoke-static {p1, v3, v1, v6}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
+
+    .line 13
+    :goto_0
+    invoke-direct {p0, v4, v2}, Lcom/google/android/gms/internal/ads/zzbbb;->zzl(II)V
+
+    const/4 p1, 0x6
+
+    .line 14
+    invoke-direct {p0, v3, p1}, Lcom/google/android/gms/internal/ads/zzbbb;->zzl(II)V
+
+    const/4 p1, 0x5
+
+    const/4 v1, 0x7
 
     .line 15
-    :goto_0
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v2
+    invoke-direct {p0, p1, v1}, Lcom/google/android/gms/internal/ads/zzbbb;->zzl(II)V
 
     .line 16
-    rem-int/lit8 v3, v2, 0x10
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejl:Ljava/lang/Object;
 
-    if-nez v3, :cond_2
-
-    move v3, v2
-
-    goto :goto_1
-
-    :cond_2
-    add-int/lit8 v4, v2, 0x10
-
-    sub-int v3, v4, v3
-
-    :goto_1
-    add-int/2addr v3, p1
-
-    add-int/lit8 v4, v3, 0x10
+    monitor-enter p1
 
     .line 17
-    invoke-static {v4}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    :try_start_1
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejo:[F
 
-    move-result-object v4
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejp:[F
 
-    sget-object v5, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object v4
+    invoke-static {v1, v0, v2, v0, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 18
-    invoke-virtual {v4, p2}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 19
-    invoke-virtual {v4, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejr:Lcom/google/android/gms/internal/ads/zzbbd;
+
+    if-eqz p1, :cond_5
 
     .line 20
-    invoke-virtual {v4, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbbd;->zzvi()V
+
+    :cond_5
+    return-void
+
+    :catchall_0
+    move-exception v0
 
     .line 21
-    invoke-virtual {v4, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    :try_start_2
+    monitor-exit p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    :catchall_1
+    move-exception p1
 
     .line 22
-    array-length p1, p2
-
-    int-to-long p1, p1
-
-    invoke-virtual {v4, p1, p2}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
-
-    int-to-long p1, v2
-
-    .line 23
-    invoke-virtual {v4, p1, p2}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
-
-    .line 24
-    invoke-virtual {v4}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object p1
-
-    .line 25
-    invoke-static {v1, p1}, Lcom/google/android/gms/internal/ads/zzbax;->zze([B[B)[B
-
-    move-result-object p1
-
-    .line 26
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result p2
-
-    add-int/lit8 p2, p2, 0x10
-
-    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    .line 27
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
-
-    .line 28
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 29
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Given ByteBuffer output is too small"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw p1
+.end method
 
-    .line 30
-    :cond_4
-    new-instance p1, Ljava/security/GeneralSecurityException;
+.method public final start()V
+    .locals 4
 
-    const-string p2, "plaintext too long"
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejq:Landroid/os/Handler;
 
-    invoke-direct {p1, p2}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 2
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejk:Landroid/hardware/SensorManager;
+
+    const/16 v1, 0xb
+
+    invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "No Sensor of TYPE_ROTATION_VECTOR"
+
+    .line 3
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzey(Ljava/lang/String;)V
+
+    return-void
+
+    .line 4
+    :cond_1
+    new-instance v1, Landroid/os/HandlerThread;
+
+    const-string v2, "OrientationMonitor"
+
+    invoke-direct {v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    .line 5
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
+
+    .line 6
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzduw;
+
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Lcom/google/android/gms/internal/ads/zzduw;-><init>(Landroid/os/Looper;)V
+
+    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejq:Landroid/os/Handler;
+
+    .line 7
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejk:Landroid/hardware/SensorManager;
+
+    const/4 v3, 0x0
+
+    .line 8
+    invoke-virtual {v1, p0, v0, v3, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const-string v0, "SensorManager.registerListener failed."
+
+    .line 9
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzey(Ljava/lang/String;)V
+
+    .line 10
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbbb;->stop()V
+
+    :cond_2
+    return-void
+.end method
+
+.method public final stop()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejq:Landroid/os/Handler;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 2
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejk:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejq:Landroid/os/Handler;
+
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzbba;
+
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/ads/zzbba;-><init>(Lcom/google/android/gms/internal/ads/zzbbb;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    const/4 v0, 0x0
+
+    .line 4
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejq:Landroid/os/Handler;
+
+    return-void
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/ads/zzbbd;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejr:Lcom/google/android/gms/internal/ads/zzbbd;
+
+    return-void
+.end method
+
+.method public final zza([F)Z
+    .locals 4
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejl:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 3
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbbb;->zzejp:[F
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    .line 4
+    monitor-exit v0
+
+    return v2
+
+    .line 5
+    :cond_0
+    array-length v3, v1
+
+    invoke-static {v1, v2, p1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    const/4 p1, 0x1
+
+    .line 6
+    monitor-exit v0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    .line 7
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

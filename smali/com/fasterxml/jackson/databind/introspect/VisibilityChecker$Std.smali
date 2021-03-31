@@ -31,7 +31,7 @@
 # static fields
 .field public static final DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -53,15 +53,15 @@
     .line 1
     new-instance v6, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    sget-object v2, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sget-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     sget-object v4, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    sget-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
     move-object v0, v6
 
-    move-object v1, v2
+    move-object v1, v5
+
+    move-object v2, v5
 
     move-object v3, v4
 

@@ -31,6 +31,9 @@
 .field public iy:I
 
 .field public lct:[I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
 .field public transIndex:I
 

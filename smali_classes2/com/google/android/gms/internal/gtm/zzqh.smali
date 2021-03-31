@@ -6,17 +6,17 @@
 
 
 # instance fields
-.field public tag:I
+.field private tag:I
 
-.field public final zzawp:Lcom/google/android/gms/internal/gtm/zzqe;
+.field private final zzawp:Lcom/google/android/gms/internal/gtm/zzqe;
 
-.field public zzawq:I
+.field private zzawq:I
 
-.field public zzawr:I
+.field private zzawr:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zzqe;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zzqe;)V
     .locals 1
 
     .line 1
@@ -39,8 +39,6 @@
     iput-object p1, p0, Lcom/google/android/gms/internal/gtm/zzqh;->zzawp:Lcom/google/android/gms/internal/gtm/zzqe;
 
     .line 4
-    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzqh;->zzawp:Lcom/google/android/gms/internal/gtm/zzqe;
-
     iput-object p0, p1, Lcom/google/android/gms/internal/gtm/zzqe;->zzawi:Lcom/google/android/gms/internal/gtm/zzqh;
 
     return-void
@@ -76,6 +74,12 @@
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")",
             "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -337,6 +341,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 5
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzqh;->tag:I
 
@@ -453,6 +463,11 @@
 
 .method private final zzat(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzqh;->tag:I
@@ -472,8 +487,13 @@
     throw p1
 .end method
 
-.method public static zzau(I)V
+.method private static zzau(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     and-int/lit8 p0, p0, 0x7
 
@@ -490,8 +510,13 @@
     throw p0
 .end method
 
-.method public static zzav(I)V
+.method private static zzav(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     and-int/lit8 p0, p0, 0x3
 
@@ -510,6 +535,11 @@
 
 .method private final zzaw(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzqh;->zzawp:Lcom/google/android/gms/internal/gtm/zzqe;
@@ -542,6 +572,12 @@
             "TT;>;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -630,6 +666,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzqh;->zzawq:I
 
@@ -704,6 +746,11 @@
 
 .method public final readDouble()D
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -722,6 +769,11 @@
 
 .method public final readFloat()F
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x5
 
@@ -740,6 +792,11 @@
 
 .method public final readString()Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -767,6 +824,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     .line 1
@@ -786,6 +849,12 @@
             "TT;>;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -815,6 +884,12 @@
             "TT;>;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -891,6 +966,12 @@
             "TK;TV;>;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1057,6 +1138,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x3
 
     .line 1
@@ -1083,6 +1170,12 @@
             "TT;>;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1152,6 +1245,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Double;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1379,6 +1478,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Float;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1611,6 +1716,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/internal/gtm/zzry;
 
@@ -1833,6 +1944,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -2061,6 +2178,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/internal/gtm/zzrd;
 
@@ -2283,6 +2406,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -2510,6 +2639,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -2742,6 +2877,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/internal/gtm/zzpq;
 
@@ -2958,6 +3099,11 @@
 
 .method public final zznj()J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -2976,6 +3122,11 @@
 
 .method public final zznk()J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -2994,6 +3145,11 @@
 
 .method public final zznl()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3012,6 +3168,11 @@
 
 .method public final zznm()J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -3030,6 +3191,11 @@
 
 .method public final zznn()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x5
 
@@ -3048,6 +3214,11 @@
 
 .method public final zzno()Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3066,6 +3237,11 @@
 
 .method public final zznp()Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -3084,6 +3260,11 @@
 
 .method public final zznq()Lcom/google/android/gms/internal/gtm/zzps;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -3102,6 +3283,11 @@
 
 .method public final zznr()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3120,6 +3306,11 @@
 
 .method public final zzns()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3138,6 +3329,11 @@
 
 .method public final zznt()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x5
 
@@ -3156,6 +3352,11 @@
 
 .method public final zznu()J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -3174,6 +3375,11 @@
 
 .method public final zznv()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3192,6 +3398,11 @@
 
 .method public final zznw()J
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3219,6 +3430,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x1
 
     .line 1
@@ -3229,6 +3446,11 @@
 
 .method public final zzog()I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzqh;->zzawr:I
@@ -3281,6 +3503,11 @@
 
 .method public final zzoh()Z
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzqh;->zzawp:Lcom/google/android/gms/internal/gtm/zzqe;
@@ -3324,6 +3551,12 @@
             "Ljava/util/List<",
             "Lcom/google/android/gms/internal/gtm/zzps;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -3390,6 +3623,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -3618,6 +3857,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/internal/gtm/zzrd;
 
@@ -3840,6 +4085,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -4072,6 +4323,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/internal/gtm/zzry;
 
@@ -4299,6 +4556,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/internal/gtm/zzrd;
 
@@ -4521,6 +4784,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

@@ -9,7 +9,7 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "WifiJobService"
+.field private static final TAG:Ljava/lang/String; = "WifiJobService"
 
 
 # direct methods
@@ -222,10 +222,7 @@
     move-result-object v1
 
     invoke-static {v1}, Lcom/elitecorelib/etech/AppUtils;->checkAndRescheduleService(Landroid/content/Context;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :try_start_1
     sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -240,9 +237,9 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, " device. Checking for pending analytics records. "
+    const-string v4, " device. Checking for pending analytics records. "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -250,31 +247,25 @@
 
     invoke-virtual {v1, p1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "Huawei"
 
-    const-string v2, "Huawei"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "Vivo"
 
-    const-string v2, "Vivo"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "Oppo"
 
-    const-string v2, "Oppo"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
@@ -302,19 +293,11 @@
     invoke-virtual {v0, p1, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-static {}, Lcom/elitecorelib/etech/services/WifiJobService;->callAnalytics()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    :catch_1
     :cond_1
-    :goto_0
     const/4 p1, 0x0
 
     return p1

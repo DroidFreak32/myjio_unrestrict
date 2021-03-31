@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzrj:Landroid/content/BroadcastReceiver$PendingResult;
+.field private final synthetic zzrj:Landroid/content/BroadcastReceiver$PendingResult;
 
 
 # direct methods

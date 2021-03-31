@@ -65,7 +65,7 @@
 
 
 # virtual methods
-.method public a(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;Lq$b;)Liq4;
+.method public a(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;Lq$b;)Lo;
     .locals 1
 
     .line 2
@@ -86,25 +86,25 @@
     if-eq p4, v0, :cond_0
 
     .line 3
-    new-instance p4, Ler4;
+    new-instance p4, Lp;
 
-    invoke-direct {p4, p1, p2, p3}, Ler4;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;)V
+    invoke-direct {p4, p1, p2, p3}, Lp;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;)V
 
     goto :goto_0
 
     .line 4
     :cond_0
-    new-instance p4, Ler4;
+    new-instance p4, Lp;
 
-    invoke-direct {p4, p1, p2, p3}, Ler4;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;)V
+    invoke-direct {p4, p1, p2, p3}, Lp;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;)V
 
     goto :goto_0
 
     .line 5
     :cond_1
-    new-instance p4, Ler4;
+    new-instance p4, Lp;
 
-    invoke-direct {p4, p1, p2, p3}, Ler4;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;)V
+    invoke-direct {p4, p1, p2, p3}, Lp;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Lcom/ril/jio/jiosdk/database/IDBController;)V
 
     :goto_0
     return-object p4

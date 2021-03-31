@@ -1,6 +1,5 @@
 .class public final Lcom/daimajia/slider/library/R$dimen;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -89,52 +88,51 @@
 
 .field public static final abc_search_view_preferred_width:I = 0x7f07003b
 
-.field public static final abc_switch_padding:I = 0x7f07003f
+.field public static final abc_switch_padding:I = 0x7f070042
 
-.field public static final abc_text_size_body_1_material:I = 0x7f070040
+.field public static final abc_text_size_body_1_material:I = 0x7f070043
 
-.field public static final abc_text_size_body_2_material:I = 0x7f070041
+.field public static final abc_text_size_body_2_material:I = 0x7f070044
 
-.field public static final abc_text_size_button_material:I = 0x7f070042
+.field public static final abc_text_size_button_material:I = 0x7f070045
 
-.field public static final abc_text_size_caption_material:I = 0x7f070043
+.field public static final abc_text_size_caption_material:I = 0x7f070046
 
-.field public static final abc_text_size_display_1_material:I = 0x7f070044
+.field public static final abc_text_size_display_1_material:I = 0x7f070047
 
-.field public static final abc_text_size_display_2_material:I = 0x7f070045
+.field public static final abc_text_size_display_2_material:I = 0x7f070048
 
-.field public static final abc_text_size_display_3_material:I = 0x7f070046
+.field public static final abc_text_size_display_3_material:I = 0x7f070049
 
-.field public static final abc_text_size_display_4_material:I = 0x7f070047
+.field public static final abc_text_size_display_4_material:I = 0x7f07004a
 
-.field public static final abc_text_size_headline_material:I = 0x7f070048
+.field public static final abc_text_size_headline_material:I = 0x7f07004b
 
-.field public static final abc_text_size_large_material:I = 0x7f070049
+.field public static final abc_text_size_large_material:I = 0x7f07004c
 
-.field public static final abc_text_size_medium_material:I = 0x7f07004a
+.field public static final abc_text_size_medium_material:I = 0x7f07004d
 
-.field public static final abc_text_size_menu_material:I = 0x7f07004c
+.field public static final abc_text_size_menu_material:I = 0x7f07004f
 
-.field public static final abc_text_size_small_material:I = 0x7f07004d
+.field public static final abc_text_size_small_material:I = 0x7f070050
 
-.field public static final abc_text_size_subhead_material:I = 0x7f07004e
+.field public static final abc_text_size_subhead_material:I = 0x7f070051
 
-.field public static final abc_text_size_subtitle_material_toolbar:I = 0x7f07004f
+.field public static final abc_text_size_subtitle_material_toolbar:I = 0x7f070052
 
-.field public static final abc_text_size_title_material:I = 0x7f070050
+.field public static final abc_text_size_title_material:I = 0x7f070053
 
-.field public static final abc_text_size_title_material_toolbar:I = 0x7f070051
+.field public static final abc_text_size_title_material_toolbar:I = 0x7f070054
 
-.field public static final disabled_alpha_material_dark:I = 0x7f070182
+.field public static final disabled_alpha_material_dark:I = 0x7f070193
 
-.field public static final disabled_alpha_material_light:I = 0x7f070183
+.field public static final disabled_alpha_material_light:I = 0x7f070194
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/server/response/zae;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/server/response/FastParser$zaa;
@@ -10,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/android/gms/common/server/response/FastParser$zaa<",
-        "Ljava/lang/Boolean;",
+        "Ljava/lang/Double;",
         ">;"
     }
 .end annotation
@@ -28,17 +29,24 @@
 
 
 # virtual methods
-.method public final synthetic zah(Lcom/google/android/gms/common/server/response/FastParser;Ljava/io/BufferedReader;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic zaa(Lcom/google/android/gms/common/server/response/FastParser;Ljava/io/BufferedReader;)Ljava/lang/Object;
+    .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-    const/4 v0, 0x0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/common/server/response/FastParser$ParseException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
-    invoke-static {p1, p2, v0}, Lcom/google/android/gms/common/server/response/FastParser;->zaa(Lcom/google/android/gms/common/server/response/FastParser;Ljava/io/BufferedReader;Z)Z
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/server/response/FastParser;->zad(Lcom/google/android/gms/common/server/response/FastParser;Ljava/io/BufferedReader;)D
 
-    move-result p1
+    move-result-wide p1
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p1
 

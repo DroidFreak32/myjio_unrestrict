@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/api/Api$Client;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$AnyClient;
@@ -30,7 +31,20 @@
     .end annotation
 .end method
 
+.method public abstract disconnect(Ljava/lang/String;)V
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+.end method
+
 .method public abstract dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    .param p2    # Ljava/io/FileDescriptor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end method
@@ -45,12 +59,28 @@
     .end annotation
 .end method
 
+.method public abstract getLastDisconnectMessage()Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+.end method
+
 .method public abstract getMinApkVersion()I
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end method
 
 .method public abstract getRemoteService(Lcom/google/android/gms/common/internal/IAccountAccessor;Ljava/util/Set;)V
+    .param p1    # Lcom/google/android/gms/common/internal/IAccountAccessor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/Set;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -70,7 +100,27 @@
     .end annotation
 .end method
 
+.method public abstract getScopesForConnectionlessNonSignIn()Ljava/util/Set;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Lcom/google/android/gms/common/api/Scope;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getServiceBrokerBinder()Landroid/os/IBinder;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end method

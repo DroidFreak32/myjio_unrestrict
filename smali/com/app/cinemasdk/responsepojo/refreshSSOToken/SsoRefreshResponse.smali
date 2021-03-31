@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public lbCookie:Ljava/lang/String;
+.field private lbCookie:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public ssoLevel:Ljava/lang/String;
+.field private ssoLevel:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public ssoToken:Ljava/lang/String;
+.field private ssoToken:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

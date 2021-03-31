@@ -18,19 +18,19 @@
 
 
 # instance fields
-.field public aspectRatioMismatch:Z
+.field private aspectRatioMismatch:Z
 
-.field public isScheduled:Z
+.field private isScheduled:Z
 
-.field public naturalAspectRatio:F
+.field private naturalAspectRatio:F
 
-.field public targetAspectRatio:F
+.field private targetAspectRatio:F
 
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;)V
     .locals 0
 
     .line 1

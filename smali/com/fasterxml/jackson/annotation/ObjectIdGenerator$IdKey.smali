@@ -18,11 +18,11 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final hashCode:I
+.field private final hashCode:I
 
 .field public final key:Ljava/lang/Object;
 

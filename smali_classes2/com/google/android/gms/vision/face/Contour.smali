@@ -1,9 +1,12 @@
 .class public final Lcom/google/android/gms/vision/face/Contour;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # static fields
 .field public static final FACE:I = 0x1
+
+.field public static final LEFT_CHEEK:I = 0xe
 
 .field public static final LEFT_EYE:I = 0x6
 
@@ -19,6 +22,8 @@
 
 .field public static final NOSE_BRIDGE:I = 0xc
 
+.field public static final RIGHT_CHEEK:I = 0xf
+
 .field public static final RIGHT_EYE:I = 0x7
 
 .field public static final RIGHT_EYEBROW_BOTTOM:I = 0x5
@@ -31,9 +36,9 @@
 
 
 # instance fields
-.field public final type:I
+.field private final type:I
 
-.field public final zzbz:[Landroid/graphics/PointF;
+.field private final zzcq:[Landroid/graphics/PointF;
 
 
 # direct methods
@@ -44,7 +49,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/Contour;->zzbz:[Landroid/graphics/PointF;
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/Contour;->zzcq:[Landroid/graphics/PointF;
 
     .line 3
     iput p2, p0, Lcom/google/android/gms/vision/face/Contour;->type:I
@@ -58,7 +63,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/Contour;->zzbz:[Landroid/graphics/PointF;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/Contour;->zzcq:[Landroid/graphics/PointF;
 
     return-object v0
 .end method

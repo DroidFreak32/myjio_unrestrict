@@ -1,78 +1,84 @@
 .class public final Lcom/google/android/gms/location/zzp;
-.super Lcom/google/android/gms/internal/location/zzak;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
-# instance fields
-.field public final synthetic zzab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+# static fields
+.field public static final zza:Lcom/google/android/gms/common/Feature;
+
+.field public static final zzb:Lcom/google/android/gms/common/Feature;
+
+.field public static final zzc:[Lcom/google/android/gms/common/Feature;
+
+.field private static final zzd:Lcom/google/android/gms/common/Feature;
+
+.field private static final zze:Lcom/google/android/gms/common/Feature;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 7
 
-    iput-object p2, p0, Lcom/google/android/gms/location/zzp;->zzab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    .line 1
+    new-instance v0, Lcom/google/android/gms/common/Feature;
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/location/zzak;-><init>()V
+    const-string v1, "name_ulr_private"
 
-    return-void
-.end method
+    const-wide/16 v2, 0x1
 
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/Feature;-><init>(Ljava/lang/String;J)V
 
-# virtual methods
-.method public final zza(Lcom/google/android/gms/internal/location/zzad;)V
-    .locals 4
+    sput-object v0, Lcom/google/android/gms/location/zzp;->zzd:Lcom/google/android/gms/common/Feature;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/location/zzad;->getStatus()Lcom/google/android/gms/common/api/Status;
+    .line 2
+    new-instance v1, Lcom/google/android/gms/common/Feature;
 
-    move-result-object p1
+    const-string v4, "name_sleep_segment_request"
 
-    if-nez p1, :cond_0
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/android/gms/common/Feature;-><init>(Ljava/lang/String;J)V
 
-    iget-object p1, p0, Lcom/google/android/gms/location/zzp;->zzab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    sput-object v1, Lcom/google/android/gms/location/zzp;->zze:Lcom/google/android/gms/common/Feature;
 
-    new-instance v0, Lcom/google/android/gms/common/api/ApiException;
+    .line 3
+    new-instance v4, Lcom/google/android/gms/common/Feature;
 
-    new-instance v1, Lcom/google/android/gms/common/api/Status;
+    const-string v5, "support_context_feature_id"
 
-    const/16 v2, 0x8
+    invoke-direct {v4, v5, v2, v3}, Lcom/google/android/gms/common/Feature;-><init>(Ljava/lang/String;J)V
 
-    const-string v3, "Got null status from location service"
+    sput-object v4, Lcom/google/android/gms/location/zzp;->zza:Lcom/google/android/gms/common/Feature;
 
-    invoke-direct {v1, v2, v3}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+    .line 4
+    new-instance v5, Lcom/google/android/gms/common/Feature;
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
+    const-string v6, "get_current_location"
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetException(Ljava/lang/Exception;)Z
+    invoke-direct {v5, v6, v2, v3}, Lcom/google/android/gms/common/Feature;-><init>(Ljava/lang/String;J)V
 
-    return-void
+    sput-object v5, Lcom/google/android/gms/location/zzp;->zzb:Lcom/google/android/gms/common/Feature;
 
-    :cond_0
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->getStatusCode()I
+    const/4 v2, 0x4
 
-    move-result v0
+    new-array v2, v2, [Lcom/google/android/gms/common/Feature;
 
-    if-nez v0, :cond_1
+    const/4 v3, 0x0
 
-    iget-object p1, p0, Lcom/google/android/gms/location/zzp;->zzab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    aput-object v0, v2, v3
 
     const/4 v0, 0x1
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    aput-object v1, v2, v0
 
-    move-result-object v0
+    const/4 v0, 0x2
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setResult(Ljava/lang/Object;)V
+    aput-object v4, v2, v0
 
-    return-void
+    const/4 v0, 0x3
 
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/location/zzp;->zzab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    aput-object v5, v2, v0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/ApiExceptionUtil;->fromStatus(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetException(Ljava/lang/Exception;)Z
+    .line 5
+    sput-object v2, Lcom/google/android/gms/location/zzp;->zzc:[Lcom/google/android/gms/common/Feature;
 
     return-void
 .end method

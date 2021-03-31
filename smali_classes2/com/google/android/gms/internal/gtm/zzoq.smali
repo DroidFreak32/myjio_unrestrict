@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public zzafk:Ljava/lang/String;
+.field private zzafk:Ljava/lang/String;
 
-.field public zzasp:Ljava/util/Map;
+.field private zzasp:Ljava/util/Map;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
@@ -19,7 +19,7 @@
     .end annotation
 .end field
 
-.field public final zzasq:Ljava/util/Map;
+.field private final zzasq:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -30,11 +30,11 @@
     .end annotation
 .end field
 
-.field public final zzauz:Lcom/google/android/gms/internal/gtm/zzpa;
+.field private final zzauz:Lcom/google/android/gms/internal/gtm/zzpa;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
 
 # direct methods
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/util/Map;Lcom/google/android/gms/internal/gtm/zzpa;Lcom/google/android/gms/common/util/Clock;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/util/Map;Lcom/google/android/gms/internal/gtm/zzpa;Lcom/google/android/gms/common/util/Clock;)V
     .locals 1
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation

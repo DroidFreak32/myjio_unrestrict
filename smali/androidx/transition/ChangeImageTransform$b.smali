@@ -43,11 +43,11 @@
     return-object p1
 .end method
 
-.method public a(Landroid/widget/ImageView;Landroid/graphics/Matrix;)V
+.method public b(Landroid/widget/ImageView;Landroid/graphics/Matrix;)V
     .locals 0
 
     .line 1
-    invoke-static {p1, p2}, Lxi;->a(Landroid/widget/ImageView;Landroid/graphics/Matrix;)V
+    invoke-static {p1, p2}, Li5;->a(Landroid/widget/ImageView;Landroid/graphics/Matrix;)V
 
     return-void
 .end method
@@ -73,7 +73,7 @@
 
     check-cast p2, Landroid/graphics/Matrix;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeImageTransform$b;->a(Landroid/widget/ImageView;Landroid/graphics/Matrix;)V
+    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeImageTransform$b;->b(Landroid/widget/ImageView;Landroid/graphics/Matrix;)V
 
     return-void
 .end method

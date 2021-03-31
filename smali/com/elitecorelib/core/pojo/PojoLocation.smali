@@ -18,31 +18,31 @@
 
 
 # instance fields
-.field public agentId:Ljava/lang/String;
+.field private agentId:Ljava/lang/String;
 
-.field public category:Ljava/lang/String;
+.field private category:Ljava/lang/String;
 
-.field public distanceLocation:D
+.field private distanceLocation:D
 
 .field public latitude:D
 
-.field public locationDescription:Ljava/lang/String;
+.field private locationDescription:Ljava/lang/String;
 
-.field public locationId:J
+.field private locationId:J
 
-.field public locationName:Ljava/lang/String;
+.field private locationName:Ljava/lang/String;
 
-.field public longitude:D
+.field private longitude:D
 
-.field public offlineMessage:Ljava/lang/String;
+.field private offlineMessage:Ljava/lang/String;
 
-.field public param1:Ljava/lang/String;
+.field private param1:Ljava/lang/String;
 
-.field public param2:Ljava/lang/String;
+.field private param2:Ljava/lang/String;
 
-.field public radius:D
+.field private radius:D
 
-.field public zoneId:I
+.field private zoneId:I
 
 
 # direct methods

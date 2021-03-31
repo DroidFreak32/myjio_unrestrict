@@ -1,131 +1,45 @@
-.class public interface abstract Lcom/google/android/gms/internal/measurement/zzr;
+.class public final Lcom/google/android/gms/internal/measurement/zzr;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
-
-# interfaces
-.implements Landroid/os/IInterface;
+.source "com.google.android.gms:play-services-measurement-sdk-api@@18.0.0"
 
 
-# virtual methods
-.method public abstract beginAdUnitExposure(Ljava/lang/String;J)V
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-.method public abstract clearConditionalUserProperty(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-.end method
 
-.method public abstract endAdUnitExposure(Ljava/lang/String;J)V
-.end method
+# static fields
+.field public static final enum zza:I = 0x1
 
-.method public abstract generateEventId(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+.field private static final enum zzb:I = 0x2
 
-.method public abstract getAppInstanceId(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+.field private static final synthetic zzc:[I
 
-.method public abstract getCachedAppInstanceId(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
 
-.method public abstract getConditionalUserProperties(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
 
-.method public abstract getCurrentScreenClass(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+    const/4 v0, 0x2
 
-.method public abstract getCurrentScreenName(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+    new-array v0, v0, [I
 
-.method public abstract getGmpAppId(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+    .line 1
+    fill-array-data v0, :array_0
 
-.method public abstract getMaxUserProperties(Ljava/lang/String;Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+    .line 2
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzr;->zzc:[I
 
-.method public abstract getTestFlag(Lcom/google/android/gms/internal/measurement/zzs;I)V
-.end method
+    return-void
 
-.method public abstract getUserProperties(Ljava/lang/String;Ljava/lang/String;ZLcom/google/android/gms/internal/measurement/zzs;)V
-.end method
+    nop
 
-.method public abstract initForTests(Ljava/util/Map;)V
-.end method
-
-.method public abstract initialize(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/measurement/zzaa;J)V
-.end method
-
-.method public abstract isDataCollectionEnabled(Lcom/google/android/gms/internal/measurement/zzs;)V
-.end method
-
-.method public abstract logEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;ZZJ)V
-.end method
-
-.method public abstract logEventAndBundle(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Lcom/google/android/gms/internal/measurement/zzs;J)V
-.end method
-
-.method public abstract logHealthData(ILjava/lang/String;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract onActivityCreated(Lcom/google/android/gms/dynamic/IObjectWrapper;Landroid/os/Bundle;J)V
-.end method
-
-.method public abstract onActivityDestroyed(Lcom/google/android/gms/dynamic/IObjectWrapper;J)V
-.end method
-
-.method public abstract onActivityPaused(Lcom/google/android/gms/dynamic/IObjectWrapper;J)V
-.end method
-
-.method public abstract onActivityResumed(Lcom/google/android/gms/dynamic/IObjectWrapper;J)V
-.end method
-
-.method public abstract onActivitySaveInstanceState(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/measurement/zzs;J)V
-.end method
-
-.method public abstract onActivityStarted(Lcom/google/android/gms/dynamic/IObjectWrapper;J)V
-.end method
-
-.method public abstract onActivityStopped(Lcom/google/android/gms/dynamic/IObjectWrapper;J)V
-.end method
-
-.method public abstract performAction(Landroid/os/Bundle;Lcom/google/android/gms/internal/measurement/zzs;J)V
-.end method
-
-.method public abstract registerOnMeasurementEventListener(Lcom/google/android/gms/internal/measurement/zzx;)V
-.end method
-
-.method public abstract resetAnalyticsData(J)V
-.end method
-
-.method public abstract setConditionalUserProperty(Landroid/os/Bundle;J)V
-.end method
-
-.method public abstract setCurrentScreen(Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;Ljava/lang/String;J)V
-.end method
-
-.method public abstract setDataCollectionEnabled(Z)V
-.end method
-
-.method public abstract setDefaultEventParameters(Landroid/os/Bundle;)V
-.end method
-
-.method public abstract setEventInterceptor(Lcom/google/android/gms/internal/measurement/zzx;)V
-.end method
-
-.method public abstract setInstanceIdProvider(Lcom/google/android/gms/internal/measurement/zzy;)V
-.end method
-
-.method public abstract setMeasurementEnabled(ZJ)V
-.end method
-
-.method public abstract setMinimumSessionDuration(J)V
-.end method
-
-.method public abstract setSessionTimeoutDuration(J)V
-.end method
-
-.method public abstract setUserId(Ljava/lang/String;J)V
-.end method
-
-.method public abstract setUserProperty(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/dynamic/IObjectWrapper;ZJ)V
-.end method
-
-.method public abstract unregisterOnMeasurementEventListener(Lcom/google/android/gms/internal/measurement/zzx;)V
+    :array_0
+    .array-data 4
+        0x1
+        0x2
+    .end array-data
 .end method

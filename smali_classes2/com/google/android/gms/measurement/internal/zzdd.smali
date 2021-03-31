@@ -1,13 +1,13 @@
 .class public final synthetic Lcom/google/android/gms/measurement/internal/zzdd;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/measurement/internal/zzek;
+.implements Lcom/google/android/gms/measurement/internal/zzeh;
 
 
 # static fields
-.field public static final zza:Lcom/google/android/gms/measurement/internal/zzek;
+.field public static final zza:Lcom/google/android/gms/measurement/internal/zzeh;
 
 
 # direct methods
@@ -18,12 +18,12 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/measurement/internal/zzdd;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/measurement/internal/zzdd;->zza:Lcom/google/android/gms/measurement/internal/zzek;
+    sput-object v0, Lcom/google/android/gms/measurement/internal/zzdd;->zza:Lcom/google/android/gms/measurement/internal/zzeh;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .method public final zza()Ljava/lang/Object;
     .locals 1
 
-    invoke-static {}, Lcom/google/android/gms/measurement/internal/zzas;->zzaa()Ljava/lang/Boolean;
+    invoke-static {}, Lcom/google/android/gms/measurement/internal/zzas;->zzz()Ljava/lang/Boolean;
 
     move-result-object v0
 

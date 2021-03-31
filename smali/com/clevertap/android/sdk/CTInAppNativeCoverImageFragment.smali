@@ -17,6 +17,12 @@
 # virtual methods
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
+    .param p2    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     sget p3, Lcom/clevertap/android/sdk/R$layout;->inapp_cover_image:I
@@ -98,6 +104,7 @@
 
     iget v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->currentOrientation:I
 
+    .line 9
     invoke-virtual {v1, v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->getInAppMediaForOrientation(I)Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
 
     move-result-object v2
@@ -106,16 +113,17 @@
 
     move-result-object v1
 
+    .line 10
     invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 9
+    .line 11
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 10
+    .line 12
     new-instance v1, Lcom/clevertap/android/sdk/CTInAppBaseFragment$CTInAppNativeButtonClickListener;
 
     invoke-direct {v1, p0}, Lcom/clevertap/android/sdk/CTInAppBaseFragment$CTInAppNativeButtonClickListener;-><init>(Lcom/clevertap/android/sdk/CTInAppBaseFragment;)V
@@ -125,21 +133,21 @@
     :cond_0
     const p3, 0x30a68
 
-    .line 11
+    .line 13
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object p2
 
     check-cast p2, Lcom/clevertap/android/sdk/CloseImageView;
 
-    .line 12
+    .line 14
     new-instance p3, Lcom/clevertap/android/sdk/CTInAppNativeCoverImageFragment$1;
 
     invoke-direct {p3, p0}, Lcom/clevertap/android/sdk/CTInAppNativeCoverImageFragment$1;-><init>(Lcom/clevertap/android/sdk/CTInAppNativeCoverImageFragment;)V
 
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 13
+    .line 15
     iget-object p3, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {p3}, Lcom/clevertap/android/sdk/CTInAppNotification;->isHideCloseButton()Z
@@ -150,12 +158,12 @@
 
     const/16 p3, 0x8
 
-    .line 14
+    .line 16
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 15
+    .line 17
     :cond_1
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 

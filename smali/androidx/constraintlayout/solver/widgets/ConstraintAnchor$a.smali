@@ -34,8 +34,6 @@
     sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$a;->a:[I
 
     :try_start_0
-    sget-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$a;->a:[I
-
     sget-object v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;->CENTER:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

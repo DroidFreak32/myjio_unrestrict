@@ -3,302 +3,302 @@
 .source "TestHistory.java"
 
 # interfaces
-.implements Lfg0;
+.implements Lcom/inn/passivesdk/util/CsvInterface;
 .implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public activeTestType:Ljava/lang/String;
+.field private activeTestType:Ljava/lang/String;
 
-.field public address:Ljava/lang/String;
+.field private address:Ljava/lang/String;
 
-.field public avgBrowseTime:Ljava/lang/Double;
+.field private avgBrowseTime:Ljava/lang/Double;
 
-.field public avgDlRate:Ljava/lang/Double;
+.field private avgDlRate:Ljava/lang/Double;
 
-.field public avgEcIo:Ljava/lang/Integer;
+.field private avgEcIo:Ljava/lang/Integer;
 
-.field public avgEcNo:Ljava/lang/Integer;
+.field private avgEcNo:Ljava/lang/Integer;
 
-.field public avgLatency:Ljava/lang/Double;
+.field private avgLatency:Ljava/lang/Double;
 
-.field public avgLinkspeed:Ljava/lang/Double;
+.field private avgLinkspeed:Ljava/lang/Double;
 
-.field public avgNoise:Ljava/lang/Double;
+.field private avgNoise:Ljava/lang/Double;
 
-.field public avgRscp:Ljava/lang/Integer;
+.field private avgRscp:Ljava/lang/Integer;
 
-.field public avgRsrp:Ljava/lang/Integer;
+.field private avgRsrp:Ljava/lang/Integer;
 
-.field public avgRsrq:Ljava/lang/Integer;
+.field private avgRsrq:Ljava/lang/Integer;
 
-.field public avgRssi:Ljava/lang/Integer;
+.field private avgRssi:Ljava/lang/Integer;
 
-.field public avgRxLevel:Ljava/lang/Integer;
+.field private avgRxLevel:Ljava/lang/Integer;
 
-.field public avgRxquality:Ljava/lang/Integer;
+.field private avgRxquality:Ljava/lang/Integer;
 
-.field public avgSinr:Ljava/lang/Double;
+.field private avgSinr:Ljava/lang/Double;
 
-.field public avgSnr:Ljava/lang/Integer;
+.field private avgSnr:Ljava/lang/Integer;
 
-.field public avgUlRate:Ljava/lang/Double;
+.field private avgUlRate:Ljava/lang/Double;
 
-.field public band:Ljava/lang/String;
+.field private band:Ljava/lang/String;
 
-.field public baseband:Ljava/lang/String;
+.field private baseband:Ljava/lang/String;
 
-.field public batteryLevel:Ljava/lang/String;
+.field private batteryLevel:Ljava/lang/String;
 
-.field public bssid:Ljava/lang/String;
+.field private bssid:Ljava/lang/String;
 
-.field public buildNumber:Ljava/lang/String;
+.field private buildNumber:Ljava/lang/String;
 
-.field public cellId:Ljava/lang/Integer;
+.field private cellId:Ljava/lang/Integer;
 
-.field public channel:Ljava/lang/Integer;
+.field private channel:Ljava/lang/Integer;
 
-.field public chargerConnected:Z
+.field private chargerConnected:Z
 
-.field public clientOperatorName:Ljava/lang/String;
+.field private clientOperatorName:Ljava/lang/String;
 
-.field public clientPingIpAddress:Ljava/lang/String;
+.field private clientPingIpAddress:Ljava/lang/String;
 
-.field public cpuUsage:Ljava/lang/String;
+.field private cpuUsage:Ljava/lang/String;
 
-.field public destinationPingIpAddress:Ljava/lang/String;
+.field private destinationPingIpAddress:Ljava/lang/String;
 
-.field public deviceChipSet:Ljava/lang/String;
+.field private deviceChipSet:Ljava/lang/String;
 
-.field public deviceCoreArch:Ljava/lang/String;
+.field private deviceCoreArch:Ljava/lang/String;
 
-.field public deviceId:Ljava/lang/String;
+.field private deviceId:Ljava/lang/String;
 
-.field public deviceOS:Ljava/lang/String;
+.field private deviceOS:Ljava/lang/String;
 
-.field public deviceSerialNo:Ljava/lang/String;
+.field private deviceSerialNo:Ljava/lang/String;
 
-.field public deviceSocModel:Ljava/lang/String;
+.field private deviceSocModel:Ljava/lang/String;
 
-.field public dlPoints:Ljava/lang/String;
+.field private dlPoints:Ljava/lang/String;
 
-.field public eNodeBId:Ljava/lang/Integer;
+.field private eNodeBId:Ljava/lang/Integer;
 
-.field public endedOn:Ljava/lang/Long;
+.field private endedOn:Ljava/lang/Long;
 
-.field public frequency:Ljava/lang/Integer;
+.field private frequency:Ljava/lang/Integer;
 
-.field public gpsAccuracy:Ljava/lang/Float;
+.field private gpsAccuracy:Ljava/lang/Float;
 
-.field public gpsStatus:Ljava/lang/String;
+.field private gpsStatus:Ljava/lang/String;
 
-.field public gpsTime:J
+.field private gpsTime:J
 
-.field public id:Ljava/lang/Integer;
+.field private id:Ljava/lang/Integer;
 
-.field public imei:Ljava/lang/String;
+.field private imei:Ljava/lang/String;
 
-.field public imsi:Ljava/lang/String;
+.field private imsi:Ljava/lang/String;
 
-.field public internalIp:Ljava/lang/String;
+.field private internalIp:Ljava/lang/String;
 
-.field public ipV4:Ljava/lang/String;
+.field private ipV4:Ljava/lang/String;
 
-.field public ipV6:Ljava/lang/String;
+.field private ipV6:Ljava/lang/String;
 
-.field public isDualSimCardReady:Ljava/lang/Boolean;
+.field private isDualSimCardReady:Ljava/lang/Boolean;
 
-.field public isEcNoCaptured:Z
+.field private isEcNoCaptured:Z
 
-.field public isEnterprise:Ljava/lang/String;
+.field private isEnterprise:Ljava/lang/String;
 
-.field public isManual:Ljava/lang/String;
+.field private isManual:Ljava/lang/String;
 
-.field public isRxQualityCaptured:Z
+.field private isRxQualityCaptured:Z
 
-.field public isUploaded:Ljava/lang/Integer;
+.field private isUploaded:Ljava/lang/Integer;
 
-.field public isWiFiRssiCapturedHistory:Z
+.field private isWiFiRssiCapturedHistory:Z
 
-.field public isWiFiSnrCapturedHistory:Z
+.field private isWiFiSnrCapturedHistory:Z
 
-.field public jitter:Ljava/lang/Double;
+.field private jitter:Ljava/lang/Double;
 
-.field public lac:Ljava/lang/Integer;
+.field private lac:Ljava/lang/Integer;
 
-.field public latitude:Ljava/lang/Double;
+.field private latitude:Ljava/lang/Double;
 
-.field public locationSource:Ljava/lang/String;
+.field private locationSource:Ljava/lang/String;
 
-.field public longitude:Ljava/lang/Double;
+.field private longitude:Ljava/lang/Double;
 
-.field public macAddress:Ljava/lang/String;
+.field private macAddress:Ljava/lang/String;
 
-.field public make:Ljava/lang/String;
+.field private make:Ljava/lang/String;
 
-.field public maxDlRate:Ljava/lang/Double;
+.field private maxDlRate:Ljava/lang/Double;
 
-.field public maxEcIo:Ljava/lang/Integer;
+.field private maxEcIo:Ljava/lang/Integer;
 
-.field public maxEcNo:Ljava/lang/Integer;
+.field private maxEcNo:Ljava/lang/Integer;
 
-.field public maxLatency:Ljava/lang/Double;
+.field private maxLatency:Ljava/lang/Double;
 
-.field public maxLinkspeed:Ljava/lang/Double;
+.field private maxLinkspeed:Ljava/lang/Double;
 
-.field public maxNoise:Ljava/lang/Double;
+.field private maxNoise:Ljava/lang/Double;
 
-.field public maxRscp:Ljava/lang/Integer;
+.field private maxRscp:Ljava/lang/Integer;
 
-.field public maxRsrp:Ljava/lang/Integer;
+.field private maxRsrp:Ljava/lang/Integer;
 
-.field public maxRsrq:Ljava/lang/Integer;
+.field private maxRsrq:Ljava/lang/Integer;
 
-.field public maxRssi:Ljava/lang/Integer;
+.field private maxRssi:Ljava/lang/Integer;
 
-.field public maxRxLevel:Ljava/lang/Integer;
+.field private maxRxLevel:Ljava/lang/Integer;
 
-.field public maxRxquality:Ljava/lang/Integer;
+.field private maxRxquality:Ljava/lang/Integer;
 
-.field public maxSinr:Ljava/lang/Double;
+.field private maxSinr:Ljava/lang/Double;
 
-.field public maxSnr:Ljava/lang/Integer;
+.field private maxSnr:Ljava/lang/Integer;
 
-.field public maxUlRate:Ljava/lang/Double;
+.field private maxUlRate:Ljava/lang/Double;
 
-.field public mcc:Ljava/lang/Integer;
+.field private mcc:Ljava/lang/Integer;
 
-.field public memoryUsage:Ljava/lang/String;
+.field private memoryUsage:Ljava/lang/String;
 
-.field public minDlRate:Ljava/lang/Double;
+.field private minDlRate:Ljava/lang/Double;
 
-.field public minEcIo:Ljava/lang/Integer;
+.field private minEcIo:Ljava/lang/Integer;
 
-.field public minEcNo:Ljava/lang/Integer;
+.field private minEcNo:Ljava/lang/Integer;
 
-.field public minLatency:Ljava/lang/Double;
+.field private minLatency:Ljava/lang/Double;
 
-.field public minLinkspeed:Ljava/lang/Double;
+.field private minLinkspeed:Ljava/lang/Double;
 
-.field public minNoise:Ljava/lang/Double;
+.field private minNoise:Ljava/lang/Double;
 
-.field public minRscp:Ljava/lang/Integer;
+.field private minRscp:Ljava/lang/Integer;
 
-.field public minRsrp:Ljava/lang/Integer;
+.field private minRsrp:Ljava/lang/Integer;
 
-.field public minRsrq:Ljava/lang/Integer;
+.field private minRsrq:Ljava/lang/Integer;
 
-.field public minRssi:Ljava/lang/Integer;
+.field private minRssi:Ljava/lang/Integer;
 
-.field public minRxLevel:Ljava/lang/Integer;
+.field private minRxLevel:Ljava/lang/Integer;
 
-.field public minRxquality:Ljava/lang/Integer;
+.field private minRxquality:Ljava/lang/Integer;
 
-.field public minSinr:Ljava/lang/Double;
+.field private minSinr:Ljava/lang/Double;
 
-.field public minSnr:Ljava/lang/Integer;
+.field private minSnr:Ljava/lang/Integer;
 
-.field public minUlRate:Ljava/lang/Double;
+.field private minUlRate:Ljava/lang/Double;
 
-.field public mnc:Ljava/lang/Integer;
+.field private mnc:Ljava/lang/Integer;
 
-.field public mobileNumber:Ljava/lang/String;
+.field private mobileNumber:Ljava/lang/String;
 
-.field public model:Ljava/lang/String;
+.field private model:Ljava/lang/String;
 
-.field public nearestServerCity:Ljava/lang/String;
+.field private nearestServerCity:Ljava/lang/String;
 
-.field public nearestServerFetchTime:Ljava/lang/Long;
+.field private nearestServerFetchTime:Ljava/lang/Long;
 
-.field public nearestServerFrom:Ljava/lang/String;
+.field private nearestServerFrom:Ljava/lang/String;
 
-.field public nearestServerIP:Ljava/lang/String;
+.field private nearestServerIP:Ljava/lang/String;
 
-.field public neighboursInfo:Ljava/lang/String;
+.field private neighboursInfo:Ljava/lang/String;
 
-.field public netvelocityId:Ljava/lang/String;
+.field private netvelocityId:Ljava/lang/String;
 
-.field public networkSubtype:Ljava/lang/String;
+.field private networkSubtype:Ljava/lang/String;
 
-.field public networkTypeWhenWifi:Ljava/lang/String;
+.field private networkTypeWhenWifi:Ljava/lang/String;
 
-.field public nvModule:Ljava/lang/String;
+.field private nvModule:Ljava/lang/String;
 
-.field public operatorNameWhenWifi:Ljava/lang/String;
+.field private operatorNameWhenWifi:Ljava/lang/String;
 
-.field public pci:Ljava/lang/Integer;
+.field private pci:Ljava/lang/Integer;
 
-.field public pcktLoss:Ljava/lang/Double;
+.field private pcktLoss:Ljava/lang/Double;
 
-.field public pcktReceived:Ljava/lang/Double;
+.field private pcktReceived:Ljava/lang/Double;
 
-.field public pcktTransmitted:Ljava/lang/Double;
+.field private pcktTransmitted:Ljava/lang/Double;
 
-.field public pinName:Ljava/lang/String;
+.field private pinName:Ljava/lang/String;
 
-.field public psc:Ljava/lang/Integer;
+.field private psc:Ljava/lang/Integer;
 
-.field public sectorId:Ljava/lang/Integer;
+.field private sectorId:Ljava/lang/Integer;
 
-.field public securityType:Ljava/lang/String;
+.field private securityType:Ljava/lang/String;
 
-.field public ssid:Ljava/lang/String;
+.field private ssid:Ljava/lang/String;
 
-.field public starRating:Ljava/lang/Integer;
+.field private starRating:Ljava/lang/Integer;
 
-.field public startedOn:Ljava/lang/Long;
+.field private startedOn:Ljava/lang/Long;
 
-.field public tac:Ljava/lang/Integer;
+.field private tac:Ljava/lang/Integer;
 
-.field public temperature:Ljava/lang/String;
+.field private temperature:Ljava/lang/String;
 
-.field public testNotificationId:Ljava/lang/String;
+.field private testNotificationId:Ljava/lang/String;
 
-.field public time:Ljava/lang/Double;
+.field private time:Ljava/lang/Double;
 
-.field public type:Ljava/lang/String;
+.field private type:Ljava/lang/String;
 
-.field public ueCellType:Ljava/lang/String;
+.field private ueCellType:Ljava/lang/String;
 
-.field public ueLocationIndoorOutdoor:Ljava/lang/String;
+.field private ueLocationIndoorOutdoor:Ljava/lang/String;
 
-.field public ulPoints:Ljava/lang/String;
+.field private ulPoints:Ljava/lang/String;
 
-.field public url1:Ljava/lang/String;
+.field private url1:Ljava/lang/String;
 
-.field public url1BrowseTime:Ljava/lang/Double;
+.field private url1BrowseTime:Ljava/lang/Double;
 
-.field public url1ResponseCode:Ljava/lang/Integer;
+.field private url1ResponseCode:Ljava/lang/Integer;
 
-.field public url2:Ljava/lang/String;
+.field private url2:Ljava/lang/String;
 
-.field public url2BrowseTime:Ljava/lang/Double;
+.field private url2BrowseTime:Ljava/lang/Double;
 
-.field public url2ResponseCode:Ljava/lang/Integer;
+.field private url2ResponseCode:Ljava/lang/Integer;
 
-.field public url3:Ljava/lang/String;
+.field private url3:Ljava/lang/String;
 
-.field public url3BrowseTime:Ljava/lang/Double;
+.field private url3BrowseTime:Ljava/lang/Double;
 
-.field public url3ResponseCode:Ljava/lang/Integer;
+.field private url3ResponseCode:Ljava/lang/Integer;
 
-.field public userComment:Ljava/lang/String;
+.field private userComment:Ljava/lang/String;
 
-.field public userid:Ljava/lang/Integer;
+.field private userid:Ljava/lang/Integer;
 
-.field public versionName:Ljava/lang/String;
+.field private versionName:Ljava/lang/String;
 
-.field public voltage:Ljava/lang/String;
+.field private voltage:Ljava/lang/String;
 
-.field public wifiAvgRssi:Ljava/lang/Integer;
+.field private wifiAvgRssi:Ljava/lang/Integer;
 
-.field public wifiMaxRssi:Ljava/lang/Integer;
+.field private wifiMaxRssi:Ljava/lang/Integer;
 
-.field public wifiMinRssi:Ljava/lang/Integer;
+.field private wifiMinRssi:Ljava/lang/Integer;
 
-.field public wifiScanList:Ljava/lang/String;
+.field private wifiScanList:Ljava/lang/String;
 
-.field public youtubeDlAvg:Ljava/lang/Double;
+.field private youtubeDlAvg:Ljava/lang/Double;
 
 
 # direct methods

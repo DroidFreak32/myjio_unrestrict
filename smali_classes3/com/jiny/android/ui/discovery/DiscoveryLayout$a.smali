@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jiny/android/ui/discovery/DiscoveryLayout;->e()V
+    value = Lcom/jiny/android/ui/discovery/DiscoveryLayout;->B()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -40,15 +40,15 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;Z)Z
+    invoke-static {v0, v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->u(Lcom/jiny/android/ui/discovery/DiscoveryLayout;Z)Z
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$a;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->j(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->R(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$a;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->y(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
 
     move-result-object v0
 
@@ -80,13 +80,13 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$a;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->k(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/widget/LinearLayout;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->S(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/widget/LinearLayout;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$a;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->k(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/widget/LinearLayout;
+    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->S(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/widget/LinearLayout;
 
     move-result-object v1
 
@@ -94,7 +94,7 @@
 
     move-result v1
 
-    invoke-static {}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->A()F
+    invoke-static {}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->Q()F
 
     move-result v2
 
@@ -104,7 +104,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$a;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->l(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->V(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
 
     return-void
 .end method

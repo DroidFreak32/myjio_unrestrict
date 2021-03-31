@@ -1,133 +1,41 @@
 .class public final Lcom/google/android/gms/internal/vision/zzfo;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/vision/zzig;
 
 
-# static fields
-.field public static final zztk:Lcom/google/android/gms/internal/vision/zzfl;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;"
-        }
-    .end annotation
-.end field
-
-.field public static final zztl:Lcom/google/android/gms/internal/vision/zzfl;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/vision/zzig<",
+        "Lcom/google/android/gms/internal/vision/zzfl$zze$zza;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzfm;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzfm;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzfo;->zztk:Lcom/google/android/gms/internal/vision/zzfl;
-
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzfo;->zzem()Lcom/google/android/gms/internal/vision/zzfl;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzfo;->zztl:Lcom/google/android/gms/internal/vision/zzfl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zzem()Lcom/google/android/gms/internal/vision/zzfl;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;"
-        }
-    .end annotation
 
-    const-string v0, "com.google.protobuf.ExtensionSchemaFull"
+# virtual methods
+.method public final synthetic zzh(I)Lcom/google/android/gms/internal/vision/zzih;
+    .locals 0
 
     .line 1
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzfl$zze$zza;->zzz(I)Lcom/google/android/gms/internal/vision/zzfl$zze$zza;
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x0
-
-    new-array v2, v1, [Ljava/lang/Class;
-
-    .line 2
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzfl;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public static zzen()Lcom/google/android/gms/internal/vision/zzfl;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzfo;->zztk:Lcom/google/android/gms/internal/vision/zzfl;
-
-    return-object v0
-.end method
-
-.method public static zzeo()Lcom/google/android/gms/internal/vision/zzfl;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzfo;->zztl:Lcom/google/android/gms/internal/vision/zzfl;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    .line 2
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Protobuf runtime is not correctly loaded."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-object p1
 .end method

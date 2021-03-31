@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/widget/ActionBarContextView;->a(Lz0;)V
+    value = Landroidx/appcompat/widget/ActionBarContextView;->initForMode(Landroidx/appcompat/view/ActionMode;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,15 +18,15 @@
 
 
 # instance fields
-.field public final synthetic s:Lz0;
+.field public final synthetic a:Landroidx/appcompat/view/ActionMode;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/appcompat/widget/ActionBarContextView;Lz0;)V
+.method public constructor <init>(Landroidx/appcompat/widget/ActionBarContextView;Landroidx/appcompat/view/ActionMode;)V
     .locals 0
 
     .line 1
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContextView$a;->s:Lz0;
+    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContextView$a;->a:Landroidx/appcompat/view/ActionMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     .locals 0
 
     .line 1
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContextView$a;->s:Lz0;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContextView$a;->a:Landroidx/appcompat/view/ActionMode;
 
-    invoke-virtual {p1}, Lz0;->a()V
+    invoke-virtual {p1}, Landroidx/appcompat/view/ActionMode;->finish()V
 
     return-void
 .end method

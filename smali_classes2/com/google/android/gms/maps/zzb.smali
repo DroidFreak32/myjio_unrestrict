@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzj:Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;
+.field private final synthetic zzj:Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;
 
 
 # direct methods

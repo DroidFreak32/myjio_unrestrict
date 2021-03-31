@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
 .field public static final enum ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
@@ -40,109 +40,97 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    const/4 v1, 0x0
+    const-string v1, "ANY"
 
-    const-string v2, "ANY"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     const-string v3, "NON_PRIVATE"
 
-    invoke-direct {v0, v3, v2}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->NON_PRIVATE:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    invoke-direct {v1, v3, v4}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->NON_PRIVATE:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    new-instance v3, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    const/4 v3, 0x2
+    const-string v5, "PROTECTED_AND_PUBLIC"
 
-    const-string v4, "PROTECTED_AND_PUBLIC"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PROTECTED_AND_PUBLIC:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sput-object v3, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PROTECTED_AND_PUBLIC:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    new-instance v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    const/4 v4, 0x3
+    const-string v7, "PUBLIC_ONLY"
 
-    const-string v5, "PUBLIC_ONLY"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sput-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 5
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    new-instance v7, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    const/4 v5, 0x4
+    const-string v9, "NONE"
 
-    const-string v6, "NONE"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->NONE:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sput-object v7, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->NONE:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 6
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    new-instance v9, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    const/4 v6, 0x5
+    const-string v11, "DEFAULT"
 
-    const-string v7, "DEFAULT"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sput-object v9, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    const/4 v0, 0x6
+    const/4 v11, 0x6
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    new-array v11, v11, [Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+
+    aput-object v0, v11, v2
+
+    aput-object v1, v11, v4
+
+    aput-object v3, v11, v6
+
+    aput-object v5, v11, v8
+
+    aput-object v7, v11, v10
+
+    aput-object v9, v11, v12
 
     .line 7
-    sget-object v7, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    aput-object v7, v0, v1
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->NON_PRIVATE:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PROTECTED_AND_PUBLIC:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->NONE:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->$VALUES:[Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sput-object v11, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->$VALUES:[Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -189,7 +177,7 @@
 
 # virtual methods
 .method public isVisible(Ljava/lang/reflect/Member;)Z
-    .locals 4
+    .locals 3
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonAutoDetect$Visibility:[I
@@ -202,13 +190,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_4
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x0
-
-    if-eq v0, v2, :cond_3
+    if-eq v0, v1, :cond_3
 
     const/4 v2, 0x3
 
@@ -222,7 +204,9 @@
 
     if-eq v0, v1, :cond_1
 
-    return v3
+    const/4 p1, 0x0
+
+    return p1
 
     .line 2
     :cond_0
@@ -265,8 +249,5 @@
     return p1
 
     :cond_3
-    return v3
-
-    :cond_4
     return v1
 .end method

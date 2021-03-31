@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public results:Ljava/util/List;
+.field private results:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public status:Ljava/lang/String;
+.field private status:Ljava/lang/String;
 
 
 # direct methods

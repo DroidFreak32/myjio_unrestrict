@@ -5,9 +5,9 @@
 # static fields
 .field public static final a:Lcom/google/a/a/c;
 
-.field public static final b:Ljava/util/logging/Logger;
+.field private static final b:Ljava/util/logging/Logger;
 
-.field public static final c:Ljava/util/concurrent/ConcurrentHashMap;
+.field private static final c:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -18,7 +18,7 @@
     .end annotation
 .end field
 
-.field public static final d:Ljava/util/concurrent/ConcurrentHashMap;
+.field private static final d:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public static final e:Ljava/util/Set;
+.field private static final e:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public static final f:Ljava/util/Set;
+.field private static final f:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -99,7 +99,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -201,16 +201,13 @@
 
     if-eqz p0, :cond_2
 
-    goto :goto_0
+    move-object p2, p0
 
     :cond_2
-    move-object p0, p2
-
-    :goto_0
-    return-object p0
+    return-object p2
 .end method
 
-.method public static a(Ljava/io/InputStream;)Lcom/google/a/a/i$c;
+.method private static a(Ljava/io/InputStream;)Lcom/google/a/a/i$c;
     .locals 5
 
     const-string v0, "error closing input stream (ignored)"
@@ -274,12 +271,12 @@
     :catchall_0
     move-exception v1
 
+    move-object v2, v3
+
     goto :goto_1
 
     :catchall_1
     move-exception v1
-
-    move-object v3, v2
 
     goto :goto_1
 
@@ -296,10 +293,10 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     :goto_1
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     :try_start_6
-    invoke-virtual {v3}, Ljava/io/ObjectInputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/ObjectInputStream;->close()V
 
     goto :goto_2
 
@@ -323,7 +320,7 @@
     throw v1
 .end method
 
-.method public static a(Ljava/lang/String;Lcom/google/a/a/c;)Ljava/util/List;
+.method private static a(Ljava/lang/String;Lcom/google/a/a/c;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {

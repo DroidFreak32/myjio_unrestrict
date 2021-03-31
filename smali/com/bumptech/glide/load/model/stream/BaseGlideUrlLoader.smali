@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public final concreteLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final concreteLoader:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader<",
@@ -33,7 +33,10 @@
     .end annotation
 .end field
 
-.field public final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+.field private final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelCache<",
@@ -68,6 +71,10 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/load/model/ModelLoader;Lcom/bumptech/glide/load/model/ModelCache;)V
     .locals 0
+    .param p2    # Lcom/bumptech/glide/load/model/ModelCache;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +101,7 @@
     return-void
 .end method
 
-.method public static getAlternateKeys(Ljava/util/Collection;)Ljava/util/List;
+.method private static getAlternateKeys(Ljava/util/Collection;)Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -152,6 +159,17 @@
 # virtual methods
 .method public buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 3
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;II",
@@ -288,6 +306,9 @@
 
 .method public getHeaders(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/Headers;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;II",

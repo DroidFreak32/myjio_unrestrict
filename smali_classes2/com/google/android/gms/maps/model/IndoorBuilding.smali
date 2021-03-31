@@ -11,14 +11,24 @@
 
 
 # instance fields
-.field public final zzdd:Lcom/google/android/gms/internal/maps/zzn;
+.field private final zzdd:Lcom/google/android/gms/internal/maps/zzn;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
-.field public final zzde:Lcom/google/android/gms/maps/model/IndoorBuilding$zza;
+.field private final zzde:Lcom/google/android/gms/maps/model/IndoorBuilding$zza;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/internal/maps/zzn;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/internal/maps/zzn;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lcom/google/android/gms/maps/model/IndoorBuilding$zza;->zzdf:Lcom/google/android/gms/maps/model/IndoorBuilding$zza;
@@ -28,8 +38,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/maps/zzn;Lcom/google/android/gms/maps/model/IndoorBuilding$zza;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/maps/zzn;Lcom/google/android/gms/maps/model/IndoorBuilding$zza;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/internal/maps/zzn;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/maps/model/IndoorBuilding$zza;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 

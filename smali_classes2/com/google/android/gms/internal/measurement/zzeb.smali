@@ -1,108 +1,419 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzeb;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
-
-# interfaces
-.implements Ljava/util/Comparator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "Lcom/google/android/gms/internal/measurement/zzdz;",
-        ">;"
-    }
-.end annotation
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static zza(II)I
+    .locals 6
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-ltz p0, :cond_1
 
-    return-void
-.end method
+    if-lt p0, p1, :cond_0
 
+    goto :goto_0
 
-# virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 4
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/measurement/zzdz;
-
-    check-cast p2, Lcom/google/android/gms/internal/measurement/zzdz;
-
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/measurement/zzdz;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzei;
-
-    .line 3
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/measurement/zzdz;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/measurement/zzei;
+    :cond_0
+    return p0
 
     .line 4
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-    move-result v2
+    const/4 v1, 0x1
 
-    if-eqz v2, :cond_1
+    const/4 v2, 0x0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v3, 0x2
 
-    move-result v2
+    const-string v4, "index"
 
-    if-eqz v2, :cond_1
+    if-ltz p0, :cond_3
+
+    if-gez p1, :cond_2
 
     .line 5
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzei;->zza()B
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    move-result v2
+    const/16 v0, 0x1a
 
-    invoke-static {v2}, Lcom/google/android/gms/internal/measurement/zzdz;->zza(B)I
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result v2
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {v1}, Lcom/google/android/gms/internal/measurement/zzei;->zza()B
+    const-string v0, "negative size: "
 
-    move-result v3
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3}, Lcom/google/android/gms/internal/measurement/zzdz;->zza(B)I
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v3
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v2, v3}, Ljava/lang/Integer;->compare(II)I
+    move-result-object p1
 
-    move-result v2
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    if-eqz v2, :cond_0
+    throw p0
 
-    return v2
+    :cond_2
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    aput-object v4, v5, v2
 
     .line 6
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, v5, v1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, v5, v3
+
+    const-string p0, "%s (%s) must be less than size (%s)"
+
+    invoke-static {p0, v5}, Lcom/google/android/gms/internal/measurement/zzed;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    :cond_3
+    new-array p1, v3, [Ljava/lang/Object;
+
+    aput-object v4, p1, v2
+
+    .line 7
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, p1, v1
+
+    const-string p0, "%s (%s) must not be negative"
+
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/measurement/zzed;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 8
+    :goto_1
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static zza(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NonNullDecl;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)TT;"
+        }
+    .end annotation
+
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NonNullDecl;
+    .end annotation
+
+    .line 2
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public static zza(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NonNullDecl;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;",
+            "Ljava/lang/Object;",
+            ")TT;"
+        }
+    .end annotation
+
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NonNullDecl;
+    .end annotation
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    .line 3
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method private static zza(IILjava/lang/String;)Ljava/lang/String;
+    .locals 4
+    .param p2    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    if-gez p0, :cond_0
+
+    new-array p1, v2, [Ljava/lang/Object;
+
+    aput-object p2, p1, v1
+
+    .line 9
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, p1, v0
+
+    const-string p0, "%s (%s) must not be negative"
+
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/measurement/zzed;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    if-ltz p1, :cond_1
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    aput-object p2, v3, v1
+
+    .line 10
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, v3, v0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, v3, v2
+
+    const-string p0, "%s (%s) must not be greater than size (%s)"
+
+    invoke-static {p0, v3}, Lcom/google/android/gms/internal/measurement/zzed;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 11
     :cond_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/measurement/zzdz;->zza()I
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    move-result p1
+    const/16 p2, 0x1a
 
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/measurement/zzdz;->zza()I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result p2
+    invoke-direct {v0, p2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-static {p1, p2}, Ljava/lang/Integer;->compare(II)I
+    const-string p2, "negative size: "
 
-    move-result p1
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return p1
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static zza(III)V
+    .locals 2
+
+    if-ltz p0, :cond_1
+
+    if-lt p1, p0, :cond_1
+
+    if-le p1, p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    .line 12
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    if-ltz p0, :cond_4
+
+    if-gt p0, p2, :cond_4
+
+    if-ltz p1, :cond_3
+
+    if-le p1, p2, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 p2, 0x2
+
+    new-array p2, p2, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    .line 13
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, p2, v1
+
+    const/4 p1, 0x1
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    aput-object p0, p2, p1
+
+    const-string p0, "end index (%s) must not be less than start index (%s)"
+
+    invoke-static {p0, p2}, Lcom/google/android/gms/internal/measurement/zzed;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_2
+
+    :cond_3
+    :goto_1
+    const-string p0, "end index"
+
+    .line 14
+    invoke-static {p1, p2, p0}, Lcom/google/android/gms/internal/measurement/zzeb;->zza(IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_2
+
+    :cond_4
+    const-string p1, "start index"
+
+    .line 15
+    invoke-static {p0, p2, p1}, Lcom/google/android/gms/internal/measurement/zzeb;->zza(IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 16
+    :goto_2
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static zza(ZLjava/lang/Object;)V
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    .line 1
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static zzb(II)I
+    .locals 2
+
+    if-ltz p0, :cond_0
+
+    if-gt p0, p1, :cond_0
+
+    return p0
+
+    .line 2
+    :cond_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v1, "index"
+
+    invoke-static {p0, p1, v1}, Lcom/google/android/gms/internal/measurement/zzeb;->zza(IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static zzb(ZLjava/lang/Object;)V
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    .line 1
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

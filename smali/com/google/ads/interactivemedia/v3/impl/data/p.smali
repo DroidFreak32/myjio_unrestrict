@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public final attached:Z
+.field private final attached:Z
 
-.field public final bounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
+.field private final bounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
-.field public final hidden:Z
+.field private final hidden:Z
 
-.field public final type:Ljava/lang/String;
+.field private final type:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(ZLcom/google/ads/interactivemedia/v3/impl/data/v;ZLjava/lang/String;)V
+.method private constructor <init>(ZLcom/google/ads/interactivemedia/v3/impl/data/v;ZLjava/lang/String;)V
     .locals 0
 
     .line 1
@@ -271,7 +271,7 @@
 
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

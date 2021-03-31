@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/GoogleApiAvailability$zaa;
 .super Lcom/google/android/gms/internal/base/zap;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -20,9 +21,9 @@
 
 
 # instance fields
-.field public final zaaq:Landroid/content/Context;
+.field private final zaa:Landroid/content/Context;
 
-.field public final synthetic zaar:Lcom/google/android/gms/common/GoogleApiAvailability;
+.field private final synthetic zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
 
 # direct methods
@@ -30,7 +31,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaar:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iput-object p1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     .line 2
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -58,7 +59,7 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaaq:Landroid/content/Context;
+    iput-object p1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaa:Landroid/content/Context;
 
     return-void
 .end method
@@ -94,16 +95,16 @@
 
     .line 3
     :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaar:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iget-object p1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaaq:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaa:Landroid/content/Context;
 
     invoke-virtual {p1, v0}, Lcom/google/android/gms/common/GoogleApiAvailability;->isGooglePlayServicesAvailable(Landroid/content/Context;)I
 
     move-result p1
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaar:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iget-object v0, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/common/GoogleApiAvailability;->isUserResolvableError(I)Z
 
@@ -112,9 +113,9 @@
     if-eqz v0, :cond_1
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaar:Lcom/google/android/gms/common/GoogleApiAvailability;
+    iget-object v0, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaaq:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/common/GoogleApiAvailability$zaa;->zaa:Landroid/content/Context;
 
     invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/common/GoogleApiAvailability;->showErrorNotification(Landroid/content/Context;I)V
 

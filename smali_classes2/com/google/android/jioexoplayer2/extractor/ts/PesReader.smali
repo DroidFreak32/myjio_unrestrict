@@ -7,47 +7,47 @@
 
 
 # static fields
-.field public static final HEADER_SIZE:I = 0x9
+.field private static final HEADER_SIZE:I = 0x9
 
-.field public static final MAX_HEADER_EXTENSION_SIZE:I = 0xa
+.field private static final MAX_HEADER_EXTENSION_SIZE:I = 0xa
 
-.field public static final PES_SCRATCH_SIZE:I = 0xa
+.field private static final PES_SCRATCH_SIZE:I = 0xa
 
-.field public static final STATE_FINDING_HEADER:I = 0x0
+.field private static final STATE_FINDING_HEADER:I = 0x0
 
-.field public static final STATE_READING_BODY:I = 0x3
+.field private static final STATE_READING_BODY:I = 0x3
 
-.field public static final STATE_READING_HEADER:I = 0x1
+.field private static final STATE_READING_HEADER:I = 0x1
 
-.field public static final STATE_READING_HEADER_EXTENSION:I = 0x2
+.field private static final STATE_READING_HEADER_EXTENSION:I = 0x2
 
-.field public static final TAG:Ljava/lang/String; = "PesReader"
+.field private static final TAG:Ljava/lang/String; = "PesReader"
 
 
 # instance fields
-.field public bytesRead:I
+.field private bytesRead:I
 
-.field public dataAlignmentIndicator:Z
+.field private dataAlignmentIndicator:Z
 
-.field public dtsFlag:Z
+.field private dtsFlag:Z
 
-.field public extendedHeaderLength:I
+.field private extendedHeaderLength:I
 
-.field public payloadSize:I
+.field private payloadSize:I
 
-.field public final pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-.field public ptsFlag:Z
+.field private ptsFlag:Z
 
-.field public final reader:Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;
+.field private final reader:Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;
 
-.field public seenFirstDts:Z
+.field private seenFirstDts:Z
 
-.field public state:I
+.field private state:I
 
-.field public timeUs:J
+.field private timeUs:J
 
-.field public timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -122,9 +122,6 @@
     add-int/2addr p1, v0
 
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->bytesRead:I
-
-    .line 5
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->bytesRead:I
 
     if-ne p1, p3, :cond_2
 
@@ -272,11 +269,9 @@
 
     add-int/lit8 v0, v0, -0x9
 
-    .line 15
-    iget v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->extendedHeaderLength:I
-
     sub-int/2addr v0, v1
 
+    .line 15
     iput v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->payloadSize:I
 
     :goto_0
@@ -472,6 +467,11 @@
 # virtual methods
 .method public final consume(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ParserException;
+        }
+    .end annotation
 
     and-int/lit8 v0, p2, 0x1
 
@@ -620,22 +620,19 @@
     .line 15
     iput v5, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->payloadSize:I
 
+    if-nez v5, :cond_4
+
     .line 16
-    iget v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->payloadSize:I
-
-    if-nez v0, :cond_4
-
-    .line 17
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->reader:Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;
 
     invoke-interface {v0}, Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;->packetFinished()V
 
-    .line 18
+    .line 17
     invoke-direct {p0, v4}, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->setState(I)V
 
     goto :goto_1
 
-    .line 19
+    .line 18
     :cond_7
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -646,14 +643,14 @@
     :cond_8
     const/16 v0, 0xa
 
-    .line 20
+    .line 19
     iget v6, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->extendedHeaderLength:I
 
     invoke-static {v0, v6}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 21
+    .line 20
     iget-object v6, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
     iget-object v6, v6, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;->data:[B
@@ -668,17 +665,17 @@
 
     iget v6, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->extendedHeaderLength:I
 
-    .line 22
+    .line 21
     invoke-direct {p0, p1, v0, v6}, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->continueRead(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;[BI)Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 23
+    .line 22
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->parseHeaderExtension()V
 
-    .line 24
+    .line 23
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->dataAlignmentIndicator:Z
 
     if-eqz v0, :cond_9
@@ -688,19 +685,19 @@
     :cond_9
     or-int/2addr p2, v5
 
-    .line 25
+    .line 24
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->reader:Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;
 
     iget-wide v5, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->timeUs:J
 
     invoke-interface {v0, v5, v6, p2}, Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;->packetStarted(JI)V
 
-    .line 26
+    .line 25
     invoke-direct {p0, v2}, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->setState(I)V
 
     goto :goto_1
 
-    .line 27
+    .line 26
     :cond_a
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
@@ -714,7 +711,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 28
+    .line 27
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/extractor/ts/PesReader;->parseHeader()Z
 
     move-result v0
@@ -728,7 +725,7 @@
 
     goto/16 :goto_1
 
-    .line 29
+    .line 28
     :cond_c
     invoke-virtual {p1}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->bytesLeft()I
 

@@ -29,17 +29,17 @@
 
 
 # static fields
-.field public static final ASSET_PATH_SEGMENT:Ljava/lang/String; = "android_asset"
+.field private static final ASSET_PATH_SEGMENT:Ljava/lang/String; = "android_asset"
 
-.field public static final ASSET_PREFIX:Ljava/lang/String; = "file:///android_asset/"
+.field private static final ASSET_PREFIX:Ljava/lang/String; = "file:///android_asset/"
 
-.field public static final ASSET_PREFIX_LENGTH:I = 0x16
+.field private static final ASSET_PREFIX_LENGTH:I = 0x16
 
 
 # instance fields
-.field public final assetManager:Landroid/content/res/AssetManager;
+.field private final assetManager:Landroid/content/res/AssetManager;
 
-.field public final factory:Lcom/bumptech/glide/load/model/AssetUriLoader$AssetFetcherFactory;
+.field private final factory:Lcom/bumptech/glide/load/model/AssetUriLoader$AssetFetcherFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/AssetUriLoader$AssetFetcherFactory<",
@@ -83,6 +83,14 @@
 # virtual methods
 .method public buildLoadData(Landroid/net/Uri;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 1
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -128,6 +136,14 @@
 
 .method public bridge synthetic buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Landroid/net/Uri;
@@ -141,6 +157,10 @@
 
 .method public handles(Landroid/net/Uri;)Z
     .locals 2
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -192,6 +212,10 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Landroid/net/Uri;

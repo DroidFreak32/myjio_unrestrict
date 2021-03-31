@@ -29,7 +29,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit;Ljava/util/List;)V
+.method private constructor <init>(Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit;Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/airbnb/lottie/model/DocumentData$Justification;
@@ -12,68 +18,82 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final baselineShift:F
 
-.field public final b:Ljava/lang/String;
+.field public final color:I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
-.field public final c:F
+.field public final fontName:Ljava/lang/String;
 
-.field public final d:Lcom/airbnb/lottie/model/DocumentData$Justification;
+.field public final justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
-.field public final e:I
+.field public final lineHeight:F
 
-.field public final f:F
+.field public final size:F
 
-.field public final g:F
+.field public final strokeColor:I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
-.field public final h:I
+.field public final strokeOverFill:Z
 
-.field public final i:I
+.field public final strokeWidth:F
 
-.field public final j:F
+.field public final text:Ljava/lang/String;
 
-.field public final k:Z
+.field public final tracking:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;FLcom/airbnb/lottie/model/DocumentData$Justification;IFFIIFZ)V
     .locals 0
+    .param p8    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
+    .param p9    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/airbnb/lottie/model/DocumentData;->a:Ljava/lang/String;
+    iput-object p1, p0, Lcom/airbnb/lottie/model/DocumentData;->text:Ljava/lang/String;
 
     .line 3
-    iput-object p2, p0, Lcom/airbnb/lottie/model/DocumentData;->b:Ljava/lang/String;
+    iput-object p2, p0, Lcom/airbnb/lottie/model/DocumentData;->fontName:Ljava/lang/String;
 
     .line 4
-    iput p3, p0, Lcom/airbnb/lottie/model/DocumentData;->c:F
+    iput p3, p0, Lcom/airbnb/lottie/model/DocumentData;->size:F
 
     .line 5
-    iput-object p4, p0, Lcom/airbnb/lottie/model/DocumentData;->d:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    iput-object p4, p0, Lcom/airbnb/lottie/model/DocumentData;->justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     .line 6
-    iput p5, p0, Lcom/airbnb/lottie/model/DocumentData;->e:I
+    iput p5, p0, Lcom/airbnb/lottie/model/DocumentData;->tracking:I
 
     .line 7
-    iput p6, p0, Lcom/airbnb/lottie/model/DocumentData;->f:F
+    iput p6, p0, Lcom/airbnb/lottie/model/DocumentData;->lineHeight:F
 
     .line 8
-    iput p7, p0, Lcom/airbnb/lottie/model/DocumentData;->g:F
+    iput p7, p0, Lcom/airbnb/lottie/model/DocumentData;->baselineShift:F
 
     .line 9
-    iput p8, p0, Lcom/airbnb/lottie/model/DocumentData;->h:I
+    iput p8, p0, Lcom/airbnb/lottie/model/DocumentData;->color:I
 
     .line 10
-    iput p9, p0, Lcom/airbnb/lottie/model/DocumentData;->i:I
+    iput p9, p0, Lcom/airbnb/lottie/model/DocumentData;->strokeColor:I
 
     .line 11
-    iput p10, p0, Lcom/airbnb/lottie/model/DocumentData;->j:F
+    iput p10, p0, Lcom/airbnb/lottie/model/DocumentData;->strokeWidth:F
 
     .line 12
-    iput-boolean p11, p0, Lcom/airbnb/lottie/model/DocumentData;->k:Z
+    iput-boolean p11, p0, Lcom/airbnb/lottie/model/DocumentData;->strokeOverFill:Z
 
     return-void
 .end method
@@ -84,7 +104,7 @@
     .locals 5
 
     .line 1
-    iget-object v0, p0, Lcom/airbnb/lottie/model/DocumentData;->a:Ljava/lang/String;
+    iget-object v0, p0, Lcom/airbnb/lottie/model/DocumentData;->text:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -93,7 +113,7 @@
     mul-int/lit8 v0, v0, 0x1f
 
     .line 2
-    iget-object v1, p0, Lcom/airbnb/lottie/model/DocumentData;->b:Ljava/lang/String;
+    iget-object v1, p0, Lcom/airbnb/lottie/model/DocumentData;->fontName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
@@ -106,7 +126,7 @@
     int-to-float v0, v0
 
     .line 3
-    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->c:F
+    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->size:F
 
     add-float/2addr v0, v1
 
@@ -115,7 +135,7 @@
     mul-int/lit8 v0, v0, 0x1f
 
     .line 4
-    iget-object v1, p0, Lcom/airbnb/lottie/model/DocumentData;->d:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    iget-object v1, p0, Lcom/airbnb/lottie/model/DocumentData;->justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -126,12 +146,12 @@
     mul-int/lit8 v0, v0, 0x1f
 
     .line 5
-    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->e:I
+    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->tracking:I
 
     add-int/2addr v0, v1
 
     .line 6
-    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->f:F
+    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->lineHeight:F
 
     invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
@@ -154,7 +174,7 @@
     mul-int/lit8 v0, v0, 0x1f
 
     .line 7
-    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->h:I
+    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->color:I
 
     add-int/2addr v0, v1
 

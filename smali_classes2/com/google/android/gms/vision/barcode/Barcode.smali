@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/barcode/Barcode;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -144,9 +145,21 @@
     .end annotation
 .end field
 
+.field public isRecognized:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x11
+    .end annotation
+.end field
+
 .field public phone:Lcom/google/android/gms/vision/barcode/Barcode$Phone;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x8
+    .end annotation
+.end field
+
+.field public rawBytes:[B
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x10
     .end annotation
 .end field
 
@@ -204,8 +217,8 @@
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;I[Landroid/graphics/Point;Lcom/google/android/gms/vision/barcode/Barcode$Email;Lcom/google/android/gms/vision/barcode/Barcode$Phone;Lcom/google/android/gms/vision/barcode/Barcode$Sms;Lcom/google/android/gms/vision/barcode/Barcode$WiFi;Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;)V
-    .locals 0
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;I[Landroid/graphics/Point;Lcom/google/android/gms/vision/barcode/Barcode$Email;Lcom/google/android/gms/vision/barcode/Barcode$Phone;Lcom/google/android/gms/vision/barcode/Barcode$Sms;Lcom/google/android/gms/vision/barcode/Barcode$WiFi;Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;[BZ)V
+    .locals 2
     .param p1    # I
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
@@ -276,53 +289,103 @@
             id = 0xf
         .end annotation
     .end param
+    .param p15    # [B
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x10
+        .end annotation
+    .end param
+    .param p16    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x11
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
     .end annotation
+
+    move-object v0, p0
 
     .line 2
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
+    move v1, p1
+
     .line 3
-    iput p1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->format:I
+    iput v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->format:I
+
+    move-object v1, p2
 
     .line 4
-    iput-object p2, p0, Lcom/google/android/gms/vision/barcode/Barcode;->rawValue:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->rawValue:Ljava/lang/String;
+
+    move-object/from16 v1, p15
 
     .line 5
-    iput-object p3, p0, Lcom/google/android/gms/vision/barcode/Barcode;->displayValue:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->rawBytes:[B
+
+    move-object v1, p3
 
     .line 6
-    iput p4, p0, Lcom/google/android/gms/vision/barcode/Barcode;->valueFormat:I
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->displayValue:Ljava/lang/String;
+
+    move v1, p4
 
     .line 7
-    iput-object p5, p0, Lcom/google/android/gms/vision/barcode/Barcode;->cornerPoints:[Landroid/graphics/Point;
+    iput v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->valueFormat:I
+
+    move-object v1, p5
 
     .line 8
-    iput-object p6, p0, Lcom/google/android/gms/vision/barcode/Barcode;->email:Lcom/google/android/gms/vision/barcode/Barcode$Email;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->cornerPoints:[Landroid/graphics/Point;
+
+    move/from16 v1, p16
 
     .line 9
-    iput-object p7, p0, Lcom/google/android/gms/vision/barcode/Barcode;->phone:Lcom/google/android/gms/vision/barcode/Barcode$Phone;
+    iput-boolean v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->isRecognized:Z
+
+    move-object v1, p6
 
     .line 10
-    iput-object p8, p0, Lcom/google/android/gms/vision/barcode/Barcode;->sms:Lcom/google/android/gms/vision/barcode/Barcode$Sms;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->email:Lcom/google/android/gms/vision/barcode/Barcode$Email;
+
+    move-object v1, p7
 
     .line 11
-    iput-object p9, p0, Lcom/google/android/gms/vision/barcode/Barcode;->wifi:Lcom/google/android/gms/vision/barcode/Barcode$WiFi;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->phone:Lcom/google/android/gms/vision/barcode/Barcode$Phone;
+
+    move-object v1, p8
 
     .line 12
-    iput-object p10, p0, Lcom/google/android/gms/vision/barcode/Barcode;->url:Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->sms:Lcom/google/android/gms/vision/barcode/Barcode$Sms;
+
+    move-object v1, p9
 
     .line 13
-    iput-object p11, p0, Lcom/google/android/gms/vision/barcode/Barcode;->geoPoint:Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->wifi:Lcom/google/android/gms/vision/barcode/Barcode$WiFi;
+
+    move-object v1, p10
 
     .line 14
-    iput-object p12, p0, Lcom/google/android/gms/vision/barcode/Barcode;->calendarEvent:Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->url:Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;
+
+    move-object v1, p11
 
     .line 15
-    iput-object p13, p0, Lcom/google/android/gms/vision/barcode/Barcode;->contactInfo:Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->geoPoint:Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;
+
+    move-object v1, p12
 
     .line 16
-    iput-object p14, p0, Lcom/google/android/gms/vision/barcode/Barcode;->driverLicense:Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->calendarEvent:Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;
+
+    move-object v1, p13
+
+    .line 17
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->contactInfo:Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;
+
+    move-object/from16 v1, p14
+
+    .line 18
+    iput-object v1, v0, Lcom/google/android/gms/vision/barcode/Barcode;->driverLicense:Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;
 
     return-void
 .end method
@@ -338,11 +401,13 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7fffffff
+    const/high16 v1, -0x80000000
 
-    const/high16 v3, -0x80000000
+    const v2, 0x7fffffff
 
-    const/high16 v4, -0x80000000
+    const v3, 0x7fffffff
+
+    const/4 v4, 0x0
 
     .line 1
     :goto_0
@@ -350,50 +415,50 @@
 
     array-length v6, v5
 
-    if-ge v2, v6, :cond_0
+    if-ge v4, v6, :cond_0
 
     .line 2
-    aget-object v5, v5, v2
+    aget-object v5, v5, v4
 
     .line 3
     iget v6, v5, Landroid/graphics/Point;->x:I
 
-    invoke-static {v1, v6}, Ljava/lang/Math;->min(II)I
+    invoke-static {v2, v6}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v2
 
     .line 4
     iget v6, v5, Landroid/graphics/Point;->x:I
 
-    invoke-static {v3, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, v6}, Ljava/lang/Math;->max(II)I
 
-    move-result v3
+    move-result v0
 
     .line 5
     iget v6, v5, Landroid/graphics/Point;->y:I
 
-    invoke-static {v0, v6}, Ljava/lang/Math;->min(II)I
+    invoke-static {v3, v6}, Ljava/lang/Math;->min(II)I
 
-    move-result v0
+    move-result v3
 
     .line 6
     iget v5, v5, Landroid/graphics/Point;->y:I
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v5}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v1
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 7
     :cond_0
-    new-instance v2, Landroid/graphics/Rect;
+    new-instance v4, Landroid/graphics/Rect;
 
-    invoke-direct {v2, v1, v0, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v4, v2, v3, v0, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    return-object v2
+    return-object v4
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
@@ -414,97 +479,111 @@
     .line 3
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->rawValue:Ljava/lang/String;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x3
 
-    const/4 v3, 0x3
+    const/4 v3, 0x0
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 4
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->displayValue:Ljava/lang/String;
 
-    const/4 v3, 0x4
+    const/4 v2, 0x4
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 5
     iget v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->valueFormat:I
 
-    const/4 v3, 0x5
+    const/4 v2, 0x5
 
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 6
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->cornerPoints:[Landroid/graphics/Point;
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
     .line 7
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->email:Lcom/google/android/gms/vision/barcode/Barcode$Email;
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 8
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->phone:Lcom/google/android/gms/vision/barcode/Barcode$Phone;
 
-    const/16 v3, 0x8
+    const/16 v2, 0x8
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 9
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->sms:Lcom/google/android/gms/vision/barcode/Barcode$Sms;
 
-    const/16 v3, 0x9
+    const/16 v2, 0x9
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 10
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->wifi:Lcom/google/android/gms/vision/barcode/Barcode$WiFi;
 
-    const/16 v3, 0xa
+    const/16 v2, 0xa
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 11
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->url:Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;
 
-    const/16 v3, 0xb
+    const/16 v2, 0xb
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 12
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->geoPoint:Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;
 
-    const/16 v3, 0xc
+    const/16 v2, 0xc
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 13
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->calendarEvent:Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;
 
-    const/16 v3, 0xd
+    const/16 v2, 0xd
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 14
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->contactInfo:Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;
 
-    const/16 v3, 0xe
+    const/16 v2, 0xe
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 15
     iget-object v1, p0, Lcom/google/android/gms/vision/barcode/Barcode;->driverLicense:Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;
 
-    const/16 v3, 0xf
+    const/16 v2, 0xf
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 16
+    iget-object p2, p0, Lcom/google/android/gms/vision/barcode/Barcode;->rawBytes:[B
+
+    const/16 v1, 0x10
+
+    invoke-static {p1, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
+
+    .line 17
+    iget-boolean p2, p0, Lcom/google/android/gms/vision/barcode/Barcode;->isRecognized:Z
+
+    const/16 v1, 0x11
+
+    invoke-static {p1, v1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+
+    .line 18
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
     return-void

@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public a:I
+.field public a:F
 
-.field public b:F
+.field public b:Z
 
-.field public c:Z
+.field public c:I
 
-.field public d:I
+.field public gravity:I
 
 
 # direct methods
@@ -34,13 +34,33 @@
     const/4 p1, 0x0
 
     .line 7
-    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
+
+    return-void
+.end method
+
+.method public constructor <init>(III)V
+    .locals 0
+
+    .line 8
+    invoke-direct {p0, p1, p2}, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;-><init>(II)V
+
+    .line 9
+    iput p3, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -48,10 +68,10 @@
     const/4 v0, 0x0
 
     .line 2
-    iput v0, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    iput v0, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
     .line 3
-    sget-object v1, Landroidx/drawerlayout/widget/DrawerLayout;->g0:[I
+    sget-object v1, Landroidx/drawerlayout/widget/DrawerLayout;->h0:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -62,7 +82,7 @@
 
     move-result p2
 
-    iput p2, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    iput p2, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
     .line 5
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
@@ -72,47 +92,59 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .locals 0
+    .param p1    # Landroid/view/ViewGroup$LayoutParams;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-    .line 11
+    .line 13
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
     const/4 p1, 0x0
 
-    .line 12
-    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    .line 14
+    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
     .locals 0
+    .param p1    # Landroid/view/ViewGroup$MarginLayoutParams;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-    .line 13
+    .line 15
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
     const/4 p1, 0x0
 
-    .line 14
-    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    .line 16
+    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;)V
     .locals 1
+    .param p1    # Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-    .line 8
+    .line 10
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
     const/4 v0, 0x0
 
-    .line 9
-    iput v0, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    .line 11
+    iput v0, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
-    .line 10
-    iget p1, p1, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    .line 12
+    iget p1, p1, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
-    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->a:I
+    iput p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$LayoutParams;->gravity:I
 
     return-void
 .end method

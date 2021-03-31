@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/ads/mediation/customevent/CustomEventNativeListener;
@@ -20,9 +21,9 @@
 
 
 # instance fields
-.field public final zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+.field private final zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-.field public final zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+.field private final zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
 
 # direct methods
@@ -33,10 +34,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iput-object p2, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
     return-void
 .end method
@@ -49,12 +50,12 @@
     const-string v0, "Custom event adapter called onAdClicked."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdClicked(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;)V
 
@@ -67,12 +68,12 @@
     const-string v0, "Custom event adapter called onAdClosed."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdClosed(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;)V
 
@@ -85,14 +86,32 @@
     const-string v0, "Custom event adapter called onAdFailedToLoad."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;I)V
+
+    return-void
+.end method
+
+.method public final onAdFailedToLoad(Lcom/google/android/gms/ads/AdError;)V
+    .locals 2
+
+    const-string v0, "Custom event adapter called onAdFailedToLoad."
+
+    .line 3
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+
+    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;Lcom/google/android/gms/ads/AdError;)V
 
     return-void
 .end method
@@ -103,12 +122,12 @@
     const-string v0, "Custom event adapter called onAdImpression."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdImpression(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;)V
 
@@ -121,12 +140,12 @@
     const-string v0, "Custom event adapter called onAdLeftApplication."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdLeftApplication(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;)V
 
@@ -139,12 +158,12 @@
     const-string v0, "Custom event adapter called onAdLoaded."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdLoaded(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;Lcom/google/android/gms/ads/mediation/NativeAdMapper;)V
 
@@ -157,12 +176,12 @@
     const-string v0, "Custom event adapter called onAdLoaded."
 
     .line 3
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdLoaded(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;)V
 
@@ -175,12 +194,12 @@
     const-string v0, "Custom event adapter called onAdOpened."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzho:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeux:Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zzc;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationNativeListener;->onAdOpened(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;)V
 

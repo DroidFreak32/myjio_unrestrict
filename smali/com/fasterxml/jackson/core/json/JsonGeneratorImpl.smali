@@ -107,6 +107,11 @@
 
 .method public _reportCantWriteValueExpectName(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -140,6 +145,11 @@
 
 .method public _verifyPrettyValueWrite(Ljava/lang/String;I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_4
 
@@ -356,6 +366,11 @@
 
 .method public final writeStringField(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeFieldName(Ljava/lang/String;)V

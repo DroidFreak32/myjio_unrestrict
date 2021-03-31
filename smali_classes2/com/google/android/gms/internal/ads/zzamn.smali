@@ -1,30 +1,27 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzamn;
+.class public final Lcom/google/android/gms/internal/ads/zzamn;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lcom/google/android/gms/ads/internal/util/zzau;
 
 
-# static fields
-.field public static final zzcwi:Landroid/content/DialogInterface$OnClickListener;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/ads/internal/util/zzau<",
+        "Lcom/google/android/gms/internal/ads/zzako;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzamn;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzamn;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzamn;->zzcwi:Landroid/content/DialogInterface$OnClickListener;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,8 +29,18 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+.method public final synthetic zzh(Ljava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzako;
+
+    .line 2
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzahc;->zzdgi:Lcom/google/android/gms/internal/ads/zzaif;
+
+    const-string v1, "/result"
+
+    invoke-interface {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzalz;->zzb(Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzahv;)V
 
     return-void
 .end method

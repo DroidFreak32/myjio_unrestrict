@@ -1,15 +1,31 @@
-.class public final Lcom/google/android/gms/internal/ads/zztz;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zztz;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzur;
+.implements Lcom/google/android/gms/internal/ads/zzazc;
+
+
+# static fields
+.field public static final zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zztt;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/gms/internal/ads/zztz;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zztz;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zztz;->zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,17 +33,14 @@
 
 
 # virtual methods
-.method public final zzb(Lcom/google/android/gms/internal/ads/zzus;)V
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzus;->zzye:Lcom/google/android/gms/internal/ads/zzkj;
+    check-cast p1, Landroid/os/IBinder;
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzha;->zza(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzgy;
 
-    .line 2
-    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzkj;->onAdImpression()V
+    move-result-object p1
 
-    :cond_0
-    return-void
+    return-object p1
 .end method

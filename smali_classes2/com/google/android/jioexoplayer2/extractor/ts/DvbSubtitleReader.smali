@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field public bytesToCheck:I
+.field private bytesToCheck:I
 
-.field public final outputs:[Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private final outputs:[Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public sampleBytesWritten:I
+.field private sampleBytesWritten:I
 
-.field public sampleTimeUs:J
+.field private sampleTimeUs:J
 
-.field public final subtitleInfos:Ljava/util/List;
+.field private final subtitleInfos:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public writingSample:Z
+.field private writingSample:Z
 
 
 # direct methods

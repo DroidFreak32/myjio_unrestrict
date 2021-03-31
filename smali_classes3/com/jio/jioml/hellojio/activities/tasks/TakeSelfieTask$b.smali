@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;
+.field public static final a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     invoke-direct {v0}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;-><init>()V
 
-    sput-object v0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;
+    sput-object v0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$b;
 
     return-void
 .end method

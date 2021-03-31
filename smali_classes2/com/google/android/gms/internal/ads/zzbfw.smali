@@ -1,321 +1,176 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbfw;
-.super Lcom/google/android/gms/internal/ads/zzbfu;
+.class public Lcom/google/android/gms/internal/ads/zzbfw;
+.super Landroid/webkit/WebView;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzbfu<",
-        "Lcom/google/android/gms/internal/ads/zzbfv;",
-        "Lcom/google/android/gms/internal/ads/zzbfv;",
-        ">;"
-    }
+.annotation runtime Ljavax/annotation/ParametersAreNonnullByDefault;
 .end annotation
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbfu;-><init>()V
+    invoke-direct {p0, p1}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+
+    const/4 p1, 0x0
+
+    .line 2
+    invoke-virtual {p0, p1}, Landroid/webkit/WebView;->setBackgroundColor(I)V
+
+    .line 3
+    invoke-virtual {p0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+
+    move-result-object v0
+
+    .line 4
+    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V
+
+    .line 5
+    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setSavePassword(Z)V
+
+    const/4 p1, 0x1
+
+    .line 6
+    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
+
+    .line 7
+    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
+
+    .line 8
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x15
+
+    if-lt v1, v2, :cond_0
+
+    const/4 v1, 0x2
+
+    .line 9
+    invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
+
+    .line 10
+    :cond_0
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzks()Lcom/google/android/gms/ads/internal/util/zzu;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/ads/internal/util/zzu;->zza(Landroid/content/Context;Landroid/webkit/WebSettings;)Z
+
+    const-string v0, "accessibility"
+
+    .line 11
+    invoke-virtual {p0, v0}, Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V
+
+    const-string v0, "accessibilityTraversal"
+
+    .line 12
+    invoke-virtual {p0, v0}, Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V
+
+    .line 13
+    :try_start_0
+    invoke-virtual {p0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
-.end method
 
-.method public static zza(Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzbfv;)V
-    .locals 0
+    :catch_0
+    move-exception p1
 
-    .line 1
-    check-cast p0, Lcom/google/android/gms/internal/ads/zzbdd;
+    const-string v0, "Unable to enable Javascript."
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbdd;->zzdxs:Lcom/google/android/gms/internal/ads/zzbfv;
+    .line 14
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Ljava/lang/Object;IJ)V
-    .locals 0
-
-    .line 8
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    .line 9
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p3
-
-    invoke-virtual {p1, p2, p3}, Lcom/google/android/gms/internal/ads/zzbfv;->zzb(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final synthetic zza(Ljava/lang/Object;ILcom/google/android/gms/internal/ads/zzbbu;)V
-    .locals 0
-
-    .line 6
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    or-int/lit8 p2, p2, 0x2
-
-    .line 7
-    invoke-virtual {p1, p2, p3}, Lcom/google/android/gms/internal/ads/zzbfv;->zzb(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final synthetic zza(Ljava/lang/Object;ILjava/lang/Object;)V
-    .locals 0
-
-    .line 4
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    check-cast p3, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    or-int/lit8 p2, p2, 0x3
-
-    .line 5
-    invoke-virtual {p1, p2, p3}, Lcom/google/android/gms/internal/ads/zzbfv;->zzb(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final synthetic zza(Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzbgp;)V
-    .locals 0
-
-    .line 2
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 3
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/ads/zzbfv;->zzb(Lcom/google/android/gms/internal/ads/zzbgp;)V
-
-    return-void
-.end method
-
-.method public final zza(Lcom/google/android/gms/internal/ads/zzbfb;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final synthetic zzad(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbdd;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzbdd;->zzdxs:Lcom/google/android/gms/internal/ads/zzbfv;
-
-    return-object p1
-.end method
-
-.method public final synthetic zzae(Ljava/lang/Object;)Ljava/lang/Object;
+.method public addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 2
 
     .line 1
-    move-object v0, p1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzbdd;
+    const/16 v1, 0x11
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/ads/zzbdd;->zzdxs:Lcom/google/android/gms/internal/ads/zzbfv;
+    if-lt v0, v1, :cond_0
 
     .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbfv;->zzahj()Lcom/google/android/gms/internal/ads/zzbfv;
+    invoke-super {p0, p1, p2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    .line 3
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbfv;->zzahk()Lcom/google/android/gms/internal/ads/zzbfv;
-
-    move-result-object v0
-
-    .line 4
-    invoke-static {p1, v0}, Lcom/google/android/gms/internal/ads/zzbfw;->zza(Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzbfv;)V
+    return-void
 
     :cond_0
-    return-object v0
+    const-string p1, "Ignore addJavascriptInterface due to low Android version."
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/ads/internal/util/zzd;->zzee(Ljava/lang/String;)V
+
+    return-void
 .end method
 
-.method public final synthetic zzaf(Ljava/lang/Object;)I
-    .locals 0
+.method public loadUrl(Ljava/lang/String;)V
+    .locals 2
 
     .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
+    :try_start_0
+    invoke-super {p0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IncompatibleClassChangeError; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_2
+    move-exception p1
 
     .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbfv;->zzahl()I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final synthetic zzahi()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbfv;->zzahk()Lcom/google/android/gms/internal/ads/zzbfv;
+    :goto_0
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzku()Lcom/google/android/gms/internal/ads/zzayg;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    const-string v1, "CoreWebView.loadUrl"
 
-.method public final synthetic zzb(Ljava/lang/Object;IJ)V
-    .locals 0
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/internal/ads/zzayg;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    or-int/lit8 p2, p2, 0x1
-
-    .line 2
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p3
+    const-string v0, "#007 Could not call remote method."
 
     .line 3
-    invoke-virtual {p1, p2, p3}, Lcom/google/android/gms/internal/ads/zzbfv;->zzb(ILjava/lang/Object;)V
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final synthetic zzc(Ljava/lang/Object;II)V
+.method public zzcy(Ljava/lang/String;)V
     .locals 0
 
-    .line 3
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    or-int/lit8 p2, p2, 0x5
-
-    .line 4
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p3
-
-    .line 5
-    invoke-virtual {p1, p2, p3}, Lcom/google/android/gms/internal/ads/zzbfv;->zzb(ILjava/lang/Object;)V
+    .line 1
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgd;->zza(Landroid/webkit/WebView;Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method public final synthetic zzc(Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzbgp;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 2
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/ads/zzbfv;->zza(Lcom/google/android/gms/internal/ads/zzbgp;)V
-
-    return-void
-.end method
-
-.method public final synthetic zze(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    invoke-static {p1, p2}, Lcom/google/android/gms/internal/ads/zzbfw;->zza(Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzbfv;)V
-
-    return-void
-.end method
-
-.method public final synthetic zzf(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 2
-    invoke-static {p1, p2}, Lcom/google/android/gms/internal/ads/zzbfw;->zza(Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzbfv;)V
-
-    return-void
-.end method
-
-.method public final synthetic zzg(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbfv;->zzahj()Lcom/google/android/gms/internal/ads/zzbfv;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Lcom/google/android/gms/internal/ads/zzbfv;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-object p1
-
-    .line 3
-    :cond_0
-    invoke-static {p1, p2}, Lcom/google/android/gms/internal/ads/zzbfv;->zza(Lcom/google/android/gms/internal/ads/zzbfv;Lcom/google/android/gms/internal/ads/zzbfv;)Lcom/google/android/gms/internal/ads/zzbfv;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final zzp(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbdd;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzbdd;->zzdxs:Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbfv;->zzact()V
-
-    return-void
-.end method
-
-.method public final synthetic zzw(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbfv;->zzact()V
-
-    return-object p1
-.end method
-
-.method public final synthetic zzz(Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzbfv;
-
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbfv;->zzaet()I
-
-    move-result p1
-
-    return p1
 .end method

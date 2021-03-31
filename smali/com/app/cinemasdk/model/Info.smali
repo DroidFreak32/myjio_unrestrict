@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public androidId:Ljava/lang/String;
+.field private androidId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public imsi:Ljava/lang/String;
+.field private imsi:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public mac:Ljava/lang/String;
+.field private mac:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public type:Ljava/lang/String;
+.field private type:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

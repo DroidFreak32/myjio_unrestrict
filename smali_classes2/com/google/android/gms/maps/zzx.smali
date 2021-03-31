@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzaf:Lcom/google/android/gms/maps/GoogleMap$OnCameraIdleListener;
+.field private final synthetic zzaf:Lcom/google/android/gms/maps/GoogleMap$OnCameraIdleListener;
 
 
 # direct methods

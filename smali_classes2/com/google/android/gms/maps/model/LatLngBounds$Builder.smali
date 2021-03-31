@@ -14,13 +14,13 @@
 
 
 # instance fields
-.field public zzdh:D
+.field private zzdh:D
 
-.field public zzdi:D
+.field private zzdi:D
 
-.field public zzdj:D
+.field private zzdj:D
 
-.field public zzdk:D
+.field private zzdk:D
 
 
 # direct methods
@@ -153,9 +153,9 @@
 
     if-gtz v7, :cond_3
 
-    cmpg-double v2, v0, v4
+    cmpg-double v7, v0, v4
 
-    if-gtz v2, :cond_3
+    if-gtz v7, :cond_3
 
     goto :goto_0
 
@@ -164,9 +164,9 @@
 
     if-lez v7, :cond_2
 
-    cmpg-double v2, v0, v4
+    cmpg-double v7, v0, v4
 
-    if-gtz v2, :cond_3
+    if-gtz v7, :cond_3
 
     :cond_2
     :goto_0
@@ -176,8 +176,6 @@
     if-nez p1, :cond_5
 
     .line 7
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLngBounds$Builder;->zzdj:D
-
     invoke-static {v2, v3, v0, v1}, Lcom/google/android/gms/maps/model/LatLngBounds;->zzc(DD)D
 
     move-result-wide v2

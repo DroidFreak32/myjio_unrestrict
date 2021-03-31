@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public nbhCapturingFrequency:Ljava/lang/String;
+.field private nbhCapturingFrequency:Ljava/lang/String;
 
-.field public nbhCapturingLimit:Ljava/lang/String;
+.field private nbhCapturingLimit:Ljava/lang/String;
 
-.field public nbhCollectionCircles:Ljava/lang/String;
+.field private nbhCollectionCircles:Ljava/lang/String;
 
-.field public nbhEndTime:Ljava/lang/String;
+.field private nbhEndTime:Ljava/lang/String;
 
-.field public nbhStartTime:Ljava/lang/String;
+.field private nbhStartTime:Ljava/lang/String;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getNbhCapturingFrequency()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -36,7 +36,7 @@
     return-object v0
 .end method
 
-.method public b()Ljava/lang/String;
+.method public getNbhCapturingLimit()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -45,7 +45,7 @@
     return-object v0
 .end method
 
-.method public c()Ljava/lang/String;
+.method public getNbhCollectionCircles()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -54,7 +54,7 @@
     return-object v0
 .end method
 
-.method public d()Ljava/lang/String;
+.method public getNbhEndTime()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -63,13 +63,58 @@
     return-object v0
 .end method
 
-.method public e()Ljava/lang/String;
+.method public getNbhStartTime()Ljava/lang/String;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/ProfileConfig;->nbhStartTime:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public setNbhCapturingFrequency(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileConfig;->nbhCapturingFrequency:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNbhCapturingLimit(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileConfig;->nbhCapturingLimit:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNbhCollectionCircles(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileConfig;->nbhCollectionCircles:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNbhEndTime(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileConfig;->nbhEndTime:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNbhStartTime(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ProfileConfig;->nbhStartTime:Ljava/lang/String;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

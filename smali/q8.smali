@@ -1,293 +1,67 @@
 .class public final Lq8;
 .super Ljava/lang/Object;
-.source "ICUCompat.java"
-
-
-# static fields
-.field public static a:Ljava/lang/reflect/Method;
-
-.field public static b:Ljava/lang/reflect/Method;
+.source "PTLog.java"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 7
+.method public static a(Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {}, Lq8;->b()I
 
-    const-string v1, "addLikelySubtags"
+    move-result p0
 
-    const/4 v2, 0x0
+    sget-object v0, Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;->DEBUG:Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;
 
-    const/4 v3, 0x1
+    invoke-virtual {v0}, Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;->intValue()I
 
-    const/16 v4, 0x15
+    move-result v0
 
-    if-ge v0, v4, :cond_0
-
-    const-string v0, "libcore.icu.ICU"
-
-    .line 2
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v4, "getScript"
-
-    new-array v5, v3, [Ljava/lang/Class;
-
-    .line 3
-    const-class v6, Ljava/lang/String;
-
-    aput-object v6, v5, v2
-
-    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v4
-
-    sput-object v4, Lq8;->a:Ljava/lang/reflect/Method;
-
-    new-array v3, v3, [Ljava/lang/Class;
-
-    .line 4
-    const-class v4, Ljava/lang/String;
-
-    aput-object v4, v3, v2
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lq8;->b:Ljava/lang/reflect/Method;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    const/4 v0, 0x0
-
-    .line 5
-    sput-object v0, Lq8;->a:Ljava/lang/reflect/Method;
-
-    .line 6
-    sput-object v0, Lq8;->b:Ljava/lang/reflect/Method;
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v4, 0x18
-
-    if-ge v0, v4, :cond_1
-
-    const-string v0, "libcore.icu.ICU"
-
-    .line 7
-    :try_start_1
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    new-array v3, v3, [Ljava/lang/Class;
-
-    .line 8
-    const-class v4, Ljava/util/Locale;
-
-    aput-object v4, v3, v2
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lq8;->b:Ljava/lang/reflect/Method;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    .line 9
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    const/4 v0, 0x0
+.method public static b()I
+    .locals 1
 
     .line 1
-    :try_start_0
-    sget-object v1, Lq8;->a:Ljava/lang/reflect/Method;
+    invoke-static {}, Lcom/clevertap/pushtemplates/TemplateRenderer;->getDebugLevel()I
 
-    if-eqz v1, :cond_0
+    move-result v0
 
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p0, v1, v2
-
-    .line 2
-    sget-object p0, Lq8;->a:Ljava/lang/reflect/Method;
-
-    invoke-virtual {p0, v0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    :cond_0
-    return-object v0
+    return v0
 .end method
 
-.method public static a(Ljava/util/Locale;)Ljava/lang/String;
-    .locals 3
-
-    .line 3
-    invoke-virtual {p0}, Ljava/util/Locale;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 4
-    :try_start_0
-    sget-object v0, Lq8;->b:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p0, v0, v1
-
-    .line 5
-    sget-object v1, Lq8;->b:Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    :cond_0
-    return-object p0
-.end method
-
-.method public static b(Ljava/util/Locale;)Ljava/lang/String;
-    .locals 3
+.method public static c(Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {}, Lq8;->b()I
 
-    const/16 v1, 0x18
+    move-result p0
 
-    if-lt v0, v1, :cond_0
+    sget-object v0, Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;->VERBOSE:Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;
 
-    .line 2
-    invoke-static {p0}, Landroid/icu/util/ULocale;->forLocale(Ljava/util/Locale;)Landroid/icu/util/ULocale;
+    invoke-virtual {v0}, Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;->intValue()I
 
-    move-result-object p0
+    move-result v0
 
-    invoke-static {p0}, Landroid/icu/util/ULocale;->addLikelySubtags(Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;
+    return-void
+.end method
 
-    move-result-object p0
+.method public static d(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 0
 
-    .line 3
-    invoke-virtual {p0}, Landroid/icu/util/ULocale;->getScript()Ljava/lang/String;
+    .line 1
+    invoke-static {}, Lq8;->b()I
 
-    move-result-object p0
+    move-result p0
 
-    return-object p0
+    sget-object p1, Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;->VERBOSE:Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;
 
-    :cond_0
-    const/16 v1, 0x15
+    invoke-virtual {p1}, Lcom/clevertap/pushtemplates/TemplateRenderer$LogLevel;->intValue()I
 
-    const/4 v2, 0x0
+    move-result p1
 
-    if-lt v0, v1, :cond_1
-
-    const/4 v0, 0x1
-
-    :try_start_0
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p0, v0, v1
-
-    .line 4
-    sget-object v1, Lq8;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v1, v2, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Locale;
-
-    invoke-virtual {v0}, Ljava/util/Locale;->getScript()Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    .line 5
-    :catch_0
-    invoke-virtual {p0}, Ljava/util/Locale;->getScript()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 6
-    :cond_1
-    invoke-static {p0}, Lq8;->a(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    .line 7
-    invoke-static {p0}, Lq8;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_2
-    return-object v2
+    return-void
 .end method

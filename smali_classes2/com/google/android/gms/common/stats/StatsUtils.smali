@@ -1,9 +1,13 @@
 .class public Lcom/google/android/gms/common/stats/StatsUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
 .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+.end annotation
+
+.annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
@@ -19,6 +23,17 @@
 
 .method public static getEventKey(Landroid/content/Context;Landroid/content/Intent;)Ljava/lang/String;
     .locals 2
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -51,6 +66,17 @@
 
 .method public static getEventKey(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
+    .param p0    # Landroid/os/PowerManager$WakeLock;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -114,68 +140,4 @@
     invoke-direct {p1, p0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     return-object p1
-.end method
-
-.method public static zza(Ljava/util/List;)Ljava/util/List;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;)",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    if-eqz p0, :cond_0
-
-    .line 1
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 2
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v1, "com.google.android.gms"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 p0, 0x0
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public static zzi(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms"
-
-    .line 1
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 p0, 0x0
-
-    :cond_0
-    return-object p0
 .end method

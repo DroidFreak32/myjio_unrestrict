@@ -1,271 +1,145 @@
-.class public final Lca;
+.class public Lca;
 .super Ljava/lang/Object;
-.source "ViewConfigurationCompat.java"
+
+# interfaces
+.implements Lcom/elitecore/wifi/listener/OnInternetCheckCompleteListner;
 
 
-# static fields
-.field public static a:Ljava/lang/reflect/Method;
+# instance fields
+.field public final synthetic a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+.field public final synthetic b:Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;
+
+.field public final synthetic c:Lcom/elitecorelib/andsf/api/ANDSFClient;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcom/elitecorelib/andsf/api/ANDSFClient;Lcom/elitecorelib/core/utility/SharedPreferencesTask;Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;)V
+    .locals 0
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lca;->c:Lcom/elitecorelib/andsf/api/ANDSFClient;
 
-    const/16 v1, 0x19
+    iput-object p2, p0, Lca;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    if-ne v0, v1, :cond_0
+    iput-object p3, p0, Lca;->b:Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;
 
-    .line 2
-    :try_start_0
-    const-class v0, Landroid/view/ViewConfiguration;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "getScaledScrollFactor"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lca;->a:Ljava/lang/reflect/Method;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :cond_0
     return-void
 .end method
 
-.method public static a(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-    .locals 3
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+# virtual methods
+.method public isInterNetAvailable(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 1
 
-    const/16 v1, 0x19
+    const-string/jumbo p1, "success"
 
-    if-lt v0, v1, :cond_0
-
-    sget-object v0, Lca;->a:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    new-array v1, v1, [Ljava/lang/Object;
-
-    .line 2
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Integer;
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    int-to-float p0, p0
-
-    return p0
-
-    :catch_0
-    nop
-
-    .line 3
-    :cond_0
-    new-instance p0, Landroid/util/TypedValue;
-
-    invoke-direct {p0}, Landroid/util/TypedValue;-><init>()V
-
-    .line 4
-    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v0
-
-    const v1, 0x101004d
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, p0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 5
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
-
-    move-result p0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static a(Landroid/view/ViewConfiguration;)I
-    .locals 2
-
-    .line 6
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_0
-
-    .line 7
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHoverSlop()I
-
-    move-result p0
-
-    return p0
-
-    .line 8
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
-
-    move-result p0
-
-    div-int/lit8 p0, p0, 0x2
-
-    return p0
-.end method
-
-.method public static b(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-    .locals 2
-
-    .line 2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_0
-
-    .line 3
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHorizontalScrollFactor()F
-
-    move-result p0
-
-    return p0
-
-    .line 4
-    :cond_0
-    invoke-static {p0, p1}, Lca;->a(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static b(Landroid/view/ViewConfiguration;)I
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static c(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledVerticalScrollFactor()F
-
-    move-result p0
-
-    return p0
-
-    .line 3
-    :cond_0
-    invoke-static {p0, p1}, Lca;->a(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static d(Landroid/view/ViewConfiguration;Landroid/content/Context;)Z
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->shouldShowMenuShortcutsWhenKeyboardPresent()Z
-
-    move-result p0
-
-    return p0
-
-    .line 3
-    :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p0
-
-    const-string p1, "config_showMenuShortcutsWhenKeyboardPresent"
-
-    const-string v0, "bool"
-
-    const-string v1, "android"
-
-    .line 4
-    invoke-virtual {p0, p1, v0, v1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
+    const-string p2, "ANDSFClient"
+
     if-eqz p1, :cond_1
 
-    .line 5
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getBoolean(I)Z
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    move-result p0
+    const-string p3, "Internet available. Hence, Processing Registration"
 
-    if-eqz p0, :cond_1
+    invoke-virtual {p1, p2, p3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 p0, 0x1
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->F()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->initializationPojoSubscriber()V
+
+    new-instance p1, Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    iget-object p2, p0, Lca;->c:Lcom/elitecorelib/andsf/api/ANDSFClient;
+
+    invoke-static {p2}, Lcom/elitecorelib/andsf/api/ANDSFClient;->access$100(Lcom/elitecorelib/andsf/api/ANDSFClient;)Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Lcom/elitecore/wifi/api/EliteWiFiAPI;-><init>(Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;)V
+
+    new-instance p2, Lcom/elitecorelib/core/pojo/PojoSubscriber;
+
+    invoke-direct {p2}, Lcom/elitecorelib/core/pojo/PojoSubscriber;-><init>()V
+
+    iget-object p3, p0, Lca;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    const-string v0, "andsf_userIdentity"
+
+    invoke-virtual {p3, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/pojo/PojoSubscriber;->setUserName(Ljava/lang/String;)V
+
+    new-instance p3, Lcom/elitecorelib/core/room/pojo/AnalyticsDevInfo;
+
+    invoke-direct {p3}, Lcom/elitecorelib/core/room/pojo/AnalyticsDevInfo;-><init>()V
+
+    iget-object v0, p0, Lca;->b:Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;
+
+    invoke-virtual {v0}, Lcom/elitecorelib/andsf/pojonew/ANDSFConfig;->getSharedKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0, p2, p3}, Lcom/elitecore/wifi/api/IWiFiConfiguration;->doRegistration(Ljava/lang/String;Lcom/elitecorelib/core/pojo/PojoSubscriber;Lcom/elitecorelib/core/room/pojo/AnalyticsDevInfo;)V
+
+    goto :goto_1
+
+    :cond_0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string p3, "User registration failed. Reason: Device Manufacture is block."
+
+    invoke-virtual {p1, p2, p3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object p1, Lcom/elitecorelib/andsf/a/a;->aZ:Lcom/elitecorelib/andsf/a/a;
 
     goto :goto_0
 
     :cond_1
-    const/4 p0, 0x0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v0, Lcom/elitecorelib/andsf/a/a;->A:Lcom/elitecorelib/andsf/a/a;
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "User registration failed. Reason: Internet unavailable"
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p1, p2, p3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object p1, Lcom/elitecorelib/andsf/a/a;->ba:Lcom/elitecorelib/andsf/a/a;
 
     :goto_0
-    return p0
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/andsf/a/a;)V
+
+    :goto_1
+    return-void
 .end method

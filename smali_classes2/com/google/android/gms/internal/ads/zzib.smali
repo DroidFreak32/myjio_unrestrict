@@ -1,30 +1,27 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzib;
+.class public final Lcom/google/android/gms/internal/ads/zzib;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaom;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# static fields
-.field public static final zzamh:Lcom/google/android/gms/internal/ads/zzaom;
+# instance fields
+.field public zzafm:Ljava/lang/Object;
+
+.field private zzags:I
+
+.field private zzaie:Ljava/lang/Object;
+
+.field public zzaif:J
+
+.field private zzaig:Z
+
+.field private zzaih:J
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzib;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzib;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzib;->zzamh:Lcom/google/android/gms/internal/ads/zzaom;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,14 +29,43 @@
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final zza(Ljava/lang/Object;Ljava/lang/Object;IJJZ)Lcom/google/android/gms/internal/ads/zzib;
     .locals 0
 
-    check-cast p1, Landroid/os/IBinder;
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzib;->zzaie:Ljava/lang/Object;
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzer;->zza(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzeq;
+    .line 2
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzib;->zzafm:Ljava/lang/Object;
 
-    move-result-object p1
+    const/4 p1, 0x0
 
-    return-object p1
+    .line 3
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzib;->zzags:I
+
+    .line 4
+    iput-wide p4, p0, Lcom/google/android/gms/internal/ads/zzib;->zzaif:J
+
+    const-wide/16 p2, 0x0
+
+    .line 5
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zzib;->zzaih:J
+
+    .line 6
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzib;->zzaig:Z
+
+    return-object p0
+.end method
+
+.method public final zzfh()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzib;->zzaih:J
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzhb;->zzdm(J)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

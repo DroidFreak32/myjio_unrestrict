@@ -1,25 +1,25 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzhk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final synthetic zza:J
 
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+.field private final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzhb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhc;Ljava/util/concurrent/atomic/AtomicReference;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhb;J)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zzb:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-wide p2, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zza:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,18 +29,30 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zzb:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzhc;->zzh()Lcom/google/android/gms/measurement/internal/zzin;
+    iget-wide v1, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zza:J
+
+    const/4 v3, 0x1
+
+    .line 2
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(JZ)V
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zzb:Lcom/google/android/gms/measurement/internal/zzhb;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzd;->zzg()Lcom/google/android/gms/measurement/internal/zzir;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhk;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzin;->zza(Ljava/util/concurrent/atomic/AtomicReference;)V
+    invoke-direct {v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzir;->zza(Ljava/util/concurrent/atomic/AtomicReference;)V
 
     return-void
 .end method

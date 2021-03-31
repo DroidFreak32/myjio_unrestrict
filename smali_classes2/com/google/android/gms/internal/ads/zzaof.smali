@@ -1,51 +1,177 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaof;
+.class public final Lcom/google/android/gms/internal/ads/zzaof;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaoj;
+.implements Lcom/google/android/gms/ads/mediation/MediationAdRequest;
 
 
 # instance fields
-.field public final zzaab:Ljava/lang/String;
+.field private final zzadn:Ljava/lang/String;
 
-.field public final zzbsr:Ljava/util/Map;
+.field private final zzcgz:I
 
-.field public final zzcyw:Ljava/lang/String;
+.field private final zzchk:Z
 
-.field public final zzcyx:[B
+.field private final zzdmt:I
+
+.field private final zzdmu:I
+
+.field private final zzmu:Ljava/util/Date;
+
+.field private final zzmw:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final zzmx:Z
+
+.field private final zzmy:Landroid/location/Location;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[B)V
+.method public constructor <init>(Ljava/util/Date;ILjava/util/Set;Landroid/location/Location;ZIZILjava/lang/String;)V
     .locals 0
+    .param p1    # Ljava/util/Date;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Ljava/util/Set;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Landroid/location/Location;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Date;",
+            "I",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;",
+            "Landroid/location/Location;",
+            "ZIZI",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzcyw:Ljava/lang/String;
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmu:Ljava/util/Date;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzaab:Ljava/lang/String;
+    .line 3
+    iput p2, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzcgz:I
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzbsr:Ljava/util/Map;
+    .line 4
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmw:Ljava/util/Set;
 
-    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzcyx:[B
+    .line 5
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmy:Landroid/location/Location;
+
+    .line 6
+    iput-boolean p5, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmx:Z
+
+    .line 7
+    iput p6, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzdmt:I
+
+    .line 8
+    iput-boolean p7, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzchk:Z
+
+    .line 9
+    iput p8, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzdmu:I
+
+    .line 10
+    iput-object p9, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzadn:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Landroid/util/JsonWriter;)V
-    .locals 4
+.method public final getBirthday()Ljava/util/Date;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzcyw:Ljava/lang/String;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmu:Ljava/util/Date;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzaab:Ljava/lang/String;
+    return-object v0
+.end method
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzbsr:Ljava/util/Map;
+.method public final getGender()I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzcyx:[B
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzcgz:I
 
-    invoke-static {v0, v1, v2, v3, p1}, Lcom/google/android/gms/internal/ads/zzaoe;->zza(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[BLandroid/util/JsonWriter;)V
+    return v0
+.end method
 
-    return-void
+.method public final getKeywords()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmw:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public final getLocation()Landroid/location/Location;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmy:Landroid/location/Location;
+
+    return-object v0
+.end method
+
+.method public final isDesignedForFamilies()Z
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzchk:Z
+
+    return v0
+.end method
+
+.method public final isTesting()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzmx:Z
+
+    return v0
+.end method
+
+.method public final taggedForChildDirectedTreatment()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzaof;->zzdmt:I
+
+    return v0
 .end method

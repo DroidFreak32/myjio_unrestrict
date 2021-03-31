@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
 .super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;
@@ -34,7 +35,10 @@
 
 
 # instance fields
-.field public final mApi:Lcom/google/android/gms/common/api/Api;
+.field private final mApi:Lcom/google/android/gms/common/api/Api;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -46,7 +50,7 @@
     .end annotation
 .end field
 
-.field public final mClientKey:Lcom/google/android/gms/common/api/Api$AnyClientKey;
+.field private final mClientKey:Lcom/google/android/gms/common/api/Api$AnyClientKey;
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -62,6 +66,14 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/api/Api$AnyClientKey;Lcom/google/android/gms/common/api/GoogleApiClient;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/common/api/Api$AnyClientKey;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/common/api/GoogleApiClient;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -108,6 +120,14 @@
 
 .method public constructor <init>(Lcom/google/android/gms/common/api/Api;Lcom/google/android/gms/common/api/GoogleApiClient;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/common/api/Api;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/common/api/GoogleApiClient;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -138,7 +158,7 @@
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Api;->getClientKey()Lcom/google/android/gms/common/api/Api$AnyClientKey;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Api;->zac()Lcom/google/android/gms/common/api/Api$AnyClientKey;
 
     move-result-object p2
 
@@ -152,6 +172,13 @@
 
 .method public constructor <init>(Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -166,10 +193,14 @@
     .line 8
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;)V
 
-    const/4 p1, 0x0
-
     .line 9
+    new-instance p1, Lcom/google/android/gms/common/api/Api$AnyClientKey;
+
+    invoke-direct {p1}, Lcom/google/android/gms/common/api/Api$AnyClientKey;-><init>()V
+
     iput-object p1, p0, Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;->mClientKey:Lcom/google/android/gms/common/api/Api$AnyClientKey;
+
+    const/4 p1, 0x0
 
     .line 10
     iput-object p1, p0, Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;->mApi:Lcom/google/android/gms/common/api/Api;
@@ -179,6 +210,10 @@
 
 .method private setFailedResult(Landroid/os/RemoteException;)V
     .locals 3
+    .param p1    # Landroid/os/RemoteException;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -204,6 +239,10 @@
 
 # virtual methods
 .method public abstract doExecute(Lcom/google/android/gms/common/api/Api$AnyClient;)V
+    .param p1    # Lcom/google/android/gms/common/api/Api$AnyClient;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -212,10 +251,19 @@
             "(TA;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
 .method public final getApi()Lcom/google/android/gms/common/api/Api;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -254,6 +302,10 @@
 
 .method public onSetFailedResult(Lcom/google/android/gms/common/api/Result;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -268,6 +320,10 @@
 
 .method public final run(Lcom/google/android/gms/common/api/Api$AnyClient;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/common/api/Api$AnyClient;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -277,15 +333,21 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/DeadObjectException;
+        }
+    .end annotation
+
     .line 1
-    instance-of v0, p1, Lcom/google/android/gms/common/internal/SimpleClientAdapter;
+    instance-of v0, p1, Lcom/google/android/gms/common/internal/zaz;
 
     if-eqz v0, :cond_0
 
     .line 2
-    check-cast p1, Lcom/google/android/gms/common/internal/SimpleClientAdapter;
+    check-cast p1, Lcom/google/android/gms/common/internal/zaz;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/SimpleClientAdapter;->getClient()Lcom/google/android/gms/common/api/Api$SimpleClient;
+    invoke-static {}, Lcom/google/android/gms/common/internal/zaz;->zaa()Lcom/google/android/gms/common/api/Api$zaa;
 
     move-result-object p1
 
@@ -319,6 +381,10 @@
 
 .method public final setFailedResult(Lcom/google/android/gms/common/api/Status;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

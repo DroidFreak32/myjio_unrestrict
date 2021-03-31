@@ -12,28 +12,32 @@
 
 
 # instance fields
-.field public carouselReadDot:Landroid/widget/ImageView;
+.field private carouselReadDot:Landroid/widget/ImageView;
 
-.field public carouselTimestamp:Landroid/widget/TextView;
+.field private carouselTimestamp:Landroid/widget/TextView;
 
-.field public clickLayout:Landroid/widget/RelativeLayout;
+.field private clickLayout:Landroid/widget/RelativeLayout;
 
-.field public imageViewPager:Lcom/clevertap/android/sdk/CTCarouselViewPager;
+.field private imageViewPager:Lcom/clevertap/android/sdk/CTCarouselViewPager;
 
-.field public message:Landroid/widget/TextView;
+.field private message:Landroid/widget/TextView;
 
-.field public readDot:Landroid/widget/ImageView;
+.field private readDot:Landroid/widget/ImageView;
 
-.field public sliderDots:Landroid/widget/LinearLayout;
+.field private sliderDots:Landroid/widget/LinearLayout;
 
-.field public timestamp:Landroid/widget/TextView;
+.field private timestamp:Landroid/widget/TextView;
 
-.field public title:Landroid/widget/TextView;
+.field private title:Landroid/widget/TextView;
 
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;-><init>(Landroid/view/View;)V
@@ -118,25 +122,7 @@
     return-void
 .end method
 
-.method public static synthetic access$000(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->carouselReadDot:Landroid/widget/ImageView;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$100(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->readDot:Landroid/widget/ImageView;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$200(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/TextView;
+.method public static synthetic access$000(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/TextView;
     .locals 0
 
     .line 1
@@ -145,11 +131,29 @@
     return-object p0
 .end method
 
-.method public static synthetic access$300(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/TextView;
+.method public static synthetic access$100(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/TextView;
     .locals 0
 
     .line 1
     iget-object p0, p0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->message:Landroid/widget/TextView;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$200(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->carouselReadDot:Landroid/widget/ImageView;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$300(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;)Landroid/widget/ImageView;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->readDot:Landroid/widget/ImageView;
 
     return-object p0
 .end method
@@ -250,12 +254,12 @@
 
     move-result v3
 
-    const/16 v4, 0x8
-
     if-eqz v3, :cond_0
 
     .line 12
     iget-object v3, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->readDot:Landroid/widget/ImageView;
+
+    const/16 v4, 0x8
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
@@ -276,16 +280,16 @@
     .line 15
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getDate()J
 
-    move-result-wide v8
+    move-result-wide v3
 
-    invoke-virtual {p0, v8, v9}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->calculateDisplayTimestamp(J)Ljava/lang/String;
+    invoke-virtual {p0, v3, v4}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->calculateDisplayTimestamp(J)Ljava/lang/String;
 
     move-result-object v3
 
     .line 16
-    iget-object v5, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->timestamp:Landroid/widget/TextView;
+    iget-object v4, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->timestamp:Landroid/widget/TextView;
 
-    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 17
     iget-object v3, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->timestamp:Landroid/widget/TextView;
@@ -342,7 +346,7 @@
     .line 21
     iget-object v3, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->imageViewPager:Lcom/clevertap/android/sdk/CTCarouselViewPager;
 
-    invoke-virtual {v3, v1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Lsk;)V
+    invoke-virtual {v3, v1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
     .line 22
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getInboxMessageContents()Ljava/util/ArrayList;
@@ -369,111 +373,36 @@
 
     .line 25
     :cond_1
-    new-array v5, v1, [Landroid/widget/ImageView;
-
-    const/4 v3, 0x0
-
-    :goto_1
-    if-ge v3, v1, :cond_3
+    new-array v4, v1, [Landroid/widget/ImageView;
 
     .line 26
-    new-instance v8, Landroid/widget/ImageView;
+    iget-object v3, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->sliderDots:Landroid/widget/LinearLayout;
 
-    invoke-virtual/range {p2 .. p2}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-direct {v8, v9}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    aput-object v8, v5, v3
+    invoke-virtual {p0, v4, v1, v0, v3}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->setDots([Landroid/widget/ImageView;ILandroid/content/Context;Landroid/widget/LinearLayout;)V
 
     .line 27
-    aget-object v8, v5, v3
-
-    invoke-virtual {v8, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    aget-object v1, v4, v2
 
     .line 28
-    aget-object v8, v5, v3
-
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v9
-
-    sget v10, Lcom/clevertap/android/sdk/R$drawable;->ct_unselected_dot:I
-
-    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 29
-    new-instance v8, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v9, -0x2
-
-    invoke-direct {v8, v9, v9}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    const/4 v9, 0x4
-
-    const/4 v10, 0x6
-
-    .line 30
-    invoke-virtual {v8, v4, v10, v9, v10}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
-
-    const/16 v9, 0x11
-
-    .line 31
-    iput v9, v8, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
-
-    .line 32
-    iget-object v9, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->sliderDots:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v9}, Landroid/widget/LinearLayout;->getChildCount()I
-
-    move-result v9
-
-    if-ge v9, v1, :cond_2
-
-    .line 33
-    iget-object v9, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->sliderDots:Landroid/widget/LinearLayout;
-
-    aget-object v10, v5, v3
-
-    invoke-virtual {v9, v10, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    :cond_2
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    .line 34
-    :cond_3
-    aget-object v0, v5, v2
-
-    invoke-virtual/range {p2 .. p2}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
+    move-result-object v0
 
     sget v2, Lcom/clevertap/android/sdk/R$drawable;->ct_selected_dot:I
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const/4 v3, 0x0
 
-    move-result-object v1
+    invoke-static {v0, v2, v3}, Landroidx/core/content/res/ResourcesCompat;->getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    move-result-object v0
 
-    .line 35
+    .line 29
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 30
     new-instance v8, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$CarouselPageChangeListener;
 
+    .line 31
     invoke-virtual/range {p2 .. p2}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v0
@@ -488,18 +417,16 @@
 
     move-object v3, p0
 
-    move-object v4, v5
-
     move-object v5, p1
 
     invoke-direct/range {v0 .. v5}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$CarouselPageChangeListener;-><init>(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;Landroid/content/Context;Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;[Landroid/widget/ImageView;Lcom/clevertap/android/sdk/CTInboxMessage;)V
 
-    .line 36
+    .line 32
     iget-object v0, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->imageViewPager:Lcom/clevertap/android/sdk/CTCarouselViewPager;
 
-    invoke-virtual {v0, v8}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$i;)V
+    invoke-virtual {v0, v8}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
 
-    .line 37
+    .line 33
     iget-object v8, v6, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;->clickLayout:Landroid/widget/RelativeLayout;
 
     new-instance v9, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
@@ -520,7 +447,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 38
+    .line 34
     new-instance v8, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$1;
 
     move-object v0, v8
@@ -535,14 +462,14 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder$1;-><init>(Lcom/clevertap/android/sdk/CTCarouselMessageViewHolder;Lcom/clevertap/android/sdk/CTInboxListViewFragment;Lcom/clevertap/android/sdk/CTInboxMessage;Lcom/clevertap/android/sdk/CTInboxListViewFragment;I)V
 
-    .line 39
+    .line 35
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     const-wide/16 v1, 0x7d0
 
-    .line 40
+    .line 36
     invoke-virtual {v0, v8, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void

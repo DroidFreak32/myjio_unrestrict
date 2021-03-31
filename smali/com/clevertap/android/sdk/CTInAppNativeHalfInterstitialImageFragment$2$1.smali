@@ -56,7 +56,7 @@
 
     iget-object v1, v1, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment$2;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;->access$100(Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;)Landroid/widget/RelativeLayout;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;->access$000(Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;)Landroid/widget/RelativeLayout;
 
     move-result-object v1
 
@@ -77,7 +77,7 @@
 
     iget-object v1, v1, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment$2;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;->access$100(Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;)Landroid/widget/RelativeLayout;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;->access$000(Lcom/clevertap/android/sdk/CTInAppNativeHalfInterstitialImageFragment;)Landroid/widget/RelativeLayout;
 
     move-result-object v1
 

@@ -1,10 +1,10 @@
 .class public Lcom/jiny/android/ui/discovery/DiscoveryLayout$g;
-.super Lxl0;
+.super Lcom/jiny/android/ui/discovery/b;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jiny/android/ui/discovery/DiscoveryLayout;->s()V
+    value = Lcom/jiny/android/ui/discovery/DiscoveryLayout;->j0()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,16 +14,16 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+.field public final synthetic a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$g;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iput-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$g;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-direct {p0}, Lxl0;-><init>()V
+    invoke-direct {p0}, Lcom/jiny/android/ui/discovery/b;-><init>()V
 
     return-void
 .end method
@@ -33,9 +33,9 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$g;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$g;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->t(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->k0(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
 
     move-result-object p1
 

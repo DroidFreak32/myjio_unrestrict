@@ -1,0 +1,46 @@
+.class public Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener$b;
+.super Landroid/animation/AnimatorListenerAdapter;
+.source "RecyclerViewUtils.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;->j()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;
+
+
+# direct methods
+.method public constructor <init>(Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener$b;->a:Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 1
+    iget-object p1, p0, Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener$b;->a:Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;->a(Lcom/jio/myjio/dashboard/utilities/RecyclerViewUtils$ShowHideToolbarOnScrollingListener;F)V
+
+    return-void
+.end method

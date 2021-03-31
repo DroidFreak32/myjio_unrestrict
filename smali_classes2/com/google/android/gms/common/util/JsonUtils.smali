@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/JsonUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -11,9 +12,9 @@
 
 
 # static fields
-.field public static final zzhd:Ljava/util/regex/Pattern;
+.field private static final zza:Ljava/util/regex/Pattern;
 
-.field public static final zzhe:Ljava/util/regex/Pattern;
+.field private static final zzb:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -27,7 +28,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zzhd:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zza:Ljava/util/regex/Pattern;
 
     const-string v0, "[\\\\\"/\u0008\u000c\n\r\t]"
 
@@ -36,12 +37,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zzhe:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zzb:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -52,6 +53,17 @@
 
 .method public static areJsonValuesEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 5
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -134,7 +146,13 @@
     .line 9
     :cond_4
     :try_start_0
-    invoke-virtual {p0, v3}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-virtual {p0, v4}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -246,6 +264,13 @@
 
 .method public static escapeString(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -257,7 +282,7 @@
     if-nez v0, :cond_8
 
     .line 2
-    sget-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zzhe:Ljava/util/regex/Pattern;
+    sget-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zzb:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -407,6 +432,13 @@
 
 .method public static unescapeString(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -418,12 +450,12 @@
     if-nez v0, :cond_b
 
     .line 2
-    invoke-static {p0}, Lcom/google/android/gms/common/util/zzd;->unescape(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/android/gms/common/util/zzc;->zza(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     .line 3
-    sget-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zzhd:Ljava/util/regex/Pattern;
+    sget-object v0, Lcom/google/android/gms/common/util/JsonUtils;->zza:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 

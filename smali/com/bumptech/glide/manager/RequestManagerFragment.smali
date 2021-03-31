@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "RMFragment"
+.field private static final TAG:Ljava/lang/String; = "RMFragment"
 
 
 # instance fields
-.field public final childRequestManagerFragments:Ljava/util/Set;
+.field private final childRequestManagerFragments:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -29,15 +29,24 @@
     .end annotation
 .end field
 
-.field public final lifecycle:Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;
+.field private final lifecycle:Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;
 
-.field public parentFragmentHint:Landroid/app/Fragment;
+.field private parentFragmentHint:Landroid/app/Fragment;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public requestManager:Lcom/bumptech/glide/RequestManager;
+.field private requestManager:Lcom/bumptech/glide/RequestManager;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final requestManagerTreeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
+.field private final requestManagerTreeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
 
-.field public rootRequestManagerFragment:Lcom/bumptech/glide/manager/RequestManagerFragment;
+.field private rootRequestManagerFragment:Lcom/bumptech/glide/manager/RequestManagerFragment;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -56,10 +65,17 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "ValidFragment"
         }
+    .end annotation
+
+    .annotation build Landroidx/annotation/VisibleForTesting;
     .end annotation
 
     .line 2
@@ -102,6 +118,9 @@
         value = 0x11
     .end annotation
 
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -134,6 +153,10 @@
 
 .method private isDescendant(Landroid/app/Fragment;)Z
     .locals 2
+    .param p1    # Landroid/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x11
     .end annotation
@@ -178,6 +201,10 @@
 
 .method private registerFragmentWithRoot(Landroid/app/Activity;)V
     .locals 1
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/manager/RequestManagerFragment;->unregisterFragmentWithRoot()V
@@ -198,8 +225,6 @@
     iput-object p1, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->rootRequestManagerFragment:Lcom/bumptech/glide/manager/RequestManagerFragment;
 
     .line 3
-    iget-object p1, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->rootRequestManagerFragment:Lcom/bumptech/glide/manager/RequestManagerFragment;
-
     invoke-virtual {p0, p1}, Landroid/app/Fragment;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -252,6 +277,9 @@
     .locals 4
     .annotation build Landroid/annotation/TargetApi;
         value = 0x11
+    .end annotation
+
+    .annotation build Landroidx/annotation/NonNull;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -364,6 +392,8 @@
 
 .method public getGlideLifecycle()Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->lifecycle:Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;
@@ -373,6 +403,8 @@
 
 .method public getRequestManager()Lcom/bumptech/glide/RequestManager;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->requestManager:Lcom/bumptech/glide/RequestManager;
@@ -382,6 +414,8 @@
 
 .method public getRequestManagerTreeNode()Lcom/bumptech/glide/manager/RequestManagerTreeNode;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->requestManagerTreeNode:Lcom/bumptech/glide/manager/RequestManagerTreeNode;
@@ -476,6 +510,10 @@
 
 .method public setParentFragmentHint(Landroid/app/Fragment;)V
     .locals 1
+    .param p1    # Landroid/app/Fragment;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->parentFragmentHint:Landroid/app/Fragment;
@@ -502,6 +540,10 @@
 
 .method public setRequestManager(Lcom/bumptech/glide/RequestManager;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/RequestManager;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/manager/RequestManagerFragment;->requestManager:Lcom/bumptech/glide/RequestManager;
@@ -523,7 +565,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "{parent="
+    const-string/jumbo v1, "{parent="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -533,7 +575,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

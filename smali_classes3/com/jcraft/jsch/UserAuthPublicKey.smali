@@ -17,6 +17,11 @@
 # virtual methods
 .method public start(Lcom/jcraft/jsch/Session;)Z
     .locals 16
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
@@ -121,7 +126,7 @@
     .line 15
     iget-object v11, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    const-string/jumbo v12, "ssh-connection"
+    const-string v12, "ssh-connection"
 
     invoke-static {v12}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
@@ -180,8 +185,6 @@
     iput-object v11, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 22
-    iget-object v11, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v11}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v11
@@ -238,8 +241,6 @@
     if-eqz v12, :cond_2
 
     .line 28
-    iget-object v12, v1, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
-
     invoke-interface {v12, v11}, Lcom/jcraft/jsch/UserInfo;->showMessage(Ljava/lang/String;)V
 
     goto :goto_1
@@ -327,7 +328,7 @@
     .line 34
     invoke-static {v13}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
-    move-result-object v14
+    move-result-object v13
 
     goto :goto_4
 
@@ -342,27 +343,27 @@
     throw v0
 
     :cond_b
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
     .line 36
     :goto_4
     invoke-interface {v6}, Lcom/jcraft/jsch/Identity;->isEncrypted()Z
 
-    move-result v13
+    move-result v14
 
-    if-eqz v13, :cond_c
+    if-eqz v14, :cond_c
 
-    if-eqz v14, :cond_d
+    if-eqz v13, :cond_e
 
     .line 37
     :cond_c
-    invoke-interface {v6, v14}, Lcom/jcraft/jsch/Identity;->setPassphrase([B)Z
+    invoke-interface {v6, v13}, Lcom/jcraft/jsch/Identity;->setPassphrase([B)Z
 
-    move-result v13
-
-    if-eqz v13, :cond_d
+    move-result v14
 
     if-eqz v14, :cond_e
+
+    if-eqz v13, :cond_d
 
     .line 38
     invoke-virtual/range {p1 .. p1}, Lcom/jcraft/jsch/Session;->getIdentityRepository()Lcom/jcraft/jsch/IdentityRepository;
@@ -371,7 +372,7 @@
 
     instance-of v12, v12, Lcom/jcraft/jsch/IdentityRepository$Wrapper;
 
-    if-eqz v12, :cond_e
+    if-eqz v12, :cond_d
 
     .line 39
     invoke-virtual/range {p1 .. p1}, Lcom/jcraft/jsch/Session;->getIdentityRepository()Lcom/jcraft/jsch/IdentityRepository;
@@ -382,11 +383,14 @@
 
     invoke-virtual {v12}, Lcom/jcraft/jsch/IdentityRepository$Wrapper;->check()V
 
+    :cond_d
+    move-object v14, v13
+
     goto :goto_5
 
     .line 40
-    :cond_d
-    invoke-static {v14}, Lcom/jcraft/jsch/Util;->bzero([B)V
+    :cond_e
+    invoke-static {v13}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
     add-int/lit8 v12, v12, -0x1
 
@@ -395,7 +399,6 @@
     const/4 v14, 0x0
 
     .line 41
-    :cond_e
     :goto_5
     invoke-static {v14}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
@@ -440,7 +443,7 @@
     .line 47
     iget-object v10, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    const-string/jumbo v12, "ssh-connection"
+    const-string v12, "ssh-connection"
 
     invoke-static {v12}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
@@ -543,15 +546,13 @@
     .line 60
     iget-object v7, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v7, v7, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v9, v7, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v9, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
+    iget v7, v7, Lcom/jcraft/jsch/Buffer;->index:I
 
-    iget v9, v9, Lcom/jcraft/jsch/Buffer;->index:I
+    sub-int/2addr v7, v11
 
-    sub-int/2addr v9, v11
-
-    invoke-static {v7, v11, v14, v13, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v11, v14, v13, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 61
     invoke-interface {v6, v14}, Lcom/jcraft/jsch/Identity;->getSignature([B)[B
@@ -585,8 +586,6 @@
     iput-object v6, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 65
-    iget-object v6, v1, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v6
@@ -641,8 +640,6 @@
     if-eqz v7, :cond_13
 
     .line 72
-    iget-object v7, v1, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
-
     invoke-interface {v7, v6}, Lcom/jcraft/jsch/UserInfo;->showMessage(Ljava/lang/String;)V
 
     goto :goto_6

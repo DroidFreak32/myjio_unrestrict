@@ -27,28 +27,28 @@
 
 
 # instance fields
-.field public zzcs:F
+.field private zzcs:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getZIndex"
         id = 0x4
     .end annotation
 .end field
 
-.field public zzct:Z
+.field private zzct:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isVisible"
         id = 0x3
     .end annotation
 .end field
 
-.field public zzda:F
+.field private zzda:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTransparency"
         id = 0x6
     .end annotation
 .end field
 
-.field public zzei:Lcom/google/android/gms/internal/maps/zzaf;
+.field private zzei:Lcom/google/android/gms/internal/maps/zzaf;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTileProviderDelegate"
         id = 0x2
@@ -56,9 +56,9 @@
     .end annotation
 .end field
 
-.field public zzej:Lcom/google/android/gms/maps/model/TileProvider;
+.field private zzej:Lcom/google/android/gms/maps/model/TileProvider;
 
-.field public zzek:Z
+.field private zzek:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "true"
         getter = "getFadeIn"
@@ -156,16 +156,13 @@
 
     iput-object p1, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzei:Lcom/google/android/gms/internal/maps/zzaf;
 
-    .line 10
-    iget-object p1, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzei:Lcom/google/android/gms/internal/maps/zzaf;
-
     if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     goto :goto_0
 
-    .line 11
+    .line 10
     :cond_0
     new-instance p1, Lcom/google/android/gms/maps/model/zzs;
 
@@ -174,16 +171,16 @@
     :goto_0
     iput-object p1, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzej:Lcom/google/android/gms/maps/model/TileProvider;
 
-    .line 12
+    .line 11
     iput-boolean p2, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzct:Z
 
-    .line 13
+    .line 12
     iput p3, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzcs:F
 
-    .line 14
+    .line 13
     iput-boolean p4, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzek:Z
 
-    .line 15
+    .line 14
     iput p5, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzda:F
 
     return-void
@@ -260,16 +257,13 @@
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzej:Lcom/google/android/gms/maps/model/TileProvider;
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/maps/model/TileOverlayOptions;->zzej:Lcom/google/android/gms/maps/model/TileProvider;
-
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     goto :goto_0
 
-    .line 3
+    .line 2
     :cond_0
     new-instance v0, Lcom/google/android/gms/maps/model/zzt;
 

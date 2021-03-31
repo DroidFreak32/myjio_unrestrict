@@ -1,29 +1,29 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzhi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Ljava/lang/String;
+.field private final synthetic zza:Ljava/lang/String;
 
-.field public final synthetic zzb:Ljava/lang/String;
+.field private final synthetic zzb:Ljava/lang/String;
 
-.field public final synthetic zzc:Ljava/lang/Object;
+.field private final synthetic zzc:Ljava/lang/Object;
 
-.field public final synthetic zzd:J
+.field private final synthetic zzd:J
 
-.field public final synthetic zze:Lcom/google/android/gms/measurement/internal/zzhc;
+.field private final synthetic zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhc;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;J)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhb;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;J)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zze:Lcom/google/android/gms/measurement/internal/zzhc;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
     iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zza:Ljava/lang/String;
 
@@ -44,7 +44,7 @@
     .locals 6
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zze:Lcom/google/android/gms/measurement/internal/zzhc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
     iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zza:Ljava/lang/String;
 
@@ -54,7 +54,7 @@
 
     iget-wide v4, p0, Lcom/google/android/gms/measurement/internal/zzhi;->zzd:J
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/gms/measurement/internal/zzhc;->zza(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;J)V
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;J)V
 
     return-void
 .end method

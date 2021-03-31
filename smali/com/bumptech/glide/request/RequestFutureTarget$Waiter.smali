@@ -4,6 +4,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/bumptech/glide/request/RequestFutureTarget;
 .end annotation
@@ -37,6 +40,11 @@
 
 .method public waitForTimeout(Ljava/lang/Object;J)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1, p2, p3}, Ljava/lang/Object;->wait(J)V

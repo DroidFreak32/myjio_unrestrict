@@ -3,18 +3,24 @@
 
 
 # static fields
-.field public static c:Z = false
+.field public static a:Z = false
 
-.field public static d:Z = false
+.field public static b:Z = false
 
 
 # instance fields
-.field public a:Landroid/content/Context;
+.field public c:Landroid/content/Context;
 
-.field public b:Landroid/os/CountDownTimer;
+.field public d:Landroid/os/CountDownTimer;
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 1
 
@@ -22,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Landroid/os/CountDownTimer;
+    iput-object v0, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Landroid/os/CountDownTimer;
 
     return-void
 .end method
@@ -30,7 +36,7 @@
 .method public static synthetic a(Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;)Landroid/os/CountDownTimer;
     .locals 0
 
-    iget-object p0, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Landroid/os/CountDownTimer;
+    iget-object p0, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Landroid/os/CountDownTimer;
 
     return-object p0
 .end method
@@ -51,7 +57,7 @@
 
     move-result-object p0
 
-    const-string v1, "wifi"
+    const-string/jumbo v1, "wifi"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -113,7 +119,7 @@
 
     invoke-virtual {v0, v2, p0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lc20;->l(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->l(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -130,7 +136,7 @@
 
 
 # virtual methods
-.method public final a()V
+.method public final b()V
     .locals 8
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -149,11 +155,11 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "wifiDisableInterval"
+    const-string/jumbo v0, "wifiDisableInterval"
 
     const-string v1, "30"
 
-    invoke-static {v0, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -165,7 +171,7 @@
 
     mul-long v3, v0, v2
 
-    new-instance v0, Lr40;
+    new-instance v0, Lvb;
 
     const-wide/16 v5, 0x1388
 
@@ -173,19 +179,19 @@
 
     move-object v2, p0
 
-    invoke-direct/range {v1 .. v7}, Lr40;-><init>(Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;JJLcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+    invoke-direct/range {v1 .. v7}, Lvb;-><init>(Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;JJLcom/elitecorelib/core/utility/SharedPreferencesTask;)V
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Landroid/os/CountDownTimer;
+    iput-object v0, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Landroid/os/CountDownTimer;
 
     :cond_0
     return-void
 .end method
 
-.method public final declared-synchronized a(Landroid/net/ConnectivityManager;)V
+.method public final declared-synchronized c(Landroid/net/ConnectivityManager;)V
     .locals 5
 
     monitor-enter p0
@@ -310,7 +316,7 @@
 
     const/4 p1, 0x0
 
-    invoke-static {p1}, Lc20;->c(Z)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->c(Z)V
 
     goto :goto_1
 
@@ -334,7 +340,7 @@
 
     const/4 p1, 0x1
 
-    invoke-static {p1}, Lc20;->c(Z)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->c(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -352,8 +358,8 @@
     throw p1
 .end method
 
-.method public final b()V
-    .locals 6
+.method public final d()V
+    .locals 7
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -374,7 +380,7 @@
     return-void
 
     :cond_0
-    sget-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Z
+    sget-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Z
 
     if-eqz v1, :cond_1
 
@@ -391,11 +397,11 @@
 
     const/4 v1, 0x0
 
-    sput-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Z
+    sput-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Z
 
     const/4 v3, 0x1
 
-    sput-boolean v3, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Z
+    sput-boolean v3, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Z
 
     const-string v4, "ISSESSIONCONTINUE"
 
@@ -411,7 +417,7 @@
 
     invoke-virtual {v4, v2, v5}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->l0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->x()V
 
     :cond_2
     sget-object v4, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
@@ -424,7 +430,7 @@
 
     invoke-virtual {v0, v4, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    invoke-static {}, Lc20;->Q()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->c()V
 
     const-string v3, "CURRENT_STATE"
 
@@ -438,7 +444,7 @@
 
     invoke-virtual {v0, v4, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lc20;->R()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->d()Z
 
     move-result v3
 
@@ -446,7 +452,7 @@
 
     if-nez v3, :cond_9
 
-    invoke-static {}, Lc20;->p()Lcom/elitecorelib/core/d;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->P()Lcom/elitecorelib/core/d;
 
     move-result-object v3
 
@@ -458,7 +464,7 @@
 
     if-eqz v3, :cond_3
 
-    invoke-static {}, Lc20;->n()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->N()Z
 
     move-result v3
 
@@ -469,23 +475,21 @@
     :cond_3
     sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v5, "Prefered wifi connected"
+    const-string v6, "Prefered wifi connected"
 
-    invoke-virtual {v3, v2, v5}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v3, v2, v6}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->p()Lcom/elitecorelib/core/d;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->P()Lcom/elitecorelib/core/d;
 
     move-result-object v2
 
-    sget-object v3, Lcom/elitecorelib/core/d;->c:Lcom/elitecorelib/core/d;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    invoke-static {}, Lc20;->n()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->N()Z
 
     move-result v2
 
@@ -494,7 +498,7 @@
     goto :goto_0
 
     :cond_4
-    invoke-static {}, Lc20;->B()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->aa()Z
 
     move-result v2
 
@@ -505,7 +509,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/andsf/api/ANDSFClient;->cancelScheduledQAEParamEvaluation(Landroid/content/Context;)V
 
@@ -530,7 +534,7 @@
 
     const-string v5, "5"
 
-    invoke-static {v3, v5}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v5}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -569,13 +573,13 @@
 
     if-eqz v2, :cond_8
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
-    invoke-static {v2}, Lc20;->n(Landroid/content/Context;)V
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->n(Landroid/content/Context;)V
 
     const-string v2, "Back on timer cancelled, Reason: SSID out of range."
 
-    invoke-static {v2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     :cond_8
     invoke-virtual {v0, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBoolean(Ljava/lang/String;)Z
@@ -584,9 +588,9 @@
 
     if-eqz v2, :cond_b
 
-    sput-boolean v1, Lc20;->e:Z
+    sput-boolean v1, Lcom/elitecorelib/andsf/utility/a;->e:Z
 
-    invoke-static {}, Lc20;->e0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->q()V
 
     goto :goto_3
 
@@ -604,16 +608,16 @@
 
     if-eqz v2, :cond_a
 
-    sput-boolean v1, Lc20;->e:Z
+    sput-boolean v1, Lcom/elitecorelib/andsf/utility/a;->e:Z
 
-    invoke-static {}, Lc20;->e0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->q()V
 
     :cond_a
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->e()V
 
     :cond_b
     :goto_3
-    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a(Landroid/content/Context;)V
 
@@ -624,7 +628,7 @@
     return-void
 .end method
 
-.method public final c()V
+.method public final e()V
     .locals 5
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -672,7 +676,7 @@
     invoke-virtual {v0, v1, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
     :try_start_0
-    invoke-static {}, Lk40;->a()Lcom/elitecorelib/wifi/receiver/BackONReceiver;
+    invoke-static {}, Lcom/elitecorelib/wifi/receiver/f;->a()Lcom/elitecorelib/wifi/receiver/BackONReceiver;
 
     move-result-object v0
 
@@ -682,7 +686,7 @@
 
     invoke-direct {v0}, Lcom/elitecorelib/wifi/receiver/BackONReceiver;-><init>()V
 
-    invoke-static {v0}, Lk40;->a(Lcom/elitecorelib/wifi/receiver/BackONReceiver;)V
+    invoke-static {v0}, Lcom/elitecorelib/wifi/receiver/f;->a(Lcom/elitecorelib/wifi/receiver/BackONReceiver;)V
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -706,14 +710,14 @@
 
     move-result-object v1
 
-    invoke-static {}, Lk40;->a()Lcom/elitecorelib/wifi/receiver/BackONReceiver;
+    invoke-static {}, Lcom/elitecorelib/wifi/receiver/f;->a()Lcom/elitecorelib/wifi/receiver/BackONReceiver;
 
     move-result-object v2
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     :cond_0
-    invoke-static {}, Lc20;->X()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->j()V
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -723,13 +727,13 @@
 
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
     const-class v2, Lcom/elitecorelib/wifi/receiver/BackONReceiver;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
     :try_end_0
@@ -767,7 +771,7 @@
     return-void
 .end method
 
-.method public final d()V
+.method public final f()V
     .locals 4
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -789,7 +793,7 @@
     return-void
 
     :cond_0
-    sget-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Z
+    sget-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Z
 
     if-eqz v1, :cond_1
 
@@ -806,13 +810,13 @@
 
     const/4 v1, 0x1
 
-    sput-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Z
+    sput-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Z
 
     const/4 v1, 0x0
 
-    sput-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Z
+    sput-boolean v1, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Z
 
-    sput-boolean v1, Lc20;->f:Z
+    sput-boolean v1, Lcom/elitecorelib/andsf/utility/a;->f:Z
 
     const-string v2, "is_wifi_session_continue"
 
@@ -824,7 +828,7 @@
 
     sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_NOT_RANGE:Ljava/lang/String;
 
-    const-string v3, "wifiDisconnectionCategory"
+    const-string/jumbo v3, "wifiDisconnectionCategory"
 
     invoke-virtual {v0, v3, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -854,13 +858,13 @@
     if-eqz v1, :cond_4
 
     :cond_3
-    iget-object v1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
-    invoke-static {v1}, Lc20;->n(Landroid/content/Context;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->n(Landroid/content/Context;)V
 
     const-string v1, "Back on timer cancelled, Reason: SSID out of range."
 
-    invoke-static {v1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     :cond_4
     const-string v1, "ISSESSIONCONTINUE"
@@ -871,7 +875,7 @@
 
     if-nez v0, :cond_5
 
-    invoke-static {}, Lc20;->k0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->w()V
 
     :cond_5
     return-void
@@ -880,7 +884,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 10
 
-    const-string p2, "wifiDisconnectionCategory"
+    const-string/jumbo p2, "wifiDisconnectionCategory"
 
     const-string v0, "CURRENT_STATE"
 
@@ -908,7 +912,7 @@
     if-eqz v3, :cond_b
 
     :try_start_1
-    iput-object p1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iput-object p1, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
     sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -972,10 +976,10 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {p0, v3}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a(Landroid/net/ConnectivityManager;)V
+    invoke-virtual {p0, v3}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c(Landroid/net/ConnectivityManager;)V
 
     :goto_0
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->f()V
 
     goto/16 :goto_2
 
@@ -987,7 +991,7 @@
     if-eqz p2, :cond_2
 
     :cond_1
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d()V
 
     goto/16 :goto_2
 
@@ -1017,7 +1021,7 @@
     goto :goto_1
 
     :cond_4
-    invoke-virtual {p0, v3}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a(Landroid/net/ConnectivityManager;)V
+    invoke-virtual {p0, v3}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c(Landroid/net/ConnectivityManager;)V
 
     goto :goto_0
 
@@ -1032,7 +1036,7 @@
 
     if-eqz v3, :cond_7
 
-    sput-boolean v7, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Z
+    sput-boolean v7, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Z
 
     sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -1040,11 +1044,11 @@
 
     invoke-virtual {v3, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b()V
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
-    invoke-static {v3}, Lo00;->a(Landroid/content/Context;)Z
+    invoke-static {v3}, Lcom/elitecore/wifi/api/b;->a(Landroid/content/Context;)Z
 
     move-result v3
 
@@ -1076,7 +1080,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lc20;->i(Ljava/lang/String;)Z
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->i(Ljava/lang/String;)Z
 
     move-result v3
 
@@ -1104,9 +1108,9 @@
 
     invoke-virtual {p2, v1, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    sput-boolean v7, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Z
+    sput-boolean v7, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Z
 
-    invoke-static {}, Lc20;->l0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->x()V
 
     const-string p2, "isLTEfirstSession"
 
@@ -1130,13 +1134,13 @@
     if-eqz p2, :cond_a
 
     :cond_9
-    iget-object p2, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Landroid/content/Context;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Landroid/content/Context;
 
-    invoke-static {p2}, Lc20;->n(Landroid/content/Context;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->n(Landroid/content/Context;)V
 
     const-string p2, "BackON timer cancelled, Reason: policy wifi disconnected."
 
-    invoke-static {p2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
@@ -1251,13 +1255,7 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_3
 
-    goto :goto_3
-
     :catch_3
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_b
     :goto_3
     return-void

@@ -1,145 +1,98 @@
 .class public final Lcom/google/android/gms/internal/ads/zzox;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/ads/internal/gmsg/zzu;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/ads/internal/gmsg/zzu<",
-        "Ljava/lang/Object;",
-        ">;"
-    }
-.end annotation
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzbkr:Lcom/google/android/gms/internal/ads/zzow;
+.field private final zzbjg:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private zzbjh:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzow;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbkr:Lcom/google/android/gms/internal/ads/zzow;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbjg:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Ljava/lang/Object;Ljava/util/Map;)V
+.method public final declared-synchronized zzit()Ljava/util/Map;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/Object;",
+            "()",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            ">;)V"
+            ">;"
         }
     .end annotation
 
+    monitor-enter p0
+
     .line 1
     :try_start_0
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbkr:Lcom/google/android/gms/internal/ads/zzow;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbjh:Ljava/util/Map;
 
-    const-string v0, "timestamp"
-
-    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, p1, Lcom/google/android/gms/internal/ads/zzow;->zzbkp:Ljava/lang/Long;
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    const-string p1, "Failed to call parse unconfirmedClickTimestamp."
+    if-nez v0, :cond_0
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaok;->e(Ljava/lang/String;)V
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 3
-    :goto_0
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbkr:Lcom/google/android/gms/internal/ads/zzow;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbjg:Ljava/util/Map;
 
-    const-string v0, "id"
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbjh:Ljava/util/Map;
 
-    iput-object v0, p1, Lcom/google/android/gms/internal/ads/zzow;->zzbko:Ljava/lang/String;
-
-    const-string p1, "asset_id"
-
-    .line 4
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    .line 5
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbkr:Lcom/google/android/gms/internal/ads/zzow;
-
-    invoke-static {p2}, Lcom/google/android/gms/internal/ads/zzow;->zza(Lcom/google/android/gms/internal/ads/zzow;)Lcom/google/android/gms/internal/ads/zzsc;
-
-    move-result-object p2
-
-    if-nez p2, :cond_0
-
-    const-string p1, "Received unconfirmed click but UnconfirmedClickListener is null."
-
-    .line 6
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    return-void
-
-    .line 7
+    .line 3
     :cond_0
-    :try_start_1
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbkr:Lcom/google/android/gms/internal/ads/zzow;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzox;->zzbjh:Ljava/util/Map;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {p2}, Lcom/google/android/gms/internal/ads/zzow;->zza(Lcom/google/android/gms/internal/ads/zzow;)Lcom/google/android/gms/internal/ads/zzsc;
+    monitor-exit p0
 
-    move-result-object p2
+    return-object v0
 
-    invoke-interface {p2, p1}, Lcom/google/android/gms/internal/ads/zzsc;->onUnconfirmedClickReceived(Ljava/lang/String;)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+    :catchall_0
+    move-exception v0
 
-    return-void
+    monitor-exit p0
 
-    :catch_1
-    move-exception p1
-
-    const-string p2, "#007 Could not call remote method."
-
-    .line 8
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzd(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    throw v0
 .end method

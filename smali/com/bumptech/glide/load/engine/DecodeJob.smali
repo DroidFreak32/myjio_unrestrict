@@ -39,11 +39,11 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "DecodeJob"
+.field private static final TAG:Ljava/lang/String; = "DecodeJob"
 
 
 # instance fields
-.field public callback:Lcom/bumptech/glide/load/engine/DecodeJob$Callback;
+.field private callback:Lcom/bumptech/glide/load/engine/DecodeJob$Callback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/DecodeJob$Callback<",
@@ -52,13 +52,13 @@
     .end annotation
 .end field
 
-.field public currentAttemptingKey:Lcom/bumptech/glide/load/Key;
+.field private currentAttemptingKey:Lcom/bumptech/glide/load/Key;
 
-.field public currentData:Ljava/lang/Object;
+.field private currentData:Ljava/lang/Object;
 
-.field public currentDataSource:Lcom/bumptech/glide/load/DataSource;
+.field private currentDataSource:Lcom/bumptech/glide/load/DataSource;
 
-.field public currentFetcher:Lcom/bumptech/glide/load/data/DataFetcher;
+.field private currentFetcher:Lcom/bumptech/glide/load/data/DataFetcher;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/data/DataFetcher<",
@@ -67,13 +67,13 @@
     .end annotation
 .end field
 
-.field public volatile currentGenerator:Lcom/bumptech/glide/load/engine/DataFetcherGenerator;
+.field private volatile currentGenerator:Lcom/bumptech/glide/load/engine/DataFetcherGenerator;
 
-.field public currentSourceKey:Lcom/bumptech/glide/load/Key;
+.field private currentSourceKey:Lcom/bumptech/glide/load/Key;
 
-.field public currentThread:Ljava/lang/Thread;
+.field private currentThread:Ljava/lang/Thread;
 
-.field public final decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
+.field private final decodeHelper:Lcom/bumptech/glide/load/engine/DecodeHelper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/DecodeHelper<",
@@ -82,7 +82,7 @@
     .end annotation
 .end field
 
-.field public final deferredEncodeManager:Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;
+.field private final deferredEncodeManager:Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/DecodeJob$DeferredEncodeManager<",
@@ -91,53 +91,53 @@
     .end annotation
 .end field
 
-.field public final diskCacheProvider:Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
+.field private final diskCacheProvider:Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
 
-.field public diskCacheStrategy:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+.field private diskCacheStrategy:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
-.field public glideContext:Lcom/bumptech/glide/GlideContext;
+.field private glideContext:Lcom/bumptech/glide/GlideContext;
 
-.field public height:I
+.field private height:I
 
-.field public volatile isCallbackNotified:Z
+.field private volatile isCallbackNotified:Z
 
-.field public volatile isCancelled:Z
+.field private volatile isCancelled:Z
 
-.field public loadKey:Lcom/bumptech/glide/load/engine/EngineKey;
+.field private loadKey:Lcom/bumptech/glide/load/engine/EngineKey;
 
-.field public model:Ljava/lang/Object;
+.field private model:Ljava/lang/Object;
 
-.field public onlyRetrieveFromCache:Z
+.field private onlyRetrieveFromCache:Z
 
-.field public options:Lcom/bumptech/glide/load/Options;
+.field private options:Lcom/bumptech/glide/load/Options;
 
-.field public order:I
+.field private order:I
 
-.field public final pool:Lz8;
+.field private final pool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/DecodeJob<",
             "*>;>;"
         }
     .end annotation
 .end field
 
-.field public priority:Lcom/bumptech/glide/Priority;
+.field private priority:Lcom/bumptech/glide/Priority;
 
-.field public final releaseManager:Lcom/bumptech/glide/load/engine/DecodeJob$ReleaseManager;
+.field private final releaseManager:Lcom/bumptech/glide/load/engine/DecodeJob$ReleaseManager;
 
-.field public runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
+.field private runReason:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
-.field public signature:Lcom/bumptech/glide/load/Key;
+.field private signature:Lcom/bumptech/glide/load/Key;
 
-.field public stage:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
+.field private stage:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
-.field public startFetchTime:J
+.field private startFetchTime:J
 
-.field public final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
+.field private final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
 
-.field public final throwables:Ljava/util/List;
+.field private final throwables:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -147,17 +147,17 @@
     .end annotation
 .end field
 
-.field public width:I
+.field private width:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;Lz8;)V
+.method public constructor <init>(Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;Landroidx/core/util/Pools$Pool;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/DecodeJob<",
             "*>;>;)V"
         }
@@ -205,7 +205,7 @@
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->diskCacheProvider:Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
 
     .line 8
-    iput-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->pool:Lz8;
+    iput-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->pool:Landroidx/core/util/Pools$Pool;
 
     return-void
 .end method
@@ -223,6 +223,12 @@
             ")",
             "Lcom/bumptech/glide/load/engine/Resource<",
             "TR;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/load/engine/GlideException;
         }
     .end annotation
 
@@ -302,6 +308,12 @@
             ")",
             "Lcom/bumptech/glide/load/engine/Resource<",
             "TR;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/load/engine/GlideException;
         }
     .end annotation
 
@@ -646,6 +658,8 @@
 
 .method private getOptionsWithHardwareConfig(Lcom/bumptech/glide/load/DataSource;)Lcom/bumptech/glide/load/Options;
     .locals 3
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
@@ -691,18 +705,18 @@
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/load/Options;->get(Lcom/bumptech/glide/load/Option;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Ljava/lang/Boolean;
+    check-cast v2, Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
     .line 6
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     if-eqz p1, :cond_4
 
@@ -716,13 +730,11 @@
     invoke-direct {v0}, Lcom/bumptech/glide/load/Options;-><init>()V
 
     .line 8
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->options:Lcom/bumptech/glide/load/Options;
 
-    invoke-virtual {v0, v1}, Lcom/bumptech/glide/load/Options;->putAll(Lcom/bumptech/glide/load/Options;)V
+    invoke-virtual {v0, v2}, Lcom/bumptech/glide/load/Options;->putAll(Lcom/bumptech/glide/load/Options;)V
 
     .line 9
-    sget-object v1, Lcom/bumptech/glide/load/resource/bitmap/Downsampler;->ALLOW_HARDWARE_CONFIG:Lcom/bumptech/glide/load/Option;
-
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -1098,9 +1110,9 @@
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     .line 22
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->pool:Lz8;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->pool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0, p0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -1207,6 +1219,12 @@
             "TData;TResourceType;TR;>;)",
             "Lcom/bumptech/glide/load/engine/Resource<",
             "TR;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/load/engine/GlideException;
         }
     .end annotation
 
@@ -1428,6 +1446,10 @@
 
 .method public compareTo(Lcom/bumptech/glide/load/engine/DecodeJob;)I
     .locals 2
+    .param p1    # Lcom/bumptech/glide/load/engine/DecodeJob;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1462,6 +1484,10 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/bumptech/glide/load/engine/DecodeJob;
@@ -1475,6 +1501,8 @@
 
 .method public getVerifier()Lcom/bumptech/glide/util/pool/StateVerifier;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeJob;->stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
@@ -1758,6 +1786,13 @@
 
 .method public onResourceDecoded(Lcom/bumptech/glide/load/DataSource;Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 11
+    .param p2    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Z:",

@@ -49,7 +49,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string v1, "state"
+    const-string/jumbo v1, "state"
 
     const/4 v2, 0x0
 
@@ -94,7 +94,7 @@
 
     if-eqz p2, :cond_0
 
-    invoke-static {}, Lc20;->l0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->x()V
 
     :cond_0
     const-string p2, "is_wifi_session_continue"
@@ -110,9 +110,9 @@
     goto :goto_0
 
     :cond_1
-    sput-boolean v2, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->c:Z
+    sput-boolean v2, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->a:Z
 
-    sput-boolean v2, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->d:Z
+    sput-boolean v2, Lcom/elitecorelib/wifi/utility/NetworkChangeReceiver;->b:Z
 
     const/4 p2, 0x2
 
@@ -129,13 +129,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_3
     :goto_0
     return-void

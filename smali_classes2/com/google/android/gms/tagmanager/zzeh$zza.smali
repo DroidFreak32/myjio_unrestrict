@@ -28,69 +28,63 @@
 
 .field public static final enum zzaiv:Lcom/google/android/gms/tagmanager/zzeh$zza;
 
-.field public static final synthetic zzaiw:[Lcom/google/android/gms/tagmanager/zzeh$zza;
+.field private static final synthetic zzaiw:[Lcom/google/android/gms/tagmanager/zzeh$zza;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/google/android/gms/tagmanager/zzeh$zza;
 
-    const/4 v1, 0x0
+    const-string v1, "NONE"
 
-    const-string v2, "NONE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/tagmanager/zzeh$zza;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/tagmanager/zzeh$zza;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzait:Lcom/google/android/gms/tagmanager/zzeh$zza;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/tagmanager/zzeh$zza;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/tagmanager/zzeh$zza;
 
     const-string v3, "CONTAINER"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/android/gms/tagmanager/zzeh$zza;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiu:Lcom/google/android/gms/tagmanager/zzeh$zza;
+    invoke-direct {v1, v3, v4}, Lcom/google/android/gms/tagmanager/zzeh$zza;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiu:Lcom/google/android/gms/tagmanager/zzeh$zza;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/tagmanager/zzeh$zza;
+    new-instance v3, Lcom/google/android/gms/tagmanager/zzeh$zza;
 
-    const/4 v3, 0x2
+    const-string v5, "CONTAINER_DEBUG"
 
-    const-string v4, "CONTAINER_DEBUG"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/google/android/gms/tagmanager/zzeh$zza;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/android/gms/tagmanager/zzeh$zza;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiv:Lcom/google/android/gms/tagmanager/zzeh$zza;
+    sput-object v3, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiv:Lcom/google/android/gms/tagmanager/zzeh$zza;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/google/android/gms/tagmanager/zzeh$zza;
+    new-array v5, v5, [Lcom/google/android/gms/tagmanager/zzeh$zza;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzait:Lcom/google/android/gms/tagmanager/zzeh$zza;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiu:Lcom/google/android/gms/tagmanager/zzeh$zza;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiv:Lcom/google/android/gms/tagmanager/zzeh$zza;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiw:[Lcom/google/android/gms/tagmanager/zzeh$zza;
+    sput-object v5, Lcom/google/android/gms/tagmanager/zzeh$zza;->zzaiw:[Lcom/google/android/gms/tagmanager/zzeh$zza;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

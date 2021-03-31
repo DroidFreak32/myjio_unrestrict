@@ -5,31 +5,31 @@
 # static fields
 .field public static final SCAN_CALL_BROADCAT:Ljava/lang/String; = "com.sterlite.connect.wifiscan"
 
-.field public static final TAG:Ljava/lang/String; = "STLForegroundService"
+.field private static final TAG:Ljava/lang/String; = "STLForegroundService"
 
 .field public static serviceRunning:Z = false
 
-.field public static sptask:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private static sptask:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # instance fields
-.field public NOTIFICATION_CNL_ID:Ljava/lang/String;
+.field private NOTIFICATION_CNL_ID:Ljava/lang/String;
 
-.field public _wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
+.field private _wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
 
-.field public handler:Landroid/os/Handler;
+.field private handler:Landroid/os/Handler;
 
-.field public isRegister:Z
+.field private isRegister:Z
 
-.field public myBroadCastReciever:Landroid/content/BroadcastReceiver;
+.field private myBroadCastReciever:Landroid/content/BroadcastReceiver;
 
-.field public receiveWiFiScanRequestreceiver:Landroid/content/BroadcastReceiver;
+.field private receiveWiFiScanRequestreceiver:Landroid/content/BroadcastReceiver;
 
-.field public runnable:Ljava/lang/Runnable;
+.field private runnable:Ljava/lang/Runnable;
 
-.field public wifiManager:Landroid/net/wifi/WifiManager;
+.field private wifiManager:Landroid/net/wifi/WifiManager;
 
-.field public wifiScanReceiver:Landroid/content/BroadcastReceiver;
+.field private wifiScanReceiver:Landroid/content/BroadcastReceiver;
 
 .field public wifiScanningRecevier:Landroid/content/BroadcastReceiver;
 
@@ -141,7 +141,7 @@
     return-object p1
 .end method
 
-.method public static addDefaultParams(Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;Landroid/content/Context;)V
+.method private static addDefaultParams(Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;Landroid/content/Context;)V
     .locals 2
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -256,7 +256,7 @@
     return-void
 .end method
 
-.method public static getDuration(JJ)J
+.method private static getDuration(JJ)J
     .locals 0
 
     sub-long/2addr p2, p0
@@ -298,7 +298,7 @@
 
     move-result-object v2
 
-    const-string v3, "wifi"
+    const-string/jumbo v3, "wifi"
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -423,8 +423,6 @@
     iget-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->wifiScanReceiver:Landroid/content/BroadcastReceiver;
 
     if-eqz p1, :cond_3
-
-    iget-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->wifiScanReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, p1}, Landroid/app/Service;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
@@ -564,8 +562,6 @@
 
     iput-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->_wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
 
-    iget-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->_wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
-
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/net/wifi/WifiManager$WifiLock;->setReferenceCounted(Z)V
@@ -638,7 +634,7 @@
 
     const-string v2, "false"
 
-    invoke-static {v1, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -648,7 +644,7 @@
 
     if-nez v1, :cond_0
 
-    const-string v1, "uptimeEnable"
+    const-string/jumbo v1, "uptimeEnable"
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
 
@@ -663,7 +659,7 @@
 
     const-string v1, "900"
 
-    invoke-static {v0, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -673,11 +669,11 @@
 
     int-to-long v0, v0
 
-    const-string v2, "uptimeEvaluteFlexTimeInterval"
+    const-string/jumbo v2, "uptimeEvaluteFlexTimeInterval"
 
     const-string v3, "300"
 
-    invoke-static {v2, v3}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -725,93 +721,93 @@
 
     if-lez v11, :cond_1
 
-    add-long/2addr v2, v7
+    add-long/2addr v7, v2
 
     goto :goto_0
 
     :cond_1
-    move-wide v2, v5
+    move-wide v7, v5
 
     :goto_0
-    new-instance v7, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;
+    new-instance v2, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;
 
-    invoke-direct {v7}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;-><init>()V
 
     invoke-virtual {v4}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getId()J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    invoke-virtual {v7, v8, v9}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setId(J)V
+    invoke-virtual {v2, v9, v10}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setId(J)V
 
     invoke-virtual {v4}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getDataCaptureTime()Ljava/lang/Long;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual {v7, v8}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setDataCaptureTime(Ljava/lang/Long;)V
-
-    invoke-virtual {v4}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getStartTime()Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setStartTime(Ljava/lang/Long;)V
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v7, v2}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setEndTime(Ljava/lang/Long;)V
-
-    invoke-virtual {v7}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getStartTime()Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-virtual {v7}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getEndTime()Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v8
-
-    invoke-static {v2, v3, v8, v9}, Lcom/elitecorelib/etech/services/SterliteForegroungService;->getDuration(JJ)J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v7, v2}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setDuration(Ljava/lang/Long;)V
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v7, v2}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setDestroyed(I)V
-
-    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
-
-    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
-
-    invoke-virtual {v2, v7}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setDataCaptureTime(Ljava/lang/Long;)V
 
     invoke-virtual {v4}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getStartTime()Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setStartTime(Ljava/lang/Long;)V
 
-    move-result-wide v2
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sub-long/2addr v5, v2
+    move-result-object v3
 
-    cmp-long v2, v5, v0
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setEndTime(Ljava/lang/Long;)V
 
-    if-lez v2, :cond_3
+    invoke-virtual {v2}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getStartTime()Ljava/lang/Long;
 
-    invoke-static {v7, p0}, Lcom/elitecorelib/etech/services/SterliteForegroungService;->storeUpTimeRecord(Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;Landroid/content/Context;)V
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v7
+
+    invoke-virtual {v2}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getEndTime()Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v9
+
+    invoke-static {v7, v8, v9, v10}, Lcom/elitecorelib/etech/services/SterliteForegroungService;->getDuration(JJ)J
+
+    move-result-wide v7
+
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setDuration(Ljava/lang/Long;)V
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->setDestroyed(I)V
+
+    new-instance v3, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+
+    invoke-direct {v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+
+    invoke-virtual {v3, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+
+    invoke-virtual {v4}, Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;->getStartTime()Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    sub-long/2addr v5, v3
+
+    cmp-long v3, v5, v0
+
+    if-lez v3, :cond_3
+
+    invoke-static {v2, p0}, Lcom/elitecorelib/etech/services/SterliteForegroungService;->storeUpTimeRecord(Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;Landroid/content/Context;)V
 
     :cond_2
     invoke-static {}, Lcom/elitecorelib/etech/services/SterliteForegroungService;->storeTempUptimeRecord()V
@@ -954,7 +950,7 @@
 
     move-result v1
 
-    invoke-static {p0, v1}, Lx6;->a(Landroid/content/Context;I)I
+    invoke-static {p0, v1}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result v1
 
@@ -1004,7 +1000,7 @@
 
     move-result v1
 
-    invoke-static {p0, v1}, Lx6;->a(Landroid/content/Context;I)I
+    invoke-static {p0, v1}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result v1
 
@@ -1051,7 +1047,7 @@
 
     move-result-object v0
 
-    const-string v1, "wifi"
+    const-string/jumbo v1, "wifi"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1378,8 +1374,6 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->receiveWiFiScanRequestreceiver:Landroid/content/BroadcastReceiver;
-
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v2, "com.sterlite.connect.wifiscan"
@@ -1425,8 +1419,6 @@
     iget-object v0, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->receiveWiFiScanRequestreceiver:Landroid/content/BroadcastReceiver;
 
     if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->receiveWiFiScanRequestreceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Landroid/app/Service;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
@@ -1504,7 +1496,7 @@
 
     const/4 p3, 0x0
 
-    invoke-static {p3}, Lk40;->a(Z)V
+    invoke-static {p3}, Lcom/elitecorelib/wifi/receiver/f;->a(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -1521,7 +1513,7 @@
 
     move-result-object p1
 
-    const-string v0, "shownotification"
+    const-string/jumbo v0, "shownotification"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
@@ -1646,8 +1638,6 @@
     iget-object v2, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->_wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
 
     if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->_wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
 
     invoke-virtual {v2}, Landroid/net/wifi/WifiManager$WifiLock;->isHeld()Z
 
@@ -1778,8 +1768,6 @@
 
     if-eqz p1, :cond_3
 
-    iget-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->wifiScanningRecevier:Landroid/content/BroadcastReceiver;
-
     invoke-virtual {p0, p1}, Landroid/app/Service;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     iput-object v2, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->wifiScanningRecevier:Landroid/content/BroadcastReceiver;
@@ -1833,8 +1821,6 @@
     iget-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->wifiScanningRecevier:Landroid/content/BroadcastReceiver;
 
     if-eqz p1, :cond_6
-
-    iget-object p1, p0, Lcom/elitecorelib/etech/services/SterliteForegroungService;->wifiScanningRecevier:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, p1}, Landroid/app/Service;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 

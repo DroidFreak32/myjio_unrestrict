@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public zzavs:Z
+.field private zzavs:Z
 
 
 # direct methods

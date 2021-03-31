@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final EMPTY:Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
+.field private static final EMPTY:Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
 
 
 # instance fields

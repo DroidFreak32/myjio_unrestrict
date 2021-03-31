@@ -37,7 +37,7 @@
     .end annotation
 .end field
 
-.field public static final zzai:Ljava/util/Comparator;
+.field private static final zzai:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Comparator<",
@@ -55,37 +55,37 @@
     .end annotation
 .end field
 
-.field public final zzab:J
+.field private final zzab:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x3
     .end annotation
 .end field
 
-.field public final zzac:Z
+.field private final zzac:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x4
     .end annotation
 .end field
 
-.field public final zzad:D
+.field private final zzad:D
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x5
     .end annotation
 .end field
 
-.field public final zzae:Ljava/lang/String;
+.field private final zzae:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x6
     .end annotation
 .end field
 
-.field public final zzaf:[B
+.field private final zzaf:[B
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x7
     .end annotation
 .end field
 
-.field public final zzag:I
+.field private final zzag:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x8
     .end annotation
@@ -183,7 +183,7 @@
     return-void
 .end method
 
-.method public static compare(II)I
+.method private static compare(II)I
     .locals 0
 
     if-ge p0, p1, :cond_0
@@ -334,6 +334,8 @@
 
     :cond_7
     new-instance p1, Ljava/lang/AssertionError;
+
+    iget v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzag:I
 
     const/16 v1, 0x1f
 
@@ -498,6 +500,8 @@
     :cond_1
     new-instance p1, Ljava/lang/AssertionError;
 
+    iget v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzag:I
+
     const/16 v1, 0x1f
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -638,9 +642,11 @@
     :cond_1
     new-instance v0, Ljava/lang/AssertionError;
 
-    iget-object v3, p0, Lcom/google/android/gms/phenotype/zzi;->name:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/phenotype/zzi;->name:Ljava/lang/String;
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget v3, p0, Lcom/google/android/gms/phenotype/zzi;->zzag:I
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -658,11 +664,11 @@
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -736,41 +742,41 @@
 
     iget-object v0, p0, Lcom/google/android/gms/phenotype/zzi;->name:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    iget-wide v2, p0, Lcom/google/android/gms/phenotype/zzi;->zzab:J
+    iget-wide v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzab:J
 
-    const/4 v0, 0x3
+    const/4 v3, 0x3
 
-    invoke-static {p1, v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
 
     iget-boolean v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzac:Z
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
-    iget-wide v2, p0, Lcom/google/android/gms/phenotype/zzi;->zzad:D
+    iget-wide v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzad:D
 
-    const/4 v0, 0x5
+    const/4 v3, 0x5
 
-    invoke-static {p1, v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeDouble(Landroid/os/Parcel;ID)V
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeDouble(Landroid/os/Parcel;ID)V
 
     iget-object v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzae:Ljava/lang/String;
 
-    const/4 v2, 0x6
+    const/4 v1, 0x6
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     iget-object v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzaf:[B
 
-    const/4 v2, 0x7
+    const/4 v1, 0x7
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
 
     iget v0, p0, Lcom/google/android/gms/phenotype/zzi;->zzag:I
 

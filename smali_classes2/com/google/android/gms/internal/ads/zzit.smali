@@ -1,55 +1,23 @@
 .class public final Lcom/google/android/gms/internal/ads/zzit;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbdi;
-
-
-# static fields
-.field public static final zzanc:Lcom/google/android/gms/internal/ads/zzbdi;
+.super Ljava/lang/Exception;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzit;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzit;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzit;->zzanc:Lcom/google/android/gms/internal/ads/zzbdi;
+    .line 2
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final zzs(I)Z
-    .locals 0
-
-    .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzif$zzq$zzb;->zzx(I)Lcom/google/android/gms/internal/ads/zzif$zzq$zzb;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
 .end method

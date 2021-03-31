@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field public capturedOn:Ljava/lang/Long;
+.field private capturedOn:Ljava/lang/Long;
 
-.field public cellId:Ljava/lang/Integer;
+.field private cellId:Ljava/lang/Integer;
 
-.field public connectionType:Ljava/lang/String;
+.field private connectionType:Ljava/lang/String;
 
-.field public frequencyBand:Ljava/lang/String;
+.field private frequencyBand:Ljava/lang/String;
 
-.field public mcc:Ljava/lang/Integer;
+.field private mcc:Ljava/lang/Integer;
 
-.field public mnc:Ljava/lang/Integer;
+.field private mnc:Ljava/lang/Integer;
 
-.field public mobileNumber:Ljava/lang/String;
+.field private mobileNumber:Ljava/lang/String;
 
-.field public networkSubtype:Ljava/lang/String;
+.field private networkSubtype:Ljava/lang/String;
 
-.field public networkType:Ljava/lang/String;
+.field private networkType:Ljava/lang/String;
 
-.field public operatorName:Ljava/lang/String;
+.field private operatorName:Ljava/lang/String;
 
 
 # direct methods
@@ -37,6 +37,186 @@
 
 
 # virtual methods
+.method public getCapturedOn()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->capturedOn:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public getCellId()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->cellId:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getConnectionType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->connectionType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getFrequencyBand()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->frequencyBand:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getMcc()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->mcc:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getMnc()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->mnc:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getMobileNumber()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->mobileNumber:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getNetworkSubtype()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->networkSubtype:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getNetworkType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->networkType:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getOperatorName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->operatorName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setCapturedOn(Ljava/lang/Long;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->capturedOn:Ljava/lang/Long;
+
+    return-void
+.end method
+
+.method public setCellId(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->cellId:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setConnectionType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->connectionType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setFrequencyBand(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->frequencyBand:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setMcc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->mcc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setMnc(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->mnc:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setMobileNumber(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->mobileNumber:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNetworkSubtype(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->networkSubtype:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setNetworkType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->networkType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setOperatorName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkNetworkParams;->operatorName:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 

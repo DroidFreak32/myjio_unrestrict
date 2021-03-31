@@ -41,7 +41,7 @@
 
 .field public static final RES_OBJ_KEY:Ljava/lang/String; = "data"
 
-.field public static SERVICE_CHECK_JOB_ID:I = 0x0
+.field private static SERVICE_CHECK_JOB_ID:I = 0x27ab
 
 .field public static final SUCCESS_CODE:I = 0x1
 
@@ -54,35 +54,31 @@
 .method public static constructor <clinit>()V
     .locals 5
 
-    const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
+    const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
 
-    const-string v1, "android.permission.WRITE_EXTERNAL_STORAGE"
+    const-string v1, "android.permission.ACCESS_FINE_LOCATION"
 
-    const-string v2, "android.permission.ACCESS_FINE_LOCATION"
+    const-string v2, "android.permission.WRITE_EXTERNAL_STORAGE"
 
-    const-string v3, "android.permission.ACCESS_COARSE_LOCATION"
+    const-string v3, "android.permission.READ_EXTERNAL_STORAGE"
 
-    filled-new-array {v3, v2, v1, v0}, [Ljava/lang/String;
+    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/String;
 
     move-result-object v4
 
     sput-object v4, Lcom/elitecorelib/etech/AppUtils;->PERMISSIONS:[Ljava/lang/String;
 
-    filled-new-array {v1, v0}, [Ljava/lang/String;
+    filled-new-array {v2, v3}, [Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    sput-object v0, Lcom/elitecorelib/etech/AppUtils;->PERMISSION_STORAGE:[Ljava/lang/String;
+    sput-object v2, Lcom/elitecorelib/etech/AppUtils;->PERMISSION_STORAGE:[Ljava/lang/String;
 
-    filled-new-array {v3, v2}, [Ljava/lang/String;
+    filled-new-array {v0, v1}, [Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/elitecorelib/etech/AppUtils;->PERMISSION_LOCATION:[Ljava/lang/String;
-
-    const/16 v0, 0x27ab
-
-    sput v0, Lcom/elitecorelib/etech/AppUtils;->SERVICE_CHECK_JOB_ID:I
 
     return-void
 .end method
@@ -368,7 +364,7 @@
     return-void
 .end method
 
-.method public static checkFirstTimePermission([Ljava/lang/String;)Z
+.method private static checkFirstTimePermission([Ljava/lang/String;)Z
     .locals 4
 
     array-length v0, p0
@@ -448,7 +444,7 @@
 
     sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    const-string v2, "yyyy-MM-dd HH:mm:ss"
+    const-string/jumbo v2, "yyyy-MM-dd HH:mm:ss"
 
     invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
@@ -466,17 +462,17 @@
 .method public static getRemainingDiff()J
     .locals 5
 
-    const-wide/16 v0, 0x0
+    const-string v0, "etm_pref_last_sync_time"
 
-    const-string v2, "etm_pref_last_sync_time"
+    const-wide/16 v1, 0x0
 
-    invoke-static {v2, v0, v1}, Lcom/elitecorelib/etech/Preference;->getLong(Ljava/lang/String;J)J
+    invoke-static {v0, v1, v2}, Lcom/elitecorelib/etech/Preference;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v3, v1
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     invoke-static {}, Lcom/elitecorelib/etech/AppUtils;->storeCurrentTime()V
 
@@ -489,7 +485,7 @@
 
     move-result-wide v0
 
-    sub-long/2addr v0, v2
+    sub-long/2addr v0, v3
 
     const-wide/32 v2, 0x927c0
 
@@ -905,48 +901,48 @@
 .method public static isScanWifi()Z
     .locals 6
 
-    const-wide/16 v0, 0x0
+    const-string v0, "etm_pref_last_sync_time"
 
-    const-string v2, "etm_pref_last_sync_time"
+    const-wide/16 v1, 0x0
 
-    invoke-static {v2, v0, v1}, Lcom/elitecorelib/etech/Preference;->getLong(Ljava/lang/String;J)J
+    invoke-static {v0, v1, v2}, Lcom/elitecorelib/etech/Preference;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    cmp-long v5, v2, v0
+    cmp-long v5, v3, v1
 
     if-nez v5, :cond_0
 
-    return v4
+    return v0
 
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    sub-long/2addr v0, v2
+    sub-long/2addr v1, v3
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Time interval(ms): "
+    const-string v4, "Time interval(ms): "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-wide/32 v2, 0x8d9a0
+    const-wide/32 v3, 0x8d9a0
 
-    cmp-long v5, v0, v2
+    cmp-long v5, v1, v3
 
     if-ltz v5, :cond_1
 
-    return v4
+    return v0
 
     :cond_1
     const/4 v0, 0x0
@@ -1164,8 +1160,6 @@
     sget-object p4, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     if-eqz p4, :cond_0
-
-    sget-object p4, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     const-string v1, "AppUtils"
 
@@ -1436,12 +1430,9 @@
     invoke-virtual {p4, p2, v1, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveLong(Ljava/lang/String;J)V
 
     new-instance p2, Landroid/content/Intent;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     const-string p4, "com.sterlite.connect.activity.DashboardActivity"
 
-    :try_start_1
     invoke-static {p4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p4
@@ -1465,8 +1456,8 @@
     invoke-direct {p2, v0, v1, p0}, Landroid/app/AlarmManager$AlarmClockInfo;-><init>(JLandroid/app/PendingIntent;)V
 
     invoke-virtual {p3, p2, p1}, Landroid/app/AlarmManager;->setAlarmClock(Landroid/app/AlarmManager$AlarmClockInfo;Landroid/app/PendingIntent;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
@@ -1512,7 +1503,7 @@
 .end method
 
 .method public static setRepeatVariables()Z
-    .locals 9
+    .locals 7
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
@@ -1530,34 +1521,35 @@
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
     move-result v3
 
-    const/4 v4, 0x3
+    const/4 v4, 0x1
 
-    const/4 v5, 0x2
+    const/4 v5, 0x0
 
     const/4 v6, -0x1
-
-    const/4 v7, 0x1
-
-    const/4 v8, 0x0
 
     sparse-switch v3, :sswitch_data_0
 
     goto :goto_0
 
     :sswitch_0
-    const-string v3, "vivo"
+    const-string/jumbo v3, "vivo"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    goto :goto_0
 
-    goto :goto_1
+    :cond_0
+    const/4 v6, 0x3
+
+    goto :goto_0
 
     :sswitch_1
     const-string v3, "oppo"
@@ -1566,11 +1558,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
 
-    const/4 v0, 0x2
+    goto :goto_0
 
-    goto :goto_1
+    :cond_1
+    const/4 v6, 0x2
+
+    goto :goto_0
 
     :sswitch_2
     const-string v3, "huawei"
@@ -1579,11 +1574,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_2
 
-    const/4 v0, 0x3
+    goto :goto_0
 
-    goto :goto_1
+    :cond_2
+    const/4 v6, 0x1
+
+    goto :goto_0
 
     :sswitch_3
     const-string v3, "oneplus"
@@ -1592,101 +1590,76 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_3
 
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    const/4 v0, -0x1
-
-    :goto_1
-    if-eqz v0, :cond_7
-
-    if-eq v0, v7, :cond_6
-
-    if-eq v0, v5, :cond_2
-
-    if-eq v0, v4, :cond_1
-
-    :goto_2
-    sput-boolean v7, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
-
-    sput-boolean v8, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
-
-    :goto_3
-    sput-boolean v8, Lcom/elitecorelib/etech/AppUtils;->IS_SET_FCM:Z
-
-    goto :goto_7
-
-    :cond_1
-    const/16 v0, 0x1a
-
-    if-eq v2, v0, :cond_7
-
-    const/16 v0, 0x1b
-
-    if-eq v2, v0, :cond_7
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const v2, 0x39f856c2
-
-    if-eq v0, v2, :cond_3
-
-    goto :goto_4
+    goto :goto_0
 
     :cond_3
+    const/4 v6, 0x0
+
+    :goto_0
+    packed-switch v6, :pswitch_data_0
+
+    :goto_1
+    sput-boolean v4, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
+
+    sput-boolean v5, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
+
+    goto :goto_3
+
+    :cond_4
+    :goto_2
+    :pswitch_0
+    sput-boolean v5, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
+
+    sput-boolean v4, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
+
+    :goto_3
+    sput-boolean v5, Lcom/elitecorelib/etech/AppUtils;->IS_SET_FCM:Z
+
+    goto :goto_5
+
+    :pswitch_1
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
     const-string v0, "cph1701"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-nez v0, :cond_5
 
-    const/4 v6, 0x0
-
-    :cond_4
-    :goto_4
-    if-eqz v6, :cond_5
-
-    goto :goto_6
+    goto :goto_2
 
     :cond_5
-    sput-boolean v8, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
+    sput-boolean v5, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
 
-    sput-boolean v7, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
+    sput-boolean v4, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
 
-    goto :goto_5
+    goto :goto_4
 
-    :cond_6
-    sput-boolean v7, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
+    :pswitch_2
+    const/16 v0, 0x1a
 
-    sput-boolean v8, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
+    if-eq v2, v0, :cond_4
+
+    const/16 v0, 0x1b
+
+    if-eq v2, v0, :cond_4
+
+    goto :goto_1
+
+    :pswitch_3
+    sput-boolean v4, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
+
+    sput-boolean v5, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
+
+    :goto_4
+    sput-boolean v4, Lcom/elitecorelib/etech/AppUtils;->IS_SET_FCM:Z
 
     :goto_5
-    sput-boolean v7, Lcom/elitecorelib/etech/AppUtils;->IS_SET_FCM:Z
-
-    goto :goto_7
-
-    :cond_7
-    :goto_6
-    sput-boolean v8, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_MANAGER:Z
-
-    sput-boolean v7, Lcom/elitecorelib/etech/AppUtils;->IS_SET_ALARM_CLOCK:Z
-
-    goto :goto_3
-
-    :goto_7
-    return v8
+    return v5
 
     :sswitch_data_0
     .sparse-switch
@@ -1695,6 +1668,14 @@
         0x3427a0 -> :sswitch_1
         0x373cac -> :sswitch_0
     .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public static startForegroundService(Landroid/content/Context;Z)V
@@ -1707,7 +1688,7 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    const-string v1, "shownotification"
+    const-string/jumbo v1, "shownotification"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
@@ -1836,7 +1817,7 @@
 
     move-result-object v1
 
-    const-string v2, "wifi"
+    const-string/jumbo v2, "wifi"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1996,7 +1977,7 @@
 
     move-result-object p0
 
-    const-string p1, "wifiScannerLog10"
+    const-string/jumbo p1, "wifiScannerLog10"
 
     new-instance v1, Ljava/io/File;
 

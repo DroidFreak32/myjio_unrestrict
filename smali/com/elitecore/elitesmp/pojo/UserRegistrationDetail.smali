@@ -6,29 +6,29 @@
 
 
 # instance fields
-.field public WIPURL:Ljava/lang/String;
+.field private WIPURL:Ljava/lang/String;
 
-.field public brandName:Ljava/lang/String;
+.field private brandName:Ljava/lang/String;
 
-.field public cardIdentifyNo:Ljava/lang/String;
+.field private cardIdentifyNo:Ljava/lang/String;
 
-.field public creditCardDetail:Lcom/elitecore/elitesmp/pojo/CreditCardDetail;
+.field private creditCardDetail:Lcom/elitecore/elitesmp/pojo/CreditCardDetail;
 
-.field public currencyType:Ljava/lang/String;
+.field private currencyType:Ljava/lang/String;
 
-.field public partnerName:Ljava/lang/String;
+.field private partnerName:Ljava/lang/String;
 
-.field public passWord:Ljava/lang/String;
+.field private passWord:Ljava/lang/String;
 
-.field public paymentMethod:Ljava/lang/String;
+.field private paymentMethod:Ljava/lang/String;
 
-.field public registrationMethod:Ljava/lang/String;
+.field private registrationMethod:Ljava/lang/String;
 
-.field public userAgent_Type:Ljava/lang/String;
+.field private userAgent_Type:Ljava/lang/String;
 
-.field public userName:Ljava/lang/String;
+.field private userName:Ljava/lang/String;
 
-.field public wifiPackageDetail:Lcom/elitecore/elitesmp/pojo/WifiPackageDetail;
+.field private wifiPackageDetail:Lcom/elitecore/elitesmp/pojo/WifiPackageDetail;
 
 
 # direct methods

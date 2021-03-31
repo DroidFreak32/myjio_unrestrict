@@ -1,15 +1,25 @@
 .class public final Lcom/google/android/gms/common/stats/WakeLockEvent;
 .super Lcom/google/android/gms/common/stats/StatsEvent;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
+.annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+.end annotation
+
 .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
     creator = "WakeLockEventCreator"
+.end annotation
+
+.annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -21,57 +31,55 @@
 
 
 # instance fields
-.field public durationMillis:J
-
-.field public final versionCode:I
+.field private final zza:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$VersionField;
         id = 0x1
     .end annotation
 .end field
 
-.field public final zzfo:J
+.field private final zzb:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTimeMillis"
         id = 0x2
     .end annotation
 .end field
 
-.field public zzfp:I
+.field private zzc:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getEventType"
         id = 0xb
     .end annotation
 .end field
 
-.field public final zzfq:Ljava/lang/String;
+.field private final zzd:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getWakeLockName"
         id = 0x4
     .end annotation
 .end field
 
-.field public final zzfr:Ljava/lang/String;
+.field private final zze:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getSecondaryWakeLockName"
         id = 0xa
     .end annotation
 .end field
 
-.field public final zzfs:Ljava/lang/String;
+.field private final zzf:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getCodePackage"
         id = 0x11
     .end annotation
 .end field
 
-.field public final zzft:I
+.field private final zzg:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getWakeLockType"
         id = 0x5
     .end annotation
 .end field
 
-.field public final zzfu:Ljava/util/List;
+.field private final zzh:Ljava/util/List;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getCallingPackages"
         id = 0x6
@@ -84,56 +92,61 @@
             ">;"
         }
     .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 .end field
 
-.field public final zzfv:Ljava/lang/String;
+.field private final zzi:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getEventKey"
         id = 0xc
     .end annotation
 .end field
 
-.field public final zzfw:J
+.field private final zzj:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getElapsedRealtime"
         id = 0x8
     .end annotation
 .end field
 
-.field public zzfx:I
+.field private zzk:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getDeviceState"
         id = 0xe
     .end annotation
 .end field
 
-.field public final zzfy:Ljava/lang/String;
+.field private final zzl:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getHostPackage"
         id = 0xd
     .end annotation
 .end field
 
-.field public final zzfz:F
+.field private final zzm:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getBeginPowerPercentage"
         id = 0xf
     .end annotation
 .end field
 
-.field public final zzga:J
+.field private final zzn:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTimeout"
         id = 0x10
     .end annotation
 .end field
 
-.field public final zzgb:Z
+.field private final zzo:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getAcquiredWithTimeout"
         id = 0x12
     .end annotation
 .end field
+
+.field private zzp:J
 
 
 # direct methods
@@ -180,6 +193,9 @@
     .param p7    # Ljava/util/List;
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x6
+        .end annotation
+
+        .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
     .param p8    # Ljava/lang/String;
@@ -256,166 +272,98 @@
     move v1, p1
 
     .line 2
-    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->versionCode:I
+    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zza:I
 
     move-wide v1, p2
 
     .line 3
-    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfo:J
+    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzb:J
 
     move v1, p4
 
     .line 4
-    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfp:I
+    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzc:I
 
     move-object v1, p5
 
     .line 5
-    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfq:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzd:Ljava/lang/String;
 
     move-object v1, p12
 
     .line 6
-    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfr:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zze:Ljava/lang/String;
 
     move-object/from16 v1, p17
 
     .line 7
-    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfs:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzf:Ljava/lang/String;
 
     move v1, p6
 
     .line 8
-    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzft:I
+    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzg:I
 
     const-wide/16 v1, -0x1
 
     .line 9
-    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->durationMillis:J
+    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzp:J
 
     move-object v1, p7
 
     .line 10
-    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfu:Ljava/util/List;
+    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzh:Ljava/util/List;
 
     move-object v1, p8
 
     .line 11
-    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfv:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzi:Ljava/lang/String;
 
     move-wide v1, p9
 
     .line 12
-    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfw:J
+    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzj:J
 
     move v1, p11
 
     .line 13
-    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfx:I
+    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzk:I
 
     move-object/from16 v1, p13
 
     .line 14
-    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfy:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzl:Ljava/lang/String;
 
     move/from16 v1, p14
 
     .line 15
-    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfz:F
+    iput v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzm:F
 
     move-wide/from16 v1, p15
 
     .line 16
-    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzga:J
+    iput-wide v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzn:J
 
     move/from16 v1, p18
 
     .line 17
-    iput-boolean v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzgb:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(JILjava/lang/String;ILjava/util/List;Ljava/lang/String;JILjava/lang/String;Ljava/lang/String;FJLjava/lang/String;Z)V
-    .locals 19
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(JI",
-            "Ljava/lang/String;",
-            "I",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            "JI",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "FJ",
-            "Ljava/lang/String;",
-            "Z)V"
-        }
-    .end annotation
-
-    move-object/from16 v0, p0
-
-    move-wide/from16 v2, p1
-
-    move/from16 v4, p3
-
-    move-object/from16 v5, p4
-
-    move/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-wide/from16 v9, p8
-
-    move/from16 v11, p10
-
-    move-object/from16 v12, p11
-
-    move-object/from16 v13, p12
-
-    move/from16 v14, p13
-
-    move-wide/from16 v15, p14
-
-    move-object/from16 v17, p16
-
-    move/from16 v18, p17
-
-    const/4 v1, 0x2
-
-    .line 18
-    invoke-direct/range {v0 .. v18}, Lcom/google/android/gms/common/stats/WakeLockEvent;-><init>(IJILjava/lang/String;ILjava/util/List;Ljava/lang/String;JILjava/lang/String;Ljava/lang/String;FJLjava/lang/String;Z)V
+    iput-boolean v1, v0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzo:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getEventType()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfp:I
-
-    return v0
-.end method
-
-.method public final getTimeMillis()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfo:J
-
-    return-wide v0
-.end method
-
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
@@ -423,14 +371,14 @@
     move-result p2
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->versionCode:I
+    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zza:I
 
     const/4 v1, 0x1
 
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->getTimeMillis()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zza()J
 
     move-result-wide v0
 
@@ -440,107 +388,107 @@
     invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfq:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzd:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
     .line 6
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 7
-    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzft:I
+    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzg:I
 
-    const/4 v2, 0x5
+    const/4 v1, 0x5
 
     .line 8
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 9
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfu:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzh:Ljava/util/List;
 
-    const/4 v2, 0x6
+    const/4 v1, 0x6
 
     .line 10
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringList(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringList(Landroid/os/Parcel;ILjava/util/List;Z)V
 
     .line 11
-    iget-wide v2, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfw:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzj:J
 
-    const/16 v0, 0x8
+    const/16 v3, 0x8
 
     .line 12
-    invoke-static {p1, v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
 
     .line 13
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zze:Ljava/lang/String;
 
-    const/16 v2, 0xa
+    const/16 v1, 0xa
 
     .line 14
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 15
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->getEventType()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zzb()I
 
     move-result v0
 
-    const/16 v2, 0xb
+    const/16 v1, 0xb
 
     .line 16
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 17
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfv:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzi:Ljava/lang/String;
 
-    const/16 v2, 0xc
+    const/16 v1, 0xc
 
     .line 18
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 19
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfy:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzl:Ljava/lang/String;
 
-    const/16 v2, 0xd
+    const/16 v1, 0xd
 
     .line 20
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 21
-    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfx:I
+    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzk:I
 
-    const/16 v2, 0xe
+    const/16 v1, 0xe
 
     .line 22
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 23
-    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfz:F
+    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzm:F
 
-    const/16 v2, 0xf
+    const/16 v1, 0xf
 
     .line 24
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
 
     .line 25
-    iget-wide v2, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzga:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzn:J
 
-    const/16 v0, 0x10
+    const/16 v3, 0x10
 
     .line 26
-    invoke-static {p1, v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
 
     .line 27
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfs:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzf:Ljava/lang/String;
 
-    const/16 v2, 0x11
+    const/16 v1, 0x11
 
     .line 28
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 29
-    iget-boolean v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzgb:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzo:Z
 
     const/16 v1, 0x12
 
@@ -553,32 +501,58 @@
     return-void
 .end method
 
-.method public final zzu()J
+.method public final zza()J
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->durationMillis:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzb:J
 
     return-wide v0
 .end method
 
-.method public final zzv()Ljava/lang/String;
-    .locals 11
+.method public final zzb()I
+    .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfq:Ljava/lang/String;
+    iget v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzc:I
+
+    return v0
+.end method
+
+.method public final zzc()J
+    .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzp:J
+
+    return-wide v0
+.end method
+
+.method public final zzd()Ljava/lang/String;
+    .locals 11
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzh:Ljava/util/List;
 
     .line 2
-    iget v1, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzft:I
+    iget-object v1, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzd:Ljava/lang/String;
 
     .line 3
-    iget-object v2, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfu:Ljava/util/List;
+    iget v2, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzg:I
 
     const-string v3, ""
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    move-object v2, v3
+    move-object v0, v3
 
     goto :goto_0
 
@@ -586,16 +560,16 @@
     const-string v4, ","
 
     .line 4
-    invoke-static {v4, v2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+    invoke-static {v4, v0}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 5
     :goto_0
-    iget v4, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfx:I
+    iget v4, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzk:I
 
     .line 6
-    iget-object v5, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfr:Ljava/lang/String;
+    iget-object v5, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zze:Ljava/lang/String;
 
     if-nez v5, :cond_1
 
@@ -603,7 +577,7 @@
 
     .line 7
     :cond_1
-    iget-object v6, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfy:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzl:Ljava/lang/String;
 
     if-nez v6, :cond_2
 
@@ -611,10 +585,10 @@
 
     .line 8
     :cond_2
-    iget v7, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfz:F
+    iget v7, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzm:F
 
     .line 9
-    iget-object v8, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzfs:Ljava/lang/String;
+    iget-object v8, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzf:Ljava/lang/String;
 
     if-nez v8, :cond_3
 
@@ -625,9 +599,9 @@
 
     .line 10
     :goto_1
-    iget-boolean v8, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzgb:Z
+    iget-boolean v8, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzo:Z
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -637,7 +611,7 @@
 
     add-int/lit8 v9, v9, 0x33
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v10
 
@@ -685,15 +659,15 @@
 
     invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

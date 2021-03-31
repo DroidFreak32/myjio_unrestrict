@@ -1,56 +1,103 @@
-.class public final Lcom/google/android/gms/measurement/internal/zzki;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/measurement/internal/zzfc;
+.class public abstract Lcom/google/android/gms/measurement/internal/zzki;
+.super Lcom/google/android/gms/measurement/internal/zzkj;
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
 
 
 # instance fields
-.field public final synthetic zza:Ljava/lang/String;
-
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzkg;
+.field private zzb:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzkg;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzkl;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzki;->zzb:Lcom/google/android/gms/measurement/internal/zzkg;
+    invoke-direct {p0, p1}, Lcom/google/android/gms/measurement/internal/zzkj;-><init>(Lcom/google/android/gms/measurement/internal/zzkl;)V
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzki;->zza:Ljava/lang/String;
+    .line 2
+    iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzkj;->zza:Lcom/google/android/gms/measurement/internal/zzkl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/measurement/internal/zzkl;->zza(Lcom/google/android/gms/measurement/internal/zzki;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "I",
-            "Ljava/lang/Throwable;",
-            "[B",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;>;)V"
-        }
-    .end annotation
+.method public final zzai()Z
+    .locals 1
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzki;->zzb:Lcom/google/android/gms/measurement/internal/zzkg;
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzki;->zzb:Z
 
-    iget-object p5, p0, Lcom/google/android/gms/measurement/internal/zzki;->zza:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p1, p2, p3, p4, p5}, Lcom/google/android/gms/measurement/internal/zzkg;->zza(ILjava/lang/Throwable;[BLjava/lang/String;)V
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final zzaj()V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzki;->zzai()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     return-void
+
+    .line 2
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Not initialized"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final zzak()V
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzki;->zzb:Z
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzki;->zzd()Z
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzkj;->zza:Lcom/google/android/gms/measurement/internal/zzkl;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkl;->zzs()V
+
+    const/4 v0, 0x1
+
+    .line 4
+    iput-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzki;->zzb:Z
+
+    return-void
+
+    .line 5
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Can\'t initialize twice"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public abstract zzd()Z
 .end method

@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static zzf:Lcom/google/android/gms/maps/internal/ICameraUpdateFactoryDelegate;
+.field private static zzf:Lcom/google/android/gms/maps/internal/ICameraUpdateFactoryDelegate;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -388,7 +388,7 @@
     return-void
 .end method
 
-.method public static zzc()Lcom/google/android/gms/maps/internal/ICameraUpdateFactoryDelegate;
+.method private static zzc()Lcom/google/android/gms/maps/internal/ICameraUpdateFactoryDelegate;
     .locals 2
 
     .line 1

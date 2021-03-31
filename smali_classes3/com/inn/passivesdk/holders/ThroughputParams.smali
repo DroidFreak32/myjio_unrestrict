@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public dlHolder:Lcom/inn/passivesdk/holders/DataHolder;
+.field private dlHolder:Lcom/inn/passivesdk/holders/DataHolder;
 
-.field public ulHolder:Lcom/inn/passivesdk/holders/DataHolder;
+.field private ulHolder:Lcom/inn/passivesdk/holders/DataHolder;
 
 
 # direct methods
@@ -21,7 +21,7 @@
 
 
 # virtual methods
-.method public a()Lcom/inn/passivesdk/holders/DataHolder;
+.method public getDlHolder()Lcom/inn/passivesdk/holders/DataHolder;
     .locals 1
 
     .line 1
@@ -30,16 +30,7 @@
     return-object v0
 .end method
 
-.method public a(Lcom/inn/passivesdk/holders/DataHolder;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/ThroughputParams;->dlHolder:Lcom/inn/passivesdk/holders/DataHolder;
-
-    return-void
-.end method
-
-.method public b()Lcom/inn/passivesdk/holders/DataHolder;
+.method public getUlHolder()Lcom/inn/passivesdk/holders/DataHolder;
     .locals 1
 
     .line 1
@@ -48,10 +39,19 @@
     return-object v0
 .end method
 
-.method public b(Lcom/inn/passivesdk/holders/DataHolder;)V
+.method public setDlHolder(Lcom/inn/passivesdk/holders/DataHolder;)V
     .locals 0
 
-    .line 2
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ThroughputParams;->dlHolder:Lcom/inn/passivesdk/holders/DataHolder;
+
+    return-void
+.end method
+
+.method public setUlHolder(Lcom/inn/passivesdk/holders/DataHolder;)V
+    .locals 0
+
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/ThroughputParams;->ulHolder:Lcom/inn/passivesdk/holders/DataHolder;
 
     return-void
@@ -71,7 +71,7 @@
 
     iget-object v1, p0, Lcom/inn/passivesdk/holders/ThroughputParams;->dlHolder:Lcom/inn/passivesdk/holders/DataHolder;
 
-    invoke-virtual {v1}, Lcom/inn/passivesdk/holders/DataHolder;->c()D
+    invoke-virtual {v1}, Lcom/inn/passivesdk/holders/DataHolder;->getRate()D
 
     move-result-wide v1
 
@@ -83,7 +83,7 @@
 
     iget-object v1, p0, Lcom/inn/passivesdk/holders/ThroughputParams;->ulHolder:Lcom/inn/passivesdk/holders/DataHolder;
 
-    invoke-virtual {v1}, Lcom/inn/passivesdk/holders/DataHolder;->c()D
+    invoke-virtual {v1}, Lcom/inn/passivesdk/holders/DataHolder;->getRate()D
 
     move-result-wide v1
 

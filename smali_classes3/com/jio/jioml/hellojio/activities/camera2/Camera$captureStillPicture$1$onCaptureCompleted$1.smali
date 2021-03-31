@@ -3,7 +3,7 @@
 .source "Camera.kt"
 
 # interfaces
-.implements Lsq3;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # annotations
@@ -19,8 +19,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lsq3<",
-        "Lno3;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
@@ -32,18 +32,19 @@
         0x3
     }
     d1 = {
-        "\u0000\u0008\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002"
+        "\u0000\u0008\n\u0002\u0010\u0002\n\u0002\u0008\u0003\u0010\u0003\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002"
     }
     d2 = {
-        "<anonymous>",
         "",
-        "invoke"
+        "invoke",
+        "()V",
+        "<anonymous>"
     }
     k = 0x3
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
@@ -83,7 +84,7 @@
     .line 1
     invoke-virtual {p0}, Lcom/jio/jioml/hellojio/activities/camera2/Camera$captureStillPicture$1$onCaptureCompleted$1;->invoke()V
 
-    sget-object v0, Lno3;->a:Lno3;
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
@@ -96,33 +97,34 @@
 
     sget-object v1, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
 
-    sget-object v2, Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity;->F:Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity$a;
+    sget-object v2, Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity;->Companion:Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity$Companion;
 
-    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity$a;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity$Companion;->getFilePath()Ljava/lang/String;
 
     move-result-object v2
-
-    const-string v3, "TakeSelfieActivity.getFilePath()"
-
-    invoke-static {v2, v3}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 v3, 0x7b
 
     invoke-direct {v0, v1, v3, v2}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Selfie;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILjava/lang/String;)V
 
     .line 3
-    sget-object v1, Lar0;->b:Lar0;
+    sget-object v1, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
 
-    invoke-virtual {v1, v0}, Lar0;->a(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+    invoke-virtual {v1, v0}, Lcom/jio/jioml/hellojio/utils/Utility;->showOutput(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
 
     .line 4
-    invoke-static {}, Lcom/jio/jioml/hellojio/activities/camera2/Camera;->j()Landroid/content/Context;
+    invoke-static {}, Lcom/jio/jioml/hellojio/activities/camera2/Camera;->access$getContext$cp()Landroid/content/Context;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
+    const-string v1, "context"
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    :cond_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Lcom/jio/jioml/hellojio/activities/TakeSelfieActivity;
 
@@ -130,21 +132,12 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance v0, Lkotlin/TypeCastException;
 
     const-string v1, "null cannot be cast to non-null type com.jio.jioml.hellojio.activities.TakeSelfieActivity"
 
     invoke-direct {v0, v1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string v0, "context"
-
-    invoke-static {v0}, Lwr3;->d(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
 
     throw v0
 .end method

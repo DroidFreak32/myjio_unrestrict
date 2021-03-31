@@ -23,13 +23,13 @@
 
 
 # static fields
-.field public static final zzbag:Lcom/google/android/gms/internal/gtm/zzqz;
+.field private static final zzbag:Lcom/google/android/gms/internal/gtm/zzqz;
 
 
 # instance fields
-.field public size:I
+.field private size:I
 
-.field public zzbah:[F
+.field private zzbah:[F
 
 
 # direct methods
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>([FI)V
+.method private constructor <init>([FI)V
     .locals 0
 
     .line 2

@@ -3,7 +3,7 @@
 .source "ImageLoader.java"
 
 # interfaces
-.implements Lwv$b;
+.implements Lcom/android/volley/Response$Listener;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lwv$b<",
+        "Lcom/android/volley/Response$Listener<",
         "Landroid/graphics/Bitmap;",
         ">;"
     }

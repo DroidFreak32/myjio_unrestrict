@@ -1,35 +1,19 @@
 .class public final Lcom/google/android/gms/internal/ads/zzasb;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
-
-# instance fields
-.field public final synthetic zzdfk:Landroid/webkit/JsResult;
+.implements Lcom/google/android/gms/internal/ads/zzarz;
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/JsResult;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.purchase.client.IPlayStorePurchaseListener"
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasb;->zzdfk:Landroid/webkit/JsResult;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    .line 1
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzasb;->zzdfk:Landroid/webkit/JsResult;
-
-    invoke-virtual {p1}, Landroid/webkit/JsResult;->confirm()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method

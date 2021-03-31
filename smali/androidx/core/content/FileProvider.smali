@@ -13,31 +13,35 @@
 
 
 # static fields
-.field public static final ATTR_NAME:Ljava/lang/String; = "name"
+.field private static final ATTR_NAME:Ljava/lang/String; = "name"
 
-.field public static final ATTR_PATH:Ljava/lang/String; = "path"
+.field private static final ATTR_PATH:Ljava/lang/String; = "path"
 
-.field public static final COLUMNS:[Ljava/lang/String;
+.field private static final COLUMNS:[Ljava/lang/String;
 
-.field public static final DEVICE_ROOT:Ljava/io/File;
+.field private static final DEVICE_ROOT:Ljava/io/File;
 
-.field public static final META_DATA_FILE_PROVIDER_PATHS:Ljava/lang/String; = "android.support.FILE_PROVIDER_PATHS"
+.field private static final META_DATA_FILE_PROVIDER_PATHS:Ljava/lang/String; = "android.support.FILE_PROVIDER_PATHS"
 
-.field public static final TAG_CACHE_PATH:Ljava/lang/String; = "cache-path"
+.field private static final TAG_CACHE_PATH:Ljava/lang/String; = "cache-path"
 
-.field public static final TAG_EXTERNAL:Ljava/lang/String; = "external-path"
+.field private static final TAG_EXTERNAL:Ljava/lang/String; = "external-path"
 
-.field public static final TAG_EXTERNAL_CACHE:Ljava/lang/String; = "external-cache-path"
+.field private static final TAG_EXTERNAL_CACHE:Ljava/lang/String; = "external-cache-path"
 
-.field public static final TAG_EXTERNAL_FILES:Ljava/lang/String; = "external-files-path"
+.field private static final TAG_EXTERNAL_FILES:Ljava/lang/String; = "external-files-path"
 
-.field public static final TAG_EXTERNAL_MEDIA:Ljava/lang/String; = "external-media-path"
+.field private static final TAG_EXTERNAL_MEDIA:Ljava/lang/String; = "external-media-path"
 
-.field public static final TAG_FILES_PATH:Ljava/lang/String; = "files-path"
+.field private static final TAG_FILES_PATH:Ljava/lang/String; = "files-path"
 
-.field public static final TAG_ROOT_PATH:Ljava/lang/String; = "root-path"
+.field private static final TAG_ROOT_PATH:Ljava/lang/String; = "root-path"
 
-.field public static sCache:Ljava/util/HashMap;
+.field private static sCache:Ljava/util/HashMap;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "sCache"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -50,7 +54,7 @@
 
 
 # instance fields
-.field public mStrategy:Landroidx/core/content/FileProvider$a;
+.field private mStrategy:Landroidx/core/content/FileProvider$a;
 
 
 # direct methods
@@ -96,7 +100,7 @@
     return-void
 .end method
 
-.method public static varargs buildPath(Ljava/io/File;[Ljava/lang/String;)Ljava/io/File;
+.method private static varargs buildPath(Ljava/io/File;[Ljava/lang/String;)Ljava/io/File;
     .locals 4
 
     .line 1
@@ -127,7 +131,7 @@
     return-object p0
 .end method
 
-.method public static copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+.method private static copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
     .locals 2
 
     .line 3
@@ -141,7 +145,7 @@
     return-object v0
 .end method
 
-.method public static copyOf([Ljava/lang/String;I)[Ljava/lang/String;
+.method private static copyOf([Ljava/lang/String;I)[Ljava/lang/String;
     .locals 2
 
     .line 1
@@ -155,7 +159,7 @@
     return-object v0
 .end method
 
-.method public static getPathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$a;
+.method private static getPathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$a;
     .locals 2
 
     .line 1
@@ -238,6 +242,18 @@
 
 .method public static getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;
     .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/io/File;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p0, p1}, Landroidx/core/content/FileProvider;->getPathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$a;
@@ -252,7 +268,7 @@
     return-object p0
 .end method
 
-.method public static modeToMode(Ljava/lang/String;)I
+.method private static modeToMode(Ljava/lang/String;)I
     .locals 3
 
     const-string v0, "r"
@@ -269,7 +285,7 @@
     goto :goto_1
 
     :cond_0
-    const-string v0, "w"
+    const-string/jumbo v0, "w"
 
     .line 2
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -278,7 +294,7 @@
 
     if-nez v0, :cond_5
 
-    const-string v0, "wt"
+    const-string/jumbo v0, "wt"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -289,7 +305,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v0, "wa"
+    const-string/jumbo v0, "wa"
 
     .line 3
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -360,8 +376,14 @@
     return p0
 .end method
 
-.method public static parsePathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$a;
+.method private static parsePathStrategy(Landroid/content/Context;Ljava/lang/String;)Landroidx/core/content/FileProvider$a;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lorg/xmlpull/v1/XmlPullParserException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroidx/core/content/FileProvider$b;
@@ -510,7 +532,7 @@
     if-eqz v6, :cond_5
 
     .line 19
-    invoke-static {p0, v3}, Lx6;->b(Landroid/content/Context;Ljava/lang/String;)[Ljava/io/File;
+    invoke-static {p0, v3}, Landroidx/core/content/ContextCompat;->getExternalFilesDirs(Landroid/content/Context;Ljava/lang/String;)[Ljava/io/File;
 
     move-result-object v1
 
@@ -535,7 +557,7 @@
     if-eqz v6, :cond_6
 
     .line 23
-    invoke-static {p0}, Lx6;->b(Landroid/content/Context;)[Ljava/io/File;
+    invoke-static {p0}, Landroidx/core/content/ContextCompat;->getExternalCacheDirs(Landroid/content/Context;)[Ljava/io/File;
 
     move-result-object v1
 
@@ -592,7 +614,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v4, v1}, Landroidx/core/content/FileProvider$b;->a(Ljava/lang/String;Ljava/io/File;)V
+    invoke-virtual {v0, v4, v1}, Landroidx/core/content/FileProvider$b;->c(Ljava/lang/String;Ljava/io/File;)V
 
     goto/16 :goto_0
 
@@ -636,6 +658,14 @@
 # virtual methods
 .method public attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/content/pm/ProviderInfo;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
@@ -684,11 +714,23 @@
 
 .method public delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 0
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object p2, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$a;
 
-    invoke-interface {p2, p1}, Landroidx/core/content/FileProvider$a;->a(Landroid/net/Uri;)Ljava/io/File;
+    invoke-interface {p2, p1}, Landroidx/core/content/FileProvider$a;->b(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
@@ -702,11 +744,15 @@
 
 .method public getType(Landroid/net/Uri;)Ljava/lang/String;
     .locals 2
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$a;
 
-    invoke-interface {v0, p1}, Landroidx/core/content/FileProvider$a;->a(Landroid/net/Uri;)Ljava/io/File;
+    invoke-interface {v0, p1}, Landroidx/core/content/FileProvider$a;->b(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
@@ -755,6 +801,10 @@
 
 .method public insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     .locals 0
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -776,11 +826,24 @@
 
 .method public openFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
     .locals 1
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$a;
 
-    invoke-interface {v0, p1}, Landroidx/core/content/FileProvider$a;->a(Landroid/net/Uri;)Ljava/io/File;
+    invoke-interface {v0, p1}, Landroidx/core/content/FileProvider$a;->b(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
@@ -799,11 +862,31 @@
 
 .method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     .locals 5
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object p3, p0, Landroidx/core/content/FileProvider;->mStrategy:Landroidx/core/content/FileProvider$a;
 
-    invoke-interface {p3, p1}, Landroidx/core/content/FileProvider$a;->a(Landroid/net/Uri;)Ljava/io/File;
+    invoke-interface {p3, p1}, Landroidx/core/content/FileProvider$a;->b(Landroid/net/Uri;)Ljava/io/File;
 
     move-result-object p1
 
@@ -921,6 +1004,18 @@
 
 .method public update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 0
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;

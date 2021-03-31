@@ -1,5 +1,5 @@
 .class public final Landroidx/work/ArrayCreatingInputMerger;
-.super Lzk;
+.super Landroidx/work/InputMerger;
 .source "ArrayCreatingInputMerger.java"
 
 
@@ -8,44 +8,22 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lzk;-><init>()V
+    invoke-direct {p0}, Landroidx/work/InputMerger;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 30
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    .line 31
-    invoke-static {v0, v1, p1}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    return-object v0
-.end method
-
 .method public final a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    .line 26
+    .line 1
     invoke-static {p1}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 27
+    .line 2
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -58,31 +36,126 @@
 
     const/4 v2, 0x0
 
-    .line 28
+    .line 3
     invoke-static {p1, v2, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 29
+    .line 4
     invoke-static {v1, v0, p2}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
     return-object v1
 .end method
 
-.method public a(Ljava/util/List;)Lwk;
+.method public final b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    invoke-static {p1}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v0
+
+    .line 2
+    invoke-static {p2}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v1
+
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+
+    move-result-object v2
+
+    add-int v3, v0, v1
+
+    invoke-static {v2, v3}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    .line 4
+    invoke-static {p1, v3, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 5
+    invoke-static {p2, v3, v2, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-object v2
+.end method
+
+.method public final c(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    .line 2
+    invoke-static {v0, v1, p1}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    const/4 p1, 0x1
+
+    .line 3
+    invoke-static {v0, p1, p2}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public final d(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    .line 2
+    invoke-static {v0, v1, p1}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public merge(Ljava/util/List;)Landroidx/work/Data;
     .locals 9
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lwk;",
+            "Landroidx/work/Data;",
             ">;)",
-            "Lwk;"
+            "Landroidx/work/Data;"
         }
     .end annotation
 
     .line 1
-    new-instance v0, Lwk$a;
+    new-instance v0, Landroidx/work/Data$Builder;
 
-    invoke-direct {v0}, Lwk$a;-><init>()V
+    invoke-direct {v0}, Landroidx/work/Data$Builder;-><init>()V
 
     .line 2
     new-instance v1, Ljava/util/HashMap;
@@ -105,10 +178,10 @@
 
     move-result-object v2
 
-    check-cast v2, Lwk;
+    check-cast v2, Landroidx/work/Data;
 
     .line 4
-    invoke-virtual {v2}, Lwk;->a()Ljava/util/Map;
+    invoke-virtual {v2}, Landroidx/work/Data;->getKeyValueMap()Ljava/util/Map;
 
     move-result-object v2
 
@@ -168,7 +241,7 @@
 
     .line 10
     :cond_1
-    invoke-virtual {p0, v3}, Landroidx/work/ArrayCreatingInputMerger;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v3}, Landroidx/work/ArrayCreatingInputMerger;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -275,78 +348,12 @@
 
     .line 24
     :cond_7
-    invoke-virtual {v0, v1}, Lwk$a;->a(Ljava/util/Map;)Lwk$a;
+    invoke-virtual {v0, v1}, Landroidx/work/Data$Builder;->putAll(Ljava/util/Map;)Landroidx/work/Data$Builder;
 
     .line 25
-    invoke-virtual {v0}, Lwk$a;->a()Lwk;
+    invoke-virtual {v0}, Landroidx/work/Data$Builder;->build()Landroidx/work/Data;
 
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    invoke-static {p1}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v0
-
-    .line 2
-    invoke-static {p2}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v1
-
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
-    move-result-object v2
-
-    add-int v3, v0, v1
-
-    invoke-static {v2, v3}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    .line 4
-    invoke-static {p1, v3, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 5
-    invoke-static {p2, v3, v2, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v2
-.end method
-
-.method public final c(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-static {v0, v1, p1}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    const/4 p1, 0x1
-
-    .line 3
-    invoke-static {v0, p1, p2}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    return-object v0
 .end method

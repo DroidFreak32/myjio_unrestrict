@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods

@@ -1,65 +1,135 @@
 .class public final Lcom/google/android/gms/internal/ads/zzph;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzblv:Lcom/google/android/gms/internal/ads/zzpf;
+.field private size:I
+
+.field private zzbjt:[J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzpf;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0x20
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzph;->zzblv:Lcom/google/android/gms/internal/ads/zzpf;
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzph;-><init>(I)V
 
+    return-void
+.end method
+
+.method private constructor <init>(I)V
+    .locals 0
+
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 p1, 0x20
+
+    new-array p1, p1, [J
+
+    .line 3
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzph;->zzbjt:[J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final add(J)V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzblv:Lcom/google/android/gms/internal/ads/zzpf;
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzph;->size:I
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpf;->zza(Lcom/google/android/gms/internal/ads/zzpf;)Lcom/google/android/gms/internal/ads/zzpm;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzph;->zzbjt:[J
 
-    move-result-object v0
+    array-length v2, v1
 
-    if-eqz v0, :cond_0
+    if-ne v0, v2, :cond_0
+
+    shl-int/lit8 v0, v0, 0x1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzblv:Lcom/google/android/gms/internal/ads/zzpf;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpf;->zza(Lcom/google/android/gms/internal/ads/zzpf;)Lcom/google/android/gms/internal/ads/zzpm;
+    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([JI)[J
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzpm;->zzlv()V
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzbjt:[J
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzblv:Lcom/google/android/gms/internal/ads/zzpf;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpf;->zza(Lcom/google/android/gms/internal/ads/zzpf;)Lcom/google/android/gms/internal/ads/zzpm;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzpm;->zzlu()V
-
-    .line 4
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzblv:Lcom/google/android/gms/internal/ads/zzpf;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzbjt:[J
 
-    const/4 v1, 0x0
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzph;->size:I
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzpf;->zza(Lcom/google/android/gms/internal/ads/zzpf;Lcom/google/android/gms/internal/ads/zzpm;)Lcom/google/android/gms/internal/ads/zzpm;
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lcom/google/android/gms/internal/ads/zzph;->size:I
+
+    aput-wide p1, v0, v1
 
     return-void
+.end method
+
+.method public final get(I)J
+    .locals 4
+
+    if-ltz p1, :cond_0
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzph;->size:I
+
+    if-ge p1, v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzph;->zzbjt:[J
+
+    aget-wide v1, v0, p1
+
+    return-wide v1
+
+    .line 3
+    :cond_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzph;->size:I
+
+    const/16 v2, 0x2e
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Invalid index "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ", size is "
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzph;->size:I
+
+    return v0
 .end method

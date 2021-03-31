@@ -292,7 +292,12 @@
 .end method
 
 .method public final synthetic zza(Lcom/google/android/gms/internal/gtm/zzun;)Lcom/google/android/gms/internal/gtm/zzuw;
-    .locals 4
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 10
     :cond_0
@@ -368,69 +373,64 @@
 
     if-nez v1, :cond_5
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     goto :goto_1
 
     :cond_5
-    array-length v1, v1
+    array-length v3, v1
 
     :goto_1
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
     .line 18
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzj;
+    new-array v4, v0, [Lcom/google/android/gms/internal/gtm/zzj;
 
-    if-eqz v1, :cond_6
+    if-eqz v3, :cond_6
 
     .line 19
-    iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzk;->zzqj:[Lcom/google/android/gms/internal/gtm/zzj;
+    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 20
     :cond_6
     :goto_2
-    array-length v2, v0
+    add-int/lit8 v1, v0, -0x1
 
-    add-int/lit8 v2, v2, -0x1
+    if-ge v3, v1, :cond_7
 
-    if-ge v1, v2, :cond_7
+    .line 20
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzj;
+
+    invoke-direct {v1}, Lcom/google/android/gms/internal/gtm/zzj;-><init>()V
+
+    aput-object v1, v4, v3
 
     .line 21
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzj;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzj;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 22
-    aget-object v2, v0, v1
-
-    invoke-virtual {p1, v2}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
-
-    .line 23
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    .line 24
-    :cond_7
-    new-instance v2, Lcom/google/android/gms/internal/gtm/zzj;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/gtm/zzj;-><init>()V
-
-    aput-object v2, v0, v1
-
-    .line 25
-    aget-object v1, v0, v1
+    aget-object v1, v4, v3
 
     invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
 
-    .line 26
-    iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzk;->zzqj:[Lcom/google/android/gms/internal/gtm/zzj;
+    .line 22
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzun;->zzni()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    .line 23
+    :cond_7
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzj;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/gtm/zzj;-><init>()V
+
+    aput-object v0, v4, v3
+
+    .line 24
+    aget-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/gtm/zzun;->zza(Lcom/google/android/gms/internal/gtm/zzuw;)V
+
+    .line 25
+    iput-object v4, p0, Lcom/google/android/gms/internal/gtm/zzk;->zzqj:[Lcom/google/android/gms/internal/gtm/zzj;
 
     goto :goto_0
 
@@ -440,6 +440,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/gtm/zzuo;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzk;->zzqj:[Lcom/google/android/gms/internal/gtm/zzj;

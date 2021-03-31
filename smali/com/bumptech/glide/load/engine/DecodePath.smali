@@ -25,11 +25,11 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "DecodePath"
+.field private static final TAG:Ljava/lang/String; = "DecodePath"
 
 
 # instance fields
-.field public final dataClass:Ljava/lang/Class;
+.field private final dataClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -38,7 +38,7 @@
     .end annotation
 .end field
 
-.field public final decoders:Ljava/util/List;
+.field private final decoders:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -49,12 +49,12 @@
     .end annotation
 .end field
 
-.field public final failureMessage:Ljava/lang/String;
+.field private final failureMessage:Ljava/lang/String;
 
-.field public final listPool:Lz8;
+.field private final listPool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;"
@@ -62,7 +62,7 @@
     .end annotation
 .end field
 
-.field public final transcoder:Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
+.field private final transcoder:Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder<",
@@ -73,7 +73,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Lz8;)V
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Landroidx/core/util/Pools$Pool;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,7 +90,7 @@
             "TDataType;TResourceType;>;>;",
             "Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder<",
             "TResourceType;TTranscode;>;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;)V"
@@ -110,7 +110,7 @@
     iput-object p5, p0, Lcom/bumptech/glide/load/engine/DecodePath;->transcoder:Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
 
     .line 5
-    iput-object p6, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Lz8;
+    iput-object p6, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Landroidx/core/util/Pools$Pool;
 
     .line 6
     new-instance p4, Ljava/lang/StringBuilder;
@@ -146,7 +146,7 @@
 
     invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p1, "}"
+    const-string/jumbo p1, "}"
 
     invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -161,6 +161,13 @@
 
 .method private decodeResource(Lcom/bumptech/glide/load/data/DataRewinder;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 7
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,10 +180,16 @@
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Lz8;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/load/engine/GlideException;
+        }
+    .end annotation
 
-    invoke-interface {v0}, Lz8;->acquire()Ljava/lang/Object;
+    .line 1
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Landroidx/core/util/Pools$Pool;
+
+    invoke-interface {v0}, Landroidx/core/util/Pools$Pool;->acquire()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -207,24 +220,31 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
-    iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Lz8;
+    iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {p2, v0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {p2, v0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     return-object p1
 
     :catchall_0
     move-exception p1
 
-    iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Lz8;
+    iget-object p2, p0, Lcom/bumptech/glide/load/engine/DecodePath;->listPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {p2, v0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {p2, v0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     throw p1
 .end method
 
 .method private decodeResourceWithList(Lcom/bumptech/glide/load/data/DataRewinder;IILcom/bumptech/glide/load/Options;Ljava/util/List;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 7
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -236,6 +256,12 @@
             ">;)",
             "Lcom/bumptech/glide/load/engine/Resource<",
             "TResourceType;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/load/engine/GlideException;
         }
     .end annotation
 
@@ -369,6 +395,10 @@
 # virtual methods
 .method public decode(Lcom/bumptech/glide/load/data/DataRewinder;IILcom/bumptech/glide/load/Options;Lcom/bumptech/glide/load/engine/DecodePath$DecodeCallback;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 0
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -379,6 +409,12 @@
             "TResourceType;>;)",
             "Lcom/bumptech/glide/load/engine/Resource<",
             "TTranscode;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/load/engine/GlideException;
         }
     .end annotation
 

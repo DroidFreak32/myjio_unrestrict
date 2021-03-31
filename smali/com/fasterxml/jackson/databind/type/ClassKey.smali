@@ -20,11 +20,11 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public _class:Ljava/lang/Class;
+.field private _class:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -33,9 +33,9 @@
     .end annotation
 .end field
 
-.field public _className:Ljava/lang/String;
+.field private _className:Ljava/lang/String;
 
-.field public _hashCode:I
+.field private _hashCode:I
 
 
 # direct methods
@@ -85,8 +85,6 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_className:Ljava/lang/String;
 
     .line 8
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_className:Ljava/lang/String;
-
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result p1
@@ -204,8 +202,6 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_className:Ljava/lang/String;
 
     .line 3
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_className:Ljava/lang/String;
-
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result p1

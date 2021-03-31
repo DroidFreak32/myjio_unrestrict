@@ -1,32 +1,40 @@
-.class public Lvh;
+.class public final synthetic Lvh;
 .super Ljava/lang/Object;
-.source "SneakyThrow.java"
+.source "lambda"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;
+
+.field public final synthetic b:Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
 
 
 # direct methods
-.method public static a(Ljava/lang/Exception;)V
+.method public synthetic constructor <init>(Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;)V
     .locals 0
 
-    .line 1
-    invoke-static {p0}, Lvh;->a(Ljava/lang/Throwable;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p0, 0x0
+    iput-object p1, p0, Lvh;->a:Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;
 
-    throw p0
+    iput-object p2, p0, Lvh;->b:Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
+
+    return-void
 .end method
 
-.method public static a(Ljava/lang/Throwable;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Throwable;",
-            ">(",
-            "Ljava/lang/Throwable;",
-            ")V^TE;"
-        }
-    .end annotation
 
-    .line 2
-    throw p0
+# virtual methods
+.method public final run()V
+    .locals 2
+
+    iget-object v0, p0, Lvh;->a:Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;
+
+    iget-object v1, p0, Lvh;->b:Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;->j(Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;)V
+
+    return-void
 .end method

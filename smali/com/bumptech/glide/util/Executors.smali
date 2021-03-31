@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final DIRECT_EXECUTOR:Ljava/util/concurrent/Executor;
+.field private static final DIRECT_EXECUTOR:Ljava/util/concurrent/Executor;
 
-.field public static final MAIN_THREAD_EXECUTOR:Ljava/util/concurrent/Executor;
+.field private static final MAIN_THREAD_EXECUTOR:Ljava/util/concurrent/Executor;
 
 
 # direct methods
@@ -30,7 +30,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -58,7 +58,9 @@
 .end method
 
 .method public static shutdownAndAwaitTermination(Ljava/util/concurrent/ExecutorService;)V
-    .locals 3
+    .locals 4
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
@@ -71,16 +73,14 @@
 
     invoke-interface {p0, v1, v2, v0}, Ljava/util/concurrent/ExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_1
+    if-nez v3, :cond_1
 
     .line 3
     invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
 
     .line 4
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
     invoke-interface {p0, v1, v2, v0}, Ljava/util/concurrent/ExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
 
     move-result v0

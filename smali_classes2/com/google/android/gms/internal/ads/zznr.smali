@@ -1,309 +1,169 @@
 .class public final Lcom/google/android/gms/internal/ads/zznr;
 .super Ljava/lang/Object;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final zzaxq:Ljava/util/Collection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Collection<",
-            "Lcom/google/android/gms/internal/ads/zznl<",
-            "*>;>;"
-        }
-    .end annotation
-.end field
+.field public final length:I
 
-.field public final zzaxr:Ljava/util/Collection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Collection<",
-            "Lcom/google/android/gms/internal/ads/zznl<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.field private zzaht:I
 
-.field public final zzaxs:Ljava/util/Collection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Collection<",
-            "Lcom/google/android/gms/internal/ads/zznl<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.field private final zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public varargs constructor <init>([Lcom/google/android/gms/internal/ads/zzhp;)V
     .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Ljava/util/ArrayList;
+    array-length v0, p1
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    if-lez v0, :cond_0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxq:Ljava/util/Collection;
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpc;->checkState(Z)V
 
     .line 3
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxr:Ljava/util/Collection;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zznr;->zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
 
     .line 4
-    new-instance v0, Ljava/util/ArrayList;
+    array-length p1, p1
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxs:Ljava/util/Collection;
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zznr;->length:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Landroid/content/SharedPreferences$Editor;ILorg/json/JSONObject;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    .line 2
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxq:Ljava/util/Collection;
+    const/4 v0, 0x1
 
-    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p2
+    return v0
 
     :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    .line 1
+    const-class v2, Lcom/google/android/gms/internal/ads/zznr;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    .line 2
+    :cond_1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zznr;
+
+    .line 3
+    iget v2, p0, Lcom/google/android/gms/internal/ads/zznr;->length:I
+
+    iget v3, p1, Lcom/google/android/gms/internal/ads/zznr;->length:I
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zznr;->zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
+
+    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zznr;->zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
+
+    invoke-static {v2, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    return v0
+
+    :cond_2
     :goto_0
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaht:I
+
+    if-nez v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
 
-    if-eqz v0, :cond_1
-
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/ads/zznl;
+    add-int/lit16 v0, v0, 0x20f
 
     .line 3
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zznl;->getSource()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_0
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaht:I
 
     .line 4
-    invoke-virtual {v0, p3}, Lcom/google/android/gms/internal/ads/zznl;->zzb(Lorg/json/JSONObject;)Ljava/lang/Object;
+    :cond_0
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaht:I
 
-    move-result-object v1
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/internal/ads/zznl;->zza(Landroid/content/SharedPreferences$Editor;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_1
-    if-eqz p3, :cond_2
-
-    .line 5
-    invoke-virtual {p3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string p3, "flag_configuration"
-
-    invoke-interface {p1, p3, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    return-void
-
-    :cond_2
-    const-string p1, "Flag Json is null."
-
-    .line 6
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaok;->e(Ljava/lang/String;)V
-
-    return-void
+    return v0
 .end method
 
-.method public final zza(Lcom/google/android/gms/internal/ads/zznl;)V
+.method public final zzbc(I)Lcom/google/android/gms/internal/ads/zzhp;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxq:Ljava/util/Collection;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    aget-object p1, v0, p1
 
-    return-void
+    return-object p1
 .end method
 
-.method public final zzb(Lcom/google/android/gms/internal/ads/zznl;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zznl<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
+.method public final zzh(Lcom/google/android/gms/internal/ads/zzhp;)I
+    .locals 3
+
+    const/4 v0, 0x0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxr:Ljava/util/Collection;
+    :goto_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zznr;->zzbfm:[Lcom/google/android/gms/internal/ads/zzhp;
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    array-length v2, v1
 
-    return-void
-.end method
-
-.method public final zzc(Lcom/google/android/gms/internal/ads/zznl;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zznl<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxs:Ljava/util/Collection;
-
-    invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final zzjz()Ljava/util/List;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    if-ge v0, v2, :cond_1
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxr:Ljava/util/Collection;
+    aget-object v1, v1, v0
 
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    if-ne p1, v1, :cond_0
 
-    move-result-object v1
+    return v0
 
     :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/internal/ads/zznl;
-
-    .line 3
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 4
-    check-cast v2, Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    .line 5
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    return-object v0
-.end method
+    const/4 p1, -0x1
 
-.method public final zzka()Ljava/util/List;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zznr;->zzjz()Ljava/util/List;
-
-    move-result-object v0
-
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zznr;->zzaxs:Ljava/util/Collection;
-
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/internal/ads/zznl;
-
-    .line 3
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 4
-    check-cast v2, Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    .line 5
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    return-object v0
+    return p1
 .end method

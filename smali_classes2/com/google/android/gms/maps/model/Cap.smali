@@ -25,11 +25,14 @@
     .end annotation
 .end field
 
-.field public static final TAG:Ljava/lang/String;
+.field private static final TAG:Ljava/lang/String;
 
 
 # instance fields
-.field public final bitmapDescriptor:Lcom/google/android/gms/maps/model/BitmapDescriptor;
+.field private final bitmapDescriptor:Lcom/google/android/gms/maps/model/BitmapDescriptor;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getWrappedBitmapDescriptorImplBinder"
         id = 0x3
@@ -37,14 +40,17 @@
     .end annotation
 .end field
 
-.field public final type:I
+.field private final type:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getType"
         id = 0x2
     .end annotation
 .end field
 
-.field public final zzcn:Ljava/lang/Float;
+.field private final zzcn:Ljava/lang/Float;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getBitmapRefWidth"
         id = 0x4
@@ -94,11 +100,17 @@
         .end annotation
     .end param
     .param p2    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x3
         .end annotation
     .end param
     .param p3    # Ljava/lang/Float;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x4
         .end annotation
@@ -132,8 +144,16 @@
     return-void
 .end method
 
-.method public constructor <init>(ILcom/google/android/gms/maps/model/BitmapDescriptor;Ljava/lang/Float;)V
+.method private constructor <init>(ILcom/google/android/gms/maps/model/BitmapDescriptor;Ljava/lang/Float;)V
     .locals 5
+    .param p2    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Float;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
@@ -222,6 +242,10 @@
 
 .method public constructor <init>(Lcom/google/android/gms/maps/model/BitmapDescriptor;F)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 12
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -398,20 +422,20 @@
     move-result-object v0
 
     :goto_0
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
     .line 7
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
 
     const/4 v0, 0x4
 
     .line 8
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/Cap;->zzcn:Ljava/lang/Float;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/Cap;->zzcn:Ljava/lang/Float;
 
     .line 9
-    invoke-static {p1, v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
+    invoke-static {p1, v0, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
 
     .line 10
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V

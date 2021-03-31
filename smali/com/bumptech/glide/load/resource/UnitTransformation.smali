@@ -20,7 +20,7 @@
 
 
 # static fields
-.field public static final TRANSFORMATION:Lcom/bumptech/glide/load/Transformation;
+.field private static final TRANSFORMATION:Lcom/bumptech/glide/load/Transformation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Transformation<",
@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -55,6 +55,9 @@
 
 .method public static get()Lcom/bumptech/glide/load/resource/UnitTransformation;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -77,6 +80,17 @@
 # virtual methods
 .method public transform(Landroid/content/Context;Lcom/bumptech/glide/load/engine/Resource;II)Lcom/bumptech/glide/load/engine/Resource;
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,6 +107,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 0
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

@@ -7,63 +7,81 @@
 
 
 # static fields
-.field public static final BYTES_PER_INTEGER:I = 0x4
+.field private static final BYTES_PER_INTEGER:I = 0x4
 
-.field public static final COLOR_TRANSPARENT_BLACK:I = 0x0
+.field private static final COLOR_TRANSPARENT_BLACK:I = 0x0
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
-.field public static final INITIAL_FRAME_POINTER:I = -0x1
+.field private static final INITIAL_FRAME_POINTER:I = -0x1
 
-.field public static final MASK_INT_LOWEST_BYTE:I = 0xff
+.field private static final MASK_INT_LOWEST_BYTE:I = 0xff
 
-.field public static final MAX_STACK_SIZE:I = 0x1000
+.field private static final MAX_STACK_SIZE:I = 0x1000
 
-.field public static final NULL_CODE:I = -0x1
+.field private static final NULL_CODE:I = -0x1
 
-.field public static final TAG:Ljava/lang/String; = "StandardGifDecoder"
+.field private static final TAG:Ljava/lang/String; = "StandardGifDecoder"
 
 
 # instance fields
-.field public act:[I
+.field private act:[I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
-.field public bitmapConfig:Landroid/graphics/Bitmap$Config;
+.field private bitmapConfig:Landroid/graphics/Bitmap$Config;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
-.field public final bitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
+.field private final bitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
 
-.field public block:[B
+.field private block:[B
 
-.field public downsampledHeight:I
+.field private downsampledHeight:I
 
-.field public downsampledWidth:I
+.field private downsampledWidth:I
 
-.field public framePointer:I
+.field private framePointer:I
 
-.field public header:Lcom/bumptech/glide/gifdecoder/GifHeader;
+.field private header:Lcom/bumptech/glide/gifdecoder/GifHeader;
 
-.field public isFirstFrameTransparent:Ljava/lang/Boolean;
+.field private isFirstFrameTransparent:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public mainPixels:[B
+.field private mainPixels:[B
 
-.field public mainScratch:[I
+.field private mainScratch:[I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
-.field public parser:Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
+.field private parser:Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
 
-.field public final pct:[I
+.field private final pct:[I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
-.field public pixelStack:[B
+.field private pixelStack:[B
 
-.field public prefix:[S
+.field private prefix:[S
 
-.field public previousImage:Landroid/graphics/Bitmap;
+.field private previousImage:Landroid/graphics/Bitmap;
 
-.field public rawData:Ljava/nio/ByteBuffer;
+.field private rawData:Ljava/nio/ByteBuffer;
 
-.field public sampleSize:I
+.field private sampleSize:I
 
-.field public savePrevious:Z
+.field private savePrevious:Z
 
-.field public status:I
+.field private status:I
 
-.field public suffix:[B
+.field private suffix:[B
 
 
 # direct methods
@@ -75,6 +93,10 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,6 +128,10 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 
@@ -117,6 +143,10 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;I)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0, p1}, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;-><init>(Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;)V
@@ -129,6 +159,8 @@
 
 .method private averageColorsNear(III)I
     .locals 9
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -294,329 +326,328 @@
 .end method
 
 .method private copyCopyIntoScratchRobust(Lcom/bumptech/glide/gifdecoder/GifFrame;)V
-    .locals 25
+    .locals 24
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     .line 1
-    iget-object v2, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->mainScratch:[I
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    iget-object v3, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->mainScratch:[I
 
     .line 2
-    iget v3, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->ih:I
+    iget v4, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->ih:I
 
-    iget v4, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->sampleSize:I
+    iget v5, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->sampleSize:I
 
-    div-int/2addr v3, v4
+    div-int/2addr v4, v5
 
     .line 3
-    iget v5, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iy:I
+    iget v6, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iy:I
 
-    div-int/2addr v5, v4
+    div-int/2addr v6, v5
 
     .line 4
-    iget v6, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
+    iget v7, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
 
-    div-int/2addr v6, v4
+    div-int/2addr v7, v5
 
     .line 5
-    iget v7, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->ix:I
+    iget v8, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->ix:I
 
-    div-int/2addr v7, v4
+    div-int/2addr v8, v5
 
     .line 6
-    iget v4, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->framePointer:I
+    iget v9, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->framePointer:I
+
+    if-nez v9, :cond_0
 
     const/4 v9, 0x1
-
-    invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v10
-
-    if-nez v4, :cond_0
-
-    const/4 v4, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    const/4 v9, 0x0
 
     .line 7
     :goto_0
-    iget v11, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->sampleSize:I
-
-    .line 8
     iget v12, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledWidth:I
 
-    .line 9
+    .line 8
     iget v13, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledHeight:I
 
-    .line 10
+    .line 9
     iget-object v14, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->mainPixels:[B
 
-    .line 11
+    .line 10
     iget-object v15, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
 
-    .line 12
-    iget-object v8, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->isFirstFrameTransparent:Ljava/lang/Boolean;
+    .line 11
+    iget-object v10, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->isFirstFrameTransparent:Ljava/lang/Boolean;
 
-    const/16 v17, 0x8
+    const/16 v16, 0x8
 
-    move-object/from16 v17, v8
+    move-object/from16 v18, v2
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
-    const/4 v9, 0x0
+    const/4 v11, 0x0
 
     const/16 v19, 0x1
 
-    const/16 v20, 0x8
-
     :goto_1
-    if-ge v8, v3, :cond_10
+    if-ge v11, v4, :cond_10
 
-    move-object/from16 v21, v10
+    move-object/from16 v20, v10
 
-    .line 13
+    .line 12
     iget-boolean v10, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->interlace:Z
 
     if-eqz v10, :cond_5
 
     const/4 v10, 0x2
 
-    if-lt v9, v3, :cond_4
+    if-lt v2, v4, :cond_4
 
-    move/from16 v23, v3
+    move/from16 v22, v2
 
-    add-int/lit8 v3, v19, 0x1
+    add-int/lit8 v2, v19, 0x1
 
-    if-eq v3, v10, :cond_3
+    if-eq v2, v10, :cond_3
 
     const/4 v10, 0x3
 
-    if-eq v3, v10, :cond_2
+    if-eq v2, v10, :cond_2
 
     const/4 v10, 0x4
 
-    if-eq v3, v10, :cond_1
+    if-eq v2, v10, :cond_1
+
+    move/from16 v19, v2
+
+    move/from16 v2, v22
 
     goto :goto_2
 
     :cond_1
-    const/4 v9, 0x1
+    move/from16 v19, v2
 
-    const/16 v20, 0x2
+    const/4 v2, 0x1
+
+    const/16 v16, 0x2
 
     goto :goto_2
 
     :cond_2
     const/4 v10, 0x4
 
-    const/4 v9, 0x2
+    move/from16 v19, v2
 
-    const/16 v20, 0x4
+    const/4 v2, 0x2
+
+    const/16 v16, 0x4
 
     goto :goto_2
 
     :cond_3
     const/4 v10, 0x4
 
-    const/4 v9, 0x4
+    move/from16 v19, v2
+
+    const/4 v2, 0x4
 
     goto :goto_2
 
     :cond_4
-    move/from16 v23, v3
-
-    move/from16 v3, v19
+    move/from16 v22, v2
 
     :goto_2
-    add-int v10, v9, v20
+    add-int v10, v2, v16
 
-    move/from16 v19, v3
+    move/from16 v22, v10
 
     goto :goto_3
 
     :cond_5
-    move/from16 v23, v3
+    move/from16 v22, v2
 
-    move v10, v9
-
-    move v9, v8
+    move v2, v11
 
     :goto_3
-    add-int/2addr v9, v5
+    add-int/2addr v2, v6
 
-    const/4 v3, 0x1
+    const/4 v10, 0x1
 
-    if-ne v11, v3, :cond_6
+    if-ne v5, v10, :cond_6
 
-    const/16 v18, 0x1
+    const/16 v17, 0x1
 
     goto :goto_4
 
     :cond_6
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
     :goto_4
-    if-ge v9, v13, :cond_d
+    if-ge v2, v13, :cond_d
 
-    mul-int v9, v9, v12
+    mul-int v2, v2, v12
 
-    add-int v22, v9, v7
+    add-int v21, v2, v8
 
-    add-int v3, v22, v6
+    add-int v10, v21, v7
 
-    add-int/2addr v9, v12
+    add-int/2addr v2, v12
 
-    if-ge v9, v3, :cond_7
+    if-ge v2, v10, :cond_7
 
-    move v3, v9
+    move v10, v2
 
     :cond_7
-    mul-int v9, v8, v11
+    mul-int v2, v11, v5
 
-    move/from16 v24, v5
+    move/from16 v23, v4
 
-    .line 14
-    iget v5, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
+    .line 13
+    iget v4, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
 
-    mul-int v9, v9, v5
+    mul-int v2, v2, v4
 
-    if-eqz v18, :cond_a
+    if-eqz v17, :cond_a
 
-    move/from16 v5, v22
+    move/from16 v4, v21
 
     :goto_5
-    if-ge v5, v3, :cond_e
+    if-ge v4, v10, :cond_e
 
-    move/from16 v18, v6
+    move/from16 v17, v6
 
-    .line 15
-    aget-byte v6, v14, v9
+    .line 14
+    aget-byte v6, v14, v2
 
     and-int/lit16 v6, v6, 0xff
 
-    .line 16
+    .line 15
     aget v6, v15, v6
 
     if-eqz v6, :cond_8
 
-    .line 17
-    aput v6, v2, v5
+    .line 16
+    aput v6, v3, v4
 
     goto :goto_6
 
     :cond_8
-    if-eqz v4, :cond_9
+    if-eqz v9, :cond_9
 
-    if-nez v17, :cond_9
+    if-nez v20, :cond_9
 
-    move-object/from16 v17, v21
+    move-object/from16 v20, v18
 
     :cond_9
     :goto_6
-    add-int/2addr v9, v11
+    add-int/2addr v2, v5
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    move/from16 v6, v18
+    move/from16 v6, v17
 
     goto :goto_5
 
     :cond_a
-    move/from16 v18, v6
+    move/from16 v17, v6
 
-    sub-int v5, v3, v22
+    sub-int v4, v10, v21
 
-    mul-int v5, v5, v11
+    mul-int v4, v4, v5
 
-    add-int/2addr v5, v9
+    add-int/2addr v4, v2
 
-    move/from16 v6, v22
+    move/from16 v6, v21
 
     :goto_7
-    if-ge v6, v3, :cond_f
+    move/from16 v21, v7
 
-    move/from16 v22, v3
+    if-ge v6, v10, :cond_f
+
+    .line 17
+    iget v7, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
+
+    invoke-direct {v0, v2, v4, v7}, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->averageColorsNear(III)I
+
+    move-result v7
+
+    if-eqz v7, :cond_b
 
     .line 18
-    iget v3, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->iw:I
-
-    invoke-direct {v0, v9, v5, v3}, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->averageColorsNear(III)I
-
-    move-result v3
-
-    if-eqz v3, :cond_b
-
-    .line 19
-    aput v3, v2, v6
+    aput v7, v3, v6
 
     goto :goto_8
 
     :cond_b
-    if-eqz v4, :cond_c
+    if-eqz v9, :cond_c
 
-    if-nez v17, :cond_c
+    if-nez v20, :cond_c
 
-    move-object/from16 v17, v21
+    move-object/from16 v20, v18
 
     :cond_c
     :goto_8
-    add-int/2addr v9, v11
+    add-int/2addr v2, v5
 
     add-int/lit8 v6, v6, 0x1
 
-    move/from16 v3, v22
+    move/from16 v7, v21
 
     goto :goto_7
 
     :cond_d
-    move/from16 v24, v5
+    move/from16 v23, v4
 
     :cond_e
-    move/from16 v18, v6
+    move/from16 v17, v6
+
+    move/from16 v21, v7
 
     :cond_f
-    add-int/lit8 v8, v8, 0x1
+    move-object/from16 v10, v20
 
-    move v9, v10
+    add-int/lit8 v11, v11, 0x1
 
-    move/from16 v6, v18
+    move/from16 v6, v17
 
-    move-object/from16 v10, v21
+    move/from16 v7, v21
 
-    move/from16 v3, v23
+    move/from16 v2, v22
 
-    move/from16 v5, v24
+    move/from16 v4, v23
 
     goto/16 :goto_1
 
-    .line 20
     :cond_10
+    move-object/from16 v20, v10
+
+    .line 19
     iget-object v1, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->isFirstFrameTransparent:Ljava/lang/Boolean;
 
     if-nez v1, :cond_12
 
-    if-nez v17, :cond_11
+    if-nez v20, :cond_11
 
-    const/16 v16, 0x0
+    const/4 v10, 0x0
 
     goto :goto_9
 
-    .line 21
+    .line 20
     :cond_11
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v8
+    move-result v10
 
-    move/from16 v16, v8
-
-    .line 22
+    .line 21
     :goto_9
-    invoke-static/range {v16 .. v16}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v10}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
@@ -627,7 +658,7 @@
 .end method
 
 .method private copyIntoScratchFast(Lcom/bumptech/glide/gifdecoder/GifFrame;)V
-    .locals 19
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -697,44 +728,48 @@
 
     mul-int v9, v9, v14
 
-    move/from16 v16, v9
-
-    move/from16 v9, v17
+    move/from16 v13, v17
 
     :goto_2
-    if-ge v9, v8, :cond_4
+    if-ge v13, v8, :cond_4
 
     .line 11
-    aget-byte v13, v11, v16
+    aget-byte v1, v11, v9
 
-    and-int/lit16 v1, v13, 0xff
+    move/from16 v17, v3
 
-    if-eq v1, v15, :cond_3
+    and-int/lit16 v3, v1, 0xff
+
+    if-eq v3, v15, :cond_3
 
     .line 12
-    aget v1, v12, v1
+    aget v3, v12, v3
 
-    if-eqz v1, :cond_2
+    if-eqz v3, :cond_2
 
     .line 13
-    aput v1, v2, v9
+    aput v3, v2, v13
 
     goto :goto_3
 
     :cond_2
-    move v15, v13
+    move v15, v1
 
     :cond_3
     :goto_3
-    add-int/lit8 v16, v16, 0x1
-
     add-int/lit8 v9, v9, 0x1
 
+    add-int/lit8 v13, v13, 0x1
+
     move-object/from16 v1, p1
+
+    move/from16 v3, v17
 
     goto :goto_2
 
     :cond_4
+    move/from16 v17, v3
+
     add-int/lit8 v14, v14, 0x1
 
     move-object/from16 v1, p1
@@ -753,16 +788,16 @@
 
     if-eq v15, v1, :cond_6
 
-    const/16 v18, 0x1
+    const/4 v8, 0x1
 
     goto :goto_4
 
     :cond_6
-    const/16 v18, 0x0
+    const/4 v8, 0x0
 
     .line 15
     :goto_4
-    invoke-static/range {v18 .. v18}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
@@ -772,7 +807,7 @@
 .end method
 
 .method private decodeBitmapData(Lcom/bumptech/glide/gifdecoder/GifFrame;)V
-    .locals 29
+    .locals 28
 
     move-object/from16 v0, p0
 
@@ -920,11 +955,11 @@
 
     const/4 v15, -0x1
 
-    move/from16 v26, v7
+    move/from16 v23, v7
 
-    move/from16 v24, v11
+    move/from16 v21, v11
 
-    move/from16 v25, v12
+    move/from16 v22, v12
 
     const/16 v16, 0x0
 
@@ -936,11 +971,11 @@
 
     const/16 v20, 0x0
 
-    const/16 v21, -0x1
+    const/16 v24, -0x1
 
-    const/16 v22, 0x0
+    const/16 v25, 0x0
 
-    const/16 v23, 0x0
+    const/16 v26, 0x0
 
     :goto_2
     if-ge v13, v2, :cond_12
@@ -959,256 +994,241 @@
     .line 20
     iput v3, v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->status:I
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_8
-    const/16 v19, 0x0
+    const/16 v17, 0x0
 
     .line 21
     :cond_9
-    aget-byte v4, v14, v19
+    aget-byte v4, v14, v17
 
     and-int/lit16 v4, v4, 0xff
 
-    shl-int v4, v4, v17
+    shl-int v4, v4, v18
 
-    add-int v18, v18, v4
+    add-int v19, v19, v4
 
-    add-int/lit8 v17, v17, 0x8
+    add-int/lit8 v18, v18, 0x8
 
-    add-int/lit8 v19, v19, 0x1
+    add-int/lit8 v17, v17, 0x1
 
     add-int/lit8 v16, v16, -0x1
 
-    move/from16 v4, v17
+    move/from16 v4, v18
 
     move/from16 v8, v21
 
-    move/from16 v28, v22
+    move/from16 v15, v23
 
-    move/from16 v27, v24
+    move/from16 v0, v24
 
-    move/from16 v21, v20
+    move/from16 v23, v7
 
-    move/from16 v20, v13
-
-    move/from16 v13, v26
+    move/from16 v7, v25
 
     :goto_3
-    if-lt v4, v13, :cond_11
+    if-lt v4, v15, :cond_11
 
-    and-int v15, v18, v25
+    move/from16 v24, v11
 
-    shr-int v18, v18, v13
+    and-int v11, v19, v22
 
-    sub-int/2addr v4, v13
+    shr-int v19, v19, v15
 
-    if-ne v15, v9, :cond_a
+    sub-int/2addr v4, v15
 
-    move v13, v7
+    if-ne v11, v9, :cond_a
 
-    move/from16 v27, v11
+    move/from16 v22, v12
 
-    move/from16 v25, v12
+    move/from16 v15, v23
 
-    const/4 v8, -0x1
+    move/from16 v8, v24
 
-    :goto_4
-    const/4 v15, -0x1
+    move v11, v8
+
+    const/4 v0, -0x1
 
     goto :goto_3
 
     :cond_a
-    if-ne v15, v10, :cond_b
+    if-ne v11, v10, :cond_b
 
-    move/from16 v17, v4
+    move/from16 v18, v4
 
-    move/from16 v26, v13
-
-    move/from16 v13, v20
-
-    move/from16 v20, v21
-
-    move/from16 v24, v27
-
-    move/from16 v22, v28
-
-    const/16 v4, 0x1000
-
-    const/4 v15, -0x1
+    move/from16 v25, v7
 
     move/from16 v21, v8
 
+    move/from16 v7, v23
+
+    move/from16 v11, v24
+
+    const/16 v4, 0x1000
+
     const/4 v8, 0x1
+
+    move/from16 v24, v0
+
+    move/from16 v23, v15
+
+    const/4 v15, -0x1
+
+    move-object/from16 v0, p0
 
     goto :goto_2
 
     :cond_b
-    const/4 v0, -0x1
+    move/from16 v25, v4
 
-    if-ne v8, v0, :cond_c
+    const/4 v4, -0x1
+
+    if-ne v0, v4, :cond_c
 
     .line 22
-    aget-byte v8, v5, v15
+    aget-byte v0, v5, v11
 
-    aput-byte v8, v1, v21
-
-    add-int/lit8 v21, v21, 0x1
+    aput-byte v0, v1, v20
 
     add-int/lit8 v20, v20, 0x1
-
-    move-object/from16 v0, p0
-
-    move v8, v15
-
-    move/from16 v28, v8
-
-    goto :goto_4
-
-    :cond_c
-    move/from16 v0, v27
-
-    move/from16 v24, v4
-
-    if-lt v15, v0, :cond_d
-
-    move/from16 v4, v28
-
-    int-to-byte v4, v4
-
-    .line 23
-    aput-byte v4, v6, v23
-
-    add-int/lit8 v23, v23, 0x1
-
-    move v4, v8
-
-    goto :goto_5
-
-    :cond_d
-    move v4, v15
-
-    :goto_5
-    if-lt v4, v9, :cond_e
-
-    .line 24
-    aget-byte v26, v5, v4
-
-    aput-byte v26, v6, v23
-
-    add-int/lit8 v23, v23, 0x1
-
-    .line 25
-    aget-short v4, v3, v4
-
-    goto :goto_5
-
-    .line 26
-    :cond_e
-    aget-byte v4, v5, v4
-
-    and-int/lit16 v4, v4, 0xff
-
-    move/from16 v26, v7
-
-    int-to-byte v7, v4
-
-    .line 27
-    aput-byte v7, v1, v21
-
-    :goto_6
-    add-int/lit8 v21, v21, 0x1
-
-    add-int/lit8 v20, v20, 0x1
-
-    if-lez v23, :cond_f
-
-    add-int/lit8 v23, v23, -0x1
-
-    .line 28
-    aget-byte v27, v6, v23
-
-    aput-byte v27, v1, v21
-
-    goto :goto_6
-
-    :cond_f
-    move/from16 v27, v4
-
-    const/16 v4, 0x1000
-
-    if-ge v0, v4, :cond_10
-
-    int-to-short v8, v8
-
-    .line 29
-    aput-short v8, v3, v0
-
-    .line 30
-    aput-byte v7, v5, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    and-int v7, v0, v25
-
-    if-nez v7, :cond_10
-
-    if-ge v0, v4, :cond_10
 
     add-int/lit8 v13, v13, 0x1
 
-    add-int v25, v25, v0
+    move v0, v11
+
+    move v7, v0
+
+    move/from16 v11, v24
+
+    move/from16 v4, v25
+
+    goto :goto_3
+
+    :cond_c
+    if-lt v11, v8, :cond_d
+
+    int-to-byte v7, v7
+
+    .line 23
+    aput-byte v7, v6, v26
+
+    add-int/lit8 v26, v26, 0x1
+
+    move v7, v0
+
+    goto :goto_4
+
+    :cond_d
+    move v7, v11
+
+    :goto_4
+    if-lt v7, v9, :cond_e
+
+    .line 24
+    aget-byte v21, v5, v7
+
+    aput-byte v21, v6, v26
+
+    add-int/lit8 v26, v26, 0x1
+
+    .line 25
+    aget-short v7, v3, v7
+
+    goto :goto_4
+
+    .line 26
+    :cond_e
+    aget-byte v7, v5, v7
+
+    and-int/lit16 v7, v7, 0xff
+
+    int-to-byte v4, v7
+
+    .line 27
+    aput-byte v4, v1, v20
+
+    :goto_5
+    add-int/lit8 v20, v20, 0x1
+
+    add-int/lit8 v13, v13, 0x1
+
+    if-lez v26, :cond_f
+
+    add-int/lit8 v26, v26, -0x1
+
+    .line 28
+    aget-byte v27, v6, v26
+
+    aput-byte v27, v1, v20
+
+    goto :goto_5
+
+    :cond_f
+    move-object/from16 v27, v6
+
+    const/16 v6, 0x1000
+
+    if-ge v8, v6, :cond_10
+
+    int-to-short v0, v0
+
+    .line 29
+    aput-short v0, v3, v8
+
+    .line 30
+    aput-byte v4, v5, v8
+
+    add-int/lit8 v8, v8, 0x1
+
+    and-int v0, v8, v22
+
+    if-nez v0, :cond_10
+
+    if-ge v8, v6, :cond_10
+
+    add-int/lit8 v15, v15, 0x1
+
+    add-int v22, v22, v8
 
     :cond_10
-    move v8, v15
+    move v0, v11
 
-    move/from16 v4, v24
+    move/from16 v11, v24
 
-    move/from16 v7, v26
+    move/from16 v4, v25
 
-    move/from16 v28, v27
-
-    const/4 v15, -0x1
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, p0
+    move-object/from16 v6, v27
 
     goto/16 :goto_3
 
     :cond_11
-    move/from16 v24, v4
-
-    move/from16 v0, v27
-
-    move/from16 v15, v28
-
-    move/from16 v26, v13
-
-    move/from16 v22, v15
-
-    move/from16 v13, v20
-
-    move/from16 v20, v21
-
-    move/from16 v17, v24
-
-    const/16 v4, 0x1000
-
-    const/4 v15, -0x1
+    move/from16 v25, v4
 
     move/from16 v24, v0
 
     move/from16 v21, v8
 
+    move/from16 v18, v25
+
+    const/16 v4, 0x1000
+
     const/4 v8, 0x1
 
     move-object/from16 v0, p0
 
+    move/from16 v25, v7
+
+    move/from16 v7, v23
+
+    move/from16 v23, v15
+
+    const/4 v15, -0x1
+
     goto/16 :goto_2
 
     :cond_12
-    :goto_7
+    :goto_6
     move/from16 v13, v20
 
     const/4 v0, 0x0
@@ -1221,6 +1241,8 @@
 
 .method private getHeaderParser()Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->parser:Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
@@ -1335,7 +1357,7 @@
 .end method
 
 .method private setPixels(Lcom/bumptech/glide/gifdecoder/GifFrame;Lcom/bumptech/glide/gifdecoder/GifFrame;)Landroid/graphics/Bitmap;
-    .locals 10
+    .locals 9
 
     .line 1
     iget-object v8, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->mainScratch:[I
@@ -1381,8 +1403,6 @@
     invoke-static {v8, v0}, Ljava/util/Arrays;->fill([II)V
 
     :cond_2
-    const/4 v9, 0x1
-
     if-eqz p2, :cond_8
 
     .line 8
@@ -1429,9 +1449,7 @@
     if-nez v1, :cond_5
 
     .line 13
-    invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     iput-object v1, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->isFirstFrameTransparent:Ljava/lang/Boolean;
 
@@ -1527,11 +1545,13 @@
     .line 24
     iget-boolean p2, p1, Lcom/bumptech/glide/gifdecoder/GifFrame;->interlace:Z
 
+    const/4 v0, 0x1
+
     if-nez p2, :cond_a
 
     iget p2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->sampleSize:I
 
-    if-eq p2, v9, :cond_9
+    if-eq p2, v0, :cond_9
 
     goto :goto_3
 
@@ -1556,7 +1576,7 @@
 
     if-eqz p1, :cond_b
 
-    if-ne p1, v9, :cond_d
+    if-ne p1, v0, :cond_d
 
     .line 28
     :cond_b
@@ -1742,6 +1762,8 @@
 
 .method public getData()Ljava/nio/ByteBuffer;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->rawData:Ljava/nio/ByteBuffer;
@@ -1867,6 +1889,8 @@
 
 .method public declared-synchronized getNextFrame()Landroid/graphics/Bitmap;
     .locals 7
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     monitor-enter p0
 
@@ -1932,8 +1956,6 @@
     const/4 v3, 0x0
 
     if-eq v0, v2, :cond_a
-
-    iget v0, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->status:I
 
     const/4 v4, 0x2
 
@@ -2006,8 +2028,6 @@
 
     if-eqz v6, :cond_6
 
-    iget-object v6, v4, Lcom/bumptech/glide/gifdecoder/GifFrame;->lct:[I
-
     goto :goto_1
 
     :cond_6
@@ -2018,12 +2038,9 @@
     :goto_1
     iput-object v6, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
 
-    .line 13
-    iget-object v6, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
-
     if-nez v6, :cond_8
 
-    .line 14
+    .line 13
     sget-object v0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->TAG:Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -2032,7 +2049,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 15
+    .line 14
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2047,48 +2064,42 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 16
+    .line 15
     :cond_7
     iput v2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->status:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 17
+    .line 16
     monitor-exit p0
 
     return-object v3
 
-    .line 18
+    .line 17
     :cond_8
     :try_start_1
     iget-boolean v1, v4, Lcom/bumptech/glide/gifdecoder/GifFrame;->transparency:Z
 
     if-eqz v1, :cond_9
 
+    .line 18
+    iget-object v1, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->pct:[I
+
+    array-length v2, v6
+
+    invoke-static {v6, v0, v1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
     .line 19
-    iget-object v1, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
-
-    iget-object v2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->pct:[I
-
-    iget-object v3, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
-
-    array-length v3, v3
-
-    invoke-static {v1, v0, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 20
     iget-object v1, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->pct:[I
 
     iput-object v1, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
 
-    .line 21
-    iget-object v1, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->act:[I
-
+    .line 20
     iget v2, v4, Lcom/bumptech/glide/gifdecoder/GifFrame;->transIndex:I
 
     aput v0, v1, v2
 
-    .line 22
+    .line 21
     :cond_9
     invoke-direct {p0, v4, v5}, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->setPixels(Lcom/bumptech/glide/gifdecoder/GifFrame;Lcom/bumptech/glide/gifdecoder/GifFrame;)Landroid/graphics/Bitmap;
 
@@ -2100,7 +2111,7 @@
 
     return-object v0
 
-    .line 23
+    .line 22
     :cond_a
     :goto_2
     :try_start_2
@@ -2112,7 +2123,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 24
+    .line 23
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2129,7 +2140,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 25
+    .line 24
     :cond_b
     monitor-exit p0
 
@@ -2193,7 +2204,11 @@
 .end method
 
 .method public read(Ljava/io/InputStream;I)I
-    .locals 4
+    .locals 5
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_2
 
@@ -2217,22 +2232,20 @@
 
     new-array p2, v0, [B
 
-    .line 2
     :goto_1
-    array-length v0, p2
-
     const/4 v2, 0x0
 
+    .line 2
     invoke-virtual {p1, p2, v2, v0}, Ljava/io/InputStream;->read([BII)I
 
-    move-result v0
+    move-result v3
 
-    const/4 v3, -0x1
+    const/4 v4, -0x1
 
-    if-eq v0, v3, :cond_1
+    if-eq v3, v4, :cond_1
 
     .line 3
-    invoke-virtual {v1, p2, v2, v0}, Ljava/io/ByteArrayOutputStream;->write([BII)V
+    invoke-virtual {v1, p2, v2, v3}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_1
 
@@ -2281,6 +2294,10 @@
 
 .method public declared-synchronized read([B)I
     .locals 1
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -2303,8 +2320,6 @@
     if-eqz p1, :cond_0
 
     .line 10
-    iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
-
     invoke-virtual {p0, v0, p1}, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->setData(Lcom/bumptech/glide/gifdecoder/GifHeader;[B)V
 
     .line 11
@@ -2338,6 +2353,14 @@
 
 .method public declared-synchronized setData(Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifHeader;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -2364,6 +2387,14 @@
 
 .method public declared-synchronized setData(Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;I)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifHeader;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -2396,8 +2427,6 @@
     iput-object p2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->rawData:Ljava/nio/ByteBuffer;
 
     .line 10
-    iget-object p2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->rawData:Ljava/nio/ByteBuffer;
-
     invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 11
@@ -2449,27 +2478,23 @@
     .line 17
     iget p2, p1, Lcom/bumptech/glide/gifdecoder/GifHeader;->width:I
 
-    div-int/2addr p2, p3
+    div-int v0, p2, p3
 
-    iput p2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledWidth:I
+    iput v0, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledWidth:I
 
     .line 18
-    iget p2, p1, Lcom/bumptech/glide/gifdecoder/GifHeader;->height:I
-
-    div-int/2addr p2, p3
-
-    iput p2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledHeight:I
-
-    .line 19
-    iget-object p2, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->bitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
-
-    iget p3, p1, Lcom/bumptech/glide/gifdecoder/GifHeader;->width:I
-
     iget p1, p1, Lcom/bumptech/glide/gifdecoder/GifHeader;->height:I
 
-    mul-int p3, p3, p1
+    div-int p3, p1, p3
 
-    invoke-interface {p2, p3}, Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;->obtainByteArray(I)[B
+    iput p3, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->downsampledHeight:I
+
+    .line 19
+    iget-object p3, p0, Lcom/bumptech/glide/gifdecoder/StandardGifDecoder;->bitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
+
+    mul-int p2, p2, p1
+
+    invoke-interface {p3, p2}, Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;->obtainByteArray(I)[B
 
     move-result-object p1
 
@@ -2535,6 +2560,14 @@
 
 .method public declared-synchronized setData(Lcom/bumptech/glide/gifdecoder/GifHeader;[B)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifHeader;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -2563,6 +2596,10 @@
 
 .method public setDefaultBitmapConfig(Landroid/graphics/Bitmap$Config;)V
     .locals 3
+    .param p1    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;

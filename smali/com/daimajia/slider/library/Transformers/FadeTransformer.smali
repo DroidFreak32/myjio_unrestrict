@@ -51,7 +51,7 @@
     if-nez p2, :cond_5
 
     .line 1
-    invoke-static {p1, v0}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     goto :goto_3
 
@@ -68,7 +68,7 @@
 
     .line 2
     :goto_1
-    invoke-static {p1, p2}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     goto :goto_3
 
@@ -77,7 +77,7 @@
     const p2, 0x3f19999a    # 0.6f
 
     .line 3
-    invoke-static {p1, p2}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     :cond_5
     :goto_3

@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public isCompleted:Z
+.field private isCompleted:Z
 
-.field public isFilling:Z
+.field private isFilling:Z
 
 .field public nalData:[B
 
 .field public nalLength:I
 
-.field public final targetType:I
+.field private final targetType:I
 
 
 # direct methods
@@ -32,13 +32,11 @@
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
-    .line 4
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
-
     const/4 p2, 0x2
 
     const/4 v0, 0x1
 
+    .line 4
     aput-byte v0, p1, p2
 
     return-void
@@ -180,17 +178,14 @@
     :goto_0
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
-    .line 3
-    iget-boolean p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
-
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_1
 
     const/4 p1, 0x3
 
-    .line 4
+    .line 3
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
-    .line 5
+    .line 4
     iput-boolean v2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
 
     :cond_1

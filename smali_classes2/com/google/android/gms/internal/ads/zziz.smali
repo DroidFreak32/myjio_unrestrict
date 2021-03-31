@@ -1,256 +1,156 @@
 .class public final Lcom/google/android/gms/internal/ads/zziz;
-.super Lcom/google/android/gms/internal/ads/zzbgt;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzbgt<",
-        "Lcom/google/android/gms/internal/ads/zziz;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field private static final zzamd:[I
 
+.field private static final zzame:[I
 
-# instance fields
-.field public zzase:Ljava/lang/Integer;
-
-.field public zzasf:Ljava/lang/Integer;
-
-.field public zzasg:Ljava/lang/Integer;
+.field private static final zzamf:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbgt;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzase:Ljava/lang/Integer;
-
-    .line 3
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasf:Ljava/lang/Integer;
-
-    .line 4
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasg:Ljava/lang/Integer;
-
-    .line 5
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgt;->zzeej:Lcom/google/android/gms/internal/ads/zzbgv;
-
-    const/4 v0, -0x1
-
-    .line 6
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzbgz;->zzees:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzbgq;)Lcom/google/android/gms/internal/ads/zzbgz;
+.method public static constructor <clinit>()V
     .locals 2
 
-    .line 8
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzade()I
+    const/16 v0, 0x10
 
-    move-result v0
+    new-array v1, v0, [I
 
-    if-eqz v0, :cond_4
+    .line 1
+    fill-array-data v1, :array_0
 
-    const/16 v1, 0x8
+    sput-object v1, Lcom/google/android/gms/internal/ads/zziz;->zzamd:[I
 
-    if-eq v0, v1, :cond_3
+    new-array v0, v0, [I
 
-    const/16 v1, 0x10
+    .line 2
+    fill-array-data v0, :array_1
 
-    if-eq v0, v1, :cond_2
+    sput-object v0, Lcom/google/android/gms/internal/ads/zziz;->zzame:[I
 
-    const/16 v1, 0x18
+    const/16 v0, 0x1d
 
-    if-eq v0, v1, :cond_1
+    new-array v0, v0, [I
 
-    .line 9
-    invoke-super {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgq;I)Z
+    .line 3
+    fill-array-data v0, :array_2
 
-    move-result v0
+    sput-object v0, Lcom/google/android/gms/internal/ads/zziz;->zzamf:[I
 
-    if-nez v0, :cond_0
+    return-void
 
-    return-object p0
+    :array_0
+    .array-data 4
+        0x1
+        0x2
+        0x2
+        0x2
+        0x2
+        0x3
+        0x3
+        0x4
+        0x4
+        0x5
+        0x6
+        0x6
+        0x6
+        0x7
+        0x8
+        0x8
+    .end array-data
 
-    .line 10
-    :cond_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadw()I
+    :array_1
+    .array-data 4
+        -0x1
+        0x1f40
+        0x3e80
+        0x7d00
+        -0x1
+        -0x1
+        0x2b11
+        0x5622
+        0xac44
+        -0x1
+        -0x1
+        0x2ee0
+        0x5dc0
+        0xbb80
+        -0x1
+        -0x1
+    .end array-data
 
-    move-result v0
-
-    .line 11
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasg:Ljava/lang/Integer;
-
-    goto :goto_0
-
-    .line 12
-    :cond_2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadw()I
-
-    move-result v0
-
-    .line 13
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasf:Ljava/lang/Integer;
-
-    goto :goto_0
-
-    .line 14
-    :cond_3
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadw()I
-
-    move-result v0
-
-    .line 15
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzase:Ljava/lang/Integer;
-
-    goto :goto_0
-
-    :cond_4
-    return-object p0
+    :array_2
+    .array-data 4
+        0x40
+        0x70
+        0x80
+        0xc0
+        0xe0
+        0x100
+        0x180
+        0x1c0
+        0x200
+        0x280
+        0x300
+        0x380
+        0x400
+        0x480
+        0x500
+        0x600
+        0x780
+        0x800
+        0x900
+        0xa00
+        0xa80
+        0xb00
+        0xb07
+        0xb80
+        0xc00
+        0xf00
+        0x1000
+        0x1800
+        0x1e00
+    .end array-data
 .end method
 
-.method public final zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
+.method public static zzo(Ljava/nio/ByteBuffer;)I
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzase:Ljava/lang/Integer;
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
 
-    if-eqz v0, :cond_0
+    move-result v0
 
-    const/4 v1, 0x1
+    add-int/lit8 v1, v0, 0x4
 
     .line 2
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->get(I)B
 
-    move-result v0
+    move-result v1
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzbgr;->zzm(II)V
+    and-int/lit8 v1, v1, 0x1
+
+    shl-int/lit8 v1, v1, 0x6
+
+    add-int/lit8 v0, v0, 0x5
 
     .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasf:Ljava/lang/Integer;
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->get(I)B
 
-    if-eqz v0, :cond_1
+    move-result p0
 
-    const/4 v1, 0x2
+    and-int/lit16 p0, p0, 0xfc
 
-    .line 4
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    shr-int/lit8 p0, p0, 0x2
 
-    move-result v0
+    or-int/2addr p0, v1
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzbgr;->zzm(II)V
+    add-int/lit8 p0, p0, 0x1
 
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasg:Ljava/lang/Integer;
+    shl-int/lit8 p0, p0, 0x5
 
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x3
-
-    .line 6
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzbgr;->zzm(II)V
-
-    .line 7
-    :cond_2
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
-
-    return-void
-.end method
-
-.method public final zzs()I
-    .locals 3
-
-    .line 1
-    invoke-super {p0}, Lcom/google/android/gms/internal/ads/zzbgt;->zzs()I
-
-    move-result v0
-
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zziz;->zzase:Ljava/lang/Integer;
-
-    if-eqz v1, :cond_0
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zzq(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 4
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasf:Ljava/lang/Integer;
-
-    if-eqz v1, :cond_1
-
-    const/4 v2, 0x2
-
-    .line 5
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zzq(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 6
-    :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zziz;->zzasg:Ljava/lang/Integer;
-
-    if-eqz v1, :cond_2
-
-    const/4 v2, 0x3
-
-    .line 7
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zzq(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    return v0
+    return p0
 .end method

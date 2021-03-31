@@ -24,13 +24,13 @@
 
 .field public static final TYPE_LINKED_HASH_MAP:I = 0x3
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final _base:Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
+.field private final _base:Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
 
-.field public final _type:I
+.field private final _type:I
 
 
 # direct methods
@@ -187,6 +187,11 @@
 
 .method public call()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector$StdTypeConstructor;->_construct()Ljava/lang/Object;
@@ -198,6 +203,11 @@
 
 .method public call([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector$StdTypeConstructor;->_construct()Ljava/lang/Object;
@@ -209,6 +219,11 @@
 
 .method public call1(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector$StdTypeConstructor;->_construct()Ljava/lang/Object;
@@ -406,6 +421,12 @@
 
 .method public getValue(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/UnsupportedOperationException;,
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -430,6 +451,12 @@
 
 .method public setValue(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/UnsupportedOperationException;,
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;

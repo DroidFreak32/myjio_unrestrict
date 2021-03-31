@@ -20,6 +20,9 @@
 # virtual methods
 .method public getDescendants()Ljava/util/Set;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -8,18 +8,23 @@
 
 
 # instance fields
-.field public full:Lcom/bumptech/glide/request/Request;
+.field private full:Lcom/bumptech/glide/request/Request;
 
-.field public isRunning:Z
+.field private isRunning:Z
 
-.field public final parent:Lcom/bumptech/glide/request/RequestCoordinator;
+.field private final parent:Lcom/bumptech/glide/request/RequestCoordinator;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public thumb:Lcom/bumptech/glide/request/Request;
+.field private thumb:Lcom/bumptech/glide/request/Request;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -31,6 +36,10 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/request/RequestCoordinator;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/RequestCoordinator;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

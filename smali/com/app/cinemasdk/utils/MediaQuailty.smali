@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/app/cinemasdk/utils/MediaQuailty;
+.field private static final synthetic $VALUES:[Lcom/app/cinemasdk/utils/MediaQuailty;
 
 .field public static final enum Auto:Lcom/app/cinemasdk/utils/MediaQuailty;
 
@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/app/cinemasdk/utils/MediaQuailty;
@@ -47,65 +47,57 @@
     sput-object v0, Lcom/app/cinemasdk/utils/MediaQuailty;->Auto:Lcom/app/cinemasdk/utils/MediaQuailty;
 
     .line 2
-    new-instance v0, Lcom/app/cinemasdk/utils/MediaQuailty;
+    new-instance v1, Lcom/app/cinemasdk/utils/MediaQuailty;
 
-    const-string v1, "Low"
+    const-string v3, "Low"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3, v1}, Lcom/app/cinemasdk/utils/MediaQuailty;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v1, v3, v4, v4, v3}, Lcom/app/cinemasdk/utils/MediaQuailty;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQuailty;->Low:Lcom/app/cinemasdk/utils/MediaQuailty;
+    sput-object v1, Lcom/app/cinemasdk/utils/MediaQuailty;->Low:Lcom/app/cinemasdk/utils/MediaQuailty;
 
     .line 3
-    new-instance v0, Lcom/app/cinemasdk/utils/MediaQuailty;
+    new-instance v3, Lcom/app/cinemasdk/utils/MediaQuailty;
 
-    const-string v1, "Medium"
+    const-string v5, "Medium"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4, v1}, Lcom/app/cinemasdk/utils/MediaQuailty;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v3, v5, v6, v6, v5}, Lcom/app/cinemasdk/utils/MediaQuailty;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQuailty;->Medium:Lcom/app/cinemasdk/utils/MediaQuailty;
+    sput-object v3, Lcom/app/cinemasdk/utils/MediaQuailty;->Medium:Lcom/app/cinemasdk/utils/MediaQuailty;
 
     .line 4
-    new-instance v0, Lcom/app/cinemasdk/utils/MediaQuailty;
+    new-instance v5, Lcom/app/cinemasdk/utils/MediaQuailty;
 
-    const-string v1, "High"
+    const-string v7, "High"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5, v1}, Lcom/app/cinemasdk/utils/MediaQuailty;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v5, v7, v8, v8, v7}, Lcom/app/cinemasdk/utils/MediaQuailty;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQuailty;->High:Lcom/app/cinemasdk/utils/MediaQuailty;
+    sput-object v5, Lcom/app/cinemasdk/utils/MediaQuailty;->High:Lcom/app/cinemasdk/utils/MediaQuailty;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/app/cinemasdk/utils/MediaQuailty;
+    new-array v7, v7, [Lcom/app/cinemasdk/utils/MediaQuailty;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQuailty;->Auto:Lcom/app/cinemasdk/utils/MediaQuailty;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQuailty;->Low:Lcom/app/cinemasdk/utils/MediaQuailty;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQuailty;->Medium:Lcom/app/cinemasdk/utils/MediaQuailty;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQuailty;->High:Lcom/app/cinemasdk/utils/MediaQuailty;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQuailty;->$VALUES:[Lcom/app/cinemasdk/utils/MediaQuailty;
+    sput-object v7, Lcom/app/cinemasdk/utils/MediaQuailty;->$VALUES:[Lcom/app/cinemasdk/utils/MediaQuailty;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

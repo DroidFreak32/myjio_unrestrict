@@ -1,72 +1,46 @@
-.class public final Lcom/google/android/gms/internal/ads/zzaia;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzaia;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzahy;
+.implements Landroid/content/DialogInterface$OnCancelListener;
+
+
+# instance fields
+.field private final zzdgs:Lcom/google/android/gms/internal/ads/zzahz;
+
+.field private final zzdha:Ljava/lang/String;
+
+.field private final zzdhb:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzahz;Ljava/lang/String;Landroid/content/Context;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.ads.internal.reward.client.IRewardItem"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaia;->zzdgs:Lcom/google/android/gms/internal/ads/zzahz;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaia;->zzdha:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaia;->zzdhb:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getAmount()I
-    .locals 2
+.method public final onCancel(Landroid/content/DialogInterface;)V
+    .locals 3
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaia;->zzdgs:Lcom/google/android/gms/internal/ads/zzahz;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaia;->zzdha:Ljava/lang/String;
 
-    const/4 v1, 0x2
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzaia;->zzdhb:Landroid/content/Context;
 
-    .line 2
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzem;->transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {v0, v1, v2, p1}, Lcom/google/android/gms/internal/ads/zzahz;->zza(Ljava/lang/String;Landroid/content/Context;Landroid/content/DialogInterface;)V
 
-    move-result-object v0
-
-    .line 3
-    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    .line 4
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return v1
-.end method
-
-.method public final getType()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    .line 2
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzem;->transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 3
-    invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 4
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-object v1
+    return-void
 .end method

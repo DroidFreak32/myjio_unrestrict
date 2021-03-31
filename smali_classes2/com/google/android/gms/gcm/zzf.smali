@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzak:Lcom/google/android/gms/gcm/GoogleCloudMessaging;
+.field private final synthetic zzak:Lcom/google/android/gms/gcm/GoogleCloudMessaging;
 
 
 # direct methods

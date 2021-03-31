@@ -37,7 +37,7 @@
     return-void
 .end method
 
-.method public constructor <init>(J[BJ)V
+.method private constructor <init>(J[BJ)V
     .locals 0
 
     .line 2
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
 
     .line 6
@@ -85,8 +85,6 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/scte35/PrivateCommand;->commandBytes:[B
 
     .line 10
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/scte35/PrivateCommand;->commandBytes:[B
-
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readByteArray([B)V
 
     return-void
@@ -114,11 +112,9 @@
     .line 2
     new-array v3, p1, [B
 
-    .line 3
-    array-length p1, v3
-
     const/4 v0, 0x0
 
+    .line 3
     invoke-virtual {p0, v3, v0, p1}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
     .line 4

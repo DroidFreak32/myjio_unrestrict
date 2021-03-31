@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final INVALID_SPAN_ID:I = -0x1
+
+
 # instance fields
 .field public e:Landroidx/recyclerview/widget/StaggeredGridLayoutManager$c;
 
@@ -57,18 +61,18 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public a(Z)V
+.method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)V
     .locals 0
 
-    .line 1
-    iput-boolean p1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LayoutParams;->f:Z
+    .line 5
+    invoke-direct {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)V
 
     return-void
 .end method
 
-.method public final e()I
+
+# virtual methods
+.method public final getSpanIndex()I
     .locals 1
 
     .line 1
@@ -87,11 +91,20 @@
     return v0
 .end method
 
-.method public f()Z
+.method public isFullSpan()Z
     .locals 1
 
     .line 1
     iget-boolean v0, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LayoutParams;->f:Z
 
     return v0
+.end method
+
+.method public setFullSpan(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Landroidx/recyclerview/widget/StaggeredGridLayoutManager$LayoutParams;->f:Z
+
+    return-void
 .end method

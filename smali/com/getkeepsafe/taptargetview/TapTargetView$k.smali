@@ -3,7 +3,7 @@
 .source "TapTargetView.java"
 
 # interfaces
-.implements Lw50$d;
+.implements Lgc$d;
 
 
 # annotations
@@ -52,7 +52,7 @@
     .line 2
     iget-object v2, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$k;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->k0:I
+    iget v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->m0:I
 
     int-to-float v3, v3
 
@@ -64,14 +64,14 @@
 
     mul-float v3, v3, v4
 
-    iput v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->j0:F
+    iput v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:F
 
     sub-float v0, v1, v0
 
     .line 3
-    iget-object v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->H:Lx50;
+    iget-object v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->J:Lcom/getkeepsafe/taptargetview/TapTarget;
 
-    iget v3, v3, Lx50;->c:F
+    iget v3, v3, Lcom/getkeepsafe/taptargetview/TapTarget;->c:F
 
     mul-float v3, v3, v0
 
@@ -81,19 +81,19 @@
 
     float-to-int v3, v3
 
-    iput v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->m0:I
+    iput v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->o0:I
 
     .line 4
-    iget-object v2, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->i0:Landroid/graphics/Path;
+    iget-object v2, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->k0:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
     .line 5
     iget-object v2, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$k;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->i0:Landroid/graphics/Path;
+    iget-object v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->k0:Landroid/graphics/Path;
 
-    iget-object v5, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:[I
+    iget-object v5, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->n0:[I
 
     const/4 v6, 0x0
 
@@ -107,7 +107,7 @@
 
     int-to-float v5, v5
 
-    iget v2, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->j0:F
+    iget v2, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:F
 
     sget-object v7, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -118,20 +118,20 @@
 
     sub-float v3, v1, p1
 
-    iget v5, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->w:I
+    iget v5, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->e:I
 
     int-to-float v6, v5
 
     mul-float v6, v6, v3
 
-    iput v6, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->p0:F
+    iput v6, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->r0:F
 
     mul-float v6, v3, v4
 
     float-to-int v6, v6
 
     .line 7
-    iput v6, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->q0:I
+    iput v6, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->s0:I
 
     add-float/2addr p1, v1
 
@@ -140,10 +140,10 @@
     mul-float p1, p1, v1
 
     .line 8
-    iput p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->n0:F
+    iput p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->p0:F
 
     .line 9
-    iget p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->o0:I
+    iget p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->q0:I
 
     int-to-float p1, p1
 
@@ -151,24 +151,24 @@
 
     float-to-int p1, v3
 
-    iput p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->o0:I
+    iput p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->q0:I
 
     mul-float v0, v0, v4
 
     float-to-int p1, v0
 
     .line 10
-    iput p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->r0:I
+    iput p1, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->t0:I
 
     .line 11
-    invoke-virtual {v2}, Lcom/getkeepsafe/taptargetview/TapTargetView;->b()V
+    invoke-virtual {v2}, Lcom/getkeepsafe/taptargetview/TapTargetView;->g()V
 
     .line 12
     iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$k;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->g0:Landroid/graphics/Rect;
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->i0:Landroid/graphics/Rect;
 
-    invoke-virtual {p1, v0}, Lcom/getkeepsafe/taptargetview/TapTargetView;->a(Landroid/graphics/Rect;)V
+    invoke-virtual {p1, v0}, Lcom/getkeepsafe/taptargetview/TapTargetView;->q(Landroid/graphics/Rect;)V
 
     return-void
 .end method

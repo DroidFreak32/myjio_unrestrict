@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -226,6 +226,11 @@
 
 .method public getValue(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/UnsupportedOperationException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -276,6 +281,11 @@
 
 .method public setValue(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/UnsupportedOperationException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;

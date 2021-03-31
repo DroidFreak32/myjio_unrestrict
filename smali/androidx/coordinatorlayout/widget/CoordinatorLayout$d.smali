@@ -3,7 +3,7 @@
 .source "CoordinatorLayout.java"
 
 # interfaces
-.implements Landroid/view/ViewGroup$OnHierarchyChangeListener;
+.implements Ljava/util/Comparator;
 
 
 # annotations
@@ -12,22 +12,25 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x9
     name = "d"
 .end annotation
 
-
-# instance fields
-.field public final synthetic s:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator<",
+        "Landroid/view/View;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$d;->s:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,43 +38,53 @@
 
 
 # virtual methods
-.method public onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
+.method public a(Landroid/view/View;Landroid/view/View;)I
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$d;->s:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    invoke-static {p1}, Landroidx/core/view/ViewCompat;->getZ(Landroid/view/View;)F
 
-    iget-object v0, v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
-
-    if-eqz v0, :cond_0
+    move-result p1
 
     .line 2
-    invoke-interface {v0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
+    invoke-static {p2}, Landroidx/core/view/ViewCompat;->getZ(Landroid/view/View;)F
+
+    move-result p2
+
+    cmpl-float v0, p1, p2
+
+    if-lez v0, :cond_0
+
+    const/4 p1, -0x1
+
+    return p1
 
     :cond_0
-    return-void
+    cmpg-float p1, p1, p2
+
+    if-gez p1, :cond_1
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
-.method public onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
-    .locals 2
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$d;->s:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    check-cast p1, Landroid/view/View;
 
-    const/4 v1, 0x2
+    check-cast p2, Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->onChildViewsChanged(I)V
+    invoke-virtual {p0, p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$d;->a(Landroid/view/View;Landroid/view/View;)I
 
-    .line 2
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$d;->s:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    move-result p1
 
-    iget-object v0, v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    invoke-interface {v0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
-
-    :cond_0
-    return-void
+    return p1
 .end method

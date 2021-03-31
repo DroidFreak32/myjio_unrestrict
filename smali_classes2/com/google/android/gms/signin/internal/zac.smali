@@ -1,45 +1,56 @@
-.class public Lcom/google/android/gms/signin/internal/zac;
-.super Lcom/google/android/gms/signin/internal/zae;
+.class public interface abstract Lcom/google/android/gms/signin/internal/zac;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/signin/internal/zae;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zaa(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/signin/internal/zaa;)V
-    .locals 0
-
-    return-void
+.method public abstract zaa(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/signin/internal/zab;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public final zaa(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
-    .locals 0
-
-    return-void
+.method public abstract zaa(Lcom/google/android/gms/common/api/Status;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public zab(Lcom/google/android/gms/signin/internal/zaj;)V
-    .locals 0
-
-    return-void
+.method public abstract zaa(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public final zag(Lcom/google/android/gms/common/api/Status;)V
-    .locals 0
-
-    return-void
+.method public abstract zaa(Lcom/google/android/gms/signin/internal/zag;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public final zah(Lcom/google/android/gms/common/api/Status;)V
-    .locals 0
+.method public abstract zaa(Lcom/google/android/gms/signin/internal/zam;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    return-void
+.method public abstract zab(Lcom/google/android/gms/common/api/Status;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

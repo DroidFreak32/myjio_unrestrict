@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final synthetic zzsw:Lcom/google/android/gms/analytics/zzg;
+.field private final synthetic zzsw:Lcom/google/android/gms/analytics/zzg;
 
-.field public final synthetic zzsx:Lcom/google/android/gms/analytics/zzk;
+.field private final synthetic zzsx:Lcom/google/android/gms/analytics/zzk;
 
 
 # direct methods

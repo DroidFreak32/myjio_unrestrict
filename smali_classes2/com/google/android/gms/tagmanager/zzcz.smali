@@ -17,7 +17,7 @@
 
 .field public static final enum zzahr:I = 0x3
 
-.field public static final synthetic zzahs:[I
+.field private static final synthetic zzahs:[I
 
 .field public static final enum zzaht:I = 0x1
 
@@ -27,7 +27,7 @@
 
 .field public static final enum zzahw:I = 0x4
 
-.field public static final synthetic zzahx:[I
+.field private static final synthetic zzahx:[I
 
 
 # direct methods
@@ -38,47 +38,33 @@
 
     new-array v1, v0, [I
 
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzahp:I
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    aput v2, v1, v3
+    aput v3, v1, v2
 
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzahq:I
+    const/4 v4, 0x2
 
-    const/4 v4, 0x1
+    aput v4, v1, v3
 
-    aput v2, v1, v4
-
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzahr:I
-
-    const/4 v5, 0x2
-
-    aput v2, v1, v5
+    aput v0, v1, v4
 
     sput-object v1, Lcom/google/android/gms/tagmanager/zzcz;->zzahs:[I
 
     const/4 v1, 0x4
 
-    new-array v1, v1, [I
+    new-array v5, v1, [I
 
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzaht:I
+    aput v3, v5, v2
 
-    aput v2, v1, v3
+    aput v4, v5, v3
 
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzahu:I
+    aput v0, v5, v4
 
-    aput v2, v1, v4
+    aput v1, v5, v0
 
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzahv:I
-
-    aput v2, v1, v5
-
-    sget v2, Lcom/google/android/gms/tagmanager/zzcz;->zzahw:I
-
-    aput v2, v1, v0
-
-    sput-object v1, Lcom/google/android/gms/tagmanager/zzcz;->zzahx:[I
+    sput-object v5, Lcom/google/android/gms/tagmanager/zzcz;->zzahx:[I
 
     return-void
 .end method

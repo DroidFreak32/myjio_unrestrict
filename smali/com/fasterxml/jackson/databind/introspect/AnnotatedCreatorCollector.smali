@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public _defaultConstructor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
+.field private _defaultConstructor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
 
-.field public final _typeContext:Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext;
+.field private final _typeContext:Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 .end method
 
 .method private _findPotentialConstructors(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Ljava/util/List;
-    .locals 12
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,9 +130,7 @@
     return-object p1
 
     :cond_5
-    move-object v0, p1
-
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_3
 
@@ -160,8 +158,14 @@
     goto :goto_2
 
     :cond_7
+    move-object v12, v0
+
+    move v0, p1
+
+    move-object p1, v12
+
     :goto_3
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_c
 
     .line 12
     invoke-static {p2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getConstructors(Ljava/lang/Class;)[Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;
@@ -172,14 +176,12 @@
 
     move-object v7, v2
 
-    move-object v6, v4
-
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     :goto_4
-    if-ge v4, v3, :cond_c
+    if-ge v6, v3, :cond_c
 
-    aget-object v8, p2, v4
+    aget-object v8, p2, v6
 
     .line 13
     invoke-virtual {v8}, Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;->getParamCount()I
@@ -188,16 +190,16 @@
 
     if-nez v9, :cond_8
 
-    if-eqz v6, :cond_b
+    if-eqz v4, :cond_b
 
     .line 14
-    invoke-virtual {p0, v6, v8}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->constructDefaultConstructor(Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
+    invoke-virtual {p0, v4, v8}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->constructDefaultConstructor(Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
 
-    move-result-object v6
+    move-result-object v4
 
-    iput-object v6, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->_defaultConstructor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
+    iput-object v4, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->_defaultConstructor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
 
-    move-object v6, v2
+    move-object v4, v2
 
     goto :goto_7
 
@@ -207,12 +209,12 @@
     if-nez v7, :cond_9
 
     .line 15
-    new-array v7, p1, [Lcom/fasterxml/jackson/databind/introspect/MemberKey;
+    new-array v7, v0, [Lcom/fasterxml/jackson/databind/introspect/MemberKey;
 
     const/4 v9, 0x0
 
     :goto_5
-    if-ge v9, p1, :cond_9
+    if-ge v9, v0, :cond_9
 
     .line 16
     new-instance v10, Lcom/fasterxml/jackson/databind/introspect/MemberKey;
@@ -248,7 +250,7 @@
     const/4 v10, 0x0
 
     :goto_6
-    if-ge v10, p1, :cond_b
+    if-ge v10, v0, :cond_b
 
     .line 18
     aget-object v11, v7, v10
@@ -270,7 +272,7 @@
 
     move-result-object v8
 
-    invoke-interface {v0, v10, v8}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v10, v8}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_7
 
@@ -281,15 +283,12 @@
 
     :cond_b
     :goto_7
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_4
 
     :cond_c
-    move-object v4, v6
-
-    :cond_d
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_d
 
     .line 20
     invoke-virtual {p0, v4, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->constructDefaultConstructor(Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
@@ -298,18 +297,18 @@
 
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->_defaultConstructor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
 
-    :cond_e
+    :cond_d
     :goto_8
-    if-ge v1, p1, :cond_10
+    if-ge v1, v0, :cond_f
 
     .line 21
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
 
-    if-nez p2, :cond_f
+    if-nez p2, :cond_e
 
     .line 22
     invoke-interface {v5, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -322,15 +321,15 @@
 
     move-result-object p2
 
-    invoke-interface {v0, v1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_f
+    :cond_e
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_8
 
-    :cond_10
-    return-object v0
+    :cond_f
+    return-object p1
 .end method
 
 .method private _findPotentialFactories(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Ljava/util/List;
@@ -723,7 +722,7 @@
     return-object p0
 .end method
 
-.method public static isIncludableConstructor(Ljava/lang/reflect/Constructor;)Z
+.method private static isIncludableConstructor(Ljava/lang/reflect/Constructor;)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1133,7 +1132,10 @@
 
     move-result-object v3
 
-    goto :goto_0
+    :goto_0
+    move-object v1, v2
+
+    goto :goto_1
 
     .line 12
     :cond_2
@@ -1175,20 +1177,18 @@
     goto :goto_0
 
     :cond_3
-    move-object v2, v1
-
-    :goto_0
+    :goto_1
     if-eqz v3, :cond_4
 
-    goto :goto_2
+    goto :goto_3
 
     .line 18
     :cond_4
     new-instance p2, Ljava/lang/IllegalStateException;
 
-    const/4 v1, 0x3
+    const/4 v2, 0x3
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;->getDeclaringClass()Ljava/lang/Class;
 
@@ -1198,25 +1198,25 @@
 
     move-result-object p1
 
-    aput-object p1, v1, v5
+    aput-object p1, v2, v5
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    aput-object p1, v1, v6
+    aput-object p1, v2, v6
 
-    array-length p1, v2
+    array-length p1, v1
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    aput-object p1, v1, v7
+    aput-object p1, v2, v7
 
     const-string p1, "Internal error: constructor for %s has mismatch: %d parameters; %d sets of annotations"
 
-    invoke-static {p1, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1227,7 +1227,7 @@
     :cond_5
     if-nez p2, :cond_6
 
-    goto :goto_1
+    goto :goto_2
 
     .line 19
     :cond_6
@@ -1235,13 +1235,13 @@
 
     move-result-object v3
 
-    :goto_1
+    :goto_2
     invoke-direct {p0, v1, v3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->collectAnnotations([[Ljava/lang/annotation/Annotation;[[Ljava/lang/annotation/Annotation;)[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     move-result-object v3
 
     .line 20
-    :goto_2
+    :goto_3
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedCreatorCollector;->_typeContext:Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext;

@@ -1,6 +1,5 @@
 .class public final Lcom/google/android/gms/base/R$attr;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -15,24 +14,23 @@
 
 
 # static fields
-.field public static final buttonSize:I = 0x7f040090
+.field public static final buttonSize:I = 0x7f0400a9
 
-.field public static final circleCrop:I = 0x7f0400cf
+.field public static final circleCrop:I = 0x7f0400ed
 
-.field public static final colorScheme:I = 0x7f0400f0
+.field public static final colorScheme:I = 0x7f040116
 
-.field public static final imageAspectRatio:I = 0x7f040206
+.field public static final imageAspectRatio:I = 0x7f040256
 
-.field public static final imageAspectRatioAdjust:I = 0x7f040207
+.field public static final imageAspectRatioAdjust:I = 0x7f040257
 
-.field public static final scopeUris:I = 0x7f04037c
+.field public static final scopeUris:I = 0x7f040401
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

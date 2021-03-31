@@ -6,35 +6,35 @@
 # instance fields
 .field public atime:I
 
-.field public bavail:J
+.field private bavail:J
 
-.field public bfree:J
+.field private bfree:J
 
-.field public blocks:J
+.field private blocks:J
 
-.field public bsize:J
+.field private bsize:J
 
 .field public extended:[Ljava/lang/String;
 
-.field public favail:J
+.field private favail:J
 
-.field public ffree:J
+.field private ffree:J
 
-.field public files:J
+.field private files:J
 
-.field public flag:J
+.field private flag:J
 
 .field public flags:I
 
-.field public frsize:J
+.field private frsize:J
 
-.field public fsid:J
+.field private fsid:J
 
 .field public gid:I
 
 .field public mtime:I
 
-.field public namemax:J
+.field private namemax:J
 
 .field public permissions:I
 
@@ -44,7 +44,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -165,9 +165,6 @@
     :goto_0
     iput-wide v5, v0, Lcom/jcraft/jsch/SftpStatVFS;->flag:J
 
-    .line 14
-    iget-wide v5, v0, Lcom/jcraft/jsch/SftpStatVFS;->flag:J
-
     and-int/lit8 p0, v2, 0x2
 
     if-eqz p0, :cond_1
@@ -177,6 +174,7 @@
     :cond_1
     or-long v1, v5, v3
 
+    .line 14
     iput-wide v1, v0, Lcom/jcraft/jsch/SftpStatVFS;->flag:J
 
     return-object v0

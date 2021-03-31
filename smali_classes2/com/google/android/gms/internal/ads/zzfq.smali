@@ -1,67 +1,56 @@
-.class public final Lcom/google/android/gms/internal/ads/zzfq;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzfq;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/ads/internal/gmsg/zzu;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/ads/internal/gmsg/zzu<",
-        "Lcom/google/android/gms/internal/ads/zzwy;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic zzags:Lcom/google/android/gms/internal/ads/zzfi;
+# static fields
+.field public static final synthetic zzaav:[I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzfi;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzfq;->zzags:Lcom/google/android/gms/internal/ads/zzfi;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic zza(Ljava/lang/Object;Ljava/util/Map;)V
-    .locals 1
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzwy;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzfq;->zzags:Lcom/google/android/gms/internal/ads/zzfi;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzfi;->zza(Lcom/google/android/gms/internal/ads/zzfi;)Lcom/google/android/gms/internal/ads/zzew;
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzcb;->values()[Lcom/google/android/gms/internal/ads/zzcb;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Lcom/google/android/gms/internal/ads/zzew;->zzc(Ljava/util/Map;)Z
+    array-length v0, v0
 
-    move-result v0
+    new-array v0, v0, [I
 
-    if-eqz v0, :cond_0
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzfq;->zzaav:[I
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzfq;->zzags:Lcom/google/android/gms/internal/ads/zzfi;
+    :try_start_0
+    sget-object v1, Lcom/google/android/gms/internal/ads/zzcb;->zzfb:Lcom/google/android/gms/internal/ads/zzcb;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzfi;->zzb(Lcom/google/android/gms/internal/ads/zzfi;)Lcom/google/android/gms/ads/internal/gmsg/zzaa;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result-object v0
+    move-result v1
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/ads/internal/gmsg/zzaa;->zza(Ljava/lang/Object;Ljava/util/Map;)V
+    const/4 v2, 0x1
 
-    :cond_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzfq;->zzaav:[I
+
+    sget-object v1, Lcom/google/android/gms/internal/ads/zzcb;->zzfa:Lcom/google/android/gms/internal/ads/zzcb;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
     return-void
 .end method

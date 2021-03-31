@@ -7,6 +7,12 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum<",
@@ -20,7 +26,7 @@
 # static fields
 .field public static final enum INSTANCE:Landroidx/work/impl/utils/futures/DirectExecutor;
 
-.field public static final synthetic s:[Landroidx/work/impl/utils/futures/DirectExecutor;
+.field public static final synthetic a:[Landroidx/work/impl/utils/futures/DirectExecutor;
 
 
 # direct methods
@@ -30,24 +36,22 @@
     .line 1
     new-instance v0, Landroidx/work/impl/utils/futures/DirectExecutor;
 
-    const/4 v1, 0x0
+    const-string v1, "INSTANCE"
 
-    const-string v2, "INSTANCE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Landroidx/work/impl/utils/futures/DirectExecutor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/work/impl/utils/futures/DirectExecutor;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Landroidx/work/impl/utils/futures/DirectExecutor;->INSTANCE:Landroidx/work/impl/utils/futures/DirectExecutor;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    new-array v0, v0, [Landroidx/work/impl/utils/futures/DirectExecutor;
+    new-array v1, v1, [Landroidx/work/impl/utils/futures/DirectExecutor;
+
+    aput-object v0, v1, v2
 
     .line 2
-    sget-object v2, Landroidx/work/impl/utils/futures/DirectExecutor;->INSTANCE:Landroidx/work/impl/utils/futures/DirectExecutor;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Landroidx/work/impl/utils/futures/DirectExecutor;->s:[Landroidx/work/impl/utils/futures/DirectExecutor;
+    sput-object v1, Landroidx/work/impl/utils/futures/DirectExecutor;->a:[Landroidx/work/impl/utils/futures/DirectExecutor;
 
     return-void
 .end method
@@ -85,7 +89,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Landroidx/work/impl/utils/futures/DirectExecutor;->s:[Landroidx/work/impl/utils/futures/DirectExecutor;
+    sget-object v0, Landroidx/work/impl/utils/futures/DirectExecutor;->a:[Landroidx/work/impl/utils/futures/DirectExecutor;
 
     invoke-virtual {v0}, [Landroidx/work/impl/utils/futures/DirectExecutor;->clone()Ljava/lang/Object;
 

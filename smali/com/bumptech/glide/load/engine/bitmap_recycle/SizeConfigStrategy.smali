@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x13
+.end annotation
+
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy$Key;,
@@ -16,21 +20,21 @@
 
 
 # static fields
-.field public static final ALPHA_8_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
+.field private static final ALPHA_8_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-.field public static final ARGB_4444_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
+.field private static final ARGB_4444_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-.field public static final ARGB_8888_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
+.field private static final ARGB_8888_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-.field public static final MAX_SIZE_MULTIPLE:I = 0x8
+.field private static final MAX_SIZE_MULTIPLE:I = 0x8
 
-.field public static final RGBA_F16_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
+.field private static final RGBA_F16_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-.field public static final RGB_565_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
+.field private static final RGB_565_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
 
 # instance fields
-.field public final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
+.field private final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap<",
@@ -41,9 +45,9 @@
     .end annotation
 .end field
 
-.field public final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy$KeyPool;
+.field private final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy$KeyPool;
 
-.field public final sortedSizes:Ljava/util/Map;
+.field private final sortedSizes:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -72,67 +76,63 @@
 
     aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v3
 
     .line 2
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x1a
 
-    if-lt v3, v4, :cond_0
+    if-lt v1, v4, :cond_0
+
+    const/4 v1, 0x3
 
     .line 3
-    array-length v3, v0
-
-    add-int/2addr v3, v1
-
-    invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Landroid/graphics/Bitmap$Config;
 
     .line 4
-    array-length v3, v0
+    array-length v1, v0
 
-    sub-int/2addr v3, v1
+    sub-int/2addr v1, v3
 
     sget-object v4, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
-    aput-object v4, v0, v3
+    aput-object v4, v0, v1
 
     .line 5
     :cond_0
     sput-object v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy;->ARGB_8888_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
     .line 6
-    sget-object v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy;->ARGB_8888_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
-
     sput-object v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy;->RGBA_F16_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-    new-array v0, v1, [Landroid/graphics/Bitmap$Config;
+    new-array v0, v3, [Landroid/graphics/Bitmap$Config;
 
     .line 7
-    sget-object v3, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    aput-object v3, v0, v2
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy;->RGB_565_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-    new-array v0, v1, [Landroid/graphics/Bitmap$Config;
+    new-array v0, v3, [Landroid/graphics/Bitmap$Config;
 
     .line 8
-    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
-    aput-object v3, v0, v2
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy;->ARGB_4444_IN_CONFIGS:[Landroid/graphics/Bitmap$Config;
 
-    new-array v0, v1, [Landroid/graphics/Bitmap$Config;
+    new-array v0, v3, [Landroid/graphics/Bitmap$Config;
 
     .line 9
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
@@ -400,7 +400,7 @@
     return-object p0
 .end method
 
-.method public static getInConfigs(Landroid/graphics/Bitmap$Config;)[Landroid/graphics/Bitmap$Config;
+.method private static getInConfigs(Landroid/graphics/Bitmap$Config;)[Landroid/graphics/Bitmap$Config;
     .locals 3
 
     .line 1
@@ -526,6 +526,8 @@
 # virtual methods
 .method public get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-static {p1, p2, p3}, Lcom/bumptech/glide/util/Util;->getBitmapByteSize(IILandroid/graphics/Bitmap$Config;)I
@@ -689,6 +691,8 @@
 
 .method public removeLast()Landroid/graphics/Bitmap;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeConfigStrategy;->groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;

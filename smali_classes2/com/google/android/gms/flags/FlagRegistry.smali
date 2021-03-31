@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzg:Ljava/util/Collection;
+.field private final zzg:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public final zzh:Ljava/util/Collection;
+.field private final zzh:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -23,7 +23,7 @@
     .end annotation
 .end field
 
-.field public final zzi:Ljava/util/Collection;
+.field private final zzi:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",

@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static zzc:Lcom/google/android/gms/internal/ads_identifier/zzd;
+.field private static zzc:Lcom/google/android/gms/internal/ads_identifier/zzd;
 
 
 # direct methods
@@ -30,6 +30,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     new-instance p1, Ljava/lang/NoSuchMethodError;
 

@@ -1,44 +1,20 @@
-.class public final Lcom/google/android/gms/ads/internal/overlay/zzp;
+.class public interface abstract Lcom/google/android/gms/ads/internal/overlay/zzp;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# instance fields
-.field public paddingBottom:I
+# virtual methods
+.method public abstract onPause()V
+.end method
 
-.field public paddingLeft:I
+.method public abstract onResume()V
+.end method
 
-.field public paddingRight:I
+.method public abstract onUserLeaveHint()V
+.end method
 
-.field public paddingTop:I
+.method public abstract zza(Lcom/google/android/gms/ads/internal/overlay/zzl;)V
+.end method
 
-.field public size:I
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzp;->paddingLeft:I
-
-    .line 3
-    iput v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzp;->paddingRight:I
-
-    .line 4
-    iput v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzp;->paddingTop:I
-
-    .line 5
-    iput v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzp;->paddingBottom:I
-
-    const/16 v0, 0x20
-
-    .line 6
-    iput v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzp;->size:I
-
-    return-void
+.method public abstract zzux()V
 .end method

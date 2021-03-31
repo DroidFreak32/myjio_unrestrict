@@ -3,26 +3,34 @@
 .source "ActionBarContainer.java"
 
 
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+
 # instance fields
 .field public A:Z
 
-.field public B:I
+.field public B:Z
 
-.field public s:Z
+.field public C:I
 
-.field public t:Landroid/view/View;
+.field public a:Z
 
-.field public u:Landroid/view/View;
+.field public b:Landroid/view/View;
 
-.field public v:Landroid/view/View;
+.field public c:Landroid/view/View;
 
-.field public w:Landroid/graphics/drawable/Drawable;
+.field public d:Landroid/view/View;
 
-.field public x:Landroid/graphics/drawable/Drawable;
+.field public e:Landroid/graphics/drawable/Drawable;
 
 .field public y:Landroid/graphics/drawable/Drawable;
 
-.field public z:Z
+.field public z:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
@@ -44,65 +52,31 @@
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 3
-    new-instance v0, Lc2;
+    new-instance v0, Lw0;
 
-    invoke-direct {v0, p0}, Lc2;-><init>(Landroidx/appcompat/widget/ActionBarContainer;)V
+    invoke-direct {v0, p0}, Lw0;-><init>(Landroidx/appcompat/widget/ActionBarContainer;)V
 
     .line 4
-    invoke-static {p0, v0}, Lba;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {p0, v0}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     .line 5
-    sget-object v0, Lb0;->ActionBar:[I
+    sget-object v0, Landroidx/appcompat/R$styleable;->ActionBar:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
     .line 6
-    sget p2, Lb0;->ActionBar_background:I
+    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_background:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     .line 7
-    sget p2, Lb0;->ActionBar_backgroundStacked:I
-
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
-
-    .line 8
-    sget p2, Lb0;->ActionBar_height:I
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result p2
-
-    iput p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->B:I
-
-    .line 9
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getId()I
-
-    move-result p2
-
-    sget v0, Lu;->split_action_bar:I
-
-    const/4 v1, 0x1
-
-    if-ne p2, v0, :cond_0
-
-    .line 10
-    iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
-
-    .line 11
-    sget p2, Lb0;->ActionBar_backgroundSplit:I
+    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_backgroundStacked:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -110,40 +84,75 @@
 
     iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
+    .line 8
+    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_height:I
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result p2
+
+    iput p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->C:I
+
+    .line 9
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getId()I
+
+    move-result p2
+
+    sget v0, Landroidx/appcompat/R$id;->split_action_bar:I
+
+    const/4 v1, 0x1
+
+    if-ne p2, v0, :cond_0
+
+    .line 10
+    iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
+
+    .line 11
+    sget p2, Landroidx/appcompat/R$styleable;->ActionBar_backgroundSplit:I
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p2
+
+    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
+
     .line 12
     :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 13
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
 
     const/4 p2, 0x0
 
     if-eqz p1, :cond_1
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_2
 
-    :goto_0
-    const/4 p2, 0x1
+    goto :goto_0
 
-    goto :goto_1
-
+    .line 14
     :cond_1
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_2
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    :goto_1
-    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+    const/4 v1, 0x0
+
+    .line 15
+    :goto_0
+    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
 .end method
@@ -218,7 +227,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->drawableStateChanged()V
 
     .line 2
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
@@ -229,7 +238,7 @@
     if-eqz v0, :cond_0
 
     .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getDrawableState()[I
 
@@ -239,7 +248,7 @@
 
     .line 4
     :cond_0
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
@@ -250,7 +259,7 @@
     if-eqz v0, :cond_1
 
     .line 5
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getDrawableState()[I
 
@@ -260,7 +269,7 @@
 
     .line 6
     :cond_1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
@@ -271,7 +280,7 @@
     if-eqz v0, :cond_2
 
     .line 7
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getDrawableState()[I
 
@@ -287,7 +296,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     return-object v0
 .end method
@@ -299,7 +308,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->jumpDrawablesToCurrentState()V
 
     .line 2
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
@@ -308,7 +317,7 @@
 
     .line 4
     :cond_0
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
@@ -317,7 +326,7 @@
 
     .line 6
     :cond_1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
@@ -335,22 +344,22 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 2
-    sget v0, Lu;->action_bar:I
+    sget v0, Landroidx/appcompat/R$id;->action_bar:I
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     .line 3
-    sget v0, Lu;->action_context_bar:I
+    sget v0, Landroidx/appcompat/R$id;->action_context_bar:I
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     return-void
 .end method
@@ -370,7 +379,7 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->s:Z
+    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->a:Z
 
     if-nez v0, :cond_1
 
@@ -396,13 +405,13 @@
 .end method
 
 .method public onLayout(ZIIII)V
-    .locals 5
+    .locals 4
 
     .line 1
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
     .line 2
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     const/16 p3, 0x8
 
@@ -456,11 +465,9 @@
     sub-int v3, p3, v3
 
     .line 8
-    iget v4, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    sub-int/2addr v3, v4
-
     iget v2, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    sub-int/2addr v3, v2
 
     sub-int/2addr p3, v2
 
@@ -468,12 +475,12 @@
 
     .line 9
     :cond_1
-    iget-boolean p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
 
     if-eqz p2, :cond_3
 
     .line 10
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_2
 
@@ -497,12 +504,12 @@
 
     .line 12
     :cond_3
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-eqz p2, :cond_6
 
     .line 13
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {p2}, Landroid/view/View;->getVisibility()I
 
@@ -511,28 +518,28 @@
     if-nez p2, :cond_4
 
     .line 14
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
-    iget-object p3, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object p3, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {p3}, Landroid/view/View;->getLeft()I
 
     move-result p3
 
-    iget-object p4, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object p4, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {p4}, Landroid/view/View;->getTop()I
 
     move-result p4
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     .line 15
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
     move-result v0
 
-    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getBottom()I
 
@@ -545,7 +552,7 @@
 
     .line 17
     :cond_4
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     if-eqz p2, :cond_5
 
@@ -557,28 +564,28 @@
     if-nez p2, :cond_5
 
     .line 19
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
-    iget-object p3, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object p3, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     invoke-virtual {p3}, Landroid/view/View;->getLeft()I
 
     move-result p3
 
-    iget-object p4, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object p4, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     invoke-virtual {p4}, Landroid/view/View;->getTop()I
 
     move-result p4
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     .line 20
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
     move-result v0
 
-    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getBottom()I
 
@@ -591,7 +598,7 @@
 
     .line 22
     :cond_5
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, v0, v0, v0, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
@@ -600,12 +607,12 @@
 
     .line 23
     :cond_6
-    iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
+    iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->B:Z
 
     if-eqz v1, :cond_7
 
     .line 24
-    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-eqz p2, :cond_7
 
@@ -649,7 +656,7 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     const/high16 v1, -0x80000000
 
@@ -662,7 +669,7 @@
 
     if-ne v0, v1, :cond_0
 
-    iget v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->B:I
+    iget v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->C:I
 
     if-ltz v0, :cond_0
 
@@ -685,7 +692,7 @@
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     .line 6
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     if-nez p1, :cond_1
 
@@ -698,7 +705,7 @@
     move-result p1
 
     .line 8
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     if-eqz v0, :cond_5
 
@@ -715,7 +722,7 @@
     if-eq p1, v0, :cond_5
 
     .line 9
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarContainer;->b(Landroid/view/View;)Z
 
@@ -724,7 +731,7 @@
     if-nez v0, :cond_2
 
     .line 10
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarContainer;->a(Landroid/view/View;)I
 
@@ -734,7 +741,7 @@
 
     .line 11
     :cond_2
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarContainer;->b(Landroid/view/View;)Z
 
@@ -743,7 +750,7 @@
     if-nez v0, :cond_3
 
     .line 12
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->v:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->d:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarContainer;->a(Landroid/view/View;)I
 
@@ -773,7 +780,7 @@
 
     move-result p2
 
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     .line 15
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/ActionBarContainer;->a(Landroid/view/View;)I
@@ -808,7 +815,7 @@
     .locals 4
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
@@ -818,13 +825,13 @@
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 4
     :cond_0
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_1
 
@@ -832,31 +839,31 @@
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     .line 6
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     if-eqz p1, :cond_1
 
     .line 7
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     move-result p1
 
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
     move-result v1
 
-    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     .line 8
     invoke-virtual {v2}, Landroid/view/View;->getRight()I
 
     move-result v2
 
-    iget-object v3, p0, Landroidx/appcompat/widget/ActionBarContainer;->u:Landroid/view/View;
+    iget-object v3, p0, Landroidx/appcompat/widget/ActionBarContainer;->c:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getBottom()I
 
@@ -867,7 +874,7 @@
 
     .line 10
     :cond_1
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
 
     const/4 v0, 0x1
 
@@ -875,18 +882,19 @@
 
     if-eqz p1, :cond_2
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_3
 
     goto :goto_0
 
+    .line 11
     :cond_2
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_3
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_3
 
@@ -895,7 +903,108 @@
     :cond_3
     const/4 v0, 0x0
 
+    .line 12
     :goto_0
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+
+    .line 13
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 14
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v0, 0x15
+
+    if-lt p1, v0, :cond_4
+
+    .line 15
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidateOutline()V
+
+    :cond_4
+    return-void
+.end method
+
+.method public setSplitBackground(Landroid/graphics/drawable/Drawable;)V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    .line 2
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 3
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 4
+    :cond_0
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_1
+
+    .line 5
+    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 6
+    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
+
+    if-eqz p1, :cond_1
+
+    .line 7
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v2
+
+    invoke-virtual {p1, v0, v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 8
+    :cond_1
+    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
+
+    const/4 v1, 0x1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
+
+    if-nez p1, :cond_3
+
+    :goto_0
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    .line 9
+    :cond_2
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
+
+    if-nez p1, :cond_3
+
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+
+    if-nez p1, :cond_3
+
+    goto :goto_0
+
+    .line 10
+    :cond_3
+    :goto_1
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     .line 11
@@ -915,8 +1024,8 @@
     return-void
 .end method
 
-.method public setSplitBackground(Landroid/graphics/drawable/Drawable;)V
-    .locals 3
+.method public setStackedBackground(Landroid/graphics/drawable/Drawable;)V
+    .locals 4
 
     .line 1
     iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
@@ -937,15 +1046,13 @@
     :cond_0
     iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
-    const/4 v0, 0x0
-
     if-eqz p1, :cond_1
 
     .line 5
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     .line 6
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->B:Z
 
     if-eqz p1, :cond_1
 
@@ -954,122 +1061,26 @@
     if-eqz p1, :cond_1
 
     .line 7
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v2
-
-    invoke-virtual {p1, v0, v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 8
-    :cond_1
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
-
-    const/4 v1, 0x1
-
-    if-eqz p1, :cond_2
-
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
-
-    if-nez p1, :cond_3
-
-    :goto_0
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
-
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
-
-    if-nez p1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
-
-    .line 9
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
-
-    .line 10
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x15
-
-    if-lt p1, v0, :cond_4
-
-    .line 11
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidateOutline()V
-
-    :cond_4
-    return-void
-.end method
-
-.method public setStackedBackground(Landroid/graphics/drawable/Drawable;)V
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 4
-    :cond_0
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p1, :cond_1
-
-    .line 5
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 6
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p1, :cond_1
-
-    .line 7
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v0
 
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
     move-result v1
 
-    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     .line 8
     invoke-virtual {v2}, Landroid/view/View;->getRight()I
 
     move-result v2
 
-    iget-object v3, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v3, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getBottom()I
 
@@ -1080,7 +1091,7 @@
 
     .line 10
     :cond_1
-    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
 
     const/4 v0, 0x1
 
@@ -1088,18 +1099,19 @@
 
     if-eqz p1, :cond_2
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_3
 
     goto :goto_0
 
+    .line 11
     :cond_2
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_3
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_3
 
@@ -1108,20 +1120,21 @@
     :cond_3
     const/4 v0, 0x0
 
+    .line 12
     :goto_0
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 11
+    .line 13
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 12
+    .line 14
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
 
     if-lt p1, v0, :cond_4
 
-    .line 13
+    .line 15
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
     :cond_4
@@ -1132,7 +1145,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
@@ -1141,7 +1154,7 @@
 
     .line 3
     :cond_0
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->t:Landroid/view/View;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->b:Landroid/view/View;
 
     if-eqz p1, :cond_1
 
@@ -1176,7 +1189,7 @@
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->s:Z
+    iput-boolean p1, p0, Landroidx/appcompat/widget/ActionBarContainer;->a:Z
 
     if-eqz p1, :cond_0
 
@@ -1213,7 +1226,7 @@
 
     .line 2
     :goto_0
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_1
 
@@ -1221,7 +1234,7 @@
 
     .line 3
     :cond_1
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_2
 
@@ -1229,7 +1242,7 @@
 
     .line 4
     :cond_2
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_3
 
@@ -1269,29 +1282,29 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->w:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->e:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_0
 
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
 
     if-eqz v0, :cond_3
 
     :cond_0
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->x:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_1
 
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
+    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->B:Z
 
     if-nez v0, :cond_3
 
     :cond_1
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->y:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_2
 
-    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->z:Z
+    iget-boolean v0, p0, Landroidx/appcompat/widget/ActionBarContainer;->A:Z
 
     if-nez v0, :cond_3
 

@@ -69,100 +69,20 @@
 
 
 # virtual methods
-.method public final a(B)V
-    .locals 4
-
-    .line 2
-    iget v0, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
-
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
-
-    array-length v2, v1
-
-    if-ne v0, v2, :cond_0
-
-    .line 3
-    array-length v0, v1
-
-    mul-int/lit8 v0, v0, 0x2
-
-    new-array v0, v0, [B
-
-    .line 4
-    array-length v2, v1
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 5
-    iput-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
-
-    .line 6
-    :cond_0
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
-
-    aput-byte p1, v0, v1
-
-    return-void
-.end method
-
-.method public a(FF)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    .line 11
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(B)V
-
-    const/4 v0, 0x2
-
-    .line 12
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(I)V
-
-    .line 13
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p1, v0, v1
-
-    .line 14
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    add-int/lit8 v1, p1, 0x1
-
-    iput v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p2, v0, p1
-
-    return-void
-.end method
-
 .method public a(FFFF)V
     .locals 3
 
     const/4 v0, 0x3
 
-    .line 23
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(B)V
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->f(B)V
 
     const/4 v0, 0x4
 
-    .line 24
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(I)V
+    .line 2
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->g(I)V
 
-    .line 25
+    .line 3
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
@@ -173,50 +93,78 @@
 
     aput p1, v0, v1
 
-    .line 26
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, v2, 0x1
 
-    add-int/lit8 v1, p1, 0x1
+    .line 4
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
-    iput v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p2, v0, p1
-
-    .line 27
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    aput p2, v0, v2
 
     add-int/lit8 p2, p1, 0x1
 
+    .line 5
     iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
     aput p3, v0, p1
 
-    .line 28
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, p2, 0x1
 
-    add-int/lit8 p2, p1, 0x1
+    .line 6
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
-    iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p4, v0, p1
+    aput p4, v0, p2
 
     return-void
 .end method
 
-.method public a(FFFFFF)V
+.method public b(FF)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->f(B)V
+
+    const/4 v0, 0x2
+
+    .line 2
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->g(I)V
+
+    .line 3
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    aput p1, v0, v1
+
+    add-int/lit8 p1, v2, 0x1
+
+    .line 4
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    aput p2, v0, v2
+
+    return-void
+.end method
+
+.method public c(FFFFFF)V
     .locals 3
 
     const/4 v0, 0x2
 
-    .line 15
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(B)V
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->f(B)V
 
     const/4 v0, 0x6
 
-    .line 16
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(I)V
+    .line 2
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->g(I)V
 
-    .line 17
+    .line 3
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
@@ -227,55 +175,56 @@
 
     aput p1, v0, v1
 
-    .line 18
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, v2, 0x1
 
-    add-int/lit8 v1, p1, 0x1
+    .line 4
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
-    iput v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p2, v0, p1
-
-    .line 19
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    aput p2, v0, v2
 
     add-int/lit8 p2, p1, 0x1
 
+    .line 5
     iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
     aput p3, v0, p1
 
-    .line 20
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, p2, 0x1
+
+    .line 6
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    aput p4, v0, p2
 
     add-int/lit8 p2, p1, 0x1
 
-    iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p4, v0, p1
-
-    .line 21
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    add-int/lit8 p2, p1, 0x1
-
+    .line 7
     iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
     aput p5, v0, p1
 
-    .line 22
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, p2, 0x1
 
-    add-int/lit8 p2, p1, 0x1
+    .line 8
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
-    iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p6, v0, p1
+    aput p6, v0, p2
 
     return-void
 .end method
 
-.method public a(FFFZZFF)V
+.method public close()V
+    .locals 1
+
+    const/16 v0, 0x8
+
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->f(B)V
+
+    return-void
+.end method
+
+.method public d(FFFZZFF)V
     .locals 1
 
     if-eqz p4, :cond_0
@@ -294,15 +243,15 @@
 
     int-to-byte p4, p4
 
-    .line 29
-    invoke-virtual {p0, p4}, Lcom/caverock/androidsvg/SVG$v;->a(B)V
+    .line 1
+    invoke-virtual {p0, p4}, Lcom/caverock/androidsvg/SVG$v;->f(B)V
 
     const/4 p4, 0x5
 
-    .line 30
-    invoke-virtual {p0, p4}, Lcom/caverock/androidsvg/SVG$v;->a(I)V
+    .line 2
+    invoke-virtual {p0, p4}, Lcom/caverock/androidsvg/SVG$v;->g(I)V
 
-    .line 31
+    .line 3
     iget-object p4, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
     iget p5, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
@@ -313,38 +262,30 @@
 
     aput p1, p4, p5
 
-    .line 32
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, v0, 0x1
 
-    add-int/lit8 p5, p1, 0x1
+    .line 4
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
-    iput p5, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p2, p4, p1
-
-    .line 33
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    aput p2, p4, v0
 
     add-int/lit8 p2, p1, 0x1
 
+    .line 5
     iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
     aput p3, p4, p1
 
-    .line 34
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+    add-int/lit8 p1, p2, 0x1
+
+    .line 6
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    aput p6, p4, p2
 
     add-int/lit8 p2, p1, 0x1
 
-    iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p6, p4, p1
-
-    .line 35
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    add-int/lit8 p2, p1, 0x1
-
+    .line 7
     iput p2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
 
     aput p7, p4, p1
@@ -352,10 +293,88 @@
     return-void
 .end method
 
-.method public final a(I)V
+.method public e(FF)V
     .locals 3
 
-    .line 7
+    const/4 v0, 0x1
+
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->f(B)V
+
+    const/4 v0, 0x2
+
+    .line 2
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->g(I)V
+
+    .line 3
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    aput p1, v0, v1
+
+    add-int/lit8 p1, v2, 0x1
+
+    .line 4
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
+
+    aput p2, v0, v2
+
+    return-void
+.end method
+
+.method public final f(B)V
+    .locals 4
+
+    .line 1
+    iget v0, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
+
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
+
+    array-length v2, v1
+
+    if-ne v0, v2, :cond_0
+
+    .line 2
+    array-length v0, v1
+
+    mul-int/lit8 v0, v0, 0x2
+
+    new-array v0, v0, [B
+
+    .line 3
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 4
+    iput-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
+
+    .line 5
+    :cond_0
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
+
+    aput-byte p1, v0, v1
+
+    return-void
+.end method
+
+.method public final g(I)V
+    .locals 3
+
+    .line 1
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
     array-length v1, v0
@@ -366,28 +385,28 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 8
+    .line 2
     array-length p1, v0
 
     mul-int/lit8 p1, p1, 0x2
 
     new-array p1, p1, [F
 
-    .line 9
+    .line 3
     array-length v1, v0
 
     const/4 v2, 0x0
 
     invoke-static {v0, v2, p1, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 10
+    .line 4
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
     :cond_0
     return-void
 .end method
 
-.method public a(Lcom/caverock/androidsvg/SVG$w;)V
+.method public h(Lcom/caverock/androidsvg/SVG$w;)V
     .locals 14
 
     const/4 v0, 0x0
@@ -396,13 +415,13 @@
 
     const/4 v2, 0x0
 
-    .line 36
+    .line 1
     :goto_0
     iget v3, p0, Lcom/caverock/androidsvg/SVG$v;->b:I
 
     if-ge v1, v3, :cond_7
 
-    .line 37
+    .line 2
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG$v;->a:[B
 
     aget-byte v3, v3, v1
@@ -448,7 +467,7 @@
     :cond_1
     const/4 v11, 0x0
 
-    .line 38
+    .line 3
     :goto_2
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
@@ -474,19 +493,19 @@
 
     move-object v6, p1
 
-    invoke-interface/range {v6 .. v13}, Lcom/caverock/androidsvg/SVG$w;->a(FFFZZFF)V
+    invoke-interface/range {v6 .. v13}, Lcom/caverock/androidsvg/SVG$w;->d(FFFZZFF)V
 
     move v2, v4
 
     goto :goto_4
 
-    .line 39
+    .line 4
     :cond_2
     invoke-interface {p1}, Lcom/caverock/androidsvg/SVG$w;->close()V
 
     goto :goto_4
 
-    .line 40
+    .line 5
     :cond_3
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
@@ -512,7 +531,7 @@
 
     goto :goto_4
 
-    .line 41
+    .line 6
     :cond_4
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
@@ -542,11 +561,11 @@
 
     move-object v5, p1
 
-    invoke-interface/range {v5 .. v11}, Lcom/caverock/androidsvg/SVG$w;->a(FFFFFF)V
+    invoke-interface/range {v5 .. v11}, Lcom/caverock/androidsvg/SVG$w;->c(FFFFFF)V
 
     goto :goto_4
 
-    .line 42
+    .line 7
     :cond_5
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
@@ -558,11 +577,11 @@
 
     aget v3, v3, v4
 
-    invoke-interface {p1, v2, v3}, Lcom/caverock/androidsvg/SVG$w;->b(FF)V
+    invoke-interface {p1, v2, v3}, Lcom/caverock/androidsvg/SVG$w;->e(FF)V
 
     goto :goto_3
 
-    .line 43
+    .line 8
     :cond_6
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
 
@@ -574,7 +593,7 @@
 
     aget v3, v3, v4
 
-    invoke-interface {p1, v2, v3}, Lcom/caverock/androidsvg/SVG$w;->a(FF)V
+    invoke-interface {p1, v2, v3}, Lcom/caverock/androidsvg/SVG$w;->b(FF)V
 
     :goto_3
     move v2, v5
@@ -588,7 +607,7 @@
     return-void
 .end method
 
-.method public a()Z
+.method public i()Z
     .locals 1
 
     .line 1
@@ -605,51 +624,4 @@
 
     :goto_0
     return v0
-.end method
-
-.method public b(FF)V
-    .locals 3
-
-    const/4 v0, 0x1
-
-    .line 1
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(B)V
-
-    const/4 v0, 0x2
-
-    .line 2
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(I)V
-
-    .line 3
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVG$v;->c:[F
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p1, v0, v1
-
-    .line 4
-    iget p1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    add-int/lit8 v1, p1, 0x1
-
-    iput v1, p0, Lcom/caverock/androidsvg/SVG$v;->d:I
-
-    aput p2, v0, p1
-
-    return-void
-.end method
-
-.method public close()V
-    .locals 1
-
-    const/16 v0, 0x8
-
-    .line 1
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG$v;->a(B)V
-
-    return-void
 .end method

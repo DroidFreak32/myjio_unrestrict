@@ -5,15 +5,29 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/jiny/android/e/f$a;,
         Lcom/jiny/android/e/f$c;,
-        Lcom/jiny/android/e/f$d;,
         Lcom/jiny/android/e/f$b;
     }
 .end annotation
 
 
 # direct methods
-.method public static a(Landroid/app/Activity;Lcom/jiny/android/e/f$c;)Landroid/view/View;
+.method public static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a(Landroid/app/Activity;Lcom/jiny/android/e/f$a;)Landroid/view/View;
     .locals 2
 
     invoke-static {p0}, Lcom/jiny/android/e/f;->a(Landroid/app/Activity;)Ljava/util/List;
@@ -51,29 +65,160 @@
 
     move-result-object p0
 
-    check-cast p0, Lcom/jiny/android/e/f$d;
+    check-cast p0, Lcom/jiny/android/e/f$c;
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p0}, Lcom/jiny/android/e/f$d;->c()Z
+    invoke-virtual {p0}, Lcom/jiny/android/e/f$c;->c()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1}, Lcom/jiny/android/e/f$c;->i()V
+    invoke-interface {p1}, Lcom/jiny/android/e/f$a;->i()V
 
     :cond_1
-    iget-object p0, p0, Lcom/jiny/android/e/f$d;->a:Landroid/view/View;
+    iget-object p0, p0, Lcom/jiny/android/e/f$c;->a:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Landroid/app/Activity;)Ljava/util/List;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            ")",
+            "Ljava/util/List<",
+            "Lcom/jiny/android/e/f$c;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lcom/jiny/android/e/f;->g(Landroid/app/Activity;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    return-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_0
+    if-ltz v1, :cond_3
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/jiny/android/e/f$c;
+
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->d()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->b()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->e()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_1
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    :cond_2
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
+
+    :cond_3
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return-object v0
+
+    :cond_4
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/jiny/android/e/f$c;
+
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->c()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/jiny/android/e/f$c;
+
+    iget-object v2, v2, Lcom/jiny/android/e/f$c;->a:Landroid/view/View;
+
+    if-eq p0, v2, :cond_5
+
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    :cond_5
+    return-object v0
+.end method
+
+.method public static b(Landroid/app/Activity;)Landroid/view/View;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lcom/jiny/android/e/f;->a(Landroid/app/Activity;Lcom/jiny/android/e/f$a;)Landroid/view/View;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     :try_start_0
-    invoke-static {p0, p1}, Lcom/jiny/android/e/f;->b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Lcom/jiny/android/e/f;->e(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
     :try_end_0
@@ -88,19 +233,24 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lhl0;->a(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/jiny/android/g;->a(Ljava/lang/String;)V
 
     new-instance p1, Lcom/jiny/android/e/f$b;
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, p0, v0}, Lcom/jiny/android/e/f$b;-><init>(Ljava/lang/Exception;Lcom/jiny/android/e/f$a;)V
+    invoke-direct {p1, p0, v0}, Lcom/jiny/android/e/f$b;-><init>(Ljava/lang/Exception;Lcom/jiny/android/e/f$d;)V
 
     throw p1
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+.method public static c(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NoSuchFieldException;
+        }
+    .end annotation
 
     move-object v0, p1
 
@@ -174,132 +324,13 @@
     throw v0
 .end method
 
-.method public static a(Landroid/app/Activity;)Ljava/util/List;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/app/Activity;",
-            ")",
-            "Ljava/util/List<",
-            "Lcom/jiny/android/e/f$d;",
-            ">;"
-        }
-    .end annotation
-
-    invoke-static {p0}, Lcom/jiny/android/e/f;->c(Landroid/app/Activity;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    :goto_0
-    if-ltz v1, :cond_3
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/jiny/android/e/f$d;
-
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->d()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->b()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->e()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    :cond_1
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    :cond_2
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return-object v0
-
-    :cond_4
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/jiny/android/e/f$d;
-
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->c()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/jiny/android/e/f$d;
-
-    iget-object v2, v2, Lcom/jiny/android/e/f$d;->a:Landroid/view/View;
-
-    if-eq p0, v2, :cond_5
-
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    :cond_5
-    return-object v0
-.end method
-
-.method public static a(Ljava/util/List;)V
+.method public static d(Ljava/util/List;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/jiny/android/e/f$d;",
+            "Lcom/jiny/android/e/f$c;",
             ">;)V"
         }
     .end annotation
@@ -324,19 +355,17 @@
 
     move-result-object v3
 
-    check-cast v3, Lcom/jiny/android/e/f$d;
+    check-cast v3, Lcom/jiny/android/e/f$c;
 
-    iget-object v4, v3, Lcom/jiny/android/e/f$d;->b:Landroid/graphics/Rect;
+    iget-object v3, v3, Lcom/jiny/android/e/f$c;->b:Landroid/graphics/Rect;
 
-    iget v4, v4, Landroid/graphics/Rect;->top:I
+    iget v4, v3, Landroid/graphics/Rect;->top:I
 
     if-ge v4, v1, :cond_1
 
     move v1, v4
 
     :cond_1
-    iget-object v3, v3, Lcom/jiny/android/e/f$d;->b:Landroid/graphics/Rect;
-
     iget v3, v3, Landroid/graphics/Rect;->left:I
 
     if-ge v3, v2, :cond_0
@@ -361,9 +390,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/jiny/android/e/f$d;
+    check-cast v0, Lcom/jiny/android/e/f$c;
 
-    iget-object v0, v0, Lcom/jiny/android/e/f$d;->b:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcom/jiny/android/e/f$c;->b:Landroid/graphics/Rect;
 
     neg-int v3, v2
 
@@ -377,26 +406,20 @@
     return-void
 .end method
 
-.method public static b(Landroid/app/Activity;)Landroid/view/View;
+.method public static e(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0}, Lcom/jiny/android/e/f;->a(Landroid/app/Activity;Lcom/jiny/android/e/f$c;)Landroid/view/View;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NoSuchFieldException;,
+            Ljava/lang/IllegalAccessException;
+        }
+    .end annotation
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/jiny/android/e/f;->a(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+    invoke-static {p0, v0}, Lcom/jiny/android/e/f;->c(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
 
     move-result-object p0
 
@@ -411,13 +434,13 @@
     return-object p0
 .end method
 
-.method public static b(Ljava/util/List;)V
+.method public static f(Ljava/util/List;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/jiny/android/e/f$d;",
+            "Lcom/jiny/android/e/f$c;",
             ">;)V"
         }
     .end annotation
@@ -448,9 +471,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/jiny/android/e/f$d;
+    check-cast v2, Lcom/jiny/android/e/f$c;
 
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->a()Z
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->a()Z
 
     move-result v3
 
@@ -459,7 +482,7 @@
     goto :goto_2
 
     :cond_1
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->f()Landroid/os/IBinder;
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->f()Landroid/os/IBinder;
 
     move-result-object v3
 
@@ -481,19 +504,19 @@
 
     move-result-object v4
 
-    check-cast v4, Lcom/jiny/android/e/f$d;
+    check-cast v4, Lcom/jiny/android/e/f$c;
 
-    invoke-virtual {v4}, Lcom/jiny/android/e/f$d;->c()Z
+    invoke-virtual {v4}, Lcom/jiny/android/e/f$c;->c()Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    invoke-virtual {v4}, Lcom/jiny/android/e/f$d;->f()Landroid/os/IBinder;
+    invoke-virtual {v4}, Lcom/jiny/android/e/f$c;->f()Landroid/os/IBinder;
 
     move-result-object v5
 
-    invoke-virtual {v2}, Lcom/jiny/android/e/f$d;->f()Landroid/os/IBinder;
+    invoke-virtual {v2}, Lcom/jiny/android/e/f$c;->f()Landroid/os/IBinder;
 
     move-result-object v6
 
@@ -520,7 +543,7 @@
     return-void
 .end method
 
-.method public static c(Landroid/app/Activity;)Ljava/util/List;
+.method public static g(Landroid/app/Activity;)Ljava/util/List;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -528,7 +551,7 @@
             "Landroid/app/Activity;",
             ")",
             "Ljava/util/List<",
-            "Lcom/jiny/android/e/f$d;",
+            "Lcom/jiny/android/e/f$c;",
             ">;"
         }
     .end annotation
@@ -552,39 +575,37 @@
 
     if-gt v1, v2, :cond_1
 
-    const-string v1, "mWindowManager"
+    const-string v2, "mWindowManager"
 
     goto :goto_0
 
     :cond_1
-    const-string v1, "mGlobal"
+    const-string v2, "mGlobal"
 
     :goto_0
-    invoke-static {v1, p0}, Lcom/jiny/android/e/f;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2, p0}, Lcom/jiny/android/e/f;->b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    const-string v1, "mRoots"
+    const-string v2, "mRoots"
 
-    invoke-static {v1, p0}, Lcom/jiny/android/e/f;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2, p0}, Lcom/jiny/android/e/f;->b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "mParams"
+    const-string v3, "mParams"
 
-    invoke-static {v2, p0}, Lcom/jiny/android/e/f;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3, p0}, Lcom/jiny/android/e/f;->b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
-
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x13
 
-    if-lt v2, v3, :cond_2
+    if-lt v1, v3, :cond_2
 
-    check-cast v1, Ljava/util/List;
+    check-cast v2, Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     move-result-object v1
 
@@ -603,6 +624,8 @@
     goto :goto_1
 
     :cond_2
+    move-object v1, v2
+
     check-cast v1, [Ljava/lang/Object;
 
     :goto_1
@@ -621,7 +644,7 @@
 
     const-string v5, "mView"
 
-    invoke-static {v5, v4}, Lcom/jiny/android/e/f;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5, v4}, Lcom/jiny/android/e/f;->b(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -631,7 +654,7 @@
 
     const-string v4, "null View stored as root in Global window manager, skipping"
 
-    invoke-static {v4}, Lhl0;->b(Ljava/lang/String;)V
+    invoke-static {v4}, Lcom/jiny/android/g;->b(Ljava/lang/String;)V
 
     goto :goto_3
 
@@ -676,11 +699,11 @@
 
     if-lez v5, :cond_4
 
-    new-instance v5, Lcom/jiny/android/e/f$d;
+    new-instance v5, Lcom/jiny/android/e/f$c;
 
     aget-object v6, p0, v3
 
-    invoke-direct {v5, v4, v7, v6}, Lcom/jiny/android/e/f$d;-><init>(Landroid/view/View;Landroid/graphics/Rect;Landroid/view/WindowManager$LayoutParams;)V
+    invoke-direct {v5, v4, v7, v6}, Lcom/jiny/android/e/f$c;-><init>(Landroid/view/View;Landroid/graphics/Rect;Landroid/view/WindowManager$LayoutParams;)V
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -704,9 +727,9 @@
     return-object p0
 
     :cond_6
-    invoke-static {v0}, Lcom/jiny/android/e/f;->a(Ljava/util/List;)V
+    invoke-static {v0}, Lcom/jiny/android/e/f;->d(Ljava/util/List;)V
 
-    invoke-static {v0}, Lcom/jiny/android/e/f;->b(Ljava/util/List;)V
+    invoke-static {v0}, Lcom/jiny/android/e/f;->f(Ljava/util/List;)V
 
     return-object v0
 .end method

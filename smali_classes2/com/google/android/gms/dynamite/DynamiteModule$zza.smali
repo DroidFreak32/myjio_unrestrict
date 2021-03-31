@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/dynamite/DynamiteModule$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -14,11 +15,11 @@
 
 
 # instance fields
-.field public zzio:Landroid/database/Cursor;
+.field public zza:Landroid/database/Cursor;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -27,7 +28,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/dynamite/zza;)V
+.method public synthetic constructor <init>(Lcom/google/android/gms/dynamite/zzb;)V
     .locals 0
 
     .line 2

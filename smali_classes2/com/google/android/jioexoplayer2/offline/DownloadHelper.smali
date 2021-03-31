@@ -24,6 +24,10 @@
 
 # virtual methods
 .method public abstract getDownloadAction([BLjava/util/List;)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -39,6 +43,10 @@
 .end method
 
 .method public abstract getRemoveAction([B)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract getTrackGroups(I)Lcom/google/android/jioexoplayer2/source/TrackGroupArray;
@@ -83,4 +91,9 @@
 .end method
 
 .method public abstract prepareInternal()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method

@@ -15,18 +15,20 @@
 
 
 # instance fields
-.field public final mAccount:Landroid/accounts/Account;
+.field private final mAccount:Landroid/accounts/Account;
 
-.field public final mAccountManager:Landroid/accounts/AccountManager;
+.field private final mAccountManager:Landroid/accounts/AccountManager;
 
-.field public final mAuthTokenType:Ljava/lang/String;
+.field private final mAuthTokenType:Ljava/lang/String;
 
-.field public final mNotifyAuthFailure:Z
+.field private final mNotifyAuthFailure:Z
 
 
 # direct methods
 .method public constructor <init>(Landroid/accounts/AccountManager;Landroid/accounts/Account;Ljava/lang/String;Z)V
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,6 +85,11 @@
 
 .method public getAuthToken()Ljava/lang/String;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/android/volley/toolbox/AndroidAuthenticator;->mAccountManager:Landroid/accounts/AccountManager;
@@ -97,11 +104,12 @@
 
     const/4 v5, 0x0
 
+    .line 2
     invoke-virtual/range {v0 .. v5}, Landroid/accounts/AccountManager;->getAuthToken(Landroid/accounts/Account;Ljava/lang/String;ZLandroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
     move-result-object v0
 
-    .line 2
+    .line 3
     :try_start_0
     invoke-interface {v0}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
 
@@ -113,7 +121,7 @@
 
     const/4 v2, 0x0
 
-    .line 3
+    .line 4
     invoke-interface {v0}, Landroid/accounts/AccountManagerFuture;->isDone()Z
 
     move-result v3
@@ -128,7 +136,7 @@
 
     const-string v0, "intent"
 
-    .line 4
+    .line 5
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
@@ -137,14 +145,14 @@
 
     const-string v0, "authtoken"
 
-    .line 5
+    .line 6
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_0
 
-    .line 6
+    .line 7
     :cond_0
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -152,7 +160,7 @@
 
     check-cast v0, Landroid/content/Intent;
 
-    .line 7
+    .line 8
     new-instance v1, Lcom/android/volley/AuthFailureError;
 
     invoke-direct {v1, v0}, Lcom/android/volley/AuthFailureError;-><init>(Landroid/content/Intent;)V
@@ -165,7 +173,7 @@
 
     return-object v2
 
-    .line 8
+    .line 9
     :cond_2
     new-instance v0, Lcom/android/volley/AuthFailureError;
 
@@ -192,7 +200,7 @@
     :catch_0
     move-exception v0
 
-    .line 9
+    .line 10
     new-instance v1, Lcom/android/volley/AuthFailureError;
 
     const-string v2, "Error while retrieving auth token"

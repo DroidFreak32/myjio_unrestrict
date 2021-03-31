@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final parsers:Ljava/util/List;
+.field private final parsers:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -36,6 +36,10 @@
 # virtual methods
 .method public declared-synchronized add(Lcom/bumptech/glide/load/ImageHeaderParser;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/ImageHeaderParser;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 
@@ -62,6 +66,9 @@
 
 .method public declared-synchronized getParsers()Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

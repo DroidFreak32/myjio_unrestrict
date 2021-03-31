@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
 
 
 # annotations
@@ -10,13 +10,19 @@
 
 
 # static fields
-.field public static final zzb:Ljava/lang/reflect/Method;
+.field private static final zzb:Ljava/lang/reflect/Method;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static final zzc:Ljava/lang/reflect/Method;
+.field private static final zzc:Ljava/lang/reflect/Method;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final zza:Landroid/app/job/JobScheduler;
+.field private final zza:Landroid/app/job/JobScheduler;
 
 
 # direct methods
@@ -40,7 +46,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/app/job/JobScheduler;)V
+.method private constructor <init>(Landroid/app/job/JobScheduler;)V
     .locals 0
 
     .line 1
@@ -170,51 +176,51 @@
     return p0
 .end method
 
-.method public static zza()Ljava/lang/reflect/Method;
-    .locals 5
+.method private static zza()Ljava/lang/reflect/Method;
+    .locals 6
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const-class v0, Ljava/lang/String;
 
-    const/16 v1, 0x18
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v0, v1, :cond_0
+    const/16 v2, 0x18
+
+    if-lt v1, v2, :cond_0
 
     .line 2
     :try_start_0
-    const-class v0, Landroid/app/job/JobScheduler;
+    const-class v1, Landroid/app/job/JobScheduler;
 
-    const-string v1, "scheduleAsPackage"
+    const-string v2, "scheduleAsPackage"
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    new-array v2, v2, [Ljava/lang/Class;
+    new-array v3, v3, [Ljava/lang/Class;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    const-class v4, Landroid/app/job/JobInfo;
+    const-class v5, Landroid/app/job/JobInfo;
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const-class v4, Ljava/lang/String;
+    aput-object v0, v3, v4
 
-    aput-object v4, v2, v3
+    const/4 v4, 0x2
 
-    const/4 v3, 0x2
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    aput-object v5, v3, v4
 
-    aput-object v4, v2, v3
+    const/4 v4, 0x3
 
-    const/4 v3, 0x3
+    aput-object v0, v3, v4
 
-    const-class v4, Ljava/lang/String;
-
-    aput-object v4, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
     :try_end_0
@@ -240,8 +246,10 @@
     return-object v0
 .end method
 
-.method public static zzb()Ljava/lang/reflect/Method;
+.method private static zzb()Ljava/lang/reflect/Method;
     .locals 3
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -282,7 +290,7 @@
     return-object v1
 .end method
 
-.method public static zzc()I
+.method private static zzc()I
     .locals 4
 
     .line 1

@@ -22,4 +22,6 @@
 
 # virtual methods
 .method public abstract build()Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method

@@ -1,14 +1,15 @@
 .class public final Lcom/google/android/gms/tasks/zzj;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zzg:Lcom/google/android/gms/tasks/Task;
+.field private final synthetic zza:Lcom/google/android/gms/tasks/Task;
 
-.field public final synthetic zzm:Lcom/google/android/gms/tasks/zzi;
+.field private final synthetic zzb:Lcom/google/android/gms/tasks/zzi;
 
 
 # direct methods
@@ -16,9 +17,9 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzj;->zzm:Lcom/google/android/gms/tasks/zzi;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzj;->zzb:Lcom/google/android/gms/tasks/zzi;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzj;->zzg:Lcom/google/android/gms/tasks/Task;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzj;->zza:Lcom/google/android/gms/tasks/Task;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +32,7 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzj;->zzm:Lcom/google/android/gms/tasks/zzi;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzj;->zzb:Lcom/google/android/gms/tasks/zzi;
 
     invoke-static {v0}, Lcom/google/android/gms/tasks/zzi;->zza(Lcom/google/android/gms/tasks/zzi;)Ljava/lang/Object;
 
@@ -41,7 +42,7 @@
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzj;->zzm:Lcom/google/android/gms/tasks/zzi;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzj;->zzb:Lcom/google/android/gms/tasks/zzi;
 
     invoke-static {v1}, Lcom/google/android/gms/tasks/zzi;->zzb(Lcom/google/android/gms/tasks/zzi;)Lcom/google/android/gms/tasks/OnCompleteListener;
 
@@ -50,13 +51,13 @@
     if-eqz v1, :cond_0
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzj;->zzm:Lcom/google/android/gms/tasks/zzi;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzj;->zzb:Lcom/google/android/gms/tasks/zzi;
 
     invoke-static {v1}, Lcom/google/android/gms/tasks/zzi;->zzb(Lcom/google/android/gms/tasks/zzi;)Lcom/google/android/gms/tasks/OnCompleteListener;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/tasks/zzj;->zzg:Lcom/google/android/gms/tasks/Task;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzj;->zza:Lcom/google/android/gms/tasks/Task;
 
     invoke-interface {v1, v2}, Lcom/google/android/gms/tasks/OnCompleteListener;->onComplete(Lcom/google/android/gms/tasks/Task;)V
 

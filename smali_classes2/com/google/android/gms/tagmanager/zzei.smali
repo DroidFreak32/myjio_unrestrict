@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzaix:Ljava/lang/String;
+.field private static final zzaix:Ljava/lang/String;
 
-.field public static final zzaiy:Ljava/lang/String;
+.field private static final zzaiy:Ljava/lang/String;
 
 
 # direct methods

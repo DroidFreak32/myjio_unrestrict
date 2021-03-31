@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public count:I
+.field private count:I
 
-.field public firstTime:I
+.field private firstTime:I
 
-.field public lastTime:I
+.field private lastTime:I
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
 
 
 # direct methods

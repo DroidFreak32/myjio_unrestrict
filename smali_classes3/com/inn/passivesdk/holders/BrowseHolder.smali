@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public responseTime:Ljava/lang/Double;
+.field private responseTime:Ljava/lang/Double;
 
-.field public statusCode:Ljava/lang/Integer;
+.field private statusCode:Ljava/lang/Integer;
 
-.field public url:Ljava/lang/String;
+.field private url:Ljava/lang/String;
 
 
 # direct methods
@@ -23,25 +23,52 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/Double;)V
+.method public getResponseTime()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BrowseHolder;->responseTime:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public getStatusCode()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BrowseHolder;->statusCode:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getUrl()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BrowseHolder;->url:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setResponseTime(Ljava/lang/Double;)V
     .locals 0
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/BrowseHolder;->responseTime:Ljava/lang/Double;
 
     return-void
 .end method
 
-.method public a(Ljava/lang/Integer;)V
+.method public setStatusCode(Ljava/lang/Integer;)V
     .locals 0
 
-    .line 3
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/BrowseHolder;->statusCode:Ljava/lang/Integer;
 
     return-void
 .end method
 
-.method public a(Ljava/lang/String;)V
+.method public setUrl(Ljava/lang/String;)V
     .locals 0
 
     .line 1

@@ -1,57 +1,46 @@
 .class public final synthetic Lcom/google/android/gms/internal/ads/zzwe;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzvs;
+.implements Lcom/google/android/gms/internal/ads/zzazc;
 
 
-# instance fields
-.field public final zzbtf:Lcom/google/android/gms/internal/ads/zzwc;
-
-.field public final zzbti:Lcom/google/android/gms/internal/ads/zzwt;
-
-.field public final zzbtj:Lcom/google/android/gms/internal/ads/zzvr;
+# static fields
+.field public static final zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzwc;Lcom/google/android/gms/internal/ads/zzwt;Lcom/google/android/gms/internal/ads/zzvr;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzwe;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzwe;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzwe;->zzbxv:Lcom/google/android/gms/internal/ads/zzazc;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwe;->zzbtf:Lcom/google/android/gms/internal/ads/zzwc;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzwe;->zzbti:Lcom/google/android/gms/internal/ads/zzwt;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzwe;->zzbtj:Lcom/google/android/gms/internal/ads/zzvr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zznf()V
-    .locals 5
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwe;->zzbtf:Lcom/google/android/gms/internal/ads/zzwc;
+    check-cast p1, Landroid/os/IBinder;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwe;->zzbti:Lcom/google/android/gms/internal/ads/zzwt;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaxu;->zzat(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzaxv;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzwe;->zzbtj:Lcom/google/android/gms/internal/ads/zzvr;
+    move-result-object p1
 
-    .line 2
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzalo;->zzcvi:Landroid/os/Handler;
-
-    new-instance v4, Lcom/google/android/gms/internal/ads/zzwf;
-
-    invoke-direct {v4, v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzwf;-><init>(Lcom/google/android/gms/internal/ads/zzwc;Lcom/google/android/gms/internal/ads/zzwt;Lcom/google/android/gms/internal/ads/zzvr;)V
-
-    sget v0, Lcom/google/android/gms/internal/ads/zzwn;->zzbts:I
-
-    int-to-long v0, v0
-
-    invoke-virtual {v3, v4, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    return-void
+    return-object p1
 .end method

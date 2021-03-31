@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/measurement/api/AppMeasurementSdk$ConditionalUserProperty;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-sdk-api@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-sdk-api@@18.0.0"
 
 
 # annotations
@@ -95,7 +95,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

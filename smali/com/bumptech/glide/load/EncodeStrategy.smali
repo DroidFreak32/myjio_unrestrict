@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/bumptech/glide/load/EncodeStrategy;
+.field private static final synthetic $VALUES:[Lcom/bumptech/glide/load/EncodeStrategy;
 
 .field public static final enum NONE:Lcom/bumptech/glide/load/EncodeStrategy;
 
@@ -25,64 +25,58 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/EncodeStrategy;
 
-    const/4 v1, 0x0
+    const-string v1, "SOURCE"
 
-    const-string v2, "SOURCE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/bumptech/glide/load/EncodeStrategy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/load/EncodeStrategy;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/bumptech/glide/load/EncodeStrategy;->SOURCE:Lcom/bumptech/glide/load/EncodeStrategy;
 
     .line 2
-    new-instance v0, Lcom/bumptech/glide/load/EncodeStrategy;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/bumptech/glide/load/EncodeStrategy;
 
     const-string v3, "TRANSFORMED"
 
-    invoke-direct {v0, v3, v2}, Lcom/bumptech/glide/load/EncodeStrategy;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/bumptech/glide/load/EncodeStrategy;->TRANSFORMED:Lcom/bumptech/glide/load/EncodeStrategy;
+    invoke-direct {v1, v3, v4}, Lcom/bumptech/glide/load/EncodeStrategy;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/bumptech/glide/load/EncodeStrategy;->TRANSFORMED:Lcom/bumptech/glide/load/EncodeStrategy;
 
     .line 3
-    new-instance v0, Lcom/bumptech/glide/load/EncodeStrategy;
+    new-instance v3, Lcom/bumptech/glide/load/EncodeStrategy;
 
-    const/4 v3, 0x2
+    const-string v5, "NONE"
 
-    const-string v4, "NONE"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/bumptech/glide/load/EncodeStrategy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/bumptech/glide/load/EncodeStrategy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/EncodeStrategy;->NONE:Lcom/bumptech/glide/load/EncodeStrategy;
+    sput-object v3, Lcom/bumptech/glide/load/EncodeStrategy;->NONE:Lcom/bumptech/glide/load/EncodeStrategy;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/bumptech/glide/load/EncodeStrategy;
+    new-array v5, v5, [Lcom/bumptech/glide/load/EncodeStrategy;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/bumptech/glide/load/EncodeStrategy;->SOURCE:Lcom/bumptech/glide/load/EncodeStrategy;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/bumptech/glide/load/EncodeStrategy;->TRANSFORMED:Lcom/bumptech/glide/load/EncodeStrategy;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/bumptech/glide/load/EncodeStrategy;->NONE:Lcom/bumptech/glide/load/EncodeStrategy;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/bumptech/glide/load/EncodeStrategy;->$VALUES:[Lcom/bumptech/glide/load/EncodeStrategy;
+    sput-object v5, Lcom/bumptech/glide/load/EncodeStrategy;->$VALUES:[Lcom/bumptech/glide/load/EncodeStrategy;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

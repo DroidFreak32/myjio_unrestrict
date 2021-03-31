@@ -1,14 +1,19 @@
 .class public final Lcom/google/android/gms/common/api/UnsupportedApiCallException;
 .super Ljava/lang/UnsupportedOperationException;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # instance fields
-.field public final zzas:Lcom/google/android/gms/common/Feature;
+.field private final zza:Lcom/google/android/gms/common/Feature;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/Feature;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/Feature;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -16,7 +21,7 @@
     invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/UnsupportedApiCallException;->zzas:Lcom/google/android/gms/common/Feature;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/UnsupportedApiCallException;->zza:Lcom/google/android/gms/common/Feature;
 
     return-void
 .end method
@@ -25,9 +30,11 @@
 # virtual methods
 .method public final getMessage()Ljava/lang/String;
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/UnsupportedApiCallException;->zzas:Lcom/google/android/gms/common/Feature;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/UnsupportedApiCallException;->zza:Lcom/google/android/gms/common/Feature;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

@@ -8,7 +8,7 @@
 
 
 # static fields
-.field public static zzaib:Lcom/google/android/gms/tagmanager/zzdj;
+.field private static zzaib:Lcom/google/android/gms/tagmanager/zzdj;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field

@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations

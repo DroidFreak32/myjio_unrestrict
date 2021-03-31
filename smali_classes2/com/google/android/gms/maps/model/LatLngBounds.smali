@@ -119,8 +119,6 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget-wide v2, p1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
-
     .line 5
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
@@ -173,7 +171,7 @@
     return-object p0
 .end method
 
-.method public static zza(DD)D
+.method private static zza(DD)D
     .locals 0
 
     sub-double/2addr p0, p2
@@ -239,7 +237,7 @@
     return v5
 .end method
 
-.method public static zzb(DD)D
+.method private static zzb(DD)D
     .locals 0
 
     sub-double/2addr p2, p0
@@ -582,18 +580,18 @@
     .line 2
     iget-object v1, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->southwest:Lcom/google/android/gms/maps/model/LatLng;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 3
     iget-object v1, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->northeast:Lcom/google/android/gms/maps/model/LatLng;
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 4
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V

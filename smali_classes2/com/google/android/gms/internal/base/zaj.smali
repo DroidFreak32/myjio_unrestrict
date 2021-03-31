@@ -1,61 +1,59 @@
 .class public final Lcom/google/android/gms/internal/base/zaj;
-.super Landroid/widget/ImageView;
+.super Landroid/graphics/drawable/Drawable$ConstantState;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+
+# instance fields
+.field public zaa:I
+
+.field public zab:I
 
 
 # direct methods
-.method public static zaa(Landroid/net/Uri;)V
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p0
-.end method
-
-.method public static zach()I
+.method public constructor <init>(Lcom/google/android/gms/internal/base/zaj;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/internal/base/zaj;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    if-eqz p1, :cond_0
 
-    throw v0
-.end method
+    .line 2
+    iget v0, p1, Lcom/google/android/gms/internal/base/zaj;->zaa:I
 
-.method public static zai(I)V
-    .locals 0
+    iput v0, p0, Lcom/google/android/gms/internal/base/zaj;->zaa:I
 
-    .line 1
-    new-instance p0, Ljava/lang/NoSuchMethodError;
+    .line 3
+    iget p1, p1, Lcom/google/android/gms/internal/base/zaj;->zab:I
 
-    invoke-direct {p0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    iput p1, p0, Lcom/google/android/gms/internal/base/zaj;->zab:I
 
-    throw p0
+    :cond_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final onDraw(Landroid/graphics/Canvas;)V
-    .locals 0
+.method public final getChangingConfigurations()I
+    .locals 1
 
     .line 1
-    new-instance p1, Ljava/lang/NoSuchMethodError;
+    iget v0, p0, Lcom/google/android/gms/internal/base/zaj;->zaa:I
 
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
+    return v0
 .end method
 
-.method public final onMeasure(II)V
-    .locals 0
+.method public final newDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 1
 
     .line 1
-    new-instance p1, Ljava/lang/NoSuchMethodError;
+    new-instance v0, Lcom/google/android/gms/internal/base/zaf;
 
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/base/zaf;-><init>(Lcom/google/android/gms/internal/base/zaj;)V
 
-    throw p1
+    return-object v0
 .end method

@@ -1,34 +1,44 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaai;
-.super Lcom/google/android/gms/common/api/internal/zabf;
+.super Lcom/google/android/gms/common/api/internal/zaay;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic zafv:Lcom/google/android/gms/common/api/internal/zaah;
+.field private final synthetic zaa:Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaah;Lcom/google/android/gms/common/api/internal/zabd;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaag;Lcom/google/android/gms/common/api/internal/zaaw;Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaai;->zafv:Lcom/google/android/gms/common/api/internal/zaah;
+    iput-object p3, p0, Lcom/google/android/gms/common/api/internal/zaai;->zaa:Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
 
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/zabf;-><init>(Lcom/google/android/gms/common/api/internal/zabd;)V
+    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/zaay;-><init>(Lcom/google/android/gms/common/api/internal/zaaw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zaan()V
-    .locals 2
+.method public final zaa()V
+    .locals 4
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaai;->zafv:Lcom/google/android/gms/common/api/internal/zaah;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaai;->zaa:Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
 
-    const/4 v1, 0x1
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/zaah;->onConnectionSuspended(I)V
+    const/16 v2, 0x10
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v2, v3}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;->onReportServiceBinding(Lcom/google/android/gms/common/ConnectionResult;)V
 
     return-void
 .end method

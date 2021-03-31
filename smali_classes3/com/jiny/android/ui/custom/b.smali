@@ -11,11 +11,11 @@
 
 
 # static fields
-.field public static volatile t:Lcom/jiny/android/ui/custom/b;
+.field public static volatile b:Lcom/jiny/android/ui/custom/b;
 
 
 # instance fields
-.field public s:Landroid/graphics/drawable/Animatable;
+.field public a:Landroid/graphics/drawable/Animatable;
 
 
 # direct methods
@@ -32,7 +32,7 @@
 .method public static synthetic a(Lcom/jiny/android/ui/custom/b;)Landroid/graphics/drawable/Animatable;
     .locals 0
 
-    iget-object p0, p0, Lcom/jiny/android/ui/custom/b;->s:Landroid/graphics/drawable/Animatable;
+    iget-object p0, p0, Lcom/jiny/android/ui/custom/b;->a:Landroid/graphics/drawable/Animatable;
 
     return-object p0
 .end method
@@ -45,7 +45,7 @@
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Lcom/jiny/android/ui/custom/b;->t:Lcom/jiny/android/ui/custom/b;
+    sget-object v1, Lcom/jiny/android/ui/custom/b;->b:Lcom/jiny/android/ui/custom/b;
 
     if-nez v1, :cond_0
 
@@ -58,17 +58,17 @@
     :try_start_1
     new-instance v2, Lcom/jiny/android/ui/custom/b;
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v3}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v3
 
     invoke-direct {v2, v3}, Lcom/jiny/android/ui/custom/b;-><init>(Landroid/content/Context;)V
 
-    sput-object v2, Lcom/jiny/android/ui/custom/b;->t:Lcom/jiny/android/ui/custom/b;
+    sput-object v2, Lcom/jiny/android/ui/custom/b;->b:Lcom/jiny/android/ui/custom/b;
 
     monitor-exit v1
 
@@ -86,7 +86,7 @@
 
     :cond_0
     :goto_0
-    sget-object v1, Lcom/jiny/android/ui/custom/b;->t:Lcom/jiny/android/ui/custom/b;
+    sget-object v1, Lcom/jiny/android/ui/custom/b;->b:Lcom/jiny/android/ui/custom/b;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -162,9 +162,7 @@
 
     check-cast v1, Landroid/graphics/drawable/Animatable;
 
-    iput-object v1, p0, Lcom/jiny/android/ui/custom/b;->s:Landroid/graphics/drawable/Animatable;
-
-    iget-object v1, p0, Lcom/jiny/android/ui/custom/b;->s:Landroid/graphics/drawable/Animatable;
+    iput-object v1, p0, Lcom/jiny/android/ui/custom/b;->a:Landroid/graphics/drawable/Animatable;
 
     invoke-interface {v1}, Landroid/graphics/drawable/Animatable;->start()V
 
@@ -189,7 +187,7 @@
 .method public e()V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/b;->s:Landroid/graphics/drawable/Animatable;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/b;->a:Landroid/graphics/drawable/Animatable;
 
     if-nez v0, :cond_0
 
@@ -200,7 +198,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/b;->s:Landroid/graphics/drawable/Animatable;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/b;->a:Landroid/graphics/drawable/Animatable;
 
     return-void
 .end method
@@ -208,7 +206,7 @@
 .method public final f()V
     .locals 1
 
-    sget v0, Lnh0;->ic_jiny_hand:I
+    sget v0, Lcom/jiny/android/R$drawable;->ic_jiny_hand:I
 
     invoke-virtual {p0, v0}, Lcom/jiny/android/ui/custom/b;->setDrawable(I)V
 
@@ -222,7 +220,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lal0;->d(Landroid/content/Context;)Landroid/content/res/Resources;
+    invoke-static {v0}, Lcom/jiny/android/e/a;->d(Landroid/content/Context;)Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -231,6 +229,10 @@
 
 .method public setDrawable(I)V
     .locals 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+    .end param
 
     invoke-virtual {p0}, Lcom/jiny/android/ui/custom/b;->getResources()Landroid/content/res/Resources;
 

@@ -4,19 +4,19 @@
 
 
 # instance fields
-.field public campaignId:Ljava/lang/String;
+.field private campaignId:Ljava/lang/String;
 
-.field public date:J
+.field private date:J
 
-.field public expires:J
+.field private expires:J
 
-.field public id:Ljava/lang/String;
+.field private id:Ljava/lang/String;
 
-.field public jsonData:Lorg/json/JSONObject;
+.field private jsonData:Lorg/json/JSONObject;
 
-.field public read:Z
+.field private read:Z
 
-.field public tags:Ljava/util/List;
+.field private tags:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -26,9 +26,9 @@
     .end annotation
 .end field
 
-.field public userId:Ljava/lang/String;
+.field private userId:Ljava/lang/String;
 
-.field public wzrkParams:Lorg/json/JSONObject;
+.field private wzrkParams:Lorg/json/JSONObject;
 
 
 # direct methods
@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;ZJJLjava/lang/String;Ljava/util/List;Ljava/lang/String;Lorg/json/JSONObject;)V
+.method private constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;ZJJLjava/lang/String;Ljava/util/List;Ljava/lang/String;Lorg/json/JSONObject;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -106,8 +106,13 @@
     return-void
 .end method
 
-.method public static getWzrkFields(Lorg/json/JSONObject;)Lorg/json/JSONObject;
+.method private static getWzrkFields(Lorg/json/JSONObject;)Lorg/json/JSONObject;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lorg/json/JSONObject;
@@ -135,7 +140,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    const-string v3, "wzrk_"
+    const-string/jumbo v3, "wzrk_"
 
     .line 5
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -162,17 +167,17 @@
 
     move-object/from16 v0, p0
 
-    const-string v1, "tags"
+    const-string/jumbo v1, "tags"
 
     const-string v2, "msg"
 
-    const-string v3, "wzrk_ttl"
+    const-string/jumbo v3, "wzrk_ttl"
 
     const-string v4, "date"
 
     const-string v5, "_id"
 
-    const-string v6, "wzrk_id"
+    const-string/jumbo v6, "wzrk_id"
 
     const/4 v7, 0x0
 
@@ -238,6 +243,7 @@
 
     goto :goto_2
 
+    .line 4
     :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -252,7 +258,7 @@
     :goto_2
     move-wide v14, v3
 
-    .line 4
+    .line 5
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v3
@@ -270,7 +276,7 @@
     :cond_3
     move-object v10, v7
 
-    .line 5
+    .line 6
     :goto_3
     new-instance v2, Ljava/util/ArrayList;
 
@@ -278,7 +284,7 @@
 
     if-eqz v10, :cond_5
 
-    .line 6
+    .line 7
     invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v3
@@ -299,7 +305,7 @@
 
     const/4 v3, 0x0
 
-    .line 7
+    .line 8
     :goto_5
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
@@ -307,7 +313,7 @@
 
     if-ge v3, v4, :cond_5
 
-    .line 8
+    .line 9
     invoke-virtual {v1, v3}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -318,7 +324,7 @@
 
     goto :goto_5
 
-    .line 9
+    .line 10
     :cond_5
     invoke-virtual {v0, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -340,7 +346,7 @@
     :cond_6
     move-object v1, v3
 
-    .line 10
+    .line 11
     :goto_6
     invoke-virtual {v1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -348,10 +354,10 @@
 
     if-eqz v3, :cond_7
 
-    .line 11
+    .line 12
     invoke-virtual {v0, v6, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 12
+    .line 13
     :cond_7
     invoke-static/range {p0 .. p0}, Lcom/clevertap/android/sdk/CTMessageDAO;->getWzrkFields(Lorg/json/JSONObject;)Lorg/json/JSONObject;
 
@@ -359,11 +365,9 @@
 
     if-nez v9, :cond_8
 
-    move-object v0, v7
-
     goto :goto_7
 
-    .line 13
+    .line 14
     :cond_8
     new-instance v0, Lcom/clevertap/android/sdk/CTMessageDAO;
 
@@ -381,13 +385,15 @@
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
+    move-object v7, v0
+
     :goto_7
-    return-object v0
+    return-object v7
 
     :catch_0
     move-exception v0
 
-    .line 14
+    .line 15
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -694,7 +700,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    const-string v1, "wzrk_ttl"
+    const-string/jumbo v1, "wzrk_ttl"
 
     .line 6
     iget-wide v2, p0, Lcom/clevertap/android/sdk/CTMessageDAO;->expires:J
@@ -732,19 +738,19 @@
     goto :goto_0
 
     :cond_0
-    const-string v2, "tags"
+    const-string/jumbo v2, "tags"
 
     .line 10
     invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string v1, "wzrk_id"
+    const-string/jumbo v1, "wzrk_id"
 
     .line 11
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTMessageDAO;->campaignId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string v1, "wzrkParams"
+    const-string/jumbo v1, "wzrkParams"
 
     .line 12
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTMessageDAO;->wzrkParams:Lorg/json/JSONObject;

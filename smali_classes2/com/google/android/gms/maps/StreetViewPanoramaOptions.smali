@@ -30,21 +30,21 @@
 
 
 # instance fields
-.field public panoId:Ljava/lang/String;
+.field private panoId:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getPanoramaId"
         id = 0x3
     .end annotation
 .end field
 
-.field public position:Lcom/google/android/gms/maps/model/LatLng;
+.field private position:Lcom/google/android/gms/maps/model/LatLng;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getPosition"
         id = 0x4
     .end annotation
 .end field
 
-.field public zzak:Ljava/lang/Boolean;
+.field private zzak:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getUseViewLifecycleInFragmentForParcel"
         id = 0xa
@@ -52,7 +52,7 @@
     .end annotation
 .end field
 
-.field public zzap:Ljava/lang/Boolean;
+.field private zzap:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getZoomGesturesEnabledForParcel"
         id = 0x7
@@ -60,21 +60,21 @@
     .end annotation
 .end field
 
-.field public zzbx:Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;
+.field private zzbx:Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getStreetViewPanoramaCamera"
         id = 0x2
     .end annotation
 .end field
 
-.field public zzby:Ljava/lang/Integer;
+.field private zzby:Ljava/lang/Integer;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getRadius"
         id = 0x5
     .end annotation
 .end field
 
-.field public zzbz:Ljava/lang/Boolean;
+.field private zzbz:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getUserNavigationEnabledForParcel"
         id = 0x6
@@ -82,7 +82,7 @@
     .end annotation
 .end field
 
-.field public zzca:Ljava/lang/Boolean;
+.field private zzca:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getPanningGesturesEnabledForParcel"
         id = 0x8
@@ -90,7 +90,7 @@
     .end annotation
 .end field
 
-.field public zzcb:Ljava/lang/Boolean;
+.field private zzcb:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getStreetNamesEnabledForParcel"
         id = 0x9
@@ -98,7 +98,7 @@
     .end annotation
 .end field
 
-.field public zzcc:Lcom/google/android/gms/maps/model/StreetViewSource;
+.field private zzcc:Lcom/google/android/gms/maps/model/StreetViewSource;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getSource"
         id = 0xb
@@ -126,12 +126,8 @@
     .line 17
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    const/4 v0, 0x1
-
     .line 18
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     iput-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzbz:Ljava/lang/Boolean;
 
@@ -210,12 +206,8 @@
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    const/4 v0, 0x1
-
     .line 2
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     iput-object v0, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzbz:Ljava/lang/Boolean;
 
@@ -615,42 +607,42 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     .line 3
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 4
     invoke-virtual {p0}, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->getPanoramaId()Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
     .line 5
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 6
     invoke-virtual {p0}, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v1
 
-    const/4 v3, 0x4
+    const/4 v2, 0x4
 
     .line 7
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 8
     invoke-virtual {p0}, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->getRadius()Ljava/lang/Integer;
 
     move-result-object v1
 
-    const/4 v3, 0x5
+    const/4 v2, 0x5
 
     .line 9
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntegerObject(Landroid/os/Parcel;ILjava/lang/Integer;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntegerObject(Landroid/os/Parcel;ILjava/lang/Integer;Z)V
 
     .line 10
     iget-object v1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzbz:Ljava/lang/Boolean;
@@ -659,10 +651,10 @@
 
     move-result v1
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
     .line 11
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 12
     iget-object v1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzap:Ljava/lang/Boolean;
@@ -671,10 +663,10 @@
 
     move-result v1
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
     .line 13
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 14
     iget-object v1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzca:Ljava/lang/Boolean;
@@ -683,10 +675,10 @@
 
     move-result v1
 
-    const/16 v3, 0x8
+    const/16 v2, 0x8
 
     .line 15
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 16
     iget-object v1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzcb:Ljava/lang/Boolean;
@@ -695,10 +687,10 @@
 
     move-result v1
 
-    const/16 v3, 0x9
+    const/16 v2, 0x9
 
     .line 17
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 18
     iget-object v1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->zzak:Ljava/lang/Boolean;
@@ -707,20 +699,20 @@
 
     move-result v1
 
-    const/16 v3, 0xa
+    const/16 v2, 0xa
 
     .line 19
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 20
     invoke-virtual {p0}, Lcom/google/android/gms/maps/StreetViewPanoramaOptions;->getSource()Lcom/google/android/gms/maps/model/StreetViewSource;
 
     move-result-object v1
 
-    const/16 v3, 0xb
+    const/16 v2, 0xb
 
     .line 21
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 22
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V

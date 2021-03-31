@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static instance:Lcom/google/ads/interactivemedia/v3/api/ImaSdkFactory;
+.field private static instance:Lcom/google/ads/interactivemedia/v3/api/ImaSdkFactory;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

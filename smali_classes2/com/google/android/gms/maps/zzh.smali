@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzp:Lcom/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener;
+.field private final synthetic zzp:Lcom/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener;
 
 
 # direct methods

@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/GoogleApiClient;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -14,6 +15,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # static fields
 .field public static final DEFAULT_ACCOUNT:Ljava/lang/String; = "<<default account>>"
@@ -25,13 +29,17 @@
 
 .field public static final SIGN_IN_MODE_REQUIRED:I = 0x1
 
-.field public static final zabq:Ljava/util/Set;
+.field private static final zaa:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
             "Lcom/google/android/gms/common/api/GoogleApiClient;",
             ">;"
         }
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "sAllClients"
     .end annotation
 .end field
 
@@ -50,7 +58,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zabq:Ljava/util/Set;
+    sput-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zaa:Ljava/util/Set;
 
     return-void
 .end method
@@ -68,7 +76,7 @@
     .locals 7
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zabq:Ljava/util/Set;
+    sget-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zaa:Ljava/util/Set;
 
     monitor-enter v0
 
@@ -87,9 +95,7 @@
     move-result-object v2
 
     .line 3
-    sget-object v3, Lcom/google/android/gms/common/api/GoogleApiClient;->zabq:Ljava/util/Set;
-
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
@@ -159,17 +165,15 @@
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zabq:Ljava/util/Set;
+    sget-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zaa:Ljava/util/Set;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/common/api/GoogleApiClient;->zabq:Ljava/util/Set;
-
     monitor-exit v0
 
-    return-object v1
+    return-object v0
 
     :catchall_0
     move-exception v1
@@ -182,11 +186,11 @@
     throw v1
 .end method
 
-.method public static synthetic zal()Ljava/util/Set;
+.method public static synthetic zaa()Ljava/util/Set;
     .locals 1
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zabq:Ljava/util/Set;
+    .line 2
+    sget-object v0, Lcom/google/android/gms/common/api/GoogleApiClient;->zaa:Ljava/util/Set;
 
     return-object v0
 .end method
@@ -197,6 +201,10 @@
 .end method
 
 .method public abstract blockingConnect(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/ConnectionResult;
+    .param p3    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract clearDefaultAccountAndReconnect()Lcom/google/android/gms/common/api/PendingResult;
@@ -232,6 +240,10 @@
 
 .method public enqueue(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -257,6 +269,10 @@
 
 .method public execute(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -282,6 +298,13 @@
 
 .method public getClient(Lcom/google/android/gms/common/api/Api$AnyClientKey;)Lcom/google/android/gms/common/api/Api$Client;
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Api$AnyClientKey;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -304,6 +327,13 @@
 .end method
 
 .method public abstract getConnectionResult(Lcom/google/android/gms/common/api/Api;)Lcom/google/android/gms/common/ConnectionResult;
+    .param p1    # Lcom/google/android/gms/common/api/Api;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -342,6 +372,10 @@
 
 .method public hasApi(Lcom/google/android/gms/common/api/Api;)Z
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Api;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -362,6 +396,10 @@
 .end method
 
 .method public abstract hasConnectedApi(Lcom/google/android/gms/common/api/Api;)Z
+    .param p1    # Lcom/google/android/gms/common/api/Api;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -378,9 +416,17 @@
 .end method
 
 .method public abstract isConnectionCallbacksRegistered(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Z
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract isConnectionFailedListenerRegistered(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Z
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public maybeSignIn(Lcom/google/android/gms/common/api/internal/SignInConnectionListener;)Z
@@ -413,13 +459,25 @@
 .end method
 
 .method public abstract registerConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract registerConnectionFailedListener(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public registerListener(Ljava/lang/Object;)Lcom/google/android/gms/common/api/internal/ListenerHolder;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -446,15 +504,27 @@
 .end method
 
 .method public abstract stopAutoManage(Landroidx/fragment/app/FragmentActivity;)V
+    .param p1    # Landroidx/fragment/app/FragmentActivity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract unregisterConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract unregisterConnectionFailedListener(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
-.method public zaa(Lcom/google/android/gms/common/api/internal/zacm;)V
+.method public zaa(Lcom/google/android/gms/common/api/internal/zaci;)V
     .locals 0
 
     .line 1
@@ -465,7 +535,7 @@
     throw p1
 .end method
 
-.method public zab(Lcom/google/android/gms/common/api/internal/zacm;)V
+.method public zab(Lcom/google/android/gms/common/api/internal/zaci;)V
     .locals 0
 
     .line 1

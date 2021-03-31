@@ -67,6 +67,11 @@
 
 .method public fastForward()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -262,6 +267,11 @@
 
 .method public next()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -273,6 +283,11 @@
 
 .method public pause()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -284,6 +299,11 @@
 
 .method public play()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -295,6 +315,11 @@
 
 .method public playFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -306,6 +331,11 @@
 
 .method public playFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -317,6 +347,11 @@
 
 .method public playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -328,6 +363,11 @@
 
 .method public prepare()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -339,6 +379,11 @@
 
 .method public prepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -350,6 +395,11 @@
 
 .method public prepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -361,6 +411,11 @@
 
 .method public prepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -372,6 +427,11 @@
 
 .method public previous()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -383,6 +443,11 @@
 
 .method public rate(Landroid/support/v4/media/RatingCompat;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -394,6 +459,11 @@
 
 .method public rateWithExtras(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -424,7 +494,7 @@
 
     .line 3
     :cond_0
-    new-instance v1, Lbf;
+    new-instance v1, Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
     .line 4
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
@@ -435,7 +505,7 @@
 
     move-result v3
 
-    invoke-direct {v1, v0, v2, v3}, Lbf;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v0, v2, v3}, Landroidx/media/MediaSessionManager$RemoteUserInfo;-><init>(Ljava/lang/String;II)V
 
     .line 5
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21$ExtraSession;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;
@@ -472,6 +542,11 @@
 
 .method public rewind()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -483,6 +558,11 @@
 
 .method public seekTo(J)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -505,6 +585,11 @@
 
 .method public sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -527,6 +612,11 @@
 
 .method public setCaptioningEnabled(Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -538,6 +628,11 @@
 
 .method public setRepeatMode(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -549,6 +644,11 @@
 
 .method public setShuffleMode(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -560,6 +660,11 @@
 
 .method public setShuffleModeEnabledRemoved(Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -588,6 +693,11 @@
 
 .method public stop()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;

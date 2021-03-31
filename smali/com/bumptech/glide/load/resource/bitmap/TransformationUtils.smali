@@ -12,17 +12,17 @@
 
 
 # static fields
-.field public static final BITMAP_DRAWABLE_LOCK:Ljava/util/concurrent/locks/Lock;
+.field private static final BITMAP_DRAWABLE_LOCK:Ljava/util/concurrent/locks/Lock;
 
-.field public static final CIRCLE_CROP_BITMAP_PAINT:Landroid/graphics/Paint;
+.field private static final CIRCLE_CROP_BITMAP_PAINT:Landroid/graphics/Paint;
 
-.field public static final CIRCLE_CROP_PAINT_FLAGS:I = 0x7
+.field private static final CIRCLE_CROP_PAINT_FLAGS:I = 0x7
 
-.field public static final CIRCLE_CROP_SHAPE_PAINT:Landroid/graphics/Paint;
+.field private static final CIRCLE_CROP_SHAPE_PAINT:Landroid/graphics/Paint;
 
-.field public static final DEFAULT_PAINT:Landroid/graphics/Paint;
+.field private static final DEFAULT_PAINT:Landroid/graphics/Paint;
 
-.field public static final MODELS_REQUIRING_BITMAP_LOCK:Ljava/util/Set;
+.field private static final MODELS_REQUIRING_BITMAP_LOCK:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -34,7 +34,7 @@
 
 .field public static final PAINT_FLAGS:I = 0x6
 
-.field public static final TAG:Ljava/lang/String; = "TransformationUtils"
+.field private static final TAG:Ljava/lang/String; = "TransformationUtils"
 
 
 # direct methods
@@ -134,8 +134,6 @@
     sput-object v0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->MODELS_REQUIRING_BITMAP_LOCK:Ljava/util/Set;
 
     .line 5
-    sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->MODELS_REQUIRING_BITMAP_LOCK:Ljava/util/Set;
-
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -167,8 +165,6 @@
     sput-object v0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->CIRCLE_CROP_BITMAP_PAINT:Landroid/graphics/Paint;
 
     .line 8
-    sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->CIRCLE_CROP_BITMAP_PAINT:Landroid/graphics/Paint;
-
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -180,7 +176,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -189,8 +185,16 @@
     return-void
 .end method
 
-.method public static applyMatrix(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Matrix;)V
-    .locals 1
+.method private static applyMatrix(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Matrix;)V
+    .locals 2
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->BITMAP_DRAWABLE_LOCK:Ljava/util/concurrent/locks/Lock;
@@ -199,24 +203,22 @@
 
     .line 2
     :try_start_0
-    new-instance v0, Landroid/graphics/Canvas;
+    new-instance v1, Landroid/graphics/Canvas;
 
-    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v1, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     .line 3
     sget-object p1, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->DEFAULT_PAINT:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, p0, p2, p1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
+    invoke-virtual {v1, p0, p2, p1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
     .line 4
-    invoke-static {v0}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->clear(Landroid/graphics/Canvas;)V
+    invoke-static {v1}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->clear(Landroid/graphics/Canvas;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
-    sget-object p0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->BITMAP_DRAWABLE_LOCK:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     return-void
 
@@ -232,6 +234,14 @@
 
 .method public static centerCrop(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 6
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -299,6 +309,10 @@
 
     mul-float v2, v2, v4
 
+    move v3, v2
+
+    const/4 v2, 0x0
+
     goto :goto_0
 
     :cond_1
@@ -328,23 +342,19 @@
 
     mul-float v2, v2, v4
 
-    move v3, v2
-
-    const/4 v2, 0x0
-
     .line 8
     :goto_0
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    add-float/2addr v2, v4
+    add-float/2addr v3, v4
 
-    float-to-int v1, v2
+    float-to-int v1, v3
 
     int-to-float v1, v1
 
-    add-float/2addr v3, v4
+    add-float/2addr v2, v4
 
-    float-to-int v2, v3
+    float-to-int v2, v2
 
     int-to-float v2, v2
 
@@ -371,6 +381,14 @@
 
 .method public static centerInside(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 3
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -412,6 +430,14 @@
 
 .method public static circleCrop(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 6
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p2, p3}, Ljava/lang/Math;->min(II)I
@@ -495,31 +521,29 @@
 
     .line 11
     :try_start_0
-    new-instance v2, Landroid/graphics/Canvas;
+    new-instance v3, Landroid/graphics/Canvas;
 
-    invoke-direct {v2, p2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v3, p2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     .line 12
-    sget-object v3, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->CIRCLE_CROP_SHAPE_PAINT:Landroid/graphics/Paint;
+    sget-object v4, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->CIRCLE_CROP_SHAPE_PAINT:Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v1, v1, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v3, v1, v1, v1, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     const/4 v1, 0x0
 
     .line 13
-    sget-object v3, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->CIRCLE_CROP_BITMAP_PAINT:Landroid/graphics/Paint;
+    sget-object v4, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->CIRCLE_CROP_BITMAP_PAINT:Landroid/graphics/Paint;
 
-    invoke-virtual {v2, p3, v1, v0, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    invoke-virtual {v3, p3, v1, v0, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     .line 14
-    invoke-static {v2}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->clear(Landroid/graphics/Canvas;)V
+    invoke-static {v3}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->clear(Landroid/graphics/Canvas;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
-    sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->BITMAP_DRAWABLE_LOCK:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 16
     invoke-virtual {p3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -545,7 +569,7 @@
     throw p0
 .end method
 
-.method public static clear(Landroid/graphics/Canvas;)V
+.method private static clear(Landroid/graphics/Canvas;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -558,6 +582,14 @@
 
 .method public static fitCenter(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 6
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -711,7 +743,7 @@
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p2, "x"
+    const-string/jumbo p2, "x"
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -724,7 +756,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "toFit:   "
+    const-string/jumbo v1, "toFit:   "
 
     invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -749,7 +781,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "toReuse: "
+    const-string/jumbo v1, "toReuse: "
 
     invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -797,8 +829,16 @@
     return-object p0
 .end method
 
-.method public static getAlphaSafeBitmap(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+.method private static getAlphaSafeBitmap(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 3
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p1}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->getAlphaSafeConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
@@ -846,8 +886,14 @@
     return-object p0
 .end method
 
-.method public static getAlphaSafeConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
+.method private static getAlphaSafeConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
     .locals 2
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -926,8 +972,14 @@
     .end packed-switch
 .end method
 
-.method public static getNonNullConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
+.method private static getNonNullConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
     .locals 1
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
@@ -951,6 +1003,8 @@
 
 .method public static initializeMatrixForRotation(ILandroid/graphics/Matrix;)V
     .locals 5
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     const/high16 v0, -0x3d4c0000    # -90.0f
 
@@ -1062,6 +1116,10 @@
 
 .method public static rotateImage(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 7
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_0
 
@@ -1122,6 +1180,14 @@
 
 .method public static rotateImageExif(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 4
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p2}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->isExifOrientationRequired(I)Z
@@ -1217,6 +1283,14 @@
 
 .method public static roundedCorners(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 8
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -1307,29 +1381,27 @@
 
     .line 13
     :try_start_0
-    new-instance v4, Landroid/graphics/Canvas;
+    new-instance v6, Landroid/graphics/Canvas;
 
-    invoke-direct {v4, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v6, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     .line 14
-    sget-object v6, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v4, v0, v6}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-virtual {v6, v0, v7}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
     int-to-float p2, p2
 
     .line 15
-    invoke-virtual {v4, v1, p2, p2, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v6, v1, p2, p2, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 16
-    invoke-static {v4}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->clear(Landroid/graphics/Canvas;)V
+    invoke-static {v6}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->clear(Landroid/graphics/Canvas;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
-    sget-object p2, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->BITMAP_DRAWABLE_LOCK:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {p2}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-interface {v4}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 18
     invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -1357,6 +1429,14 @@
 
 .method public static roundedCorners(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;
     .locals 0
+    .param p0    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

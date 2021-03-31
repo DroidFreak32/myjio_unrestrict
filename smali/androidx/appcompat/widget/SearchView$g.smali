@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/SearchView;
+.field public final synthetic a:Landroidx/appcompat/widget/SearchView;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/SearchView$g;->s:Landroidx/appcompat/widget/SearchView;
+    iput-object p1, p0, Landroidx/appcompat/widget/SearchView$g;->a:Landroidx/appcompat/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->s:Landroidx/appcompat/widget/SearchView;
+    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->a:Landroidx/appcompat/widget/SearchView;
 
-    iget-object v1, v0, Landroidx/appcompat/widget/SearchView;->i0:Landroid/app/SearchableInfo;
+    iget-object v1, v0, Landroidx/appcompat/widget/SearchView;->j0:Landroid/app/SearchableInfo;
 
     const/4 v2, 0x0
 
@@ -51,7 +51,7 @@
 
     .line 2
     :cond_0
-    iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+    iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
     invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
@@ -59,9 +59,9 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->s:Landroidx/appcompat/widget/SearchView;
+    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->a:Landroidx/appcompat/widget/SearchView;
 
-    iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+    iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
     .line 3
     invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->getListSelection()I
@@ -73,9 +73,9 @@
     if-eq v0, v1, :cond_1
 
     .line 4
-    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->s:Landroidx/appcompat/widget/SearchView;
+    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->a:Landroidx/appcompat/widget/SearchView;
 
-    invoke-virtual {v0, p1, p2, p3}, Landroidx/appcompat/widget/SearchView;->a(Landroid/view/View;ILandroid/view/KeyEvent;)Z
+    invoke-virtual {v0, p1, p2, p3}, Landroidx/appcompat/widget/SearchView;->v(Landroid/view/View;ILandroid/view/KeyEvent;)Z
 
     move-result p1
 
@@ -83,11 +83,11 @@
 
     .line 5
     :cond_1
-    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->s:Landroidx/appcompat/widget/SearchView;
+    iget-object v0, p0, Landroidx/appcompat/widget/SearchView$g;->a:Landroidx/appcompat/widget/SearchView;
 
-    iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+    iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->a()Z
+    invoke-virtual {v0}, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->b()Z
 
     move-result v0
 
@@ -116,11 +116,11 @@
     invoke-virtual {p1}, Landroid/view/View;->cancelLongPress()V
 
     .line 8
-    iget-object p1, p0, Landroidx/appcompat/widget/SearchView$g;->s:Landroidx/appcompat/widget/SearchView;
+    iget-object p1, p0, Landroidx/appcompat/widget/SearchView$g;->a:Landroidx/appcompat/widget/SearchView;
 
     const/4 p2, 0x0
 
-    iget-object p3, p1, Landroidx/appcompat/widget/SearchView;->s:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+    iget-object p3, p1, Landroidx/appcompat/widget/SearchView;->a:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
 
     invoke-virtual {p3}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
@@ -132,7 +132,7 @@
     move-result-object p3
 
     .line 10
-    invoke-virtual {p1, v2, p2, p3}, Landroidx/appcompat/widget/SearchView;->a(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v2, p2, p3}, Landroidx/appcompat/widget/SearchView;->n(ILjava/lang/String;Ljava/lang/String;)V
 
     return v0
 

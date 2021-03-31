@@ -38,7 +38,7 @@
     return v2
 
     :cond_1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v1
 
@@ -55,7 +55,7 @@
     return v2
 
     :cond_2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v1
 
@@ -87,11 +87,11 @@
     return v2
 
     :cond_4
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v0
 
-    invoke-virtual {p0, p1, v2, v0}, Lcom/google/android/gms/internal/clearcut/zzbi;->zza(Lcom/google/android/gms/internal/clearcut/zzbb;II)Z
+    invoke-virtual {p0, p1, v2, v0}, Lcom/google/android/gms/internal/clearcut/zzbh;->zza(Lcom/google/android/gms/internal/clearcut/zzbb;II)Z
 
     move-result p1
 
@@ -134,7 +134,7 @@
 .method public final zza(II)Lcom/google/android/gms/internal/clearcut/zzbb;
     .locals 2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result p1
 
@@ -175,7 +175,7 @@
 
     move-result v2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v3
 
@@ -186,6 +186,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/clearcut/zzba;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbi;->zzfp:[B
 
@@ -193,7 +198,7 @@
 
     move-result v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v2
 
@@ -271,7 +276,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, v0, p3}, Lcom/google/android/gms/internal/clearcut/zzbi;->zza(II)Lcom/google/android/gms/internal/clearcut/zzbb;
+    invoke-virtual {p0, v0, p3}, Lcom/google/android/gms/internal/clearcut/zzbb;->zza(II)Lcom/google/android/gms/internal/clearcut/zzbb;
 
     move-result-object p2
 
@@ -317,7 +322,7 @@
     :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result p2
 
@@ -353,7 +358,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzbi;->zzfp:[B
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbi;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v2
 

@@ -1,8 +1,9 @@
 .class public final Lcom/google/android/gms/tasks/zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/zzq;
+.implements Lcom/google/android/gms/tasks/zzr;
 
 
 # annotations
@@ -14,16 +15,16 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/zzq<",
+        "Lcom/google/android/gms/tasks/zzr<",
         "TTResult;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public final zzd:Ljava/util/concurrent/Executor;
+.field private final zza:Ljava/util/concurrent/Executor;
 
-.field public final zze:Lcom/google/android/gms/tasks/Continuation;
+.field private final zzb:Lcom/google/android/gms/tasks/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tasks/Continuation<",
@@ -32,7 +33,7 @@
     .end annotation
 .end field
 
-.field public final zzf:Lcom/google/android/gms/tasks/zzu;
+.field private final zzc:Lcom/google/android/gms/tasks/zzu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tasks/zzu<",
@@ -45,6 +46,18 @@
 # direct methods
 .method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/Continuation;Lcom/google/android/gms/tasks/zzu;)V
     .locals 0
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/Continuation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/google/android/gms/tasks/zzu;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,13 +73,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzc;->zzd:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzc;->zza:Ljava/util/concurrent/Executor;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzc;->zze:Lcom/google/android/gms/tasks/Continuation;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzc;->zzb:Lcom/google/android/gms/tasks/Continuation;
 
     .line 4
-    iput-object p3, p0, Lcom/google/android/gms/tasks/zzc;->zzf:Lcom/google/android/gms/tasks/zzu;
+    iput-object p3, p0, Lcom/google/android/gms/tasks/zzc;->zzc:Lcom/google/android/gms/tasks/zzu;
 
     return-void
 .end method
@@ -74,8 +87,8 @@
 .method public static synthetic zza(Lcom/google/android/gms/tasks/zzc;)Lcom/google/android/gms/tasks/zzu;
     .locals 0
 
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/tasks/zzc;->zzf:Lcom/google/android/gms/tasks/zzu;
+    .line 3
+    iget-object p0, p0, Lcom/google/android/gms/tasks/zzc;->zzc:Lcom/google/android/gms/tasks/zzu;
 
     return-object p0
 .end method
@@ -84,17 +97,17 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/tasks/zzc;->zze:Lcom/google/android/gms/tasks/Continuation;
+    iget-object p0, p0, Lcom/google/android/gms/tasks/zzc;->zzb:Lcom/google/android/gms/tasks/Continuation;
 
     return-object p0
 .end method
 
 
 # virtual methods
-.method public final cancel()V
+.method public final zza()V
     .locals 1
 
-    .line 1
+    .line 2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -102,8 +115,12 @@
     throw v0
 .end method
 
-.method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
+.method public final zza(Lcom/google/android/gms/tasks/Task;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/tasks/Task;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -113,11 +130,11 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzc;->zzd:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzc;->zza:Ljava/util/concurrent/Executor;
 
-    new-instance v1, Lcom/google/android/gms/tasks/zzd;
+    new-instance v1, Lcom/google/android/gms/tasks/zze;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzd;-><init>(Lcom/google/android/gms/tasks/zzc;Lcom/google/android/gms/tasks/Task;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zze;-><init>(Lcom/google/android/gms/tasks/zzc;Lcom/google/android/gms/tasks/Task;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 

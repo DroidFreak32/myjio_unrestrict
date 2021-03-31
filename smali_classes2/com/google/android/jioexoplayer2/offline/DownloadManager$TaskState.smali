@@ -47,7 +47,7 @@
 
 
 # direct methods
-.method public constructor <init>(ILcom/google/android/jioexoplayer2/offline/DownloadAction;IFJLjava/lang/Throwable;)V
+.method private constructor <init>(ILcom/google/android/jioexoplayer2/offline/DownloadAction;IFJLjava/lang/Throwable;)V
     .locals 0
 
     .line 2

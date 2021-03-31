@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/transition/ChangeClipBounds;->createAnimator(Landroid/view/ViewGroup;Llj;Llj;)Landroid/animation/Animator;
+    value = Landroidx/transition/ChangeClipBounds;->createAnimator(Landroid/view/ViewGroup;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroid/view/View;
+.field public final synthetic a:Landroid/view/View;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Landroidx/transition/ChangeClipBounds$a;->s:Landroid/view/View;
+    iput-object p2, p0, Landroidx/transition/ChangeClipBounds$a;->a:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -36,11 +36,11 @@
     .locals 1
 
     .line 1
-    iget-object p1, p0, Landroidx/transition/ChangeClipBounds$a;->s:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/ChangeClipBounds$a;->a:Landroid/view/View;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lba;->a(Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-static {p1, v0}, Landroidx/core/view/ViewCompat;->setClipBounds(Landroid/view/View;Landroid/graphics/Rect;)V
 
     return-void
 .end method

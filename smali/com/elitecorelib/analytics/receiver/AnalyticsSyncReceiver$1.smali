@@ -60,7 +60,7 @@
 
     move-result-object p1
 
-    const-string v0, "syncRetriedCount"
+    const-string/jumbo v0, "syncRetriedCount"
 
     invoke-virtual {p1, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
@@ -100,7 +100,7 @@
 
     const-string p1, "Analytic record not sync, Error/Record not available "
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

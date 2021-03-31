@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final animation:Landroid/view/animation/Animation;
+.field private final animation:Landroid/view/animation/Animation;
 
 
 # direct methods

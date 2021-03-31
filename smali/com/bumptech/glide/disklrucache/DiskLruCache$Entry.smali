@@ -17,23 +17,23 @@
 # instance fields
 .field public cleanFiles:[Ljava/io/File;
 
-.field public currentEditor:Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
+.field private currentEditor:Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
 
 .field public dirtyFiles:[Ljava/io/File;
 
-.field public final key:Ljava/lang/String;
+.field private final key:Ljava/lang/String;
 
-.field public final lengths:[J
+.field private final lengths:[J
 
-.field public readable:Z
+.field private readable:Z
 
-.field public sequenceNumber:J
+.field private sequenceNumber:J
 
 .field public final synthetic this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
 
 # direct methods
-.method public constructor <init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;)V
+.method private constructor <init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;)V
     .locals 6
 
     .line 2
@@ -231,6 +231,11 @@
 
 .method public static synthetic access$900(Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;[Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;->setLengths([Ljava/lang/String;)V
@@ -240,6 +245,11 @@
 
 .method private invalidLengths([Ljava/lang/String;)Ljava/io/IOException;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -248,7 +258,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "unexpected journal line: "
+    const-string/jumbo v2, "unexpected journal line: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -269,6 +279,11 @@
 
 .method private setLengths([Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     array-length v0, p1
@@ -353,6 +368,11 @@
 
 .method public getLengths()Ljava/lang/String;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

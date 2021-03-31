@@ -22,9 +22,9 @@
 
 
 # static fields
-.field public static final AUTO_DETECT_MASK:I
+.field private static final AUTO_DETECT_MASK:I
 
-.field public static final DEFAULT_MAPPER_FEATURES:I
+.field private static final DEFAULT_MAPPER_FEATURES:I
 
 .field public static final EMPTY_OVERRIDE:Lcom/fasterxml/jackson/databind/cfg/ConfigOverride;
 

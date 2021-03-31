@@ -11,11 +11,11 @@
 
 
 # static fields
-.field public static final zzrh:Landroid/net/Uri;
+.field private static final zzrh:Landroid/net/Uri;
 
 
 # instance fields
-.field public final zzsb:Landroid/util/LogPrinter;
+.field private final zzsb:Landroid/util/LogPrinter;
 
 
 # direct methods

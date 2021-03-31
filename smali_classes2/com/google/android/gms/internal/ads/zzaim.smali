@@ -1,15 +1,17 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaim;
-.super Lcom/google/android/gms/dynamic/RemoteCreator;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/android/gms/dynamic/RemoteCreator<",
-        "Lcom/google/android/gms/internal/ads/zzaig;",
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/internal/ads/zzain;",
         ">;"
     }
 .end annotation
@@ -17,125 +19,170 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.reward.RewardedVideoAdCreatorImpl"
+    .locals 0
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/dynamic/RemoteCreator;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic getRemoteCreator(Landroid/os/IBinder;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 16
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.reward.client.IRewardedVideoAdCreator"
+    move-object/from16 v0, p1
 
     .line 1
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    move-result-object v0
+    move-result v1
 
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzaig;
+    const/4 v2, 0x0
 
-    if-eqz v1, :cond_1
+    const/4 v3, 0x0
 
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzaig;
+    const-wide/16 v4, 0x0
 
-    return-object v0
+    move-object v8, v3
 
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzaih;
+    move-object v10, v8
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzaih;-><init>(Landroid/os/IBinder;)V
+    move-object v11, v10
 
-    return-object v0
-.end method
+    move-object v12, v11
 
-.method public final zza(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzyn;)Lcom/google/android/gms/internal/ads/zzaid;
-    .locals 3
+    move-wide v14, v4
 
-    const/4 v0, 0x0
+    const/4 v7, 0x0
 
-    .line 1
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    const/4 v9, 0x0
 
-    move-result-object v1
+    const/4 v13, 0x0
 
     .line 2
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/dynamic/RemoteCreator;->getRemoteCreatorInstance(Landroid/content/Context;)Ljava/lang/Object;
+    :goto_0
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result-object p1
+    move-result v2
 
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzaig;
-
-    const v2, 0xc65d40
+    if-ge v2, v1, :cond_0
 
     .line 3
-    invoke-interface {p1, v1, p2, v2}, Lcom/google/android/gms/internal/ads/zzaig;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zzyn;I)Landroid/os/IBinder;
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
 
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    const-string p2, "com.google.android.gms.ads.internal.reward.client.IRewardedVideoAd"
+    move-result v2
 
     .line 4
-    invoke-interface {p1, p2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
 
-    move-result-object p2
+    move-result v3
+
+    packed-switch v3, :pswitch_data_0
 
     .line 5
-    instance-of v1, p2, Lcom/google/android/gms/internal/ads/zzaid;
-
-    if-eqz v1, :cond_1
-
-    .line 6
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzaid;
-
-    return-object p2
-
-    .line 7
-    :cond_1
-    new-instance p2, Lcom/google/android/gms/internal/ads/zzaif;
-
-    invoke-direct {p2, p1}, Lcom/google/android/gms/internal/ads/zzaif;-><init>(Landroid/os/IBinder;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lcom/google/android/gms/dynamic/RemoteCreator$RemoteCreatorException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p2
-
-    :catch_0
-    move-exception p1
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :catch_1
-    move-exception p1
+    .line 6
+    :pswitch_0
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readLong(Landroid/os/Parcel;I)J
 
-    :goto_0
-    const-string p2, "Could not get remote RewardedVideoAd."
+    move-result-wide v14
+
+    goto :goto_0
+
+    .line 7
+    :pswitch_1
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v13
+
+    goto :goto_0
 
     .line 8
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :pswitch_2
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createStringArray(Landroid/os/Parcel;I)[Ljava/lang/String;
+
+    move-result-object v12
+
+    goto :goto_0
+
+    .line 9
+    :pswitch_3
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createStringArray(Landroid/os/Parcel;I)[Ljava/lang/String;
+
+    move-result-object v11
+
+    goto :goto_0
+
+    .line 10
+    :pswitch_4
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createByteArray(Landroid/os/Parcel;I)[B
+
+    move-result-object v10
+
+    goto :goto_0
+
+    .line 11
+    :pswitch_5
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v9
+
+    goto :goto_0
+
+    .line 12
+    :pswitch_6
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v8
+
+    goto :goto_0
+
+    .line 13
+    :pswitch_7
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v7
+
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    .line 15
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzain;
+
+    move-object v6, v0
+
+    invoke-direct/range {v6 .. v15}, Lcom/google/android/gms/internal/ads/zzain;-><init>(ZLjava/lang/String;I[B[Ljava/lang/String;[Ljava/lang/String;ZJ)V
 
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-array p1, p1, [Lcom/google/android/gms/internal/ads/zzain;
+
+    return-object p1
 .end method

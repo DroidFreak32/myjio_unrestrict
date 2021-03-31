@@ -1,10 +1,12 @@
 .class public Lcom/google/android/gms/vision/Frame;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/gms/vision/Frame$zza;,
         Lcom/google/android/gms/vision/Frame$Metadata;,
         Lcom/google/android/gms/vision/Frame$Builder;
     }
@@ -22,15 +24,30 @@
 
 
 # instance fields
-.field public zzap:Lcom/google/android/gms/vision/Frame$Metadata;
+.field private final zzao:Lcom/google/android/gms/vision/Frame$Metadata;
 
-.field public zzaq:Ljava/nio/ByteBuffer;
+.field private zzap:Ljava/nio/ByteBuffer;
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public zzar:Landroid/graphics/Bitmap;
+.field private zzaq:Lcom/google/android/gms/vision/Frame$zza;
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x13
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+.end field
+
+.field private zzar:Landroid/graphics/Bitmap;
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -41,14 +58,17 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/vision/Frame$Metadata;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzap:Lcom/google/android/gms/vision/Frame$Metadata;
+    iput-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzao:Lcom/google/android/gms/vision/Frame$Metadata;
 
     const/4 v0, 0x0
 
     .line 3
-    iput-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Ljava/nio/ByteBuffer;
+    iput-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzap:Ljava/nio/ByteBuffer;
 
     .line 4
+    iput-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Lcom/google/android/gms/vision/Frame$zza;
+
+    .line 5
     iput-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzar:Landroid/graphics/Bitmap;
 
     return-void
@@ -57,7 +77,7 @@
 .method public synthetic constructor <init>(Lcom/google/android/gms/vision/zzb;)V
     .locals 0
 
-    .line 5
+    .line 6
     invoke-direct {p0}, Lcom/google/android/gms/vision/Frame;-><init>()V
 
     return-void
@@ -72,11 +92,20 @@
     return-object p1
 .end method
 
+.method public static synthetic zza(Lcom/google/android/gms/vision/Frame;Lcom/google/android/gms/vision/Frame$zza;)Lcom/google/android/gms/vision/Frame$zza;
+    .locals 0
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Lcom/google/android/gms/vision/Frame$zza;
+
+    return-object p1
+.end method
+
 .method public static synthetic zza(Lcom/google/android/gms/vision/Frame;)Ljava/nio/ByteBuffer;
     .locals 0
 
-    .line 3
-    iget-object p0, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Ljava/nio/ByteBuffer;
+    .line 4
+    iget-object p0, p0, Lcom/google/android/gms/vision/Frame;->zzap:Ljava/nio/ByteBuffer;
 
     return-object p0
 .end method
@@ -84,8 +113,8 @@
 .method public static synthetic zza(Lcom/google/android/gms/vision/Frame;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
     .locals 0
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Ljava/nio/ByteBuffer;
+    .line 3
+    iput-object p1, p0, Lcom/google/android/gms/vision/Frame;->zzap:Ljava/nio/ByteBuffer;
 
     return-object p1
 .end method
@@ -95,6 +124,15 @@
 
     .line 1
     iget-object p0, p0, Lcom/google/android/gms/vision/Frame;->zzar:Landroid/graphics/Bitmap;
+
+    return-object p0
+.end method
+
+.method public static synthetic zzc(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/vision/Frame$zza;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Lcom/google/android/gms/vision/Frame$zza;
 
     return-object p0
 .end method
@@ -151,81 +189,78 @@
     invoke-virtual/range {v1 .. v8}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
     .line 6
-    new-array v0, v0, [B
+    new-array v1, v0, [B
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 7
-    :goto_0
-    array-length v2, v9
-
-    if-ge v1, v2, :cond_0
+    aget v3, v9, v2
 
     .line 8
-    aget v2, v9, v1
+    invoke-static {v3}, Landroid/graphics/Color;->red(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    const v4, 0x3e991687    # 0.299f
+
+    mul-float v3, v3, v4
+
+    aget v4, v9, v2
 
     .line 9
-    invoke-static {v2}, Landroid/graphics/Color;->red(I)I
+    invoke-static {v4}, Landroid/graphics/Color;->green(I)I
 
-    move-result v2
+    move-result v4
 
-    int-to-float v2, v2
+    int-to-float v4, v4
 
-    const v3, 0x3e991687    # 0.299f
+    const v5, 0x3f1645a2    # 0.587f
 
-    mul-float v2, v2, v3
+    mul-float v4, v4, v5
 
-    aget v3, v9, v1
+    add-float/2addr v3, v4
+
+    aget v4, v9, v2
 
     .line 10
-    invoke-static {v3}, Landroid/graphics/Color;->green(I)I
+    invoke-static {v4}, Landroid/graphics/Color;->blue(I)I
 
-    move-result v3
+    move-result v4
 
-    int-to-float v3, v3
+    int-to-float v4, v4
 
-    const v4, 0x3f1645a2    # 0.587f
+    const v5, 0x3de978d5    # 0.114f
 
-    mul-float v3, v3, v4
+    mul-float v4, v4, v5
 
-    add-float/2addr v2, v3
+    add-float/2addr v3, v4
 
-    aget v3, v9, v1
+    float-to-int v3, v3
 
-    .line 11
-    invoke-static {v3}, Landroid/graphics/Color;->blue(I)I
+    int-to-byte v3, v3
 
-    move-result v3
+    aput-byte v3, v1, v2
 
-    int-to-float v3, v3
-
-    const v4, 0x3de978d5    # 0.114f
-
-    mul-float v3, v3, v4
-
-    add-float/2addr v2, v3
-
-    float-to-int v2, v2
-
-    int-to-byte v2, v2
-
-    aput-byte v2, v0, v1
-
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 12
+    .line 11
     :cond_0
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+    invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     return-object v0
 
-    .line 13
+    .line 12
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Ljava/nio/ByteBuffer;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzap:Ljava/nio/ByteBuffer;
 
     return-object v0
 .end method
@@ -234,7 +269,36 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzap:Lcom/google/android/gms/vision/Frame$Metadata;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzao:Lcom/google/android/gms/vision/Frame$Metadata;
+
+    return-object v0
+.end method
+
+.method public getPlanes()[Landroid/media/Image$Plane;
+    .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x13
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/vision/Frame;->zzaq:Lcom/google/android/gms/vision/Frame$zza;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/google/android/gms/vision/Frame$zza;->getPlanes()[Landroid/media/Image$Plane;
+
+    move-result-object v0
 
     return-object v0
 .end method

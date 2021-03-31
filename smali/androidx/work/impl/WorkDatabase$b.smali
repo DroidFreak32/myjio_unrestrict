@@ -1,11 +1,11 @@
 .class public Landroidx/work/impl/WorkDatabase$b;
-.super Landroidx/room/RoomDatabase$b;
+.super Landroidx/room/RoomDatabase$Callback;
 .source "WorkDatabase.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/work/impl/WorkDatabase;->h()Landroidx/room/RoomDatabase$b;
+    value = Landroidx/work/impl/WorkDatabase;->a()Landroidx/room/RoomDatabase$Callback;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,44 +19,48 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroidx/room/RoomDatabase$b;-><init>()V
+    invoke-direct {p0}, Landroidx/room/RoomDatabase$Callback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c(Lbi;)V
+.method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 1
+    .param p1    # Landroidx/sqlite/db/SupportSQLiteDatabase;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0, p1}, Landroidx/room/RoomDatabase$b;->c(Lbi;)V
+    invoke-super {p0, p1}, Landroidx/room/RoomDatabase$Callback;->onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     .line 2
-    invoke-interface {p1}, Lbi;->beginTransaction()V
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->beginTransaction()V
 
     .line 3
     :try_start_0
-    invoke-static {}, Landroidx/work/impl/WorkDatabase;->j()Ljava/lang/String;
+    invoke-static {}, Landroidx/work/impl/WorkDatabase;->c()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     .line 4
-    invoke-interface {p1}, Lbi;->setTransactionSuccessful()V
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
-    invoke-interface {p1}, Lbi;->endTransaction()V
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->endTransaction()V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    invoke-interface {p1}, Lbi;->endTransaction()V
+    invoke-interface {p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->endTransaction()V
 
     .line 6
     throw v0

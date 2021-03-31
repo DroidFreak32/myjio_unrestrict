@@ -31,7 +31,7 @@
     mul-float p3, p3, p2
 
     .line 1
-    invoke-static {p1, p3}, La53;->f(Landroid/view/View;F)V
+    invoke-static {p1, p3}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 
     goto :goto_0
 
@@ -43,7 +43,7 @@
     mul-float p3, p3, p2
 
     .line 2
-    invoke-static {p1, p3}, La53;->f(Landroid/view/View;F)V
+    invoke-static {p1, p3}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 
     :goto_0
     return-void
@@ -73,7 +73,7 @@
 
     .line 1
     :goto_0
-    invoke-static {p1, v2}, La53;->g(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleX(Landroid/view/View;F)V
 
     if-eqz v1, :cond_1
 
@@ -88,7 +88,7 @@
 
     .line 2
     :goto_1
-    invoke-static {p1, p3}, La53;->h(Landroid/view/View;F)V
+    invoke-static {p1, p3}, Lcom/nineoldandroids/view/ViewHelper;->setScaleY(Landroid/view/View;F)V
 
     return-void
 .end method
@@ -117,7 +117,7 @@
     int-to-float v0, v0
 
     .line 3
-    invoke-static {p1, v0}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     return-void
 .end method

@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/internal/ServiceSpecificExtraArgs$CastExtraArgs;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -18,6 +19,9 @@
 
 # static fields
 .field public static final LISTENER:Ljava/lang/String; = "listener"
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end field

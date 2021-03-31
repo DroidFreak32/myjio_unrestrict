@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/Object;Lcom/google/android/gms/internal/gtm/zzts;)V
+.method private static zza(Ljava/lang/Object;Lcom/google/android/gms/internal/gtm/zzts;)V
     .locals 0
 
     .line 1
@@ -90,6 +90,11 @@
 
 .method public final synthetic zza(Ljava/lang/Object;Lcom/google/android/gms/internal/gtm/zzum;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     check-cast p1, Lcom/google/android/gms/internal/gtm/zzts;
@@ -230,6 +235,11 @@
 
 .method public final synthetic zzc(Ljava/lang/Object;Lcom/google/android/gms/internal/gtm/zzum;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Lcom/google/android/gms/internal/gtm/zzts;

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public isEligibleStartService:Z
+.field private isEligibleStartService:Z
 
-.field public packageName:Ljava/lang/String;
+.field private packageName:Ljava/lang/String;
 
-.field public version:I
+.field private version:I
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getPackageName()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -32,34 +32,7 @@
     return-object v0
 .end method
 
-.method public a(I)V
-    .locals 0
-
-    .line 3
-    iput p1, p0, Lcom/inn/passivesdk/holders/AppInfo;->version:I
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/AppInfo;->packageName:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .locals 0
-
-    .line 4
-    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/AppInfo;->isEligibleStartService:Z
-
-    return-void
-.end method
-
-.method public b()I
+.method public getVersion()I
     .locals 1
 
     .line 1
@@ -68,13 +41,40 @@
     return v0
 .end method
 
-.method public c()Z
+.method public isEligibleStartService()Z
     .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/inn/passivesdk/holders/AppInfo;->isEligibleStartService:Z
 
     return v0
+.end method
+
+.method public setEligibleStartService(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/AppInfo;->isEligibleStartService:Z
+
+    return-void
+.end method
+
+.method public setPackageName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/AppInfo;->packageName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setVersion(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/inn/passivesdk/holders/AppInfo;->version:I
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

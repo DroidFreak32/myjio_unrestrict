@@ -1,45 +1,55 @@
 .class public final Lcom/google/android/gms/internal/ads/zzadb;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final synthetic zzabd:Lcom/google/android/gms/internal/ads/zzakm;
+# static fields
+.field public static zzdct:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final synthetic zzcdh:Lcom/google/android/gms/internal/ads/zzada;
+.field public static zzdcu:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzada;Lcom/google/android/gms/internal/ads/zzakm;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
+
+    const-string v0, "gads:js_flags:mf"
+
+    const/4 v1, 0x0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzadb;->zzcdh:Lcom/google/android/gms/internal/ads/zzada;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzadb;->zzabd:Lcom/google/android/gms/internal/ads/zzakm;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzadb;->zzcdh:Lcom/google/android/gms/internal/ads/zzada;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzada;->zza(Lcom/google/android/gms/internal/ads/zzada;)Lcom/google/android/gms/internal/ads/zzact;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzadb;->zzabd:Lcom/google/android/gms/internal/ads/zzakm;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadb;->zzdct:Lcom/google/android/gms/internal/ads/zzacn;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzact;->zzb(Lcom/google/android/gms/internal/ads/zzakm;)V
+    const-string v0, "gads:js_flags:update_interval"
+
+    const-wide/32 v1, 0x2932e00
+
+    .line 2
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzb(Ljava/lang/String;J)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadb;->zzdcu:Lcom/google/android/gms/internal/ads/zzacn;
 
     return-void
 .end method

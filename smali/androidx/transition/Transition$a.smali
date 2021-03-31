@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public a(FFFF)Landroid/graphics/Path;
+.method public getPath(FFFF)Landroid/graphics/Path;
     .locals 1
 
     .line 1

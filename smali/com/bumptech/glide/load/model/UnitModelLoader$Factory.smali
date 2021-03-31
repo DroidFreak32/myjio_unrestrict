@@ -29,7 +29,7 @@
 
 
 # static fields
-.field public static final FACTORY:Lcom/bumptech/glide/load/model/UnitModelLoader$Factory;
+.field private static final FACTORY:Lcom/bumptech/glide/load/model/UnitModelLoader$Factory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/UnitModelLoader$Factory<",
@@ -86,6 +86,9 @@
 # virtual methods
 .method public build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

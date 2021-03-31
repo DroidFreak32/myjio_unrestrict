@@ -21,6 +21,11 @@
 # virtual methods
 .method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 p2, 0x1
 

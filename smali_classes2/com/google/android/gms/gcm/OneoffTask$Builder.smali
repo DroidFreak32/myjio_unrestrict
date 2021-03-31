@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public zzal:J
+.field private zzal:J
 
-.field public zzam:J
+.field private zzam:J
 
 
 # direct methods
@@ -66,7 +66,7 @@
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/gcm/OneoffTask$Builder;->checkConditions()V
+    invoke-virtual {p0}, Lcom/google/android/gms/gcm/Task$Builder;->checkConditions()V
 
     .line 2
     new-instance v0, Lcom/google/android/gms/gcm/OneoffTask;
@@ -171,6 +171,9 @@
 
 .method public setPersisted(Z)Lcom/google/android/gms/gcm/OneoffTask$Builder;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.RECEIVE_BOOT_COMPLETED"
+    .end annotation
 
     .line 1
     iput-boolean p1, p0, Lcom/google/android/gms/gcm/Task$Builder;->isPersisted:Z
@@ -180,6 +183,9 @@
 
 .method public bridge synthetic setPersisted(Z)Lcom/google/android/gms/gcm/Task$Builder;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.RECEIVE_BOOT_COMPLETED"
+    .end annotation
 
     .line 2
     invoke-virtual {p0, p1}, Lcom/google/android/gms/gcm/OneoffTask$Builder;->setPersisted(Z)Lcom/google/android/gms/gcm/OneoffTask$Builder;

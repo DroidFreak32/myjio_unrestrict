@@ -1,32 +1,32 @@
-.class public final Lcom/google/android/gms/internal/location/zzi;
-.super Lcom/google/android/gms/internal/location/zzj;
+.class public abstract Lcom/google/android/gms/internal/location/zzi;
+.super Lcom/google/android/gms/location/ActivityRecognition$zza;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
-# instance fields
-.field public final synthetic zzbz:Landroid/app/PendingIntent;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/location/ActivityRecognition$zza<",
+        "Lcom/google/android/gms/common/api/Status;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/location/zze;Lcom/google/android/gms/common/api/GoogleApiClient;Landroid/app/PendingIntent;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
     .locals 0
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/location/zzi;->zzbz:Landroid/app/PendingIntent;
-
-    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/location/zzj;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    .line 1
+    invoke-direct {p0, p1}, Lcom/google/android/gms/location/ActivityRecognition$zza;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic doExecute(Lcom/google/android/gms/common/api/Api$AnyClient;)V
-    .locals 1
+.method public synthetic createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
+    .locals 0
 
-    check-cast p1, Lcom/google/android/gms/internal/location/zzaz;
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzi;->zzbz:Landroid/app/PendingIntent;
-
-    invoke-virtual {p1, v0, p0}, Lcom/google/android/gms/internal/location/zzaz;->zza(Landroid/app/PendingIntent;Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;)V
-
-    return-void
+    return-object p1
 .end method

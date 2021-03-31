@@ -9,7 +9,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -59,6 +59,11 @@
 
 .method public parse(Ljava/lang/String;)Ljava/util/Date;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     .line 2
     new-instance v0, Ljava/text/ParsePosition;

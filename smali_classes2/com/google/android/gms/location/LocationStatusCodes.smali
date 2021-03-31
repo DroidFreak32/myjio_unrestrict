@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/location/LocationStatusCodes;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -20,15 +21,16 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zzc(I)I
+.method public static zza(I)I
     .locals 2
 
     const/4 v0, 0x1
@@ -42,9 +44,9 @@
 
     if-gt v1, p0, :cond_2
 
-    const/16 v1, 0x3ea
+    const/16 v1, 0x3ee
 
-    if-gt p0, v1, :cond_2
+    if-ge p0, v1, :cond_2
 
     :cond_1
     return p0
@@ -53,7 +55,7 @@
     return v0
 .end method
 
-.method public static zzd(I)Lcom/google/android/gms/common/api/Status;
+.method public static zzb(I)Lcom/google/android/gms/common/api/Status;
     .locals 1
 
     const/4 v0, 0x1
@@ -65,6 +67,7 @@
     :cond_0
     const/16 p0, 0xd
 
+    .line 1
     :goto_0
     new-instance v0, Lcom/google/android/gms/common/api/Status;
 

@@ -1,314 +1,346 @@
-.class public final synthetic Lcom/google/android/gms/internal/measurement/zzio;
+.class public Lcom/google/android/gms/internal/measurement/zzio;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # static fields
-.field public static final synthetic zza:[I
+.field private static final zza:Lcom/google/android/gms/internal/measurement/zzhl;
+
+
+# instance fields
+.field private zzb:Lcom/google/android/gms/internal/measurement/zzgp;
+
+.field private volatile zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+.field private volatile zzd:Lcom/google/android/gms/internal/measurement/zzgp;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzir;->values()[Lcom/google/android/gms/internal/measurement/zzir;
+    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhl;->zza()Lcom/google/android/gms/internal/measurement/zzhl;
 
     move-result-object v0
 
-    array-length v0, v0
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:Lcom/google/android/gms/internal/measurement/zzhl;
 
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zza:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzb:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzc:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzd:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zze:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzf:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzg:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    :try_start_7
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzh:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
-
-    :catch_7
-    :try_start_8
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzl:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
-
-    :catch_8
-    :try_start_9
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzm:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xa
-
-    aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
-
-    :catch_9
-    :try_start_a
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzo:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xb
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
-
-    :catch_a
-    :try_start_b
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzp:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xc
-
-    aput v2, v0, v1
-    :try_end_b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
-
-    :catch_b
-    :try_start_c
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzq:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xd
-
-    aput v2, v0, v1
-    :try_end_c
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
-
-    :catch_c
-    :try_start_d
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzr:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xe
-
-    aput v2, v0, v1
-    :try_end_d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d
-
-    :catch_d
-    :try_start_e
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzi:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xf
-
-    aput v2, v0, v1
-    :try_end_e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_e
-
-    :catch_e
-    :try_start_f
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzj:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x10
-
-    aput v2, v0, v1
-    :try_end_f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f
-
-    :catch_f
-    :try_start_10
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzk:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x11
-
-    aput v2, v0, v1
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10
-
-    :catch_10
-    :try_start_11
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzio;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzir;->zzn:Lcom/google/android/gms/internal/measurement/zzir;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x12
-
-    aput v2, v0, v1
-    :try_end_11
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_11 .. :try_end_11} :catch_11
-
-    :catch_11
     return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method private final zzb(Lcom/google/android/gms/internal/measurement/zzjj;)Lcom/google/android/gms/internal/measurement/zzjj;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    if-nez v0, :cond_1
+
+    .line 2
+    monitor-enter p0
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    if-eqz v0, :cond_0
+
+    .line 4
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    .line 5
+    :cond_0
+    :try_start_1
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    .line 6
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgp;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+    :try_end_1
+    .catch Lcom/google/android/gms/internal/measurement/zzij; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 7
+    :catch_0
+    :try_start_2
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    .line 8
+    sget-object p1, Lcom/google/android/gms/internal/measurement/zzgp;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    .line 9
+    :goto_0
+    monitor-exit p0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
+
+    .line 10
+    :cond_1
+    :goto_1
+    iget-object p1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    return-object p1
+.end method
+
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    .line 1
+    :cond_0
+    instance-of v0, p1, Lcom/google/android/gms/internal/measurement/zzio;
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 2
+    :cond_1
+    check-cast p1, Lcom/google/android/gms/internal/measurement/zzio;
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    .line 4
+    iget-object v1, p1, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    if-nez v0, :cond_2
+
+    if-nez v1, :cond_2
+
+    .line 5
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzio;->zzc()Lcom/google/android/gms/internal/measurement/zzgp;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/measurement/zzio;->zzc()Lcom/google/android/gms/internal/measurement/zzgp;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/measurement/zzgp;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_2
+    if-eqz v0, :cond_3
+
+    if-eqz v1, :cond_3
+
+    .line 6
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_3
+    if-eqz v0, :cond_4
+
+    .line 7
+    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzjl;->zzbv()Lcom/google/android/gms/internal/measurement/zzjj;
+
+    move-result-object v1
+
+    invoke-direct {p1, v1}, Lcom/google/android/gms/internal/measurement/zzio;->zzb(Lcom/google/android/gms/internal/measurement/zzjj;)Lcom/google/android/gms/internal/measurement/zzjj;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 8
+    :cond_4
+    invoke-interface {v1}, Lcom/google/android/gms/internal/measurement/zzjl;->zzbv()Lcom/google/android/gms/internal/measurement/zzjj;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzio;->zzb(Lcom/google/android/gms/internal/measurement/zzjj;)Lcom/google/android/gms/internal/measurement/zzjj;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/measurement/zzjj;)Lcom/google/android/gms/internal/measurement/zzjj;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    const/4 v1, 0x0
+
+    .line 2
+    iput-object v1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzb:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    .line 3
+    iput-object v1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    .line 4
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    return-object v0
+.end method
+
+.method public final zzb()I
+    .locals 1
+
+    .line 11
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    if-eqz v0, :cond_0
+
+    .line 12
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgp;->zza()I
+
+    move-result v0
+
+    return v0
+
+    .line 13
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    if-eqz v0, :cond_1
+
+    .line 14
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzjj;->zzbp()I
+
+    move-result v0
+
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final zzc()Lcom/google/android/gms/internal/measurement/zzgp;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    monitor-enter p0
+
+    .line 4
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    if-eqz v0, :cond_1
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    monitor-exit p0
+
+    return-object v0
+
+    .line 6
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    if-nez v0, :cond_2
+
+    .line 7
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgp;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    goto :goto_0
+
+    .line 8
+    :cond_2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzc:Lcom/google/android/gms/internal/measurement/zzjj;
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzjj;->zzbj()Lcom/google/android/gms/internal/measurement/zzgp;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    .line 9
+    :goto_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzio;->zzd:Lcom/google/android/gms/internal/measurement/zzgp;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    .line 10
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

@@ -1,377 +1,54 @@
 .class public Lkc;
-.super Ljava/lang/Object;
-.source "FragmentAnim.java"
+.super Lcom/getkeepsafe/taptargetview/TapTarget;
+.source "ViewTapTarget.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lkc$e;,
-        Lkc$d;
-    }
-.end annotation
+# instance fields
+.field public final C:Landroid/view/View;
 
 
 # direct methods
-.method public static a(IZ)I
-    .locals 1
-
-    const/16 v0, 0x1001
-
-    if-eq p0, v0, :cond_4
-
-    const/16 v0, 0x1003
-
-    if-eq p0, v0, :cond_2
-
-    const/16 v0, 0x2002
-
-    if-eq p0, v0, :cond_0
-
-    const/4 p0, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    .line 41
-    sget p0, Lfc;->fragment_close_enter:I
-
-    goto :goto_0
-
-    :cond_1
-    sget p0, Lfc;->fragment_close_exit:I
-
-    goto :goto_0
-
-    :cond_2
-    if-eqz p1, :cond_3
-
-    .line 42
-    sget p0, Lfc;->fragment_fade_enter:I
-
-    goto :goto_0
-
-    :cond_3
-    sget p0, Lfc;->fragment_fade_exit:I
-
-    goto :goto_0
-
-    :cond_4
-    if-eqz p1, :cond_5
-
-    .line 43
-    sget p0, Lfc;->fragment_open_enter:I
-
-    goto :goto_0
-
-    :cond_5
-    sget p0, Lfc;->fragment_open_exit:I
-
-    :goto_0
-    return p0
-.end method
-
-.method public static a(Landroid/content/Context;Llc;Landroidx/fragment/app/Fragment;Z)Lkc$d;
-    .locals 5
+.method public constructor <init>(Landroid/view/View;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    .locals 0
+    .param p3    # Ljava/lang/CharSequence;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p2}, Landroidx/fragment/app/Fragment;->getNextTransition()I
-
-    move-result v0
-
-    .line 2
-    invoke-virtual {p2}, Landroidx/fragment/app/Fragment;->getNextAnim()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    .line 3
-    invoke-virtual {p2, v2}, Landroidx/fragment/app/Fragment;->setNextAnim(I)V
-
-    .line 4
-    iget v3, p2, Landroidx/fragment/app/Fragment;->mContainerId:I
-
-    invoke-virtual {p1, v3}, Llc;->a(I)Landroid/view/View;
-
-    move-result-object p1
-
-    const/4 v3, 0x0
+    invoke-direct {p0, p2, p3}, Lcom/getkeepsafe/taptargetview/TapTarget;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     if-eqz p1, :cond_0
 
-    .line 5
-    sget v4, Lgc;->visible_removing_fragment_view_tag:I
+    .line 2
+    iput-object p1, p0, Lkc;->C:Landroid/view/View;
 
-    .line 6
-    invoke-virtual {p1, v4}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    return-void
 
-    move-result-object v4
-
-    if-eqz v4, :cond_0
-
-    .line 7
-    sget v4, Lgc;->visible_removing_fragment_view_tag:I
-
-    invoke-virtual {p1, v4, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 8
+    .line 3
     :cond_0
-    iget-object p1, p2, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    if-eqz p1, :cond_1
+    const-string p2, "Given null view to target"
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getLayoutTransition()Landroid/animation/LayoutTransition;
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    return-object v3
-
-    .line 9
-    :cond_1
-    invoke-virtual {p2, v0, p3, v1}, Landroidx/fragment/app/Fragment;->onCreateAnimation(IZI)Landroid/view/animation/Animation;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    .line 10
-    new-instance p0, Lkc$d;
-
-    invoke-direct {p0, p1}, Lkc$d;-><init>(Landroid/view/animation/Animation;)V
-
-    return-object p0
-
-    .line 11
-    :cond_2
-    invoke-virtual {p2, v0, p3, v1}, Landroidx/fragment/app/Fragment;->onCreateAnimator(IZI)Landroid/animation/Animator;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_3
-
-    .line 12
-    new-instance p0, Lkc$d;
-
-    invoke-direct {p0, p1}, Lkc$d;-><init>(Landroid/animation/Animator;)V
-
-    return-object p0
-
-    :cond_3
-    if-eqz v1, :cond_7
-
-    .line 13
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "anim"
-
-    .line 14
-    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_5
-
-    .line 15
-    :try_start_0
-    invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_4
-
-    .line 16
-    new-instance v4, Lkc$d;
-
-    invoke-direct {v4, p2}, Lkc$d;-><init>(Landroid/view/animation/Animation;)V
-    :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v4
-
-    :cond_4
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :catch_0
-    nop
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    .line 17
-    throw p0
-
-    :cond_5
-    :goto_0
-    if-nez v2, :cond_7
-
-    .line 18
-    :try_start_1
-    invoke-static {p0, v1}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_7
-
-    .line 19
-    new-instance v2, Lkc$d;
-
-    invoke-direct {v2, p2}, Lkc$d;-><init>(Landroid/animation/Animator;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_2
-
-    return-object v2
-
-    :catch_2
-    move-exception p2
-
-    if-nez p1, :cond_6
-
-    .line 20
-    invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_7
-
-    .line 21
-    new-instance p0, Lkc$d;
-
-    invoke-direct {p0, p1}, Lkc$d;-><init>(Landroid/view/animation/Animation;)V
-
-    return-object p0
-
-    .line 22
-    :cond_6
-    throw p2
-
-    :cond_7
-    if-nez v0, :cond_8
-
-    return-object v3
-
-    .line 23
-    :cond_8
-    invoke-static {v0, p3}, Lkc;->a(IZ)I
-
-    move-result p1
-
-    if-gez p1, :cond_9
-
-    return-object v3
-
-    .line 24
-    :cond_9
-    new-instance p2, Lkc$d;
-
-    invoke-static {p0, p1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object p0
-
-    invoke-direct {p2, p0}, Lkc$d;-><init>(Landroid/view/animation/Animation;)V
-
-    return-object p2
+    throw p1
 .end method
 
-.method public static a(Landroidx/fragment/app/Fragment;Lkc$d;Lzc$g;)V
-    .locals 7
 
-    .line 25
-    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+# virtual methods
+.method public onReady(Ljava/lang/Runnable;)V
+    .locals 2
 
-    .line 26
-    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
+    .line 1
+    iget-object v0, p0, Lkc;->C:Landroid/view/View;
 
-    .line 27
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->startViewTransition(Landroid/view/View;)V
+    new-instance v1, Lkc$a;
 
-    .line 28
-    new-instance v5, Lf8;
+    invoke-direct {v1, p0, p1}, Lkc$a;-><init>(Lkc;Ljava/lang/Runnable;)V
 
-    invoke-direct {v5}, Lf8;-><init>()V
+    invoke-static {v0, v1}, Llc;->b(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 29
-    new-instance v0, Lkc$a;
-
-    invoke-direct {v0, p0}, Lkc$a;-><init>(Landroidx/fragment/app/Fragment;)V
-
-    invoke-virtual {v5, v0}, Lf8;->a(Lf8$a;)V
-
-    .line 30
-    invoke-interface {p2, p0, v5}, Lzc$g;->b(Landroidx/fragment/app/Fragment;Lf8;)V
-
-    .line 31
-    iget-object v0, p1, Lkc$d;->a:Landroid/view/animation/Animation;
-
-    if-eqz v0, :cond_0
-
-    .line 32
-    new-instance p1, Lkc$e;
-
-    invoke-direct {p1, v0, v1, v2}, Lkc$e;-><init>(Landroid/view/animation/Animation;Landroid/view/ViewGroup;Landroid/view/View;)V
-
-    .line 33
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->setAnimatingAway(Landroid/view/View;)V
-
-    .line 34
-    new-instance v0, Lkc$b;
-
-    invoke-direct {v0, v1, p0, p2, v5}, Lkc$b;-><init>(Landroid/view/ViewGroup;Landroidx/fragment/app/Fragment;Lzc$g;Lf8;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
-
-    .line 35
-    iget-object p0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
-
-    goto :goto_0
-
-    .line 36
-    :cond_0
-    iget-object p1, p1, Lkc$d;->b:Landroid/animation/Animator;
-
-    .line 37
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->setAnimator(Landroid/animation/Animator;)V
-
-    .line 38
-    new-instance v6, Lkc$c;
-
-    move-object v0, v6
-
-    move-object v3, p0
-
-    move-object v4, p2
-
-    invoke-direct/range {v0 .. v5}, Lkc$c;-><init>(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/fragment/app/Fragment;Lzc$g;Lf8;)V
-
-    invoke-virtual {p1, v6}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    .line 39
-    iget-object p0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-virtual {p1, p0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
-
-    .line 40
-    invoke-virtual {p1}, Landroid/animation/Animator;->start()V
-
-    :goto_0
     return-void
 .end method

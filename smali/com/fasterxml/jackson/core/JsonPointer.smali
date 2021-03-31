@@ -108,7 +108,7 @@
     return-void
 .end method
 
-.method public static _appendEscape(Ljava/lang/StringBuilder;C)V
+.method private static _appendEscape(Ljava/lang/StringBuilder;C)V
     .locals 2
 
     const/16 v0, 0x7e
@@ -141,7 +141,7 @@
     return-void
 .end method
 
-.method public static _appendEscaped(Ljava/lang/StringBuilder;Ljava/lang/String;)V
+.method private static _appendEscaped(Ljava/lang/StringBuilder;Ljava/lang/String;)V
     .locals 4
 
     .line 1
@@ -163,7 +163,7 @@
 
     if-ne v2, v3, :cond_0
 
-    const-string v2, "~1"
+    const-string/jumbo v2, "~1"
 
     .line 3
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -175,7 +175,7 @@
 
     if-ne v2, v3, :cond_1
 
-    const-string v2, "~0"
+    const-string/jumbo v2, "~0"
 
     .line 4
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -195,7 +195,7 @@
     return-void
 .end method
 
-.method public static _fullPath(Lcom/fasterxml/jackson/core/JsonPointer;Ljava/lang/String;)Ljava/lang/String;
+.method private static _fullPath(Lcom/fasterxml/jackson/core/JsonPointer;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
     const/16 v0, 0x2f
@@ -264,7 +264,7 @@
     return-object p0
 .end method
 
-.method public static final _parseIndex(Ljava/lang/String;)I
+.method private static final _parseIndex(Ljava/lang/String;)I
     .locals 7
 
     .line 1
@@ -555,6 +555,11 @@
 
 .method public static compile(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonPointer;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     if-eqz p0, :cond_2
 

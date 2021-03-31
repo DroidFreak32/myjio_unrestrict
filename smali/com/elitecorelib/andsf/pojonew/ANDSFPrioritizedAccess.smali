@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "ANDSFPrioritizedAccess"
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -32,14 +36,34 @@
 
 # instance fields
 .field public AccessId:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "AccessId"
+    .end annotation
+.end field
 
 .field public AccessNetworkPriority:I
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "AccessNetworkPriority"
+    .end annotation
+.end field
 
 .field public AccessTechnology:I
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "AccessTechnology"
+    .end annotation
+.end field
 
 .field public SecondaryAccessId:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = ""
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 
 # direct methods

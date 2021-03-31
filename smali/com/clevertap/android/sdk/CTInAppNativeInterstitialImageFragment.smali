@@ -4,41 +4,20 @@
 
 
 # instance fields
-.field public layoutHeight:I
-
-.field public layoutWidth:I
-
-.field public relativeLayout:Landroid/widget/RelativeLayout;
+.field private relativeLayout:Landroid/widget/RelativeLayout;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/CTInAppBaseFullFragment;-><init>()V
 
-    const/4 v0, 0x0
-
-    .line 2
-    iput v0, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->layoutHeight:I
-
-    .line 3
-    iput v0, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->layoutWidth:I
-
     return-void
 .end method
 
-.method public static synthetic access$002(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;I)I
-    .locals 0
-
-    .line 1
-    iput p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->layoutHeight:I
-
-    return p1
-.end method
-
-.method public static synthetic access$100(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;)Landroid/widget/RelativeLayout;
+.method public static synthetic access$000(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;)Landroid/widget/RelativeLayout;
     .locals 0
 
     .line 1
@@ -47,19 +26,20 @@
     return-object p0
 .end method
 
-.method public static synthetic access$202(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;I)I
-    .locals 0
-
-    .line 1
-    iput p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->layoutWidth:I
-
-    return p1
-.end method
-
 
 # virtual methods
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 4
+    .param p1    # Landroid/view/LayoutInflater;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object p3, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
@@ -112,7 +92,7 @@
 
     invoke-direct {p3, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     const p3, 0x30a68
 
@@ -135,8 +115,6 @@
     iput-object v1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->relativeLayout:Landroid/widget/RelativeLayout;
 
     .line 8
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->relativeLayout:Landroid/widget/RelativeLayout;
-
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->getBackgroundColor()Ljava/lang/String;
@@ -185,11 +163,12 @@
 
     invoke-direct {v3, p0, p2, p3}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment$2;-><init>(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;Landroid/widget/FrameLayout;Lcom/clevertap/android/sdk/CloseImageView;)V
 
+    .line 12
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
     goto :goto_1
 
-    .line 12
+    .line 13
     :cond_2
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;->relativeLayout:Landroid/widget/RelativeLayout;
 
@@ -201,9 +180,10 @@
 
     invoke-direct {v3, p0, p2, p3}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment$1;-><init>(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment;Landroid/widget/FrameLayout;Lcom/clevertap/android/sdk/CloseImageView;)V
 
+    .line 14
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 13
+    .line 15
     :goto_1
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
@@ -215,7 +195,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 14
+    .line 16
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     iget v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->currentOrientation:I
@@ -230,11 +210,12 @@
 
     if-eqz p2, :cond_3
 
-    .line 15
+    .line 17
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     iget v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->currentOrientation:I
 
+    .line 18
     invoke-virtual {p2, v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->getInAppMediaForOrientation(I)Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
 
     move-result-object v2
@@ -243,23 +224,24 @@
 
     move-result-object p2
 
+    .line 19
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 16
+    .line 20
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 17
+    .line 21
     new-instance p2, Lcom/clevertap/android/sdk/CTInAppBaseFragment$CTInAppNativeButtonClickListener;
 
     invoke-direct {p2, p0}, Lcom/clevertap/android/sdk/CTInAppBaseFragment$CTInAppNativeButtonClickListener;-><init>(Lcom/clevertap/android/sdk/CTInAppBaseFragment;)V
 
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 18
+    .line 22
     :cond_3
     new-instance p2, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialImageFragment$3;
 
@@ -267,7 +249,7 @@
 
     invoke-virtual {p3, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 19
+    .line 23
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-virtual {p2}, Lcom/clevertap/android/sdk/CTInAppNotification;->isHideCloseButton()Z
@@ -278,12 +260,12 @@
 
     const/16 p2, 0x8
 
-    .line 20
+    .line 24
     invoke-virtual {p3, p2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_2
 
-    .line 21
+    .line 25
     :cond_4
     invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 

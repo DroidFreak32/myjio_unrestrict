@@ -25,7 +25,7 @@
 
 
 # direct methods
-.method public constructor <init>(IJ)V
+.method private constructor <init>(IJ)V
     .locals 0
 
     .line 1
@@ -42,6 +42,12 @@
 
 .method public static peek(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)Lcom/google/android/jioexoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p1, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->data:[B

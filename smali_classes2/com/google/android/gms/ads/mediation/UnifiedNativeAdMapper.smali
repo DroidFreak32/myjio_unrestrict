@@ -1,22 +1,22 @@
 .class public Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;
 .super Ljava/lang/Object;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # instance fields
-.field public extras:Landroid/os/Bundle;
+.field private extras:Landroid/os/Bundle;
 
-.field public zzboi:Lcom/google/android/gms/ads/VideoController;
+.field private zzcjv:Lcom/google/android/gms/ads/VideoController;
 
-.field public zzcih:Ljava/lang/String;
+.field private zzdul:Ljava/lang/String;
 
-.field public zzdjm:Ljava/lang/String;
+.field private zzetv:Landroid/view/View;
 
-.field public zzdjn:Ljava/util/List;
+.field private zzetw:Z
+
+.field private zzetx:Ljava/lang/String;
+
+.field private zzety:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -26,29 +26,27 @@
     .end annotation
 .end field
 
-.field public zzdjo:Lcom/google/android/gms/ads/formats/NativeAd$Image;
+.field private zzeua:Ljava/lang/String;
 
-.field public zzdjp:Ljava/lang/String;
+.field private zzeub:Ljava/lang/String;
 
-.field public zzdjq:Ljava/lang/String;
+.field private zzeuc:Lcom/google/android/gms/ads/formats/NativeAd$Image;
 
-.field public zzdjr:Ljava/lang/Double;
+.field private zzeue:Ljava/lang/String;
 
-.field public zzdjs:Ljava/lang/String;
+.field private zzeuf:Ljava/lang/String;
 
-.field public zzdjt:Ljava/lang/String;
+.field private zzeuj:Ljava/lang/Double;
 
-.field public zzdju:Z
+.field private zzeuk:Landroid/view/View;
 
-.field public zzdjv:Landroid/view/View;
+.field private zzeul:Ljava/lang/Object;
 
-.field public zzdjw:Landroid/view/View;
+.field private zzeum:Z
 
-.field public zzdjx:Ljava/lang/Object;
+.field private zzeun:Z
 
-.field public zzdjy:Z
-
-.field public zzdjz:Z
+.field private zzeuo:F
 
 
 # direct methods
@@ -74,7 +72,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjv:Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuk:Landroid/view/View;
 
     return-object v0
 .end method
@@ -83,7 +81,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjq:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeub:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -92,7 +90,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzcih:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdul:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -101,9 +99,25 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjp:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeua:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getCurrentTime()F
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getDuration()F
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public final getExtras()Landroid/os/Bundle;
@@ -119,7 +133,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjm:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzetx:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -128,7 +142,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjo:Lcom/google/android/gms/ads/formats/NativeAd$Image;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuc:Lcom/google/android/gms/ads/formats/NativeAd$Image;
 
     return-object v0
 .end method
@@ -145,16 +159,25 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzety:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public getMediaContentAspectRatio()F
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuo:F
+
+    return v0
 .end method
 
 .method public final getOverrideClickHandling()Z
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjz:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeun:Z
 
     return v0
 .end method
@@ -163,7 +186,7 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjy:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeum:Z
 
     return v0
 .end method
@@ -172,7 +195,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjt:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuf:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -181,7 +204,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjr:Ljava/lang/Double;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuj:Ljava/lang/Double;
 
     return-object v0
 .end method
@@ -190,7 +213,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjs:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeue:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -199,7 +222,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzboi:Lcom/google/android/gms/ads/VideoController;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzcjv:Lcom/google/android/gms/ads/VideoController;
 
     return-object v0
 .end method
@@ -214,7 +237,7 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdju:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzetw:Z
 
     return v0
 .end method
@@ -229,7 +252,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjv:Landroid/view/View;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuk:Landroid/view/View;
 
     return-void
 .end method
@@ -238,7 +261,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjq:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeub:Ljava/lang/String;
 
     return-void
 .end method
@@ -247,7 +270,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzcih:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdul:Ljava/lang/String;
 
     return-void
 .end method
@@ -256,7 +279,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjp:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeua:Ljava/lang/String;
 
     return-void
 .end method
@@ -274,7 +297,7 @@
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdju:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzetw:Z
 
     return-void
 .end method
@@ -283,7 +306,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjm:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzetx:Ljava/lang/String;
 
     return-void
 .end method
@@ -292,7 +315,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjo:Lcom/google/android/gms/ads/formats/NativeAd$Image;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuc:Lcom/google/android/gms/ads/formats/NativeAd$Image;
 
     return-void
 .end method
@@ -309,7 +332,16 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjn:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzety:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public setMediaContentAspectRatio(F)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuo:F
 
     return-void
 .end method
@@ -318,7 +350,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjw:Landroid/view/View;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzetv:Landroid/view/View;
 
     return-void
 .end method
@@ -327,7 +359,7 @@
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjz:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeun:Z
 
     return-void
 .end method
@@ -336,7 +368,7 @@
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjy:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeum:Z
 
     return-void
 .end method
@@ -345,7 +377,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjt:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuf:Ljava/lang/String;
 
     return-void
 .end method
@@ -354,7 +386,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjr:Ljava/lang/Double;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeuj:Ljava/lang/Double;
 
     return-void
 .end method
@@ -363,7 +395,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjs:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeue:Ljava/lang/String;
 
     return-void
 .end method
@@ -398,34 +430,34 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzboi:Lcom/google/android/gms/ads/VideoController;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzcjv:Lcom/google/android/gms/ads/VideoController;
 
     return-void
 .end method
 
-.method public final zzbh()Ljava/lang/Object;
+.method public final zzaee()Landroid/view/View;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjx:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzetv:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method public final zzm(Ljava/lang/Object;)V
+.method public final zzjw()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeul:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final zzn(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjx:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzeul:Ljava/lang/Object;
 
     return-void
-.end method
-
-.method public final zzxr()Landroid/view/View;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/UnifiedNativeAdMapper;->zzdjw:Landroid/view/View;
-
-    return-object v0
 .end method

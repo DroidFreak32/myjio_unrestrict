@@ -19,13 +19,13 @@
 
 
 # static fields
-.field public static final zzlq:Lcom/google/android/gms/internal/clearcut/zzcw;
+.field private static final zzlq:Lcom/google/android/gms/internal/clearcut/zzcw;
 
-.field public static final zzlr:Lcom/google/android/gms/internal/clearcut/zzcx;
+.field private static final zzlr:Lcom/google/android/gms/internal/clearcut/zzcx;
 
 
 # instance fields
-.field public final zzls:Ljava/util/List;
+.field private final zzls:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -47,8 +47,6 @@
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcw;->zzlq:Lcom/google/android/gms/internal/clearcut/zzcw;
 
     invoke-virtual {v0}, Lcom/google/android/gms/internal/clearcut/zzav;->zzv()V
-
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzcw;->zzlq:Lcom/google/android/gms/internal/clearcut/zzcw;
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcw;->zzlr:Lcom/google/android/gms/internal/clearcut/zzcx;
 
@@ -77,7 +75,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/ArrayList;)V
+.method private constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -95,7 +93,7 @@
     return-void
 .end method
 
-.method public static zze(Ljava/lang/Object;)Ljava/lang/String;
+.method private static zze(Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
 
     instance-of v0, p0, Ljava/lang/String;
@@ -207,7 +205,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/clearcut/zzcw;->addAll(ILjava/util/Collection;)Z
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/clearcut/zzav;->addAll(ILjava/util/Collection;)Z
 
     move-result p1
 
@@ -434,7 +432,7 @@
 .method public final zzbu()Lcom/google/android/gms/internal/clearcut/zzcx;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzcw;->zzu()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzav;->zzu()Z
 
     move-result v0
 

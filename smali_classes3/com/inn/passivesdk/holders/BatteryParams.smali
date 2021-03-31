@@ -4,27 +4,27 @@
 
 
 # instance fields
-.field public batteryHealth:Ljava/lang/String;
+.field private batteryHealth:Ljava/lang/String;
 
-.field public batteryLevel:Ljava/lang/Integer;
+.field private batteryLevel:Ljava/lang/Integer;
 
-.field public batteryPercentage:Ljava/lang/Float;
+.field private batteryPercentage:Ljava/lang/Float;
 
-.field public batteryScale:Ljava/lang/Integer;
+.field private batteryScale:Ljava/lang/Integer;
 
-.field public batteryStatus:Ljava/lang/String;
+.field private batteryStatus:Ljava/lang/String;
 
-.field public batteryTemperature:Ljava/lang/String;
+.field private batteryTemperature:Ljava/lang/String;
 
-.field public batteryVoltage:Ljava/lang/String;
+.field private batteryVoltage:Ljava/lang/String;
 
-.field public chargerType:Ljava/lang/String;
+.field private chargerType:Ljava/lang/String;
 
-.field public chargingStatus:Z
+.field private chargingStatus:Z
 
-.field public plugStatus:Ljava/lang/String;
+.field private plugStatus:Ljava/lang/String;
 
-.field public remainingTime:Ljava/lang/String;
+.field private remainingTime:Ljava/lang/String;
 
 
 # direct methods
@@ -44,61 +44,61 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/Integer;
+.method public getBatteryHealth()Ljava/lang/String;
     .locals 1
 
-    .line 3
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryHealth:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getBatteryLevel()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryLevel:Ljava/lang/Integer;
 
     return-object v0
 .end method
 
-.method public a(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 4
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryLevel:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryTemperature:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .locals 0
-
-    .line 1
-    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->chargingStatus:Z
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/String;
+.method public getBatteryPercentage()Ljava/lang/Float;
     .locals 1
 
-    .line 2
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryPercentage:Ljava/lang/Float;
+
+    return-object v0
+.end method
+
+.method public getBatteryScale()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryScale:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getBatteryStatus()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryStatus:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getBatteryTemperature()Ljava/lang/String;
+    .locals 1
+
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryTemperature:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public b(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryVoltage:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/String;
+.method public getBatteryVoltage()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -107,34 +107,16 @@
     return-object v0
 .end method
 
-.method public c(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->chargerType:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public d()Ljava/lang/String;
+.method public getChargerType()Ljava/lang/String;
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->chargerType:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public d(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->plugStatus:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public e()Z
+.method public getChargingStatus()Z
     .locals 1
 
     .line 1
@@ -143,13 +125,121 @@
     return v0
 .end method
 
-.method public f()Ljava/lang/String;
+.method public getPlugStatus()Ljava/lang/String;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->plugStatus:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getRemainingTime()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BatteryParams;->remainingTime:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setBatteryHealth(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryHealth:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setBatteryLevel(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryLevel:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setBatteryPercentage(Ljava/lang/Float;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryPercentage:Ljava/lang/Float;
+
+    return-void
+.end method
+
+.method public setBatteryScale(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryScale:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setBatteryStatus(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryStatus:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setBatteryTemperature(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryTemperature:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setBatteryVoltage(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->batteryVoltage:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setChargerType(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->chargerType:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setChargingStatus(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->chargingStatus:Z
+
+    return-void
+.end method
+
+.method public setPlugStatus(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->plugStatus:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setRemainingTime(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BatteryParams;->remainingTime:Ljava/lang/String;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

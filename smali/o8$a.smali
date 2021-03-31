@@ -1,6 +1,6 @@
-.class public final Lo8$a;
+.class public synthetic Lo8$a;
 .super Ljava/lang/Object;
-.source "BidiFormatter.java"
+.source "SVGAndroidRenderer.java"
 
 
 # annotations
@@ -9,114 +9,261 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "a"
+    accessFlags = 0x1009
+    name = null
 .end annotation
 
 
-# instance fields
-.field public a:Z
+# static fields
+.field public static final synthetic a:[I
 
-.field public b:I
+.field public static final synthetic b:[I
 
-.field public c:Ls8;
+.field public static final synthetic c:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    invoke-static {}, Lcom/caverock/androidsvg/SVG$Style$LineJoin;->values()[Lcom/caverock/androidsvg/SVG$Style$LineJoin;
 
     move-result-object v0
 
-    invoke-static {v0}, Lo8;->a(Ljava/util/Locale;)Z
+    array-length v0, v0
 
-    move-result v0
+    new-array v0, v0, [I
 
-    invoke-virtual {p0, v0}, Lo8$a;->a(Z)V
+    sput-object v0, Lo8$a;->c:[I
 
-    return-void
-.end method
+    const/4 v1, 0x1
 
-.method public static b(Z)Lo8;
-    .locals 0
+    :try_start_0
+    sget-object v2, Lcom/caverock/androidsvg/SVG$Style$LineJoin;->Miter:Lcom/caverock/androidsvg/SVG$Style$LineJoin;
 
-    if-eqz p0, :cond_0
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    .line 1
-    sget-object p0, Lo8;->h:Lo8;
+    move-result v2
 
-    goto :goto_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_0
-    sget-object p0, Lo8;->g:Lo8;
+    :catch_0
+    const/4 v0, 0x2
 
-    :goto_0
-    return-object p0
-.end method
+    :try_start_1
+    sget-object v2, Lo8$a;->c:[I
 
+    sget-object v3, Lcom/caverock/androidsvg/SVG$Style$LineJoin;->Round:Lcom/caverock/androidsvg/SVG$Style$LineJoin;
 
-# virtual methods
-.method public a()Lo8;
-    .locals 4
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    .line 4
-    iget v0, p0, Lo8$a;->b:I
+    move-result v3
 
-    const/4 v1, 0x2
+    aput v0, v2, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-ne v0, v1, :cond_0
+    :catch_1
+    const/4 v2, 0x3
 
-    iget-object v0, p0, Lo8$a;->c:Ls8;
+    :try_start_2
+    sget-object v3, Lo8$a;->c:[I
 
-    sget-object v1, Lo8;->d:Ls8;
+    sget-object v4, Lcom/caverock/androidsvg/SVG$Style$LineJoin;->Bevel:Lcom/caverock/androidsvg/SVG$Style$LineJoin;
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
-    .line 5
-    iget-boolean v0, p0, Lo8$a;->a:Z
+    move-result v4
 
-    invoke-static {v0}, Lo8$a;->b(Z)Lo8;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 6
-    :cond_0
-    new-instance v0, Lo8;
-
-    iget-boolean v1, p0, Lo8$a;->a:Z
-
-    iget v2, p0, Lo8$a;->b:I
-
-    iget-object v3, p0, Lo8$a;->c:Ls8;
-
-    invoke-direct {v0, v1, v2, v3}, Lo8;-><init>(ZILs8;)V
-
-    return-object v0
-.end method
-
-.method public final a(Z)V
-    .locals 0
-
-    .line 1
-    iput-boolean p1, p0, Lo8$a;->a:Z
+    aput v2, v3, v4
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 2
-    sget-object p1, Lo8;->d:Ls8;
+    :catch_2
+    invoke-static {}, Lcom/caverock/androidsvg/SVG$Style$LineCap;->values()[Lcom/caverock/androidsvg/SVG$Style$LineCap;
 
-    iput-object p1, p0, Lo8$a;->c:Ls8;
+    move-result-object v3
 
-    const/4 p1, 0x2
+    array-length v3, v3
+
+    new-array v3, v3, [I
+
+    sput-object v3, Lo8$a;->b:[I
+
+    :try_start_3
+    sget-object v4, Lcom/caverock/androidsvg/SVG$Style$LineCap;->Butt:Lcom/caverock/androidsvg/SVG$Style$LineCap;
+
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v4
+
+    aput v1, v3, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v3, Lo8$a;->b:[I
+
+    sget-object v4, Lcom/caverock/androidsvg/SVG$Style$LineCap;->Round:Lcom/caverock/androidsvg/SVG$Style$LineCap;
+
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v4
+
+    aput v0, v3, v4
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v3, Lo8$a;->b:[I
+
+    sget-object v4, Lcom/caverock/androidsvg/SVG$Style$LineCap;->Square:Lcom/caverock/androidsvg/SVG$Style$LineCap;
+
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v4
+
+    aput v2, v3, v4
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
     .line 3
-    iput p1, p0, Lo8$a;->b:I
+    :catch_5
+    invoke-static {}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->values()[Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
+    move-result-object v3
+
+    array-length v3, v3
+
+    new-array v3, v3, [I
+
+    sput-object v3, Lo8$a;->a:[I
+
+    :try_start_6
+    sget-object v4, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v4
+
+    aput v1, v3, v4
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    :try_start_7
+    sget-object v1, Lo8$a;->a:[I
+
+    sget-object v3, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    aput v0, v1, v3
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    :catch_7
+    :try_start_8
+    sget-object v0, Lo8$a;->a:[I
+
+    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMidYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
+
+    :catch_8
+    :try_start_9
+    sget-object v0, Lo8$a;->a:[I
+
+    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
+
+    :catch_9
+    :try_start_a
+    sget-object v0, Lo8$a;->a:[I
+
+    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
+
+    :catch_a
+    :try_start_b
+    sget-object v0, Lo8$a;->a:[I
+
+    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMaxYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
+
+    :catch_b
+    :try_start_c
+    sget-object v0, Lo8$a;->a:[I
+
+    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
+
+    :catch_c
+    :try_start_d
+    sget-object v0, Lo8$a;->a:[I
+
+    sget-object v1, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->xMinYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_d
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d
+
+    :catch_d
     return-void
 .end method

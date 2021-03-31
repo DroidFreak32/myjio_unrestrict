@@ -1,219 +1,173 @@
 .class public final Lcom/google/android/gms/internal/vision/zzan;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.super Lcom/google/android/gms/internal/vision/zzs;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "WordBoxParcelCreator"
-.end annotation
-
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        0x1
+        "Lcom/google/android/gms/internal/vision/zzs<",
+        "Lcom/google/android/gms/internal/vision/zzad;",
+        ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/internal/vision/zzan;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public final zzdo:F
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x6
-    .end annotation
-.end field
-
-.field public final zzex:Ljava/lang/String;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x7
-    .end annotation
-.end field
-
-.field public final zzfd:Lcom/google/android/gms/internal/vision/zzy;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x3
-    .end annotation
-.end field
-
-.field public final zzfe:Lcom/google/android/gms/internal/vision/zzy;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x4
-    .end annotation
-.end field
-
-.field public final zzfg:Ljava/lang/String;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x5
-    .end annotation
-.end field
-
-.field public final zzfm:[Lcom/google/android/gms/internal/vision/zzai;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x2
-    .end annotation
-.end field
-
-.field public final zzfn:Z
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x8
-    .end annotation
-.end field
+.field private final zzem:Lcom/google/android/gms/internal/vision/zzam;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/internal/vision/zzam;)V
+    .locals 2
+
+    const-string v0, "TextNativeHandle"
+
+    const-string v1, "ocr"
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzao;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzao;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzan;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>([Lcom/google/android/gms/internal/vision/zzai;Lcom/google/android/gms/internal/vision/zzy;Lcom/google/android/gms/internal/vision/zzy;Ljava/lang/String;FLjava/lang/String;Z)V
-    .locals 0
-    .param p1    # [Lcom/google/android/gms/internal/vision/zzai;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x2
-        .end annotation
-    .end param
-    .param p2    # Lcom/google/android/gms/internal/vision/zzy;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x3
-        .end annotation
-    .end param
-    .param p3    # Lcom/google/android/gms/internal/vision/zzy;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x4
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/String;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x5
-        .end annotation
-    .end param
-    .param p5    # F
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x6
-        .end annotation
-    .end param
-    .param p6    # Ljava/lang/String;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x7
-        .end annotation
-    .end param
-    .param p7    # Z
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x8
-        .end annotation
-    .end param
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
-    .end annotation
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+    invoke-direct {p0, p1, v0, v1}, Lcom/google/android/gms/internal/vision/zzs;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfm:[Lcom/google/android/gms/internal/vision/zzai;
+    iput-object p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzem:Lcom/google/android/gms/internal/vision/zzam;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfd:Lcom/google/android/gms/internal/vision/zzy;
-
-    .line 4
-    iput-object p3, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfe:Lcom/google/android/gms/internal/vision/zzy;
-
-    .line 5
-    iput-object p4, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfg:Ljava/lang/String;
-
-    .line 6
-    iput p5, p0, Lcom/google/android/gms/internal/vision/zzan;->zzdo:F
-
-    .line 7
-    iput-object p6, p0, Lcom/google/android/gms/internal/vision/zzan;->zzex:Ljava/lang/String;
-
-    .line 8
-    iput-boolean p7, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfn:Z
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzs;->zzr()Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
+.method public final synthetic zza(Lcom/google/android/gms/dynamite/DynamiteModule;Landroid/content/Context;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;,
+            Lcom/google/android/gms/dynamite/DynamiteModule$LoadingException;
+        }
+    .end annotation
+
+    const-string v0, "com.google.android.gms.vision.text.ChimeraNativeTextRecognizerCreator"
+
+    .line 4
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/dynamite/DynamiteModule;->instantiate(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    move-object v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "com.google.android.gms.vision.text.internal.client.INativeTextRecognizerCreator"
+
+    .line 5
+    invoke-interface {p1, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v1
+
+    .line 6
+    instance-of v2, v1, Lcom/google/android/gms/internal/vision/zzaf;
+
+    if-eqz v2, :cond_1
+
+    .line 7
+    check-cast v1, Lcom/google/android/gms/internal/vision/zzaf;
+
+    goto :goto_0
+
+    .line 8
+    :cond_1
+    new-instance v1, Lcom/google/android/gms/internal/vision/zzae;
+
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/vision/zzae;-><init>(Landroid/os/IBinder;)V
+
+    :goto_0
+    if-nez v1, :cond_2
+
+    return-object v0
+
+    .line 9
+    :cond_2
+    invoke-static {p2}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 10
+    iget-object p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzem:Lcom/google/android/gms/internal/vision/zzam;
+
+    invoke-interface {v1, p1, p2}, Lcom/google/android/gms/internal/vision/zzaf;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzam;)Lcom/google/android/gms/internal/vision/zzad;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final zza(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzu;Lcom/google/android/gms/internal/vision/zzaj;)[Lcom/google/android/gms/internal/vision/zzah;
+    .locals 2
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzs;->isOperational()Z
 
     move-result v0
 
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    new-array p1, v1, [Lcom/google/android/gms/internal/vision/zzah;
+
+    return-object p1
+
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfm:[Lcom/google/android/gms/internal/vision/zzai;
+    :cond_0
+    :try_start_0
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    move-result-object p1
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfd:Lcom/google/android/gms/internal/vision/zzy;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzs;->zzr()Ljava/lang/Object;
 
-    const/4 v3, 0x3
+    move-result-object v0
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    check-cast v0, Lcom/google/android/gms/internal/vision/zzad;
 
-    .line 4
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfe:Lcom/google/android/gms/internal/vision/zzy;
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/gms/internal/vision/zzad;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzu;Lcom/google/android/gms/internal/vision/zzaj;)[Lcom/google/android/gms/internal/vision/zzah;
 
-    const/4 v3, 0x4
+    move-result-object p1
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    return-object p1
 
-    .line 5
-    iget-object p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfg:Ljava/lang/String;
+    :catch_0
+    new-array p1, v1, [Lcom/google/android/gms/internal/vision/zzah;
 
-    const/4 v1, 0x5
+    return-object p1
+.end method
 
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+.method public final zzp()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    .line 6
-    iget p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzdo:F
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzs;->zzr()Ljava/lang/Object;
 
-    const/4 v1, 0x6
+    move-result-object v0
 
-    invoke-static {p1, v1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
+    check-cast v0, Lcom/google/android/gms/internal/vision/zzad;
 
-    .line 7
-    iget-object p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzex:Ljava/lang/String;
-
-    const/4 v1, 0x7
-
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
-
-    .line 8
-    iget-boolean p2, p0, Lcom/google/android/gms/internal/vision/zzan;->zzfn:Z
-
-    const/16 v1, 0x8
-
-    invoke-static {p1, v1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
-
-    .line 9
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
+    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzad;->zzs()V
 
     return-void
 .end method

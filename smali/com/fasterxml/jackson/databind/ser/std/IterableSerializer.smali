@@ -201,6 +201,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 2
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;->_unwrapSingle:Ljava/lang/Boolean;
 
@@ -249,6 +255,11 @@
 
 .method public bridge synthetic serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Ljava/lang/Iterable;
@@ -268,6 +279,12 @@
             "Lcom/fasterxml/jackson/core/JsonGenerator;",
             "Lcom/fasterxml/jackson/databind/SerializerProvider;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -316,8 +333,6 @@
 
     if-ne v4, v1, :cond_2
 
-    move-object v4, v1
-
     goto :goto_0
 
     .line 9
@@ -328,17 +343,17 @@
 
     move-result-object v2
 
+    move-object v1, v4
+
     :goto_0
-    move-object v1, v2
+    move-object v4, v2
 
     goto :goto_1
 
     :cond_3
     move-object v5, v4
 
-    move-object v4, v1
-
-    move-object v1, v2
+    move-object v4, v2
 
     move-object v2, v5
 
@@ -355,9 +370,7 @@
     invoke-virtual {v2, v3, p2, p3, v0}, Lcom/fasterxml/jackson/databind/JsonSerializer;->serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
 
     :goto_2
-    move-object v2, v1
-
-    move-object v1, v4
+    move-object v2, v4
 
     .line 12
     :goto_3
@@ -373,6 +386,11 @@
 
 .method public bridge synthetic serializeContents(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Ljava/lang/Iterable;

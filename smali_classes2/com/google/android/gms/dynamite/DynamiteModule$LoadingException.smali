@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/dynamite/DynamiteModule$LoadingException;
 .super Ljava/lang/Exception;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -17,7 +18,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -26,7 +27,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Lcom/google/android/gms/dynamite/zza;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Lcom/google/android/gms/dynamite/zzb;)V
     .locals 0
 
     .line 3
@@ -35,7 +36,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
     .line 2
@@ -44,7 +45,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Lcom/google/android/gms/dynamite/zza;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Lcom/google/android/gms/dynamite/zzb;)V
     .locals 0
 
     .line 4

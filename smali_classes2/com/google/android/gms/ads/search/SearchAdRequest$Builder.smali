@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
@@ -14,9 +15,9 @@
 
 
 # instance fields
-.field public zzabu:Ljava/lang/String;
+.field private final zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-.field public final zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+.field private zzbqr:Ljava/lang/String;
 
 
 # direct methods
@@ -27,11 +28,11 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzmh;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzmh;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzyz;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iput-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
     return-void
 .end method
@@ -40,16 +41,16 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzabu:Ljava/lang/String;
+    iget-object p0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzbqr:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public static synthetic zzb(Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;)Lcom/google/android/gms/internal/ads/zzmh;
+.method public static synthetic zzb(Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;)Lcom/google/android/gms/internal/ads/zzyz;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object p0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
     return-object p0
 .end method
@@ -72,9 +73,9 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzmh;->zzb(Ljava/lang/Class;Landroid/os/Bundle;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzyz;->zzb(Ljava/lang/Class;Landroid/os/Bundle;)V
 
     return-object p0
 .end method
@@ -83,9 +84,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzmh;->zza(Lcom/google/android/gms/ads/mediation/NetworkExtras;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzyz;->zza(Lcom/google/android/gms/ads/mediation/NetworkExtras;)V
 
     return-object p0
 .end method
@@ -106,20 +107,22 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzmh;->zza(Ljava/lang/Class;Landroid/os/Bundle;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzyz;->zza(Ljava/lang/Class;Landroid/os/Bundle;)V
 
     return-object p0
 .end method
 
 .method public final addTestDevice(Ljava/lang/String;)Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzmh;->zzag(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzyz;->zzcg(Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -237,9 +240,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzmh;->zzb(Landroid/location/Location;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzyz;->zza(Landroid/location/Location;)V
 
     return-object p0
 .end method
@@ -248,7 +251,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzabu:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzbqr:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -257,9 +260,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzmh;->zzak(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzyz;->zzck(Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -268,9 +271,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzuz:Lcom/google/android/gms/internal/ads/zzmh;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/SearchAdRequest$Builder;->zzact:Lcom/google/android/gms/internal/ads/zzyz;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzmh;->zzj(Z)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzyz;->zzz(Z)V
 
     return-object p0
 .end method

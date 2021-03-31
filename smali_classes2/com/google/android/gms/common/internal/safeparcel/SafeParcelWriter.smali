@@ -1,9 +1,10 @@
 .class public Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -14,6 +15,12 @@
 
 .method public static beginObjectHeader(Landroid/os/Parcel;)I
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     const/16 v0, 0x4f45
 
@@ -27,6 +34,14 @@
 
 .method public static finishObjectHeader(Landroid/os/Parcel;I)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)V
@@ -36,6 +51,22 @@
 
 .method public static writeBigDecimal(Landroid/os/Parcel;ILjava/math/BigDecimal;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/math/BigDecimal;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -44,7 +75,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -81,6 +112,22 @@
 
 .method public static writeBigDecimalArray(Landroid/os/Parcel;I[Ljava/math/BigDecimal;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Ljava/math/BigDecimal;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -89,7 +136,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -144,6 +191,22 @@
 
 .method public static writeBigInteger(Landroid/os/Parcel;ILjava/math/BigInteger;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/math/BigInteger;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -152,7 +215,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -178,6 +241,22 @@
 
 .method public static writeBigIntegerArray(Landroid/os/Parcel;I[Ljava/math/BigInteger;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Ljava/math/BigInteger;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -186,7 +265,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -228,11 +307,23 @@
 
 .method public static writeBoolean(Landroid/os/Parcel;IZ)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
@@ -242,6 +333,22 @@
 
 .method public static writeBooleanArray(Landroid/os/Parcel;I[ZZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -250,7 +357,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -272,6 +379,22 @@
 
 .method public static writeBooleanList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -290,7 +413,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -338,6 +461,22 @@
 
 .method public static writeBooleanObject(Landroid/os/Parcel;ILjava/lang/Boolean;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Boolean;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -346,7 +485,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -355,7 +494,7 @@
     const/4 p3, 0x4
 
     .line 2
-    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 3
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -369,6 +508,22 @@
 
 .method public static writeBundle(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -377,7 +532,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -399,11 +554,23 @@
 
 .method public static writeByte(Landroid/os/Parcel;IB)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
@@ -413,6 +580,22 @@
 
 .method public static writeByteArray(Landroid/os/Parcel;I[BZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -421,7 +604,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -443,6 +626,22 @@
 
 .method public static writeByteArrayArray(Landroid/os/Parcel;I[[BZ)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [[B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -451,7 +650,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -489,6 +688,22 @@
 
 .method public static writeByteArraySparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -506,7 +721,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -557,11 +772,23 @@
 
 .method public static writeChar(Landroid/os/Parcel;IC)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # C
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
@@ -571,6 +798,22 @@
 
 .method public static writeCharArray(Landroid/os/Parcel;I[CZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [C
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -579,7 +822,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -601,11 +844,23 @@
 
 .method public static writeDouble(Landroid/os/Parcel;ID)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # D
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/16 v0, 0x8
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2, p3}, Landroid/os/Parcel;->writeDouble(D)V
@@ -615,6 +870,22 @@
 
 .method public static writeDoubleArray(Landroid/os/Parcel;I[DZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [D
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -623,7 +894,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -645,6 +916,22 @@
 
 .method public static writeDoubleList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -663,7 +950,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -711,6 +998,22 @@
 
 .method public static writeDoubleObject(Landroid/os/Parcel;ILjava/lang/Double;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Double;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -719,7 +1022,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -728,7 +1031,7 @@
     const/16 p3, 0x8
 
     .line 2
-    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 3
     invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
@@ -742,6 +1045,22 @@
 
 .method public static writeDoubleSparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -760,7 +1079,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -815,11 +1134,23 @@
 
 .method public static writeFloat(Landroid/os/Parcel;IF)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # F
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeFloat(F)V
@@ -829,6 +1160,22 @@
 
 .method public static writeFloatArray(Landroid/os/Parcel;I[FZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [F
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -837,7 +1184,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -859,6 +1206,22 @@
 
 .method public static writeFloatList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -877,7 +1240,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -925,6 +1288,22 @@
 
 .method public static writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Float;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -933,7 +1312,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -942,7 +1321,7 @@
     const/4 p3, 0x4
 
     .line 2
-    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 3
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -956,6 +1335,22 @@
 
 .method public static writeFloatSparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -974,7 +1369,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1029,6 +1424,22 @@
 
 .method public static writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1037,7 +1448,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1059,6 +1470,22 @@
 
 .method public static writeIBinderArray(Landroid/os/Parcel;I[Landroid/os/IBinder;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1067,7 +1494,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1089,6 +1516,22 @@
 
 .method public static writeIBinderList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1107,7 +1550,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1129,6 +1572,22 @@
 
 .method public static writeIBinderSparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1147,7 +1606,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1198,11 +1657,23 @@
 
 .method public static writeInt(Landroid/os/Parcel;II)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
@@ -1212,6 +1683,22 @@
 
 .method public static writeIntArray(Landroid/os/Parcel;I[IZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1220,7 +1707,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1242,6 +1729,22 @@
 
 .method public static writeIntegerList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1260,7 +1763,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1308,6 +1811,22 @@
 
 .method public static writeIntegerObject(Landroid/os/Parcel;ILjava/lang/Integer;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1316,7 +1835,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1325,7 +1844,7 @@
     const/4 p3, 0x4
 
     .line 2
-    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 3
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -1339,6 +1858,22 @@
 
 .method public static writeList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1347,7 +1882,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1369,11 +1904,23 @@
 
 .method public static writeLong(Landroid/os/Parcel;IJ)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # J
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/16 v0, 0x8
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
@@ -1383,6 +1930,22 @@
 
 .method public static writeLongArray(Landroid/os/Parcel;I[JZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [J
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1391,7 +1954,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1413,6 +1976,22 @@
 
 .method public static writeLongList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1431,7 +2010,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1479,6 +2058,22 @@
 
 .method public static writeLongObject(Landroid/os/Parcel;ILjava/lang/Long;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Long;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1487,7 +2082,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1496,7 +2091,7 @@
     const/16 p3, 0x8
 
     .line 2
-    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 3
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
@@ -1510,6 +2105,22 @@
 
 .method public static writeParcel(Landroid/os/Parcel;ILandroid/os/Parcel;Z)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -1518,7 +2129,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1544,6 +2155,22 @@
 
 .method public static writeParcelArray(Landroid/os/Parcel;I[Landroid/os/Parcel;Z)V
     .locals 4
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -1552,7 +2179,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1613,6 +2240,22 @@
 
 .method public static writeParcelList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 4
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1631,7 +2274,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1698,6 +2341,22 @@
 
 .method public static writeParcelSparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 4
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1716,7 +2375,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1790,6 +2449,26 @@
 
 .method public static writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Parcelable;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p4    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1798,7 +2477,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1820,11 +2499,23 @@
 
 .method public static writeShort(Landroid/os/Parcel;IS)V
     .locals 1
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # S
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     .line 2
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
@@ -1834,6 +2525,22 @@
 
 .method public static writeSparseBooleanArray(Landroid/os/Parcel;ILandroid/util/SparseBooleanArray;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseBooleanArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1842,7 +2549,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1864,6 +2571,22 @@
 
 .method public static writeSparseIntArray(Landroid/os/Parcel;ILandroid/util/SparseIntArray;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseIntArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -1872,7 +2595,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1921,6 +2644,22 @@
 
 .method public static writeSparseLongArray(Landroid/os/Parcel;ILandroid/util/SparseLongArray;Z)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseLongArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -1929,7 +2668,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -1978,6 +2717,22 @@
 
 .method public static writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -1986,7 +2741,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2008,6 +2763,22 @@
 
 .method public static writeStringArray(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     if-nez p2, :cond_1
 
@@ -2016,7 +2787,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2038,6 +2809,22 @@
 
 .method public static writeStringList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 0
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2056,7 +2843,7 @@
     const/4 p2, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2078,6 +2865,22 @@
 
 .method public static writeStringSparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 2
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2096,7 +2899,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2147,6 +2950,26 @@
 
 .method public static writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [Landroid/os/Parcelable;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p4    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -2164,7 +2987,7 @@
     if-eqz p4, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2214,6 +3037,22 @@
 
 .method public static writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -2233,7 +3072,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2289,6 +3128,22 @@
 
 .method public static writeTypedSparseArray(Landroid/os/Parcel;ILandroid/util/SparseArray;Z)V
     .locals 3
+    .param p0    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/SparseArray;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -2308,7 +3163,7 @@
     if-eqz p3, :cond_0
 
     .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zza(Landroid/os/Parcel;II)V
 
     :cond_0
     return-void
@@ -2369,22 +3224,22 @@
     return-void
 .end method
 
-.method public static zza(Landroid/os/Parcel;I)I
+.method private static zza(Landroid/os/Parcel;I)I
     .locals 1
 
     const/high16 v0, -0x10000
 
     or-int/2addr p1, v0
 
-    .line 1
+    .line 4
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     const/4 p1, 0x0
 
-    .line 2
+    .line 5
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 3
+    .line 6
     invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
     move-result p0
@@ -2392,80 +3247,7 @@
     return p0
 .end method
 
-.method public static zza(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Landroid/os/Parcelable;",
-            ">(",
-            "Landroid/os/Parcel;",
-            "TT;I)V"
-        }
-    .end annotation
-
-    .line 4
-    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    .line 5
-    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 6
-    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v1
-
-    .line 7
-    invoke-interface {p1, p0, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 8
-    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result p1
-
-    .line 9
-    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
-
-    sub-int p2, p1, v1
-
-    .line 10
-    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 11
-    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
-
-    return-void
-.end method
-
-.method public static zzb(Landroid/os/Parcel;I)V
-    .locals 2
-
-    .line 4
-    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v0
-
-    sub-int v1, v0, p1
-
-    add-int/lit8 p1, p1, -0x4
-
-    .line 5
-    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
-
-    .line 6
-    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 7
-    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
-
-    return-void
-.end method
-
-.method public static zzb(Landroid/os/Parcel;II)V
+.method private static zza(Landroid/os/Parcel;II)V
     .locals 1
 
     const v0, 0xffff
@@ -2491,6 +3273,79 @@
 
     .line 3
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+.end method
+
+.method private static zza(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "TT;I)V"
+        }
+    .end annotation
+
+    .line 7
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    .line 8
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 9
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v1
+
+    .line 10
+    invoke-interface {p1, p0, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 11
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result p1
+
+    .line 12
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    sub-int p2, p1, v1
+
+    .line 13
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 14
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    return-void
+.end method
+
+.method private static zzb(Landroid/os/Parcel;I)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    sub-int v1, v0, p1
+
+    add-int/lit8 p1, p1, -0x4
+
+    .line 2
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 3
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 4
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
     return-void
 .end method

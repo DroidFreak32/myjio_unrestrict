@@ -3,7 +3,7 @@
 .source "ViewPagerEx.java"
 
 # interfaces
-.implements Li8;
+.implements Landroidx/core/os/ParcelableCompatCreatorCallbacks;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Li8<",
+        "Landroidx/core/os/ParcelableCompatCreatorCallbacks<",
         "Lcom/daimajia/slider/library/Tricks/ViewPagerEx$SavedState;",
         ">;"
     }

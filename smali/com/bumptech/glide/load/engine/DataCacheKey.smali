@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public final signature:Lcom/bumptech/glide/load/Key;
+.field private final signature:Lcom/bumptech/glide/load/Key;
 
-.field public final sourceKey:Lcom/bumptech/glide/load/Key;
+.field private final sourceKey:Lcom/bumptech/glide/load/Key;
 
 
 # direct methods
@@ -140,6 +140,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 1
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheKey;->sourceKey:Lcom/bumptech/glide/load/Key;

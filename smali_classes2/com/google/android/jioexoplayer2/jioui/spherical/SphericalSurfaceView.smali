@@ -18,39 +18,54 @@
 
 
 # static fields
-.field public static final FIELD_OF_VIEW_DEGREES:I = 0x5a
+.field private static final FIELD_OF_VIEW_DEGREES:I = 0x5a
 
-.field public static final PX_PER_DEGREES:F = 25.0f
+.field private static final PX_PER_DEGREES:F = 25.0f
 
 .field public static final UPRIGHT_ROLL:F = 3.1415927f
 
-.field public static final Z_FAR:F = 100.0f
+.field private static final Z_FAR:F = 100.0f
 
-.field public static final Z_NEAR:F = 0.1f
+.field private static final Z_NEAR:F = 0.1f
 
 
 # instance fields
-.field public final mainHandler:Landroid/os/Handler;
+.field private final mainHandler:Landroid/os/Handler;
 
-.field public final orientationSensor:Landroid/hardware/Sensor;
+.field private final orientationSensor:Landroid/hardware/Sensor;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final phoneOrientationListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;
+.field private final phoneOrientationListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;
 
-.field public final renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
+.field private final renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
 
-.field public final scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
+.field private final scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
 
-.field public final sensorManager:Landroid/hardware/SensorManager;
+.field private final sensorManager:Landroid/hardware/SensorManager;
 
-.field public surface:Landroid/view/Surface;
+.field private surface:Landroid/view/Surface;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public surfaceListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;
+.field private surfaceListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public surfaceTexture:Landroid/graphics/SurfaceTexture;
+.field private surfaceTexture:Landroid/graphics/SurfaceTexture;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
+.field private final touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
 
-.field public videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
+.field private videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -67,6 +82,10 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0, p1, p2}, Landroid/opengl/GLSurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -98,41 +117,37 @@
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->sensorManager:Landroid/hardware/SensorManager;
 
     .line 5
-    sget p2, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
+    sget v0, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
 
-    const/16 v0, 0x12
+    const/16 v1, 0x12
 
-    if-lt p2, v0, :cond_0
-
-    .line 6
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->sensorManager:Landroid/hardware/SensorManager;
+    if-lt v0, v1, :cond_0
 
     const/16 v0, 0xf
 
+    .line 6
     invoke-virtual {p2, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    move-result-object p2
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez p2, :cond_1
-
-    .line 7
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->sensorManager:Landroid/hardware/SensorManager;
+    if-nez v0, :cond_1
 
     const/16 v0, 0xb
 
+    .line 7
     invoke-virtual {p2, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    move-result-object p2
+    move-result-object v0
 
     .line 8
     :cond_1
-    iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->orientationSensor:Landroid/hardware/Sensor;
+    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->orientationSensor:Landroid/hardware/Sensor;
 
     .line 9
     new-instance p2, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
@@ -142,18 +157,14 @@
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
 
     .line 10
-    new-instance p2, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
+    new-instance v0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
 
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
+    invoke-direct {v0, p0, p2}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;)V
 
-    invoke-direct {p2, p0, v0}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;)V
-
-    iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
+    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
 
     .line 11
     new-instance p2, Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
-
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
 
     const/high16 v1, 0x41c80000    # 25.0f
 
@@ -161,10 +172,10 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
 
-    const-string p2, "window"
+    const-string v1, "window"
 
     .line 12
-    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -182,15 +193,11 @@
     move-result-object p1
 
     .line 14
-    new-instance p2, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;
+    new-instance v1, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;
 
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
+    invoke-direct {v1, p1, p2, v0}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;-><init>(Landroid/view/Display;Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;)V
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
-
-    invoke-direct {p2, p1, v0, v1}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;-><init>(Landroid/view/Display;Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;)V
-
-    iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->phoneOrientationListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;
+    iput-object v1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->phoneOrientationListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;
 
     const/4 p1, 0x2
 
@@ -198,63 +205,15 @@
     invoke-virtual {p0, p1}, Landroid/opengl/GLSurfaceView;->setEGLContextClientVersion(I)V
 
     .line 16
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
-
-    invoke-virtual {p0, p1}, Landroid/opengl/GLSurfaceView;->setRenderer(Landroid/opengl/GLSurfaceView$Renderer;)V
+    invoke-virtual {p0, v0}, Landroid/opengl/GLSurfaceView;->setRenderer(Landroid/opengl/GLSurfaceView$Renderer;)V
 
     .line 17
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
-
-    invoke-virtual {p0, p1}, Landroid/opengl/GLSurfaceView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {p0, p2}, Landroid/opengl/GLSurfaceView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     return-void
 .end method
 
-.method public static synthetic access$000(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Landroid/graphics/SurfaceTexture;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;)V
-
-    return-void
-.end method
-
-.method private onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->mainHandler:Landroid/os/Handler;
-
-    new-instance v1, Lvc0;
-
-    invoke-direct {v1, p0, p1}, Lvc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Landroid/graphics/SurfaceTexture;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public static releaseSurface(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
-    .locals 0
-
-    if-eqz p0, :cond_0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/graphics/SurfaceTexture;->release()V
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    .line 2
-    invoke-virtual {p1}, Landroid/view/Surface;->release()V
-
-    :cond_1
-    return-void
-.end method
-
-
-# virtual methods
-.method public synthetic a()V
+.method private synthetic a()V
     .locals 3
 
     .line 1
@@ -290,38 +249,104 @@
     return-void
 .end method
 
-.method public synthetic a(Landroid/graphics/SurfaceTexture;)V
+.method public static synthetic access$000(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Landroid/graphics/SurfaceTexture;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;)V
+
+    return-void
+.end method
+
+.method private synthetic c(Landroid/graphics/SurfaceTexture;)V
     .locals 3
 
-    .line 7
+    .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 8
+    .line 2
     iget-object v1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surface:Landroid/view/Surface;
 
-    .line 9
+    .line 3
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 10
+    .line 4
     new-instance v2, Landroid/view/Surface;
 
     invoke-direct {v2, p1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
     iput-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surface:Landroid/view/Surface;
 
-    .line 11
+    .line 5
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surfaceListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;
 
     if-eqz p1, :cond_0
 
-    .line 12
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surface:Landroid/view/Surface;
-
+    .line 6
     invoke-interface {p1, v2}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;->surfaceChanged(Landroid/view/Surface;)V
 
-    .line 13
+    .line 7
     :cond_0
     invoke-static {v0, v1}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->releaseSurface(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
+
+    return-void
+.end method
+
+.method private onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->mainHandler:Landroid/os/Handler;
+
+    new-instance v1, Lfj;
+
+    invoke-direct {v1, p0, p1}, Lfj;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Landroid/graphics/SurfaceTexture;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method private static releaseSurface(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
+    .locals 0
+    .param p0    # Landroid/graphics/SurfaceTexture;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p1    # Landroid/view/Surface;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    if-eqz p0, :cond_0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/graphics/SurfaceTexture;->release()V
+
+    :cond_0
+    if-eqz p1, :cond_1
+
+    .line 2
+    invoke-virtual {p1}, Landroid/view/Surface;->release()V
+
+    :cond_1
+    return-void
+.end method
+
+
+# virtual methods
+.method public synthetic b()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->a()V
+
+    return-void
+.end method
+
+.method public synthetic d(Landroid/graphics/SurfaceTexture;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->c(Landroid/graphics/SurfaceTexture;)V
 
     return-void
 .end method
@@ -335,9 +360,9 @@
     .line 2
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Luc0;
+    new-instance v1, Lej;
 
-    invoke-direct {v1, p0}, Luc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;)V
+    invoke-direct {v1, p0}, Lej;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -403,6 +428,10 @@
 
 .method public setSingleTapListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;)V
     .locals 1
+    .param p1    # Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
@@ -414,6 +443,10 @@
 
 .method public setSurfaceListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;)V
     .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surfaceListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;
@@ -423,6 +456,10 @@
 
 .method public setVideoComponent(Lcom/google/android/jioexoplayer2/Player$VideoComponent;)V
     .locals 2
+    .param p1    # Lcom/google/android/jioexoplayer2/Player$VideoComponent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
@@ -461,24 +498,21 @@
     :cond_2
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
 
-    .line 7
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
-
     if-eqz p1, :cond_3
 
-    .line 8
+    .line 7
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
 
     invoke-interface {p1, v0}, Lcom/google/android/jioexoplayer2/Player$VideoComponent;->setVideoFrameMetadataListener(Lcom/google/android/jioexoplayer2/video/VideoFrameMetadataListener;)V
 
-    .line 9
+    .line 8
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
 
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
 
     invoke-interface {p1, v0}, Lcom/google/android/jioexoplayer2/Player$VideoComponent;->setCameraMotionListener(Lcom/google/android/jioexoplayer2/video/spherical/CameraMotionListener;)V
 
-    .line 10
+    .line 9
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->videoComponent:Lcom/google/android/jioexoplayer2/Player$VideoComponent;
 
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->surface:Landroid/view/Surface;

@@ -1,452 +1,176 @@
 .class public final Lcom/google/android/gms/internal/location/zzbd;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "LocationRequestInternalCreator"
-.end annotation
-
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        0x3e8,
-        0x2,
-        0x3,
-        0x4
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/internal/location/zzbe;",
+        ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/internal/location/zzbd;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zzcd:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/common/internal/ClientIdentity;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public moduleId:Ljava/lang/String;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        id = 0xa
-    .end annotation
-.end field
-
-.field public tag:Ljava/lang/String;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        id = 0x6
-    .end annotation
-.end field
-
-.field public zzdg:Lcom/google/android/gms/location/LocationRequest;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        id = 0x1
-    .end annotation
-.end field
-
-.field public zzdh:Z
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "LocationRequestInternal.DEFAULT_HIDE_FROM_APP_OPS"
-        id = 0x7
-    .end annotation
-.end field
-
-.field public zzdi:Z
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "LocationRequestInternal.DEFAULT_FORCE_COARSE_LOCATION"
-        id = 0x8
-    .end annotation
-.end field
-
-.field public zzdj:Z
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "LocationRequestInternal.DEFAULT_EXEMPT_FROM_THROTTLE"
-        id = 0x9
-    .end annotation
-.end field
-
-.field public zzdk:Z
-
-.field public zzm:Ljava/util/List;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "LocationRequestInternal.DEFAULT_CLIENTS"
-        id = 0x5
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/common/internal/ClientIdentity;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/location/zzbd;->zzcd:Ljava/util/List;
-
-    new-instance v0, Lcom/google/android/gms/internal/location/zzbe;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/location/zzbe;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/location/zzbd;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/location/LocationRequest;Ljava/util/List;Ljava/lang/String;ZZZLjava/lang/String;)V
-    .locals 1
-    .param p1    # Lcom/google/android/gms/location/LocationRequest;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x1
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x5
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/String;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x6
-        .end annotation
-    .end param
-    .param p4    # Z
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x7
-        .end annotation
-    .end param
-    .param p5    # Z
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x8
-        .end annotation
-    .end param
-    .param p6    # Z
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x9
-        .end annotation
-    .end param
-    .param p7    # Ljava/lang/String;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0xa
-        .end annotation
-    .end param
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/location/LocationRequest;",
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/common/internal/ClientIdentity;",
-            ">;",
-            "Ljava/lang/String;",
-            "ZZZ",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdk:Z
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdg:Lcom/google/android/gms/location/LocationRequest;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/location/zzbd;->zzm:Ljava/util/List;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/location/zzbd;->tag:Ljava/lang/String;
-
-    iput-boolean p4, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdh:Z
-
-    iput-boolean p5, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdi:Z
-
-    iput-boolean p6, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdj:Z
-
-    iput-object p7, p0, Lcom/google/android/gms/internal/location/zzbd;->moduleId:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static zza(Lcom/google/android/gms/location/LocationRequest;)Lcom/google/android/gms/internal/location/zzbd;
-    .locals 9
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    new-instance v8, Lcom/google/android/gms/internal/location/zzbd;
-
-    sget-object v2, Lcom/google/android/gms/internal/location/zzbd;->zzcd:Ljava/util/List;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/internal/location/zzbd;-><init>(Lcom/google/android/gms/location/LocationRequest;Ljava/util/List;Ljava/lang/String;ZZZLjava/lang/String;)V
-
-    return-object v8
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 10
 
-    instance-of v0, p1, Lcom/google/android/gms/internal/location/zzbd;
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+
+    move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    const/4 v2, 0x1
 
-    return v1
+    move-object v5, v1
 
+    move-object v6, v5
+
+    move-object v7, v6
+
+    move-object v8, v7
+
+    move-object v9, v8
+
+    const/4 v4, 0x1
+
+    .line 2
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v1
+
+    if-ge v1, v0, :cond_0
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+
+    move-result v1
+
+    .line 4
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+
+    move-result v2
+
+    packed-switch v2, :pswitch_data_0
+
+    .line 5
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    .line 6
+    :pswitch_0
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
+
+    move-result-object v9
+
+    goto :goto_0
+
+    .line 7
+    :pswitch_1
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
+
+    move-result-object v8
+
+    goto :goto_0
+
+    .line 8
+    :pswitch_2
+    sget-object v2, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Landroid/app/PendingIntent;
+
+    goto :goto_0
+
+    .line 10
+    :pswitch_3
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    .line 11
+    :pswitch_4
+    sget-object v2, Lcom/google/android/gms/internal/location/zzbc;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 12
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Lcom/google/android/gms/internal/location/zzbc;
+
+    goto :goto_0
+
+    .line 13
+    :pswitch_5
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v4
+
+    goto :goto_0
+
+    .line 14
     :cond_0
-    check-cast p1, Lcom/google/android/gms/internal/location/zzbd;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdg:Lcom/google/android/gms/location/LocationRequest;
+    .line 15
+    new-instance p1, Lcom/google/android/gms/internal/location/zzbe;
 
-    iget-object v2, p1, Lcom/google/android/gms/internal/location/zzbd;->zzdg:Lcom/google/android/gms/location/LocationRequest;
+    move-object v3, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct/range {v3 .. v9}, Lcom/google/android/gms/internal/location/zzbe;-><init>(ILcom/google/android/gms/internal/location/zzbc;Landroid/os/IBinder;Landroid/app/PendingIntent;Landroid/os/IBinder;Landroid/os/IBinder;)V
 
-    move-result v0
+    return-object p1
 
-    if-eqz v0, :cond_1
+    nop
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzm:Ljava/util/List;
-
-    iget-object v2, p1, Lcom/google/android/gms/internal/location/zzbd;->zzm:Ljava/util/List;
-
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzbd;->tag:Ljava/lang/String;
-
-    iget-object v2, p1, Lcom/google/android/gms/internal/location/zzbd;->tag:Ljava/lang/String;
-
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdh:Z
-
-    iget-boolean v2, p1, Lcom/google/android/gms/internal/location/zzbd;->zzdh:Z
-
-    if-ne v0, v2, :cond_1
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdi:Z
-
-    iget-boolean v2, p1, Lcom/google/android/gms/internal/location/zzbd;->zzdi:Z
-
-    if-ne v0, v2, :cond_1
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdj:Z
-
-    iget-boolean v2, p1, Lcom/google/android/gms/internal/location/zzbd;->zzdj:Z
-
-    if-ne v0, v2, :cond_1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzbd;->moduleId:Ljava/lang/String;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/location/zzbd;->moduleId:Ljava/lang/String;
-
-    invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_1
-    return v1
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdg:Lcom/google/android/gms/location/LocationRequest;
+    .line 1
+    new-array p1, p1, [Lcom/google/android/gms/internal/location/zzbe;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/location/LocationRequest;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdg:Lcom/google/android/gms/location/LocationRequest;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->tag:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    const-string v1, " tag="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->tag:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->moduleId:Ljava/lang/String;
-
-    if-eqz v1, :cond_1
-
-    const-string v1, " moduleId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->moduleId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    const-string v1, " hideAppOps="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdh:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, " clients="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzm:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, " forceCoarseLocation="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdi:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdj:Z
-
-    if-eqz v1, :cond_2
-
-    const-string v1, " exemptFromBackgroundThrottle"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdg:Lcom/google/android/gms/location/LocationRequest;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
-
-    iget-object p2, p0, Lcom/google/android/gms/internal/location/zzbd;->zzm:Ljava/util/List;
-
-    const/4 v1, 0x5
-
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
-
-    iget-object p2, p0, Lcom/google/android/gms/internal/location/zzbd;->tag:Ljava/lang/String;
-
-    const/4 v1, 0x6
-
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
-
-    iget-boolean p2, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdh:Z
-
-    const/4 v1, 0x7
-
-    invoke-static {p1, v1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
-
-    iget-boolean p2, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdi:Z
-
-    const/16 v1, 0x8
-
-    invoke-static {p1, v1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
-
-    iget-boolean p2, p0, Lcom/google/android/gms/internal/location/zzbd;->zzdj:Z
-
-    const/16 v1, 0x9
-
-    invoke-static {p1, v1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
-
-    iget-object p2, p0, Lcom/google/android/gms/internal/location/zzbd;->moduleId:Ljava/lang/String;
-
-    const/16 v1, 0xa
-
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
-
-    return-void
+    return-object p1
 .end method

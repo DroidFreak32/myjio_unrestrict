@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final HEADER_CONTENT_TYPE:Ljava/lang/String; = "Content-Type"
+.field private static final HEADER_CONTENT_TYPE:Ljava/lang/String; = "Content-Type"
 
 
 # instance fields
@@ -38,56 +38,6 @@
     return-void
 .end method
 
-.method public static addHeaders(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/util/Map;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lorg/apache/http/client/methods/HttpUriRequest;",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 1
-    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    .line 2
-    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-interface {p0, v1, v2}, Lorg/apache/http/client/methods/HttpUriRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
 .method public static createHttpRequest(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/client/methods/HttpUriRequest;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -100,6 +50,12 @@
             "Ljava/lang/String;",
             ">;)",
             "Lorg/apache/http/client/methods/HttpUriRequest;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
         }
     .end annotation
 
@@ -269,19 +225,20 @@
 
     move-result-object p0
 
+    .line 20
     invoke-virtual {v1, v0, p0}, Lorg/apache/http/client/methods/HttpPost;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 20
+    .line 21
     new-instance p0, Lorg/apache/http/entity/ByteArrayEntity;
 
     invoke-direct {p0, p1}, Lorg/apache/http/entity/ByteArrayEntity;-><init>([B)V
 
-    .line 21
+    .line 22
     invoke-virtual {v1, p0}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
     return-object v1
 
-    .line 22
+    .line 23
     :cond_0
     new-instance p1, Lorg/apache/http/client/methods/HttpGet;
 
@@ -307,7 +264,7 @@
     .end packed-switch
 .end method
 
-.method public static getPostParameterPairs(Ljava/util/Map;)Ljava/util/List;
+.method private static getPostParameterPairs(Ljava/util/Map;)Ljava/util/List;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -372,7 +329,7 @@
     return-object v0
 .end method
 
-.method public static setEntityIfNonEmptyBody(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lcom/android/volley/Request;)V
+.method private static setEntityIfNonEmptyBody(Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Lcom/android/volley/Request;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -380,6 +337,12 @@
             "Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;",
             "Lcom/android/volley/Request<",
             "*>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
         }
     .end annotation
 
@@ -402,10 +365,65 @@
     return-void
 .end method
 
+.method private static setHeaders(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/util/Map;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/apache/http/client/methods/HttpUriRequest;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 2
+    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-interface {p0, v1, v2}, Lorg/apache/http/client/methods/HttpUriRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
 
 # virtual methods
 .method public onPrepareRequest(Lorg/apache/http/client/methods/HttpUriRequest;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -425,20 +443,27 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
+
     .line 1
     invoke-static {p1, p2}, Lcom/android/volley/toolbox/HttpClientStack;->createHttpRequest(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/client/methods/HttpUriRequest;
 
     move-result-object v0
 
     .line 2
-    invoke-static {v0, p2}, Lcom/android/volley/toolbox/HttpClientStack;->addHeaders(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/util/Map;)V
+    invoke-static {v0, p2}, Lcom/android/volley/toolbox/HttpClientStack;->setHeaders(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/util/Map;)V
 
     .line 3
     invoke-virtual {p1}, Lcom/android/volley/Request;->getHeaders()Ljava/util/Map;
 
     move-result-object p2
 
-    invoke-static {v0, p2}, Lcom/android/volley/toolbox/HttpClientStack;->addHeaders(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/util/Map;)V
+    invoke-static {v0, p2}, Lcom/android/volley/toolbox/HttpClientStack;->setHeaders(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/util/Map;)V
 
     .line 4
     invoke-virtual {p0, v0}, Lcom/android/volley/toolbox/HttpClientStack;->onPrepareRequest(Lorg/apache/http/client/methods/HttpUriRequest;)V

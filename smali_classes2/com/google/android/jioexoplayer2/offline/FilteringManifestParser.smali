@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public final parser:Lcom/google/android/jioexoplayer2/upstream/ParsingLoadable$Parser;
+.field private final parser:Lcom/google/android/jioexoplayer2/upstream/ParsingLoadable$Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/upstream/ParsingLoadable$Parser<",
@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public final streamKeys:Ljava/util/List;
+.field private final streamKeys:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -79,6 +79,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 2
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/FilteringManifestParser;->parser:Lcom/google/android/jioexoplayer2/upstream/ParsingLoadable$Parser;
 
@@ -117,6 +123,11 @@
 
 .method public bridge synthetic parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1, p2}, Lcom/google/android/jioexoplayer2/offline/FilteringManifestParser;->parse(Landroid/net/Uri;Ljava/io/InputStream;)Lcom/google/android/jioexoplayer2/offline/FilterableManifest;

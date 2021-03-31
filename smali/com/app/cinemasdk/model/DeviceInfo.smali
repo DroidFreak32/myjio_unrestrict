@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public consumptionDeviceName:Ljava/lang/String;
+.field private consumptionDeviceName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public info:Lcom/app/cinemasdk/model/Info;
+.field private info:Lcom/app/cinemasdk/model/Info;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public jToken:Ljava/lang/String;
+.field private jToken:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

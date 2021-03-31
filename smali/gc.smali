@@ -1,143 +1,176 @@
-.class public final Lgc;
+.class public Lgc;
 .super Ljava/lang/Object;
-.source "R.java"
+.source "FloatValueAnimatorBuilder.java"
 
 
-# static fields
-.field public static final accessibility_action_clickable_span:I = 0x7f0b005c
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lgc$c;,
+        Lgc$d;
+    }
+.end annotation
 
-.field public static final accessibility_custom_action_0:I = 0x7f0b005d
 
-.field public static final accessibility_custom_action_1:I = 0x7f0b005e
+# instance fields
+.field public final a:Landroid/animation/ValueAnimator;
 
-.field public static final accessibility_custom_action_10:I = 0x7f0b005f
+.field public b:Lgc$c;
 
-.field public static final accessibility_custom_action_11:I = 0x7f0b0060
 
-.field public static final accessibility_custom_action_12:I = 0x7f0b0061
+# direct methods
+.method public constructor <init>()V
+    .locals 1
 
-.field public static final accessibility_custom_action_13:I = 0x7f0b0062
+    const/4 v0, 0x0
 
-.field public static final accessibility_custom_action_14:I = 0x7f0b0063
+    .line 1
+    invoke-direct {p0, v0}, Lgc;-><init>(Z)V
 
-.field public static final accessibility_custom_action_15:I = 0x7f0b0064
+    return-void
+.end method
 
-.field public static final accessibility_custom_action_16:I = 0x7f0b0065
+.method public constructor <init>(Z)V
+    .locals 1
 
-.field public static final accessibility_custom_action_17:I = 0x7f0b0066
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static final accessibility_custom_action_18:I = 0x7f0b0067
+    const/4 v0, 0x2
 
-.field public static final accessibility_custom_action_19:I = 0x7f0b0068
+    if-eqz p1, :cond_0
 
-.field public static final accessibility_custom_action_2:I = 0x7f0b0069
+    new-array p1, v0, [F
 
-.field public static final accessibility_custom_action_20:I = 0x7f0b006a
+    .line 3
+    fill-array-data p1, :array_0
 
-.field public static final accessibility_custom_action_21:I = 0x7f0b006b
+    invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-.field public static final accessibility_custom_action_22:I = 0x7f0b006c
+    move-result-object p1
 
-.field public static final accessibility_custom_action_23:I = 0x7f0b006d
+    iput-object p1, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final accessibility_custom_action_24:I = 0x7f0b006e
+    goto :goto_0
 
-.field public static final accessibility_custom_action_25:I = 0x7f0b006f
+    :cond_0
+    new-array p1, v0, [F
 
-.field public static final accessibility_custom_action_26:I = 0x7f0b0070
+    .line 4
+    fill-array-data p1, :array_1
 
-.field public static final accessibility_custom_action_27:I = 0x7f0b0071
+    invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-.field public static final accessibility_custom_action_28:I = 0x7f0b0072
+    move-result-object p1
 
-.field public static final accessibility_custom_action_29:I = 0x7f0b0073
+    iput-object p1, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final accessibility_custom_action_3:I = 0x7f0b0074
+    :goto_0
+    return-void
 
-.field public static final accessibility_custom_action_30:I = 0x7f0b0075
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+    .end array-data
 
-.field public static final accessibility_custom_action_31:I = 0x7f0b0076
+    :array_1
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
 
-.field public static final accessibility_custom_action_4:I = 0x7f0b0077
 
-.field public static final accessibility_custom_action_5:I = 0x7f0b0078
+# virtual methods
+.method public a()Landroid/animation/ValueAnimator;
+    .locals 2
 
-.field public static final accessibility_custom_action_6:I = 0x7f0b0079
+    .line 1
+    iget-object v0, p0, Lgc;->b:Lgc$c;
 
-.field public static final accessibility_custom_action_7:I = 0x7f0b007a
+    if-eqz v0, :cond_0
 
-.field public static final accessibility_custom_action_8:I = 0x7f0b007b
+    .line 2
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final accessibility_custom_action_9:I = 0x7f0b007c
+    new-instance v1, Lgc$b;
 
-.field public static final action_container:I = 0x7f0b0098
+    invoke-direct {v1, p0}, Lgc$b;-><init>(Lgc;)V
 
-.field public static final action_divider:I = 0x7f0b009d
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-.field public static final action_image:I = 0x7f0b00a5
+    .line 3
+    :cond_0
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final action_text:I = 0x7f0b00b9
+    return-object v0
+.end method
 
-.field public static final actions:I = 0x7f0b00be
+.method public b(J)Lgc;
+    .locals 1
 
-.field public static final async:I = 0x7f0b014d
+    .line 1
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final blocking:I = 0x7f0b01de
+    invoke-virtual {v0, p1, p2}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-.field public static final chronometer:I = 0x7f0b03b8
+    return-object p0
+.end method
 
-.field public static final dialog_button:I = 0x7f0b0578
+.method public c(J)Lgc;
+    .locals 1
 
-.field public static final forever:I = 0x7f0b0754
+    .line 1
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final fragment_container_view_tag:I = 0x7f0b076c
+    invoke-virtual {v0, p1, p2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-.field public static final icon:I = 0x7f0b083f
+    return-object p0
+.end method
 
-.field public static final icon_group:I = 0x7f0b0847
+.method public d(Landroid/animation/TimeInterpolator;)Lgc;
+    .locals 1
 
-.field public static final info:I = 0x7f0b0921
+    .line 1
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final italic:I = 0x7f0b0944
+    invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-.field public static final line1:I = 0x7f0b0b02
+    return-object p0
+.end method
 
-.field public static final line3:I = 0x7f0b0b04
+.method public e(Lgc$c;)Lgc;
+    .locals 0
 
-.field public static final normal:I = 0x7f0b0efb
+    .line 1
+    iput-object p1, p0, Lgc;->b:Lgc$c;
 
-.field public static final notification_background:I = 0x7f0b0f02
+    return-object p0
+.end method
 
-.field public static final notification_main_column:I = 0x7f0b0f04
+.method public f(Lgc$d;)Lgc;
+    .locals 2
 
-.field public static final notification_main_column_container:I = 0x7f0b0f05
+    .line 1
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final right_icon:I = 0x7f0b112c
+    new-instance v1, Lgc$a;
 
-.field public static final right_side:I = 0x7f0b112d
+    invoke-direct {v1, p0, p1}, Lgc$a;-><init>(Lgc;Lgc$d;)V
 
-.field public static final tag_accessibility_actions:I = 0x7f0b13ca
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-.field public static final tag_accessibility_clickable_spans:I = 0x7f0b13cb
+    return-object p0
+.end method
 
-.field public static final tag_accessibility_heading:I = 0x7f0b13cc
+.method public g(I)Lgc;
+    .locals 1
 
-.field public static final tag_accessibility_pane_title:I = 0x7f0b13cd
+    .line 1
+    iget-object v0, p0, Lgc;->a:Landroid/animation/ValueAnimator;
 
-.field public static final tag_screen_reader_focusable:I = 0x7f0b13ce
+    invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-.field public static final tag_transition_group:I = 0x7f0b13cf
-
-.field public static final tag_unhandled_key_event_manager:I = 0x7f0b13d0
-
-.field public static final tag_unhandled_key_listeners:I = 0x7f0b13d1
-
-.field public static final text:I = 0x7f0b13e4
-
-.field public static final text2:I = 0x7f0b13e6
-
-.field public static final time:I = 0x7f0b146e
-
-.field public static final title:I = 0x7f0b1476
-
-.field public static final visible_removing_fragment_view_tag:I = 0x7f0b19d2
+    return-object p0
+.end method

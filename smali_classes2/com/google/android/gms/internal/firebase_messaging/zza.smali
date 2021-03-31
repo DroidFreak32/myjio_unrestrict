@@ -1,12 +1,12 @@
 .class public final Lcom/google/android/gms/internal/firebase_messaging/zza;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-iid@@20.2.0"
+.source "com.google.firebase:firebase-messaging@@21.0.0"
 
 
 # static fields
-.field public static final zza:Lcom/google/android/gms/internal/firebase_messaging/zzb;
+.field private static final zza:Lcom/google/android/gms/internal/firebase_messaging/zzb;
 
-.field public static volatile zzb:Lcom/google/android/gms/internal/firebase_messaging/zzb;
+.field private static volatile zzb:Lcom/google/android/gms/internal/firebase_messaging/zzb;
 
 
 # direct methods

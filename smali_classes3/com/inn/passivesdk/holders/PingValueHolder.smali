@@ -4,23 +4,23 @@
 
 
 # instance fields
-.field public avgJitter:Ljava/lang/Double;
+.field private avgJitter:Ljava/lang/Double;
 
-.field public avgLatency:Ljava/lang/Double;
+.field private avgLatency:Ljava/lang/Double;
 
-.field public host:Ljava/lang/String;
+.field private host:Ljava/lang/String;
 
-.field public maxLatency:Ljava/lang/Double;
+.field private maxLatency:Ljava/lang/Double;
 
-.field public minLatency:Ljava/lang/Double;
+.field private minLatency:Ljava/lang/Double;
 
-.field public pcktLoss:Ljava/lang/Double;
+.field private pcktLoss:Ljava/lang/Double;
 
-.field public pcktReceived:Ljava/lang/Double;
+.field private pcktReceived:Ljava/lang/Double;
 
-.field public pcktTransmitted:Ljava/lang/Double;
+.field private pcktTransmitted:Ljava/lang/Double;
 
-.field public time:Ljava/lang/Double;
+.field private time:Ljava/lang/Double;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/Double;
+.method public getAvgJitter()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -44,16 +44,7 @@
     return-object v0
 .end method
 
-.method public a(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->avgJitter:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/Double;
+.method public getAvgLatency()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -62,16 +53,16 @@
     return-object v0
 .end method
 
-.method public b(Ljava/lang/Double;)V
-    .locals 0
+.method public getHost()Ljava/lang/String;
+    .locals 1
 
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->avgLatency:Ljava/lang/Double;
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->host:Ljava/lang/String;
 
-    return-void
+    return-object v0
 .end method
 
-.method public c()Ljava/lang/Double;
+.method public getMaxLatency()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -80,16 +71,7 @@
     return-object v0
 .end method
 
-.method public c(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->maxLatency:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public d()Ljava/lang/Double;
+.method public getMinLatency()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -98,16 +80,7 @@
     return-object v0
 .end method
 
-.method public d(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->minLatency:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public e()Ljava/lang/Double;
+.method public getPcktLoss()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -116,16 +89,7 @@
     return-object v0
 .end method
 
-.method public e(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->pcktLoss:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public f()Ljava/lang/Double;
+.method public getPcktReceived()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -134,16 +98,7 @@
     return-object v0
 .end method
 
-.method public f(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->pcktReceived:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public g()Ljava/lang/Double;
+.method public getPcktTransmitted()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -152,16 +107,7 @@
     return-object v0
 .end method
 
-.method public g(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->pcktTransmitted:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public h()Ljava/lang/Double;
+.method public getTime()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -170,10 +116,82 @@
     return-object v0
 .end method
 
-.method public h(Ljava/lang/Double;)V
+.method public setAvgJitter(Ljava/lang/Double;)V
     .locals 0
 
-    .line 2
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->avgJitter:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setAvgLatency(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->avgLatency:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setHost(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->host:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setMaxLatency(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->maxLatency:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setMinLatency(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->minLatency:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setPcktLoss(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->pcktLoss:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setPcktReceived(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->pcktReceived:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setPcktTransmitted(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->pcktTransmitted:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setTime(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/PingValueHolder;->time:Ljava/lang/Double;
 
     return-void

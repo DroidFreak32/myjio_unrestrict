@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public user:Lcom/app/cinemasdk/responsepojo/zla/User;
+.field private user:Lcom/app/cinemasdk/responsepojo/zla/User;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

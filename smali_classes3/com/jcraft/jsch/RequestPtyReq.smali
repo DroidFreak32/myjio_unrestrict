@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public tcol:I
+.field private tcol:I
 
-.field public terminal_mode:[B
+.field private terminal_mode:[B
 
-.field public thp:I
+.field private thp:I
 
-.field public trow:I
+.field private trow:I
 
-.field public ttype:Ljava/lang/String;
+.field private ttype:Ljava/lang/String;
 
-.field public twp:I
+.field private twp:I
 
 
 # direct methods
@@ -24,7 +24,7 @@
     .line 1
     invoke-direct {p0}, Lcom/jcraft/jsch/Request;-><init>()V
 
-    const-string/jumbo v0, "vt100"
+    const-string v0, "vt100"
 
     .line 2
     iput-object v0, p0, Lcom/jcraft/jsch/RequestPtyReq;->ttype:Ljava/lang/String;
@@ -61,6 +61,11 @@
 # virtual methods
 .method public request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1, p2}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V

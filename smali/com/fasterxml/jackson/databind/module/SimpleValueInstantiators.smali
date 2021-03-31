@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = -0x7beb8da55ae36f3aL
+.field private static final serialVersionUID:J = -0x7beb8da55ae36f3aL
 
 
 # instance fields
@@ -89,8 +89,11 @@
 
     if-nez p1, :cond_0
 
-    move-object p1, p3
+    goto :goto_0
 
     :cond_0
-    return-object p1
+    move-object p3, p1
+
+    :goto_0
+    return-object p3
 .end method

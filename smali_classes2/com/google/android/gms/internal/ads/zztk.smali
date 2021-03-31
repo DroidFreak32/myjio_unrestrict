@@ -1,16 +1,48 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zztk;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/ads/zztk;
+.super Lcom/google/android/gms/internal/ads/zzazq;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/internal/ads/zzazq<",
+        "Lcom/google/android/gms/internal/ads/zztt;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final synthetic zzbvh:Lcom/google/android/gms/internal/ads/zztl;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zztl;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zztk;->zzbvh:Lcom/google/android/gms/internal/ads/zztl;
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzazq;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract destroy()V
-.end method
+.method public final cancel(Z)Z
+    .locals 1
 
-.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzly;
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zztk;->zzbvh:Lcom/google/android/gms/internal/ads/zztl;
 
-.method public abstract zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zztm;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zztl;->zza(Lcom/google/android/gms/internal/ads/zztl;)V
+
+    .line 2
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/ads/zzazq;->cancel(Z)Z
+
+    move-result p1
+
+    return p1
 .end method

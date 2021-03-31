@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 .method private syncAnalyticData(Lcom/google/gson/JsonArray;)V
     .locals 5
 
-    const-string v0, "userIdentity"
+    const-string/jumbo v0, "userIdentity"
 
     const-string v1, "SecretKey"
 
@@ -208,11 +208,11 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->getEliteAnalytics()Li30;
+    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->getEliteAnalytics()Lcom/elitecorelib/core/utility/d;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Li30;->b()I
+    invoke-virtual {p1}, Lcom/elitecorelib/core/utility/d;->b()I
 
     move-result p1
 
@@ -297,11 +297,11 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->getEliteAnalytics()Li30;
+    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->getEliteAnalytics()Lcom/elitecorelib/core/utility/d;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Li30;->a()Lcom/google/gson/JsonArray;
+    invoke-virtual {p1}, Lcom/elitecorelib/core/utility/d;->a()Lcom/google/gson/JsonArray;
 
     move-result-object p1
 

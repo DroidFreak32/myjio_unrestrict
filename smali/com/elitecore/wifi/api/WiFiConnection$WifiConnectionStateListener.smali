@@ -5,9 +5,13 @@
 # instance fields
 .field public a:Ljava/lang/String;
 
-.field public b:Ljava/lang/String;
+.field public b:Z
 
-.field public c:Ljava/util/Set;
+.field public c:Z
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -17,14 +21,14 @@
     .end annotation
 .end field
 
-.field public final synthetic d:Lm00;
+.field public final synthetic f:Lcom/elitecore/wifi/api/WiFiConnection;
 
 
 # direct methods
-.method public constructor <init>(Lm00;)V
+.method public constructor <init>(Lcom/elitecore/wifi/api/WiFiConnection;)V
     .locals 1
 
-    iput-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iput-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -32,11 +36,11 @@
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->c:Ljava/util/Set;
+    iput-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->e:Ljava/util/Set;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lm00;->a(Lm00;I)I
+    invoke-static {p1, v0}, Lcom/elitecore/wifi/api/WiFiConnection;->a(Lcom/elitecore/wifi/api/WiFiConnection;I)I
 
     return-void
 .end method
@@ -73,15 +77,13 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object v4, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {v4, p2}, Lm00;->a(Lm00;Landroid/content/Intent;)Ljava/lang/String;
+    invoke-static {v4, p2}, Lcom/elitecore/wifi/api/WiFiConnection;->f(Lcom/elitecore/wifi/api/WiFiConnection;Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
-
-    iget-object v4, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -89,9 +91,9 @@
 
     if-nez v4, :cond_0
 
-    iget-object v4, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object v4, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {v4}, Lm00;->g(Lm00;)I
+    invoke-static {v4}, Lcom/elitecore/wifi/api/WiFiConnection;->w(Lcom/elitecore/wifi/api/WiFiConnection;)I
 
     :cond_0
     const-string v4, "android.net.wifi.supplicant.CONNECTION_CHANGE"
@@ -139,17 +141,17 @@
 
     move-result-object v1
 
-    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {p2, p1}, Lm00;->a(Lm00;Landroid/content/Context;)Z
+    invoke-static {p2, p1}, Lcom/elitecore/wifi/api/WiFiConnection;->j(Lcom/elitecore/wifi/api/WiFiConnection;Landroid/content/Context;)Z
 
     move-result p2
 
     if-eqz p2, :cond_3
 
-    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {p2, p1}, Lm00;->b(Lm00;Landroid/content/Context;)Landroid/net/NetworkInfo;
+    invoke-static {p2, p1}, Lcom/elitecore/wifi/api/WiFiConnection;->l(Lcom/elitecore/wifi/api/WiFiConnection;Landroid/content/Context;)Landroid/net/NetworkInfo;
 
     move-result-object p1
 
@@ -197,9 +199,9 @@
 
     sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {v0}, Lm00;->e(Lm00;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecore/wifi/api/WiFiConnection;->s(Lcom/elitecore/wifi/api/WiFiConnection;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -282,9 +284,9 @@
 
     sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    iget-object v3, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object v3, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {v3}, Lm00;->e(Lm00;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/elitecore/wifi/api/WiFiConnection;->s(Lcom/elitecore/wifi/api/WiFiConnection;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -340,9 +342,9 @@
 
     sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {v0}, Lm00;->e(Lm00;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecore/wifi/api/WiFiConnection;->s(Lcom/elitecore/wifi/api/WiFiConnection;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -354,13 +356,11 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->b:Ljava/lang/String;
+    iput-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Ljava/lang/String;
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->c:Ljava/util/Set;
+    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->e:Ljava/util/Set;
 
-    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->b:Ljava/lang/String;
-
-    invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {p2, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
 
@@ -372,17 +372,17 @@
 
     if-nez p1, :cond_7
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {p1}, Lm00;->h(Lm00;)I
+    invoke-static {p1}, Lcom/elitecore/wifi/api/WiFiConnection;->y(Lcom/elitecore/wifi/api/WiFiConnection;)I
 
     move-result p1
 
     if-le p1, p2, :cond_7
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {p1}, Lm00;->i(Lm00;)Lcom/elitecore/wifi/a/a;
+    invoke-static {p1}, Lcom/elitecore/wifi/api/WiFiConnection;->A(Lcom/elitecore/wifi/api/WiFiConnection;)Lcom/elitecore/wifi/a/a;
 
     move-result-object p1
 
@@ -398,70 +398,74 @@
 
     if-nez p1, :cond_7
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->c:Ljava/util/Set;
+    iput-boolean p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->b:Z
 
-    invoke-interface {p1}, Ljava/util/Set;->clear()V
+    const/4 p1, 0x0
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->c:Ljava/util/Set;
+    iput-boolean p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->c:Z
 
-    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
+    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->e:Ljava/util/Set;
 
-    invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {p2}, Ljava/util/Set;->clear()V
+
+    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->e:Ljava/util/Set;
+
+    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
+
+    invoke-interface {p2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
-
-    move-result-object p1
-
-    const-string p2, "WiFiConnection_hold_failstatelist_constant"
-
-    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->c:Ljava/util/Set;
-
-    invoke-virtual {p1, p2, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->savelinkedhashset(Ljava/lang/String;Ljava/util/Set;)V
-
-    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
-
-    invoke-static {p2}, Lm00;->e(Lm00;)Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
     move-result-object p2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "WiFiConnection_hold_failstatelist_constant"
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->e:Ljava/util/Set;
 
-    const-string v1, "Connecting timer cancel from [RECEIVER], Reason: Connection status is "
+    invoke-virtual {p2, v0, v1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->savelinkedhashset(Ljava/lang/String;Ljava/util/Set;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    iget-object v1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
+    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecore/wifi/api/WiFiConnection;->s(Lcom/elitecore/wifi/api/WiFiConnection;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, p2, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p1}, Lm00;->a(Lm00;)Ll00;
+    const-string v2, "Connecting timer cancel from [RECEIVER], Reason: Connection status is "
 
-    move-result-object p1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p2, 0x0
+    iget-object v2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->a:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Ll00;->a(Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p2, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
+
+    invoke-static {p2}, Lcom/elitecore/wifi/api/WiFiConnection;->b(Lcom/elitecore/wifi/api/WiFiConnection;)Lb9;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p1}, Lb9;->a(Z)V
 
     goto :goto_5
 
     :cond_7
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -471,15 +475,15 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lm00;->a(Lm00;Landroid/content/Context;)Z
+    invoke-static {p1, v0}, Lcom/elitecore/wifi/api/WiFiConnection;->j(Lcom/elitecore/wifi/api/WiFiConnection;Landroid/content/Context;)Z
 
     move-result p1
 
     if-eqz p1, :cond_8
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {p1}, Lm00;->i(Lm00;)Lcom/elitecore/wifi/a/a;
+    invoke-static {p1}, Lcom/elitecore/wifi/api/WiFiConnection;->A(Lcom/elitecore/wifi/api/WiFiConnection;)Lcom/elitecore/wifi/a/a;
 
     move-result-object p1
 
@@ -487,7 +491,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lo00;->b(Ljava/lang/String;)Z
+    invoke-static {p1}, Lcom/elitecore/wifi/api/b;->b(Ljava/lang/String;)Z
 
     move-result p1
 
@@ -503,9 +507,9 @@
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object v0, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {v0}, Lm00;->e(Lm00;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecore/wifi/api/WiFiConnection;->s(Lcom/elitecore/wifi/api/WiFiConnection;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -513,13 +517,13 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->d:Lm00;
+    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiConnection$WifiConnectionStateListener;->f:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    invoke-static {p1}, Lm00;->a(Lm00;)Ll00;
+    invoke-static {p1}, Lcom/elitecore/wifi/api/WiFiConnection;->b(Lcom/elitecore/wifi/api/WiFiConnection;)Lb9;
 
     move-result-object p1
 
-    invoke-virtual {p1, p2}, Ll00;->a(Z)V
+    invoke-virtual {p1, p2}, Lb9;->a(Z)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

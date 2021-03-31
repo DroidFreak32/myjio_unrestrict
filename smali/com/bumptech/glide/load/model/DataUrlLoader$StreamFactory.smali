@@ -31,7 +31,7 @@
 
 
 # instance fields
-.field public final opener:Lcom/bumptech/glide/load/model/DataUrlLoader$DataDecoder;
+.field private final opener:Lcom/bumptech/glide/load/model/DataUrlLoader$DataDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/DataUrlLoader$DataDecoder<",
@@ -63,6 +63,13 @@
 # virtual methods
 .method public build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -39,4 +39,9 @@
 
 # virtual methods
 .method public abstract readFromStream(ILjava/io/DataInputStream;)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method

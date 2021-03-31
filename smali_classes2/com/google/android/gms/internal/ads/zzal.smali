@@ -1,46 +1,24 @@
-.class public final Lcom/google/android/gms/internal/ads/zzal;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzal;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<T:",
         "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "[B>;"
+        ">",
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    check-cast p1, [B
-
-    check-cast p2, [B
-
-    .line 2
-    array-length p1, p1
-
-    array-length p2, p2
-
-    sub-int/2addr p1, p2
-
-    return p1
+.method public abstract zzb(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
 .end method

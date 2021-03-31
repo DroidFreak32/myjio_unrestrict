@@ -8,15 +8,15 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzadw:Ljava/lang/String;
+.field private static final zzadw:Ljava/lang/String;
 
-.field public static final zzafl:Ljava/lang/String;
+.field private static final zzafl:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzafm:Lcom/google/android/gms/tagmanager/zzan;
+.field private final zzafm:Lcom/google/android/gms/tagmanager/zzan;
 
 
 # direct methods

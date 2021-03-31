@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzox:Lcom/google/android/gms/internal/clearcut/zzbb;
+.field private final synthetic zzox:Lcom/google/android/gms/internal/clearcut/zzbb;
 
 
 # direct methods

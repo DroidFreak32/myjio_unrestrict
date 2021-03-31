@@ -52,7 +52,7 @@
     .end annotation
 .end field
 
-.field public values:Ljava/util/List;
+.field private values:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -129,6 +129,9 @@
 
 .method public removeLast()Ljava/lang/Object;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"

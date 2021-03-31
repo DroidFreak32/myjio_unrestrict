@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+.field private static final synthetic $VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
 .field public static final enum BINARY:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
@@ -31,104 +31,92 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     .line 1
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const/4 v1, 0x0
+    const-string v1, "CONTINUOUS"
 
-    const-string v2, "CONTINUOUS"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CONTINUOUS:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
     const-string v3, "TEXT"
 
-    invoke-direct {v0, v3, v2}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->TEXT:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    invoke-direct {v1, v3, v4}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    sput-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->TEXT:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const-string v4, "BINARY"
+    const-string v5, "BINARY"
 
-    invoke-direct {v0, v4, v3}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->BINARY:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    invoke-direct {v3, v5, v6}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    sput-object v3, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->BINARY:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const-string v5, "PING"
+    const-string v7, "PING"
 
-    invoke-direct {v0, v5, v4}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    invoke-direct {v5, v7, v8}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    sput-object v5, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const/4 v5, 0x4
+    new-instance v7, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const-string v6, "PONG"
+    const-string v9, "PONG"
 
-    invoke-direct {v0, v6, v5}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
+    const/4 v10, 0x4
 
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PONG:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    invoke-direct {v7, v9, v10}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    sput-object v7, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PONG:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const/4 v6, 0x5
+    new-instance v9, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const-string v7, "CLOSING"
+    const-string v11, "CLOSING"
 
-    invoke-direct {v0, v7, v6}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
+    const/4 v12, 0x5
 
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CLOSING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    invoke-direct {v9, v11, v12}, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x6
+    sput-object v9, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CLOSING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    new-array v0, v0, [Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    const/4 v11, 0x6
+
+    new-array v11, v11, [Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+
+    aput-object v0, v11, v2
+
+    aput-object v1, v11, v4
+
+    aput-object v3, v11, v6
+
+    aput-object v5, v11, v8
+
+    aput-object v7, v11, v10
+
+    aput-object v9, v11, v12
 
     .line 2
-    sget-object v7, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CONTINUOUS:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    aput-object v7, v0, v1
-
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->TEXT:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->BINARY:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PONG:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CLOSING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->$VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    sput-object v11, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->$VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

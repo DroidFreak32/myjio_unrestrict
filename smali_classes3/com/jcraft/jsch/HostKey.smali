@@ -12,9 +12,9 @@
 
 .field public static final UNKNOWN:I = 0x3
 
-.field public static final sshdss:[B
+.field private static final sshdss:[B
 
-.field public static final sshrsa:[B
+.field private static final sshrsa:[B
 
 
 # instance fields
@@ -33,7 +33,7 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    const-string/jumbo v0, "ssh-dss"
+    const-string v0, "ssh-dss"
 
     .line 1
     invoke-static {v0}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
@@ -42,7 +42,7 @@
 
     sput-object v0, Lcom/jcraft/jsch/HostKey;->sshdss:[B
 
-    const-string/jumbo v0, "ssh-rsa"
+    const-string v0, "ssh-rsa"
 
     .line 2
     invoke-static {v0}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
@@ -56,6 +56,11 @@
 
 .method public constructor <init>(Ljava/lang/String;I[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -67,6 +72,11 @@
 
 .method public constructor <init>(Ljava/lang/String;I[BLjava/lang/String;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v1, ""
 
@@ -88,6 +98,11 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I[BLjava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -155,6 +170,11 @@
 
 .method public constructor <init>(Ljava/lang/String;[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

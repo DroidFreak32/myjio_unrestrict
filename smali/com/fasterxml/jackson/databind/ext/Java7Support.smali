@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final IMPL:Lcom/fasterxml/jackson/databind/ext/Java7Support;
+.field private static final IMPL:Lcom/fasterxml/jackson/databind/ext/Java7Support;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
 
+    :try_start_0
     const-string v0, "com.fasterxml.jackson.databind.ext.Java7SupportImpl"
 
     .line 1
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

@@ -1,6 +1,9 @@
 .class public Lu0$a;
-.super Ls0$c;
-.source "StateListDrawable.java"
+.super Ljava/lang/Object;
+.source "StandardMenuPopup.java"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # annotations
@@ -9,195 +12,85 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "a"
+    accessFlags = 0x1
+    name = null
 .end annotation
 
 
 # instance fields
-.field public J:[[I
+.field public final synthetic a:Lu0;
 
 
 # direct methods
-.method public constructor <init>(Lu0$a;Lu0;Landroid/content/res/Resources;)V
+.method public constructor <init>(Lu0;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2, p3}, Ls0$c;-><init>(Ls0$c;Ls0;Landroid/content/res/Resources;)V
+    iput-object p1, p0, Lu0$a;->a:Lu0;
 
-    if-eqz p1, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iget-object p1, p1, Lu0$a;->J:[[I
-
-    iput-object p1, p0, Lu0$a;->J:[[I
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    invoke-virtual {p0}, Ls0$c;->d()I
-
-    move-result p1
-
-    new-array p1, p1, [[I
-
-    iput-object p1, p0, Lu0$a;->J:[[I
-
-    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public a([I)I
-    .locals 4
-
-    .line 3
-    iget-object v0, p0, Lu0$a;->J:[[I
-
-    .line 4
-    invoke-virtual {p0}, Ls0$c;->e()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    .line 5
-    aget-object v3, v0, v2
-
-    invoke-static {v3, p1}, Landroid/util/StateSet;->stateSetMatches([I[I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    return v2
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, -0x1
-
-    return p1
-.end method
-
-.method public a([ILandroid/graphics/drawable/Drawable;)I
+.method public onGlobalLayout()V
     .locals 1
 
     .line 1
-    invoke-virtual {p0, p2}, Ls0$c;->a(Landroid/graphics/drawable/Drawable;)I
+    iget-object v0, p0, Lu0$a;->a:Lu0;
 
-    move-result p2
+    invoke-virtual {v0}, Lu0;->isShowing()Z
 
-    .line 2
-    iget-object v0, p0, Lu0$a;->J:[[I
+    move-result v0
 
-    aput-object p1, v0, p2
+    if-eqz v0, :cond_2
 
-    return p2
-.end method
+    iget-object v0, p0, Lu0$a;->a:Lu0;
 
-.method public a(II)V
-    .locals 2
+    iget-object v0, v0, Lu0;->B:Landroidx/appcompat/widget/MenuPopupWindow;
 
-    .line 6
-    invoke-super {p0, p1, p2}, Ls0$c;->a(II)V
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->isModal()Z
 
-    .line 7
-    new-array p2, p2, [[I
+    move-result v0
 
-    .line 8
-    iget-object v0, p0, Lu0$a;->J:[[I
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1, p2, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 9
-    iput-object p2, p0, Lu0$a;->J:[[I
-
-    return-void
-.end method
-
-.method public n()V
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lu0$a;->J:[[I
-
-    array-length v1, v0
-
-    new-array v1, v1, [[I
+    if-nez v0, :cond_2
 
     .line 2
-    array-length v0, v0
+    iget-object v0, p0, Lu0$a;->a:Lu0;
 
-    add-int/lit8 v0, v0, -0x1
+    iget-object v0, v0, Lu0;->G:Landroid/view/View;
 
-    :goto_0
-    if-ltz v0, :cond_1
+    if-eqz v0, :cond_1
 
     .line 3
-    iget-object v2, p0, Lu0$a;->J:[[I
+    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
 
-    aget-object v3, v2, v0
+    move-result v0
 
-    if-eqz v3, :cond_0
+    if-nez v0, :cond_0
 
-    aget-object v2, v2, v0
+    goto :goto_0
 
-    invoke-virtual {v2}, [I->clone()Ljava/lang/Object;
+    .line 4
+    :cond_0
+    iget-object v0, p0, Lu0$a;->a:Lu0;
 
-    move-result-object v2
+    iget-object v0, v0, Lu0;->B:Landroidx/appcompat/widget/MenuPopupWindow;
 
-    check-cast v2, [I
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
 
     goto :goto_1
 
-    :cond_0
-    const/4 v2, 0x0
-
-    :goto_1
-    aput-object v2, v1, v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    .line 4
+    .line 5
     :cond_1
-    iput-object v1, p0, Lu0$a;->J:[[I
+    :goto_0
+    iget-object v0, p0, Lu0$a;->a:Lu0;
 
+    invoke-virtual {v0}, Lu0;->dismiss()V
+
+    :cond_2
+    :goto_1
     return-void
-.end method
-
-.method public newDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lu0;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lu0;-><init>(Lu0$a;Landroid/content/res/Resources;)V
-
-    return-object v0
-.end method
-
-.method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    .line 2
-    new-instance v0, Lu0;
-
-    invoke-direct {v0, p0, p1}, Lu0;-><init>(Lu0$a;Landroid/content/res/Resources;)V
-
-    return-object v0
 .end method

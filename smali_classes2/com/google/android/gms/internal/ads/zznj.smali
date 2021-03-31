@@ -1,13 +1,16 @@
 .class public final Lcom/google/android/gms/internal/ads/zznj;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zznk;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# instance fields
+.field public size:I
+
+.field public zzaro:Lcom/google/android/gms/internal/ads/zzkg;
+
+.field public zzawl:J
+
+.field public zzbgi:J
 
 
 # direct methods
@@ -18,31 +21,4 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final zze(Ljava/util/List;)Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;)",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    if-nez p1, :cond_0
-
-    .line 1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p1
-
-    :cond_0
-    return-object p1
 .end method

@@ -1,8 +1,25 @@
-.class public interface abstract Lja;
-.super Ljava/lang/Object;
-.source "ViewPropertyAnimatorUpdateListener.java"
+.class public final Lja;
+.super Lcom/google/gson/reflect/TypeToken;
 
 
-# virtual methods
-.method public abstract a(Landroid/view/View;)V
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/gson/reflect/TypeToken<",
+        "Ljava/util/HashMap<",
+        "Ljava/lang/String;",
+        "Ljava/util/ArrayList<",
+        "Ljava/lang/String;",
+        ">;>;>;"
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/gson/reflect/TypeToken;-><init>()V
+
+    return-void
 .end method

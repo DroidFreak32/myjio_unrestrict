@@ -8,11 +8,11 @@
 
 
 # static fields
-.field public static final NULLER:Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;
+.field private static final NULLER:Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;
 
-.field public static final SKIPPER:Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;
+.field private static final SKIPPER:Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -53,11 +53,9 @@
     .line 2
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;->_nullValue:Ljava/lang/Object;
 
-    .line 3
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;->_nullValue:Ljava/lang/Object;
-
     if-nez p1, :cond_0
 
+    .line 3
     sget-object p1, Lcom/fasterxml/jackson/databind/util/AccessPattern;->ALWAYS_NULL:Lcom/fasterxml/jackson/databind/util/AccessPattern;
 
     goto :goto_0

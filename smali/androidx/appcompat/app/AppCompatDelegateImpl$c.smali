@@ -3,12 +3,12 @@
 .source "AppCompatDelegateImpl.java"
 
 # interfaces
-.implements Lv9;
+.implements Landroidx/core/view/OnApplyWindowInsetsListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/app/AppCompatDelegateImpl;->p()Landroid/view/ViewGroup;
+    value = Landroidx/appcompat/app/AppCompatDelegateImpl;->o()Landroid/view/ViewGroup;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,46 +35,48 @@
 
 
 # virtual methods
-.method public onApplyWindowInsets(Landroid/view/View;Lka;)Lka;
+.method public onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
     .locals 4
 
     .line 1
-    invoke-virtual {p2}, Lka;->e()I
+    invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
 
     move-result v0
 
     .line 2
     iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$c;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->l(I)I
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p2, v2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->g0(Landroidx/core/view/WindowInsetsCompat;Landroid/graphics/Rect;)I
 
     move-result v1
 
     if-eq v0, v1, :cond_0
 
     .line 3
-    invoke-virtual {p2}, Lka;->c()I
+    invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
 
     move-result v0
 
     .line 4
-    invoke-virtual {p2}, Lka;->d()I
+    invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetRight()I
 
     move-result v2
 
     .line 5
-    invoke-virtual {p2}, Lka;->b()I
+    invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetBottom()I
 
     move-result v3
 
     .line 6
-    invoke-virtual {p2, v0, v1, v2, v3}, Lka;->a(IIII)Lka;
+    invoke-virtual {p2, v0, v1, v2, v3}, Landroidx/core/view/WindowInsetsCompat;->replaceSystemWindowInsets(IIII)Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p2
 
     .line 7
     :cond_0
-    invoke-static {p1, p2}, Lba;->b(Landroid/view/View;Lka;)Lka;
+    invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p1
 

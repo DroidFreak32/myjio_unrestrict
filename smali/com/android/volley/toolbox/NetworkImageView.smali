@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public mDefaultImageId:I
+.field private mDefaultImageId:I
 
-.field public mErrorImageId:I
+.field private mErrorImageId:I
 
-.field public mImageContainer:Lcom/android/volley/toolbox/ImageLoader$ImageContainer;
+.field private mImageContainer:Lcom/android/volley/toolbox/ImageLoader$ImageContainer;
 
-.field public mImageLoader:Lcom/android/volley/toolbox/ImageLoader;
+.field private mImageLoader:Lcom/android/volley/toolbox/ImageLoader;
 
-.field public mUrl:Ljava/lang/String;
+.field private mUrl:Ljava/lang/String;
 
 
 # direct methods
@@ -282,6 +282,7 @@
 
     move v5, v0
 
+    .line 17
     invoke-virtual/range {v2 .. v7}, Lcom/android/volley/toolbox/ImageLoader;->get(Ljava/lang/String;Lcom/android/volley/toolbox/ImageLoader$ImageListener;IILandroid/widget/ImageView$ScaleType;)Lcom/android/volley/toolbox/ImageLoader$ImageContainer;
 
     move-result-object p1
@@ -351,16 +352,21 @@
 
 .method public setImageUrl(Ljava/lang/String;Lcom/android/volley/toolbox/ImageLoader;)V
     .locals 0
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/android/volley/toolbox/NetworkImageView;->mUrl:Ljava/lang/String;
+    invoke-static {}, Lcom/android/volley/toolbox/Threads;->throwIfNotOnMainThread()V
 
     .line 2
+    iput-object p1, p0, Lcom/android/volley/toolbox/NetworkImageView;->mUrl:Ljava/lang/String;
+
+    .line 3
     iput-object p2, p0, Lcom/android/volley/toolbox/NetworkImageView;->mImageLoader:Lcom/android/volley/toolbox/ImageLoader;
 
     const/4 p1, 0x0
 
-    .line 3
+    .line 4
     invoke-virtual {p0, p1}, Lcom/android/volley/toolbox/NetworkImageView;->loadImageIfNecessary(Z)V
 
     return-void

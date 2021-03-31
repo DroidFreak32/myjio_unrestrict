@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final displayMetrics:Landroid/util/DisplayMetrics;
+.field private final displayMetrics:Landroid/util/DisplayMetrics;
 
 
 # direct methods

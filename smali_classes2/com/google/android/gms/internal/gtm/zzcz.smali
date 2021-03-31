@@ -8,7 +8,7 @@
 
 
 # static fields
-.field public static final zzact:[C
+.field private static final zzact:[C
 
 
 # direct methods
@@ -538,26 +538,26 @@
 
     aget-object v4, p0, v3
 
-    const/4 v5, 0x3
+    const-string v5, "="
 
-    const-string v6, "="
+    const/4 v6, 0x3
 
     .line 4
-    invoke-virtual {v4, v6, v5}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v4
 
     .line 5
-    array-length v6, v4
+    array-length v5, v4
 
     const/4 v7, 0x0
 
     const/4 v8, 0x1
 
-    if-le v6, v8, :cond_2
+    if-le v5, v8, :cond_2
 
     .line 6
-    aget-object v6, v4, v2
+    aget-object v5, v4, v2
 
     aget-object v9, v4, v8
 
@@ -575,12 +575,12 @@
     aget-object v9, v4, v8
 
     :goto_1
-    invoke-interface {v0, v6, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v5, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
-    array-length v6, v4
+    array-length v5, v4
 
-    if-ne v6, v5, :cond_3
+    if-ne v5, v6, :cond_3
 
     aget-object v5, v4, v8
 

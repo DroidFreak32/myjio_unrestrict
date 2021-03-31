@@ -15,7 +15,7 @@
     return-void
 .end method
 
-.method public static final _int(Ljava/lang/Object;)I
+.method private static final _int(Ljava/lang/Object;)I
     .locals 0
 
     if-nez p0, :cond_0
@@ -36,7 +36,7 @@
     return p0
 .end method
 
-.method public static final _long(Ljava/lang/Object;)J
+.method private static final _long(Ljava/lang/Object;)J
     .locals 2
 
     if-nez p0, :cond_0
@@ -57,7 +57,7 @@
     return-wide v0
 .end method
 
-.method public static creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+.method private static creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
     .locals 11
 
     .line 1
@@ -177,55 +177,55 @@
 
     move-result-object p1
 
-    const/4 v3, 0x0
+    const-string/jumbo v3, "sourceRef"
 
-    const-string v4, "sourceRef"
+    const/4 v4, 0x0
 
-    invoke-static {v4, p1, v3}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+    invoke-static {v3, p1, v4}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+
+    move-result-object p1
+
+    aput-object p1, v2, v4
+
+    const-string p1, "byteOffset"
+
+    const/4 v3, 0x1
+
+    invoke-static {p1, v1, v3}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
     move-result-object p1
 
     aput-object p1, v2, v3
 
-    const/4 p1, 0x1
+    const-string p1, "charOffset"
 
-    const-string v3, "byteOffset"
+    const/4 v3, 0x2
 
-    invoke-static {v3, v1, p1}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+    invoke-static {p1, v1, v3}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
-    move-result-object v3
+    move-result-object p1
 
-    aput-object v3, v2, p1
+    aput-object p1, v2, v3
 
-    const/4 p1, 0x2
+    const-string p1, "lineNr"
 
-    const-string v3, "charOffset"
+    const/4 v1, 0x3
 
-    invoke-static {v3, v1, p1}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+    invoke-static {p1, v0, v1}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
-    move-result-object v1
+    move-result-object p1
 
-    aput-object v1, v2, p1
+    aput-object p1, v2, v1
 
-    const/4 p1, 0x3
+    const-string p1, "columnNr"
 
-    const-string v1, "lineNr"
+    const/4 v1, 0x4
 
-    invoke-static {v1, v0, p1}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+    invoke-static {p1, v0, v1}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
-    move-result-object v1
+    move-result-object p1
 
-    aput-object v1, v2, p1
-
-    const/4 p1, 0x4
-
-    const-string v1, "columnNr"
-
-    invoke-static {v1, v0, p1}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
-
-    move-result-object v0
-
-    aput-object v0, v2, p1
+    aput-object p1, v2, v1
 
     return-object v2
 .end method

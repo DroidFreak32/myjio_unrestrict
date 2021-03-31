@@ -30,7 +30,7 @@
     .end annotation
 .end field
 
-.field public static final CLIENT_BUILDER:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.field private static final CLIENT_BUILDER:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
@@ -41,7 +41,7 @@
     .end annotation
 .end field
 
-.field public static final CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
+.field private static final CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$ClientKey<",
@@ -51,39 +51,39 @@
     .end annotation
 .end field
 
-.field public static final zze:[Lcom/google/android/gms/phenotype/ExperimentTokens;
+.field private static final zze:[Lcom/google/android/gms/phenotype/ExperimentTokens;
 
-.field public static final zzf:[Ljava/lang/String;
+.field private static final zzf:[Ljava/lang/String;
 
-.field public static final zzg:[[B
+.field private static final zzg:[[B
 
 
 # instance fields
-.field public final packageName:Ljava/lang/String;
+.field private final packageName:Ljava/lang/String;
 
-.field public final zzh:Landroid/content/Context;
+.field private final zzh:Landroid/content/Context;
 
-.field public final zzi:I
+.field private final zzi:I
 
-.field public zzj:Ljava/lang/String;
+.field private zzj:Ljava/lang/String;
 
-.field public zzk:I
+.field private zzk:I
 
-.field public zzl:Ljava/lang/String;
+.field private zzl:Ljava/lang/String;
 
-.field public zzm:Ljava/lang/String;
+.field private zzm:Ljava/lang/String;
 
-.field public final zzn:Z
+.field private final zzn:Z
 
-.field public zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
+.field private zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
 
-.field public final zzp:Lcom/google/android/gms/clearcut/zzb;
+.field private final zzp:Lcom/google/android/gms/clearcut/zzb;
 
-.field public final zzq:Lcom/google/android/gms/common/util/Clock;
+.field private final zzq:Lcom/google/android/gms/common/util/Clock;
 
-.field public zzr:Lcom/google/android/gms/clearcut/ClearcutLogger$zzc;
+.field private zzr:Lcom/google/android/gms/clearcut/ClearcutLogger$zzc;
 
-.field public final zzs:Lcom/google/android/gms/clearcut/ClearcutLogger$zza;
+.field private final zzs:Lcom/google/android/gms/clearcut/ClearcutLogger$zza;
 
 
 # direct methods
@@ -96,23 +96,19 @@
 
     sput-object v0, Lcom/google/android/gms/clearcut/ClearcutLogger;->CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
 
-    new-instance v0, Lcom/google/android/gms/clearcut/zza;
+    new-instance v1, Lcom/google/android/gms/clearcut/zza;
 
-    invoke-direct {v0}, Lcom/google/android/gms/clearcut/zza;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/gms/clearcut/zza;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/clearcut/ClearcutLogger;->CLIENT_BUILDER:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    sput-object v1, Lcom/google/android/gms/clearcut/ClearcutLogger;->CLIENT_BUILDER:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
-    new-instance v0, Lcom/google/android/gms/common/api/Api;
-
-    sget-object v1, Lcom/google/android/gms/clearcut/ClearcutLogger;->CLIENT_BUILDER:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    sget-object v2, Lcom/google/android/gms/clearcut/ClearcutLogger;->CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
+    new-instance v2, Lcom/google/android/gms/common/api/Api;
 
     const-string v3, "ClearcutLogger.API"
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
+    invoke-direct {v2, v3, v1, v0}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
 
-    sput-object v0, Lcom/google/android/gms/clearcut/ClearcutLogger;->API:Lcom/google/android/gms/common/api/Api;
+    sput-object v2, Lcom/google/android/gms/clearcut/ClearcutLogger;->API:Lcom/google/android/gms/common/api/Api;
 
     const/4 v0, 0x0
 
@@ -131,7 +127,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/google/android/gms/clearcut/zzb;Lcom/google/android/gms/common/util/Clock;Lcom/google/android/gms/clearcut/ClearcutLogger$zzc;Lcom/google/android/gms/clearcut/ClearcutLogger$zza;)V
+.method private constructor <init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/google/android/gms/clearcut/zzb;Lcom/google/android/gms/common/util/Clock;Lcom/google/android/gms/clearcut/ClearcutLogger$zzc;Lcom/google/android/gms/clearcut/ClearcutLogger$zza;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -150,9 +146,9 @@
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object p5
+    move-result-object p9
 
-    iput-object p5, p0, Lcom/google/android/gms/clearcut/ClearcutLogger;->packageName:Ljava/lang/String;
+    iput-object p9, p0, Lcom/google/android/gms/clearcut/ClearcutLogger;->packageName:Ljava/lang/String;
 
     invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zza(Landroid/content/Context;)I
 
@@ -182,9 +178,7 @@
 
     iput-object p1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzr:Lcom/google/android/gms/clearcut/ClearcutLogger$zzc;
 
-    sget-object p1, Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;->zzbhk:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
-
-    iput-object p1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
+    iput-object p5, p0, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
 
     iput-object p10, p0, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzs:Lcom/google/android/gms/clearcut/ClearcutLogger$zza;
 
@@ -210,6 +204,10 @@
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 11
+    .param p3    # Ljava/lang/String;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -286,7 +284,7 @@
     return-object v11
 .end method
 
-.method public static zza(Landroid/content/Context;)I
+.method private static zza(Landroid/content/Context;)I
     .locals 3
 
     const/4 v0, 0x0
@@ -331,7 +329,7 @@
     return p0
 .end method
 
-.method public static zza(Ljava/util/ArrayList;)[I
+.method private static zza(Ljava/util/ArrayList;)[I
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -494,6 +492,10 @@
 # virtual methods
 .method public final newEvent([B)Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;
     .locals 2
+    .param p1    # [B
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

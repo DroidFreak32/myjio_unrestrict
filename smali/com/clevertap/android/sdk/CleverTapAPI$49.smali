@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->messageDidShow(Lcom/clevertap/android/sdk/CTInboxActivity;Lcom/clevertap/android/sdk/CTInboxMessage;Landroid/os/Bundle;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->showNotificationIfAvailable(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,21 +20,17 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public final synthetic val$data:Landroid/os/Bundle;
-
-.field public final synthetic val$inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
+.field public final synthetic val$context:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/clevertap/android/sdk/CTInboxMessage;Landroid/os/Bundle;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
-
-    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$data:Landroid/os/Bundle;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,46 +40,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$context:Landroid/content/Context;
 
-    invoke-virtual {v1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getMessageId()Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1500(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;)V
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->getInboxMessageForId(Ljava/lang/String;)Lcom/clevertap/android/sdk/CTInboxMessage;
-
-    move-result-object v0
-
-    .line 2
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInboxMessage;->isRead()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
-
-    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->markReadInboxMessage(Lcom/clevertap/android/sdk/CTInboxMessage;)V
-
-    .line 4
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
-
-    iget-object v3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$49;->val$data:Landroid/os/Bundle;
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/clevertap/android/sdk/CleverTapAPI;->pushInboxMessageStateEvent(ZLcom/clevertap/android/sdk/CTInboxMessage;Landroid/os/Bundle;)V
-
-    :cond_0
     return-void
 .end method

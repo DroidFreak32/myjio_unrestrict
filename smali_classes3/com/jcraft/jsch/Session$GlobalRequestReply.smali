@@ -15,17 +15,17 @@
 
 
 # instance fields
-.field public port:I
+.field private port:I
 
-.field public reply:I
+.field private reply:I
 
 .field public final synthetic this$0:Lcom/jcraft/jsch/Session;
 
-.field public thread:Ljava/lang/Thread;
+.field private thread:Ljava/lang/Thread;
 
 
 # direct methods
-.method public constructor <init>(Lcom/jcraft/jsch/Session;)V
+.method private constructor <init>(Lcom/jcraft/jsch/Session;)V
     .locals 0
 
     .line 1

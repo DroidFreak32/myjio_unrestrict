@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public mIcon:I
+.field private mIcon:I
 
-.field public final mPosition:Lcom/google/android/gms/maps/model/LatLng;
+.field private final mPosition:Lcom/google/android/gms/maps/model/LatLng;
 
-.field public mSnippet:Ljava/lang/String;
+.field private mSnippet:Ljava/lang/String;
 
-.field public mTitle:Ljava/lang/String;
+.field private mTitle:Ljava/lang/String;
 
 
 # direct methods

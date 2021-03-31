@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/auth/api/signin/GoogleSignInOptionsExtension;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # static fields
@@ -21,6 +22,9 @@
 .end method
 
 .method public abstract getImpliedScopes()Ljava/util/List;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -35,4 +39,6 @@
 .end method
 
 .method public abstract toBundle()Landroid/os/Bundle;
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
 .end method

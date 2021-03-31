@@ -26,6 +26,16 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/location/LocationManager;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/location/LocationManager;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,6 +58,10 @@
 
 .method public static a(Landroid/content/Context;)Lo0;
     .locals 2
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lo0;->d:Lo0;
@@ -84,7 +98,7 @@
 
 
 # virtual methods
-.method public final a()Landroid/location/Location;
+.method public final b()Landroid/location/Location;
     .locals 7
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -92,12 +106,12 @@
         }
     .end annotation
 
-    .line 6
+    .line 1
     iget-object v0, p0, Lo0;->a:Landroid/content/Context;
 
     const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
 
-    invoke-static {v0, v1}, Ly6;->b(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroidx/core/content/PermissionChecker;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 
@@ -107,8 +121,8 @@
 
     const-string v0, "network"
 
-    .line 7
-    invoke-virtual {p0, v0}, Lo0;->a(Ljava/lang/String;)Landroid/location/Location;
+    .line 2
+    invoke-virtual {p0, v0}, Lo0;->c(Ljava/lang/String;)Landroid/location/Location;
 
     move-result-object v0
 
@@ -117,13 +131,13 @@
     :cond_0
     move-object v0, v1
 
-    .line 8
+    .line 3
     :goto_0
     iget-object v2, p0, Lo0;->a:Landroid/content/Context;
 
     const-string v3, "android.permission.ACCESS_FINE_LOCATION"
 
-    invoke-static {v2, v3}, Ly6;->b(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroidx/core/content/PermissionChecker;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v2
 
@@ -131,8 +145,8 @@
 
     const-string v1, "gps"
 
-    .line 9
-    invoke-virtual {p0, v1}, Lo0;->a(Ljava/lang/String;)Landroid/location/Location;
+    .line 4
+    invoke-virtual {p0, v1}, Lo0;->c(Ljava/lang/String;)Landroid/location/Location;
 
     move-result-object v1
 
@@ -141,7 +155,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 10
+    .line 5
     invoke-virtual {v1}, Landroid/location/Location;->getTime()J
 
     move-result-wide v2
@@ -168,10 +182,16 @@
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/String;)Landroid/location/Location;
+.method public final c(Ljava/lang/String;)Landroid/location/Location;
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
 
-    .line 11
+    .line 1
     :try_start_0
     iget-object v0, p0, Lo0;->b:Landroid/location/LocationManager;
 
@@ -181,7 +201,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 12
+    .line 2
     iget-object v0, p0, Lo0;->b:Landroid/location/LocationManager;
 
     invoke-virtual {v0, p1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
@@ -199,21 +219,122 @@
     return-object p1
 .end method
 
-.method public final a(Landroid/location/Location;)V
+.method public d()Z
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo0;->c:Lo0$a;
+
+    .line 2
+    invoke-virtual {p0}, Lo0;->e()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 3
+    iget-boolean v0, v0, Lo0$a;->a:Z
+
+    return v0
+
+    .line 4
+    :cond_0
+    invoke-virtual {p0}, Lo0;->b()Landroid/location/Location;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    .line 5
+    invoke-virtual {p0, v1}, Lo0;->f(Landroid/location/Location;)V
+
+    .line 6
+    iget-boolean v0, v0, Lo0$a;->a:Z
+
+    return v0
+
+    .line 7
+    :cond_1
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    const/16 v1, 0xb
+
+    .line 8
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    const/4 v1, 0x6
+
+    if-lt v0, v1, :cond_3
+
+    const/16 v1, 0x16
+
+    if-lt v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
+.end method
+
+.method public final e()Z
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lo0;->c:Lo0$a;
+
+    iget-wide v0, v0, Lo0$a;->f:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    cmp-long v4, v0, v2
+
+    if-lez v4, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public final f(Landroid/location/Location;)V
     .locals 22
+    .param p1    # Landroid/location/Location;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     move-object/from16 v0, p0
 
-    .line 13
+    .line 1
     iget-object v1, v0, Lo0;->c:Lo0$a;
 
-    .line 14
+    .line 2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
 
-    .line 15
-    invoke-static {}, Ln0;->a()Ln0;
+    .line 3
+    invoke-static {}, Ln0;->b()Ln0;
 
     move-result-object v11
 
@@ -221,7 +342,7 @@
 
     sub-long v3, v9, v12
 
-    .line 16
+    .line 4
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v5
@@ -232,13 +353,13 @@
 
     move-object v2, v11
 
-    .line 17
+    .line 5
     invoke-virtual/range {v2 .. v8}, Ln0;->a(JDD)V
 
-    .line 18
+    .line 6
     iget-wide v14, v11, Ln0;->a:J
 
-    .line 19
+    .line 7
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v5
@@ -251,7 +372,7 @@
 
     invoke-virtual/range {v2 .. v8}, Ln0;->a(JDD)V
 
-    .line 20
+    .line 8
     iget v2, v11, Ln0;->c:I
 
     const/4 v3, 0x1
@@ -267,16 +388,16 @@
 
     const/4 v7, 0x0
 
-    .line 21
+    .line 9
     :goto_0
     iget-wide v5, v11, Ln0;->b:J
 
-    .line 22
+    .line 10
     iget-wide v3, v11, Ln0;->a:J
 
     add-long/2addr v12, v9
 
-    .line 23
+    .line 11
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v16
@@ -301,10 +422,10 @@
 
     move-wide/from16 v7, v18
 
-    .line 24
+    .line 12
     invoke-virtual/range {v2 .. v8}, Ln0;->a(JDD)V
 
-    .line 25
+    .line 13
     iget-wide v2, v11, Ln0;->b:J
 
     const-wide/16 v4, 0x0
@@ -355,123 +476,26 @@
 
     add-long/2addr v4, v9
 
-    .line 26
+    .line 14
     :goto_3
     iput-boolean v0, v1, Lo0$a;->a:Z
 
     move-wide/from16 v6, v20
 
-    .line 27
+    .line 15
     iput-wide v6, v1, Lo0$a;->b:J
 
-    .line 28
+    .line 16
     iput-wide v12, v1, Lo0$a;->c:J
 
-    .line 29
+    .line 17
     iput-wide v14, v1, Lo0$a;->d:J
 
-    .line 30
+    .line 18
     iput-wide v2, v1, Lo0$a;->e:J
 
-    .line 31
+    .line 19
     iput-wide v4, v1, Lo0$a;->f:J
 
     return-void
-.end method
-
-.method public b()Z
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lo0;->c:Lo0$a;
-
-    .line 2
-    invoke-virtual {p0}, Lo0;->c()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    iget-boolean v0, v0, Lo0$a;->a:Z
-
-    return v0
-
-    .line 4
-    :cond_0
-    invoke-virtual {p0}, Lo0;->a()Landroid/location/Location;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    .line 5
-    invoke-virtual {p0, v1}, Lo0;->a(Landroid/location/Location;)V
-
-    .line 6
-    iget-boolean v0, v0, Lo0$a;->a:Z
-
-    return v0
-
-    .line 7
-    :cond_1
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v0
-
-    const/16 v1, 0xb
-
-    .line 8
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
-
-    move-result v0
-
-    const/4 v1, 0x6
-
-    if-lt v0, v1, :cond_3
-
-    const/16 v1, 0x16
-
-    if-lt v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 5
-
-    .line 1
-    iget-object v0, p0, Lo0;->c:Lo0$a;
-
-    iget-wide v0, v0, Lo0$a;->f:J
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    cmp-long v4, v0, v2
-
-    if-lez v4, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
 .end method

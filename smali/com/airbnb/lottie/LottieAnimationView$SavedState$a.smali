@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Lcom/airbnb/lottie/LottieAnimationView$SavedState;
+.method public a(Landroid/os/Parcel;)Lcom/airbnb/lottie/LottieAnimationView$SavedState;
     .locals 2
 
-    .line 2
+    .line 1
     new-instance v0, Lcom/airbnb/lottie/LottieAnimationView$SavedState;
 
     const/4 v1, 0x0
@@ -51,22 +51,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Lcom/airbnb/lottie/LottieAnimationView$SavedState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieAnimationView$SavedState$a;->createFromParcel(Landroid/os/Parcel;)Lcom/airbnb/lottie/LottieAnimationView$SavedState;
-
-    move-result-object p1
+    new-array p1, p1, [Lcom/airbnb/lottie/LottieAnimationView$SavedState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Lcom/airbnb/lottie/LottieAnimationView$SavedState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Lcom/airbnb/lottie/LottieAnimationView$SavedState;
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieAnimationView$SavedState$a;->a(Landroid/os/Parcel;)Lcom/airbnb/lottie/LottieAnimationView$SavedState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -75,7 +75,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieAnimationView$SavedState$a;->newArray(I)[Lcom/airbnb/lottie/LottieAnimationView$SavedState;
+    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieAnimationView$SavedState$a;->b(I)[Lcom/airbnb/lottie/LottieAnimationView$SavedState;
 
     move-result-object p1
 

@@ -23,13 +23,13 @@
 
 
 # static fields
-.field public static final zzavv:Lcom/google/android/gms/internal/gtm/zzpq;
+.field private static final zzavv:Lcom/google/android/gms/internal/gtm/zzpq;
 
 
 # instance fields
-.field public size:I
+.field private size:I
 
-.field public zzavw:[Z
+.field private zzavw:[Z
 
 
 # direct methods
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>([ZI)V
+.method private constructor <init>([ZI)V
     .locals 0
 
     .line 2

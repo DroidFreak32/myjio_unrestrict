@@ -1,98 +1,122 @@
-.class public final Lcom/google/android/gms/internal/ads/zzgs;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzgs;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-gass@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# instance fields
-.field public final zzajj:F
-
-.field public final zzajk:F
-
-.field public final zzajl:F
-
-.field public final zzajm:F
-
-.field public final zzajn:I
+# static fields
+.field public static final synthetic zzds:[I
 
 
 # direct methods
-.method public constructor <init>(FFFFI)V
-    .locals 0
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
+.method public static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzbih()[I
 
-    .line 2
-    iput p1, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajj:F
+    move-result-object v0
 
-    .line 3
-    iput p2, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajk:F
+    array-length v0, v0
 
-    add-float/2addr p1, p3
+    new-array v0, v0, [I
 
-    .line 4
-    iput p1, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajl:F
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
 
-    add-float/2addr p2, p4
+    const/4 v1, 0x1
 
-    .line 5
-    iput p2, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajm:F
+    :try_start_0
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzinx:I
 
-    .line 6
-    iput p5, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajn:I
+    sub-int/2addr v2, v1
 
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
+
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zziny:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v3, 0x2
+
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :try_start_2
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
+
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzinw:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v3, 0x3
+
+    aput v3, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
+
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzinz:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v3, 0x4
+
+    aput v3, v0, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
+
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzioa:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v3, 0x5
+
+    aput v3, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
+
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzinu:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v3, 0x6
+
+    aput v3, v0, v2
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgs;->zzds:[I
+
+    sget v2, Lcom/google/android/gms/internal/ads/zzekh$zzf;->zzinv:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v1, 0x7
+
+    aput v1, v0, v2
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
     return-void
-.end method
-
-
-# virtual methods
-.method public final zzhb()F
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajj:F
-
-    return v0
-.end method
-
-.method public final zzhc()F
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajk:F
-
-    return v0
-.end method
-
-.method public final zzhd()F
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajl:F
-
-    return v0
-.end method
-
-.method public final zzhe()F
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajm:F
-
-    return v0
-.end method
-
-.method public final zzhf()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzgs;->zzajn:I
-
-    return v0
 .end method

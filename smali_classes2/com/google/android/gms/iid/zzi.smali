@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzbm:Lcom/google/android/gms/iid/zze;
+.field private final zzbm:Lcom/google/android/gms/iid/zze;
 
 
 # direct methods
@@ -44,17 +44,17 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x3
+    const-string v0, "EnhancedIntentService"
 
-    const-string v1, "EnhancedIntentService"
+    const/4 v1, 0x3
 
     .line 2
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v2
 
     .line 3
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 

@@ -12,25 +12,28 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/savedstate/SavedStateRegistry$b;,
-        Landroidx/savedstate/SavedStateRegistry$a;
+        Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;,
+        Landroidx/savedstate/SavedStateRegistry$AutoRecreated;
     }
 .end annotation
 
 
 # instance fields
-.field public a:Lr3;
+.field public a:Landroidx/arch/core/internal/SafeIterableMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lr3<",
+            "Landroidx/arch/core/internal/SafeIterableMap<",
             "Ljava/lang/String;",
-            "Landroidx/savedstate/SavedStateRegistry$b;",
+            "Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;",
             ">;"
         }
     .end annotation
 .end field
 
 .field public b:Landroid/os/Bundle;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 .field public c:Z
 
@@ -47,11 +50,11 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lr3;
+    new-instance v0, Landroidx/arch/core/internal/SafeIterableMap;
 
-    invoke-direct {v0}, Lr3;-><init>()V
+    invoke-direct {v0}, Landroidx/arch/core/internal/SafeIterableMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->a:Lr3;
+    iput-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->a:Landroidx/arch/core/internal/SafeIterableMap;
 
     const/4 v0, 0x1
 
@@ -63,8 +66,147 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)Landroid/os/Bundle;
+.method public a(Landroidx/lifecycle/Lifecycle;Landroid/os/Bundle;)V
+    .locals 1
+    .param p1    # Landroidx/lifecycle/Lifecycle;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
+
+    .line 1
+    iget-boolean v0, p0, Landroidx/savedstate/SavedStateRegistry;->c:Z
+
+    if-nez v0, :cond_1
+
+    if-eqz p2, :cond_0
+
+    const-string v0, "androidx.lifecycle.BundlableSavedStateRegistry.key"
+
+    .line 2
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object p2
+
+    iput-object p2, p0, Landroidx/savedstate/SavedStateRegistry;->b:Landroid/os/Bundle;
+
+    .line 3
+    :cond_0
+    new-instance p2, Landroidx/savedstate/SavedStateRegistry$1;
+
+    invoke-direct {p2, p0}, Landroidx/savedstate/SavedStateRegistry$1;-><init>(Landroidx/savedstate/SavedStateRegistry;)V
+
+    invoke-virtual {p1, p2}, Landroidx/lifecycle/Lifecycle;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
+
+    const/4 p1, 0x1
+
+    .line 4
+    iput-boolean p1, p0, Landroidx/savedstate/SavedStateRegistry;->c:Z
+
+    return-void
+
+    .line 5
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "SavedStateRegistry was already restored."
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public b(Landroid/os/Bundle;)V
+    .locals 4
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
+
+    .line 1
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 2
+    iget-object v1, p0, Landroidx/savedstate/SavedStateRegistry;->b:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_0
+
+    .line 3
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    .line 4
+    :cond_0
+    iget-object v1, p0, Landroidx/savedstate/SavedStateRegistry;->a:Landroidx/arch/core/internal/SafeIterableMap;
+
+    .line 5
+    invoke-virtual {v1}, Landroidx/arch/core/internal/SafeIterableMap;->iteratorWithAdditions()Landroidx/arch/core/internal/SafeIterableMap$d;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 6
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Map$Entry;
+
+    .line 7
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+
+    invoke-interface {v2}, Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;->saveState()Landroid/os/Bundle;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    goto :goto_0
+
+    :cond_1
+    const-string v1, "androidx.lifecycle.BundlableSavedStateRegistry.key"
+
+    .line 8
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method public consumeRestoredStateForKey(Ljava/lang/String;)Landroid/os/Bundle;
     .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
+
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Landroidx/savedstate/SavedStateRegistry;->c:Z
@@ -117,143 +259,84 @@
     throw p1
 .end method
 
-.method public a(Landroid/os/Bundle;)V
-    .locals 4
-
-    .line 22
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    .line 23
-    iget-object v1, p0, Landroidx/savedstate/SavedStateRegistry;->b:Landroid/os/Bundle;
-
-    if-eqz v1, :cond_0
-
-    .line 24
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
-
-    .line 25
-    :cond_0
-    iget-object v1, p0, Landroidx/savedstate/SavedStateRegistry;->a:Lr3;
-
-    .line 26
-    invoke-virtual {v1}, Lr3;->b()Lr3$d;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 27
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map$Entry;
-
-    .line 28
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/savedstate/SavedStateRegistry$b;
-
-    invoke-interface {v2}, Landroidx/savedstate/SavedStateRegistry$b;->a()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "androidx.lifecycle.BundlableSavedStateRegistry.key"
-
-    .line 29
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    return-void
-.end method
-
-.method public a(Landroidx/lifecycle/Lifecycle;Landroid/os/Bundle;)V
+.method public isRestored()Z
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
-    .line 17
+    .line 1
     iget-boolean v0, p0, Landroidx/savedstate/SavedStateRegistry;->c:Z
 
-    if-nez v0, :cond_1
+    return v0
+.end method
 
-    if-eqz p2, :cond_0
+.method public registerSavedStateProvider(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
-    const-string v0, "androidx.lifecycle.BundlableSavedStateRegistry.key"
+    .line 1
+    iget-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->a:Landroidx/arch/core/internal/SafeIterableMap;
 
-    .line 18
-    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {v0, p1, p2}, Landroidx/arch/core/internal/SafeIterableMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object p1
 
-    iput-object p2, p0, Landroidx/savedstate/SavedStateRegistry;->b:Landroid/os/Bundle;
+    check-cast p1, Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
-    .line 19
-    :cond_0
-    new-instance p2, Landroidx/savedstate/SavedStateRegistry$1;
-
-    invoke-direct {p2, p0}, Landroidx/savedstate/SavedStateRegistry$1;-><init>(Landroidx/savedstate/SavedStateRegistry;)V
-
-    invoke-virtual {p1, p2}, Landroidx/lifecycle/Lifecycle;->a(Lud;)V
-
-    const/4 p1, 0x1
-
-    .line 20
-    iput-boolean p1, p0, Landroidx/savedstate/SavedStateRegistry;->c:Z
+    if-nez p1, :cond_0
 
     return-void
 
-    .line 21
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
+    .line 2
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "SavedStateRegistry was already restored."
+    const-string p2, "SavedStateProvider with the given key is already registered"
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method
 
-.method public a(Ljava/lang/Class;)V
+.method public runOnNextRecreation(Ljava/lang/Class;)V
     .locals 4
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Class<",
             "+",
-            "Landroidx/savedstate/SavedStateRegistry$a;",
+            "Landroidx/savedstate/SavedStateRegistry$AutoRecreated;",
             ">;)V"
         }
     .end annotation
 
-    .line 10
+    .line 1
     iget-boolean v0, p0, Landroidx/savedstate/SavedStateRegistry;->e:Z
 
     if-eqz v0, :cond_1
 
-    .line 11
+    .line 2
     iget-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->d:Landroidx/savedstate/Recreator$a;
 
     if-nez v0, :cond_0
 
-    .line 12
+    .line 3
     new-instance v0, Landroidx/savedstate/Recreator$a;
 
     invoke-direct {v0, p0}, Landroidx/savedstate/Recreator$a;-><init>(Landroidx/savedstate/SavedStateRegistry;)V
@@ -266,12 +349,12 @@
     :try_start_0
     new-array v0, v0, [Ljava/lang/Class;
 
-    .line 13
+    .line 4
     invoke-virtual {p1, v0}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 14
+    .line 5
     iget-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->d:Landroidx/savedstate/Recreator$a;
 
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -285,7 +368,7 @@
     :catch_0
     move-exception v0
 
-    .line 15
+    .line 6
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -314,7 +397,7 @@
 
     throw v1
 
-    .line 16
+    .line 7
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -325,29 +408,19 @@
     throw p1
 .end method
 
-.method public a(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$b;)V
+.method public unregisterSavedStateProvider(Ljava/lang/String;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
-    .line 8
-    iget-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->a:Lr3;
+    .line 1
+    iget-object v0, p0, Landroidx/savedstate/SavedStateRegistry;->a:Landroidx/arch/core/internal/SafeIterableMap;
 
-    invoke-virtual {v0, p1, p2}, Lr3;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/savedstate/SavedStateRegistry$b;
-
-    if-nez p1, :cond_0
+    invoke-virtual {v0, p1}, Landroidx/arch/core/internal/SafeIterableMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    .line 9
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "SavedStateProvider with the given key is already registered"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

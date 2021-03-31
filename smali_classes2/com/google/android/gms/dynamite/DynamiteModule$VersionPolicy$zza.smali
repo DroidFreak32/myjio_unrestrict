@@ -1,5 +1,6 @@
-.class public interface abstract Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;
+.class public final Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,14 +9,36 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
+    accessFlags = 0x9
     name = "zza"
 .end annotation
 
 
-# virtual methods
-.method public abstract getLocalVersion(Landroid/content/Context;Ljava/lang/String;)I
-.end method
+# instance fields
+.field public zza:I
 
-.method public abstract zza(Landroid/content/Context;Ljava/lang/String;Z)I
+.field public zzb:I
+
+.field public zzc:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 2
+    iput v0, p0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;->zza:I
+
+    .line 3
+    iput v0, p0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;->zzb:I
+
+    .line 4
+    iput v0, p0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;->zzc:I
+
+    return-void
 .end method

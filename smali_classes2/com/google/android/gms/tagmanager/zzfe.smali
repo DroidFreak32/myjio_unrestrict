@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public final synthetic zzakb:Ljava/util/Map;
+.field private final synthetic zzakb:Ljava/util/Map;
 
-.field public final synthetic zzakc:Ljava/util/Map;
+.field private final synthetic zzakc:Ljava/util/Map;
 
-.field public final synthetic zzakd:Ljava/util/Map;
+.field private final synthetic zzakd:Ljava/util/Map;
 
-.field public final synthetic zzake:Ljava/util/Map;
+.field private final synthetic zzake:Ljava/util/Map;
 
 
 # direct methods

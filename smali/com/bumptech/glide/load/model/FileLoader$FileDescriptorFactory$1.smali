@@ -40,6 +40,11 @@
 # virtual methods
 .method public close(Landroid/os/ParcelFileDescriptor;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
@@ -49,6 +54,11 @@
 
 .method public bridge synthetic close(Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Landroid/os/ParcelFileDescriptor;
@@ -77,6 +87,11 @@
 
 .method public open(Ljava/io/File;)Landroid/os/ParcelFileDescriptor;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     const/high16 v0, 0x10000000
 
@@ -90,6 +105,11 @@
 
 .method public bridge synthetic open(Ljava/io/File;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/model/FileLoader$FileDescriptorFactory$1;->open(Ljava/io/File;)Landroid/os/ParcelFileDescriptor;

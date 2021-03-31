@@ -38,6 +38,8 @@
 .end method
 
 .method public abstract getData()Ljava/nio/ByteBuffer;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method
 
 .method public abstract getDelay(I)I
@@ -61,6 +63,8 @@
 .end method
 
 .method public abstract getNextFrame()Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getStatus()I
@@ -73,22 +77,58 @@
 .end method
 
 .method public abstract read(Ljava/io/InputStream;I)I
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract read([B)I
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract resetFrameIndex()V
 .end method
 
 .method public abstract setData(Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;)V
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifHeader;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract setData(Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;I)V
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifHeader;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract setData(Lcom/bumptech/glide/gifdecoder/GifHeader;[B)V
+    .param p1    # Lcom/bumptech/glide/gifdecoder/GifHeader;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract setDefaultBitmapConfig(Landroid/graphics/Bitmap$Config;)V
+    .param p1    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method

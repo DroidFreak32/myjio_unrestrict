@@ -17,9 +17,9 @@
 
 
 # instance fields
-.field public final synthetic zzpe:Lcom/google/android/gms/internal/clearcut/zzfa;
+.field private final synthetic zzpe:Lcom/google/android/gms/internal/clearcut/zzfa;
 
-.field public zzpf:Ljava/util/Iterator;
+.field private zzpf:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -37,8 +37,6 @@
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzfc;->zzpe:Lcom/google/android/gms/internal/clearcut/zzfa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzfc;->zzpe:Lcom/google/android/gms/internal/clearcut/zzfa;
 
     invoke-static {p1}, Lcom/google/android/gms/internal/clearcut/zzfa;->zza(Lcom/google/android/gms/internal/clearcut/zzfa;)Lcom/google/android/gms/internal/clearcut/zzcx;
 

@@ -1,5 +1,5 @@
 {
-  "version": "2.0.97",
+  "version": "3.0.014",
   "name": "MyJio",
   "files_download_method": "AWS",
   "files_download_url": "https://jep-asset.akamaized.net/MyJio_Client/android_files/prod/hellojio_files/",
@@ -1052,19 +1052,7 @@
       },
       {
         "corrected": "iuc",
-        "source": "Aayushi"
-      },
-      {
-        "corrected": "iuc",
         "source": "are you see"
-      },
-      {
-        "corrected": "iuc",
-        "source": "Ayush"
-      },
-      {
-        "corrected": "iuc",
-        "source": "Khushi"
       },
       {
         "corrected": "iuc",
@@ -1841,6 +1829,94 @@
       {
         "corrected": "problem",
         "source": "priblem"
+      },
+      {
+        "corrected": "ifc plan",
+        "source": "ifsc plan"
+      },
+      {
+        "corrected": "ifc packs",
+        "source": "ifsc packs"
+      },
+      {
+        "corrected": "ifc pack",
+        "source": "ifsc pack"
+      },
+      {
+        "corrected": "statement",
+        "source": "stetement"
+      },
+      {
+        "corrected": "plans",
+        "source": "plants"
+      },
+      {
+        "corrected": "hotstar",
+        "source": "hostar"
+      },
+      {
+        "corrected": "area",
+        "source": "aria"
+      },
+      {
+        "corrected": "bad",
+        "source": "bed"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "net made"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "netmed"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "nedmed"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "nedmeds"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "net med"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "ned med"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "net meds"
+      },
+      {
+        "corrected": "netmeds",
+        "source": "ned meds"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "soda score"
+      },
+      {
+        "corrected": "sodexo card",
+        "source": "soda so card"
+      },
+      {
+        "corrected": "sodexo card",
+        "source": "product so card"
+      },
+      {
+        "corrected": "sodexo card",
+        "source": "so dat so card"
+      },
+      {
+        "corrected": "sodexo card",
+        "source": "so that so card"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "so daxo"
       }
     ],
     "hindiCorrectionArray": [
@@ -2070,7 +2146,7 @@
       },
       {
         "corrected": "आईएफएससी",
-        "source": "आयी f ए"
+        "source": "आयी f ए"
       },
       {
         "corrected": "आईएसडी",
@@ -2229,8 +2305,8 @@
         "source": "इजी योगी"
       },
       {
-        "corrected": "इजी गवर्नमेंट",
-        "source": "ec गवर्मेंट"
+        "corrected": "इजी गवर्नमेंट",
+        "source": "ec गवर्मेंट"
       },
       {
         "corrected": "इन जिओ",
@@ -2334,7 +2410,7 @@
       },
       {
         "corrected": "ईज़ीगोव",
-        "source": "eg गाँव"
+        "source": "eg गाँव"
       },
       {
         "corrected": "ईज़ीगोव पे",
@@ -2345,8 +2421,8 @@
         "source": "ई मेल id"
       },
       {
-        "corrected": "ईमेल आईडी",
-        "source": "ईमेल id"
+        "corrected": "ईमेल आईडी",
+        "source": "ईमेल id"
       },
       {
         "corrected": "ए जिओ",
@@ -4254,10 +4330,6 @@
       },
       {
         "corrected": "प्लान",
-        "source": "प्लेन"
-      },
-      {
-        "corrected": "प्लान",
         "source": "प्लॅन"
       },
       {
@@ -4533,8 +4605,8 @@
         "source": "भ्रष्ट"
       },
       {
-        "corrected": "बेस्ट प्लान",
-        "source": "20 प्लान"
+        "corrected": "बेस्ट प्लान",
+        "source": "20 प्लान"
       },
       {
         "corrected": "बैकग्राउंड",
@@ -4905,8 +4977,8 @@
         "source": "अटेंडेंस"
       },
       {
-        "corrected": "रिटर्न डेस्क",
-        "source": "रिटर्न 10"
+        "corrected": "रिटर्न डेस्क",
+        "source": "रिटर्न 10"
       },
       {
         "corrected": "रिडीम",
@@ -5657,10 +5729,6 @@
         "source": "अश्विनी"
       },
       {
-        "corrected": "a9",
-        "source": "एयरलाइन"
-      },
-      {
         "corrected": "नोट 10",
         "source": "नोट ट्रेन"
       },
@@ -6097,6 +6165,126 @@
         "source": "सिलो"
       },
       {
+        "corrected": "प्री ऑन पोस्ट",
+        "source": "प्रिय ऑन पोस्ट"
+      },
+      {
+        "corrected": "प्री ऑन पोस्ट",
+        "source": "प्रीऑन पोस्ट"
+      },
+      {
+        "corrected": "प्री ऑन पोस्ट",
+        "source": "फ्री ऑन पोस्ट"
+      },
+      {
+        "corrected": "प्री ऑन पोस्ट",
+        "source": "प्रि ऑन पोस्ट"
+      },
+      {
+        "corrected": "ऐड ऑन पैक",
+        "source": "एडवांटेक"
+      },
+      {
+        "corrected": "डिज्नी",
+        "source": "डिन्जी"
+      },
+      {
+        "corrected": "हॉटस्टार",
+        "source": "हौटस्टार"
+      },
+      {
+        "corrected": "जिओ पेजेस में",
+        "source": "जिओपे जिसमें"
+      },
+      {
+        "corrected": "टैब",
+        "source": "टॉर्च"
+      },
+      {
+        "corrected": "जिओ पेज",
+        "source": "जिओ पेट"
+      },
+      {
+        "corrected": "जिओ पेजेस के",
+        "source": "जिओपे जिसके"
+      },
+      {
+        "corrected": "जिओ पेजेस",
+        "source": "जिओपे जस"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेट मेड"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेटमेड"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेट मेड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेटमेड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेट मीड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेटमीड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेड मेड"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेडमेड"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेड मेड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेडमेड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेड मीड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेडमीड्स"
+      },
+      {
+        "corrected": "नेटमैड्स",
+        "source": "नेट मैड्स"
+      },
+      {
+        "corrected": "आरएमएन",
+        "source": "आर एम एन"
+      },
+      {
+        "corrected": "आरएमएन",
+        "source": "आर एम एल"
+      },
+      {
+        "corrected": "आरएमएन अपडेट",
+        "source": "अरे मैन अपडेट"
+      },
+      {
+        "corrected": "आरएमएन",
+        "source": "आरा मैन"
+      },
+      {
+        "corrected": "आरएमएन",
+        "source": "आर्यन मैन"
+      },
+      {
         "corrected": "mp3",
         "source": "m पी थ्री"
       },
@@ -6137,7 +6325,7 @@
         "source": "icc"
       },
       {
-        "corrected": "आर एम एन",
+        "corrected": "आरएमएन",
         "source": "r.m.l."
       },
       {
@@ -6351,6 +6539,30 @@
       {
         "corrected": "मायजिओ",
         "source": "myjio"
+      },
+      {
+        "corrected": "आईएफसी पैक",
+        "source": "irc5"
+      },
+      {
+        "corrected": "वर्क फ्रॉम होम",
+        "source": "work-from-home"
+      },
+      {
+        "corrected": "जूम इन",
+        "source": "zoom-in"
+      },
+      {
+        "corrected": "जूम आउट",
+        "source": "zoom-out"
+      },
+      {
+        "corrected": "599",
+        "source": "Y99"
+      },
+      {
+        "corrected": "मायजिओ ऐप",
+        "source": "my.jio.app"
       }
     ]
   },
@@ -6382,6 +6594,10 @@
     {
       "name": "jio_payment_bank",
       "url": "jio://com.jio.myjio/jio_jpb"
+    },
+    {
+      "name": "set_jiotune",
+      "url": "jio://com.jio.myjio/jio_tunes_native"
     }
   ],
   "commands": [

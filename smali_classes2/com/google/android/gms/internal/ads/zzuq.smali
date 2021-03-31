@@ -1,25 +1,33 @@
 .class public final Lcom/google/android/gms/internal/ads/zzuq;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/gms/internal/ads/zzekl;
 
 
-# instance fields
-.field public final synthetic zzbra:Lcom/google/android/gms/internal/ads/zzur;
-
-.field public final synthetic zzbrb:Lcom/google/android/gms/internal/ads/zzus;
+# static fields
+.field public static final zzer:Lcom/google/android/gms/internal/ads/zzekl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzts;Lcom/google/android/gms/internal/ads/zzur;Lcom/google/android/gms/internal/ads/zzus;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzuq;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzuq;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzuq;->zzer:Lcom/google/android/gms/internal/ads/zzekl;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzuq;->zzbra:Lcom/google/android/gms/internal/ads/zzur;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzuq;->zzbrb:Lcom/google/android/gms/internal/ads/zzus;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,28 +35,22 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final zzi(I)Z
+    .locals 0
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzuq;->zzbra:Lcom/google/android/gms/internal/ads/zzur;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzue$zzm$zza;->zzce(I)Lcom/google/android/gms/internal/ads/zzue$zzm$zza;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzuq;->zzbrb:Lcom/google/android/gms/internal/ads/zzus;
+    move-result-object p1
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzur;->zzb(Lcom/google/android/gms/internal/ads/zzus;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz p1, :cond_0
 
-    return-void
+    const/4 p1, 0x1
 
-    :catch_0
-    move-exception v0
+    return p1
 
-    const-string v1, "Could not propagate interstitial ad event."
+    :cond_0
+    const/4 p1, 0x0
 
-    .line 2
-    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    return p1
 .end method

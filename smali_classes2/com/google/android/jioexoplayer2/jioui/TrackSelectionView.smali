@@ -12,31 +12,34 @@
 
 
 # instance fields
-.field public allowAdaptiveSelections:Z
+.field private allowAdaptiveSelections:Z
 
-.field public final componentListener:Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
+.field private final componentListener:Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
 
-.field public final defaultView:Landroid/widget/CheckedTextView;
+.field private final defaultView:Landroid/widget/CheckedTextView;
 
-.field public final disableView:Landroid/widget/CheckedTextView;
+.field private final disableView:Landroid/widget/CheckedTextView;
 
-.field public final inflater:Landroid/view/LayoutInflater;
+.field private final inflater:Landroid/view/LayoutInflater;
 
-.field public isDisabled:Z
+.field private isDisabled:Z
 
-.field public override:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
+.field private override:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public rendererIndex:I
+.field private rendererIndex:I
 
-.field public final selectableItemBackgroundResourceId:I
+.field private final selectableItemBackgroundResourceId:I
 
-.field public trackGroups:Lcom/google/android/jioexoplayer2/source/TrackGroupArray;
+.field private trackGroups:Lcom/google/android/jioexoplayer2/source/TrackGroupArray;
 
-.field public trackNameProvider:Lcom/google/android/jioexoplayer2/jioui/TrackNameProvider;
+.field private trackNameProvider:Lcom/google/android/jioexoplayer2/jioui/TrackNameProvider;
 
-.field public trackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
+.field private trackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
 
-.field public trackViews:[[Landroid/widget/CheckedTextView;
+.field private trackViews:[[Landroid/widget/CheckedTextView;
 
 
 # direct methods
@@ -53,6 +56,10 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -63,7 +70,15 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 3
+    .locals 5
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/AttrRes;
+        .end annotation
+    .end param
 
     .line 3
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -77,11 +92,11 @@
 
     new-array v0, p3, [I
 
-    const/4 v1, 0x0
+    const v1, 0x101030e
 
-    const v2, 0x101030e
+    const/4 v2, 0x0
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     .line 5
     invoke-virtual {p2, v0}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
@@ -89,7 +104,7 @@
     move-result-object p2
 
     .line 6
-    invoke-virtual {p2, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {p2, v2, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
@@ -106,98 +121,72 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->inflater:Landroid/view/LayoutInflater;
 
     .line 9
-    new-instance p1, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
+    new-instance p2, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
 
-    const/4 p2, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {p1, p0, p2}, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;-><init>(Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$1;)V
+    invoke-direct {p2, p0, v1}, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;-><init>(Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$1;)V
 
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
+    iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
 
     .line 10
-    new-instance p1, Lcom/google/android/jioexoplayer2/jioui/DefaultTrackNameProvider;
+    new-instance v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTrackNameProvider;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p2
+    move-result-object v3
 
-    invoke-direct {p1, p2}, Lcom/google/android/jioexoplayer2/jioui/DefaultTrackNameProvider;-><init>(Landroid/content/res/Resources;)V
+    invoke-direct {v1, v3}, Lcom/google/android/jioexoplayer2/jioui/DefaultTrackNameProvider;-><init>(Landroid/content/res/Resources;)V
 
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->trackNameProvider:Lcom/google/android/jioexoplayer2/jioui/TrackNameProvider;
+    iput-object v1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->trackNameProvider:Lcom/google/android/jioexoplayer2/jioui/TrackNameProvider;
+
+    const v1, 0x109000f
 
     .line 11
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->inflater:Landroid/view/LayoutInflater;
+    invoke-virtual {p1, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    const p2, 0x109000f
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/CheckedTextView;
+
+    iput-object v3, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
 
     .line 12
-    invoke-virtual {p1, p2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/CheckedTextView;
-
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
+    invoke-virtual {v3, v0}, Landroid/widget/CheckedTextView;->setBackgroundResource(I)V
 
     .line 13
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
+    sget v4, Lcom/app/cinemasdk/R$string;->exo_track_selection_none:I
 
-    iget v0, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->selectableItemBackgroundResourceId:I
-
-    invoke-virtual {p1, v0}, Landroid/widget/CheckedTextView;->setBackgroundResource(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/CheckedTextView;->setText(I)V
 
     .line 14
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
-
-    sget v0, Lcom/app/cinemasdk/R$string;->exo_track_selection_none:I
-
-    invoke-virtual {p1, v0}, Landroid/widget/CheckedTextView;->setText(I)V
+    invoke-virtual {v3, v2}, Landroid/widget/CheckedTextView;->setEnabled(Z)V
 
     .line 15
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
-
-    invoke-virtual {p1, v1}, Landroid/widget/CheckedTextView;->setEnabled(Z)V
+    invoke-virtual {v3, p3}, Landroid/widget/CheckedTextView;->setFocusable(Z)V
 
     .line 16
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
+    invoke-virtual {v3, p2}, Landroid/widget/CheckedTextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {p1, p3}, Landroid/widget/CheckedTextView;->setFocusable(Z)V
+    const/16 v4, 0x8
 
     .line 17
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
-
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
-
-    invoke-virtual {p1, v0}, Landroid/widget/CheckedTextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, v4}, Landroid/widget/CheckedTextView;->setVisibility(I)V
 
     .line 18
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Landroid/widget/CheckedTextView;->setVisibility(I)V
+    invoke-virtual {p0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 19
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->disableView:Landroid/widget/CheckedTextView;
+    sget v3, Lcom/app/cinemasdk/R$layout;->exo_list_divider_jio:I
 
-    invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {p1, v3, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 20
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->inflater:Landroid/view/LayoutInflater;
-
-    sget v0, Lcom/app/cinemasdk/R$layout;->exo_list_divider_jio:I
-
-    invoke-virtual {p1, v0, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 21
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->inflater:Landroid/view/LayoutInflater;
-
-    .line 22
-    invoke-virtual {p1, p2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p1
 
@@ -205,40 +194,24 @@
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
 
+    .line 21
+    invoke-virtual {p1, v0}, Landroid/widget/CheckedTextView;->setBackgroundResource(I)V
+
+    .line 22
+    sget v0, Lcom/app/cinemasdk/R$string;->exo_track_selection_auto:I
+
+    invoke-virtual {p1, v0}, Landroid/widget/CheckedTextView;->setText(I)V
+
     .line 23
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
-
-    iget p2, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->selectableItemBackgroundResourceId:I
-
-    invoke-virtual {p1, p2}, Landroid/widget/CheckedTextView;->setBackgroundResource(I)V
+    invoke-virtual {p1, v2}, Landroid/widget/CheckedTextView;->setEnabled(Z)V
 
     .line 24
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
-
-    sget p2, Lcom/app/cinemasdk/R$string;->exo_track_selection_auto:I
-
-    invoke-virtual {p1, p2}, Landroid/widget/CheckedTextView;->setText(I)V
-
-    .line 25
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
-
-    invoke-virtual {p1, v1}, Landroid/widget/CheckedTextView;->setEnabled(Z)V
-
-    .line 26
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
-
     invoke-virtual {p1, p3}, Landroid/widget/CheckedTextView;->setFocusable(Z)V
 
-    .line 27
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
-
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView$ComponentListener;
-
+    .line 25
     invoke-virtual {p1, p2}, Landroid/widget/CheckedTextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 28
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->defaultView:Landroid/widget/CheckedTextView;
-
+    .line 26
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     return-void
@@ -360,9 +333,9 @@
     invoke-virtual {v1, p2, p3}, Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;->init(Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;I)V
 
     .line 6
-    new-instance p2, Lrc0;
+    new-instance p2, Laj;
 
-    invoke-direct {p2, v1}, Lrc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;)V
+    invoke-direct {p2, v1}, Laj;-><init>(Lcom/google/android/jioexoplayer2/jioui/TrackSelectionView;)V
 
     .line 7
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
@@ -401,7 +374,7 @@
     return-object p0
 .end method
 
-.method public static getTracksAdding([II)[I
+.method private static getTracksAdding([II)[I
     .locals 1
 
     .line 1
@@ -423,7 +396,7 @@
     return-object p0
 .end method
 
-.method public static getTracksRemoving([II)[I
+.method private static getTracksRemoving([II)[I
     .locals 6
 
     .line 1

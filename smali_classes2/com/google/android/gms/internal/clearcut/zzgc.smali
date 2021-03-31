@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static volatile zzbg:Lcom/google/android/gms/internal/clearcut/zzdz;
+.field private static volatile zzbg:Lcom/google/android/gms/internal/clearcut/zzdz;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzdz<",
@@ -34,11 +34,11 @@
     .end annotation
 .end field
 
-.field public static final zzsg:Lcom/google/android/gms/internal/clearcut/zzgc;
+.field private static final zzsg:Lcom/google/android/gms/internal/clearcut/zzgc;
 
 
 # instance fields
-.field public zzsf:B
+.field private zzsf:B
 
 
 # direct methods
@@ -51,16 +51,14 @@
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzgc;->zzsg:Lcom/google/android/gms/internal/clearcut/zzgc;
 
-    const-class v0, Lcom/google/android/gms/internal/clearcut/zzgc;
+    const-class v1, Lcom/google/android/gms/internal/clearcut/zzgc;
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzgc;->zzsg:Lcom/google/android/gms/internal/clearcut/zzgc;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/clearcut/zzcg;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/clearcut/zzcg;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzcg$zzd;-><init>()V
@@ -178,11 +176,11 @@
     return-object p1
 
     :pswitch_4
-    sget-object p1, Lcom/google/android/gms/internal/clearcut/zzgc;->zzsg:Lcom/google/android/gms/internal/clearcut/zzgc;
+    const-string p1, "\u0003\u0000"
 
-    const-string p2, "\u0003\u0000"
+    sget-object p2, Lcom/google/android/gms/internal/clearcut/zzgc;->zzsg:Lcom/google/android/gms/internal/clearcut/zzgc;
 
-    invoke-static {p1, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, p1, p3}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

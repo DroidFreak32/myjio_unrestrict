@@ -36,13 +36,11 @@
 
     iput-object p1, p0, Lcom/elitecore/wifi/api/WiFiReciever;->a:Landroid/content/Context;
 
-    iget-object p1, p0, Lcom/elitecore/wifi/api/WiFiReciever;->a:Landroid/content/Context;
-
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    const-string v0, "wifi"
+    const-string/jumbo v0, "wifi"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

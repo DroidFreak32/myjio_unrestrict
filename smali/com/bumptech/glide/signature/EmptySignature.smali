@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final EMPTY_KEY:Lcom/bumptech/glide/signature/EmptySignature;
+.field private static final EMPTY_KEY:Lcom/bumptech/glide/signature/EmptySignature;
 
 
 # direct methods
@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -35,6 +35,8 @@
 
 .method public static obtain()Lcom/bumptech/glide/signature/EmptySignature;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/signature/EmptySignature;->EMPTY_KEY:Lcom/bumptech/glide/signature/EmptySignature;
@@ -54,6 +56,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 0
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

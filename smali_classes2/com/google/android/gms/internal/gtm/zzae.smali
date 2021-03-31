@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzvu:Lcom/google/android/gms/internal/gtm/zzbb;
+.field private final zzvu:Lcom/google/android/gms/internal/gtm/zzbb;
 
 
 # direct methods

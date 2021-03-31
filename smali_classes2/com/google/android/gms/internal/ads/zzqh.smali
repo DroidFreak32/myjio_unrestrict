@@ -1,103 +1,200 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzqh;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.class public final Lcom/google/android/gms/internal/ads/zzqh;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzqg;
+.implements Landroid/os/Handler$Callback;
+.implements Landroid/view/Choreographer$FrameCallback;
+
+
+# static fields
+.field private static final zzbms:Lcom/google/android/gms/internal/ads/zzqh;
+
+
+# instance fields
+.field private final handler:Landroid/os/Handler;
+
+.field public volatile zzbmr:J
+
+.field private final zzbmt:Landroid/os/HandlerThread;
+
+.field private zzbmu:Landroid/view/Choreographer;
+
+.field private zzbmv:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.IAttributionInfo"
-
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Ljava/lang/String;)V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzqh;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzqh;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzqh;->zzbms:Lcom/google/android/gms/internal/ads/zzqh;
 
     return-void
 .end method
 
-.method public static zzi(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzqg;
+.method private constructor <init>()V
     .locals 2
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.IAttributionInfo"
-
     .line 1
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    new-instance v0, Landroid/os/HandlerThread;
+
+    const-string v1, "ChoreographerOwner:Handler"
+
+    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmt:Landroid/os/HandlerThread;
+
+    .line 3
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+
+    .line 4
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzqg;
+    invoke-direct {v1, v0, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
-    if-eqz v1, :cond_1
+    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzqh;->handler:Landroid/os/Handler;
 
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzqg;
+    const/4 v0, 0x0
 
-    return-object v0
+    .line 5
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzqi;
+    return-void
+.end method
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzqi;-><init>(Landroid/os/IBinder;)V
+.method public static zzjp()Lcom/google/android/gms/internal/ads/zzqh;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzqh;->zzbms:Lcom/google/android/gms/internal/ads/zzqh;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
+.method public final doFrame(J)V
+    .locals 2
 
-    const/4 p2, 0x2
+    .line 1
+    iput-wide p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmr:J
 
-    if-eq p1, p2, :cond_1
+    .line 2
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmu:Landroid/view/Choreographer;
 
-    const/4 p2, 0x3
+    const-wide/16 v0, 0x1f4
 
-    if-eq p1, p2, :cond_0
+    invoke-virtual {p1, p0, v0, v1}, Landroid/view/Choreographer;->postFrameCallbackDelayed(Landroid/view/Choreographer$FrameCallback;J)V
+
+    return-void
+.end method
+
+.method public final handleMessage(Landroid/os/Message;)Z
+    .locals 3
+
+    .line 1
+    iget p1, p1, Landroid/os/Message;->what:I
+
+    const/4 v0, 0x1
+
+    if-eqz p1, :cond_4
+
+    if-eq p1, v0, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq p1, v1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
-    .line 1
-    :cond_0
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzqg;->zzkr()Ljava/util/List;
-
-    move-result-object p1
-
     .line 2
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    :cond_0
+    iget p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmv:I
+
+    sub-int/2addr p1, v0
+
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmv:I
+
+    if-nez p1, :cond_1
 
     .line 3
-    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmu:Landroid/view/Choreographer;
 
-    goto :goto_0
+    invoke-virtual {p1, p0}, Landroid/view/Choreographer;->removeFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
+
+    const-wide/16 v1, 0x0
 
     .line 4
+    iput-wide v1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmr:J
+
     :cond_1
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzqg;->getText()Ljava/lang/String;
+    return v0
+
+    .line 5
+    :cond_2
+    iget p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmv:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmv:I
+
+    if-ne p1, v0, :cond_3
+
+    .line 6
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmu:Landroid/view/Choreographer;
+
+    invoke-virtual {p1, p0}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
+
+    :cond_3
+    return v0
+
+    .line 7
+    :cond_4
+    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object p1
 
-    .line 5
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzqh;->zzbmu:Landroid/view/Choreographer;
 
-    .line 6
-    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    return v0
+.end method
 
-    :goto_0
-    const/4 p1, 0x1
+.method public final removeObserver()V
+    .locals 2
 
-    return p1
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqh;->handler:Landroid/os/Handler;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    return-void
+.end method
+
+.method public final zzjq()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqh;->handler:Landroid/os/Handler;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    return-void
 .end method

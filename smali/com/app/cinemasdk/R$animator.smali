@@ -1,6 +1,5 @@
 .class public final Lcom/app/cinemasdk/R$animator;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -25,22 +24,21 @@
 
 .field public static final mtrl_btn_unelevated_state_list_anim:I = 0x7f020005
 
-.field public static final mtrl_chip_state_list_anim:I = 0x7f020006
+.field public static final mtrl_chip_state_list_anim:I = 0x7f020007
 
-.field public static final mtrl_fab_hide_motion_spec:I = 0x7f020007
+.field public static final mtrl_fab_hide_motion_spec:I = 0x7f02000c
 
-.field public static final mtrl_fab_show_motion_spec:I = 0x7f020008
+.field public static final mtrl_fab_show_motion_spec:I = 0x7f02000d
 
-.field public static final mtrl_fab_transformation_sheet_collapse_spec:I = 0x7f020009
+.field public static final mtrl_fab_transformation_sheet_collapse_spec:I = 0x7f02000e
 
-.field public static final mtrl_fab_transformation_sheet_expand_spec:I = 0x7f02000a
+.field public static final mtrl_fab_transformation_sheet_expand_spec:I = 0x7f02000f
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

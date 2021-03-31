@@ -1,49 +1,89 @@
 .class public final Lcom/google/android/gms/internal/ads/zzase;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.super Lcom/google/android/gms/internal/ads/zzaxo;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzdfl:Landroid/webkit/JsPromptResult;
-
-.field public final synthetic zzdfm:Landroid/widget/EditText;
+.field private final synthetic zzdsa:Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/JsPromptResult;Landroid/widget/EditText;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzasf;Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdfl:Landroid/webkit/JsPromptResult;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdsa:Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdfm:Landroid/widget/EditText;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzaxo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+.method public final onError(Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdfl:Landroid/webkit/JsPromptResult;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdsa:Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;
 
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdfm:Landroid/widget/EditText;
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;->onFailure(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    return-void
+.end method
 
-    move-result-object p2
+.method public final zza(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 2
 
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 1
+    new-instance v0, Lcom/google/android/gms/ads/query/QueryInfo;
 
-    move-result-object p2
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzzn;
 
-    invoke-virtual {p1, p2}, Landroid/webkit/JsPromptResult;->confirm(Ljava/lang/String;)V
+    invoke-direct {v1, p1, p3}, Lcom/google/android/gms/internal/ads/zzzn;-><init>(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/ads/query/QueryInfo;-><init>(Lcom/google/android/gms/internal/ads/zzzn;)V
+
+    .line 2
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzwq;->zzqi()Ljava/util/WeakHashMap;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0, p2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 3
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdsa:Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;->onSuccess(Lcom/google/android/gms/ads/query/QueryInfo;)V
+
+    return-void
+.end method
+
+.method public final zzk(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/ads/query/QueryInfo;
+
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzzn;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, v2}, Lcom/google/android/gms/internal/ads/zzzn;-><init>(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/ads/query/QueryInfo;-><init>(Lcom/google/android/gms/internal/ads/zzzn;)V
+
+    .line 2
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzwq;->zzqi()Ljava/util/WeakHashMap;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0, p2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 3
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzase;->zzdsa:Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;->onSuccess(Lcom/google/android/gms/ads/query/QueryInfo;)V
 
     return-void
 .end method

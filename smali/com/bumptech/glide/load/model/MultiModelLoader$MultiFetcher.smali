@@ -32,7 +32,7 @@
 
 
 # instance fields
-.field public callback:Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+.field private callback:Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/data/DataFetcher$DataCallback<",
@@ -41,9 +41,12 @@
     .end annotation
 .end field
 
-.field public currentIndex:I
+.field private currentIndex:I
 
-.field public exceptions:Ljava/util/List;
+.field private exceptions:Ljava/util/List;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -53,7 +56,7 @@
     .end annotation
 .end field
 
-.field public final fetchers:Ljava/util/List;
+.field private final fetchers:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -63,14 +66,14 @@
     .end annotation
 .end field
 
-.field public isCancelled:Z
+.field private isCancelled:Z
 
-.field public priority:Lcom/bumptech/glide/Priority;
+.field private priority:Lcom/bumptech/glide/Priority;
 
-.field public final throwableListPool:Lz8;
+.field private final throwableListPool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;"
@@ -80,15 +83,23 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lz8;)V
+.method public constructor <init>(Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
     .locals 0
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/core/util/Pools$Pool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
             "Lcom/bumptech/glide/load/data/DataFetcher<",
             "TData;>;>;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;)V"
@@ -99,7 +110,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->throwableListPool:Lz8;
+    iput-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
     .line 3
     invoke-static {p1}, Lcom/bumptech/glide/util/Preconditions;->checkNotEmpty(Ljava/util/Collection;)Ljava/util/Collection;
@@ -230,9 +241,9 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->throwableListPool:Lz8;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v1, v0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     :cond_0
     const/4 v0, 0x0
@@ -271,6 +282,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -299,6 +313,8 @@
 
 .method public getDataSource()Lcom/bumptech/glide/load/DataSource;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->fetchers:Ljava/util/List;
@@ -320,6 +336,14 @@
 
 .method public loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -336,9 +360,9 @@
     iput-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->callback:Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
 
     .line 3
-    iget-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->throwableListPool:Lz8;
+    iget-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {p2}, Lz8;->acquire()Ljava/lang/Object;
+    invoke-interface {p2}, Landroidx/core/util/Pools$Pool;->acquire()Ljava/lang/Object;
 
     move-result-object p2
 
@@ -373,6 +397,10 @@
 
 .method public onDataReady(Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TData;)V"
@@ -398,6 +426,10 @@
 
 .method public onLoadFailed(Ljava/lang/Exception;)V
     .locals 1
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;->exceptions:Ljava/util/List;

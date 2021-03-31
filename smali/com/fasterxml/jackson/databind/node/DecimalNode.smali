@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final MAX_INTEGER:Ljava/math/BigDecimal;
+.field private static final MAX_INTEGER:Ljava/math/BigDecimal;
 
-.field public static final MAX_LONG:Ljava/math/BigDecimal;
+.field private static final MAX_LONG:Ljava/math/BigDecimal;
 
-.field public static final MIN_INTEGER:Ljava/math/BigDecimal;
+.field private static final MIN_INTEGER:Ljava/math/BigDecimal;
 
-.field public static final MIN_LONG:Ljava/math/BigDecimal;
+.field private static final MIN_LONG:Ljava/math/BigDecimal;
 
 .field public static final ZERO:Lcom/fasterxml/jackson/databind/node/DecimalNode;
 
@@ -363,6 +363,12 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     iget-object p2, p0, Lcom/fasterxml/jackson/databind/node/DecimalNode;->_value:Ljava/math/BigDecimal;

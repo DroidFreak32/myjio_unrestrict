@@ -1,12 +1,30 @@
 .class public final Lcom/google/android/gms/internal/ads/zzul;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzur;
+.implements Lcom/google/android/gms/internal/ads/zzekl;
+
+
+# static fields
+.field public static final zzer:Lcom/google/android/gms/internal/ads/zzekl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzuh;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzul;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzul;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzul;->zzer:Lcom/google/android/gms/internal/ads/zzekl;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -17,17 +35,22 @@
 
 
 # virtual methods
-.method public final zzb(Lcom/google/android/gms/internal/ads/zzus;)V
+.method public final zzi(I)Z
     .locals 0
 
     .line 1
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzus;->zzbrg:Lcom/google/android/gms/internal/ads/zzaii;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzue$zzh$zza;->zzcc(I)Lcom/google/android/gms/internal/ads/zzue$zzh$zza;
+
+    move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 2
-    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzaii;->onRewardedVideoAdClosed()V
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_0
-    return-void
+    const/4 p1, 0x0
+
+    return p1
 .end method

@@ -27,11 +27,11 @@
 
 
 # instance fields
-.field public mConfigurationChanged:Z
+.field private mConfigurationChanged:Z
 
-.field public mIndeterminateProgressMode:Z
+.field private mIndeterminateProgressMode:Z
 
-.field public mProgress:I
+.field private mProgress:I
 
 
 # direct methods
@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 3
 
     .line 3

@@ -13,11 +13,11 @@
 
 
 # static fields
-.field public static final DEBUG:Z = false
+.field private static final DEBUG:Z = false
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 2
@@ -37,6 +37,8 @@
 
 .method public static newInstance()Lcom/bumptech/glide/util/pool/StateVerifier;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/util/pool/StateVerifier$DefaultStateVerifier;

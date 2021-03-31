@@ -4,6 +4,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/bumptech/glide/load/resource/gif/GifFrameLoader;
 .end annotation
@@ -23,13 +26,13 @@
 
 
 # instance fields
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
 .field public final index:I
 
-.field public resource:Landroid/graphics/Bitmap;
+.field private resource:Landroid/graphics/Bitmap;
 
-.field public final targetTime:J
+.field private final targetTime:J
 
 
 # direct methods
@@ -64,6 +67,14 @@
 
 .method public onResourceReady(Landroid/graphics/Bitmap;Lcom/bumptech/glide/request/transition/Transition;)V
     .locals 2
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/transition/Transition;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,6 +110,14 @@
 
 .method public bridge synthetic onResourceReady(Ljava/lang/Object;Lcom/bumptech/glide/request/transition/Transition;)V
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/transition/Transition;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Landroid/graphics/Bitmap;

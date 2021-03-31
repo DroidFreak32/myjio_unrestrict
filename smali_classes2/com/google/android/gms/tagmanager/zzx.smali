@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final zzaes:Lcom/google/android/gms/tagmanager/ContainerHolder$ContainerAvailableListener;
+.field private final zzaes:Lcom/google/android/gms/tagmanager/ContainerHolder$ContainerAvailableListener;
 
-.field public final synthetic zzaet:Lcom/google/android/gms/tagmanager/zzv;
+.field private final synthetic zzaet:Lcom/google/android/gms/tagmanager/zzv;
 
 
 # direct methods

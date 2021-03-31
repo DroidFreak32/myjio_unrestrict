@@ -1,158 +1,176 @@
-.class public final Lcom/google/android/gms/internal/ads/zzaui;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaui;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# static fields
-.field public static zzdje:Ljava/lang/Boolean;
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+# virtual methods
+.method public abstract destroy()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
     .end annotation
-.end field
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
 .end method
 
-.method public static zza(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .locals 2
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x13
+.method public abstract getAdMetadata()Landroid/os/Bundle;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
     .end annotation
-
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastKitKat()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzaui;->zzb(Landroid/webkit/WebView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 2
-    invoke-virtual {p0, p1, v0}, Landroid/webkit/WebView;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
-
-    return-void
-
-    :cond_0
-    const-string v0, "javascript:"
-
-    .line 3
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Ljava/lang/String;
-
-    invoke-direct {p1, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    :goto_0
-    invoke-virtual {p0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    return-void
 .end method
 
-.method public static zzb(Landroid/webkit/WebView;)Z
-    .locals 3
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x13
+.method public abstract getMediationAdapterClassName()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
     .end annotation
+.end method
 
-    .line 1
-    const-class v0, Lcom/google/android/gms/internal/ads/zzaui;
+.method public abstract isLoaded()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    monitor-enter v0
+.method public abstract pause()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 2
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaui;->zzdje:Ljava/lang/Boolean;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public abstract resume()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    if-nez v1, :cond_0
+.method public abstract setAppPackageName(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    :try_start_1
-    const-string v1, "(function(){})()"
+.method public abstract setCustomData(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const/4 v2, 0x0
+.method public abstract setImmersiveMode(Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 3
-    invoke-virtual {p0, v1, v2}, Landroid/webkit/WebView;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
+.method public abstract setUserId(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    const/4 p0, 0x1
+.method public abstract show()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 4
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaug;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object p0
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaup;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    sput-object p0, Lcom/google/android/gms/internal/ads/zzaui;->zzdje:Ljava/lang/Boolean;
-    :try_end_1
-    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzauv;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    goto :goto_0
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzxj;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    :catch_0
-    const/4 p0, 0x0
+.method public abstract zzi(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 5
-    :try_start_2
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+.method public abstract zzj(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object p0
+.method public abstract zzk(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    sput-object p0, Lcom/google/android/gms/internal/ads/zzaui;->zzdje:Ljava/lang/Boolean;
+.method public abstract zzkh()Lcom/google/android/gms/internal/ads/zzyn;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 6
-    :cond_0
-    :goto_0
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzaui;->zzdje:Ljava/lang/Boolean;
+.method public abstract zzl(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    monitor-exit v0
-
-    return p0
-
-    :catchall_0
-    move-exception p0
-
-    .line 7
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p0
+.method public abstract zzrf()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

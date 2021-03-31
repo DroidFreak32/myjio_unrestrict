@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public cache:Ljava/util/Vector;
+.field private cache:Ljava/util/Vector;
 
-.field public ir:Lcom/jcraft/jsch/IdentityRepository;
+.field private ir:Lcom/jcraft/jsch/IdentityRepository;
 
-.field public keep_in_cache:Z
+.field private keep_in_cache:Z
 
 
 # direct methods

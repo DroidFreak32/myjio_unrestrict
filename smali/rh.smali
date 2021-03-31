@@ -1,213 +1,249 @@
-.class public Lrh;
+.class public final synthetic Lrh;
 .super Ljava/lang/Object;
-.source "CopyLock.java"
-
-
-# static fields
-.field public static final e:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/util/concurrent/locks/Lock;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final a:Ljava/io/File;
-
-.field public final b:Ljava/util/concurrent/locks/Lock;
-
-.field public final c:Z
-
-.field public d:Ljava/nio/channels/FileChannel;
+.source "AnalyticsListener.java"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lrh;->e:Ljava/util/Map;
+.method public static $default$onAudioAttributesChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/audio/AudioAttributes;)V
+    .locals 0
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/io/File;Z)V
-    .locals 2
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/io/File;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ".lck"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p2, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object v0, p0, Lrh;->a:Ljava/io/File;
-
-    .line 3
-    iget-object p1, p0, Lrh;->a:Ljava/io/File;
-
-    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lrh;->a(Ljava/lang/String;)Ljava/util/concurrent/locks/Lock;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lrh;->b:Ljava/util/concurrent/locks/Lock;
-
-    .line 4
-    iput-boolean p3, p0, Lrh;->c:Z
+.method public static $default$onAudioSessionId(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;I)V
+    .locals 0
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Ljava/util/concurrent/locks/Lock;
-    .locals 3
+.method public static $default$onAudioUnderrun(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;IJJ)V
+    .locals 0
 
-    .line 6
-    sget-object v0, Lrh;->e:Ljava/util/Map;
-
-    monitor-enter v0
-
-    .line 7
-    :try_start_0
-    sget-object v1, Lrh;->e:Ljava/util/Map;
-
-    invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/concurrent/locks/Lock;
-
-    if-nez v1, :cond_0
-
-    .line 8
-    new-instance v1, Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-direct {v1}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
-
-    .line 9
-    sget-object v2, Lrh;->e:Ljava/util/Map;
-
-    invoke-interface {v2, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 10
-    :cond_0
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception p0
-
-    .line 11
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-
-# virtual methods
-.method public a()V
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lrh;->b:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    .line 2
-    iget-boolean v0, p0, Lrh;->c:Z
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    :try_start_0
-    new-instance v0, Ljava/io/FileOutputStream;
-
-    iget-object v1, p0, Lrh;->a:Ljava/io/File;
-
-    invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lrh;->d:Ljava/nio/channels/FileChannel;
-
-    .line 4
-    iget-object v0, p0, Lrh;->d:Ljava/nio/channels/FileChannel;
-
-    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->lock()Ljava/nio/channels/FileLock;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    .line 5
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "Unable to grab copy lock."
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :cond_0
-    :goto_0
     return-void
 .end method
 
-.method public b()V
-    .locals 1
+.method public static $default$onBandwidthEstimate(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;IJJ)V
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lrh;->d:Ljava/nio/channels/FileChannel;
+    return-void
+.end method
 
-    if-eqz v0, :cond_0
+.method public static $default$onDecoderDisabled(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;ILcom/google/android/jioexoplayer2/decoder/DecoderCounters;)V
+    .locals 0
 
-    .line 2
-    :try_start_0
-    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    return-void
+.end method
 
-    .line 3
-    :catch_0
-    :cond_0
-    iget-object v0, p0, Lrh;->b:Ljava/util/concurrent/locks/Lock;
+.method public static $default$onDecoderEnabled(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;ILcom/google/android/jioexoplayer2/decoder/DecoderCounters;)V
+    .locals 0
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    return-void
+.end method
+
+.method public static $default$onDecoderInitialized(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;ILjava/lang/String;J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDecoderInputFormatChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;ILcom/google/android/jioexoplayer2/Format;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDownstreamFormatChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDrmKeysLoaded(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDrmKeysRemoved(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDrmKeysRestored(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDrmSessionAcquired(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDrmSessionManagerError(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDrmSessionReleased(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onDroppedVideoFrames(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;IJ)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onLoadCanceled(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onLoadCompleted(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onLoadError(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;Ljava/io/IOException;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onLoadStarted(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onLoadingChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onMediaPeriodCreated(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onMediaPeriodReleased(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onMetadata(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/metadata/Metadata;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onPlaybackParametersChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/PlaybackParameters;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onPlayerError(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onPlayerStateChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;ZI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onPositionDiscontinuity(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onReadingStarted(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onRenderedFirstFrame(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Landroid/view/Surface;)V
+    .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    return-void
+.end method
+
+.method public static $default$onRepeatModeChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onSeekProcessed(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onSeekStarted(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onShuffleModeChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onSurfaceSizeChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onTimelineChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onTracksChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onUpstreamDiscarded(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onVideoSizeChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;IIIF)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onVolumeChanged(Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener;Lcom/google/android/jioexoplayer2/analytics/AnalyticsListener$EventTime;F)V
+    .locals 0
 
     return-void
 .end method

@@ -3,12 +3,12 @@
 .source "DeepLinkTask.kt"
 
 # interfaces
-.implements Lsq3;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/DeepLinkTask;->i()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/DeepLinkTask;->oneTimeInit()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,8 +19,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lsq3<",
-        "Lno3;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
@@ -32,18 +32,19 @@
         0x3
     }
     d1 = {
-        "\u0000\u0008\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002"
+        "\u0000\u0008\n\u0002\u0010\u0002\n\u0002\u0008\u0003\u0010\u0003\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002"
     }
     d2 = {
-        "<anonymous>",
         "",
-        "invoke"
+        "invoke",
+        "()V",
+        "<anonymous>"
     }
     k = 0x3
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
@@ -83,7 +84,7 @@
     .line 1
     invoke-virtual {p0}, Lcom/jio/jioml/hellojio/activities/tasks/DeepLinkTask$oneTimeInit$1;->invoke()V
 
-    sget-object v0, Lno3;->a:Lno3;
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
@@ -92,7 +93,7 @@
     .locals 5
 
     .line 2
-    sget-object v0, Lar0;->b:Lar0;
+    sget-object v0, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
 
     new-instance v1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Feedback;
 
@@ -104,7 +105,7 @@
 
     invoke-direct {v1, v2, v3, v4}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Feedback;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/enums/Feedback;)V
 
-    invoke-virtual {v0, v1}, Lar0;->a(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+    invoke-virtual {v0, v1}, Lcom/jio/jioml/hellojio/utils/Utility;->showOutput(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
 
     return-void
 .end method

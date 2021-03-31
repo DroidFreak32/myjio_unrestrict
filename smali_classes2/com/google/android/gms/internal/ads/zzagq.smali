@@ -1,41 +1,52 @@
 .class public final Lcom/google/android/gms/internal/ads/zzagq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzamu;
+.super Lcom/google/android/gms/internal/ads/zzaft;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzamu<",
-        "Lcom/google/android/gms/internal/ads/zzvr;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zzdfi:Lcom/google/android/gms/internal/ads/zzagp;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Lcom/google/android/gms/internal/ads/zzagp;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzagq;->zzdfi:Lcom/google/android/gms/internal/ads/zzagp;
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzaft;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/ads/zzagp;Lcom/google/android/gms/internal/ads/zzago;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzagq;-><init>(Lcom/google/android/gms/internal/ads/zzagp;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zze(Ljava/lang/Object;)V
-    .locals 0
+.method public final zza(Lcom/google/android/gms/internal/ads/zzaff;)V
+    .locals 2
 
     .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzvr;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzagq;->zzdfi:Lcom/google/android/gms/internal/ads/zzagp;
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzagk;->zzc(Lcom/google/android/gms/internal/ads/zzvr;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzagp;->zza(Lcom/google/android/gms/internal/ads/zzagp;)Lcom/google/android/gms/ads/formats/NativeCustomTemplateAd$OnCustomTemplateAdLoadedListener;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzagq;->zzdfi:Lcom/google/android/gms/internal/ads/zzagp;
+
+    invoke-static {v1, p1}, Lcom/google/android/gms/internal/ads/zzagp;->zza(Lcom/google/android/gms/internal/ads/zzagp;Lcom/google/android/gms/internal/ads/zzaff;)Lcom/google/android/gms/ads/formats/NativeCustomTemplateAd;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/ads/formats/NativeCustomTemplateAd$OnCustomTemplateAdLoadedListener;->onCustomTemplateAdLoaded(Lcom/google/android/gms/ads/formats/NativeCustomTemplateAd;)V
 
     return-void
 .end method

@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final zzavg:Ljava/lang/Integer;
+.field private static final zzavg:Ljava/lang/Integer;
 
-.field public static final zzavh:Ljava/lang/Integer;
+.field private static final zzavh:Ljava/lang/Integer;
 
 
 # instance fields
-.field public final zzajm:Ljava/util/concurrent/ExecutorService;
+.field private final zzajm:Ljava/util/concurrent/ExecutorService;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation

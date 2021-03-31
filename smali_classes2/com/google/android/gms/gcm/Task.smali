@@ -26,21 +26,21 @@
 
 
 # instance fields
-.field public final extras:Landroid/os/Bundle;
+.field private final extras:Landroid/os/Bundle;
 
-.field public final gcmTaskService:Ljava/lang/String;
+.field private final gcmTaskService:Ljava/lang/String;
 
-.field public final isPersisted:Z
+.field private final isPersisted:Z
 
-.field public final requiredNetworkState:I
+.field private final requiredNetworkState:I
 
-.field public final requiresCharging:Z
+.field private final requiresCharging:Z
 
-.field public final tag:Ljava/lang/String;
+.field private final tag:Ljava/lang/String;
 
-.field public final updateCurrent:Z
+.field private final updateCurrent:Z
 
-.field public final zzaw:Ljava/util/Set;
+.field private final zzaw:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -50,9 +50,9 @@
     .end annotation
 .end field
 
-.field public final zzax:Z
+.field private final zzax:Z
 
-.field public final zzay:Lcom/google/android/gms/gcm/zzl;
+.field private final zzay:Lcom/google/android/gms/gcm/zzl;
 
 
 # direct methods
@@ -212,7 +212,7 @@
     return-void
 .end method
 
-.method public static zzd(Landroid/net/Uri;)V
+.method private static zzd(Landroid/net/Uri;)V
     .locals 3
 
     if-eqz p0, :cond_7

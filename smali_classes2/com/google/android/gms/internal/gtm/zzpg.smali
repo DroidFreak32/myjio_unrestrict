@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzavk:[Ljava/lang/Throwable;
+.field private static final zzavk:[Ljava/lang/Throwable;
 
 
 # direct methods

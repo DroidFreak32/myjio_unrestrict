@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/app/cinemasdk/utils/CustomRadioGroup;)V
+.method private constructor <init>(Lcom/app/cinemasdk/utils/CustomRadioGroup;)V
     .locals 0
 
     .line 1

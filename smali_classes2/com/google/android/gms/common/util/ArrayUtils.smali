@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/ArrayUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -11,7 +12,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -22,6 +23,17 @@
 
 .method public static appendToArray([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
     .locals 2
+    .param p0    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -91,6 +103,13 @@
 
 .method public static varargs concat([[Ljava/lang/Object;)[Ljava/lang/Object;
     .locals 6
+    .param p0    # [[Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -188,6 +207,13 @@
 
 .method public static varargs concatByteArrays([[B)[B
     .locals 6
+    .param p0    # [[B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -268,6 +294,17 @@
 
 .method public static contains([II)Z
     .locals 4
+    .param p0    # [I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -305,6 +342,17 @@
 
 .method public static contains([Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 4
+    .param p0    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -366,6 +414,9 @@
 
 .method public static newArrayList()Ljava/util/ArrayList;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -389,6 +440,17 @@
 
 .method public static varargs removeAll([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
     .locals 8
+    .param p0    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -407,7 +469,7 @@
     return-object v0
 
     :cond_0
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_9
 
     .line 1
     array-length v1, p1
@@ -451,7 +513,7 @@
     const/4 v5, 0x0
 
     :goto_0
-    if-ge v4, v2, :cond_5
+    if-ge v4, v2, :cond_6
 
     aget-object v6, p0, v4
 
@@ -480,26 +542,26 @@
     :cond_3
     array-length v2, p0
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     :goto_1
     if-ge v3, v2, :cond_5
 
-    aget-object v4, p0, v3
+    aget-object v5, p0, v3
 
     .line 8
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v6
 
     if-nez v6, :cond_4
 
-    add-int/lit8 v6, v5, 0x1
+    add-int/lit8 v6, v4, 0x1
 
     .line 9
-    aput-object v4, v1, v5
+    aput-object v5, v1, v4
 
-    move v5, v6
+    move v4, v6
 
     :cond_4
     add-int/lit8 v3, v3, 0x1
@@ -507,26 +569,29 @@
     goto :goto_1
 
     :cond_5
-    if-nez v1, :cond_6
+    move v5, v4
+
+    :cond_6
+    if-nez v1, :cond_7
 
     return-object v0
 
     .line 10
-    :cond_6
+    :cond_7
     array-length p0, v1
 
-    if-eq v5, p0, :cond_7
+    if-eq v5, p0, :cond_8
 
     .line 11
     invoke-static {v1, v5}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v1
 
-    :cond_7
+    :cond_8
     return-object v1
 
     .line 12
-    :cond_8
+    :cond_9
     :goto_2
     array-length p1, p0
 
@@ -539,6 +604,13 @@
 
 .method public static toArrayList([Ljava/lang/Object;)Ljava/util/ArrayList;
     .locals 4
+    .param p0    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -580,6 +652,13 @@
 
 .method public static toPrimitiveArray(Ljava/util/Collection;)[I
     .locals 4
+    .param p0    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -656,6 +735,13 @@
 
 .method public static toWrapperArray([I)[Ljava/lang/Integer;
     .locals 4
+    .param p0    # [I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -696,6 +782,14 @@
 
 .method public static writeArray(Ljava/lang/StringBuilder;[D)V
     .locals 4
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [D
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -734,6 +828,14 @@
 
 .method public static writeArray(Ljava/lang/StringBuilder;[F)V
     .locals 3
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [F
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -772,6 +874,14 @@
 
 .method public static writeArray(Ljava/lang/StringBuilder;[I)V
     .locals 3
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -810,6 +920,14 @@
 
 .method public static writeArray(Ljava/lang/StringBuilder;[J)V
     .locals 4
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [J
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -848,6 +966,14 @@
 
 .method public static writeArray(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
     .locals 3
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -880,11 +1006,7 @@
     :cond_0
     aget-object v2, p1, v1
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v1, v1, 0x1
 
@@ -896,6 +1018,14 @@
 
 .method public static writeArray(Ljava/lang/StringBuilder;[Z)V
     .locals 3
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -934,6 +1064,14 @@
 
 .method public static writeStringArray(Ljava/lang/StringBuilder;[Ljava/lang/String;)V
     .locals 4
+    .param p0    # Ljava/lang/StringBuilder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

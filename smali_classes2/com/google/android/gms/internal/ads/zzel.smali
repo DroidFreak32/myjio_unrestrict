@@ -1,110 +1,42 @@
 .class public final Lcom/google/android/gms/internal/ads/zzel;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzeu;
 
 
 # instance fields
-.field public final zzuk:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/util/concurrent/atomic/AtomicReference<",
-            "TT;>;>;"
-        }
-    .end annotation
-.end field
+.field private final synthetic val$activity:Landroid/app/Activity;
+
+.field private final synthetic zzyg:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
 
     .line 1
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzel;->val$activity:Landroid/app/Activity;
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzel;->zzyg:Landroid/os/Bundle;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzel;->zzuk:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzp(Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReference;
+.method public final zza(Landroid/app/Application$ActivityLifecycleCallbacks;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/concurrent/atomic/AtomicReference<",
-            "TT;>;"
-        }
-    .end annotation
 
     .line 1
-    monitor-enter p0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzel;->val$activity:Landroid/app/Activity;
 
-    .line 2
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzel;->zzuk:Ljava/util/Map;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzel;->zzyg:Landroid/os/Bundle;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {p1, v0, v1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 3
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    .line 4
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzel;->zzuk:Ljava/util/Map;
-
-    invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 6
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzel;->zzuk:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/concurrent/atomic/AtomicReference;
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    .line 7
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
+    return-void
 .end method

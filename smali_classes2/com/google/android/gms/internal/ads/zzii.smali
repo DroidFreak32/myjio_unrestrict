@@ -1,55 +1,42 @@
 .class public final Lcom/google/android/gms/internal/ads/zzii;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbdi;
-
-
-# static fields
-.field public static final zzanc:Lcom/google/android/gms/internal/ads/zzbdi;
+.super Ljava/lang/Exception;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(III)V
+    .locals 2
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzii;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzii;-><init>()V
+    const/16 v1, 0x4e
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzii;->zzanc:Lcom/google/android/gms/internal/ads/zzbdi;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return-void
-.end method
+    const-string v1, "Unhandled format: "
 
-.method public constructor <init>()V
-    .locals 0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    const-string p1, " Hz, "
 
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-# virtual methods
-.method public final zzs(I)Z
-    .locals 0
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzif$zza$zza;->zzr(I)Lcom/google/android/gms/internal/ads/zzif$zza$zza;
+    const-string p1, " channels in encoding "
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

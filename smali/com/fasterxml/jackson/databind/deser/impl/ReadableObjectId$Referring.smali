@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final _beanType:Ljava/lang/Class;
+.field private final _beanType:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public final _reference:Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
+.field private final _reference:Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
 
 
 # direct methods
@@ -102,6 +102,11 @@
 .end method
 
 .method public abstract handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public hasId(Ljava/lang/Object;)Z

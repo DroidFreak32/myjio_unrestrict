@@ -32,11 +32,11 @@
 
 
 # instance fields
-.field public final mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
+.field private final mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
-.field public final mId:J
+.field private final mId:J
 
-.field public mItem:Ljava/lang/Object;
+.field private mItem:Ljava/lang/Object;
 
 
 # direct methods
@@ -91,7 +91,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Object;Landroid/support/v4/media/MediaDescriptionCompat;J)V
+.method private constructor <init>(Ljava/lang/Object;Landroid/support/v4/media/MediaDescriptionCompat;J)V
     .locals 3
 
     .line 2
@@ -282,11 +282,11 @@
 
     if-nez v0, :cond_1
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0x15
+    const/16 v2, 0x15
 
-    if-ge v0, v1, :cond_0
+    if-ge v1, v2, :cond_0
 
     goto :goto_0
 
@@ -306,16 +306,8 @@
 
     iput-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->mItem:Ljava/lang/Object;
 
-    .line 3
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->mItem:Ljava/lang/Object;
-
-    return-object v0
-
-    .line 4
     :cond_1
     :goto_0
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->mItem:Ljava/lang/Object;
-
     return-object v0
 .end method
 

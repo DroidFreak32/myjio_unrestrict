@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-.field public zlaResponse:Lcom/app/cinemasdk/ZLAResponse;
+.field private zlaResponse:Lcom/app/cinemasdk/ZLAResponse;
 
 
 # direct methods
@@ -58,7 +58,7 @@
     invoke-direct {v0, v1}, Lcom/app/cinemasdk/network/DataManager;-><init>(Ljava/lang/String;)V
 
     .line 2
-    invoke-virtual {v0}, Lcom/app/cinemasdk/network/DataManager;->zlaNetworkCheck()Ljr4;
+    invoke-virtual {v0}, Lcom/app/cinemasdk/network/DataManager;->zlaNetworkCheck()Lretrofit2/Call;
 
     move-result-object v0
 
@@ -67,7 +67,7 @@
 
     invoke-direct {v1, p0}, Lcom/app/cinemasdk/ZLA$1;-><init>(Lcom/app/cinemasdk/ZLA;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -109,7 +109,7 @@
 
     move-result-object v2
 
-    const-string v3, "subscriberId"
+    const-string/jumbo v3, "subscriberId"
 
     if-eqz v2, :cond_0
 
@@ -118,7 +118,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "subscriberId zla_user - "
+    const-string/jumbo v4, "subscriberId zla_user - "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -177,7 +177,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "subscriberId zla_direct - "
+    const-string/jumbo v4, "subscriberId zla_direct - "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -214,7 +214,7 @@
 
     .line 8
     :goto_0
-    invoke-virtual {v0, v1}, Lcom/app/cinemasdk/network/DataManager;->loginViaSubId(Ljava/util/HashMap;)Ljr4;
+    invoke-virtual {v0, v1}, Lcom/app/cinemasdk/network/DataManager;->loginViaSubId(Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object v0
 
@@ -223,7 +223,7 @@
 
     invoke-direct {v1, p0}, Lcom/app/cinemasdk/ZLA$2;-><init>(Lcom/app/cinemasdk/ZLA;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method

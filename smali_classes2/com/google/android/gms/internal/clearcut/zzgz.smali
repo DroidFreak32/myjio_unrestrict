@@ -17,13 +17,13 @@
 
 
 # instance fields
-.field public zzbjb:[B
+.field private zzbjb:[B
 
-.field public zzbjc:Ljava/lang/String;
+.field private zzbjc:Ljava/lang/String;
 
-.field public zzbjd:[[B
+.field private zzbjd:[[B
 
-.field public zzbje:Z
+.field private zzbje:Z
 
 
 # direct methods
@@ -104,6 +104,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzgz;->zzgc()Lcom/google/android/gms/internal/clearcut/zzgz;
 
@@ -315,6 +320,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/clearcut/zzfs;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzgz;->zzbjb:[B
 
@@ -490,8 +500,13 @@
 
 .method public final synthetic zzeo()Lcom/google/android/gms/internal/clearcut/zzfu;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzgz;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -502,8 +517,13 @@
 
 .method public final synthetic zzep()Lcom/google/android/gms/internal/clearcut/zzfz;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzgz;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

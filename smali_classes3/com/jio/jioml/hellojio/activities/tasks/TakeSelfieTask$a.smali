@@ -18,18 +18,18 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-.field public final synthetic t:Ljava/io/File;
+.field public final synthetic b:Ljava/io/File;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;Ljava/io/File;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    iput-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->t:Ljava/io/File;
+    iput-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->b:Ljava/io/File;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,7 +42,7 @@
     .locals 3
 
     .line 1
-    iget-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->t:Ljava/io/File;
+    iget-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->b:Ljava/io/File;
 
     invoke-virtual {p2}, Ljava/io/File;->delete()Z
 
@@ -51,23 +51,23 @@
     if-eqz p2, :cond_0
 
     .line 2
-    iget-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iget-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    invoke-virtual {p2}, Lao0;->b()Landroid/content/Context;
+    invoke-virtual {p2}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getContext()Landroid/content/Context;
 
     move-result-object p2
 
-    sget-object v0, Lar0;->b:Lar0;
+    sget-object v0, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
 
-    sget v1, Lfn0;->hj_selfi_delete:I
+    sget v1, Lcom/jio/jioml/hellojio/R$string;->hj_selfi_delete:I
 
-    iget-object v2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iget-object v2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    invoke-virtual {v2}, Lao0;->b()Landroid/content/Context;
+    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lar0;->a(ILandroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Lcom/jio/jioml/hellojio/utils/Utility;->getString(ILandroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -80,9 +80,9 @@
     invoke-virtual {p2}, Landroid/widget/Toast;->show()V
 
     .line 3
-    iget-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iget-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    invoke-static {p2}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;)Landroid/view/View;
+    invoke-static {p2}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;)Landroid/view/View;
 
     move-result-object p2
 

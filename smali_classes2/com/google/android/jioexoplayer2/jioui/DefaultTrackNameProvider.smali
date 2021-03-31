@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final resources:Landroid/content/res/Resources;
+.field private final resources:Landroid/content/res/Resources;
 
 
 # direct methods
@@ -321,7 +321,7 @@
     return-object p1
 .end method
 
-.method public static inferPrimaryTrackType(Lcom/google/android/jioexoplayer2/Format;)I
+.method private static inferPrimaryTrackType(Lcom/google/android/jioexoplayer2/Format;)I
     .locals 4
 
     .line 1
@@ -411,14 +411,12 @@
 
     const-string v2, ""
 
-    move-object v3, v2
-
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    if-ge v2, v0, :cond_2
+    if-ge v3, v0, :cond_2
 
-    aget-object v4, p1, v2
+    aget-object v4, p1, v3
 
     .line 2
     invoke-virtual {v4}, Ljava/lang/String;->length()I
@@ -428,13 +426,13 @@
     if-lez v5, :cond_1
 
     .line 3
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    move-object v3, v4
+    move-object v2, v4
 
     goto :goto_1
 
@@ -448,24 +446,24 @@
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    aput-object v3, v7, v1
+    aput-object v2, v7, v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    aput-object v4, v7, v3
+    aput-object v4, v7, v2
 
     invoke-virtual {v5, v6, v7}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     :cond_1
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_2
-    return-object v3
+    return-object v2
 .end method
 
 

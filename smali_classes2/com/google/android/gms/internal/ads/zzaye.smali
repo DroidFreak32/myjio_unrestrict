@@ -1,123 +1,106 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaye;
+.class public final Lcom/google/android/gms/internal/ads/zzaye;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# static fields
-.field public static final synthetic zzakw:[I
+# instance fields
+.field private zzeag:J
+
+.field private zzeah:J
+
+.field private final synthetic zzeai:Lcom/google/android/gms/internal/ads/zzayf;
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzayf;)V
+    .locals 2
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeai:Lcom/google/android/gms/internal/ads/zzayf;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, -0x1
+
+    .line 2
+    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeag:J
+
+    .line 3
+    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeah:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toBundle()Landroid/os/Bundle;
     .locals 4
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbdd$zze;->values$50KLMJ33DTMIUPRFDTJMOP9FE1P6UT3FC9QMCBQ7CLN6ASJ1EHIM8JB5EDPM2PR59HKN8P949LIN8Q3FCHA6UIBEEPNMMP9R0()[I
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 2
+    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeag:J
+
+    const-string v3, "topen"
+
+    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    .line 3
+    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeah:J
+
+    const-string v3, "tclose"
+
+    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    return-object v0
+.end method
+
+.method public final zzwm()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeah:J
+
+    return-wide v0
+.end method
+
+.method public final zzwn()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeai:Lcom/google/android/gms/internal/ads/zzayf;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzayf;->zza(Lcom/google/android/gms/internal/ads/zzayf;)Lcom/google/android/gms/common/util/Clock;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
 
-    new-array v0, v0, [I
+    move-result-wide v0
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
+    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeah:J
 
-    const/4 v0, 0x1
+    return-void
+.end method
 
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
+.method public final zzwo()V
+    .locals 2
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyc:I
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeai:Lcom/google/android/gms/internal/ads/zzayf;
 
-    sub-int/2addr v2, v0
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzayf;->zza(Lcom/google/android/gms/internal/ads/zzayf;)Lcom/google/android/gms/common/util/Clock;
 
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
-    :catch_0
-    :try_start_1
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyd:I
+    move-result-wide v0
 
-    sub-int/2addr v2, v0
+    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzaye;->zzeag:J
 
-    const/4 v3, 0x2
-
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyb:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x3
-
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdye:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x4
-
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyf:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x5
-
-    aput v3, v1, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdxz:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x6
-
-    aput v3, v1, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaye;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdya:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v0, 0x7
-
-    aput v0, v1, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
     return-void
 .end method

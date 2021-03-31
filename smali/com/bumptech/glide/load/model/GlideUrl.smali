@@ -7,23 +7,38 @@
 
 
 # static fields
-.field public static final ALLOWED_URI_CHARS:Ljava/lang/String; = "@#&=*+-_.,:!?()/~\'%;$"
+.field private static final ALLOWED_URI_CHARS:Ljava/lang/String; = "@#&=*+-_.,:!?()/~\'%;$"
 
 
 # instance fields
-.field public volatile cacheKeyBytes:[B
+.field private volatile cacheKeyBytes:[B
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public hashCode:I
+.field private hashCode:I
 
-.field public final headers:Lcom/bumptech/glide/load/model/Headers;
+.field private final headers:Lcom/bumptech/glide/load/model/Headers;
 
-.field public safeStringUrl:Ljava/lang/String;
+.field private safeStringUrl:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public safeUrl:Ljava/net/URL;
+.field private safeUrl:Ljava/net/URL;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final stringUrl:Ljava/lang/String;
+.field private final stringUrl:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final url:Ljava/net/URL;
+.field private final url:Ljava/net/URL;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -193,6 +208,11 @@
 
 .method private getSafeUrl()Ljava/net/URL;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/net/MalformedURLException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/model/GlideUrl;->safeUrl:Ljava/net/URL;
@@ -332,11 +352,9 @@
 
     iput v0, p0, Lcom/bumptech/glide/load/model/GlideUrl;->hashCode:I
 
-    .line 3
-    iget v0, p0, Lcom/bumptech/glide/load/model/GlideUrl;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 3
     iget-object v1, p0, Lcom/bumptech/glide/load/model/GlideUrl;->headers:Lcom/bumptech/glide/load/model/Headers;
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
@@ -378,6 +396,11 @@
 
 .method public toURL()Ljava/net/URL;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/net/MalformedURLException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/load/model/GlideUrl;->getSafeUrl()Ljava/net/URL;
@@ -389,6 +412,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 1
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/load/model/GlideUrl;->getCacheKeyBytes()[B

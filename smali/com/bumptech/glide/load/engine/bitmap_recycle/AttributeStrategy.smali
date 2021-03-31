@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
+.field private final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap<",
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
+.field private final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
 
 
 # direct methods
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p0, "x"
+    const-string/jumbo p0, "x"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -87,7 +87,7 @@
     return-object p0
 .end method
 
-.method public static getBitmapString(Landroid/graphics/Bitmap;)Ljava/lang/String;
+.method private static getBitmapString(Landroid/graphics/Bitmap;)Ljava/lang/String;
     .locals 2
 
     .line 1

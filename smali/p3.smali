@@ -1,48 +1,121 @@
-.class public abstract Lp3;
-.super Ljava/lang/Object;
-.source "TaskExecutor.java"
+.class public final Lp3;
+.super Ljava/io/Writer;
+.source "LogWriter.java"
+
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public b:Ljava/lang/StringBuilder;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/io/Writer;-><init>()V
+
+    .line 2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x80
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    iput-object v0, p0, Lp3;->b:Ljava/lang/StringBuilder;
+
+    .line 3
+    iput-object p1, p0, Lp3;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/Runnable;)V
-.end method
-
-.method public abstract a()Z
-.end method
-
-.method public b(Ljava/lang/Runnable;)V
-    .locals 1
+.method public final a()V
+    .locals 3
 
     .line 1
-    invoke-virtual {p0}, Lp3;->a()Z
+    iget-object v0, p0, Lp3;->b:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-lez v0, :cond_0
 
     .line 2
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    iget-object v0, p0, Lp3;->b:Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 3
-    :cond_0
-    invoke-virtual {p0, p1}, Lp3;->c(Ljava/lang/Runnable;)V
+    iget-object v0, p0, Lp3;->b:Ljava/lang/StringBuilder;
 
-    :goto_0
+    const/4 v1, 0x0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    :cond_0
     return-void
 .end method
 
-.method public abstract c(Ljava/lang/Runnable;)V
+.method public close()V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lp3;->a()V
+
+    return-void
+.end method
+
+.method public flush()V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lp3;->a()V
+
+    return-void
+.end method
+
+.method public write([CII)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p3, :cond_1
+
+    add-int v1, p2, v0
+
+    .line 1
+    aget-char v1, p1, v1
+
+    const/16 v2, 0xa
+
+    if-ne v1, v2, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Lp3;->a()V
+
+    goto :goto_1
+
+    .line 3
+    :cond_0
+    iget-object v2, p0, Lp3;->b:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
 .end method

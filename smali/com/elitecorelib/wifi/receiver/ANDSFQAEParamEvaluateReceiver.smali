@@ -6,15 +6,15 @@
 
 
 # instance fields
-.field public s:Landroid/content/Context;
+.field public a:Landroid/content/Context;
 
-.field public t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+.field public b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-.field public u:Z
+.field public c:Z
 
-.field public v:Ljava/lang/String;
+.field public d:Ljava/lang/String;
 
-.field public w:Z
+.field public e:Z
 
 
 # direct methods
@@ -25,13 +25,13 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iput-boolean v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     const-string v1, "QOE parameter check process on hold, Reason:"
 
-    iput-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    iput-boolean v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->w:Z
+    iput-boolean v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->e:Z
 
     return-void
 .end method
@@ -58,11 +58,11 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->j0()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->v()Z
 
     move-result v2
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v4, "PASSIVE_DEVICE_WIFI_DOWNLOAD"
 
@@ -76,7 +76,7 @@
 
     invoke-virtual {v3, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWifiPassiveDownSpeed(Ljava/lang/Long;)V
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v4, "PASSIVE_DEVICE_WIFI_UPLOAD"
 
@@ -97,19 +97,19 @@
     if-eqz v2, :cond_0
 
     :try_start_1
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v2, Ljava/util/Date;
 
@@ -129,7 +129,7 @@
 
     invoke-direct {v1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
@@ -141,13 +141,13 @@
 
     const-string v1, "Already offload, Passive throughput match."
 
-    invoke-static {v3, v1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v3}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
     sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -155,7 +155,7 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->i0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->u()V
 
     goto :goto_0
 
@@ -184,21 +184,21 @@
 
     invoke-virtual {v2, v0, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v3}, Lc20;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v3, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v1, Lt30;
+    new-instance v1, Lcom/elitecorelib/core/utility/o;
 
-    invoke-static {v3}, Lc20;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, p0, v2, v3}, Lt30;-><init>(Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;Ljava/lang/String;Z)V
+    invoke-direct {v1, p0, v2, v3}, Lcom/elitecorelib/core/utility/o;-><init>(Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;Ljava/lang/String;Z)V
 
     invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
@@ -241,7 +241,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;)V
+.method public final b(Ljava/lang/String;)V
     .locals 3
 
     :try_start_0
@@ -259,7 +259,7 @@
 
     move-result-object v0
 
-    const-string v1, "true"
+    const-string/jumbo v1, "true"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -293,7 +293,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/Double;Ljava/lang/Double;)Z
+.method public final c(Ljava/lang/Double;Ljava/lang/Double;)Z
     .locals 13
 
     const-string v0, ""
@@ -319,7 +319,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {p2}, Ljava/lang/Double;->longValue()J
 
@@ -331,7 +331,7 @@
 
     invoke-virtual {v8, v9}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWifiActiveDownSpeed(Ljava/lang/Long;)V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {p1}, Ljava/lang/Double;->longValue()J
 
@@ -347,7 +347,7 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_5
 
     invoke-virtual {v7, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -357,13 +357,13 @@
 
     move-result v8
 
-    if-nez v8, :cond_6
+    if-nez v8, :cond_5
 
     invoke-virtual {v7, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_5
 
     invoke-virtual {v7, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
     invoke-virtual {v7, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -447,35 +447,35 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
     :cond_0
     :try_start_2
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_UPLOADDOWNLOAD:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_UPLOADDOWNLOAD_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v1, Ljava/util/Date;
 
@@ -495,13 +495,13 @@
 
     invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
     const-string v0, "Speed threshold not match."
 
-    invoke-static {v9, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v0}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -563,7 +563,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 
     :cond_1
     :try_start_3
@@ -616,31 +616,31 @@
 
     :cond_2
     :try_start_5
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_UPLOAD:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_UPLOAD_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance p2, Ljava/util/Date;
 
@@ -660,11 +660,11 @@
 
     invoke-direct {p1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    invoke-static {v9, v10}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v10}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -693,7 +693,7 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 
     :cond_3
     :try_start_6
@@ -705,7 +705,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -739,7 +739,7 @@
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
-    goto :goto_2
+    goto/16 :goto_4
 
     :cond_4
     :try_start_7
@@ -749,31 +749,31 @@
 
     invoke-virtual {p1, v4, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_DOWNLOAD:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_DOWNLOAD_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v0, Ljava/util/Date;
 
@@ -793,11 +793,11 @@
 
     invoke-direct {p1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {p1, v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    invoke-static {v9, v10}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v10}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -852,12 +852,6 @@
     goto/16 :goto_1
 
     :cond_5
-    :goto_2
-    const/4 v6, 0x1
-
-    goto :goto_4
-
-    :cond_6
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -884,17 +878,20 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
 
+    :goto_2
+    const/4 v5, 0x0
+
     goto :goto_4
 
     :catch_0
     move-exception p1
 
+    const/4 v5, 0x0
+
     goto :goto_3
 
     :catch_1
     move-exception p1
-
-    const/4 v6, 0x1
 
     :goto_3
     sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
@@ -919,11 +916,12 @@
 
     invoke-virtual {p2, v4, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    :cond_6
     :goto_4
-    return v6
+    return v5
 .end method
 
-.method public final b()Z
+.method public final d()Z
     .locals 5
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -958,7 +956,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lc20;->a(Landroid/content/Context;)I
+    invoke-static {v3}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;)I
 
     move-result v3
 
@@ -984,9 +982,9 @@
 
     const-string v3, "event_constant_for_QOEparameter"
 
-    invoke-static {v3, v2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1000,7 +998,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lc20;->a(Landroid/content/Context;)I
+    invoke-static {v4}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;)I
 
     move-result v4
 
@@ -1028,7 +1026,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lc20;->a(Landroid/content/Context;)I
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;)I
 
     move-result v1
 
@@ -1042,7 +1040,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1057,7 +1055,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lc20;->a(Landroid/content/Context;)I
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;)I
 
     move-result v2
 
@@ -1078,7 +1076,7 @@
 
     const-string v1, "false"
 
-    invoke-static {v0, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1099,7 +1097,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1114,7 +1112,7 @@
     return v0
 .end method
 
-.method public final c()Z
+.method public final e()Z
     .locals 11
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -1193,7 +1191,7 @@
 
     const-string v7, "REQUIREDSIGNALLEVEL_LOW"
 
-    invoke-static {v7, v7}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v7}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -1221,7 +1219,7 @@
 
     move-result v1
 
-    invoke-static {v7, v7}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v7}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1263,7 +1261,7 @@
 
     const-string v6, "event_constant_for_QOEparameter"
 
-    invoke-static {v6, v5}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v6, v5}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getRssi()I
 
@@ -1309,7 +1307,7 @@
 
     invoke-virtual {v5, v3, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1329,7 +1327,7 @@
 
     invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWifiRSSI(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v2, "LTE_RSRP_Threshhold"
 
@@ -1339,7 +1337,7 @@
 
     invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setLteRSRP(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v2, "LTE_SINR_Threshhold"
 
@@ -1360,7 +1358,7 @@
 
     invoke-virtual {v0, v3, v1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1402,7 +1400,7 @@
     return v2
 .end method
 
-.method public final d()V
+.method public final f()V
     .locals 5
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -1415,11 +1413,11 @@
 
     const-string v1, "event_constant_for_QOEparameter"
 
-    invoke-static {v1}, Lc20;->h(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->h(Ljava/lang/String;)Z
 
     move-result v2
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v4, "LTE_RSRP_Threshhold"
 
@@ -1429,7 +1427,7 @@
 
     invoke-virtual {v3, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setLteRSRP(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v4, "LTE_SINR_Threshhold"
 
@@ -1439,7 +1437,7 @@
 
     invoke-virtual {v3, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setLTESINR(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     const-string v4, "device_rsrq"
 
@@ -1459,31 +1457,31 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_RSSI:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_RSSI_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v3, Ljava/util/Date;
 
@@ -1503,25 +1501,25 @@
 
     invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
     const-string v2, "LTE Signal higher than the server values, WiFi disconnected."
 
-    invoke-static {v1, v2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->s:Landroid/content/Context;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a:Landroid/content/Context;
 
     sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_RSSI:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -1558,21 +1556,21 @@
 
     const-string v0, "LTE signal lower than the server values, WiFi connected."
 
-    invoke-static {v1, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v1, Ljava/util/Date;
 
@@ -1588,7 +1586,7 @@
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
@@ -1598,7 +1596,7 @@
 
     invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
@@ -1607,660 +1605,682 @@
 .end method
 
 .method public getResponseData(Ljava/lang/String;)V
-    .locals 24
+    .locals 27
 
     move-object/from16 v1, p0
 
     move-object/from16 v0, p1
 
-    const-string v2, "wifiJitter"
+    const-string v2, "0"
 
-    const-string v3, "packet_loss_server_threshold"
+    const-string v3, "Latency check is skip due to device is in idle mode."
 
-    const-string v4, ";"
+    const-string v4, "ANDSF_DOWNLOADSPEED"
 
-    const-string v5, "jitter_value"
+    const-string v5, "; "
 
-    const-string v6, "RequestId"
+    const-string v6, "ANDSF_UPLOADSPEED"
 
-    const-string v7, "latencyThresoldValue"
+    const-string/jumbo v7, "wifiJitter"
 
-    const-string v8, ""
+    const-string v8, "packet_loss_server_threshold"
 
-    const-string v9, "ANDSFQAEParamEvaluateReceiver"
+    const-string v9, ";"
+
+    const-string v10, "jitter_value"
+
+    const-string v11, "RequestId"
+
+    const-string v12, "latencyThresoldValue"
+
+    const-string v13, ""
+
+    const-string v14, "ANDSFQAEParamEvaluateReceiver"
 
     :try_start_0
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
-    move-result-object v10
+    move-result-object v15
 
-    invoke-virtual {v10}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+    invoke-virtual {v15}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    move-result-object v10
+    move-result-object v15
 
     invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
-    move-result-object v11
+    move-result-object v16
 
-    invoke-virtual {v11}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isANDSFEnable()Z
+    invoke-virtual/range {v16 .. v16}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isANDSFEnable()Z
 
-    move-result v11
+    move-result v16
 
-    if-eqz v11, :cond_f
+    if-eqz v16, :cond_f
 
-    new-instance v11, Lorg/json/JSONObject;
+    move-object/from16 v16, v4
 
-    invoke-direct {v11, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    new-instance v4, Lorg/json/JSONObject;
 
-    sget-object v12, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    invoke-direct {v4, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    move-object/from16 v17, v5
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v5, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v14, "Received response: "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v9, v13}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v11, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v12
-
-    const/16 v13, 0x840
-
-    invoke-static {v13}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v12
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const-string v14, "/"
-
-    const-string v15, "event_constant_for_QOEparameter"
-
-    if-eqz v12, :cond_b
-
-    :try_start_1
-    const-string v0, "packetsent"
-
-    invoke-virtual {v11, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    const-string v6, "packetreceive"
-
-    invoke-virtual {v11, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    const-string v12, "value"
-
-    invoke-virtual {v11, v12}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v12
-
-    move-object/from16 v18, v14
-
-    int-to-double v13, v12
-
-    const-string v12, "packetLost"
-
-    invoke-virtual {v11, v12}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v12
-
-    move-object/from16 v20, v2
-
-    move-object/from16 v21, v3
-
-    int-to-double v2, v12
-
-    sget-object v12, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    move-object/from16 v22, v4
-
-    const-string v4, "Packets Sent : %s, Packets Received : %s, Latency : %s"
-
-    move-object/from16 v23, v7
-
-    const/4 v7, 0x3
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v19, 0x0
-
-    aput-object v0, v7, v19
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v17, 0x1
-
-    aput-object v0, v7, v17
-
-    invoke-static {v13, v14}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v16, 0x2
-
-    aput-object v0, v7, v16
-
-    invoke-static {v4, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v12, v9, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "MobileStatus"
-
-    invoke-virtual {v11, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lc20;->g(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v13, v14}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWLatency(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWPacketLoss(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWJitter(Ljava/lang/String;)V
-
-    invoke-static {v15}, Lc20;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v4, "="
-
-    invoke-virtual {v0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {v10, v15}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    invoke-static {v11}, Lc20;->c(Lorg/json/JSONObject;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_a
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Latency: "
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v13, v14}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-object/from16 v4, v18
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object/from16 v7, v23
-
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object/from16 v11, v22
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "Packet Loss: "
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object/from16 v2, v21
-
-    invoke-virtual {v10, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Jitter: "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object/from16 v3, v20
-
-    invoke-virtual {v10, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v4, "0"
-
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    const-wide/16 v11, 0x0
-
-    if-nez v0, :cond_2
-
-    if-eqz v6, :cond_1
-
-    cmpl-double v0, v13, v11
-
-    if-nez v0, :cond_2
-
-    :cond_1
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v2, "Latency is zero or Received packets is zero"
-
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY_CATEGORY:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
-
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
-
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
-
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v3, Lcom/elitecorelib/andsf/a/a;->r:Lcom/elitecorelib/andsf/a/a;
-
-    invoke-static {v3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "WiFi Disconnected. %s , Result - FAIL"
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v15}, Lc20;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    aput-object v5, v4, v6
-
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, " WiFi disconnected, Latency not match."
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lc20;->f(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->s:Landroid/content/Context;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY_CATEGORY:Ljava/lang/String;
-
-    invoke-static {v0, v2}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto/16 :goto_5
-
-    :cond_2
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v4, "0"
-
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    const/4 v4, -0x1
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {v10, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    if-ne v0, v4, :cond_3
-
-    const-wide/high16 v20, -0x4010000000000000L    # -1.0
-
-    cmpl-double v0, v13, v20
-
-    if-nez v0, :cond_3
-
-    if-ne v6, v4, :cond_3
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v2, "Latency is zero but internet available"
-
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
-
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
-
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
-
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
-
-    const-string v0, " Latency is zero but internet available, Already offloaded "
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-static {v0}, Lc20;->f(Ljava/lang/String;)V
-
-    goto/16 :goto_5
-
-    :cond_3
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v20
-
-    cmpl-double v0, v20, v11
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v20
-
-    cmpl-double v0, v13, v20
-
-    if-lez v0, :cond_4
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    move-object/from16 v18, v6
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v18, Lcom/elitecorelib/andsf/a/a;->s:Lcom/elitecorelib/andsf/a/a;
+    move-object/from16 v19, v3
 
-    invoke-static/range {v18 .. v18}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+    const-string v3, "Received response: "
 
-    move-result-object v4
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "Ping Latency : %s Is Higher Than The Thresold Latency : %s"
-
-    const/4 v11, 0x2
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    invoke-static {v13, v14}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
-
-    move-result-object v12
-
-    const/4 v13, 0x0
-
-    aput-object v12, v11, v13
-
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v12}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v12
-
-    const/4 v13, 0x1
-
-    aput-object v12, v11, v13
-
-    invoke-static {v4, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    move-result-object v3
+
+    invoke-virtual {v5, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v4, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v5, 0x840
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const-string v5, "MobileStatus"
+
+    const-string v6, "/"
+
+    const-string v0, "event_constant_for_QOEparameter"
+
+    if-eqz v3, :cond_b
+
+    :try_start_1
+    const-string v3, "packetsent"
+
+    invoke-virtual {v4, v3}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    const-string v11, "packetreceive"
+
+    invoke-virtual {v4, v11}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v11
+
+    move-object/from16 v20, v2
+
+    const-string/jumbo v2, "value"
+
+    invoke-virtual {v4, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    move-object/from16 v21, v7
+
+    move-object/from16 v22, v8
+
+    int-to-double v7, v2
+
+    const-string v2, "packetLost"
+
+    invoke-virtual {v4, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    move-object/from16 v23, v9
+
+    move-object/from16 v24, v10
+
+    int-to-double v9, v2
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    move-object/from16 v25, v12
+
+    const-string v12, "Packets Sent : %s, Packets Received : %s, Latency : %s"
+
+    move-object/from16 v26, v6
+
+    const/4 v6, 0x3
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v16, 0x0
+
+    aput-object v3, v6, v16
+
+    invoke-static {v11}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v16, 0x1
+
+    aput-object v3, v6, v16
+
+    invoke-static {v7, v8}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/16 v16, 0x2
+
+    aput-object v3, v6, v16
+
+    invoke-static {v12, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v4, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->g(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v7, v8}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWLatency(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v9, v10}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWPacketLoss(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v5, v24
+
+    invoke-virtual {v15, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v6
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWJitter(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "="
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v15, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    invoke-static {v4}, Lcom/elitecorelib/andsf/utility/a;->c(Lorg/json/JSONObject;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_a
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Latency: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v7, v8}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-object/from16 v3, v26
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v4, v25
+
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v6, v23
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "Packet Loss: "
+
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v9, v10}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v9, v22
+
+    invoke-virtual {v15, v9}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v10
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Jitter: "
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v15, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v10
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v3, v21
+
+    invoke-virtual {v15, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v10
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v6, v20
+
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    const-wide/16 v16, 0x0
+
+    if-nez v2, :cond_2
+
+    if-eqz v11, :cond_1
+
+    cmpl-double v2, v7, v16
+
+    if-nez v2, :cond_2
+
+    :cond_1
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v3, "Latency is zero or Received packets is zero"
+
+    invoke-virtual {v2, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY_CATEGORY:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    new-instance v3, Ljava/util/Date;
+
+    invoke-direct {v3}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v4, Lcom/elitecorelib/andsf/a/a;->r:Lcom/elitecorelib/andsf/a/a;
+
+    invoke-static {v4}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+
     move-result-object v4
 
-    invoke-virtual {v0, v9, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY:Ljava/lang/String;
+    const-string v4, "WiFi Disconnected. %s , Result - FAIL"
 
-    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY_CATEGORY:Ljava/lang/String;
+    const/4 v5, 0x1
 
-    const-string v6, " high latency."
+    new-array v5, v5, [Ljava/lang/Object;
 
-    const/4 v13, 0x0
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    aput-object v6, v5, v7
+
+    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v2, " WiFi disconnected, Latency not match."
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a:Landroid/content/Context;
+
+    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY_CATEGORY:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto/16 :goto_5
+
+    :cond_2
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    const/4 v6, -0x1
+
+    if-nez v2, :cond_3
+
+    invoke-virtual {v15, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-ne v2, v6, :cond_3
+
+    const-wide/high16 v18, -0x4010000000000000L    # -1.0
+
+    cmpl-double v2, v7, v18
+
+    if-nez v2, :cond_3
+
+    if-ne v11, v6, :cond_3
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v3, "Latency is zero but internet available"
+
+    invoke-virtual {v2, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    new-instance v3, Ljava/util/Date;
+
+    invoke-direct {v3}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+
+    const-string v2, " Latency is zero but internet available, Already offloaded "
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
+
+    goto/16 :goto_5
+
+    :cond_3
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v10
+
+    cmpl-double v2, v10, v16
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v10
+
+    cmpl-double v2, v7, v10
+
+    if-lez v2, :cond_4
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v11, Lcom/elitecorelib/andsf/a/a;->s:Lcom/elitecorelib/andsf/a/a;
+
+    invoke-static {v11}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v11, "Ping Latency : %s Is Higher Than The Thresold Latency : %s"
+
+    const/4 v12, 0x2
+
+    new-array v12, v12, [Ljava/lang/Object;
+
+    invoke-static {v7, v8}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+
+    move-result-object v7
+
+    const/4 v8, 0x0
+
+    aput-object v7, v12, v8
+
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    const/4 v8, 0x1
+
+    aput-object v7, v12, v8
+
+    invoke-static {v11, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v14, v7}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY:Ljava/lang/String;
+
+    sget-object v7, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_LATTENCY_CATEGORY:Ljava/lang/String;
+
+    const-string v8, " high latency."
+
+    const/4 v10, 0x0
 
     goto :goto_1
 
     :cond_4
-    move-object v0, v8
+    move-object v2, v13
 
-    move-object v4, v0
+    move-object v7, v2
 
-    move-object v6, v4
+    move-object v8, v7
 
-    const/4 v13, 0x1
+    const/4 v10, 0x1
 
     :goto_1
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
@@ -2268,286 +2288,278 @@
 
     move-result-wide v11
 
-    const-wide/16 v20, 0x0
+    cmpl-double v18, v11, v16
 
-    cmpl-double v14, v11, v20
+    if-eqz v18, :cond_6
 
-    if-eqz v14, :cond_6
-
-    invoke-virtual {v10, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v15, v9}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
     move-result v11
 
-    const/4 v12, -0x1
-
-    if-le v11, v12, :cond_6
+    if-le v11, v6, :cond_6
 
     const-string v11, "packet_loss"
 
-    invoke-virtual {v10, v11}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v15, v11}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
     move-result v11
 
-    invoke-virtual {v10, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v15, v9}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v9
 
-    if-le v11, v2, :cond_6
+    if-le v11, v9, :cond_6
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v7
 
-    if-nez v2, :cond_5
+    if-nez v7, :cond_5
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v7
 
-    if-lez v2, :cond_5
+    if-lez v7, :cond_5
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, " And "
+    const-string v2, " And "
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS:Ljava/lang/String;
+    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS:Ljava/lang/String;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS_CATEGORY:Ljava/lang/String;
+    sget-object v7, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS_CATEGORY:Ljava/lang/String;
 
-    const-string v6, " high latency and high packet loss."
+    const-string v8, " high latency and high packet loss."
 
     goto :goto_2
 
     :cond_5
-    sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS:Ljava/lang/String;
+    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS:Ljava/lang/String;
 
-    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS_CATEGORY:Ljava/lang/String;
+    sget-object v7, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_PACKET_LOSS_CATEGORY:Ljava/lang/String;
 
-    const-string v6, " high packet loss."
+    const-string v8, " high packet loss."
 
     :goto_2
-    const/4 v13, 0x0
+    const/4 v10, 0x0
 
     :cond_6
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v15, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    invoke-static {v4}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v11
 
-    const-wide/16 v20, 0x0
+    cmpl-double v4, v11, v16
 
-    cmpl-double v2, v11, v20
+    if-eqz v4, :cond_8
 
-    if-eqz v2, :cond_8
+    invoke-virtual {v15, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
-    invoke-virtual {v10, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+    move-result v4
 
-    move-result v2
+    if-le v4, v6, :cond_8
 
-    const/4 v7, -0x1
+    invoke-virtual {v15, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
-    if-le v2, v7, :cond_8
+    move-result v4
 
-    invoke-virtual {v10, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v10, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v15, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
     move-result v3
 
-    if-le v2, v3, :cond_8
+    if-le v4, v3, :cond_8
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_7
+    if-nez v3, :cond_7
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v3
 
-    if-lez v2, :cond_7
+    if-lez v3, :cond_7
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, " and "
+    const-string v2, " and "
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER:Ljava/lang/String;
+    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER:Ljava/lang/String;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER_CATEGORY:Ljava/lang/String;
+    sget-object v7, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER_CATEGORY:Ljava/lang/String;
 
-    const-string v6, "high jitter and high packet loss."
+    const-string v8, "high jitter and high packet loss."
 
     goto :goto_3
 
     :cond_7
-    sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER:Ljava/lang/String;
+    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER:Ljava/lang/String;
 
-    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER_CATEGORY:Ljava/lang/String;
+    sget-object v7, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_JITTER_CATEGORY:Ljava/lang/String;
 
-    const-string v6, "high jitter."
+    const-string v8, "high jitter."
 
     :goto_3
-    const/4 v13, 0x0
+    const/4 v10, 0x0
 
     :cond_8
-    if-eqz v13, :cond_9
+    if-eqz v10, :cond_9
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    new-instance v2, Ljava/util/Date;
+    new-instance v3, Ljava/util/Date;
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    invoke-direct {v3}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
 
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
 
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    const-string v0, "Already offloaded data to the WiFi network."
+    const-string v2, "Already offloaded data to the WiFi network."
 
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     const-string v2, ".saveStartWIFIPassiveThroughput()"
 
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v14, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->i0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->u()V
 
     goto/16 :goto_5
 
     :cond_9
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Offload failed, "
+    const-string v4, "Offload failed, "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v15, v2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    invoke-virtual {v2, v0}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    invoke-virtual {v0, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
+    invoke-virtual {v2, v7}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    new-instance v2, Ljava/util/Date;
+    new-instance v3, Ljava/util/Date;
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    invoke-direct {v3}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
 
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
 
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->s:Landroid/content/Context;
+    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a:Landroid/content/Context;
 
-    invoke-static {v0, v4}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v0, v7}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -2565,13 +2577,13 @@
 
     const-string v3, "Failed to offload data to the WiFi network. Reason : %s , Result - FAIL"
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v4, v6, [Ljava/lang/Object;
 
     const/4 v5, 0x0
 
-    aput-object v6, v4, v5
+    aput-object v8, v4, v5
 
     invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2584,176 +2596,81 @@
     move-result-object v2
 
     :goto_4
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v14, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_5
 
     :cond_a
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v2, "Latency check is skip due to device is in idle mode."
+    move-object/from16 v3, v19
 
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
+    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
+    sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    new-instance v2, Ljava/util/Date;
+    new-instance v4, Ljava/util/Date;
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    invoke-direct {v4}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v4}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+    invoke-virtual {v2, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
 
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
 
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v4, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+    invoke-virtual {v2, v4}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    const-string v0, "Latency check is skip due to device is in idle mode."
+    invoke-static {v0, v3}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :cond_b
-    move-object v4, v14
+    move-object v3, v6
 
-    invoke-virtual {v11, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v6, 0x1
+
+    invoke-virtual {v4, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const/16 v3, 0x83f
+    const/16 v7, 0x83f
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v7}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_c
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v3, Lcom/elitecorelib/andsf/a/a;->v:Lcom/elitecorelib/andsf/a/a;
-
-    invoke-static {v3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "Latency Check Fail,Result - FAIL"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v9, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
-
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
-
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
-
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
-
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
-
-    const-string v0, "MobileStatus"
-
-    invoke-virtual {v11, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lc20;->g(Ljava/lang/String;)V
-
-    const-string v0, "Already connected to the WiFi."
-
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-
-    :cond_c
-    invoke-virtual {v11, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/16 v3, 0x7d5
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_e
 
     sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -2761,253 +2678,342 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Upload Download speed response data:: "
+    sget-object v6, Lcom/elitecorelib/andsf/a/a;->v:Lcom/elitecorelib/andsf/a/a;
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, "Latency Check Fail,Result - FAIL"
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    move-result-object v3
+
+    invoke-virtual {v2, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    new-instance v3, Ljava/util/Date;
+
+    invoke-direct {v3}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+
+    invoke-virtual {v4, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->g(Ljava/lang/String;)V
+
+    const-string v2, "Already connected to the WiFi."
+
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v0
 
-    invoke-virtual {v2, v9, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    goto/16 :goto_0
 
-    const-string v0, "Download_speed"
+    :cond_c
+    invoke-virtual {v4, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v11, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v0
+    const/16 v5, 0x7d5
 
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-wide v2
+    move-result-object v5
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v2
 
-    const-string v2, "Upload_speed"
+    if-eqz v2, :cond_e
 
-    invoke-virtual {v11, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Upload Download speed response data:: "
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v6, p1
+
+    const/4 v7, 0x1
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v14, v5}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v2, "Download_speed"
+
+    invoke-virtual {v4, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v2
+    move-result-wide v5
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v5, "Upload_speed"
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v4, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v5, "Upload: "
+    move-result-object v4
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-wide v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    const-string v5, "ANDSF_UPLOADSPEED"
+    move-result-object v4
 
-    invoke-virtual {v10, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Upload: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v6, v18
+
+    invoke-virtual {v15, v6}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v8, v17
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v5}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v5, "; "
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v9, "Download: "
 
-    move-result-object v3
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v15, v3}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-object/from16 v3, v16
 
-    const-string v5, "Download: "
+    invoke-virtual {v15, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "ANDSF_DOWNLOADSPEED"
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v10, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v4
+    invoke-static {v0, v5}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "; "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v15, v3}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWDownloadSpeed(Ljava/lang/String;)V
-
-    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v5, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v8
 
-    invoke-virtual {v3, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWUploadSpeed(Ljava/lang/String;)V
+    invoke-virtual {v5, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWDownloadSpeed(Ljava/lang/String;)V
 
-    sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    iget-object v5, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    const-string v4, "Device Upload Speed : %s, Policy Upload Speed : %s, Download Speed : %s, Download Speed : %s"
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v5, 0x4
+    move-result-object v8
 
-    new-array v5, v5, [Ljava/lang/Object;
+    invoke-virtual {v5, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setWUploadSpeed(Ljava/lang/String;)V
+
+    sget-object v5, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v8, "Device Upload Speed : %s, Policy Upload Speed : %s, Download Speed : %s, Download Speed : %s"
+
+    const/4 v9, 0x4
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    const/4 v11, 0x0
+
+    aput-object v10, v9, v11
+
+    invoke-virtual {v15, v6}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v9, v7
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v7, 0x0
-
-    aput-object v6, v5, v7
-
-    const-string v6, "ANDSF_UPLOADSPEED"
-
-    invoke-virtual {v10, v6}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v7, 0x1
-
-    aput-object v6, v5, v7
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
     const/4 v7, 0x2
 
-    aput-object v6, v5, v7
+    aput-object v6, v9, v7
+
+    invoke-virtual {v15, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
 
     const/4 v6, 0x3
 
-    const-string v7, "ANDSF_DOWNLOADSPEED"
+    aput-object v3, v9, v6
 
-    invoke-virtual {v10, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v3
 
-    aput-object v7, v5, v6
+    invoke-virtual {v5, v14, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v4, v2}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c(Ljava/lang/Double;Ljava/lang/Double;)Z
 
-    move-result-object v4
+    move-result v2
 
-    invoke-virtual {v3, v9, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v2, :cond_d
 
-    invoke-virtual {v1, v2, v0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a(Ljava/lang/Double;Ljava/lang/Double;)Z
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v2
 
-    if-nez v0, :cond_d
+    invoke-virtual {v15, v0, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v15}, Lc20;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v2, Lcom/elitecorelib/core/utility/o;
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v10, v15, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lt30;
-
-    invoke-static {v15}, Lc20;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lt30;-><init>(Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;Ljava/lang/String;Z)V
+    invoke-direct {v2, v1, v0, v3}, Lcom/elitecorelib/core/utility/o;-><init>(Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;Ljava/lang/String;Z)V
 
     invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
-    move-result-object v2
+    move-result-object v0
 
     new-array v3, v3, [Ljava/lang/Void;
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v2, v0, v3}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto/16 :goto_5
 
     :cond_d
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    sget-object v2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
+    sget-object v3, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    new-instance v2, Ljava/util/Date;
+    new-instance v3, Ljava/util/Date;
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    invoke-direct {v3}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setEndTime(Ljava/lang/Long;)V
 
-    new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+    new-instance v2, Lcom/elitecorelib/core/room/AnalyticsDBRep;
 
-    invoke-direct {v0}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v2, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v3, v1, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    const-string v0, "Already connected."
+    const-string v2, "Already connected."
 
-    invoke-static {v15, v0}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v15}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :cond_e
-    invoke-virtual {v11, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -3083,7 +3089,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v9, v0}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v14, v0}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_10
     :goto_5
@@ -3114,7 +3120,7 @@
 
     invoke-virtual {v3, v2, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->s:Landroid/content/Context;
+    iput-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a:Landroid/content/Context;
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -3136,9 +3142,9 @@
 
     invoke-static {p1}, Lcom/elitecorelib/analytics/utility/AnalyticsUtility;->resetRetryTimer(Landroid/content/Context;)V
 
-    invoke-static {}, Lc20;->b()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->B()V
 
-    invoke-static {}, Lc20;->S()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->e()Z
 
     move-result v4
 
@@ -3176,16 +3182,14 @@
 
     if-nez p2, :cond_0
 
-    invoke-static {p1, v5}, Lc20;->d(Landroid/content/Context;Z)V
+    invoke-static {p1, v5}, Lcom/elitecorelib/andsf/utility/a;->d(Landroid/content/Context;Z)V
 
     :cond_0
     invoke-static {p1}, Lcom/elitecorelib/analytics/utility/AnalyticsUtility;->getAnalyticPolicyEvaluationInstant(Landroid/content/Context;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v4, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->QOE:Ljava/lang/String;
 
@@ -3217,7 +3221,7 @@
     goto/16 :goto_2
 
     :cond_1
-    invoke-static {p1}, Lo00;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecore/wifi/api/b;->a(Landroid/content/Context;)Z
 
     move-result p2
 
@@ -3225,7 +3229,7 @@
 
     if-eqz p2, :cond_4
 
-    invoke-static {p1}, Lc20;->k(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->k(Landroid/content/Context;)Z
 
     move-result p2
 
@@ -3239,7 +3243,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lc20;->a(Landroid/net/wifi/WifiManager;)I
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/net/wifi/WifiManager;)I
 
     move-result p2
 
@@ -3248,7 +3252,7 @@
     goto/16 :goto_1
 
     :cond_2
-    invoke-static {p1}, Lc20;->k(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->k(Landroid/content/Context;)Z
 
     move-result p2
 
@@ -3262,13 +3266,13 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lc20;->a(Landroid/net/wifi/WifiManager;)I
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/net/wifi/WifiManager;)I
 
     move-result p2
 
     if-eq p2, v8, :cond_8
 
-    invoke-static {p1}, Lo00;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecore/wifi/api/b;->a(Landroid/content/Context;)Z
 
     move-result p2
 
@@ -3278,13 +3282,13 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lo00;->b(Ljava/lang/String;)Z
+    invoke-static {p2}, Lcom/elitecore/wifi/api/b;->b(Ljava/lang/String;)Z
 
     move-result p2
 
     if-nez p2, :cond_3
 
-    invoke-static {}, Lc20;->c()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->C()Z
 
     move-result p2
 
@@ -3307,17 +3311,17 @@
 
     if-eqz p2, :cond_8
 
-    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, "voice call is going on."
+    const-string/jumbo v8, "voice call is going on."
 
     invoke-virtual {p2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3325,27 +3329,27 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_ONCALL:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_ONCALL_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v8, Ljava/util/Date;
 
@@ -3365,7 +3369,7 @@
 
     invoke-direct {p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     :goto_0
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
@@ -3374,19 +3378,19 @@
 
     :cond_4
     :goto_1
-    invoke-static {p1}, Lc20;->k(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->k(Landroid/content/Context;)Z
 
     move-result p2
 
     if-eqz p2, :cond_5
 
-    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3398,27 +3402,27 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_AIRPLANE:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_AIRPLANE_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v8, Ljava/util/Date;
 
@@ -3438,7 +3442,7 @@
 
     invoke-direct {p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     goto :goto_0
 
@@ -3451,19 +3455,19 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lc20;->a(Landroid/net/wifi/WifiManager;)I
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/net/wifi/WifiManager;)I
 
     move-result p2
 
     if-ne p2, v8, :cond_6
 
-    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3475,27 +3479,27 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_HOTSPOT:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_HOTESPOT_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v8, Ljava/util/Date;
 
@@ -3515,24 +3519,24 @@
 
     invoke-direct {p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     goto/16 :goto_0
 
     :cond_6
-    invoke-static {p1}, Lo00;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecore/wifi/api/b;->a(Landroid/content/Context;)Z
 
     move-result p2
 
     if-nez p2, :cond_8
 
-    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3544,27 +3548,27 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_MOBILE:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_MOBILEDATA_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v8, Ljava/util/Date;
 
@@ -3584,7 +3588,7 @@
 
     invoke-direct {p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     goto/16 :goto_0
 
@@ -3596,13 +3600,13 @@
 
     invoke-virtual {p2, v2, v8}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3614,27 +3618,25 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    invoke-virtual {v8, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
-
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_BACKONTIMER_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v8, Ljava/util/Date;
 
@@ -3654,13 +3656,13 @@
 
     invoke-direct {p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object v8, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     goto/16 :goto_0
 
     :cond_8
     :goto_3
-    iget-boolean p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->u:Z
+    iget-boolean p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c:Z
 
     if-eqz p2, :cond_a
 
@@ -3672,14 +3674,12 @@
 
     const-string p1, "QOE check skip because BackON wait time running."
 
-    iput-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iput-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     :cond_9
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     if-eqz p1, :cond_17
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
@@ -3687,13 +3687,13 @@
 
     if-nez p1, :cond_17
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->v:Ljava/lang/String;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d:Ljava/lang/String;
 
     :goto_4
     invoke-virtual {p1, v2, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -3705,13 +3705,13 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lo00;->b(Ljava/lang/String;)Z
+    invoke-static {p2}, Lcom/elitecore/wifi/api/b;->b(Ljava/lang/String;)Z
 
     move-result p2
 
     if-nez p2, :cond_c
 
-    invoke-static {}, Lc20;->c()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->C()Z
 
     move-result p2
 
@@ -3738,11 +3738,11 @@
     :goto_5
     invoke-static {v7}, Lcom/elitecorelib/analytics/utility/AnalyticsUtility;->saveWiFiScanFlagForAnalytics(Z)V
 
-    const-string p1, "ssid_list"
+    const-string/jumbo p1, "ssid_list"
 
     const-string p2, "SAMOG_EAP_AKA_TEST,JioPrivateNet,JioHomeNet"
 
-    invoke-static {p1, p2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3800,15 +3800,15 @@
 
     if-nez p2, :cond_e
 
-    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->w:Z
+    iput-boolean v7, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->e:Z
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->WIFI:Ljava/lang/String;
 
     invoke-virtual {p2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionType(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->CONNECTED:Ljava/lang/String;
 
@@ -3817,15 +3817,15 @@
     :cond_e
     const-string p2, "QOE parameters evaluation started."
 
-    invoke-static {p2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
-    sput-object v0, Lc20;->a:Ljava/lang/String;
+    sput-object v0, Lcom/elitecorelib/andsf/utility/a;->a:Ljava/lang/String;
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lc20;->c0()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->o()Ljava/lang/String;
 
     move-result-object v8
 
@@ -3839,15 +3839,15 @@
 
     move-result-object p2
 
-    invoke-static {v1, p2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p2, "000000"
 
-    invoke-static {}, Lc20;->s()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->S()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-static {v8}, Lc20;->d(Ljava/lang/String;)Z
+    invoke-static {v8}, Lcom/elitecorelib/andsf/utility/a;->d(Ljava/lang/String;)Z
 
     move-result v8
 
@@ -3888,9 +3888,9 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lc20;->a(Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;)V
 
-    const-string v8, "validPolicyid"
+    const-string/jumbo v8, "validPolicyid"
 
     iget-object v9, p2, Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;->policyId:Ljava/lang/String;
 
@@ -3904,13 +3904,13 @@
 
     invoke-virtual {v3, v8, p2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-boolean p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->w:Z
+    iget-boolean p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->e:Z
 
     if-nez p2, :cond_10
 
-    invoke-static {v1}, Lu10;->a(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/api/e;->a(Ljava/lang/String;)V
 
-    invoke-static {}, Lu10;->d()Ljava/util/ArrayList;
+    invoke-static {}, Lcom/elitecorelib/andsf/api/e;->d()Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -3929,7 +3929,7 @@
     check-cast p2, Lcom/elitecorelib/andsf/pojonew/ANDSFDiscoveryInformations;
 
     :cond_10
-    iget-boolean p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->w:Z
+    iget-boolean p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->e:Z
 
     if-nez p2, :cond_11
 
@@ -3952,7 +3952,7 @@
 
     invoke-virtual {p2, v2, v5}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {p2, v4}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setSSID(Ljava/lang/String;)V
     :try_end_1
@@ -3963,7 +3963,7 @@
 
     move-result-object p1
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -3983,7 +3983,7 @@
 
     invoke-virtual {p2, v5}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setBSSID(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -4007,7 +4007,7 @@
 
     :catch_0
     :try_start_3
-    iget-boolean p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->w:Z
+    iget-boolean p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->e:Z
 
     if-nez p1, :cond_12
 
@@ -4018,13 +4018,13 @@
     invoke-virtual {v3, v6, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_12
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d()Z
 
     move-result p1
 
     if-eqz p1, :cond_14
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->c()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->e()Z
 
     move-result p1
 
@@ -4032,43 +4032,43 @@
 
     const-string p1, "LTE check, Wifi signal not match."
 
-    invoke-static {v1, p1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->d()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->f()V
 
     goto/16 :goto_7
 
     :cond_13
-    invoke-virtual {p0, v4}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v4}, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b(Ljava/lang/String;)V
 
     goto/16 :goto_7
 
     :cond_14
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->LTE:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setHandover(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_BATTERY:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedreason(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_BATTERY_CATEGORY:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setFailedCategory(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->DISCONNECTED:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;->setConnectionstatus(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     new-instance p2, Ljava/util/Date;
 
@@ -4088,7 +4088,7 @@
 
     invoke-direct {p1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->t:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
+    iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
@@ -4118,19 +4118,19 @@
 
     const-string p1, " WiFi disconnected, Battery not match."
 
-    invoke-static {v1, p1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->s:Landroid/content/Context;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFQAEParamEvaluateReceiver;->a:Landroid/content/Context;
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_BATTERY:Ljava/lang/String;
 
-    invoke-static {p1, p2}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     goto :goto_7
 

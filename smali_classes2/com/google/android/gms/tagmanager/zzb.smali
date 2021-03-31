@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzads:Lcom/google/android/gms/tagmanager/zza;
+.field private final synthetic zzads:Lcom/google/android/gms/tagmanager/zza;
 
 
 # direct methods

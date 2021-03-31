@@ -1,94 +1,108 @@
 .class public final Lcom/google/android/gms/internal/ads/zzme;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzmc;
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "IconAdOptionsParcelCreator"
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x15
 .end annotation
-
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
-    value = {
-        0x1
-    }
-.end annotation
-
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/internal/ads/zzme;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final zzawe:I
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        id = 0x2
-    .end annotation
-.end field
+.field private final zzbdd:I
+
+.field private zzbde:[Landroid/media/MediaCodecInfo;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Z)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzmf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzmf;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzme;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 2
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzme;->zzbdd:I
 
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .locals 0
-    .param p1    # I
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x2
-        .end annotation
-    .end param
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
-    .end annotation
+.method private final zzhm()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzme;->zzbde:[Landroid/media/MediaCodecInfo;
+
+    if-nez v0, :cond_0
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/internal/ads/zzme;->zzawe:I
+    new-instance v0, Landroid/media/MediaCodecList;
 
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzme;->zzbdd:I
+
+    invoke-direct {v0, v1}, Landroid/media/MediaCodecList;-><init>(I)V
+
+    invoke-virtual {v0}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzme;->zzbde:[Landroid/media/MediaCodecInfo;
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final getCodecCount()I
+    .locals 1
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
-
-    move-result p2
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzme;->zzhm()V
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzme;->zzawe:I
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzme;->zzbde:[Landroid/media/MediaCodecInfo;
 
-    const/4 v1, 0x2
+    array-length v0, v0
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    return v0
+.end method
 
-    .line 3
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
+.method public final getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
+    .locals 1
 
-    return-void
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzme;->zzhm()V
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzme;->zzbde:[Landroid/media/MediaCodecInfo;
+
+    aget-object p1, v0, p1
+
+    return-object p1
+.end method
+
+.method public final zza(Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+    .locals 0
+
+    const-string p1, "secure-playback"
+
+    .line 1
+    invoke-virtual {p2, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureSupported(Ljava/lang/String;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final zzhl()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

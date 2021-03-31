@@ -25,7 +25,7 @@
     const-string v0, "ConstraintProxy"
 
     .line 1
-    invoke-static {v0}, Lbl;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Landroidx/work/Logger;->tagWithPrefix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -50,7 +50,7 @@
             "(",
             "Landroid/content/Context;",
             "Ljava/util/List<",
-            "Lrn;",
+            "Landroidx/work/impl/model/WorkSpec;",
             ">;)V"
         }
     .end annotation
@@ -81,34 +81,34 @@
 
     move-result-object v5
 
-    check-cast v5, Lrn;
+    check-cast v5, Landroidx/work/impl/model/WorkSpec;
 
     .line 2
-    iget-object v5, v5, Lrn;->j:Luk;
+    iget-object v5, v5, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
     .line 3
-    invoke-virtual {v5}, Luk;->f()Z
+    invoke-virtual {v5}, Landroidx/work/Constraints;->requiresBatteryNotLow()Z
 
     move-result v6
 
     or-int/2addr v1, v6
 
     .line 4
-    invoke-virtual {v5}, Luk;->g()Z
+    invoke-virtual {v5}, Landroidx/work/Constraints;->requiresCharging()Z
 
     move-result v6
 
     or-int/2addr v2, v6
 
     .line 5
-    invoke-virtual {v5}, Luk;->i()Z
+    invoke-virtual {v5}, Landroidx/work/Constraints;->requiresStorageNotLow()Z
 
     move-result v6
 
     or-int/2addr v3, v6
 
     .line 6
-    invoke-virtual {v5}, Luk;->b()Landroidx/work/NetworkType;
+    invoke-virtual {v5}, Landroidx/work/Constraints;->getRequiredNetworkType()Landroidx/work/NetworkType;
 
     move-result-object v5
 
@@ -136,7 +136,7 @@
 
     .line 7
     :cond_2
-    invoke-static {p0, v1, v2, v3, v4}, Landroidx/work/impl/background/systemalarm/ConstraintProxyUpdateReceiver;->a(Landroid/content/Context;ZZZZ)Landroid/content/Intent;
+    invoke-static {p0, v1, v2, v3, v4}, Landroidx/work/impl/background/systemalarm/ConstraintProxyUpdateReceiver;->newConstraintProxyUpdateIntent(Landroid/content/Context;ZZZZ)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -152,7 +152,7 @@
     .locals 4
 
     .line 1
-    invoke-static {}, Lbl;->a()Lbl;
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v0
 
@@ -174,10 +174,10 @@
 
     new-array v2, v3, [Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v1, p2, v2}, Lbl;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1, p2, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     .line 2
-    invoke-static {p1}, Lam;->a(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static {p1}, Landroidx/work/impl/background/systemalarm/CommandHandler;->a(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object p2
 

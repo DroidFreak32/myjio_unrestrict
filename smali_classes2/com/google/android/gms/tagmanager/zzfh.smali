@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public zzakf:Lcom/google/android/gms/tagmanager/zzdz;
+.field private zzakf:Lcom/google/android/gms/tagmanager/zzdz;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tagmanager/zzdz<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public zzakg:Lcom/google/android/gms/internal/gtm/zzl;
+.field private zzakg:Lcom/google/android/gms/internal/gtm/zzl;
 
 
 # direct methods

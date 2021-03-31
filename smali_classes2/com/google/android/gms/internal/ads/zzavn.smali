@@ -1,28 +1,16 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzavn;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<P:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public abstract zzb(Ljava/lang/String;Ljava/lang/String;I)Lcom/google/android/gms/internal/ads/zzavt;
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract zzd(Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzani;I)Landroid/os/IBinder;
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "I)",
-            "Lcom/google/android/gms/internal/ads/zzavt<",
-            "TP;>;"
+            Landroid/os/RemoteException;
         }
     .end annotation
 .end method

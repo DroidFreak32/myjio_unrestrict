@@ -17,91 +17,91 @@
 # static fields
 .field public static final APPEND:I = 0x2
 
-.field public static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x8000
+.field private static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x8000
 
-.field public static final LOCAL_WINDOW_SIZE_MAX:I = 0x200000
+.field private static final LOCAL_WINDOW_SIZE_MAX:I = 0x200000
 
-.field public static final MAX_MSG_LENGTH:I = 0x40000
+.field private static final MAX_MSG_LENGTH:I = 0x40000
 
 .field public static final OVERWRITE:I = 0x0
 
 .field public static final RESUME:I = 0x1
 
-.field public static final SSH_FILEXFER_ATTR_ACMODTIME:I = 0x8
+.field private static final SSH_FILEXFER_ATTR_ACMODTIME:I = 0x8
 
-.field public static final SSH_FILEXFER_ATTR_EXTENDED:I = -0x80000000
+.field private static final SSH_FILEXFER_ATTR_EXTENDED:I = -0x80000000
 
-.field public static final SSH_FILEXFER_ATTR_PERMISSIONS:I = 0x4
+.field private static final SSH_FILEXFER_ATTR_PERMISSIONS:I = 0x4
 
-.field public static final SSH_FILEXFER_ATTR_SIZE:I = 0x1
+.field private static final SSH_FILEXFER_ATTR_SIZE:I = 0x1
 
-.field public static final SSH_FILEXFER_ATTR_UIDGID:I = 0x2
+.field private static final SSH_FILEXFER_ATTR_UIDGID:I = 0x2
 
-.field public static final SSH_FXF_APPEND:I = 0x4
+.field private static final SSH_FXF_APPEND:I = 0x4
 
-.field public static final SSH_FXF_CREAT:I = 0x8
+.field private static final SSH_FXF_CREAT:I = 0x8
 
-.field public static final SSH_FXF_EXCL:I = 0x20
+.field private static final SSH_FXF_EXCL:I = 0x20
 
-.field public static final SSH_FXF_READ:I = 0x1
+.field private static final SSH_FXF_READ:I = 0x1
 
-.field public static final SSH_FXF_TRUNC:I = 0x10
+.field private static final SSH_FXF_TRUNC:I = 0x10
 
-.field public static final SSH_FXF_WRITE:I = 0x2
+.field private static final SSH_FXF_WRITE:I = 0x2
 
-.field public static final SSH_FXP_ATTRS:B = 0x69t
+.field private static final SSH_FXP_ATTRS:B = 0x69t
 
-.field public static final SSH_FXP_CLOSE:B = 0x4t
+.field private static final SSH_FXP_CLOSE:B = 0x4t
 
-.field public static final SSH_FXP_DATA:B = 0x67t
+.field private static final SSH_FXP_DATA:B = 0x67t
 
-.field public static final SSH_FXP_EXTENDED:B = -0x38t
+.field private static final SSH_FXP_EXTENDED:B = -0x38t
 
-.field public static final SSH_FXP_EXTENDED_REPLY:B = -0x37t
+.field private static final SSH_FXP_EXTENDED_REPLY:B = -0x37t
 
-.field public static final SSH_FXP_FSETSTAT:B = 0xat
+.field private static final SSH_FXP_FSETSTAT:B = 0xat
 
-.field public static final SSH_FXP_FSTAT:B = 0x8t
+.field private static final SSH_FXP_FSTAT:B = 0x8t
 
-.field public static final SSH_FXP_HANDLE:B = 0x66t
+.field private static final SSH_FXP_HANDLE:B = 0x66t
 
-.field public static final SSH_FXP_INIT:B = 0x1t
+.field private static final SSH_FXP_INIT:B = 0x1t
 
-.field public static final SSH_FXP_LSTAT:B = 0x7t
+.field private static final SSH_FXP_LSTAT:B = 0x7t
 
-.field public static final SSH_FXP_MKDIR:B = 0xet
+.field private static final SSH_FXP_MKDIR:B = 0xet
 
-.field public static final SSH_FXP_NAME:B = 0x68t
+.field private static final SSH_FXP_NAME:B = 0x68t
 
-.field public static final SSH_FXP_OPEN:B = 0x3t
+.field private static final SSH_FXP_OPEN:B = 0x3t
 
-.field public static final SSH_FXP_OPENDIR:B = 0xbt
+.field private static final SSH_FXP_OPENDIR:B = 0xbt
 
-.field public static final SSH_FXP_READ:B = 0x5t
+.field private static final SSH_FXP_READ:B = 0x5t
 
-.field public static final SSH_FXP_READDIR:B = 0xct
+.field private static final SSH_FXP_READDIR:B = 0xct
 
-.field public static final SSH_FXP_READLINK:B = 0x13t
+.field private static final SSH_FXP_READLINK:B = 0x13t
 
-.field public static final SSH_FXP_REALPATH:B = 0x10t
+.field private static final SSH_FXP_REALPATH:B = 0x10t
 
-.field public static final SSH_FXP_REMOVE:B = 0xdt
+.field private static final SSH_FXP_REMOVE:B = 0xdt
 
-.field public static final SSH_FXP_RENAME:B = 0x12t
+.field private static final SSH_FXP_RENAME:B = 0x12t
 
-.field public static final SSH_FXP_RMDIR:B = 0xft
+.field private static final SSH_FXP_RMDIR:B = 0xft
 
-.field public static final SSH_FXP_SETSTAT:B = 0x9t
+.field private static final SSH_FXP_SETSTAT:B = 0x9t
 
-.field public static final SSH_FXP_STAT:B = 0x11t
+.field private static final SSH_FXP_STAT:B = 0x11t
 
-.field public static final SSH_FXP_STATUS:B = 0x65t
+.field private static final SSH_FXP_STATUS:B = 0x65t
 
-.field public static final SSH_FXP_SYMLINK:B = 0x14t
+.field private static final SSH_FXP_SYMLINK:B = 0x14t
 
-.field public static final SSH_FXP_VERSION:B = 0x2t
+.field private static final SSH_FXP_VERSION:B = 0x2t
 
-.field public static final SSH_FXP_WRITE:B = 0x6t
+.field private static final SSH_FXP_WRITE:B = 0x6t
 
 .field public static final SSH_FX_BAD_MESSAGE:I = 0x5
 
@@ -121,57 +121,57 @@
 
 .field public static final SSH_FX_PERMISSION_DENIED:I = 0x3
 
-.field public static final UTF8:Ljava/lang/String; = "UTF-8"
+.field private static final UTF8:Ljava/lang/String; = "UTF-8"
 
-.field public static final file_separator:Ljava/lang/String;
+.field private static final file_separator:Ljava/lang/String;
 
-.field public static final file_separatorc:C
+.field private static final file_separatorc:C
 
-.field public static fs_is_bs:Z
+.field private static fs_is_bs:Z
 
 
 # instance fields
-.field public ackid:[I
+.field private ackid:[I
 
-.field public buf:Lcom/jcraft/jsch/Buffer;
+.field private buf:Lcom/jcraft/jsch/Buffer;
 
-.field public client_version:I
+.field private client_version:I
 
-.field public cwd:Ljava/lang/String;
+.field private cwd:Ljava/lang/String;
 
-.field public extension_hardlink:Z
+.field private extension_hardlink:Z
 
-.field public extension_posix_rename:Z
+.field private extension_posix_rename:Z
 
-.field public extension_statvfs:Z
+.field private extension_statvfs:Z
 
-.field public extensions:Ljava/util/Hashtable;
+.field private extensions:Ljava/util/Hashtable;
 
-.field public fEncoding:Ljava/lang/String;
+.field private fEncoding:Ljava/lang/String;
 
-.field public fEncoding_is_utf8:Z
+.field private fEncoding_is_utf8:Z
 
-.field public home:Ljava/lang/String;
+.field private home:Ljava/lang/String;
 
-.field public interactive:Z
+.field private interactive:Z
 
-.field public io_in:Ljava/io/InputStream;
+.field private io_in:Ljava/io/InputStream;
 
-.field public lcwd:Ljava/lang/String;
+.field private lcwd:Ljava/lang/String;
 
-.field public obuf:Lcom/jcraft/jsch/Buffer;
+.field private obuf:Lcom/jcraft/jsch/Buffer;
 
-.field public opacket:Lcom/jcraft/jsch/Packet;
+.field private opacket:Lcom/jcraft/jsch/Packet;
 
-.field public packet:Lcom/jcraft/jsch/Packet;
+.field private packet:Lcom/jcraft/jsch/Packet;
 
-.field public rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
+.field private rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
-.field public seq:I
+.field private seq:I
 
-.field public server_version:I
+.field private server_version:I
 
-.field public version:Ljava/lang/String;
+.field private version:Ljava/lang/String;
 
 
 # direct methods
@@ -238,8 +238,6 @@
     iput v2, p0, Lcom/jcraft/jsch/ChannelSftp;->server_version:I
 
     .line 7
-    iget v2, p0, Lcom/jcraft/jsch/ChannelSftp;->client_version:I
-
     invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v2
@@ -298,6 +296,11 @@
 
 .method private _get(Ljava/lang/String;Ljava/io/OutputStream;Lcom/jcraft/jsch/SftpProgressMonitor;IJ)V
     .locals 20
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     move-object/from16 v7, p0
 
@@ -417,60 +420,67 @@
 
     const/16 v3, 0x400
 
-    move-wide v15, v1
+    move-wide v14, v1
+
+    const/4 v5, 0x1
 
     const/16 v6, 0x400
 
     goto :goto_1
 
     :cond_4
-    move-wide v15, v1
+    move-wide v14, v1
 
     move v6, v3
 
-    :goto_1
-    const/4 v14, 0x1
+    const/4 v5, 0x1
 
     .line 15
-    :goto_2
+    :goto_1
     iget-object v1, v7, Lcom/jcraft/jsch/ChannelSftp;->rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
     invoke-virtual {v1}, Lcom/jcraft/jsch/ChannelSftp$RequestQueue;->count()I
 
     move-result v1
 
-    if-ge v1, v14, :cond_5
+    if-ge v1, v5, :cond_5
 
     .line 16
-    iget-object v5, v7, Lcom/jcraft/jsch/ChannelSftp;->rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
+    iget-object v3, v7, Lcom/jcraft/jsch/ChannelSftp;->rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
     move-object/from16 v1, p0
 
     move-object v2, v12
 
-    move-wide v3, v15
+    move-object/from16 v16, v3
 
-    move-object/from16 v17, v5
+    move-wide v3, v14
+
+    move/from16 v17, v5
 
     move v5, v6
 
     move v10, v6
 
-    move-object/from16 v6, v17
+    move-object/from16 v6, v16
 
     invoke-direct/range {v1 .. v6}, Lcom/jcraft/jsch/ChannelSftp;->sendREAD([BJILcom/jcraft/jsch/ChannelSftp$RequestQueue;)V
 
     int-to-long v1, v10
 
-    add-long/2addr v15, v1
+    add-long/2addr v14, v1
 
     move v6, v10
 
+    move/from16 v5, v17
+
     const/4 v10, 0x4
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
+    move/from16 v17, v5
+
     move v10, v6
 
     .line 17
@@ -518,7 +528,7 @@
 
     if-ne v2, v13, :cond_6
 
-    goto :goto_3
+    goto :goto_2
 
     .line 23
     :cond_6
@@ -531,10 +541,10 @@
 
     if-eq v1, v2, :cond_8
 
-    :goto_3
+    :goto_2
     move-object/from16 v13, p2
 
-    goto :goto_6
+    goto :goto_5
 
     .line 24
     :cond_8
@@ -566,7 +576,7 @@
 
     move v3, v1
 
-    :goto_4
+    :goto_3
     if-lez v3, :cond_e
 
     .line 27
@@ -574,37 +584,29 @@
 
     iget-object v4, v4, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    array-length v4, v4
+    array-length v11, v4
 
-    if-le v3, v4, :cond_9
+    if-le v3, v11, :cond_9
 
     .line 28
-    iget-object v4, v7, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    array-length v11, v4
 
-    iget-object v4, v4, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v4, v4
-
-    goto :goto_5
+    goto :goto_4
 
     :cond_9
-    move v4, v3
+    move v11, v3
 
     .line 29
-    :goto_5
-    iget-object v11, v7, Lcom/jcraft/jsch/ChannelSftp;->io_in:Ljava/io/InputStream;
+    :goto_4
+    iget-object v13, v7, Lcom/jcraft/jsch/ChannelSftp;->io_in:Ljava/io/InputStream;
 
-    iget-object v13, v7, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v13, v13, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    invoke-virtual {v11, v13, v2, v4}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v13, v4, v2, v11}, Ljava/io/InputStream;->read([BII)I
 
     move-result v4
 
     if-gez v4, :cond_a
 
-    goto :goto_3
+    goto :goto_2
 
     .line 30
     :cond_a
@@ -645,7 +647,7 @@
 
     .line 34
     :cond_b
-    :goto_6
+    :goto_5
     invoke-virtual/range {p2 .. p2}, Ljava/io/OutputStream;->flush()V
 
     if-eqz v8, :cond_c
@@ -673,7 +675,7 @@
 
     const/4 v13, 0x1
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_e
     move-object/from16 v13, p2
@@ -725,7 +727,7 @@
 
     move v5, v0
 
-    move-object v15, v6
+    move-object v14, v6
 
     move-object v6, v10
 
@@ -740,28 +742,35 @@
 
     move-wide/from16 v18, v0
 
-    move-object v1, v15
+    move-object v1, v14
 
-    move-wide/from16 v15, v18
+    move-wide/from16 v14, v18
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_10
     move-object v1, v6
 
     .line 43
-    :goto_7
+    :goto_6
     iget-object v0, v7, Lcom/jcraft/jsch/ChannelSftp;->rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
     invoke-virtual {v0}, Lcom/jcraft/jsch/ChannelSftp$RequestQueue;->size()I
 
     move-result v0
 
-    if-ge v14, v0, :cond_11
+    move/from16 v2, v17
 
-    add-int/lit8 v14, v14, 0x1
+    if-ge v2, v0, :cond_11
+
+    add-int/lit8 v5, v2, 0x1
+
+    goto :goto_7
 
     :cond_11
+    move v5, v2
+
+    :goto_7
     move/from16 v6, p4
 
     move-object v0, v1
@@ -777,22 +786,24 @@
 
     move/from16 p4, v10
 
+    move/from16 v2, v17
+
     .line 44
-    iget-wide v2, v0, Lcom/jcraft/jsch/ChannelSftp$RequestQueue$OutOfOrderException;->offset:J
+    iget-wide v14, v0, Lcom/jcraft/jsch/ChannelSftp$RequestQueue$OutOfOrderException;->offset:J
 
     .line 45
     iget v0, v1, Lcom/jcraft/jsch/ChannelSftp$Header;->length:I
 
-    int-to-long v4, v0
+    int-to-long v3, v0
 
-    invoke-direct {v7, v4, v5}, Lcom/jcraft/jsch/ChannelSftp;->skip(J)V
+    invoke-direct {v7, v3, v4}, Lcom/jcraft/jsch/ChannelSftp;->skip(J)V
 
     .line 46
     iget-object v0, v7, Lcom/jcraft/jsch/ChannelSftp;->rq:Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
-    iget-object v4, v7, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v3, v7, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    invoke-virtual {v0, v1, v4}, Lcom/jcraft/jsch/ChannelSftp$RequestQueue;->cancel(Lcom/jcraft/jsch/ChannelSftp$Header;Lcom/jcraft/jsch/Buffer;)V
+    invoke-virtual {v0, v1, v3}, Lcom/jcraft/jsch/ChannelSftp$RequestQueue;->cancel(Lcom/jcraft/jsch/ChannelSftp$Header;Lcom/jcraft/jsch/Buffer;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -800,7 +811,7 @@
 
     move-object v0, v1
 
-    move-wide v15, v2
+    move v5, v2
 
     :goto_8
     const/4 v10, 0x4
@@ -809,7 +820,7 @@
 
     const/4 v13, 0x1
 
-    goto/16 :goto_2
+    goto/16 :goto_1
 
     :catch_1
     move-exception v0
@@ -837,6 +848,11 @@
 
 .method private _lstat(Ljava/lang/String;)Lcom/jcraft/jsch/SftpATTRS;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -939,6 +955,13 @@
 
 .method private _realpath(Ljava/lang/String;)[B
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;,
+            Ljava/io/IOException;,
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
@@ -1060,6 +1083,11 @@
 
 .method private _sendCLOSE([BLcom/jcraft/jsch/ChannelSftp$Header;)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/jcraft/jsch/ChannelSftp;->sendCLOSE([B)V
@@ -1076,6 +1104,11 @@
 
 .method private _setStat(Ljava/lang/String;Lcom/jcraft/jsch/SftpATTRS;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -1169,6 +1202,11 @@
 
 .method private _stat(Ljava/lang/String;)Lcom/jcraft/jsch/SftpATTRS;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 14
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
@@ -1186,6 +1224,11 @@
 
 .method private _stat([B)Lcom/jcraft/jsch/SftpATTRS;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -1282,6 +1325,11 @@
 
 .method private _statVFS(Ljava/lang/String;)Lcom/jcraft/jsch/SftpStatVFS;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 16
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
@@ -1299,6 +1347,11 @@
 
 .method private _statVFS([B)Lcom/jcraft/jsch/SftpStatVFS;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -1403,7 +1456,7 @@
 
     const/16 v0, 0x8
 
-    const-string/jumbo v1, "statvfs@openssh.com is not supported"
+    const-string v1, "statvfs@openssh.com is not supported"
 
     invoke-direct {p1, v0, v1}, Lcom/jcraft/jsch/SftpException;-><init>(ILjava/lang/String;)V
 
@@ -1421,6 +1474,11 @@
 
 .method public static synthetic access$100(Lcom/jcraft/jsch/ChannelSftp;[BJ[BII)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct/range {p0 .. p6}, Lcom/jcraft/jsch/ChannelSftp;->sendWRITE([BJ[BII)I
@@ -1432,6 +1490,11 @@
 
 .method public static synthetic access$1000(Lcom/jcraft/jsch/ChannelSftp;[BJILcom/jcraft/jsch/ChannelSftp$RequestQueue;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct/range {p0 .. p5}, Lcom/jcraft/jsch/ChannelSftp;->sendREAD([BJILcom/jcraft/jsch/ChannelSftp$RequestQueue;)V
@@ -1441,6 +1504,11 @@
 
 .method public static synthetic access$1100(Lcom/jcraft/jsch/ChannelSftp;Lcom/jcraft/jsch/Buffer;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/ChannelSftp;->fill(Lcom/jcraft/jsch/Buffer;I)V
@@ -1450,6 +1518,11 @@
 
 .method public static synthetic access$1200(Lcom/jcraft/jsch/ChannelSftp;[BII)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Lcom/jcraft/jsch/ChannelSftp;->fill([BII)I
@@ -1470,6 +1543,12 @@
 
 .method public static synthetic access$300(Lcom/jcraft/jsch/ChannelSftp;[ILcom/jcraft/jsch/ChannelSftp$Header;)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/ChannelSftp;->checkStatus([ILcom/jcraft/jsch/ChannelSftp$Header;)Z
@@ -1481,6 +1560,11 @@
 
 .method public static synthetic access$400(Lcom/jcraft/jsch/ChannelSftp;[BLcom/jcraft/jsch/ChannelSftp$Header;)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/ChannelSftp;->_sendCLOSE([BLcom/jcraft/jsch/ChannelSftp$Header;)Z
@@ -1492,6 +1576,11 @@
 
 .method public static synthetic access$500(Lcom/jcraft/jsch/ChannelSftp;Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/ChannelSftp$Header;)Lcom/jcraft/jsch/ChannelSftp$Header;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/ChannelSftp;->header(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/ChannelSftp$Header;)Lcom/jcraft/jsch/ChannelSftp$Header;
@@ -1503,6 +1592,11 @@
 
 .method public static synthetic access$600(Lcom/jcraft/jsch/ChannelSftp;J)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/ChannelSftp;->skip(J)V
@@ -1539,6 +1633,12 @@
 
 .method private checkStatus([ILcom/jcraft/jsch/ChannelSftp$Header;)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
@@ -1606,6 +1706,11 @@
 
 .method private fill([BII)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     move v0, p2
 
@@ -1645,6 +1750,11 @@
 
 .method private fill(Lcom/jcraft/jsch/Buffer;I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/jcraft/jsch/Buffer;->reset()V
@@ -1664,6 +1774,11 @@
 
 .method private getCwd()Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->cwd:Ljava/lang/String;
@@ -1685,7 +1800,12 @@
 .end method
 
 .method private glob_local(Ljava/lang/String;)Ljava/util/Vector;
-    .locals 7
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/util/Vector;
@@ -1858,14 +1978,12 @@
 
     sub-int/2addr v6, v4
 
-    new-array v6, v6, [B
+    new-array v7, v6, [B
 
     add-int/2addr v3, v4
 
     .line 14
-    array-length v4, v6
-
-    invoke-static {v2, v3, v6, p1, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v2, v3, v7, p1, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 15
     :try_start_0
@@ -1913,7 +2031,7 @@
 
     move-result-object v4
 
-    invoke-static {v6, v4}, Lcom/jcraft/jsch/Util;->glob([B[B)Z
+    invoke-static {v7, v4}, Lcom/jcraft/jsch/Util;->glob([B[B)Z
 
     move-result v4
 
@@ -1950,6 +2068,11 @@
 
 .method private glob_remote(Ljava/lang/String;)Ljava/util/Vector;
     .locals 16
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -1998,7 +2121,7 @@
 
     move-result-object v5
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/2addr v3, v4
 
     .line 5
     invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -2253,26 +2376,20 @@
 
     if-le v9, v10, :cond_b
 
-    move v6, v13
+    move v9, v13
 
     goto :goto_5
 
     :cond_b
-    array-length v6, v6
+    array-length v9, v6
 
-    sub-int/2addr v6, v15
+    sub-int/2addr v9, v15
 
     .line 35
     :goto_5
-    iget-object v9, v0, Lcom/jcraft/jsch/ChannelSftp;->io_in:Ljava/io/InputStream;
+    iget-object v10, v0, Lcom/jcraft/jsch/ChannelSftp;->io_in:Ljava/io/InputStream;
 
-    iget-object v10, v0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v15, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    iget v10, v10, Lcom/jcraft/jsch/Buffer;->index:I
-
-    invoke-virtual {v9, v15, v10, v6}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v10, v6, v15, v9}, Ljava/io/InputStream;->read([BII)I
 
     move-result v6
 
@@ -2382,9 +2499,7 @@
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
-
-    move-object v12, v6
+    move-result-object v12
 
     goto :goto_7
 
@@ -2432,6 +2547,11 @@
 
 .method private header(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/ChannelSftp$Header;)Lcom/jcraft/jsch/ChannelSftp$Header;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/jcraft/jsch/Buffer;->rewind()V
@@ -2473,7 +2593,7 @@
     return-object p2
 .end method
 
-.method public static isLocalAbsolutePath(Ljava/lang/String;)Z
+.method private static isLocalAbsolutePath(Ljava/lang/String;)Z
     .locals 1
 
     .line 1
@@ -2651,6 +2771,12 @@
 
 .method private isUnique(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;,
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/jcraft/jsch/ChannelSftp;->glob_remote(Ljava/lang/String;)Ljava/util/Vector;
@@ -2709,7 +2835,7 @@
 .end method
 
 .method private localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     .line 1
     invoke-static {p1}, Lcom/jcraft/jsch/ChannelSftp;->isLocalAbsolutePath(Ljava/lang/String;)Z
@@ -2754,11 +2880,9 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/jcraft/jsch/ChannelSftp;->lcwd:Ljava/lang/String;
+    iget-object v2, p0, Lcom/jcraft/jsch/ChannelSftp;->lcwd:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v1, Lcom/jcraft/jsch/ChannelSftp;->file_separator:Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2773,6 +2897,11 @@
 
 .method private putHEAD(BI)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 6
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
@@ -2784,6 +2913,11 @@
 
 .method private putHEAD(Lcom/jcraft/jsch/Buffer;BI)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x5e
 
@@ -2811,6 +2945,12 @@
 
 .method private read([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     :goto_0
     if-lez p3, :cond_1
@@ -2848,6 +2988,11 @@
 
 .method private remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -2912,6 +3057,11 @@
 
 .method private sendCLOSE([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -2923,6 +3073,11 @@
 
 .method private sendFSTAT([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x8
 
@@ -2934,6 +3089,11 @@
 
 .method private sendHARDLINK([B[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -2947,6 +3107,11 @@
 
 .method private sendINIT()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -2983,6 +3148,11 @@
 
 .method private sendLSTAT([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x7
 
@@ -2994,6 +3164,11 @@
 
 .method private sendMKDIR([BLcom/jcraft/jsch/SftpATTRS;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -3093,6 +3268,11 @@
 
 .method private sendOPEN([BI)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -3156,6 +3336,11 @@
 
 .method private sendOPENA([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0xa
 
@@ -3167,6 +3352,11 @@
 
 .method private sendOPENDIR([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0xb
 
@@ -3178,6 +3368,11 @@
 
 .method private sendOPENR([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -3189,6 +3384,11 @@
 
 .method private sendOPENW([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x1a
 
@@ -3200,6 +3400,11 @@
 
 .method private sendPacketPath(B[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3211,6 +3416,11 @@
 
 .method private sendPacketPath(B[BLjava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 2
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -3297,6 +3507,11 @@
 
 .method private sendPacketPath(B[B[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3308,6 +3523,11 @@
 
 .method private sendPacketPath(B[B[BLjava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 13
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -3403,6 +3623,11 @@
 
 .method private sendREAD([BJI)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v5, 0x0
 
@@ -3422,6 +3647,11 @@
 
 .method private sendREAD([BJILcom/jcraft/jsch/ChannelSftp$RequestQueue;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 2
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -3493,6 +3723,11 @@
 
 .method private sendREADDIR([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0xc
 
@@ -3504,6 +3739,11 @@
 
 .method private sendREADLINK([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x13
 
@@ -3515,6 +3755,11 @@
 
 .method private sendREALPATH([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x10
 
@@ -3526,6 +3771,11 @@
 
 .method private sendREMOVE([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0xd
 
@@ -3537,6 +3787,11 @@
 
 .method private sendRENAME([B[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp;->extension_posix_rename:Z
@@ -3560,6 +3815,11 @@
 
 .method private sendRMDIR([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0xf
 
@@ -3571,6 +3831,11 @@
 
 .method private sendSETSTAT([BLcom/jcraft/jsch/SftpATTRS;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
@@ -3639,6 +3904,11 @@
 
 .method private sendSTAT([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x11
 
@@ -3650,10 +3920,15 @@
 
 .method private sendSTATVFS([B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    const-string/jumbo v1, "statvfs@openssh.com"
+    const-string v1, "statvfs@openssh.com"
 
     .line 1
     invoke-direct {p0, v0, p1, v1}, Lcom/jcraft/jsch/ChannelSftp;->sendPacketPath(B[BLjava/lang/String;)V
@@ -3663,6 +3938,11 @@
 
 .method private sendSYMLINK([B[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/16 v0, 0x14
 
@@ -3673,7 +3953,12 @@
 .end method
 
 .method private sendWRITE([BJ[BII)I
-    .locals 5
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->opacket:Lcom/jcraft/jsch/Packet;
@@ -3687,43 +3972,41 @@
 
     array-length v2, v1
 
-    iget v0, v0, Lcom/jcraft/jsch/Buffer;->index:I
+    iget v3, v0, Lcom/jcraft/jsch/Buffer;->index:I
 
-    add-int/lit8 v3, v0, 0xd
+    add-int/lit8 v4, v3, 0xd
 
-    add-int/lit8 v3, v3, 0x15
+    add-int/lit8 v4, v4, 0x15
 
-    array-length v4, p1
+    array-length v5, p1
 
-    add-int/2addr v3, v4
+    add-int/2addr v4, v5
 
-    add-int/2addr v3, p6
+    add-int/2addr v4, p6
 
-    add-int/lit8 v3, v3, 0x54
+    add-int/lit8 v4, v4, 0x54
 
-    if-ge v2, v3, :cond_0
+    if-ge v2, v4, :cond_0
 
     .line 3
     array-length p6, v1
 
-    add-int/lit8 v0, v0, 0xd
+    add-int/lit8 v3, v3, 0xd
 
-    add-int/lit8 v0, v0, 0x15
+    add-int/lit8 v3, v3, 0x15
 
     array-length v1, p1
 
-    add-int/2addr v0, v1
+    add-int/2addr v3, v1
 
-    add-int/lit8 v0, v0, 0x54
+    add-int/lit8 v3, v3, 0x54
 
-    sub-int/2addr p6, v0
+    sub-int/2addr p6, v3
 
-    .line 4
     :cond_0
-    iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp;->obuf:Lcom/jcraft/jsch/Buffer;
-
     const/4 v1, 0x6
 
+    .line 4
     array-length v2, p1
 
     add-int/lit8 v2, v2, 0x15
@@ -3806,6 +4089,11 @@
 
 .method private skip(J)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     :goto_0
     const-wide/16 v0, 0x0
@@ -3839,6 +4127,11 @@
 
 .method private throwStatusError(Lcom/jcraft/jsch/Buffer;I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/jcraft/jsch/ChannelSftp;->server_version:I
@@ -3888,6 +4181,11 @@
 # virtual methods
 .method public _put(Ljava/io/InputStream;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V
     .locals 22
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     move-object/from16 v8, p0
 
@@ -4104,11 +4402,7 @@
     add-int/lit8 v16, v1, 0x27
 
     .line 21
-    iget-object v1, v8, Lcom/jcraft/jsch/ChannelSftp;->obuf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v1, v1, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v1, v1
+    array-length v1, v13
 
     sub-int v1, v1, v16
 
@@ -4177,11 +4471,9 @@
     .line 24
     iget v2, v8, Lcom/jcraft/jsch/ChannelSftp;->seq:I
 
-    sub-int/2addr v2, v11
+    add-int/lit8 v3, v2, -0x1
 
-    if-eq v2, v12, :cond_e
-
-    iget v2, v8, Lcom/jcraft/jsch/ChannelSftp;->seq:I
+    if-eq v3, v12, :cond_e
 
     sub-int/2addr v2, v12
 
@@ -4447,6 +4739,11 @@
 
 .method public cd(Ljava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -4578,6 +4875,11 @@
 
 .method public chgrp(ILjava/lang/String;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -4669,6 +4971,11 @@
 
 .method public chmod(ILjava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -4758,6 +5065,11 @@
 
 .method public chown(ILjava/lang/String;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -4867,6 +5179,11 @@
 
 .method public get(Ljava/lang/String;)Ljava/io/InputStream;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -4882,6 +5199,11 @@
 
 .method public get(Ljava/lang/String;I)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 p2, 0x0
 
@@ -4897,6 +5219,11 @@
 
 .method public get(Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -4910,6 +5237,11 @@
 
 .method public get(Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -4923,6 +5255,11 @@
 
 .method public get(Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;J)Ljava/io/InputStream;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -5088,6 +5425,11 @@
 
 .method public get(Ljava/lang/String;Ljava/io/OutputStream;)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v3, 0x0
 
@@ -5109,6 +5451,11 @@
 
 .method public get(Ljava/lang/String;Ljava/io/OutputStream;Lcom/jcraft/jsch/SftpProgressMonitor;)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v4, 0x0
 
@@ -5130,6 +5477,11 @@
 
 .method public get(Ljava/lang/String;Ljava/io/OutputStream;Lcom/jcraft/jsch/SftpProgressMonitor;IJ)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 43
     :try_start_0
@@ -5226,6 +5578,11 @@
 
 .method public get(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -5239,6 +5596,11 @@
 
 .method public get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -5250,6 +5612,11 @@
 
 .method public get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V
     .locals 24
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     move-object/from16 v8, p0
 
@@ -5314,22 +5681,20 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v4
 
-    if-nez v2, :cond_0
+    if-nez v4, :cond_0
 
     .line 11
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v3, Lcom/jcraft/jsch/ChannelSftp;->file_separator:Ljava/lang/String;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -5719,9 +6084,11 @@
     move-object/from16 v22, v4
 
     :goto_9
+    move/from16 v1, v17
+
     move-object/from16 v11, v22
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_a
     move-object/from16 p2, v6
@@ -5757,7 +6124,10 @@
 
     move-object v11, v1
 
-    goto :goto_a
+    :goto_a
+    move/from16 v1, v17
+
+    goto :goto_b
 
     :cond_b
     return-void
@@ -5790,10 +6160,8 @@
     :catch_8
     move-exception v0
 
-    const/16 v17, 0x0
-
-    :goto_a
-    if-nez v17, :cond_e
+    :goto_b
+    if-nez v1, :cond_e
 
     if-eqz v11, :cond_e
 
@@ -5882,6 +6250,11 @@
 
 .method public getHome()Ljava/lang/String;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -5949,6 +6322,11 @@
 
 .method public getServerVersion()I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/Channel;->isConnected()Z
@@ -5977,6 +6355,11 @@
 
 .method public hardlink(Ljava/lang/String;Ljava/lang/String;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -6185,6 +6568,11 @@
 
 .method public lcd(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/jcraft/jsch/ChannelSftp;->localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;
@@ -6244,6 +6632,11 @@
 
 .method public ls(Ljava/lang/String;)Ljava/util/Vector;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/util/Vector;
@@ -6262,7 +6655,12 @@
 .end method
 
 .method public ls(Ljava/lang/String;Lcom/jcraft/jsch/ChannelSftp$LsEntrySelector;)V
-    .locals 18
+    .locals 17
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
@@ -6470,12 +6868,10 @@
 
     move-result-object v8
 
-    move-object v11, v4
-
-    const/4 v4, 0x0
+    const/4 v11, 0x0
 
     :goto_3
-    if-nez v4, :cond_16
+    if-nez v11, :cond_16
 
     .line 31
     invoke-direct {v1, v8}, Lcom/jcraft/jsch/ChannelSftp;->sendREADDIR([B)V
@@ -6483,15 +6879,15 @@
     .line 32
     iget-object v12, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    invoke-direct {v1, v12, v11}, Lcom/jcraft/jsch/ChannelSftp;->header(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/ChannelSftp$Header;)Lcom/jcraft/jsch/ChannelSftp$Header;
+    invoke-direct {v1, v12, v4}, Lcom/jcraft/jsch/ChannelSftp;->header(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/ChannelSftp$Header;)Lcom/jcraft/jsch/ChannelSftp$Header;
 
-    move-result-object v11
+    move-result-object v4
 
     .line 33
-    iget v12, v11, Lcom/jcraft/jsch/ChannelSftp$Header;->length:I
+    iget v12, v4, Lcom/jcraft/jsch/ChannelSftp$Header;->length:I
 
     .line 34
-    iget v13, v11, Lcom/jcraft/jsch/ChannelSftp$Header;->type:I
+    iget v13, v4, Lcom/jcraft/jsch/ChannelSftp$Header;->type:I
 
     if-eq v13, v6, :cond_8
 
@@ -6527,7 +6923,7 @@
 
     if-ne v13, v5, :cond_9
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
     .line 38
     :cond_9
@@ -6575,57 +6971,39 @@
     .line 44
     iget-object v14, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v14, v14, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v15, v14, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    array-length v14, v14
+    array-length v6, v15
 
-    iget-object v15, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    iget v14, v14, Lcom/jcraft/jsch/Buffer;->index:I
 
-    iget v15, v15, Lcom/jcraft/jsch/Buffer;->index:I
+    add-int v7, v14, v12
 
-    add-int/2addr v15, v12
+    if-le v6, v7, :cond_b
 
-    if-le v14, v15, :cond_b
-
-    move v14, v12
+    move v6, v12
 
     goto :goto_6
 
     :cond_b
-    iget-object v14, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    array-length v6, v15
 
-    iget-object v14, v14, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v14, v14
-
-    iget-object v15, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget v15, v15, Lcom/jcraft/jsch/Buffer;->index:I
-
-    sub-int/2addr v14, v15
+    sub-int/2addr v6, v14
 
     .line 45
     :goto_6
-    iget-object v15, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v15, v15, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget v6, v6, Lcom/jcraft/jsch/Buffer;->index:I
-
-    invoke-direct {v1, v15, v6, v14}, Lcom/jcraft/jsch/ChannelSftp;->fill([BII)I
+    invoke-direct {v1, v15, v14, v6}, Lcom/jcraft/jsch/ChannelSftp;->fill([BII)I
 
     move-result v6
 
     .line 46
-    iget-object v14, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget v15, v14, Lcom/jcraft/jsch/Buffer;->index:I
+    iget v14, v7, Lcom/jcraft/jsch/Buffer;->index:I
 
-    add-int/2addr v15, v6
+    add-int/2addr v14, v6
 
-    iput v15, v14, Lcom/jcraft/jsch/Buffer;->index:I
+    iput v14, v7, Lcom/jcraft/jsch/Buffer;->index:I
 
     sub-int/2addr v12, v6
 
@@ -6638,46 +7016,51 @@
     move-result-object v6
 
     .line 48
-    iget v14, v1, Lcom/jcraft/jsch/ChannelSftp;->server_version:I
+    iget v7, v1, Lcom/jcraft/jsch/ChannelSftp;->server_version:I
 
-    const/4 v15, 0x3
+    const/4 v14, 0x3
 
-    if-gt v14, v15, :cond_d
+    if-gt v7, v14, :cond_d
 
     .line 49
-    iget-object v14, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    invoke-virtual {v14}, Lcom/jcraft/jsch/Buffer;->getString()[B
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Buffer;->getString()[B
 
-    move-result-object v14
+    move-result-object v7
 
     goto :goto_7
 
     :cond_d
-    move-object v14, v10
+    move-object v7, v10
 
     .line 50
     :goto_7
-    iget-object v15, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v14, v1, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    invoke-static {v15}, Lcom/jcraft/jsch/SftpATTRS;->getATTR(Lcom/jcraft/jsch/Buffer;)Lcom/jcraft/jsch/SftpATTRS;
+    invoke-static {v14}, Lcom/jcraft/jsch/SftpATTRS;->getATTR(Lcom/jcraft/jsch/Buffer;)Lcom/jcraft/jsch/SftpATTRS;
 
-    move-result-object v15
+    move-result-object v14
 
-    if-ne v4, v5, :cond_e
+    if-ne v11, v5, :cond_e
 
     add-int/lit8 v13, v13, -0x1
 
+    :goto_8
     const/16 v6, 0x65
+
+    const/4 v7, 0x0
 
     goto :goto_5
 
     :cond_e
     if-nez v0, :cond_f
 
-    move-object v7, v10
+    move-object v5, v10
 
-    goto :goto_9
+    const/4 v15, 0x1
+
+    goto :goto_a
 
     :cond_f
     if-nez v9, :cond_10
@@ -6685,138 +7068,134 @@
     .line 51
     invoke-static {v0, v6}, Lcom/jcraft/jsch/Util;->array_equals([B[B)Z
 
-    move-result v16
+    move-result v15
 
-    move-object v7, v10
+    move-object v5, v10
 
-    move/from16 v5, v16
-
-    goto :goto_9
+    goto :goto_a
 
     .line 52
     :cond_10
-    iget-boolean v5, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding_is_utf8:Z
+    iget-boolean v15, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding_is_utf8:Z
 
-    if-nez v5, :cond_11
+    if-nez v15, :cond_11
 
     .line 53
+    iget-object v15, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
+
+    invoke-static {v6, v15}, Lcom/jcraft/jsch/Util;->byte2str([BLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    const-string v5, "UTF-8"
+
+    .line 54
+    invoke-static {v15, v5}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;Ljava/lang/String;)[B
+
+    move-result-object v5
+
+    goto :goto_9
+
+    :cond_11
+    move-object v5, v6
+
+    move-object v15, v10
+
+    .line 55
+    :goto_9
+    invoke-static {v0, v5}, Lcom/jcraft/jsch/Util;->glob([B[B)Z
+
+    move-result v5
+
+    move-object/from16 v16, v15
+
+    move v15, v5
+
+    move-object/from16 v5, v16
+
+    :goto_a
+    if-eqz v15, :cond_14
+
+    if-nez v5, :cond_12
+
+    .line 56
     iget-object v5, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
 
     invoke-static {v6, v5}, Lcom/jcraft/jsch/Util;->byte2str([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v7, "UTF-8"
-
-    .line 54
-    invoke-static {v5, v7}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;Ljava/lang/String;)[B
-
-    move-result-object v7
-
-    goto :goto_8
-
-    :cond_11
-    move-object v7, v6
-
-    move-object v5, v10
-
-    .line 55
-    :goto_8
-    invoke-static {v0, v7}, Lcom/jcraft/jsch/Util;->glob([B[B)Z
-
-    move-result v7
-
-    move/from16 v17, v7
-
-    move-object v7, v5
-
-    move/from16 v5, v17
-
-    :goto_9
-    if-eqz v5, :cond_14
-
-    if-nez v7, :cond_12
-
-    .line 56
-    iget-object v4, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
-
-    invoke-static {v6, v4}, Lcom/jcraft/jsch/Util;->byte2str([BLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
     :cond_12
-    if-nez v14, :cond_13
+    if-nez v7, :cond_13
 
     .line 57
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v15}, Lcom/jcraft/jsch/SftpATTRS;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Lcom/jcraft/jsch/SftpATTRS;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, " "
+    const-string v7, " "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
-
-    goto :goto_a
-
-    .line 58
-    :cond_13
-    iget-object v4, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
-
-    invoke-static {v14, v4}, Lcom/jcraft/jsch/Util;->byte2str([BLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 59
-    :goto_a
-    new-instance v5, Lcom/jcraft/jsch/ChannelSftp$LsEntry;
-
-    invoke-direct {v5, v1, v7, v4, v15}, Lcom/jcraft/jsch/ChannelSftp$LsEntry;-><init>(Lcom/jcraft/jsch/ChannelSftp;Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpATTRS;)V
-
-    move-object/from16 v6, p2
-
-    invoke-interface {v6, v5}, Lcom/jcraft/jsch/ChannelSftp$LsEntrySelector;->select(Lcom/jcraft/jsch/ChannelSftp$LsEntry;)I
-
-    move-result v4
+    move-result-object v6
 
     goto :goto_b
 
-    :cond_14
-    move-object/from16 v6, p2
+    .line 58
+    :cond_13
+    iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
 
+    invoke-static {v7, v6}, Lcom/jcraft/jsch/Util;->byte2str([BLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 59
     :goto_b
+    new-instance v7, Lcom/jcraft/jsch/ChannelSftp$LsEntry;
+
+    invoke-direct {v7, v1, v5, v6, v14}, Lcom/jcraft/jsch/ChannelSftp$LsEntry;-><init>(Lcom/jcraft/jsch/ChannelSftp;Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpATTRS;)V
+
+    move-object/from16 v5, p2
+
+    invoke-interface {v5, v7}, Lcom/jcraft/jsch/ChannelSftp$LsEntrySelector;->select(Lcom/jcraft/jsch/ChannelSftp$LsEntry;)I
+
+    move-result v6
+
+    move v11, v6
+
+    goto :goto_c
+
+    :cond_14
+    move-object/from16 v5, p2
+
+    :goto_c
     add-int/lit8 v13, v13, -0x1
 
     const/4 v5, 0x1
 
-    const/16 v6, 0x65
-
-    const/4 v7, 0x0
-
-    goto/16 :goto_5
+    goto :goto_8
 
     :cond_15
-    move-object/from16 v6, p2
+    move-object/from16 v5, p2
 
-    const/16 v6, 0x65
+    const/4 v5, 0x1
 
     goto/16 :goto_3
 
     .line 60
     :cond_16
-    :goto_c
-    invoke-direct {v1, v8, v11}, Lcom/jcraft/jsch/ChannelSftp;->_sendCLOSE([BLcom/jcraft/jsch/ChannelSftp$Header;)Z
+    :goto_d
+    invoke-direct {v1, v8, v4}, Lcom/jcraft/jsch/ChannelSftp;->_sendCLOSE([BLcom/jcraft/jsch/ChannelSftp$Header;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -6846,6 +7225,11 @@
 
 .method public lstat(Ljava/lang/String;)Lcom/jcraft/jsch/SftpATTRS;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -6902,6 +7286,11 @@
 
 .method public mkdir(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -7011,6 +7400,11 @@
 
 .method public put(Ljava/lang/String;)Ljava/io/OutputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7026,6 +7420,11 @@
 
 .method public put(Ljava/lang/String;I)Ljava/io/OutputStream;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7039,6 +7438,11 @@
 
 .method public put(Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)Ljava/io/OutputStream;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-wide/16 v4, 0x0
 
@@ -7060,6 +7464,11 @@
 
 .method public put(Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;IJ)Ljava/io/OutputStream;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -7277,6 +7686,11 @@
 
 .method public put(Ljava/io/InputStream;Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7290,6 +7704,11 @@
 
 .method public put(Ljava/io/InputStream;Ljava/lang/String;I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7301,6 +7720,11 @@
 
 .method public put(Ljava/io/InputStream;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7312,6 +7736,11 @@
 
 .method public put(Ljava/io/InputStream;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -7483,6 +7912,11 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7496,6 +7930,11 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7507,6 +7946,11 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -7517,7 +7961,12 @@
 .end method
 
 .method public put(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V
-    .locals 23
+    .locals 21
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
@@ -7648,40 +8097,40 @@
 
     invoke-direct {v2, v5}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    move-object v6, v2
+    move-object v15, v2
 
-    move-object v15, v5
+    move-object/from16 v16, v5
 
     goto :goto_0
 
     :cond_4
     if-gt v13, v10, :cond_e
 
-    move-object v15, v5
+    move-object/from16 v16, v5
 
-    const/4 v6, 0x0
+    const/4 v15, 0x0
 
     :goto_0
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    if-ge v7, v13, :cond_d
+    if-ge v6, v13, :cond_d
 
     .line 20
-    invoke-virtual {v12, v7}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v12, v6}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    move-object v5, v2
+    move-object v7, v2
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v7, Ljava/lang/String;
 
     if-eqz v11, :cond_7
 
     .line 21
     sget-char v2, Lcom/jcraft/jsch/ChannelSftp;->file_separatorc:C
 
-    invoke-virtual {v5, v2}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v7, v2}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v2
 
@@ -7695,7 +8144,7 @@
     const/16 v3, 0x2f
 
     .line 23
-    invoke-virtual {v5, v3}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v7, v3}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v3
 
@@ -7709,7 +8158,7 @@
     if-ne v2, v4, :cond_6
 
     .line 24
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v15, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     goto :goto_2
 
@@ -7717,20 +8166,20 @@
     add-int/lit8 v2, v2, 0x1
 
     .line 25
-    invoke-virtual {v5, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v7, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v15, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 26
     :goto_2
-    invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v15}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     .line 27
-    invoke-virtual {v15}, Ljava/lang/String;->length()I
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
     move-result v3
 
@@ -7738,16 +8187,16 @@
 
     move-result v4
 
-    invoke-virtual {v6, v3, v4}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
+    invoke-virtual {v15, v3, v4}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-object v4, v2
+    move-object v5, v2
 
     goto :goto_3
 
     :cond_7
-    move-object v4, v15
+    move-object/from16 v5, v16
 
     :goto_3
     const-wide/16 v2, 0x0
@@ -7756,12 +8205,12 @@
 
     .line 28
     :try_start_1
-    invoke-direct {v1, v4}, Lcom/jcraft/jsch/ChannelSftp;->_stat(Ljava/lang/String;)Lcom/jcraft/jsch/SftpATTRS;
+    invoke-direct {v1, v5}, Lcom/jcraft/jsch/ChannelSftp;->_stat(Ljava/lang/String;)Lcom/jcraft/jsch/SftpATTRS;
 
-    move-result-object v16
+    move-result-object v4
 
     .line 29
-    invoke-virtual/range {v16 .. v16}, Lcom/jcraft/jsch/SftpATTRS;->getSize()J
+    invoke-virtual {v4}, Lcom/jcraft/jsch/SftpATTRS;->getSize()J
 
     move-result-wide v2
     :try_end_1
@@ -7770,19 +8219,19 @@
     .line 30
     :catch_0
     :try_start_2
-    new-instance v14, Ljava/io/File;
+    new-instance v4, Ljava/io/File;
 
-    invoke-direct {v14, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v14}, Ljava/io/File;->length()J
+    invoke-virtual {v4}, Ljava/io/File;->length()J
 
-    move-result-wide v16
+    move-result-wide v17
 
-    cmp-long v14, v16, v2
+    cmp-long v4, v17, v2
 
-    if-ltz v14, :cond_8
+    if-ltz v4, :cond_8
 
-    if-nez v14, :cond_9
+    if-nez v4, :cond_9
 
     return-void
 
@@ -7798,7 +8247,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -7809,60 +8258,58 @@
     throw v0
 
     :cond_9
+    move-wide v3, v2
+
     if-eqz v0, :cond_a
 
-    const/4 v14, 0x0
+    const/16 v17, 0x0
 
     .line 32
-    new-instance v9, Ljava/io/File;
+    new-instance v2, Ljava/io/File;
 
-    invoke-direct {v9, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v9}, Ljava/io/File;->length()J
+    invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v17
-
-    move-wide/from16 v19, v2
+    move-result-wide v18
 
     move-object/from16 v2, p3
 
-    move v3, v14
+    move-object/from16 p2, v15
 
-    move-object v9, v4
+    move-wide v14, v3
 
-    move-object v4, v5
+    move/from16 v3, v17
 
-    move-object v14, v5
+    move-object v4, v7
 
-    move-object v5, v9
+    move-object/from16 v17, v5
 
-    move-object/from16 v22, v6
+    move/from16 v20, v6
 
-    move/from16 v21, v7
+    move-object v9, v7
 
-    move-wide/from16 v6, v17
+    move-wide/from16 v6, v18
 
     invoke-interface/range {v2 .. v7}, Lcom/jcraft/jsch/SftpProgressMonitor;->init(ILjava/lang/String;Ljava/lang/String;J)V
 
     if-ne v8, v10, :cond_b
 
-    move-wide/from16 v2, v19
-
     .line 33
-    invoke-interface {v0, v2, v3}, Lcom/jcraft/jsch/SftpProgressMonitor;->count(J)Z
+    invoke-interface {v0, v14, v15}, Lcom/jcraft/jsch/SftpProgressMonitor;->count(J)Z
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_4
 
     :cond_a
-    move-object v9, v4
+    move-object/from16 v17, v5
 
-    move-object v14, v5
+    move/from16 v20, v6
 
-    move-object/from16 v22, v6
+    move-object v9, v7
 
-    move/from16 v21, v7
+    move-object/from16 p2, v15
 
     .line 34
     :cond_b
@@ -7870,13 +8317,15 @@
     :try_start_3
     new-instance v2, Ljava/io/FileInputStream;
 
-    invoke-direct {v2, v14}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v9}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
+    move-object/from16 v3, v17
+
     .line 35
     :try_start_4
-    invoke-virtual {v1, v2, v9, v0, v8}, Lcom/jcraft/jsch/ChannelSftp;->_put(Ljava/io/InputStream;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V
+    invoke-virtual {v1, v2, v3, v0, v8}, Lcom/jcraft/jsch/ChannelSftp;->_put(Ljava/io/InputStream;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
@@ -7884,9 +8333,9 @@
     :try_start_5
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
-    add-int/lit8 v7, v21, 0x1
+    add-int/lit8 v6, v20, 0x1
 
-    move-object/from16 v6, v22
+    move-object/from16 v15, p2
 
     const/4 v9, 0x4
 
@@ -7895,17 +8344,19 @@
     :catchall_0
     move-exception v0
 
+    move-object v14, v2
+
     goto :goto_5
 
     :catchall_1
     move-exception v0
 
-    const/4 v2, 0x0
+    const/4 v14, 0x0
 
     :goto_5
-    if-eqz v2, :cond_c
+    if-eqz v14, :cond_c
 
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v14}, Ljava/io/FileInputStream;->close()V
 
     :cond_c
     throw v0
@@ -7957,6 +8408,11 @@
 
 .method public pwd()Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/jcraft/jsch/ChannelSftp;->getCwd()Ljava/lang/String;
@@ -7977,6 +8433,11 @@
 
 .method public readlink(Ljava/lang/String;)Ljava/lang/String;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -8165,6 +8626,11 @@
 
 .method public realpath(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -8215,6 +8681,11 @@
 
 .method public rename(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -8418,6 +8889,11 @@
 
 .method public rm(Ljava/lang/String;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -8550,6 +9026,11 @@
 
 .method public rmdir(Ljava/lang/String;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 
@@ -8700,6 +9181,11 @@
 
 .method public setBulkRequests(I)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     if-lez p1, :cond_0
 
@@ -8768,6 +9254,11 @@
 
 .method public setFilenameEncoding(Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/ChannelSftp;->getServerVersion()I
@@ -8821,8 +9312,6 @@
     iput-object p1, p0, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
 
     .line 6
-    iget-object p1, p0, Lcom/jcraft/jsch/ChannelSftp;->fEncoding:Ljava/lang/String;
-
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -8834,6 +9323,11 @@
 
 .method public setMtime(Ljava/lang/String;I)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -8963,6 +9457,11 @@
 
 .method public setStat(Ljava/lang/String;Lcom/jcraft/jsch/SftpATTRS;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -9057,10 +9556,15 @@
 
 .method public start()V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "hardlink@openssh.com"
 
-    const-string/jumbo v1, "statvfs@openssh.com"
+    const-string v1, "statvfs@openssh.com"
 
     const-string v2, "posix-rename@openssh.com"
 
@@ -9094,24 +9598,21 @@
 
     iput-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->io_in:Ljava/io/InputStream;
 
-    .line 6
-    iget-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->io_in:Ljava/io/InputStream;
-
     if-eqz v3, :cond_5
 
-    .line 7
+    .line 6
     new-instance v3, Lcom/jcraft/jsch/RequestSftp;
 
     invoke-direct {v3}, Lcom/jcraft/jsch/RequestSftp;-><init>()V
 
-    .line 8
+    .line 7
     invoke-virtual {p0}, Lcom/jcraft/jsch/Channel;->getSession()Lcom/jcraft/jsch/Session;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4, p0}, Lcom/jcraft/jsch/RequestSftp;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
+    invoke-virtual {v3, v4, p0}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
 
-    .line 9
+    .line 8
     new-instance v3, Lcom/jcraft/jsch/Buffer;
 
     iget v4, p0, Lcom/jcraft/jsch/Channel;->lmpsize:I
@@ -9120,7 +9621,7 @@
 
     iput-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
-    .line 10
+    .line 9
     new-instance v3, Lcom/jcraft/jsch/Packet;
 
     iget-object v4, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
@@ -9129,7 +9630,7 @@
 
     iput-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->packet:Lcom/jcraft/jsch/Packet;
 
-    .line 11
+    .line 10
     new-instance v3, Lcom/jcraft/jsch/Buffer;
 
     iget v4, p0, Lcom/jcraft/jsch/Channel;->rmpsize:I
@@ -9138,7 +9639,7 @@
 
     iput-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->obuf:Lcom/jcraft/jsch/Buffer;
 
-    .line 12
+    .line 11
     new-instance v3, Lcom/jcraft/jsch/Packet;
 
     iget-object v4, p0, Lcom/jcraft/jsch/ChannelSftp;->obuf:Lcom/jcraft/jsch/Buffer;
@@ -9147,22 +9648,22 @@
 
     iput-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->opacket:Lcom/jcraft/jsch/Packet;
 
-    .line 13
+    .line 12
     invoke-direct {p0}, Lcom/jcraft/jsch/ChannelSftp;->sendINIT()V
 
-    .line 14
+    .line 13
     new-instance v3, Lcom/jcraft/jsch/ChannelSftp$Header;
 
     invoke-direct {v3, p0}, Lcom/jcraft/jsch/ChannelSftp$Header;-><init>(Lcom/jcraft/jsch/ChannelSftp;)V
 
-    .line 15
+    .line 14
     iget-object v4, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
     invoke-direct {p0, v4, v3}, Lcom/jcraft/jsch/ChannelSftp;->header(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/ChannelSftp$Header;)Lcom/jcraft/jsch/ChannelSftp$Header;
 
     move-result-object v3
 
-    .line 16
+    .line 15
     iget v4, v3, Lcom/jcraft/jsch/ChannelSftp$Header;->length:I
 
     const/high16 v5, 0x40000
@@ -9171,15 +9672,15 @@
 
     if-gt v4, v5, :cond_4
 
-    .line 17
+    .line 16
     iget v5, v3, Lcom/jcraft/jsch/ChannelSftp$Header;->type:I
 
-    .line 18
+    .line 17
     iget v3, v3, Lcom/jcraft/jsch/ChannelSftp$Header;->rid:I
 
     iput v3, p0, Lcom/jcraft/jsch/ChannelSftp;->server_version:I
 
-    .line 19
+    .line 18
     new-instance v3, Ljava/util/Hashtable;
 
     invoke-direct {v3}, Ljava/util/Hashtable;-><init>()V
@@ -9188,7 +9689,7 @@
 
     if-lez v4, :cond_0
 
-    .line 20
+    .line 19
     iget-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
     invoke-direct {p0, v3, v4}, Lcom/jcraft/jsch/ChannelSftp;->fill(Lcom/jcraft/jsch/Buffer;I)V
@@ -9196,35 +9697,35 @@
     :goto_0
     if-lez v4, :cond_0
 
-    .line 21
+    .line 20
     iget-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
     invoke-virtual {v3}, Lcom/jcraft/jsch/Buffer;->getString()[B
 
     move-result-object v3
 
-    .line 22
+    .line 21
     array-length v5, v3
 
     add-int/2addr v5, v6
 
     sub-int/2addr v4, v5
 
-    .line 23
+    .line 22
     iget-object v5, p0, Lcom/jcraft/jsch/ChannelSftp;->buf:Lcom/jcraft/jsch/Buffer;
 
     invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getString()[B
 
     move-result-object v5
 
-    .line 24
+    .line 23
     array-length v7, v5
 
     add-int/2addr v7, v6
 
     sub-int/2addr v4, v7
 
-    .line 25
+    .line 24
     iget-object v7, p0, Lcom/jcraft/jsch/ChannelSftp;->extensions:Ljava/util/Hashtable;
 
     invoke-static {v3}, Lcom/jcraft/jsch/Util;->byte2str([B)Ljava/lang/String;
@@ -9239,7 +9740,7 @@
 
     goto :goto_0
 
-    .line 26
+    .line 25
     :cond_0
     iget-object v3, p0, Lcom/jcraft/jsch/ChannelSftp;->extensions:Ljava/util/Hashtable;
 
@@ -9268,10 +9769,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 27
+    .line 26
     iput-boolean v5, p0, Lcom/jcraft/jsch/ChannelSftp;->extension_posix_rename:Z
 
-    .line 28
+    .line 27
     :cond_1
     iget-object v2, p0, Lcom/jcraft/jsch/ChannelSftp;->extensions:Ljava/util/Hashtable;
 
@@ -9295,10 +9796,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 29
+    .line 28
     iput-boolean v5, p0, Lcom/jcraft/jsch/ChannelSftp;->extension_statvfs:Z
 
-    .line 30
+    .line 29
     :cond_2
     iget-object v1, p0, Lcom/jcraft/jsch/ChannelSftp;->extensions:Ljava/util/Hashtable;
 
@@ -9320,10 +9821,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 31
+    .line 30
     iput-boolean v5, p0, Lcom/jcraft/jsch/ChannelSftp;->extension_hardlink:Z
 
-    .line 32
+    .line 31
     :cond_3
     new-instance v0, Ljava/io/File;
 
@@ -9339,7 +9840,7 @@
 
     return-void
 
-    .line 33
+    .line 32
     :cond_4
     new-instance v0, Lcom/jcraft/jsch/SftpException;
 
@@ -9361,7 +9862,7 @@
 
     throw v0
 
-    .line 34
+    .line 33
     :cond_5
     new-instance v0, Lcom/jcraft/jsch/JSchException;
 
@@ -9376,12 +9877,12 @@
     :catch_0
     move-exception v0
 
-    .line 35
+    .line 34
     instance-of v1, v0, Lcom/jcraft/jsch/JSchException;
 
     if-nez v1, :cond_6
 
-    .line 36
+    .line 35
     new-instance v1, Lcom/jcraft/jsch/JSchException;
 
     invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
@@ -9392,7 +9893,7 @@
 
     throw v1
 
-    .line 37
+    .line 36
     :cond_6
     check-cast v0, Lcom/jcraft/jsch/JSchException;
 
@@ -9401,6 +9902,11 @@
 
 .method public stat(Ljava/lang/String;)Lcom/jcraft/jsch/SftpATTRS;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -9457,6 +9963,11 @@
 
 .method public statVFS(Ljava/lang/String;)Lcom/jcraft/jsch/SftpStatVFS;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -9513,6 +10024,11 @@
 
 .method public symlink(Ljava/lang/String;Ljava/lang/String;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/SftpException;
+        }
+    .end annotation
 
     const-string v0, ""
 

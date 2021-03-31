@@ -21,6 +21,11 @@
 # virtual methods
 .method public final zza(F)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 11
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;
@@ -54,6 +59,11 @@
 
 .method public final zza(I)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;
@@ -87,6 +97,11 @@
 
 .method public final zza(Landroid/graphics/Bitmap;)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 16
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;
@@ -120,6 +135,11 @@
 
 .method public final zza(Ljava/lang/String;)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 6
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;
@@ -153,6 +173,11 @@
 
 .method public final zzb(Ljava/lang/String;)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;
@@ -186,6 +211,11 @@
 
 .method public final zzc(Ljava/lang/String;)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;
@@ -219,6 +249,11 @@
 
 .method public final zzi()Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;

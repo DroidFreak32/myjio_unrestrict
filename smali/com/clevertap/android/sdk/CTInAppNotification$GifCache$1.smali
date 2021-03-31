@@ -53,7 +53,7 @@
     .locals 2
 
     .line 2
-    invoke-static {p2}, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->access$100([B)I
+    invoke-static {p2}, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->access$000([B)I
 
     move-result p2
 

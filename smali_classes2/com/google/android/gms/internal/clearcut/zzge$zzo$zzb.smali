@@ -26,7 +26,7 @@
 
 
 # static fields
-.field public static final zzbq:Lcom/google/android/gms/internal/clearcut/zzck;
+.field private static final zzbq:Lcom/google/android/gms/internal/clearcut/zzck;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzck<",
@@ -36,70 +36,64 @@
     .end annotation
 .end field
 
-.field public static final enum zzyw:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+.field private static final enum zzyw:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-.field public static final enum zzyx:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+.field private static final enum zzyx:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-.field public static final enum zzyy:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+.field private static final enum zzyy:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-.field public static final synthetic zzyz:[Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+.field private static final synthetic zzyz:[Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-    const/4 v1, 0x0
+    const-string v1, "NONE"
 
-    const-string v2, "NONE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyw:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
     const-string v3, "WALL_CLOCK_SET"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyx:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyx:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-    const-string v4, "DEVICE_BOOT"
+    const-string v5, "DEVICE_BOOT"
 
-    invoke-direct {v0, v4, v3, v3}, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyy:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;-><init>(Ljava/lang/String;II)V
 
-    const/4 v0, 0x3
+    sput-object v3, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyy:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    const/4 v5, 0x3
 
-    sget-object v4, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyw:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    new-array v5, v5, [Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
-    aput-object v4, v0, v1
+    aput-object v0, v5, v2
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyx:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    aput-object v1, v5, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v5, v6
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyy:Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyz:[Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
+    sput-object v5, Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;->zzyz:[Lcom/google/android/gms/internal/clearcut/zzge$zzo$zzb;
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzgl;
 
@@ -110,7 +104,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

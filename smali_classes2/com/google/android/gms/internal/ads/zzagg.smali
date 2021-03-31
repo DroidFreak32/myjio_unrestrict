@@ -1,144 +1,66 @@
 .class public final Lcom/google/android/gms/internal/ads/zzagg;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic zzcjr:Ljava/io/OutputStream;
-
-.field public final synthetic zzcjs:[B
+.implements Lcom/google/android/gms/internal/ads/zzage;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzagf;Ljava/io/OutputStream;[B)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.formats.client.IUnconfirmedClickListener"
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjr:Ljava/io/OutputStream;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjs:[B
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
-
-    const/4 v0, 0x0
+.method public final onUnconfirmedClickCancelled()V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    :try_start_0
-    new-instance v1, Ljava/io/DataOutputStream;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjr:Ljava/io/OutputStream;
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v1, 0x2
 
     .line 2
-    :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjs:[B
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
 
-    array-length v0, v0
+    return-void
+.end method
 
-    invoke-virtual {v1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+.method public final onUnconfirmedClickReceived(Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 2
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 p1, 0x1
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjs:[B
-
-    invoke-virtual {v1, v0}, Ljava/io/DataOutputStream;->write([B)V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 4
-    invoke-static {v1}, Lcom/google/android/gms/common/util/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    move-object v4, v1
-
-    move-object v1, v0
-
-    move-object v0, v4
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v1
-
-    move-object v4, v1
-
-    move-object v1, v0
-
-    move-object v0, v4
-
-    :goto_0
-    :try_start_2
-    const-string v2, "Error transporting the ad response"
-
-    .line 5
-    invoke-static {v2, v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 6
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzeo()Lcom/google/android/gms/internal/ads/zzakr;
-
-    move-result-object v2
-
-    const-string v3, "LargeParcelTeleporter.pipeData.1"
-
-    invoke-virtual {v2, v0, v3}, Lcom/google/android/gms/internal/ads/zzakr;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    if-nez v1, :cond_0
-
-    .line 7
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjr:Ljava/io/OutputStream;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/util/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
-
-    return-void
-
-    .line 8
-    :cond_0
-    invoke-static {v1}, Lcom/google/android/gms/common/util/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
-
-    return-void
-
-    :catchall_1
-    move-exception v0
-
-    :goto_1
-    if-nez v1, :cond_1
-
-    .line 9
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzagg;->zzcjr:Ljava/io/OutputStream;
-
-    invoke-static {v1}, Lcom/google/android/gms/common/util/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
-
-    goto :goto_2
-
-    .line 10
-    :cond_1
-    invoke-static {v1}, Lcom/google/android/gms/common/util/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
-
-    :goto_2
-    throw v0
 .end method

@@ -62,7 +62,7 @@
 
     invoke-static {}, Lcom/elitecorelib/analytics/utility/AnalyticsUtility;->getSyncStart()J
 
-    const-string p1, "syncRetriedCount"
+    const-string/jumbo p1, "syncRetriedCount"
 
     invoke-virtual {v0, p1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
@@ -93,7 +93,7 @@
 
     if-nez p1, :cond_2
 
-    invoke-static {}, Lk40;->b()V
+    invoke-static {}, Lcom/elitecorelib/wifi/receiver/f;->b()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

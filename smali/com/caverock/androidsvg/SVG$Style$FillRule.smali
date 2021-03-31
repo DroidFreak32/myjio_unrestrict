@@ -27,49 +27,45 @@
 
 .field public static final enum NonZero:Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
-.field public static final synthetic s:[Lcom/caverock/androidsvg/SVG$Style$FillRule;
+.field public static final synthetic a:[Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
-    const/4 v1, 0x0
+    const-string v1, "NonZero"
 
-    const-string v2, "NonZero"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/caverock/androidsvg/SVG$Style$FillRule;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/SVG$Style$FillRule;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;->NonZero:Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
     .line 2
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
     const-string v3, "EvenOdd"
 
-    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/SVG$Style$FillRule;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;->EvenOdd:Lcom/caverock/androidsvg/SVG$Style$FillRule;
+    invoke-direct {v1, v3, v4}, Lcom/caverock/androidsvg/SVG$Style$FillRule;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/caverock/androidsvg/SVG$Style$FillRule;->EvenOdd:Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
-    new-array v0, v0, [Lcom/caverock/androidsvg/SVG$Style$FillRule;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/caverock/androidsvg/SVG$Style$FillRule;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/caverock/androidsvg/SVG$Style$FillRule;->NonZero:Lcom/caverock/androidsvg/SVG$Style$FillRule;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$FillRule;->EvenOdd:Lcom/caverock/androidsvg/SVG$Style$FillRule;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;->s:[Lcom/caverock/androidsvg/SVG$Style$FillRule;
+    sput-object v3, Lcom/caverock/androidsvg/SVG$Style$FillRule;->a:[Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
     return-void
 .end method
@@ -107,7 +103,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;->s:[Lcom/caverock/androidsvg/SVG$Style$FillRule;
+    sget-object v0, Lcom/caverock/androidsvg/SVG$Style$FillRule;->a:[Lcom/caverock/androidsvg/SVG$Style$FillRule;
 
     invoke-virtual {v0}, [Lcom/caverock/androidsvg/SVG$Style$FillRule;->clone()Ljava/lang/Object;
 

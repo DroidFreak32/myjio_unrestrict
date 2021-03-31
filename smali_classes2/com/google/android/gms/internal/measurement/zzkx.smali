@@ -1,144 +1,182 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzkx;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzde;
+.implements Ljava/util/ListIterator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/measurement/zzde<",
-        "Lcom/google/android/gms/internal/measurement/zzkw;",
+        "Ljava/util/ListIterator<",
+        "Ljava/lang/String;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static zza:Lcom/google/android/gms/internal/measurement/zzkx;
-
-
 # instance fields
-.field public final zzb:Lcom/google/android/gms/internal/measurement/zzde;
+.field private zza:Ljava/util/ListIterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/internal/measurement/zzde<",
-            "Lcom/google/android/gms/internal/measurement/zzkw;",
+            "Ljava/util/ListIterator<",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 .end field
 
+.field private final synthetic zzb:I
+
+.field private final synthetic zzc:Lcom/google/android/gms/internal/measurement/zzku;
+
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzkx;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzkx;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Lcom/google/android/gms/internal/measurement/zzkx;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzkz;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzkz;-><init>()V
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzdh;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/measurement/zzde;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzkx;-><init>(Lcom/google/android/gms/internal/measurement/zzde;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzde;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzku;I)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/measurement/zzde<",
-            "Lcom/google/android/gms/internal/measurement/zzkw;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zzc:Lcom/google/android/gms/internal/measurement/zzku;
+
+    iput p2, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zzb:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzdh;->zza(Lcom/google/android/gms/internal/measurement/zzde;)Lcom/google/android/gms/internal/measurement/zzde;
+    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzku;->zza(Lcom/google/android/gms/internal/measurement/zzku;)Lcom/google/android/gms/internal/measurement/zziq;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zzb:Lcom/google/android/gms/internal/measurement/zzde;
+    invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
 
     return-void
-.end method
-
-.method public static zzb()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Lcom/google/android/gms/internal/measurement/zzkx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzkx;->zza()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzkw;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzkw;->zza()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static zzc()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Lcom/google/android/gms/internal/measurement/zzkx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzkx;->zza()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzkw;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzkw;->zzb()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final synthetic zza()Ljava/lang/Object;
+.method public final synthetic add(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljava/lang/String;
+
+    .line 2
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final hasNext()Z
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zzb:Lcom/google/android/gms/internal/measurement/zzde;
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzde;->zza()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final hasPrevious()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzkw;
+    check-cast v0, Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public final nextIndex()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final synthetic previous()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final previousIndex()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkx;->zza:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final synthetic set(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljava/lang/String;
+
+    .line 2
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
 .end method

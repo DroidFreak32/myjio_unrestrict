@@ -27,54 +27,50 @@
 
 .field public static final enum HLS:Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
-.field public static final synthetic a:[Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
+.field private static final synthetic a:[Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
-    const/4 v1, 0x0
+    const-string v1, "DASH"
 
-    const-string v2, "DASH"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->DASH:Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
     .line 2
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
     const-string v3, "HLS"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->HLS:Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
+    invoke-direct {v1, v3, v4}, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->HLS:Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
-    new-array v0, v0, [Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->DASH:Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->HLS:Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->a:[Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
+    sput-object v3, Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;->a:[Lcom/google/ads/interactivemedia/v3/api/StreamRequest$StreamFormat;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final zzfm:I
+.field private final zzfm:I
 
-.field public final zzfn:I
+.field private final zzfn:I
 
 
 # direct methods
@@ -48,7 +48,7 @@
 .method public final zzj(I)B
     .locals 4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbe;->size()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v0
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final _buf16:[B
+.field private final _buf16:[B
 
 
 # direct methods

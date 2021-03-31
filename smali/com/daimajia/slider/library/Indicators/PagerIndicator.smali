@@ -17,25 +17,25 @@
 
 
 # instance fields
-.field public dataChangeObserver:Landroid/database/DataSetObserver;
+.field private dataChangeObserver:Landroid/database/DataSetObserver;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public mDefaultSelectedColor:I
+.field private mDefaultSelectedColor:I
 
-.field public mDefaultSelectedHeight:F
+.field private mDefaultSelectedHeight:F
 
-.field public mDefaultSelectedWidth:F
+.field private mDefaultSelectedWidth:F
 
-.field public mDefaultUnSelectedColor:I
+.field private mDefaultUnSelectedColor:I
 
-.field public mDefaultUnSelectedHeight:F
+.field private mDefaultUnSelectedHeight:F
 
-.field public mDefaultUnSelectedWidth:F
+.field private mDefaultUnSelectedWidth:F
 
-.field public mIndicatorShape:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
+.field private mIndicatorShape:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
-.field public mIndicators:Ljava/util/ArrayList;
+.field private mIndicators:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -45,55 +45,55 @@
     .end annotation
 .end field
 
-.field public mItemCount:I
+.field private mItemCount:I
 
-.field public mPadding_bottom:F
+.field private mPadding_bottom:F
 
-.field public mPadding_left:F
+.field private mPadding_left:F
 
-.field public mPadding_right:F
+.field private mPadding_right:F
 
-.field public mPadding_top:F
+.field private mPadding_top:F
 
-.field public mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
+.field private mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-.field public mPreviousSelectedIndicator:Landroid/widget/ImageView;
+.field private mPreviousSelectedIndicator:Landroid/widget/ImageView;
 
-.field public mPreviousSelectedPosition:I
+.field private mPreviousSelectedPosition:I
 
-.field public mSelectedDrawable:Landroid/graphics/drawable/Drawable;
+.field private mSelectedDrawable:Landroid/graphics/drawable/Drawable;
 
-.field public mSelectedGradientDrawable:Landroid/graphics/drawable/GradientDrawable;
+.field private mSelectedGradientDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-.field public mSelectedLayerDrawable:Landroid/graphics/drawable/LayerDrawable;
+.field private mSelectedLayerDrawable:Landroid/graphics/drawable/LayerDrawable;
 
-.field public mSelectedPadding_Bottom:F
+.field private mSelectedPadding_Bottom:F
 
-.field public mSelectedPadding_Left:F
+.field private mSelectedPadding_Left:F
 
-.field public mSelectedPadding_Right:F
+.field private mSelectedPadding_Right:F
 
-.field public mSelectedPadding_Top:F
+.field private mSelectedPadding_Top:F
 
-.field public mUnSelectedGradientDrawable:Landroid/graphics/drawable/GradientDrawable;
+.field private mUnSelectedGradientDrawable:Landroid/graphics/drawable/GradientDrawable;
 
-.field public mUnSelectedLayerDrawable:Landroid/graphics/drawable/LayerDrawable;
+.field private mUnSelectedLayerDrawable:Landroid/graphics/drawable/LayerDrawable;
 
-.field public mUnSelectedPadding_Bottom:F
+.field private mUnSelectedPadding_Bottom:F
 
-.field public mUnSelectedPadding_Left:F
+.field private mUnSelectedPadding_Left:F
 
-.field public mUnSelectedPadding_Right:F
+.field private mUnSelectedPadding_Right:F
 
-.field public mUnSelectedPadding_Top:F
+.field private mUnSelectedPadding_Top:F
 
-.field public mUnselectedDrawable:Landroid/graphics/drawable/Drawable;
+.field private mUnselectedDrawable:Landroid/graphics/drawable/Drawable;
 
-.field public mUserSetSelectedIndicatorResId:I
+.field private mUserSetSelectedIndicatorResId:I
 
-.field public mUserSetUnSelectedIndicatorResId:I
+.field private mUserSetUnSelectedIndicatorResId:I
 
-.field public mVisibility:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+.field private mVisibility:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
 
 # direct methods
@@ -130,33 +130,31 @@
     iput-object v1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mVisibility:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
     .line 6
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mIndicators:Ljava/util/ArrayList;
+    iput-object v2, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mIndicators:Ljava/util/ArrayList;
 
     .line 7
-    new-instance v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$1;
+    new-instance v2, Lcom/daimajia/slider/library/Indicators/PagerIndicator$1;
 
-    invoke-direct {v1, p0}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$1;-><init>(Lcom/daimajia/slider/library/Indicators/PagerIndicator;)V
+    invoke-direct {v2, p0}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$1;-><init>(Lcom/daimajia/slider/library/Indicators/PagerIndicator;)V
 
-    iput-object v1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->dataChangeObserver:Landroid/database/DataSetObserver;
+    iput-object v2, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->dataChangeObserver:Landroid/database/DataSetObserver;
 
     .line 8
     iput-object p1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mContext:Landroid/content/Context;
 
     .line 9
-    sget-object v1, Lcom/daimajia/slider/library/R$styleable;->PagerIndicator:[I
+    sget-object v2, Lcom/daimajia/slider/library/R$styleable;->PagerIndicator:[I
 
-    invoke-virtual {p1, p2, v1, v0, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v2, v0, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
     .line 10
     sget p2, Lcom/daimajia/slider/library/R$styleable;->PagerIndicator_visibility:I
-
-    sget-object v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->Visible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -623,8 +621,6 @@
 
     iget v0, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mDefaultUnSelectedHeight:F
 
-    sget-object v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Unit;->Px:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Unit;
-
     invoke-virtual {p0, p2, v0, v1}, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->setDefaultUnselectedIndicatorSize(FFLcom/daimajia/slider/library/Indicators/PagerIndicator$Unit;)V
 
     .line 46
@@ -764,7 +760,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -775,7 +771,7 @@
     .line 2
     iget-object v0, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -791,11 +787,11 @@
     :cond_0
     iget-object v0, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lsk;->getCount()I
+    invoke-virtual {v0}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I
 
     move-result v0
 
@@ -972,7 +968,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -984,7 +980,7 @@
     :cond_0
     iget-object v0, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -1000,7 +996,7 @@
     .line 4
     iget-object v1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->dataChangeObserver:Landroid/database/DataSetObserver;
 
-    invoke-virtual {v0, v1}, Lsk;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-virtual {v0, v1}, Landroidx/viewpager/widget/PagerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 5
     :cond_1
@@ -1455,7 +1451,7 @@
     .locals 1
 
     .line 1
-    invoke-virtual {p1}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {p1}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -1465,14 +1461,12 @@
     iput-object p1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
     .line 3
-    iget-object p1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
-
     invoke-virtual {p1, p0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->addOnPageChangeListener(Lcom/daimajia/slider/library/Tricks/ViewPagerEx$OnPageChangeListener;)V
 
     .line 4
     iget-object p1, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->mPager:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-virtual {p1}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Lsk;
+    invoke-virtual {p1}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object p1
 
@@ -1484,7 +1478,7 @@
 
     iget-object v0, p0, Lcom/daimajia/slider/library/Indicators/PagerIndicator;->dataChangeObserver:Landroid/database/DataSetObserver;
 
-    invoke-virtual {p1, v0}, Lsk;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-virtual {p1, v0}, Landroidx/viewpager/widget/PagerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     return-void
 

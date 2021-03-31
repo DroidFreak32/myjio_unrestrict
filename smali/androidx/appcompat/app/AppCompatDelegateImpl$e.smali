@@ -3,12 +3,12 @@
 .source "AppCompatDelegateImpl.java"
 
 # interfaces
-.implements Landroidx/appcompat/widget/ContentFrameLayout$a;
+.implements Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/app/AppCompatDelegateImpl;->p()Landroid/view/ViewGroup;
+    value = Landroidx/appcompat/app/AppCompatDelegateImpl;->o()Landroid/view/ViewGroup;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public a()V
+.method public onAttachedFromWindow()V
     .locals 0
 
     return-void
@@ -47,7 +47,7 @@
     .line 1
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$e;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->q()V
+    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->p()V
 
     return-void
 .end method

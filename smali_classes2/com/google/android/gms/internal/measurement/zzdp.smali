@@ -1,6 +1,6 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzdp;
-.super Lcom/google/android/gms/internal/measurement/zzdk;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.class public abstract Lcom/google/android/gms/internal/measurement/zzdp;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # direct methods
@@ -8,18 +8,27 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzdk;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 0
+.method public abstract zza()Landroid/content/Context;
+.end method
 
-    .line 1
-    invoke-virtual {p1, p2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+.method public abstract zzb()Lcom/google/android/gms/internal/measurement/zzec;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/measurement/zzec<",
+            "Lcom/google/android/gms/internal/measurement/zzdy<",
+            "Lcom/google/android/gms/internal/measurement/zzdd;",
+            ">;>;"
+        }
+    .end annotation
 
-    return-void
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 .end method

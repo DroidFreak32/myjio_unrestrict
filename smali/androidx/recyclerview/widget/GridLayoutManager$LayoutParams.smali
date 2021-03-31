@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final INVALID_SPAN_ID:I = -0x1
+
+
 # instance fields
 .field public e:I
 
@@ -97,9 +101,28 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)V
+    .locals 0
+
+    .line 13
+    invoke-direct {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)V
+
+    const/4 p1, -0x1
+
+    .line 14
+    iput p1, p0, Landroidx/recyclerview/widget/GridLayoutManager$LayoutParams;->e:I
+
+    const/4 p1, 0x0
+
+    .line 15
+    iput p1, p0, Landroidx/recyclerview/widget/GridLayoutManager$LayoutParams;->f:I
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public e()I
+.method public getSpanIndex()I
     .locals 1
 
     .line 1
@@ -108,7 +131,7 @@
     return v0
 .end method
 
-.method public f()I
+.method public getSpanSize()I
     .locals 1
 
     .line 1

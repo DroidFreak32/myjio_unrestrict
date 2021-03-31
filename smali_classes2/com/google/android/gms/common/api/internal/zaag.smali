@@ -1,279 +1,342 @@
-.class public Lcom/google/android/gms/common/api/internal/zaag;
-.super Lcom/google/android/gms/common/api/GoogleApiClient;
+.class public final Lcom/google/android/gms/common/api/internal/zaag;
+.super Lcom/google/android/gms/common/api/internal/zaap;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final zafs:Ljava/lang/String;
+.field public final synthetic zaa:Lcom/google/android/gms/common/api/internal/zaaf;
+
+.field private final zab:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Lcom/google/android/gms/common/api/Api$Client;",
+            "Lcom/google/android/gms/common/api/internal/zaah;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaaf;Ljava/util/Map;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Lcom/google/android/gms/common/api/Api$Client;",
+            "Lcom/google/android/gms/common/api/internal/zaah;",
+            ">;)V"
+        }
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/GoogleApiClient;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/common/api/internal/zaap;-><init>(Lcom/google/android/gms/common/api/internal/zaaf;Lcom/google/android/gms/common/api/internal/zaae;)V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zaag;->zab:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public blockingConnect()Lcom/google/android/gms/common/ConnectionResult;
-    .locals 2
+.method public final zaa()V
+    .locals 6
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
     .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    new-instance v0, Lcom/google/android/gms/common/internal/zal;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zab(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
 
-    throw v0
-.end method
+    move-result-object v1
 
-.method public blockingConnect(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/ConnectionResult;
-    .locals 0
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/internal/zal;-><init>(Lcom/google/android/gms/common/GoogleApiAvailabilityLight;)V
 
     .line 2
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    .line 3
+    new-instance v2, Ljava/util/ArrayList;
 
-    throw p1
-.end method
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-.method public clearDefaultAccountAndReconnect()Lcom/google/android/gms/common/api/PendingResult;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/common/api/PendingResult<",
-            "Lcom/google/android/gms/common/api/Status;",
-            ">;"
-        }
-    .end annotation
+    .line 4
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/zaag;->zab:Ljava/util/Map;
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    move-result-object v3
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    throw v0
-.end method
+    move-result-object v3
 
-.method public connect()V
-    .locals 2
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    move-result v4
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    if-eqz v4, :cond_1
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    throw v0
-.end method
+    move-result-object v4
 
-.method public disconnect()V
-    .locals 2
+    check-cast v4, Lcom/google/android/gms/common/api/Api$Client;
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .line 5
+    invoke-interface {v4}, Lcom/google/android/gms/common/api/Api$Client;->requiresGooglePlayServices()Z
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    move-result v5
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    if-eqz v5, :cond_0
 
-    throw v0
-.end method
+    iget-object v5, p0, Lcom/google/android/gms/common/api/internal/zaag;->zab:Ljava/util/Map;
 
-.method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 0
+    invoke-interface {v5, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    move-result-object v5
 
-    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    check-cast v5, Lcom/google/android/gms/common/api/internal/zaah;
 
-    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v5}, Lcom/google/android/gms/common/api/internal/zaah;->zaa(Lcom/google/android/gms/common/api/internal/zaah;)Z
 
-    throw p1
-.end method
+    move-result v5
 
-.method public getConnectionResult(Lcom/google/android/gms/common/api/Api;)Lcom/google/android/gms/common/ConnectionResult;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/Api<",
-            "*>;)",
-            "Lcom/google/android/gms/common/ConnectionResult;"
-        }
-    .end annotation
+    if-nez v5, :cond_0
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    .line 6
+    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    goto :goto_0
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    .line 7
+    :cond_0
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    throw p1
-.end method
+    goto :goto_0
 
-.method public hasConnectedApi(Lcom/google/android/gms/common/api/Api;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/Api<",
-            "*>;)Z"
-        }
-    .end annotation
+    :cond_1
+    const/4 v3, -0x1
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    .line 8
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    move-result v4
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    const/4 v5, 0x0
 
-    throw p1
-.end method
+    if-eqz v4, :cond_3
 
-.method public isConnected()Z
-    .locals 2
+    .line 9
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    move-result v1
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    :cond_2
+    if-ge v5, v1, :cond_5
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    throw v0
-.end method
+    move-result-object v3
 
-.method public isConnecting()Z
-    .locals 2
+    add-int/lit8 v5, v5, 0x1
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    check-cast v3, Lcom/google/android/gms/common/api/Api$Client;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    .line 10
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v4}, Lcom/google/android/gms/common/api/internal/zaaf;->zaa(Lcom/google/android/gms/common/api/internal/zaaf;)Landroid/content/Context;
 
-    throw v0
-.end method
+    move-result-object v4
 
-.method public isConnectionCallbacksRegistered(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Z
-    .locals 1
+    invoke-virtual {v0, v4, v3}, Lcom/google/android/gms/common/internal/zal;->zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/Api$Client;)I
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    move-result v3
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    if-nez v3, :cond_2
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    goto :goto_1
 
-    throw p1
-.end method
+    .line 11
+    :cond_3
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-.method public isConnectionFailedListenerRegistered(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Z
-    .locals 1
+    move-result v2
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    :cond_4
+    if-ge v5, v2, :cond_5
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result-object v3
 
-    throw p1
-.end method
+    add-int/lit8 v5, v5, 0x1
 
-.method public reconnect()V
-    .locals 2
+    check-cast v3, Lcom/google/android/gms/common/api/Api$Client;
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .line 12
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/android/gms/common/api/internal/zaaf;->zaa(Lcom/google/android/gms/common/api/internal/zaaf;)Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result-object v4
 
-    throw v0
-.end method
+    invoke-virtual {v0, v4, v3}, Lcom/google/android/gms/common/internal/zal;->zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/Api$Client;)I
 
-.method public registerConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
-    .locals 1
+    move-result v3
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    if-eqz v3, :cond_4
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    :cond_5
+    :goto_1
+    if-eqz v3, :cond_6
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    .line 13
+    new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    throw p1
-.end method
+    const/4 v1, 0x0
 
-.method public registerConnectionFailedListener(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
-    .locals 1
+    invoke-direct {v0, v3, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    .line 14
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zad(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/common/api/internal/zaaz;
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    throw p1
-.end method
+    new-instance v2, Lcom/google/android/gms/common/api/internal/zaaj;
 
-.method public stopAutoManage(Landroidx/fragment/app/FragmentActivity;)V
-    .locals 1
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    invoke-direct {v2, p0, v3, v0}, Lcom/google/android/gms/common/api/internal/zaaj;-><init>(Lcom/google/android/gms/common/api/internal/zaag;Lcom/google/android/gms/common/api/internal/zaaw;Lcom/google/android/gms/common/ConnectionResult;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/common/api/internal/zaaz;->zaa(Lcom/google/android/gms/common/api/internal/zaay;)V
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    return-void
 
-    throw p1
-.end method
+    .line 15
+    :cond_6
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-.method public unregisterConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
-    .locals 1
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zae(Lcom/google/android/gms/common/api/internal/zaaf;)Z
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    move-result v1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    if-eqz v1, :cond_7
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    throw p1
-.end method
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zaf(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/signin/zad;
 
-.method public unregisterConnectionFailedListener(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
-    .locals 1
+    move-result-object v1
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    if-eqz v1, :cond_7
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaag;->zafs:Ljava/lang/String;
+    .line 16
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zaf(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/signin/zad;
 
-    throw p1
+    move-result-object v1
+
+    invoke-interface {v1}, Lcom/google/android/gms/signin/zad;->zab()V
+
+    .line 17
+    :cond_7
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaag;->zab:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/common/api/Api$Client;
+
+    .line 18
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/zaag;->zab:Ljava/util/Map;
+
+    invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
+
+    .line 19
+    invoke-interface {v2}, Lcom/google/android/gms/common/api/Api$Client;->requiresGooglePlayServices()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    .line 20
+    invoke-static {v4}, Lcom/google/android/gms/common/api/internal/zaaf;->zaa(Lcom/google/android/gms/common/api/internal/zaaf;)Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4, v2}, Lcom/google/android/gms/common/internal/zal;->zaa(Landroid/content/Context;Lcom/google/android/gms/common/api/Api$Client;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    .line 21
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    invoke-static {v2}, Lcom/google/android/gms/common/api/internal/zaaf;->zad(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/common/api/internal/zaaz;
+
+    move-result-object v2
+
+    new-instance v4, Lcom/google/android/gms/common/api/internal/zaai;
+
+    iget-object v5, p0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    invoke-direct {v4, p0, v5, v3}, Lcom/google/android/gms/common/api/internal/zaai;-><init>(Lcom/google/android/gms/common/api/internal/zaag;Lcom/google/android/gms/common/api/internal/zaaw;Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;)V
+
+    invoke-virtual {v2, v4}, Lcom/google/android/gms/common/api/internal/zaaz;->zaa(Lcom/google/android/gms/common/api/internal/zaay;)V
+
+    goto :goto_2
+
+    .line 22
+    :cond_8
+    invoke-interface {v2, v3}, Lcom/google/android/gms/common/api/Api$Client;->connect(Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;)V
+
+    goto :goto_2
+
+    :cond_9
+    return-void
 .end method

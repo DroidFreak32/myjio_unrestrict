@@ -15,33 +15,36 @@
     }
 .end annotation
 
+.annotation build Ljavax/annotation/concurrent/ThreadSafe;
+.end annotation
+
 
 # static fields
-.field public static zzn:Ljava/util/concurrent/ScheduledExecutorService;
+.field private static zzn:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field public static volatile zzo:Lcom/google/android/gms/stats/WakeLock$zza;
+.field private static volatile zzo:Lcom/google/android/gms/stats/WakeLock$zza;
 
 
 # instance fields
-.field public final zza:Ljava/lang/Object;
+.field private final zza:Ljava/lang/Object;
 
-.field public final zzb:Landroid/os/PowerManager$WakeLock;
+.field private final zzb:Landroid/os/PowerManager$WakeLock;
 
-.field public zzc:Landroid/os/WorkSource;
+.field private zzc:Landroid/os/WorkSource;
 
-.field public final zzd:I
+.field private final zzd:I
 
-.field public final zze:Ljava/lang/String;
+.field private final zze:Ljava/lang/String;
 
-.field public final zzf:Ljava/lang/String;
+.field private final zzf:Ljava/lang/String;
 
-.field public final zzg:Ljava/lang/String;
+.field private final zzg:Ljava/lang/String;
 
-.field public final zzh:Landroid/content/Context;
+.field private final zzh:Landroid/content/Context;
 
-.field public zzi:Z
+.field private zzi:Z
 
-.field public final zzj:Ljava/util/Map;
+.field private final zzj:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -53,7 +56,7 @@
     .end annotation
 .end field
 
-.field public final zzk:Ljava/util/Set;
+.field private final zzk:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -63,9 +66,9 @@
     .end annotation
 .end field
 
-.field public zzl:I
+.field private zzl:I
 
-.field public zzm:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private zzm:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
@@ -84,6 +87,14 @@
 
 .method public constructor <init>(Landroid/content/Context;ILjava/lang/String;)V
     .locals 7
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -118,8 +129,24 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private constructor <init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 7
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v4, 0x0
 
@@ -141,8 +168,28 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+.method private constructor <init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p6    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "UnwrappedWakeLock"
@@ -218,44 +265,44 @@
     .line 16
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object p4
+    move-result-object p6
 
-    const-string p6, "com.google.android.gms"
+    const-string v0, "com.google.android.gms"
 
-    invoke-virtual {p6, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p4
+    move-result p6
 
-    if-nez p4, :cond_1
+    if-nez p6, :cond_1
 
-    const-string p4, "*gcore*:"
+    const-string p6, "*gcore*:"
 
     .line 17
     invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p6, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object p6
-
-    invoke-virtual {p6}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p4, p6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p4
 
     goto :goto_0
 
     :cond_0
-    new-instance p6, Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    invoke-direct {p6, p4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    move-object p4, p6
+    move-object p6, v0
 
     :goto_0
-    iput-object p4, p0, Lcom/google/android/gms/stats/WakeLock;->zze:Ljava/lang/String;
+    iput-object p6, p0, Lcom/google/android/gms/stats/WakeLock;->zze:Ljava/lang/String;
 
     goto :goto_1
 
@@ -264,17 +311,17 @@
     iput-object p3, p0, Lcom/google/android/gms/stats/WakeLock;->zze:Ljava/lang/String;
 
     :goto_1
-    const-string p4, "power"
+    const-string p6, "power"
 
     .line 19
-    invoke-virtual {p1, p4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object p4
+    move-result-object p6
 
-    check-cast p4, Landroid/os/PowerManager;
+    check-cast p6, Landroid/os/PowerManager;
 
     .line 20
-    invoke-virtual {p4, p2, p3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    invoke-virtual {p6, p2, p3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object p2
 
@@ -283,16 +330,16 @@
     .line 21
     invoke-static {p1}, Lcom/google/android/gms/common/util/WorkSourceUtil;->hasWorkSourcePermission(Landroid/content/Context;)Z
 
-    move-result p2
+    move-result p3
 
-    if-eqz p2, :cond_4
+    if-eqz p3, :cond_4
 
     .line 22
     invoke-static {p5}, Lcom/google/android/gms/common/util/Strings;->isEmptyOrWhitespace(Ljava/lang/String;)Z
 
-    move-result p2
+    move-result p3
 
-    if-eqz p2, :cond_2
+    if-eqz p3, :cond_2
 
     .line 23
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -307,42 +354,35 @@
 
     iput-object p1, p0, Lcom/google/android/gms/stats/WakeLock;->zzc:Landroid/os/WorkSource;
 
-    .line 25
-    iget-object p1, p0, Lcom/google/android/gms/stats/WakeLock;->zzc:Landroid/os/WorkSource;
-
     if-eqz p1, :cond_4
 
+    .line 25
+    invoke-static {p4}, Lcom/google/android/gms/common/util/WorkSourceUtil;->hasWorkSourcePermission(Landroid/content/Context;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_4
+
     .line 26
-    iget-object p2, p0, Lcom/google/android/gms/stats/WakeLock;->zzh:Landroid/content/Context;
+    iget-object p3, p0, Lcom/google/android/gms/stats/WakeLock;->zzc:Landroid/os/WorkSource;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/util/WorkSourceUtil;->hasWorkSourcePermission(Landroid/content/Context;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_4
+    if-eqz p3, :cond_3
 
     .line 27
-    iget-object p2, p0, Lcom/google/android/gms/stats/WakeLock;->zzc:Landroid/os/WorkSource;
-
-    if-eqz p2, :cond_3
-
-    .line 28
-    invoke-virtual {p2, p1}, Landroid/os/WorkSource;->add(Landroid/os/WorkSource;)Z
+    invoke-virtual {p3, p1}, Landroid/os/WorkSource;->add(Landroid/os/WorkSource;)Z
 
     goto :goto_2
 
-    .line 29
+    .line 28
     :cond_3
     iput-object p1, p0, Lcom/google/android/gms/stats/WakeLock;->zzc:Landroid/os/WorkSource;
 
-    .line 30
+    .line 29
     :goto_2
     iget-object p1, p0, Lcom/google/android/gms/stats/WakeLock;->zzc:Landroid/os/WorkSource;
 
-    .line 31
+    .line 30
     :try_start_0
-    iget-object p2, p0, Lcom/google/android/gms/stats/WakeLock;->zzb:Landroid/os/PowerManager$WakeLock;
-
     invoke-virtual {p2, p1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
@@ -358,7 +398,7 @@
     :catch_1
     move-exception p1
 
-    .line 32
+    .line 31
     :goto_3
     invoke-virtual {p1}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
 
@@ -368,14 +408,14 @@
 
     invoke-static {p2, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 33
+    .line 32
     :cond_4
     :goto_4
     sget-object p1, Lcom/google/android/gms/stats/WakeLock;->zzn:Ljava/util/concurrent/ScheduledExecutorService;
 
     if-nez p1, :cond_5
 
-    .line 34
+    .line 33
     invoke-static {}, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->getInstance()Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
 
     move-result-object p1

@@ -17,11 +17,11 @@
 
 
 # instance fields
-.field public zzgu:Z
+.field private zzgu:Z
 
-.field public final zzol:I
+.field private final zzol:I
 
-.field public zzom:Ljava/util/List;
+.field private zzom:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public zzon:Ljava/util/Map;
+.field private zzon:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public volatile zzoo:Lcom/google/android/gms/internal/clearcut/zzer;
+.field private volatile zzoo:Lcom/google/android/gms/internal/clearcut/zzer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzer;"
@@ -48,7 +48,7 @@
     .end annotation
 .end field
 
-.field public zzop:Ljava/util/Map;
+.field private zzop:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -57,7 +57,7 @@
     .end annotation
 .end field
 
-.field public volatile zzoq:Lcom/google/android/gms/internal/clearcut/zzel;
+.field private volatile zzoq:Lcom/google/android/gms/internal/clearcut/zzel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzel;"
@@ -67,7 +67,7 @@
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
@@ -377,8 +377,6 @@
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzei;->zzon:Ljava/util/Map;
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzei;->zzon:Ljava/util/Map;
 
     check-cast v0, Ljava/util/TreeMap;
 

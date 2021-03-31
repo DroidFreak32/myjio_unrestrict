@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzw:Lcom/google/android/gms/maps/GoogleMap$OnCircleClickListener;
+.field private final synthetic zzw:Lcom/google/android/gms/maps/GoogleMap$OnCircleClickListener;
 
 
 # direct methods

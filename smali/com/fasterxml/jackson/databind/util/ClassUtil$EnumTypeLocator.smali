@@ -19,9 +19,9 @@
 
 
 # instance fields
-.field public final enumMapTypeField:Ljava/lang/reflect/Field;
+.field private final enumMapTypeField:Ljava/lang/reflect/Field;
 
-.field public final enumSetTypeField:Ljava/lang/reflect/Field;
+.field private final enumSetTypeField:Ljava/lang/reflect/Field;
 
 
 # direct methods
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 3
 
     .line 1
@@ -95,7 +95,7 @@
     throw p2
 .end method
 
-.method public static locateField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+.method private static locateField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {

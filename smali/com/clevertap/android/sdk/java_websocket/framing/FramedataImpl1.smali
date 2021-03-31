@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field public fin:Z
+.field private fin:Z
 
-.field public optcode:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+.field private optcode:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-.field public rsv1:Z
+.field private rsv1:Z
 
-.field public rsv2:Z
+.field private rsv2:Z
 
-.field public rsv3:Z
+.field private rsv3:Z
 
-.field public transferemasked:Z
+.field private transferemasked:Z
 
-.field public unmaskedpayload:Ljava/nio/ByteBuffer;
+.field private unmaskedpayload:Ljava/nio/ByteBuffer;
 
 
 # direct methods
@@ -543,6 +543,11 @@
 .end method
 
 .method public abstract isValid()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 .end method
 
 .method public setFin(Z)V
@@ -651,6 +656,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 2
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->isRSV3()Z
 
     move-result v1
@@ -675,6 +681,7 @@
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->unmaskedpayload:Ljava/nio/ByteBuffer;
 
+    .line 3
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
@@ -704,6 +711,7 @@
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->unmaskedpayload:Ljava/nio/ByteBuffer;
 
+    .line 4
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v2

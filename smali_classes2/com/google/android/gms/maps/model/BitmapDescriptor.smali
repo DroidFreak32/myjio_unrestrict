@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zze:Lcom/google/android/gms/dynamic/IObjectWrapper;
+.field private final zze:Lcom/google/android/gms/dynamic/IObjectWrapper;
 
 
 # direct methods

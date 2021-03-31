@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public arrayClass:Ljava/lang/Class;
+.field private arrayClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruArrayPool$KeyPool;
+.field private final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruArrayPool$KeyPool;
 
 .field public size:I
 

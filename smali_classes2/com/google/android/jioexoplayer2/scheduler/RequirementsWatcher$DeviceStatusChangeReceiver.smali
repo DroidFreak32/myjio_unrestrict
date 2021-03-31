@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;)V
     .locals 0
 
     .line 1

@@ -7,6 +7,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy;
 .end annotation
@@ -18,7 +21,7 @@
 
 
 # instance fields
-.field public final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy$KeyPool;
+.field private final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy$KeyPool;
 
 .field public size:I
 

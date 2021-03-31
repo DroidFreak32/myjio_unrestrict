@@ -1,252 +1,490 @@
 .class public Lsa;
-.super Ljava/lang/Object;
-.source "PathInterpolatorApi14.java"
+.super Landroid/os/AsyncTask;
 
-# interfaces
-.implements Landroid/view/animation/Interpolator;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final a:[F
+.field public a:Z
 
-.field public final b:[F
+.field public b:[Ljava/lang/String;
+
+.field public c:Ljava/lang/String;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/lang/String;
+
+.field public final synthetic f:Lcom/elitecorelib/core/logger/EliteMail;
 
 
 # direct methods
-.method public constructor <init>(FFFF)V
+.method public constructor <init>(Lcom/elitecorelib/core/logger/EliteMail;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 9
-    invoke-static {p1, p2, p3, p4}, Lsa;->a(FFFF)Landroid/graphics/Path;
+    iput-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
 
-    move-result-object p1
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    invoke-direct {p0, p1}, Lsa;-><init>(Landroid/graphics/Path;)V
+    iput-object p2, p0, Lsa;->b:[Ljava/lang/String;
+
+    iput-object p3, p0, Lsa;->c:Ljava/lang/String;
+
+    iput-object p4, p0, Lsa;->d:Ljava/lang/String;
+
+    iput-object p5, p0, Lsa;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/graphics/Path;)V
-    .locals 8
+.method public synthetic constructor <init>(Lcom/elitecorelib/core/logger/EliteMail;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lra;)V
+    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p5}, Lsa;-><init>(Lcom/elitecorelib/core/logger/EliteMail;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2
-    new-instance v0, Landroid/graphics/PathMeasure;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, v1}, Landroid/graphics/PathMeasure;-><init>(Landroid/graphics/Path;Z)V
-
-    .line 3
-    invoke-virtual {v0}, Landroid/graphics/PathMeasure;->getLength()F
-
-    move-result p1
-
-    const v2, 0x3b03126f    # 0.002f
-
-    div-float v2, p1, v2
-
-    float-to-int v2, v2
-
-    const/4 v3, 0x1
-
-    add-int/2addr v2, v3
-
-    .line 4
-    new-array v4, v2, [F
-
-    iput-object v4, p0, Lsa;->a:[F
-
-    .line 5
-    new-array v4, v2, [F
-
-    iput-object v4, p0, Lsa;->b:[F
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [F
-
-    const/4 v5, 0x0
-
-    :goto_0
-    if-ge v5, v2, :cond_0
-
-    int-to-float v6, v5
-
-    mul-float v6, v6, p1
-
-    add-int/lit8 v7, v2, -0x1
-
-    int-to-float v7, v7
-
-    div-float/2addr v6, v7
-
-    const/4 v7, 0x0
-
-    .line 6
-    invoke-virtual {v0, v6, v4, v7}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
-
-    .line 7
-    iget-object v6, p0, Lsa;->a:[F
-
-    aget v7, v4, v1
-
-    aput v7, v6, v5
-
-    .line 8
-    iget-object v6, p0, Lsa;->b:[F
-
-    aget v7, v4, v3
-
-    aput v7, v6, v5
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-void
-.end method
-
-.method public static a(FFFF)Landroid/graphics/Path;
-    .locals 8
-
-    .line 1
-    new-instance v7, Landroid/graphics/Path;
-
-    invoke-direct {v7}, Landroid/graphics/Path;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    invoke-virtual {v7, v0, v0}, Landroid/graphics/Path;->moveTo(FF)V
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    move-object v0, v7
-
-    move v1, p0
-
-    move v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    .line 3
-    invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
-
-    return-object v7
 .end method
 
 
 # virtual methods
-.method public getInterpolation(F)F
-    .locals 6
+.method public varargs a([Ljava/lang/Void;)Ljava/lang/Void;
+    .locals 7
 
-    const/4 v0, 0x0
+    const-string p1, ""
 
-    cmpg-float v1, p1, v0
+    const-string v0, " "
 
-    if-gtz v1, :cond_0
+    const-string v1, "EliteMail"
 
-    return v0
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    new-instance v3, Lcom/elitecorelib/core/logger/d;
+
+    invoke-static {}, Lcom/elitecorelib/core/logger/EliteMail;->access$200()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {}, Lcom/elitecorelib/core/logger/EliteMail;->access$300()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v3, v4, v5}, Lcom/elitecorelib/core/logger/d;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v2, v3}, Lcom/elitecorelib/core/logger/EliteMail;->access$102(Lcom/elitecorelib/core/logger/EliteMail;Lcom/elitecorelib/core/logger/d;)Lcom/elitecorelib/core/logger/d;
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v2}, Lcom/elitecorelib/core/logger/EliteMail;->access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lsa;->b:[Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/logger/d;->b([Ljava/lang/String;)V
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v2}, Lcom/elitecorelib/core/logger/EliteMail;->access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lsa;->c:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/logger/d;->b(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v2}, Lcom/elitecorelib/core/logger/EliteMail;->access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lsa;->d:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/logger/d;->c(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v2}, Lcom/elitecorelib/core/logger/EliteMail;->access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lsa;->e:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/logger/d;->a(Ljava/lang/String;)V
+
+    :try_start_0
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    new-instance v3, Ljava/io/File;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    sget-object v5, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v6, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    iget-object v6, v6, Lcom/elitecorelib/core/logger/EliteMail;->AppName:Ljava/lang/String;
+
+    invoke-virtual {v6, v0, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v2, v3}, Lcom/elitecorelib/core/logger/EliteMail;->access$402(Lcom/elitecorelib/core/logger/EliteMail;Ljava/io/File;)Ljava/io/File;
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Folder location :"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v4}, Lcom/elitecorelib/core/logger/EliteMail;->access$400(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    new-instance v3, Ljava/io/File;
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v6, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    iget-object v6, v6, Lcom/elitecorelib/core/logger/EliteMail;->AppName:Ljava/lang/String;
+
+    invoke-virtual {v6, v0, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, ".zip"
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v3, v4, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-static {v2, v3}, Lcom/elitecorelib/core/logger/EliteMail;->access$502(Lcom/elitecorelib/core/logger/EliteMail;Ljava/io/File;)Ljava/io/File;
+
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Zip location :"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v2}, Lcom/elitecorelib/core/logger/EliteMail;->access$500(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    :try_start_1
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$400(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$400(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v0, "Zip directory exist"
+
+    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$400(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v2}, Lcom/elitecorelib/core/logger/EliteMail;->access$500(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v2}, Lcom/elitecorelib/core/logger/EliteMail;->zipFileAtPath(Ljava/lang/String;Ljava/lang/String;)Z
+
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
+
+    move-result-object p1
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {v3}, Lcom/elitecorelib/core/logger/EliteMail;->access$500(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v0, v2
+
+    invoke-virtual {p1, v0}, Lcom/elitecorelib/core/logger/d;->a([Ljava/lang/String;)V
 
     :cond_0
-    const/high16 v1, 0x3f800000    # 1.0f
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    cmpl-float v2, p1, v1
+    const-string v0, "attachment added,sending mail"
 
-    if-ltz v2, :cond_1
+    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v1
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
 
-    :cond_1
-    const/4 v1, 0x0
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
 
-    .line 1
-    iget-object v2, p0, Lsa;->a:[F
+    move-result-object p1
 
-    array-length v2, v2
+    invoke-virtual {p1}, Lcom/elitecorelib/core/logger/d;->a()Z
 
-    const/4 v3, 0x1
+    move-result p1
 
-    sub-int/2addr v2, v3
+    iput-boolean p1, p0, Lsa;->a:Z
+
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Mail Success  : "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lsa;->a:Z
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    :try_start_2
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p1
+
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    sub-int v4, v2, v1
+    const/4 p1, 0x0
 
-    if-le v4, v3, :cond_3
+    return-object p1
+.end method
 
-    add-int v4, v1, v2
+.method public b(Ljava/lang/Void;)V
+    .locals 2
 
-    .line 2
-    div-int/lit8 v4, v4, 0x2
+    invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 
-    .line 3
-    iget-object v5, p0, Lsa;->a:[F
+    iget-boolean p1, p0, Lsa;->a:Z
 
-    aget v5, v5, v4
+    const-string v0, "EliteMail"
 
-    cmpg-float v5, p1, v5
+    if-eqz p1, :cond_1
 
-    if-gez v5, :cond_2
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
 
-    move v2, v4
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$500(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    invoke-static {p1}, Lcom/elitecorelib/core/logger/EliteMail;->access$500(Lcom/elitecorelib/core/logger/EliteMail;)Ljava/io/File;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+
+    :cond_0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v1, "Email was sent successfully."
+
+    invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
+
+    iget-object p1, p1, Lcom/elitecorelib/core/logger/EliteMail;->mailTaskCompleteListner:Lcom/elitecorelib/core/listner/OnMailTaskCompleteListner;
+
+    const/4 v0, 0x1
+
+    invoke-interface {p1, v0}, Lcom/elitecorelib/core/listner/OnMailTaskCompleteListner;->onMailTaskComplete(Z)V
 
     goto :goto_0
 
-    :cond_2
-    move v1, v4
+    :cond_1
+    iget-object p1, p0, Lsa;->f:Lcom/elitecorelib/core/logger/EliteMail;
 
-    goto :goto_0
+    iget-object p1, p1, Lcom/elitecorelib/core/logger/EliteMail;->mailTaskCompleteListner:Lcom/elitecorelib/core/listner/OnMailTaskCompleteListner;
 
-    .line 4
-    :cond_3
-    iget-object v3, p0, Lsa;->a:[F
+    const/4 v1, 0x0
 
-    aget v4, v3, v2
+    invoke-interface {p1, v1}, Lcom/elitecorelib/core/listner/OnMailTaskCompleteListner;->onMailTaskComplete(Z)V
 
-    aget v5, v3, v1
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    sub-float/2addr v4, v5
+    const-string v1, "Email was not sent."
 
-    cmpl-float v0, v4, v0
+    invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v0, :cond_4
+    :goto_0
+    return-void
+.end method
 
-    .line 5
-    iget-object p1, p0, Lsa;->b:[F
+.method public synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    aget p1, p1, v1
+    check-cast p1, [Ljava/lang/Void;
 
-    return p1
+    invoke-virtual {p0, p1}, Lsa;->a([Ljava/lang/Void;)Ljava/lang/Void;
 
-    .line 6
-    :cond_4
-    aget v0, v3, v1
+    move-result-object p1
 
-    sub-float/2addr p1, v0
+    return-object p1
+.end method
 
-    div-float/2addr p1, v4
+.method public synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 0
 
-    .line 7
-    iget-object v0, p0, Lsa;->b:[F
+    check-cast p1, Ljava/lang/Void;
 
-    aget v1, v0, v1
+    invoke-virtual {p0, p1}, Lsa;->b(Ljava/lang/Void;)V
 
-    .line 8
-    aget v0, v0, v2
-
-    sub-float/2addr v0, v1
-
-    mul-float p1, p1, v0
-
-    add-float/2addr v1, p1
-
-    return v1
+    return-void
 .end method

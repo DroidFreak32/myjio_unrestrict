@@ -16,41 +16,44 @@
 
 
 # static fields
-.field public static final FRAME_FLAG_V3_HAS_GROUP_IDENTIFIER:I = 0x20
+.field private static final FRAME_FLAG_V3_HAS_GROUP_IDENTIFIER:I = 0x20
 
-.field public static final FRAME_FLAG_V3_IS_COMPRESSED:I = 0x80
+.field private static final FRAME_FLAG_V3_IS_COMPRESSED:I = 0x80
 
-.field public static final FRAME_FLAG_V3_IS_ENCRYPTED:I = 0x40
+.field private static final FRAME_FLAG_V3_IS_ENCRYPTED:I = 0x40
 
-.field public static final FRAME_FLAG_V4_HAS_DATA_LENGTH:I = 0x1
+.field private static final FRAME_FLAG_V4_HAS_DATA_LENGTH:I = 0x1
 
-.field public static final FRAME_FLAG_V4_HAS_GROUP_IDENTIFIER:I = 0x40
+.field private static final FRAME_FLAG_V4_HAS_GROUP_IDENTIFIER:I = 0x40
 
-.field public static final FRAME_FLAG_V4_IS_COMPRESSED:I = 0x8
+.field private static final FRAME_FLAG_V4_IS_COMPRESSED:I = 0x8
 
-.field public static final FRAME_FLAG_V4_IS_ENCRYPTED:I = 0x4
+.field private static final FRAME_FLAG_V4_IS_ENCRYPTED:I = 0x4
 
-.field public static final FRAME_FLAG_V4_IS_UNSYNCHRONIZED:I = 0x2
+.field private static final FRAME_FLAG_V4_IS_UNSYNCHRONIZED:I = 0x2
 
 .field public static final ID3_HEADER_LENGTH:I = 0xa
 
 .field public static final ID3_TAG:I
 
-.field public static final ID3_TEXT_ENCODING_ISO_8859_1:I = 0x0
+.field private static final ID3_TEXT_ENCODING_ISO_8859_1:I = 0x0
 
-.field public static final ID3_TEXT_ENCODING_UTF_16:I = 0x1
+.field private static final ID3_TEXT_ENCODING_UTF_16:I = 0x1
 
-.field public static final ID3_TEXT_ENCODING_UTF_16BE:I = 0x2
+.field private static final ID3_TEXT_ENCODING_UTF_16BE:I = 0x2
 
-.field public static final ID3_TEXT_ENCODING_UTF_8:I = 0x3
+.field private static final ID3_TEXT_ENCODING_UTF_8:I = 0x3
 
 .field public static final NO_FRAMES_PREDICATE:Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
 
-.field public static final TAG:Ljava/lang/String; = "Id3Decoder"
+.field private static final TAG:Ljava/lang/String; = "Id3Decoder"
 
 
 # instance fields
-.field public final framePredicate:Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
+.field private final framePredicate:Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -58,7 +61,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lwc0;->a:Lwc0;
+    sget-object v0, Lgj;->a:Lgj;
 
     sput-object v0, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->NO_FRAMES_PREDICATE:Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
 
@@ -87,6 +90,10 @@
 
 .method public constructor <init>(Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)V
     .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,7 +112,7 @@
     return p0
 .end method
 
-.method public static copyOfRangeIfValid([BII)[B
+.method private static copyOfRangeIfValid([BII)[B
     .locals 0
 
     if-gt p2, p1, :cond_0
@@ -124,8 +131,13 @@
     return-object p0
 .end method
 
-.method public static decodeApicFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;II)Lcom/google/android/jioexoplayer2/metadata/id3/ApicFrame;
-    .locals 6
+.method private static decodeApicFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;II)Lcom/google/android/jioexoplayer2/metadata/id3/ApicFrame;
+    .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -149,11 +161,11 @@
 
     const-string p0, "image/"
 
-    const-string p1, "ISO-8859-1"
+    const-string v4, "ISO-8859-1"
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
-    if-ne p2, v4, :cond_1
+    if-ne p2, v5, :cond_1
 
     .line 5
     new-instance p2, Ljava/lang/StringBuilder;
@@ -164,9 +176,9 @@
 
     new-instance p0, Ljava/lang/String;
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    invoke-direct {p0, v2, v3, v5, p1}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {p0, v2, v3, v6, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
     invoke-static {p0}, Lcom/google/android/jioexoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
 
@@ -178,14 +190,14 @@
 
     move-result-object p0
 
-    const-string p1, "image/jpg"
+    const-string p2, "image/jpg"
 
     .line 6
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_0
+    if-eqz p2, :cond_0
 
     const-string p0, "image/jpeg"
 
@@ -201,88 +213,86 @@
     move-result p2
 
     .line 8
-    new-instance v5, Ljava/lang/String;
+    new-instance v6, Ljava/lang/String;
 
-    invoke-direct {v5, v2, v3, p2, p1}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v6, v2, v3, p2, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
-    invoke-static {v5}, Lcom/google/android/jioexoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6}, Lcom/google/android/jioexoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v3
 
-    const/16 v3, 0x2f
+    const/16 v4, 0x2f
 
     .line 9
-    invoke-virtual {p1, v3}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v3
+    move-result v4
 
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
-    if-ne v3, v5, :cond_2
+    if-ne v4, v6, :cond_2
 
     .line 10
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_0
 
     :cond_2
-    move-object p0, p1
+    move-object p0, v3
 
     :goto_0
-    add-int/lit8 p1, p2, 0x1
+    add-int/lit8 v3, p2, 0x1
 
     .line 11
-    aget-byte p1, v2, p1
+    aget-byte v3, v2, v3
 
-    and-int/lit16 p1, p1, 0xff
+    and-int/lit16 v3, v3, 0xff
 
-    add-int/2addr p2, v4
+    add-int/2addr p2, v5
 
     .line 12
     invoke-static {v2, p2, v0}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
 
-    move-result v3
+    move-result v4
 
     .line 13
-    new-instance v4, Ljava/lang/String;
+    new-instance v5, Ljava/lang/String;
 
-    sub-int v5, v3, p2
+    sub-int v6, v4, p2
 
-    invoke-direct {v4, v2, p2, v5, v1}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v5, v2, p2, v6, v1}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
     .line 14
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
     move-result p2
 
-    add-int/2addr v3, p2
+    add-int/2addr v4, p2
 
     .line 15
-    array-length p2, v2
+    invoke-static {v2, v4, p1}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
 
-    invoke-static {v2, v3, p2}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
-
-    move-result-object p2
+    move-result-object p1
 
     .line 16
-    new-instance v0, Lcom/google/android/jioexoplayer2/metadata/id3/ApicFrame;
+    new-instance p2, Lcom/google/android/jioexoplayer2/metadata/id3/ApicFrame;
 
-    invoke-direct {v0, p0, v4, p1, p2}, Lcom/google/android/jioexoplayer2/metadata/id3/ApicFrame;-><init>(Ljava/lang/String;Ljava/lang/String;I[B)V
+    invoke-direct {p2, p0, v5, v3, p1}, Lcom/google/android/jioexoplayer2/metadata/id3/ApicFrame;-><init>(Ljava/lang/String;Ljava/lang/String;I[B)V
 
-    return-object v0
+    return-object p2
 .end method
 
-.method public static decodeBinaryFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/jioexoplayer2/metadata/id3/BinaryFrame;
+.method private static decodeBinaryFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/jioexoplayer2/metadata/id3/BinaryFrame;
     .locals 2
 
     .line 1
@@ -301,8 +311,17 @@
     return-object p0
 .end method
 
-.method public static decodeChapterFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;IIZILcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/jioexoplayer2/metadata/id3/ChapterFrame;
+.method private static decodeChapterFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;IIZILcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/jioexoplayer2/metadata/id3/ChapterFrame;
     .locals 15
+    .param p5    # Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -443,8 +462,17 @@
     return-object v1
 .end method
 
-.method public static decodeChapterTOCFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;IIZILcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/jioexoplayer2/metadata/id3/ChapterTocFrame;
+.method private static decodeChapterTOCFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;IIZILcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/jioexoplayer2/metadata/id3/ChapterTocFrame;
     .locals 15
+    .param p5    # Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -620,8 +648,16 @@
     return-object v1
 .end method
 
-.method public static decodeCommentFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/CommentFrame;
+.method private static decodeCommentFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/CommentFrame;
     .locals 7
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -699,8 +735,14 @@
     return-object v0
 .end method
 
-.method public static decodeFrame(ILcom/google/android/jioexoplayer2/util/ParsableByteArray;ZILcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/jioexoplayer2/metadata/id3/Id3Frame;
+.method private static decodeFrame(ILcom/google/android/jioexoplayer2/util/ParsableByteArray;ZILcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/jioexoplayer2/metadata/id3/Id3Frame;
     .locals 19
+    .param p4    # Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$FramePredicate;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     move/from16 v0, p0
 
@@ -1077,9 +1119,7 @@
     .line 18
     invoke-static {v7, v15}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->removeUnsynchronization(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)I
 
-    move-result v1
-
-    move v15, v1
+    move-result v15
 
     :cond_16
     const/16 v1, 0x54
@@ -1149,9 +1189,7 @@
     goto/16 :goto_e
 
     :cond_1b
-    const/16 v3, 0x57
-
-    if-ne v8, v3, :cond_1c
+    if-ne v8, v4, :cond_1c
 
     .line 23
     invoke-static {v0, v8, v9, v10, v13}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->getFrameId(IIIII)Ljava/lang/String;
@@ -1217,7 +1255,9 @@
     goto/16 :goto_e
 
     :cond_1f
-    const/16 v5, 0x43
+    const/16 v5, 0x41
+
+    const/16 v11, 0x43
 
     if-ne v0, v2, :cond_20
 
@@ -1225,20 +1265,18 @@
 
     if-ne v9, v3, :cond_21
 
-    if-ne v10, v5, :cond_21
+    if-ne v10, v11, :cond_21
 
     goto :goto_d
 
     :cond_20
-    const/16 v11, 0x41
-
-    if-ne v8, v11, :cond_21
+    if-ne v8, v5, :cond_21
 
     if-ne v9, v4, :cond_21
 
     if-ne v10, v3, :cond_21
 
-    if-ne v13, v5, :cond_21
+    if-ne v13, v11, :cond_21
 
     .line 27
     :goto_d
@@ -1251,7 +1289,7 @@
     :cond_21
     const/16 v3, 0x4d
 
-    if-ne v8, v5, :cond_23
+    if-ne v8, v11, :cond_23
 
     if-ne v9, v6, :cond_23
 
@@ -1270,15 +1308,13 @@
     goto :goto_e
 
     :cond_23
-    if-ne v8, v5, :cond_24
+    if-ne v8, v11, :cond_24
 
     const/16 v2, 0x48
 
     if-ne v9, v2, :cond_24
 
-    const/16 v2, 0x41
-
-    if-ne v10, v2, :cond_24
+    if-ne v10, v5, :cond_24
 
     if-ne v13, v4, :cond_24
 
@@ -1302,13 +1338,13 @@
     goto :goto_e
 
     :cond_24
-    if-ne v8, v5, :cond_25
+    if-ne v8, v11, :cond_25
 
     if-ne v9, v1, :cond_25
 
     if-ne v10, v6, :cond_25
 
-    if-ne v13, v5, :cond_25
+    if-ne v13, v11, :cond_25
 
     move-object/from16 v1, p1
 
@@ -1335,8 +1371,6 @@
     const/16 v2, 0x4c
 
     if-ne v9, v2, :cond_26
-
-    const/16 v2, 0x4c
 
     if-ne v10, v2, :cond_26
 
@@ -1434,8 +1468,13 @@
     return-object v16
 .end method
 
-.method public static decodeGeobFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/GeobFrame;
-    .locals 5
+.method private static decodeGeobFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/GeobFrame;
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -1463,11 +1502,11 @@
     move-result p0
 
     .line 6
-    new-instance p1, Ljava/lang/String;
+    new-instance v4, Ljava/lang/String;
 
-    const-string v4, "ISO-8859-1"
+    const-string v5, "ISO-8859-1"
 
-    invoke-direct {p1, v2, v3, p0, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v4, v2, v3, p0, v5}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
     add-int/lit8 p0, p0, 0x1
 
@@ -1484,17 +1523,17 @@
     .line 9
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
-    move-result v4
+    move-result v5
 
-    add-int/2addr v3, v4
+    add-int/2addr v3, v5
 
     .line 10
     invoke-static {v2, v3, v0}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
 
-    move-result v4
+    move-result v5
 
     .line 11
-    invoke-static {v2, v3, v4, v1}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v5, v1}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1503,25 +1542,25 @@
 
     move-result v0
 
-    add-int/2addr v4, v0
+    add-int/2addr v5, v0
 
     .line 13
-    array-length v0, v2
+    invoke-static {v2, v5, p1}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
 
-    invoke-static {v2, v4, v0}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
-
-    move-result-object v0
+    move-result-object p1
 
     .line 14
-    new-instance v2, Lcom/google/android/jioexoplayer2/metadata/id3/GeobFrame;
+    new-instance v0, Lcom/google/android/jioexoplayer2/metadata/id3/GeobFrame;
 
-    invoke-direct {v2, p1, p0, v1, v0}, Lcom/google/android/jioexoplayer2/metadata/id3/GeobFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[B)V
+    invoke-direct {v0, v4, p0, v1, p1}, Lcom/google/android/jioexoplayer2/metadata/id3/GeobFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[B)V
 
-    return-object v2
+    return-object v0
 .end method
 
-.method public static decodeHeader(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$Id3Header;
+.method private static decodeHeader(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder$Id3Header;
     .locals 9
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->bytesLeft()I
@@ -1744,7 +1783,7 @@
     return-object v1
 .end method
 
-.method public static decodeMlltFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/MlltFrame;
+.method private static decodeMlltFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/MlltFrame;
     .locals 10
 
     .line 1
@@ -1835,8 +1874,13 @@
     return-object p1
 .end method
 
-.method public static decodePrivFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/PrivFrame;
-    .locals 3
+.method private static decodePrivFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/PrivFrame;
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     .line 1
     new-array v0, p1, [B
@@ -1852,31 +1896,34 @@
     move-result p0
 
     .line 4
-    new-instance p1, Ljava/lang/String;
+    new-instance v2, Ljava/lang/String;
 
-    const-string v2, "ISO-8859-1"
+    const-string v3, "ISO-8859-1"
 
-    invoke-direct {p1, v0, v1, p0, v2}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v2, v0, v1, p0, v3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
     add-int/lit8 p0, p0, 0x1
 
     .line 5
-    array-length v1, v0
-
-    invoke-static {v0, p0, v1}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
+    invoke-static {v0, p0, p1}, Lcom/google/android/jioexoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
 
     move-result-object p0
 
     .line 6
-    new-instance v0, Lcom/google/android/jioexoplayer2/metadata/id3/PrivFrame;
+    new-instance p1, Lcom/google/android/jioexoplayer2/metadata/id3/PrivFrame;
 
-    invoke-direct {v0, p1, p0}, Lcom/google/android/jioexoplayer2/metadata/id3/PrivFrame;-><init>(Ljava/lang/String;[B)V
+    invoke-direct {p1, v2, p0}, Lcom/google/android/jioexoplayer2/metadata/id3/PrivFrame;-><init>(Ljava/lang/String;[B)V
 
-    return-object v0
+    return-object p1
 .end method
 
-.method public static decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+.method private static decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     if-le p2, p1, :cond_1
 
@@ -1904,8 +1951,16 @@
     return-object p0
 .end method
 
-.method public static decodeTextInformationFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/jioexoplayer2/metadata/id3/TextInformationFrame;
+.method private static decodeTextInformationFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/jioexoplayer2/metadata/id3/TextInformationFrame;
     .locals 5
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -1954,8 +2009,16 @@
     return-object p0
 .end method
 
-.method public static decodeTxxxFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/TextInformationFrame;
+.method private static decodeTxxxFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/TextInformationFrame;
     .locals 4
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -2023,8 +2086,13 @@
     return-object v0
 .end method
 
-.method public static decodeUrlLinkFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/jioexoplayer2/metadata/id3/UrlLinkFrame;
+.method private static decodeUrlLinkFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/jioexoplayer2/metadata/id3/UrlLinkFrame;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     .line 1
     new-array v0, p1, [B
@@ -2056,8 +2124,16 @@
     return-object p0
 .end method
 
-.method public static decodeWxxxFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/UrlLinkFrame;
+.method private static decodeWxxxFrame(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)Lcom/google/android/jioexoplayer2/metadata/id3/UrlLinkFrame;
     .locals 4
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -2127,7 +2203,7 @@
     return-object v0
 .end method
 
-.method public static delimiterLength(I)I
+.method private static delimiterLength(I)I
     .locals 1
 
     if-eqz p0, :cond_1
@@ -2151,7 +2227,7 @@
     return p0
 .end method
 
-.method public static getCharsetName(I)Ljava/lang/String;
+.method private static getCharsetName(I)Ljava/lang/String;
     .locals 1
 
     const/4 v0, 0x1
@@ -2186,7 +2262,7 @@
     return-object p0
 .end method
 
-.method public static getFrameId(IIIII)Ljava/lang/String;
+.method private static getFrameId(IIIII)Ljava/lang/String;
     .locals 5
 
     const/4 v0, 0x3
@@ -2272,7 +2348,7 @@
     return-object p0
 .end method
 
-.method public static indexOfEos([BII)I
+.method private static indexOfEos([BII)I
     .locals 1
 
     .line 1
@@ -2331,7 +2407,7 @@
     return p1
 .end method
 
-.method public static indexOfZeroByte([BI)I
+.method private static indexOfZeroByte([BI)I
     .locals 1
 
     .line 1
@@ -2359,7 +2435,7 @@
     return p0
 .end method
 
-.method public static removeUnsynchronization(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)I
+.method private static removeUnsynchronization(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;I)I
     .locals 4
 
     .line 1
@@ -2408,7 +2484,7 @@
     return p1
 .end method
 
-.method public static validateFrames(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;IIZ)Z
+.method private static validateFrames(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;IIZ)Z
     .locals 18
 
     move-object/from16 v1, p0
@@ -2431,7 +2507,7 @@
 
     move/from16 v5, p2
 
-    if-lt v3, v5, :cond_d
+    if-lt v3, v5, :cond_c
 
     const/4 v3, 0x3
 
@@ -2550,7 +2626,7 @@
     or-long/2addr v8, v13
 
     :cond_3
-    if-ne v0, v7, :cond_5
+    if-ne v0, v7, :cond_6
 
     and-int/lit8 v3, v10, 0x40
 
@@ -2566,66 +2642,60 @@
     :goto_2
     and-int/lit8 v7, v10, 0x1
 
-    if-eqz v7, :cond_8
-
-    :goto_3
-    const/4 v7, 0x1
+    if-eqz v7, :cond_5
 
     goto :goto_5
 
     :cond_5
-    if-ne v0, v3, :cond_7
+    :goto_3
+    const/4 v4, 0x0
+
+    goto :goto_5
+
+    :cond_6
+    if-ne v0, v3, :cond_8
 
     and-int/lit8 v3, v10, 0x20
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     const/4 v3, 0x1
 
     goto :goto_4
 
-    :cond_6
+    :cond_7
     const/4 v3, 0x0
 
     :goto_4
     and-int/lit16 v7, v10, 0x80
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_5
+
+    goto :goto_5
+
+    :cond_8
+    const/4 v3, 0x0
 
     goto :goto_3
 
-    :cond_7
-    const/4 v3, 0x0
-
-    :cond_8
-    const/4 v7, 0x0
-
     :goto_5
-    if-eqz v3, :cond_9
+    if-eqz v4, :cond_9
 
-    goto :goto_6
+    add-int/lit8 v3, v3, 0x4
 
     :cond_9
-    const/4 v4, 0x0
-
-    :goto_6
-    if-eqz v7, :cond_a
-
-    add-int/lit8 v4, v4, 0x4
-
-    :cond_a
-    int-to-long v3, v4
+    int-to-long v3, v3
 
     cmp-long v7, v8, v3
 
-    if-gez v7, :cond_b
+    if-gez v7, :cond_a
 
     invoke-virtual {v1, v2}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return v6
 
     .line 9
-    :cond_b
+    :cond_a
     :try_start_1
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->bytesLeft()I
 
@@ -2637,14 +2707,14 @@
 
     cmp-long v7, v3, v8
 
-    if-gez v7, :cond_c
+    if-gez v7, :cond_b
 
     .line 10
     invoke-virtual {v1, v2}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return v6
 
-    :cond_c
+    :cond_b
     long-to-int v3, v8
 
     .line 11
@@ -2656,7 +2726,7 @@
     goto/16 :goto_0
 
     .line 12
-    :cond_d
+    :cond_c
     invoke-virtual {v1, v2}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return v4
@@ -2674,6 +2744,8 @@
 # virtual methods
 .method public decode(Lcom/google/android/jioexoplayer2/metadata/MetadataInputBuffer;)Lcom/google/android/jioexoplayer2/metadata/Metadata;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object p1, p1, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -2696,6 +2768,8 @@
 
 .method public decode([BI)Lcom/google/android/jioexoplayer2/metadata/Metadata;
     .locals 6
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 3
     new-instance v0, Ljava/util/ArrayList;

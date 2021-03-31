@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public attrs:Lcom/jcraft/jsch/SftpATTRS;
+.field private attrs:Lcom/jcraft/jsch/SftpATTRS;
 
-.field public filename:Ljava/lang/String;
+.field private filename:Ljava/lang/String;
 
-.field public longname:Ljava/lang/String;
+.field private longname:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -52,6 +52,11 @@
 # virtual methods
 .method public compareTo(Ljava/lang/Object;)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/ClassCastException;
+        }
+    .end annotation
 
     .line 1
     instance-of v0, p1, Lcom/jcraft/jsch/ChannelSftp$LsEntry;

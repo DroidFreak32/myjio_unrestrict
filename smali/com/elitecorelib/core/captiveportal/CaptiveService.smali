@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static t:Lcom/elitecorelib/core/captiveportal/a;
+.field public static a:Lcom/elitecorelib/core/captiveportal/a;
 
 
 # instance fields
-.field public s:Lv20;
+.field public b:Lcom/elitecorelib/core/captiveportal/c;
 
 
 # direct methods
@@ -16,11 +16,11 @@
 
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    new-instance v0, Lv20;
+    new-instance v0, Lcom/elitecorelib/core/captiveportal/c;
 
-    invoke-direct {v0, p0}, Lv20;-><init>(Lcom/elitecorelib/core/captiveportal/CaptiveService;)V
+    invoke-direct {v0, p0}, Lcom/elitecorelib/core/captiveportal/c;-><init>(Lcom/elitecorelib/core/captiveportal/CaptiveService;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/captiveportal/CaptiveService;->s:Lv20;
+    iput-object v0, p0, Lcom/elitecorelib/core/captiveportal/CaptiveService;->b:Lcom/elitecorelib/core/captiveportal/c;
 
     return-void
 .end method
@@ -29,18 +29,20 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-    sget-object p1, Lcom/elitecorelib/core/captiveportal/CaptiveService;->t:Lcom/elitecorelib/core/captiveportal/a;
+    sget-object p1, Lcom/elitecorelib/core/captiveportal/CaptiveService;->a:Lcom/elitecorelib/core/captiveportal/a;
 
     if-nez p1, :cond_0
 
     new-instance p1, Lcom/elitecorelib/core/captiveportal/a;
 
-    iget-object v0, p0, Lcom/elitecorelib/core/captiveportal/CaptiveService;->s:Lv20;
+    iget-object v0, p0, Lcom/elitecorelib/core/captiveportal/CaptiveService;->b:Lcom/elitecorelib/core/captiveportal/c;
 
     invoke-direct {p1, v0}, Lcom/elitecorelib/core/captiveportal/a;-><init>(Landroid/os/IBinder;)V
 
-    sput-object p1, Lcom/elitecorelib/core/captiveportal/CaptiveService;->t:Lcom/elitecorelib/core/captiveportal/a;
+    sput-object p1, Lcom/elitecorelib/core/captiveportal/CaptiveService;->a:Lcom/elitecorelib/core/captiveportal/a;
 
     :cond_0
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
@@ -51,7 +53,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p1, p0, Lcom/elitecorelib/core/captiveportal/CaptiveService;->s:Lv20;
+    iget-object p1, p0, Lcom/elitecorelib/core/captiveportal/CaptiveService;->b:Lcom/elitecorelib/core/captiveportal/c;
 
     return-object p1
 .end method

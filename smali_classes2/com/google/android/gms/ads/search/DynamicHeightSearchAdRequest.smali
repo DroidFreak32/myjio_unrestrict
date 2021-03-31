@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
@@ -11,11 +12,11 @@
 
 
 # instance fields
-.field public final zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+.field private final zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest$Builder;)V
+.method private constructor <init>(Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest$Builder;)V
     .locals 0
 
     .line 1
@@ -30,7 +31,7 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iput-object p1, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
     return-void
 .end method
@@ -60,7 +61,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/search/SearchAdRequest;->getCustomEventExtrasBundle(Ljava/lang/Class;)Landroid/os/Bundle;
 
@@ -85,7 +86,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/search/SearchAdRequest;->getNetworkExtras(Ljava/lang/Class;)Lcom/google/android/gms/ads/mediation/NetworkExtras;
 
@@ -108,7 +109,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/search/SearchAdRequest;->getNetworkExtrasBundle(Ljava/lang/Class;)Landroid/os/Bundle;
 
@@ -121,7 +122,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
     invoke-virtual {v0}, Lcom/google/android/gms/ads/search/SearchAdRequest;->getQuery()Ljava/lang/String;
 
@@ -134,7 +135,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/search/SearchAdRequest;->isTestDevice(Landroid/content/Context;)Z
 
@@ -143,13 +144,13 @@
     return p1
 .end method
 
-.method public final zzay()Lcom/google/android/gms/internal/ads/zzmg;
+.method public final zzds()Lcom/google/android/gms/internal/ads/zzza;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzdkk:Lcom/google/android/gms/ads/search/SearchAdRequest;
+    iget-object v0, p0, Lcom/google/android/gms/ads/search/DynamicHeightSearchAdRequest;->zzhpk:Lcom/google/android/gms/ads/search/SearchAdRequest;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/ads/search/SearchAdRequest;->zzay()Lcom/google/android/gms/internal/ads/zzmg;
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/search/SearchAdRequest;->zzds()Lcom/google/android/gms/internal/ads/zzza;
 
     move-result-object v0
 

@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzadd:Lcom/google/android/gms/internal/gtm/zzde;
+.field private static final zzadd:Lcom/google/android/gms/internal/gtm/zzde;
 
-.field public static volatile zzade:Lcom/google/android/gms/internal/gtm/zzde;
+.field private static volatile zzade:Lcom/google/android/gms/internal/gtm/zzde;
 
 
 # direct methods

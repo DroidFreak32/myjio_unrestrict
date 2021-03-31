@@ -58,7 +58,7 @@
         }
     .end annotation
 
-    .line 4
+    .line 1
     iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$c;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     const/4 v1, 0x0
@@ -67,15 +67,15 @@
 
     return-object v1
 
-    .line 5
+    .line 2
     :cond_0
-    iget-object v2, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iget-object v2, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    .line 6
-    iput-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .line 3
+    iput-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    .line 7
-    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .line 4
+    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     :goto_0
     move-object v3, v2
@@ -86,22 +86,22 @@
 
     if-eqz v2, :cond_1
 
-    .line 8
-    iput-object v1, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .line 5
+    iput-object v1, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    .line 9
-    iget-object v1, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    .line 6
+    iget-object v1, v2, Lcom/squareup/moshi/LinkedHashTreeMap$g;->b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     goto :goto_0
 
-    .line 10
+    .line 7
     :cond_1
     iput-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$c;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     return-object v0
 .end method
 
-.method public a(Lcom/squareup/moshi/LinkedHashTreeMap$g;)V
+.method public b(Lcom/squareup/moshi/LinkedHashTreeMap$g;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -114,25 +114,25 @@
     const/4 v0, 0x0
 
     :goto_0
+    if-eqz p1, :cond_0
+
+    .line 1
+    iput-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    .line 2
+    iget-object v0, p1, Lcom/squareup/moshi/LinkedHashTreeMap$g;->b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
     move-object v1, v0
 
     move-object v0, p1
 
     move-object p1, v1
 
-    if-eqz v0, :cond_0
-
-    .line 1
-    iput-object p1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
-    .line 2
-    iget-object p1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
-
     goto :goto_0
 
     .line 3
     :cond_0
-    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$c;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$c;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     return-void
 .end method

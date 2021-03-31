@@ -22,7 +22,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzey;)V
+.method private static zza(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzey;)V
     .locals 0
 
     check-cast p0, Lcom/google/android/gms/internal/clearcut/zzcg;
@@ -66,6 +66,11 @@
 
 .method public final synthetic zza(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzfr;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     check-cast p1, Lcom/google/android/gms/internal/clearcut/zzey;
 
@@ -88,6 +93,11 @@
 
 .method public final synthetic zzc(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzfr;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     check-cast p1, Lcom/google/android/gms/internal/clearcut/zzey;
 

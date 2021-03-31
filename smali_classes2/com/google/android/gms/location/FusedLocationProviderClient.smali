@@ -1,10 +1,14 @@
 .class public Lcom/google/android/gms/location/FusedLocationProviderClient;
 .super Lcom/google/android/gms/common/api/GoogleApi;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/gms/location/FusedLocationProviderClient$zzb;,
+        Lcom/google/android/gms/location/FusedLocationProviderClient$zzd;,
+        Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;,
         Lcom/google/android/gms/location/FusedLocationProviderClient$zza;
     }
 .end annotation
@@ -19,13 +23,23 @@
 
 
 # static fields
+.field public static final KEY_MOCK_LOCATION:Ljava/lang/String; = "mockLocation"
+
 .field public static final KEY_VERTICAL_ACCURACY:Ljava/lang/String; = "verticalAccuracy"
 
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 3
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+        otherwise = 0x3
+    .end annotation
 
+    .line 2
     sget-object v0, Lcom/google/android/gms/location/LocationServices;->API:Lcom/google/android/gms/common/api/Api;
 
     new-instance v1, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
@@ -41,7 +55,15 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+        otherwise = 0x3
+    .end annotation
 
+    .line 1
     sget-object v0, Lcom/google/android/gms/location/LocationServices;->API:Lcom/google/android/gms/common/api/Api;
 
     new-instance v1, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
@@ -55,17 +77,18 @@
     return-void
 .end method
 
-.method public static synthetic zza(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzaj;
+.method public static synthetic zza(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzai;
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzaj;
+    .line 25
+    invoke-direct {p0, p1}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzai;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private final zza(Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzaj;
+.method private final zza(Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzai;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -73,15 +96,109 @@
             "Lcom/google/android/gms/tasks/TaskCompletionSource<",
             "Ljava/lang/Boolean;",
             ">;)",
-            "Lcom/google/android/gms/internal/location/zzaj;"
+            "Lcom/google/android/gms/internal/location/zzai;"
         }
     .end annotation
 
-    new-instance v0, Lcom/google/android/gms/location/zzp;
+    .line 11
+    new-instance v0, Lcom/google/android/gms/location/zzaf;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/location/zzp;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/location/zzaf;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
     return-object v0
+.end method
+
+.method private final zza(Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/location/LocationCallback;Landroid/os/Looper;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;)Lcom/google/android/gms/tasks/Task;
+    .locals 9
+    .param p3    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/internal/location/zzbc;",
+            "Lcom/google/android/gms/location/LocationCallback;",
+            "Landroid/os/Looper;",
+            "Lcom/google/android/gms/location/FusedLocationProviderClient$zza;",
+            ")",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p3}, Lcom/google/android/gms/internal/location/zzbj;->zza(Landroid/os/Looper;)Landroid/os/Looper;
+
+    move-result-object p3
+
+    const-class v0, Lcom/google/android/gms/location/LocationCallback;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 2
+    invoke-static {p2, p3, v0}, Lcom/google/android/gms/common/api/internal/ListenerHolders;->createListenerHolder(Ljava/lang/Object;Landroid/os/Looper;Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/ListenerHolder;
+
+    move-result-object p3
+
+    .line 3
+    new-instance v0, Lcom/google/android/gms/location/zzag;
+
+    invoke-direct {v0, p0, p3}, Lcom/google/android/gms/location/zzag;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/common/api/internal/ListenerHolder;)V
+
+    .line 4
+    new-instance v8, Lcom/google/android/gms/location/zzaa;
+
+    move-object v1, v8
+
+    move-object v2, p0
+
+    move-object v3, v0
+
+    move-object v4, p2
+
+    move-object v5, p4
+
+    move-object v6, p1
+
+    move-object v7, p3
+
+    invoke-direct/range {v1 .. v7}, Lcom/google/android/gms/location/zzaa;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;Lcom/google/android/gms/location/LocationCallback;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/common/api/internal/ListenerHolder;)V
+
+    .line 5
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/RegistrationMethods;->builder()Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+
+    move-result-object p1
+
+    .line 6
+    invoke-virtual {p1, v8}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->register(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+
+    move-result-object p1
+
+    .line 7
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->unregister(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+
+    move-result-object p1
+
+    .line 8
+    invoke-virtual {p1, p3}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->withHolder(Lcom/google/android/gms/common/api/internal/ListenerHolder;)Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+
+    move-result-object p1
+
+    .line 9
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->build()Lcom/google/android/gms/common/api/internal/RegistrationMethods;
+
+    move-result-object p1
+
+    .line 10
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doRegisterEventListener(Lcom/google/android/gms/common/api/internal/RegistrationMethods;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 
@@ -97,25 +214,175 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->asGoogleApiClient()Lcom/google/android/gms/common/api/GoogleApiClient;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/android/gms/location/FusedLocationProviderApi;->flushLocations(Lcom/google/android/gms/common/api/GoogleApiClient;)Lcom/google/android/gms/common/api/PendingResult;
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/PendingResultUtil;->toVoidTask(Lcom/google/android/gms/common/api/PendingResult;)Lcom/google/android/gms/tasks/Task;
+    sget-object v1, Lcom/google/android/gms/location/zzr;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    .line 2
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    .line 3
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object v0
+
+    .line 4
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/GoogleApi;->doWrite(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
     return-object v0
 .end method
 
+.method public getCurrentLocation(ILcom/google/android/gms/tasks/CancellationToken;)Lcom/google/android/gms/tasks/Task;
+    .locals 3
+    .param p2    # Lcom/google/android/gms/tasks/CancellationToken;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Lcom/google/android/gms/tasks/CancellationToken;",
+            ")",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Landroid/location/Location;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/location/LocationRequest;->create()Lcom/google/android/gms/location/LocationRequest;
+
+    move-result-object v0
+
+    .line 2
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/location/LocationRequest;->setPriority(I)Lcom/google/android/gms/location/LocationRequest;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0x0
+
+    .line 3
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/location/LocationRequest;->setInterval(J)Lcom/google/android/gms/location/LocationRequest;
+
+    move-result-object p1
+
+    .line 4
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/location/LocationRequest;->setFastestInterval(J)Lcom/google/android/gms/location/LocationRequest;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0x7530
+
+    .line 5
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/location/LocationRequest;->setExpirationDuration(J)Lcom/google/android/gms/location/LocationRequest;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    .line 6
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/location/zzbc;->zza(Ljava/lang/String;Lcom/google/android/gms/location/LocationRequest;)Lcom/google/android/gms/internal/location/zzbc;
+
+    move-result-object p1
+
+    const/4 v0, 0x1
+
+    .line 7
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/location/zzbc;->zza(Z)Lcom/google/android/gms/internal/location/zzbc;
+
+    move-result-object p1
+
+    const-wide/16 v1, 0x2710
+
+    .line 8
+    invoke-virtual {p1, v1, v2}, Lcom/google/android/gms/internal/location/zzbc;->zza(J)Lcom/google/android/gms/internal/location/zzbc;
+
+    move-result-object p1
+
+    .line 9
+    new-instance v1, Lcom/google/android/gms/location/zzs;
+
+    invoke-direct {v1, p0, p2, p1}, Lcom/google/android/gms/location/zzs;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/CancellationToken;Lcom/google/android/gms/internal/location/zzbc;)V
+
+    .line 10
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object p1
+
+    .line 11
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object p1
+
+    new-array v0, v0, [Lcom/google/android/gms/common/Feature;
+
+    sget-object v1, Lcom/google/android/gms/location/zzp;->zzb:Lcom/google/android/gms/common/Feature;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    .line 12
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->setFeatures([Lcom/google/android/gms/common/Feature;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object p1
+
+    .line 13
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object p1
+
+    .line 14
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doRead(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    if-eqz p2, :cond_0
+
+    .line 15
+    new-instance v0, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-direct {v0, p2}, Lcom/google/android/gms/tasks/TaskCompletionSource;-><init>(Lcom/google/android/gms/tasks/CancellationToken;)V
+
+    .line 16
+    new-instance p2, Lcom/google/android/gms/location/zzy;
+
+    invoke-direct {p2, v0}, Lcom/google/android/gms/location/zzy;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/Task;->continueWithTask(Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
+
+    .line 17
+    invoke-virtual {v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->getTask()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    :cond_0
+    return-object p1
+.end method
+
 .method public getLastLocation()Lcom/google/android/gms/tasks/Task;
-    .locals 1
+    .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -125,10 +392,26 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/google/android/gms/location/zzl;
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/location/zzl;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;)V
+    move-result-object v0
 
+    new-instance v1, Lcom/google/android/gms/location/zzq;
+
+    invoke-direct {v1, p0}, Lcom/google/android/gms/location/zzq;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;)V
+
+    .line 2
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    .line 3
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object v0
+
+    .line 4
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/GoogleApi;->doRead(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
@@ -137,7 +420,14 @@
 .end method
 
 .method public getLocationAvailability()Lcom/google/android/gms/tasks/Task;
-    .locals 1
+    .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -147,10 +437,24 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/google/android/gms/location/zzm;
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/location/zzm;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;)V
+    move-result-object v0
 
+    sget-object v1, Lcom/google/android/gms/location/zzx;->zza:Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+    .line 2
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    .line 3
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object v0
+
+    .line 4
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/GoogleApi;->doRead(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
@@ -171,17 +475,27 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
+    .line 5
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->asGoogleApiClient()Lcom/google/android/gms/common/api/GoogleApiClient;
+    move-result-object v0
 
-    move-result-object v1
+    new-instance v1, Lcom/google/android/gms/location/zzac;
 
-    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/location/FusedLocationProviderApi;->removeLocationUpdates(Lcom/google/android/gms/common/api/GoogleApiClient;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    invoke-direct {v1, p1}, Lcom/google/android/gms/location/zzac;-><init>(Landroid/app/PendingIntent;)V
+
+    .line 6
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/PendingResultUtil;->toVoidTask(Lcom/google/android/gms/common/api/PendingResult;)Lcom/google/android/gms/tasks/Task;
+    .line 7
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object p1
+
+    .line 8
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doWrite(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -201,8 +515,10 @@
         }
     .end annotation
 
+    .line 1
     const-class v0, Lcom/google/android/gms/location/LocationCallback;
 
+    .line 2
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
@@ -211,10 +527,12 @@
 
     move-result-object p1
 
+    .line 3
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doUnregisterEventListener(Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
+    .line 4
     invoke-static {p1}, Lcom/google/android/gms/common/api/internal/TaskUtil;->toVoidTaskThatFailsOnFalse(Lcom/google/android/gms/tasks/Task;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
@@ -224,6 +542,13 @@
 
 .method public requestLocationUpdates(Lcom/google/android/gms/location/LocationRequest;Landroid/app/PendingIntent;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -236,17 +561,34 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->asGoogleApiClient()Lcom/google/android/gms/common/api/GoogleApiClient;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p1, p2}, Lcom/google/android/gms/location/FusedLocationProviderApi;->requestLocationUpdates(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/LocationRequest;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    .line 3
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/location/zzbc;->zza(Ljava/lang/String;Lcom/google/android/gms/location/LocationRequest;)Lcom/google/android/gms/internal/location/zzbc;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/PendingResultUtil;->toVoidTask(Lcom/google/android/gms/common/api/PendingResult;)Lcom/google/android/gms/tasks/Task;
+    .line 4
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/location/zzz;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/google/android/gms/location/zzz;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/internal/location/zzbc;Landroid/app/PendingIntent;)V
+
+    .line 5
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
+
+    move-result-object p1
+
+    .line 6
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object p1
+
+    .line 7
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doWrite(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -255,6 +597,17 @@
 
 .method public requestLocationUpdates(Lcom/google/android/gms/location/LocationRequest;Lcom/google/android/gms/location/LocationCallback;Landroid/os/Looper;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p3    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,37 +621,15 @@
         }
     .end annotation
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/location/zzbd;->zza(Lcom/google/android/gms/location/LocationRequest;)Lcom/google/android/gms/internal/location/zzbd;
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/location/zzbc;->zza(Ljava/lang/String;Lcom/google/android/gms/location/LocationRequest;)Lcom/google/android/gms/internal/location/zzbc;
 
     move-result-object p1
 
-    invoke-static {p3}, Lcom/google/android/gms/internal/location/zzbm;->zza(Landroid/os/Looper;)Landroid/os/Looper;
-
-    move-result-object p3
-
-    const-class v0, Lcom/google/android/gms/location/LocationCallback;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p2, p3, v0}, Lcom/google/android/gms/common/api/internal/ListenerHolders;->createListenerHolder(Ljava/lang/Object;Landroid/os/Looper;Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/ListenerHolder;
-
-    move-result-object p2
-
-    new-instance p3, Lcom/google/android/gms/location/zzn;
-
-    invoke-direct {p3, p0, p2, p1, p2}, Lcom/google/android/gms/location/zzn;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/common/api/internal/ListenerHolder;Lcom/google/android/gms/internal/location/zzbd;Lcom/google/android/gms/common/api/internal/ListenerHolder;)V
-
-    new-instance p1, Lcom/google/android/gms/location/zzo;
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->getListenerKey()Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
-
-    move-result-object p2
-
-    invoke-direct {p1, p0, p2}, Lcom/google/android/gms/location/zzo;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;)V
-
-    invoke-virtual {p0, p3, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doRegisterEventListener(Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;Lcom/google/android/gms/common/api/internal/UnregisterListenerMethod;)Lcom/google/android/gms/tasks/Task;
+    .line 2
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/location/LocationCallback;Landroid/os/Looper;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -307,6 +638,13 @@
 
 .method public setMockLocation(Landroid/location/Location;)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -318,17 +656,27 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->asGoogleApiClient()Lcom/google/android/gms/common/api/GoogleApiClient;
+    move-result-object v0
 
-    move-result-object v1
+    new-instance v1, Lcom/google/android/gms/location/zzae;
 
-    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/location/FusedLocationProviderApi;->setMockLocation(Lcom/google/android/gms/common/api/GoogleApiClient;Landroid/location/Location;)Lcom/google/android/gms/common/api/PendingResult;
+    invoke-direct {v1, p1}, Lcom/google/android/gms/location/zzae;-><init>(Landroid/location/Location;)V
+
+    .line 2
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/PendingResultUtil;->toVoidTask(Lcom/google/android/gms/common/api/PendingResult;)Lcom/google/android/gms/tasks/Task;
+    .line 3
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object p1
+
+    .line 4
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doWrite(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -337,6 +685,13 @@
 
 .method public setMockMode(Z)Lcom/google/android/gms/tasks/Task;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -346,19 +701,155 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/common/api/internal/TaskApiCall;->builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->asGoogleApiClient()Lcom/google/android/gms/common/api/GoogleApiClient;
+    move-result-object v0
 
-    move-result-object v1
+    new-instance v1, Lcom/google/android/gms/location/zzab;
 
-    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/location/FusedLocationProviderApi;->setMockMode(Lcom/google/android/gms/common/api/GoogleApiClient;Z)Lcom/google/android/gms/common/api/PendingResult;
+    invoke-direct {v1, p1}, Lcom/google/android/gms/location/zzab;-><init>(Z)V
+
+    .line 2
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->run(Lcom/google/android/gms/common/api/internal/RemoteCall;)Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/PendingResultUtil;->toVoidTask(Lcom/google/android/gms/common/api/PendingResult;)Lcom/google/android/gms/tasks/Task;
+    .line 3
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
+
+    move-result-object p1
+
+    .line 4
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApi;->doWrite(Lcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public final synthetic zza(Lcom/google/android/gms/internal/location/zzay;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 23
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->getContextAttributionTag()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/location/zzay;->zza(Ljava/lang/String;)Landroid/location/Location;
+
+    move-result-object p1
+
+    .line 24
+    invoke-virtual {p2, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setResult(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final synthetic zza(Lcom/google/android/gms/internal/location/zzbc;Landroid/app/PendingIntent;Lcom/google/android/gms/internal/location/zzay;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 12
+    new-instance v0, Lcom/google/android/gms/location/FusedLocationProviderClient$zzd;
+
+    invoke-direct {v0, p4}, Lcom/google/android/gms/location/FusedLocationProviderClient$zzd;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+
+    .line 13
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->getContextAttributionTag()Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p1, p4}, Lcom/google/android/gms/internal/location/zzbc;->zza(Ljava/lang/String;)Lcom/google/android/gms/internal/location/zzbc;
+
+    .line 14
+    invoke-virtual {p3, p1, p2, v0}, Lcom/google/android/gms/internal/location/zzay;->zza(Lcom/google/android/gms/internal/location/zzbc;Landroid/app/PendingIntent;Lcom/google/android/gms/internal/location/zzai;)V
+
+    return-void
+.end method
+
+.method public final synthetic zza(Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;Lcom/google/android/gms/location/LocationCallback;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/common/api/internal/ListenerHolder;Lcom/google/android/gms/internal/location/zzay;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 15
+    new-instance v0, Lcom/google/android/gms/location/FusedLocationProviderClient$zzb;
+
+    new-instance v1, Lcom/google/android/gms/location/zzu;
+
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/android/gms/location/zzu;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;Lcom/google/android/gms/location/LocationCallback;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;)V
+
+    invoke-direct {v0, p7, v1}, Lcom/google/android/gms/location/FusedLocationProviderClient$zzb;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;)V
+
+    .line 16
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApi;->getContextAttributionTag()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p4, p1}, Lcom/google/android/gms/internal/location/zzbc;->zza(Ljava/lang/String;)Lcom/google/android/gms/internal/location/zzbc;
+
+    .line 17
+    invoke-virtual {p6, p4, p5, v0}, Lcom/google/android/gms/internal/location/zzay;->zza(Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/common/api/internal/ListenerHolder;Lcom/google/android/gms/internal/location/zzai;)V
+
+    return-void
+.end method
+
+.method public final synthetic zza(Lcom/google/android/gms/tasks/CancellationToken;Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/internal/location/zzay;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 18
+    new-instance p3, Lcom/google/android/gms/location/zzad;
+
+    invoke-direct {p3, p0, p4}, Lcom/google/android/gms/location/zzad;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+
+    if-eqz p1, :cond_0
+
+    .line 19
+    new-instance v0, Lcom/google/android/gms/location/zzt;
+
+    invoke-direct {v0, p0, p3}, Lcom/google/android/gms/location/zzt;-><init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/location/LocationCallback;)V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/tasks/CancellationToken;->onCanceledRequested(Lcom/google/android/gms/tasks/OnTokenCanceledListener;)Lcom/google/android/gms/tasks/CancellationToken;
+
+    .line 20
+    :cond_0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object p1
+
+    new-instance v0, Lcom/google/android/gms/location/zzw;
+
+    invoke-direct {v0, p4}, Lcom/google/android/gms/location/zzw;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+
+    .line 21
+    invoke-direct {p0, p2, p3, p1, v0}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/internal/location/zzbc;Lcom/google/android/gms/location/LocationCallback;Landroid/os/Looper;Lcom/google/android/gms/location/FusedLocationProviderClient$zza;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    .line 22
+    new-instance p2, Lcom/google/android/gms/location/zzv;
+
+    invoke-direct {p2, p4, p1}, Lcom/google/android/gms/location/zzv;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/tasks/Task;)V
+
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/Task;->continueWithTask(Lcom/google/android/gms/tasks/Continuation;)Lcom/google/android/gms/tasks/Task;
+
+    return-void
 .end method

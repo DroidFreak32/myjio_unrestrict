@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final buffer:Ljava/nio/ByteBuffer;
+.field private final buffer:Ljava/nio/ByteBuffer;
 
 
 # direct methods
@@ -53,6 +53,18 @@
 # virtual methods
 .method public update([BLjava/lang/Long;Ljava/security/MessageDigest;)V
     .locals 3
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Long;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
@@ -104,6 +116,18 @@
 
 .method public bridge synthetic update([BLjava/lang/Object;Ljava/security/MessageDigest;)V
     .locals 0
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p2, Ljava/lang/Long;

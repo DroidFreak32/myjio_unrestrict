@@ -19,11 +19,11 @@
 
 
 # instance fields
-.field public final zzbdc:Lcom/google/android/gms/internal/gtm/zzsk;
+.field private final zzbdc:Lcom/google/android/gms/internal/gtm/zzsk;
 
-.field public final zzbdd:Z
+.field private final zzbdd:Z
 
-.field public final zzbdm:Lcom/google/android/gms/internal/gtm/zztr;
+.field private final zzbdm:Lcom/google/android/gms/internal/gtm/zztr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zztr<",
@@ -32,7 +32,7 @@
     .end annotation
 .end field
 
-.field public final zzbdn:Lcom/google/android/gms/internal/gtm/zzqq;
+.field private final zzbdn:Lcom/google/android/gms/internal/gtm/zzqq;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzqq<",
@@ -43,7 +43,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zztr;Lcom/google/android/gms/internal/gtm/zzqq;Lcom/google/android/gms/internal/gtm/zzsk;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zztr;Lcom/google/android/gms/internal/gtm/zzqq;Lcom/google/android/gms/internal/gtm/zzsk;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -247,6 +247,12 @@
             "Lcom/google/android/gms/internal/gtm/zzsy;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -465,6 +471,12 @@
             "(TT;",
             "Lcom/google/android/gms/internal/gtm/zzum;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

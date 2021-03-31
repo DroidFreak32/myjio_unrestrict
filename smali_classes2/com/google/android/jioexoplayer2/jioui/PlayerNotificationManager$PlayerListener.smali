@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;)V
     .locals 0
 
     .line 1
@@ -47,7 +47,7 @@
 .method public synthetic onLoadingChanged(Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onLoadingChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
+    invoke-static {p0, p1}, Lph;->$default$onLoadingChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
 
     return-void
 .end method
@@ -94,7 +94,7 @@
 .method public synthetic onPlayerError(Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onPlayerError(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
+    invoke-static {p0, p1}, Lph;->$default$onPlayerError(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
 
     return-void
 .end method
@@ -198,7 +198,7 @@
 .method public synthetic onSeekProcessed()V
     .locals 0
 
-    invoke-static {p0}, Lfb0;->$default$onSeekProcessed(Lcom/google/android/jioexoplayer2/Player$EventListener;)V
+    invoke-static {p0}, Lph;->$default$onSeekProcessed(Lcom/google/android/jioexoplayer2/Player$EventListener;)V
 
     return-void
 .end method
@@ -206,13 +206,17 @@
 .method public synthetic onShuffleModeEnabledChanged(Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onShuffleModeEnabledChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
+    invoke-static {p0, p1}, Lph;->$default$onShuffleModeEnabledChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
 
     return-void
 .end method
 
 .method public onTimelineChanged(Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
     .locals 0
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager$PlayerListener;->this$0:Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;
@@ -253,7 +257,7 @@
 .method public synthetic onTracksChanged(Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lfb0;->$default$onTracksChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
+    invoke-static {p0, p1, p2}, Lph;->$default$onTracksChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
 
     return-void
 .end method

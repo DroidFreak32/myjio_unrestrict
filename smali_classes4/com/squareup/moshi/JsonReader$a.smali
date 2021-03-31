@@ -1,4 +1,4 @@
-.class public final Lcom/squareup/moshi/JsonReader$a;
+.class public synthetic Lcom/squareup/moshi/JsonReader$a;
 .super Ljava/lang/Object;
 .source "JsonReader.java"
 
@@ -9,101 +9,123 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "a"
+    accessFlags = 0x1009
+    name = null
 .end annotation
 
 
-# instance fields
-.field public final a:[Ljava/lang/String;
-
-.field public final b:Lokio/Options;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/String;Lokio/Options;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/squareup/moshi/JsonReader$a;->a:[Ljava/lang/String;
-
-    .line 3
-    iput-object p2, p0, Lcom/squareup/moshi/JsonReader$a;->b:Lokio/Options;
-
-    return-void
-.end method
-
-.method public static varargs a([Ljava/lang/String;)Lcom/squareup/moshi/JsonReader$a;
-    .locals 4
-
-    .line 1
-    :try_start_0
-    array-length v0, p0
-
-    new-array v0, v0, [Lokio/ByteString;
-
-    .line 2
-    new-instance v1, Lokio/Buffer;
-
-    invoke-direct {v1}, Lokio/Buffer;-><init>()V
-
-    const/4 v2, 0x0
-
-    .line 3
-    :goto_0
-    array-length v3, p0
-
-    if-ge v2, v3, :cond_0
-
-    .line 4
-    aget-object v3, p0, v2
-
-    invoke-static {v1, v3}, Lv63;->a(Lokio/BufferedSink;Ljava/lang/String;)V
-
-    .line 5
-    invoke-virtual {v1}, Lokio/Buffer;->readByte()B
-
-    .line 6
-    invoke-virtual {v1}, Lokio/Buffer;->readByteString()Lokio/ByteString;
-
-    move-result-object v3
-
-    aput-object v3, v0, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 7
-    :cond_0
-    new-instance v1, Lcom/squareup/moshi/JsonReader$a;
-
-    invoke-virtual {p0}, [Ljava/lang/String;->clone()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, [Ljava/lang/String;
-
-    invoke-static {v0}, Lokio/Options;->of([Lokio/ByteString;)Lokio/Options;
+    invoke-static {}, Lcom/squareup/moshi/JsonReader$Token;->values()[Lcom/squareup/moshi/JsonReader$Token;
 
     move-result-object v0
 
-    invoke-direct {v1, p0, v0}, Lcom/squareup/moshi/JsonReader$a;-><init>([Ljava/lang/String;Lokio/Options;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    array-length v0, v0
 
-    return-object v1
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/squareup/moshi/JsonReader$a;->a:[I
+
+    :try_start_0
+    sget-object v1, Lcom/squareup/moshi/JsonReader$Token;->BEGIN_ARRAY:Lcom/squareup/moshi/JsonReader$Token;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    move-exception p0
+    :try_start_1
+    sget-object v0, Lcom/squareup/moshi/JsonReader$a;->a:[I
 
-    .line 8
-    new-instance v0, Ljava/lang/AssertionError;
+    sget-object v1, Lcom/squareup/moshi/JsonReader$Token;->BEGIN_OBJECT:Lcom/squareup/moshi/JsonReader$Token;
 
-    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    throw v0
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :try_start_2
+    sget-object v0, Lcom/squareup/moshi/JsonReader$a;->a:[I
+
+    sget-object v1, Lcom/squareup/moshi/JsonReader$Token;->STRING:Lcom/squareup/moshi/JsonReader$Token;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v0, Lcom/squareup/moshi/JsonReader$a;->a:[I
+
+    sget-object v1, Lcom/squareup/moshi/JsonReader$Token;->NUMBER:Lcom/squareup/moshi/JsonReader$Token;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v0, Lcom/squareup/moshi/JsonReader$a;->a:[I
+
+    sget-object v1, Lcom/squareup/moshi/JsonReader$Token;->BOOLEAN:Lcom/squareup/moshi/JsonReader$Token;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v0, Lcom/squareup/moshi/JsonReader$a;->a:[I
+
+    sget-object v1, Lcom/squareup/moshi/JsonReader$Token;->NULL:Lcom/squareup/moshi/JsonReader$Token;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    return-void
 .end method

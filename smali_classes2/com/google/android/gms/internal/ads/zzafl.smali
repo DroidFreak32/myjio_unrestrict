@@ -1,35 +1,45 @@
 .class public final Lcom/google/android/gms/internal/ads/zzafl;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapv;
-
-
-# instance fields
-.field public final synthetic zzcgi:Lcom/google/android/gms/internal/ads/zzafj;
+.implements Lcom/google/android/gms/internal/ads/zzafj;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzafj;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.formats.client.IOnAppInstallAdLoadedListener"
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzafl;->zzcgi:Lcom/google/android/gms/internal/ads/zzafj;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final zza(Lcom/google/android/gms/internal/ads/zzaex;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzafl;->zzcgi:Lcom/google/android/gms/internal/ads/zzafj;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzafj;->zzpm()V
+    move-result-object v0
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    const/4 p1, 0x1
+
+    .line 3
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
 
     return-void
 .end method

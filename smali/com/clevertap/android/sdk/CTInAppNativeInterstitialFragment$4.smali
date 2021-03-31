@@ -1,14 +1,11 @@
 .class public Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;
-.super Ljava/lang/Object;
+.super Landroid/app/Dialog;
 .source "CTInAppNativeInterstitialFragment.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->prepareMedia()V
+    value = Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->initFullScreenDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,44 +19,39 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;Landroid/content/Context;I)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 0
+.method public onBackPressed()V
+    .locals 1
 
     .line 1
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$400(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)Z
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$200(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)Z
 
-    move-result p1
+    move-result v0
 
-    if-nez p1, :cond_0
+    if-eqz v0, :cond_0
 
     .line 2
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$500(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)V
-
-    goto :goto_0
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$300(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)V
 
     .line 3
     :cond_0
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment$4;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;
+    invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;->access$600(Lcom/clevertap/android/sdk/CTInAppNativeInterstitialFragment;)V
-
-    :goto_0
     return-void
 .end method

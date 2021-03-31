@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
 
 # direct methods
@@ -46,6 +46,10 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/util/Executors$1;->handler:Landroid/os/Handler;

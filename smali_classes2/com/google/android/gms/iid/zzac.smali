@@ -30,11 +30,7 @@
     .line 1
     new-instance p1, Lcom/google/android/gms/iid/zzae;
 
-    const/4 p2, 0x1
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     const/4 v0, 0x0
 

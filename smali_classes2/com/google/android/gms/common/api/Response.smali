@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/Response;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public zzap:Lcom/google/android/gms/common/api/Result;
+.field private zza:Lcom/google/android/gms/common/api/Result;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -35,6 +36,10 @@
 
 .method public constructor <init>(Lcom/google/android/gms/common/api/Result;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -45,7 +50,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/api/Response;->zzap:Lcom/google/android/gms/common/api/Result;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Response;->zza:Lcom/google/android/gms/common/api/Result;
 
     return-void
 .end method
@@ -54,6 +59,9 @@
 # virtual methods
 .method public getResult()Lcom/google/android/gms/common/api/Result;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -61,13 +69,17 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Response;->zzap:Lcom/google/android/gms/common/api/Result;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Response;->zza:Lcom/google/android/gms/common/api/Result;
 
     return-object v0
 .end method
 
 .method public setResult(Lcom/google/android/gms/common/api/Result;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -75,7 +87,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/Response;->zzap:Lcom/google/android/gms/common/api/Result;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Response;->zza:Lcom/google/android/gms/common/api/Result;
 
     return-void
 .end method

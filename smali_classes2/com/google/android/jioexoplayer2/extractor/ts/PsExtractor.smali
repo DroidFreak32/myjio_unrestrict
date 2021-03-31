@@ -21,11 +21,11 @@
 
 .field public static final FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
-.field public static final MAX_SEARCH_LENGTH:J = 0x100000L
+.field private static final MAX_SEARCH_LENGTH:J = 0x100000L
 
-.field public static final MAX_SEARCH_LENGTH_AFTER_AUDIO_AND_VIDEO_FOUND:J = 0x2000L
+.field private static final MAX_SEARCH_LENGTH_AFTER_AUDIO_AND_VIDEO_FOUND:J = 0x2000L
 
-.field public static final MAX_STREAM_ID_PLUS_ONE:I = 0x100
+.field private static final MAX_STREAM_ID_PLUS_ONE:I = 0x100
 
 .field public static final MPEG_PROGRAM_END_CODE:I = 0x1b9
 
@@ -43,25 +43,25 @@
 
 
 # instance fields
-.field public final durationReader:Lcom/google/android/jioexoplayer2/extractor/ts/PsDurationReader;
+.field private final durationReader:Lcom/google/android/jioexoplayer2/extractor/ts/PsDurationReader;
 
-.field public foundAllTracks:Z
+.field private foundAllTracks:Z
 
-.field public foundAudioTrack:Z
+.field private foundAudioTrack:Z
 
-.field public foundVideoTrack:Z
+.field private foundVideoTrack:Z
 
-.field public hasOutputSeekMap:Z
+.field private hasOutputSeekMap:Z
 
-.field public lastTrackPosition:J
+.field private lastTrackPosition:J
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
 
-.field public psBinarySearchSeeker:Lcom/google/android/jioexoplayer2/extractor/ts/PsBinarySearchSeeker;
+.field private psBinarySearchSeeker:Lcom/google/android/jioexoplayer2/extractor/ts/PsBinarySearchSeeker;
 
-.field public final psPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final psPacketBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final psPayloadReaders:Landroid/util/SparseArray;
+.field private final psPayloadReaders:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -71,7 +71,7 @@
     .end annotation
 .end field
 
-.field public final timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private final timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -79,7 +79,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lkc0;->a:Lkc0;
+    sget-object v0, Lui;->a:Lui;
 
     sput-object v0, Lcom/google/android/jioexoplayer2/extractor/ts/PsExtractor;->FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
@@ -209,9 +209,7 @@
     .line 7
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PsExtractor;->output:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
 
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PsExtractor;->psBinarySearchSeeker:Lcom/google/android/jioexoplayer2/extractor/ts/PsBinarySearchSeeker;
-
-    invoke-virtual {p2}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker;->getSeekMap()Lcom/google/android/jioexoplayer2/extractor/SeekMap;
+    invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker;->getSeekMap()Lcom/google/android/jioexoplayer2/extractor/SeekMap;
 
     move-result-object p2
 
@@ -253,6 +251,12 @@
 
 .method public read(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getLength()J
@@ -805,6 +809,12 @@
 
 .method public sniff(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)Z
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     const/16 v0, 0xe
 

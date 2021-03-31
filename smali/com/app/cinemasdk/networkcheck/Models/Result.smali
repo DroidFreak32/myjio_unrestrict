@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public data:Lcom/app/cinemasdk/networkcheck/Models/Data;
+.field private data:Lcom/app/cinemasdk/networkcheck/Models/Data;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

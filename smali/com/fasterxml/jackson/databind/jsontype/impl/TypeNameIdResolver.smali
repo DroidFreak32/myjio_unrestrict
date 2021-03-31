@@ -479,7 +479,9 @@
     new-array v0, v0, [Ljava/lang/Object;
 
     .line 1
-    const-class v1, Lcom/fasterxml/jackson/databind/jsontype/impl/TypeNameIdResolver;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 

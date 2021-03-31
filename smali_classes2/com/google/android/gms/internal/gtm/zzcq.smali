@@ -16,13 +16,13 @@
 
 
 # static fields
-.field public static zzacd:Ljava/lang/Boolean;
+.field private static zzacd:Ljava/lang/Boolean;
 
 
 # instance fields
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public final zzacc:Landroid/content/Context;
+.field private final zzacc:Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -133,6 +133,12 @@
 # virtual methods
 .method public final onCreate()V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzcq;->zzacc:Landroid/content/Context;
@@ -156,6 +162,12 @@
 
 .method public final onDestroy()V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzcq;->zzacc:Landroid/content/Context;
@@ -179,6 +191,12 @@
 
 .method public final onStartCommand(Landroid/content/Intent;II)I
     .locals 3
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -255,14 +273,14 @@
 
     move-result-object p1
 
+    const-string v1, "Local AnalyticsService called. startId, action"
+
     .line 10
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "Local AnalyticsService called. startId, action"
-
-    invoke-virtual {p2, v2, v1, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p2, v1, v2, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     const-string v1, "com.google.android.gms.analytics.ANALYTICS_DISPATCH"
 

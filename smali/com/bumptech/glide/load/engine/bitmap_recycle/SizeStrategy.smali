@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x13
+.end annotation
+
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy$Key;,
@@ -16,11 +20,11 @@
 
 
 # static fields
-.field public static final MAX_SIZE_MULTIPLE:I = 0x8
+.field private static final MAX_SIZE_MULTIPLE:I = 0x8
 
 
 # instance fields
-.field public final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
+.field private final groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap<",
@@ -31,9 +35,9 @@
     .end annotation
 .end field
 
-.field public final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy$KeyPool;
+.field private final keyPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy$KeyPool;
 
-.field public final sortedSizes:Ljava/util/NavigableMap;
+.field private final sortedSizes:Ljava/util/NavigableMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/NavigableMap<",
@@ -149,7 +153,7 @@
     return-object p0
 .end method
 
-.method public static getBitmapString(Landroid/graphics/Bitmap;)Ljava/lang/String;
+.method private static getBitmapString(Landroid/graphics/Bitmap;)Ljava/lang/String;
     .locals 0
 
     .line 1
@@ -169,6 +173,8 @@
 # virtual methods
 .method public get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 4
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-static {p1, p2, p3}, Lcom/bumptech/glide/util/Util;->getBitmapByteSize(IILandroid/graphics/Bitmap$Config;)I
@@ -357,6 +363,8 @@
 
 .method public removeLast()Landroid/graphics/Bitmap;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy;->groupedMap:Lcom/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap;

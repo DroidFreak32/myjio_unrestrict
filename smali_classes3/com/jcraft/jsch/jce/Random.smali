@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public random:Ljava/security/SecureRandom;
+.field private random:Ljava/security/SecureRandom;
 
-.field public tmp:[B
+.field private tmp:[B
 
 
 # direct methods

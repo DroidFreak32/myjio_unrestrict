@@ -21,9 +21,9 @@
 
 
 # instance fields
-.field public final _name:Ljava/lang/String;
+.field private final _name:Ljava/lang/String;
 
-.field public final _type:Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty$Type;
+.field private final _type:Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty$Type;
 
 
 # direct methods

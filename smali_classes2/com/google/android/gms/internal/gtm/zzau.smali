@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzxe:Lcom/google/android/gms/internal/gtm/zzat;
+.field private final synthetic zzxe:Lcom/google/android/gms/internal/gtm/zzat;
 
 
 # direct methods

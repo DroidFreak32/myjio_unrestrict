@@ -4,83 +4,55 @@
 
 
 # instance fields
-.field public final clickThroughUrl:Ljava/lang/String;
+.field private final clickThroughUrl:Ljava/lang/String;
 
-.field public final size:Ljava/lang/String;
+.field private final size:Ljava/lang/String;
 
-.field public final src:Ljava/lang/String;
+.field private final src:Ljava/lang/String;
 
-.field public final type:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
+.field private final type:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;)V
-    .locals 0
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData;-><init>()V
 
-    if-eqz p1, :cond_3
+    const-string v0, "Null size"
 
     .line 2
-    iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->size:Ljava/lang/String;
-
-    if-eqz p2, :cond_2
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 3
-    iput-object p2, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->src:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->size:Ljava/lang/String;
 
-    if-eqz p3, :cond_1
+    const-string p1, "Null src"
 
     .line 4
-    iput-object p3, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->clickThroughUrl:Ljava/lang/String;
-
-    if-eqz p4, :cond_0
+    invoke-static {p2, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 5
+    iput-object p2, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->src:Ljava/lang/String;
+
+    const-string p1, "Null clickThroughUrl"
+
+    .line 6
+    invoke-static {p3, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 7
+    iput-object p3, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->clickThroughUrl:Ljava/lang/String;
+
+    const-string p1, "Null type"
+
+    .line 8
+    invoke-static {p4, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 9
     iput-object p4, p0, Lcom/google/ads/interactivemedia/v3/impl/data/j;->type:Lcom/google/ads/interactivemedia/v3/impl/data/CompanionData$a;
 
     return-void
-
-    .line 6
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null type"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 7
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null clickThroughUrl"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 8
-    :cond_2
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null src"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 9
-    :cond_3
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null size"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 

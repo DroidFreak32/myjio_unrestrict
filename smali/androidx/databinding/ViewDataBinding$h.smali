@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/databinding/ViewDataBinding;-><init>(Lsb;Landroid/view/View;I)V
+    value = Landroidx/databinding/ViewDataBinding;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/databinding/ViewDataBinding;
+.field public final synthetic a:Landroidx/databinding/ViewDataBinding;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/databinding/ViewDataBinding$h;->s:Landroidx/databinding/ViewDataBinding;
+    iput-object p1, p0, Landroidx/databinding/ViewDataBinding$h;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,7 +39,7 @@
     .locals 0
 
     .line 1
-    iget-object p1, p0, Landroidx/databinding/ViewDataBinding$h;->s:Landroidx/databinding/ViewDataBinding;
+    iget-object p1, p0, Landroidx/databinding/ViewDataBinding$h;->a:Landroidx/databinding/ViewDataBinding;
 
     invoke-static {p1}, Landroidx/databinding/ViewDataBinding;->access$100(Landroidx/databinding/ViewDataBinding;)Ljava/lang/Runnable;
 

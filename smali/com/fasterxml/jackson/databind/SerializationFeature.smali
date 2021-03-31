@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/databind/SerializationFeature;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/databind/SerializationFeature;
 
 .field public static final enum CLOSE_CLOSEABLE:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
@@ -77,391 +77,401 @@
 
 
 # instance fields
-.field public final _defaultState:Z
+.field private final _defaultState:Z
 
-.field public final _mask:I
+.field private final _mask:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 16
+    .locals 26
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v1, 0x0
+    const-string v1, "WRAP_ROOT_VALUE"
 
-    const-string v2, "WRAP_ROOT_VALUE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRAP_ROOT_VALUE:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     const-string v3, "INDENT_OUTPUT"
 
-    invoke-direct {v0, v3, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->INDENT_OUTPUT:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    invoke-direct {v1, v3, v4, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->INDENT_OUTPUT:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v3, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v3, 0x2
+    const-string v5, "FAIL_ON_EMPTY_BEANS"
 
-    const-string v4, "FAIL_ON_EMPTY_BEANS"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v3, v5, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_EMPTY_BEANS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v3, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_EMPTY_BEANS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v4, 0x3
+    const-string v7, "FAIL_ON_SELF_REFERENCES"
 
-    const-string v5, "FAIL_ON_SELF_REFERENCES"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v5, v7, v8, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_SELF_REFERENCES:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v5, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_SELF_REFERENCES:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 5
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v7, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v5, 0x4
+    const-string v9, "WRAP_EXCEPTIONS"
 
-    const-string v6, "WRAP_EXCEPTIONS"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v7, v9, v10, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRAP_EXCEPTIONS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v7, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRAP_EXCEPTIONS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 6
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v9, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v6, 0x5
+    const-string v11, "FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS"
 
-    const-string v7, "FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v9, v11, v12, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v9, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 7
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v11, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v7, 0x6
+    const-string v13, "CLOSE_CLOSEABLE"
 
-    const-string v8, "CLOSE_CLOSEABLE"
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v8, v7, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v11, v13, v14, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->CLOSE_CLOSEABLE:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v11, Lcom/fasterxml/jackson/databind/SerializationFeature;->CLOSE_CLOSEABLE:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 8
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v13, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/4 v8, 0x7
+    const-string v15, "FLUSH_AFTER_WRITE_VALUE"
 
-    const-string v9, "FLUSH_AFTER_WRITE_VALUE"
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v9, v8, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v13, v15, v14, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->FLUSH_AFTER_WRITE_VALUE:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v13, Lcom/fasterxml/jackson/databind/SerializationFeature;->FLUSH_AFTER_WRITE_VALUE:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 9
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v15, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v9, 0x8
+    const-string v14, "WRITE_DATES_AS_TIMESTAMPS"
 
-    const-string v10, "WRITE_DATES_AS_TIMESTAMPS"
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v10, v9, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v15, v14, v12, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATES_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v15, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATES_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 10
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v14, Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    const-string v12, "WRITE_DATE_KEYS_AS_TIMESTAMPS"
 
     const/16 v10, 0x9
 
-    const-string v11, "WRITE_DATE_KEYS_AS_TIMESTAMPS"
+    invoke-direct {v14, v12, v10, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    invoke-direct {v0, v11, v10, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATE_KEYS_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v14, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATE_KEYS_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 11
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v12, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v11, 0xa
+    const-string v10, "WRITE_DATES_WITH_ZONE_ID"
 
-    const-string v12, "WRITE_DATES_WITH_ZONE_ID"
+    const/16 v8, 0xa
 
-    invoke-direct {v0, v12, v11, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v12, v10, v8, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATES_WITH_ZONE_ID:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v12, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATES_WITH_ZONE_ID:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 12
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v10, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v12, 0xb
+    const-string v8, "WRITE_DURATIONS_AS_TIMESTAMPS"
 
-    const-string v13, "WRITE_DURATIONS_AS_TIMESTAMPS"
+    const/16 v6, 0xb
 
-    invoke-direct {v0, v13, v12, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v10, v8, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DURATIONS_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v10, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DURATIONS_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 13
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v8, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v13, 0xc
+    const-string v6, "WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS"
 
-    const-string v14, "WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS"
+    const/16 v4, 0xc
 
-    invoke-direct {v0, v14, v13, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v8, v6, v4, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v8, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 14
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v6, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v14, 0xd
+    const-string v4, "WRITE_ENUMS_USING_TO_STRING"
 
-    const-string v15, "WRITE_ENUMS_USING_TO_STRING"
+    move-object/from16 v16, v8
 
-    invoke-direct {v0, v15, v14, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    const/16 v8, 0xd
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_TO_STRING:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    invoke-direct {v6, v4, v8, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v6, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_TO_STRING:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 15
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v4, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v15, 0xe
+    const-string v8, "WRITE_ENUMS_USING_INDEX"
 
-    const-string v14, "WRITE_ENUMS_USING_INDEX"
+    move-object/from16 v17, v6
 
-    invoke-direct {v0, v14, v15, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+    const/16 v6, 0xe
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_INDEX:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    invoke-direct {v4, v8, v6, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v4, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_INDEX:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .line 16
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
+    new-instance v8, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const-string v14, "WRITE_NULL_MAP_VALUES"
-
-    const/16 v15, 0xf
-
-    invoke-direct {v0, v14, v15, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_NULL_MAP_VALUES:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 17
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "WRITE_EMPTY_JSON_ARRAYS"
-
-    const/16 v15, 0x10
-
-    invoke-direct {v0, v14, v15, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_EMPTY_JSON_ARRAYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 18
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED"
-
-    const/16 v15, 0x11
-
-    invoke-direct {v0, v14, v15, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 19
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "WRITE_BIGDECIMAL_AS_PLAIN"
-
-    const/16 v15, 0x12
-
-    invoke-direct {v0, v14, v15, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_BIGDECIMAL_AS_PLAIN:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 20
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS"
-
-    const/16 v15, 0x13
-
-    invoke-direct {v0, v14, v15, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 21
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "ORDER_MAP_ENTRIES_BY_KEYS"
-
-    const/16 v15, 0x14
-
-    invoke-direct {v0, v14, v15, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->ORDER_MAP_ENTRIES_BY_KEYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 22
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "EAGER_SERIALIZER_FETCH"
-
-    const/16 v15, 0x15
-
-    invoke-direct {v0, v14, v15, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->EAGER_SERIALIZER_FETCH:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 23
-    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const-string v14, "USE_EQUALITY_FOR_OBJECT_ID"
-
-    const/16 v15, 0x16
-
-    invoke-direct {v0, v14, v15, v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->USE_EQUALITY_FOR_OBJECT_ID:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const/16 v0, 0x17
-
-    new-array v0, v0, [Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    .line 24
-    sget-object v14, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRAP_ROOT_VALUE:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v14, v0, v1
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->INDENT_OUTPUT:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_EMPTY_BEANS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_SELF_REFERENCES:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRAP_EXCEPTIONS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->CLOSE_CLOSEABLE:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->FLUSH_AFTER_WRITE_VALUE:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATES_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATE_KEYS_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v10
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATES_WITH_ZONE_ID:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v11
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DURATIONS_AS_TIMESTAMPS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v12
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    aput-object v1, v0, v13
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_TO_STRING:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_INDEX:Lcom/fasterxml/jackson/databind/SerializationFeature;
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_NULL_MAP_VALUES:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    const-string v6, "WRITE_NULL_MAP_VALUES"
 
     const/16 v2, 0xf
 
-    aput-object v1, v0, v2
+    move-object/from16 v18, v4
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_EMPTY_JSON_ARRAYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    const/4 v4, 0x1
 
-    const/16 v2, 0x10
+    invoke-direct {v8, v6, v2, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    aput-object v1, v0, v2
+    sput-object v8, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_NULL_MAP_VALUES:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    .line 17
+    new-instance v6, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v2, 0x11
+    const-string v2, "WRITE_EMPTY_JSON_ARRAYS"
 
-    aput-object v1, v0, v2
+    move-object/from16 v19, v8
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_BIGDECIMAL_AS_PLAIN:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v2, v8, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v6, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_EMPTY_JSON_ARRAYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    .line 18
+    new-instance v2, Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    const-string v4, "WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED"
+
+    const/16 v8, 0x11
+
+    move-object/from16 v20, v6
+
+    const/4 v6, 0x0
+
+    invoke-direct {v2, v4, v8, v6}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v2, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED:Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    .line 19
+    new-instance v4, Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    const-string v8, "WRITE_BIGDECIMAL_AS_PLAIN"
+
+    move-object/from16 v21, v2
 
     const/16 v2, 0x12
 
-    aput-object v1, v0, v2
+    invoke-direct {v4, v8, v2, v6}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    sput-object v4, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_BIGDECIMAL_AS_PLAIN:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    const/16 v2, 0x13
+    .line 20
+    new-instance v8, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    aput-object v1, v0, v2
+    const-string v2, "WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS"
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->ORDER_MAP_ENTRIES_BY_KEYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    const/16 v6, 0x13
 
-    const/16 v2, 0x14
+    move-object/from16 v22, v4
 
-    aput-object v1, v0, v2
+    const/4 v4, 0x1
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->EAGER_SERIALIZER_FETCH:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    invoke-direct {v8, v2, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
 
-    const/16 v2, 0x15
+    sput-object v8, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    aput-object v1, v0, v2
+    .line 21
+    new-instance v2, Lcom/fasterxml/jackson/databind/SerializationFeature;
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/SerializationFeature;->USE_EQUALITY_FOR_OBJECT_ID:Lcom/fasterxml/jackson/databind/SerializationFeature;
+    const-string v6, "ORDER_MAP_ENTRIES_BY_KEYS"
+
+    const/16 v4, 0x14
+
+    move-object/from16 v23, v8
+
+    const/4 v8, 0x0
+
+    invoke-direct {v2, v6, v4, v8}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v2, Lcom/fasterxml/jackson/databind/SerializationFeature;->ORDER_MAP_ENTRIES_BY_KEYS:Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    .line 22
+    new-instance v6, Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    const-string v4, "EAGER_SERIALIZER_FETCH"
+
+    const/16 v8, 0x15
+
+    move-object/from16 v24, v2
+
+    const/4 v2, 0x1
+
+    invoke-direct {v6, v4, v8, v2}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v6, Lcom/fasterxml/jackson/databind/SerializationFeature;->EAGER_SERIALIZER_FETCH:Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    .line 23
+    new-instance v4, Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    const-string v8, "USE_EQUALITY_FOR_OBJECT_ID"
 
     const/16 v2, 0x16
 
-    aput-object v1, v0, v2
+    move-object/from16 v25, v6
 
-    sput-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->$VALUES:[Lcom/fasterxml/jackson/databind/SerializationFeature;
+    const/4 v6, 0x0
+
+    invoke-direct {v4, v8, v2, v6}, Lcom/fasterxml/jackson/databind/SerializationFeature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v4, Lcom/fasterxml/jackson/databind/SerializationFeature;->USE_EQUALITY_FOR_OBJECT_ID:Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    const/16 v2, 0x17
+
+    new-array v2, v2, [Lcom/fasterxml/jackson/databind/SerializationFeature;
+
+    aput-object v0, v2, v6
+
+    const/4 v0, 0x1
+
+    aput-object v1, v2, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v2, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v2, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v2, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v2, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v2, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v2, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v2, v0
+
+    const/16 v0, 0x9
+
+    aput-object v14, v2, v0
+
+    const/16 v0, 0xa
+
+    aput-object v12, v2, v0
+
+    const/16 v0, 0xb
+
+    aput-object v10, v2, v0
+
+    const/16 v0, 0xc
+
+    aput-object v16, v2, v0
+
+    const/16 v0, 0xd
+
+    aput-object v17, v2, v0
+
+    const/16 v0, 0xe
+
+    aput-object v18, v2, v0
+
+    const/16 v0, 0xf
+
+    aput-object v19, v2, v0
+
+    const/16 v0, 0x10
+
+    aput-object v20, v2, v0
+
+    const/16 v0, 0x11
+
+    aput-object v21, v2, v0
+
+    const/16 v0, 0x12
+
+    aput-object v22, v2, v0
+
+    const/16 v0, 0x13
+
+    aput-object v23, v2, v0
+
+    const/16 v0, 0x14
+
+    aput-object v24, v2, v0
+
+    const/16 v0, 0x15
+
+    aput-object v25, v2, v0
+
+    const/16 v0, 0x16
+
+    aput-object v4, v2, v0
+
+    .line 24
+    sput-object v2, Lcom/fasterxml/jackson/databind/SerializationFeature;->$VALUES:[Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IZ)V
+.method private constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

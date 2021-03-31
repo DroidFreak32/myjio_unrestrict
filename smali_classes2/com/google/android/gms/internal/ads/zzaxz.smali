@@ -1,244 +1,148 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaxz;
-.super Lcom/google/android/gms/internal/ads/zzbdd;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzben;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/internal/ads/zzaxz$zza;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/android/gms/internal/ads/zzbdd<",
-        "Lcom/google/android/gms/internal/ads/zzaxz;",
-        "Lcom/google/android/gms/internal/ads/zzaxz$zza;",
-        ">;",
-        "Lcom/google/android/gms/internal/ads/zzben;"
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/internal/ads/zzaxw;",
+        ">;"
     }
 .end annotation
-
-
-# static fields
-.field public static volatile zzaky:Lcom/google/android/gms/internal/ads/zzbew;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/ads/zzbew<",
-            "Lcom/google/android/gms/internal/ads/zzaxz;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
-
-
-# instance fields
-.field public zzdmx:Lcom/google/android/gms/internal/ads/zzaza;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzaxz;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzaxz;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
-
-    .line 2
-    const-class v0, Lcom/google/android/gms/internal/ads/zzaxz;
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzbdd;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/ads/zzbdd;)V
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbdd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zzzk()Lcom/google/android/gms/internal/ads/zzaxz;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
-
-    return-object v0
-.end method
-
-.method public static synthetic zzzl()Lcom/google/android/gms/internal/ads/zzaxz;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    sget-object p2, Lcom/google/android/gms/internal/ads/zzaya;->zzakw:[I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    const/4 p3, 0x1
+    move-result v0
 
-    sub-int/2addr p1, p3
+    const/4 v1, 0x0
 
-    aget p1, p2, p1
+    move-object v2, v1
 
-    const/4 p2, 0x0
+    move-object v3, v2
 
-    packed-switch p1, :pswitch_data_0
+    move-object v4, v3
 
     .line 2
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result v5
 
-    throw p1
-
-    :pswitch_0
-    return-object p2
+    if-ge v5, v0, :cond_4
 
     .line 3
-    :pswitch_1
-    invoke-static {p3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
 
-    move-result-object p1
-
-    return-object p1
+    move-result v5
 
     .line 4
-    :pswitch_2
-    sget-object p1, Lcom/google/android/gms/internal/ads/zzaxz;->zzaky:Lcom/google/android/gms/internal/ads/zzbew;
+    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
 
-    if-nez p1, :cond_1
+    move-result v6
+
+    const/4 v7, 0x1
+
+    if-eq v6, v7, :cond_3
+
+    const/4 v7, 0x2
+
+    if-eq v6, v7, :cond_2
+
+    const/4 v7, 0x3
+
+    if-eq v6, v7, :cond_1
+
+    const/4 v7, 0x4
+
+    if-eq v6, v7, :cond_0
 
     .line 5
-    const-class p2, Lcom/google/android/gms/internal/ads/zzaxz;
-
-    monitor-enter p2
-
-    .line 6
-    :try_start_0
-    sget-object p1, Lcom/google/android/gms/internal/ads/zzaxz;->zzaky:Lcom/google/android/gms/internal/ads/zzbew;
-
-    if-nez p1, :cond_0
-
-    .line 7
-    new-instance p1, Lcom/google/android/gms/internal/ads/zzbdd$zzb;
-
-    sget-object p3, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
-
-    invoke-direct {p1, p3}, Lcom/google/android/gms/internal/ads/zzbdd$zzb;-><init>(Lcom/google/android/gms/internal/ads/zzbdd;)V
-
-    .line 8
-    sput-object p1, Lcom/google/android/gms/internal/ads/zzaxz;->zzaky:Lcom/google/android/gms/internal/ads/zzbew;
-
-    .line 9
-    :cond_0
-    monitor-exit p2
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    .line 6
+    :cond_0
+    sget-object v4, Lcom/google/android/gms/internal/ads/zzvk;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 7
+    invoke-static {p1, v5, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    throw p1
+    move-result-object v4
 
+    check-cast v4, Lcom/google/android/gms/internal/ads/zzvk;
+
+    goto :goto_0
+
+    .line 8
     :cond_1
-    :goto_0
-    return-object p1
+    sget-object v3, Lcom/google/android/gms/internal/ads/zzvn;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
+    invoke-static {p1, v5, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/gms/internal/ads/zzvn;
+
+    goto :goto_0
 
     .line 10
-    :pswitch_3
-    sget-object p1, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
+    :cond_2
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    return-object p1
+    move-result-object v2
 
-    :pswitch_4
-    new-array p1, p3, [Ljava/lang/Object;
-
-    const/4 p2, 0x0
-
-    const-string p3, "zzdmx"
-
-    aput-object p3, p1, p2
+    goto :goto_0
 
     .line 11
-    sget-object p2, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmy:Lcom/google/android/gms/internal/ads/zzaxz;
+    :cond_3
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    const-string p3, "\u0000\u0001\u0000\u0000\u0002\u0002\u0001\u0000\u0000\u0000\u0002\t"
+    move-result-object v1
 
-    invoke-static {p2, p3, p1}, Lcom/google/android/gms/internal/ads/zzbdd;->zza(Lcom/google/android/gms/internal/ads/zzbel;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    goto :goto_0
 
     .line 12
-    :pswitch_5
-    new-instance p1, Lcom/google/android/gms/internal/ads/zzaxz$zza;
-
-    invoke-direct {p1, p2}, Lcom/google/android/gms/internal/ads/zzaxz$zza;-><init>(Lcom/google/android/gms/internal/ads/zzaya;)V
-
-    return-object p1
+    :cond_4
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
     .line 13
-    :pswitch_6
-    new-instance p1, Lcom/google/android/gms/internal/ads/zzaxz;
+    new-instance p1, Lcom/google/android/gms/internal/ads/zzaxw;
 
-    invoke-direct {p1}, Lcom/google/android/gms/internal/ads/zzaxz;-><init>()V
+    invoke-direct {p1, v1, v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzaxw;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzvn;Lcom/google/android/gms/internal/ads/zzvk;)V
 
     return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final zzzj()Lcom/google/android/gms/internal/ads/zzaza;
-    .locals 1
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaxz;->zzdmx:Lcom/google/android/gms/internal/ads/zzaza;
+    new-array p1, p1, [Lcom/google/android/gms/internal/ads/zzaxw;
 
-    if-nez v0, :cond_0
-
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzaza;->zzaaw()Lcom/google/android/gms/internal/ads/zzaza;
-
-    move-result-object v0
-
-    :cond_0
-    return-object v0
+    return-object p1
 .end method

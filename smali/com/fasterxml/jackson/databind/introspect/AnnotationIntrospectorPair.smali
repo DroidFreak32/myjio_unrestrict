@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -1588,10 +1588,13 @@
 
     if-nez p1, :cond_2
 
-    move-object p1, v0
+    goto :goto_0
 
     :cond_2
-    return-object p1
+    move-object v0, p1
+
+    :goto_0
+    return-object v0
 .end method
 
 .method public findSerializationContentConverter(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Object;
@@ -2567,6 +2570,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationIntrospectorPair;->_secondary:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
@@ -2595,6 +2604,12 @@
             "Lcom/fasterxml/jackson/databind/JavaType;",
             ")",
             "Lcom/fasterxml/jackson/databind/JavaType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
         }
     .end annotation
 

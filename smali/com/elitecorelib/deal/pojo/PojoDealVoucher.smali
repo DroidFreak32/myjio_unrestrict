@@ -6,41 +6,41 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0xb61f92e394529L
+.field private static final serialVersionUID:J = 0xb61f92e394529L
 
 
 # instance fields
-.field public createDate:Ljava/lang/String;
+.field private createDate:Ljava/lang/String;
 
-.field public dealHeadline:Ljava/lang/String;
+.field private dealHeadline:Ljava/lang/String;
 
-.field public dealId:Ljava/lang/Long;
+.field private dealId:Ljava/lang/Long;
 
-.field public dealThumbImage:Ljava/lang/String;
+.field private dealThumbImage:Ljava/lang/String;
 
-.field public dealVoucherDetailId:Ljava/lang/Long;
+.field private dealVoucherDetailId:Ljava/lang/Long;
 
-.field public expiryDate:Ljava/lang/String;
+.field private expiryDate:Ljava/lang/String;
 
-.field public imei:Ljava/lang/String;
+.field private imei:Ljava/lang/String;
 
-.field public imsi:Ljava/lang/String;
+.field private imsi:Ljava/lang/String;
 
-.field public merchantId:Ljava/lang/Long;
+.field private merchantId:Ljava/lang/Long;
 
-.field public merchentId:Ljava/lang/String;
+.field private merchentId:Ljava/lang/String;
 
-.field public msisdn:Ljava/lang/String;
+.field private msisdn:Ljava/lang/String;
 
-.field public password:Ljava/lang/String;
+.field private password:Ljava/lang/String;
 
-.field public price:Ljava/lang/Long;
+.field private price:Ljava/lang/Long;
 
-.field public status:Ljava/lang/String;
+.field private status:Ljava/lang/String;
 
-.field public usedDate:Ljava/lang/String;
+.field private usedDate:Ljava/lang/String;
 
-.field public voucherCode:Ljava/lang/String;
+.field private voucherCode:Ljava/lang/String;
 
 
 # direct methods
@@ -71,7 +71,9 @@
     return v1
 
     :cond_1
-    const-class v2, Lcom/elitecorelib/deal/pojo/PojoDealVoucher;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

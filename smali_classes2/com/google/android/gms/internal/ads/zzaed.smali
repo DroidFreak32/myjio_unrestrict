@@ -1,43 +1,92 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaed;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/ads/zzaed;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaos;
-
-
-# instance fields
-.field public final zzcew:Lorg/json/JSONObject;
-
-.field public final zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+.implements Lcom/google/android/gms/internal/ads/zzaeb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaea;Lorg/json/JSONObject;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.gms.ads.internal.formats.client.IAttributionInfo"
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaed;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaed;->zzcew:Lorg/json/JSONObject;
+    .line 1
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
+.method public final getText()Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaed;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaed;->zzcew:Lorg/json/JSONObject;
+    move-result-object v0
 
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzasg;
+    const/4 v1, 0x2
 
-    invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/internal/ads/zzaea;->zzc(Lorg/json/JSONObject;Lcom/google/android/gms/internal/ads/zzasg;)Lcom/google/android/gms/internal/ads/zzapi;
+    .line 2
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    .line 3
+    invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 4
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    return-object v1
+.end method
+
+.method public final zzsm()Ljava/util/List;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/internal/ads/zzaej;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    .line 2
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 3
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzgv;->zzb(Landroid/os/Parcel;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    .line 4
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    return-object v1
 .end method

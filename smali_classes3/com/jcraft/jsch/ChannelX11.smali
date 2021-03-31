@@ -4,33 +4,33 @@
 
 
 # static fields
-.field public static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
+.field private static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
 
-.field public static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
+.field private static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
 
-.field public static final TIMEOUT:I = 0x2710
+.field private static final TIMEOUT:I = 0x2710
 
 .field public static cookie:[B = null
 
-.field public static cookie_hex:[B = null
+.field private static cookie_hex:[B = null
 
-.field public static faked_cookie_hex_pool:Ljava/util/Hashtable; = null
+.field private static faked_cookie_hex_pool:Ljava/util/Hashtable; = null
 
-.field public static faked_cookie_pool:Ljava/util/Hashtable; = null
+.field private static faked_cookie_pool:Ljava/util/Hashtable; = null
 
-.field public static host:Ljava/lang/String; = "127.0.0.1"
+.field private static host:Ljava/lang/String; = "127.0.0.1"
 
-.field public static port:I = 0x1770
+.field private static port:I = 0x1770
 
-.field public static table:[B
+.field private static table:[B
 
 
 # instance fields
-.field public cache:[B
+.field private cache:[B
 
-.field public init:Z
+.field private init:Z
 
-.field public socket:Ljava/net/Socket;
+.field private socket:Ljava/net/Socket;
 
 
 # direct methods
@@ -119,7 +119,7 @@
     .line 7
     invoke-virtual {p0, v1}, Lcom/jcraft/jsch/Channel;->setLocalPacketSize(I)V
 
-    const-string/jumbo v1, "x11"
+    const-string v1, "x11"
 
     .line 8
     invoke-static {v1}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
@@ -169,13 +169,10 @@
     :cond_0
     iput-object v1, p0, Lcom/jcraft/jsch/ChannelX11;->cache:[B
 
-    .line 6
-    iget-object p1, p0, Lcom/jcraft/jsch/ChannelX11;->cache:[B
-
-    return-object p1
+    return-object v1
 .end method
 
-.method public static equals([B[B)Z
+.method private static equals([B[B)Z
     .locals 4
 
     .line 1
@@ -285,15 +282,13 @@
 
     and-int/lit8 v7, v7, 0xf
 
-    aget-byte v6, v6, v7
+    aget-byte v7, v6, v7
 
-    aput-byte v6, v1, v5
+    aput-byte v7, v1, v5
 
     add-int/lit8 v5, v5, 0x1
 
     .line 9
-    sget-object v6, Lcom/jcraft/jsch/ChannelX11;->table:[B
-
     aget-byte v7, v3, v4
 
     and-int/lit8 v7, v7, 0xf
@@ -516,8 +511,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/ChannelX11;->socket:Ljava/net/Socket;
 
     .line 2
-    iget-object v1, p0, Lcom/jcraft/jsch/ChannelX11;->socket:Ljava/net/Socket;
-
     invoke-virtual {v1, v0}, Ljava/net/Socket;->setTcpNoDelay(Z)V
 
     .line 3
@@ -528,8 +521,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
 
     .line 4
-    iget-object v1, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
     iget-object v2, p0, Lcom/jcraft/jsch/ChannelX11;->socket:Ljava/net/Socket;
 
     invoke-virtual {v2}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;
@@ -584,22 +575,14 @@
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
     iget-object v2, v2, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
 
     if-eqz v2, :cond_2
 
     .line 11
-    iget-object v2, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v2, v2, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
-
     iget-object v3, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v4, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v4, v4
+    array-length v4, v3
 
     const/16 v5, 0xe
 
@@ -680,6 +663,11 @@
 
 .method public write([BII)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelX11;->init:Z

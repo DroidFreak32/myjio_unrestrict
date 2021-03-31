@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public zzdjf:I
+.field private zzett:I
 
 
 # direct methods
@@ -29,18 +30,7 @@
 
 
 # virtual methods
-.method public final zzaq(I)Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;
-    .locals 0
-
-    const/4 p1, 0x1
-
-    .line 1
-    iput p1, p0, Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;->zzdjf:I
-
-    return-object p0
-.end method
-
-.method public final zzxq()Landroid/os/Bundle;
+.method public final zzaed()Landroid/os/Bundle;
     .locals 3
 
     .line 1
@@ -49,11 +39,22 @@
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 2
-    iget v1, p0, Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;->zzdjf:I
+    iget v1, p0, Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;->zzett:I
 
     const-string v2, "capabilities"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     return-object v0
+.end method
+
+.method public final zzdw(I)Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;
+    .locals 0
+
+    const/4 p1, 0x1
+
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/ads/mediation/MediationAdapter$zza;->zzett:I
+
+    return-object p0
 .end method

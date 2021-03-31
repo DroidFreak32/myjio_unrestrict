@@ -1,6 +1,9 @@
 .class public Lp5$a;
 .super Ljava/lang/Object;
-.source "Snapshot.java"
+.source "TransitionUtils.java"
+
+# interfaces
+.implements Landroid/animation/TypeEvaluator;
 
 
 # annotations
@@ -13,166 +16,124 @@
     name = "a"
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/animation/TypeEvaluator<",
+        "Landroid/graphics/Matrix;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
-.field public a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+.field public final a:[F
 
-.field public b:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+.field public final b:[F
 
-.field public c:I
-
-.field public d:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-.field public e:I
+.field public final c:Landroid/graphics/Matrix;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/16 v0, 0x9
+
+    new-array v1, v0, [F
+
     .line 2
-    iput-object p1, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iput-object v1, p0, Lp5$a;->a:[F
+
+    new-array v0, v0, [F
 
     .line 3
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->g()Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lp5$a;->b:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iput-object v0, p0, Lp5$a;->b:[F
 
     .line 4
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->b()I
+    new-instance v0, Landroid/graphics/Matrix;
 
-    move-result v0
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput v0, p0, Lp5$a;->c:I
-
-    .line 5
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->f()Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lp5$a;->d:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-    .line 6
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lp5$a;->e:I
+    iput-object v0, p0, Lp5$a;->c:Landroid/graphics/Matrix;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
-    .locals 4
+.method public a(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iget-object v0, p0, Lp5$a;->a:[F
 
-    invoke-virtual {v0}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->h()Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->a(Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;)Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    move-result-object p1
+    invoke-virtual {p2, v0}, Landroid/graphics/Matrix;->getValues([F)V
 
     .line 2
-    iget-object v0, p0, Lp5$a;->b:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iget-object p2, p0, Lp5$a;->b:[F
 
-    iget v1, p0, Lp5$a;->c:I
+    invoke-virtual {p3, p2}, Landroid/graphics/Matrix;->getValues([F)V
 
-    iget-object v2, p0, Lp5$a;->d:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    const/4 p2, 0x0
 
-    iget v3, p0, Lp5$a;->e:I
+    :goto_0
+    const/16 p3, 0x9
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->a(Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;ILandroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;I)Z
-
-    return-void
-.end method
-
-.method public b(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    invoke-virtual {v0}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->h()Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->a(Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;)Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    .line 2
-    iget-object p1, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    if-eqz p1, :cond_0
+    if-ge p2, p3, :cond_0
 
     .line 3
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->g()Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iget-object p3, p0, Lp5$a;->b:[F
 
-    move-result-object p1
+    aget v0, p3, p2
 
-    iput-object p1, p0, Lp5$a;->b:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iget-object v1, p0, Lp5$a;->a:[F
+
+    aget v2, v1, p2
+
+    sub-float/2addr v0, v2
 
     .line 4
-    iget-object p1, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    aget v1, v1, p2
 
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->b()I
+    mul-float v0, v0, p1
 
-    move-result p1
+    add-float/2addr v1, v0
 
-    iput p1, p0, Lp5$a;->c:I
+    aput v1, p3, p2
 
-    .line 5
-    iget-object p1, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->f()Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lp5$a;->d:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-    .line 6
-    iget-object p1, p0, Lp5$a;->a:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
-
-    invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lp5$a;->e:I
+    add-int/lit8 p2, p2, 0x1
 
     goto :goto_0
 
+    .line 5
     :cond_0
-    const/4 p1, 0x0
+    iget-object p1, p0, Lp5$a;->c:Landroid/graphics/Matrix;
 
-    .line 7
-    iput-object p1, p0, Lp5$a;->b:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;
+    iget-object p2, p0, Lp5$a;->b:[F
 
-    const/4 p1, 0x0
+    invoke-virtual {p1, p2}, Landroid/graphics/Matrix;->setValues([F)V
 
-    .line 8
-    iput p1, p0, Lp5$a;->c:I
+    .line 6
+    iget-object p1, p0, Lp5$a;->c:Landroid/graphics/Matrix;
 
-    .line 9
-    sget-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->STRONG:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    return-object p1
+.end method
 
-    iput-object v0, p0, Lp5$a;->d:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+.method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    .line 10
-    iput p1, p0, Lp5$a;->e:I
+    .line 1
+    check-cast p2, Landroid/graphics/Matrix;
 
-    :goto_0
-    return-void
+    check-cast p3, Landroid/graphics/Matrix;
+
+    invoke-virtual {p0, p1, p2, p3}, Lp5$a;->a(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
+
+    move-result-object p1
+
+    return-object p1
 .end method

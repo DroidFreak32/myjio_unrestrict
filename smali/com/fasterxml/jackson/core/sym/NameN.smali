@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public final q:[I
+.field private final q:[I
 
-.field public final q1:I
+.field private final q1:I
 
-.field public final q2:I
+.field private final q2:I
 
-.field public final q3:I
+.field private final q3:I
 
-.field public final q4:I
+.field private final q4:I
 
-.field public final qlen:I
+.field private final qlen:I
 
 
 # direct methods

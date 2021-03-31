@@ -1,9 +1,6 @@
-.class public Landroidx/media/MediaBrowserServiceCompat$f;
+.class public interface abstract Landroidx/media/MediaBrowserServiceCompat$f;
 .super Ljava/lang/Object;
 .source "MediaBrowserServiceCompat.java"
-
-# interfaces
-.implements Landroid/os/IBinder$DeathRecipient;
 
 
 # annotations
@@ -12,80 +9,29 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x609
     name = "f"
 .end annotation
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Landroidx/media/MediaBrowserServiceCompat$o;
-
-.field public final c:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap<",
-            "Ljava/lang/String;",
-            "Ljava/util/List<",
-            "Ly8<",
-            "Landroid/os/IBinder;",
-            "Landroid/os/Bundle;",
-            ">;>;>;"
-        }
-    .end annotation
-.end field
-
-.field public d:Landroidx/media/MediaBrowserServiceCompat$e;
-
-.field public final synthetic e:Landroidx/media/MediaBrowserServiceCompat;
-
-
-# direct methods
-.method public constructor <init>(Landroidx/media/MediaBrowserServiceCompat;Ljava/lang/String;IILandroid/os/Bundle;Landroidx/media/MediaBrowserServiceCompat$o;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$f;->e:Landroidx/media/MediaBrowserServiceCompat;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-instance p1, Ljava/util/HashMap;
-
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$f;->c:Ljava/util/HashMap;
-
-    .line 3
-    iput-object p2, p0, Landroidx/media/MediaBrowserServiceCompat$f;->a:Ljava/lang/String;
-
-    .line 4
-    new-instance p1, Lbf;
-
-    invoke-direct {p1, p2, p3, p4}, Lbf;-><init>(Ljava/lang/String;II)V
-
-    .line 5
-    iput-object p6, p0, Landroidx/media/MediaBrowserServiceCompat$f;->b:Landroidx/media/MediaBrowserServiceCompat$o;
-
-    return-void
+# virtual methods
+.method public abstract a()V
 .end method
 
+.method public abstract b()Landroidx/media/MediaSessionManager$RemoteUserInfo;
+.end method
 
-# virtual methods
-.method public binderDied()V
-    .locals 2
+.method public abstract c(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    .line 1
-    iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$f;->e:Landroidx/media/MediaBrowserServiceCompat;
+.method public abstract d(Landroid/support/v4/media/session/MediaSessionCompat$Token;)V
+.end method
 
-    iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat;->v:Landroidx/media/MediaBrowserServiceCompat$q;
+.method public abstract e()Landroid/os/Bundle;
+.end method
 
-    new-instance v1, Landroidx/media/MediaBrowserServiceCompat$f$a;
+.method public abstract f(Landroidx/media/MediaSessionManager$RemoteUserInfo;Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    invoke-direct {v1, p0}, Landroidx/media/MediaBrowserServiceCompat$f$a;-><init>(Landroidx/media/MediaBrowserServiceCompat$f;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+.method public abstract g(Landroid/content/Intent;)Landroid/os/IBinder;
 .end method

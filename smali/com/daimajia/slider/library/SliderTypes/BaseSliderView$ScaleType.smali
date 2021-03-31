@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+.field private static final synthetic $VALUES:[Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
 .field public static final enum CenterCrop:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
@@ -36,76 +36,68 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    const/4 v1, 0x0
+    const-string v1, "CenterCrop"
 
-    const-string v2, "CenterCrop"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->CenterCrop:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    new-instance v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
     const-string v3, "CenterInside"
 
-    invoke-direct {v0, v3, v2}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->CenterInside:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    invoke-direct {v1, v3, v4}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    sput-object v1, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->CenterInside:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    const-string v4, "Fit"
+    const-string v5, "Fit"
 
-    invoke-direct {v0, v4, v3}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->Fit:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    invoke-direct {v3, v5, v6}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    sput-object v3, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->Fit:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    const-string v5, "FitCenterCrop"
+    const-string v7, "FitCenterCrop"
 
-    invoke-direct {v0, v5, v4}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->FitCenterCrop:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    invoke-direct {v5, v7, v8}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->FitCenterCrop:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-    new-array v0, v0, [Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 2
-    sget-object v5, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->CenterCrop:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->CenterInside:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->Fit:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->FitCenterCrop:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->$VALUES:[Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+    sput-object v7, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->$VALUES:[Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

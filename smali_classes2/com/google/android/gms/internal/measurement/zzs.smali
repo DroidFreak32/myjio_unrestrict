@@ -1,11 +1,3 @@
 .class public interface abstract Lcom/google/android/gms/internal/measurement/zzs;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
-
-# interfaces
-.implements Landroid/os/IInterface;
-
-
-# virtual methods
-.method public abstract zza(Landroid/os/Bundle;)V
-.end method
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"

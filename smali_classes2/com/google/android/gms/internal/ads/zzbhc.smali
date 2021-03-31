@@ -1,113 +1,91 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbhc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzepf;
 
 
-# static fields
-.field public static final zzeae:[I
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzepf<",
+        "Lcom/google/android/gms/internal/ads/zzatz;",
+        ">;"
+    }
+.end annotation
 
-.field public static final zzeet:I = 0xb
 
-.field public static final zzeeu:I = 0xc
-
-.field public static final zzeev:I = 0x10
-
-.field public static final zzeew:I = 0x1a
-
-.field public static final zzeex:[J
-
-.field public static final zzeey:[F
-
-.field public static final zzeez:[D
-
-.field public static final zzefa:[Z
-
-.field public static final zzefb:[Ljava/lang/String;
-
-.field public static final zzefc:[[B
-
-.field public static final zzefd:[B
+# instance fields
+.field private final zzevi:Lcom/google/android/gms/internal/ads/zzeps;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzeps<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    new-array v1, v0, [I
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzeps;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/internal/ads/zzeps<",
+            "Landroid/content/Context;",
+            ">;)V"
+        }
+    .end annotation
 
     .line 1
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzeae:[I
-
-    new-array v1, v0, [J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzeex:[J
-
-    new-array v1, v0, [F
-
-    .line 3
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzeey:[F
-
-    new-array v1, v0, [D
-
-    .line 4
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzeez:[D
-
-    new-array v1, v0, [Z
-
-    .line 5
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzefa:[Z
-
-    new-array v1, v0, [Ljava/lang/String;
-
-    .line 6
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzefb:[Ljava/lang/String;
-
-    new-array v1, v0, [[B
-
-    .line 7
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzbhc;->zzefc:[[B
-
-    new-array v0, v0, [B
-
-    .line 8
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbhc;->zzefd:[B
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbhc;->zzevi:Lcom/google/android/gms/internal/ads/zzeps;
 
     return-void
 .end method
 
-.method public static final zzb(Lcom/google/android/gms/internal/ads/zzbgq;I)I
+
+# virtual methods
+.method public final synthetic get()Ljava/lang/Object;
     .locals 3
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbgq;->getPosition()I
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbhc;->zzevi:Lcom/google/android/gms/internal/ads/zzeps;
 
-    move-result v0
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzeps;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
 
     .line 2
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzbx(I)Z
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzaua;
 
-    const/4 v1, 0x1
+    invoke-direct {v1, v0}, Lcom/google/android/gms/internal/ads/zzaua;-><init>(Landroid/content/Context;)V
 
     .line 3
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbgq;->zzade()I
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzatx;
 
-    move-result v2
+    invoke-interface {v1}, Lcom/google/android/gms/internal/ads/zzatp;->zzvs()Lcom/google/android/gms/internal/ads/zzamd;
 
-    if-ne v2, p1, :cond_0
+    move-result-object v1
+
+    invoke-direct {v2, v0, v1}, Lcom/google/android/gms/internal/ads/zzatx;-><init>(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzamd;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
     .line 4
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzbx(I)Z
+    invoke-static {v2, v0}, Lcom/google/android/gms/internal/ads/zzepl;->zza(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzatz;
 
-    .line 5
-    :cond_0
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzae(II)V
-
-    return v1
+    return-object v0
 .end method

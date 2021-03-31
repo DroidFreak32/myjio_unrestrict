@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final DESCRIPTOR_TAG_CAPTION_SERVICE:I = 0x86
+.field private static final DESCRIPTOR_TAG_CAPTION_SERVICE:I = 0x86
 
 .field public static final FLAG_ALLOW_NON_IDR_KEYFRAMES:I = 0x1
 
@@ -33,7 +33,7 @@
 
 
 # instance fields
-.field public final closedCaptionFormats:Ljava/util/List;
+.field private final closedCaptionFormats:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -43,7 +43,7 @@
     .end annotation
 .end field
 
-.field public final flags:I
+.field private final flags:I
 
 
 # direct methods

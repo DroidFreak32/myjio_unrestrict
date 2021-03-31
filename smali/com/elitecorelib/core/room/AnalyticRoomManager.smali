@@ -6,7 +6,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
-        "Lgh;",
+        "Landroidx/room/Room;",
         ">",
         "Ljava/lang/Object;"
     }
@@ -14,11 +14,11 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
+.field private dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-.field public tableName:Ljava/lang/String;
+.field private tableName:Ljava/lang/String;
 
 .field public final type:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
@@ -258,11 +258,11 @@
 
     iget-object p2, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance p3, Lai;
+    new-instance p3, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {p3, p1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {p3, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->deleteRecord(Lei;)I
+    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -442,11 +442,11 @@
 
     iget-object p2, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance p3, Lai;
+    new-instance p3, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {p3, p1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {p3, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->deleteRecord(Lei;)I
+    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -591,11 +591,11 @@
 
     iget-object v1, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance v2, Lai;
+    new-instance v2, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {v2, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->deleteRecord(Lei;)I
+    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -660,11 +660,11 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {v1, p1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->getMaxCount(Lei;)I
+    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->getMaxCount(Landroidx/sqlite/db/SupportSQLiteQuery;)I
 
     move-result p1
     :try_end_0
@@ -784,7 +784,7 @@
 
     move-result-wide v2
 
-    invoke-static {v2, v3}, Lc20;->c(J)J
+    invoke-static {v2, v3}, Lcom/elitecorelib/andsf/utility/a;->c(J)J
 
     move-result-wide v2
 
@@ -845,15 +845,15 @@
 
     iget-object p2, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance p3, Lai;
+    new-instance p3, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p4
 
-    invoke-direct {p3, p4}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {p3, p4}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->getLastRecord(Lei;)Ljava/util/List;
+    invoke-virtual {p2, p3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->getLastRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
 
     move-result-object p2
 
@@ -910,7 +910,7 @@
     return-object p1
 .end method
 
-.method public insertData(Lgh;)V
+.method public insertData(Landroidx/room/Room;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -964,7 +964,7 @@
     :cond_0
     iget-object v0, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    invoke-virtual {v0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->insertRecordAll(Lgh;)V
+    invoke-virtual {v0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->insertRecordAll(Landroidx/room/Room;)V
 
     invoke-static {}, Lcom/elitecorelib/analytics/utility/AnalyticsUtility;->analyzeAnalyticsDbFileSize()V
     :try_end_0
@@ -1047,11 +1047,11 @@
 
     iget-object v2, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance v3, Lai;
+    new-instance v3, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {v3, v1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->getRecordCount(Lei;)I
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->getRecordCount(Landroidx/sqlite/db/SupportSQLiteQuery;)I
 
     move-result v1
     :try_end_0
@@ -1114,7 +1114,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "st = "
+    const-string/jumbo v2, "st = "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1152,15 +1152,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/AnalyticRoomManager;->dao:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->updateRecord(Lei;)I
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -7,6 +7,11 @@
 
 # virtual methods
 .method public abstract zzb(Lcom/google/android/gms/internal/gtm/zzqj;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzmv()Lcom/google/android/gms/internal/gtm/zzps;

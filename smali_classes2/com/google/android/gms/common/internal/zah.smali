@@ -1,95 +1,51 @@
 .class public final Lcom/google/android/gms/common/internal/zah;
-.super Lcom/google/android/gms/internal/base/zaa;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
-.implements Lcom/google/android/gms/common/internal/ISignInButtonCreator;
+.implements Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
+
+
+# instance fields
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.common.internal.ISignInButtonCreator"
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/base/zaa;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zah;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final newSignInButton(Lcom/google/android/gms/dynamic/IObjectWrapper;II)Lcom/google/android/gms/dynamic/IObjectWrapper;
+.method public final onConnected(Landroid/os/Bundle;)V
     .locals 1
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/base/zaa;->zaa()Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zah;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;->onConnected(Landroid/os/Bundle;)V
 
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/base/zac;->zaa(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    .line 3
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 4
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 p1, 0x1
-
-    .line 5
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/base/zaa;->zaa(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object p1
-
-    .line 6
-    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p2
-
-    .line 7
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return-object p2
+    return-void
 .end method
 
-.method public final newSignInButtonFromConfig(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/common/internal/SignInButtonConfig;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+.method public final onConnectionSuspended(I)V
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/base/zaa;->zaa()Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zah;->zaa:Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;->onConnectionSuspended(I)V
 
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/base/zac;->zaa(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    .line 3
-    invoke-static {v0, p2}, Lcom/google/android/gms/internal/base/zac;->zaa(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    const/4 p1, 0x2
-
-    .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/base/zaa;->zaa(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object p1
-
-    .line 5
-    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p2
-
-    .line 6
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return-object p2
+    return-void
 .end method

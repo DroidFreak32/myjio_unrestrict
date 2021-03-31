@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final ISO_8859_1:Ljava/nio/charset/Charset;
+.field private static final ISO_8859_1:Ljava/nio/charset/Charset;
 
 .field public static final UTF_8:Ljava/nio/charset/Charset;
 

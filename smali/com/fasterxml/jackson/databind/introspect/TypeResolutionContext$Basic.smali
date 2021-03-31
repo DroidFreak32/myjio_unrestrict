@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final _bindings:Lcom/fasterxml/jackson/databind/type/TypeBindings;
+.field private final _bindings:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-.field public final _typeFactory:Lcom/fasterxml/jackson/databind/type/TypeFactory;
+.field private final _typeFactory:Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
 
 # direct methods

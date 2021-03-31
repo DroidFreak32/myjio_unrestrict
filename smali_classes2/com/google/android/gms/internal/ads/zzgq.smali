@@ -1,57 +1,28 @@
 .class public final Lcom/google/android/gms/internal/ads/zzgq;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-gass@@19.5.0"
 
 # interfaces
-.implements Landroid/webkit/ValueCallback;
+.implements Lcom/google/android/gms/internal/ads/zzekm;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Landroid/webkit/ValueCallback<",
-        "Ljava/lang/String;",
+        "Lcom/google/android/gms/internal/ads/zzekm<",
+        "Lcom/google/android/gms/internal/ads/zzgn;",
         ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public final synthetic zzajg:Lcom/google/android/gms/internal/ads/zzgp;
-
-
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzgp;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzgq;->zzajg:Lcom/google/android/gms/internal/ads/zzgp;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic onReceiveValue(Ljava/lang/Object;)V
-    .locals 4
-
-    .line 1
-    check-cast p1, Ljava/lang/String;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzgq;->zzajg:Lcom/google/android/gms/internal/ads/zzgp;
-
-    iget-object v1, v0, Lcom/google/android/gms/internal/ads/zzgp;->zzajb:Lcom/google/android/gms/internal/ads/zzgn;
-
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzgp;->zzajd:Lcom/google/android/gms/internal/ads/zzgh;
-
-    iget-object v3, v0, Lcom/google/android/gms/internal/ads/zzgp;->zzaje:Landroid/webkit/WebView;
-
-    iget-boolean v0, v0, Lcom/google/android/gms/internal/ads/zzgp;->zzajf:Z
-
-    invoke-virtual {v1, v2, v3, p1, v0}, Lcom/google/android/gms/internal/ads/zzgn;->zza(Lcom/google/android/gms/internal/ads/zzgh;Landroid/webkit/WebView;Ljava/lang/String;Z)V
 
     return-void
 .end method

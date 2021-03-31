@@ -1,85 +1,172 @@
 .class public final Lcom/google/android/gms/internal/ads/zznq;
-.super Lcom/google/android/gms/internal/ads/zznl;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zznl<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field public static final zzbgs:Lcom/google/android/gms/internal/ads/zznq;
+
+
+# instance fields
+.field public final length:I
+
+.field private zzaht:I
+
+.field private final zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
+.method public static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/gms/internal/ads/zznl;-><init>(ILjava/lang/String;Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zznm;)V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zznq;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Lcom/google/android/gms/internal/ads/zznr;
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/ads/zznq;-><init>([Lcom/google/android/gms/internal/ads/zznr;)V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zznq;->zzbgs:Lcom/google/android/gms/internal/ads/zznq;
+
+    return-void
+.end method
+
+.method public varargs constructor <init>([Lcom/google/android/gms/internal/ads/zznr;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zznq;->zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
+
+    .line 3
+    array-length p1, p1
+
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zznq;->length:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Landroid/content/SharedPreferences;)Ljava/lang/Object;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    .line 1
+    const-class v2, Lcom/google/android/gms/internal/ads/zznq;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    .line 2
+    :cond_1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zznq;
 
     .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zznl;->getKey()Ljava/lang/String;
+    iget v2, p0, Lcom/google/android/gms/internal/ads/zznq;->length:I
 
-    move-result-object v0
+    iget v3, p1, Lcom/google/android/gms/internal/ads/zznq;->length:I
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zznl;->zzjy()Ljava/lang/Object;
+    if-ne v2, v3, :cond_2
 
-    move-result-object v1
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zznq;->zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
 
-    check-cast v1, Ljava/lang/String;
+    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zznq;->zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
 
-    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
-    move-result-object p1
+    move-result p1
 
-    return-object p1
+    if-eqz p1, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
 .end method
 
-.method public final synthetic zza(Landroid/content/SharedPreferences$Editor;Ljava/lang/Object;)V
+.method public final hashCode()I
     .locals 1
 
     .line 1
-    check-cast p2, Ljava/lang/String;
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zznq;->zzaht:I
+
+    if-nez v0, :cond_0
 
     .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zznl;->getKey()Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznq;->zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
 
-    move-result-object v0
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
-    invoke-interface {p1, v0, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    move-result v0
 
-    return-void
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zznq;->zzaht:I
+
+    .line 3
+    :cond_0
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zznq;->zzaht:I
+
+    return v0
 .end method
 
-.method public final synthetic zzb(Lorg/json/JSONObject;)Ljava/lang/Object;
+.method public final zza(Lcom/google/android/gms/internal/ads/zznr;)I
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zznl;->getKey()Ljava/lang/String;
+    :goto_0
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zznq;->length:I
 
-    move-result-object v0
+    if-ge v0, v1, :cond_1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zznl;->zzjy()Ljava/lang/Object;
+    .line 2
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zznq;->zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
 
-    move-result-object v1
+    aget-object v1, v1, v0
 
-    check-cast v1, Ljava/lang/String;
+    if-ne v1, p1, :cond_0
 
-    invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    return v0
 
-    move-result-object p1
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, -0x1
+
+    return p1
+.end method
+
+.method public final zzbb(I)Lcom/google/android/gms/internal/ads/zznr;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zznq;->zzbgt:[Lcom/google/android/gms/internal/ads/zznr;
+
+    aget-object p1, v0, p1
 
     return-object p1
 .end method

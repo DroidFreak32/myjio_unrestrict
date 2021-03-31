@@ -1,13 +1,8 @@
-.class public final Lcom/google/android/gms/ads/internal/overlay/zzu;
+.class public interface abstract Lcom/google/android/gms/ads/internal/overlay/zzu;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract zzvo()V
 .end method

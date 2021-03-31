@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzeh:Lcom/google/android/gms/internal/maps/zzac;
+.field private final zzeh:Lcom/google/android/gms/internal/maps/zzac;
 
 
 # direct methods

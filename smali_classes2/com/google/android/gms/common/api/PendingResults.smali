@@ -1,22 +1,20 @@
 .class public final Lcom/google/android/gms/common/api/PendingResults;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/gms/common/api/PendingResults$zaa;,
-        Lcom/google/android/gms/common/api/PendingResults$zab;,
-        Lcom/google/android/gms/common/api/PendingResults$zac;
+        Lcom/google/android/gms/common/api/PendingResults$zac;,
+        Lcom/google/android/gms/common/api/PendingResults$zab;
     }
 .end annotation
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
@@ -48,7 +46,7 @@
     invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/internal/StatusPendingResult;-><init>(Landroid/os/Looper;)V
 
     .line 2
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->cancel()V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/PendingResult;->cancel()V
 
     return-object v0
 .end method
@@ -102,7 +100,7 @@
     invoke-direct {v0, p0}, Lcom/google/android/gms/common/api/PendingResults$zaa;-><init>(Lcom/google/android/gms/common/api/Result;)V
 
     .line 7
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->cancel()V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/PendingResult;->cancel()V
 
     return-object v0
 .end method
@@ -145,9 +143,9 @@
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/common/api/PendingResults$zab;
+    new-instance v0, Lcom/google/android/gms/common/api/PendingResults$zac;
 
-    invoke-direct {v0, p1, p0}, Lcom/google/android/gms/common/api/PendingResults$zab;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/Result;)V
+    invoke-direct {v0, p1, p0}, Lcom/google/android/gms/common/api/PendingResults$zac;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/Result;)V
 
     .line 4
     invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
@@ -176,11 +174,11 @@
     invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
-    new-instance v0, Lcom/google/android/gms/common/api/PendingResults$zac;
+    new-instance v0, Lcom/google/android/gms/common/api/PendingResults$zab;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/PendingResults$zac;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/PendingResults$zab;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     .line 9
     invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
@@ -216,9 +214,9 @@
     invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 12
-    new-instance v0, Lcom/google/android/gms/common/api/PendingResults$zac;
+    new-instance v0, Lcom/google/android/gms/common/api/PendingResults$zab;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/common/api/PendingResults$zac;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    invoke-direct {v0, p1}, Lcom/google/android/gms/common/api/PendingResults$zab;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     .line 13
     invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V

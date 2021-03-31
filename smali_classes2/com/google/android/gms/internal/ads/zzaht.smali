@@ -1,191 +1,77 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaht;
-.super Landroid/content/ContextWrapper;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzahv;
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzahv<",
+        "Lcom/google/android/gms/internal/ads/zzbdv;",
+        ">;"
+    }
 .end annotation
 
 
 # direct methods
-.method public static zzt(Landroid/content/Context;)Landroid/content/Context;
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    instance-of v0, p0, Lcom/google/android/gms/internal/ads/zzaht;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz v0, :cond_0
-
-    .line 2
-    check-cast p0, Lcom/google/android/gms/internal/ads/zzaht;
-
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 3
-    :cond_0
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    return-object p0
-
-    :cond_1
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final getApplicationContext()Landroid/content/Context;
-    .locals 1
+.method public final synthetic zza(Ljava/lang/Object;Ljava/util/Map;)V
+    .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzbdv;
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    .line 2
+    invoke-interface {p2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    throw v0
-.end method
+    move-result-object v0
 
-.method public final declared-synchronized getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-    .locals 1
+    const-string v1, "start"
 
-    monitor-enter p0
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    .line 1
-    :try_start_0
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    move-result v0
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    if-eqz v0, :cond_0
 
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v0, 0x1
 
-    :catchall_0
-    move-exception v0
+    .line 3
+    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/ads/zzbdv;->zzbb(Z)V
 
-    monitor-exit p0
+    .line 4
+    :cond_0
+    invoke-interface {p2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    throw v0
-.end method
+    move-result-object p2
 
-.method public final declared-synchronized getPackageName()Ljava/lang/String;
-    .locals 1
+    const-string v0, "stop"
 
-    monitor-enter p0
+    invoke-interface {p2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    .line 1
-    :try_start_0
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    move-result p2
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    if-eqz p2, :cond_1
 
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 p2, 0x0
 
-    :catchall_0
-    move-exception v0
+    .line 5
+    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/ads/zzbdv;->zzbb(Z)V
 
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized getPackageResourcePath()Ljava/lang/String;
-    .locals 1
-
-    monitor-enter p0
-
-    .line 1
-    :try_start_0
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized setAppPackageName(Ljava/lang/String;)V
-    .locals 0
-
-    monitor-enter p0
-
-    .line 1
-    :try_start_0
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized startActivity(Landroid/content/Intent;)V
-    .locals 0
-
-    monitor-enter p0
-
-    .line 1
-    :try_start_0
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized zzf(Landroid/app/Activity;)V
-    .locals 0
-
-    monitor-enter p0
-
-    .line 1
-    :try_start_0
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
+    :cond_1
+    return-void
 .end method

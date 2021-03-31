@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzx:Lcom/google/android/gms/maps/GoogleMap$OnPolygonClickListener;
+.field private final synthetic zzx:Lcom/google/android/gms/maps/GoogleMap$OnPolygonClickListener;
 
 
 # direct methods

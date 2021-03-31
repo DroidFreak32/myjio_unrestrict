@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field public final synthetic zzaik:Lcom/google/android/gms/tagmanager/zzeb;
+.field private final synthetic zzaik:Lcom/google/android/gms/tagmanager/zzeb;
 
 
 # direct methods

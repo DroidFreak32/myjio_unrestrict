@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzcw:Lcom/google/android/gms/internal/maps/zzk;
+.field private final zzcw:Lcom/google/android/gms/internal/maps/zzk;
 
 
 # direct methods
@@ -199,6 +199,8 @@
 
 .method public final getTag()Ljava/lang/Object;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -505,6 +507,10 @@
 
 .method public final setImage(Lcom/google/android/gms/maps/model/BitmapDescriptor;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "imageDescriptor must not be null"
 
@@ -587,6 +593,10 @@
 
 .method public final setTag(Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     :try_start_0

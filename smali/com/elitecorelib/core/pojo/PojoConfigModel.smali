@@ -6,43 +6,43 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public adEnable:I
+.field private adEnable:I
 
-.field public adRefreshInterval:I
+.field private adRefreshInterval:I
 
-.field public communicationMode:I
+.field private communicationMode:I
 
-.field public eventAnalyticsEnable:I
+.field private eventAnalyticsEnable:I
 
-.field public eventAnalyticsInterval:I
+.field private eventAnalyticsInterval:I
 
-.field public eventAnalyticsMode:Ljava/lang/String;
+.field private eventAnalyticsMode:Ljava/lang/String;
 
-.field public locationBaseNotification:I
+.field private locationBaseNotification:I
 
-.field public locationSyncRange:I
+.field private locationSyncRange:I
 
-.field public nfCallBackInterval:I
+.field private nfCallBackInterval:I
 
-.field public nfCallBackMode:I
+.field private nfCallBackMode:I
 
-.field public serverUnreachbleMessage:Ljava/lang/String;
+.field private serverUnreachbleMessage:Ljava/lang/String;
 
-.field public syncIntervalTime:I
+.field private syncIntervalTime:I
 
-.field public termsAndCondition:Ljava/lang/String;
+.field private termsAndCondition:Ljava/lang/String;
 
-.field public termsAndConditionMode:Ljava/lang/String;
+.field private termsAndConditionMode:Ljava/lang/String;
 
-.field public userIdentity:Ljava/lang/String;
+.field private userIdentity:Ljava/lang/String;
 
-.field public wifiConnectionTimeout:I
+.field private wifiConnectionTimeout:I
 
-.field public wifiSetting:Ljava/lang/String;
+.field private wifiSetting:Ljava/lang/String;
 
 
 # direct methods

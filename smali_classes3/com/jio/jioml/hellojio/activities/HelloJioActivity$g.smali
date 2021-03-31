@@ -3,29 +3,17 @@
 .source "HelloJioActivity.kt"
 
 # interfaces
-.implements Lce;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onCreate(Landroid/os/Bundle;)V
+    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onError(Ljava/lang/Integer;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x19
     name = null
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lce<",
-        "Ljava/lang/Boolean;",
-        ">;"
-    }
 .end annotation
 
 
@@ -34,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)V
+.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Ljava/lang/Integer;)V
     .locals 0
 
     iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$g;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
@@ -46,76 +34,39 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Boolean;)V
+.method public final run()V
     .locals 3
 
     .line 1
     iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$g;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->e(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->access$getStateManager$p(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)Lcom/jio/jioml/hellojio/core/StateManager;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$g;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string v0, "it"
-
-    .line 2
-    invoke-static {p1, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    .line 3
-    sget-object v0, Lmq0;->b:Lmq0;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "connectivity change "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->access$getStateManager$p(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)Lcom/jio/jioml/hellojio/core/StateManager;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lmq0;->a(Ljava/lang/String;)V
+    invoke-virtual {v1}, Lcom/jio/jioml/hellojio/core/StateManager;->getCurrentMode()Lcom/jio/jioml/hellojio/core/MODE;
 
-    .line 4
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$g;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    move-result-object v1
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    sget-object v2, Lcom/jio/jioml/hellojio/core/MODE;->CHAT:Lcom/jio/jioml/hellojio/core/MODE;
 
-    move-result p1
+    if-ne v1, v2, :cond_0
 
-    invoke-static {v0, p1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->a(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Z)V
+    sget-object v1, Lcom/jio/jioml/hellojio/core/STATE;->STATE_CHAT_SETTLED:Lcom/jio/jioml/hellojio/core/STATE;
 
-    return-void
-.end method
+    goto :goto_0
 
-.method public bridge synthetic onChanged(Ljava/lang/Object;)V
-    .locals 0
+    :cond_0
+    sget-object v1, Lcom/jio/jioml/hellojio/core/STATE;->STATE_HOME_SETTLED:Lcom/jio/jioml/hellojio/core/STATE;
 
-    .line 1
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p0, p1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$g;->a(Ljava/lang/Boolean;)V
+    :goto_0
+    invoke-virtual {v0, v1}, Lcom/jio/jioml/hellojio/core/StateManager;->changeState(Lcom/jio/jioml/hellojio/core/STATE;)V
 
     return-void
 .end method

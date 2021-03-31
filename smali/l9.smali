@@ -1,210 +1,133 @@
-.class public final Ll9;
-.super Ljava/lang/Object;
-.source "MenuItemCompat.java"
+.class public Ll9;
+.super Landroid/content/BroadcastReceiver;
+
+
+# instance fields
+.field public final synthetic a:Landroid/net/wifi/WifiManager;
+
+.field public final synthetic b:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
 
 # direct methods
-.method public static a(Landroid/view/MenuItem;Lf9;)Landroid/view/MenuItem;
-    .locals 1
+.method public constructor <init>(Lcom/elitecore/wifi/api/EliteWiFiAPI;Landroid/net/wifi/WifiManager;)V
+    .locals 0
 
-    .line 1
-    instance-of v0, p0, La8;
+    iput-object p1, p0, Ll9;->b:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    if-eqz v0, :cond_0
+    iput-object p2, p0, Ll9;->a:Landroid/net/wifi/WifiManager;
 
-    .line 2
-    check-cast p0, La8;
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    invoke-interface {p0, p1}, La8;->a(Lf9;)La8;
-
-    move-result-object p0
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public static a(Landroid/view/MenuItem;CI)V
-    .locals 2
-
-    .line 7
-    instance-of v0, p0, La8;
-
-    if-eqz v0, :cond_0
-
-    .line 8
-    check-cast p0, La8;
-
-    invoke-interface {p0, p1, p2}, La8;->setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-
-    goto :goto_0
-
-    .line 9
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
-
-    .line 10
-    invoke-interface {p0, p1, p2}, Landroid/view/MenuItem;->setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public static a(Landroid/view/MenuItem;Landroid/content/res/ColorStateList;)V
-    .locals 2
 
-    .line 11
-    instance-of v0, p0, La8;
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
 
-    if-eqz v0, :cond_0
+    :try_start_0
+    invoke-static {p1}, Lcom/elitecorelib/core/LibraryApplication;->reInitApplicationResourceIfNeeded(Landroid/content/Context;)V
 
-    .line 12
-    check-cast p0, La8;
+    iget-object p2, p0, Ll9;->b:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    invoke-interface {p0, p1}, La8;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
+    invoke-static {p2}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$1000(Lcom/elitecore/wifi/api/EliteWiFiAPI;)Z
 
-    goto :goto_0
+    move-result p2
 
-    .line 13
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-eqz p2, :cond_0
 
-    const/16 v1, 0x1a
+    iget-object p2, p0, Ll9;->b:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    if-lt v0, v1, :cond_1
+    iget-object v0, p0, Ll9;->a:Landroid/net/wifi/WifiManager;
 
-    .line 14
-    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method public static a(Landroid/view/MenuItem;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 2
-
-    .line 15
-    instance-of v0, p0, La8;
-
-    if-eqz v0, :cond_0
-
-    .line 16
-    check-cast p0, La8;
-
-    invoke-interface {p0, p1}, La8;->setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
+    invoke-static {p2, v0, p1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$700(Lcom/elitecore/wifi/api/EliteWiFiAPI;Landroid/net/wifi/WifiManager;Landroid/content/Context;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_0
 
-    .line 17
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_start_1
+    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const/16 v1, 0x1a
+    invoke-static {}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$100()Ljava/lang/String;
 
-    if-lt v0, v1, :cond_1
+    move-result-object v0
 
-    .line 18
-    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
+    const-string v1, "Unregister WiFi Receiver"
 
-    :cond_1
-    :goto_0
-    return-void
-.end method
+    invoke-virtual {p2, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-.method public static a(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
-    .locals 2
+    invoke-static {p1}, Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->getInstance(Landroid/content/Context;)Landroidx/localbroadcastmanager/content/LocalBroadcastManager;
 
-    .line 3
-    instance-of v0, p0, La8;
+    move-result-object p1
 
-    if-eqz v0, :cond_0
+    iget-object p2, p0, Ll9;->b:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    .line 4
-    check-cast p0, La8;
+    invoke-static {p2}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$1100(Lcom/elitecore/wifi/api/EliteWiFiAPI;)Landroid/content/BroadcastReceiver;
 
-    invoke-interface {p0, p1}, La8;->setContentDescription(Ljava/lang/CharSequence;)La8;
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    iget-object p1, p0, Ll9;->b:Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    const/4 p2, 0x0
+
+    invoke-static {p1, p2}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$1102(Lcom/elitecore/wifi/api/EliteWiFiAPI;Landroid/content/BroadcastReceiver;)Landroid/content/BroadcastReceiver;
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
-    .line 5
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    :catch_0
+    move-exception p1
 
-    const/16 v1, 0x1a
+    :try_start_2
+    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    if-lt v0, v1, :cond_1
+    invoke-static {}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$100()Ljava/lang/String;
 
-    .line 6
-    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+    move-result-object v0
 
-    :cond_1
-    :goto_0
-    return-void
-.end method
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.method public static b(Landroid/view/MenuItem;CI)V
-    .locals 2
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 5
-    instance-of v0, p0, La8;
+    sget-object v2, Lcom/elitecorelib/andsf/a/a;->D:Lcom/elitecorelib/andsf/a/a;
 
-    if-eqz v0, :cond_0
+    invoke-static {v2}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
 
-    .line 6
-    check-cast p0, La8;
+    move-result-object v2
 
-    invoke-interface {p0, p1, p2}, La8;->setNumericShortcut(CI)Landroid/view/MenuItem;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    const-string v2, " Error while unregistering WiFi Receiver. Reason : "
 
-    .line 7
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v1, 0x1a
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    if-lt v0, v1, :cond_1
+    move-result-object p1
 
-    .line 8
-    invoke-interface {p0, p1, p2}, Landroid/view/MenuItem;->setNumericShortcut(CI)Landroid/view/MenuItem;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    :goto_0
-    return-void
-.end method
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public static b(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
-    .locals 2
+    move-result-object p1
 
-    .line 1
-    instance-of v0, p0, La8;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    check-cast p0, La8;
-
-    invoke-interface {p0, p1}, La8;->setTooltipText(Ljava/lang/CharSequence;)La8;
+    invoke-virtual {p2, v0, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_0
 
-    .line 3
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    :catch_1
+    move-exception p1
 
-    const/16 v1, 0x1a
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    if-lt v0, v1, :cond_1
-
-    .line 4
-    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-
-    :cond_1
     :goto_0
     return-void
 .end method

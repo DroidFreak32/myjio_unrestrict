@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public final notificationTag:I
+.field private final notificationTag:I
 
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;I)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;I)V
     .locals 0
 
     .line 2
@@ -44,9 +44,7 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public synthetic a(Landroid/graphics/Bitmap;)V
+.method private synthetic a(Landroid/graphics/Bitmap;)V
     .locals 2
 
     .line 1
@@ -87,6 +85,16 @@
     return-void
 .end method
 
+
+# virtual methods
+.method public synthetic b(Landroid/graphics/Bitmap;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager$BitmapCallback;->a(Landroid/graphics/Bitmap;)V
+
+    return-void
+.end method
+
 .method public onBitmap(Landroid/graphics/Bitmap;)V
     .locals 2
 
@@ -99,9 +107,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lqc0;
+    new-instance v1, Lzi;
 
-    invoke-direct {v1, p0, p1}, Lqc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager$BitmapCallback;Landroid/graphics/Bitmap;)V
+    invoke-direct {v1, p0, p1}, Lzi;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager$BitmapCallback;Landroid/graphics/Bitmap;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

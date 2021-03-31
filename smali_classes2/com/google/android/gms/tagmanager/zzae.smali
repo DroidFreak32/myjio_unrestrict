@@ -17,11 +17,11 @@
 
 
 # instance fields
-.field public final synthetic zzafg:Lcom/google/android/gms/tagmanager/zzy;
+.field private final synthetic zzafg:Lcom/google/android/gms/tagmanager/zzy;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zzy;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zzy;)V
     .locals 0
 
     .line 1
@@ -122,9 +122,7 @@
     :cond_1
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzae;->zzafg:Lcom/google/android/gms/tagmanager/zzy;
 
-    iget-object v2, p0, Lcom/google/android/gms/tagmanager/zzae;->zzafg:Lcom/google/android/gms/tagmanager/zzy;
-
-    invoke-static {v2}, Lcom/google/android/gms/tagmanager/zzy;->zzd(Lcom/google/android/gms/tagmanager/zzy;)Lcom/google/android/gms/common/util/Clock;
+    invoke-static {v1}, Lcom/google/android/gms/tagmanager/zzy;->zzd(Lcom/google/android/gms/tagmanager/zzy;)Lcom/google/android/gms/common/util/Clock;
 
     move-result-object v2
 
@@ -198,7 +196,7 @@
 .end method
 
 .method public final zzs(I)V
-    .locals 3
+    .locals 2
 
     .line 1
     sget v0, Lcom/google/android/gms/tagmanager/zzcz;->zzahw:I
@@ -242,9 +240,7 @@
     .line 6
     iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzae;->zzafg:Lcom/google/android/gms/tagmanager/zzy;
 
-    iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzae;->zzafg:Lcom/google/android/gms/tagmanager/zzy;
-
-    invoke-static {v1}, Lcom/google/android/gms/tagmanager/zzy;->zzb(Lcom/google/android/gms/tagmanager/zzy;)Lcom/google/android/gms/tagmanager/zzv;
+    invoke-static {v0}, Lcom/google/android/gms/tagmanager/zzy;->zzb(Lcom/google/android/gms/tagmanager/zzy;)Lcom/google/android/gms/tagmanager/zzv;
 
     move-result-object v1
 
@@ -256,11 +252,9 @@
     :cond_1
     iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzae;->zzafg:Lcom/google/android/gms/tagmanager/zzy;
 
-    iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzae;->zzafg:Lcom/google/android/gms/tagmanager/zzy;
+    sget-object v1, Lcom/google/android/gms/common/api/Status;->RESULT_TIMEOUT:Lcom/google/android/gms/common/api/Status;
 
-    sget-object v2, Lcom/google/android/gms/common/api/Status;->RESULT_TIMEOUT:Lcom/google/android/gms/common/api/Status;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tagmanager/zzy;->zza(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/tagmanager/ContainerHolder;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tagmanager/zzy;->zza(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/tagmanager/ContainerHolder;
 
     move-result-object v1
 

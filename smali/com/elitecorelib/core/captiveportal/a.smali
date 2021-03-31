@@ -18,18 +18,18 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field public final b:Landroid/os/IBinder;
+.field private final b:Landroid/os/IBinder;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lu20;
+    new-instance v0, Loa;
 
-    invoke-direct {v0}, Lu20;-><init>()V
+    invoke-direct {v0}, Loa;-><init>()V
 
     sput-object v0, Lcom/elitecorelib/core/captiveportal/a;->CREATOR:Landroid/os/Parcelable$Creator;
 

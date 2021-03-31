@@ -4,8 +4,8 @@
 
 # interfaces
 .implements Ljava/util/concurrent/Future;
-.implements Lwv$b;
-.implements Lwv$a;
+.implements Lcom/android/volley/Response$Listener;
+.implements Lcom/android/volley/Response$ErrorListener;
 
 
 # annotations
@@ -17,17 +17,17 @@
         "Ljava/lang/Object;",
         "Ljava/util/concurrent/Future<",
         "TT;>;",
-        "Lwv$b<",
+        "Lcom/android/volley/Response$Listener<",
         "TT;>;",
-        "Lwv$a;"
+        "Lcom/android/volley/Response$ErrorListener;"
     }
 .end annotation
 
 
 # instance fields
-.field public mException:Lcom/android/volley/VolleyError;
+.field private mException:Lcom/android/volley/VolleyError;
 
-.field public mRequest:Lcom/android/volley/Request;
+.field private mRequest:Lcom/android/volley/Request;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/android/volley/Request<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public mResult:Ljava/lang/Object;
+.field private mResult:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -44,11 +44,11 @@
     .end annotation
 .end field
 
-.field public mResultReceived:Z
+.field private mResultReceived:Z
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -69,6 +69,14 @@
             "(",
             "Ljava/lang/Long;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 
@@ -100,12 +108,20 @@
     if-nez p1, :cond_1
 
     .line 4
+    :goto_0
     :try_start_1
+    invoke-virtual {p0}, Lcom/android/volley/toolbox/RequestFuture;->isDone()Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    .line 5
     invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
 
     goto :goto_0
 
-    .line 5
+    .line 6
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
@@ -115,26 +131,54 @@
 
     if-lez v4, :cond_2
 
-    .line 6
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    .line 7
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
+    .line 8
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    add-long/2addr v2, v0
+
+    .line 9
+    :goto_1
+    invoke-virtual {p0}, Lcom/android/volley/toolbox/RequestFuture;->isDone()Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    cmp-long p1, v0, v2
+
+    if-gez p1, :cond_2
+
+    sub-long v0, v2, v0
+
+    .line 10
     invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
 
-    .line 7
+    .line 11
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    goto :goto_1
+
+    .line 12
     :cond_2
-    :goto_0
     iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
 
     if-nez p1, :cond_4
 
-    .line 8
+    .line 13
     iget-boolean p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResultReceived:Z
 
     if-eqz p1, :cond_3
 
-    .line 9
+    .line 14
     iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResult:Ljava/lang/Object;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -143,7 +187,7 @@
 
     return-object p1
 
-    .line 10
+    .line 15
     :cond_3
     :try_start_2
     new-instance p1, Ljava/util/concurrent/TimeoutException;
@@ -152,7 +196,7 @@
 
     throw p1
 
-    .line 11
+    .line 16
     :cond_4
     new-instance p1, Ljava/util/concurrent/ExecutionException;
 
@@ -162,7 +206,7 @@
 
     throw p1
 
-    .line 12
+    .line 17
     :cond_5
     new-instance p1, Ljava/util/concurrent/ExecutionException;
 
@@ -269,6 +313,13 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     .line 1
@@ -299,6 +350,14 @@
             "(J",
             "Ljava/util/concurrent/TimeUnit;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 

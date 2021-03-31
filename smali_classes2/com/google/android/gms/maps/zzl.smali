@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzt:Lcom/google/android/gms/maps/LocationSource;
+.field private final synthetic zzt:Lcom/google/android/gms/maps/LocationSource;
 
 
 # direct methods

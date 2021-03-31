@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
 .field public static final enum CANONICALIZE_FIELD_NAMES:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
@@ -35,84 +35,76 @@
 
 
 # instance fields
-.field public final _defaultState:Z
+.field private final _defaultState:Z
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
-    const/4 v1, 0x0
+    const-string v1, "INTERN_FIELD_NAMES"
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const-string v3, "INTERN_FIELD_NAMES"
+    const/4 v3, 0x1
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->INTERN_FIELD_NAMES:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    new-instance v1, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
-    const-string v3, "CANONICALIZE_FIELD_NAMES"
+    const-string v4, "CANONICALIZE_FIELD_NAMES"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v1, v4, v3, v3}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->CANONICALIZE_FIELD_NAMES:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    sput-object v1, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->CANONICALIZE_FIELD_NAMES:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    new-instance v4, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
-    const/4 v3, 0x2
+    const-string v5, "FAIL_ON_SYMBOL_HASH_OVERFLOW"
 
-    const-string v4, "FAIL_ON_SYMBOL_HASH_OVERFLOW"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3, v2}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v4, v5, v6, v3}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->FAIL_ON_SYMBOL_HASH_OVERFLOW:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    sput-object v4, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->FAIL_ON_SYMBOL_HASH_OVERFLOW:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    new-instance v5, Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
-    const/4 v4, 0x3
+    const-string v7, "USE_THREAD_LOCAL_FOR_BUFFER_RECYCLING"
 
-    const-string v5, "USE_THREAD_LOCAL_FOR_BUFFER_RECYCLING"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4, v2}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v5, v7, v8, v3}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->USE_THREAD_LOCAL_FOR_BUFFER_RECYCLING:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    sput-object v5, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->USE_THREAD_LOCAL_FOR_BUFFER_RECYCLING:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    new-array v7, v7, [Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v3
+
+    aput-object v4, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->INTERN_FIELD_NAMES:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->CANONICALIZE_FIELD_NAMES:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->FAIL_ON_SYMBOL_HASH_OVERFLOW:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->USE_THREAD_LOCAL_FOR_BUFFER_RECYCLING:Lcom/fasterxml/jackson/core/JsonFactory$Feature;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->$VALUES:[Lcom/fasterxml/jackson/core/JsonFactory$Feature;
+    sput-object v7, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->$VALUES:[Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IZ)V
+.method private constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -25,20 +25,22 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "MediaStoreThumbFetcher"
+.field private static final TAG:Ljava/lang/String; = "MediaStoreThumbFetcher"
 
 
 # instance fields
-.field public inputStream:Ljava/io/InputStream;
+.field private inputStream:Ljava/io/InputStream;
 
-.field public final mediaStoreImageUri:Landroid/net/Uri;
+.field private final mediaStoreImageUri:Landroid/net/Uri;
 
-.field public final opener:Lcom/bumptech/glide/load/data/mediastore/ThumbnailStreamOpener;
+.field private final opener:Lcom/bumptech/glide/load/data/mediastore/ThumbnailStreamOpener;
 
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Lcom/bumptech/glide/load/data/mediastore/ThumbnailStreamOpener;)V
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +54,7 @@
     return-void
 .end method
 
-.method public static build(Landroid/content/Context;Landroid/net/Uri;Lcom/bumptech/glide/load/data/mediastore/ThumbnailQuery;)Lcom/bumptech/glide/load/data/mediastore/ThumbFetcher;
+.method private static build(Landroid/content/Context;Landroid/net/Uri;Lcom/bumptech/glide/load/data/mediastore/ThumbnailQuery;)Lcom/bumptech/glide/load/data/mediastore/ThumbFetcher;
     .locals 3
 
     .line 1
@@ -135,6 +137,11 @@
 
 .method private openThumbInputStream()Ljava/io/InputStream;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/data/mediastore/ThumbFetcher;->opener:Lcom/bumptech/glide/load/data/mediastore/ThumbnailStreamOpener;
@@ -206,6 +213,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -223,6 +233,8 @@
 
 .method public getDataSource()Lcom/bumptech/glide/load/DataSource;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/DataSource;->LOCAL:Lcom/bumptech/glide/load/DataSource;
@@ -232,6 +244,14 @@
 
 .method public loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -254,8 +274,6 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
-    iget-object p1, p0, Lcom/bumptech/glide/load/data/mediastore/ThumbFetcher;->inputStream:Ljava/io/InputStream;
-
     invoke-interface {p2, p1}, Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;->onDataReady(Ljava/lang/Object;)V
 
     return-void

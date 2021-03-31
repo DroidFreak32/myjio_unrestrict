@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public mRemote:Landroid/os/IBinder;
+.field private mRemote:Landroid/os/IBinder;
 
 
 # direct methods
@@ -47,6 +47,11 @@
 
 .method public extraCallback(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -128,6 +133,11 @@
 
 .method public onMessageChannelReady(Landroid/os/Bundle;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -198,6 +208,11 @@
 
 .method public onNavigationEvent(ILandroid/os/Bundle;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -271,6 +286,11 @@
 
 .method public onPostMessage(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -344,6 +364,11 @@
 
 .method public onRelationshipValidationResult(ILandroid/net/Uri;ZLandroid/os/Bundle;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;

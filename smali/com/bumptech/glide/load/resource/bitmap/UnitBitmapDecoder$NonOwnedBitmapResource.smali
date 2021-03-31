@@ -27,12 +27,16 @@
 
 
 # instance fields
-.field public final bitmap:Landroid/graphics/Bitmap;
+.field private final bitmap:Landroid/graphics/Bitmap;
 
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,6 +51,8 @@
 # virtual methods
 .method public get()Landroid/graphics/Bitmap;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/UnitBitmapDecoder$NonOwnedBitmapResource;->bitmap:Landroid/graphics/Bitmap;
@@ -56,6 +62,8 @@
 
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bitmap/UnitBitmapDecoder$NonOwnedBitmapResource;->get()Landroid/graphics/Bitmap;
@@ -67,6 +75,9 @@
 
 .method public getResourceClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

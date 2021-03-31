@@ -25,27 +25,27 @@
 
 
 # static fields
-.field public static final BUFFER_SIZE_BYTES:I = 0x20000
+.field private static final BUFFER_SIZE_BYTES:I = 0x20000
 
 
 # instance fields
-.field public final cache:Lcom/google/android/jioexoplayer2/upstream/cache/Cache;
+.field private final cache:Lcom/google/android/jioexoplayer2/upstream/cache/Cache;
 
-.field public final dataSource:Lcom/google/android/jioexoplayer2/upstream/cache/CacheDataSource;
+.field private final dataSource:Lcom/google/android/jioexoplayer2/upstream/cache/CacheDataSource;
 
-.field public volatile downloadedBytes:J
+.field private volatile downloadedBytes:J
 
-.field public volatile downloadedSegments:I
+.field private volatile downloadedSegments:I
 
-.field public final isCanceled:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final isCanceled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final manifestUri:Landroid/net/Uri;
+.field private final manifestUri:Landroid/net/Uri;
 
-.field public final offlineDataSource:Lcom/google/android/jioexoplayer2/upstream/cache/CacheDataSource;
+.field private final offlineDataSource:Lcom/google/android/jioexoplayer2/upstream/cache/CacheDataSource;
 
-.field public final priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
+.field private final priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
 
-.field public final streamKeys:Ljava/util/ArrayList;
+.field private final streamKeys:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field public volatile totalSegments:I
+.field private volatile totalSegments:I
 
 
 # direct methods
@@ -141,6 +141,13 @@
             "Ljava/util/List<",
             "Lcom/google/android/jioexoplayer2/offline/SegmentDownloader$Segment;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
         }
     .end annotation
 
@@ -294,6 +301,12 @@
 
 .method public final download()V
     .locals 14
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/SegmentDownloader;->priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
@@ -482,6 +495,12 @@
             ")TM;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getSegments(Lcom/google/android/jioexoplayer2/upstream/DataSource;Lcom/google/android/jioexoplayer2/offline/FilterableManifest;Z)Ljava/util/List;
@@ -495,10 +514,22 @@
             ">;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final remove()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0

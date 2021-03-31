@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzat:Lcom/google/android/gms/phenotype/PhenotypeFlag;
+.field private final zzat:Lcom/google/android/gms/phenotype/PhenotypeFlag;
 
-.field public final zzau:Lcom/google/android/gms/phenotype/zza;
+.field private final zzau:Lcom/google/android/gms/phenotype/zza;
 
 
 # direct methods

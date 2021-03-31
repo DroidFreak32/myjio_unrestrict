@@ -1,116 +1,61 @@
-.class public final Lk9;
+.class public Lk9;
 .super Ljava/lang/Object;
-.source "MarginLayoutParamsCompat.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Landroid/net/wifi/WifiManager;
+
+.field public final synthetic b:Landroid/content/Context;
+
+.field public final synthetic c:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
 
 # direct methods
-.method public static a(Landroid/view/ViewGroup$MarginLayoutParams;)I
-    .locals 2
+.method public constructor <init>(Lcom/elitecore/wifi/api/EliteWiFiAPI;Landroid/net/wifi/WifiManager;Landroid/content/Context;)V
+    .locals 0
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lk9;->c:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    const/16 v1, 0x11
+    iput-object p2, p0, Lk9;->a:Landroid/net/wifi/WifiManager;
 
-    if-lt v0, v1, :cond_0
+    iput-object p3, p0, Lk9;->b:Landroid/content/Context;
 
-    .line 2
-    invoke-virtual {p0}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginEnd()I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result p0
-
-    return p0
-
-    .line 3
-    :cond_0
-    iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    return p0
-.end method
-
-.method public static a(Landroid/view/ViewGroup$MarginLayoutParams;I)V
-    .locals 2
-
-    .line 4
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_0
-
-    .line 5
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->resolveLayoutDirection(I)V
-
-    :cond_0
     return-void
 .end method
 
-.method public static b(Landroid/view/ViewGroup$MarginLayoutParams;)I
-    .locals 2
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+# virtual methods
+.method public run()V
+    .locals 3
 
-    const/16 v1, 0x11
+    invoke-static {}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$100()Ljava/lang/String;
 
-    if-lt v0, v1, :cond_0
+    iget-object v0, p0, Lk9;->c:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    .line 2
-    invoke-virtual {p0}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginStart()I
+    iget-object v1, p0, Lk9;->a:Landroid/net/wifi/WifiManager;
 
-    move-result p0
+    iget-object v2, p0, Lk9;->b:Landroid/content/Context;
 
-    return p0
+    invoke-static {v0, v1, v2}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$700(Lcom/elitecore/wifi/api/EliteWiFiAPI;Landroid/net/wifi/WifiManager;Landroid/content/Context;)V
 
-    .line 3
-    :cond_0
-    iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget-object v0, p0, Lk9;->c:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    return p0
-.end method
+    invoke-static {v0}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$900(Lcom/elitecore/wifi/api/EliteWiFiAPI;)Landroid/os/Handler;
 
-.method public static b(Landroid/view/ViewGroup$MarginLayoutParams;I)V
-    .locals 2
+    move-result-object v0
 
-    .line 4
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iget-object v1, p0, Lk9;->c:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    const/16 v1, 0x11
+    invoke-static {v1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$800(Lcom/elitecore/wifi/api/EliteWiFiAPI;)Ljava/lang/Runnable;
 
-    if-lt v0, v1, :cond_0
+    move-result-object v1
 
-    .line 5
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    :goto_0
-    return-void
-.end method
-
-.method public static c(Landroid/view/ViewGroup$MarginLayoutParams;I)V
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_0
-
-    .line 2
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    :goto_0
     return-void
 .end method

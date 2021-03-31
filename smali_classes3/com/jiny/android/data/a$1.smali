@@ -4,7 +4,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jiny/android/data/a;->u()V
+    value = Lcom/jiny/android/data/a;->V()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,11 +35,11 @@
 
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    const-string p1, "ang"
+    const-string p1, "hin"
 
-    const-string v0, "hin"
+    const-string v0, "ang"
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -53,7 +53,7 @@
 
     const-string v1, "mar"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v2
 
@@ -67,7 +67,7 @@
 
     const-string v2, "ori"
 
-    filled-new-array {v2, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v2, p1, v0}, [Ljava/lang/String;
 
     move-result-object v2
 
@@ -79,7 +79,7 @@
 
     invoke-virtual {p0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -93,7 +93,7 @@
 
     const-string v1, "mal"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -105,7 +105,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -117,7 +117,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -131,7 +131,7 @@
 
     const-string v1, "ben"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v2
 
@@ -143,7 +143,7 @@
 
     invoke-virtual {p0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v2
 
@@ -157,7 +157,7 @@
 
     const-string v2, "kan"
 
-    filled-new-array {v2, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v2, p1, v0}, [Ljava/lang/String;
 
     move-result-object v2
 
@@ -169,7 +169,7 @@
 
     invoke-virtual {p0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -183,7 +183,7 @@
 
     const-string v1, "guj"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -195,7 +195,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -207,9 +207,9 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string/jumbo v1, "tel"
+    const-string v1, "tel"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -221,9 +221,9 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string/jumbo v1, "tam"
+    const-string v1, "tam"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -235,7 +235,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -247,7 +247,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -261,7 +261,7 @@
 
     const-string v1, "asm"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -275,7 +275,7 @@
 
     const-string v1, "pan"
 
-    filled-new-array {v1, v0, p1}, [Ljava/lang/String;
+    filled-new-array {v1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -287,7 +287,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -299,7 +299,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -311,7 +311,7 @@
 
     invoke-virtual {p0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    filled-new-array {v0, v0, p1}, [Ljava/lang/String;
+    filled-new-array {p1, p1, v0}, [Ljava/lang/String;
 
     move-result-object p1
 

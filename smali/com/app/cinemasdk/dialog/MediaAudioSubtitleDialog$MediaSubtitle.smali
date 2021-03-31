@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+.field private static final synthetic $VALUES:[Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
 .field public static final enum English:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
@@ -38,7 +38,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
@@ -52,35 +52,31 @@
     sput-object v0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->Off:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
     .line 2
-    new-instance v0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+    new-instance v1, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
-    const-string v1, "English"
+    const-string v3, "English"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3, v1}, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v1, v3, v4, v4, v3}, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
-    sput-object v0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->English:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+    sput-object v1, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->English:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
-    const/4 v0, 0x2
+    const/4 v3, 0x2
 
-    new-array v0, v0, [Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+    new-array v3, v3, [Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v1, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->Off:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->English:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->$VALUES:[Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+    sput-object v3, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;->$VALUES:[Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

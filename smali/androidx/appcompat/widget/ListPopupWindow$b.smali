@@ -3,12 +3,12 @@
 .source "ListPopupWindow.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemSelectedListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/widget/ListPopupWindow;->f()I
+    value = Landroidx/appcompat/widget/ListPopupWindow;->e()I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/ListPopupWindow;
+.field public final synthetic a:Landroidx/appcompat/widget/ListPopupWindow;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$b;->s:Landroidx/appcompat/widget/ListPopupWindow;
+    iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$b;->a:Landroidx/appcompat/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,47 +35,30 @@
 
 
 # virtual methods
-.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView<",
-            "*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
-
-    const/4 p1, -0x1
-
-    if-eq p3, p1, :cond_0
+.method public run()V
+    .locals 1
 
     .line 1
-    iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$b;->s:Landroidx/appcompat/widget/ListPopupWindow;
+    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$b;->a:Landroidx/appcompat/widget/ListPopupWindow;
 
-    iget-object p1, p1, Landroidx/appcompat/widget/ListPopupWindow;->u:Lr2;
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
 
-    if-eqz p1, :cond_0
+    move-result-object v0
 
-    const/4 p2, 0x0
+    if-eqz v0, :cond_0
 
     .line 2
-    invoke-virtual {p1, p2}, Lr2;->setListSelectionHidden(Z)V
+    invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$b;->a:Landroidx/appcompat/widget/ListPopupWindow;
+
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
 
     :cond_0
-    return-void
-.end method
-
-.method public onNothingSelected(Landroid/widget/AdapterView;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView<",
-            "*>;)V"
-        }
-    .end annotation
-
     return-void
 .end method

@@ -1,123 +1,72 @@
-.class public final synthetic Lcom/google/android/gms/internal/vision/zzda;
+.class public final Lcom/google/android/gms/internal/vision/zzda;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/gms/internal/vision/zzda$zza;
+    }
+.end annotation
 
 
 # static fields
-.field public static final synthetic zzbc:[I
+.field private static final logger:Ljava/util/logging/Logger;
+
+.field private static final zzlz:Lcom/google/android/gms/internal/vision/zzdb;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 2
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzfy$zzg;->values$50KLMJ33DTMIUPRFDTJMOP9FE1P6UT3FC9QMCBQ7CLN6ASJ1EHIM8JB5EDPM2PR59HKN8P949LIN8Q3FCHA6UIBEEPNMMP9R0()[I
+    const-class v0, Lcom/google/android/gms/internal/vision/zzda;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
-    new-array v0, v0, [I
+    move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzda;->logger:Ljava/util/logging/Logger;
 
-    const/4 v0, 0x1
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzda$zza;
 
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
+    const/4 v1, 0x0
 
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzxa:I
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/vision/zzda$zza;-><init>(Lcom/google/android/gms/internal/vision/zzdc;)V
 
-    sub-int/2addr v2, v0
+    .line 3
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzda;->zzlz:Lcom/google/android/gms/internal/vision/zzdb;
 
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
-
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzxb:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x2
-
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
-
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzwz:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x3
-
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
-
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzxc:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x4
-
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
-
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzxd:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x5
-
-    aput v3, v1, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
-
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzwx:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x6
-
-    aput v3, v1, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzda;->zzbc:[I
-
-    sget v2, Lcom/google/android/gms/internal/vision/zzfy$zzg;->zzwy:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v0, 0x7
-
-    aput v0, v1, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
     return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static zzl(Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .param p0    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-nez p0, :cond_0
+
+    const-string p0, ""
+
+    :cond_0
+    return-object p0
 .end method

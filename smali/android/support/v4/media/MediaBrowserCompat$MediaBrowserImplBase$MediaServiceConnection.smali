@@ -86,11 +86,11 @@
 
     if-ne v1, p0, :cond_1
 
-    iget v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
+    iget v1, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    if-ne v0, v2, :cond_0
+    if-ne v1, v2, :cond_0
 
     goto :goto_0
 
@@ -100,8 +100,6 @@
     .line 2
     :cond_1
     :goto_0
-    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
-
     iget v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
 
     if-eqz v0, :cond_2

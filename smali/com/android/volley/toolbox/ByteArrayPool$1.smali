@@ -1,4 +1,4 @@
-.class public final Lcom/android/volley/toolbox/ByteArrayPool$1;
+.class public Lcom/android/volley/toolbox/ByteArrayPool$1;
 .super Ljava/lang/Object;
 .source "ByteArrayPool.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

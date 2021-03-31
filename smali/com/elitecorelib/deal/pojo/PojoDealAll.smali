@@ -18,49 +18,49 @@
 
 
 # instance fields
-.field public currency:Ljava/lang/String;
+.field private currency:Ljava/lang/String;
 
-.field public customerCostPerVoucher:Ljava/lang/Long;
+.field private customerCostPerVoucher:Ljava/lang/Long;
 
-.field public dealDescription:Ljava/lang/String;
+.field private dealDescription:Ljava/lang/String;
 
 .field public dealDisplayInfoData:Lcom/elitecorelib/deal/pojo/PojoDealDisplayInfo;
 
 .field public dealHeadline:Ljava/lang/String;
 
-.field public dealId:Ljava/lang/Long;
+.field private dealId:Ljava/lang/Long;
 
-.field public dealImagepath:Ljava/lang/String;
+.field private dealImagepath:Ljava/lang/String;
 
-.field public dealName:Ljava/lang/String;
+.field private dealName:Ljava/lang/String;
 
-.field public dealStartdate:Ljava/lang/String;
+.field private dealStartdate:Ljava/lang/String;
 
-.field public dealStopdate:Ljava/lang/String;
+.field private dealStopdate:Ljava/lang/String;
 
-.field public dealTags:Ljava/lang/String;
+.field private dealTags:Ljava/lang/String;
 
-.field public dealThumbail_imagepath:Ljava/lang/String;
+.field private dealThumbail_imagepath:Ljava/lang/String;
 
-.field public distance:Ljava/lang/Double;
+.field private distance:Ljava/lang/Double;
 
-.field public isVoucher:Ljava/lang/String;
+.field private isVoucher:Ljava/lang/String;
 
-.field public latitude:Ljava/lang/Double;
+.field private latitude:Ljava/lang/Double;
 
-.field public longitude:Ljava/lang/Double;
+.field private longitude:Ljava/lang/Double;
 
-.field public merchantPrice:Ljava/lang/Long;
+.field private merchantPrice:Ljava/lang/Long;
 
-.field public offer:Ljava/lang/String;
+.field private offer:Ljava/lang/String;
 
-.field public offerDescription:Ljava/lang/String;
+.field private offerDescription:Ljava/lang/String;
 
-.field public price:Ljava/lang/Long;
+.field private price:Ljava/lang/Long;
 
-.field public redirectURL:Ljava/lang/String;
+.field private redirectURL:Ljava/lang/String;
 
-.field public reedmptionDetails:Ljava/lang/String;
+.field private reedmptionDetails:Ljava/lang/String;
 
 
 # direct methods

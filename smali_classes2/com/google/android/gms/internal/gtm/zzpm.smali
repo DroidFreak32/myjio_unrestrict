@@ -33,6 +33,11 @@
 # virtual methods
 .method public synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzpm;->zzmx()Lcom/google/android/gms/internal/gtm/zzpm;

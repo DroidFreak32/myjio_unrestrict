@@ -1,97 +1,40 @@
 .class public final Lcom/google/android/gms/internal/ads/zzags;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/ads/internal/gmsg/zzu;
+.super Lcom/google/android/gms/internal/ads/zzafn;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/ads/internal/gmsg/zzu<",
-        "Ljava/lang/Object;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final zzdfj:Lcom/google/android/gms/ads/formats/NativeContentAd$OnContentAdLoadedListener;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/ads/formats/NativeContentAd$OnContentAdLoadedListener;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzafn;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzags;->zzdfj:Lcom/google/android/gms/ads/formats/NativeContentAd$OnContentAdLoadedListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Ljava/lang/Object;Ljava/util/Map;)V
+.method public final zza(Lcom/google/android/gms/internal/ads/zzafb;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    const-string p1, "request_id"
 
     .line 1
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    const-string v0, "errors"
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzags;->zzdfj:Lcom/google/android/gms/ads/formats/NativeContentAd$OnContentAdLoadedListener;
 
     .line 2
-    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzafc;
 
-    move-result-object p2
-
-    check-cast p2, Ljava/lang/String;
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/ads/zzafc;-><init>(Lcom/google/android/gms/internal/ads/zzafb;)V
 
     .line 3
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const-string v1, "Invalid request: "
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p2, Ljava/lang/String;
-
-    invoke-direct {p2, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    :goto_0
-    invoke-static {p2}, Lcom/google/android/gms/internal/ads/zzaok;->zzdp(Ljava/lang/String;)V
-
-    .line 4
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzagk;->zzpq()Lcom/google/android/gms/ads/internal/gmsg/zzz;
-
-    move-result-object p2
-
-    invoke-virtual {p2, p1}, Lcom/google/android/gms/ads/internal/gmsg/zzz;->zzaw(Ljava/lang/String;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/formats/NativeContentAd$OnContentAdLoadedListener;->onContentAdLoaded(Lcom/google/android/gms/ads/formats/NativeContentAd;)V
 
     return-void
 .end method

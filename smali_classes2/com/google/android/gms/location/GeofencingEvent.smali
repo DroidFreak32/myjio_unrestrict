@@ -1,13 +1,14 @@
 .class public Lcom/google/android/gms/location/GeofencingEvent;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # instance fields
-.field public final errorCode:I
+.field private final zza:I
 
-.field public final zzam:I
+.field private final zzb:I
 
-.field public final zzan:Ljava/util/List;
+.field private final zzc:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -17,11 +18,11 @@
     .end annotation
 .end field
 
-.field public final zzao:Landroid/location/Location;
+.field private final zzd:Landroid/location/Location;
 
 
 # direct methods
-.method public constructor <init>(IILjava/util/List;Landroid/location/Location;)V
+.method private constructor <init>(IILjava/util/List;Landroid/location/Location;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -34,15 +35,20 @@
         }
     .end annotation
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/GeofencingEvent;->errorCode:I
+    .line 2
+    iput p1, p0, Lcom/google/android/gms/location/GeofencingEvent;->zza:I
 
-    iput p2, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzam:I
+    .line 3
+    iput p2, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzb:I
 
-    iput-object p3, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzan:Ljava/util/List;
+    .line 4
+    iput-object p3, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzc:Ljava/util/List;
 
-    iput-object p4, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzao:Landroid/location/Location;
+    .line 5
+    iput-object p4, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzd:Landroid/location/Location;
 
     return-void
 .end method
@@ -57,21 +63,23 @@
     return-object v0
 
     :cond_0
-    const/4 v1, -0x1
+    const-string v1, "gms_error_code"
 
-    const-string v2, "gms_error_code"
+    const/4 v2, -0x1
 
-    invoke-virtual {p0, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    .line 1
+    invoke-virtual {p0, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v2
+    move-result v1
 
     const-string v3, "com.google.android.location.intent.extra.transition"
 
-    invoke-virtual {p0, v3, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    .line 2
+    invoke-virtual {p0, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v3
 
-    if-eq v3, v1, :cond_2
+    if-eq v3, v2, :cond_2
 
     const/4 v4, 0x1
 
@@ -86,11 +94,12 @@
     if-ne v3, v4, :cond_2
 
     :cond_1
-    move v1, v3
+    move v2, v3
 
     :cond_2
     const-string v3, "com.google.android.location.intent.extra.geofence_list"
 
+    .line 3
     invoke-virtual {p0, v3}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
     move-result-object v3
@@ -101,6 +110,7 @@
 
     goto :goto_1
 
+    .line 4
     :cond_3
     new-instance v0, Ljava/util/ArrayList;
 
@@ -110,6 +120,7 @@
 
     invoke-direct {v0, v4}, Ljava/util/ArrayList;-><init>(I)V
 
+    .line 5
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
@@ -127,7 +138,8 @@
 
     check-cast v6, [B
 
-    invoke-static {v6}, Lcom/google/android/gms/internal/location/zzbh;->zza([B)Lcom/google/android/gms/internal/location/zzbh;
+    .line 6
+    invoke-static {v6}, Lcom/google/android/gms/internal/location/zzbg;->zza([B)Lcom/google/android/gms/internal/location/zzbg;
 
     move-result-object v6
 
@@ -139,15 +151,17 @@
     :goto_1
     const-string v3, "com.google.android.location.intent.extra.triggering_location"
 
+    .line 7
     invoke-virtual {p0, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object p0
 
     check-cast p0, Landroid/location/Location;
 
+    .line 8
     new-instance v3, Lcom/google/android/gms/location/GeofencingEvent;
 
-    invoke-direct {v3, v2, v1, v0, p0}, Lcom/google/android/gms/location/GeofencingEvent;-><init>(IILjava/util/List;Landroid/location/Location;)V
+    invoke-direct {v3, v1, v2, v0, p0}, Lcom/google/android/gms/location/GeofencingEvent;-><init>(IILjava/util/List;Landroid/location/Location;)V
 
     return-object v3
 .end method
@@ -157,7 +171,8 @@
 .method public getErrorCode()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->errorCode:I
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zza:I
 
     return v0
 .end method
@@ -165,7 +180,8 @@
 .method public getGeofenceTransition()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzam:I
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzb:I
 
     return v0
 .end method
@@ -181,7 +197,8 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzan:Ljava/util/List;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzc:Ljava/util/List;
 
     return-object v0
 .end method
@@ -189,7 +206,8 @@
 .method public getTriggeringLocation()Landroid/location/Location;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzao:Landroid/location/Location;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zzd:Landroid/location/Location;
 
     return-object v0
 .end method
@@ -197,7 +215,8 @@
 .method public hasError()Z
     .locals 2
 
-    iget v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->errorCode:I
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/location/GeofencingEvent;->zza:I
 
     const/4 v1, -0x1
 

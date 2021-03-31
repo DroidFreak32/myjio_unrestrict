@@ -7,9 +7,9 @@
 
 
 # static fields
-.field public static final NETWORK_PERMISSION:Ljava/lang/String; = "android.permission.ACCESS_NETWORK_STATE"
+.field private static final NETWORK_PERMISSION:Ljava/lang/String; = "android.permission.ACCESS_NETWORK_STATE"
 
-.field public static final TAG:Ljava/lang/String; = "ConnectivityMonitor"
+.field private static final TAG:Ljava/lang/String; = "ConnectivityMonitor"
 
 
 # direct methods
@@ -26,11 +26,21 @@
 # virtual methods
 .method public build(Landroid/content/Context;Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;)Lcom/bumptech/glide/manager/ConnectivityMonitor;
     .locals 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     const-string v0, "android.permission.ACCESS_NETWORK_STATE"
 
     .line 1
-    invoke-static {p1, v0}, Lx6;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 

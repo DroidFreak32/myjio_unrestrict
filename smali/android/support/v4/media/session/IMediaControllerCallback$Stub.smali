@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static final DESCRIPTOR:Ljava/lang/String; = "android.support.v4.media.session.IMediaControllerCallback"
+.field private static final DESCRIPTOR:Ljava/lang/String; = "android.support.v4.media.session.IMediaControllerCallback"
 
 .field public static final TRANSACTION_onCaptioningEnabledChanged:I = 0xb
 
@@ -116,6 +116,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const v0, 0x5f4e5446
 

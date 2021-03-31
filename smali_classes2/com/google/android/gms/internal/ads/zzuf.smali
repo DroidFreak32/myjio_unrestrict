@@ -1,40 +1,56 @@
 .class public final Lcom/google/android/gms/internal/ads/zzuf;
-.super Lcom/google/android/gms/internal/ads/zzkh;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzekl;
 
 
-# instance fields
-.field public final synthetic zzbqv:Lcom/google/android/gms/internal/ads/zzts;
+# static fields
+.field public static final zzer:Lcom/google/android/gms/internal/ads/zzekl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzts;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzuf;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzuf;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzuf;->zzer:Lcom/google/android/gms/internal/ads/zzekl;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzuf;->zzbqv:Lcom/google/android/gms/internal/ads/zzts;
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzkh;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAdClicked()V
-    .locals 2
+.method public final zzi(I)Z
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzuf;->zzbqv:Lcom/google/android/gms/internal/ads/zzts;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzue$zza$zza;->zzbw(I)Lcom/google/android/gms/internal/ads/zzue$zza$zza;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzts;->zza(Lcom/google/android/gms/internal/ads/zzts;)Ljava/util/List;
+    move-result-object p1
 
-    move-result-object v0
+    if-eqz p1, :cond_0
 
-    new-instance v1, Lcom/google/android/gms/internal/ads/zzug;
+    const/4 p1, 0x1
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/ads/zzug;-><init>(Lcom/google/android/gms/internal/ads/zzuf;)V
+    return p1
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :cond_0
+    const/4 p1, 0x0
 
-    return-void
+    return p1
 .end method

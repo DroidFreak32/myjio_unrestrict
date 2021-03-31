@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
 
 # direct methods

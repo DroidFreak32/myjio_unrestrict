@@ -6,11 +6,11 @@
 
 
 # static fields
-.field public static final zzbcn:Lcom/google/android/gms/internal/gtm/zzsj;
+.field private static final zzbcn:Lcom/google/android/gms/internal/gtm/zzsj;
 
 
 # instance fields
-.field public final zzbcm:Lcom/google/android/gms/internal/gtm/zzsj;
+.field private final zzbcm:Lcom/google/android/gms/internal/gtm/zzsj;
 
 
 # direct methods
@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zzsj;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zzsj;)V
     .locals 1
 
     .line 4
@@ -82,7 +82,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/gtm/zzsi;)Z
+.method private static zza(Lcom/google/android/gms/internal/gtm/zzsi;)Z
     .locals 1
 
     .line 1
@@ -104,13 +104,13 @@
     return p0
 .end method
 
-.method public static zzqe()Lcom/google/android/gms/internal/gtm/zzsj;
+.method private static zzqe()Lcom/google/android/gms/internal/gtm/zzsj;
     .locals 4
 
+    :try_start_0
     const-string v0, "com.google.protobuf.DescriptorMessageInfoFactory"
 
     .line 1
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

@@ -4,55 +4,55 @@
 
 
 # static fields
-.field public static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
+.field private static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
 
-.field public static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
+.field private static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
 
 
 # instance fields
-.field public final SSH2_AGENTC_ADD_IDENTITY:B
+.field private final SSH2_AGENTC_ADD_IDENTITY:B
 
-.field public final SSH2_AGENTC_REMOVE_ALL_IDENTITIES:B
+.field private final SSH2_AGENTC_REMOVE_ALL_IDENTITIES:B
 
-.field public final SSH2_AGENTC_REMOVE_IDENTITY:B
+.field private final SSH2_AGENTC_REMOVE_IDENTITY:B
 
-.field public final SSH2_AGENTC_REQUEST_IDENTITIES:B
+.field private final SSH2_AGENTC_REQUEST_IDENTITIES:B
 
-.field public final SSH2_AGENTC_SIGN_REQUEST:B
+.field private final SSH2_AGENTC_SIGN_REQUEST:B
 
-.field public final SSH2_AGENT_FAILURE:B
+.field private final SSH2_AGENT_FAILURE:B
 
-.field public final SSH2_AGENT_IDENTITIES_ANSWER:B
+.field private final SSH2_AGENT_IDENTITIES_ANSWER:B
 
-.field public final SSH2_AGENT_SIGN_RESPONSE:B
+.field private final SSH2_AGENT_SIGN_RESPONSE:B
 
-.field public final SSH_AGENTC_ADD_RSA_IDENTITY:B
+.field private final SSH_AGENTC_ADD_RSA_IDENTITY:B
 
-.field public final SSH_AGENTC_REMOVE_ALL_RSA_IDENTITIES:B
+.field private final SSH_AGENTC_REMOVE_ALL_RSA_IDENTITIES:B
 
-.field public final SSH_AGENTC_REMOVE_RSA_IDENTITY:B
+.field private final SSH_AGENTC_REMOVE_RSA_IDENTITY:B
 
-.field public final SSH_AGENTC_REQUEST_RSA_IDENTITIES:B
+.field private final SSH_AGENTC_REQUEST_RSA_IDENTITIES:B
 
-.field public final SSH_AGENTC_RSA_CHALLENGE:B
+.field private final SSH_AGENTC_RSA_CHALLENGE:B
 
-.field public final SSH_AGENT_FAILURE:B
+.field private final SSH_AGENT_FAILURE:B
 
-.field public final SSH_AGENT_RSA_IDENTITIES_ANSWER:B
+.field private final SSH_AGENT_RSA_IDENTITIES_ANSWER:B
 
-.field public final SSH_AGENT_RSA_RESPONSE:B
+.field private final SSH_AGENT_RSA_RESPONSE:B
 
-.field public final SSH_AGENT_SUCCESS:B
+.field private final SSH_AGENT_SUCCESS:B
 
 .field public init:Z
 
-.field public mbuf:Lcom/jcraft/jsch/Buffer;
+.field private mbuf:Lcom/jcraft/jsch/Buffer;
 
-.field public packet:Lcom/jcraft/jsch/Packet;
+.field private packet:Lcom/jcraft/jsch/Packet;
 
-.field public rbuf:Lcom/jcraft/jsch/Buffer;
+.field private rbuf:Lcom/jcraft/jsch/Buffer;
 
-.field public wbuf:Lcom/jcraft/jsch/Buffer;
+.field private wbuf:Lcom/jcraft/jsch/Buffer;
 
 
 # direct methods
@@ -194,8 +194,6 @@
     iput-object v1, p0, Lcom/jcraft/jsch/ChannelAgentForwarding;->rbuf:Lcom/jcraft/jsch/Buffer;
 
     .line 29
-    iget-object v1, p0, Lcom/jcraft/jsch/ChannelAgentForwarding;->rbuf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v1}, Lcom/jcraft/jsch/Buffer;->reset()V
 
     .line 30
@@ -307,6 +305,11 @@
 
 .method public write([BII)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelAgentForwarding;->packet:Lcom/jcraft/jsch/Packet;

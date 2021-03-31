@@ -13,7 +13,7 @@
     return-void
 .end method
 
-.method public static final min(FF)F
+.method private static final min(FF)F
     .locals 1
 
     cmpg-float v0, p0, p1
@@ -71,20 +71,20 @@
     move-result v2
 
     .line 4
-    invoke-static {p1, v2}, La53;->g(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleX(Landroid/view/View;F)V
 
     .line 5
-    invoke-static {p1, v2}, La53;->h(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleY(Landroid/view/View;F)V
 
     mul-float v2, v1, v4
 
     .line 6
-    invoke-static {p1, v2}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     mul-float v0, v0, v4
 
     .line 7
-    invoke-static {p1, v0}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     if-gez v3, :cond_1
 
@@ -103,7 +103,7 @@
 
     .line 8
     :goto_1
-    invoke-static {p1, v1}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     return-void
 .end method

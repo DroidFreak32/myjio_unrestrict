@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final __db:Landroidx/room/RoomDatabase;
+.field private final __db:Landroidx/room/RoomDatabase;
 
-.field public final __insertionAdapterOfPojoDeviceInfo:Lah;
+.field private final __insertionAdapterOfPojoDeviceInfo:Landroidx/room/EntityInsertionAdapter;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl$1;-><init>(Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__insertionAdapterOfPojoDeviceInfo:Lah;
+    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__insertionAdapterOfPojoDeviceInfo:Landroidx/room/EntityInsertionAdapter;
 
     return-void
 .end method
@@ -36,7 +36,7 @@
 
     move-result v1
 
-    const-string v2, "uid"
+    const-string/jumbo v2, "uid"
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -78,7 +78,7 @@
 
     move-result v8
 
-    const-string v9, "st"
+    const-string/jumbo v9, "st"
 
     invoke-interface {v0, v9}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -222,12 +222,12 @@
 
 
 # virtual methods
-.method public deleteRecord(Lei;)I
+.method public deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -259,12 +259,12 @@
     throw v0
 .end method
 
-.method public getLastRecord(Lei;)Ljava/util/List;
+.method public getLastRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lei;",
+            "Landroidx/sqlite/db/SupportSQLiteQuery;",
             ")",
             "Ljava/util/List<",
             "Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;",
@@ -274,7 +274,7 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -317,12 +317,12 @@
     throw v0
 .end method
 
-.method public getMaxCount(Lei;)I
+.method public getMaxCount(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -354,12 +354,12 @@
     throw v0
 .end method
 
-.method public getRecordCount(Lei;)I
+.method public getRecordCount(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -389,6 +389,16 @@
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
     throw v0
+.end method
+
+.method public bridge synthetic insertRecord(Landroidx/room/Room;)V
+    .locals 0
+
+    check-cast p1, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->insertRecord(Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;)V
+
+    return-void
 .end method
 
 .method public insertRecord(Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;)V
@@ -399,9 +409,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__insertionAdapterOfPojoDeviceInfo:Lah;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__insertionAdapterOfPojoDeviceInfo:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, p1}, Lah;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -425,12 +435,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic insertRecord(Lgh;)V
+.method public bridge synthetic insertRecordAll(Landroidx/room/Room;)V
     .locals 0
 
     check-cast p1, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->insertRecord(Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->insertRecordAll(Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;)V
 
     return-void
 .end method
@@ -443,7 +453,7 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-super {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->insertRecordAll(Lgh;)V
+    invoke-super {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->insertRecordAll(Landroidx/room/Room;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -467,22 +477,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic insertRecordAll(Lgh;)V
-    .locals 0
-
-    check-cast p1, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->insertRecordAll(Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;)V
-
-    return-void
-.end method
-
-.method public updateRecord(Lei;)I
+.method public updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDeviceInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 

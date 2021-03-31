@@ -1,60 +1,36 @@
-.class public interface abstract Lbi;
+.class public final synthetic Lbi;
 .super Ljava/lang/Object;
-.source "SupportSQLiteDatabase.java"
+.source "lambda"
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Lcom/google/android/jioexoplayer2/util/EventDispatcher$Event;
+
+
+# instance fields
+.field public final synthetic a:Ljava/lang/Exception;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ljava/lang/Exception;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbi;->a:Ljava/lang/Exception;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract D()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Landroid/util/Pair<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-.end method
+.method public final sendTo(Ljava/lang/Object;)V
+    .locals 1
 
-.method public abstract E()Z
-.end method
+    iget-object v0, p0, Lbi;->a:Ljava/lang/Exception;
 
-.method public abstract a(Ljava/lang/String;ILandroid/content/ContentValues;)J
-.end method
+    check-cast p1, Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionEventListener;
 
-.method public abstract a(Lei;)Landroid/database/Cursor;
-.end method
+    invoke-static {v0, p1}, Lcom/google/android/jioexoplayer2/drm/DefaultDrmSession;->a(Ljava/lang/Exception;Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionEventListener;)V
 
-.method public abstract a(Lei;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-.end method
-
-.method public abstract a(Ljava/lang/String;[Ljava/lang/Object;)V
-.end method
-
-.method public abstract beginTransaction()V
-.end method
-
-.method public abstract e(Ljava/lang/String;)V
-.end method
-
-.method public abstract endTransaction()V
-.end method
-
-.method public abstract f(Ljava/lang/String;)Lfi;
-.end method
-
-.method public abstract g(Ljava/lang/String;)Landroid/database/Cursor;
-.end method
-
-.method public abstract getPath()Ljava/lang/String;
-.end method
-
-.method public abstract isOpen()Z
-.end method
-
-.method public abstract setTransactionSuccessful()V
+    return-void
 .end method

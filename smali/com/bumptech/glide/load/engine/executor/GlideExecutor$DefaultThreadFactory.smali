@@ -18,15 +18,15 @@
 
 
 # static fields
-.field public static final DEFAULT_PRIORITY:I = 0x9
+.field private static final DEFAULT_PRIORITY:I = 0x9
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
 .field public final preventNetworkOperations:Z
 
-.field public threadNum:I
+.field private threadNum:I
 
 .field public final uncaughtThrowableStrategy:Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;
 
@@ -54,6 +54,10 @@
 # virtual methods
 .method public declared-synchronized newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 3
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     monitor-enter p0
 

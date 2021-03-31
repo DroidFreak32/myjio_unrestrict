@@ -8,9 +8,13 @@
 .end method
 
 .method public abstract get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method
 
 .method public abstract getDirty(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method
 
 .method public abstract getMaxSize()J

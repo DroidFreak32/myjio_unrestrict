@@ -1,105 +1,185 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzasf;
+.class public Lcom/google/android/gms/internal/ads/zzasf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # static fields
-.field public static final synthetic zzdfn:[I
+.field private static zzdsc:Lcom/google/android/gms/internal/ads/zzaxq;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "InternalQueryInfoGenerator.class"
+    .end annotation
+.end field
+
+
+# instance fields
+.field private final context:Landroid/content/Context;
+
+.field private final zzacr:Lcom/google/android/gms/internal/ads/zzza;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
+
+.field private final zzdsb:Lcom/google/android/gms/ads/AdFormat;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/ads/AdFormat;Lcom/google/android/gms/internal/ads/zzza;)V
+    .locals 0
+    .param p3    # Lcom/google/android/gms/internal/ads/zzza;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-static {}, Landroid/webkit/ConsoleMessage$MessageLevel;->values()[Landroid/webkit/ConsoleMessage$MessageLevel;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasf;->context:Landroid/content/Context;
+
+    .line 3
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzasf;->zzdsb:Lcom/google/android/gms/ads/AdFormat;
+
+    .line 4
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzasf;->zzacr:Lcom/google/android/gms/internal/ads/zzza;
+
+    return-void
+.end method
+
+.method public static zzp(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzaxq;
+    .locals 3
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .line 1
+    const-class v0, Lcom/google/android/gms/internal/ads/zzasf;
+
+    monitor-enter v0
+
+    .line 2
+    :try_start_0
+    sget-object v1, Lcom/google/android/gms/internal/ads/zzasf;->zzdsc:Lcom/google/android/gms/internal/ads/zzaxq;
+
+    if-nez v1, :cond_0
+
+    .line 3
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzwq;->zzqb()Lcom/google/android/gms/internal/ads/zzvx;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzanj;
+
+    invoke-direct {v2}, Lcom/google/android/gms/internal/ads/zzanj;-><init>()V
+
+    invoke-virtual {v1, p0, v2}, Lcom/google/android/gms/internal/ads/zzvx;->zza(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzani;)Lcom/google/android/gms/internal/ads/zzaxq;
+
+    move-result-object p0
+
+    sput-object p0, Lcom/google/android/gms/internal/ads/zzasf;->zzdsc:Lcom/google/android/gms/internal/ads/zzaxq;
+
+    .line 4
+    :cond_0
+    sget-object p0, Lcom/google/android/gms/internal/ads/zzasf;->zzdsc:Lcom/google/android/gms/internal/ads/zzaxq;
+
+    monitor-exit v0
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    .line 5
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final zza(Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;)V
+    .locals 6
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasf;->context:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzasf;->zzp(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzaxq;
 
     move-result-object v0
 
-    array-length v0, v0
+    if-nez v0, :cond_0
 
-    new-array v0, v0, [I
+    const-string v0, "Internal Error, query info generator is null."
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzasf;->zzdfn:[I
+    .line 2
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;->onFailure(Ljava/lang/String;)V
 
+    return-void
+
+    .line 3
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzasf;->context:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object v1
+
+    .line 4
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzasf;->zzacr:Lcom/google/android/gms/internal/ads/zzza;
+
+    if-nez v2, :cond_1
+
+    .line 5
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzvj;
+
+    invoke-direct {v2}, Lcom/google/android/gms/internal/ads/zzvj;-><init>()V
+
+    invoke-virtual {v2}, Lcom/google/android/gms/internal/ads/zzvj;->zzpn()Lcom/google/android/gms/internal/ads/zzvk;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 6
+    :cond_1
+    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzasf;->context:Landroid/content/Context;
+
+    invoke-static {v3, v2}, Lcom/google/android/gms/internal/ads/zzvl;->zza(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzza;)Lcom/google/android/gms/internal/ads/zzvk;
+
+    move-result-object v2
+
+    .line 7
+    :goto_0
+    new-instance v3, Lcom/google/android/gms/internal/ads/zzaxw;
+
+    iget-object v4, p0, Lcom/google/android/gms/internal/ads/zzasf;->zzdsb:Lcom/google/android/gms/ads/AdFormat;
+
+    .line 8
+    invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-direct {v3, v5, v4, v5, v2}, Lcom/google/android/gms/internal/ads/zzaxw;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzvn;Lcom/google/android/gms/internal/ads/zzvk;)V
+
+    .line 9
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzasf;->zzdfn:[I
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzase;
 
-    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->ERROR:Landroid/webkit/ConsoleMessage$MessageLevel;
+    invoke-direct {v2, p0, p1}, Lcom/google/android/gms/internal/ads/zzase;-><init>(Lcom/google/android/gms/internal/ads/zzasf;Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;)V
 
-    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
+    invoke-interface {v0, v1, v3, v2}, Lcom/google/android/gms/internal/ads/zzaxq;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zzaxw;Lcom/google/android/gms/internal/ads/zzaxp;)V
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
 
     :catch_0
-    :try_start_1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzasf;->zzdfn:[I
+    const-string v0, "Internal Error."
 
-    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->WARNING:Landroid/webkit/ConsoleMessage$MessageLevel;
+    .line 10
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/ads/query/QueryInfoGenerationCallback;->onFailure(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzasf;->zzdfn:[I
-
-    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->LOG:Landroid/webkit/ConsoleMessage$MessageLevel;
-
-    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzasf;->zzdfn:[I
-
-    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->TIP:Landroid/webkit/ConsoleMessage$MessageLevel;
-
-    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzasf;->zzdfn:[I
-
-    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->DEBUG:Landroid/webkit/ConsoleMessage$MessageLevel;
-
-    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
     return-void
 .end method

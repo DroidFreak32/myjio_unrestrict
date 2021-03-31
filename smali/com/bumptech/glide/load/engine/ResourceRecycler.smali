@@ -12,9 +12,9 @@
 
 
 # instance fields
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public isRecycling:Z
+.field private isRecycling:Z
 
 
 # direct methods

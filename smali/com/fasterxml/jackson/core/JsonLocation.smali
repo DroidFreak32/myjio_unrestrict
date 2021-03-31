@@ -11,7 +11,7 @@
 
 .field public static final NA:Lcom/fasterxml/jackson/core/JsonLocation;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields

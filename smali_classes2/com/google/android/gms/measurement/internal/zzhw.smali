@@ -1,25 +1,37 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzhw;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Z
+.field private final synthetic zza:Lcom/google/android/gms/measurement/internal/zzac;
 
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+.field private final synthetic zzb:I
+
+.field private final synthetic zzc:J
+
+.field private final synthetic zzd:Z
+
+.field private final synthetic zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhc;Z)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhb;Lcom/google/android/gms/measurement/internal/zzac;IJZ)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iput-boolean p2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Z
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Lcom/google/android/gms/measurement/internal/zzac;
+
+    iput p3, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:I
+
+    iput-wide p4, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzc:J
+
+    iput-boolean p6, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzd:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,135 +41,29 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 9
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Lcom/google/android/gms/measurement/internal/zzac;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzab()Z
-
-    move-result v0
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(Lcom/google/android/gms/measurement/internal/zzac;)V
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iget-object v1, v1, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
+    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Lcom/google/android/gms/measurement/internal/zzac;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzaa()Z
+    iget v4, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:I
 
-    move-result v1
+    iget-wide v5, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzc:J
 
-    .line 3
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iget-boolean v8, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzd:Z
 
-    iget-object v2, v2, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
+    const/4 v7, 0x0
 
-    iget-boolean v3, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Z
-
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/measurement/internal/zzfx;->zza(Z)V
-
-    .line 4
-    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Z
-
-    if-ne v1, v2, :cond_0
-
-    .line 5
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    iget-object v1, v1, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 6
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v1
-
-    .line 7
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzet;->zzx()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Z
-
-    .line 8
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    const-string v3, "Default data collection state already set to"
-
-    invoke-virtual {v1, v3, v2}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 9
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    iget-object v1, v1, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzab()Z
-
-    move-result v1
-
-    if-eq v1, v0, :cond_1
-
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    iget-object v1, v1, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 10
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzab()Z
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    iget-object v2, v2, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzfx;->zzaa()Z
-
-    move-result v2
-
-    if-eq v1, v2, :cond_2
-
-    .line 11
-    :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    iget-object v1, v1, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 12
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v1
-
-    .line 13
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzet;->zzk()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zza:Z
-
-    .line 14
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    .line 15
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    const-string v3, "Default data collection is different than actual status"
-
-    .line 16
-    invoke-virtual {v1, v3, v2, v0}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 17
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhw;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
-
-    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzhc;->zza(Lcom/google/android/gms/measurement/internal/zzhc;)V
+    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(Lcom/google/android/gms/measurement/internal/zzhb;Lcom/google/android/gms/measurement/internal/zzac;IJZZ)V
 
     return-void
 .end method

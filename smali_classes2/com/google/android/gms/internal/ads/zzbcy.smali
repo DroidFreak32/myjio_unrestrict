@@ -1,128 +1,183 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzbcy;
+.class public final Lcom/google/android/gms/internal/ads/zzbcy;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic zzdxg:[I
+# instance fields
+.field private final synthetic zzees:Ljava/lang/String;
 
-.field public static final synthetic zzdxh:[I
+.field private final synthetic zzeob:Ljava/lang/String;
+
+.field private final synthetic zzeoc:I
+
+.field private final synthetic zzeod:I
+
+.field private final synthetic zzeoe:Z
+
+.field private final synthetic zzeof:Lcom/google/android/gms/internal/ads/zzbcx;
+
+.field private final synthetic zzeoh:J
+
+.field private final synthetic zzeoi:J
+
+.field private final synthetic zzeoj:I
+
+.field private final synthetic zzeok:I
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbcx;Ljava/lang/String;Ljava/lang/String;IIJJZII)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbdn;->values()[Lcom/google/android/gms/internal/ads/zzbdn;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeof:Lcom/google/android/gms/internal/ads/zzbcx;
 
-    move-result-object v0
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzees:Ljava/lang/String;
 
-    array-length v0, v0
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeob:Ljava/lang/String;
 
-    new-array v0, v0, [I
+    iput p4, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoc:I
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxh:[I
+    iput p5, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeod:I
 
-    const/4 v0, 0x1
+    iput-wide p6, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoh:J
 
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxh:[I
+    iput-wide p8, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoi:J
 
-    sget-object v2, Lcom/google/android/gms/internal/ads/zzbdn;->zzdza:Lcom/google/android/gms/internal/ads/zzbdn;
+    iput-boolean p10, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoe:Z
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+    iput p11, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoj:I
 
-    move-result v2
+    iput p12, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeok:I
 
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :catch_0
-    const/4 v1, 0x2
+    return-void
+.end method
 
-    :try_start_1
-    sget-object v2, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxh:[I
 
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzbdn;->zzdzc:Lcom/google/android/gms/internal/ads/zzbdn;
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+    .line 1
+    new-instance v0, Ljava/util/HashMap;
 
-    move-result v3
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    aput v1, v2, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    const-string v1, "event"
 
-    :catch_1
-    const/4 v2, 0x3
-
-    :try_start_2
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxh:[I
-
-    sget-object v4, Lcom/google/android/gms/internal/ads/zzbdn;->zzdyz:Lcom/google/android/gms/internal/ads/zzbdn;
-
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v4
-
-    aput v2, v3, v4
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    const-string v2, "precacheProgress"
 
     .line 2
-    :catch_2
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbcz;->values()[Lcom/google/android/gms/internal/ads/zzbcz;
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzees:Ljava/lang/String;
 
-    array-length v3, v3
+    const-string v2, "src"
 
-    new-array v3, v3, [I
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sput-object v3, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxg:[I
+    .line 4
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeob:Ljava/lang/String;
 
-    :try_start_3
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxg:[I
+    const-string v2, "cachedSrc"
 
-    sget-object v4, Lcom/google/android/gms/internal/ads/zzbcz;->zzdxl:Lcom/google/android/gms/internal/ads/zzbcz;
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    .line 5
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoc:I
 
-    move-result v4
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    aput v0, v3, v4
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    move-result-object v1
 
-    :catch_3
-    :try_start_4
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxg:[I
+    const-string v2, "bytesLoaded"
 
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzbcz;->zzdxj:Lcom/google/android/gms/internal/ads/zzbcz;
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+    .line 6
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeod:I
 
-    move-result v3
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    aput v1, v0, v3
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    move-result-object v1
 
-    :catch_4
-    :try_start_5
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzbcy;->zzdxg:[I
+    const-string v2, "totalBytes"
 
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzbcz;->zzdxi:Lcom/google/android/gms/internal/ads/zzbcz;
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    .line 7
+    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoh:J
 
-    move-result v1
+    invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+    move-result-object v1
 
-    :catch_5
+    const-string v2, "bufferedDuration"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 8
+    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoi:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "totalDuration"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 9
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoe:Z
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "1"
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "0"
+
+    :goto_0
+    const-string v2, "cacheReady"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 10
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeoj:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "playerCount"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 11
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeok:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "playerPreparedCount"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 12
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbcy;->zzeof:Lcom/google/android/gms/internal/ads/zzbcx;
+
+    const-string v2, "onPrecacheEvent"
+
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/internal/ads/zzbcx;->zza(Lcom/google/android/gms/internal/ads/zzbcx;Ljava/lang/String;Ljava/util/Map;)V
+
     return-void
 .end method

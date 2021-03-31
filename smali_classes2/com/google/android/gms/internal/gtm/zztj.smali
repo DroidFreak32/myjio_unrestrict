@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public value:Ljava/lang/Object;
+.field private value:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TV;"
@@ -28,9 +28,9 @@
     .end annotation
 .end field
 
-.field public final synthetic zzbef:Lcom/google/android/gms/internal/gtm/zztc;
+.field private final synthetic zzbef:Lcom/google/android/gms/internal/gtm/zztc;
 
-.field public final zzbei:Ljava/lang/Comparable;
+.field private final zzbei:Ljava/lang/Comparable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TK;"
@@ -88,7 +88,7 @@
     return-void
 .end method
 
-.method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method private static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
     if-nez p0, :cond_1

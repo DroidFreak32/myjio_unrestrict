@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "EliteSMPUtility"
+.field private static final MODULE:Ljava/lang/String; = "EliteSMPUtility"
 
 .field public static stateset:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -152,7 +152,7 @@
 .end method
 
 .method public static getExcludeParam(I)Ljava/util/List;
-    .locals 18
+    .locals 28
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -288,9 +288,29 @@
     :cond_1
     move-object/from16 v10, v16
 
-    const/16 v2, 0x68
+    const-string v2, "Sub.SubscriberIdentity"
 
-    if-ne v2, v0, :cond_2
+    move-object/from16 v18, v2
+
+    const-string v2, "Sub.VoucherCode"
+
+    move-object/from16 v19, v13
+
+    const-string v13, "VoucherPin"
+
+    move-object/from16 v20, v2
+
+    const-string v2, "OperationMode"
+
+    move-object/from16 v21, v6
+
+    const-string/jumbo v6, "voucherCode"
+
+    move-object/from16 v22, v7
+
+    const/16 v7, 0x68
+
+    if-ne v7, v0, :cond_2
 
     invoke-interface {v1, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -298,23 +318,17 @@
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v0, "voucherCode"
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v0, "OperationMode"
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v0, "VoucherPin"
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -324,31 +338,47 @@
 
     invoke-interface {v1, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    move-object/from16 v7, v22
+
     invoke-interface {v1, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const-string v0, "Sub.VoucherCode"
+    move-object/from16 v0, v21
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v1, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-object/from16 v0, v20
 
-    move-object/from16 v2, v17
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-object/from16 v0, v19
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v17
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v18
 
     :goto_0
-    const-string v0, "Sub.SubscriberIdentity"
-
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_2
-    const/16 v2, 0x65
+    move-object/from16 v25, v17
 
-    if-ne v2, v0, :cond_3
+    move-object/from16 v23, v18
+
+    move-object/from16 v26, v19
+
+    move-object/from16 v24, v20
+
+    move-object/from16 v27, v21
+
+    const/16 v7, 0x65
+
+    if-ne v7, v0, :cond_3
 
     invoke-interface {v1, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -356,23 +386,17 @@
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v0, "voucherCode"
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v0, "OperationMode"
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v0, "VoucherPin"
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -382,19 +406,27 @@
 
     invoke-interface {v1, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v1, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const-string v0, "Sub.VoucherCode"
+    move-object/from16 v0, v22
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v1, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    move-object/from16 v0, v17
+    move-object/from16 v0, v27
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v24
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v26
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v25
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, v23
 
     goto :goto_0
 
@@ -423,7 +455,7 @@
 
     move-result-object p0
 
-    const-string v3, "wifi"
+    const-string/jumbo v3, "wifi"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -552,7 +584,7 @@
     invoke-virtual {v3, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_1
-    invoke-static {p0}, Lk30;->h(Ljava/lang/String;)Z
+    invoke-static {p0}, Lcom/elitecorelib/core/utility/f;->h(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -564,7 +596,7 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {p0}, Lk30;->g(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/elitecorelib/core/utility/f;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_2

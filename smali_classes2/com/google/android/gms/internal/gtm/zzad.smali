@@ -8,19 +8,19 @@
 
 
 # static fields
-.field public static zzvo:Z
+.field private static zzvo:Z
 
 
 # instance fields
-.field public zzvp:Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+.field private zzvp:Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-.field public final zzvq:Lcom/google/android/gms/internal/gtm/zzcv;
+.field private final zzvq:Lcom/google/android/gms/internal/gtm/zzcv;
 
-.field public zzvr:Ljava/lang/String;
+.field private zzvr:Ljava/lang/String;
 
-.field public zzvs:Z
+.field private zzvs:Z
 
-.field public final zzvt:Ljava/lang/Object;
+.field private final zzvt:Ljava/lang/Object;
 
 
 # direct methods
@@ -599,7 +599,7 @@
     return-object v1
 .end method
 
-.method public static zzo(Ljava/lang/String;)Ljava/lang/String;
+.method private static zzo(Ljava/lang/String;)Ljava/lang/String;
     .locals 6
 
     const-string v0, "MD5"

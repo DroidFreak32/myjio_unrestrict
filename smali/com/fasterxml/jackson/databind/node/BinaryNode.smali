@@ -65,11 +65,9 @@
 
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/node/BinaryNode;->_data:[B
 
-    .line 7
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/BinaryNode;->_data:[B
-
     const/4 v1, 0x0
 
+    .line 7
     invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :goto_0
@@ -239,6 +237,12 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getConfig()Lcom/fasterxml/jackson/databind/SerializationConfig;

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final appGlideModule:Lcom/ril/jio/jiosdk/util/JioSdkGlideModule;
+.field private final appGlideModule:Lcom/ril/jio/jiosdk/util/JioSdkGlideModule;
 
 
 # direct methods
@@ -37,6 +37,14 @@
 # virtual methods
 .method public applyOptions(Landroid/content/Context;Lcom/bumptech/glide/GlideBuilder;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/GlideBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/GeneratedAppGlideModuleImpl;->appGlideModule:Lcom/ril/jio/jiosdk/util/JioSdkGlideModule;
@@ -48,6 +56,9 @@
 
 .method public getExcludedModuleClasses()Ljava/util/Set;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -67,6 +78,8 @@
 
 .method public getRequestManagerFactory()Lcom/bumptech/glide/a;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/bumptech/glide/a;
@@ -78,6 +91,8 @@
 
 .method public bridge synthetic getRequestManagerFactory()Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/GeneratedAppGlideModuleImpl;->getRequestManagerFactory()Lcom/bumptech/glide/a;
@@ -102,6 +117,18 @@
 
 .method public registerComponents(Landroid/content/Context;Lcom/bumptech/glide/Glide;Lcom/bumptech/glide/Registry;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/Glide;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/Registry;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/integration/volley/VolleyLibraryGlideModule;

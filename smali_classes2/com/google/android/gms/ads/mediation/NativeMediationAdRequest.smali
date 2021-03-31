@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/ads/mediation/NativeMediationAdRequest;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/ads/mediation/MediationAdRequest;
@@ -24,10 +25,10 @@
 .method public abstract isUnifiedNativeAdRequested()Z
 .end method
 
-.method public abstract zzok()Z
+.method public abstract zzuu()Z
 .end method
 
-.method public abstract zzol()Ljava/util/Map;
+.method public abstract zzuv()Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

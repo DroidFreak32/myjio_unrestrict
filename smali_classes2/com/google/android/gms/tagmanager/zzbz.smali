@@ -6,13 +6,13 @@
 
 
 # static fields
-.field public static zzahd:Lcom/google/android/gms/tagmanager/zzbz;
+.field private static zzahd:Lcom/google/android/gms/tagmanager/zzbz;
 
 
 # instance fields
-.field public volatile closed:Z
+.field private volatile closed:Z
 
-.field public final zzahb:Ljava/util/concurrent/LinkedBlockingQueue;
+.field private final zzahb:Ljava/util/concurrent/LinkedBlockingQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/LinkedBlockingQueue<",
@@ -22,15 +22,15 @@
     .end annotation
 .end field
 
-.field public volatile zzahc:Z
+.field private volatile zzahc:Z
 
-.field public volatile zzahe:Lcom/google/android/gms/tagmanager/zzcb;
+.field private volatile zzahe:Lcom/google/android/gms/tagmanager/zzcb;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 1
 
     const-string v0, "GAThread"

@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Ljava/util/concurrent/ThreadFactory;
@@ -11,16 +12,20 @@
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final zza:Ljava/lang/String;
 
-.field public final priority:I
+.field private final zzb:I
 
-.field public final zzhr:Ljava/util/concurrent/ThreadFactory;
+.field private final zzc:Ljava/util/concurrent/ThreadFactory;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -32,7 +37,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
     .line 2
@@ -43,7 +48,7 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zzhr:Ljava/util/concurrent/ThreadFactory;
+    iput-object p2, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zzc:Ljava/util/concurrent/ThreadFactory;
 
     const-string p2, "Name must not be null"
 
@@ -54,12 +59,12 @@
 
     check-cast p1, Ljava/lang/String;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->name:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zza:Ljava/lang/String;
 
     const/4 p1, 0x0
 
     .line 5
-    iput p1, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->priority:I
+    iput p1, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zzb:I
 
     return-void
 .end method
@@ -68,9 +73,15 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 3
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zzhr:Ljava/util/concurrent/ThreadFactory;
+    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zzc:Ljava/util/concurrent/ThreadFactory;
 
     new-instance v1, Lcom/google/android/gms/common/util/concurrent/zza;
 
@@ -83,7 +94,7 @@
     move-result-object p1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->name:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NamedThreadFactory;->zza:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 

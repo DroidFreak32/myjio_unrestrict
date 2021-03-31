@@ -3,7 +3,7 @@
 .source "DiskBasedCache.java"
 
 # interfaces
-.implements Lnv;
+.implements Lcom/android/volley/Cache;
 
 
 # annotations
@@ -16,15 +16,15 @@
 
 
 # static fields
-.field public static final CACHE_MAGIC:I = 0x20150306
+.field private static final CACHE_MAGIC:I = 0x20150306
 
-.field public static final DEFAULT_DISK_USAGE_BYTES:I = 0x500000
+.field private static final DEFAULT_DISK_USAGE_BYTES:I = 0x500000
 
-.field public static final HYSTERESIS_FACTOR:F = 0.9f
+.field private static final HYSTERESIS_FACTOR:F = 0.9f
 
 
 # instance fields
-.field public final mEntries:Ljava/util/Map;
+.field private final mEntries:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -35,11 +35,11 @@
     .end annotation
 .end field
 
-.field public final mMaxCacheSizeInBytes:I
+.field private final mMaxCacheSizeInBytes:I
 
-.field public final mRootDirectory:Ljava/io/File;
+.field private final mRootDirectory:Ljava/io/File;
 
-.field public mTotalSize:J
+.field private mTotalSize:J
 
 
 # direct methods
@@ -166,7 +166,7 @@
 
     .line 2
     :cond_0
-    sget-boolean v1, Lzv;->b:Z
+    sget-boolean v1, Lcom/android/volley/VolleyLog;->DEBUG:Z
 
     const/4 v2, 0x0
 
@@ -177,7 +177,7 @@
     const-string v5, "Pruning old cache entries."
 
     .line 3
-    invoke-static {v5, v1}, Lzv;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v5, v1}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 4
     :cond_1
@@ -275,7 +275,7 @@
     const-string v3, "Could not delete cache entry for key=%s, filename=%s"
 
     .line 14
-    invoke-static {v3, v2}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v3, v2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 15
     :goto_1
@@ -314,7 +314,7 @@
     .line 17
     :cond_4
     :goto_2
-    sget-boolean v1, Lzv;->b:Z
+    sget-boolean v1, Lcom/android/volley/VolleyLog;->DEBUG:Z
 
     if-eqz v1, :cond_5
 
@@ -356,7 +356,7 @@
     const-string v2, "pruned %d files, %d bytes, %d ms"
 
     .line 19
-    invoke-static {v2, v1}, Lzv;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v1}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_5
     return-void
@@ -417,8 +417,13 @@
     return-void
 .end method
 
-.method public static read(Ljava/io/InputStream;)I
+.method private static read(Ljava/io/InputStream;)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
@@ -448,8 +453,14 @@
             "Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;",
             ")",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -457,6 +468,8 @@
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->readInt(Ljava/io/InputStream;)I
 
     move-result v0
+
+    if-ltz v0, :cond_2
 
     if-nez v0, :cond_0
 
@@ -470,7 +483,7 @@
     :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     :goto_0
     const/4 v2, 0x0
@@ -497,9 +510,9 @@
     move-result-object v4
 
     .line 5
-    new-instance v5, Lrv;
+    new-instance v5, Lcom/android/volley/Header;
 
-    invoke-direct {v5, v3, v4}, Lrv;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v5, v3, v4}, Lcom/android/volley/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -509,10 +522,37 @@
 
     :cond_1
     return-object v1
+
+    .line 6
+    :cond_2
+    new-instance p0, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "readHeaderList size="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 .method public static readInt(Ljava/io/InputStream;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->read(Ljava/io/InputStream;)I
@@ -555,6 +595,11 @@
 
 .method public static readLong(Ljava/io/InputStream;)J
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->read(Ljava/io/InputStream;)I
@@ -685,6 +730,11 @@
 
 .method public static readString(Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;)Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->readLong(Ljava/io/InputStream;)J
@@ -735,6 +785,11 @@
 
 .method public static streamToBytes(Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;J)[B
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;->bytesRemaining()J
@@ -779,7 +834,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "streamToBytes length="
+    const-string/jumbo v3, "streamToBytes length="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -806,10 +861,16 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;",
             "Ljava/io/OutputStream;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -838,17 +899,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lrv;
+    check-cast v0, Lcom/android/volley/Header;
 
     .line 3
-    invoke-virtual {v0}, Lrv;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/volley/Header;->getName()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {p1, v1}, Lcom/android/volley/toolbox/DiskBasedCache;->writeString(Ljava/io/OutputStream;Ljava/lang/String;)V
 
     .line 4
-    invoke-virtual {v0}, Lrv;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/volley/Header;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
@@ -868,6 +929,11 @@
 
 .method public static writeInt(Ljava/io/OutputStream;I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     shr-int/lit8 v0, p1, 0x0
 
@@ -902,6 +968,11 @@
 
 .method public static writeLong(Ljava/io/OutputStream;J)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -996,6 +1067,11 @@
 
 .method public static writeString(Ljava/io/OutputStream;Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-string v0, "UTF-8"
 
@@ -1073,7 +1149,7 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 6
-    invoke-static {v0, v1}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1092,6 +1168,11 @@
 
 .method public createInputStream(Ljava/io/File;)Ljava/io/InputStream;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/FileInputStream;
@@ -1103,6 +1184,11 @@
 
 .method public createOutputStream(Ljava/io/File;)Ljava/io/OutputStream;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/FileOutputStream;
@@ -1112,7 +1198,7 @@
     return-object v0
 .end method
 
-.method public declared-synchronized get(Ljava/lang/String;)Lnv$a;
+.method public declared-synchronized get(Ljava/lang/String;)Lcom/android/volley/Cache$Entry;
     .locals 10
 
     monitor-enter p0
@@ -1210,7 +1296,7 @@
     aput-object v7, v8, v5
 
     .line 9
-    invoke-static {v0, v8}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v8}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 10
     invoke-direct {p0, p1}, Lcom/android/volley/toolbox/DiskBasedCache;->removeEntry(Ljava/lang/String;)V
@@ -1241,7 +1327,7 @@
     move-result-object v7
 
     .line 14
-    invoke-virtual {v0, v7}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->toCacheEntry([B)Lnv$a;
+    invoke-virtual {v0, v7}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->toCacheEntry([B)Lcom/android/volley/Cache$Entry;
 
     move-result-object v0
     :try_end_5
@@ -1292,7 +1378,7 @@
 
     aput-object v0, v5, v3
 
-    invoke-static {v6, v5}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v6, v5}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 19
     invoke-virtual {p0, p1}, Lcom/android/volley/toolbox/DiskBasedCache;->remove(Ljava/lang/String;)V
@@ -1370,7 +1456,7 @@
 
     aput-object v3, v2, v1
 
-    invoke-static {v0, v2}, Lzv;->c(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -1498,7 +1584,7 @@
 
     .line 1
     :try_start_0
-    invoke-virtual {p0, p1}, Lcom/android/volley/toolbox/DiskBasedCache;->get(Ljava/lang/String;)Lnv$a;
+    invoke-virtual {p0, p1}, Lcom/android/volley/toolbox/DiskBasedCache;->get(Ljava/lang/String;)Lcom/android/volley/Cache$Entry;
 
     move-result-object v0
 
@@ -1507,16 +1593,16 @@
     const-wide/16 v1, 0x0
 
     .line 2
-    iput-wide v1, v0, Lnv$a;->f:J
+    iput-wide v1, v0, Lcom/android/volley/Cache$Entry;->softTtl:J
 
     if-eqz p2, :cond_0
 
     .line 3
-    iput-wide v1, v0, Lnv$a;->e:J
+    iput-wide v1, v0, Lcom/android/volley/Cache$Entry;->ttl:J
 
     .line 4
     :cond_0
-    invoke-virtual {p0, p1, v0}, Lcom/android/volley/toolbox/DiskBasedCache;->put(Ljava/lang/String;Lnv$a;)V
+    invoke-virtual {p0, p1, v0}, Lcom/android/volley/toolbox/DiskBasedCache;->put(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1534,14 +1620,14 @@
     throw p1
 .end method
 
-.method public declared-synchronized put(Ljava/lang/String;Lnv$a;)V
+.method public declared-synchronized put(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
     .locals 6
 
     monitor-enter p0
 
     .line 1
     :try_start_0
-    iget-object v0, p2, Lnv$a;->a:[B
+    iget-object v0, p2, Lcom/android/volley/Cache$Entry;->data:[B
 
     array-length v0, v0
 
@@ -1571,7 +1657,7 @@
     .line 4
     new-instance v4, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;
 
-    invoke-direct {v4, p1, p2}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;-><init>(Ljava/lang/String;Lnv$a;)V
+    invoke-direct {v4, p1, p2}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;-><init>(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
 
     .line 5
     invoke-virtual {v4, v3}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->writeHeader(Ljava/io/OutputStream;)Z
@@ -1581,7 +1667,7 @@
     if-eqz v5, :cond_0
 
     .line 6
-    iget-object p2, p2, Lnv$a;->a:[B
+    iget-object p2, p2, Lcom/android/volley/Cache$Entry;->data:[B
 
     invoke-virtual {v3, p2}, Ljava/io/BufferedOutputStream;->write([B)V
 
@@ -1615,7 +1701,7 @@
 
     aput-object v3, p2, v1
 
-    invoke-static {p1, p2}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p1, p2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 12
     new-instance p1, Ljava/io/IOException;
@@ -1647,7 +1733,7 @@
 
     aput-object v0, p2, v1
 
-    invoke-static {p1, p2}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p1, p2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -1705,7 +1791,7 @@
     aput-object p1, v1, v2
 
     .line 4
-    invoke-static {v0, v1}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

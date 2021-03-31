@@ -3,7 +3,7 @@
 .source "CardView.java"
 
 # interfaces
-.implements Li4;
+.implements Ls1;
 
 
 # annotations
@@ -37,34 +37,6 @@
 
 
 # virtual methods
-.method public a(II)V
-    .locals 2
-
-    .line 4
-    iget-object v0, p0, Landroidx/cardview/widget/CardView$a;->b:Landroidx/cardview/widget/CardView;
-
-    iget v1, v0, Landroidx/cardview/widget/CardView;->mUserSetMinWidth:I
-
-    if-le p1, v1, :cond_0
-
-    .line 5
-    invoke-static {v0, p1}, Landroidx/cardview/widget/CardView;->access$101(Landroidx/cardview/widget/CardView;I)V
-
-    .line 6
-    :cond_0
-    iget-object p1, p0, Landroidx/cardview/widget/CardView$a;->b:Landroidx/cardview/widget/CardView;
-
-    iget v0, p1, Landroidx/cardview/widget/CardView;->mUserSetMinHeight:I
-
-    if-le p2, v0, :cond_1
-
-    .line 7
-    invoke-static {p1, p2}, Landroidx/cardview/widget/CardView;->access$201(Landroidx/cardview/widget/CardView;I)V
-
-    :cond_1
-    return-void
-.end method
-
 .method public a(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
@@ -79,10 +51,10 @@
     return-void
 .end method
 
-.method public a()Z
+.method public b()Z
     .locals 1
 
-    .line 3
+    .line 1
     iget-object v0, p0, Landroidx/cardview/widget/CardView$a;->b:Landroidx/cardview/widget/CardView;
 
     invoke-virtual {v0}, Landroidx/cardview/widget/CardView;->getUseCompatPadding()Z
@@ -92,7 +64,7 @@
     return v0
 .end method
 
-.method public b()Landroid/graphics/drawable/Drawable;
+.method public c()Landroid/graphics/drawable/Drawable;
     .locals 1
 
     .line 1
@@ -101,7 +73,35 @@
     return-object v0
 .end method
 
-.method public c()Z
+.method public d(II)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Landroidx/cardview/widget/CardView$a;->b:Landroidx/cardview/widget/CardView;
+
+    iget v1, v0, Landroidx/cardview/widget/CardView;->mUserSetMinWidth:I
+
+    if-le p1, v1, :cond_0
+
+    .line 2
+    invoke-static {v0, p1}, Landroidx/cardview/widget/CardView;->access$101(Landroidx/cardview/widget/CardView;I)V
+
+    .line 3
+    :cond_0
+    iget-object p1, p0, Landroidx/cardview/widget/CardView$a;->b:Landroidx/cardview/widget/CardView;
+
+    iget v0, p1, Landroidx/cardview/widget/CardView;->mUserSetMinHeight:I
+
+    if-le p2, v0, :cond_1
+
+    .line 4
+    invoke-static {p1, p2}, Landroidx/cardview/widget/CardView;->access$201(Landroidx/cardview/widget/CardView;I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public e()Z
     .locals 1
 
     .line 1
@@ -114,7 +114,7 @@
     return v0
 .end method
 
-.method public d()Landroid/view/View;
+.method public f()Landroid/view/View;
     .locals 1
 
     .line 1

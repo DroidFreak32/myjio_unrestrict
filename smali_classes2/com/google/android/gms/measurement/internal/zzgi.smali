@@ -1,45 +1,29 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzgi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable<",
-        "Ljava/util/List<",
-        "Lcom/google/android/gms/measurement/internal/zzy;",
-        ">;>;"
-    }
-.end annotation
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Ljava/lang/String;
+.field private final synthetic zza:Lcom/google/android/gms/measurement/internal/zzaq;
 
-.field public final synthetic zzb:Ljava/lang/String;
+.field private final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzn;
 
-.field public final synthetic zzc:Ljava/lang/String;
-
-.field public final synthetic zzd:Lcom/google/android/gms/measurement/internal/zzgc;
+.field private final synthetic zzc:Lcom/google/android/gms/measurement/internal/zzfz;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzgc;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzfz;Lcom/google/android/gms/measurement/internal/zzaq;Lcom/google/android/gms/measurement/internal/zzn;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzd:Lcom/google/android/gms/measurement/internal/zzgc;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzc:Lcom/google/android/gms/measurement/internal/zzfz;
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zza:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zza:Lcom/google/android/gms/measurement/internal/zzaq;
 
-    iput-object p3, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzb:Ljava/lang/String;
-
-    iput-object p4, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzc:Ljava/lang/String;
+    iput-object p3, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzb:Lcom/google/android/gms/measurement/internal/zzn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,40 +32,40 @@
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 4
+.method public final run()V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzd:Lcom/google/android/gms/measurement/internal/zzgc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzc:Lcom/google/android/gms/measurement/internal/zzfz;
 
-    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzgc;->zza(Lcom/google/android/gms/measurement/internal/zzgc;)Lcom/google/android/gms/measurement/internal/zzkg;
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zza:Lcom/google/android/gms/measurement/internal/zzaq;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkg;->zzo()V
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzb:Lcom/google/android/gms/measurement/internal/zzn;
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzd:Lcom/google/android/gms/measurement/internal/zzgc;
-
-    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzgc;->zza(Lcom/google/android/gms/measurement/internal/zzgc;)Lcom/google/android/gms/measurement/internal/zzkg;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/measurement/internal/zzfz;->zzb(Lcom/google/android/gms/measurement/internal/zzaq;Lcom/google/android/gms/measurement/internal/zzn;)Lcom/google/android/gms/measurement/internal/zzaq;
 
     move-result-object v0
 
     .line 3
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkg;->zze()Lcom/google/android/gms/measurement/internal/zzab;
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzc:Lcom/google/android/gms/measurement/internal/zzfz;
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzfz;->zza(Lcom/google/android/gms/measurement/internal/zzfz;)Lcom/google/android/gms/measurement/internal/zzkl;
 
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zza:Ljava/lang/String;
+    move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzb:Ljava/lang/String;
-
-    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzc:Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzkl;->zzr()V
 
     .line 4
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/gms/measurement/internal/zzab;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzc:Lcom/google/android/gms/measurement/internal/zzfz;
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzfz;->zza(Lcom/google/android/gms/measurement/internal/zzfz;)Lcom/google/android/gms/measurement/internal/zzkl;
 
-    return-object v0
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzgi;->zzb:Lcom/google/android/gms/measurement/internal/zzn;
+
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/measurement/internal/zzkl;->zza(Lcom/google/android/gms/measurement/internal/zzaq;Lcom/google/android/gms/measurement/internal/zzn;)V
+
+    return-void
 .end method

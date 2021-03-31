@@ -1,30 +1,27 @@
-.class public final synthetic Lcom/google/android/gms/measurement/internal/zzjn;
+.class public final Lcom/google/android/gms/measurement/internal/zzjn;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/measurement/internal/zzjl;
+.field private final synthetic zza:Landroid/content/ComponentName;
 
-.field public final zzb:Lcom/google/android/gms/measurement/internal/zzet;
-
-.field public final zzc:Landroid/app/job/JobParameters;
+.field private final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzjl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzjl;Lcom/google/android/gms/measurement/internal/zzet;Landroid/app/job/JobParameters;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzjl;Landroid/content/ComponentName;)V
     .locals 0
 
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zzb:Lcom/google/android/gms/measurement/internal/zzjl;
+
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zza:Landroid/content/ComponentName;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zza:Lcom/google/android/gms/measurement/internal/zzjl;
-
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zzb:Lcom/google/android/gms/measurement/internal/zzet;
-
-    iput-object p3, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zzc:Landroid/app/job/JobParameters;
 
     return-void
 .end method
@@ -32,15 +29,16 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zza:Lcom/google/android/gms/measurement/internal/zzjl;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zzb:Lcom/google/android/gms/measurement/internal/zzjl;
 
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zzb:Lcom/google/android/gms/measurement/internal/zzet;
+    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzjl;->zza:Lcom/google/android/gms/measurement/internal/zzir;
 
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zzc:Landroid/app/job/JobParameters;
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzjn;->zza:Landroid/content/ComponentName;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/measurement/internal/zzjl;->zza(Lcom/google/android/gms/measurement/internal/zzet;Landroid/app/job/JobParameters;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/measurement/internal/zzir;->zza(Lcom/google/android/gms/measurement/internal/zzir;Landroid/content/ComponentName;)V
 
     return-void
 .end method

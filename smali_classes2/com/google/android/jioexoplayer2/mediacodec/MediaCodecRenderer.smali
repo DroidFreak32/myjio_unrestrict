@@ -16,15 +16,15 @@
 
 
 # static fields
-.field public static final ADAPTATION_WORKAROUND_BUFFER:[B
+.field private static final ADAPTATION_WORKAROUND_BUFFER:[B
 
-.field public static final ADAPTATION_WORKAROUND_MODE_ALWAYS:I = 0x2
+.field private static final ADAPTATION_WORKAROUND_MODE_ALWAYS:I = 0x2
 
-.field public static final ADAPTATION_WORKAROUND_MODE_NEVER:I = 0x0
+.field private static final ADAPTATION_WORKAROUND_MODE_NEVER:I = 0x0
 
-.field public static final ADAPTATION_WORKAROUND_MODE_SAME_RESOLUTION:I = 0x1
+.field private static final ADAPTATION_WORKAROUND_MODE_SAME_RESOLUTION:I = 0x1
 
-.field public static final ADAPTATION_WORKAROUND_SLICE_WIDTH_HEIGHT:I = 0x20
+.field private static final ADAPTATION_WORKAROUND_SLICE_WIDTH_HEIGHT:I = 0x20
 
 .field public static final CODEC_OPERATING_RATE_UNSET:F = -1.0f
 
@@ -34,27 +34,30 @@
 
 .field public static final KEEP_CODEC_RESULT_YES_WITH_RECONFIGURATION:I = 0x3
 
-.field public static final MAX_CODEC_HOTSWAP_TIME_MS:J = 0x3e8L
+.field private static final MAX_CODEC_HOTSWAP_TIME_MS:J = 0x3e8L
 
-.field public static final RECONFIGURATION_STATE_NONE:I = 0x0
+.field private static final RECONFIGURATION_STATE_NONE:I = 0x0
 
-.field public static final RECONFIGURATION_STATE_QUEUE_PENDING:I = 0x2
+.field private static final RECONFIGURATION_STATE_QUEUE_PENDING:I = 0x2
 
-.field public static final RECONFIGURATION_STATE_WRITE_PENDING:I = 0x1
+.field private static final RECONFIGURATION_STATE_WRITE_PENDING:I = 0x1
 
-.field public static final REINITIALIZATION_STATE_NONE:I = 0x0
+.field private static final REINITIALIZATION_STATE_NONE:I = 0x0
 
-.field public static final REINITIALIZATION_STATE_SIGNAL_END_OF_STREAM:I = 0x1
+.field private static final REINITIALIZATION_STATE_SIGNAL_END_OF_STREAM:I = 0x1
 
-.field public static final REINITIALIZATION_STATE_WAIT_END_OF_STREAM:I = 0x2
+.field private static final REINITIALIZATION_STATE_WAIT_END_OF_STREAM:I = 0x2
 
-.field public static final TAG:Ljava/lang/String; = "MediaCodecRenderer"
+.field private static final TAG:Ljava/lang/String; = "MediaCodecRenderer"
 
 
 # instance fields
-.field public final assumedMinimumCodecOperatingRate:F
+.field private final assumedMinimumCodecOperatingRate:F
 
-.field public availableCodecInfos:Ljava/util/ArrayDeque;
+.field private availableCodecInfos:Ljava/util/ArrayDeque;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayDeque<",
@@ -64,47 +67,50 @@
     .end annotation
 .end field
 
-.field public final buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
+.field private final buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
-.field public codec:Landroid/media/MediaCodec;
+.field private codec:Landroid/media/MediaCodec;
 
-.field public codecAdaptationWorkaroundMode:I
+.field private codecAdaptationWorkaroundMode:I
 
-.field public codecConfiguredWithOperatingRate:Z
+.field private codecConfiguredWithOperatingRate:Z
 
-.field public codecHotswapDeadlineMs:J
+.field private codecHotswapDeadlineMs:J
 
-.field public codecInfo:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
+.field private codecInfo:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public codecNeedsAdaptationWorkaroundBuffer:Z
+.field private codecNeedsAdaptationWorkaroundBuffer:Z
 
-.field public codecNeedsDiscardToSpsWorkaround:Z
+.field private codecNeedsDiscardToSpsWorkaround:Z
 
-.field public codecNeedsEosFlushWorkaround:Z
+.field private codecNeedsEosFlushWorkaround:Z
 
-.field public codecNeedsEosOutputExceptionWorkaround:Z
+.field private codecNeedsEosOutputExceptionWorkaround:Z
 
-.field public codecNeedsEosPropagation:Z
+.field private codecNeedsEosPropagation:Z
 
-.field public codecNeedsFlushWorkaround:Z
+.field private codecNeedsFlushWorkaround:Z
 
-.field public codecNeedsMonoChannelCountWorkaround:Z
+.field private codecNeedsMonoChannelCountWorkaround:Z
 
-.field public codecNeedsReconfigureWorkaround:Z
+.field private codecNeedsReconfigureWorkaround:Z
 
-.field public codecOperatingRate:F
+.field private codecOperatingRate:F
 
-.field public codecReceivedBuffers:Z
+.field private codecReceivedBuffers:Z
 
-.field public codecReceivedEos:Z
+.field private codecReceivedEos:Z
 
-.field public codecReconfigurationState:I
+.field private codecReconfigurationState:I
 
-.field public codecReconfigured:Z
+.field private codecReconfigured:Z
 
-.field public codecReinitializationState:I
+.field private codecReinitializationState:I
 
-.field public final decodeOnlyPresentationTimestamps:Ljava/util/List;
+.field private final decodeOnlyPresentationTimestamps:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -116,7 +122,7 @@
 
 .field public decoderCounters:Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
 
-.field public drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
+.field private drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/drm/DrmSession<",
@@ -126,7 +132,10 @@
     .end annotation
 .end field
 
-.field public final drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+.field private final drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/drm/DrmSessionManager<",
@@ -136,13 +145,13 @@
     .end annotation
 .end field
 
-.field public final flagsOnlyBuffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
+.field private final flagsOnlyBuffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
-.field public format:Lcom/google/android/jioexoplayer2/Format;
+.field private format:Lcom/google/android/jioexoplayer2/Format;
 
-.field public final formatHolder:Lcom/google/android/jioexoplayer2/FormatHolder;
+.field private final formatHolder:Lcom/google/android/jioexoplayer2/FormatHolder;
 
-.field public final formatQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
+.field private final formatQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/util/TimedValueQueue<",
@@ -152,27 +161,27 @@
     .end annotation
 .end field
 
-.field public inputBuffers:[Ljava/nio/ByteBuffer;
+.field private inputBuffers:[Ljava/nio/ByteBuffer;
 
-.field public inputIndex:I
+.field private inputIndex:I
 
-.field public inputStreamEnded:Z
+.field private inputStreamEnded:Z
 
-.field public final mediaCodecSelector:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecSelector;
+.field private final mediaCodecSelector:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecSelector;
 
-.field public outputBuffer:Ljava/nio/ByteBuffer;
+.field private outputBuffer:Ljava/nio/ByteBuffer;
 
-.field public final outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
+.field private final outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
-.field public outputBuffers:[Ljava/nio/ByteBuffer;
+.field private outputBuffers:[Ljava/nio/ByteBuffer;
 
-.field public outputFormat:Lcom/google/android/jioexoplayer2/Format;
+.field private outputFormat:Lcom/google/android/jioexoplayer2/Format;
 
-.field public outputIndex:I
+.field private outputIndex:I
 
-.field public outputStreamEnded:Z
+.field private outputStreamEnded:Z
 
-.field public pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
+.field private pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/drm/DrmSession<",
@@ -182,21 +191,24 @@
     .end annotation
 .end field
 
-.field public pendingFormat:Lcom/google/android/jioexoplayer2/Format;
+.field private pendingFormat:Lcom/google/android/jioexoplayer2/Format;
 
-.field public final playClearSamplesWithoutKeys:Z
+.field private final playClearSamplesWithoutKeys:Z
 
-.field public preferredDecoderInitializationException:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
+.field private preferredDecoderInitializationException:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public rendererOperatingRate:F
+.field private rendererOperatingRate:F
 
-.field public shouldSkipAdaptationWorkaroundOutputBuffer:Z
+.field private shouldSkipAdaptationWorkaroundOutputBuffer:Z
 
-.field public shouldSkipOutputBuffer:Z
+.field private shouldSkipOutputBuffer:Z
 
-.field public waitingForFirstSyncFrame:Z
+.field private waitingForFirstSyncFrame:Z
 
-.field public waitingForKeys:Z
+.field private waitingForKeys:Z
 
 
 # direct methods
@@ -217,6 +229,10 @@
 
 .method public constructor <init>(ILcom/google/android/jioexoplayer2/mediacodec/MediaCodecSelector;Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;ZF)V
     .locals 2
+    .param p3    # Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -329,7 +345,7 @@
 .end method
 
 .method private codecAdaptationWorkaroundMode(Ljava/lang/String;)I
-    .locals 2
+    .locals 3
 
     .line 1
     sget v0, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
@@ -338,72 +354,63 @@
 
     if-gt v0, v1, :cond_1
 
-    const-string v0, "OMX.Exynos.avc.dec.secure"
+    const-string v1, "OMX.Exynos.avc.dec.secure"
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    sget-object v0, Lcom/google/android/jioexoplayer2/util/Util;->MODEL:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/jioexoplayer2/util/Util;->MODEL:Ljava/lang/String;
 
-    const-string v1, "SM-T585"
+    const-string v2, "SM-T585"
 
     .line 2
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
-    sget-object v0, Lcom/google/android/jioexoplayer2/util/Util;->MODEL:Ljava/lang/String;
+    const-string v2, "SM-A510"
 
-    const-string v1, "SM-A510"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move-result v2
 
-    move-result v0
+    if-nez v2, :cond_0
 
-    if-nez v0, :cond_0
-
-    sget-object v0, Lcom/google/android/jioexoplayer2/util/Util;->MODEL:Ljava/lang/String;
-
-    const-string v1, "SM-A520"
+    const-string v2, "SM-A520"
 
     .line 3
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
-    sget-object v0, Lcom/google/android/jioexoplayer2/util/Util;->MODEL:Ljava/lang/String;
+    const-string v2, "SM-J700"
 
-    const-string v1, "SM-J700"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move-result v1
 
-    move-result v0
-
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     :cond_0
     const/4 p1, 0x2
 
     return p1
 
-    .line 4
     :cond_1
-    sget v0, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
-
     const/16 v1, 0x18
 
     if-ge v0, v1, :cond_4
 
     const-string v0, "OMX.Nvidia.h264.decode"
 
-    .line 5
+    .line 4
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -423,35 +430,29 @@
 
     const-string v0, "flounder"
 
-    .line 6
+    .line 5
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result v0
 
-    if-nez p1, :cond_3
-
-    sget-object p1, Lcom/google/android/jioexoplayer2/util/Util;->DEVICE:Ljava/lang/String;
+    if-nez v0, :cond_3
 
     const-string v0, "flounder_lte"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result v0
 
-    if-nez p1, :cond_3
-
-    sget-object p1, Lcom/google/android/jioexoplayer2/util/Util;->DEVICE:Ljava/lang/String;
+    if-nez v0, :cond_3
 
     const-string v0, "grouper"
 
-    .line 7
+    .line 6
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result v0
 
-    if-nez p1, :cond_3
-
-    sget-object p1, Lcom/google/android/jioexoplayer2/util/Util;->DEVICE:Ljava/lang/String;
+    if-nez v0, :cond_3
 
     const-string v0, "tilapia"
 
@@ -472,7 +473,7 @@
     return p1
 .end method
 
-.method public static codecNeedsDiscardToSpsWorkaround(Ljava/lang/String;Lcom/google/android/jioexoplayer2/Format;)Z
+.method private static codecNeedsDiscardToSpsWorkaround(Ljava/lang/String;Lcom/google/android/jioexoplayer2/Format;)Z
     .locals 2
 
     .line 1
@@ -510,7 +511,7 @@
     return p0
 .end method
 
-.method public static codecNeedsEosFlushWorkaround(Ljava/lang/String;)Z
+.method private static codecNeedsEosFlushWorkaround(Ljava/lang/String;)Z
     .locals 2
 
     .line 1
@@ -520,17 +521,15 @@
 
     if-gt v0, v1, :cond_0
 
-    const-string v0, "OMX.google.vorbis.decoder"
+    const-string v1, "OMX.google.vorbis.decoder"
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
     :cond_0
-    sget v0, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
-
     const/16 v1, 0x13
 
     if-gt v0, v1, :cond_3
@@ -542,11 +541,9 @@
     .line 2
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Lcom/google/android/jioexoplayer2/util/Util;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "stvm8"
 
@@ -587,7 +584,7 @@
     return p0
 .end method
 
-.method public static codecNeedsEosOutputExceptionWorkaround(Ljava/lang/String;)Z
+.method private static codecNeedsEosOutputExceptionWorkaround(Ljava/lang/String;)Z
     .locals 2
 
     .line 1
@@ -616,7 +613,7 @@
     return p0
 .end method
 
-.method public static codecNeedsEosPropagationWorkaround(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;)Z
+.method private static codecNeedsEosPropagationWorkaround(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;)Z
     .locals 3
 
     .line 1
@@ -685,7 +682,7 @@
     return p0
 .end method
 
-.method public static codecNeedsFlushWorkaround(Ljava/lang/String;)Z
+.method private static codecNeedsFlushWorkaround(Ljava/lang/String;)Z
     .locals 2
 
     .line 1
@@ -697,26 +694,24 @@
 
     if-ne v0, v1, :cond_0
 
-    const-string v0, "OMX.SEC.avc.dec"
+    const-string v1, "OMX.SEC.avc.dec"
 
     .line 2
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
-    const-string v0, "OMX.SEC.avc.dec.secure"
+    const-string v1, "OMX.SEC.avc.dec.secure"
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
     :cond_0
-    sget v0, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
-
     const/16 v1, 0x13
 
     if-ne v0, v1, :cond_1
@@ -764,7 +759,7 @@
     return p0
 .end method
 
-.method public static codecNeedsMonoChannelCountWorkaround(Ljava/lang/String;Lcom/google/android/jioexoplayer2/Format;)Z
+.method private static codecNeedsMonoChannelCountWorkaround(Ljava/lang/String;Lcom/google/android/jioexoplayer2/Format;)Z
     .locals 3
 
     .line 1
@@ -798,7 +793,7 @@
     return v1
 .end method
 
-.method public static codecNeedsReconfigureWorkaround(Ljava/lang/String;)Z
+.method private static codecNeedsReconfigureWorkaround(Ljava/lang/String;)Z
     .locals 2
 
     .line 1
@@ -852,11 +847,9 @@
     .line 2
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
-
-    sget-object v0, Lcom/google/android/jioexoplayer2/util/Util;->MODEL:Ljava/lang/String;
+    if-nez v1, :cond_0
 
     const-string v1, "AFTB"
 
@@ -881,6 +874,11 @@
 
 .method private drainOutputBuffer(JJ)Z
     .locals 16
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     move-object/from16 v13, p0
 
@@ -1046,19 +1044,16 @@
 
     iput-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBuffer:Ljava/nio/ByteBuffer;
 
-    .line 21
-    iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBuffer:Ljava/nio/ByteBuffer;
-
     if-eqz v0, :cond_9
 
-    .line 22
+    .line 21
     iget-object v1, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v1, v1, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 23
+    .line 22
     iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBuffer:Ljava/nio/ByteBuffer;
 
     iget-object v1, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -1071,7 +1066,7 @@
 
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 24
+    .line 23
     :cond_9
     iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
@@ -1083,14 +1078,14 @@
 
     iput-boolean v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->shouldSkipOutputBuffer:Z
 
-    .line 25
+    .line 24
     iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget-wide v0, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     invoke-virtual {v13, v0, v1}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->updateOutputFormatForTime(J)Lcom/google/android/jioexoplayer2/Format;
 
-    .line 26
+    .line 25
     :cond_a
     iget-boolean v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosOutputExceptionWorkaround:Z
 
@@ -1100,7 +1095,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 27
+    .line 26
     :try_start_1
     iget-object v5, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
@@ -1111,8 +1106,6 @@
     iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v8, v0, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget-wide v9, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
@@ -1126,7 +1119,7 @@
 
     move-wide/from16 v3, p3
 
-    .line 28
+    .line 27
     invoke-virtual/range {v0 .. v12}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->processOutputBuffer(JJLandroid/media/MediaCodec;Ljava/nio/ByteBuffer;IIJZLcom/google/android/jioexoplayer2/Format;)Z
 
     move-result v0
@@ -1138,21 +1131,21 @@
     :catch_1
     nop
 
-    .line 29
+    .line 28
     invoke-direct/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->processEndOfStream()V
 
-    .line 30
+    .line 29
     iget-boolean v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputStreamEnded:Z
 
     if-eqz v0, :cond_b
 
-    .line 31
+    .line 30
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->releaseCodec()V
 
     :cond_b
     return v15
 
-    .line 32
+    .line 31
     :cond_c
     iget-object v5, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
@@ -1176,7 +1169,7 @@
 
     move-wide/from16 v3, p3
 
-    .line 33
+    .line 32
     invoke-virtual/range {v0 .. v12}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->processOutputBuffer(JJLandroid/media/MediaCodec;Ljava/nio/ByteBuffer;IIJZLcom/google/android/jioexoplayer2/Format;)Z
 
     move-result v0
@@ -1184,14 +1177,14 @@
     :goto_1
     if-eqz v0, :cond_f
 
-    .line 34
+    .line 33
     iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget-wide v0, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     invoke-virtual {v13, v0, v1}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->onProcessedOutputBuffer(J)V
 
-    .line 35
+    .line 34
     iget-object v0, v13, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v0, v0, Landroid/media/MediaCodec$BufferInfo;->flags:I
@@ -1207,7 +1200,7 @@
     :cond_d
     const/4 v0, 0x0
 
-    .line 36
+    .line 35
     :goto_2
     invoke-direct/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetOutputBuffer()V
 
@@ -1215,7 +1208,7 @@
 
     return v14
 
-    .line 37
+    .line 36
     :cond_e
     invoke-direct/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->processEndOfStream()V
 
@@ -1225,6 +1218,11 @@
 
 .method private feedInputBuffer()Z
     .locals 13
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
@@ -1260,14 +1258,11 @@
 
     iput v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputIndex:I
 
-    .line 4
-    iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputIndex:I
-
     if-gez v0, :cond_1
 
     return v1
 
-    .line 5
+    .line 4
     :cond_1
     iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
@@ -1277,12 +1272,12 @@
 
     iput-object v0, v2, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    .line 6
+    .line 5
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->clear()V
 
-    .line 7
+    .line 6
     :cond_2
     iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReinitializationState:I
 
@@ -1290,18 +1285,18 @@
 
     if-ne v0, v2, :cond_4
 
-    .line 8
+    .line 7
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosPropagation:Z
 
     if-eqz v0, :cond_3
 
     goto :goto_0
 
-    .line 9
+    .line 8
     :cond_3
     iput-boolean v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReceivedEos:Z
 
-    .line 10
+    .line 9
     iget-object v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
     iget v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputIndex:I
@@ -1316,25 +1311,25 @@
 
     invoke-virtual/range {v4 .. v10}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    .line 11
+    .line 10
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetInputBuffer()V
 
-    .line 12
+    .line 11
     :goto_0
     iput v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReinitializationState:I
 
     return v1
 
-    .line 13
+    .line 12
     :cond_4
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsAdaptationWorkaroundBuffer:Z
 
     if-eqz v0, :cond_5
 
-    .line 14
+    .line 13
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsAdaptationWorkaroundBuffer:Z
 
-    .line 15
+    .line 14
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     iget-object v0, v0, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -1343,16 +1338,14 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 16
+    .line 15
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
     iget v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputIndex:I
 
     const/4 v5, 0x0
 
-    sget-object v0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->ADAPTATION_WORKAROUND_BUFFER:[B
-
-    array-length v6, v0
+    array-length v6, v1
 
     const-wide/16 v7, 0x0
 
@@ -1360,15 +1353,15 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    .line 17
+    .line 16
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetInputBuffer()V
 
-    .line 18
+    .line 17
     iput-boolean v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReceivedBuffers:Z
 
     return v2
 
-    .line 19
+    .line 18
     :cond_5
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->waitingForKeys:Z
 
@@ -1380,7 +1373,7 @@
 
     goto :goto_2
 
-    .line 20
+    .line 19
     :cond_6
     iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
@@ -1388,7 +1381,7 @@
 
     const/4 v0, 0x0
 
-    .line 21
+    .line 20
     :goto_1
     iget-object v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
 
@@ -1400,7 +1393,7 @@
 
     if-ge v0, v4, :cond_7
 
-    .line 22
+    .line 21
     iget-object v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
 
     iget-object v4, v4, Lcom/google/android/jioexoplayer2/Format;->initializationData:Ljava/util/List;
@@ -1411,7 +1404,7 @@
 
     check-cast v4, [B
 
-    .line 23
+    .line 22
     iget-object v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     iget-object v5, v5, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -1422,11 +1415,11 @@
 
     goto :goto_1
 
-    .line 24
+    .line 23
     :cond_7
     iput v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
-    .line 25
+    .line 24
     :cond_8
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
@@ -1436,7 +1429,7 @@
 
     move-result v0
 
-    .line 26
+    .line 25
     iget-object v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->formatHolder:Lcom/google/android/jioexoplayer2/FormatHolder;
 
     iget-object v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
@@ -1463,20 +1456,20 @@
 
     if-ne v0, v5, :cond_b
 
-    .line 27
+    .line 26
     iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
     if-ne v0, v3, :cond_a
 
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->clear()V
 
-    .line 29
+    .line 28
     iput v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
-    .line 30
+    .line 29
     :cond_a
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->formatHolder:Lcom/google/android/jioexoplayer2/FormatHolder;
 
@@ -1486,7 +1479,7 @@
 
     return v2
 
-    .line 31
+    .line 30
     :cond_b
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
@@ -1496,34 +1489,34 @@
 
     if-eqz v0, :cond_f
 
-    .line 32
+    .line 31
     iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
     if-ne v0, v3, :cond_c
 
-    .line 33
+    .line 32
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->clear()V
 
-    .line 34
+    .line 33
     iput v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
-    .line 35
+    .line 34
     :cond_c
     iput-boolean v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputStreamEnded:Z
 
-    .line 36
+    .line 35
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReceivedBuffers:Z
 
     if-nez v0, :cond_d
 
-    .line 37
+    .line 36
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->processEndOfStream()V
 
     return v1
 
-    .line 38
+    .line 37
     :cond_d
     :try_start_0
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosPropagation:Z
@@ -1532,11 +1525,11 @@
 
     goto :goto_3
 
-    .line 39
+    .line 38
     :cond_e
     iput-boolean v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReceivedEos:Z
 
-    .line 40
+    .line 39
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
     iget v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputIndex:I
@@ -1551,7 +1544,7 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    .line 41
+    .line 40
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetInputBuffer()V
     :try_end_0
     .catch Landroid/media/MediaCodec$CryptoException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1562,7 +1555,7 @@
     :catch_0
     move-exception v0
 
-    .line 42
+    .line 41
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/BaseRenderer;->getIndex()I
 
     move-result v1
@@ -1573,7 +1566,7 @@
 
     throw v0
 
-    .line 43
+    .line 42
     :cond_f
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->waitingForFirstSyncFrame:Z
 
@@ -1587,48 +1580,45 @@
 
     if-nez v0, :cond_11
 
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->clear()V
 
-    .line 45
+    .line 44
     iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
     if-ne v0, v3, :cond_10
 
-    .line 46
+    .line 45
     iput v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
     :cond_10
     return v2
 
-    .line 47
+    .line 46
     :cond_11
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->waitingForFirstSyncFrame:Z
 
-    .line 48
+    .line 47
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->isEncrypted()Z
 
     move-result v0
 
-    .line 49
+    .line 48
     invoke-direct {p0, v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->shouldWaitForKeys(Z)Z
 
     move-result v3
 
     iput-boolean v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->waitingForKeys:Z
 
-    .line 50
-    iget-boolean v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->waitingForKeys:Z
-
     if-eqz v3, :cond_12
 
     return v1
 
-    .line 51
+    .line 49
     :cond_12
     iget-boolean v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsDiscardToSpsWorkaround:Z
 
@@ -1636,14 +1626,14 @@
 
     if-nez v0, :cond_14
 
-    .line 52
+    .line 50
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     iget-object v3, v3, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
     invoke-static {v3}, Lcom/google/android/jioexoplayer2/util/NalUnitUtil;->discardToSps(Ljava/nio/ByteBuffer;)V
 
-    .line 53
+    .line 51
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     iget-object v3, v3, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -1656,27 +1646,25 @@
 
     return v2
 
-    .line 54
+    .line 52
     :cond_13
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsDiscardToSpsWorkaround:Z
 
-    .line 55
+    .line 53
     :cond_14
     :try_start_1
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     iget-wide v9, v3, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->timeUs:J
 
-    .line 56
-    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
-
+    .line 54
     invoke-virtual {v3}, Lcom/google/android/jioexoplayer2/decoder/Buffer;->isDecodeOnly()Z
 
     move-result v3
 
     if-eqz v3, :cond_15
 
-    .line 57
+    .line 55
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->decodeOnlyPresentationTimestamps:Ljava/util/List;
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1685,45 +1673,43 @@
 
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 58
+    .line 56
     :cond_15
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingFormat:Lcom/google/android/jioexoplayer2/Format;
 
     if-eqz v3, :cond_16
 
-    .line 59
-    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->formatQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
+    .line 57
+    iget-object v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->formatQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
 
-    iget-object v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingFormat:Lcom/google/android/jioexoplayer2/Format;
-
-    invoke-virtual {v3, v9, v10, v5}, Lcom/google/android/jioexoplayer2/util/TimedValueQueue;->add(JLjava/lang/Object;)V
+    invoke-virtual {v5, v9, v10, v3}, Lcom/google/android/jioexoplayer2/util/TimedValueQueue;->add(JLjava/lang/Object;)V
 
     const/4 v3, 0x0
 
-    .line 60
+    .line 58
     iput-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingFormat:Lcom/google/android/jioexoplayer2/Format;
 
-    .line 61
+    .line 59
     :cond_16
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {v3}, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->flip()V
 
-    .line 62
+    .line 60
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-virtual {p0, v3}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->onQueueInputBuffer(Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;)V
 
     if-eqz v0, :cond_17
 
-    .line 63
+    .line 61
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->buffer:Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;
 
     invoke-static {v0, v4}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->getFrameworkCryptoInfo(Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;I)Landroid/media/MediaCodec$CryptoInfo;
 
     move-result-object v8
 
-    .line 64
+    .line 62
     iget-object v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
     iget v6, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->inputIndex:I
@@ -1736,7 +1722,7 @@
 
     goto :goto_4
 
-    .line 65
+    .line 63
     :cond_17
     iget-object v5, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
 
@@ -1756,17 +1742,17 @@
 
     invoke-virtual/range {v5 .. v11}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    .line 66
+    .line 64
     :goto_4
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetInputBuffer()V
 
-    .line 67
+    .line 65
     iput-boolean v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReceivedBuffers:Z
 
-    .line 68
+    .line 66
     iput v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReconfigurationState:I
 
-    .line 69
+    .line 67
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
 
     iget v1, v0, Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;->inputBufferCount:I
@@ -1782,7 +1768,7 @@
     :catch_1
     move-exception v0
 
-    .line 70
+    .line 68
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/BaseRenderer;->getIndex()I
 
     move-result v1
@@ -1806,6 +1792,12 @@
             "Ljava/util/List<",
             "Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
         }
     .end annotation
 
@@ -1911,7 +1903,7 @@
     return-void
 .end method
 
-.method public static getFrameworkCryptoInfo(Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;I)Landroid/media/MediaCodec$CryptoInfo;
+.method private static getFrameworkCryptoInfo(Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;I)Landroid/media/MediaCodec$CryptoInfo;
     .locals 3
 
     .line 1
@@ -2030,6 +2022,11 @@
 
 .method private initCodec(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;Landroid/media/MediaCrypto;)V
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v1, p1, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
@@ -2183,6 +2180,11 @@
 
 .method private initCodecWithFallback(Landroid/media/MediaCrypto;Z)Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->availableCodecInfos:Ljava/util/ArrayDeque;
@@ -2316,13 +2318,16 @@
 
     .line 15
     :cond_2
+    iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->preferredDecoderInitializationException:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
+
+    .line 16
     invoke-static {v0, v2}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;->access$000(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;)Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->preferredDecoderInitializationException:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
 
-    .line 16
+    .line 17
     :goto_2
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->availableCodecInfos:Ljava/util/ArrayDeque;
 
@@ -2334,13 +2339,13 @@
 
     goto :goto_1
 
-    .line 17
+    .line 18
     :cond_3
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->preferredDecoderInitializationException:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
 
     throw p1
 
-    .line 18
+    .line 19
     :cond_4
     new-instance p1, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
 
@@ -2355,6 +2360,11 @@
 
 .method private processEndOfStream()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecReinitializationState:I
@@ -2409,6 +2419,11 @@
 
 .method private processOutputFormat()V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
@@ -2471,6 +2486,11 @@
 
 .method private reinitializeCodec()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -2610,6 +2630,11 @@
 
 .method private shouldWaitForKeys(Z)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
@@ -2624,13 +2649,11 @@
 
     if-eqz p1, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 2
     :cond_0
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
-    invoke-interface {p1}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getState()I
+    invoke-interface {v0}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getState()I
 
     move-result p1
 
@@ -2642,13 +2665,10 @@
 
     if-eq p1, v2, :cond_1
 
-    goto :goto_0
+    const/4 v1, 0x1
 
     :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
+    return v1
 
     .line 3
     :cond_2
@@ -2669,12 +2689,17 @@
     throw p1
 
     :cond_3
-    :goto_1
+    :goto_0
     return v1
 .end method
 
 .method private updateCodecOperatingRate()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
@@ -2794,10 +2819,20 @@
 .end method
 
 .method public abstract configureCodec(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;Landroid/media/MediaCodec;Lcom/google/android/jioexoplayer2/Format;Landroid/media/MediaCrypto;F)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
 .end method
 
 .method public flushCodec()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -2910,6 +2945,8 @@
 
 .method public final getCodecInfo()Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecInfo:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
@@ -2944,6 +2981,12 @@
             "Ljava/util/List<",
             "Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
         }
     .end annotation
 
@@ -3033,6 +3076,11 @@
 
 .method public final maybeInitCodec()V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codec:Landroid/media/MediaCodec;
@@ -3054,27 +3102,24 @@
     .line 3
     iget-object v0, v0, Lcom/google/android/jioexoplayer2/Format;->sampleMimeType:Ljava/lang/String;
 
-    const/4 v1, 0x0
-
-    .line 4
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
     const/4 v4, 0x1
 
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_4
+
+    .line 4
+    invoke-interface {v1}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getMediaCrypto()Lcom/google/android/jioexoplayer2/drm/ExoMediaCrypto;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;
+
+    if-nez v1, :cond_2
 
     .line 5
-    invoke-interface {v2}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getMediaCrypto()Lcom/google/android/jioexoplayer2/drm/ExoMediaCrypto;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;
-
-    if-nez v2, :cond_2
-
-    .line 6
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     invoke-interface {v0}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getError()Lcom/google/android/jioexoplayer2/drm/DrmSession$DrmSessionException;
@@ -3090,41 +3135,41 @@
     :cond_1
     return-void
 
-    .line 7
+    .line 6
     :cond_2
-    invoke-virtual {v2}, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;->getWrappedMediaCrypto()Landroid/media/MediaCrypto;
+    invoke-virtual {v1}, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;->getWrappedMediaCrypto()Landroid/media/MediaCrypto;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 8
-    invoke-virtual {v2, v0}, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;->requiresSecureDecoderComponent(Ljava/lang/String;)Z
+    .line 7
+    invoke-virtual {v1, v0}, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;->requiresSecureDecoderComponent(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 9
+    .line 8
     :goto_0
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->deviceNeedsDrmKeysToConfigureCodecWorkaround()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_5
+    if-eqz v1, :cond_5
 
-    .line 10
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
+    .line 9
+    iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
-    invoke-interface {v2}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getState()I
+    invoke-interface {v1}, Lcom/google/android/jioexoplayer2/drm/DrmSession;->getState()I
 
-    move-result v2
+    move-result v1
 
-    if-eq v2, v4, :cond_3
+    if-eq v1, v4, :cond_3
 
     const/4 v5, 0x4
 
-    if-eq v2, v5, :cond_5
+    if-eq v1, v5, :cond_5
 
     return-void
 
-    .line 11
+    .line 10
     :cond_3
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
@@ -3145,10 +3190,10 @@
     :cond_4
     const/4 v0, 0x0
 
-    .line 12
+    .line 11
     :cond_5
     :try_start_0
-    invoke-direct {p0, v1, v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->initCodecWithFallback(Landroid/media/MediaCrypto;Z)Z
+    invoke-direct {p0, v2, v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->initCodecWithFallback(Landroid/media/MediaCrypto;Z)Z
 
     move-result v0
     :try_end_0
@@ -3158,27 +3203,27 @@
 
     return-void
 
-    .line 13
+    .line 12
     :cond_6
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecInfo:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
 
     iget-object v0, v0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
-    .line 14
+    .line 13
     invoke-direct {p0, v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecAdaptationWorkaroundMode(Ljava/lang/String;)I
 
     move-result v1
 
     iput v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecAdaptationWorkaroundMode:I
 
-    .line 15
+    .line 14
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsReconfigureWorkaround(Ljava/lang/String;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsReconfigureWorkaround:Z
 
-    .line 16
+    .line 15
     iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
 
     invoke-static {v0, v1}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsDiscardToSpsWorkaround(Ljava/lang/String;Lcom/google/android/jioexoplayer2/Format;)Z
@@ -3187,28 +3232,28 @@
 
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsDiscardToSpsWorkaround:Z
 
-    .line 17
+    .line 16
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsFlushWorkaround(Ljava/lang/String;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsFlushWorkaround:Z
 
-    .line 18
+    .line 17
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosFlushWorkaround(Ljava/lang/String;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosFlushWorkaround:Z
 
-    .line 19
+    .line 18
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosOutputExceptionWorkaround(Ljava/lang/String;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosOutputExceptionWorkaround:Z
 
-    .line 20
+    .line 19
     iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
 
     invoke-static {v0, v1}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsMonoChannelCountWorkaround(Ljava/lang/String;Lcom/google/android/jioexoplayer2/Format;)Z
@@ -3217,10 +3262,10 @@
 
     iput-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsMonoChannelCountWorkaround:Z
 
-    .line 21
+    .line 20
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecInfo:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
 
-    .line 22
+    .line 21
     invoke-static {v0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosPropagationWorkaround(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;)Z
 
     move-result v0
@@ -3239,7 +3284,7 @@
     :cond_8
     iput-boolean v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosPropagation:Z
 
-    .line 23
+    .line 22
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/BaseRenderer;->getState()I
 
     move-result v0
@@ -3248,7 +3293,7 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 24
+    .line 23
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -3265,16 +3310,16 @@
     :goto_1
     iput-wide v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->codecHotswapDeadlineMs:J
 
-    .line 25
+    .line 24
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetInputBuffer()V
 
-    .line 26
+    .line 25
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->resetOutputBuffer()V
 
-    .line 27
+    .line 26
     iput-boolean v4, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->waitingForFirstSyncFrame:Z
 
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->decoderCounters:Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
 
     iget v1, v0, Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;->decoderInitCount:I
@@ -3288,7 +3333,7 @@
     :catch_0
     move-exception v0
 
-    .line 29
+    .line 28
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/BaseRenderer;->getIndex()I
 
     move-result v1
@@ -3334,11 +3379,9 @@
     if-eqz v1, :cond_0
 
     .line 5
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
 
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
-    invoke-interface {v1, v2}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
+    invoke-interface {v2, v1}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -3349,18 +3392,14 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
     iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     if-eq v1, v2, :cond_1
 
     .line 7
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
 
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
-    invoke-interface {v1, v2}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
+    invoke-interface {v2, v1}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -3394,18 +3433,14 @@
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     if-eq v2, v3, :cond_2
 
     .line 14
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
 
-    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
-    invoke-interface {v2, v3}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
+    invoke-interface {v3, v2}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
@@ -3456,18 +3491,14 @@
 
     if-eqz v2, :cond_4
 
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     if-eq v2, v3, :cond_4
 
     .line 24
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
 
-    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
-    invoke-interface {v2, v3}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
+    invoke-interface {v3, v2}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
@@ -3502,18 +3533,14 @@
 
     if-eqz v2, :cond_5
 
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
     iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     if-eq v2, v3, :cond_5
 
     .line 32
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
+    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSessionManager:Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;
 
-    iget-object v3, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
-    invoke-interface {v2, v3}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
+    invoke-interface {v3, v2}, Lcom/google/android/jioexoplayer2/drm/DrmSessionManager;->releaseSession(Lcom/google/android/jioexoplayer2/drm/DrmSession;)V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_6
 
@@ -3542,6 +3569,11 @@
 
 .method public onEnabled(Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;
@@ -3555,6 +3587,11 @@
 
 .method public onInputFormatChanged(Lcom/google/android/jioexoplayer2/Format;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
@@ -3566,8 +3603,6 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingFormat:Lcom/google/android/jioexoplayer2/Format;
 
     .line 4
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->format:Lcom/google/android/jioexoplayer2/Format;
-
     iget-object p1, p1, Lcom/google/android/jioexoplayer2/Format;->drmInitData:Lcom/google/android/jioexoplayer2/drm/DrmInitData;
 
     const/4 v1, 0x0
@@ -3621,8 +3656,6 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     .line 9
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->pendingDrmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
-
     iget-object v1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->drmSession:Lcom/google/android/jioexoplayer2/drm/DrmSession;
 
     if-ne p1, v1, :cond_3
@@ -3762,12 +3795,22 @@
 
 .method public onOutputFormatChanged(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public onPositionReset(JZ)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -3819,6 +3862,11 @@
 .end method
 
 .method public abstract processOutputBuffer(JJLandroid/media/MediaCodec;Ljava/nio/ByteBuffer;IIJZLcom/google/android/jioexoplayer2/Format;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 .end method
 
 .method public releaseCodec()V
@@ -4100,6 +4148,11 @@
 
 .method public render(JJ)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->outputStreamEnded:Z
@@ -4282,12 +4335,22 @@
 
 .method public renderToEndOfStream()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public final setOperatingRate(F)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iput p1, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->rendererOperatingRate:F
@@ -4308,6 +4371,11 @@
 
 .method public final supportsFormat(Lcom/google/android/jioexoplayer2/Format;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -4350,6 +4418,12 @@
             ")I"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
 .end method
 
 .method public final supportsMixedMimeTypeAdaptation()I
@@ -4362,6 +4436,8 @@
 
 .method public final updateOutputFormatForTime(J)Lcom/google/android/jioexoplayer2/Format;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer;->formatQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;

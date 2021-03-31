@@ -142,6 +142,11 @@
 
 .method public hasMoreBytes()Z
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
@@ -199,6 +204,11 @@
 
 .method public nextByte()B
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I

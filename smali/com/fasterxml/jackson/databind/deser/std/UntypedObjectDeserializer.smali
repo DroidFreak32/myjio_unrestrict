@@ -31,7 +31,7 @@
 # static fields
 .field public static final NO_OBJECTS:[Ljava/lang/Object;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -270,6 +270,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
     .line 1
     invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findNonContextualValueDeserializer(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
@@ -288,6 +294,12 @@
             ")",
             "Lcom/fasterxml/jackson/databind/JsonDeserializer<",
             "*>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
         }
     .end annotation
 
@@ -337,7 +349,9 @@
 
     if-nez p2, :cond_1
 
-    const-class p2, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p2
 
     const-class v0, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer;
 
@@ -369,6 +383,11 @@
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getCurrentTokenId()I
@@ -587,6 +606,11 @@
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 27
     iget-boolean v0, p0, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer;->_nonMerging:Z
@@ -848,6 +872,11 @@
 
 .method public deserializeWithType(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getCurrentTokenId()I
@@ -1027,6 +1056,11 @@
 
 .method public mapArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -1055,11 +1089,9 @@
     .line 4
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v1
+    move-result-object v3
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
-
-    if-ne v1, v3, :cond_1
+    if-ne v3, v1, :cond_1
 
     .line 5
     new-instance p1, Ljava/util/ArrayList;
@@ -1075,16 +1107,14 @@
     :cond_1
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
     .line 8
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v3
+    move-result-object v4
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
-
-    if-ne v3, v4, :cond_2
+    if-ne v4, v1, :cond_2
 
     .line 9
     new-instance p1, Ljava/util/ArrayList;
@@ -1095,7 +1125,7 @@
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 11
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-object p1
 
@@ -1103,10 +1133,10 @@
     :cond_2
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->leaseObjectBuffer()Lcom/fasterxml/jackson/databind/util/ObjectBuffer;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 13
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->resetAndStart()[Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->resetAndStart()[Ljava/lang/Object;
 
     move-result-object v4
 
@@ -1118,9 +1148,9 @@
     const/4 v0, 0x1
 
     .line 15
-    aput-object v1, v4, v0
+    aput-object v3, v4, v0
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
     .line 16
     :goto_0
@@ -1133,31 +1163,31 @@
     .line 17
     array-length v7, v4
 
-    if-lt v1, v7, :cond_3
+    if-lt v3, v7, :cond_3
 
     .line 18
-    invoke-virtual {v3, v4}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v1, v4}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
-    move-object v4, v1
+    move-object v4, v3
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     :cond_3
-    add-int/lit8 v7, v1, 0x1
+    add-int/lit8 v7, v3, 0x1
 
     .line 19
-    aput-object v6, v4, v1
+    aput-object v6, v4, v3
 
     .line 20
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v1
+    move-result-object v3
 
     sget-object v6, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v1, v6, :cond_4
+    if-ne v3, v6, :cond_4
 
     .line 21
     new-instance p1, Ljava/util/ArrayList;
@@ -1165,12 +1195,12 @@
     invoke-direct {p1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 22
-    invoke-virtual {v3, v4, v7, p1}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->completeAndClearBuffer([Ljava/lang/Object;ILjava/util/List;)V
+    invoke-virtual {v1, v4, v7, p1}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->completeAndClearBuffer([Ljava/lang/Object;ILjava/util/List;)V
 
     return-object p1
 
     :cond_4
-    move v1, v7
+    move v3, v7
 
     goto :goto_0
 .end method
@@ -1186,6 +1216,12 @@
             "Ljava/lang/Object;",
             ">;)",
             "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1214,6 +1250,11 @@
 
 .method public mapArrayToArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[Ljava/lang/Object;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -1242,9 +1283,7 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v1
-
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     .line 5
     :goto_0
@@ -1253,49 +1292,52 @@
     move-result-object v4
 
     .line 6
-    array-length v5, v3
+    array-length v5, v1
 
-    if-lt v1, v5, :cond_1
+    if-lt v3, v5, :cond_1
 
     .line 7
-    invoke-virtual {v0, v3}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v3, v1
-
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     :cond_1
-    add-int/lit8 v5, v1, 0x1
+    add-int/lit8 v5, v3, 0x1
 
     .line 8
-    aput-object v4, v3, v1
+    aput-object v4, v1, v3
 
     .line 9
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v1
+    move-result-object v3
 
     sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v1, v4, :cond_2
+    if-ne v3, v4, :cond_2
 
     .line 10
-    invoke-virtual {v0, v3, v5}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->completeAndClearBuffer([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-virtual {v0, v1, v5}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->completeAndClearBuffer([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 
     :cond_2
-    move v1, v5
+    move v3, v5
 
     goto :goto_0
 .end method
 
 .method public mapObject(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getCurrentToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -1464,6 +1506,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 26
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getCurrentToken()Lcom/fasterxml/jackson/core/JsonToken;
 
@@ -1536,6 +1584,11 @@
 
 .method public resolve(Lcom/fasterxml/jackson/databind/DeserializationContext;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
 
     .line 1
     const-class v0, Ljava/lang/Object;

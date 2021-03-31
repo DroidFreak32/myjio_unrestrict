@@ -1,124 +1,46 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbbv;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzbbv;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbca;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final limit:I
+.field private final zzejc:Z
 
-.field public position:I
+.field private final zzels:Lcom/google/android/gms/internal/ads/zzbbl;
 
-.field public final synthetic zzdth:Lcom/google/android/gms/internal/ads/zzbbu;
+.field private final zzeme:J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbbu;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbbl;ZJ)V
     .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzdth:Lcom/google/android/gms/internal/ads/zzbbu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzels:Lcom/google/android/gms/internal/ads/zzbbl;
 
-    .line 2
-    iput p1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->position:I
+    iput-boolean p2, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzejc:Z
 
-    .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzdth:Lcom/google/android/gms/internal/ads/zzbbu;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbbu;->size()I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->limit:I
+    iput-wide p3, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzeme:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzbbv;->position:I
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzels:Lcom/google/android/gms/internal/ads/zzbbl;
 
-    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->limit:I
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzejc:Z
 
-    if-ge v0, v1, :cond_0
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzeme:J
 
-    const/4 v0, 0x1
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzbbl;->zzc(ZJ)V
 
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbbv;->nextByte()B
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final nextByte()B
-    .locals 3
-
-    .line 1
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbv;->zzdth:Lcom/google/android/gms/internal/ads/zzbbu;
-
-    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbbv;->position:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lcom/google/android/gms/internal/ads/zzbbv;->position:I
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzbbu;->zzbu(I)B
-
-    move-result v0
-    :try_end_0
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return v0
-
-    :catch_0
-    move-exception v0
-
-    .line 2
-    new-instance v1, Ljava/util/NoSuchElementException;
-
-    invoke-virtual {v0}, Ljava/lang/IndexOutOfBoundsException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+    return-void
 .end method

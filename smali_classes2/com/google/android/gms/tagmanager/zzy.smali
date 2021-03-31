@@ -16,45 +16,45 @@
 
 
 # instance fields
-.field public final zzaec:Ljava/lang/String;
+.field private final zzaec:Ljava/lang/String;
 
-.field public zzaeh:J
+.field private zzaeh:J
 
-.field public final zzaek:Landroid/os/Looper;
+.field private final zzaek:Landroid/os/Looper;
 
-.field public final zzaer:Lcom/google/android/gms/tagmanager/TagManager;
+.field private final zzaer:Lcom/google/android/gms/tagmanager/TagManager;
 
-.field public final zzaeu:Lcom/google/android/gms/tagmanager/zzaf;
+.field private final zzaeu:Lcom/google/android/gms/tagmanager/zzaf;
 
-.field public final zzaev:Lcom/google/android/gms/tagmanager/zzej;
+.field private final zzaev:Lcom/google/android/gms/tagmanager/zzej;
 
-.field public final zzaew:I
+.field private final zzaew:I
 
-.field public final zzaex:Lcom/google/android/gms/tagmanager/zzai;
+.field private final zzaex:Lcom/google/android/gms/tagmanager/zzai;
 
-.field public zzaey:Lcom/google/android/gms/tagmanager/zzah;
+.field private zzaey:Lcom/google/android/gms/tagmanager/zzah;
 
-.field public zzaez:Lcom/google/android/gms/internal/gtm/zzoq;
+.field private zzaez:Lcom/google/android/gms/internal/gtm/zzoq;
 
-.field public volatile zzafa:Lcom/google/android/gms/tagmanager/zzv;
+.field private volatile zzafa:Lcom/google/android/gms/tagmanager/zzv;
 
-.field public volatile zzafb:Z
+.field private volatile zzafb:Z
 
-.field public zzafc:Lcom/google/android/gms/internal/gtm/zzk;
+.field private zzafc:Lcom/google/android/gms/internal/gtm/zzk;
 
-.field public zzafd:Ljava/lang/String;
+.field private zzafd:Ljava/lang/String;
 
-.field public zzafe:Lcom/google/android/gms/tagmanager/zzag;
+.field private zzafe:Lcom/google/android/gms/tagmanager/zzag;
 
-.field public zzaff:Lcom/google/android/gms/tagmanager/zzac;
+.field private zzaff:Lcom/google/android/gms/tagmanager/zzac;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/TagManager;Landroid/os/Looper;Ljava/lang/String;ILcom/google/android/gms/tagmanager/zzah;Lcom/google/android/gms/tagmanager/zzag;Lcom/google/android/gms/internal/gtm/zzoq;Lcom/google/android/gms/common/util/Clock;Lcom/google/android/gms/tagmanager/zzej;Lcom/google/android/gms/tagmanager/zzai;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/TagManager;Landroid/os/Looper;Ljava/lang/String;ILcom/google/android/gms/tagmanager/zzah;Lcom/google/android/gms/tagmanager/zzag;Lcom/google/android/gms/internal/gtm/zzoq;Lcom/google/android/gms/common/util/Clock;Lcom/google/android/gms/tagmanager/zzej;Lcom/google/android/gms/tagmanager/zzai;)V
     .locals 1
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -708,8 +708,6 @@
     .line 4
     :cond_0
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzy;->zzafe:Lcom/google/android/gms/tagmanager/zzag;
-
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzy;->zzafc:Lcom/google/android/gms/internal/gtm/zzk;
 
     iget-object v1, v1, Lcom/google/android/gms/internal/gtm/zzk;->zzql:Ljava/lang/String;
@@ -794,8 +792,6 @@
     if-eqz v0, :cond_0
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzy;->zzafe:Lcom/google/android/gms/tagmanager/zzag;
-
     invoke-interface {v0, p1}, Lcom/google/android/gms/tagmanager/zzag;->zzap(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

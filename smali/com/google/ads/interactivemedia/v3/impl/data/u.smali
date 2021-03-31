@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public volume:Ljava/lang/Float;
+.field private volume:Ljava/lang/Float;
 
 
 # direct methods

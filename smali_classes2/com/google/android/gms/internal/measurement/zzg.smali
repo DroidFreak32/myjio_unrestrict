@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/internal/measurement/zzg;
 .super Lcom/google/android/gms/internal/measurement/zzc;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Lcom/google/android/gms/internal/measurement/zzd;

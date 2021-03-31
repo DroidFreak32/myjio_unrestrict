@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final height:I
+.field private final height:I
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods

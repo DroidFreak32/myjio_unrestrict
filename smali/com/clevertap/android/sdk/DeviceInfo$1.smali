@@ -41,7 +41,7 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$1;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$100(Lcom/clevertap/android/sdk/DeviceInfo;)Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;
 
     return-void
 .end method

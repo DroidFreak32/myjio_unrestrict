@@ -1,37 +1,41 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzje;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Ljava/lang/String;
+.field private final synthetic zza:Z
 
-.field public final synthetic zzb:Ljava/lang/String;
+.field private final synthetic zzb:Z
 
-.field public final synthetic zzc:Lcom/google/android/gms/measurement/internal/zzm;
+.field private final synthetic zzc:Lcom/google/android/gms/measurement/internal/zzaq;
 
-.field public final synthetic zzd:Lcom/google/android/gms/internal/measurement/zzs;
+.field private final synthetic zzd:Lcom/google/android/gms/measurement/internal/zzn;
 
-.field public final synthetic zze:Lcom/google/android/gms/measurement/internal/zzin;
+.field private final synthetic zze:Ljava/lang/String;
+
+.field private final synthetic zzf:Lcom/google/android/gms/measurement/internal/zzir;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzin;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/measurement/internal/zzm;Lcom/google/android/gms/internal/measurement/zzs;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzir;ZZLcom/google/android/gms/measurement/internal/zzaq;Lcom/google/android/gms/measurement/internal/zzn;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zza:Ljava/lang/String;
+    iput-boolean p2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zza:Z
 
-    iput-object p3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzb:Ljava/lang/String;
+    iput-boolean p3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzb:Z
 
-    iput-object p4, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzc:Lcom/google/android/gms/measurement/internal/zzm;
+    iput-object p4, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzc:Lcom/google/android/gms/measurement/internal/zzaq;
 
-    iput-object p5, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/internal/measurement/zzs;
+    iput-object p5, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/measurement/internal/zzn;
+
+    iput-object p6, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,157 +45,126 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 4
 
     .line 1
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
-
-    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zzd(Lcom/google/android/gms/measurement/internal/zzin;)Lcom/google/android/gms/measurement/internal/zzel;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    .line 3
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v1
-
-    .line 4
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v1
-
-    const-string v2, "Failed to get conditional properties; not connected to service"
-
-    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zza:Ljava/lang/String;
-
-    iget-object v4, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzb:Ljava/lang/String;
-
-    .line 5
-    invoke-virtual {v1, v2, v3, v4}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 6
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zzp()Lcom/google/android/gms/measurement/internal/zzko;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/internal/measurement/zzs;
-
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzko;->zza(Lcom/google/android/gms/internal/measurement/zzs;Ljava/util/ArrayList;)V
-
-    return-void
-
-    .line 7
-    :cond_0
-    :try_start_1
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zza:Ljava/lang/String;
-
-    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzb:Ljava/lang/String;
-
-    iget-object v4, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzc:Lcom/google/android/gms/measurement/internal/zzm;
-
-    .line 8
-    invoke-interface {v1, v2, v3, v4}, Lcom/google/android/gms/measurement/internal/zzel;->zza(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/measurement/internal/zzm;)Ljava/util/List;
-
-    move-result-object v1
-
-    .line 9
-    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzko;->zzb(Ljava/util/List;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzir;->zzd(Lcom/google/android/gms/measurement/internal/zzir;)Lcom/google/android/gms/measurement/internal/zzei;
 
     move-result-object v0
 
-    .line 10
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
+    if-nez v0, :cond_0
 
-    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zze(Lcom/google/android/gms/measurement/internal/zzin;)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
 
-    .line 11
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzgr;->zzq()Lcom/google/android/gms/measurement/internal/zzeq;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zzp()Lcom/google/android/gms/measurement/internal/zzko;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzeq;->zze()Lcom/google/android/gms/measurement/internal/zzes;
 
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/internal/measurement/zzs;
+    move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzko;->zza(Lcom/google/android/gms/internal/measurement/zzs;Ljava/util/ArrayList;)V
+    const-string v1, "Discarding data. Failed to send event to service"
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzes;->zza(Ljava/lang/String;)V
 
     return-void
 
-    :catchall_0
-    move-exception v1
+    .line 3
+    :cond_0
+    iget-boolean v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zza:Z
+
+    if-eqz v1, :cond_2
+
+    .line 4
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
+
+    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzb:Z
+
+    if-eqz v2, :cond_1
+
+    const/4 v2, 0x0
 
     goto :goto_0
 
+    :cond_1
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzc:Lcom/google/android/gms/measurement/internal/zzaq;
+
+    :goto_0
+    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/measurement/internal/zzn;
+
+    invoke-virtual {v1, v0, v2, v3}, Lcom/google/android/gms/measurement/internal/zzir;->zza(Lcom/google/android/gms/measurement/internal/zzei;Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;Lcom/google/android/gms/measurement/internal/zzn;)V
+
+    goto :goto_1
+
+    .line 5
+    :cond_2
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 6
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzc:Lcom/google/android/gms/measurement/internal/zzaq;
+
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/measurement/internal/zzn;
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/measurement/internal/zzei;->zza(Lcom/google/android/gms/measurement/internal/zzaq;Lcom/google/android/gms/measurement/internal/zzn;)V
+
+    goto :goto_1
+
+    .line 7
+    :cond_3
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzc:Lcom/google/android/gms/measurement/internal/zzaq;
+
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Ljava/lang/String;
+
+    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
+
+    invoke-virtual {v3}, Lcom/google/android/gms/measurement/internal/zzgr;->zzq()Lcom/google/android/gms/measurement/internal/zzeq;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/gms/measurement/internal/zzeq;->zzx()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/gms/measurement/internal/zzei;->zza(Lcom/google/android/gms/measurement/internal/zzaq;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    .line 12
-    :try_start_2
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
+    .line 8
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzin;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v2
-
-    .line 13
-    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v2
-
-    const-string v3, "Failed to get conditional properties; remote exception"
-
-    iget-object v4, p0, Lcom/google/android/gms/measurement/internal/zzje;->zza:Ljava/lang/String;
-
-    iget-object v5, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzb:Ljava/lang/String;
-
-    .line 14
-    invoke-virtual {v2, v3, v4, v5, v1}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 15
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zzp()Lcom/google/android/gms/measurement/internal/zzko;
+    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzgr;->zzq()Lcom/google/android/gms/measurement/internal/zzeq;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/internal/measurement/zzs;
+    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzeq;->zze()Lcom/google/android/gms/measurement/internal/zzes;
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzko;->zza(Lcom/google/android/gms/internal/measurement/zzs;Ljava/util/ArrayList;)V
+    move-result-object v1
+
+    const-string v2, "Failed to send event to the service"
+
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzes;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 9
+    :goto_1
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzf:Lcom/google/android/gms/measurement/internal/zzir;
+
+    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzir;->zze(Lcom/google/android/gms/measurement/internal/zzir;)V
 
     return-void
-
-    .line 16
-    :goto_0
-    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzje;->zze:Lcom/google/android/gms/measurement/internal/zzin;
-
-    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzin;->zzp()Lcom/google/android/gms/measurement/internal/zzko;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzje;->zzd:Lcom/google/android/gms/internal/measurement/zzs;
-
-    invoke-virtual {v2, v3, v0}, Lcom/google/android/gms/measurement/internal/zzko;->zza(Lcom/google/android/gms/internal/measurement/zzs;Ljava/util/ArrayList;)V
-
-    .line 17
-    throw v1
 .end method

@@ -25,7 +25,7 @@
 
 .field public static final EMPTY_INCLUDE:Lcom/fasterxml/jackson/annotation/JsonInclude$Value;
 
-.field public static final serialVersionUID:J = 0x2L
+.field private static final serialVersionUID:J = 0x2L
 
 
 # instance fields

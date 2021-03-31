@@ -1,183 +1,504 @@
 .class public final Lcom/google/android/gms/internal/ads/zzavb;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzauz;
+.implements Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdListener;
+
+
+# instance fields
+.field private final zzdya:Lcom/google/android/gms/internal/ads/zzauw;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.omid.IOmid"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzauw;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getVersion()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    const/4 v1, 0x6
-
-    .line 2
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzem;->transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 3
-    invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 4
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-object v1
-.end method
-
-.method public final zza(Ljava/lang/String;Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+.method public final onAdClicked(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
     .locals 1
 
-    .line 5
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    const-string v0, "#008 Must be called on the main UI thread."
 
-    move-result-object v0
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
 
-    .line 6
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    const-string v0, "Adapter called onAdClicked."
 
-    .line 7
-    invoke-static {v0, p2}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
-    .line 8
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
 
-    .line 9
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 10
-    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 11
-    invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    const/16 p1, 0x9
-
-    .line 12
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object p1
 
-    .line 13
-    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzak(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object p2
+    return-void
 
-    invoke-static {p2}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    :catch_0
+    move-exception p1
 
-    move-result-object p2
-
-    .line 14
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return-object p2
-.end method
-
-.method public final zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    .line 3
-    invoke-static {v0, p2}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x5
+    const-string v0, "#007 Could not call remote method."
 
     .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final zzab(Lcom/google/android/gms/dynamic/IObjectWrapper;)Z
+.method public final onAdClosed(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
     .locals 1
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    const-string v0, "#008 Must be called on the main UI thread."
 
-    move-result-object v0
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onAdClosed."
 
     .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object p1
 
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzaj(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
     .line 4
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;)Z
-
-    move-result v0
-
-    .line 5
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-.end method
-
-.method public final zzo(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x4
-
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final zzp(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+.method public final onAdFailedToLoad(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;I)V
     .locals 1
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    const-string v0, "#008 Must be called on the main UI thread."
 
-    move-result-object v0
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onAdFailedToLoad."
 
     .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x7
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzauw;->zze(Lcom/google/android/gms/dynamic/IObjectWrapper;I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string p2, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onAdLeftApplication(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onAdLeftApplication."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzal(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onAdLoaded(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onAdLoaded."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzag(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onAdOpened(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onAdOpened."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzah(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onInitializationFailed(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;I)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onInitializationFailed."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzauw;->zzd(Lcom/google/android/gms/dynamic/IObjectWrapper;I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string p2, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onInitializationSucceeded(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onInitializationSucceeded."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzaf(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onRewarded(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;Lcom/google/android/gms/ads/reward/RewardItem;)V
+    .locals 3
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onRewarded."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    if-eqz p2, :cond_0
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzava;
+
+    invoke-direct {v1, p2}, Lcom/google/android/gms/internal/ads/zzava;-><init>(Lcom/google/android/gms/ads/reward/RewardItem;)V
+
+    invoke-interface {v0, p1, v1}, Lcom/google/android/gms/internal/ads/zzauw;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zzava;)V
+
+    return-void
+
+    .line 4
+    :cond_0
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzava;
+
+    const-string v1, ""
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzava;-><init>(Ljava/lang/String;I)V
+
+    invoke-interface {p2, p1, v0}, Lcom/google/android/gms/internal/ads/zzauw;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zzava;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string p2, "#007 Could not call remote method."
+
+    .line 5
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onVideoCompleted(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onVideoCompleted."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzam(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onVideoStarted(Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onVideoStarted."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzai(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final zzb(Landroid/os/Bundle;)V
+    .locals 1
+
+    const-string v0, "#008 Must be called on the main UI thread."
+
+    .line 1
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkMainThread(Ljava/lang/String;)V
+
+    const-string v0, "Adapter called onAdMetadataChanged."
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavb;->zzdya:Lcom/google/android/gms/internal/ads/zzauw;
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzauw;->zzb(Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, "#007 Could not call remote method."
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

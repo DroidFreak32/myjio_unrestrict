@@ -16,7 +16,7 @@
     return-void
 .end method
 
-.method public static bodyToString(Lokhttp3/Request;)Ljava/lang/String;
+.method private static bodyToString(Lokhttp3/Request;)Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -60,6 +60,15 @@
 # virtual methods
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
     .locals 5
+    .param p1    # Lokhttp3/Interceptor$Chain;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;
@@ -83,7 +92,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v2, "user-agent"
+    const-string/jumbo v2, "user-agent"
 
     .line 5
     invoke-virtual {v0, v2}, Lokhttp3/Request$Builder;->removeHeader(Ljava/lang/String;)Lokhttp3/Request$Builder;
@@ -105,7 +114,7 @@
 
     move-result-object v2
 
-    const-string v3, "ssoToken"
+    const-string/jumbo v3, "ssoToken"
 
     invoke-virtual {v0, v3, v2}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
 
@@ -130,24 +139,24 @@
 
     invoke-static {v2}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
 
-    const-string v2, ""
+    const-string/jumbo v2, "uid"
 
-    const-string v3, "uid"
+    const-string v3, ""
 
     .line 10
-    invoke-virtual {v0, v3, v2}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
+    invoke-virtual {v0, v2, v3}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
 
-    const-string v3, "userGrp"
+    const-string/jumbo v2, "userGrp"
 
     .line 11
-    invoke-virtual {v0, v3, v2}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
+    invoke-virtual {v0, v2, v3}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
 
     .line 12
     invoke-virtual {v1}, Lcom/app/cinemasdk/model/LoginData;->getUniqueId()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "uniqueId"
+    const-string/jumbo v3, "uniqueId"
 
     invoke-virtual {v0, v3, v2}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
 
@@ -172,7 +181,7 @@
 
     invoke-static {v1}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
 
-    const-string v1, "x-api-key"
+    const-string/jumbo v1, "x-api-key"
 
     const-string v2, "l7xx8bd12e956b7a47f48a4e56603bf85bae"
 

@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzafv:Lcom/google/android/gms/tagmanager/DataLayer;
+.field private final synthetic zzafv:Lcom/google/android/gms/tagmanager/DataLayer;
 
 
 # direct methods

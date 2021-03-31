@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/face/Face;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # static fields
@@ -7,21 +8,21 @@
 
 
 # instance fields
-.field public height:F
+.field private height:F
 
-.field public id:I
+.field private id:I
 
-.field public width:F
+.field private width:F
 
-.field public zzca:Landroid/graphics/PointF;
+.field private zzcg:Landroid/graphics/PointF;
 
-.field public zzcb:F
+.field private zzch:F
 
-.field public zzcc:F
+.field private zzci:F
 
-.field public zzcd:F
+.field private zzcj:F
 
-.field public zzce:Ljava/util/List;
+.field private zzck:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -31,7 +32,7 @@
     .end annotation
 .end field
 
-.field public final zzcf:Ljava/util/List;
+.field private final zzcl:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -41,15 +42,17 @@
     .end annotation
 .end field
 
-.field public zzcg:F
+.field private zzcm:F
 
-.field public zzch:F
+.field private zzcn:F
 
-.field public zzci:F
+.field private zzco:F
+
+.field private final zzcp:F
 
 
 # direct methods
-.method public constructor <init>(ILandroid/graphics/PointF;FFFFF[Lcom/google/android/gms/vision/face/Landmark;[Lcom/google/android/gms/vision/face/Contour;FFF)V
+.method public constructor <init>(ILandroid/graphics/PointF;FFFFF[Lcom/google/android/gms/vision/face/Landmark;[Lcom/google/android/gms/vision/face/Contour;FFFF)V
     .locals 0
 
     .line 1
@@ -59,7 +62,7 @@
     iput p1, p0, Lcom/google/android/gms/vision/face/Face;->id:I
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/vision/face/Face;->zzca:Landroid/graphics/PointF;
+    iput-object p2, p0, Lcom/google/android/gms/vision/face/Face;->zzcg:Landroid/graphics/PointF;
 
     .line 4
     iput p3, p0, Lcom/google/android/gms/vision/face/Face;->width:F
@@ -68,88 +71,80 @@
     iput p4, p0, Lcom/google/android/gms/vision/face/Face;->height:F
 
     .line 6
-    iput p5, p0, Lcom/google/android/gms/vision/face/Face;->zzcb:F
+    iput p5, p0, Lcom/google/android/gms/vision/face/Face;->zzch:F
 
     .line 7
-    iput p6, p0, Lcom/google/android/gms/vision/face/Face;->zzcc:F
+    iput p6, p0, Lcom/google/android/gms/vision/face/Face;->zzci:F
 
     .line 8
-    iput p7, p0, Lcom/google/android/gms/vision/face/Face;->zzcd:F
+    iput p7, p0, Lcom/google/android/gms/vision/face/Face;->zzcj:F
 
     .line 9
     invoke-static {p8}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/Face;->zzce:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/Face;->zzck:Ljava/util/List;
 
     .line 10
     invoke-static {p9}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/Face;->zzcf:Ljava/util/List;
-
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    const/high16 p2, -0x40800000    # -1.0f
-
-    const/4 p3, 0x0
-
-    cmpl-float p4, p10, p3
-
-    if-ltz p4, :cond_0
-
-    cmpg-float p4, p10, p1
-
-    if-gtz p4, :cond_0
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/Face;->zzcl:Ljava/util/List;
 
     .line 11
-    iput p10, p0, Lcom/google/android/gms/vision/face/Face;->zzcg:F
+    invoke-static {p10}, Lcom/google/android/gms/vision/face/Face;->zza(F)F
 
-    goto :goto_0
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/gms/vision/face/Face;->zzcm:F
 
     .line 12
-    :cond_0
-    iput p2, p0, Lcom/google/android/gms/vision/face/Face;->zzcg:F
+    invoke-static {p11}, Lcom/google/android/gms/vision/face/Face;->zza(F)F
 
-    :goto_0
-    cmpl-float p4, p11, p3
+    move-result p1
 
-    if-ltz p4, :cond_1
-
-    cmpg-float p4, p11, p1
-
-    if-gtz p4, :cond_1
+    iput p1, p0, Lcom/google/android/gms/vision/face/Face;->zzcn:F
 
     .line 13
-    iput p11, p0, Lcom/google/android/gms/vision/face/Face;->zzch:F
+    invoke-static {p12}, Lcom/google/android/gms/vision/face/Face;->zza(F)F
 
-    goto :goto_1
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/gms/vision/face/Face;->zzco:F
 
     .line 14
-    :cond_1
-    iput p2, p0, Lcom/google/android/gms/vision/face/Face;->zzch:F
+    invoke-static {p13}, Lcom/google/android/gms/vision/face/Face;->zza(F)F
 
-    :goto_1
-    cmpl-float p3, p12, p3
+    move-result p1
 
-    if-ltz p3, :cond_2
-
-    cmpg-float p1, p12, p1
-
-    if-gtz p1, :cond_2
-
-    .line 15
-    iput p12, p0, Lcom/google/android/gms/vision/face/Face;->zzci:F
+    iput p1, p0, Lcom/google/android/gms/vision/face/Face;->zzcp:F
 
     return-void
+.end method
 
-    .line 16
-    :cond_2
-    iput p2, p0, Lcom/google/android/gms/vision/face/Face;->zzci:F
+.method private static zza(F)F
+    .locals 1
 
-    return-void
+    const/4 v0, 0x0
+
+    cmpl-float v0, p0, v0
+
+    if-ltz v0, :cond_0
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    cmpg-float v0, p0, v0
+
+    if-gtz v0, :cond_0
+
+    return p0
+
+    :cond_0
+    const/high16 p0, -0x40800000    # -1.0f
+
+    return p0
 .end method
 
 
@@ -166,16 +161,30 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcf:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcl:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public getEulerX()F
+    .locals 1
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
+    .end annotation
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcj:F
+
+    return v0
 .end method
 
 .method public getEulerY()F
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcb:F
+    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzch:F
 
     return v0
 .end method
@@ -184,7 +193,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcc:F
+    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzci:F
 
     return v0
 .end method
@@ -211,7 +220,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcg:F
+    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcm:F
 
     return v0
 .end method
@@ -220,7 +229,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzch:F
+    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzcn:F
 
     return v0
 .end method
@@ -229,7 +238,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzci:F
+    iget v0, p0, Lcom/google/android/gms/vision/face/Face;->zzco:F
 
     return v0
 .end method
@@ -246,7 +255,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/Face;->zzce:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/Face;->zzck:Ljava/util/List;
 
     return-object v0
 .end method
@@ -257,7 +266,7 @@
     .line 1
     new-instance v0, Landroid/graphics/PointF;
 
-    iget-object v1, p0, Lcom/google/android/gms/vision/face/Face;->zzca:Landroid/graphics/PointF;
+    iget-object v1, p0, Lcom/google/android/gms/vision/face/Face;->zzcg:Landroid/graphics/PointF;
 
     iget v2, v1, Landroid/graphics/PointF;->x:F
 

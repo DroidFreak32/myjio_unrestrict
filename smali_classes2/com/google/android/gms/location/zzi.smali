@@ -1,16 +1,17 @@
 .class public final Lcom/google/android/gms/location/zzi;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/location/DetectedActivity;",
+        "Ljava/util/Comparator<",
+        "Lcom/google/android/gms/location/ActivityTransition;",
         ">;"
     }
 .end annotation
@@ -20,6 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,72 +29,59 @@
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    .line 1
+    check-cast p1, Lcom/google/android/gms/location/ActivityTransition;
+
+    check-cast p2, Lcom/google/android/gms/location/ActivityTransition;
+
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/location/ActivityTransition;->getActivityType()I
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v3
-
-    if-ge v3, v0, :cond_2
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
-
-    move-result v3
-
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    if-eq v4, v5, :cond_1
-
-    const/4 v5, 0x2
-
-    if-eq v4, v5, :cond_0
-
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v2
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+    .line 3
+    invoke-virtual {p2}, Lcom/google/android/gms/location/ActivityTransition;->getActivityType()I
 
     move-result v1
 
-    goto :goto_0
+    const/4 v2, -0x1
+
+    const/4 v3, 0x1
+
+    if-eq v0, v1, :cond_1
+
+    if-ge v0, v1, :cond_0
+
+    return v2
+
+    :cond_0
+    return v3
+
+    .line 4
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/android/gms/location/ActivityTransition;->getTransitionType()I
+
+    move-result p1
+
+    .line 5
+    invoke-virtual {p2}, Lcom/google/android/gms/location/ActivityTransition;->getTransitionType()I
+
+    move-result p2
+
+    if-ne p1, p2, :cond_2
+
+    const/4 p1, 0x0
+
+    return p1
 
     :cond_2
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+    if-ge p1, p2, :cond_3
 
-    new-instance p1, Lcom/google/android/gms/location/DetectedActivity;
+    return v2
 
-    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/location/DetectedActivity;-><init>(II)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    new-array p1, p1, [Lcom/google/android/gms/location/DetectedActivity;
-
-    return-object p1
+    :cond_3
+    return v3
 .end method

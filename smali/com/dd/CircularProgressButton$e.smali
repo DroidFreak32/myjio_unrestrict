@@ -3,12 +3,12 @@
 .source "CircularProgressButton.java"
 
 # interfaces
-.implements Lzz;
+.implements Lu8;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/dd/CircularProgressButton;->k()V
+    value = Lcom/dd/CircularProgressButton;->D()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -41,12 +41,12 @@
     .line 1
     iget-object v0, p0, Lcom/dd/CircularProgressButton$e;->a:Lcom/dd/CircularProgressButton;
 
-    invoke-virtual {v0}, Lcom/dd/CircularProgressButton;->m()V
+    invoke-virtual {v0}, Lcom/dd/CircularProgressButton;->removeIcon()V
 
     .line 2
     iget-object v0, p0, Lcom/dd/CircularProgressButton$e;->a:Lcom/dd/CircularProgressButton;
 
-    invoke-static {v0}, Lcom/dd/CircularProgressButton;->d(Lcom/dd/CircularProgressButton;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/dd/CircularProgressButton;->g(Lcom/dd/CircularProgressButton;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -64,18 +64,18 @@
 
     sget-object v1, Lcom/dd/CircularProgressButton$State;->IDLE:Lcom/dd/CircularProgressButton$State;
 
-    invoke-static {v0, v1}, Lcom/dd/CircularProgressButton;->a(Lcom/dd/CircularProgressButton;Lcom/dd/CircularProgressButton$State;)Lcom/dd/CircularProgressButton$State;
+    invoke-static {v0, v1}, Lcom/dd/CircularProgressButton;->b(Lcom/dd/CircularProgressButton;Lcom/dd/CircularProgressButton$State;)Lcom/dd/CircularProgressButton$State;
 
     .line 5
     iget-object v0, p0, Lcom/dd/CircularProgressButton$e;->a:Lcom/dd/CircularProgressButton;
 
-    invoke-static {v0}, Lcom/dd/CircularProgressButton;->a(Lcom/dd/CircularProgressButton;)La00;
+    invoke-static {v0}, Lcom/dd/CircularProgressButton;->c(Lcom/dd/CircularProgressButton;)Lv8;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/dd/CircularProgressButton$e;->a:Lcom/dd/CircularProgressButton;
 
-    invoke-virtual {v0, v1}, La00;->a(Lcom/dd/CircularProgressButton;)V
+    invoke-virtual {v0, v1}, Lv8;->a(Lcom/dd/CircularProgressButton;)V
 
     return-void
 .end method

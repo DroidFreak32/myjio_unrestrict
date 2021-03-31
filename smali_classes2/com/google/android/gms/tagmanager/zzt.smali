@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final VALUE:Ljava/lang/String;
+.field private static final VALUE:Ljava/lang/String;
 
 
 # direct methods

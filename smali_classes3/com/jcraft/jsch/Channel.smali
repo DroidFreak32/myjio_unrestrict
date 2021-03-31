@@ -33,7 +33,7 @@
 
 .field public static index:I
 
-.field public static pool:Ljava/util/Vector;
+.field private static pool:Ljava/util/Vector;
 
 
 # instance fields
@@ -71,7 +71,7 @@
 
 .field public volatile rwsize:J
 
-.field public session:Lcom/jcraft/jsch/Session;
+.field private session:Lcom/jcraft/jsch/Session;
 
 .field public thread:Ljava/lang/Thread;
 
@@ -428,7 +428,7 @@
     return-object p0
 
     :cond_0
-    const-string/jumbo v0, "shell"
+    const-string v0, "shell"
 
     .line 3
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -462,7 +462,7 @@
     return-object p0
 
     :cond_2
-    const-string/jumbo v0, "x11"
+    const-string v0, "x11"
 
     .line 7
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -530,7 +530,7 @@
     return-object p0
 
     :cond_6
-    const-string/jumbo v0, "sftp"
+    const-string v0, "sftp"
 
     .line 15
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -547,7 +547,7 @@
     return-object p0
 
     :cond_7
-    const-string/jumbo v0, "subsystem"
+    const-string v0, "subsystem"
 
     .line 17
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -702,6 +702,11 @@
 
 .method public connect()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -713,6 +718,11 @@
 
 .method public connect(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 2
     iput p1, p0, Lcom/jcraft/jsch/Channel;->connectTimeout:I
@@ -824,8 +834,6 @@
     if-eqz v0, :cond_1
 
     .line 20
-    iget-object v0, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
     invoke-virtual {v0}, Lcom/jcraft/jsch/IO;->close()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
@@ -1058,6 +1066,11 @@
 
 .method public getExtInputStream()Ljava/io/InputStream;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const v0, 0x8000
 
@@ -1125,6 +1138,11 @@
 
 .method public getInputStream()Ljava/io/InputStream;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const v0, 0x8000
 
@@ -1183,6 +1201,11 @@
 
 .method public getOutputStream()Ljava/io/OutputStream;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/Channel$1;
@@ -1203,6 +1226,11 @@
 
 .method public getSession()Lcom/jcraft/jsch/Session;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Channel;->session:Lcom/jcraft/jsch/Session;
@@ -1224,6 +1252,11 @@
 
 .method public init()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -1281,6 +1314,11 @@
 
 .method public sendChannelOpen()V
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/Channel;->getSession()Lcom/jcraft/jsch/Session;
@@ -1492,6 +1530,11 @@
 
 .method public sendOpenConfirmation()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/Buffer;
@@ -1608,6 +1651,11 @@
 
 .method public sendSignal(Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/RequestSignal;
@@ -1817,12 +1865,22 @@
 
 .method public start()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public write([B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     array-length v0, p1
@@ -1836,6 +1894,11 @@
 
 .method public write([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     :try_start_0
@@ -1851,6 +1914,11 @@
 
 .method public write_ext([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0

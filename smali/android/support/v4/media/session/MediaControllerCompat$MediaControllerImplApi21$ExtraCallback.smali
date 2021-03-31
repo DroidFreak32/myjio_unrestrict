@@ -28,6 +28,11 @@
 # virtual methods
 .method public onExtrasChanged(Landroid/os/Bundle;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -39,6 +44,11 @@
 
 .method public onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -59,6 +69,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
 
@@ -69,6 +85,11 @@
 
 .method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -80,6 +101,11 @@
 
 .method public onSessionDestroyed()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -91,6 +117,11 @@
 
 .method public onVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;

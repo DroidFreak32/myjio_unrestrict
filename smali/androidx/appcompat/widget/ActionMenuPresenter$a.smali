@@ -1,5 +1,5 @@
 .class public Landroidx/appcompat/widget/ActionMenuPresenter$a;
-.super Lt1;
+.super Landroidx/appcompat/view/menu/MenuPopupHelper;
 .source "ActionMenuPresenter.java"
 
 
@@ -19,14 +19,14 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/appcompat/widget/ActionMenuPresenter;Landroid/content/Context;Lz1;Landroid/view/View;)V
+.method public constructor <init>(Landroidx/appcompat/widget/ActionMenuPresenter;Landroid/content/Context;Landroidx/appcompat/view/menu/SubMenuBuilder;Landroid/view/View;)V
     .locals 6
 
     .line 1
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$a;->m:Landroidx/appcompat/widget/ActionMenuPresenter;
 
     .line 2
-    sget v5, Lo;->actionOverflowMenuStyle:I
+    sget v5, Landroidx/appcompat/R$attr;->actionOverflowMenuStyle:I
 
     const/4 v4, 0x0
 
@@ -38,48 +38,48 @@
 
     move-object v3, p4
 
-    invoke-direct/range {v0 .. v5}, Lt1;-><init>(Landroid/content/Context;Ln1;Landroid/view/View;ZI)V
+    invoke-direct/range {v0 .. v5}, Landroidx/appcompat/view/menu/MenuPopupHelper;-><init>(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/View;ZI)V
 
     .line 3
-    invoke-virtual {p3}, Lz1;->getItem()Landroid/view/MenuItem;
+    invoke-virtual {p3}, Landroidx/appcompat/view/menu/SubMenuBuilder;->getItem()Landroid/view/MenuItem;
 
     move-result-object p2
 
-    check-cast p2, Lq1;
+    check-cast p2, Landroidx/appcompat/view/menu/MenuItemImpl;
 
     .line 4
-    invoke-virtual {p2}, Lq1;->h()Z
+    invoke-virtual {p2}, Landroidx/appcompat/view/menu/MenuItemImpl;->isActionButton()Z
 
     move-result p2
 
     if-nez p2, :cond_1
 
     .line 5
-    iget-object p2, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->B:Landroidx/appcompat/widget/ActionMenuPresenter$d;
+    iget-object p2, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->e:Landroidx/appcompat/widget/ActionMenuPresenter$d;
 
     if-nez p2, :cond_0
 
-    invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuPresenter;->c(Landroidx/appcompat/widget/ActionMenuPresenter;)Lv1;
+    invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuPresenter;->c(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuView;
 
     move-result-object p2
 
     check-cast p2, Landroid/view/View;
 
     :cond_0
-    invoke-virtual {p0, p2}, Lt1;->a(Landroid/view/View;)V
+    invoke-virtual {p0, p2}, Landroidx/appcompat/view/menu/MenuPopupHelper;->setAnchorView(Landroid/view/View;)V
 
     .line 6
     :cond_1
-    iget-object p1, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->T:Landroidx/appcompat/widget/ActionMenuPresenter$f;
+    iget-object p1, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->P:Landroidx/appcompat/widget/ActionMenuPresenter$f;
 
-    invoke-virtual {p0, p1}, Lt1;->a(Lu1$a;)V
+    invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/MenuPopupHelper;->setPresenterCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e()V
+.method public onDismiss()V
     .locals 2
 
     .line 1
@@ -87,15 +87,15 @@
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->Q:Landroidx/appcompat/widget/ActionMenuPresenter$a;
+    iput-object v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->M:Landroidx/appcompat/widget/ActionMenuPresenter$a;
 
     const/4 v1, 0x0
 
     .line 2
-    iput v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->U:I
+    iput v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->Q:I
 
     .line 3
-    invoke-super {p0}, Lt1;->e()V
+    invoke-super {p0}, Landroidx/appcompat/view/menu/MenuPopupHelper;->onDismiss()V
 
     return-void
 .end method

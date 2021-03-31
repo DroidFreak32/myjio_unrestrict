@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+.field private static final synthetic $VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
 .field public static final enum DEBUG:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
@@ -33,71 +33,65 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
-    const/4 v1, 0x0
+    const-string v1, "OFF"
 
-    const-string v2, "OFF"
+    const/4 v2, 0x0
 
     const/4 v3, -0x1
 
-    invoke-direct {v0, v2, v1, v3}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->OFF:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
     .line 2
-    new-instance v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
     const-string v3, "INFO"
 
-    invoke-direct {v0, v3, v2, v1}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->INFO:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+    invoke-direct {v1, v3, v4, v2}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->INFO:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
     .line 3
-    new-instance v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+    new-instance v3, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
-    const/4 v3, 0x2
+    const-string v5, "DEBUG"
 
-    const-string v4, "DEBUG"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3, v3}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->DEBUG:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+    sput-object v3, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->DEBUG:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+    new-array v5, v5, [Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->OFF:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->INFO:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->DEBUG:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->$VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
+    sput-object v5, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->$VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -19,15 +19,15 @@
 
 
 # instance fields
-.field public emulatorConnectRunnable:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$EmulatorConnectRunnable;
+.field private emulatorConnectRunnable:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$EmulatorConnectRunnable;
 
-.field public gesture:Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;
+.field private gesture:Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)V
+.method private constructor <init>(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)V
     .locals 1
 
     .line 2
@@ -67,7 +67,7 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Z
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Z
 
     move-result v0
 
@@ -76,7 +76,7 @@
     .line 2
     iget-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object p1
 
@@ -86,7 +86,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object v0
 
@@ -138,40 +138,38 @@
 .end method
 
 .method private inEmulator()Z
-    .locals 4
+    .locals 5
 
     .line 1
     sget-object v0, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "goldfish"
+    const-string v2, "goldfish"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    if-nez v0, :cond_0
-
-    sget-object v0, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
+    if-nez v1, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "ranchu"
+    const-string v1, "ranchu"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    return v1
+    return v2
 
     .line 2
     :cond_0
@@ -179,47 +177,44 @@
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v2, "generic"
+    const-string v3, "generic"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v3, "android"
+    const-string v4, "android"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "google"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    return v1
+    if-nez v1, :cond_1
 
     .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "google"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    return v2
+
+    .line 4
     :cond_1
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
@@ -227,15 +222,15 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    return v1
+    return v2
 
-    .line 4
+    .line 5
     :cond_2
     sget-object v0, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
@@ -243,27 +238,27 @@
 
     move-result-object v0
 
-    const-string v2, "sdk"
+    const-string v1, "sdk"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    return v1
+    return v2
 
-    .line 5
+    .line 6
     :cond_3
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
@@ -276,7 +271,7 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Z
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Z
 
     move-result v0
 
@@ -285,7 +280,7 @@
     .line 2
     iget-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object p1
 
@@ -295,7 +290,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object v0
 
@@ -357,7 +352,7 @@
     :catchall_0
     iget-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object p1
 
@@ -367,7 +362,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object v0
 
@@ -403,7 +398,7 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$700(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
 
     move-result-object v0
 
@@ -424,7 +419,7 @@
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$700(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
 
     move-result-object v0
 
@@ -457,20 +452,21 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1700(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
+    .line 2
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 2
+    .line 3
     iget-object v1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;->this$0:Lcom/clevertap/android/sdk/ab_testing/CTABTestController;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->access$1700(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
 
     move-result-object v1
 

@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method public static zza([BIJI)I
+.method private static zza([BIJI)I
     .locals 2
 
     if-eqz p4, :cond_2
@@ -148,11 +148,12 @@
 
     add-long/2addr v7, v11
 
+    :cond_3
     :goto_2
     const/4 v1, 0x0
 
     :goto_3
-    if-lez v2, :cond_3
+    if-lez v2, :cond_5
 
     add-long v11, v7, v9
 
@@ -168,116 +169,108 @@
 
     goto :goto_3
 
-    :cond_3
-    move-wide v11, v7
-
     :cond_4
-    if-nez v2, :cond_5
-
-    return v6
+    move-wide v7, v11
 
     :cond_5
-    add-int/lit8 v2, v2, -0x1
-
-    const/16 v3, -0x20
-
-    const/16 v7, -0x41
-
-    const/4 v8, -0x1
-
-    if-ge v1, v3, :cond_9
-
     if-nez v2, :cond_6
 
-    return v1
+    return v6
 
     :cond_6
     add-int/lit8 v2, v2, -0x1
 
+    const/16 v3, -0x20
+
+    const/16 v11, -0x41
+
+    const/4 v12, -0x1
+
+    if-ge v1, v3, :cond_a
+
+    if-nez v2, :cond_7
+
+    return v1
+
+    :cond_7
+    add-int/lit8 v2, v2, -0x1
+
     const/16 v3, -0x3e
 
-    if-lt v1, v3, :cond_8
+    if-lt v1, v3, :cond_9
 
-    add-long v13, v11, v9
+    add-long v13, v7, v9
 
-    invoke-static {v0, v11, v12}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
+    invoke-static {v0, v7, v8}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
 
     move-result v1
 
-    if-le v1, v7, :cond_7
+    if-le v1, v11, :cond_8
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     move-wide v7, v13
 
     goto :goto_2
 
-    :cond_8
-    :goto_4
-    return v8
-
     :cond_9
+    :goto_4
+    return v12
+
+    :cond_a
     const/16 v13, -0x10
 
     if-ge v1, v13, :cond_f
 
-    if-ge v2, v4, :cond_a
+    if-ge v2, v4, :cond_b
 
-    invoke-static {v0, v1, v11, v12, v2}, Lcom/google/android/gms/internal/clearcut/zzfj;->zza([BIJI)I
+    invoke-static {v0, v1, v7, v8, v2}, Lcom/google/android/gms/internal/clearcut/zzfj;->zza([BIJI)I
 
     move-result v0
 
     return v0
 
-    :cond_a
+    :cond_b
     add-int/lit8 v2, v2, -0x2
 
-    add-long v13, v11, v9
+    add-long v13, v7, v9
 
-    invoke-static {v0, v11, v12}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
+    invoke-static {v0, v7, v8}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
 
-    move-result v11
+    move-result v7
 
-    if-gt v11, v7, :cond_e
+    if-gt v7, v11, :cond_e
 
-    const/16 v12, -0x60
-
-    if-ne v1, v3, :cond_b
-
-    if-lt v11, v12, :cond_e
-
-    :cond_b
-    const/16 v3, -0x13
+    const/16 v8, -0x60
 
     if-ne v1, v3, :cond_c
 
-    if-ge v11, v12, :cond_e
+    if-lt v7, v8, :cond_e
 
     :cond_c
-    add-long v11, v13, v9
+    const/16 v3, -0x13
+
+    if-ne v1, v3, :cond_d
+
+    if-ge v7, v8, :cond_e
+
+    :cond_d
+    add-long v7, v13, v9
 
     invoke-static {v0, v13, v14}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
 
     move-result v1
 
-    if-le v1, v7, :cond_d
-
-    goto :goto_5
-
-    :cond_d
-    move-wide v7, v11
-
-    goto :goto_2
+    if-le v1, v11, :cond_3
 
     :cond_e
-    :goto_5
-    return v8
+    return v12
 
     :cond_f
     if-ge v2, v5, :cond_10
 
-    invoke-static {v0, v1, v11, v12, v2}, Lcom/google/android/gms/internal/clearcut/zzfj;->zza([BIJI)I
+    invoke-static {v0, v1, v7, v8, v2}, Lcom/google/android/gms/internal/clearcut/zzfj;->zza([BIJI)I
 
     move-result v0
 
@@ -286,13 +279,13 @@
     :cond_10
     add-int/lit8 v2, v2, -0x3
 
-    add-long v13, v11, v9
+    add-long v13, v7, v9
 
-    invoke-static {v0, v11, v12}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
+    invoke-static {v0, v7, v8}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
 
     move-result v3
 
-    if-gt v3, v7, :cond_11
+    if-gt v3, v11, :cond_11
 
     shl-int/lit8 v1, v1, 0x1c
 
@@ -304,24 +297,24 @@
 
     if-nez v1, :cond_11
 
-    add-long v11, v13, v9
+    add-long v7, v13, v9
 
     invoke-static {v0, v13, v14}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
 
     move-result v1
 
-    if-gt v1, v7, :cond_11
+    if-gt v1, v11, :cond_11
 
-    add-long v13, v11, v9
+    add-long v13, v7, v9
 
-    invoke-static {v0, v11, v12}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
+    invoke-static {v0, v7, v8}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza([BJ)B
 
     move-result v1
 
-    if-le v1, v7, :cond_7
+    if-le v1, v11, :cond_8
 
     :cond_11
-    return v8
+    return v12
 
     :cond_12
     new-instance v3, Ljava/lang/ArrayIndexOutOfBoundsException;
@@ -981,7 +974,7 @@
 
     add-int/lit8 v1, v9, 0x1
 
-    if-eq v1, v8, :cond_6
+    if-eq v1, v8, :cond_7
 
     invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -991,7 +984,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_6
 
     invoke-static {v15, v2}, Ljava/lang/Character;->toCodePoint(CC)I
 
@@ -1059,14 +1052,14 @@
     goto/16 :goto_2
 
     :cond_6
-    move v1, v9
+    move v9, v1
 
     :cond_7
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzfi;
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v9, v9, -0x1
 
-    invoke-direct {v0, v1, v8}, Lcom/google/android/gms/internal/clearcut/zzfi;-><init>(II)V
+    invoke-direct {v0, v9, v8}, Lcom/google/android/gms/internal/clearcut/zzfi;-><init>(II)V
 
     throw v0
 

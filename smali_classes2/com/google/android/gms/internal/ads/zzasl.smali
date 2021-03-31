@@ -1,74 +1,164 @@
 .class public final Lcom/google/android/gms/internal/ads/zzasl;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/ads/internal/overlay/zzn;
+
+# annotations
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
+    creator = "NativeAdLayoutInfoParcelCreator"
+.end annotation
+
+.annotation runtime Ljavax/annotation/ParametersAreNonnullByDefault;
+.end annotation
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/internal/ads/zzasl;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public zzdfr:Lcom/google/android/gms/ads/internal/overlay/zzn;
+.field public final zzaaq:Landroid/view/View;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        getter = "getAdViewAsBinder"
+        id = 0x1
+        type = "android.os.IBinder"
+    .end annotation
+.end field
 
-.field public zzdgl:Lcom/google/android/gms/internal/ads/zzasg;
+.field public final zzdse:Ljava/util/Map;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        getter = "getAssetViewMapAsBinder"
+        id = 0x2
+        type = "android.os.IBinder"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/ref/WeakReference<",
+            "Landroid/view/View;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzasg;Lcom/google/android/gms/ads/internal/overlay/zzn;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzask;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzask;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzasl;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/IBinder;Landroid/os/IBinder;)V
+    .locals 0
+    .param p1    # Landroid/os/IBinder;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x1
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/IBinder;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x2
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
+    .end annotation
+
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdgl:Lcom/google/android/gms/internal/ads/zzasg;
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->unwrap(Lcom/google/android/gms/dynamic/IObjectWrapper;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/View;
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzaaq:Landroid/view/View;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdfr:Lcom/google/android/gms/ads/internal/overlay/zzn;
+    invoke-static {p2}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->unwrap(Lcom/google/android/gms/dynamic/IObjectWrapper;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/Map;
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdse:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPause()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onResume()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final zzca()V
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdfr:Lcom/google/android/gms/ads/internal/overlay/zzn;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
-    invoke-interface {v0}, Lcom/google/android/gms/ads/internal/overlay/zzn;->zzca()V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdgl:Lcom/google/android/gms/internal/ads/zzasg;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzasg;->zzvo()V
-
-    return-void
-.end method
-
-.method public final zzcb()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdfr:Lcom/google/android/gms/ads/internal/overlay/zzn;
-
-    invoke-interface {v0}, Lcom/google/android/gms/ads/internal/overlay/zzn;->zzcb()V
+    move-result p2
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdgl:Lcom/google/android/gms/internal/ads/zzasg;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzaaq:Landroid/view/View;
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzasg;->zzoz()V
+    invoke-static {v0}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 3
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasl;->zzdse:Ljava/util/Map;
+
+    invoke-static {v0}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    .line 5
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+
+    .line 6
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
     return-void
 .end method

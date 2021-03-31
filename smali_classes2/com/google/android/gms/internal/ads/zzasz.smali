@@ -1,85 +1,110 @@
 .class public final Lcom/google/android/gms/internal/ads/zzasz;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x11
-.end annotation
-
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<WebViewT::",
-        "Lcom/google/android/gms/internal/ads/zzatc;",
-        ":",
-        "Lcom/google/android/gms/internal/ads/zzatk;",
-        ":",
-        "Lcom/google/android/gms/internal/ads/zzatm;",
-        ">",
-        "Ljava/lang/Object;"
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/internal/ads/zzasw;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public final zzdim:Lcom/google/android/gms/internal/ads/zzatb;
-
-.field public final zzdin:Lcom/google/android/gms/internal/ads/zzatc;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TWebViewT;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzatc;Lcom/google/android/gms/internal/ads/zzatb;)V
+.method public constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TWebViewT;",
-            "Lcom/google/android/gms/internal/ads/zzatb;",
-            ")V"
-        }
-    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzasz;->zzdim:Lcom/google/android/gms/internal/ads/zzatb;
-
-    .line 3
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasz;->zzdin:Lcom/google/android/gms/internal/ads/zzatc;
-
     return-void
 .end method
 
-.method public static zzk(Lcom/google/android/gms/internal/ads/zzasg;)Lcom/google/android/gms/internal/ads/zzasz;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zzasg;",
-            ")",
-            "Lcom/google/android/gms/internal/ads/zzasz<",
-            "Lcom/google/android/gms/internal/ads/zzasg;",
-            ">;"
-        }
-    .end annotation
+
+# virtual methods
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzasz;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    new-instance v1, Lcom/google/android/gms/internal/ads/zzata;
+    move-result v0
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/ads/zzata;-><init>(Lcom/google/android/gms/internal/ads/zzasg;)V
+    const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/android/gms/internal/ads/zzasz;-><init>(Lcom/google/android/gms/internal/ads/zzatc;Lcom/google/android/gms/internal/ads/zzatb;)V
+    const/4 v2, 0x0
 
-    return-object v0
+    .line 2
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v3
+
+    if-ge v3, v0, :cond_2
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+
+    move-result v3
+
+    .line 4
+    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+
+    move-result v4
+
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :cond_1
+
+    const/4 v5, 0x3
+
+    if-eq v4, v5, :cond_0
+
+    .line 5
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createStringList(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 7
+    :cond_1
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v1
+
+    goto :goto_0
+
+    .line 8
+    :cond_2
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    .line 9
+    new-instance p1, Lcom/google/android/gms/internal/ads/zzasw;
+
+    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzasw;-><init>(ZLjava/util/List;)V
+
+    return-object p1
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-array p1, p1, [Lcom/google/android/gms/internal/ads/zzasw;
+
+    return-object p1
 .end method

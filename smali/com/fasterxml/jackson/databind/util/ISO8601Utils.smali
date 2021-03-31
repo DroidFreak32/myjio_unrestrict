@@ -11,7 +11,7 @@
 # static fields
 .field public static final DEF_8601_LEN:I = 0x1d
 
-.field public static final TIMEZONE_Z:Ljava/util/TimeZone;
+.field private static final TIMEZONE_Z:Ljava/util/TimeZone;
 
 
 # direct methods
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method public static checkOffset(Ljava/lang/String;IC)Z
+.method private static checkOffset(Ljava/lang/String;IC)Z
     .locals 1
 
     .line 1
@@ -331,7 +331,7 @@
     return-object p0
 .end method
 
-.method public static indexOfNonDigit(Ljava/lang/String;I)I
+.method private static indexOfNonDigit(Ljava/lang/String;I)I
     .locals 2
 
     .line 1
@@ -377,6 +377,11 @@
 
 .method public static parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
     .locals 17
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
@@ -473,7 +478,7 @@
 
     const/4 v12, 0x2
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_a
 
     add-int/lit8 v6, v6, 0x1
 
@@ -518,18 +523,18 @@
 
     move-result v13
 
-    if-le v13, v14, :cond_a
+    if-le v13, v14, :cond_9
 
     .line 17
     invoke-virtual {v1, v14}, Ljava/lang/String;->charAt(I)C
 
     move-result v13
 
-    if-eq v13, v10, :cond_a
+    if-eq v13, v10, :cond_9
 
-    if-eq v13, v9, :cond_a
+    if-eq v13, v9, :cond_9
 
-    if-eq v13, v4, :cond_a
+    if-eq v13, v4, :cond_9
 
     add-int/lit8 v13, v14, 0x2
 
@@ -585,10 +590,7 @@
 
     if-eq v11, v12, :cond_6
 
-    :goto_0
-    move/from16 v11, v16
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_6
     mul-int/lit8 v16, v16, 0xa
@@ -598,47 +600,59 @@
     :cond_7
     mul-int/lit8 v16, v16, 0x64
 
-    goto :goto_0
+    :goto_0
+    move v11, v7
 
-    :goto_1
-    move v13, v11
+    move/from16 v13, v16
 
-    move v11, v14
+    move v7, v6
 
-    move v14, v15
+    move v6, v15
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_8
-    move v11, v14
+    move v11, v7
 
-    move v14, v13
+    move v7, v6
+
+    move v6, v13
+
+    const/4 v13, 0x0
 
     goto :goto_2
 
     :cond_9
-    move v14, v6
+    move v11, v7
 
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    :cond_a
-    const/4 v11, 0x0
-
-    :goto_2
     const/4 v13, 0x0
 
+    move v7, v6
+
+    move v6, v14
+
+    goto :goto_1
+
+    :cond_a
+    const/4 v7, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v13, 0x0
+
+    :goto_1
+    const/4 v14, 0x0
+
     .line 23
-    :goto_3
+    :goto_2
     invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
 
     move-result v15
 
-    if-le v15, v14, :cond_12
+    if-le v15, v6, :cond_12
 
     .line 24
-    invoke-virtual {v1, v14}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v1, v6}, Ljava/lang/String;->charAt(I)C
 
     move-result v15
 
@@ -647,16 +661,16 @@
     .line 25
     sget-object v4, Lcom/fasterxml/jackson/databind/util/ISO8601Utils;->TIMEZONE_Z:Ljava/util/TimeZone;
 
-    add-int/2addr v14, v8
+    add-int/2addr v6, v8
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_b
     if-eq v15, v9, :cond_d
 
     if-ne v15, v4, :cond_c
 
-    goto :goto_4
+    goto :goto_3
 
     .line 26
     :cond_c
@@ -686,8 +700,8 @@
 
     .line 27
     :cond_d
-    :goto_4
-    invoke-virtual {v1, v14}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    :goto_3
+    invoke-virtual {v1, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -696,7 +710,7 @@
 
     move-result v9
 
-    add-int/2addr v14, v9
+    add-int/2addr v6, v9
 
     const-string v9, "+0000"
 
@@ -715,7 +729,7 @@
 
     if-eqz v9, :cond_e
 
-    goto :goto_6
+    goto :goto_5
 
     .line 30
     :cond_e
@@ -766,7 +780,7 @@
 
     if-eqz v10, :cond_f
 
-    goto :goto_5
+    goto :goto_4
 
     .line 36
     :cond_f
@@ -801,18 +815,18 @@
     throw v0
 
     :cond_10
-    :goto_5
+    :goto_4
     move-object v4, v9
 
-    goto :goto_7
+    goto :goto_6
 
     .line 37
     :cond_11
-    :goto_6
+    :goto_5
     sget-object v4, Lcom/fasterxml/jackson/databind/util/ISO8601Utils;->TIMEZONE_Z:Ljava/util/TimeZone;
 
     .line 38
-    :goto_7
+    :goto_6
     new-instance v9, Ljava/util/GregorianCalendar;
 
     invoke-direct {v9, v4}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;)V
@@ -840,17 +854,17 @@
     const/16 v0, 0xb
 
     .line 43
-    invoke-virtual {v9, v0, v6}, Ljava/util/Calendar;->set(II)V
+    invoke-virtual {v9, v0, v7}, Ljava/util/Calendar;->set(II)V
 
     const/16 v0, 0xc
 
     .line 44
-    invoke-virtual {v9, v0, v7}, Ljava/util/Calendar;->set(II)V
+    invoke-virtual {v9, v0, v11}, Ljava/util/Calendar;->set(II)V
 
     const/16 v0, 0xd
 
     .line 45
-    invoke-virtual {v9, v0, v11}, Ljava/util/Calendar;->set(II)V
+    invoke-virtual {v9, v0, v14}, Ljava/util/Calendar;->set(II)V
 
     const/16 v0, 0xe
 
@@ -858,7 +872,7 @@
     invoke-virtual {v9, v0, v13}, Ljava/util/Calendar;->set(II)V
 
     .line 47
-    invoke-virtual {v2, v14}, Ljava/text/ParsePosition;->setIndex(I)V
+    invoke-virtual {v2, v6}, Ljava/text/ParsePosition;->setIndex(I)V
 
     .line 48
     invoke-virtual {v9}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
@@ -886,7 +900,7 @@
 
     const/4 v1, 0x0
 
-    goto :goto_8
+    goto :goto_7
 
     .line 50
     :cond_13
@@ -907,7 +921,7 @@
     move-result-object v1
 
     .line 51
-    :goto_8
+    :goto_7
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v3
@@ -986,8 +1000,13 @@
     throw v4
 .end method
 
-.method public static parseInt(Ljava/lang/String;II)I
+.method private static parseInt(Ljava/lang/String;II)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     if-ltz p1, :cond_4
 

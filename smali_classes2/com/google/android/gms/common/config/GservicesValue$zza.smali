@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/config/GservicesValue$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -14,12 +15,6 @@
 
 
 # virtual methods
-.method public abstract getLong(Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;
-.end method
-
-.method public abstract getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-.end method
-
 .method public abstract zza(Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 .end method
 
@@ -27,4 +22,10 @@
 .end method
 
 .method public abstract zza(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+.end method
+
+.method public abstract zza(Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;
+.end method
+
+.method public abstract zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 .end method

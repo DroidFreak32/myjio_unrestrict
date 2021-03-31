@@ -59,6 +59,10 @@
 # virtual methods
 .method public compareTo(Lcom/google/android/jioexoplayer2/offline/StreamKey;)I
     .locals 2
+    .param p1    # Lcom/google/android/jioexoplayer2/offline/StreamKey;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     iget v0, p0, Lcom/google/android/jioexoplayer2/offline/StreamKey;->periodIndex:I
@@ -91,6 +95,10 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/google/android/jioexoplayer2/offline/StreamKey;
@@ -104,6 +112,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 

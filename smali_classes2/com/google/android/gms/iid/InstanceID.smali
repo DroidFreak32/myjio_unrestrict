@@ -16,7 +16,7 @@
 
 .field public static final ERROR_TIMEOUT:Ljava/lang/String; = "TIMEOUT"
 
-.field public static final zzbu:Lcom/google/android/gms/iid/zzaj;
+.field private static final zzbu:Lcom/google/android/gms/iid/zzaj;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/iid/zzaj<",
@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field public static zzbv:Ljava/util/Map;
+.field private static zzbv:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -37,19 +37,19 @@
     .end annotation
 .end field
 
-.field public static final zzbw:J
+.field private static final zzbw:J
 
-.field public static zzbx:Lcom/google/android/gms/iid/zzak;
+.field private static zzbx:Lcom/google/android/gms/iid/zzak;
 
-.field public static zzby:Lcom/google/android/gms/iid/zzaf;
+.field private static zzby:Lcom/google/android/gms/iid/zzaf;
 
-.field public static zzbz:Ljava/lang/String;
+.field private static zzbz:Ljava/lang/String;
 
 
 # instance fields
-.field public zzca:Ljava/lang/String;
+.field private zzca:Ljava/lang/String;
 
-.field public zzl:Landroid/content/Context;
+.field private zzl:Landroid/content/Context;
 
 
 # direct methods
@@ -72,9 +72,9 @@
     sput-object v0, Lcom/google/android/gms/iid/InstanceID;->zzbu:Lcom/google/android/gms/iid/zzaj;
 
     .line 2
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/iid/InstanceID;->zzbv:Ljava/util/Map;
 
@@ -92,7 +92,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
     .annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
     .end annotation
@@ -477,6 +477,12 @@
 # virtual methods
 .method public deleteInstanceID()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -495,6 +501,12 @@
 
 .method public deleteToken(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -557,6 +569,12 @@
 
 .method public getToken(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -572,6 +590,12 @@
 
 .method public getToken(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -663,7 +687,7 @@
     move-result-object v0
 
     :cond_4
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
     if-nez p3, :cond_5
 
@@ -742,7 +766,7 @@
 
     :cond_7
     :goto_1
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_8
 
     .line 15
     sget-object v0, Lcom/google/android/gms/iid/InstanceID;->zzbx:Lcom/google/android/gms/iid/zzak;
@@ -759,14 +783,11 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/gms/iid/zzak;->zzd(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2
-
     :cond_8
-    move-object p3, v0
+    move-object v0, p3
 
     :cond_9
-    :goto_2
-    return-object p3
+    return-object v0
 
     .line 16
     :cond_a
@@ -782,6 +803,12 @@
 .method public final zzd(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 2
     .annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .line 7
@@ -828,17 +855,17 @@
     .line 12
     invoke-virtual {p3, p2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string p2, "1"
+    const-string p2, "delete"
 
-    const-string v0, "delete"
+    const-string v0, "1"
 
     .line 13
-    invoke-virtual {p3, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p3, p2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "X-delete"
+    const-string p2, "X-delete"
 
     .line 14
-    invoke-virtual {p3, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p3, p2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 15
     iget-object p2, p0, Lcom/google/android/gms/iid/InstanceID;->zzca:Ljava/lang/String;
@@ -911,6 +938,11 @@
 
 .method public final zze(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 

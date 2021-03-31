@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzbdp:Lcom/google/android/gms/internal/gtm/zzsr;
+.field private static final zzbdp:Lcom/google/android/gms/internal/gtm/zzsr;
 
-.field public static final zzbdq:Lcom/google/android/gms/internal/gtm/zzsr;
+.field private static final zzbdq:Lcom/google/android/gms/internal/gtm/zzsr;
 
 
 # direct methods
@@ -47,13 +47,13 @@
     return-object v0
 .end method
 
-.method public static zzqr()Lcom/google/android/gms/internal/gtm/zzsr;
+.method private static zzqr()Lcom/google/android/gms/internal/gtm/zzsr;
     .locals 3
 
+    :try_start_0
     const-string v0, "com.google.protobuf.NewInstanceSchemaFull"
 
     .line 1
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

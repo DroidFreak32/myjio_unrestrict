@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/wrappers/InstantApps;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,9 +9,12 @@
 
 
 # static fields
-.field public static zzhv:Landroid/content/Context;
+.field private static zza:Landroid/content/Context;
 
-.field public static zzhw:Ljava/lang/Boolean;
+.field private static zzb:Ljava/lang/Boolean;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -24,7 +28,14 @@
 .end method
 
 .method public static declared-synchronized isInstantApp(Landroid/content/Context;)Z
-    .locals 3
+    .locals 4
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -39,22 +50,18 @@
     move-result-object v1
 
     .line 2
-    sget-object v2, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhv:Landroid/content/Context;
+    sget-object v2, Lcom/google/android/gms/common/wrappers/InstantApps;->zza:Landroid/content/Context;
 
     if-eqz v2, :cond_0
 
-    sget-object v2, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
+    sget-object v3, Lcom/google/android/gms/common/wrappers/InstantApps;->zzb:Ljava/lang/Boolean;
 
-    if-eqz v2, :cond_0
-
-    sget-object v2, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhv:Landroid/content/Context;
+    if-eqz v3, :cond_0
 
     if-ne v2, v1, :cond_0
 
     .line 3
-    sget-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
     :try_end_0
@@ -69,7 +76,7 @@
 
     .line 4
     :try_start_1
-    sput-object v2, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
+    sput-object v2, Lcom/google/android/gms/common/wrappers/InstantApps;->zzb:Ljava/lang/Boolean;
 
     .line 5
     invoke-static {}, Lcom/google/android/gms/common/util/PlatformVersion;->isAtLeastO()Z
@@ -91,7 +98,7 @@
 
     move-result-object p0
 
-    sput-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzb:Ljava/lang/Boolean;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -109,37 +116,29 @@
     .line 8
     invoke-virtual {p0, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
-    const/4 p0, 0x1
-
     .line 9
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    move-result-object p0
-
-    sput-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzb:Ljava/lang/Boolean;
     :try_end_2
     .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 
-    :catch_0
-    const/4 p0, 0x0
-
     .line 10
+    :catch_0
     :try_start_3
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    move-result-object p0
-
-    sput-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
+    sput-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzb:Ljava/lang/Boolean;
 
     .line 11
     :goto_0
-    sput-object v1, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhv:Landroid/content/Context;
+    sput-object v1, Lcom/google/android/gms/common/wrappers/InstantApps;->zza:Landroid/content/Context;
 
     .line 12
-    sget-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzhw:Ljava/lang/Boolean;
+    sget-object p0, Lcom/google/android/gms/common/wrappers/InstantApps;->zzb:Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 

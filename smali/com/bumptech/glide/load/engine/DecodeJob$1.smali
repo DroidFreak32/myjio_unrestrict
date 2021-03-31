@@ -37,23 +37,21 @@
 
     sput-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$EncodeStrategy:[I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :try_start_0
-    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$EncodeStrategy:[I
-
     sget-object v2, Lcom/bumptech/glide/load/EncodeStrategy;->SOURCE:Lcom/bumptech/glide/load/EncodeStrategy;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
-    aput v0, v1, v2
+    aput v1, v0, v2
     :try_end_0
     .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
     :try_start_1
     sget-object v2, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$EncodeStrategy:[I
@@ -64,7 +62,7 @@
 
     move-result v3
 
-    aput v1, v2, v3
+    aput v0, v2, v3
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -81,15 +79,13 @@
     sput-object v2, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage:[I
 
     :try_start_2
-    sget-object v2, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$Stage:[I
-
     sget-object v3, Lcom/bumptech/glide/load/engine/DecodeJob$Stage;->RESOURCE_CACHE:Lcom/bumptech/glide/load/engine/DecodeJob$Stage;
 
     invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     move-result v3
 
-    aput v0, v2, v3
+    aput v1, v2, v3
     :try_end_2
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -103,7 +99,7 @@
 
     move-result v3
 
-    aput v1, v2, v3
+    aput v0, v2, v3
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
@@ -168,21 +164,19 @@
     sput-object v3, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason:[I
 
     :try_start_7
-    sget-object v3, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason:[I
-
     sget-object v4, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->INITIALIZE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
-    aput v0, v3, v4
+    aput v1, v3, v4
     :try_end_7
     .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
     :catch_7
     :try_start_8
-    sget-object v0, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason:[I
+    sget-object v1, Lcom/bumptech/glide/load/engine/DecodeJob$1;->$SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason:[I
 
     sget-object v3, Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;->SWITCH_TO_SOURCE_SERVICE:Lcom/bumptech/glide/load/engine/DecodeJob$RunReason;
 
@@ -190,7 +184,7 @@
 
     move-result v3
 
-    aput v1, v0, v3
+    aput v0, v1, v3
     :try_end_8
     .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
 

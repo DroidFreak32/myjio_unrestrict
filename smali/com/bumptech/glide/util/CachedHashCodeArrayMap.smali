@@ -1,5 +1,5 @@
 .class public final Lcom/bumptech/glide/util/CachedHashCodeArrayMap;
-.super Lm4;
+.super Landroidx/collection/ArrayMap;
 .source "CachedHashCodeArrayMap.java"
 
 
@@ -11,14 +11,14 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Lm4<",
+        "Landroidx/collection/ArrayMap<",
         "TK;TV;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public hashCode:I
+.field private hashCode:I
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lm4;-><init>()V
+    invoke-direct {p0}, Landroidx/collection/ArrayMap;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     iput v0, p0, Lcom/bumptech/glide/util/CachedHashCodeArrayMap;->hashCode:I
 
     .line 2
-    invoke-super {p0}, Ls4;->clear()V
+    invoke-super {p0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     if-nez v0, :cond_0
 
     .line 2
-    invoke-super {p0}, Ls4;->hashCode()I
+    invoke-super {p0}, Landroidx/collection/SimpleArrayMap;->hashCode()I
 
     move-result v0
 
@@ -83,19 +83,19 @@
     iput v0, p0, Lcom/bumptech/glide/util/CachedHashCodeArrayMap;->hashCode:I
 
     .line 2
-    invoke-super {p0, p1, p2}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1, p2}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public putAll(Ls4;)V
+.method public putAll(Landroidx/collection/SimpleArrayMap;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls4<",
+            "Landroidx/collection/SimpleArrayMap<",
             "+TK;+TV;>;)V"
         }
     .end annotation
@@ -106,7 +106,7 @@
     iput v0, p0, Lcom/bumptech/glide/util/CachedHashCodeArrayMap;->hashCode:I
 
     .line 2
-    invoke-super {p0, p1}, Ls4;->putAll(Ls4;)V
+    invoke-super {p0, p1}, Landroidx/collection/SimpleArrayMap;->putAll(Landroidx/collection/SimpleArrayMap;)V
 
     return-void
 .end method
@@ -125,7 +125,7 @@
     iput v0, p0, Lcom/bumptech/glide/util/CachedHashCodeArrayMap;->hashCode:I
 
     .line 2
-    invoke-super {p0, p1}, Ls4;->removeAt(I)Ljava/lang/Object;
+    invoke-super {p0, p1}, Landroidx/collection/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -146,7 +146,7 @@
     iput v0, p0, Lcom/bumptech/glide/util/CachedHashCodeArrayMap;->hashCode:I
 
     .line 2
-    invoke-super {p0, p1, p2}, Ls4;->setValueAt(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1, p2}, Landroidx/collection/SimpleArrayMap;->setValueAt(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

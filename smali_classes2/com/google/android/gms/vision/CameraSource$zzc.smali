@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/CameraSource$zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
 .implements Landroid/hardware/Camera$PictureCallback;
@@ -17,17 +18,17 @@
 
 
 # instance fields
-.field public final synthetic zzt:Lcom/google/android/gms/vision/CameraSource;
+.field private final synthetic zzae:Lcom/google/android/gms/vision/CameraSource;
 
-.field public zzz:Lcom/google/android/gms/vision/CameraSource$PictureCallback;
+.field private zzaf:Lcom/google/android/gms/vision/CameraSource$PictureCallback;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/vision/CameraSource;)V
+.method private constructor <init>(Lcom/google/android/gms/vision/CameraSource;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzt:Lcom/google/android/gms/vision/CameraSource;
+    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzae:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +48,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzz:Lcom/google/android/gms/vision/CameraSource$PictureCallback;
+    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzaf:Lcom/google/android/gms/vision/CameraSource$PictureCallback;
 
     return-object p1
 .end method
@@ -58,7 +59,7 @@
     .locals 0
 
     .line 1
-    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzz:Lcom/google/android/gms/vision/CameraSource$PictureCallback;
+    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzaf:Lcom/google/android/gms/vision/CameraSource$PictureCallback;
 
     if-eqz p2, :cond_0
 
@@ -67,7 +68,7 @@
 
     .line 3
     :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzt:Lcom/google/android/gms/vision/CameraSource;
+    iget-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzae:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;)Ljava/lang/Object;
 
@@ -77,7 +78,7 @@
 
     .line 4
     :try_start_0
-    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzt:Lcom/google/android/gms/vision/CameraSource;
+    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzae:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {p2}, Lcom/google/android/gms/vision/CameraSource;->zzb(Lcom/google/android/gms/vision/CameraSource;)Landroid/hardware/Camera;
 
@@ -86,7 +87,7 @@
     if-eqz p2, :cond_1
 
     .line 5
-    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzt:Lcom/google/android/gms/vision/CameraSource;
+    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$zzc;->zzae:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {p2}, Lcom/google/android/gms/vision/CameraSource;->zzb(Lcom/google/android/gms/vision/CameraSource;)Landroid/hardware/Camera;
 

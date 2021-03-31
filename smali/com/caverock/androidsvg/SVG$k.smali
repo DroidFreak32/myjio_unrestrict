@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public a(Landroid/graphics/Matrix;)V
+.method public j(Landroid/graphics/Matrix;)V
     .locals 0
 
     .line 1

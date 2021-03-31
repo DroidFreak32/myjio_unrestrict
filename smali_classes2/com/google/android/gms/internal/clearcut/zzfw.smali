@@ -6,17 +6,17 @@
 
 
 # static fields
-.field public static final zzrl:Lcom/google/android/gms/internal/clearcut/zzfx;
+.field private static final zzrl:Lcom/google/android/gms/internal/clearcut/zzfx;
 
 
 # instance fields
-.field public mSize:I
+.field private mSize:I
 
-.field public zzrm:Z
+.field private zzrm:Z
 
-.field public zzrn:[I
+.field private zzrn:[I
 
-.field public zzro:[Lcom/google/android/gms/internal/clearcut/zzfx;
+.field private zzro:[Lcom/google/android/gms/internal/clearcut/zzfx;
 
 
 # direct methods
@@ -42,7 +42,7 @@
     return-void
 .end method
 
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -100,6 +100,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzfw;->mSize:I
 

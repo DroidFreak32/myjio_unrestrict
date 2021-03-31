@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+.field private static final synthetic $VALUES:[Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
 .field public static final enum INDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
@@ -35,84 +35,76 @@
 
 
 # instance fields
-.field public value:I
+.field private value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
-    const/4 v1, 0x0
+    const-string v1, "NO_INPUT"
 
-    const-string v2, "NO_INPUT"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->NO_INPUT:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
     .line 2
-    new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
     const-string v3, "INDOOR"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->INDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    invoke-direct {v1, v3, v4, v4}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->INDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
     .line 3
-    new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    new-instance v3, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
-    const/4 v3, 0x2
+    const-string v5, "SEMI_OUTDOOR"
 
-    const-string v4, "SEMI_OUTDOOR"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3, v3}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->SEMI_OUTDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    sput-object v3, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->SEMI_OUTDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
     .line 4
-    new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    new-instance v5, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
-    const/4 v4, 0x3
+    const-string v7, "OUTDOOR"
 
-    const-string v5, "OUTDOOR"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4, v4}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->OUTDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    sput-object v5, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->OUTDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    new-array v7, v7, [Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->NO_INPUT:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->INDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->SEMI_OUTDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->OUTDOOR:Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->$VALUES:[Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
+    sput-object v7, Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;->$VALUES:[Lcom/inn/passivesdk/indoorOutdoorDetection/CellTowerResult$PrevStatus;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -1,53 +1,43 @@
 .class public final Lcom/google/android/gms/common/internal/service/zaf;
-.super Lcom/google/android/gms/common/internal/service/zaa;
-
-
-# instance fields
-.field public final mResultHolder:Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder<",
-            "Lcom/google/android/gms/common/api/Status;",
-            ">;"
-        }
-    .end annotation
-.end field
+.super Lcom/google/android/gms/common/internal/service/zag;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;)V
+.method public constructor <init>(Lcom/google/android/gms/common/internal/service/zac;Lcom/google/android/gms/common/api/GoogleApiClient;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder<",
-            "Lcom/google/android/gms/common/api/Status;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/service/zaa;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/service/zaf;->mResultHolder:Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;
+    invoke-direct {p0, p2}, Lcom/google/android/gms/common/internal/service/zag;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zaj(I)V
-    .locals 2
+.method public final synthetic doExecute(Lcom/google/android/gms/common/api/Api$AnyClient;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/service/zaf;->mResultHolder:Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;
+    check-cast p1, Lcom/google/android/gms/common/internal/service/zaj;
 
-    new-instance v1, Lcom/google/android/gms/common/api/Status;
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 
-    invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
+    move-result-object p1
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;->setResult(Ljava/lang/Object;)V
+    check-cast p1, Lcom/google/android/gms/common/internal/service/zak;
+
+    new-instance v0, Lcom/google/android/gms/common/internal/service/zae;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/service/zae;-><init>(Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;)V
+
+    invoke-interface {p1, v0}, Lcom/google/android/gms/common/internal/service/zak;->zaa(Lcom/google/android/gms/common/internal/service/zai;)V
 
     return-void
 .end method

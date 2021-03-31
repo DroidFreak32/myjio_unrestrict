@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final PACKAGE_NAME_TO_KEY:Ljava/util/concurrent/ConcurrentMap;
+.field private static final PACKAGE_NAME_TO_KEY:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentMap<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public static final TAG:Ljava/lang/String; = "AppVersionSignature"
+.field private static final TAG:Ljava/lang/String; = "AppVersionSignature"
 
 
 # direct methods
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -41,8 +41,14 @@
     return-void
 .end method
 
-.method public static getPackageInfo(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
+.method private static getPackageInfo(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
     .locals 3
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -87,8 +93,14 @@
     return-object p0
 .end method
 
-.method public static getVersionCode(Landroid/content/pm/PackageInfo;)Ljava/lang/String;
+.method private static getVersionCode(Landroid/content/pm/PackageInfo;)Ljava/lang/String;
     .locals 0
+    .param p0    # Landroid/content/pm/PackageInfo;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     if-eqz p0, :cond_0
 
@@ -116,7 +128,13 @@
 .end method
 
 .method public static obtain(Landroid/content/Context;)Lcom/bumptech/glide/load/Key;
-    .locals 2
+    .locals 3
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -128,21 +146,19 @@
 
     invoke-interface {v1, v0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lcom/bumptech/glide/load/Key;
+    check-cast v2, Lcom/bumptech/glide/load/Key;
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
     .line 3
     invoke-static {p0}, Lcom/bumptech/glide/signature/ApplicationVersionSignature;->obtainVersionSignature(Landroid/content/Context;)Lcom/bumptech/glide/load/Key;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 4
-    sget-object p0, Lcom/bumptech/glide/signature/ApplicationVersionSignature;->PACKAGE_NAME_TO_KEY:Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-interface {p0, v0, v1}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v0, v2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -153,15 +169,21 @@
     goto :goto_0
 
     :cond_0
-    move-object v1, p0
+    move-object v2, p0
 
     :cond_1
     :goto_0
-    return-object v1
+    return-object v2
 .end method
 
-.method public static obtainVersionSignature(Landroid/content/Context;)Lcom/bumptech/glide/load/Key;
+.method private static obtainVersionSignature(Landroid/content/Context;)Lcom/bumptech/glide/load/Key;
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/bumptech/glide/signature/ApplicationVersionSignature;->getPackageInfo(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
@@ -183,6 +205,8 @@
 
 .method public static reset()V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/signature/ApplicationVersionSignature;->PACKAGE_NAME_TO_KEY:Ljava/util/concurrent/ConcurrentMap;

@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public final __db:Landroidx/room/RoomDatabase;
+.field private final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfANDSFLocation3GPPLevel1:Lzg;
+.field private final __deletionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityDeletionOrUpdateAdapter;
 
-.field public final __insertionAdapterOfANDSFLocation3GPPLevel1:Lah;
+.field private final __insertionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityInsertionAdapter;
 
 
 # direct methods
@@ -22,13 +22,13 @@
 
     invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$1;-><init>(Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__insertionAdapterOfANDSFLocation3GPPLevel1:Lah;
+    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__insertionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$2;
 
     invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$2;-><init>(Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__deletionAdapterOfANDSFLocation3GPPLevel1:Lzg;
+    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__deletionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityDeletionOrUpdateAdapter;
 
     return-void
 .end method
@@ -197,12 +197,12 @@
 
 
 # virtual methods
-.method public deleteRecord(Lei;)I
+.method public deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -234,6 +234,16 @@
     throw v0
 .end method
 
+.method public bridge synthetic deleteRecord(Landroidx/room/Room;)V
+    .locals 0
+
+    check-cast p1, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->deleteRecord(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
+
+    return-void
+.end method
+
 .method public deleteRecord(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
     .locals 1
 
@@ -242,9 +252,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__deletionAdapterOfANDSFLocation3GPPLevel1:Lzg;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__deletionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityDeletionOrUpdateAdapter;
 
-    invoke-virtual {v0, p1}, Lzg;->handle(Ljava/lang/Object;)I
+    invoke-virtual {v0, p1}, Landroidx/room/EntityDeletionOrUpdateAdapter;->handle(Ljava/lang/Object;)I
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -268,22 +278,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic deleteRecord(Lgh;)V
-    .locals 0
-
-    check-cast p1, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->deleteRecord(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
-
-    return-void
-.end method
-
-.method public deletebyField(Lei;)I
+.method public deletebyField(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -315,12 +315,22 @@
     throw v0
 .end method
 
-.method public getRecord(Lei;)Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
+.method public bridge synthetic getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
     .locals 1
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -355,22 +365,12 @@
     throw v0
 .end method
 
-.method public bridge synthetic getRecord(Lei;)Lgh;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->getRecord(Lei;)Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public getRecordList(Lei;)Ljava/util/List;
+.method public getRecordList(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lei;",
+            "Landroidx/sqlite/db/SupportSQLiteQuery;",
             ")",
             "Ljava/util/List<",
             "Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;",
@@ -380,7 +380,7 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -479,9 +479,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__insertionAdapterOfANDSFLocation3GPPLevel1:Lah;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__insertionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, p1}, Lah;->insert(Ljava/lang/Iterable;)V
+    invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Iterable;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -503,6 +503,16 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw p1
+.end method
+
+.method public bridge synthetic insertRecord(Landroidx/room/Room;)V
+    .locals 0
+
+    check-cast p1, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->insertRecord(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
+
+    return-void
 .end method
 
 .method public insertRecord(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
@@ -513,7 +523,7 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-super {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Lgh;)V
+    invoke-super {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Landroidx/room/Room;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -537,12 +547,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic insertRecord(Lgh;)V
+.method public bridge synthetic insertRecordAll(Landroidx/room/Room;)V
     .locals 0
 
     check-cast p1, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->insertRecord(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->insertRecordAll(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
 
     return-void
 .end method
@@ -555,9 +565,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__insertionAdapterOfANDSFLocation3GPPLevel1:Lah;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__insertionAdapterOfANDSFLocation3GPPLevel1:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, p1}, Lah;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -581,22 +591,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic insertRecordAll(Lgh;)V
-    .locals 0
-
-    check-cast p1, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->insertRecordAll(Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
-
-    return-void
-.end method
-
-.method public updateRecord(Lei;)I
+.method public updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 

@@ -8,7 +8,7 @@
 # instance fields
 .field public batteryLife:I
 
-.field public evaluationTime:I
+.field private evaluationTime:I
 
 .field public packetLoss:I
 

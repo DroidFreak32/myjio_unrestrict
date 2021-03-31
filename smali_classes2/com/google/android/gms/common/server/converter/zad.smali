@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/server/converter/zad;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -40,7 +41,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move-object v3, v2
+
+    const/4 v2, 0x0
 
     .line 2
     :goto_0
@@ -81,7 +84,7 @@
     :cond_0
     invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v3
+    move-result v2
 
     goto :goto_0
 
@@ -89,7 +92,7 @@
     :cond_1
     invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
     goto :goto_0
 
@@ -108,7 +111,7 @@
     .line 10
     new-instance p1, Lcom/google/android/gms/common/server/converter/StringToIntConverter$zaa;
 
-    invoke-direct {p1, v1, v2, v3}, Lcom/google/android/gms/common/server/converter/StringToIntConverter$zaa;-><init>(ILjava/lang/String;I)V
+    invoke-direct {p1, v1, v3, v2}, Lcom/google/android/gms/common/server/converter/StringToIntConverter$zaa;-><init>(ILjava/lang/String;I)V
 
     return-object p1
 .end method

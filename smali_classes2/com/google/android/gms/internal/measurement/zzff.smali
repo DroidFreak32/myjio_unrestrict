@@ -1,129 +1,61 @@
-.class public final synthetic Lcom/google/android/gms/internal/measurement/zzff;
+.class public final Lcom/google/android/gms/internal/measurement/zzff;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
-# static fields
-.field public static final synthetic zza:[I
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-.field public static final synthetic zzb:[I
+
+# instance fields
+.field public zza:[Ljava/lang/Object;
+
+.field public zzb:I
+
+.field public zzc:Z
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x4
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzfv;->values()[Lcom/google/android/gms/internal/measurement/zzfv;
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzff;-><init>(I)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzff;->zzb:[I
-
-    const/4 v0, 0x1
-
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzff;->zzb:[I
-
-    sget-object v2, Lcom/google/android/gms/internal/measurement/zzfv;->zzh:Lcom/google/android/gms/internal/measurement/zzfv;
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v2
-
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v1, 0x2
-
-    :try_start_1
-    sget-object v2, Lcom/google/android/gms/internal/measurement/zzff;->zzb:[I
-
-    sget-object v3, Lcom/google/android/gms/internal/measurement/zzfv;->zzj:Lcom/google/android/gms/internal/measurement/zzfv;
-
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v3
-
-    aput v1, v2, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v2, 0x3
-
-    :try_start_2
-    sget-object v3, Lcom/google/android/gms/internal/measurement/zzff;->zzb:[I
-
-    sget-object v4, Lcom/google/android/gms/internal/measurement/zzfv;->zzg:Lcom/google/android/gms/internal/measurement/zzfv;
-
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v4
-
-    aput v2, v3, v4
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+.method public constructor <init>(I)V
+    .locals 0
 
     .line 2
-    :catch_2
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzfe;->values()[Lcom/google/android/gms/internal/measurement/zzfe;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v3
+    mul-int/lit8 p1, p1, 0x2
 
-    array-length v3, v3
+    .line 3
+    new-array p1, p1, [Ljava/lang/Object;
 
-    new-array v3, v3, [I
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzff;->zza:[Ljava/lang/Object;
 
-    sput-object v3, Lcom/google/android/gms/internal/measurement/zzff;->zza:[I
+    const/4 p1, 0x0
 
-    :try_start_3
-    sget-object v3, Lcom/google/android/gms/internal/measurement/zzff;->zza:[I
+    .line 4
+    iput p1, p0, Lcom/google/android/gms/internal/measurement/zzff;->zzb:I
 
-    sget-object v4, Lcom/google/android/gms/internal/measurement/zzfe;->zzd:Lcom/google/android/gms/internal/measurement/zzfe;
+    .line 5
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/measurement/zzff;->zzc:Z
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v4
-
-    aput v0, v3, v4
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzff;->zza:[I
-
-    sget-object v3, Lcom/google/android/gms/internal/measurement/zzfe;->zzb:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v3
-
-    aput v1, v0, v3
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzff;->zza:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzfe;->zza:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
     return-void
 .end method

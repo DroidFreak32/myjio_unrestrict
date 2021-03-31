@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
 .field public static final enum AUTO:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
@@ -36,79 +36,71 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
-    const/4 v1, 0x0
+    const-string v1, "AUTO"
 
-    const-string v2, "AUTO"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->AUTO:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
     const-string v3, "READ_ONLY"
 
-    invoke-direct {v0, v3, v2}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    invoke-direct {v1, v3, v4}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    new-instance v3, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
-    const/4 v3, 0x2
+    const-string v5, "WRITE_ONLY"
 
-    const-string v4, "WRITE_ONLY"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->WRITE_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    sput-object v3, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->WRITE_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    new-instance v5, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
-    const/4 v4, 0x3
+    const-string v7, "READ_WRITE"
 
-    const-string v5, "READ_WRITE"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_WRITE:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    sput-object v5, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_WRITE:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    new-array v7, v7, [Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->AUTO:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->WRITE_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_WRITE:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->$VALUES:[Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+    sput-object v7, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->$VALUES:[Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

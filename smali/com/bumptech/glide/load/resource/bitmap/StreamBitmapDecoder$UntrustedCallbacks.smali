@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final bufferedStream:Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;
+.field private final bufferedStream:Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;
 
-.field public final exceptionStream:Lcom/bumptech/glide/util/ExceptionCatchingInputStream;
+.field private final exceptionStream:Lcom/bumptech/glide/util/ExceptionCatchingInputStream;
 
 
 # direct methods
@@ -43,6 +43,11 @@
 # virtual methods
 .method public onDecodeComplete(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/StreamBitmapDecoder$UntrustedCallbacks;->exceptionStream:Lcom/bumptech/glide/util/ExceptionCatchingInputStream;

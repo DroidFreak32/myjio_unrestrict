@@ -1,64 +1,59 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbgx;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzepf;
 
 
-# static fields
-.field public static final ISO_8859_1:Ljava/nio/charset/Charset;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzepf<",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
 
-.field public static final UTF_8:Ljava/nio/charset/Charset;
 
-.field public static final zzeer:Ljava/lang/Object;
+# instance fields
+.field private final zzevc:Lcom/google/android/gms/internal/ads/zzbgl;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "UTF-8"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbgl;)V
+    .locals 0
 
     .line 1
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbgx;->UTF_8:Ljava/nio/charset/Charset;
-
-    const-string v0, "ISO-8859-1"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbgx;->ISO_8859_1:Ljava/nio/charset/Charset;
-
-    .line 3
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbgx;->zzeer:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbgx;->zzevc:Lcom/google/android/gms/internal/ads/zzbgl;
 
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/ads/zzbgt;Lcom/google/android/gms/internal/ads/zzbgt;)V
-    .locals 0
+
+# virtual methods
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zzbgt;->zzeej:Lcom/google/android/gms/internal/ads/zzbgv;
-
-    if-eqz p0, :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgx;->zzevc:Lcom/google/android/gms/internal/ads/zzbgl;
 
     .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbgv;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbgl;->zzaei()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
-    check-cast p0, Lcom/google/android/gms/internal/ads/zzbgv;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iput-object p0, p1, Lcom/google/android/gms/internal/ads/zzbgt;->zzeej:Lcom/google/android/gms/internal/ads/zzbgv;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzepl;->zza(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
 .end method

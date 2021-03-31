@@ -3,21 +3,21 @@
 
 
 # instance fields
-.field public final flags:I
+.field private final flags:I
 
-.field public final zzmj:[Ljava/lang/Object;
+.field private final zzmj:[Ljava/lang/Object;
 
-.field public final zzmk:I
+.field private final zzmk:I
 
-.field public final zzml:I
+.field private final zzml:I
 
-.field public final zzmm:I
+.field private final zzmm:I
 
-.field public final zzms:[I
+.field private final zzms:[I
 
-.field public final zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+.field private final zznh:Lcom/google/android/gms/internal/clearcut/zzee;
 
-.field public zzni:Ljava/lang/Class;
+.field private zzni:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -26,58 +26,58 @@
     .end annotation
 .end field
 
-.field public final zznj:I
+.field private final zznj:I
 
-.field public final zznk:I
+.field private final zznk:I
 
-.field public final zznl:I
+.field private final zznl:I
 
-.field public final zznm:I
+.field private final zznm:I
 
-.field public final zznn:I
+.field private final zznn:I
 
-.field public final zzno:I
+.field private final zzno:I
 
-.field public zznp:I
+.field private zznp:I
 
-.field public zznq:I
+.field private zznq:I
 
-.field public zznr:I
+.field private zznr:I
 
-.field public zzns:I
+.field private zzns:I
 
-.field public zznt:I
+.field private zznt:I
 
-.field public zznu:I
+.field private zznu:I
 
-.field public zznv:I
+.field private zznv:I
 
-.field public zznw:I
+.field private zznw:I
 
-.field public zznx:I
+.field private zznx:I
 
-.field public zzny:I
+.field private zzny:I
 
-.field public zznz:I
+.field private zznz:I
 
-.field public zzoa:I
+.field private zzoa:I
 
-.field public zzob:I
+.field private zzob:I
 
-.field public zzoc:I
+.field private zzoc:I
 
-.field public zzod:Ljava/lang/reflect/Field;
+.field private zzod:Ljava/lang/reflect/Field;
 
-.field public zzoe:Ljava/lang/Object;
+.field private zzoe:Ljava/lang/Object;
 
-.field public zzof:Ljava/lang/Object;
+.field private zzof:Ljava/lang/Object;
 
-.field public zzog:Ljava/lang/Object;
+.field private zzog:Ljava/lang/Object;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,27 +122,21 @@
 
     iput-object p3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzmj:[Ljava/lang/Object;
 
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
+
+    move-result p2
+
+    iput p2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->flags:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result p2
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->flags:I
+    iput p2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznj:I
 
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    const/4 p3, 0x0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznj:I
-
-    iget p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznj:I
-
-    const/4 p2, 0x0
-
-    if-nez p1, :cond_0
+    if-nez p2, :cond_0
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznk:I
 
@@ -160,76 +154,58 @@
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzno:I
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzms:[I
+    iput-object p3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzms:[I
 
     return-void
 
     :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
+
+    move-result p2
+
+    iput p2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznk:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v0
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznk:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznl:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznl:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzmk:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzmk:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzml:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzml:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznn:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznn:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzmm:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzmm:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznm:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznm:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzno:I
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzno:I
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzee;->next()I
 
@@ -240,18 +216,14 @@
     goto :goto_0
 
     :cond_1
-    new-array p2, p1, [I
+    new-array p3, p1, [I
 
     :goto_0
-    iput-object p2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzms:[I
+    iput-object p3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzms:[I
 
-    iget p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznk:I
+    shl-int/lit8 p1, p2, 0x1
 
-    shl-int/lit8 p1, p1, 0x1
-
-    iget p2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznl:I
-
-    add-int/2addr p1, p2
+    add-int/2addr p1, v0
 
     iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznp:I
 
@@ -266,7 +238,7 @@
     return p0
 .end method
 
-.method public static zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+.method private static zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -493,7 +465,7 @@
 
 # virtual methods
 .method public final next()Z
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznh:Lcom/google/android/gms/internal/clearcut/zzee;
 
@@ -524,45 +496,39 @@
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznz:I
 
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznz:I
-
     and-int/lit16 v0, v0, 0xff
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
+    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
 
-    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
+    iget v3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
 
-    if-ge v0, v2, :cond_1
+    if-ge v2, v3, :cond_1
 
-    iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
+    iput v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
 
     :cond_1
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
+    iget v3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzns:I
 
-    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzns:I
+    if-le v2, v3, :cond_2
 
-    if-le v0, v2, :cond_2
-
-    iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzns:I
+    iput v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzns:I
 
     :cond_2
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
-
     sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zziw:Lcom/google/android/gms/internal/clearcut/zzcb;
 
     invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v3, :cond_3
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznt:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v4
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznt:I
 
@@ -571,27 +537,27 @@
     :cond_3
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhq:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhq:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-lt v0, v2, :cond_4
+    if-lt v0, v3, :cond_4
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zziv:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zziv:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-gt v0, v2, :cond_4
+    if-gt v0, v3, :cond_4
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznu:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v4
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznu:I
 
@@ -599,17 +565,15 @@
     :goto_0
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznx:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v4
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznx:I
 
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
+    iget v3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
 
-    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
+    iget v5, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
 
-    iget v4, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznx:I
-
-    invoke-static {v0, v2, v4}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzc(III)Z
+    invoke-static {v3, v5, v0}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzc(III)Z
 
     move-result v0
 
@@ -617,22 +581,20 @@
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v4
 
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznw:I
 
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznw:I
+    iget v3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
 
-    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznr:I
-
-    sub-int/2addr v0, v2
+    sub-int/2addr v0, v3
 
     goto :goto_1
 
     :cond_5
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznv:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v4
 
     :goto_1
     iput v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznv:I
@@ -655,15 +617,15 @@
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzms:[I
 
-    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznq:I
+    iget v3, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznq:I
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v5, v3, 0x1
 
-    iput v4, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznq:I
+    iput v5, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zznq:I
 
-    iget v4, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
+    iget v5, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzny:I
 
-    aput v4, v0, v2
+    aput v5, v0, v3
 
     :cond_7
     const/4 v0, 0x0
@@ -758,11 +720,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzed;->zzcw()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/lang/String;
+    check-cast v3, Ljava/lang/String;
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/internal/clearcut/zzed;->zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/clearcut/zzed;->zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v0
 
@@ -785,86 +747,84 @@
     :cond_b
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhh:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhh:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v0, v2, :cond_11
+    if-eq v0, v3, :cond_11
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhp:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhp:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-ne v0, v2, :cond_c
+    if-ne v0, v3, :cond_c
 
     goto :goto_8
 
     :cond_c
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhz:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhz:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v0, v2, :cond_9
+    if-eq v0, v3, :cond_9
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zziv:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zziv:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-ne v0, v2, :cond_d
+    if-ne v0, v3, :cond_d
 
     goto :goto_4
 
     :cond_d
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhk:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zzhk:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v0, v2, :cond_10
-
-    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
-
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zzic:Lcom/google/android/gms/internal/clearcut/zzcb;
-
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
-
-    move-result v2
-
-    if-eq v0, v2, :cond_10
+    if-eq v0, v3, :cond_10
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zziq:Lcom/google/android/gms/internal/clearcut/zzcb;
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zzic:Lcom/google/android/gms/internal/clearcut/zzcb;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
-    move-result v2
+    move-result v3
 
-    if-ne v0, v2, :cond_e
+    if-eq v0, v3, :cond_10
+
+    iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
+
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcb;->zziq:Lcom/google/android/gms/internal/clearcut/zzcb;
+
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
+
+    move-result v3
+
+    if-ne v0, v3, :cond_e
 
     goto :goto_6
 
     :cond_e
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzed;->zzoa:I
-
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcb;->zziw:Lcom/google/android/gms/internal/clearcut/zzcb;
 
     invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzcb;->id()I
 
@@ -914,7 +874,7 @@
 
     :cond_12
     :goto_9
-    return v3
+    return v4
 .end method
 
 .method public final zzcx()I

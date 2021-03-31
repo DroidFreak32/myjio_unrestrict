@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/security/ProviderInstaller$ProviderInstallListener;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -15,6 +16,14 @@
 
 # virtual methods
 .method public abstract onProviderInstallFailed(ILandroid/content/Intent;)V
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract onProviderInstalled()V

@@ -22,10 +22,10 @@
 
 
 # static fields
-.field public static final POOL:Lz8;
+.field private static final POOL:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/LockedResource<",
             "*>;>;"
         }
@@ -34,13 +34,13 @@
 
 
 # instance fields
-.field public isLocked:Z
+.field private isLocked:Z
 
-.field public isRecycled:Z
+.field private isRecycled:Z
 
-.field public final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
+.field private final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
 
-.field public toWrap:Lcom/bumptech/glide/load/engine/Resource;
+.field private toWrap:Lcom/bumptech/glide/load/engine/Resource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/Resource<",
@@ -61,11 +61,11 @@
 
     const/16 v1, 0x14
 
-    invoke-static {v1, v0}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafe(ILcom/bumptech/glide/util/pool/FactoryPools$Factory;)Lz8;
+    invoke-static {v1, v0}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafe(ILcom/bumptech/glide/util/pool/FactoryPools$Factory;)Landroidx/core/util/Pools$Pool;
 
     move-result-object v0
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/LockedResource;->POOL:Lz8;
+    sput-object v0, Lcom/bumptech/glide/load/engine/LockedResource;->POOL:Landroidx/core/util/Pools$Pool;
 
     return-void
 .end method
@@ -114,6 +114,9 @@
 
 .method public static obtain(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/LockedResource;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Z:",
@@ -127,9 +130,9 @@
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/bumptech/glide/load/engine/LockedResource;->POOL:Lz8;
+    sget-object v0, Lcom/bumptech/glide/load/engine/LockedResource;->POOL:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0}, Lz8;->acquire()Ljava/lang/Object;
+    invoke-interface {v0}, Landroidx/core/util/Pools$Pool;->acquire()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -156,9 +159,9 @@
     iput-object v0, p0, Lcom/bumptech/glide/load/engine/LockedResource;->toWrap:Lcom/bumptech/glide/load/engine/Resource;
 
     .line 2
-    sget-object v0, Lcom/bumptech/glide/load/engine/LockedResource;->POOL:Lz8;
+    sget-object v0, Lcom/bumptech/glide/load/engine/LockedResource;->POOL:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0, p0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -167,6 +170,9 @@
 # virtual methods
 .method public get()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TZ;"
@@ -185,6 +191,9 @@
 
 .method public getResourceClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -218,6 +227,8 @@
 
 .method public getVerifier()Lcom/bumptech/glide/util/pool/StateVerifier;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/LockedResource;->stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;

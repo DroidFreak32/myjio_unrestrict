@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "Analytics[RoomPM]"
+.field private static final MODULE:Ljava/lang/String; = "Analytics[RoomPM]"
 
-.field public static datausageover:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static datausageover:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public static map:Ljava/util/Map;
+.field private static map:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field public static offloadFailRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static offloadFailRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public static offloadSpeedRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static offloadSpeedRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -46,7 +46,7 @@
     .end annotation
 .end field
 
-.field public static pojoDeviceInfo:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static pojoDeviceInfo:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -56,7 +56,7 @@
     .end annotation
 .end field
 
-.field public static policyDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static policyDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -66,7 +66,7 @@
     .end annotation
 .end field
 
-.field public static policyEvolutionRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static policyEvolutionRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -76,7 +76,7 @@
     .end annotation
 .end field
 
-.field public static ramUsageDataRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static ramUsageDataRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -86,7 +86,7 @@
     .end annotation
 .end field
 
-.field public static tempUptimeDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static tempUptimeDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -96,7 +96,7 @@
     .end annotation
 .end field
 
-.field public static uptimeDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
+.field private static uptimeDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/elitecorelib/core/room/AnalyticRoomManager<",
@@ -444,7 +444,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;)",
@@ -566,7 +566,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->offloadFailRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -661,7 +661,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->datausageover:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -739,7 +739,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->pojoDeviceInfo:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
 
     goto :goto_0
 
@@ -833,7 +833,7 @@
     :cond_0
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->offloadSpeedRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -930,7 +930,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->policyDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1039,7 +1039,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->policyEvolutionRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
 
     goto :goto_0
 
@@ -1156,7 +1156,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->ramUsageDataRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1225,7 +1225,7 @@
     :cond_0
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->tempUptimeDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1336,7 +1336,7 @@
 
     sget-object p1, Lcom/elitecorelib/core/room/AnalyticsRoomPojoManager;->uptimeDetailsRM:Lcom/elitecorelib/core/room/AnalyticRoomManager;
 
-    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Lgh;)V
+    invoke-virtual {p1, p0}, Lcom/elitecorelib/core/room/AnalyticRoomManager;->insertData(Landroidx/room/Room;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

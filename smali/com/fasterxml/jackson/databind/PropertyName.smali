@@ -11,11 +11,11 @@
 
 .field public static final USE_DEFAULT:Lcom/fasterxml/jackson/databind/PropertyName;
 
-.field public static final _NO_NAME:Ljava/lang/String; = ""
+.field private static final _NO_NAME:Ljava/lang/String; = ""
 
-.field public static final _USE_DEFAULT:Ljava/lang/String; = ""
+.field private static final _USE_DEFAULT:Ljava/lang/String; = ""
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -33,11 +33,11 @@
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/databind/PropertyName;
 
-    const/4 v1, 0x0
+    const-string v1, ""
 
-    const-string v2, ""
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/fasterxml/jackson/databind/PropertyName;->USE_DEFAULT:Lcom/fasterxml/jackson/databind/PropertyName;
 
@@ -46,9 +46,9 @@
 
     new-instance v3, Ljava/lang/String;
 
-    invoke-direct {v3, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v3, v1}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v3, v2}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/fasterxml/jackson/databind/PropertyName;->NO_NAME:Lcom/fasterxml/jackson/databind/PropertyName;
 
@@ -184,7 +184,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/databind/PropertyName;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-eq v2, v3, :cond_2
 
@@ -519,7 +521,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "{"
+    const-string/jumbo v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -527,7 +529,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

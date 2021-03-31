@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/WebViewActivity;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/WebViewActivity;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/WebViewActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/WebViewActivity$a;->s:Lcom/jio/jioml/hellojio/activities/WebViewActivity;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/WebViewActivity$a;->a:Lcom/jio/jioml/hellojio/activities/WebViewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,9 +38,9 @@
     .locals 0
 
     .line 1
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/WebViewActivity$a;->s:Lcom/jio/jioml/hellojio/activities/WebViewActivity;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/WebViewActivity$a;->a:Lcom/jio/jioml/hellojio/activities/WebViewActivity;
 
-    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/WebViewActivity;->onBackPressed()V
+    invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->onBackPressed()V
 
     return-void
 .end method

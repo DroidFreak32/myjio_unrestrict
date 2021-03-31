@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzi:Lcom/google/android/gms/maps/GoogleMap$OnIndoorStateChangeListener;
+.field private final synthetic zzi:Lcom/google/android/gms/maps/GoogleMap$OnIndoorStateChangeListener;
 
 
 # direct methods

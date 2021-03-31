@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public final converter:Lcom/bumptech/glide/load/model/ByteArrayLoader$Converter;
+.field private final converter:Lcom/bumptech/glide/load/model/ByteArrayLoader$Converter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ByteArrayLoader$Converter<",
@@ -38,7 +38,7 @@
     .end annotation
 .end field
 
-.field public final model:[B
+.field private final model:[B
 
 
 # direct methods
@@ -80,6 +80,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -100,6 +103,8 @@
 
 .method public getDataSource()Lcom/bumptech/glide/load/DataSource;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/DataSource;->LOCAL:Lcom/bumptech/glide/load/DataSource;
@@ -109,6 +114,14 @@
 
 .method public loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

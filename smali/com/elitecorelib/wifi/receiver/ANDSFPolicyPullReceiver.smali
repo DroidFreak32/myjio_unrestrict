@@ -9,7 +9,7 @@
 
 .field public c:Ljava/lang/String;
 
-.field public d:Lp10;
+.field public d:Lcom/elitecorelib/andsf/a/f;
 
 .field public e:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
@@ -28,15 +28,15 @@
 
     iput-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->c:Ljava/lang/String;
 
-    new-instance v0, Lg40;
+    new-instance v0, Llb;
 
-    invoke-direct {v0, p0}, Lg40;-><init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+    invoke-direct {v0, p0}, Llb;-><init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->d:Lp10;
+    iput-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->d:Lcom/elitecorelib/andsf/a/f;
 
-    new-instance v0, Lh40;
+    new-instance v0, Lmb;
 
-    invoke-direct {v0, p0}, Lh40;-><init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+    invoke-direct {v0, p0}, Lmb;-><init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
 
     iput-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->e:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
@@ -51,41 +51,49 @@
     return-object p0
 .end method
 
-.method public static synthetic a(Ljava/lang/String;I)Ljava/lang/String;
+.method public static synthetic b(Ljava/lang/String;I)Ljava/lang/String;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->l(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;II)V
+.method public static synthetic g(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;II)V
     .locals 0
 
-    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a(II)V
+    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->d(II)V
 
     return-void
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+.method public static synthetic h(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->f(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
 
     return-void
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;Ljava/lang/String;)V
+.method public static synthetic i(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;Ljava/lang/String;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->j(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static b(Ljava/lang/String;I)Ljava/lang/String;
+.method public static synthetic k(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lcom/elitecorelib/andsf/a/f;
+    .locals 0
+
+    iget-object p0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->d:Lcom/elitecorelib/andsf/a/f;
+
+    return-object p0
+.end method
+
+.method public static l(Ljava/lang/String;I)Ljava/lang/String;
     .locals 1
 
     if-eqz p1, :cond_0
@@ -110,23 +118,15 @@
     return-object p0
 .end method
 
-.method public static synthetic b(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lp10;
+.method public static synthetic n(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;Ljava/lang/String;)V
     .locals 0
 
-    iget-object p0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->d:Lp10;
-
-    return-object p0
-.end method
-
-.method public static synthetic b(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->o(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic c(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+.method public static synthetic p(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
     .locals 0
 
     iget-object p0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
@@ -134,15 +134,15 @@
     return-object p0
 .end method
 
-.method public static synthetic d(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+.method public static synthetic r(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->c()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->q()V
 
     return-void
 .end method
 
-.method public static synthetic e(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Landroid/content/Context;
+.method public static synthetic s(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Landroid/content/Context;
     .locals 0
 
     iget-object p0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a:Landroid/content/Context;
@@ -150,25 +150,160 @@
     return-object p0
 .end method
 
-.method public static synthetic f(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+.method public static synthetic t(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->c()V
 
     return-void
 .end method
 
-.method public static synthetic g(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+.method public static synthetic u(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->m()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public a(Z)V
+    .locals 5
+
+    const-string v0, "##"
+
+    const-string v1, "ANDSFPolicyPullReceiver"
+
+    :try_start_0
+    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    move-result-object v2
+
+    const-string v3, "plamList"
+
+    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    if-eqz p1, :cond_0
+
+    const-string p1, "Before Deleting records of PLMN: "
+
+    :goto_0
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_0
+    const-string p1, "After Deleting records of PLMN: "
+
+    goto :goto_0
+
+    :goto_1
+    if-eqz v2, :cond_1
+
+    const-string p1, ""
+
+    invoke-virtual {v2, v0, p1}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    :goto_2
+    array-length v2, p1
+
+    if-ge v0, v2, :cond_2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "\nPLMN["
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, "]: "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    aget-object v4, p1, v0
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_1
+    const-string p1, "No Records Found"
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception p1
+
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Error :"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_3
+    return-void
+.end method
+
+.method public final c()V
     .locals 7
 
     const-string v0, "lastPullPLMN"
@@ -194,7 +329,7 @@
 
     const-string v4, "405"
 
-    invoke-static {v3, v4}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -202,13 +337,13 @@
 
     const-string v5, "874#840#854#855#856#857#858#859#860#861#862#863#864#865#866#867#868#869#870#871#872#873"
 
-    invoke-static {v4, v5}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     const-string v5, "#"
 
-    invoke-static {v3, v4, v5}, Lo00;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v3, v4, v5}, Lcom/elitecore/wifi/api/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
@@ -262,7 +397,7 @@
     iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->e:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
     :goto_0
-    invoke-static {v0, v3, v5}, Lc20;->a(Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3, v5}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_2
 
@@ -332,7 +467,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v3, v1}, Lc20;->a(Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3, v1}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -396,7 +531,7 @@
     return-void
 .end method
 
-.method public final a(II)V
+.method public final d(II)V
     .locals 6
 
     const-string v0, "Policy pull request failed - "
@@ -435,7 +570,7 @@
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->REASON_POLICY_NOT_AVAILABLE_SERVER:Ljava/lang/String;
 
-    invoke-static {v1, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->l(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -455,7 +590,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -486,20 +621,20 @@
 
     const-string v0, "Request timeout"
 
-    invoke-static {v0, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->l(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;->setReason(Ljava/lang/String;)V
 
-    invoke-static {v2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     invoke-virtual {p1, v5, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->c()V
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->q()V
 
     goto :goto_1
 
@@ -512,13 +647,13 @@
 
     const-string v0, "IOException Occurred"
 
-    invoke-static {v0, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->l(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;->setReason(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -529,13 +664,13 @@
     :cond_2
     const-string p1, "Policy pull request failed - server is unreachable."
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
     sget-object v0, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->REASON_POLICYPULLNETWORKFAILED:Ljava/lang/String;
 
-    invoke-static {v0, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->l(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -627,7 +762,7 @@
     invoke-virtual {p2, p1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     :cond_3
-    invoke-virtual {p0, v4}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+    invoke-virtual {p0, v4}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->f(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -636,7 +771,7 @@
     return-void
 .end method
 
-.method public final a(Landroid/content/Context;)V
+.method public final e(Landroid/content/Context;)V
     .locals 8
 
     const-string p1, "PREF_ANDSF_MNC"
@@ -656,7 +791,7 @@
 
     move-result-object v3
 
-    invoke-static {}, Lc20;->o()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->O()Z
 
     move-result v4
 
@@ -673,14 +808,14 @@
 
     iget-object v4, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a:Landroid/content/Context;
 
-    invoke-static {v4}, Lc20;->c(Landroid/content/Context;)V
+    invoke-static {v4}, Lcom/elitecorelib/andsf/utility/a;->c(Landroid/content/Context;)V
 
-    sput-object v1, Lc20;->i:Ljava/lang/String;
+    sput-object v1, Lcom/elitecorelib/andsf/utility/a;->j:Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     :try_start_1
-    invoke-static {}, Lk30;->b()Landroid/telephony/TelephonyManager;
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->b()Landroid/telephony/TelephonyManager;
 
     move-result-object v4
 
@@ -696,7 +831,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lc20;->q(Ljava/lang/String;)V
+    invoke-static {v4}, Lcom/elitecorelib/andsf/utility/a;->q(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -735,17 +870,17 @@
 
     const/4 v5, 0x0
 
-    invoke-static {v4, v5, v1}, Lk30;->a(ZZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5, v1}, Lcom/elitecorelib/core/utility/f;->a(ZZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lc20;->r(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->r(Ljava/lang/String;)V
 
     const-string v1, "Policy pull started."
 
-    invoke-static {v1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
-    invoke-static {}, Lk30;->e()Ljava/util/ArrayList;
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->e()Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -795,8 +930,6 @@
 
     iput-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->b:Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
-
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
@@ -843,9 +976,9 @@
 
     new-instance p1, Lcom/elitecorelib/core/services/InterNetAvailabilityCheckTask;
 
-    new-instance v0, Li40;
+    new-instance v0, Lnb;
 
-    invoke-direct {v0, p0}, Li40;-><init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+    invoke-direct {v0, p0}, Lnb;-><init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
 
     const-string v1, "https://connectivitycheck.android.com/generate_204"
 
@@ -902,7 +1035,7 @@
     return-void
 .end method
 
-.method public final a(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
+.method public final f(Lcom/elitecorelib/core/utility/SharedPreferencesTask;)V
     .locals 3
 
     const-string v0, "isFirstPolicyPull"
@@ -929,7 +1062,7 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;)V
+.method public final j(Ljava/lang/String;)V
     .locals 10
 
     const-string v0, "##"
@@ -1077,142 +1210,7 @@
     return-void
 .end method
 
-.method public a(Z)V
-    .locals 5
-
-    const-string v0, "##"
-
-    const-string v1, "ANDSFPolicyPullReceiver"
-
-    :try_start_0
-    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
-
-    move-result-object v2
-
-    const-string v3, "plamList"
-
-    invoke-virtual {v2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    if-eqz p1, :cond_0
-
-    const-string p1, "Before Deleting records of PLMN: "
-
-    :goto_0
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_1
-
-    :cond_0
-    const-string p1, "After Deleting records of PLMN: "
-
-    goto :goto_0
-
-    :goto_1
-    if-eqz v2, :cond_1
-
-    const-string p1, ""
-
-    invoke-virtual {v2, v0, p1}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    :goto_2
-    array-length v2, p1
-
-    if-ge v0, v2, :cond_2
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "\nPLMN["
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v4, "]: "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget-object v4, p1, v0
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    :cond_1
-    const-string p1, "No Records Found"
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_3
-
-    :catch_0
-    move-exception p1
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Error :"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v1, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_3
-    return-void
-.end method
-
-.method public final b()V
+.method public final m()V
     .locals 7
 
     const-string v0, "##"
@@ -1236,7 +1234,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1311,7 +1309,7 @@
 
     aget-object v4, v0, v2
 
-    invoke-virtual {p0, v4}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v4}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->j(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1349,7 +1347,7 @@
     return-void
 .end method
 
-.method public final b(Ljava/lang/String;)V
+.method public final o(Ljava/lang/String;)V
     .locals 5
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -1387,172 +1385,10 @@
     return-void
 .end method
 
-.method public final c()V
-    .locals 8
-
-    const-string v0, "policy_failed_count"
-
-    const-string v1, "ANDSFPolicyPullReceiver"
-
-    :try_start_0
-    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v4, "Increment and re-schedule policy pull count"
-
-    invoke-virtual {v3, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v3, "policyPullRetryCountLimit"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, ""
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v5, Lc20;->l:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    invoke-static {}, Lc20;->a()Ljava/util/ArrayList;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    add-int/2addr v4, v5
-
-    invoke-virtual {v2, v0, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
-
-    if-nez v3, :cond_0
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    invoke-virtual {v2, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    if-ne v0, v5, :cond_1
-
-    const-string v4, "pullRetryEndTime"
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Lc20;->b(J)J
-
-    move-result-wide v6
-
-    invoke-virtual {v2, v4, v6, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveLong(Ljava/lang/String;J)V
-
-    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Pull retry reset on : "
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Lc20;->b(J)J
-
-    move-result-wide v6
-
-    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-le v0, v2, :cond_2
-
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Lc20;->c(Landroid/content/Context;)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a:Landroid/content/Context;
-
-    invoke-static {v0, v5}, Lc20;->a(Landroid/content/Context;Z)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Error :"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_0
-    return-void
-.end method
-
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
 
-    const-string v0, "spLastPullTime"
+    const-string/jumbo v0, "spLastPullTime"
 
     const-string v1, "ANDSFPolicyPullReceiver"
 
@@ -1605,7 +1441,7 @@
 
     move-result-wide v5
 
-    invoke-static {v5, v6}, Lc20;->a(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Lcom/elitecorelib/andsf/utility/a;->a(J)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1686,7 +1522,7 @@
     invoke-virtual {v2, v0, p2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->e(Landroid/content/Context;)V
 
     goto/16 :goto_2
 
@@ -1712,7 +1548,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {}, Lc20;->Y()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->k()Z
 
     move-result p2
 
@@ -1739,7 +1575,7 @@
 
     if-gtz p2, :cond_5
 
-    invoke-static {p1}, Lc20;->c(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->c(Landroid/content/Context;)V
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -1817,5 +1653,167 @@
 
     :cond_5
     :goto_2
+    return-void
+.end method
+
+.method public final q()V
+    .locals 8
+
+    const-string v0, "policy_failed_count"
+
+    const-string v1, "ANDSFPolicyPullReceiver"
+
+    :try_start_0
+    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v4, "Increment and re-schedule policy pull count"
+
+    invoke-virtual {v3, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v3, "policyPullRetryCountLimit"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, ""
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v5, Lcom/elitecorelib/andsf/utility/a;->n:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->A()Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    const/4 v5, 0x1
+
+    add-int/2addr v4, v5
+
+    invoke-virtual {v2, v0, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
+
+    if-nez v3, :cond_0
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_0
+    invoke-virtual {v2, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-ne v0, v5, :cond_1
+
+    const-string v4, "pullRetryEndTime"
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Lcom/elitecorelib/andsf/utility/a;->b(J)J
+
+    move-result-wide v6
+
+    invoke-virtual {v2, v4, v6, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveLong(Ljava/lang/String;J)V
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Pull retry reset on : "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Lcom/elitecorelib/andsf/utility/a;->b(J)J
+
+    move-result-wide v6
+
+    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-le v0, v2, :cond_2
+
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->c(Landroid/content/Context;)V
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->a:Landroid/content/Context;
+
+    invoke-static {v0, v5}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Z)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Error :"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
     return-void
 .end method

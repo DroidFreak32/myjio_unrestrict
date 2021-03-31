@@ -34,8 +34,6 @@
     sput-object v0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$10;->$SwitchMap$com$fasterxml$jackson$annotation$JsonProperty$Access:[I
 
     :try_start_0
-    sget-object v0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$10;->$SwitchMap$com$fasterxml$jackson$annotation$JsonProperty$Access:[I
-
     sget-object v1, Lcom/fasterxml/jackson/annotation/JsonProperty$Access;->READ_ONLY:Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

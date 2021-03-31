@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzbp:Lcom/google/android/gms/maps/StreetViewPanorama$OnStreetViewPanoramaChangeListener;
+.field private final synthetic zzbp:Lcom/google/android/gms/maps/StreetViewPanorama$OnStreetViewPanoramaChangeListener;
 
 
 # direct methods

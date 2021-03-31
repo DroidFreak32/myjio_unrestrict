@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzaa:Lcom/google/android/gms/maps/GoogleMap$OnPoiClickListener;
+.field private final synthetic zzaa:Lcom/google/android/gms/maps/GoogleMap$OnPoiClickListener;
 
 
 # direct methods
@@ -22,6 +22,11 @@
 # virtual methods
 .method public final zza(Lcom/google/android/gms/maps/model/PointOfInterest;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/zzs;->zzaa:Lcom/google/android/gms/maps/GoogleMap$OnPoiClickListener;

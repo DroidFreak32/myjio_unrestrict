@@ -37,6 +37,15 @@
 # virtual methods
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
     .locals 4
+    .param p1    # Lokhttp3/Interceptor$Chain;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-string v0, "http.agent"
 
@@ -53,7 +62,7 @@
 
     move-result-object v0
 
-    const-string v1, "user-agent"
+    const-string/jumbo v1, "user-agent"
 
     .line 4
     invoke-virtual {v0, v1}, Lokhttp3/Request$Builder;->removeHeader(Ljava/lang/String;)Lokhttp3/Request$Builder;
@@ -71,7 +80,7 @@
 
     sget-object v2, Lcom/app/cinemasdk/networkcall/RequestUtils;->apiKey:Ljava/lang/String;
 
-    const-string v3, "x-api-key"
+    const-string/jumbo v3, "x-api-key"
 
     .line 6
     invoke-virtual {v0, v3, v2}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;

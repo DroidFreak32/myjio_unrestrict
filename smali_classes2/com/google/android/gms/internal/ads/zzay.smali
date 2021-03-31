@@ -1,47 +1,34 @@
 .class public final Lcom/google/android/gms/internal/ads/zzay;
-.super Lcom/google/android/gms/internal/ads/zzbgt;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzaz;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzbgt<",
-        "Lcom/google/android/gms/internal/ads/zzay;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zzcl:Ljava/io/File;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzav;Ljava/io/File;)V
+    .locals 0
+
+    .line 1
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzay;->zzcl:Ljava/io/File;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzbgq;)Lcom/google/android/gms/internal/ads/zzbgz;
-    .locals 0
-
-    .line 2
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
-.end method
-
-.method public final zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
-.end method
-
-.method public final zzs()I
+.method public final zzo()Ljava/io/File;
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzay;->zzcl:Ljava/io/File;
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
+    return-object v0
 .end method

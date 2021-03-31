@@ -16,25 +16,25 @@
 
 
 # instance fields
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
 
-.field public zzno:Ljava/lang/String;
+.field private zzno:Ljava/lang/String;
 
-.field public zztz:Ljava/lang/String;
+.field private zztz:Ljava/lang/String;
 
-.field public zzua:Ljava/lang/String;
+.field private zzua:Ljava/lang/String;
 
-.field public zzub:Ljava/lang/String;
+.field private zzub:Ljava/lang/String;
 
-.field public zzuc:Ljava/lang/String;
+.field private zzuc:Ljava/lang/String;
 
-.field public zzud:Ljava/lang/String;
+.field private zzud:Ljava/lang/String;
 
-.field public zzue:Ljava/lang/String;
+.field private zzue:Ljava/lang/String;
 
-.field public zzuf:Ljava/lang/String;
+.field private zzuf:Ljava/lang/String;
 
-.field public zzug:Ljava/lang/String;
+.field private zzug:Ljava/lang/String;
 
 
 # direct methods

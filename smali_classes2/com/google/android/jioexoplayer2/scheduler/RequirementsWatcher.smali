@@ -14,21 +14,21 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "RequirementsWatcher"
+.field private static final TAG:Ljava/lang/String; = "RequirementsWatcher"
 
 
 # instance fields
-.field public final context:Landroid/content/Context;
+.field private final context:Landroid/content/Context;
 
-.field public final listener:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$Listener;
+.field private final listener:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$Listener;
 
-.field public networkCallback:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$CapabilityValidatedCallback;
+.field private networkCallback:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$CapabilityValidatedCallback;
 
-.field public receiver:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
+.field private receiver:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
 
-.field public final requirements:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
+.field private final requirements:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
 
-.field public requirementsWereMet:Z
+.field private requirementsWereMet:Z
 
 
 # direct methods
@@ -158,7 +158,7 @@
     return-void
 .end method
 
-.method public static logd(Ljava/lang/String;)V
+.method private static logd(Ljava/lang/String;)V
     .locals 0
 
     return-void
@@ -209,8 +209,6 @@
     iput-object v2, p0, Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;->networkCallback:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$CapabilityValidatedCallback;
 
     .line 7
-    iget-object v2, p0, Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;->networkCallback:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$CapabilityValidatedCallback;
-
     invoke-virtual {v0, v1, v2}, Landroid/net/ConnectivityManager;->registerNetworkCallback(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V
 
     return-void
@@ -382,15 +380,13 @@
     iput-object v1, p0, Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;->receiver:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
 
     .line 17
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
-
-    iget-object v3, p0, Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;->receiver:Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
+    iget-object v3, p0, Lcom/google/android/jioexoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
 
     new-instance v4, Landroid/os/Handler;
 
     invoke-direct {v4}, Landroid/os/Handler;-><init>()V
 
-    invoke-virtual {v1, v3, v0, v2, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-virtual {v3, v1, v0, v2, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     .line 18
     new-instance v0, Ljava/lang/StringBuilder;

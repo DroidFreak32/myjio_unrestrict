@@ -1,65 +1,75 @@
 .class public final Lcom/google/android/gms/internal/ads/zzajx;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# instance fields
+.field private zzbnn:I
+
+.field private zzdhu:Ljava/lang/String;
 
 
 # direct methods
-.method public static isEnabled()Z
-    .locals 2
+.method public constructor <init>(I)V
+    .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zznw;->zzbfq:Lcom/google/android/gms/internal/ads/zznl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x2
 
     .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzbnn:I
 
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v0
+    const-string v0, ""
 
     .line 3
-    check-cast v0, Ljava/lang/Boolean;
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzdhu:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 4
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzbnn:I
 
-    move-result v0
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x2
+
+    .line 6
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzbnn:I
+
+    const-string v0, ""
+
+    .line 7
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzdhu:Ljava/lang/String;
+
+    .line 8
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzdhu:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getMediaAspectRatio()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzbnn:I
 
     return v0
 .end method
 
-.method public static zzco(Ljava/lang/String;)V
-    .locals 2
+.method public final zztq()Ljava/lang/String;
+    .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zznw;->zzbfq:Lcom/google/android/gms/internal/ads/zznl;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzajx;->zzdhu:Ljava/lang/String;
 
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 3
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 4
-    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

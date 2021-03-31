@@ -10,15 +10,15 @@
 # static fields
 .field public static final zzaq:Lcom/google/android/gms/gcm/zzl;
 
-.field public static final zzar:Lcom/google/android/gms/gcm/zzl;
+.field private static final zzar:Lcom/google/android/gms/gcm/zzl;
 
 
 # instance fields
-.field public final zzas:I
+.field private final zzas:I
 
-.field public final zzat:I
+.field private final zzat:I
 
-.field public final zzau:I
+.field private final zzau:I
 
 
 # direct methods
@@ -28,29 +28,29 @@
     .line 1
     new-instance v0, Lcom/google/android/gms/gcm/zzl;
 
-    const/16 v1, 0xe10
+    const/4 v1, 0x0
 
     const/16 v2, 0x1e
 
-    const/4 v3, 0x0
+    const/16 v3, 0xe10
 
-    invoke-direct {v0, v3, v2, v1}, Lcom/google/android/gms/gcm/zzl;-><init>(III)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/gcm/zzl;-><init>(III)V
 
     sput-object v0, Lcom/google/android/gms/gcm/zzl;->zzaq:Lcom/google/android/gms/gcm/zzl;
 
     .line 2
     new-instance v0, Lcom/google/android/gms/gcm/zzl;
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v3, v2, v1}, Lcom/google/android/gms/gcm/zzl;-><init>(III)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/gcm/zzl;-><init>(III)V
 
     sput-object v0, Lcom/google/android/gms/gcm/zzl;->zzar:Lcom/google/android/gms/gcm/zzl;
 
     return-void
 .end method
 
-.method public constructor <init>(III)V
+.method private constructor <init>(III)V
     .locals 0
 
     .line 1

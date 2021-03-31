@@ -1,5 +1,5 @@
 .class public Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Ljava/io/Serializable;
@@ -7,9 +7,13 @@
 
 
 # annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "ANDSFPolicies"
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lgh;",
+        "Landroidx/room/Room;",
         "Ljava/io/Serializable;",
         "Ljava/lang/Comparable<",
         "Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;",
@@ -20,18 +24,47 @@
 
 # instance fields
 .field public PLMN:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "PLMN"
+    .end annotation
+.end field
 
 .field public enable:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "enable"
+    .end annotation
+.end field
 
 .field public ext:Lcom/elitecorelib/andsf/pojonew/ANDSFExt;
+    .annotation build Landroidx/room/Embedded;
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public policyId:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "policyId"
+    .end annotation
+.end field
 
 .field public policyName:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "policyName"
+    .end annotation
+.end field
 
 .field public prioritizedAccess:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -42,10 +75,24 @@
 .end field
 
 .field public roaming:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "roaming"
+    .end annotation
+.end field
 
 .field public rulePriority:I
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "rulePriority"
+    .end annotation
+.end field
 
 .field public timeOfDay:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -56,15 +103,22 @@
 .end field
 
 .field public validityArea:Lcom/elitecorelib/andsf/pojonew/ANDSFValidityArea;
+    .annotation build Landroidx/room/Embedded;
+    .end annotation
+.end field
 
 .field public version:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "version"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 2
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     const-string v0, ""
 

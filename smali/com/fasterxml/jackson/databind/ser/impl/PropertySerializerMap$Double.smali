@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final _serializer1:Lcom/fasterxml/jackson/databind/JsonSerializer;
+.field private final _serializer1:Lcom/fasterxml/jackson/databind/JsonSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/JsonSerializer<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public final _serializer2:Lcom/fasterxml/jackson/databind/JsonSerializer;
+.field private final _serializer2:Lcom/fasterxml/jackson/databind/JsonSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/JsonSerializer<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public final _type1:Ljava/lang/Class;
+.field private final _type1:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -44,7 +44,7 @@
     .end annotation
 .end field
 
-.field public final _type2:Ljava/lang/Class;
+.field private final _type2:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",

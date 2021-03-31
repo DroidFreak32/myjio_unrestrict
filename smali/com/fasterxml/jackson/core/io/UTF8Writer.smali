@@ -14,17 +14,17 @@
 
 
 # instance fields
-.field public final _context:Lcom/fasterxml/jackson/core/io/IOContext;
+.field private final _context:Lcom/fasterxml/jackson/core/io/IOContext;
 
-.field public _out:Ljava/io/OutputStream;
+.field private _out:Ljava/io/OutputStream;
 
-.field public _outBuffer:[B
+.field private _outBuffer:[B
 
-.field public final _outBufferEnd:I
+.field private final _outBufferEnd:I
 
-.field public _outPtr:I
+.field private _outPtr:I
 
-.field public _surrogate:I
+.field private _surrogate:I
 
 
 # direct methods
@@ -48,8 +48,6 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
     .line 5
-    iget-object p1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
-
     array-length p1, p1
 
     add-int/lit8 p1, p1, -0x4
@@ -66,6 +64,11 @@
 
 .method public static illegalSurrogate(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -198,6 +201,11 @@
 # virtual methods
 .method public append(C)Ljava/io/Writer;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
@@ -207,6 +215,11 @@
 
 .method public bridge synthetic append(C)Ljava/lang/Appendable;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->append(C)Ljava/io/Writer;
@@ -218,6 +231,11 @@
 
 .method public close()V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
@@ -282,6 +300,11 @@
 
 .method public convertSurrogate(I)I
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
@@ -358,6 +381,11 @@
 
 .method public flush()V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
@@ -391,6 +419,11 @@
 
 .method public write(I)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 30
     iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
@@ -616,6 +649,11 @@
 
 .method public write(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 50
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -631,6 +669,11 @@
 
 .method public write(Ljava/lang/String;II)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -949,6 +992,11 @@
 
 .method public write([C)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     array-length v0, p1
@@ -962,6 +1010,11 @@
 
 .method public write([CII)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 

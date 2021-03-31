@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x33ca2ae9af8edac6L
+.field private static final serialVersionUID:J = 0x33ca2ae9af8edac6L
 
 
 # instance fields
-.field public final closecode:I
+.field private final closecode:I
 
 
 # direct methods

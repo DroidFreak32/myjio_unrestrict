@@ -504,6 +504,11 @@
 
 .method public final zzh([BII)Ljava/lang/String;
     .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     or-int v0, p2, p3
 

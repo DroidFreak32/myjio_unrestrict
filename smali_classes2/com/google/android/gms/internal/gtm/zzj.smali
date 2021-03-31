@@ -13,13 +13,13 @@
 
 
 # static fields
-.field public static volatile zzqg:[Lcom/google/android/gms/internal/gtm/zzj;
+.field private static volatile zzqg:[Lcom/google/android/gms/internal/gtm/zzj;
 
 
 # instance fields
 .field public name:Ljava/lang/String;
 
-.field public zzqh:Lcom/google/android/gms/internal/gtm/zzl;
+.field private zzqh:Lcom/google/android/gms/internal/gtm/zzl;
 
 .field public zzqi:Lcom/google/android/gms/internal/gtm/zzh;
 
@@ -361,6 +361,11 @@
 
 .method public final synthetic zza(Lcom/google/android/gms/internal/gtm/zzun;)Lcom/google/android/gms/internal/gtm/zzuw;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 8
     :cond_0
@@ -450,6 +455,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/gtm/zzuo;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzj;->name:Ljava/lang/String;

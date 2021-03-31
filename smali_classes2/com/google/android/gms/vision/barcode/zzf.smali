@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/barcode/zzf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -10,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;",
+        "Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;",
         ">;"
     }
 .end annotation
@@ -79,58 +80,51 @@
 
     .line 6
     :pswitch_0
-    sget-object v2, Lcom/google/android/gms/vision/barcode/Barcode$Address;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v2, Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 7
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v1
 
     move-object v9, v1
 
-    check-cast v9, [Lcom/google/android/gms/vision/barcode/Barcode$Address;
+    check-cast v9, Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;
 
     goto :goto_0
 
     .line 8
     :pswitch_1
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createStringArray(Landroid/os/Parcel;I)[Ljava/lang/String;
-
-    move-result-object v8
-
-    goto :goto_0
+    sget-object v2, Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 9
-    :pswitch_2
-    sget-object v2, Lcom/google/android/gms/vision/barcode/Barcode$Email;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 10
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v1
 
-    move-object v7, v1
+    move-object v8, v1
 
-    check-cast v7, [Lcom/google/android/gms/vision/barcode/Barcode$Email;
+    check-cast v8, Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;
+
+    goto :goto_0
+
+    .line 10
+    :pswitch_2
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v7
 
     goto :goto_0
 
     .line 11
     :pswitch_3
-    sget-object v2, Lcom/google/android/gms/vision/barcode/Barcode$Phone;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    .line 12
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, [Lcom/google/android/gms/vision/barcode/Barcode$Phone;
+    move-result-object v6
 
     goto :goto_0
 
-    .line 13
+    .line 12
     :pswitch_4
     invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
@@ -138,7 +132,7 @@
 
     goto :goto_0
 
-    .line 14
+    .line 13
     :pswitch_5
     invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
@@ -146,31 +140,24 @@
 
     goto :goto_0
 
-    .line 15
+    .line 14
     :pswitch_6
-    sget-object v2, Lcom/google/android/gms/vision/barcode/Barcode$PersonName;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    .line 16
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Lcom/google/android/gms/vision/barcode/Barcode$PersonName;
+    move-result-object v3
 
     goto :goto_0
 
-    .line 17
+    .line 15
     :cond_0
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
-    .line 18
-    new-instance p1, Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;
+    .line 16
+    new-instance p1, Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;
 
     move-object v2, p1
 
-    invoke-direct/range {v2 .. v9}, Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;-><init>(Lcom/google/android/gms/vision/barcode/Barcode$PersonName;Ljava/lang/String;Ljava/lang/String;[Lcom/google/android/gms/vision/barcode/Barcode$Phone;[Lcom/google/android/gms/vision/barcode/Barcode$Email;[Ljava/lang/String;[Lcom/google/android/gms/vision/barcode/Barcode$Address;)V
+    invoke-direct/range {v2 .. v9}, Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;Lcom/google/android/gms/vision/barcode/Barcode$CalendarDateTime;)V
 
     return-object p1
 
@@ -190,7 +177,7 @@
     .locals 0
 
     .line 1
-    new-array p1, p1, [Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;
+    new-array p1, p1, [Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;
 
     return-object p1
 .end method

@@ -12,7 +12,7 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "ChargingStateResult"
+.field private static final TAG:Ljava/lang/String; = "ChargingStateResult"
 
 
 # instance fields
@@ -26,7 +26,7 @@
 
 .field public isCharging:Z
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
 .field public powerConnectionReceiver:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;
 
@@ -170,11 +170,9 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->mContext:Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->powerConnectionReceiver:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final cb:Lcom/bumptech/glide/request/ResourceCallback;
+.field private final cb:Lcom/bumptech/glide/request/ResourceCallback;
 
 .field public final synthetic this$0:Lcom/bumptech/glide/load/engine/EngineJob;
 

@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final info:Ljava/lang/String;
+.field private final info:Ljava/lang/String;
 
-.field public position:I
+.field private position:I
 
 
 # direct methods

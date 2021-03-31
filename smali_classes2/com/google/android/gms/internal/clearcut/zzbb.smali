@@ -21,11 +21,11 @@
 # static fields
 .field public static final zzfi:Lcom/google/android/gms/internal/clearcut/zzbb;
 
-.field public static final zzfj:Lcom/google/android/gms/internal/clearcut/zzbf;
+.field private static final zzfj:Lcom/google/android/gms/internal/clearcut/zzbf;
 
 
 # instance fields
-.field public zzfk:I
+.field private zzfk:I
 
 
 # direct methods
@@ -324,6 +324,11 @@
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/clearcut/zzba;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzaa()Z

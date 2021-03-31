@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzu:Lcom/google/android/gms/maps/internal/zzah;
+.field private final synthetic zzu:Lcom/google/android/gms/maps/internal/zzah;
 
 
 # direct methods

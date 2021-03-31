@@ -52,6 +52,10 @@
 # virtual methods
 .method public compareTo(Lcom/google/android/jioexoplayer2/offline/SegmentDownloader$Segment;)I
     .locals 4
+    .param p1    # Lcom/google/android/jioexoplayer2/offline/SegmentDownloader$Segment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     iget-wide v0, p0, Lcom/google/android/jioexoplayer2/offline/SegmentDownloader$Segment;->startTimeUs:J
@@ -67,6 +71,10 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/google/android/jioexoplayer2/offline/SegmentDownloader$Segment;

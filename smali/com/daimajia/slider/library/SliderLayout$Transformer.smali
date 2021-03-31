@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/daimajia/slider/library/SliderLayout$Transformer;
+.field private static final synthetic $VALUES:[Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
 .field public static final enum Accordion:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
@@ -59,298 +59,280 @@
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 11
+    .locals 19
 
     .line 1
     new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const/4 v1, 0x0
+    const-string v1, "Default"
 
-    const-string v2, "Default"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v2}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v2, v1}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Default:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 2
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     const-string v3, "Accordion"
 
-    invoke-direct {v0, v3, v2, v3}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Accordion:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    invoke-direct {v1, v3, v4, v3}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Accordion:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 3
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v3, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const/4 v3, 0x2
+    const-string v5, "Background2Foreground"
 
-    const-string v4, "Background2Foreground"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3, v4}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v3, v5, v6, v5}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Background2Foreground:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v3, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Background2Foreground:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 4
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v5, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const/4 v4, 0x3
+    const-string v7, "CubeIn"
 
-    const-string v5, "CubeIn"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4, v5}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v5, v7, v8, v7}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->CubeIn:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v5, Lcom/daimajia/slider/library/SliderLayout$Transformer;->CubeIn:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 5
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v7, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const/4 v5, 0x4
+    const-string v9, "DepthPage"
 
-    const-string v6, "DepthPage"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5, v6}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v7, v9, v10, v9}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->DepthPage:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v7, Lcom/daimajia/slider/library/SliderLayout$Transformer;->DepthPage:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 6
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v9, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const/4 v6, 0x5
+    const-string v11, "Fade"
 
-    const-string v7, "Fade"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6, v7}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v9, v11, v12, v11}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Fade:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v9, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Fade:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 7
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v11, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const/4 v7, 0x6
+    const-string v13, "FlipHorizontal"
 
-    const-string v8, "FlipHorizontal"
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v8, v7, v8}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v11, v13, v14, v13}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->FlipHorizontal:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v11, Lcom/daimajia/slider/library/SliderLayout$Transformer;->FlipHorizontal:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 8
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v13, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "FlipPage"
+    const-string v15, "FlipPage"
 
-    const/4 v9, 0x7
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v8, v9, v8}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v13, v15, v14, v15}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->FlipPage:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v13, Lcom/daimajia/slider/library/SliderLayout$Transformer;->FlipPage:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 9
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v15, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "Foreground2Background"
+    const-string v14, "Foreground2Background"
 
-    const/16 v9, 0x8
+    const/16 v12, 0x8
 
-    const-string v10, "Foreground2Background"
+    invoke-direct {v15, v14, v12, v14}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Foreground2Background:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v15, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Foreground2Background:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 10
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v14, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "RotateDown"
+    const-string v12, "RotateDown"
 
-    const/16 v9, 0x9
+    const/16 v10, 0x9
 
-    const-string v10, "RotateDown"
+    invoke-direct {v14, v12, v10, v12}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->RotateDown:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v14, Lcom/daimajia/slider/library/SliderLayout$Transformer;->RotateDown:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 11
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const-string v8, "RotateUp"
-
-    const/16 v9, 0xa
+    new-instance v12, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     const-string v10, "RotateUp"
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const/16 v8, 0xa
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->RotateUp:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    invoke-direct {v12, v10, v8, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v12, Lcom/daimajia/slider/library/SliderLayout$Transformer;->RotateUp:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 12
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v10, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     const-string v8, "Stack"
 
-    const/16 v9, 0xb
+    const/16 v6, 0xb
 
-    const-string v10, "Stack"
+    const-string v4, "Stack"
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v10, v8, v6, v4}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Stack:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v10, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Stack:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 13
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v4, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "Tablet"
+    const-string v6, "Tablet"
 
-    const/16 v9, 0xc
+    const/16 v8, 0xc
 
-    const-string v10, "Tablet"
+    const-string v2, "Tablet"
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v4, v6, v8, v2}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Tablet:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v4, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Tablet:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 14
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v2, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "ZoomIn"
+    const-string v6, "ZoomIn"
 
-    const/16 v9, 0xd
+    const/16 v8, 0xd
 
-    const-string v10, "ZoomIn"
+    move-object/from16 v16, v4
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-string v4, "ZoomIn"
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomIn:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    invoke-direct {v2, v6, v8, v4}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v2, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomIn:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 15
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v4, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "ZoomOutSlide"
+    const-string v6, "ZoomOutSlide"
 
-    const/16 v9, 0xe
+    const/16 v8, 0xe
 
-    const-string v10, "ZoomOutSlide"
+    move-object/from16 v17, v2
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-string v2, "ZoomOutSlide"
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomOutSlide:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    invoke-direct {v4, v6, v8, v2}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v4, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomOutSlide:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     .line 16
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    new-instance v2, Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    const-string v8, "ZoomOut"
+    const-string v6, "ZoomOut"
 
-    const/16 v9, 0xf
+    const/16 v8, 0xf
 
-    const-string v10, "ZoomOut"
+    move-object/from16 v18, v4
 
-    invoke-direct {v0, v8, v9, v10}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-string v4, "ZoomOut"
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomOut:Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    invoke-direct {v2, v6, v8, v4}, Lcom/daimajia/slider/library/SliderLayout$Transformer;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    const/16 v0, 0x10
+    sput-object v2, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomOut:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
-    new-array v0, v0, [Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    const/16 v4, 0x10
+
+    new-array v4, v4, [Lcom/daimajia/slider/library/SliderLayout$Transformer;
+
+    const/4 v6, 0x0
+
+    aput-object v0, v4, v6
+
+    const/4 v0, 0x1
+
+    aput-object v1, v4, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v4, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v4, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v4, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v4, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v4, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v4, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v4, v0
+
+    const/16 v0, 0x9
+
+    aput-object v14, v4, v0
+
+    const/16 v0, 0xa
+
+    aput-object v12, v4, v0
+
+    const/16 v0, 0xb
+
+    aput-object v10, v4, v0
+
+    const/16 v0, 0xc
+
+    aput-object v16, v4, v0
+
+    const/16 v0, 0xd
+
+    aput-object v17, v4, v0
+
+    const/16 v0, 0xe
+
+    aput-object v18, v4, v0
+
+    const/16 v0, 0xf
+
+    aput-object v2, v4, v0
 
     .line 17
-    sget-object v8, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Default:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v8, v0, v1
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Accordion:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Background2Foreground:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->CubeIn:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->DepthPage:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Fade:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->FlipHorizontal:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->FlipPage:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Foreground2Background:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->RotateDown:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->RotateUp:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Stack:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0xb
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Tablet:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomIn:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomOutSlide:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->ZoomOut:Lcom/daimajia/slider/library/SliderLayout$Transformer;
-
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$Transformer;->$VALUES:[Lcom/daimajia/slider/library/SliderLayout$Transformer;
+    sput-object v4, Lcom/daimajia/slider/library/SliderLayout$Transformer;->$VALUES:[Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

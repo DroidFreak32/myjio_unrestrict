@@ -31,79 +31,71 @@
 
 .field public static final enum NORMAL:Lcom/android/volley/Request$Priority;
 
-.field public static final synthetic s:[Lcom/android/volley/Request$Priority;
+.field public static final synthetic a:[Lcom/android/volley/Request$Priority;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/android/volley/Request$Priority;
 
-    const/4 v1, 0x0
+    const-string v1, "LOW"
 
-    const-string v2, "LOW"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/volley/Request$Priority;->LOW:Lcom/android/volley/Request$Priority;
 
     .line 2
-    new-instance v0, Lcom/android/volley/Request$Priority;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/android/volley/Request$Priority;
 
     const-string v3, "NORMAL"
 
-    invoke-direct {v0, v3, v2}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
+    invoke-direct {v1, v3, v4}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
 
     .line 3
-    new-instance v0, Lcom/android/volley/Request$Priority;
+    new-instance v3, Lcom/android/volley/Request$Priority;
 
-    const/4 v3, 0x2
+    const-string v5, "HIGH"
 
-    const-string v4, "HIGH"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/volley/Request$Priority;->HIGH:Lcom/android/volley/Request$Priority;
+    sput-object v3, Lcom/android/volley/Request$Priority;->HIGH:Lcom/android/volley/Request$Priority;
 
     .line 4
-    new-instance v0, Lcom/android/volley/Request$Priority;
+    new-instance v5, Lcom/android/volley/Request$Priority;
 
-    const/4 v4, 0x3
+    const-string v7, "IMMEDIATE"
 
-    const-string v5, "IMMEDIATE"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/volley/Request$Priority;->IMMEDIATE:Lcom/android/volley/Request$Priority;
+    sput-object v5, Lcom/android/volley/Request$Priority;->IMMEDIATE:Lcom/android/volley/Request$Priority;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/android/volley/Request$Priority;
+    new-array v7, v7, [Lcom/android/volley/Request$Priority;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/android/volley/Request$Priority;->LOW:Lcom/android/volley/Request$Priority;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/android/volley/Request$Priority;->HIGH:Lcom/android/volley/Request$Priority;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/android/volley/Request$Priority;->IMMEDIATE:Lcom/android/volley/Request$Priority;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/android/volley/Request$Priority;->s:[Lcom/android/volley/Request$Priority;
+    sput-object v7, Lcom/android/volley/Request$Priority;->a:[Lcom/android/volley/Request$Priority;
 
     return-void
 .end method
@@ -141,7 +133,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/android/volley/Request$Priority;->s:[Lcom/android/volley/Request$Priority;
+    sget-object v0, Lcom/android/volley/Request$Priority;->a:[Lcom/android/volley/Request$Priority;
 
     invoke-virtual {v0}, [Lcom/android/volley/Request$Priority;->clone()Ljava/lang/Object;
 

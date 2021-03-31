@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final callbacksAndExecutors:Ljava/util/List;
+.field private final callbacksAndExecutors:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -74,7 +74,7 @@
     return-void
 .end method
 
-.method public static defaultCallbackAndExecutor(Lcom/bumptech/glide/request/ResourceCallback;)Lcom/bumptech/glide/load/engine/EngineJob$ResourceCallbackAndExecutor;
+.method private static defaultCallbackAndExecutor(Lcom/bumptech/glide/request/ResourceCallback;)Lcom/bumptech/glide/load/engine/EngineJob$ResourceCallbackAndExecutor;
     .locals 2
 
     .line 1
@@ -166,6 +166,9 @@
 
 .method public iterator()Ljava/util/Iterator;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/TaskApiCall;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -25,9 +26,12 @@
 
 
 # instance fields
-.field public final zake:[Lcom/google/android/gms/common/Feature;
+.field private final zaa:[Lcom/google/android/gms/common/Feature;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final zakl:Z
+.field private final zab:Z
 
 
 # direct methods
@@ -45,17 +49,17 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zake:[Lcom/google/android/gms/common/Feature;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zaa:[Lcom/google/android/gms/common/Feature;
 
     const/4 v0, 0x0
 
     .line 3
-    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zakl:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zab:Z
 
     return-void
 .end method
 
-.method public constructor <init>([Lcom/google/android/gms/common/Feature;Z)V
+.method private constructor <init>([Lcom/google/android/gms/common/Feature;Z)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
@@ -64,15 +68,15 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zake:[Lcom/google/android/gms/common/Feature;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zaa:[Lcom/google/android/gms/common/Feature;
 
     .line 6
-    iput-boolean p2, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zakl:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zab:Z
 
     return-void
 .end method
 
-.method public synthetic constructor <init>([Lcom/google/android/gms/common/Feature;ZLcom/google/android/gms/common/api/internal/zaci;)V
+.method public synthetic constructor <init>([Lcom/google/android/gms/common/Feature;ZLcom/google/android/gms/common/api/internal/zacf;)V
     .locals 0
 
     .line 7
@@ -103,7 +107,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>(Lcom/google/android/gms/common/api/internal/zaci;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>(Lcom/google/android/gms/common/api/internal/zacf;)V
 
     return-object v0
 .end method
@@ -121,6 +125,12 @@
             "TResultT;>;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
 .method public shouldAutoResolveMissingFeatures()Z
@@ -129,16 +139,18 @@
     .end annotation
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zakl:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zab:Z
 
     return v0
 .end method
 
-.method public final zabt()[Lcom/google/android/gms/common/Feature;
+.method public final zaa()[Lcom/google/android/gms/common/Feature;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zake:[Lcom/google/android/gms/common/Feature;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zaa:[Lcom/google/android/gms/common/Feature;
 
     return-object v0
 .end method

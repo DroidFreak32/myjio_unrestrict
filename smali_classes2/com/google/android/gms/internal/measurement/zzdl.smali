@@ -1,222 +1,152 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzdl;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.super Lcom/google/android/gms/internal/measurement/zzdh;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lcom/google/android/gms/internal/measurement/zzdl$zza;
+        "Lcom/google/android/gms/internal/measurement/zzdh<",
+        "Ljava/lang/Boolean;",
+        ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzdk;
-
-.field public static final zzb:I
-
-
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzdm;Ljava/lang/String;Ljava/lang/Boolean;Z)V
+    .locals 6
 
-    const/4 v0, 0x1
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
 
     .line 1
-    :try_start_0
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzdl;->zza()Ljava/lang/Integer;
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/measurement/zzdh;-><init>(Lcom/google/android/gms/internal/measurement/zzdm;Ljava/lang/String;Ljava/lang/Object;ZLcom/google/android/gms/internal/measurement/zzdi;)V
 
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    return-void
+.end method
 
-    if-eqz v1, :cond_0
+
+# virtual methods
+.method public final synthetic zza(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    instance-of v0, p1, Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_0
 
     .line 2
-    :try_start_1
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result v2
-
-    const/16 v3, 0x13
-
-    if-lt v2, v3, :cond_0
+    return-object p1
 
     .line 3
-    new-instance v2, Lcom/google/android/gms/internal/measurement/zzdp;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/measurement/zzdp;-><init>()V
-
-    goto :goto_1
-
     :cond_0
-    const-string v2, "com.google.devtools.build.android.desugar.runtime.twr_disable_mimic"
+    instance-of v0, p1, Ljava/lang/String;
+
+    if-eqz v0, :cond_2
 
     .line 4
-    invoke-static {v2}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
+    move-object v0, p1
 
-    move-result v2
-
-    xor-int/2addr v2, v0
-
-    if-eqz v2, :cond_1
+    check-cast v0, Ljava/lang/String;
 
     .line 5
-    new-instance v2, Lcom/google/android/gms/internal/measurement/zzdo;
+    sget-object v1, Lcom/google/android/gms/internal/measurement/zzcp;->zzb:Ljava/util/regex/Pattern;
 
-    invoke-direct {v2}, Lcom/google/android/gms/internal/measurement/zzdo;-><init>()V
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    goto :goto_1
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
 
     .line 6
-    :cond_1
-    new-instance v2, Lcom/google/android/gms/internal/measurement/zzdl$zza;
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-direct {v2}, Lcom/google/android/gms/internal/measurement/zzdl$zza;-><init>()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v2
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception v2
-
-    const/4 v1, 0x0
+    return-object p1
 
     .line 7
-    :goto_0
-    sget-object v3, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    :cond_1
+    sget-object v1, Lcom/google/android/gms/internal/measurement/zzcp;->zzc:Ljava/util/regex/Pattern;
 
-    const-class v4, Lcom/google/android/gms/internal/measurement/zzdl$zza;
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    .line 8
-    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v4
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/lit16 v5, v5, 0x85
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v5, "An error has occurred when initializing the try-with-resources desuguring strategy. The default strategy "
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "will be used. The error is: "
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 9
-    invoke-virtual {v3, v4}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 10
-    sget-object v3, Ljava/lang/System;->err:Ljava/io/PrintStream;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintStream;)V
-
-    .line 11
-    new-instance v2, Lcom/google/android/gms/internal/measurement/zzdl$zza;
-
-    invoke-direct {v2}, Lcom/google/android/gms/internal/measurement/zzdl$zza;-><init>()V
-
-    .line 12
-    :goto_1
-    sput-object v2, Lcom/google/android/gms/internal/measurement/zzdl;->zza:Lcom/google/android/gms/internal/measurement/zzdk;
-
-    if-nez v1, :cond_2
-
-    goto :goto_2
-
-    .line 13
-    :cond_2
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v0
 
-    :goto_2
-    sput v0, Lcom/google/android/gms/internal/measurement/zzdl;->zzb:I
+    if-eqz v0, :cond_2
 
-    return-void
-.end method
+    .line 8
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-.method public static zza()Ljava/lang/Integer;
-    .locals 4
+    return-object p1
 
-    const-string v0, "android.os.Build$VERSION"
-
-    const/4 v1, 0x0
-
-    .line 2
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    .line 9
+    :cond_2
+    invoke-super {p0}, Lcom/google/android/gms/internal/measurement/zzdh;->zzb()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "SDK_INT"
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 3
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    move-result-object p1
 
-    move-result-object v0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 4
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    check-cast v0, Ljava/lang/Integer;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v1
 
-    return-object v0
+    add-int/lit8 v1, v1, 0x1c
 
-    :catch_0
-    move-exception v0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 5
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    move-result-object v2
 
-    const-string v3, "Failed to retrieve value from android.os.Build$VERSION.SDK_INT due to the following exception."
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    move-result v2
 
-    .line 6
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    add-int/2addr v1, v2
 
-    invoke-virtual {v0, v2}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    return-object v1
-.end method
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public static zza(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 1
+    const-string v1, "Invalid boolean value for "
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzdl;->zza:Lcom/google/android/gms/internal/measurement/zzdk;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p0, p1}, Lcom/google/android/gms/internal/measurement/zzdk;->zza(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    const-string v0, ": "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    return-object p1
 .end method

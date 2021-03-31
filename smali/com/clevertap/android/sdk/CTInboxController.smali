@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static EXECUTOR_THREAD_ID:J
+.field private static EXECUTOR_THREAD_ID:J
 
-.field public static es:Ljava/util/concurrent/ExecutorService;
+.field private static es:Ljava/util/concurrent/ExecutorService;
 
 
 # instance fields
-.field public dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
+.field private dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
 
-.field public messages:Ljava/util/ArrayList;
+.field private messages:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -22,11 +22,11 @@
     .end annotation
 .end field
 
-.field public final messagesLock:Ljava/lang/Object;
+.field private final messagesLock:Ljava/lang/Object;
 
-.field public userId:Ljava/lang/String;
+.field private userId:Ljava/lang/String;
 
-.field public videoSupported:Z
+.field private videoSupported:Z
 
 
 # direct methods
@@ -56,11 +56,7 @@
     iput-object p2, p0, Lcom/clevertap/android/sdk/CTInboxController;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
 
     .line 5
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxController;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
-
-    iget-object p2, p0, Lcom/clevertap/android/sdk/CTInboxController;->userId:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Lcom/clevertap/android/sdk/DBAdapter;->getMessages(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p2, p1}, Lcom/clevertap/android/sdk/DBAdapter;->getMessages(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -87,16 +83,7 @@
     return-void
 .end method
 
-.method public static synthetic access$002(J)J
-    .locals 0
-
-    .line 1
-    sput-wide p0, Lcom/clevertap/android/sdk/CTInboxController;->EXECUTOR_THREAD_ID:J
-
-    return-wide p0
-.end method
-
-.method public static synthetic access$100(Lcom/clevertap/android/sdk/CTInboxController;)Ljava/lang/String;
+.method public static synthetic access$000(Lcom/clevertap/android/sdk/CTInboxController;)Ljava/lang/String;
     .locals 0
 
     .line 1
@@ -105,13 +92,22 @@
     return-object p0
 .end method
 
-.method public static synthetic access$200(Lcom/clevertap/android/sdk/CTInboxController;)Lcom/clevertap/android/sdk/DBAdapter;
+.method public static synthetic access$100(Lcom/clevertap/android/sdk/CTInboxController;)Lcom/clevertap/android/sdk/DBAdapter;
     .locals 0
 
     .line 1
     iget-object p0, p0, Lcom/clevertap/android/sdk/CTInboxController;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
 
     return-object p0
+.end method
+
+.method public static synthetic access$202(J)J
+    .locals 0
+
+    .line 1
+    sput-wide p0, Lcom/clevertap/android/sdk/CTInboxController;->EXECUTOR_THREAD_ID:J
+
+    return-wide p0
 .end method
 
 .method private findMessageById(Ljava/lang/String;)Lcom/clevertap/android/sdk/CTMessageDAO;
@@ -202,7 +198,7 @@
     throw p1
 .end method
 
-.method public static postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
+.method private static postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 5
 
     .line 1
@@ -240,9 +236,9 @@
     :cond_1
     sget-object v0, Lcom/clevertap/android/sdk/CTInboxController;->es:Ljava/util/concurrent/ExecutorService;
 
-    new-instance v1, Lcom/clevertap/android/sdk/CTInboxController$1;
+    new-instance v1, Lcom/clevertap/android/sdk/CTInboxController$3;
 
-    invoke-direct {v1, p0, p1}, Lcom/clevertap/android/sdk/CTInboxController$1;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-direct {v1, p0, p1}, Lcom/clevertap/android/sdk/CTInboxController$3;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
     :try_end_0
@@ -391,11 +387,12 @@
 
     if-gtz v2, :cond_4
 
+    .line 12
     monitor-exit v1
 
     return-void
 
-    .line 12
+    .line 13
     :cond_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -414,7 +411,7 @@
 
     check-cast v2, Lcom/clevertap/android/sdk/CTMessageDAO;
 
-    .line 13
+    .line 14
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTMessageDAO;->getId()Ljava/lang/String;
 
     move-result-object v2
@@ -423,7 +420,7 @@
 
     goto :goto_2
 
-    .line 14
+    .line 15
     :cond_5
     monitor-exit v1
 
@@ -487,14 +484,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    const-string v0, "RunDeleteMessage"
+
     .line 5
-    new-instance v0, Lcom/clevertap/android/sdk/CTInboxController$2;
+    new-instance v1, Lcom/clevertap/android/sdk/CTInboxController$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/clevertap/android/sdk/CTInboxController$2;-><init>(Lcom/clevertap/android/sdk/CTInboxController;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lcom/clevertap/android/sdk/CTInboxController$1;-><init>(Lcom/clevertap/android/sdk/CTInboxController;Ljava/lang/String;)V
 
-    const-string p1, "RunDeleteMessage"
-
-    invoke-static {p1, v0}, Lcom/clevertap/android/sdk/CTInboxController;->postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CTInboxController;->postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
 
     const/4 p1, 0x1
 
@@ -666,14 +663,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    const-string v0, "RunMarkMessageRead"
+
     .line 5
-    new-instance v0, Lcom/clevertap/android/sdk/CTInboxController$3;
+    new-instance v1, Lcom/clevertap/android/sdk/CTInboxController$2;
 
-    invoke-direct {v0, p0, p1}, Lcom/clevertap/android/sdk/CTInboxController$3;-><init>(Lcom/clevertap/android/sdk/CTInboxController;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lcom/clevertap/android/sdk/CTInboxController$2;-><init>(Lcom/clevertap/android/sdk/CTInboxController;Ljava/lang/String;)V
 
-    const-string p1, "RunMarkMessageRead"
-
-    invoke-static {p1, v0}, Lcom/clevertap/android/sdk/CTInboxController;->postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CTInboxController;->postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
 
     return v2
 

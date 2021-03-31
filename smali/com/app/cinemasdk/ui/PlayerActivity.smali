@@ -20,65 +20,65 @@
 # static fields
 .field public static final LOG_TAG:Ljava/lang/String; = "PlayerActivity"
 
-.field public static final USER_QUALITY_SELECTED_KEY:Ljava/lang/String; = "qualityselected"
+.field private static final USER_QUALITY_SELECTED_KEY:Ljava/lang/String; = "qualityselected"
 
 
 # instance fields
 .field public _bufferCount:I
 
-.field public _isDRM:Z
+.field private _isDRM:Z
 
-.field public _isRememberMySettingChecked:Z
+.field private _isRememberMySettingChecked:Z
 
 .field public _playerInitialBufferingTime:J
 
-.field public _playerStateInBuffering:Z
+.field private _playerStateInBuffering:Z
 
 .field public _playerTotalBufferDuration:J
 
-.field public _qualitySelected:Ljava/lang/String;
+.field private _qualitySelected:Ljava/lang/String;
 
 .field public _startPlayingVideoTime:J
 
-.field public audioHeard:Ljava/lang/String;
+.field private audioHeard:Ljava/lang/String;
 
-.field public audioHeared:Ljava/lang/String;
+.field private audioHeared:Ljava/lang/String;
 
-.field public audioLang:Ljava/lang/String;
+.field private audioLang:Ljava/lang/String;
 
-.field public audioSelected:Ljava/lang/String;
+.field private audioSelected:Ljava/lang/String;
 
-.field public audioValue:I
+.field private audioValue:I
 
-.field public autoUrl:Ljava/lang/String;
+.field private autoUrl:Ljava/lang/String;
 
-.field public backError:Landroid/widget/ImageView;
+.field private backError:Landroid/widget/ImageView;
 
-.field public bitrate:I
+.field private bitrate:I
 
-.field public buttonRetry:Landroid/widget/Button;
+.field private buttonRetry:Landroid/widget/Button;
 
-.field public contentId:Ljava/lang/String;
+.field private contentId:Ljava/lang/String;
 
-.field public contentName:Ljava/lang/String;
+.field private contentName:Ljava/lang/String;
 
 .field public contentType:I
 
-.field public controlView:Landroid/view/View;
+.field private controlView:Landroid/view/View;
 
-.field public count:I
+.field private count:I
 
-.field public defaultTrackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
+.field private defaultTrackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
 
-.field public defaultlanguage:Ljava/lang/String;
+.field private defaultlanguage:Ljava/lang/String;
 
-.field public director:Lorg/json/JSONArray;
+.field private director:Lorg/json/JSONArray;
 
-.field public duration:Ljava/lang/String;
+.field private duration:Ljava/lang/String;
 
-.field public durationPlayed:J
+.field private durationPlayed:J
 
-.field public durationWatchList:Ljava/util/ArrayList;
+.field private durationWatchList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -88,37 +88,37 @@
     .end annotation
 .end field
 
-.field public durationWatched:J
+.field private durationWatched:J
 
-.field public errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
+.field private errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
-.field public from:I
+.field private from:I
 
-.field public genres:Lorg/json/JSONArray;
+.field private genres:Lorg/json/JSONArray;
 
-.field public handler:Landroid/os/Handler;
+.field private handler:Landroid/os/Handler;
 
-.field public highUrl:Ljava/lang/String;
+.field private highUrl:Ljava/lang/String;
 
-.field public invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+.field private invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
-.field public isAudioChanged:Z
+.field private isAudioChanged:Z
 
-.field public isNetworkAvailable:Z
+.field private isNetworkAvailable:Z
 
-.field public isPlaying:Z
+.field private isPlaying:Z
 
-.field public isReplay:Z
+.field private isReplay:Z
 
-.field public isSubTitleChanged:Z
+.field private isSubTitleChanged:Z
 
 .field public isVisible:Z
 
-.field public isrRetryShow:Z
+.field private isrRetryShow:Z
 
-.field public lang:Ljava/lang/String;
+.field private lang:Ljava/lang/String;
 
-.field public languageList:Ljava/util/ArrayList;
+.field private languageList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -128,29 +128,29 @@
     .end annotation
 .end field
 
-.field public lastDuration:J
+.field private lastDuration:J
 
-.field public lowUrl:Ljava/lang/String;
+.field private lowUrl:Ljava/lang/String;
 
-.field public mPDPHandler:Landroid/os/Handler;
+.field private mPDPHandler:Landroid/os/Handler;
 
-.field public mTimerTask:Ljava/util/Timer;
+.field private mTimerTask:Ljava/util/Timer;
 
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-.field public mediaAudioSubtitleDialog:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;
+.field private mediaAudioSubtitleDialog:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;
 
 .field public mediaQualityDialog:Lcom/app/cinemasdk/dialog/MediaQualityDialog;
 
-.field public mediaSourceFactory:Lcom/google/android/jioexoplayer2/source/MediaSource;
+.field private mediaSourceFactory:Lcom/google/android/jioexoplayer2/source/MediaSource;
 
-.field public mediumUrl:Ljava/lang/String;
+.field private mediumUrl:Ljava/lang/String;
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
 
-.field public networkReceiver:Lcom/app/cinemasdk/networkcheck/JioNetworkReceiver;
+.field private networkReceiver:Lcom/app/cinemasdk/networkcheck/JioNetworkReceiver;
 
-.field public playPauseView:Landroid/widget/TextView;
+.field private playPauseView:Landroid/widget/TextView;
 
 .field public player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
@@ -160,55 +160,55 @@
 
 .field public playerView:Lcom/google/android/jioexoplayer2/jioui/PlayerView;
 
-.field public progressBar:Landroid/widget/ProgressBar;
+.field private progressBar:Landroid/widget/ProgressBar;
 
 .field public relativeLayout:Landroid/widget/RelativeLayout;
 
-.field public replay:Landroidx/appcompat/widget/AppCompatImageView;
+.field private replay:Landroidx/appcompat/widget/AppCompatImageView;
 
-.field public runnable:Ljava/lang/Runnable;
+.field private runnable:Ljava/lang/Runnable;
 
-.field public seekBar:Landroid/widget/SeekBar;
+.field private seekBar:Landroid/widget/SeekBar;
 
-.field public seekPlayTime:Landroid/widget/TextView;
+.field private seekPlayTime:Landroid/widget/TextView;
 
-.field public sharedPreferences:Landroid/content/SharedPreferences;
+.field private sharedPreferences:Landroid/content/SharedPreferences;
 
-.field public starcast:Lorg/json/JSONArray;
+.field private starcast:Lorg/json/JSONArray;
 
-.field public subTitleViewed:Ljava/lang/String;
+.field private subTitleViewed:Ljava/lang/String;
 
 .field public subtiltle:Ljava/lang/String;
 
-.field public subtitleFlag:Z
+.field private subtitleFlag:Z
 
-.field public subtitleValue:I
+.field private subtitleValue:I
 
-.field public textView:Landroid/widget/TextView;
+.field private textView:Landroid/widget/TextView;
 
-.field public totaltsTime:I
+.field private totaltsTime:I
 
-.field public tvAudioSubtitle:Landroid/widget/TextView;
+.field private tvAudioSubtitle:Landroid/widget/TextView;
 
-.field public tvDuration:Landroid/widget/TextView;
+.field private tvDuration:Landroid/widget/TextView;
 
-.field public tvMenu:Landroid/widget/TextView;
+.field private tvMenu:Landroid/widget/TextView;
 
-.field public tvSeekBack:Landroid/widget/TextView;
+.field private tvSeekBack:Landroid/widget/TextView;
 
-.field public tvSeekForword:Landroid/widget/TextView;
+.field private tvSeekForword:Landroid/widget/TextView;
 
-.field public tvTopTitle:Landroid/widget/TextView;
+.field private tvTopTitle:Landroid/widget/TextView;
 
-.field public tvTopback:Landroid/widget/TextView;
+.field private tvTopback:Landroid/widget/TextView;
 
-.field public uri:Landroid/net/Uri;
+.field private uri:Landroid/net/Uri;
 
-.field public vendorName:Ljava/lang/String;
+.field private vendorName:Ljava/lang/String;
 
-.field public video:Lcom/app/cinemasdk/responsepojo/playbackrights/Video;
+.field private video:Lcom/app/cinemasdk/responsepojo/playbackrights/Video;
 
-.field public videoProfileUrl:Ljava/lang/String;
+.field private videoProfileUrl:Ljava/lang/String;
 
 
 # direct methods
@@ -891,13 +891,11 @@
     iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->runnable:Ljava/lang/Runnable;
 
     .line 3
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->handler:Landroid/os/Handler;
-
-    iget-object v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->runnable:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->handler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x7d0
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
@@ -944,8 +942,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->videoProfileUrl:Ljava/lang/String;
 
     .line 6
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->videoProfileUrl:Ljava/lang/String;
-
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
@@ -957,7 +953,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "url - "
+    const-string/jumbo v2, "url - "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1016,8 +1012,6 @@
     iput-object v3, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->defaultTrackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
 
     .line 12
-    iget-object v3, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->defaultTrackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
-
     invoke-virtual {v3, v0}, Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;->setParameters(Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;)V
 
     .line 13
@@ -1129,7 +1123,7 @@
     invoke-direct {p0}, Lcom/app/cinemasdk/ui/PlayerActivity;->playSubtitle()V
 
     :goto_0
-    const-string v0, "setPlayWhenReady - true"
+    const-string/jumbo v0, "setPlayWhenReady - true"
 
     .line 24
     invoke-static {v0}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
@@ -1163,15 +1157,13 @@
     if-eqz v4, :cond_2
 
     .line 29
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
+    iget-object v2, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
-    iget-wide v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->durationPlayed:J
+    long-to-int v1, v0
 
-    long-to-int v2, v1
+    int-to-long v0, v1
 
-    int-to-long v1, v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/jioexoplayer2/BasePlayer;->seekTo(J)V
+    invoke-virtual {v2, v0, v1}, Lcom/google/android/jioexoplayer2/BasePlayer;->seekTo(J)V
 
     .line 30
     :cond_2
@@ -1521,21 +1513,17 @@
     if-eqz v0, :cond_0
 
     .line 3
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->mTimerTask:Ljava/util/Timer;
-
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
     .line 4
     :cond_0
-    new-instance v0, Ljava/util/Timer;
+    new-instance v1, Ljava/util/Timer;
 
-    invoke-direct {v0}, Ljava/util/Timer;-><init>()V
+    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
 
-    iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->mTimerTask:Ljava/util/Timer;
+    iput-object v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->mTimerTask:Ljava/util/Timer;
 
     .line 5
-    iget-object v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->mTimerTask:Ljava/util/Timer;
-
     new-instance v2, Lcom/app/cinemasdk/ui/PlayerActivity$5;
 
     invoke-direct {v2, p0}, Lcom/app/cinemasdk/ui/PlayerActivity$5;-><init>(Lcom/app/cinemasdk/ui/PlayerActivity;)V
@@ -1750,7 +1738,7 @@
 
     const-string v27, ""
 
-    const-string v28, "webpage"
+    const-string/jumbo v28, "webpage"
 
     const-string v29, ""
 
@@ -1824,7 +1812,7 @@
 
     move/from16 v20, v1
 
-    const-string v11, "webpage"
+    const-string/jumbo v11, "webpage"
 
     const-string v12, ""
 
@@ -1982,7 +1970,7 @@
 
     move/from16 v22, v2
 
-    const-string v13, "webpage"
+    const-string/jumbo v13, "webpage"
 
     const-string v14, ""
 
@@ -2059,8 +2047,6 @@
     iput-wide v3, v0, Lcom/app/cinemasdk/ui/PlayerActivity;->durationWatched:J
 
     .line 19
-    iget-wide v3, v0, Lcom/app/cinemasdk/ui/PlayerActivity;->durationWatched:J
-
     iput-wide v3, v0, Lcom/app/cinemasdk/ui/PlayerActivity;->lastDuration:J
 
     goto :goto_2
@@ -2080,7 +2066,7 @@
 
     invoke-direct {v0, v1}, Lcom/app/cinemasdk/ui/PlayerActivity;->setPlayerLanguage(Ljava/lang/String;)V
 
-    const-string v1, "setPlayWhenReady - true"
+    const-string/jumbo v1, "setPlayWhenReady - true"
 
     .line 22
     invoke-static {v1}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
@@ -2138,7 +2124,7 @@
     .line 1
     iget-object v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->tvMenu:Landroid/widget/TextView;
 
-    const-string v10, "setPlayWhenReady - false"
+    const-string/jumbo v10, "setPlayWhenReady - false"
 
     const/4 v11, 0x0
 
@@ -2265,7 +2251,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "setPlayWhenReady - "
+    const-string/jumbo v1, "setPlayWhenReady - "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2522,7 +2508,7 @@
     .locals 5
 
     .line 1
-    invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     const/4 p1, 0x1
 
@@ -2601,11 +2587,9 @@
 
     iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->playerView:Lcom/google/android/jioexoplayer2/jioui/PlayerView;
 
-    .line 11
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->playerView:Lcom/google/android/jioexoplayer2/jioui/PlayerView;
-
     const/4 v1, 0x0
 
+    .line 11
     invoke-virtual {v0, v1}, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->setUseController(Z)V
 
     .line 12
@@ -2816,8 +2800,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->progressBar:Landroid/widget/ProgressBar;
 
     .line 29
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->progressBar:Landroid/widget/ProgressBar;
-
     invoke-virtual {v0}, Landroid/widget/ProgressBar;->bringToFront()V
 
     .line 30
@@ -2932,8 +2914,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->tvMenu:Landroid/widget/TextView;
 
     .line 40
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->tvMenu:Landroid/widget/TextView;
-
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 41
@@ -3036,7 +3016,7 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/jioexoplayer2/upstream/token/TokenController;->setSid(Ljava/lang/String;)V
 
-    const-string v3, "toilet:ekpremkatha11082017"
+    const-string/jumbo v3, "toilet:ekpremkatha11082017"
 
     .line 57
     invoke-virtual {v2, v3}, Lcom/google/android/jioexoplayer2/upstream/token/TokenController;->setTokenId(Ljava/lang/String;)V
@@ -3063,7 +3043,7 @@
 
     move-result-object v0
 
-    const-string v2, "url_subtitle"
+    const-string/jumbo v2, "url_subtitle"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3233,7 +3213,7 @@
 
     move-result-object v0
 
-    const-string v3, "vendorName"
+    const-string/jumbo v3, "vendorName"
 
     invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3285,17 +3265,14 @@
     :goto_2
     iput-boolean v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->subtitleFlag:Z
 
-    .line 76
-    iget-boolean v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->subtitleFlag:Z
-
     if-eqz v0, :cond_4
 
     const-string v0, "English"
 
-    .line 77
+    .line 76
     iput-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->subTitleViewed:Ljava/lang/String;
 
-    .line 78
+    .line 77
     iput p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->subtitleValue:I
 
     goto :goto_3
@@ -3303,13 +3280,13 @@
     :cond_4
     const-string p1, "off"
 
-    .line 79
+    .line 78
     iput-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->subTitleViewed:Ljava/lang/String;
 
-    .line 80
+    .line 79
     iput v1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->subtitleValue:I
 
-    .line 81
+    .line 80
     :goto_3
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->name:Ljava/lang/String;
 
@@ -3325,7 +3302,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 82
+    .line 81
     :cond_5
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->languageList:Ljava/util/ArrayList;
 
@@ -3337,7 +3314,7 @@
 
     if-lez p1, :cond_6
 
-    .line 83
+    .line 82
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->languageList:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3350,13 +3327,13 @@
 
     goto :goto_4
 
-    .line 84
+    .line 83
     :cond_6
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->defaultlanguage:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->audioHeared:Ljava/lang/String;
 
-    .line 85
+    .line 84
     :goto_4
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->seekPlayTime:Landroid/widget/TextView;
 
@@ -3364,7 +3341,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 86
+    .line 85
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->tvDuration:Landroid/widget/TextView;
 
     iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->duration:Ljava/lang/String;
@@ -3379,7 +3356,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 87
+    .line 86
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->seekBar:Landroid/widget/SeekBar;
 
     iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->duration:Ljava/lang/String;
@@ -3390,7 +3367,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/SeekBar;->setMax(I)V
 
-    .line 88
+    .line 87
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->seekBar:Landroid/widget/SeekBar;
 
     new-instance v0, Lcom/app/cinemasdk/ui/PlayerActivity$1;
@@ -3399,16 +3376,16 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
-    .line 89
+    .line 88
     invoke-direct {p0}, Lcom/app/cinemasdk/ui/PlayerActivity;->initializePlayer()V
 
-    .line 90
+    .line 89
     :cond_7
     iget-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
     if-eqz p1, :cond_8
 
-    .line 91
+    .line 90
     new-instance v0, Lcom/app/cinemasdk/ui/PlayerActivity$2;
 
     invoke-direct {v0, p0}, Lcom/app/cinemasdk/ui/PlayerActivity$2;-><init>(Lcom/app/cinemasdk/ui/PlayerActivity;)V
@@ -3490,7 +3467,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "setPlayWhenReady - true"
+    const-string/jumbo p1, "setPlayWhenReady - true"
 
     .line 2
     invoke-static {p1}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
@@ -3514,7 +3491,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "setPlayWhenReady - false"
+    const-string/jumbo v0, "setPlayWhenReady - false"
 
     .line 2
     invoke-static {v0}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
@@ -3662,7 +3639,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "setPlayWhenReady true"
+    const-string/jumbo v0, "setPlayWhenReady true"
 
     .line 6
     invoke-static {v0}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
@@ -3689,7 +3666,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "video_bitrate - "
+    const-string/jumbo v1, "video_bitrate - "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3714,8 +3691,6 @@
     iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
     if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/PlayerActivity;->errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
@@ -3849,7 +3824,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "setPlayWhenReady - false"
+    const-string/jumbo v0, "setPlayWhenReady - false"
 
     .line 2
     invoke-static {v0}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V
@@ -3878,7 +3853,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "setPlayWhenReady - false"
+    const-string/jumbo v0, "setPlayWhenReady - false"
 
     .line 2
     invoke-static {v0}, Lcom/app/cinemasdk/utils/Logger;->d(Ljava/lang/String;)V

@@ -115,7 +115,9 @@
 
     move-result-object p1
 
-    const-class v0, Lcom/fasterxml/jackson/annotation/SimpleObjectIdResolver;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     if-ne p1, v0, :cond_0
 

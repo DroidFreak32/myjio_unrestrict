@@ -34,7 +34,7 @@
 
 
 # static fields
-.field public static volatile zzbg:Lcom/google/android/gms/internal/clearcut/zzdz;
+.field private static volatile zzbg:Lcom/google/android/gms/internal/clearcut/zzdz;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzdz<",
@@ -44,17 +44,17 @@
     .end annotation
 .end field
 
-.field public static final zzub:Lcom/google/android/gms/internal/clearcut/zzge$zze;
+.field private static final zzub:Lcom/google/android/gms/internal/clearcut/zzge$zze;
 
 
 # instance fields
-.field public zzbb:I
+.field private zzbb:I
 
-.field public zzty:I
+.field private zzty:I
 
-.field public zztz:Ljava/lang/String;
+.field private zztz:Ljava/lang/String;
 
-.field public zzua:Ljava/lang/String;
+.field private zzua:Ljava/lang/String;
 
 
 # direct methods
@@ -67,16 +67,14 @@
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zze;->zzub:Lcom/google/android/gms/internal/clearcut/zzge$zze;
 
-    const-class v0, Lcom/google/android/gms/internal/clearcut/zzge$zze;
+    const-class v1, Lcom/google/android/gms/internal/clearcut/zzge$zze;
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zze;->zzub:Lcom/google/android/gms/internal/clearcut/zzge$zze;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/clearcut/zzcg;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/clearcut/zzcg;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzcg;-><init>()V
@@ -211,11 +209,11 @@
 
     aput-object p3, p1, p2
 
-    sget-object p2, Lcom/google/android/gms/internal/clearcut/zzge$zze;->zzub:Lcom/google/android/gms/internal/clearcut/zzge$zze;
+    const-string p2, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0004\u0000\u0000\u0000\u0001\u000c\u0000\u0002\u0008\u0001\u0003\u0008\u0002"
 
-    const-string p3, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0004\u0000\u0000\u0000\u0001\u000c\u0000\u0002\u0008\u0001\u0003\u0008\u0002"
+    sget-object p3, Lcom/google/android/gms/internal/clearcut/zzge$zze;->zzub:Lcom/google/android/gms/internal/clearcut/zzge$zze;
 
-    invoke-static {p2, p3, p1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, p2, p1}, Lcom/google/android/gms/internal/clearcut/zzcg;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -30,7 +30,7 @@
 
 
 # instance fields
-.field public transient _formatRFC1123:Ljava/text/DateFormat;
+.field private transient _formatRFC1123:Ljava/text/DateFormat;
 
 .field public _lenient:Ljava/lang/Boolean;
 
@@ -41,7 +41,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     const-string v0, "\\d\\d\\d\\d[-]\\d\\d[-]\\d\\d"
 
@@ -65,66 +65,54 @@
     .line 3
     sput-object v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->PATTERN_ISO8601:Ljava/util/regex/Pattern;
 
-    const-string v0, "EEE, dd MMM yyyy HH:mm:ss zzz"
+    const-string/jumbo v0, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
 
-    const-string v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
+    const-string/jumbo v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSS"
 
-    const-string v2, "yyyy-MM-dd\'T\'HH:mm:ss.SSS"
+    const-string v2, "EEE, dd MMM yyyy HH:mm:ss zzz"
 
-    const-string v3, "yyyy-MM-dd"
+    const-string/jumbo v3, "yyyy-MM-dd"
 
     .line 4
-    filled-new-array {v1, v2, v0, v3}, [Ljava/lang/String;
+    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    sput-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->ALL_FORMATS:[Ljava/lang/String;
+    sput-object v1, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->ALL_FORMATS:[Ljava/lang/String;
 
-    const-string v2, "UTC"
+    const-string v1, "UTC"
 
     .line 5
-    invoke-static {v2}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
-    move-result-object v2
+    move-result-object v1
 
-    sput-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_TIMEZONE:Ljava/util/TimeZone;
+    sput-object v1, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_TIMEZONE:Ljava/util/TimeZone;
 
     .line 6
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    sput-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_LOCALE:Ljava/util/Locale;
+    sput-object v3, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_LOCALE:Ljava/util/Locale;
 
     .line 7
-    new-instance v2, Ljava/text/SimpleDateFormat;
+    new-instance v4, Ljava/text/SimpleDateFormat;
 
-    sget-object v3, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_LOCALE:Ljava/util/Locale;
+    invoke-direct {v4, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    sput-object v4, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_RFC1123:Ljava/text/DateFormat;
+
+    .line 8
+    invoke-virtual {v4, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+
+    .line 9
+    new-instance v2, Ljava/text/SimpleDateFormat;
 
     invoke-direct {v2, v0, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    sput-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_RFC1123:Ljava/text/DateFormat;
-
-    .line 8
-    sget-object v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_RFC1123:Ljava/text/DateFormat;
-
-    sget-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_TIMEZONE:Ljava/util/TimeZone;
-
-    invoke-virtual {v0, v2}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    .line 9
-    new-instance v0, Ljava/text/SimpleDateFormat;
-
-    sget-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_LOCALE:Ljava/util/Locale;
-
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    sput-object v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_ISO8601:Ljava/text/DateFormat;
+    sput-object v2, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_ISO8601:Ljava/text/DateFormat;
 
     .line 10
-    sget-object v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_ISO8601:Ljava/text/DateFormat;
-
-    sget-object v1, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_TIMEZONE:Ljava/util/TimeZone;
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    invoke-virtual {v2, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     .line 11
     new-instance v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
@@ -195,7 +183,7 @@
     return-void
 .end method
 
-.method public static final _cloneFormat(Ljava/text/DateFormat;Ljava/lang/String;Ljava/util/TimeZone;Ljava/util/Locale;Ljava/lang/Boolean;)Ljava/text/DateFormat;
+.method private static final _cloneFormat(Ljava/text/DateFormat;Ljava/lang/String;Ljava/util/TimeZone;Ljava/util/Locale;Ljava/lang/Boolean;)Ljava/text/DateFormat;
     .locals 1
 
     .line 1
@@ -445,7 +433,7 @@
     return-void
 .end method
 
-.method public static _parse2D(Ljava/lang/String;I)I
+.method private static _parse2D(Ljava/lang/String;I)I
     .locals 1
 
     .line 1
@@ -470,7 +458,7 @@
     return v0
 .end method
 
-.method public static _parse4D(Ljava/lang/String;I)I
+.method private static _parse4D(Ljava/lang/String;I)I
     .locals 2
 
     .line 1
@@ -521,6 +509,11 @@
 
 .method private _parseDateFromLong(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -581,7 +574,7 @@
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_ISO8601:Ljava/text/DateFormat;
 
-    const-string v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
+    const-string/jumbo v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
 
     const/4 v2, 0x0
 
@@ -611,7 +604,7 @@
     return-object p0
 .end method
 
-.method public static pad2(Ljava/lang/StringBuffer;I)V
+.method private static pad2(Ljava/lang/StringBuffer;I)V
     .locals 3
 
     .line 1
@@ -649,7 +642,7 @@
     return-void
 .end method
 
-.method public static pad3(Ljava/lang/StringBuffer;I)V
+.method private static pad3(Ljava/lang/StringBuffer;I)V
     .locals 2
 
     .line 1
@@ -683,7 +676,7 @@
     return-void
 .end method
 
-.method public static pad4(Ljava/lang/StringBuffer;I)V
+.method private static pad4(Ljava/lang/StringBuffer;I)V
     .locals 1
 
     .line 1
@@ -730,6 +723,12 @@
 
 .method public _parseAsISO8601(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
     .locals 17
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;,
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -853,7 +852,7 @@
     return-object v1
 
     :cond_2
-    const-string v2, "yyyy-MM-dd"
+    const-string/jumbo v2, "yyyy-MM-dd"
 
     const/4 v12, 0x1
 
@@ -1123,7 +1122,7 @@
     :cond_c
     const/4 v12, 0x1
 
-    const-string v2, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
+    const-string/jumbo v2, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
 
     .line 42
     :goto_4
@@ -1158,6 +1157,11 @@
 
 .method public _parseDate(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->looksLikeISO8601(Ljava/lang/String;)Z
@@ -1420,6 +1424,11 @@
 
 .method public parse(Ljava/lang/String;)Ljava/util/Date;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1545,6 +1554,11 @@
 
 .method public parseAsISO8601(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/text/ParseException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -1693,7 +1707,7 @@
     .line 2
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
+    const-string/jumbo v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSSZ"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1720,7 +1734,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "strict"
+    const-string/jumbo v1, "strict"
 
     goto :goto_0
 
@@ -1750,7 +1764,9 @@
     new-array v0, v0, [Ljava/lang/Object;
 
     .line 1
-    const-class v1, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 

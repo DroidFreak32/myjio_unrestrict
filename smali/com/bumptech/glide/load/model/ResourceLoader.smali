@@ -30,13 +30,13 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "ResourceLoader"
+.field private static final TAG:Ljava/lang/String; = "ResourceLoader"
 
 
 # instance fields
-.field public final resources:Landroid/content/res/Resources;
+.field private final resources:Landroid/content/res/Resources;
 
-.field public final uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader<",
@@ -74,6 +74,8 @@
 
 .method private getResourceUri(Ljava/lang/Integer;)Landroid/net/Uri;
     .locals 4
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -180,6 +182,14 @@
 # virtual methods
 .method public buildLoadData(Ljava/lang/Integer;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 1
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -217,6 +227,14 @@
 
 .method public bridge synthetic buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Ljava/lang/Integer;
@@ -230,6 +248,10 @@
 
 .method public handles(Ljava/lang/Integer;)Z
     .locals 0
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 p1, 0x1
 
@@ -238,6 +260,10 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Ljava/lang/Integer;

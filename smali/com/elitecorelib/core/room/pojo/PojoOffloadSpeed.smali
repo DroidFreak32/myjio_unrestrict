@@ -1,47 +1,113 @@
 .class public Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoOffloadSpeed"
+.end annotation
+
+
 # instance fields
 .field public adspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "adspd"
+    .end annotation
+.end field
 
 .field public auspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "auspd"
+    .end annotation
+.end field
 
 .field public cell:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "cell"
+    .end annotation
+.end field
 
 .field public et:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "et"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public maxdspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "maxdspd"
+    .end annotation
+.end field
 
 .field public maxuspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "maxuspd"
+    .end annotation
+.end field
 
 .field public mindspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "mindspd"
+    .end annotation
+.end field
 
 .field public minuspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "minuspd"
+    .end annotation
+.end field
 
 .field public pid:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "pid"
+    .end annotation
+.end field
 
 .field public plmn:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "plmn"
+    .end annotation
+.end field
 
 .field public pname:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "pname"
+    .end annotation
+.end field
 
 .field public ssid:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ssid"
+    .end annotation
+.end field
 
 .field public st:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "st"
+    .end annotation
+.end field
 
 .field public stime:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "stime"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method

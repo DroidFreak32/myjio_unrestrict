@@ -13,11 +13,11 @@
 
 
 # instance fields
-.field public final synthetic zzbef:Lcom/google/android/gms/internal/gtm/zztc;
+.field private final synthetic zzbef:Lcom/google/android/gms/internal/gtm/zztc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zztc;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zztc;)V
     .locals 0
 
     .line 1

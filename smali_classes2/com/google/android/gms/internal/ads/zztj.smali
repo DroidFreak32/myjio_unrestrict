@@ -1,95 +1,131 @@
 .class public final Lcom/google/android/gms/internal/ads/zztj;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/internal/ads/zzti;",
-        ">;"
-    }
-.end annotation
+.implements Lcom/google/android/gms/internal/ads/zztg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.cache.ICacheService"
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 5
+.method public final zza(Lcom/google/android/gms/internal/ads/zztf;)Lcom/google/android/gms/internal/ads/zzta;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    move-result v0
-
-    const/4 v1, 0x0
+    move-result-object v0
 
     .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    move-result v2
-
-    if-ge v2, v0, :cond_1
+    const/4 p1, 0x1
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    move-result v2
+    move-result-object p1
 
     .line 4
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzta;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result v3
+    invoke-static {p1, v0}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    const/4 v4, 0x1
+    move-result-object v0
 
-    if-eq v3, v4, :cond_0
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzta;
 
     .line 5
-    invoke-static {p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
 
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    invoke-static {p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    .line 7
-    :cond_1
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    .line 8
-    new-instance p1, Lcom/google/android/gms/internal/ads/zzti;
-
-    invoke-direct {p1, v1}, Lcom/google/android/gms/internal/ads/zzti;-><init>(I)V
-
-    return-object p1
+    return-object v0
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
+.method public final zzb(Lcom/google/android/gms/internal/ads/zztf;)J
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    new-array p1, p1, [Lcom/google/android/gms/internal/ads/zzti;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    return-object p1
+    move-result-object v0
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x3
+
+    .line 3
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object p1
+
+    .line 4
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    .line 5
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
+    return-wide v0
+.end method
+
+.method public final zzc(Lcom/google/android/gms/internal/ads/zztf;)Lcom/google/android/gms/internal/ads/zzta;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x2
+
+    .line 3
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object p1
+
+    .line 4
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzta;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzta;
+
+    .line 5
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
+    return-object v0
 .end method

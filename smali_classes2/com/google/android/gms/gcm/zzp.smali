@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final zzba:Lcom/google/android/gms/iid/zzaj;
+.field private static final zzba:Lcom/google/android/gms/iid/zzaj;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/iid/zzaj<",
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final enabled:Z
+.field private final enabled:Z
 
 
 # direct methods
@@ -85,12 +85,9 @@
     :goto_0
     iput-boolean v0, p0, Lcom/google/android/gms/gcm/zzp;->enabled:Z
 
-    .line 3
-    iget-boolean v0, p0, Lcom/google/android/gms/gcm/zzp;->enabled:Z
-
     if-eqz v0, :cond_2
 
-    .line 4
+    .line 3
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -101,13 +98,13 @@
 
     goto :goto_1
 
-    .line 5
+    .line 4
     :cond_1
     invoke-virtual {p1, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 6
+    .line 5
     :goto_1
     invoke-static {p1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 

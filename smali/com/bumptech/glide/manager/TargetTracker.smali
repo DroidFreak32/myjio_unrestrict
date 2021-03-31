@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final targets:Ljava/util/Set;
+.field private final targets:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -55,6 +55,9 @@
 
 .method public getAll()Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -184,6 +187,10 @@
 
 .method public track(Lcom/bumptech/glide/request/target/Target;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/Target;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -202,6 +209,10 @@
 
 .method public untrack(Lcom/bumptech/glide/request/target/Target;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/Target;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

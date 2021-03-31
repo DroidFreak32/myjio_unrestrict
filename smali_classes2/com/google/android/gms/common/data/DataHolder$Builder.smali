@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/data/DataHolder$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -17,9 +18,9 @@
 
 
 # instance fields
-.field public final zalq:[Ljava/lang/String;
+.field private final zaa:[Ljava/lang/String;
 
-.field public final zalz:Ljava/util/ArrayList;
+.field private final zab:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -31,9 +32,12 @@
     .end annotation
 .end field
 
-.field public final zama:Ljava/lang/String;
+.field private final zac:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final zamb:Ljava/util/HashMap;
+.field private final zad:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -44,14 +48,21 @@
     .end annotation
 .end field
 
-.field public zamc:Z
+.field private zae:Z
 
-.field public zamd:Ljava/lang/String;
+.field private zaf:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/String;Ljava/lang/String;)V
+.method private constructor <init>([Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,34 +74,34 @@
 
     check-cast p1, [Ljava/lang/String;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalq:[Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zaa:[Ljava/lang/String;
 
     .line 3
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalz:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zab:Ljava/util/ArrayList;
 
     .line 4
-    iput-object p2, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zama:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zac:Ljava/lang/String;
 
     .line 5
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zamb:Ljava/util/HashMap;
+    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zad:Ljava/util/HashMap;
 
     const/4 p1, 0x0
 
     .line 6
-    iput-boolean p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zamc:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zae:Z
 
     const/4 p1, 0x0
 
     .line 7
-    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zamd:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zaf:Ljava/lang/String;
 
     return-void
 .end method
@@ -110,7 +121,7 @@
     .locals 0
 
     .line 11
-    iget-object p0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalq:[Ljava/lang/String;
+    iget-object p0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zaa:[Ljava/lang/String;
 
     return-object p0
 .end method
@@ -119,7 +130,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalz:Ljava/util/ArrayList;
+    iget-object p0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zab:Ljava/util/ArrayList;
 
     return-object p0
 .end method
@@ -247,7 +258,7 @@
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Asserts;->checkNotNull(Ljava/lang/Object;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zama:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zac:Ljava/lang/String;
 
     const/4 v1, -0x1
 
@@ -270,7 +281,7 @@
 
     .line 4
     :cond_1
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zamb:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zad:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -281,9 +292,9 @@
     if-nez v2, :cond_2
 
     .line 5
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zamb:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zad:Ljava/util/HashMap;
 
-    iget-object v3, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalz:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zab:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -307,7 +318,7 @@
     if-ne v0, v1, :cond_3
 
     .line 7
-    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalz:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zab:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -315,12 +326,12 @@
 
     .line 8
     :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalz:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zab:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 9
-    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zalz:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zab:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
@@ -328,7 +339,7 @@
     const/4 p1, 0x0
 
     .line 10
-    iput-boolean p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zamc:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/data/DataHolder$Builder;->zae:Z
 
     return-object p0
 .end method

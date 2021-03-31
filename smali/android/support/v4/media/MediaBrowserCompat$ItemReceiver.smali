@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final mCallback:Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;
+.field private final mCallback:Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;
 
-.field public final mMediaId:Ljava/lang/String;
+.field private final mMediaId:Ljava/lang/String;
 
 
 # direct methods

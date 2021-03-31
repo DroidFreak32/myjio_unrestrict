@@ -23,7 +23,7 @@
             "I)",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
-            "Lq6$a;",
+            "Landroidx/core/app/NotificationCompat$Action;",
             ">;"
         }
     .end annotation

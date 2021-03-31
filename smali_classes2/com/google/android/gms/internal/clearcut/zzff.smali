@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzqb:Lcom/google/android/gms/internal/clearcut/zzfg;
+.field private static final zzqb:Lcom/google/android/gms/internal/clearcut/zzfg;
 
 
 # direct methods
@@ -263,7 +263,7 @@
     return-void
 .end method
 
-.method public static zzam(I)I
+.method private static zzam(I)I
     .locals 1
 
     const/16 v0, -0xc
@@ -286,7 +286,7 @@
     return p0
 .end method
 
-.method public static zzd(III)I
+.method private static zzd(III)I
     .locals 1
 
     const/16 v0, -0xc
@@ -357,7 +357,7 @@
     return p0
 .end method
 
-.method public static zzf([BII)I
+.method private static zzf([BII)I
     .locals 3
 
     add-int/lit8 v0, p1, -0x1
@@ -422,7 +422,7 @@
     return p0
 .end method
 
-.method public static zzp(II)I
+.method private static zzp(II)I
     .locals 1
 
     const/16 v0, -0xc

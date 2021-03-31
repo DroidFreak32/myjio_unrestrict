@@ -11,6 +11,10 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/maps/model/BitmapDescriptor;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/high16 v0, 0x41200000    # 10.0f
 
@@ -22,6 +26,10 @@
 
 .method public constructor <init>(Lcom/google/android/gms/maps/model/BitmapDescriptor;F)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "bitmapDescriptor must not be null"
 

@@ -9,13 +9,17 @@
 
 .field public static final RESULT_SUCCESS:I
 
-.field public static zzh:Lcom/google/android/gms/gcm/GcmNetworkManager;
+.field private static zzh:Lcom/google/android/gms/gcm/GcmNetworkManager;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "GcmNetworkManager.class"
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final zzi:Landroid/content/Context;
+.field private final zzi:Landroid/content/Context;
 
-.field public final zzj:Ljava/util/Map;
+.field private final zzj:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -26,20 +30,24 @@
             ">;>;"
         }
     .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "this"
+    .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/gms/gcm/GcmNetworkManager;->zzj:Ljava/util/Map;
 
@@ -135,7 +143,7 @@
     throw p0
 .end method
 
-.method public static synthetic zzd(Ljava/lang/Throwable;Lcom/google/android/gms/gcm/zzp;)V
+.method private static synthetic zzd(Ljava/lang/Throwable;Lcom/google/android/gms/gcm/zzp;)V
     .locals 0
 
     if-eqz p0, :cond_0
@@ -163,6 +171,8 @@
 
 .method private final zze()Lcom/google/android/gms/gcm/zzn;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/gcm/GcmNetworkManager;->zzi:Landroid/content/Context;
@@ -351,6 +361,9 @@
 # virtual methods
 .method public cancelAllTasks(Ljava/lang/Class;)V
     .locals 2
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -419,6 +432,9 @@
 
 .method public cancelTask(Ljava/lang/String;Ljava/lang/Class;)V
     .locals 4
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -513,6 +529,8 @@
 
 .method public declared-synchronized schedule(Lcom/google/android/gms/gcm/Task;)V
     .locals 4
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
 
     monitor-enter p0
 
@@ -605,11 +623,7 @@
 
     move-result-object p1
 
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
@@ -674,24 +688,20 @@
     if-nez v0, :cond_0
 
     .line 6
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
     .line 7
     iget-object v1, p0, Lcom/google/android/gms/gcm/GcmNetworkManager;->zzj:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    const/4 p2, 0x0
-
     .line 8
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :cond_0
+    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    move-result-object v1
-
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_0
@@ -701,14 +711,15 @@
 
     const/4 p1, 0x1
 
+    :goto_0
     monitor-exit p0
 
     return p1
 
     :cond_1
-    monitor-exit p0
+    const/4 p1, 0x0
 
-    return p2
+    goto :goto_0
 
     :catchall_0
     move-exception p1

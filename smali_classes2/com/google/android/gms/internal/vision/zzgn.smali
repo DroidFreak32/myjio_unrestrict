@@ -1,573 +1,312 @@
-.class public final Lcom/google/android/gms/internal/vision/zzgn;
-.super Lcom/google/android/gms/internal/vision/zzef;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/vision/zzgo;
-.implements Ljava/util/RandomAccess;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/vision/zzef<",
-        "Ljava/lang/String;",
-        ">;",
-        "Lcom/google/android/gms/internal/vision/zzgo;",
-        "Ljava/util/RandomAccess;"
-    }
-.end annotation
+.class public final synthetic Lcom/google/android/gms/internal/vision/zzgn;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # static fields
-.field public static final zzyk:Lcom/google/android/gms/internal/vision/zzgn;
-
-.field public static final zzyl:Lcom/google/android/gms/internal/vision/zzgo;
-
-
-# instance fields
-.field public final zzym:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final synthetic zztn:[I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzgn;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzgn;-><init>()V
-
-    .line 2
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zzyk:Lcom/google/android/gms/internal/vision/zzgn;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzef;->zzci()V
-
-    .line 3
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zzyk:Lcom/google/android/gms/internal/vision/zzgn;
-
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zzyl:Lcom/google/android/gms/internal/vision/zzgo;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    const/16 v0, 0xa
-
-    .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/vision/zzgn;-><init>(I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 1
-
-    .line 2
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/vision/zzgn;-><init>(Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/ArrayList;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/Object;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 3
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzef;-><init>()V
-
-    .line 4
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
-
-    return-void
-.end method
-
-.method public static zzh(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    instance-of v0, p0, Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    check-cast p0, Ljava/lang/String;
-
-    return-object p0
-
-    .line 3
-    :cond_0
-    instance-of v0, p0, Lcom/google/android/gms/internal/vision/zzeo;
-
-    if-eqz v0, :cond_1
-
-    .line 4
-    check-cast p0, Lcom/google/android/gms/internal/vision/zzeo;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzeo;->zzdk()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 5
-    :cond_1
-    check-cast p0, [B
-
-    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzga;->zzj([B)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final synthetic add(ILjava/lang/Object;)V
-    .locals 1
-
-    .line 1
-    check-cast p2, Ljava/lang/String;
-
-    .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    .line 4
-    iget p1, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Ljava/util/AbstractList;->modCount:I
-
-    return-void
-.end method
-
-.method public final addAll(ILjava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/String;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 3
-    instance-of v0, p2, Lcom/google/android/gms/internal/vision/zzgo;
-
-    if-eqz v0, :cond_0
-
-    check-cast p2, Lcom/google/android/gms/internal/vision/zzgo;
-
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzgo;->zzft()Ljava/util/List;
-
-    move-result-object p2
-
-    .line 4
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
-
-    move-result p1
-
-    .line 5
-    iget p2, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 p2, p2, 0x1
-
-    iput p2, p0, Ljava/util/AbstractList;->modCount:I
-
-    return p1
-.end method
-
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/String;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgn;->size()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/vision/zzgn;->addAll(ILjava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    .line 3
-    iget v0, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Ljava/util/AbstractList;->modCount:I
-
-    return-void
-.end method
-
-.method public final bridge synthetic equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzef;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final synthetic get(I)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {}, Lcom/google/android/gms/internal/vision/zzlk;->values()[Lcom/google/android/gms/internal/vision/zzlk;
 
     move-result-object v0
 
-    .line 2
-    instance-of v1, v0, Ljava/lang/String;
+    array-length v0, v0
 
-    if-eqz v1, :cond_0
+    new-array v0, v0, [I
 
-    .line 3
-    check-cast v0, Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    return-object v0
+    :try_start_0
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadf:Lcom/google/android/gms/internal/vision/zzlk;
 
-    .line 4
-    :cond_0
-    instance-of v1, v0, Lcom/google/android/gms/internal/vision/zzeo;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    if-eqz v1, :cond_2
+    move-result v1
 
-    .line 5
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzeo;
+    const/4 v2, 0x1
 
-    .line 6
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzeo;->zzdk()Ljava/lang/String;
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    :catch_0
+    :try_start_1
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    .line 7
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzeo;->zzdl()Z
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadg:Lcom/google/android/gms/internal/vision/zzlk;
 
-    move-result v0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    if-eqz v0, :cond_1
+    move-result v1
 
-    .line 8
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    const/4 v2, 0x2
 
-    invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    :cond_1
-    return-object v1
+    :catch_1
+    :try_start_2
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    .line 9
-    :cond_2
-    check-cast v0, [B
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadh:Lcom/google/android/gms/internal/vision/zzlk;
 
-    .line 10
-    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzga;->zzj([B)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result-object v1
+    move-result v1
 
-    .line 11
-    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzga;->zzi([B)Z
+    const/4 v2, 0x3
 
-    move-result v0
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    if-eqz v0, :cond_3
+    :catch_2
+    :try_start_3
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    .line 12
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadi:Lcom/google/android/gms/internal/vision/zzlk;
 
-    invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    :cond_3
-    return-object v1
-.end method
+    move-result v1
 
-.method public final getRaw(I)Ljava/lang/Object;
-    .locals 1
+    const/4 v2, 0x4
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :catch_3
+    :try_start_4
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    move-result-object p1
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadj:Lcom/google/android/gms/internal/vision/zzlk;
 
-    return-object p1
-.end method
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-.method public final bridge synthetic hashCode()I
-    .locals 1
+    move-result v1
 
-    .line 1
-    invoke-super {p0}, Lcom/google/android/gms/internal/vision/zzef;->hashCode()I
+    const/4 v2, 0x5
 
-    move-result v0
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    return v0
-.end method
+    :catch_4
+    :try_start_5
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-.method public final synthetic remove(I)Ljava/lang/Object;
-    .locals 1
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadr:Lcom/google/android/gms/internal/vision/zzlk;
 
-    .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    move-result v1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    const/4 v2, 0x6
 
-    move-result-object p1
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    .line 4
-    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+    :catch_5
+    :try_start_6
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    add-int/lit8 v0, v0, 0x1
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadk:Lcom/google/android/gms/internal/vision/zzlk;
 
-    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 5
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzgn;->zzh(Ljava/lang/Object;)Ljava/lang/String;
+    move-result v1
 
-    move-result-object p1
+    const/4 v2, 0x7
 
-    return-object p1
-.end method
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-.method public final bridge synthetic remove(Ljava/lang/Object;)Z
-    .locals 0
+    :catch_6
+    :try_start_7
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    .line 1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzef;->remove(Ljava/lang/Object;)Z
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadu:Lcom/google/android/gms/internal/vision/zzlk;
 
-    move-result p1
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    return p1
-.end method
+    move-result v1
 
-.method public final bridge synthetic removeAll(Ljava/util/Collection;)Z
-    .locals 0
+    const/16 v2, 0x8
 
-    .line 1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzef;->removeAll(Ljava/util/Collection;)Z
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
-    move-result p1
+    :catch_7
+    :try_start_8
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    return p1
-.end method
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadl:Lcom/google/android/gms/internal/vision/zzlk;
 
-.method public final bridge synthetic retainAll(Ljava/util/Collection;)Z
-    .locals 0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzef;->retainAll(Ljava/util/Collection;)Z
+    move-result v1
 
-    move-result p1
+    const/16 v2, 0x9
 
-    return p1
-.end method
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
 
-.method public final synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    :catch_8
+    :try_start_9
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    .line 1
-    check-cast p2, Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadt:Lcom/google/android/gms/internal/vision/zzlk;
 
-    .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    move-result v1
 
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    const/16 v2, 0xa
 
-    move-result-object p1
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
 
-    .line 4
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzgn;->zzh(Ljava/lang/Object;)Ljava/lang/String;
+    :catch_9
+    :try_start_a
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    move-result-object p1
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadm:Lcom/google/android/gms/internal/vision/zzlk;
 
-    return-object p1
-.end method
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-.method public final size()I
-    .locals 1
+    move-result v1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    const/16 v2, 0xb
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    aput v2, v0, v1
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
 
-    move-result v0
+    :catch_a
+    :try_start_b
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    return v0
-.end method
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadv:Lcom/google/android/gms/internal/vision/zzlk;
 
-.method public final synthetic zzah(I)Lcom/google/android/gms/internal/vision/zzge;
-    .locals 1
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgn;->size()I
+    move-result v1
 
-    move-result v0
+    const/16 v2, 0xc
 
-    if-lt p1, v0, :cond_0
+    aput v2, v0, v1
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
 
-    .line 2
-    new-instance v0, Ljava/util/ArrayList;
+    :catch_b
+    :try_start_c
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadw:Lcom/google/android/gms/internal/vision/zzlk;
 
-    .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    move-result v1
 
-    .line 4
-    new-instance p1, Lcom/google/android/gms/internal/vision/zzgn;
+    const/16 v2, 0xd
 
-    invoke-direct {p1, v0}, Lcom/google/android/gms/internal/vision/zzgn;-><init>(Ljava/util/ArrayList;)V
+    aput v2, v0, v1
+    :try_end_c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
 
-    return-object p1
+    :catch_c
+    :try_start_d
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    .line 5
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzads:Lcom/google/android/gms/internal/vision/zzlk;
 
-    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    throw p1
-.end method
+    move-result v1
 
-.method public final zzc(Lcom/google/android/gms/internal/vision/zzeo;)V
-    .locals 1
+    const/16 v2, 0xe
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
+    aput v2, v0, v1
+    :try_end_d
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
+    :catch_d
+    :try_start_e
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadq:Lcom/google/android/gms/internal/vision/zzlk;
 
-    .line 3
-    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    add-int/lit8 p1, p1, 0x1
+    move-result v1
 
-    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+    const/16 v2, 0xf
 
+    aput v2, v0, v1
+    :try_end_e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_e
+
+    :catch_e
+    :try_start_f
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
+
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadn:Lcom/google/android/gms/internal/vision/zzlk;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x10
+
+    aput v2, v0, v1
+    :try_end_f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f
+
+    :catch_f
+    :try_start_10
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
+
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzado:Lcom/google/android/gms/internal/vision/zzlk;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x11
+
+    aput v2, v0, v1
+    :try_end_10
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10
+
+    :catch_10
+    :try_start_11
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgn;->zztn:[I
+
+    sget-object v1, Lcom/google/android/gms/internal/vision/zzlk;->zzadp:Lcom/google/android/gms/internal/vision/zzlk;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x12
+
+    aput v2, v0, v1
+    :try_end_11
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_11 .. :try_end_11} :catch_11
+
+    :catch_11
     return-void
-.end method
-
-.method public final bridge synthetic zzch()Z
-    .locals 1
-
-    .line 1
-    invoke-super {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzch()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final zzft()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgn;->zzym:Ljava/util/List;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final zzfu()Lcom/google/android/gms/internal/vision/zzgo;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgn;->zzch()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzir;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/vision/zzir;-><init>(Lcom/google/android/gms/internal/vision/zzgo;)V
-
-    return-object v0
-
-    :cond_0
-    return-object p0
 .end method

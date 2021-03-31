@@ -15,10 +15,15 @@
 
 
 # virtual methods
-.method public abstract a(Lcom/caverock/androidsvg/SVG$l0;)V
+.method public abstract g(Lcom/caverock/androidsvg/SVG$l0;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/caverock/androidsvg/SVGParseException;
+        }
+    .end annotation
 .end method
 
-.method public abstract b()Ljava/util/List;
+.method public abstract getChildren()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

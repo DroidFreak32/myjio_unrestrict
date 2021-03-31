@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public final zzacl:Lcom/google/android/gms/internal/gtm/zzcy;
+.field private final zzacl:Lcom/google/android/gms/internal/gtm/zzcy;
 
 
 # direct methods

@@ -52,6 +52,12 @@
             ")V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzc(Ljava/lang/Object;)V
@@ -63,6 +69,12 @@
             "(TT;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

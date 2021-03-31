@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "RequestTracker"
+.field private static final TAG:Ljava/lang/String; = "RequestTracker"
 
 
 # instance fields
-.field public isPaused:Z
+.field private isPaused:Z
 
-.field public final pendingRequests:Ljava/util/List;
+.field private final pendingRequests:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -20,7 +20,7 @@
     .end annotation
 .end field
 
-.field public final requests:Ljava/util/Set;
+.field private final requests:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -62,6 +62,10 @@
 
 .method private clearRemoveAndMaybeRecycle(Lcom/bumptech/glide/request/Request;Z)Z
     .locals 3
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 
@@ -113,6 +117,8 @@
 # virtual methods
 .method public addRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/RequestTracker;->requests:Ljava/util/Set;
@@ -124,6 +130,10 @@
 
 .method public clearRemoveAndRecycle(Lcom/bumptech/glide/request/Request;)Z
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 
@@ -430,6 +440,10 @@
 
 .method public runRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/RequestTracker;->requests:Ljava/util/Set;
@@ -482,7 +496,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "{numRequests="
+    const-string/jumbo v1, "{numRequests="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -502,7 +516,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

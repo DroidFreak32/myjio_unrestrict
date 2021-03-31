@@ -1,116 +1,99 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbbg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zzdsm:Ljava/util/concurrent/ConcurrentHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/ConcurrentHashMap<",
-            "Lcom/google/android/gms/internal/ads/zzbbh;",
-            "Ljava/util/List<",
-            "Ljava/lang/Throwable;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.field private zzbsq:Z
 
-.field public final zzdsn:Ljava/lang/ref/ReferenceQueue;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/ReferenceQueue<",
-            "Ljava/lang/Throwable;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private zzejf:Lcom/google/android/gms/internal/ads/zzbar;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbar;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x0
+
     .line 2
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    const/16 v1, 0x10
-
-    const/high16 v2, 0x3f400000    # 0.75f
-
-    const/16 v3, 0xa
-
-    invoke-direct {v0, v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(IFI)V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzdsm:Ljava/util/concurrent/ConcurrentHashMap;
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzbsq:Z
 
     .line 3
-    new-instance v0, Ljava/lang/ref/ReferenceQueue;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzejf:Lcom/google/android/gms/internal/ads/zzbar;
 
-    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
+    return-void
+.end method
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzdsn:Ljava/lang/ref/ReferenceQueue;
+.method private final zzaas()V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/ads/internal/util/zzm;->zzedd:Lcom/google/android/gms/internal/ads/zzduw;
+
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    const-wide/16 v1, 0xfa
+
+    .line 2
+    invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Ljava/lang/Throwable;Z)Ljava/util/List;
+.method public final pause()V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Throwable;",
-            "Z)",
-            "Ljava/util/List<",
-            "Ljava/lang/Throwable;",
-            ">;"
-        }
-    .end annotation
+
+    const/4 v0, 0x1
 
     .line 1
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzdsn:Ljava/lang/ref/ReferenceQueue;
-
-    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
-
-    move-result-object p2
-
-    :goto_0
-    if-eqz p2, :cond_0
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzbsq:Z
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzdsm:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzejf:Lcom/google/android/gms/internal/ads/zzbar;
 
-    invoke-virtual {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbar;->zzzz()V
 
-    .line 3
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzdsn:Ljava/lang/ref/ReferenceQueue;
+    return-void
+.end method
 
-    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    new-instance p2, Lcom/google/android/gms/internal/ads/zzbbh;
+.method public final resume()V
+    .locals 1
 
     const/4 v0, 0x0
 
-    invoke-direct {p2, p1, v0}, Lcom/google/android/gms/internal/ads/zzbbh;-><init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+    .line 1
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzbsq:Z
 
-    .line 5
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzdsm:Ljava/util/concurrent/ConcurrentHashMap;
+    .line 2
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbbg;->zzaas()V
 
-    invoke-virtual {p1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object p1
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Ljava/util/List;
+    .line 1
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzbsq:Z
 
-    return-object p1
+    if-nez v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbbg;->zzejf:Lcom/google/android/gms/internal/ads/zzbar;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbar;->zzzz()V
+
+    .line 3
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbbg;->zzaas()V
+
+    :cond_0
+    return-void
 .end method

@@ -20,12 +20,22 @@
 # virtual methods
 .method public onWebsocketHandshakeReceivedAsClient(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshake;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public onWebsocketHandshakeReceivedAsServer(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;)Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshakeBuilder;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     new-instance p1, Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeImpl1Server;
@@ -37,6 +47,11 @@
 
 .method public onWebsocketHandshakeSentAsClient(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     return-void
 .end method

@@ -7,21 +7,21 @@
 
 
 # static fields
-.field public static final BUFFER_SIZE_BYTES:I = 0x20000
+.field private static final BUFFER_SIZE_BYTES:I = 0x20000
 
 
 # instance fields
-.field public final cache:Lcom/google/android/jioexoplayer2/upstream/cache/Cache;
+.field private final cache:Lcom/google/android/jioexoplayer2/upstream/cache/Cache;
 
-.field public final cachingCounters:Lcom/google/android/jioexoplayer2/upstream/cache/CacheUtil$CachingCounters;
+.field private final cachingCounters:Lcom/google/android/jioexoplayer2/upstream/cache/CacheUtil$CachingCounters;
 
-.field public final dataSource:Lcom/google/android/jioexoplayer2/upstream/cache/CacheDataSource;
+.field private final dataSource:Lcom/google/android/jioexoplayer2/upstream/cache/CacheDataSource;
 
-.field public final dataSpec:Lcom/google/android/jioexoplayer2/upstream/DataSpec;
+.field private final dataSpec:Lcom/google/android/jioexoplayer2/upstream/DataSpec;
 
-.field public final isCanceled:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final isCanceled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
+.field private final priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
 
 
 # direct methods
@@ -107,6 +107,12 @@
 
 .method public download()V
     .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloader;->priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;

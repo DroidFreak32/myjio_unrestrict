@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-.field public current:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner;
+.field private current:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner;
 
-.field public final defaultFormat:Lcom/bumptech/glide/load/DecodeFormat;
+.field private final defaultFormat:Lcom/bumptech/glide/load/DecodeFormat;
 
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public final memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
+.field private final memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
 
 
 # direct methods
@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method public static getSizeInBytes(Lcom/bumptech/glide/load/engine/prefill/PreFillType;)I
+.method private static getSizeInBytes(Lcom/bumptech/glide/load/engine/prefill/PreFillType;)I
     .locals 2
 
     .line 1
@@ -72,6 +72,8 @@
 # virtual methods
 .method public varargs generateAllocationOrder([Lcom/bumptech/glide/load/engine/prefill/PreFillType;)Lcom/bumptech/glide/load/engine/prefill/PreFillQueue;
     .locals 7
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/prefill/BitmapPreFiller;->memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
@@ -268,8 +270,6 @@
 
     .line 13
     iget-object p1, p0, Lcom/bumptech/glide/load/engine/prefill/BitmapPreFiller;->handler:Landroid/os/Handler;
-
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/prefill/BitmapPreFiller;->current:Lcom/bumptech/glide/load/engine/prefill/BitmapPreFillRunner;
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

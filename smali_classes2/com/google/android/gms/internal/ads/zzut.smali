@@ -1,186 +1,56 @@
 .class public final Lcom/google/android/gms/internal/ads/zzut;
-.super Lcom/google/android/gms/internal/ads/zzkk;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzekl;
 
 
-# instance fields
-.field public final zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
+# static fields
+.field public static final zzer:Lcom/google/android/gms/internal/ads/zzekl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzkj;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzut;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzut;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzut;->zzer:Lcom/google/android/gms/internal/ads/zzekl;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzkk;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAdClicked()V
-    .locals 1
+.method public final zzi(I)Z
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzue$zzm$zzc;->zzcf(I)Lcom/google/android/gms/internal/ads/zzue$zzm$zzc;
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzkj;->onAdClicked()V
+    move-result-object p1
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
-.method public final onAdClosed()V
-    .locals 4
+    const/4 p1, 0x1
 
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzvc;->zznd()Z
+    return p1
 
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 2
-    sget-object v0, Lcom/google/android/gms/internal/ads/zznw;->zzbcl:Lcom/google/android/gms/internal/ads/zznl;
-
-    .line 3
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 4
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    .line 5
-    sget-object v1, Lcom/google/android/gms/internal/ads/zznw;->zzbcm:Lcom/google/android/gms/internal/ads/zznl;
-
-    .line 6
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 7
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-lez v0, :cond_1
-
-    if-gez v1, :cond_0
-
-    goto :goto_0
-
-    .line 8
     :cond_0
-    new-instance v2, Ljava/util/Random;
+    const/4 p1, 0x0
 
-    invoke-direct {v2}, Ljava/util/Random;-><init>()V
-
-    add-int/lit8 v1, v1, 0x1
-
-    invoke-virtual {v2, v1}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    int-to-long v0, v0
-
-    .line 9
-    sget-object v2, Lcom/google/android/gms/internal/ads/zzalo;->zzcvi:Landroid/os/Handler;
-
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzuu;->zzbri:Ljava/lang/Runnable;
-
-    invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_1
-
-    .line 10
-    :cond_1
-    :goto_0
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzey()Lcom/google/android/gms/internal/ads/zzuv;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzuv;->zzml()V
-
-    .line 11
-    :cond_2
-    :goto_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzkj;->onAdClosed()V
-
-    return-void
-.end method
-
-.method public final onAdFailedToLoad(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
-
-    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzkj;->onAdFailedToLoad(I)V
-
-    return-void
-.end method
-
-.method public final onAdImpression()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzkj;->onAdImpression()V
-
-    return-void
-.end method
-
-.method public final onAdLeftApplication()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzkj;->onAdLeftApplication()V
-
-    return-void
-.end method
-
-.method public final onAdLoaded()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzkj;->onAdLoaded()V
-
-    return-void
-.end method
-
-.method public final onAdOpened()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzut;->zzbrh:Lcom/google/android/gms/internal/ads/zzkj;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzkj;->onAdOpened()V
-
-    return-void
+    return p1
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final closedCaptionFormats:Ljava/util/List;
+.field private final closedCaptionFormats:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -14,7 +14,7 @@
     .end annotation
 .end field
 
-.field public final outputs:[Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private final outputs:[Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
 
 # direct methods

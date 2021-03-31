@@ -1,7 +1,14 @@
-.class public interface abstract Lcom/google/android/gms/ads/internal/overlay/zzw;
+.class public final Lcom/google/android/gms/ads/internal/overlay/zzw;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# virtual methods
-.method public abstract zzot()V
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public messageCode:Ljava/lang/Integer;
+.field private messageCode:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public result:Lcom/app/cinemasdk/networkcheck/Models/Result;
+.field private result:Lcom/app/cinemasdk/networkcheck/Models/Result;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

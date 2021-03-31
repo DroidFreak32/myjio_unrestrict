@@ -7,9 +7,9 @@
 
 
 # static fields
-.field public static anyLocalAddress:Ljava/net/InetAddress;
+.field private static anyLocalAddress:Ljava/net/InetAddress;
 
-.field public static pool:Ljava/util/Vector;
+.field private static pool:Ljava/util/Vector;
 
 
 # instance fields
@@ -64,6 +64,11 @@
 
 .method public constructor <init>(Lcom/jcraft/jsch/Session;Ljava/lang/String;ILjava/lang/String;ILcom/jcraft/jsch/ServerSocketFactory;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,8 +110,6 @@
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Lcom/jcraft/jsch/PortWatcher;->boundaddress:Ljava/net/InetAddress;
-
     invoke-interface {p6, p3, v0, p1}, Lcom/jcraft/jsch/ServerSocketFactory;->createServerSocket(IILjava/net/InetAddress;)Ljava/net/ServerSocket;
 
     move-result-object p1
@@ -119,8 +122,6 @@
     if-nez p3, :cond_1
 
     .line 9
-    iget-object p1, p0, Lcom/jcraft/jsch/PortWatcher;->ss:Ljava/net/ServerSocket;
-
     invoke-virtual {p1}, Ljava/net/ServerSocket;->getLocalPort()I
 
     move-result p1
@@ -173,6 +174,11 @@
 
 .method public static addPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;ILjava/lang/String;ILcom/jcraft/jsch/ServerSocketFactory;)Lcom/jcraft/jsch/PortWatcher;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1}, Lcom/jcraft/jsch/PortWatcher;->normalize(Ljava/lang/String;)Ljava/lang/String;
@@ -340,6 +346,11 @@
 
 .method public static delPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1}, Lcom/jcraft/jsch/PortWatcher;->normalize(Ljava/lang/String;)Ljava/lang/String;
@@ -398,6 +409,11 @@
 
 .method public static getPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)Lcom/jcraft/jsch/PortWatcher;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -448,11 +464,9 @@
 
     if-eqz v3, :cond_0
 
-    iget-object v3, v2, Lcom/jcraft/jsch/PortWatcher;->boundaddress:Ljava/net/InetAddress;
+    iget-object v4, v2, Lcom/jcraft/jsch/PortWatcher;->boundaddress:Ljava/net/InetAddress;
 
-    sget-object v4, Lcom/jcraft/jsch/PortWatcher;->anyLocalAddress:Ljava/net/InetAddress;
-
-    invoke-virtual {v3, v4}, Ljava/net/InetAddress;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/net/InetAddress;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -652,7 +666,7 @@
     throw p0
 .end method
 
-.method public static normalize(Ljava/lang/String;)Ljava/lang/String;
+.method private static normalize(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
     if-eqz p0, :cond_2
@@ -712,8 +726,6 @@
     iget-object v1, p0, Lcom/jcraft/jsch/PortWatcher;->ss:Ljava/net/ServerSocket;
 
     if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/jcraft/jsch/PortWatcher;->ss:Ljava/net/ServerSocket;
 
     invoke-virtual {v1}, Ljava/net/ServerSocket;->close()V
 
@@ -813,15 +825,12 @@
     iget v0, p0, Lcom/jcraft/jsch/PortWatcher;->connectTimeout:I
 
     invoke-virtual {v3, v0}, Lcom/jcraft/jsch/ChannelDirectTCPIP;->connect(I)V
-
-    .line 17
-    iget v0, v3, Lcom/jcraft/jsch/Channel;->exitstatus:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 18
+    .line 17
     :catch_0
     :cond_0
     invoke-virtual {p0}, Lcom/jcraft/jsch/PortWatcher;->delete()V

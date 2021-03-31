@@ -1,8 +1,9 @@
 .class public final Lcom/google/android/gms/dynamite/DynamiteModule$zzb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
-.implements Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;
+.implements Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;
 
 
 # annotations
@@ -17,9 +18,9 @@
 
 
 # instance fields
-.field public final zzip:I
+.field private final zza:I
 
-.field public final zziq:I
+.field private final zzb:I
 
 
 # direct methods
@@ -30,23 +31,23 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$zzb;->zzip:I
+    iput p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$zzb;->zza:I
 
     const/4 p1, 0x0
 
     .line 3
-    iput p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$zzb;->zziq:I
+    iput p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$zzb;->zzb:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getLocalVersion(Landroid/content/Context;Ljava/lang/String;)I
+.method public final zza(Landroid/content/Context;Ljava/lang/String;)I
     .locals 0
 
     .line 1
-    iget p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$zzb;->zzip:I
+    iget p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$zzb;->zza:I
 
     return p1
 .end method

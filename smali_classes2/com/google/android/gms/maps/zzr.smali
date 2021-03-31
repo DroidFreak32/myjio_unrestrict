@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzz:Lcom/google/android/gms/maps/GoogleMap$SnapshotReadyCallback;
+.field private final synthetic zzz:Lcom/google/android/gms/maps/GoogleMap$SnapshotReadyCallback;
 
 
 # direct methods
@@ -22,6 +22,11 @@
 # virtual methods
 .method public final onSnapshotReady(Landroid/graphics/Bitmap;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/zzr;->zzz:Lcom/google/android/gms/maps/GoogleMap$SnapshotReadyCallback;
@@ -33,6 +38,11 @@
 
 .method public final zzb(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/zzr;->zzz:Lcom/google/android/gms/maps/GoogleMap$SnapshotReadyCallback;

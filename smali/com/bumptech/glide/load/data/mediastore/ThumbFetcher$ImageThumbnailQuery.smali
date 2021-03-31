@@ -18,13 +18,13 @@
 
 
 # static fields
-.field public static final PATH_PROJECTION:[Ljava/lang/String;
+.field private static final PATH_PROJECTION:[Ljava/lang/String;
 
-.field public static final PATH_SELECTION:Ljava/lang/String; = "kind = 1 AND image_id = ?"
+.field private static final PATH_SELECTION:Ljava/lang/String; = "kind = 1 AND image_id = ?"
 
 
 # instance fields
-.field public final contentResolver:Landroid/content/ContentResolver;
+.field private final contentResolver:Landroid/content/ContentResolver;
 
 
 # direct methods

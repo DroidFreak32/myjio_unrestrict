@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/ListenerHolders;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # instance fields
-.field public final zajo:Ljava/util/Set;
+.field private final zaa:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -36,13 +37,25 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zajo:Ljava/util/Set;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zaa:Ljava/util/Set;
 
     return-void
 .end method
 
 .method public static createListenerHolder(Ljava/lang/Object;Landroid/os/Looper;Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/ListenerHolder;
     .locals 1
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -87,6 +100,14 @@
 
 .method public static createListenerKey(Ljava/lang/Object;Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
     .locals 1
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -130,45 +151,20 @@
 
 
 # virtual methods
-.method public final release()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zajo:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/api/internal/ListenerHolder;
-
-    .line 2
-    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->clear()V
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zajo:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
-
-    return-void
-.end method
-
 .method public final zaa(Ljava/lang/Object;Landroid/os/Looper;Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/ListenerHolder;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",
@@ -191,9 +187,46 @@
     move-result-object p1
 
     .line 2
-    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zajo:Ljava/util/Set;
+    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zaa:Ljava/util/Set;
 
     invoke-interface {p2, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     return-object p1
+.end method
+
+.method public final zaa()V
+    .locals 2
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zaa:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/internal/ListenerHolder;
+
+    .line 4
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->clear()V
+
+    goto :goto_0
+
+    .line 5
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolders;->zaa:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->clear()V
+
+    return-void
 .end method

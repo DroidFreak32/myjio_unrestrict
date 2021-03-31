@@ -27,11 +27,11 @@
 
     .line 1
     :try_start_0
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lmg0;->C()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isCheckPermissions()Z
 
     move-result p2
 
@@ -54,20 +54,20 @@
     move-result p2
 
     .line 4
-    invoke-static {p1}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Log0;->v()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->globalNetworkProvider()Ljava/lang/String;
 
     if-eqz p2, :cond_3
 
     .line 5
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lhf0;->V()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PreferenceHelper;->isInternationalRoaming()Z
 
     move-result p2
 
@@ -81,27 +81,37 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lpg0;->a(Landroid/content/Context;)Lpg0;
+    invoke-static {p2}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkPassiveAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lpg0;->d()Lcom/inn/passivesdk/holders/AppInfo;
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getOwnAppInfoIfEligibleService()Lcom/inn/passivesdk/holders/AppInfo;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion;->a:Lcom/inn/passivesdk/holders/AppInfo;
 
-    .line 7
-    iget-object p2, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion;->a:Lcom/inn/passivesdk/holders/AppInfo;
-
     if-eqz p2, :cond_3
 
-    .line 8
+    .line 7
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1a
 
     if-ge p2, v0, :cond_1
+
+    .line 8
+    const-class p2, Lcom/inn/passivesdk/service/GlobalService;
+
+    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p1, p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isServiceRunning(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_2
 
     .line 9
     const-class p2, Lcom/inn/passivesdk/service/GlobalService;
@@ -110,20 +120,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lmg0;->b(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_2
-
-    .line 10
-    const-class p2, Lcom/inn/passivesdk/service/GlobalService;
-
-    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p1, p2}, Lmg0;->b(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;
+    invoke-static {p1, p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isServiceRunning(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object p2
 
@@ -141,14 +138,14 @@
 
     if-eqz p2, :cond_2
 
-    .line 11
+    .line 10
     new-instance p2, Landroid/content/Intent;
 
     const-class v0, Lcom/inn/passivesdk/service/GlobalService;
 
     invoke-direct {p2, p1, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 12
+    .line 11
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -157,7 +154,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 13
+    .line 12
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -166,26 +163,26 @@
 
     goto :goto_0
 
-    .line 14
+    .line 13
     :cond_1
-    invoke-static {p1}, Lff0;->a(Landroid/content/Context;)Lff0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lff0;->k()V
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PassiveManager;->stopJobScheduler()V
 
-    .line 15
+    .line 14
     :cond_2
     :goto_0
     iget-object p2, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion;->a:Lcom/inn/passivesdk/holders/AppInfo;
 
-    invoke-virtual {p2}, Lcom/inn/passivesdk/holders/AppInfo;->c()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/holders/AppInfo;->isEligibleStartService()Z
 
     move-result p2
 
     if-eqz p2, :cond_3
 
-    .line 16
+    .line 15
     new-instance p2, Landroid/os/Handler;
 
     invoke-direct {p2}, Landroid/os/Handler;-><init>()V

@@ -1,5 +1,5 @@
 .class public Landroidx/transition/ChangeTransform$d;
-.super Lhj;
+.super Landroidx/transition/TransitionListenerAdapter;
 .source "ChangeTransform.java"
 
 
@@ -15,81 +15,93 @@
 
 
 # instance fields
-.field public s:Landroid/view/View;
+.field public a:Landroid/view/View;
 
-.field public t:Lsi;
+.field public b:Ld5;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lsi;)V
+.method public constructor <init>(Landroid/view/View;Ld5;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lhj;-><init>()V
+    invoke-direct {p0}, Landroidx/transition/TransitionListenerAdapter;-><init>()V
 
     .line 2
-    iput-object p1, p0, Landroidx/transition/ChangeTransform$d;->s:Landroid/view/View;
+    iput-object p1, p0, Landroidx/transition/ChangeTransform$d;->a:Landroid/view/View;
 
     .line 3
-    iput-object p2, p0, Landroidx/transition/ChangeTransform$d;->t:Lsi;
+    iput-object p2, p0, Landroidx/transition/ChangeTransform$d;->b:Ld5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroidx/transition/Transition;)V
-    .locals 1
-
-    .line 1
-    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->t:Lsi;
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0}, Lsi;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public c(Landroidx/transition/Transition;)V
-    .locals 1
-
-    .line 1
-    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->t:Lsi;
-
-    const/4 v0, 0x4
-
-    invoke-interface {p1, v0}, Lsi;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public d(Landroidx/transition/Transition;)V
+.method public onTransitionEnd(Landroidx/transition/Transition;)V
     .locals 2
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$g;)Landroidx/transition/Transition;
+    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
 
     .line 2
-    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->s:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->a:Landroid/view/View;
 
-    invoke-static {p1}, Lwi;->a(Landroid/view/View;)V
+    invoke-static {p1}, Lh5;->b(Landroid/view/View;)V
 
     .line 3
-    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->s:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->a:Landroid/view/View;
 
-    sget v0, Lcj;->transition_transform:I
+    sget v0, Landroidx/transition/R$id;->transition_transform:I
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 4
-    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->s:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->a:Landroid/view/View;
 
-    sget v0, Lcj;->parent_matrix:I
+    sget v0, Landroidx/transition/R$id;->parent_matrix:I
 
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public onTransitionPause(Landroidx/transition/Transition;)V
+    .locals 1
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->b:Ld5;
+
+    const/4 v0, 0x4
+
+    invoke-interface {p1, v0}, Ld5;->setVisibility(I)V
+
+    return-void
+.end method
+
+.method public onTransitionResume(Landroidx/transition/Transition;)V
+    .locals 1
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object p1, p0, Landroidx/transition/ChangeTransform$d;->b:Ld5;
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, v0}, Ld5;->setVisibility(I)V
 
     return-void
 .end method

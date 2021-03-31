@@ -1,29 +1,18 @@
-.class public final Lcom/google/android/gms/common/internal/zai;
+.class public interface abstract Lcom/google/android/gms/common/internal/zai;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# annotations
+.annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+.end annotation
 
 
 # virtual methods
-.method public final zaf(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
-    .locals 0
+.method public abstract getConnectionHint()Landroid/os/Bundle;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end method
 
-    .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/ApiExceptionUtil;->fromStatus(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
-
-    move-result-object p1
-
-    return-object p1
+.method public abstract isConnected()Z
 .end method

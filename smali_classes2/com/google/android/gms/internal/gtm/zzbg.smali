@@ -15,124 +15,112 @@
 # static fields
 .field public static final enum zzya:Lcom/google/android/gms/internal/gtm/zzbg;
 
-.field public static final enum zzyb:Lcom/google/android/gms/internal/gtm/zzbg;
+.field private static final enum zzyb:Lcom/google/android/gms/internal/gtm/zzbg;
 
-.field public static final enum zzyc:Lcom/google/android/gms/internal/gtm/zzbg;
+.field private static final enum zzyc:Lcom/google/android/gms/internal/gtm/zzbg;
 
-.field public static final enum zzyd:Lcom/google/android/gms/internal/gtm/zzbg;
+.field private static final enum zzyd:Lcom/google/android/gms/internal/gtm/zzbg;
 
 .field public static final enum zzye:Lcom/google/android/gms/internal/gtm/zzbg;
 
-.field public static final enum zzyf:Lcom/google/android/gms/internal/gtm/zzbg;
+.field private static final enum zzyf:Lcom/google/android/gms/internal/gtm/zzbg;
 
-.field public static final synthetic zzyg:[Lcom/google/android/gms/internal/gtm/zzbg;
+.field private static final synthetic zzyg:[Lcom/google/android/gms/internal/gtm/zzbg;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/gtm/zzbg;
 
-    const/4 v1, 0x0
+    const-string v1, "NONE"
 
-    const-string v2, "NONE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzya:Lcom/google/android/gms/internal/gtm/zzbg;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzbg;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzbg;
 
     const-string v3, "BATCH_BY_SESSION"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzyb:Lcom/google/android/gms/internal/gtm/zzbg;
+    invoke-direct {v1, v3, v4}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/google/android/gms/internal/gtm/zzbg;->zzyb:Lcom/google/android/gms/internal/gtm/zzbg;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzbg;
+    new-instance v3, Lcom/google/android/gms/internal/gtm/zzbg;
 
-    const/4 v3, 0x2
+    const-string v5, "BATCH_BY_TIME"
 
-    const-string v4, "BATCH_BY_TIME"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzyc:Lcom/google/android/gms/internal/gtm/zzbg;
+    sput-object v3, Lcom/google/android/gms/internal/gtm/zzbg;->zzyc:Lcom/google/android/gms/internal/gtm/zzbg;
 
     .line 4
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzbg;
+    new-instance v5, Lcom/google/android/gms/internal/gtm/zzbg;
 
-    const/4 v4, 0x3
+    const-string v7, "BATCH_BY_BRUTE_FORCE"
 
-    const-string v5, "BATCH_BY_BRUTE_FORCE"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzyd:Lcom/google/android/gms/internal/gtm/zzbg;
+    sput-object v5, Lcom/google/android/gms/internal/gtm/zzbg;->zzyd:Lcom/google/android/gms/internal/gtm/zzbg;
 
     .line 5
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzbg;
+    new-instance v7, Lcom/google/android/gms/internal/gtm/zzbg;
 
-    const/4 v5, 0x4
+    const-string v9, "BATCH_BY_COUNT"
 
-    const-string v6, "BATCH_BY_COUNT"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzye:Lcom/google/android/gms/internal/gtm/zzbg;
+    sput-object v7, Lcom/google/android/gms/internal/gtm/zzbg;->zzye:Lcom/google/android/gms/internal/gtm/zzbg;
 
     .line 6
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzbg;
+    new-instance v9, Lcom/google/android/gms/internal/gtm/zzbg;
 
-    const/4 v6, 0x5
+    const-string v11, "BATCH_BY_SIZE"
 
-    const-string v7, "BATCH_BY_SIZE"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/google/android/gms/internal/gtm/zzbg;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzyf:Lcom/google/android/gms/internal/gtm/zzbg;
+    sput-object v9, Lcom/google/android/gms/internal/gtm/zzbg;->zzyf:Lcom/google/android/gms/internal/gtm/zzbg;
 
-    const/4 v0, 0x6
+    const/4 v11, 0x6
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzbg;
+    new-array v11, v11, [Lcom/google/android/gms/internal/gtm/zzbg;
+
+    aput-object v0, v11, v2
+
+    aput-object v1, v11, v4
+
+    aput-object v3, v11, v6
+
+    aput-object v5, v11, v8
+
+    aput-object v7, v11, v10
+
+    aput-object v9, v11, v12
 
     .line 7
-    sget-object v7, Lcom/google/android/gms/internal/gtm/zzbg;->zzya:Lcom/google/android/gms/internal/gtm/zzbg;
-
-    aput-object v7, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzbg;->zzyb:Lcom/google/android/gms/internal/gtm/zzbg;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzbg;->zzyc:Lcom/google/android/gms/internal/gtm/zzbg;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzbg;->zzyd:Lcom/google/android/gms/internal/gtm/zzbg;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzbg;->zzye:Lcom/google/android/gms/internal/gtm/zzbg;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzbg;->zzyf:Lcom/google/android/gms/internal/gtm/zzbg;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbg;->zzyg:[Lcom/google/android/gms/internal/gtm/zzbg;
+    sput-object v11, Lcom/google/android/gms/internal/gtm/zzbg;->zzyg:[Lcom/google/android/gms/internal/gtm/zzbg;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

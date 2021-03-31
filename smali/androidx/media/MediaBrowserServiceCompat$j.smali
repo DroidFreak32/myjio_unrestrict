@@ -2,11 +2,12 @@
 .super Landroidx/media/MediaBrowserServiceCompat$i;
 .source "MediaBrowserServiceCompat.java"
 
-# interfaces
-.implements Laf$c;
-
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x1c
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/media/MediaBrowserServiceCompat;
 .end annotation
@@ -18,7 +19,7 @@
 
 
 # instance fields
-.field public final synthetic f:Landroidx/media/MediaBrowserServiceCompat;
+.field public final synthetic g:Landroidx/media/MediaBrowserServiceCompat;
 
 
 # direct methods
@@ -26,7 +27,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$j;->f:Landroidx/media/MediaBrowserServiceCompat;
+    iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$j;->g:Landroidx/media/MediaBrowserServiceCompat;
 
     invoke-direct {p0, p1}, Landroidx/media/MediaBrowserServiceCompat$i;-><init>(Landroidx/media/MediaBrowserServiceCompat;)V
 
@@ -35,38 +36,36 @@
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public b()Landroidx/media/MediaSessionManager$RemoteUserInfo;
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$j;->f:Landroidx/media/MediaBrowserServiceCompat;
+    iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$j;->g:Landroidx/media/MediaBrowserServiceCompat;
 
-    invoke-static {v0, p0}, Laf;->a(Landroid/content/Context;Laf$c;)Ljava/lang/Object;
+    iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat;->c:Landroidx/media/MediaBrowserServiceCompat$e;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat$e;->b:Landroidx/media/MediaSessionManager$RemoteUserInfo;
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$g;->b:Ljava/lang/Object;
+
+    check-cast v0, Landroid/service/media/MediaBrowserService;
+
+    .line 4
+    invoke-virtual {v0}, Landroid/service/media/MediaBrowserService;->getCurrentBrowserInfo()Landroid/media/session/MediaSessionManager$RemoteUserInfo;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$h;->b:Ljava/lang/Object;
+    .line 5
+    new-instance v1, Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
-    .line 2
-    iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$h;->b:Ljava/lang/Object;
+    invoke-direct {v1, v0}, Landroidx/media/MediaSessionManager$RemoteUserInfo;-><init>(Landroid/media/session/MediaSessionManager$RemoteUserInfo;)V
 
-    invoke-static {v0}, Lye;->a(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;Laf$b;Landroid/os/Bundle;)V
-    .locals 1
-
-    .line 3
-    new-instance v0, Landroidx/media/MediaBrowserServiceCompat$j$a;
-
-    invoke-direct {v0, p0, p1, p2}, Landroidx/media/MediaBrowserServiceCompat$j$a;-><init>(Landroidx/media/MediaBrowserServiceCompat$j;Ljava/lang/Object;Laf$b;)V
-
-    .line 4
-    iget-object p2, p0, Landroidx/media/MediaBrowserServiceCompat$j;->f:Landroidx/media/MediaBrowserServiceCompat;
-
-    invoke-virtual {p2, p1, v0, p3}, Landroidx/media/MediaBrowserServiceCompat;->a(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$m;Landroid/os/Bundle;)V
-
-    return-void
+    return-object v1
 .end method

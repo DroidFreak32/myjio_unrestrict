@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzp:Lcom/google/android/gms/stats/WakeLock;
+.field private final synthetic zzp:Lcom/google/android/gms/stats/WakeLock;
 
 
 # direct methods

@@ -42,6 +42,11 @@
 
 .method public final readFromStream(ILjava/io/DataInputStream;)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p2}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
@@ -105,6 +110,11 @@
 
 .method public readKey(ILjava/io/DataInputStream;)Lcom/google/android/jioexoplayer2/offline/StreamKey;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p2}, Ljava/io/DataInputStream;->readInt()I

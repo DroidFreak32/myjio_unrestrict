@@ -14,12 +14,16 @@
 
 
 # instance fields
-.field public final zzbo:Lcom/google/android/gms/maps/internal/IStreetViewPanoramaDelegate;
+.field private final zzbo:Lcom/google/android/gms/maps/internal/IStreetViewPanoramaDelegate;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/maps/internal/IStreetViewPanoramaDelegate;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/internal/IStreetViewPanoramaDelegate;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

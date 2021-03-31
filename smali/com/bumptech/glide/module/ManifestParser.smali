@@ -9,13 +9,13 @@
 
 
 # static fields
-.field public static final GLIDE_MODULE_VALUE:Ljava/lang/String; = "GlideModule"
+.field private static final GLIDE_MODULE_VALUE:Ljava/lang/String; = "GlideModule"
 
-.field public static final TAG:Ljava/lang/String; = "ManifestParser"
+.field private static final TAG:Ljava/lang/String; = "ManifestParser"
 
 
 # instance fields
-.field public final context:Landroid/content/Context;
+.field private final context:Landroid/content/Context;
 
 
 # direct methods
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public static parseModule(Ljava/lang/String;)Lcom/bumptech/glide/module/GlideModule;
+.method private static parseModule(Ljava/lang/String;)Lcom/bumptech/glide/module/GlideModule;
     .locals 3
 
     .line 1
@@ -143,7 +143,7 @@
     throw v0
 .end method
 
-.method public static throwInstantiateGlideModuleException(Ljava/lang/Class;Ljava/lang/Exception;)V
+.method private static throwInstantiateGlideModuleException(Ljava/lang/Class;Ljava/lang/Exception;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -190,12 +190,12 @@
         }
     .end annotation
 
-    const/4 v0, 0x3
+    const-string v0, "ManifestParser"
 
-    const-string v1, "ManifestParser"
+    const/4 v1, 0x3
 
     .line 1
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v2
 
@@ -231,7 +231,7 @@
     if-nez v4, :cond_0
 
     .line 6
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -241,7 +241,7 @@
     const/4 v4, 0x2
 
     .line 7
-    invoke-static {v1, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v4
 
@@ -311,7 +311,7 @@
     invoke-interface {v2, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 12
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v6
 
@@ -336,7 +336,7 @@
 
     .line 14
     :cond_3
-    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 

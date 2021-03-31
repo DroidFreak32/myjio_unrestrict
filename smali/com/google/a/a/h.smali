@@ -23,9 +23,9 @@
 
 .field public static final e:Ljava/util/regex/Pattern;
 
-.field public static final f:Ljava/util/logging/Logger;
+.field private static final f:Ljava/util/logging/Logger;
 
-.field public static final g:Ljava/util/Map;
+.field private static final g:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public static final h:Ljava/util/Set;
+.field private static final h:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -46,7 +46,7 @@
     .end annotation
 .end field
 
-.field public static final i:Ljava/util/Set;
+.field private static final i:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -56,7 +56,7 @@
     .end annotation
 .end field
 
-.field public static final j:Ljava/util/Map;
+.field private static final j:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -67,7 +67,7 @@
     .end annotation
 .end field
 
-.field public static final k:Ljava/util/Map;
+.field private static final k:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -78,7 +78,7 @@
     .end annotation
 .end field
 
-.field public static final l:Ljava/util/Map;
+.field private static final l:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -89,7 +89,7 @@
     .end annotation
 .end field
 
-.field public static final m:Ljava/util/Map;
+.field private static final m:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -100,37 +100,37 @@
     .end annotation
 .end field
 
-.field public static final n:Ljava/util/regex/Pattern;
+.field private static final n:Ljava/util/regex/Pattern;
 
-.field public static final o:Ljava/lang/String;
+.field private static final o:Ljava/lang/String;
 
-.field public static final p:Ljava/util/regex/Pattern;
+.field private static final p:Ljava/util/regex/Pattern;
 
-.field public static final q:Ljava/util/regex/Pattern;
+.field private static final q:Ljava/util/regex/Pattern;
 
-.field public static final r:Ljava/util/regex/Pattern;
+.field private static final r:Ljava/util/regex/Pattern;
 
-.field public static final s:Ljava/util/regex/Pattern;
+.field private static final s:Ljava/util/regex/Pattern;
 
-.field public static final t:Ljava/lang/String;
+.field private static final t:Ljava/lang/String;
 
-.field public static final u:Ljava/lang/String;
+.field private static final u:Ljava/lang/String;
 
-.field public static final v:Ljava/util/regex/Pattern;
+.field private static final v:Ljava/util/regex/Pattern;
 
-.field public static final w:Ljava/util/regex/Pattern;
+.field private static final w:Ljava/util/regex/Pattern;
 
-.field public static final x:Ljava/util/regex/Pattern;
+.field private static final x:Ljava/util/regex/Pattern;
 
-.field public static final y:Ljava/util/regex/Pattern;
+.field private static final y:Ljava/util/regex/Pattern;
 
-.field public static z:Lcom/google/a/a/h;
+.field private static z:Lcom/google/a/a/h;
 
 
 # instance fields
-.field public final A:Lcom/google/a/a/e;
+.field private final A:Lcom/google/a/a/e;
 
-.field public final B:Ljava/util/Map;
+.field private final B:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -142,9 +142,9 @@
     .end annotation
 .end field
 
-.field public final C:Lcom/google/a/a/a/a;
+.field private final C:Lcom/google/a/a/a/a;
 
-.field public final D:Ljava/util/Set;
+.field private final D:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -154,9 +154,9 @@
     .end annotation
 .end field
 
-.field public final E:Lcom/google/a/a/a/c;
+.field private final E:Lcom/google/a/a/a/c;
 
-.field public final F:Ljava/util/Set;
+.field private final F:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -166,7 +166,7 @@
     .end annotation
 .end field
 
-.field public final G:Ljava/util/Set;
+.field private final G:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -199,31 +199,31 @@
 
     const/16 v1, 0x34
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-string v4, "1"
+    const-string v3, "1"
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v3, 0x36
 
-    invoke-static {v3}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v5
+    move-result-object v3
 
-    const-string v6, "9"
+    const-string v5, "9"
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -253,37 +253,29 @@
 
     invoke-direct {v6}, Ljava/util/HashSet;-><init>()V
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v6, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    invoke-virtual {v6, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v6, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    const/16 v2, 0x37
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v6, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v1, 0x37
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-virtual {v6, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    const/16 v2, 0x3e
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v6, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    const/16 v1, 0x3e
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v6, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     invoke-virtual {v6, v0}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
@@ -297,39 +289,29 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const/16 v1, 0x30
+    const/16 v2, 0x30
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-virtual {v0, v2, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    const/16 v2, 0x31
 
-    invoke-virtual {v0, v6, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    const/16 v1, 0x31
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-virtual {v0, v2, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    const/16 v2, 0x32
 
-    const/16 v6, 0x31
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    invoke-static {v6}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    move-result-object v2
 
-    move-result-object v6
-
-    invoke-virtual {v0, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v1, 0x32
-
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v6, 0x33
 
@@ -339,7 +321,7 @@
 
     invoke-virtual {v0, v6, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v7, 0x35
 
@@ -349,21 +331,17 @@
 
     invoke-virtual {v0, v7, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v4, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     invoke-virtual {v0, v3, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, v4, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v8, 0x38
 
     invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v10
-
-    invoke-virtual {v0, v9, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v9, 0x39
 
@@ -385,7 +363,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v10, v11, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v11, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v11, 0x42
 
@@ -393,7 +371,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v12, 0x43
 
@@ -401,55 +379,55 @@
 
     move-result-object v12
 
-    invoke-virtual {v10, v12, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v1, 0x44
+    const/16 v2, 0x44
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v10, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v1, 0x45
+    const/16 v2, 0x45
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v10, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v1, 0x46
+    const/16 v2, 0x46
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v10, v1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v1, 0x47
+    const/16 v2, 0x47
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v10, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v1, 0x48
+    const/16 v2, 0x48
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v10, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v1, 0x49
+    const/16 v2, 0x49
 
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v10, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x4a
 
@@ -481,7 +459,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x4e
 
@@ -489,7 +467,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x4f
 
@@ -497,7 +475,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x50
 
@@ -505,7 +483,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x51
 
@@ -513,7 +491,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x52
 
@@ -521,7 +499,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x53
 
@@ -529,7 +507,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v10, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x54
 
@@ -537,11 +515,7 @@
 
     move-result-object v1
 
-    invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
-
-    invoke-virtual {v10, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x55
 
@@ -549,21 +523,13 @@
 
     move-result-object v1
 
-    invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
-
-    invoke-virtual {v10, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v5}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v1
 
-    invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
-
-    invoke-virtual {v10, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v1, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x57
 
@@ -603,35 +569,27 @@
 
     sput-object v1, Lcom/google/a/a/h;->k:Ljava/util/Map;
 
-    new-instance v1, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    const/16 v2, 0x64
+    const/16 v3, 0x64
 
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
 
-    sget-object v2, Lcom/google/a/a/h;->k:Ljava/util/Map;
+    invoke-virtual {v2, v1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-virtual {v2, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
-
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/google/a/a/h;->l:Ljava/util/Map;
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
-
-    const/16 v2, 0x2b
-
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v2}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v2
+
+    sput-object v2, Lcom/google/a/a/h;->l:Ljava/util/Map;
+
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
     const/16 v3, 0x2b
 
@@ -639,13 +597,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v2, 0x2a
-
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
+    invoke-virtual {v2, v3, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v3, 0x2a
 
@@ -653,13 +605,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v2, 0x23
-
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
+    invoke-virtual {v2, v3, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v3, 0x23
 
@@ -667,36 +613,34 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v3, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {v2}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/google/a/a/h;->j:Ljava/util/Map;
+
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
 
-    sput-object v1, Lcom/google/a/a/h;->j:Ljava/util/Map;
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    sget-object v2, Lcom/google/a/a/h;->k:Ljava/util/Map;
-
-    invoke-interface {v2}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
+    move-result-object v1
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -718,7 +662,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v1, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v3}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
@@ -728,206 +672,206 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-virtual {v2, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
     const/16 v0, 0x2d
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const v2, 0xff0d
+    const v1, 0xff0d
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
-
-    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v2, 0x2010
-
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v2, 0x2011
+    const/16 v1, 0x2010
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
-
-    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v2, 0x2012
-
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v2, 0x2013
+    const/16 v1, 0x2011
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
-
-    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v2, 0x2014
-
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v2, 0x2015
+    const/16 v1, 0x2012
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v2, 0x2212
+    const/16 v1, 0x2013
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/16 v1, 0x2014
+
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/16 v1, 0x2015
+
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/16 v1, 0x2212
+
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v0, 0x2f
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const v2, 0xff0f
+    const v1, 0xff0f
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v0, 0x20
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v2, 0x3000
+    const/16 v1, 0x3000
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v2, 0x2060
+    const/16 v1, 0x2060
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v0, 0x2e
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const v2, 0xff0e
+    const v1, 0xff0e
 
-    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {v2}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -949,27 +893,25 @@
 
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {v1}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "[, \\[\\]]"
+    const-string v3, "[, \\[\\]]"
 
-    const-string v3, ""
+    const-string v4, ""
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v1, Lcom/google/a/a/h;->k:Ljava/util/Map;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -987,11 +929,7 @@
 
     move-result-object v1
 
-    const-string v2, "[, \\[\\]]"
-
-    const-string v3, ""
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1003,163 +941,153 @@
 
     sput-object v0, Lcom/google/a/a/h;->o:Ljava/lang/String;
 
-    const-string v0, "[+\uff0b]+"
+    const-string v1, "[+\uff0b]+"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->a:Ljava/util/regex/Pattern;
+    sput-object v1, Lcom/google/a/a/h;->a:Ljava/util/regex/Pattern;
 
-    const-string v0, "[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\\[\\]/~\u2053\u223c\uff5e]+"
+    const-string v1, "[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\\[\\]/~\u2053\u223c\uff5e]+"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->p:Ljava/util/regex/Pattern;
+    sput-object v1, Lcom/google/a/a/h;->p:Ljava/util/regex/Pattern;
 
-    const-string v0, "(\\p{Nd})"
+    const-string v1, "(\\p{Nd})"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->q:Ljava/util/regex/Pattern;
+    sput-object v1, Lcom/google/a/a/h;->q:Ljava/util/regex/Pattern;
 
-    const-string v0, "[+\uff0b\\p{Nd}]"
+    const-string v1, "[+\uff0b\\p{Nd}]"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->r:Ljava/util/regex/Pattern;
+    sput-object v1, Lcom/google/a/a/h;->r:Ljava/util/regex/Pattern;
 
-    const-string v0, "[\\\\/] *x"
+    const-string v1, "[\\\\/] *x"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->b:Ljava/util/regex/Pattern;
+    sput-object v1, Lcom/google/a/a/h;->b:Ljava/util/regex/Pattern;
 
-    const-string v0, "[[\\P{N}&&\\P{L}]&&[^#]]+$"
+    const-string v1, "[[\\P{N}&&\\P{L}]&&[^#]]+$"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->c:Ljava/util/regex/Pattern;
+    sput-object v1, Lcom/google/a/a/h;->c:Ljava/util/regex/Pattern;
 
-    const-string v0, "(?:.*?[A-Za-z]){3}.*"
+    const-string v1, "(?:.*?[A-Za-z]){3}.*"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/a/a/h;->s:Ljava/util/regex/Pattern;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "\\p{Nd}{2}|[+\uff0b]*+(?:[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\\[\\]/~\u2053\u223c\uff5e*]*\\p{Nd}){3,}[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\\[\\]/~\u2053\u223c\uff5e*"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v1, Lcom/google/a/a/h;->o:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\\p{Nd}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "]*"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/a/a/h;->t:Ljava/lang/String;
-
-    const-string v0, "x\uff58#\uff03~\uff5e"
+    sput-object v1, Lcom/google/a/a/h;->s:Ljava/util/regex/Pattern;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, ",;"
+    const-string v2, "\\p{Nd}{2}|[+\uff0b]*+(?:[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\\[\\]/~\u2053\u223c\uff5e*]*\\p{Nd}){3,}[-x\u2010-\u2015\u2212\u30fc\uff0d-\uff0f \u00a0\u00ad\u200b\u2060\u3000()\uff08\uff09\uff3b\uff3d.\\[\\]/~\u2053\u223c\uff5e*"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    const-string v0, "\\p{Nd}"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]*"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
+
+    sput-object v0, Lcom/google/a/a/h;->t:Ljava/lang/String;
+
+    const-string/jumbo v1, "x\uff58#\uff03~\uff5e"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, ",;"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/google/a/a/h;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/google/a/a/h;->u:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/google/a/a/h;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    sput-object v1, Lcom/google/a/a/h;->u:Ljava/lang/String;
+    sput-object v1, Lcom/google/a/a/h;->d:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/google/a/a/h;->b(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sput-object v0, Lcom/google/a/a/h;->d:Ljava/lang/String;
+    const-string v3, "(?:"
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "(?:"
+    const-string v4, ")$"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v1, Lcom/google/a/a/h;->u:Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    const-string v1, ")$"
+    invoke-static {v1, v11}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sput-object v1, Lcom/google/a/a/h;->v:Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v11}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sput-object v0, Lcom/google/a/a/h;->v:Ljava/util/regex/Pattern;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, ")?"
 
-    sget-object v1, Lcom/google/a/a/h;->t:Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "(?:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v1, Lcom/google/a/a/h;->u:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1504,15 +1432,13 @@
 
     move-object v0, p2
 
-    goto :goto_2
+    :goto_2
+    move-object v1, v2
 
     :cond_4
-    move-object v2, v1
-
-    :goto_2
     const/4 p2, 0x0
 
-    invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -1522,9 +1448,9 @@
 
     move-result p3
 
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
-    if-ne p3, v1, :cond_5
+    if-ne p3, v2, :cond_5
 
     sget-object p1, Lcom/google/a/a/h$c;->e:Lcom/google/a/a/h$c;
 
@@ -1550,7 +1476,7 @@
     return-object p1
 
     :cond_6
-    invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -1574,7 +1500,7 @@
     return-object p1
 
     :cond_8
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result p2
 
@@ -1582,7 +1508,7 @@
 
     sub-int/2addr p2, p3
 
-    invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -1599,11 +1525,11 @@
     return-object p1
 
     :cond_9
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    invoke-interface {v2, p3, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
+    invoke-interface {v1, p3, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p2
 
@@ -1665,7 +1591,7 @@
     throw v1
 .end method
 
-.method public static a(Lcom/google/a/a/e;)Lcom/google/a/a/h;
+.method private static a(Lcom/google/a/a/e;)Lcom/google/a/a/h;
     .locals 2
 
     if-eqz p0, :cond_0
@@ -1795,7 +1721,7 @@
     return-object p0
 .end method
 
-.method public static a(Ljava/lang/CharSequence;Ljava/util/Map;Z)Ljava/lang/String;
+.method private static a(Ljava/lang/CharSequence;Ljava/util/Map;Z)Ljava/lang/String;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2047,6 +1973,11 @@
 
 .method private a(Ljava/lang/CharSequence;Ljava/lang/String;ZZLcom/google/a/a/j$a;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/a/a/g;
+        }
+    .end annotation
 
     if-eqz p1, :cond_10
 
@@ -2455,7 +2386,7 @@
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_1
-    const-string v1, "tel:"
+    const-string/jumbo v1, "tel:"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -2505,7 +2436,7 @@
     return-void
 .end method
 
-.method public static a(Lcom/google/a/a/i$d;)Z
+.method private static a(Lcom/google/a/a/i$d;)Z
     .locals 3
 
     invoke-virtual {p0}, Lcom/google/a/a/i$d;->c()I
@@ -2597,7 +2528,7 @@
     return v1
 .end method
 
-.method public static b(Ljava/lang/String;)Ljava/lang/String;
+.method private static b(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2626,7 +2557,7 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p0, "{1,5})#"
+    const-string/jumbo p0, "{1,5})#"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2780,11 +2711,9 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/google/a/a/h;->g:Ljava/util/Map;
+    if-eqz v1, :cond_0
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2838,6 +2767,11 @@
 # virtual methods
 .method public a(Ljava/lang/CharSequence;Lcom/google/a/a/i$b;Ljava/lang/StringBuilder;ZLcom/google/a/a/j$a;)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/a/a/g;
+        }
+    .end annotation
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -3303,6 +3237,11 @@
 
 .method public a(Ljava/lang/CharSequence;Ljava/lang/String;)Lcom/google/a/a/j$a;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/a/a/g;
+        }
+    .end annotation
 
     new-instance v0, Lcom/google/a/a/j$a;
 
@@ -3315,6 +3254,11 @@
 
 .method public a(Ljava/lang/CharSequence;Ljava/lang/String;Lcom/google/a/a/j$a;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/a/a/g;
+        }
+    .end annotation
 
     const/4 v3, 0x0
 

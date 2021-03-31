@@ -40,9 +40,11 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move-object v4, v2
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
 
     .line 2
     :goto_0
@@ -87,7 +89,7 @@
     :cond_0
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v4
+    move-result v3
 
     goto :goto_0
 
@@ -95,7 +97,7 @@
     :cond_1
     invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v3
+    move-result v2
 
     goto :goto_0
 
@@ -109,14 +111,14 @@
 
     .line 9
     :cond_3
-    sget-object v2, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v4, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 10
-    invoke-static {p1, v5, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v5, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Lcom/google/android/gms/maps/model/LatLng;
+    check-cast v4, Lcom/google/android/gms/maps/model/LatLng;
 
     goto :goto_0
 
@@ -127,7 +129,7 @@
     .line 12
     new-instance p1, Lcom/google/android/gms/maps/model/CameraPosition;
 
-    invoke-direct {p1, v2, v1, v3, v4}, Lcom/google/android/gms/maps/model/CameraPosition;-><init>(Lcom/google/android/gms/maps/model/LatLng;FFF)V
+    invoke-direct {p1, v4, v1, v2, v3}, Lcom/google/android/gms/maps/model/CameraPosition;-><init>(Lcom/google/android/gms/maps/model/LatLng;FFF)V
 
     return-object p1
 .end method

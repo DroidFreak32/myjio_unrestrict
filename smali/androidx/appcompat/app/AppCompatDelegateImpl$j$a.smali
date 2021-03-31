@@ -1,11 +1,11 @@
 .class public Landroidx/appcompat/app/AppCompatDelegateImpl$j$a;
-.super Lia;
+.super Landroidx/core/view/ViewPropertyAnimatorListenerAdapter;
 .source "AppCompatDelegateImpl.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/app/AppCompatDelegateImpl$j;->a(Lz0;)V
+    value = Landroidx/appcompat/app/AppCompatDelegateImpl$j;->onDestroyActionMode(Landroidx/appcompat/view/ActionMode;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .line 1
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$j$a;->a:Landroidx/appcompat/app/AppCompatDelegateImpl$j;
 
-    invoke-direct {p0}, Lia;-><init>()V
+    invoke-direct {p0}, Landroidx/core/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl$j;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->H:Landroidx/appcompat/widget/ActionBarContextView;
+    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->I:Landroidx/appcompat/widget/ActionBarContextView;
 
     const/16 v0, 0x8
 
@@ -51,7 +51,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl$j;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object v0, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->I:Landroid/widget/PopupWindow;
+    iget-object v0, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->J:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
 
@@ -62,7 +62,7 @@
 
     .line 4
     :cond_0
-    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->H:Landroidx/appcompat/widget/ActionBarContextView;
+    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->I:Landroidx/appcompat/widget/ActionBarContextView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
@@ -77,7 +77,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl$j;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->H:Landroidx/appcompat/widget/ActionBarContextView;
+    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->I:Landroidx/appcompat/widget/ActionBarContextView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
@@ -85,7 +85,7 @@
 
     check-cast p1, Landroid/view/View;
 
-    invoke-static {p1}, Lba;->K(Landroid/view/View;)V
+    invoke-static {p1}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
 
     .line 6
     :cond_1
@@ -94,7 +94,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl$j;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->H:Landroidx/appcompat/widget/ActionBarContextView;
+    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->I:Landroidx/appcompat/widget/ActionBarContextView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->removeAllViews()V
 
@@ -103,18 +103,23 @@
 
     iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl$j;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->K:Lga;
+    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->L:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lga;->a(Lha;)Lga;
+    invoke-virtual {p1, v0}, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     .line 8
     iget-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$j$a;->a:Landroidx/appcompat/app/AppCompatDelegateImpl$j;
 
     iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl$j;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iput-object v0, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->K:Lga;
+    iput-object v0, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->L:Landroidx/core/view/ViewPropertyAnimatorCompat;
+
+    .line 9
+    iget-object p1, p1, Landroidx/appcompat/app/AppCompatDelegateImpl;->O:Landroid/view/ViewGroup;
+
+    invoke-static {p1}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
 
     return-void
 .end method

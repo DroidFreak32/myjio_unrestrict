@@ -1,170 +1,77 @@
 .class public final Lcom/google/android/gms/internal/ads/zzhe;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
+.super Ljava/lang/Exception;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "Lcom/google/android/gms/internal/ads/zzgs;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final type:I
+
+.field private final zzaej:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzhd;)V
+.method private constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
     .locals 0
 
+    const/4 p2, 0x0
+
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 2
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzhe;->type:I
+
+    .line 3
+    iput p4, p0, Lcom/google/android/gms/internal/ads/zzhe;->zzaej:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public static zza(Ljava/io/IOException;)Lcom/google/android/gms/internal/ads/zzhe;
     .locals 4
 
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzgs;
-
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzgs;
-
     .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhc()F
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzhe;
 
-    move-result v0
+    const/4 v1, 0x0
 
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhc()F
+    const/4 v2, 0x0
 
-    move-result v1
+    const/4 v3, -0x1
 
-    const/4 v2, -0x1
+    invoke-direct {v0, v1, v2, p0, v3}, Lcom/google/android/gms/internal/ads/zzhe;-><init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
 
-    cmpg-float v0, v0, v1
+    return-object v0
+.end method
 
-    if-gez v0, :cond_0
+.method public static zza(Ljava/lang/Exception;I)Lcom/google/android/gms/internal/ads/zzhe;
+    .locals 3
 
-    return v2
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzhe;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2, p0, p1}, Lcom/google/android/gms/internal/ads/zzhe;-><init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
+
+    return-object v0
+.end method
+
+.method public static zza(Ljava/lang/RuntimeException;)Lcom/google/android/gms/internal/ads/zzhe;
+    .locals 4
 
     .line 3
-    :cond_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhc()F
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzhe;
 
-    move-result v0
+    const/4 v1, 0x2
 
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhc()F
+    const/4 v2, 0x0
 
-    move-result v1
+    const/4 v3, -0x1
 
-    const/4 v3, 0x1
+    invoke-direct {v0, v1, v2, p0, v3}, Lcom/google/android/gms/internal/ads/zzhe;-><init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
 
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_1
-
-    return v3
-
-    .line 4
-    :cond_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhb()F
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhb()F
-
-    move-result v1
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_2
-
-    return v2
-
-    .line 5
-    :cond_2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhb()F
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhb()F
-
-    move-result v1
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_3
-
-    return v3
-
-    .line 6
-    :cond_3
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhe()F
-
-    move-result v0
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhc()F
-
-    move-result v1
-
-    sub-float/2addr v0, v1
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhd()F
-
-    move-result v1
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzgs;->zzhb()F
-
-    move-result p1
-
-    sub-float/2addr v1, p1
-
-    mul-float v0, v0, v1
-
-    .line 7
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhe()F
-
-    move-result p1
-
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhc()F
-
-    move-result v1
-
-    sub-float/2addr p1, v1
-
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhd()F
-
-    move-result v1
-
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzgs;->zzhb()F
-
-    move-result p2
-
-    sub-float/2addr v1, p2
-
-    mul-float p1, p1, v1
-
-    cmpl-float p2, v0, p1
-
-    if-lez p2, :cond_4
-
-    return v2
-
-    :cond_4
-    cmpg-float p1, v0, p1
-
-    if-gez p1, :cond_5
-
-    return v3
-
-    :cond_5
-    const/4 p1, 0x0
-
-    return p1
+    return-object v0
 .end method

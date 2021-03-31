@@ -28,6 +28,11 @@
 
 .method public final _writeTypeId(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 

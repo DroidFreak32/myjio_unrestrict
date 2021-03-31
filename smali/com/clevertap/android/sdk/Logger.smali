@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public debugLevel:I
+.field private debugLevel:I
 
 
 # direct methods
@@ -129,7 +129,7 @@
     return v0
 .end method
 
-.method public static getStaticDebugLevel()I
+.method private static getStaticDebugLevel()I
     .locals 1
 
     .line 1

@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iget-object p1, p1, Lcom/squareup/moshi/LinkedHashTreeMap$e;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object p1, p1, Lcom/squareup/moshi/LinkedHashTreeMap$e;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-direct {p0, p1}, Lcom/squareup/moshi/LinkedHashTreeMap$f;-><init>(Lcom/squareup/moshi/LinkedHashTreeMap;)V
 
@@ -48,7 +48,7 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iget-object v0, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     return-object v0
 .end method

@@ -51,7 +51,7 @@
     .line 2
     check-cast p2, Lcom/caverock/androidsvg/SVG$h0;
 
-    invoke-interface {p2}, Lcom/caverock/androidsvg/SVG$h0;->b()Ljava/util/List;
+    invoke-interface {p2}, Lcom/caverock/androidsvg/SVG$h0;->getChildren()Ljava/util/List;
 
     move-result-object p1
 

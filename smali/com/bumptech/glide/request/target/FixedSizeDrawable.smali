@@ -12,17 +12,17 @@
 
 
 # instance fields
-.field public final bounds:Landroid/graphics/RectF;
+.field private final bounds:Landroid/graphics/RectF;
 
-.field public final matrix:Landroid/graphics/Matrix;
+.field private final matrix:Landroid/graphics/Matrix;
 
-.field public mutated:Z
+.field private mutated:Z
 
-.field public state:Lcom/bumptech/glide/request/target/FixedSizeDrawable$State;
+.field private state:Lcom/bumptech/glide/request/target/FixedSizeDrawable$State;
 
-.field public wrapped:Landroid/graphics/drawable/Drawable;
+.field private wrapped:Landroid/graphics/drawable/Drawable;
 
-.field public final wrappedRect:Landroid/graphics/RectF;
+.field private final wrappedRect:Landroid/graphics/RectF;
 
 
 # direct methods
@@ -150,6 +150,10 @@
 
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 1
+    .param p1    # Landroid/graphics/Canvas;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -172,6 +176,9 @@
 
 .method public getAlpha()I
     .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x13
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;->wrapped:Landroid/graphics/drawable/Drawable;
@@ -220,6 +227,8 @@
 
 .method public getCurrent()Landroid/graphics/drawable/Drawable;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;->wrapped:Landroid/graphics/drawable/Drawable;
@@ -294,6 +303,10 @@
 
 .method public getPadding(Landroid/graphics/Rect;)Z
     .locals 1
+    .param p1    # Landroid/graphics/Rect;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;->wrapped:Landroid/graphics/drawable/Drawable;
@@ -321,6 +334,8 @@
 
 .method public mutate()Landroid/graphics/drawable/Drawable;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;->mutated:Z
@@ -362,6 +377,10 @@
 
 .method public scheduleSelf(Ljava/lang/Runnable;J)V
     .locals 1
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
@@ -412,6 +431,10 @@
 
 .method public setBounds(Landroid/graphics/Rect;)V
     .locals 1
+    .param p1    # Landroid/graphics/Rect;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 4
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
@@ -440,6 +463,10 @@
 
 .method public setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
     .locals 1
+    .param p2    # Landroid/graphics/PorterDuff$Mode;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;->wrapped:Landroid/graphics/drawable/Drawable;
@@ -499,6 +526,10 @@
 
 .method public unscheduleSelf(Ljava/lang/Runnable;)V
     .locals 1
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->unscheduleSelf(Ljava/lang/Runnable;)V

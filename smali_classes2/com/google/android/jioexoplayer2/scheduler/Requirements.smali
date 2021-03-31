@@ -12,13 +12,13 @@
 
 
 # static fields
-.field public static final DEVICE_CHARGING:I = 0x10
+.field private static final DEVICE_CHARGING:I = 0x10
 
-.field public static final DEVICE_IDLE:I = 0x8
+.field private static final DEVICE_IDLE:I = 0x8
 
 .field public static final NETWORK_TYPE_ANY:I = 0x1
 
-.field public static final NETWORK_TYPE_MASK:I = 0x7
+.field private static final NETWORK_TYPE_MASK:I = 0x7
 
 .field public static final NETWORK_TYPE_METERED:I = 0x4
 
@@ -26,15 +26,15 @@
 
 .field public static final NETWORK_TYPE_NOT_ROAMING:I = 0x3
 
-.field public static final NETWORK_TYPE_STRINGS:[Ljava/lang/String; = null
+.field private static final NETWORK_TYPE_STRINGS:[Ljava/lang/String; = null
 
 .field public static final NETWORK_TYPE_UNMETERED:I = 0x2
 
-.field public static final TAG:Ljava/lang/String; = "Requirements"
+.field private static final TAG:Ljava/lang/String; = "Requirements"
 
 
 # instance fields
-.field public final requirements:I
+.field private final requirements:I
 
 
 # direct methods
@@ -133,17 +133,20 @@
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_2
+    if-eq p1, v2, :cond_3
 
     const/4 v2, 0x5
 
-    if-ne p1, v2, :cond_3
+    if-ne p1, v2, :cond_2
+
+    goto :goto_0
 
     :cond_2
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
     :cond_3
-    return v0
+    :goto_0
+    return v1
 .end method
 
 .method private checkIdleRequirement(Landroid/content/Context;)Z
@@ -216,7 +219,7 @@
     return v1
 .end method
 
-.method public static checkInternetConnectivity(Landroid/net/ConnectivityManager;)Z
+.method private static checkInternetConnectivity(Landroid/net/ConnectivityManager;)Z
     .locals 3
 
     .line 1
@@ -434,7 +437,7 @@
     return v3
 .end method
 
-.method public static isActiveNetworkMetered(Landroid/net/ConnectivityManager;Landroid/net/NetworkInfo;)Z
+.method private static isActiveNetworkMetered(Landroid/net/ConnectivityManager;Landroid/net/NetworkInfo;)Z
     .locals 2
 
     .line 1
@@ -478,7 +481,7 @@
     return p1
 .end method
 
-.method public static logd(Ljava/lang/String;)V
+.method private static logd(Ljava/lang/String;)V
     .locals 0
 
     return-void

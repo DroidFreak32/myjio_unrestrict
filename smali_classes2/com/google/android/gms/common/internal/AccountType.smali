@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/AccountType;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -9,11 +10,14 @@
 
 # static fields
 .field public static final GOOGLE:Ljava/lang/String; = "com.google"
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end field
 
-.field public static final zzbs:[Ljava/lang/String;
+.field private static final zza:[Ljava/lang/String;
 
 
 # direct methods
@@ -31,12 +35,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/internal/AccountType;->zzbs:[Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/common/internal/AccountType;->zza:[Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

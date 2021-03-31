@@ -32,25 +32,25 @@
 
 
 # instance fields
-.field public final action:Lcom/google/android/jioexoplayer2/offline/DownloadAction;
+.field private final action:Lcom/google/android/jioexoplayer2/offline/DownloadAction;
 
-.field public volatile currentState:I
+.field private volatile currentState:I
 
-.field public final downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
+.field private final downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
 
-.field public volatile downloader:Lcom/google/android/jioexoplayer2/offline/Downloader;
+.field private volatile downloader:Lcom/google/android/jioexoplayer2/offline/Downloader;
 
-.field public error:Ljava/lang/Throwable;
+.field private error:Ljava/lang/Throwable;
 
-.field public final id:I
+.field private final id:I
 
-.field public final minRetryCount:I
+.field private final minRetryCount:I
 
-.field public thread:Ljava/lang/Thread;
+.field private thread:Ljava/lang/Thread;
 
 
 # direct methods
-.method public constructor <init>(ILcom/google/android/jioexoplayer2/offline/DownloadManager;Lcom/google/android/jioexoplayer2/offline/DownloadAction;I)V
+.method private constructor <init>(ILcom/google/android/jioexoplayer2/offline/DownloadManager;Lcom/google/android/jioexoplayer2/offline/DownloadAction;I)V
     .locals 0
 
     .line 2
@@ -81,6 +81,19 @@
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;-><init>(ILcom/google/android/jioexoplayer2/offline/DownloadManager;Lcom/google/android/jioexoplayer2/offline/DownloadAction;I)V
+
+    return-void
+.end method
+
+.method private synthetic a()V
+    .locals 2
+
+    const/4 v0, 0x5
+
+    const/4 v1, 0x3
+
+    .line 1
+    invoke-direct {p0, v0, v1}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(II)Z
 
     return-void
 .end method
@@ -150,6 +163,65 @@
     return-void
 .end method
 
+.method private synthetic c(Ljava/lang/Throwable;)V
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x2
+
+    :goto_0
+    const/4 v1, 0x1
+
+    .line 1
+    invoke-direct {p0, v1, v0, p1}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(IILjava/lang/Throwable;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    const/4 p1, 0x6
+
+    const/4 v0, 0x3
+
+    .line 2
+    invoke-direct {p0, p1, v0}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(II)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    const/4 p1, 0x7
+
+    const/4 v0, 0x0
+
+    .line 3
+    invoke-direct {p0, p1, v0}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(II)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    goto :goto_1
+
+    .line 4
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p1
+
+    :cond_2
+    :goto_1
+    return-void
+.end method
+
 .method private canStart()Z
     .locals 1
 
@@ -190,9 +262,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lbd0;
+    new-instance v1, Llj;
 
-    invoke-direct {v1, p0}, Lbd0;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;)V
+    invoke-direct {v1, p0}, Llj;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -408,8 +480,6 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->thread:Ljava/lang/Thread;
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->thread:Ljava/lang/Thread;
-
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     :cond_0
@@ -442,7 +512,7 @@
     return-void
 .end method
 
-.method public static toString([B)Ljava/lang/String;
+.method private static toString([B)Ljava/lang/String;
     .locals 2
 
     .line 2
@@ -483,75 +553,19 @@
 
 
 # virtual methods
-.method public synthetic a()V
-    .locals 2
+.method public synthetic b()V
+    .locals 0
 
-    const/4 v0, 0x5
-
-    const/4 v1, 0x3
-
-    .line 1
-    invoke-direct {p0, v0, v1}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(II)Z
+    invoke-direct {p0}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->a()V
 
     return-void
 .end method
 
-.method public synthetic a(Ljava/lang/Throwable;)V
-    .locals 2
+.method public synthetic d(Ljava/lang/Throwable;)V
+    .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->c(Ljava/lang/Throwable;)V
 
-    const/4 v0, 0x4
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x2
-
-    :goto_0
-    const/4 v1, 0x1
-
-    .line 2
-    invoke-direct {p0, v1, v0, p1}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(IILjava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    const/4 p1, 0x6
-
-    const/4 v0, 0x3
-
-    .line 3
-    invoke-direct {p0, p1, v0}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(II)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    const/4 p1, 0x7
-
-    const/4 v0, 0x0
-
-    .line 4
-    invoke-direct {p0, p1, v0}, Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;->changeStateAndNotify(II)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    goto :goto_1
-
-    .line 5
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw p1
-
-    :cond_2
-    :goto_1
     return-void
 .end method
 
@@ -878,9 +892,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcd0;
+    new-instance v2, Lmj;
 
-    invoke-direct {v2, p0, v0}, Lcd0;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;Ljava/lang/Throwable;)V
+    invoke-direct {v2, p0, v0}, Lmj;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadManager$Task;Ljava/lang/Throwable;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

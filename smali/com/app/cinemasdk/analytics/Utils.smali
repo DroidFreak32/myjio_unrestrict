@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static appName:Ljava/lang/String;
+.field private static appName:Ljava/lang/String;
 
-.field public static carrierName:Ljava/lang/String;
+.field private static carrierName:Ljava/lang/String;
 
-.field public static deviceType:Ljava/lang/String;
+.field private static deviceType:Ljava/lang/String;
 
-.field public static ntwrkType:Ljava/lang/String;
+.field private static ntwrkType:Ljava/lang/String;
 
-.field public static udid:Ljava/lang/String;
+.field private static udid:Ljava/lang/String;
 
 
 # direct methods
@@ -137,7 +137,7 @@
     return p0
 .end method
 
-.method public static setAppName(Landroid/content/Context;)V
+.method private static setAppName(Landroid/content/Context;)V
     .locals 1
 
     .line 1
@@ -156,7 +156,7 @@
     return-void
 .end method
 
-.method public static setCarrierName(Landroid/content/Context;)V
+.method private static setCarrierName(Landroid/content/Context;)V
     .locals 1
 
     const-string v0, "phone"
@@ -178,7 +178,7 @@
     return-void
 .end method
 
-.method public static setDeviceType(Landroid/content/Context;)V
+.method private static setDeviceType(Landroid/content/Context;)V
     .locals 0
 
     .line 1
@@ -205,7 +205,7 @@
     return-void
 .end method
 
-.method public static setNetworkType(Landroid/content/Context;)V
+.method private static setNetworkType(Landroid/content/Context;)V
     .locals 1
 
     const-string v0, "connectivity"
@@ -241,7 +241,7 @@
 
     if-ne p0, v0, :cond_1
 
-    const-string p0, "wifi"
+    const-string/jumbo p0, "wifi"
 
     .line 5
     sput-object p0, Lcom/app/cinemasdk/analytics/Utils;->ntwrkType:Ljava/lang/String;
@@ -258,7 +258,7 @@
     return-void
 .end method
 
-.method public static setUdid(Landroid/content/Context;)V
+.method private static setUdid(Landroid/content/Context;)V
     .locals 1
 
     .line 1

@@ -1,26 +1,22 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbas;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbam;
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzbam<",
-        "Ljava/security/MessageDigest;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zzeja:Lcom/google/android/gms/internal/ads/zzbar;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbar;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbas;->zzeja:Lcom/google/android/gms/internal/ads/zzbar;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,23 +24,19 @@
 
 
 # virtual methods
-.method public final synthetic zzb(Ljava/lang/String;Ljava/security/Provider;)Ljava/lang/Object;
-    .locals 0
-
-    if-nez p2, :cond_0
+.method public final run()V
+    .locals 3
 
     .line 1
-    invoke-static {p1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbas;->zzeja:Lcom/google/android/gms/internal/ads/zzbar;
 
-    move-result-object p1
+    const/4 v1, 0x0
 
-    return-object p1
+    new-array v1, v1, [Ljava/lang/String;
 
-    .line 2
-    :cond_0
-    invoke-static {p1, p2}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;
+    const-string v2, "surfaceCreated"
 
-    move-result-object p1
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/internal/ads/zzbar;->zza(Lcom/google/android/gms/internal/ads/zzbar;Ljava/lang/String;[Ljava/lang/String;)V
 
-    return-object p1
+    return-void
 .end method

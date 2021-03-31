@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->pushNotificationClickedEvent(Landroid/os/Bundle;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->processCustomPushNotification(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -42,95 +42,187 @@
 .method public run()V
     .locals 8
 
-    const-string v0, "wzrk_inbox"
-
     .line 1
-    :try_start_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->val$extras:Landroid/os/Bundle;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "nm"
 
-    const-string v2, "Received inbox via push payload: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->val$extras:Landroid/os/Bundle;
-
-    invoke-virtual {v2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
-
-    .line 2
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
-
-    .line 3
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
-
-    const-string v3, "inbox_notifs"
-
-    .line 4
-    invoke-virtual {v1, v3, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 5
-    new-instance v3, Lorg/json/JSONObject;
-
-    iget-object v4, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->val$extras:Landroid/os/Bundle;
-
-    invoke-virtual {v4, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v3, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    const-string v1, ""
 
-    const-string v0, "_id"
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v0, v1
+
+    .line 2
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 3
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->getAccountId()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "Push notification message is empty, not rendering"
+
+    invoke-virtual {v0, v2, v3}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 4
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1800(Lcom/clevertap/android/sdk/CleverTapAPI;)Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$2700(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;)Lcom/clevertap/android/sdk/DBAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/clevertap/android/sdk/DBAdapter;->storeUninstallTimestamp()V
+
+    .line 5
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->val$extras:Landroid/os/Bundle;
+
+    const-string v2, "pf"
+
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     .line 6
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 7
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1800(Lcom/clevertap/android/sdk/CleverTapAPI;)Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-static {v1, v2, v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$2800(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;I)V
+
+    goto :goto_1
+
+    .line 8
+    :cond_1
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->val$extras:Landroid/os/Bundle;
+
+    const-string/jumbo v2, "wzrk_pid"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 9
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->val$extras:Landroid/os/Bundle;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 10
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
+
+    const-wide/32 v6, 0x14997000
+
+    add-long/2addr v4, v6
 
     const-wide/16 v6, 0x3e8
 
     div-long/2addr v4, v6
 
-    invoke-static {v4, v5}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v3, "wzrk_ttl"
+
+    .line 11
+    invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 12
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    .line 13
+    iget-object v4, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v4}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1800(Lcom/clevertap/android/sdk/CleverTapAPI;)Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$2700(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;)Lcom/clevertap/android/sdk/DBAdapter;
 
     move-result-object v4
 
-    invoke-virtual {v3, v0, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    .line 14
+    iget-object v5, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    .line 7
-    invoke-virtual {v2, v3}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-static {v5}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
 
-    .line 8
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$39;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+    move-result-object v5
 
-    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$4500(Lcom/clevertap/android/sdk/CleverTapAPI;Lorg/json/JSONObject;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    :catchall_0
-    move-exception v0
+    const-string v7, "Storing Push Notification..."
 
-    const-string v1, "Failed to process inbox message from push notification payload"
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9
-    invoke-static {v1, v0}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_0
+    const-string v7, " - with ttl - "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v5, v1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;)V
+
+    .line 15
+    invoke-virtual {v4, v0, v2, v3}, Lcom/clevertap/android/sdk/DBAdapter;->storePushNotificationId(Ljava/lang/String;J)V
+
+    :cond_2
+    :goto_1
     return-void
 .end method

@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/jioexoplayer2/offline/DownloadService;)V
+.method private constructor <init>(Lcom/google/android/jioexoplayer2/offline/DownloadService;)V
     .locals 0
 
     .line 1

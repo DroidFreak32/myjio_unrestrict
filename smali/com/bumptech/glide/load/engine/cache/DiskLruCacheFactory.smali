@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final cacheDirectoryGetter:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheFactory$CacheDirectoryGetter;
+.field private final cacheDirectoryGetter:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheFactory$CacheDirectoryGetter;
 
-.field public final diskCacheSize:J
+.field private final diskCacheSize:J
 
 
 # direct methods

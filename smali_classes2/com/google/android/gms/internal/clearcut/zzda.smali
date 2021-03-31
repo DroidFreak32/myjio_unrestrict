@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzlv:Ljava/lang/Class;
+.field private static final zzlv:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -34,7 +34,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     const/4 v0, 0x0
@@ -52,7 +52,7 @@
     return-void
 .end method
 
-.method public static zzb(Ljava/lang/Object;J)Ljava/util/List;
+.method private static zzb(Ljava/lang/Object;J)Ljava/util/List;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -224,7 +224,7 @@
 
     check-cast v1, Lcom/google/android/gms/internal/clearcut/zzfa;
 
-    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/clearcut/zzcw;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/clearcut/zzav;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_1
 

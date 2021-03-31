@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method public static zza(Ljava/lang/String;I)Ljava/lang/String;
+.method private static zza(Ljava/lang/String;I)Ljava/lang/String;
     .locals 2
 
     if-gtz p1, :cond_0

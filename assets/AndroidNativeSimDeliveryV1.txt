@@ -13,7 +13,7 @@
     "headerVisibility": 3,
     "iconURL": "/upload/drawable/ic_digital_life_sd.xml",
     "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
-    "iconColor": "#4939FF",
+    "iconColor": "/upload/drawable/sd_delivery_agent.xml",
     "accessibilityContent": "Say Hello to Jio PostPaid Plus!",
     "actionTag": "T022",
     "callActionLink": "native_sim_delivery_main_screen",

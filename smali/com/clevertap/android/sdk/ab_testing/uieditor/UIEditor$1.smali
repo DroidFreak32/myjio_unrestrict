@@ -41,7 +41,7 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$1;->this$0:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->access$100(Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;)V
+    invoke-static {v0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->access$200(Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;)V
 
     return-void
 .end method

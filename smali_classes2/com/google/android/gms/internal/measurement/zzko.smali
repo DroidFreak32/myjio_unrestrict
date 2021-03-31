@@ -1,57 +1,22 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzko;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzkp;
+.implements Lcom/google/android/gms/internal/measurement/zzkr;
 
 
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzcq;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/measurement/zzcq<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field private final synthetic zza:Lcom/google/android/gms/internal/measurement/zzgp;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzcw;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lcom/google/android/gms/internal/measurement/zzcr;->zza(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzcw;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.engagement_time_main_thread"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/measurement/zzcw;->zza(Ljava/lang/String;Z)Lcom/google/android/gms/internal/measurement/zzcq;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzko;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzgp;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzko;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,27 +24,26 @@
 
 
 # virtual methods
-.method public final zza()Z
+.method public final zza(I)B
     .locals 1
 
-    const/4 v0, 0x1
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzko;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
 
-    return v0
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/measurement/zzgp;->zza(I)B
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public final zzb()Z
+.method public final zza()I
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzko;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzko;->zza:Lcom/google/android/gms/internal/measurement/zzgp;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzcq;->zzc()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgp;->zza()I
 
     move-result v0
 

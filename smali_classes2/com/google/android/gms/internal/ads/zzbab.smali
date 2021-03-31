@@ -1,69 +1,85 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbab;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzbad;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzavr;
-
-
-# static fields
-.field public static final zzdlk:[B
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # instance fields
-.field public final zzdqp:Ljava/security/interfaces/ECPrivateKey;
-
-.field public final zzdqq:Lcom/google/android/gms/internal/ads/zzbad;
-
-.field public final zzdqr:Ljava/lang/String;
-
-.field public final zzdqs:[B
-
-.field public final zzdqt:Lcom/google/android/gms/internal/ads/zzbaj;
-
-.field public final zzdqu:Lcom/google/android/gms/internal/ads/zzbaa;
+.field private final zzehg:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference<",
+            "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [B
+.method public constructor <init>(Landroid/view/View;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    .locals 0
 
     .line 1
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbab;->zzdlk:[B
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzbad;-><init>(Landroid/view/View;)V
+
+    .line 2
+    new-instance p1, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzehg:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/security/interfaces/ECPrivateKey;[BLjava/lang/String;Lcom/google/android/gms/internal/ads/zzbaj;Lcom/google/android/gms/internal/ads/zzbaa;)V
+
+# virtual methods
+.method public final onGlobalLayout()V
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzehg:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+
+    if-eqz v0, :cond_0
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzdqp:Ljava/security/interfaces/ECPrivateKey;
+    invoke-interface {v0}, Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;->onGlobalLayout()V
+
+    return-void
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbad;
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbad;->detach()V
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzbad;-><init>(Ljava/security/interfaces/ECPrivateKey;)V
+    return-void
+.end method
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzdqq:Lcom/google/android/gms/internal/ads/zzbad;
+.method public final zza(Landroid/view/ViewTreeObserver;)V
+    .locals 0
 
-    .line 4
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzdqs:[B
+    .line 1
+    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 5
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzdqr:Ljava/lang/String;
+    return-void
+.end method
 
-    .line 6
-    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzdqt:Lcom/google/android/gms/internal/ads/zzbaj;
+.method public final zzb(Landroid/view/ViewTreeObserver;)V
+    .locals 0
 
-    .line 7
-    iput-object p5, p0, Lcom/google/android/gms/internal/ads/zzbab;->zzdqu:Lcom/google/android/gms/internal/ads/zzbaa;
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzks()Lcom/google/android/gms/ads/internal/util/zzu;
+
+    .line 2
+    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
     return-void
 .end method

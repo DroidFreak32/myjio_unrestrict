@@ -1,31 +1,69 @@
-.class public final Lcom/google/android/gms/internal/ads/zzif;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzif;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/internal/ads/zzif$zzc;,
-        Lcom/google/android/gms/internal/ads/zzif$zzj;,
-        Lcom/google/android/gms/internal/ads/zzif$zzk;,
-        Lcom/google/android/gms/internal/ads/zzif$zzb;,
-        Lcom/google/android/gms/internal/ads/zzif$zza;,
-        Lcom/google/android/gms/internal/ads/zzif$zzl;,
-        Lcom/google/android/gms/internal/ads/zzif$zzf;,
-        Lcom/google/android/gms/internal/ads/zzif$zzg;,
-        Lcom/google/android/gms/internal/ads/zzif$zzm;,
-        Lcom/google/android/gms/internal/ads/zzif$zze;,
-        Lcom/google/android/gms/internal/ads/zzif$zzi;,
-        Lcom/google/android/gms/internal/ads/zzif$zzs;,
-        Lcom/google/android/gms/internal/ads/zzif$zzp;,
-        Lcom/google/android/gms/internal/ads/zzif$zzv;,
-        Lcom/google/android/gms/internal/ads/zzif$zzu;,
-        Lcom/google/android/gms/internal/ads/zzif$zzt;,
-        Lcom/google/android/gms/internal/ads/zzif$zzr;,
-        Lcom/google/android/gms/internal/ads/zzif$zzq;,
-        Lcom/google/android/gms/internal/ads/zzif$zzh;,
-        Lcom/google/android/gms/internal/ads/zzif$zzd;,
-        Lcom/google/android/gms/internal/ads/zzif$zzn;,
-        Lcom/google/android/gms/internal/ads/zzif$zzo;
-    }
-.end annotation
+# static fields
+.field public static final zzaiw:Ljava/nio/ByteBuffer;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzif;->zzaiw:Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract flush()V
+.end method
+
+.method public abstract isActive()Z
+.end method
+
+.method public abstract reset()V
+.end method
+
+.method public abstract zzb(III)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/ads/zzii;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzfe()Z
+.end method
+
+.method public abstract zzfj()I
+.end method
+
+.method public abstract zzfk()I
+.end method
+
+.method public abstract zzfl()V
+.end method
+
+.method public abstract zzfm()Ljava/nio/ByteBuffer;
+.end method
+
+.method public abstract zzn(Ljava/nio/ByteBuffer;)V
+.end method

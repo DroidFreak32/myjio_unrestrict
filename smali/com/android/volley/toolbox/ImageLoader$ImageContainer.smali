@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public mBitmap:Landroid/graphics/Bitmap;
+.field private mBitmap:Landroid/graphics/Bitmap;
 
-.field public final mCacheKey:Ljava/lang/String;
+.field private final mCacheKey:Ljava/lang/String;
 
-.field public final mListener:Lcom/android/volley/toolbox/ImageLoader$ImageListener;
+.field private final mListener:Lcom/android/volley/toolbox/ImageLoader$ImageListener;
 
-.field public final mRequestUrl:Ljava/lang/String;
+.field private final mRequestUrl:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/android/volley/toolbox/ImageLoader;
 
@@ -72,15 +72,20 @@
 # virtual methods
 .method public cancelRequest()V
     .locals 2
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
+    invoke-static {}, Lcom/android/volley/toolbox/Threads;->throwIfNotOnMainThread()V
+
+    .line 2
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->mListener:Lcom/android/volley/toolbox/ImageLoader$ImageListener;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2
+    .line 3
     :cond_0
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
@@ -98,14 +103,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 3
+    .line 4
     invoke-virtual {v0, p0}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->removeContainerAndCancelIfNecessary(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 4
+    .line 5
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     invoke-static {v0}, Lcom/android/volley/toolbox/ImageLoader;->access$100(Lcom/android/volley/toolbox/ImageLoader;)Ljava/util/HashMap;
@@ -118,7 +123,7 @@
 
     goto :goto_0
 
-    .line 5
+    .line 6
     :cond_1
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
@@ -136,21 +141,21 @@
 
     if-eqz v0, :cond_2
 
-    .line 6
+    .line 7
     invoke-virtual {v0, p0}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->removeContainerAndCancelIfNecessary(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Z
 
-    .line 7
-    invoke-static {v0}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$300(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/LinkedList;
+    .line 8
+    invoke-static {v0}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$300(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     invoke-static {v0}, Lcom/android/volley/toolbox/ImageLoader;->access$200(Lcom/android/volley/toolbox/ImageLoader;)Ljava/util/HashMap;

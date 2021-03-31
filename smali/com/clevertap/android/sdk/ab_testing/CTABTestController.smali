@@ -4,6 +4,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    api = 0x13
+.end annotation
+
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;,
@@ -15,61 +19,61 @@
 
 
 # static fields
-.field public static final DASHBOARD_URL:Ljava/lang/String; = "dashboard.clevertap.com"
+.field private static final DASHBOARD_URL:Ljava/lang/String; = "dashboard.clevertap.com"
 
-.field public static final DATA_KEY:Ljava/lang/String; = "data"
+.field private static final DATA_KEY:Ljava/lang/String; = "data"
 
-.field public static final DEFAULT_REGION:Ljava/lang/String; = "eu1"
+.field private static final DEFAULT_REGION:Ljava/lang/String; = "eu1"
 
-.field public static final EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
+.field private static final EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
 
-.field public static final EMULATOR_CONNECT_ATTEMPT_INTERVAL_MILLIS:I = 0x7530
+.field private static final EMULATOR_CONNECT_ATTEMPT_INTERVAL_MILLIS:I = 0x7530
 
-.field public static final MESSAGE_TYPE_CHANGE_REQUEST:Ljava/lang/String; = "change_request"
+.field private static final MESSAGE_TYPE_CHANGE_REQUEST:Ljava/lang/String; = "change_request"
 
-.field public static final MESSAGE_TYPE_CLEAR_REQUEST:Ljava/lang/String; = "clear_request"
+.field private static final MESSAGE_TYPE_CLEAR_REQUEST:Ljava/lang/String; = "clear_request"
 
-.field public static final MESSAGE_TYPE_DEVICE_INFO_REQUEST:Ljava/lang/String; = "device_info_request"
+.field private static final MESSAGE_TYPE_DEVICE_INFO_REQUEST:Ljava/lang/String; = "device_info_request"
 
-.field public static final MESSAGE_TYPE_DEVICE_INFO_RESPONSE:Ljava/lang/String; = "device_info_response"
+.field private static final MESSAGE_TYPE_DEVICE_INFO_RESPONSE:Ljava/lang/String; = "device_info_response"
 
-.field public static final MESSAGE_TYPE_DISCONNECT:Ljava/lang/String; = "disconnect"
+.field private static final MESSAGE_TYPE_DISCONNECT:Ljava/lang/String; = "disconnect"
 
-.field public static final MESSAGE_TYPE_GENERIC_ERROR:Ljava/lang/String; = "error"
+.field private static final MESSAGE_TYPE_GENERIC_ERROR:Ljava/lang/String; = "error"
 
-.field public static final MESSAGE_TYPE_HANDSHAKE:Ljava/lang/String; = "handshake"
+.field private static final MESSAGE_TYPE_HANDSHAKE:Ljava/lang/String; = "handshake"
 
-.field public static final MESSAGE_TYPE_LAYOUT_ERROR:Ljava/lang/String; = "layout_error"
+.field private static final MESSAGE_TYPE_LAYOUT_ERROR:Ljava/lang/String; = "layout_error"
 
-.field public static final MESSAGE_TYPE_MATCHED:Ljava/lang/String; = "matched"
+.field private static final MESSAGE_TYPE_MATCHED:Ljava/lang/String; = "matched"
 
-.field public static final MESSAGE_TYPE_SNAPSHOT_REQUEST:Ljava/lang/String; = "snapshot_request"
+.field private static final MESSAGE_TYPE_SNAPSHOT_REQUEST:Ljava/lang/String; = "snapshot_request"
 
-.field public static final MESSAGE_TYPE_SNAPSHOT_RESPONSE:Ljava/lang/String; = "snapshot_response"
+.field private static final MESSAGE_TYPE_SNAPSHOT_RESPONSE:Ljava/lang/String; = "snapshot_response"
 
-.field public static final MESSAGE_TYPE_VARS_REQUEST:Ljava/lang/String; = "vars_request"
+.field private static final MESSAGE_TYPE_VARS_REQUEST:Ljava/lang/String; = "vars_request"
 
-.field public static final MESSAGE_TYPE_VARS_RESPONSE:Ljava/lang/String; = "vars_response"
+.field private static final MESSAGE_TYPE_VARS_RESPONSE:Ljava/lang/String; = "vars_response"
 
-.field public static final MESSAGE_TYPE_VARS_TEST:Ljava/lang/String; = "test_vars"
+.field private static final MESSAGE_TYPE_VARS_TEST:Ljava/lang/String; = "test_vars"
 
-.field public static SSLSocketFactory:Ljavax/net/ssl/SSLSocketFactory; = null
+.field private static SSLSocketFactory:Ljavax/net/ssl/SSLSocketFactory; = null
 
-.field public static final TYPE_KEY:Ljava/lang/String; = "type"
+.field private static final TYPE_KEY:Ljava/lang/String; = "type"
 
 
 # instance fields
-.field public cachedDeviceInfo:Lorg/json/JSONObject;
+.field private cachedDeviceInfo:Lorg/json/JSONObject;
 
-.field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.field private config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-.field public enableEditor:Z
+.field private enableEditor:Z
 
-.field public final executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
+.field private executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
 
-.field public guid:Ljava/lang/String;
+.field private guid:Ljava/lang/String;
 
-.field public listenerWeakReference:Ljava/lang/ref/WeakReference;
+.field private listenerWeakReference:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -79,9 +83,9 @@
     .end annotation
 .end field
 
-.field public uiEditor:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
+.field private uiEditor:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
 
-.field public varCache:Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
+.field private varCache:Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
 
 
 # direct methods
@@ -90,18 +94,27 @@
 
     const/4 v0, 0x0
 
+    .line 1
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
+
+    const/4 v0, 0x0
+
     :try_start_0
     const-string v1, "TLS"
 
-    .line 1
+    .line 2
     invoke-static {v1}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
 
     move-result-object v1
 
-    .line 2
+    .line 3
     invoke-virtual {v1, v0, v0, v0}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
 
-    .line 3
+    .line 4
     invoke-virtual {v1}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
 
     move-result-object v0
@@ -113,7 +126,7 @@
     :catch_0
     move-exception v1
 
-    .line 4
+    .line 5
     invoke-virtual {v1}, Ljava/security/GeneralSecurityException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -122,18 +135,9 @@
 
     invoke-static {v2, v1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5
+    .line 6
     :goto_0
     sput-object v0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->SSLSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
-
-    const/4 v0, 0x0
-
-    .line 6
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
@@ -145,6 +149,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
+    :try_start_0
     new-instance v0, Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
 
     invoke-direct {v0}, Lcom/clevertap/android/sdk/ab_testing/CTVarCache;-><init>()V
@@ -205,9 +210,7 @@
     iput-object p4, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
 
     .line 12
-    iget-object p3, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
-
-    invoke-virtual {p3}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;->start()V
+    invoke-virtual {p4}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;->start()V
 
     .line 13
     iget-boolean p3, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->enableEditor:Z
@@ -222,13 +225,13 @@
     check-cast p1, Landroid/app/Application;
 
     .line 15
-    new-instance p2, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;
+    new-instance p3, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;
 
-    const/4 p3, 0x0
+    const/4 p4, 0x0
 
-    invoke-direct {p2, p0, p3}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;-><init>(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Lcom/clevertap/android/sdk/ab_testing/CTABTestController$1;)V
+    invoke-direct {p3, p0, p4}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController$LifecycleCallbacks;-><init>(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Lcom/clevertap/android/sdk/ab_testing/CTABTestController$1;)V
 
-    invoke-virtual {p1, p2}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    invoke-virtual {p1, p3}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
     goto :goto_0
 
@@ -240,16 +243,43 @@
 
     invoke-virtual {p2}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getAccountId()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p3
 
-    const-string p3, "UIEditor connection is disabled"
+    const-string p4, "UIEditor connection is disabled"
 
-    invoke-virtual {p1, p2, p3}, Lcom/clevertap/android/sdk/Logger;->debug(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p3, p4}, Lcom/clevertap/android/sdk/Logger;->debug(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 17
     :goto_0
     invoke-direct {p0}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->applyStoredExperiments()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
+
+    const/4 p3, 0x0
+
+    .line 18
+    invoke-virtual {p2, p3}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->setEnableABTesting(Z)V
+
+    .line 19
+    invoke-virtual {p2, p3}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->setEnableUIEditor(Z)V
+
+    .line 20
+    invoke-virtual {p2}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getLogger()Lcom/clevertap/android/sdk/Logger;
+
+    move-result-object p3
+
+    invoke-virtual {p2}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getAccountId()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p3, p2, p1}, Lcom/clevertap/android/sdk/Logger;->debug(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_1
     return-void
 .end method
 
@@ -288,6 +318,7 @@
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 3
     invoke-virtual {p2}, Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -300,6 +331,7 @@
 
     if-eqz p3, :cond_0
 
+    .line 4
     invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -316,12 +348,13 @@
 
     move-result-object p1
 
+    .line 5
     invoke-virtual {v0, v1, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic access$100()Ljavax/net/ssl/SSLSocketFactory;
+.method public static synthetic access$000()Ljavax/net/ssl/SSLSocketFactory;
     .locals 1
 
     .line 1
@@ -330,61 +363,52 @@
     return-object v0
 .end method
 
-.method public static synthetic access$1400(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Lorg/json/JSONObject;)V
+.method public static synthetic access$1000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->handleDashboardMessage(Lorg/json/JSONObject;)V
+    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->uiEditor:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$1100(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Ljava/lang/String;Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2, p3}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->_registerVar(Ljava/lang/String;Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic access$1700()Ljava/nio/ByteBuffer;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$1800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
+.method public static synthetic access$1400(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lorg/json/JSONObject;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->cachedDeviceInfo:Lorg/json/JSONObject;
 
     return-object p0
 .end method
 
-.method public static synthetic access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Z
+.method public static synthetic access$1402(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Lorg/json/JSONObject;)Lorg/json/JSONObject;
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->enableEditor:Z
+    iput-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->cachedDeviceInfo:Lorg/json/JSONObject;
 
-    return p0
+    return-object p1
 .end method
 
-.method public static synthetic access$2000(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.method public static synthetic access$1500(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->guid:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public static synthetic access$300(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->varCache:Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$500(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestListener;
+.method public static synthetic access$1600(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestListener;
     .locals 0
 
     .line 1
@@ -395,49 +419,58 @@
     return-object p0
 .end method
 
-.method public static synthetic access$600(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Ljava/lang/String;
+.method public static synthetic access$1700(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->guid:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
 
     return-object p0
 .end method
 
-.method public static synthetic access$700(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
+.method public static synthetic access$1800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Z
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->uiEditor:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;
+    iget-boolean p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->enableEditor:Z
+
+    return p0
+.end method
+
+.method public static synthetic access$1900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     return-object p0
 .end method
 
-.method public static synthetic access$800(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lorg/json/JSONObject;
+.method public static synthetic access$500(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Lorg/json/JSONObject;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->cachedDeviceInfo:Lorg/json/JSONObject;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$802(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Lorg/json/JSONObject;)Lorg/json/JSONObject;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->cachedDeviceInfo:Lorg/json/JSONObject;
-
-    return-object p1
-.end method
-
-.method public static synthetic access$900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;Ljava/lang/String;Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1, p2, p3}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->_registerVar(Ljava/lang/String;Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;Ljava/lang/Object;)V
+    invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->handleDashboardMessage(Lorg/json/JSONObject;)V
 
     return-void
+.end method
+
+.method public static synthetic access$700()Ljava/nio/ByteBuffer;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
+
+    return-object v0
+.end method
+
+.method public static synthetic access$900(Lcom/clevertap/android/sdk/ab_testing/CTABTestController;)Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->varCache:Lcom/clevertap/android/sdk/ab_testing/CTVarCache;
+
+    return-object p0
 .end method
 
 .method private applyStoredExperiments()V
@@ -448,10 +481,12 @@
 
     const/4 v1, 0x0
 
+    .line 2
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
+    .line 3
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
@@ -504,9 +539,9 @@
 .method private handleDashboardMessage(Lorg/json/JSONObject;)V
     .locals 8
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
-    const-string v1, "unknown"
+    const-string/jumbo v1, "unknown"
 
     .line 1
     invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -516,23 +551,28 @@
     .line 2
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
     move-result v1
 
-    const/4 v2, 0x5
+    const/4 v2, 0x7
 
-    const/4 v3, 0x2
+    const/4 v3, 0x5
 
     const/4 v4, 0x4
 
-    const/4 v5, 0x7
+    const/4 v5, 0x3
 
-    const/4 v6, 0x3
+    const/4 v6, 0x2
 
     const/4 v7, -0x1
 
     sparse-switch v1, :sswitch_data_0
 
-    goto :goto_0
+    :goto_0
+    const/4 v0, -0x1
+
+    goto/16 :goto_1
 
     :sswitch_0
     const-string v1, "matched"
@@ -541,22 +581,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x6
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x7
 
     goto :goto_1
 
     :sswitch_1
-    const-string v1, "vars_request"
+    const-string/jumbo v1, "vars_request"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
 
-    const/4 v0, 0x4
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x6
 
     goto :goto_1
 
@@ -567,34 +613,43 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_2
 
-    const/4 v0, 0x7
+    goto :goto_0
 
-    goto :goto_1
-
-    :sswitch_3
-    const-string v1, "test_vars"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
+    :cond_2
     const/4 v0, 0x5
 
     goto :goto_1
 
-    :sswitch_4
-    const-string v1, "snapshot_request"
+    :sswitch_3
+    const-string/jumbo v1, "test_vars"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_3
 
+    goto :goto_0
+
+    :cond_3
+    const/4 v0, 0x4
+
+    goto :goto_1
+
+    :sswitch_4
+    const-string/jumbo v1, "snapshot_request"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    goto :goto_0
+
+    :cond_4
     const/4 v0, 0x3
 
     goto :goto_1
@@ -606,9 +661,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_5
 
-    const/4 v0, 0x0
+    goto :goto_0
+
+    :cond_5
+    const/4 v0, 0x2
 
     goto :goto_1
 
@@ -619,8 +677,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_6
 
+    goto :goto_0
+
+    :cond_6
     const/4 v0, 0x1
 
     goto :goto_1
@@ -632,15 +693,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_7
 
-    const/4 v0, 0x2
+    goto :goto_0
 
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    const/4 v0, -0x1
+    :cond_7
+    const/4 v0, 0x0
 
     :goto_1
     packed-switch v0, :pswitch_data_0
@@ -655,32 +713,32 @@
     goto :goto_2
 
     :pswitch_1
-    const/16 v2, 0xc
-
-    goto :goto_2
-
-    :pswitch_2
     const/16 v2, 0xb
 
     goto :goto_2
 
+    :pswitch_2
+    const/4 v2, 0x5
+
+    goto :goto_2
+
     :pswitch_3
-    const/4 v2, 0x2
+    const/16 v2, 0xc
 
     goto :goto_2
 
     :pswitch_4
-    const/4 v2, 0x4
+    const/4 v2, 0x2
 
     goto :goto_2
 
     :pswitch_5
-    const/4 v2, 0x7
+    const/4 v2, 0x3
 
     goto :goto_2
 
     :pswitch_6
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
     .line 3
     :goto_2
@@ -735,13 +793,13 @@
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_6
+        :pswitch_7
         :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0
-        :pswitch_7
     .end packed-switch
 .end method
 
@@ -1832,14 +1890,15 @@
 
     const/4 v1, 0x6
 
+    .line 2
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 2
+    .line 3
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 3
+    .line 4
     iget-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/CTABTestController;->executionThreadHandler:Lcom/clevertap/android/sdk/ab_testing/CTABTestController$ExecutionThreadHandler;
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z

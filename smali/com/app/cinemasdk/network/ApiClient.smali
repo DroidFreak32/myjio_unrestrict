@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
+.field private serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
 
 # direct methods
@@ -15,9 +15,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     .line 3
     new-instance v1, Lokhttp3/OkHttpClient$Builder;
@@ -39,39 +39,41 @@
     invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->connectTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     .line 6
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
     invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     .line 7
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
     invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     .line 8
-    invoke-virtual {v0, p1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
-
-    .line 9
-    invoke-static {}, Lks4;->a()Lks4;
+    invoke-virtual {v0, p1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lyr4$b;->a(Lnr4$a;)Lyr4$b;
+    .line 9
+    invoke-static {}, Lretrofit2/converter/gson/GsonConverterFactory;->create()Lretrofit2/converter/gson/GsonConverterFactory;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lretrofit2/Retrofit$Builder;->addConverterFactory(Lretrofit2/Converter$Factory;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object p1
 
     .line 10
     invoke-virtual {v1}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;
 
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lretrofit2/Retrofit$Builder;->client(Lokhttp3/OkHttpClient;)Lretrofit2/Retrofit$Builder;
+
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lyr4$b;->a(Lokhttp3/OkHttpClient;)Lyr4$b;
-
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {p1}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
 
     move-result-object p1
 
     const-class v0, Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-virtual {p1, v0}, Lyr4;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p1
 

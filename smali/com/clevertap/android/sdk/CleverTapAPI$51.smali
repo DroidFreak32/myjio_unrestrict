@@ -1,4 +1,4 @@
-.class public Lcom/clevertap/android/sdk/CleverTapAPI$51;
+.class public final Lcom/clevertap/android/sdk/CleverTapAPI$51;
 .super Ljava/lang/Object;
 .source "CleverTapAPI.java"
 
@@ -8,29 +8,33 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->notifyDisplayUnitsLoaded(Ljava/util/ArrayList;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->checkPendingNotifications(Landroid/content/Context;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x9
     name = null
 .end annotation
 
 
 # instance fields
-.field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+.field public final synthetic val$config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-.field public final synthetic val$displayUnits:Ljava/util/ArrayList;
+.field public final synthetic val$context:Landroid/content/Context;
+
+.field public final synthetic val$notification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Ljava/util/ArrayList;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/clevertap/android/sdk/CTInAppNotification;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$context:Landroid/content/Context;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$displayUnits:Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$notification:Lcom/clevertap/android/sdk/CTInAppNotification;
+
+    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,46 +44,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$context:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$7500(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/ref/WeakReference;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$notification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0, v1, v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$7200(Landroid/content/Context;Lcom/clevertap/android/sdk/CTInAppNotification;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)V
 
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$7500(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/ref/WeakReference;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$7500(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/ref/WeakReference;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/clevertap/android/sdk/displayunits/DisplayUnitListener;
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$51;->val$displayUnits:Ljava/util/ArrayList;
-
-    invoke-interface {v0, v1}, Lcom/clevertap/android/sdk/displayunits/DisplayUnitListener;->onDisplayUnitsLoaded(Ljava/util/ArrayList;)V
-
-    :cond_0
     return-void
 .end method

@@ -3,14 +3,14 @@
 
 
 # static fields
-.field public static final zzabm:Ljava/lang/String;
+.field private static final zzabm:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field
 
 
 # instance fields
-.field public final zzaic:Lcom/google/android/gms/tagmanager/zzfm;
+.field private final zzaic:Lcom/google/android/gms/tagmanager/zzfm;
 
 
 # direct methods

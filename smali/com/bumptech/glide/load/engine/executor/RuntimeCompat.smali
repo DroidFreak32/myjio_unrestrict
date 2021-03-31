@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static final CPU_LOCATION:Ljava/lang/String; = "/sys/devices/system/cpu/"
+.field private static final CPU_LOCATION:Ljava/lang/String; = "/sys/devices/system/cpu/"
 
-.field public static final CPU_NAME_REGEX:Ljava/lang/String; = "cpu[0-9]+"
+.field private static final CPU_NAME_REGEX:Ljava/lang/String; = "cpu[0-9]+"
 
-.field public static final TAG:Ljava/lang/String; = "GlideRuntimeCompat"
+.field private static final TAG:Ljava/lang/String; = "GlideRuntimeCompat"
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -53,7 +53,7 @@
     return v0
 .end method
 
-.method public static getCoreCountPre17()I
+.method private static getCoreCountPre17()I
     .locals 4
 
     .line 1

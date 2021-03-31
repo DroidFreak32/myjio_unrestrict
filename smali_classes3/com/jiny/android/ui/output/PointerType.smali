@@ -33,158 +33,148 @@
 
 .field public static final enum TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
 
-.field public static final synthetic s:[Lcom/jiny/android/ui/output/PointerType;
+.field public static final synthetic a:[Lcom/jiny/android/ui/output/PointerType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 12
+    .locals 16
 
     new-instance v0, Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v1, 0x0
+    const-string v1, "ARROW"
 
-    const-string v2, "ARROW"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/jiny/android/ui/output/PointerType;->ARROW:Lcom/jiny/android/ui/output/PointerType;
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/jiny/android/ui/output/PointerType;
 
     const-string v3, "RIPPLE"
 
-    invoke-direct {v0, v3, v2}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->RIPPLE:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v1, v3, v4}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v1, Lcom/jiny/android/ui/output/PointerType;->RIPPLE:Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v4, "FINGER"
+    const-string v5, "FINGER"
 
-    invoke-direct {v0, v4, v3}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->FINGER:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v3, v5, v6}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v3, Lcom/jiny/android/ui/output/PointerType;->FINGER:Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v5, "NEGATIVE_UI"
+    const-string v7, "NEGATIVE_UI"
 
-    invoke-direct {v0, v5, v4}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_UI:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v5, v7, v8}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v5, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_UI:Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v5, 0x4
+    new-instance v7, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v6, "NEGATIVE_LIGHT_BG_UI"
+    const-string v9, "NEGATIVE_LIGHT_BG_UI"
 
-    invoke-direct {v0, v6, v5}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v10, 0x4
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_LIGHT_BG_UI:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v7, v9, v10}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v7, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_LIGHT_BG_UI:Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v6, 0x5
+    new-instance v9, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v7, "NEGATIVE_UI_ACTION"
+    const-string v11, "NEGATIVE_UI_ACTION"
 
-    invoke-direct {v0, v7, v6}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v12, 0x5
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_UI_ACTION:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v9, v11, v12}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v9, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_UI_ACTION:Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v7, 0x6
+    new-instance v11, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v8, "TOOLTIP"
+    const-string v13, "TOOLTIP"
 
-    invoke-direct {v0, v8, v7}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v14, 0x6
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v11, v13, v14}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v11, Lcom/jiny/android/ui/output/PointerType;->TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
 
-    const/4 v8, 0x7
+    new-instance v13, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v9, "NEGATIVE_TOOLTIP"
+    const-string v15, "NEGATIVE_TOOLTIP"
 
-    invoke-direct {v0, v9, v8}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/4 v14, 0x7
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v13, v15, v14}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v13, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
 
-    const/16 v9, 0x8
+    new-instance v15, Lcom/jiny/android/ui/output/PointerType;
 
-    const-string v10, "NEGATIVE_LIGHT_BG_TOOLTIP"
+    const-string v14, "NEGATIVE_LIGHT_BG_TOOLTIP"
 
-    invoke-direct {v0, v10, v9}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    const/16 v12, 0x8
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_LIGHT_BG_TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
+    invoke-direct {v15, v14, v12}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/ui/output/PointerType;
+    sput-object v15, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_LIGHT_BG_TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
+
+    new-instance v14, Lcom/jiny/android/ui/output/PointerType;
+
+    const-string v12, "FINGER_RIPPLE_V2"
 
     const/16 v10, 0x9
 
-    const-string v11, "FINGER_RIPPLE_V2"
+    invoke-direct {v14, v12, v10}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v11, v10}, Lcom/jiny/android/ui/output/PointerType;-><init>(Ljava/lang/String;I)V
+    sput-object v14, Lcom/jiny/android/ui/output/PointerType;->FINGER_RIPPLE_V2:Lcom/jiny/android/ui/output/PointerType;
 
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->FINGER_RIPPLE_V2:Lcom/jiny/android/ui/output/PointerType;
+    const/16 v12, 0xa
 
-    const/16 v0, 0xa
+    new-array v12, v12, [Lcom/jiny/android/ui/output/PointerType;
 
-    new-array v0, v0, [Lcom/jiny/android/ui/output/PointerType;
+    aput-object v0, v12, v2
 
-    sget-object v11, Lcom/jiny/android/ui/output/PointerType;->ARROW:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v1, v12, v4
 
-    aput-object v11, v0, v1
+    aput-object v3, v12, v6
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->RIPPLE:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v5, v12, v8
 
-    aput-object v1, v0, v2
+    const/4 v0, 0x4
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->FINGER:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v7, v12, v0
 
-    aput-object v1, v0, v3
+    const/4 v0, 0x5
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_UI:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v9, v12, v0
 
-    aput-object v1, v0, v4
+    const/4 v0, 0x6
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_LIGHT_BG_UI:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v11, v12, v0
 
-    aput-object v1, v0, v5
+    const/4 v0, 0x7
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_UI_ACTION:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v13, v12, v0
 
-    aput-object v1, v0, v6
+    const/16 v0, 0x8
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
+    aput-object v15, v12, v0
 
-    aput-object v1, v0, v7
+    aput-object v14, v12, v10
 
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->NEGATIVE_LIGHT_BG_TOOLTIP:Lcom/jiny/android/ui/output/PointerType;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/jiny/android/ui/output/PointerType;->FINGER_RIPPLE_V2:Lcom/jiny/android/ui/output/PointerType;
-
-    aput-object v1, v0, v10
-
-    sput-object v0, Lcom/jiny/android/ui/output/PointerType;->s:[Lcom/jiny/android/ui/output/PointerType;
+    sput-object v12, Lcom/jiny/android/ui/output/PointerType;->a:[Lcom/jiny/android/ui/output/PointerType;
 
     return-void
 .end method
@@ -219,7 +209,7 @@
 .method public static values()[Lcom/jiny/android/ui/output/PointerType;
     .locals 1
 
-    sget-object v0, Lcom/jiny/android/ui/output/PointerType;->s:[Lcom/jiny/android/ui/output/PointerType;
+    sget-object v0, Lcom/jiny/android/ui/output/PointerType;->a:[Lcom/jiny/android/ui/output/PointerType;
 
     invoke-virtual {v0}, [Lcom/jiny/android/ui/output/PointerType;->clone()Ljava/lang/Object;
 

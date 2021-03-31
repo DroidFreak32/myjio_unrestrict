@@ -42,9 +42,9 @@
 
 
 # instance fields
-.field public code:I
+.field private code:I
 
-.field public reason:Ljava/lang/String;
+.field private reason:Ljava/lang/String;
 
 
 # direct methods
@@ -122,6 +122,11 @@
 
 .method private validateUtf8(Ljava/nio/ByteBuffer;I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -191,7 +196,9 @@
     if-eqz p1, :cond_6
 
     .line 1
-    const-class v2, Lcom/clevertap/android/sdk/java_websocket/framing/CloseFrame;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -337,6 +344,11 @@
 
 .method public isValid()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0}, Lcom/clevertap/android/sdk/java_websocket/framing/ControlFrame;->isValid()V
@@ -424,11 +436,8 @@
 
     throw v0
 
-    .line 8
     :cond_5
     :goto_2
-    iget v0, p0, Lcom/clevertap/android/sdk/java_websocket/framing/CloseFrame;->code:I
-
     const/16 v1, 0x3ee
 
     if-eq v0, v1, :cond_6
@@ -451,7 +460,7 @@
 
     return-void
 
-    .line 9
+    .line 8
     :cond_6
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidFrameException;
 

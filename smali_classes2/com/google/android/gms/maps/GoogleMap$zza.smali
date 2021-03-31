@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public final zzai:Lcom/google/android/gms/maps/GoogleMap$CancelableCallback;
+.field private final zzai:Lcom/google/android/gms/maps/GoogleMap$CancelableCallback;
 
 
 # direct methods

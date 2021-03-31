@@ -23,11 +23,11 @@
 
 .field public static MIN_SPEED_UPLOAD:Ljava/lang/String; = "min_speed_upload"
 
-.field public static final MODULE:Ljava/lang/String; = "OffloadSpeedAlarmBroadcast"
+.field private static final MODULE:Ljava/lang/String; = "OffloadSpeedAlarmBroadcast"
 
 
 # instance fields
-.field public spTask:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private spTask:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # direct methods
@@ -872,13 +872,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    :goto_0
     return-void
 .end method

@@ -8,13 +8,13 @@
 
 
 # static fields
-.field public static zzo:Lcom/google/android/gms/gcm/GcmPubSub;
+.field private static zzo:Lcom/google/android/gms/gcm/GcmPubSub;
 
-.field public static final zzq:Ljava/util/regex/Pattern;
+.field private static final zzq:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field public zzp:Lcom/google/android/gms/iid/InstanceID;
+.field private zzp:Lcom/google/android/gms/iid/InstanceID;
 
 
 # direct methods
@@ -33,7 +33,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     .line 1
@@ -96,6 +96,16 @@
 # virtual methods
 .method public subscribe(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "com.google.android.c2dm.permission.RECEIVE"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -218,6 +228,16 @@
 
 .method public unsubscribe(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "com.google.android.c2dm.permission.RECEIVE"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

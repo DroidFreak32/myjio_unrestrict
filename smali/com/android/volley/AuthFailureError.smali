@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mResolutionIntent:Landroid/content/Intent;
+.field private mResolutionIntent:Landroid/content/Intent;
 
 
 # direct methods
@@ -29,6 +29,15 @@
     return-void
 .end method
 
+.method public constructor <init>(Lcom/android/volley/NetworkResponse;)V
+    .locals 0
+
+    .line 4
+    invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Lcom/android/volley/NetworkResponse;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
@@ -43,15 +52,6 @@
 
     .line 6
     invoke-direct {p0, p1, p2}, Lcom/android/volley/VolleyError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Luv;)V
-    .locals 0
-
-    .line 4
-    invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Luv;)V
 
     return-void
 .end method

@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "Spherical.Utils"
+.field private static final TAG:Ljava/lang/String; = "Spherical.Utils"
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -128,15 +128,15 @@
 
     new-array v0, p0, [I
 
-    const/4 v1, 0x0
+    const v1, 0x8b82
 
-    const v2, 0x8b82
+    const/4 v2, 0x0
 
     .line 14
-    invoke-static {p1, v2, v0, v1}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
+    invoke-static {p1, v1, v0, v2}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
 
     .line 15
-    aget v0, v0, v1
+    aget v0, v0, v2
 
     if-eq v0, p0, :cond_0
 
@@ -232,29 +232,29 @@
 
     invoke-static {v3, v2}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    const/16 v2, 0x2601
+    const/16 v2, 0x2801
 
-    const/16 v4, 0x2801
+    const/16 v4, 0x2601
 
     .line 3
-    invoke-static {v3, v4, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+    invoke-static {v3, v2, v4}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    const/16 v4, 0x2800
+    const/16 v2, 0x2800
 
     .line 4
-    invoke-static {v3, v4, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+    invoke-static {v3, v2, v4}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    const v2, 0x812f
+    const/16 v2, 0x2802
 
-    const/16 v4, 0x2802
+    const v4, 0x812f
 
     .line 5
-    invoke-static {v3, v4, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+    invoke-static {v3, v2, v4}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    const/16 v4, 0x2803
+    const/16 v2, 0x2803
 
     .line 6
-    invoke-static {v3, v4, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+    invoke-static {v3, v2, v4}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     .line 7
     invoke-static {}, Lcom/google/android/jioexoplayer2/jioui/spherical/GlUtil;->checkGlError()V

@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public address_components:Ljava/util/Collection;
+.field private address_components:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -13,15 +13,15 @@
     .end annotation
 .end field
 
-.field public formatted_address:Ljava/lang/String;
+.field private formatted_address:Ljava/lang/String;
 
-.field public geometry:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeometry;
+.field private geometry:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeometry;
 
-.field public partialMatch:Z
+.field private partialMatch:Z
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse;
 
-.field public types:Ljava/util/Collection;
+.field private types:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",

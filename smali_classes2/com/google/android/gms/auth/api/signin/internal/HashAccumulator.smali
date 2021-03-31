@@ -1,16 +1,17 @@
 .class public Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # static fields
-.field public static zaah:I = 0x1f
+.field private static zaa:I = 0x1f
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field
 
 
 # instance fields
-.field public zaai:I
+.field private zab:I
 
 
 # direct methods
@@ -29,7 +30,7 @@
     const/4 v0, 0x1
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaai:I
+    iput v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
     return-void
 .end method
@@ -38,13 +39,17 @@
 # virtual methods
 .method public addObject(Ljava/lang/Object;)Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget v0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaah:I
+    sget v0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaa:I
 
-    iget v1, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaai:I
+    iget v1, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
     mul-int v0, v0, v1
 
@@ -62,7 +67,7 @@
     :goto_0
     add-int/2addr v0, p1
 
-    iput v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaai:I
+    iput v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
     return-object p0
 .end method
@@ -73,7 +78,7 @@
     .end annotation
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaai:I
+    iget v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
     return v0
 .end method
@@ -82,15 +87,15 @@
     .locals 2
 
     .line 1
-    sget v0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaah:I
+    sget v0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaa:I
 
-    iget v1, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaai:I
+    iget v1, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
     mul-int v0, v0, v1
 
     add-int/2addr v0, p1
 
-    iput v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zaai:I
+    iput v0, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
     return-object p0
 .end method

@@ -7,6 +7,10 @@
 
 # instance fields
 .field public state:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
 .field public final zzch:Landroid/os/Messenger;
 
@@ -20,6 +24,10 @@
             "*>;>;"
         }
     .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "this"
+    .end annotation
 .end field
 
 .field public final zzck:Landroid/util/SparseArray;
@@ -30,13 +38,17 @@
             "*>;>;"
         }
     .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "this"
+    .end annotation
 .end field
 
 .field public final synthetic zzcl:Lcom/google/android/gms/iid/zzr;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/iid/zzr;)V
+.method private constructor <init>(Lcom/google/android/gms/iid/zzr;)V
     .locals 3
 
     .line 1
@@ -548,12 +560,12 @@
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const-string v0, "unsupported"
 
-    const-string v3, "unsupported"
+    const/4 v3, 0x0
 
     .line 12
-    invoke-virtual {p1, v3, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 

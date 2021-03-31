@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
 .super Lcom/google/android/gms/internal/base/zap;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -100,7 +101,7 @@
     .line 4
     sget-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_TIMEOUT:Lcom/google/android/gms/common/api/Status;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab(Lcom/google/android/gms/common/api/Status;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
 
     return-void
 
@@ -131,7 +132,7 @@
     move-exception v0
 
     .line 8
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zab(Lcom/google/android/gms/common/api/Result;)V
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaa(Lcom/google/android/gms/common/api/Result;)V
 
     .line 9
     throw v0
@@ -139,6 +140,10 @@
 
 .method public final zaa(Lcom/google/android/gms/common/api/ResultCallback;Lcom/google/android/gms/common/api/Result;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/common/api/ResultCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,6 +153,17 @@
     .end annotation
 
     .line 1
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaa(Lcom/google/android/gms/common/api/ResultCallback;)Lcom/google/android/gms/common/api/ResultCallback;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/gms/common/api/ResultCallback;
+
+    .line 2
     new-instance v0, Landroid/util/Pair;
 
     invoke-direct {v0, p1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V

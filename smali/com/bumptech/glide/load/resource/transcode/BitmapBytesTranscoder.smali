@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final compressFormat:Landroid/graphics/Bitmap$CompressFormat;
+.field private final compressFormat:Landroid/graphics/Bitmap$CompressFormat;
 
-.field public final quality:I
+.field private final quality:I
 
 
 # direct methods
@@ -39,6 +39,10 @@
 
 .method public constructor <init>(Landroid/graphics/Bitmap$CompressFormat;I)V
     .locals 0
+    .param p1    # Landroid/graphics/Bitmap$CompressFormat;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,6 +60,17 @@
 # virtual methods
 .method public transcode(Lcom/bumptech/glide/load/engine/Resource;Lcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 3
+    .param p1    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

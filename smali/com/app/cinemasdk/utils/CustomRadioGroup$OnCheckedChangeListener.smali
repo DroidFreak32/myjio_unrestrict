@@ -16,4 +16,8 @@
 
 # virtual methods
 .method public abstract onCheckedChanged(Lcom/app/cinemasdk/utils/CustomRadioGroup;I)V
+    .param p2    # I
+        .annotation build Landroidx/annotation/IdRes;
+        .end annotation
+    .end param
 .end method

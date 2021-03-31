@@ -41,23 +41,23 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$2;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$100(Lcom/clevertap/android/sdk/DeviceInfo;)V
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$1900(Lcom/clevertap/android/sdk/DeviceInfo;)V
 
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$2;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$200(Lcom/clevertap/android/sdk/DeviceInfo;)V
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$2000(Lcom/clevertap/android/sdk/DeviceInfo;)V
 
     .line 3
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$2;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/DeviceInfo$2;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$400(Lcom/clevertap/android/sdk/DeviceInfo;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$2100(Lcom/clevertap/android/sdk/DeviceInfo;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     move-result-object v1
 

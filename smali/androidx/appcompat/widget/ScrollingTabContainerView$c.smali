@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/ScrollingTabContainerView;
+.field public final synthetic a:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$c;->s:Landroidx/appcompat/widget/ScrollingTabContainerView;
+    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$c;->a:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,16 +44,16 @@
     check-cast v0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;
 
     .line 2
-    invoke-virtual {v0}, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->a()Landroidx/appcompat/app/ActionBar$b;
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b()Landroidx/appcompat/app/ActionBar$Tab;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$b;->e()V
+    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$Tab;->select()V
 
     .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$c;->s:Landroidx/appcompat/widget/ScrollingTabContainerView;
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$c;->a:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
-    iget-object v0, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->u:Landroidx/appcompat/widget/LinearLayoutCompat;
+    iget-object v0, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->c:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -67,9 +67,9 @@
     if-ge v2, v0, :cond_1
 
     .line 4
-    iget-object v3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$c;->s:Landroidx/appcompat/widget/ScrollingTabContainerView;
+    iget-object v3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$c;->a:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
-    iget-object v3, v3, Landroidx/appcompat/widget/ScrollingTabContainerView;->u:Landroidx/appcompat/widget/LinearLayoutCompat;
+    iget-object v3, v3, Landroidx/appcompat/widget/ScrollingTabContainerView;->c:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 

@@ -1,129 +1,79 @@
 .class public Lpa;
 .super Ljava/lang/Object;
-.source "AccessibilityNodeProviderCompat.java"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lpa$b;,
-        Lpa$a;
-    }
-.end annotation
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public a:I
+
+.field public b:Ljava/util/Date;
+
+.field public c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(ILjava/util/Date;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-eqz p4, :cond_0
 
-    const/16 v1, 0x13
+    const-string v0, ""
 
-    if-lt v0, v1, :cond_0
+    invoke-virtual {v0, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 3
-    new-instance v0, Lpa$b;
+    move-result v0
 
-    invoke-direct {v0, p0}, Lpa$b;-><init>(Lpa;)V
+    if-nez v0, :cond_0
 
-    iput-object v0, p0, Lpa;->a:Ljava/lang/Object;
+    const-string v0, "gt50981"
 
-    goto :goto_0
+    invoke-virtual {v0, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_0
+
+    iput p1, p0, Lpa;->a:I
+
+    iput-object p2, p0, Lpa;->b:Ljava/util/Date;
+
+    iput-object p3, p0, Lpa;->c:Ljava/lang/String;
+
+    return-void
 
     :cond_0
-    const/16 v1, 0x10
+    new-instance p1, Ljava/lang/Exception;
 
-    if-lt v0, v1, :cond_1
+    const-string p2, "Please Mention Correct Validation Key for License Data"
 
-    .line 4
-    new-instance v0, Lpa$a;
+    invoke-direct {p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, p0}, Lpa$a;-><init>(Lpa;)V
-
-    iput-object v0, p0, Lpa;->a:Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    .line 5
-    iput-object v0, p0, Lpa;->a:Ljava/lang/Object;
-
-    :goto_0
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 7
-    iput-object p1, p0, Lpa;->a:Ljava/lang/Object;
-
-    return-void
+    throw p1
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Object;
+.method public a()I
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lpa;->a:Ljava/lang/Object;
+    iget v0, p0, Lpa;->a:I
+
+    return v0
+.end method
+
+.method public b()Ljava/util/Date;
+    .locals 1
+
+    iget-object v0, p0, Lpa;->b:Ljava/util/Date;
 
     return-object v0
 .end method
 
-.method public a(Ljava/lang/String;I)Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "I)",
-            "Ljava/util/List<",
-            "Loa;",
-            ">;"
-        }
-    .end annotation
+.method public c()Ljava/lang/String;
+    .locals 1
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Lpa;->c:Ljava/lang/String;
 
-    return-object p1
-.end method
-
-.method public a(I)Loa;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public a(IILandroid/os/Bundle;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public b(I)Loa;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
+    return-object v0
 .end method

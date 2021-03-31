@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzy:Lcom/google/android/gms/maps/GoogleMap$OnPolylineClickListener;
+.field private final synthetic zzy:Lcom/google/android/gms/maps/GoogleMap$OnPolylineClickListener;
 
 
 # direct methods

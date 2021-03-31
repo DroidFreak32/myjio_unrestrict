@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public final synthetic zzvw:Lcom/google/android/gms/internal/gtm/zzae;
+.field private final synthetic zzvw:Lcom/google/android/gms/internal/gtm/zzae;
 
 
 # direct methods
@@ -36,6 +36,11 @@
 # virtual methods
 .method public final synthetic call()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzal;->zzvw:Lcom/google/android/gms/internal/gtm/zzae;

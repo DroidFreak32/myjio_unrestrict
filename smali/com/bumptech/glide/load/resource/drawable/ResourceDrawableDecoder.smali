@@ -19,23 +19,23 @@
 
 
 # static fields
-.field public static final ANDROID_PACKAGE_NAME:Ljava/lang/String; = "android"
+.field private static final ANDROID_PACKAGE_NAME:Ljava/lang/String; = "android"
 
-.field public static final ID_PATH_SEGMENTS:I = 0x1
+.field private static final ID_PATH_SEGMENTS:I = 0x1
 
-.field public static final MISSING_RESOURCE_ID:I = 0x0
+.field private static final MISSING_RESOURCE_ID:I = 0x0
 
-.field public static final NAME_PATH_SEGMENT_INDEX:I = 0x1
+.field private static final NAME_PATH_SEGMENT_INDEX:I = 0x1
 
-.field public static final NAME_URI_PATH_SEGMENTS:I = 0x2
+.field private static final NAME_URI_PATH_SEGMENTS:I = 0x2
 
-.field public static final RESOURCE_ID_SEGMENT_INDEX:I
+.field private static final RESOURCE_ID_SEGMENT_INDEX:I
 
-.field public static final TYPE_PATH_SEGMENT_INDEX:I
+.field private static final TYPE_PATH_SEGMENT_INDEX:I
 
 
 # instance fields
-.field public final context:Landroid/content/Context;
+.field private final context:Landroid/content/Context;
 
 
 # direct methods
@@ -57,6 +57,8 @@
 
 .method private findContextForPackage(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Context;
     .locals 3
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/drawable/ResourceDrawableDecoder;->context:Landroid/content/Context;
@@ -137,6 +139,8 @@
 
 .method private findResourceIdFromResourceIdUri(Landroid/net/Uri;)I
     .locals 4
+    .annotation build Landroidx/annotation/DrawableRes;
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
@@ -188,6 +192,8 @@
 
 .method private findResourceIdFromTypeAndNameResourceUri(Landroid/content/Context;Landroid/net/Uri;)I
     .locals 4
+    .annotation build Landroidx/annotation/DrawableRes;
+    .end annotation
 
     .line 1
     invoke-virtual {p2}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
@@ -269,6 +275,8 @@
 
 .method private findResourceIdFromUri(Landroid/content/Context;Landroid/net/Uri;)I
     .locals 3
+    .annotation build Landroidx/annotation/DrawableRes;
+    .end annotation
 
     .line 1
     invoke-virtual {p2}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
@@ -335,6 +343,17 @@
 # virtual methods
 .method public decode(Landroid/net/Uri;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 0
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -380,6 +399,22 @@
 
 .method public bridge synthetic decode(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Landroid/net/Uri;
@@ -393,6 +428,14 @@
 
 .method public handles(Landroid/net/Uri;Lcom/bumptech/glide/load/Options;)Z
     .locals 0
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -410,6 +453,19 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;Lcom/bumptech/glide/load/Options;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Landroid/net/Uri;

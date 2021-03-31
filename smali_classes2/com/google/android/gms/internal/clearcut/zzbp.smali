@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
+.field private final zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/clearcut/zzbn;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/clearcut/zzbn;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,8 +24,6 @@
     check-cast p1, Lcom/google/android/gms/internal/clearcut/zzbn;
 
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
     iput-object p0, p1, Lcom/google/android/gms/internal/clearcut/zzbn;->zzfz:Lcom/google/android/gms/internal/clearcut/zzbp;
 
@@ -53,6 +51,11 @@
 # virtual methods
 .method public final zza(ID)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -63,6 +66,11 @@
 
 .method public final zza(IF)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -73,6 +81,11 @@
 
 .method public final zza(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -83,6 +96,11 @@
 
 .method public final zza(ILcom/google/android/gms/internal/clearcut/zzbb;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -104,6 +122,12 @@
             "TK;TV;>;",
             "Ljava/util/Map<",
             "TK;TV;>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -170,6 +194,11 @@
 
 .method public final zza(ILjava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     instance-of v0, p2, Lcom/google/android/gms/internal/clearcut/zzbb;
 
@@ -195,6 +224,11 @@
 
 .method public final zza(ILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzef;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -207,6 +241,11 @@
 
 .method public final zza(ILjava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -223,6 +262,12 @@
             "Ljava/util/List<",
             "Ljava/lang/String;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -312,6 +357,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     :goto_0
@@ -343,6 +394,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -452,6 +509,11 @@
 
 .method public final zzaa(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -464,6 +526,11 @@
 
 .method public final zzab(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -484,6 +551,11 @@
 
 .method public final zzb(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -494,6 +566,11 @@
 
 .method public final zzb(ILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzef;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -522,6 +599,12 @@
             "Ljava/util/List<",
             "Lcom/google/android/gms/internal/clearcut/zzbb;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -564,6 +647,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     :goto_0
@@ -595,6 +684,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -704,6 +799,11 @@
 
 .method public final zzb(IZ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -714,6 +814,11 @@
 
 .method public final zzc(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -724,6 +829,11 @@
 
 .method public final zzc(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -740,6 +850,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -849,6 +965,11 @@
 
 .method public final zzd(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -865,6 +986,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -974,6 +1101,11 @@
 
 .method public final zze(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -990,6 +1122,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1099,6 +1237,11 @@
 
 .method public final zzf(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -1115,6 +1258,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Float;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1233,6 +1382,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     if-eqz p3, :cond_2
@@ -1348,6 +1503,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     if-eqz p3, :cond_2
@@ -1454,6 +1615,11 @@
 
 .method public final zzi(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -1470,6 +1636,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Boolean;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1579,6 +1751,11 @@
 
 .method public final zzj(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -1595,6 +1772,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1713,6 +1896,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     if-eqz p3, :cond_2
@@ -1828,6 +2017,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     if-eqz p3, :cond_2
@@ -1934,6 +2129,11 @@
 
 .method public final zzm(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -1950,6 +2150,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -2059,6 +2265,11 @@
 
 .method public final zzn(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbp;->zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
@@ -2075,6 +2286,12 @@
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

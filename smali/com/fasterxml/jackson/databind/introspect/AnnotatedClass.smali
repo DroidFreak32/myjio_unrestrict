@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final NO_CREATORS:Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass$Creators;
+.field private static final NO_CREATORS:Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass$Creators;
 
 
 # instance fields

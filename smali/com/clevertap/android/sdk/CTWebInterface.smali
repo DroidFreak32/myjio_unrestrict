@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public weakReference:Ljava/lang/ref/WeakReference;
+.field private weakReference:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -145,7 +145,7 @@
     goto :goto_0
 
     :cond_2
-    const-string p1, "values passed to CTWebInterface is null"
+    const-string/jumbo p1, "values passed to CTWebInterface is null"
 
     .line 7
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
@@ -474,7 +474,7 @@
     goto :goto_0
 
     :cond_2
-    const-string p1, "values passed to CTWebInterface is null"
+    const-string/jumbo p1, "values passed to CTWebInterface is null"
 
     .line 7
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
@@ -604,7 +604,7 @@
     goto :goto_0
 
     :cond_2
-    const-string p1, "values passed to CTWebInterface is null"
+    const-string/jumbo p1, "values passed to CTWebInterface is null"
 
     .line 7
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V

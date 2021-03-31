@@ -1,4 +1,4 @@
-.class public final Landroidx/appcompat/widget/SwitchCompat$a;
+.class public Landroidx/appcompat/widget/SwitchCompat$a;
 .super Landroid/util/Property;
 .source "SwitchCompat.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -39,7 +39,7 @@
     .locals 0
 
     .line 1
-    iget p1, p1, Landroidx/appcompat/widget/SwitchCompat;->P:F
+    iget p1, p1, Landroidx/appcompat/widget/SwitchCompat;->mThumbPosition:F
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -48,10 +48,10 @@
     return-object p1
 .end method
 
-.method public a(Landroidx/appcompat/widget/SwitchCompat;Ljava/lang/Float;)V
+.method public b(Landroidx/appcompat/widget/SwitchCompat;Ljava/lang/Float;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result p2
@@ -82,7 +82,7 @@
 
     check-cast p2, Ljava/lang/Float;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/appcompat/widget/SwitchCompat$a;->a(Landroidx/appcompat/widget/SwitchCompat;Ljava/lang/Float;)V
+    invoke-virtual {p0, p1, p2}, Landroidx/appcompat/widget/SwitchCompat$a;->b(Landroidx/appcompat/widget/SwitchCompat;Ljava/lang/Float;)V
 
     return-void
 .end method

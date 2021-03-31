@@ -1,23 +1,48 @@
-.class public interface abstract Ldi;
+.class public final synthetic Ldi;
 .super Ljava/lang/Object;
-.source "SupportSQLiteProgram.java"
+.source "lambda"
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Landroid/media/MediaDrm$OnKeyStatusChangeListener;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/jioexoplayer2/drm/FrameworkMediaDrm;
+
+.field public final synthetic b:Lcom/google/android/jioexoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/google/android/jioexoplayer2/drm/FrameworkMediaDrm;Lcom/google/android/jioexoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldi;->a:Lcom/google/android/jioexoplayer2/drm/FrameworkMediaDrm;
+
+    iput-object p2, p0, Ldi;->b:Lcom/google/android/jioexoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(ID)V
-.end method
+.method public final onKeyStatusChange(Landroid/media/MediaDrm;[BLjava/util/List;Z)V
+    .locals 6
 
-.method public abstract a(IJ)V
-.end method
+    iget-object v0, p0, Ldi;->a:Lcom/google/android/jioexoplayer2/drm/FrameworkMediaDrm;
 
-.method public abstract a(I[B)V
-.end method
+    iget-object v1, p0, Ldi;->b:Lcom/google/android/jioexoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;
 
-.method public abstract b(ILjava/lang/String;)V
-.end method
+    move-object v2, p1
 
-.method public abstract c(I)V
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move v5, p4
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/jioexoplayer2/drm/FrameworkMediaDrm;->d(Lcom/google/android/jioexoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;Landroid/media/MediaDrm;[BLjava/util/List;Z)V
+
+    return-void
 .end method

@@ -1,8 +1,9 @@
 .class public final Lcom/google/android/gms/tasks/Tasks$zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/Tasks$zzb;
+.implements Lcom/google/android/gms/tasks/Tasks$zza;
 
 
 # annotations
@@ -17,9 +18,11 @@
 
 
 # instance fields
-.field public final mLock:Ljava/lang/Object;
+.field private final zza:Ljava/lang/Object;
 
-.field public final zza:Lcom/google/android/gms/tasks/zzu;
+.field private final zzb:I
+
+.field private final zzc:Lcom/google/android/gms/tasks/zzu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tasks/zzu<",
@@ -29,17 +32,35 @@
     .end annotation
 .end field
 
-.field public zzab:Ljava/lang/Exception;
+.field private zzd:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public final zzag:I
+.field private zze:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public zzah:I
+.field private zzf:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public zzai:I
+.field private zzg:Ljava/lang/Exception;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public zzaj:I
-
-.field public zzak:Z
+.field private zzh:Z
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -62,44 +83,51 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->mLock:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Ljava/lang/Object;
 
     .line 3
-    iput p1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzag:I
+    iput p1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzb:I
 
     .line 4
-    iput-object p2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Lcom/google/android/gms/tasks/zzu;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzc:Lcom/google/android/gms/tasks/zzu;
 
     return-void
 .end method
 
-.method private final zzf()V
+.method private final zza()V
     .locals 6
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzah:I
+    iget v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzd:I
 
-    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzai:I
+    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zze:I
 
     add-int/2addr v0, v1
 
-    iget v2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzaj:I
+    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzf:I
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
-    iget v2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzag:I
+    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzb:I
 
-    if-ne v0, v2, :cond_2
+    if-ne v0, v1, :cond_2
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzab:Ljava/lang/Exception;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzg:Ljava/lang/Exception;
 
     if-eqz v0, :cond_0
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzc:Lcom/google/android/gms/tasks/zzu;
 
-    new-instance v3, Ljava/util/concurrent/ExecutionException;
+    new-instance v1, Ljava/util/concurrent/ExecutionException;
+
+    iget v2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zze:I
+
+    iget v3, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzb:I
 
     const/16 v4, 0x36
 
@@ -107,38 +135,38 @@
 
     invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " out of "
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, " underlying tasks failed"
+    const-string v2, " out of "
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " underlying tasks failed"
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzab:Ljava/lang/Exception;
+    iget-object v3, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzg:Ljava/lang/Exception;
 
-    invoke-direct {v3, v1, v2}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v3}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v0, v3}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
 
     return-void
 
     .line 4
     :cond_0
-    iget-boolean v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzak:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzh:Z
 
     if-eqz v0, :cond_1
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzc:Lcom/google/android/gms/tasks/zzu;
 
     invoke-virtual {v0}, Lcom/google/android/gms/tasks/zzu;->zza()Z
 
@@ -146,11 +174,11 @@
 
     .line 6
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzc:Lcom/google/android/gms/tasks/zzu;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzu;->setResult(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Object;)V
 
     :cond_2
     return-void
@@ -162,25 +190,25 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzaj:I
+    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzf:I
 
     const/4 v2, 0x1
 
     add-int/2addr v1, v2
 
-    iput v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzaj:I
+    iput v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzf:I
 
     .line 3
-    iput-boolean v2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzak:Z
+    iput-boolean v2, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzh:Z
 
     .line 4
-    invoke-direct {p0}, Lcom/google/android/gms/tasks/Tasks$zzc;->zzf()V
+    invoke-direct {p0}, Lcom/google/android/gms/tasks/Tasks$zzc;->zza()V
 
     .line 5
     monitor-exit v0
@@ -199,25 +227,29 @@
 
 .method public final onFailure(Ljava/lang/Exception;)V
     .locals 2
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzai:I
+    iget v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zze:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzai:I
+    iput v1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zze:I
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzab:Ljava/lang/Exception;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzg:Ljava/lang/Exception;
 
     .line 4
-    invoke-direct {p0}, Lcom/google/android/gms/tasks/Tasks$zzc;->zzf()V
+    invoke-direct {p0}, Lcom/google/android/gms/tasks/Tasks$zzc;->zza()V
 
     .line 5
     monitor-exit v0
@@ -238,20 +270,20 @@
     .locals 1
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->mLock:Ljava/lang/Object;
+    iget-object p1, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zza:Ljava/lang/Object;
 
     monitor-enter p1
 
     .line 2
     :try_start_0
-    iget v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzah:I
+    iget v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzd:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzah:I
+    iput v0, p0, Lcom/google/android/gms/tasks/Tasks$zzc;->zzd:I
 
     .line 3
-    invoke-direct {p0}, Lcom/google/android/gms/tasks/Tasks$zzc;->zzf()V
+    invoke-direct {p0}, Lcom/google/android/gms/tasks/Tasks$zzc;->zza()V
 
     .line 4
     monitor-exit p1

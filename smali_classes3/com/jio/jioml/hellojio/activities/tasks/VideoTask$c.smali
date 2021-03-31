@@ -3,12 +3,12 @@
 .source "VideoTask.kt"
 
 # interfaces
-.implements Lce;
+.implements Landroidx/lifecycle/Observer;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lce<",
+        "Landroidx/lifecycle/Observer<",
         "Lcom/jio/jioml/hellojio/datamodels/VideoEvent;",
         ">;"
     }
@@ -47,106 +47,100 @@
 
 # virtual methods
 .method public final a(Lcom/jio/jioml/hellojio/datamodels/VideoEvent;)V
-    .locals 4
+    .locals 6
 
     .line 1
-    sget-object v0, Lmq0;->b:Lmq0;
+    sget-object v0, Lcom/jio/jioml/hellojio/utils/Console;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Console;
 
     invoke-virtual {p1}, Lcom/jio/jioml/hellojio/datamodels/VideoEvent;->getEvent()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lmq0;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/jio/jioml/hellojio/utils/Console;->debug(Ljava/lang/String;)V
 
     .line 2
     invoke-virtual {p1}, Lcom/jio/jioml/hellojio/datamodels/VideoEvent;->getEvent()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v1
+    move-result v2
 
-    const v2, -0x37b237d3
+    const v3, -0x37b237d3
 
-    const-string/jumbo v3, "view.video_view"
+    const-string v4, "view.video_view"
 
-    if-eq v1, v2, :cond_2
+    if-eq v2, v3, :cond_2
 
-    const v2, 0x360802
+    const v3, 0x360802
 
-    if-eq v1, v2, :cond_1
+    if-eq v2, v3, :cond_1
 
-    const v2, 0x65825f6
+    const v3, 0x65825f6
 
-    if-eq v1, v2, :cond_0
+    if-eq v2, v3, :cond_0
 
     goto/16 :goto_1
 
     :cond_0
-    const-string v1, "pause"
+    const-string v2, "pause"
 
     .line 3
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_4
+    if-eqz v1, :cond_4
 
     .line 4
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+
+    move-result-object v3
+
+    sget v5, Lcom/jio/jioml/hellojio/R$id;->video_view:I
+
+    invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/VideoView;
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Landroid/widget/VideoView;->getCurrentPosition()I
+
+    move-result v3
+
+    invoke-static {v1, v3}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$setMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;I)V
+
+    .line 5
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+
+    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object v1
 
-    sget v2, Ldn0;->video_view:I
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/VideoView;
 
-    invoke-static {v1, v3}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Landroid/widget/VideoView;->getCurrentPosition()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;I)V
-
-    .line 5
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
-
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
-
-    move-result-object v0
-
-    sget v1, Ldn0;->video_view:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/VideoView;
-
-    invoke-virtual {v0}, Landroid/widget/VideoView;->pause()V
+    invoke-virtual {v1}, Landroid/widget/VideoView;->pause()V
 
     .line 6
-    sget-object v0, Lmq0;->b:Lmq0;
-
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "pause "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v2}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {v2}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
     move-result v2
 
@@ -156,12 +150,12 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lmq0;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/jio/jioml/hellojio/utils/Console;->debug(Ljava/lang/String;)V
 
     .line 7
     iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
     move-result v0
 
@@ -173,21 +167,21 @@
     invoke-virtual {p1, v0}, Lcom/jio/jioml/hellojio/datamodels/VideoEvent;->setEvent(Ljava/lang/String;)V
 
     .line 9
-    sget-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->R:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$a;
+    sget-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->Companion:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$Companion;
 
-    invoke-virtual {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$a;->a()Lbe;
+    invoke-virtual {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$Companion;->getEVENT()Landroidx/lifecycle/MutableLiveData;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lbe;->b(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
     goto/16 :goto_1
 
     :cond_1
-    const-string/jumbo p1, "stop"
+    const-string p1, "stop"
 
     .line 10
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -195,11 +189,11 @@
 
     iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->video_view:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -212,49 +206,49 @@
     goto/16 :goto_1
 
     :cond_2
-    const-string v1, "resume"
+    const-string v2, "resume"
 
     .line 11
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_4
+    if-eqz v1, :cond_4
 
     .line 12
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget v1, Ldn0;->video_view:I
+    sget v2, Lcom/jio/jioml/hellojio/R$id;->video_view:I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/widget/VideoView;
+    check-cast v1, Landroid/widget/VideoView;
 
-    invoke-static {v0, v3}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Landroid/widget/VideoView;->setVisibility(I)V
 
     .line 13
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
     invoke-virtual {p1}, Lcom/jio/jioml/hellojio/datamodels/VideoEvent;->getVideoPosition()I
 
     move-result p1
 
-    invoke-static {v0, p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;I)V
+    invoke-static {v1, p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$setMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;I)V
 
     .line 14
     iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
     move-result p1
 
@@ -263,25 +257,23 @@
     .line 15
     iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
     check-cast p1, Landroid/widget/VideoView;
 
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
-    move-result v0
+    move-result v1
 
-    invoke-virtual {p1, v0}, Landroid/widget/VideoView;->seekTo(I)V
+    invoke-virtual {p1, v1}, Landroid/widget/VideoView;->seekTo(I)V
 
     goto :goto_0
 
@@ -289,33 +281,29 @@
     :cond_3
     iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
     check-cast p1, Landroid/widget/VideoView;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/widget/VideoView;->seekTo(I)V
+    invoke-virtual {p1, v1}, Landroid/widget/VideoView;->seekTo(I)V
 
     .line 17
     :goto_0
     iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -324,33 +312,27 @@
     invoke-virtual {p1}, Landroid/widget/VideoView;->start()V
 
     .line 18
-    sget-object p1, Lmq0;->b:Lmq0;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "Resume"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$c;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
     move-result v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lmq0;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/jio/jioml/hellojio/utils/Console;->debug(Ljava/lang/String;)V
 
     :cond_4
     :goto_1

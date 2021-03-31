@@ -3,12 +3,12 @@
 .source "HelloJioActivity.kt"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->a(Ljava/lang/Integer;)V
+    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,18 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+
+.field public final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Ljava/lang/Integer;)V
+.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+
+    iput p2, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,39 +38,21 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->c(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)Lqo0;
+    const-string p2, "android.permission.CAMERA"
 
-    move-result-object v0
+    filled-new-array {p2}, [Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    move-result-object p2
 
-    invoke-static {v1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->c(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)Lqo0;
+    iget v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$i;->b:I
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lqo0;->a()Lcom/jio/jioml/hellojio/core/MODE;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/jio/jioml/hellojio/core/MODE;->CHAT:Lcom/jio/jioml/hellojio/core/MODE;
-
-    if-ne v1, v2, :cond_0
-
-    sget-object v1, Lcom/jio/jioml/hellojio/core/STATE;->STATE_CHAT_SETTLED:Lcom/jio/jioml/hellojio/core/STATE;
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v1, Lcom/jio/jioml/hellojio/core/STATE;->STATE_HOME_SETTLED:Lcom/jio/jioml/hellojio/core/STATE;
-
-    :goto_0
-    invoke-virtual {v0, v1}, Lqo0;->a(Lcom/jio/jioml/hellojio/core/STATE;)V
+    invoke-static {p1, p2, v0}, Landroidx/core/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
 
     return-void
 .end method

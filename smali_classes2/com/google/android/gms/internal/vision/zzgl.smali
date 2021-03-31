@@ -1,119 +1,120 @@
 .class public final Lcom/google/android/gms/internal/vision/zzgl;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Iterator;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljava/util/Iterator<",
-        "Ljava/util/Map$Entry<",
-        "TK;",
-        "Ljava/lang/Object;",
-        ">;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field public zzyg:Ljava/util/Iterator;
+# static fields
+.field private static final zzti:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Iterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;",
-            "Ljava/lang/Object;",
-            ">;>;"
+            "Ljava/lang/Class<",
+            "*>;"
         }
     .end annotation
 .end field
 
+.field private static final zztj:Z
+
 
 # direct methods
-.method public constructor <init>(Ljava/util/Iterator;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Iterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;",
-            "Ljava/lang/Object;",
-            ">;>;)V"
-        }
-    .end annotation
+.method public static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "libcore.io.Memory"
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzgl;->zzu(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzgl;->zzti:Ljava/lang/Class;
+
+    const-string v0, "org.robolectric.Robolectric"
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzgl;->zzyg:Ljava/util/Iterator;
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzgl;->zzu(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    sput-boolean v0, Lcom/google/android/gms/internal/vision/zzgl;->zztj:Z
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final hasNext()Z
+.method public static zzel()Z
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgl;->zzyg:Ljava/util/Iterator;
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgl;->zzti:Ljava/lang/Class;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz v0, :cond_0
 
-    move-result v0
+    sget-boolean v0, Lcom/google/android/gms/internal/vision/zzgl;->zztj:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 3
+.method public static zzem()Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgl;->zzyg:Ljava/util/Iterator;
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgl;->zzti:Ljava/lang/Class;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    .line 2
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    instance-of v1, v1, Lcom/google/android/gms/internal/vision/zzgi;
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    new-instance v1, Lcom/google/android/gms/internal/vision/zzgk;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Lcom/google/android/gms/internal/vision/zzgk;-><init>(Ljava/util/Map$Entry;Lcom/google/android/gms/internal/vision/zzgj;)V
-
-    return-object v1
-
-    :cond_0
     return-object v0
 .end method
 
-.method public final remove()V
-    .locals 1
+.method private static zzu(Ljava/lang/String;)Ljava/lang/Class;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/lang/Class<",
+            "TT;>;"
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzgl;->zzyg:Ljava/util/Iterator;
+    :try_start_0
+    invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
+    return-object p0
+
+    :catchall_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method

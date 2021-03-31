@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/preference/PreferenceGroup;
+.field public final synthetic a:Landroidx/preference/PreferenceGroup;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/preference/PreferenceGroup$a;->s:Landroidx/preference/PreferenceGroup;
+    iput-object p1, p0, Landroidx/preference/PreferenceGroup$a;->a:Landroidx/preference/PreferenceGroup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,11 +43,11 @@
 
     .line 2
     :try_start_0
-    iget-object v0, p0, Landroidx/preference/PreferenceGroup$a;->s:Landroidx/preference/PreferenceGroup;
+    iget-object v0, p0, Landroidx/preference/PreferenceGroup$a;->a:Landroidx/preference/PreferenceGroup;
 
-    iget-object v0, v0, Landroidx/preference/PreferenceGroup;->M:Ls4;
+    iget-object v0, v0, Landroidx/preference/PreferenceGroup;->k0:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v0}, Ls4;->clear()V
+    invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
     .line 3
     monitor-exit p0

@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public a:Ljava/util/List;
+.field private a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -75,6 +75,11 @@
 
 .method public readExternal(Ljava/io/ObjectInput;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
@@ -105,6 +110,11 @@
 
 .method public writeExternal(Ljava/io/ObjectOutput;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-virtual {p0}, Lcom/google/a/a/i$c;->b()I
 

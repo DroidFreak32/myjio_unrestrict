@@ -1,8 +1,9 @@
 .class public final Lcom/google/android/gms/tasks/zzm;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/zzq;
+.implements Lcom/google/android/gms/tasks/zzr;
 
 
 # annotations
@@ -12,23 +13,30 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/zzq<",
+        "Lcom/google/android/gms/tasks/zzr<",
         "TTResult;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public final mLock:Ljava/lang/Object;
+.field private final zza:Ljava/util/concurrent/Executor;
 
-.field public final zzd:Ljava/util/concurrent/Executor;
+.field private final zzb:Ljava/lang/Object;
 
-.field public zzp:Lcom/google/android/gms/tasks/OnSuccessListener;
+.field private zzc:Lcom/google/android/gms/tasks/OnSuccessListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tasks/OnSuccessListener<",
             "-TTResult;>;"
         }
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
     .end annotation
 .end field
 
@@ -36,6 +44,14 @@
 # direct methods
 .method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)V
     .locals 1
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnSuccessListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,13 +69,13 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/tasks/zzm;->mLock:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/tasks/zzm;->zzb:Ljava/lang/Object;
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzm;->zzd:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzm;->zza:Ljava/util/concurrent/Executor;
 
     .line 4
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzm;->zzp:Lcom/google/android/gms/tasks/OnSuccessListener;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzm;->zzc:Lcom/google/android/gms/tasks/OnSuccessListener;
 
     return-void
 .end method
@@ -67,8 +83,8 @@
 .method public static synthetic zza(Lcom/google/android/gms/tasks/zzm;)Ljava/lang/Object;
     .locals 0
 
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/tasks/zzm;->mLock:Ljava/lang/Object;
+    .line 11
+    iget-object p0, p0, Lcom/google/android/gms/tasks/zzm;->zzb:Ljava/lang/Object;
 
     return-object p0
 .end method
@@ -77,28 +93,28 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/tasks/zzm;->zzp:Lcom/google/android/gms/tasks/OnSuccessListener;
+    iget-object p0, p0, Lcom/google/android/gms/tasks/zzm;->zzc:Lcom/google/android/gms/tasks/OnSuccessListener;
 
     return-object p0
 .end method
 
 
 # virtual methods
-.method public final cancel()V
+.method public final zza()V
     .locals 2
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzm;->mLock:Ljava/lang/Object;
+    .line 8
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzm;->zzb:Ljava/lang/Object;
 
     monitor-enter v0
 
     const/4 v1, 0x0
 
-    .line 2
+    .line 9
     :try_start_0
-    iput-object v1, p0, Lcom/google/android/gms/tasks/zzm;->zzp:Lcom/google/android/gms/tasks/OnSuccessListener;
+    iput-object v1, p0, Lcom/google/android/gms/tasks/zzm;->zzc:Lcom/google/android/gms/tasks/OnSuccessListener;
 
-    .line 3
+    .line 10
     monitor-exit v0
 
     return-void
@@ -113,8 +129,12 @@
     throw v1
 .end method
 
-.method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
+.method public final zza(Lcom/google/android/gms/tasks/Task;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/tasks/Task;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,13 +151,13 @@
     if-eqz v0, :cond_1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzm;->mLock:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzm;->zzb:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 3
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzm;->zzp:Lcom/google/android/gms/tasks/OnSuccessListener;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzm;->zzc:Lcom/google/android/gms/tasks/OnSuccessListener;
 
     if-nez v1, :cond_0
 
@@ -153,7 +173,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzm;->zzd:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzm;->zza:Ljava/util/concurrent/Executor;
 
     new-instance v1, Lcom/google/android/gms/tasks/zzn;
 

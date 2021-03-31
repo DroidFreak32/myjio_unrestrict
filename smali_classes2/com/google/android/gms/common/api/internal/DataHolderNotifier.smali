@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/DataHolderNotifier;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/ListenerHolder$Notifier;
@@ -24,7 +25,7 @@
 
 
 # instance fields
-.field public final mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
+.field private final zaa:Lcom/google/android/gms/common/data/DataHolder;
 
 
 # direct methods
@@ -37,7 +38,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->zaa:Lcom/google/android/gms/common/data/DataHolder;
 
     return-void
 .end method
@@ -58,7 +59,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->zaa:Lcom/google/android/gms/common/data/DataHolder;
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->notifyListener(Ljava/lang/Object;Lcom/google/android/gms/common/data/DataHolder;)V
 
@@ -85,7 +86,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/DataHolderNotifier;->zaa:Lcom/google/android/gms/common/data/DataHolder;
 
     if-eqz v0, :cond_0
 

@@ -1,27 +1,53 @@
 .class public Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoUptimeDetails"
+.end annotation
+
+
 # instance fields
 .field public drn:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "drn"
+    .end annotation
+.end field
 
 .field public dst:Ljava/lang/Integer;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "dst"
+    .end annotation
+.end field
 
 .field public et:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "et"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public st:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "st"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method

@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -12,16 +13,25 @@
 
 # static fields
 .field public static final GOOGLE_PLAY_SERVICES_PACKAGE:Ljava/lang/String; = "com.google.android.gms"
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end field
 
 .field public static final GOOGLE_PLAY_SERVICES_VERSION_CODE:I
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end field
 
 .field public static final GOOGLE_PLAY_STORE_PACKAGE:Ljava/lang/String; = "com.android.vending"
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end field
@@ -36,7 +46,7 @@
     .end annotation
 .end field
 
-.field public static final zzm:Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
+.field private static final zza:Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
 
 
 # direct methods
@@ -53,7 +63,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->zzm:Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
+    sput-object v0, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->zza:Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
 
     return-void
 .end method
@@ -71,17 +81,28 @@
 
 .method public static getInstance()Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->zzm:Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
+    sget-object v0, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->zza:Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
 
     return-object v0
 .end method
 
-.method public static zza(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+.method private static zza(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
@@ -172,6 +193,10 @@
 # virtual methods
 .method public cancelAvailabilityErrorNotifications(Landroid/content/Context;)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -183,6 +208,13 @@
 
 .method public getApkVersion(Landroid/content/Context;)I
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -199,6 +231,13 @@
 
 .method public getClientVersion(Landroid/content/Context;)I
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -215,6 +254,13 @@
 
 .method public getErrorResolutionIntent(I)Landroid/content/Intent;
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -236,6 +282,21 @@
 
 .method public getErrorResolutionIntent(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
     .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -262,7 +323,7 @@
 
     .line 2
     :cond_0
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzg;->zzg(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzj;->zza(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -279,7 +340,7 @@
     if-eqz p2, :cond_2
 
     .line 4
-    invoke-static {}, Lcom/google/android/gms/common/internal/zzg;->zzs()Landroid/content/Intent;
+    invoke-static {}, Lcom/google/android/gms/common/internal/zzj;->zza()Landroid/content/Intent;
 
     move-result-object p1
 
@@ -292,7 +353,7 @@
     move-result-object p1
 
     .line 6
-    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/zzg;->zza(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/zzj;->zza(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -301,6 +362,21 @@
 
 .method public getErrorResolutionPendingIntent(Landroid/content/Context;II)Landroid/app/PendingIntent;
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -316,6 +392,25 @@
 
 .method public getErrorResolutionPendingIntent(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -346,6 +441,13 @@
 
 .method public getErrorString(I)Ljava/lang/String;
     .locals 0
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -359,6 +461,13 @@
 
 .method public isGooglePlayServicesAvailable(Landroid/content/Context;)I
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -377,6 +486,17 @@
 
 .method public isGooglePlayServicesAvailable(Landroid/content/Context;I)I
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -400,6 +520,17 @@
 
 .method public isPlayServicesPossiblyUpdating(Landroid/content/Context;I)Z
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -416,6 +547,17 @@
 
 .method public isPlayStorePossiblyUpdating(Landroid/content/Context;I)Z
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -432,11 +574,22 @@
 
 .method public isUninstalledAppPossiblyUpdating(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/GooglePlayServicesUtilLight;->isUninstalledAppPossiblyUpdating(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/GooglePlayServicesUtilLight;->zza(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result p1
 
@@ -445,6 +598,13 @@
 
 .method public isUserResolvableError(I)Z
     .locals 0
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -458,7 +618,22 @@
 
 .method public verifyGooglePlayServicesIsAvailable(Landroid/content/Context;I)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/common/GooglePlayServicesRepairableException;,
+            Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException;
+        }
     .end annotation
 
     .line 1

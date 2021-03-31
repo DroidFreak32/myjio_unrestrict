@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field public final version:Ljava/lang/String;
+.field private final version:Ljava/lang/String;
 
-.field public final zzatq:Ljava/util/List;
+.field private final zzatq:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -20,7 +20,7 @@
     .end annotation
 .end field
 
-.field public final zzatr:Ljava/util/Map;
+.field private final zzatr:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -32,11 +32,11 @@
     .end annotation
 .end field
 
-.field public final zzpw:I
+.field private final zzpw:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

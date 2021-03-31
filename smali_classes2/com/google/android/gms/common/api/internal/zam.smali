@@ -1,48 +1,54 @@
 .class public final Lcom/google/android/gms/common/api/internal/zam;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/common/api/internal/zabk;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final zadh:I
+.field private final synthetic zaa:Landroid/app/Dialog;
 
-.field public final zadi:Lcom/google/android/gms/common/ConnectionResult;
+.field private final synthetic zab:Lcom/google/android/gms/common/api/internal/zan;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/ConnectionResult;I)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zan;Landroid/app/Dialog;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zam;->zab:Lcom/google/android/gms/common/api/internal/zan;
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zam;->zaa:Landroid/app/Dialog;
 
-    .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zam;->zadi:Lcom/google/android/gms/common/ConnectionResult;
-
-    .line 4
-    iput p2, p0, Lcom/google/android/gms/common/api/internal/zam;->zadh:I
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/zabk;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getConnectionResult()Lcom/google/android/gms/common/ConnectionResult;
+.method public final zaa()V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zam;->zadi:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zam;->zab:Lcom/google/android/gms/common/api/internal/zan;
 
-    return-object v0
-.end method
+    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zan;->zaa:Lcom/google/android/gms/common/api/internal/zal;
 
-.method public final zar()I
-    .locals 1
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/zal;->zab()V
 
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/common/api/internal/zam;->zadh:I
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zam;->zaa:Landroid/app/Dialog;
 
-    return v0
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zam;->zaa:Landroid/app/Dialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+
+    :cond_0
+    return-void
 .end method

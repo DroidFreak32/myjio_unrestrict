@@ -1,5 +1,5 @@
 .class public Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;
-.super Lhd;
+.super Landroidx/lifecycle/AndroidViewModel;
 .source "JioCinemaViewModel.java"
 
 # interfaces
@@ -7,12 +7,12 @@
 
 
 # instance fields
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-.field public zlaUserData:Lbe;
+.field private zlaUserData:Landroidx/lifecycle/MutableLiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbe<",
+            "Landroidx/lifecycle/MutableLiveData<",
             "Lcom/app/cinemasdk/model/zla/ZLAUserData;",
             ">;"
         }
@@ -23,9 +23,13 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Application;)V
     .locals 0
+    .param p1    # Landroid/app/Application;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-direct {p0, p1}, Lhd;-><init>(Landroid/app/Application;)V
+    invoke-direct {p0, p1}, Landroidx/lifecycle/AndroidViewModel;-><init>(Landroid/app/Application;)V
 
     .line 2
     invoke-static {}, Lcom/app/cinemasdk/datamanager/MainDataManager;->getInstance()Lcom/app/cinemasdk/datamanager/MainDataManager;
@@ -35,11 +39,11 @@
     iput-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
     .line 3
-    new-instance p1, Lbe;
+    new-instance p1, Landroidx/lifecycle/MutableLiveData;
 
-    invoke-direct {p1}, Lbe;-><init>()V
+    invoke-direct {p1}, Landroidx/lifecycle/MutableLiveData;-><init>()V
 
-    iput-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Lbe;
+    iput-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Landroidx/lifecycle/MutableLiveData;
 
     return-void
 .end method
@@ -186,12 +190,8 @@
 
     invoke-virtual {v0, v1}, Lcom/app/cinemasdk/model/LoginData;->setName(Ljava/lang/String;)V
 
-    const/4 v1, 0x0
-
     .line 8
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lcom/app/cinemasdk/model/LoginData;->setSsoExpired(Ljava/lang/Boolean;)V
 
@@ -252,17 +252,17 @@
 
     .line 14
     :cond_0
-    iget-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Lbe;
+    iget-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Landroidx/lifecycle/MutableLiveData;
 
-    invoke-virtual {p1, v1}, Lbe;->b(Ljava/lang/Object;)V
+    invoke-virtual {p1, v1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
     goto :goto_0
 
     .line 15
     :cond_1
-    iget-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Lbe;
+    iget-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Landroidx/lifecycle/MutableLiveData;
 
-    invoke-virtual {p1, v1}, Lbe;->b(Ljava/lang/Object;)V
+    invoke-virtual {p1, v1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
     :goto_0
     return-void
@@ -365,7 +365,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lhd;->getApplication()Landroid/app/Application;
+    invoke-virtual {p0}, Landroidx/lifecycle/AndroidViewModel;->getApplication()Landroid/app/Application;
 
     move-result-object v1
 
@@ -376,19 +376,19 @@
     return-void
 .end method
 
-.method public getZlaUserData()Lbe;
+.method public getZlaUserData()Landroidx/lifecycle/MutableLiveData;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbe<",
+            "Landroidx/lifecycle/MutableLiveData<",
             "Lcom/app/cinemasdk/model/zla/ZLAUserData;",
             ">;"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Lbe;
+    iget-object v0, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Landroidx/lifecycle/MutableLiveData;
 
     return-object v0
 .end method
@@ -396,64 +396,57 @@
 .method public onFailed(Ljava/lang/String;II)V
     .locals 0
 
-    packed-switch p3, :pswitch_data_0
+    const/16 p1, 0x64
+
+    if-eq p3, p1, :cond_0
 
     goto :goto_0
 
     .line 1
-    :pswitch_0
-    iget-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Lbe;
+    :cond_0
+    iget-object p1, p0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->zlaUserData:Landroidx/lifecycle/MutableLiveData;
 
     const/4 p2, 0x0
 
-    invoke-virtual {p1, p2}, Lbe;->b(Ljava/lang/Object;)V
+    invoke-virtual {p1, p2}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
     :goto_0
-    :pswitch_1
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x64
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method public onSuccess(Ljava/lang/String;Lokhttp3/Headers;I)V
     .locals 0
 
-    packed-switch p3, :pswitch_data_0
+    const/16 p2, 0x64
+
+    if-eq p3, p2, :cond_2
+
+    const/16 p2, 0x65
+
+    if-eq p3, p2, :cond_1
+
+    const/16 p2, 0x67
+
+    if-eq p3, p2, :cond_0
 
     goto :goto_0
 
     .line 1
-    :pswitch_0
+    :cond_0
     invoke-direct {p0, p1}, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->handlePlaybackRightsResponse(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 2
-    :pswitch_1
+    :cond_1
     invoke-direct {p0, p1}, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->handleLoginViaSubIdResponse(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 3
-    :pswitch_2
+    :cond_2
     invoke-direct {p0, p1}, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;->handleZlaResponse(Ljava/lang/String;)V
 
     :goto_0
-    :pswitch_3
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x64
-        :pswitch_2
-        :pswitch_1
-        :pswitch_3
-        :pswitch_0
-    .end packed-switch
 .end method

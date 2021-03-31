@@ -1,5 +1,6 @@
 .class public final enum Lcom/google/ads/AdRequest$Gender;
 .super Ljava/lang/Enum;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
@@ -28,69 +29,63 @@
 
 .field public static final enum UNKNOWN:Lcom/google/ads/AdRequest$Gender;
 
-.field public static final synthetic zzcn:[Lcom/google/ads/AdRequest$Gender;
+.field private static final synthetic zzdr:[Lcom/google/ads/AdRequest$Gender;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/google/ads/AdRequest$Gender;
 
-    const/4 v1, 0x0
+    const-string v1, "UNKNOWN"
 
-    const-string v2, "UNKNOWN"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/ads/AdRequest$Gender;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/ads/AdRequest$Gender;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/ads/AdRequest$Gender;->UNKNOWN:Lcom/google/ads/AdRequest$Gender;
 
     .line 2
-    new-instance v0, Lcom/google/ads/AdRequest$Gender;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/ads/AdRequest$Gender;
 
     const-string v3, "MALE"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/ads/AdRequest$Gender;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/ads/AdRequest$Gender;->MALE:Lcom/google/ads/AdRequest$Gender;
+    invoke-direct {v1, v3, v4}, Lcom/google/ads/AdRequest$Gender;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/google/ads/AdRequest$Gender;->MALE:Lcom/google/ads/AdRequest$Gender;
 
     .line 3
-    new-instance v0, Lcom/google/ads/AdRequest$Gender;
+    new-instance v3, Lcom/google/ads/AdRequest$Gender;
 
-    const/4 v3, 0x2
+    const-string v5, "FEMALE"
 
-    const-string v4, "FEMALE"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/google/ads/AdRequest$Gender;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/ads/AdRequest$Gender;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/ads/AdRequest$Gender;->FEMALE:Lcom/google/ads/AdRequest$Gender;
+    sput-object v3, Lcom/google/ads/AdRequest$Gender;->FEMALE:Lcom/google/ads/AdRequest$Gender;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/google/ads/AdRequest$Gender;
+    new-array v5, v5, [Lcom/google/ads/AdRequest$Gender;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/google/ads/AdRequest$Gender;->UNKNOWN:Lcom/google/ads/AdRequest$Gender;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/google/ads/AdRequest$Gender;->MALE:Lcom/google/ads/AdRequest$Gender;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/ads/AdRequest$Gender;->FEMALE:Lcom/google/ads/AdRequest$Gender;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/ads/AdRequest$Gender;->zzcn:[Lcom/google/ads/AdRequest$Gender;
+    sput-object v5, Lcom/google/ads/AdRequest$Gender;->zzdr:[Lcom/google/ads/AdRequest$Gender;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -123,7 +118,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/ads/AdRequest$Gender;->zzcn:[Lcom/google/ads/AdRequest$Gender;
+    sget-object v0, Lcom/google/ads/AdRequest$Gender;->zzdr:[Lcom/google/ads/AdRequest$Gender;
 
     invoke-virtual {v0}, [Lcom/google/ads/AdRequest$Gender;->clone()Ljava/lang/Object;
 

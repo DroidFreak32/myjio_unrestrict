@@ -3,25 +3,25 @@
 
 
 # static fields
-.field public static final LOCATION_DISTANCE:F = 10.0f
+.field private static final LOCATION_DISTANCE:F = 10.0f
 
-.field public static final LOCATION_INTERVAL:I = 0x32
+.field private static final LOCATION_INTERVAL:I = 0x32
 
-.field public static final MODULE:Ljava/lang/String; = "CurrentLatLong"
+.field private static final MODULE:Ljava/lang/String; = "CurrentLatLong"
 
 
 # instance fields
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
 .field public isGPSEnable:Z
 
 .field public isNetworkEnable:Z
 
-.field public location:Landroid/location/Location;
+.field private location:Landroid/location/Location;
 
 .field public mLocationListeners:[Lcom/elitecorelib/core/services/CurrentLatLong$LocationListener;
 
-.field public mLocationManager:Landroid/location/LocationManager;
+.field private mLocationManager:Landroid/location/LocationManager;
 
 
 # direct methods
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public callLatLong()V
-    .locals 14
+    .locals 15
 
     const-string v0, "network"
 
@@ -140,57 +140,51 @@
 
     iput-boolean v3, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->isNetworkEnable:Z
 
-    iget-boolean v3, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->isGPSEnable:Z
+    iget-boolean v4, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->isGPSEnable:Z
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v3, :cond_0
-
-    iget-boolean v3, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->isNetworkEnable:Z
+    if-nez v4, :cond_0
 
     if-nez v3, :cond_0
 
     goto/16 :goto_1
 
     :cond_0
-    iget-boolean v3, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->isNetworkEnable:Z
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v5, 0x0
 
-    const/4 v4, 0x0
+    const-string v6, "CURRENT_LONGITUDE"
 
-    const-string v5, "CURRENT_LONGITUDE"
+    const-string v7, ""
 
-    const-string v6, ""
-
-    const-string v7, "CURRENT_LATITUDE"
+    const-string v8, "CURRENT_LATITUDE"
 
     if-eqz v3, :cond_1
 
     :try_start_1
-    iput-object v4, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
+    iput-object v5, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
 
-    iget-object v8, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
+    iget-object v9, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
 
-    const-string v9, "network"
+    const-string v10, "network"
 
-    const-wide/16 v10, 0x32
+    const-wide/16 v11, 0x32
 
-    const/high16 v12, 0x41200000    # 10.0f
+    const/high16 v13, 0x41200000    # 10.0f
 
     iget-object v1, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationListeners:[Lcom/elitecorelib/core/services/CurrentLatLong$LocationListener;
 
     const/4 v3, 0x1
 
-    aget-object v13, v1, v3
+    aget-object v14, v1, v3
 
-    invoke-virtual/range {v8 .. v13}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    invoke-virtual/range {v9 .. v14}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
     iget-object v1, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
 
     if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
 
     invoke-virtual {v1, v0}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
@@ -198,8 +192,6 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
 
-    iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
-
     if-eqz v0, :cond_2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -214,13 +206,13 @@
 
     invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v7, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v8, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -234,57 +226,53 @@
 
     invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v5, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v6, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->context:Landroid/content/Context;
 
-    invoke-virtual {v2, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v8}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     :goto_0
-    invoke-virtual {v2, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v6}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_1
-    iget-boolean v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->isGPSEnable:Z
+    if-eqz v4, :cond_2
 
-    if-eqz v0, :cond_2
+    iput-object v5, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
 
-    iput-object v4, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
+    iget-object v9, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
 
-    iget-object v8, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
+    const-string v10, "gps"
 
-    const-string v9, "gps"
+    const-wide/16 v11, 0x32
 
-    const-wide/16 v10, 0x32
-
-    const/high16 v12, 0x41200000    # 10.0f
+    const/high16 v13, 0x41200000    # 10.0f
 
     iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationListeners:[Lcom/elitecorelib/core/services/CurrentLatLong$LocationListener;
 
     const/4 v3, 0x0
 
-    aget-object v13, v0, v3
+    aget-object v14, v0, v3
 
-    invoke-virtual/range {v8 .. v13}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    invoke-virtual/range {v9 .. v14}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
     iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
 
     if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->mLocationManager:Landroid/location/LocationManager;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
@@ -292,8 +280,6 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
 
-    iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->location:Landroid/location/Location;
-
     if-eqz v0, :cond_2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -308,13 +294,13 @@
 
     invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v7, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v8, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -328,17 +314,17 @@
 
     invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v5, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v6, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/elitecorelib/core/services/CurrentLatLong;->context:Landroid/content/Context;
 
-    invoke-virtual {v2, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v8}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -1,59 +1,65 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzado;
+.class public final Lcom/google/android/gms/internal/ads/zzado;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final zzcen:Lcom/google/android/gms/internal/ads/zzadm;
+# static fields
+.field private static final zzddy:Ljava/util/concurrent/atomic/AtomicReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/atomic/AtomicReference<",
+            "Lcom/google/android/gms/internal/ads/zzadp;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final zzceo:Z
-
-.field public final zzcer:Lcom/google/android/gms/internal/ads/zzaps;
-
-.field public final zzces:Ljava/lang/String;
-
-.field public final zzcet:Ljava/lang/String;
+.field public static final zzddz:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzadm;ZLcom/google/android/gms/internal/ads/zzaps;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzado;->zzcen:Lcom/google/android/gms/internal/ads/zzadm;
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    const/4 p1, 0x1
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzado;->zzddy:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzado;->zzceo:Z
+    .line 2
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzado;->zzcer:Lcom/google/android/gms/internal/ads/zzaps;
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzado;->zzces:Ljava/lang/String;
-
-    iput-object p5, p0, Lcom/google/android/gms/internal/ads/zzado;->zzcet:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzado;->zzddz:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
+.method public static zza(Lcom/google/android/gms/internal/ads/zzadp;)V
+    .locals 1
 
-# virtual methods
-.method public final run()V
-    .locals 5
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzado;->zzddy:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzado;->zzcen:Lcom/google/android/gms/internal/ads/zzadm;
-
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzado;->zzceo:Z
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzado;->zzcer:Lcom/google/android/gms/internal/ads/zzaps;
-
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzado;->zzces:Ljava/lang/String;
-
-    iget-object v4, p0, Lcom/google/android/gms/internal/ads/zzado;->zzcet:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzadm;->zza(ZLcom/google/android/gms/internal/ads/zzaps;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     return-void
+.end method
+
+.method public static zzsl()Lcom/google/android/gms/internal/ads/zzadp;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzado;->zzddy:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzadp;
+
+    return-object v0
 .end method

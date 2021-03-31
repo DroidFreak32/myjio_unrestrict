@@ -18,23 +18,23 @@
 
 
 # instance fields
-.field public dealDisplayInfoId:Ljava/lang/String;
+.field private dealDisplayInfoId:Ljava/lang/String;
 
-.field public dealHeadline:Ljava/lang/String;
+.field private dealHeadline:Ljava/lang/String;
 
-.field public dealId:Ljava/lang/Long;
+.field private dealId:Ljava/lang/Long;
 
-.field public displayDealName:Ljava/lang/String;
+.field private displayDealName:Ljava/lang/String;
 
-.field public id:I
+.field private id:I
 
-.field public languageCode:Ljava/lang/String;
+.field private languageCode:Ljava/lang/String;
 
-.field public offer:Ljava/lang/String;
+.field private offer:Ljava/lang/String;
 
-.field public offerDescription:Ljava/lang/String;
+.field private offerDescription:Ljava/lang/String;
 
-.field public reedmptionDetails:Ljava/lang/String;
+.field private reedmptionDetails:Ljava/lang/String;
 
 
 # direct methods

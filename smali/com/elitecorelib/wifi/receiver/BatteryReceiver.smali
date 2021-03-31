@@ -30,87 +30,90 @@
 
     const-string v1, "PROGRESS_BATTERY"
 
-    const-string v2, "BatteryReceiver"
-
     :try_start_0
     invoke-static {p1}, Lcom/elitecorelib/core/LibraryApplication;->reInitApplicationResourceIfNeeded(Landroid/content/Context;)V
 
-    sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v4, "Received Battery Level Check Request"
-
-    invoke-virtual {v3, v2, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isANDSFEnable()Z
+    invoke-virtual {v2}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isANDSFEnable()Z
 
-    move-result v3
+    move-result v2
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v3, :cond_8
+    const-string v3, "BatteryReceiver"
 
+    if-eqz v2, :cond_8
+
+    :try_start_1
     invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isUserRegesteredSuccessFully()Z
+    invoke-virtual {v2}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isUserRegesteredSuccessFully()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_8
+    if-eqz v2, :cond_8
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
     const-string v4, "first_evalution"
 
-    invoke-virtual {v3, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
+    invoke-virtual {v2, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_8
+    if-eqz v2, :cond_8
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v4, "Received Battery Level Check Request"
+
+    invoke-virtual {v2, v3, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
     const-string v4, "ACTIVECONNECTION"
 
-    invoke-virtual {v3, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3}, Lo00;->b(Ljava/lang/String;)Z
+    invoke-static {v2}, Lcom/elitecore/wifi/api/b;->b(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
-    invoke-static {}, Lc20;->c()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->C()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_9
+    if-eqz v2, :cond_9
 
     :cond_0
-    invoke-static {}, Lc20;->S()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->e()Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_7
+    if-nez v2, :cond_7
 
-    invoke-static {p1}, Lo00;->a(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecore/wifi/api/b;->a(Landroid/content/Context;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
-    const-string v3, "level"
+    const-string v2, "level"
 
     const/4 v4, -0x1
 
-    invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v2, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v2
 
     const-string v5, "scale"
 
@@ -118,13 +121,13 @@
 
     move-result p2
 
-    if-ltz v3, :cond_1
+    if-ltz v2, :cond_1
 
     if-lez p2, :cond_1
 
-    mul-int/lit8 v3, v3, 0x64
+    mul-int/lit8 v2, v2, 0x64
 
-    div-int v4, v3, p2
+    div-int v4, v2, p2
 
     :cond_1
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
@@ -137,9 +140,9 @@
 
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    const-string v3, "android.permission.READ_PHONE_STATE"
+    const-string v2, "android.permission.READ_PHONE_STATE"
 
-    invoke-virtual {p2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p2, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBoolean(Ljava/lang/String;)Z
 
     move-result p2
 
@@ -147,9 +150,9 @@
 
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    const-string v3, "callState"
+    const-string v2, "callState"
 
-    invoke-virtual {p2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
+    invoke-virtual {p2, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
     move-result p2
 
@@ -159,16 +162,16 @@
 
     const-string p2, "Battery level is below threshold. Voice is ongoing or ringing. Will skip rove-out."
 
-    invoke-virtual {p1, v2, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v3, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
     :cond_2
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    const-string v3, "back_ontime_running"
+    const-string v2, "back_ontime_running"
 
-    invoke-virtual {p2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
+    invoke-virtual {p2, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
 
     move-result p2
 
@@ -176,9 +179,9 @@
 
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    const-string v3, "back_ontime_running2"
+    const-string v2, "back_ontime_running2"
 
-    invoke-virtual {p2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
+    invoke-virtual {p2, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
 
     move-result p2
 
@@ -192,9 +195,9 @@
 
     move-result-object p2
 
-    const-string v3, "ISBETTERYTHRESHOLDENABLE"
+    const-string v2, "ISBETTERYTHRESHOLDENABLE"
 
-    invoke-virtual {p2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
+    invoke-virtual {p2, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
 
     move-result p2
 
@@ -205,10 +208,10 @@
     invoke-virtual {p2, v1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
     move-result p2
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    const-string v3, " ]"
+    const-string v2, " ]"
 
     const-string v5, "Battery Level [ "
 
@@ -216,7 +219,7 @@
 
     if-gt v4, p2, :cond_4
 
-    :try_start_1
+    :try_start_2
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BatteryReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
     const/4 v7, 0x1
@@ -227,7 +230,7 @@
 
     const-string v6, "false"
 
-    invoke-static {p2, v6}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v6}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -242,7 +245,7 @@
     const-string p2, "Device Battery Level Not Matched With Policy Level Battery Threshold But Skip Rove-Out"
 
     :goto_0
-    invoke-virtual {p1, v2, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v3, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_1
 
@@ -269,13 +272,13 @@
 
     invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {p2, v2, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p2, v3, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-static {p1}, Lcom/elitecorelib/analytics/utility/AnalyticsUtility;->getAnalyticPolicyEvaluationInstant(Landroid/content/Context;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
 
@@ -343,13 +346,13 @@
 
     const-string p2, ""
 
-    sput-object p2, Lc20;->b:Ljava/lang/String;
+    sput-object p2, Lcom/elitecorelib/andsf/utility/a;->b:Ljava/lang/String;
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lc20;->c0()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->o()Ljava/lang/String;
 
     move-result-object v2
 
@@ -363,7 +366,7 @@
 
     move-result-object p2
 
-    invoke-static {v0, p2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -391,21 +394,21 @@
 
     move-result-object p2
 
-    invoke-static {v0, p2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p2, "WiFi disconnected, Battery not match."
 
-    invoke-static {v0, p2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-static {p2}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
     sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_BATTERY:Ljava/lang/String;
 
-    invoke-static {p1, p2}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -438,13 +441,13 @@
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-virtual {p1, v2, p2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v3, p2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
@@ -473,8 +476,8 @@
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     const-string p2, "ANDSF disabled"
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     goto/16 :goto_0
 

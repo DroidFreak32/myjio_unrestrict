@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final LANDSCAPE:Ljava/lang/String; = "landscape"
+.field private static final LANDSCAPE:Ljava/lang/String; = "landscape"
 
-.field public static final PORTRAIT:Ljava/lang/String; = "portrait"
+.field private static final PORTRAIT:Ljava/lang/String; = "portrait"
 
-.field public static final UNSPECIFIED:Ljava/lang/String; = "unspecified"
+.field private static final UNSPECIFIED:Ljava/lang/String; = "unspecified"
 
 
 # instance fields
@@ -41,7 +41,7 @@
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "unspecified"
+    const-string/jumbo v0, "unspecified"
 
     .line 2
     iput-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootView;->orientation:Ljava/lang/String;

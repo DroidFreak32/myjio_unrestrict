@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final DEFAULT_SIZE:I = 0x100
+.field private static final DEFAULT_SIZE:I = 0x100
 
 
 # instance fields
-.field public final mPool:Lcom/android/volley/toolbox/ByteArrayPool;
+.field private final mPool:Lcom/android/volley/toolbox/ByteArrayPool;
 
 
 # direct methods
@@ -32,11 +32,9 @@
     .line 3
     iput-object p1, p0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;->mPool:Lcom/android/volley/toolbox/ByteArrayPool;
 
-    .line 4
-    iget-object p1, p0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;->mPool:Lcom/android/volley/toolbox/ByteArrayPool;
-
     const/16 v0, 0x100
 
+    .line 4
     invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p2
@@ -104,6 +102,11 @@
 # virtual methods
 .method public close()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;->mPool:Lcom/android/volley/toolbox/ByteArrayPool;

@@ -6,43 +6,43 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = -0x5f6944d021bfea9cL
+.field private static final serialVersionUID:J = -0x5f6944d021bfea9cL
 
 
 # instance fields
-.field public MCC:Ljava/lang/String;
+.field private MCC:Ljava/lang/String;
 
-.field public MNC:Ljava/lang/String;
+.field private MNC:Ljava/lang/String;
 
-.field public androidSetting:Lcom/elitecorelib/core/pojo/PojoWiFiProfiles;
+.field private androidSetting:Lcom/elitecorelib/core/pojo/PojoWiFiProfiles;
 
-.field public autoJoin:Ljava/lang/String;
+.field private autoJoin:Ljava/lang/String;
 
-.field public eapType:Ljava/lang/String;
+.field private eapType:Ljava/lang/String;
 
-.field public hidden:Ljava/lang/String;
+.field private hidden:Ljava/lang/String;
 
-.field public isPreferable:Ljava/lang/String;
+.field private isPreferable:Ljava/lang/String;
 
-.field public networkName:Ljava/lang/String;
+.field private networkName:Ljava/lang/String;
 
-.field public notificationMessage:Ljava/lang/String;
+.field private notificationMessage:Ljava/lang/String;
 
-.field public password:Ljava/lang/String;
+.field private password:Ljava/lang/String;
 
-.field public protocolType:Ljava/lang/String;
+.field private protocolType:Ljava/lang/String;
 
-.field public securityType:Ljava/lang/String;
+.field private securityType:Ljava/lang/String;
 
-.field public selectedNetwork:Ljava/lang/String;
+.field private selectedNetwork:Ljava/lang/String;
 
-.field public ssidName:Ljava/lang/String;
+.field private ssidName:Ljava/lang/String;
 
-.field public userIdentity:Ljava/lang/String;
+.field private userIdentity:Ljava/lang/String;
 
-.field public validForAllNetwork:Ljava/lang/String;
+.field private validForAllNetwork:Ljava/lang/String;
 
-.field public wifiSettingId:Ljava/lang/Long;
+.field private wifiSettingId:Ljava/lang/Long;
 
 
 # direct methods
@@ -73,7 +73,9 @@
     return v1
 
     :cond_1
-    const-class v2, Lcom/elitecorelib/core/pojo/PojoWiFiConnections;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

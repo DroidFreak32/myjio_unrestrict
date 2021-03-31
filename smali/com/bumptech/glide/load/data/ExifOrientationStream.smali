@@ -4,19 +4,19 @@
 
 
 # static fields
-.field public static final EXIF_SEGMENT:[B
+.field private static final EXIF_SEGMENT:[B
 
-.field public static final ORIENTATION_POSITION:I
+.field private static final ORIENTATION_POSITION:I
 
-.field public static final SEGMENT_LENGTH:I
+.field private static final SEGMENT_LENGTH:I
 
-.field public static final SEGMENT_START_POSITION:I = 0x2
+.field private static final SEGMENT_START_POSITION:I = 0x2
 
 
 # instance fields
-.field public final orientation:B
+.field private final orientation:B
 
-.field public position:I
+.field private position:I
 
 
 # direct methods
@@ -33,17 +33,13 @@
     sput-object v0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->EXIF_SEGMENT:[B
 
     .line 2
-    sget-object v0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->EXIF_SEGMENT:[B
-
     array-length v0, v0
 
     sput v0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->SEGMENT_LENGTH:I
 
-    .line 3
-    sget v0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->SEGMENT_LENGTH:I
-
     add-int/lit8 v0, v0, 0x2
 
+    .line 3
     sput v0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->ORIENTATION_POSITION:I
 
     return-void
@@ -151,6 +147,11 @@
 
 .method public read()I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->position:I
@@ -210,6 +211,15 @@
 
 .method public read([BII)I
     .locals 3
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 6
     iget v0, p0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->position:I
@@ -286,6 +296,11 @@
 
 .method public reset()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -297,6 +312,11 @@
 
 .method public skip(J)J
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1, p2}, Ljava/io/FilterInputStream;->skip(J)J

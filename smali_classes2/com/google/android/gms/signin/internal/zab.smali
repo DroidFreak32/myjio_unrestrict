@@ -1,130 +1,195 @@
 .class public final Lcom/google/android/gms/signin/internal/zab;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Lcom/google/android/gms/common/api/Result;
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/signin/internal/zaa;",
-        ">;"
-    }
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
+    creator = "AuthAccountResultCreator"
 .end annotation
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/signin/internal/zab;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field private final zaa:I
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$VersionField;
+        id = 0x1
+    .end annotation
+.end field
+
+.field private zab:I
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        getter = "getConnectionResultCode"
+        id = 0x2
+    .end annotation
+.end field
+
+.field private zac:Landroid/content/Intent;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        getter = "getRawAuthResolutionIntent"
+        id = 0x3
+    .end annotation
+.end field
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/signin/internal/zaa;
+
+    invoke-direct {v0}, Lcom/google/android/gms/signin/internal/zaa;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/signin/internal/zab;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 5
+    invoke-direct {p0, v0, v1}, Lcom/google/android/gms/signin/internal/zab;-><init>(ILandroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IILandroid/content/Intent;)V
+    .locals 0
+    .param p1    # I
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x1
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x2
+        .end annotation
+    .end param
+    .param p3    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x3
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
+    .end annotation
+
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+
+    .line 2
+    iput p1, p0, Lcom/google/android/gms/signin/internal/zab;->zaa:I
+
+    .line 3
+    iput p2, p0, Lcom/google/android/gms/signin/internal/zab;->zab:I
+
+    .line 4
+    iput-object p3, p0, Lcom/google/android/gms/signin/internal/zab;->zac:Landroid/content/Intent;
+
+    return-void
+.end method
+
+.method private constructor <init>(ILandroid/content/Intent;)V
+    .locals 1
+    .param p2    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    const/4 p1, 0x2
+
+    const/4 p2, 0x0
+
+    const/4 v0, 0x0
+
+    .line 6
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/signin/internal/zab;-><init>(IILandroid/content/Intent;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 7
+.method public final getStatus()Lcom/google/android/gms/common/api/Status;
+    .locals 1
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    iget v0, p0, Lcom/google/android/gms/signin/internal/zab;->zab:I
+
+    if-nez v0, :cond_0
+
+    .line 2
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_CANCELED:Lcom/google/android/gms/common/api/Status;
+
+    return-object v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 4
+
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v3, v2
-
-    const/4 v2, 0x0
-
     .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    iget v1, p0, Lcom/google/android/gms/signin/internal/zab;->zaa:I
 
-    move-result v4
+    const/4 v2, 0x1
 
-    if-ge v4, v0, :cond_3
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+    iget v1, p0, Lcom/google/android/gms/signin/internal/zab;->zab:I
 
-    move-result v4
+    const/4 v2, 0x2
 
     .line 4
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-eq v5, v6, :cond_2
-
-    const/4 v6, 0x2
-
-    if-eq v5, v6, :cond_1
-
-    const/4 v6, 0x3
-
-    if-eq v5, v6, :cond_0
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 5
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+    iget-object v1, p0, Lcom/google/android/gms/signin/internal/zab;->zac:Landroid/content/Intent;
 
-    goto :goto_0
+    const/4 v2, 0x3
+
+    const/4 v3, 0x0
 
     .line 6
-    :cond_0
-    sget-object v3, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 7
-    invoke-static {p1, v4, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
-    move-result-object v3
-
-    check-cast v3, Landroid/content/Intent;
-
-    goto :goto_0
-
-    .line 8
-    :cond_1
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v2
-
-    goto :goto_0
-
-    .line 9
-    :cond_2
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    .line 10
-    :cond_3
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    .line 11
-    new-instance p1, Lcom/google/android/gms/signin/internal/zaa;
-
-    invoke-direct {p1, v1, v2, v3}, Lcom/google/android/gms/signin/internal/zaa;-><init>(IILandroid/content/Intent;)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-array p1, p1, [Lcom/google/android/gms/signin/internal/zaa;
-
-    return-object p1
+    return-void
 .end method

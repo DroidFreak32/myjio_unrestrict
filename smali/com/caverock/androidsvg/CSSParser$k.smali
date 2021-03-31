@@ -59,7 +59,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "target"
+    const-string/jumbo v0, "target"
 
     return-object v0
 .end method

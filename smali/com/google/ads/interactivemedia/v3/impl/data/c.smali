@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public adId:Ljava/lang/String;
+.field private adId:Ljava/lang/String;
 
-.field public adPodInfo:Lcom/google/ads/interactivemedia/v3/impl/data/d;
+.field private adPodInfo:Lcom/google/ads/interactivemedia/v3/impl/data/d;
     .annotation runtime Lcom/google/ads/interactivemedia/v3/internal/ahi;
     .end annotation
 
@@ -17,9 +17,9 @@
     .end annotation
 .end field
 
-.field public adSystem:Ljava/lang/String;
+.field private adSystem:Ljava/lang/String;
 
-.field public adWrapperCreativeIds:[Ljava/lang/String;
+.field private adWrapperCreativeIds:[Ljava/lang/String;
     .annotation runtime Lcom/google/ads/interactivemedia/v3/internal/ahi;
     .end annotation
 
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public adWrapperIds:[Ljava/lang/String;
+.field private adWrapperIds:[Ljava/lang/String;
     .annotation runtime Lcom/google/ads/interactivemedia/v3/internal/ahi;
     .end annotation
 
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public adWrapperSystems:[Ljava/lang/String;
+.field private adWrapperSystems:[Ljava/lang/String;
     .annotation runtime Lcom/google/ads/interactivemedia/v3/internal/ahi;
     .end annotation
 
@@ -43,11 +43,11 @@
     .end annotation
 .end field
 
-.field public advertiserName:Ljava/lang/String;
+.field private advertiserName:Ljava/lang/String;
 
-.field public clickThroughUrl:Ljava/lang/String;
+.field private clickThroughUrl:Ljava/lang/String;
 
-.field public companions:Ljava/util/List;
+.field private companions:Ljava/util/List;
     .annotation runtime Lcom/google/ads/interactivemedia/v3/internal/ahi;
     .end annotation
 
@@ -63,37 +63,37 @@
     .end annotation
 .end field
 
-.field public contentType:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
 
-.field public creativeAdId:Ljava/lang/String;
+.field private creativeAdId:Ljava/lang/String;
 
-.field public creativeId:Ljava/lang/String;
+.field private creativeId:Ljava/lang/String;
 
-.field public dealId:Ljava/lang/String;
+.field private dealId:Ljava/lang/String;
 
-.field public description:Ljava/lang/String;
+.field private description:Ljava/lang/String;
 
-.field public disableUi:Z
+.field private disableUi:Z
 
-.field public duration:D
+.field private duration:D
 
-.field public height:I
+.field private height:I
 
-.field public isUiDisabled_:Z
+.field private isUiDisabled_:Z
 
-.field public linear:Z
+.field private linear:Z
 
-.field public skipTimeOffset:D
+.field private skipTimeOffset:D
 
-.field public skippable:Z
+.field private skippable:Z
 
-.field public surveyUrl:Ljava/lang/String;
+.field private surveyUrl:Ljava/lang/String;
 
-.field public title:Ljava/lang/String;
+.field private title:Ljava/lang/String;
 
-.field public traffickingParameters:Ljava/lang/String;
+.field private traffickingParameters:Ljava/lang/String;
 
-.field public uiElements:Ljava/util/Set;
+.field private uiElements:Ljava/util/Set;
     .annotation runtime Lcom/google/ads/interactivemedia/v3/internal/ahi;
     .end annotation
 
@@ -109,17 +109,17 @@
     .end annotation
 .end field
 
-.field public universalAdIdRegistry:Ljava/lang/String;
+.field private universalAdIdRegistry:Ljava/lang/String;
 
-.field public universalAdIdValue:Ljava/lang/String;
+.field private universalAdIdValue:Ljava/lang/String;
 
-.field public vastMediaBitrate:I
+.field private vastMediaBitrate:I
 
-.field public vastMediaHeight:I
+.field private vastMediaHeight:I
 
-.field public vastMediaWidth:I
+.field private vastMediaWidth:I
 
-.field public width:I
+.field private width:I
 
 
 # direct methods

@@ -8,32 +8,32 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "BackgroundLocationService"
+.field private static final MODULE:Ljava/lang/String; = "BackgroundLocationService"
 
 .field public static startDistanceCheck:Z
 
 
 # instance fields
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public current:I
+.field private current:I
 
-.field public isNotificaitonTrigger:Z
+.field private isNotificaitonTrigger:Z
 
-.field public location:Landroid/location/Location;
+.field private location:Landroid/location/Location;
 
-.field public mBinder:Landroid/os/IBinder;
+.field private mBinder:Landroid/os/IBinder;
 
-.field public mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
+.field private mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-.field public servicesAvailable:Ljava/lang/Boolean;
+.field private servicesAvailable:Ljava/lang/Boolean;
 
-.field public task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     const-string v0, ""
 
@@ -45,13 +45,11 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->mBinder:Landroid/os/IBinder;
 
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    iput-object v0, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->servicesAvailable:Ljava/lang/Boolean;
+
     const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->servicesAvailable:Ljava/lang/Boolean;
 
     iput-boolean v0, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->isNotificaitonTrigger:Z
 
@@ -618,8 +616,6 @@
 
     iput-object v1, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->location:Landroid/location/Location;
 
-    iget-object v1, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->location:Landroid/location/Location;
-
     if-eqz v1, :cond_0
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -638,7 +634,7 @@
 
     invoke-direct {v1, v3, v4, v5, v6}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    sput-object v1, Lk30;->d:Lcom/google/android/gms/maps/model/LatLng;
+    sput-object v1, Lcom/elitecorelib/core/utility/f;->c:Lcom/google/android/gms/maps/model/LatLng;
 
     iget-object v1, p0, Lcom/elitecorelib/core/services/BackgroundLocationService;->task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
@@ -753,7 +749,7 @@
 
     invoke-direct {p1, v3, v4, v5, v6}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    sput-object p1, Lk30;->d:Lcom/google/android/gms/maps/model/LatLng;
+    sput-object p1, Lcom/elitecorelib/core/utility/f;->c:Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -801,7 +797,7 @@
 
     const/16 v11, 0x4d
 
-    invoke-static/range {v3 .. v11}, Lk30;->a(DDDDC)D
+    invoke-static/range {v3 .. v11}, Lcom/elitecorelib/core/utility/f;->a(DDDDC)D
 
     move-result-wide v0
 

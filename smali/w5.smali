@@ -1,242 +1,259 @@
-.class public final Lw5;
+.class public Lw5;
 .super Ljava/lang/Object;
-.source "R.java"
+.source "ViewGroupUtilsApi14.java"
 
 
 # static fields
-.field public static final ColorStateListItem:[I
+.field public static a:Landroid/animation/LayoutTransition;
 
-.field public static final ColorStateListItem_alpha:I = 0x2
+.field public static b:Ljava/lang/reflect/Field;
 
-.field public static final ColorStateListItem_android_alpha:I = 0x1
+.field public static c:Z
 
-.field public static final ColorStateListItem_android_color:I = 0x0
+.field public static d:Ljava/lang/reflect/Method;
 
-.field public static final CoordinatorLayout:[I
-
-.field public static final CoordinatorLayout_Layout:[I
-
-.field public static final CoordinatorLayout_Layout_android_layout_gravity:I = 0x0
-
-.field public static final CoordinatorLayout_Layout_layout_anchor:I = 0x1
-
-.field public static final CoordinatorLayout_Layout_layout_anchorGravity:I = 0x2
-
-.field public static final CoordinatorLayout_Layout_layout_behavior:I = 0x3
-
-.field public static final CoordinatorLayout_Layout_layout_dodgeInsetEdges:I = 0x4
-
-.field public static final CoordinatorLayout_Layout_layout_insetEdge:I = 0x5
-
-.field public static final CoordinatorLayout_Layout_layout_keyline:I = 0x6
-
-.field public static final CoordinatorLayout_keylines:I = 0x0
-
-.field public static final CoordinatorLayout_statusBarBackground:I = 0x1
-
-.field public static final FontFamily:[I
-
-.field public static final FontFamilyFont:[I
-
-.field public static final FontFamilyFont_android_font:I = 0x0
-
-.field public static final FontFamilyFont_android_fontStyle:I = 0x2
-
-.field public static final FontFamilyFont_android_fontVariationSettings:I = 0x4
-
-.field public static final FontFamilyFont_android_fontWeight:I = 0x1
-
-.field public static final FontFamilyFont_android_ttcIndex:I = 0x3
-
-.field public static final FontFamilyFont_font:I = 0x5
-
-.field public static final FontFamilyFont_fontStyle:I = 0x6
-
-.field public static final FontFamilyFont_fontVariationSettings:I = 0x7
-
-.field public static final FontFamilyFont_fontWeight:I = 0x8
-
-.field public static final FontFamilyFont_ttcIndex:I = 0x9
-
-.field public static final FontFamily_fontProviderAuthority:I = 0x0
-
-.field public static final FontFamily_fontProviderCerts:I = 0x1
-
-.field public static final FontFamily_fontProviderFetchStrategy:I = 0x2
-
-.field public static final FontFamily_fontProviderFetchTimeout:I = 0x3
-
-.field public static final FontFamily_fontProviderPackage:I = 0x4
-
-.field public static final FontFamily_fontProviderQuery:I = 0x5
-
-.field public static final GradientColor:[I
-
-.field public static final GradientColorItem:[I
-
-.field public static final GradientColorItem_android_color:I = 0x0
-
-.field public static final GradientColorItem_android_offset:I = 0x1
-
-.field public static final GradientColor_android_centerColor:I = 0x7
-
-.field public static final GradientColor_android_centerX:I = 0x3
-
-.field public static final GradientColor_android_centerY:I = 0x4
-
-.field public static final GradientColor_android_endColor:I = 0x1
-
-.field public static final GradientColor_android_endX:I = 0xa
-
-.field public static final GradientColor_android_endY:I = 0xb
-
-.field public static final GradientColor_android_gradientRadius:I = 0x5
-
-.field public static final GradientColor_android_startColor:I = 0x0
-
-.field public static final GradientColor_android_startX:I = 0x8
-
-.field public static final GradientColor_android_startY:I = 0x9
-
-.field public static final GradientColor_android_tileMode:I = 0x6
-
-.field public static final GradientColor_android_type:I = 0x2
+.field public static e:Z
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [I
+.method public static a(Landroid/animation/LayoutTransition;)V
+    .locals 5
 
     .line 1
-    fill-array-data v0, :array_0
+    sget-boolean v0, Lw5;->e:Z
 
-    sput-object v0, Lw5;->ColorStateListItem:[I
+    const/4 v1, 0x0
 
-    const/4 v0, 0x2
+    if-nez v0, :cond_0
 
-    new-array v1, v0, [I
+    const/4 v0, 0x1
 
     .line 2
-    fill-array-data v1, :array_1
+    :try_start_0
+    const-class v2, Landroid/animation/LayoutTransition;
 
-    sput-object v1, Lw5;->CoordinatorLayout:[I
+    const-string v3, "cancel"
 
-    const/4 v1, 0x7
+    new-array v4, v1, [Ljava/lang/Class;
 
-    new-array v1, v1, [I
+    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v2
+
+    sput-object v2, Lw5;->d:Ljava/lang/reflect/Method;
 
     .line 3
-    fill-array-data v1, :array_2
-
-    sput-object v1, Lw5;->CoordinatorLayout_Layout:[I
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [I
+    invoke-virtual {v2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
-    fill-array-data v1, :array_3
-
-    sput-object v1, Lw5;->FontFamily:[I
-
-    const/16 v1, 0xa
-
-    new-array v1, v1, [I
+    :catch_0
+    sput-boolean v0, Lw5;->e:Z
 
     .line 5
-    fill-array-data v1, :array_4
+    :cond_0
+    sget-object v0, Lw5;->d:Ljava/lang/reflect/Method;
 
-    sput-object v1, Lw5;->FontFamilyFont:[I
+    if-eqz v0, :cond_1
 
-    const/16 v1, 0xc
-
-    new-array v1, v1, [I
+    :try_start_1
+    new-array v1, v1, [Ljava/lang/Object;
 
     .line 6
-    fill-array-data v1, :array_5
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
 
-    sput-object v1, Lw5;->GradientColor:[I
+    :catch_1
+    :cond_1
+    return-void
+.end method
 
-    new-array v0, v0, [I
+.method public static b(Landroid/view/ViewGroup;Z)V
+    .locals 5
+    .param p0    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    sget-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    if-nez v0, :cond_0
+
+    .line 2
+    new-instance v0, Lw5$a;
+
+    invoke-direct {v0}, Lw5$a;-><init>()V
+
+    sput-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    const/4 v4, 0x2
+
+    .line 3
+    invoke-virtual {v0, v4, v3}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
+
+    .line 4
+    sget-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    invoke-virtual {v0, v2, v3}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
+
+    .line 5
+    sget-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    invoke-virtual {v0, v1, v3}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
+
+    .line 6
+    sget-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    const/4 v4, 0x3
+
+    invoke-virtual {v0, v4, v3}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
 
     .line 7
-    fill-array-data v0, :array_6
+    sget-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
 
-    sput-object v0, Lw5;->GradientColorItem:[I
+    const/4 v4, 0x4
 
+    invoke-virtual {v0, v4, v3}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
+
+    :cond_0
+    if-eqz p1, :cond_3
+
+    .line 8
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getLayoutTransition()Landroid/animation/LayoutTransition;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    .line 9
+    invoke-virtual {p1}, Landroid/animation/LayoutTransition;->isRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 10
+    invoke-static {p1}, Lw5;->a(Landroid/animation/LayoutTransition;)V
+
+    .line 11
+    :cond_1
+    sget-object v0, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    if-eq p1, v0, :cond_2
+
+    .line 12
+    sget v0, Landroidx/transition/R$id;->transition_layout_save:I
+
+    invoke-virtual {p0, v0, p1}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
+
+    .line 13
+    :cond_2
+    sget-object p1, Lw5;->a:Landroid/animation/LayoutTransition;
+
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
+
+    goto :goto_1
+
+    .line 14
+    :cond_3
+    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
+
+    .line 15
+    sget-boolean p1, Lw5;->c:Z
+
+    if-nez p1, :cond_4
+
+    .line 16
+    :try_start_0
+    const-class p1, Landroid/view/ViewGroup;
+
+    const-string v0, "mLayoutSuppressed"
+
+    invoke-virtual {p1, v0}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object p1
+
+    sput-object p1, Lw5;->b:Ljava/lang/reflect/Field;
+
+    .line 17
+    invoke-virtual {p1, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 18
+    :catch_0
+    sput-boolean v1, Lw5;->c:Z
+
+    .line 19
+    :cond_4
+    sget-object p1, Lw5;->b:Ljava/lang/reflect/Field;
+
+    if-eqz p1, :cond_6
+
+    .line 20
+    :try_start_1
+    invoke-virtual {p1, p0}, Ljava/lang/reflect/Field;->getBoolean(Ljava/lang/Object;)Z
+
+    move-result p1
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
+
+    if-eqz p1, :cond_5
+
+    .line 21
+    :try_start_2
+    sget-object v0, Lw5;->b:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v0, p0, v2}, Ljava/lang/reflect/Field;->setBoolean(Ljava/lang/Object;Z)V
+    :try_end_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_1
+
+    :catch_1
+    :cond_5
+    move v2, p1
+
+    goto :goto_0
+
+    :catch_2
+    nop
+
+    :cond_6
+    :goto_0
+    if-eqz v2, :cond_7
+
+    .line 22
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->requestLayout()V
+
+    .line 23
+    :cond_7
+    sget p1, Landroidx/transition/R$id;->transition_layout_save:I
+
+    .line 24
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/animation/LayoutTransition;
+
+    if-eqz v0, :cond_8
+
+    .line 25
+    invoke-virtual {p0, p1, v3}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
+
+    .line 26
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
+
+    :cond_8
+    :goto_1
     return-void
-
-    :array_0
-    .array-data 4
-        0x10101a5
-        0x101031f
-        0x7f04003c
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x7f04022d
-        0x7f040424
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x10100b3
-        0x7f040246
-        0x7f040247
-        0x7f040249
-        0x7f040275
-        0x7f04027f
-        0x7f040280
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x7f0401b3
-        0x7f0401b4
-        0x7f0401b5
-        0x7f0401b6
-        0x7f0401b7
-        0x7f0401b8
-    .end array-data
-
-    :array_4
-    .array-data 4
-        0x1010532
-        0x1010533
-        0x101053f
-        0x101056f
-        0x1010570
-        0x7f0401b0
-        0x7f0401b9
-        0x7f0401ba
-        0x7f0401bb
-        0x7f0404a0
-    .end array-data
-
-    :array_5
-    .array-data 4
-        0x101019d
-        0x101019e
-        0x10101a1
-        0x10101a2
-        0x10101a3
-        0x10101a4
-        0x1010201
-        0x101020b
-        0x1010510
-        0x1010511
-        0x1010512
-        0x1010513
-    .end array-data
-
-    :array_6
-    .array-data 4
-        0x10101a5
-        0x1010514
-    .end array-data
 .end method

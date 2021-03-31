@@ -16,13 +16,13 @@
 
 
 # static fields
-.field public static final MAX_CLASS_CACHE_SIZE:I = 0xff
+.field private static final MAX_CLASS_CACHE_SIZE:I = 0xff
 
-.field public static final classCache:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ClassCache;
+.field private static final classCache:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ClassCache;
 
-.field public static final mainThreadHandler:Landroid/os/Handler;
+.field private static final mainThreadHandler:Landroid/os/Handler;
 
-.field public static final rootViewsGenerator:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;
+.field private static final rootViewsGenerator:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;
 
 
 # direct methods
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public static getAccountId(Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)Ljava/lang/String;
+.method private static getAccountId(Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)Ljava/lang/String;
     .locals 0
 
     .line 1
@@ -79,7 +79,7 @@
     return-object p0
 .end method
 
-.method public static getConfigLogger(Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)Lcom/clevertap/android/sdk/Logger;
+.method private static getConfigLogger(Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)Lcom/clevertap/android/sdk/Logger;
     .locals 0
 
     .line 1
@@ -90,8 +90,13 @@
     return-object p0
 .end method
 
-.method public static viewHierarchySnapshot(Landroid/util/JsonWriter;Landroid/view/View;Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;)V
+.method private static viewHierarchySnapshot(Landroid/util/JsonWriter;Landroid/view/View;Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/util/JsonWriter;->beginArray()Landroid/util/JsonWriter;
@@ -105,8 +110,13 @@
     return-void
 .end method
 
-.method public static viewSnapshot(Landroid/util/JsonWriter;Landroid/view/View;Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;)V
+.method private static viewSnapshot(Landroid/util/JsonWriter;Landroid/view/View;Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Landroid/view/View;->getId()I
@@ -204,7 +214,7 @@
 
     move-result-object v0
 
-    const-string v1, "tag"
+    const-string/jumbo v1, "tag"
 
     if-nez v0, :cond_2
 
@@ -236,7 +246,7 @@
 
     :cond_3
     :goto_2
-    const-string v0, "top"
+    const-string/jumbo v0, "top"
 
     .line 14
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -266,7 +276,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/JsonWriter;->value(J)Landroid/util/JsonWriter;
 
-    const-string v0, "width"
+    const-string/jumbo v0, "width"
 
     .line 16
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -326,7 +336,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/JsonWriter;->value(J)Landroid/util/JsonWriter;
 
-    const-string v0, "visibility"
+    const-string/jumbo v0, "visibility"
 
     .line 20
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -351,7 +361,7 @@
 
     move-result v1
 
-    const-string v2, "translationX"
+    const-string/jumbo v2, "translationX"
 
     .line 23
     invoke-virtual {p0, v2}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -362,7 +372,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/JsonWriter;->value(D)Landroid/util/JsonWriter;
 
-    const-string v0, "translationY"
+    const-string/jumbo v0, "translationY"
 
     .line 24
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -469,7 +479,7 @@
     invoke-virtual {p0}, Landroid/util/JsonWriter;->endArray()Landroid/util/JsonWriter;
 
     :cond_7
-    const-string v0, "subviews"
+    const-string/jumbo v0, "subviews"
 
     .line 42
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -559,6 +569,11 @@
 
 .method public static writeSnapshot(Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$ActivitySet;Ljava/io/OutputStream;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)V
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder;->rootViewsGenerator:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;
@@ -567,8 +582,6 @@
 
     .line 2
     new-instance p1, Ljava/util/concurrent/FutureTask;
-
-    sget-object v0, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder;->rootViewsGenerator:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;
 
     invoke-direct {p1, v0}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
@@ -608,7 +621,9 @@
     .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    move-object v1, p1
+
+    goto :goto_0
 
     :catch_0
     move-exception p1
@@ -662,21 +677,18 @@
 
     invoke-virtual {v2, p3, v3, p1}, Lcom/clevertap/android/sdk/Logger;->debug(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
-    move-object p1, v1
-
     .line 11
-    :goto_1
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    :goto_0
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result p3
+    move-result p1
 
-    const/4 v1, 0x0
+    const/4 p3, 0x0
 
     const/4 v2, 0x0
 
-    :goto_2
-    if-ge v2, p3, :cond_1
+    :goto_1
+    if-ge v2, p1, :cond_1
 
     const-string v3, ","
 
@@ -687,13 +699,13 @@
 
     .line 13
     :cond_0
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootView;
 
-    const-string v5, "{"
+    const-string/jumbo v5, "{"
 
     .line 14
     invoke-virtual {v0, v5}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
@@ -731,7 +743,7 @@
 
     move-result-object v6
 
-    aput-object v6, v5, v1
+    aput-object v6, v5, p3
 
     const-string v6, "%s"
 
@@ -827,14 +839,14 @@
 
     invoke-virtual {v3, v4, v5, p2}, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$Screenshot;->writeJSON(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)V
 
-    const-string v3, "}"
+    const-string/jumbo v3, "}"
 
     .line 36
     invoke-virtual {v0, v3}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_2
+    goto/16 :goto_1
 
     :cond_1
     const-string p0, "]"
@@ -848,8 +860,13 @@
     return-void
 .end method
 
-.method public static writeViewProperties(Landroid/util/JsonWriter;Landroid/view/View;Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;)V
+.method private static writeViewProperties(Landroid/util/JsonWriter;Landroid/view/View;Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1064,7 +1081,7 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/util/JsonWriter;->value(J)Landroid/util/JsonWriter;
 
-    const-string v1, "top"
+    const-string/jumbo v1, "top"
 
     .line 27
     invoke-virtual {p0, v1}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;

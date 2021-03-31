@@ -63,6 +63,11 @@
 
 .method public bridge synthetic init([B)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1}, Lcom/jcraft/jsch/jce/HMAC;->init([B)V

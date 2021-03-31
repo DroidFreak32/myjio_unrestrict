@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public final indexStack:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder$IntStack;
+.field private final indexStack:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder$IntStack;
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit;
 
@@ -291,11 +291,12 @@
 
     const/4 p1, 0x1
 
-    return p1
+    goto :goto_0
 
     :cond_0
     const/4 p1, 0x0
 
+    :goto_0
     return p1
 .end method
 
@@ -341,6 +342,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 4
     invoke-virtual {p2}, Landroid/view/View;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -353,7 +355,7 @@
 
     return v1
 
-    .line 4
+    .line 5
     :cond_2
     iget-object p1, p1, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$PathElement;->tag:Ljava/lang/String;
 
@@ -361,14 +363,14 @@
 
     if-eqz p1, :cond_4
 
-    .line 5
+    .line 6
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
     if-eqz v2, :cond_3
 
-    .line 6
+    .line 7
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p2
@@ -383,13 +385,12 @@
 
     if-eqz p1, :cond_3
 
-    goto :goto_0
+    const/4 v1, 0x1
 
     :cond_3
-    const/4 v0, 0x0
+    return v1
 
     :cond_4
-    :goto_0
     return v0
 .end method
 

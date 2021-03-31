@@ -7,16 +7,23 @@
 
 
 # instance fields
-.field public final dateModified:J
+.field private final dateModified:J
 
-.field public final mimeType:Ljava/lang/String;
+.field private final mimeType:Ljava/lang/String;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
-.field public final orientation:I
+.field private final orientation:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JI)V
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +62,9 @@
     if-eqz p1, :cond_5
 
     .line 1
-    const-class v2, Lcom/bumptech/glide/signature/MediaStoreSignature;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -149,6 +158,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 3
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/16 v0, 0xc
 

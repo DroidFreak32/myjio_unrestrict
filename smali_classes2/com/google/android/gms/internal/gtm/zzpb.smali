@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public zzatk:Ljava/net/HttpURLConnection;
+.field private zzatk:Ljava/net/HttpURLConnection;
 
-.field public zzatl:Ljava/io/InputStream;
+.field private zzatl:Ljava/io/InputStream;
 
 
 # direct methods
@@ -41,8 +41,6 @@
     if-eqz v1, :cond_1
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzpb;->zzatl:Ljava/io/InputStream;
-
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -99,6 +97,11 @@
 
 .method public final zzcj(Ljava/lang/String;)Ljava/io/InputStream;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/net/URL;
@@ -124,9 +127,6 @@
     iput-object p1, p0, Lcom/google/android/gms/internal/gtm/zzpb;->zzatk:Ljava/net/HttpURLConnection;
 
     .line 6
-    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzpb;->zzatk:Ljava/net/HttpURLConnection;
-
-    .line 7
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v0
@@ -135,23 +135,20 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 8
+    .line 7
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object p1
 
-    .line 9
+    .line 8
     iput-object p1, p0, Lcom/google/android/gms/internal/gtm/zzpb;->zzatl:Ljava/io/InputStream;
-
-    .line 10
-    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzpb;->zzatl:Ljava/io/InputStream;
 
     return-object p1
 
     :cond_0
     const/16 p1, 0x19
 
-    .line 11
+    .line 9
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, p1}, Ljava/lang/StringBuilder;-><init>(I)V
@@ -174,14 +171,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 12
+    .line 10
     new-instance v0, Lcom/google/android/gms/internal/gtm/zzpe;
 
     invoke-direct {v0, p1}, Lcom/google/android/gms/internal/gtm/zzpe;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 13
+    .line 11
     :cond_1
     new-instance v0, Ljava/io/IOException;
 
@@ -189,7 +186,7 @@
 
     throw v0
 
-    .line 14
+    .line 12
     :cond_2
     new-instance v0, Ljava/io/FileNotFoundException;
 

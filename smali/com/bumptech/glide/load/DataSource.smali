@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/bumptech/glide/load/DataSource;
+.field private static final synthetic $VALUES:[Lcom/bumptech/glide/load/DataSource;
 
 .field public static final enum DATA_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
 
@@ -29,94 +29,84 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 11
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/DataSource;
 
-    const/4 v1, 0x0
+    const-string v1, "LOCAL"
 
-    const-string v2, "LOCAL"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/bumptech/glide/load/DataSource;->LOCAL:Lcom/bumptech/glide/load/DataSource;
 
     .line 2
-    new-instance v0, Lcom/bumptech/glide/load/DataSource;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/bumptech/glide/load/DataSource;
 
     const-string v3, "REMOTE"
 
-    invoke-direct {v0, v3, v2}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/bumptech/glide/load/DataSource;->REMOTE:Lcom/bumptech/glide/load/DataSource;
+    invoke-direct {v1, v3, v4}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/bumptech/glide/load/DataSource;->REMOTE:Lcom/bumptech/glide/load/DataSource;
 
     .line 3
-    new-instance v0, Lcom/bumptech/glide/load/DataSource;
+    new-instance v3, Lcom/bumptech/glide/load/DataSource;
 
-    const/4 v3, 0x2
+    const-string v5, "DATA_DISK_CACHE"
 
-    const-string v4, "DATA_DISK_CACHE"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/DataSource;->DATA_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
+    sput-object v3, Lcom/bumptech/glide/load/DataSource;->DATA_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
 
     .line 4
-    new-instance v0, Lcom/bumptech/glide/load/DataSource;
+    new-instance v5, Lcom/bumptech/glide/load/DataSource;
 
-    const/4 v4, 0x3
+    const-string v7, "RESOURCE_DISK_CACHE"
 
-    const-string v5, "RESOURCE_DISK_CACHE"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/DataSource;->RESOURCE_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
+    sput-object v5, Lcom/bumptech/glide/load/DataSource;->RESOURCE_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
 
     .line 5
-    new-instance v0, Lcom/bumptech/glide/load/DataSource;
+    new-instance v7, Lcom/bumptech/glide/load/DataSource;
 
-    const/4 v5, 0x4
+    const-string v9, "MEMORY_CACHE"
 
-    const-string v6, "MEMORY_CACHE"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/bumptech/glide/load/DataSource;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/DataSource;->MEMORY_CACHE:Lcom/bumptech/glide/load/DataSource;
+    sput-object v7, Lcom/bumptech/glide/load/DataSource;->MEMORY_CACHE:Lcom/bumptech/glide/load/DataSource;
 
-    const/4 v0, 0x5
+    const/4 v9, 0x5
 
-    new-array v0, v0, [Lcom/bumptech/glide/load/DataSource;
+    new-array v9, v9, [Lcom/bumptech/glide/load/DataSource;
+
+    aput-object v0, v9, v2
+
+    aput-object v1, v9, v4
+
+    aput-object v3, v9, v6
+
+    aput-object v5, v9, v8
+
+    aput-object v7, v9, v10
 
     .line 6
-    sget-object v6, Lcom/bumptech/glide/load/DataSource;->LOCAL:Lcom/bumptech/glide/load/DataSource;
-
-    aput-object v6, v0, v1
-
-    sget-object v1, Lcom/bumptech/glide/load/DataSource;->REMOTE:Lcom/bumptech/glide/load/DataSource;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/bumptech/glide/load/DataSource;->DATA_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/bumptech/glide/load/DataSource;->RESOURCE_DISK_CACHE:Lcom/bumptech/glide/load/DataSource;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/bumptech/glide/load/DataSource;->MEMORY_CACHE:Lcom/bumptech/glide/load/DataSource;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lcom/bumptech/glide/load/DataSource;->$VALUES:[Lcom/bumptech/glide/load/DataSource;
+    sput-object v9, Lcom/bumptech/glide/load/DataSource;->$VALUES:[Lcom/bumptech/glide/load/DataSource;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

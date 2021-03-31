@@ -62,13 +62,14 @@
 
     const-string v6, "com/clevertap/android/sdk/certificates/DigiCertGlobalRootCA.crt"
 
+    .line 6
     invoke-virtual {v5, v6}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v5
 
     invoke-direct {v4, v5}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 6
+    .line 7
     invoke-virtual {v1, v4}, Ljava/security/cert/CertificateFactory;->generateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
 
     move-result-object v4
@@ -77,10 +78,10 @@
 
     const-string v5, "DigiCertGlobalRootCA"
 
-    .line 7
+    .line 8
     invoke-virtual {v3, v5, v4}, Ljava/security/KeyStore;->setCertificateEntry(Ljava/lang/String;Ljava/security/cert/Certificate;)V
 
-    .line 8
+    .line 9
     new-instance v4, Ljava/io/BufferedInputStream;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -93,13 +94,14 @@
 
     const-string v6, "com/clevertap/android/sdk/certificates/DigiCertSHA2SecureServerCA.crt"
 
+    .line 10
     invoke-virtual {v5, v6}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v5
 
     invoke-direct {v4, v5}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 9
+    .line 11
     invoke-virtual {v1, v4}, Ljava/security/cert/CertificateFactory;->generateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
 
     move-result-object v1
@@ -108,20 +110,20 @@
 
     const-string v4, "DigiCertSHA2SecureServerCA"
 
-    .line 10
+    .line 12
     invoke-virtual {v3, v4, v1}, Ljava/security/KeyStore;->setCertificateEntry(Ljava/lang/String;Ljava/security/cert/Certificate;)V
 
-    .line 11
+    .line 13
     invoke-virtual {v2, v3}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
 
     const-string v1, "TLS"
 
-    .line 12
+    .line 14
     invoke-static {v1}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
 
     move-result-object v1
 
-    .line 13
+    .line 15
     invoke-virtual {v2}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
 
     move-result-object v2
@@ -130,7 +132,7 @@
 
     const-string v2, "SSL Context built"
 
-    .line 14
+    .line 16
     invoke-static {v2}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -142,7 +144,7 @@
 
     const-string v2, "Error building SSL Context"
 
-    .line 15
+    .line 17
     invoke-static {v2, v1}, Lcom/clevertap/android/sdk/Logger;->i(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-object v0

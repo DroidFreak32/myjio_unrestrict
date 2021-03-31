@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static EXECUTOR_THREAD_ID:J
+.field private static EXECUTOR_THREAD_ID:J
 
 
 # instance fields
-.field public final PROFILE_EXPIRY_MAP:Ljava/util/HashMap;
+.field private final PROFILE_EXPIRY_MAP:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -19,7 +19,7 @@
     .end annotation
 .end field
 
-.field public final PROFILE_FIELDS_IN_THIS_SESSION:Ljava/util/HashMap;
+.field private final PROFILE_FIELDS_IN_THIS_SESSION:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -30,15 +30,15 @@
     .end annotation
 .end field
 
-.field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.field private config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
+.field private dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
 
-.field public es:Ljava/util/concurrent/ExecutorService;
+.field private es:Ljava/util/concurrent/ExecutorService;
 
-.field public final eventNamespace:Ljava/lang/String;
+.field private final eventNamespace:Ljava/lang/String;
 
 
 # direct methods
@@ -59,19 +59,19 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->PROFILE_FIELDS_IN_THIS_SESSION:Ljava/util/HashMap;
-
-    const-string v0, "local_events"
+    iput-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->PROFILE_EXPIRY_MAP:Ljava/util/HashMap;
 
     .line 3
-    iput-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->eventNamespace:Ljava/lang/String;
-
-    .line 4
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->PROFILE_EXPIRY_MAP:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->PROFILE_FIELDS_IN_THIS_SESSION:Ljava/util/HashMap;
+
+    const-string v0, "local_events"
+
+    .line 4
+    iput-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->eventNamespace:Ljava/lang/String;
 
     .line 5
     iput-object p1, p0, Lcom/clevertap/android/sdk/LocalDataStore;->context:Landroid/content/Context;
@@ -188,6 +188,7 @@
 
     move-result-object v2
 
+    .line 4
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
     move-result-object v3
@@ -208,7 +209,7 @@
 
     invoke-virtual {v2, v3, p1, v1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 4
+    .line 5
     :goto_0
     monitor-exit v0
 
@@ -264,16 +265,43 @@
     return-void
 .end method
 
-.method public static synthetic access$002(J)J
+.method public static synthetic access$000(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/DBAdapter;
     .locals 0
 
     .line 1
-    sput-wide p0, Lcom/clevertap/android/sdk/LocalDataStore;->EXECUTOR_THREAD_ID:J
+    iget-object p0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
 
-    return-wide p0
+    return-object p0
 .end method
 
-.method public static synthetic access$100(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/lang/String;
+.method public static synthetic access$002(Lcom/clevertap/android/sdk/LocalDataStore;Lcom/clevertap/android/sdk/DBAdapter;)Lcom/clevertap/android/sdk/DBAdapter;
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/clevertap/android/sdk/LocalDataStore;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
+
+    return-object p1
+.end method
+
+.method public static synthetic access$100(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$200(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/util/HashMap;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->PROFILE_FIELDS_IN_THIS_SESSION:Ljava/util/HashMap;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$300(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/lang/String;
     .locals 0
 
     .line 1
@@ -284,7 +312,7 @@
     return-object p0
 .end method
 
-.method public static synthetic access$200(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/Logger;
+.method public static synthetic access$400(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/Logger;
     .locals 0
 
     .line 1
@@ -295,40 +323,13 @@
     return-object p0
 .end method
 
-.method public static synthetic access$300(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/DBAdapter;
+.method public static synthetic access$502(J)J
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
+    sput-wide p0, Lcom/clevertap/android/sdk/LocalDataStore;->EXECUTOR_THREAD_ID:J
 
-    return-object p0
-.end method
-
-.method public static synthetic access$302(Lcom/clevertap/android/sdk/LocalDataStore;Lcom/clevertap/android/sdk/DBAdapter;)Lcom/clevertap/android/sdk/DBAdapter;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/clevertap/android/sdk/LocalDataStore;->dbAdapter:Lcom/clevertap/android/sdk/DBAdapter;
-
-    return-object p1
-.end method
-
-.method public static synthetic access$400(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$500(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/util/HashMap;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->PROFILE_FIELDS_IN_THIS_SESSION:Ljava/util/HashMap;
-
-    return-object p0
+    return-wide p0
 .end method
 
 .method private buildChangeFromOldValueToNewValue(Ljava/lang/Object;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -484,7 +485,7 @@
 
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p3, "|"
+    const-string/jumbo p3, "|"
 
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -655,6 +656,7 @@
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->context:Landroid/content/Context;
 
+    .line 3
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/LocalDataStore;->storageKeyWithSuffix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -667,7 +669,7 @@
 
     goto :goto_0
 
-    .line 3
+    .line 4
     :cond_0
     iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->context:Landroid/content/Context;
 
@@ -678,7 +680,7 @@
     :goto_0
     return-object v0
 
-    .line 4
+    .line 5
     :cond_1
     iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->context:Landroid/content/Context;
 
@@ -717,9 +719,9 @@
     move-result-object v0
 
     .line 2
-    new-instance v1, Lcom/clevertap/android/sdk/LocalDataStore$2;
+    new-instance v1, Lcom/clevertap/android/sdk/LocalDataStore$1;
 
-    invoke-direct {v1, p0, p1, v0}, Lcom/clevertap/android/sdk/LocalDataStore$2;-><init>(Lcom/clevertap/android/sdk/LocalDataStore;Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1, v0}, Lcom/clevertap/android/sdk/LocalDataStore$1;-><init>(Lcom/clevertap/android/sdk/LocalDataStore;Landroid/content/Context;Ljava/lang/String;)V
 
     const-string p1, "LocalDataStore#inflateLocalProfileAsync"
 
@@ -895,9 +897,9 @@
     move-result-object v0
 
     .line 2
-    new-instance v1, Lcom/clevertap/android/sdk/LocalDataStore$3;
+    new-instance v1, Lcom/clevertap/android/sdk/LocalDataStore$2;
 
-    invoke-direct {v1, p0, v0}, Lcom/clevertap/android/sdk/LocalDataStore$3;-><init>(Lcom/clevertap/android/sdk/LocalDataStore;Ljava/lang/String;)V
+    invoke-direct {v1, p0, v0}, Lcom/clevertap/android/sdk/LocalDataStore$2;-><init>(Lcom/clevertap/android/sdk/LocalDataStore;Ljava/lang/String;)V
 
     const-string v0, "LocalDataStore#persistLocalProfileAsync"
 
@@ -944,9 +946,9 @@
     :cond_1
     iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore;->es:Ljava/util/concurrent/ExecutorService;
 
-    new-instance v1, Lcom/clevertap/android/sdk/LocalDataStore$1;
+    new-instance v1, Lcom/clevertap/android/sdk/LocalDataStore$3;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/clevertap/android/sdk/LocalDataStore$1;-><init>(Lcom/clevertap/android/sdk/LocalDataStore;Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/clevertap/android/sdk/LocalDataStore$3;-><init>(Lcom/clevertap/android/sdk/LocalDataStore;Ljava/lang/String;Ljava/lang/Runnable;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
     :try_end_0
@@ -1028,15 +1030,15 @@
 
     if-gtz p1, :cond_2
 
-    const/4 v1, 0x1
-
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    const/4 v0, 0x0
+
+    :goto_1
+    move v1, v0
 
     :cond_3
-    :goto_1
     return v1
 .end method
 
@@ -1653,6 +1655,7 @@
 
     move-result-object v4
 
+    .line 18
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
     move-result-object v14
@@ -1679,7 +1682,7 @@
 
     if-nez v8, :cond_2
 
-    .line 18
+    .line 19
     :try_start_4
     new-instance v1, Lorg/json/JSONObject;
 
@@ -1687,38 +1690,38 @@
 
     move-object v8, v1
 
-    .line 19
+    .line 20
     :cond_2
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    .line 20
+    .line 21
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
 
-    .line 21
+    .line 22
     invoke-virtual {v10}, Lcom/clevertap/android/sdk/EventDetail;->getCount()I
 
     move-result v13
 
     invoke-virtual {v4, v3, v13}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 22
+    .line 23
     invoke-virtual {v4, v2, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     const-string v9, "count"
 
-    .line 23
+    .line 24
     invoke-virtual {v1, v9, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 24
+    .line 25
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
 
-    .line 25
+    .line 26
     invoke-virtual {v10}, Lcom/clevertap/android/sdk/EventDetail;->getFirstTime()I
 
     move-result v9
@@ -1727,7 +1730,7 @@
 
     const/4 v9, 0x1
 
-    .line 26
+    .line 27
     invoke-virtual {v12, v9}, Lorg/json/JSONArray;->getInt(I)I
 
     move-result v9
@@ -1736,15 +1739,15 @@
 
     const-string v9, "firstTime"
 
-    .line 27
+    .line 28
     invoke-virtual {v1, v9, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 28
+    .line 29
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
 
-    .line 29
+    .line 30
     invoke-virtual {v10}, Lcom/clevertap/android/sdk/EventDetail;->getLastTime()I
 
     move-result v9
@@ -1753,7 +1756,7 @@
 
     const/4 v9, 0x2
 
-    .line 30
+    .line 31
     invoke-virtual {v12, v9}, Lorg/json/JSONArray;->getInt(I)I
 
     move-result v9
@@ -1762,10 +1765,10 @@
 
     const-string v9, "lastTime"
 
-    .line 31
+    .line 32
     invoke-virtual {v1, v9, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 32
+    .line 33
     invoke-virtual {v8, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
@@ -1775,7 +1778,7 @@
     :catchall_0
     move-exception v0
 
-    .line 33
+    .line 34
     :try_start_5
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
@@ -1791,12 +1794,13 @@
 
     goto :goto_3
 
-    .line 34
+    .line 35
     :cond_3
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v1
 
+    .line 36
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
     move-result-object v4
@@ -1821,7 +1825,7 @@
 
     goto :goto_3
 
-    .line 35
+    .line 37
     :catchall_1
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
@@ -1839,6 +1843,7 @@
 
     invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 38
     invoke-virtual {v12}, Lorg/json/JSONArray;->toString()Ljava/lang/String;
 
     move-result-object v9
@@ -1849,11 +1854,12 @@
 
     move-result-object v4
 
+    .line 39
     invoke-virtual {v0, v1, v4}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_3
 
-    .line 36
+    .line 40
     :cond_4
     :goto_2
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
@@ -1873,7 +1879,7 @@
 
     goto/16 :goto_1
 
-    .line 37
+    .line 41
     :cond_5
     invoke-static {v7}, Lcom/clevertap/android/sdk/StorageHelper;->persist(Landroid/content/SharedPreferences$Editor;)V
     :try_end_5
@@ -1884,7 +1890,7 @@
     :catchall_2
     move-exception v0
 
-    .line 38
+    .line 42
     invoke-direct/range {p0 .. p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v1
@@ -1903,74 +1909,74 @@
 .end method
 
 .method private syncProfile(Lorg/json/JSONObject;)Lorg/json/JSONObject;
-    .locals 10
+    .locals 11
 
     .line 1
-    new-instance v0, Lorg/json/JSONObject;
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    new-instance v1, Lorg/json/JSONObject;
+
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
     if-eqz p1, :cond_7
 
     .line 2
     invoke-virtual {p1}, Lorg/json/JSONObject;->length()I
 
-    move-result v1
+    move-result v2
 
-    if-gtz v1, :cond_0
+    if-gtz v2, :cond_0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 3
     :try_start_0
-    new-instance v2, Lorg/json/JSONObject;
+    new-instance v3, Lorg/json/JSONObject;
 
-    invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
+    invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
 
     .line 4
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-wide/16 v5, 0x3e8
+    const-wide/16 v6, 0x3e8
 
-    div-long/2addr v3, v5
+    div-long/2addr v4, v6
 
-    long-to-int v4, v3
+    long-to-int v5, v4
 
     .line 5
     invoke-virtual {p1}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 6
     :cond_1
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v6
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    const/4 v6, 0x1
-
-    if-eqz v5, :cond_5
+    if-eqz v6, :cond_5
 
     .line 7
     :try_start_1
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 8
-    invoke-direct {p0, v5, v4}, Lcom/clevertap/android/sdk/LocalDataStore;->shouldPreferLocalProfileUpdateForKeyForTime(Ljava/lang/String;I)Ljava/lang/Boolean;
+    invoke-direct {p0, v6, v5}, Lcom/clevertap/android/sdk/LocalDataStore;->shouldPreferLocalProfileUpdateForKeyForTime(Ljava/lang/String;I)Ljava/lang/Boolean;
 
     move-result-object v7
 
@@ -1983,55 +1989,56 @@
     .line 9
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
-    move-result-object v6
-
-    invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
-
     move-result-object v7
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Rejecting upstream value for key "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, " because our local cache prohibits it"
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v6, v7, v5}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
 
     .line 10
-    :cond_2
-    invoke-virtual {p0, v5}, Lcom/clevertap/android/sdk/LocalDataStore;->getProfileValueForKey(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    .line 11
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
     move-result-object v8
 
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Rejecting upstream value for key "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, " because our local cache prohibits it"
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v8, v6}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 11
+    :cond_2
+    invoke-virtual {p0, v6}, Lcom/clevertap/android/sdk/LocalDataStore;->getProfileValueForKey(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v7
+
     .line 12
+    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    .line 13
     invoke-direct {p0, v8}, Lcom/clevertap/android/sdk/LocalDataStore;->profileValueIsEmpty(Ljava/lang/Object;)Z
 
     move-result v9
 
     if-eqz v9, :cond_3
 
-    move-object v8, v1
+    move-object v8, v2
 
-    .line 13
+    .line 14
     :cond_3
     invoke-direct {p0, v8, v7}, Lcom/clevertap/android/sdk/LocalDataStore;->profileValuesAreEqual(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Boolean;
 
@@ -2047,116 +2054,113 @@
 
     if-eqz v8, :cond_4
 
-    .line 14
+    .line 15
     :try_start_2
-    invoke-virtual {v2, v5, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v3, v6, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     goto :goto_1
 
-    .line 15
+    :catchall_0
+    move-exception v6
+
+    goto :goto_2
+
     :cond_4
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v9
-
-    invoke-direct {p0, v5, v9, v6}, Lcom/clevertap/android/sdk/LocalDataStore;->removeProfileField(Ljava/lang/String;Ljava/lang/Boolean;Z)V
+    const/4 v9, 0x1
 
     .line 16
+    invoke-direct {p0, v6, v0, v9}, Lcom/clevertap/android/sdk/LocalDataStore;->removeProfileField(Ljava/lang/String;Ljava/lang/Boolean;Z)V
+
+    .line 17
     :goto_1
     invoke-direct {p0, v7, v8}, Lcom/clevertap/android/sdk/LocalDataStore;->buildChangeFromOldValueToNewValue(Ljava/lang/Object;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
-    .line 17
-    invoke-virtual {v0, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    .line 18
+    invoke-virtual {v1, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v5
-
-    .line 18
+    .line 19
+    :goto_2
     :try_start_3
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
-    move-result-object v6
+    move-result-object v7
 
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "Failed to set profile updates"
+    const-string v9, "Failed to set profile updates"
 
-    invoke-virtual {v6, v7, v8, v5}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v7, v8, v9, v6}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_0
 
     :catchall_1
-    move-exception v5
+    move-exception v6
 
-    .line 19
+    .line 20
     :try_start_4
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
-    move-result-object v6
+    move-result-object v7
 
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "Failed to update profile field"
+    const-string v9, "Failed to update profile field"
 
-    invoke-virtual {v6, v7, v8, v5}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v7, v8, v9, v6}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto/16 :goto_0
 
-    .line 20
+    .line 21
     :cond_5
-    invoke-virtual {v2}, Lorg/json/JSONObject;->length()I
+    invoke-virtual {v3}, Lorg/json/JSONObject;->length()I
 
     move-result p1
 
     if-lez p1, :cond_6
 
-    .line 21
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    invoke-direct {p0, v2, p1}, Lcom/clevertap/android/sdk/LocalDataStore;->setProfileFields(Lorg/json/JSONObject;Ljava/lang/Boolean;)V
+    .line 22
+    invoke-direct {p0, v3, v0}, Lcom/clevertap/android/sdk/LocalDataStore;->setProfileFields(Lorg/json/JSONObject;Ljava/lang/Boolean;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     :cond_6
-    return-object v0
+    return-object v1
 
     :catchall_2
     move-exception p1
 
-    .line 22
+    .line 23
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v0
 
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigAccountId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     const-string v3, "Failed to sync remote profile"
 
-    invoke-virtual {v0, v2, v3, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1, v3, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object v1
+    return-object v2
 
     :cond_7
-    :goto_2
-    return-object v0
+    :goto_3
+    return-object v1
 .end method
 
 .method private updateLocalProfileKeyExpiryTime(Ljava/lang/String;)V
@@ -2493,12 +2497,8 @@
 .method public removeProfileField(Ljava/lang/String;)V
     .locals 2
 
-    const/4 v0, 0x0
-
     .line 1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     const/4 v1, 0x1
 
@@ -2522,13 +2522,9 @@
 
     return-void
 
-    :cond_0
-    const/4 v0, 0x0
-
     .line 1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    :cond_0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-direct {p0, p1, v0}, Lcom/clevertap/android/sdk/LocalDataStore;->removeProfileFields(Ljava/util/ArrayList;Ljava/lang/Boolean;)V
 
@@ -2561,7 +2557,7 @@
     return-void
 
     :cond_0
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     .line 3
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -2733,12 +2729,8 @@
 .method public setProfileField(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 2
 
-    const/4 v0, 0x0
-
     .line 1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     const/4 v1, 0x1
 
@@ -2750,12 +2742,8 @@
 .method public setProfileFields(Lorg/json/JSONObject;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     .line 1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-direct {p0, p1, v0}, Lcom/clevertap/android/sdk/LocalDataStore;->setProfileFields(Lorg/json/JSONObject;Ljava/lang/Boolean;)V
 
@@ -2936,6 +2924,7 @@
 
     move-result-object p2
 
+    .line 21
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -2946,6 +2935,7 @@
 
     long-to-int v0, v6
 
+    .line 22
     invoke-static {p1, p2, v0}, Lcom/clevertap/android/sdk/StorageHelper;->putInt(Landroid/content/Context;Ljava/lang/String;I)V
 
     const/4 p2, 0x1
@@ -2954,7 +2944,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 21
+    .line 23
     invoke-virtual {v1}, Lorg/json/JSONObject;->length()I
 
     move-result v6
@@ -2975,7 +2965,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 22
+    .line 24
     invoke-virtual {v2}, Lorg/json/JSONObject;->length()I
 
     move-result v7
@@ -2992,7 +2982,7 @@
 
     move-result-object p2
 
-    .line 23
+    .line 25
     invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -3005,23 +2995,23 @@
 
     if-eqz v0, :cond_c
 
-    .line 24
+    .line 26
     :cond_8
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 25
+    .line 27
     invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v6
 
     if-eqz v6, :cond_9
 
-    .line 26
+    .line 28
     invoke-virtual {v0, v4, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 27
+    .line 29
     :cond_9
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -3029,12 +3019,12 @@
 
     if-eqz p2, :cond_a
 
-    .line 28
+    .line 30
     invoke-virtual {v0, v3, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    .line 29
+    .line 31
     :cond_a
     :try_start_4
     invoke-static {p1}, Lcom/clevertap/android/sdk/CleverTapAPI;->getDefaultInstance(Landroid/content/Context;)Lcom/clevertap/android/sdk/CleverTapAPI;
@@ -3043,7 +3033,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 30
+    .line 32
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CleverTapAPI;->getSyncListener()Lcom/clevertap/android/sdk/SyncListener;
 
     move-result-object p1
@@ -3061,7 +3051,7 @@
     :goto_6
     if-eqz v5, :cond_c
 
-    .line 31
+    .line 33
     :try_start_5
     invoke-interface {v5, v0}, Lcom/clevertap/android/sdk/SyncListener;->profileDataUpdated(Lorg/json/JSONObject;)V
     :try_end_5
@@ -3072,7 +3062,7 @@
     :catchall_2
     move-exception p1
 
-    .line 32
+    .line 34
     :try_start_6
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
@@ -3093,7 +3083,7 @@
     :catchall_3
     move-exception p1
 
-    .line 33
+    .line 35
     invoke-direct {p0}, Lcom/clevertap/android/sdk/LocalDataStore;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object p2

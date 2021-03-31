@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/AndroidUtilsLight;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # static fields
-.field public static volatile zzgf:I = -0x1
+.field private static volatile zza:I = -0x1
 
 
 # direct methods
@@ -29,8 +30,15 @@
 
 .method public static getDeviceProtectedStorageContext(Landroid/content/Context;)Landroid/content/Context;
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x18
+    .end annotation
+
+    .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
@@ -40,14 +48,14 @@
     .end annotation
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/common/zzg;->zzam()Z
+    invoke-static {}, Lcom/google/android/gms/internal/common/zzl;->zza()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-static {p0}, Lcom/google/android/gms/internal/common/zzg;->getDeviceProtectedStorageContext(Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {p0}, Lcom/google/android/gms/internal/common/zzl;->zza(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object p0
 
@@ -57,7 +65,27 @@
 
 .method public static getPackageCertificateHashBytes(Landroid/content/Context;Ljava/lang/String;)[B
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 1
@@ -85,7 +113,7 @@
     const-string p1, "SHA1"
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/util/AndroidUtilsLight;->zzj(Ljava/lang/String;)Ljava/security/MessageDigest;
+    invoke-static {p1}, Lcom/google/android/gms/common/util/AndroidUtilsLight;->zza(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     move-result-object p1
 
@@ -114,8 +142,14 @@
     return-object p0
 .end method
 
-.method public static zzj(Ljava/lang/String;)Ljava/security/MessageDigest;
+.method public static zza(Ljava/lang/String;)Ljava/security/MessageDigest;
     .locals 2
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 
     const/4 v0, 0x0
 

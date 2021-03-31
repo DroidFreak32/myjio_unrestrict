@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/face/FaceDetector$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -14,19 +15,19 @@
 
 
 # instance fields
-.field public landmarkType:I
+.field private landmarkType:I
 
-.field public mode:I
+.field private mode:I
 
-.field public proportionalMinFaceSize:F
+.field private proportionalMinFaceSize:F
 
-.field public trackingEnabled:Z
+.field private trackingEnabled:Z
 
-.field public zzcm:Z
+.field private zzcv:Z
 
-.field public zzcn:I
+.field private zzcw:I
 
-.field public final zze:Landroid/content/Context;
+.field private final zzg:Landroid/content/Context;
 
 
 # direct methods
@@ -42,10 +43,10 @@
     iput v0, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->landmarkType:I
 
     .line 3
-    iput-boolean v0, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcm:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcv:Z
 
     .line 4
-    iput v0, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcn:I
+    iput v0, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcw:I
 
     const/4 v1, 0x1
 
@@ -61,7 +62,7 @@
     iput v0, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->proportionalMinFaceSize:F
 
     .line 8
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zze:Landroid/content/Context;
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzg:Landroid/content/Context;
 
     return-void
 .end method
@@ -72,60 +73,60 @@
     .locals 3
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/vision/face/internal/client/zze;
+    new-instance v0, Lcom/google/android/gms/vision/face/internal/client/zzf;
 
-    invoke-direct {v0}, Lcom/google/android/gms/vision/face/internal/client/zze;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/vision/face/internal/client/zzf;-><init>()V
 
     .line 2
     iget v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->mode:I
 
-    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zze;->mode:I
+    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zzf;->mode:I
 
     .line 3
     iget v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->landmarkType:I
 
-    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zze;->landmarkType:I
+    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zzf;->landmarkType:I
 
     .line 4
-    iget v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcn:I
+    iget v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcw:I
 
-    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcn:I
+    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zzf;->zzcw:I
 
     .line 5
-    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcm:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcv:Z
 
-    iput-boolean v1, v0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcm:Z
+    iput-boolean v1, v0, Lcom/google/android/gms/vision/face/internal/client/zzf;->zzcv:Z
 
     .line 6
     iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->trackingEnabled:Z
 
-    iput-boolean v1, v0, Lcom/google/android/gms/vision/face/internal/client/zze;->trackingEnabled:Z
+    iput-boolean v1, v0, Lcom/google/android/gms/vision/face/internal/client/zzf;->trackingEnabled:Z
 
     .line 7
     iget v1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->proportionalMinFaceSize:F
 
-    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zze;->proportionalMinFaceSize:F
+    iput v1, v0, Lcom/google/android/gms/vision/face/internal/client/zzf;->proportionalMinFaceSize:F
 
     .line 8
-    invoke-static {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->zzb(Lcom/google/android/gms/vision/face/internal/client/zze;)Z
+    invoke-static {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->zzb(Lcom/google/android/gms/vision/face/internal/client/zzf;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
     .line 9
-    new-instance v1, Lcom/google/android/gms/vision/face/internal/client/zzc;
+    new-instance v1, Lcom/google/android/gms/vision/face/internal/client/zzb;
 
-    iget-object v2, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zze:Landroid/content/Context;
+    iget-object v2, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzg:Landroid/content/Context;
 
-    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/vision/face/internal/client/zzc;-><init>(Landroid/content/Context;Lcom/google/android/gms/vision/face/internal/client/zze;)V
+    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/vision/face/internal/client/zzb;-><init>(Landroid/content/Context;Lcom/google/android/gms/vision/face/internal/client/zzf;)V
 
     .line 10
     new-instance v0, Lcom/google/android/gms/vision/face/FaceDetector;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/vision/face/FaceDetector;-><init>(Lcom/google/android/gms/vision/face/internal/client/zzc;Lcom/google/android/gms/vision/face/zza;)V
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/vision/face/FaceDetector;-><init>(Lcom/google/android/gms/vision/face/internal/client/zzb;Lcom/google/android/gms/vision/face/zza;)V
 
     return-object v0
 
@@ -178,7 +179,7 @@
     .line 2
     :cond_1
     :goto_0
-    iput p1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcn:I
+    iput p1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcw:I
 
     return-object p0
 .end method
@@ -326,7 +327,7 @@
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcm:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->zzcv:Z
 
     return-object p0
 .end method

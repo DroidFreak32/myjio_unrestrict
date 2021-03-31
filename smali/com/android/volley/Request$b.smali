@@ -15,23 +15,23 @@
 
 
 # virtual methods
-.method public abstract a(Lcom/android/volley/Request;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/android/volley/Request<",
-            "*>;)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract a(Lcom/android/volley/Request;Lwv;)V
+.method public abstract a(Lcom/android/volley/Request;Lcom/android/volley/Response;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/android/volley/Request<",
             "*>;",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
+            "*>;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract b(Lcom/android/volley/Request;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/volley/Request<",
             "*>;)V"
         }
     .end annotation

@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public zzyn:Lcom/google/android/gms/internal/gtm/zzbp;
+.field private zzyn:Lcom/google/android/gms/internal/gtm/zzbp;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzbp<",

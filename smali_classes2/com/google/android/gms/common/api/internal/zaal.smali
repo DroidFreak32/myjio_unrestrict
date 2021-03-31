@@ -1,45 +1,112 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaal;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Lcom/google/android/gms/common/api/internal/zaap;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic zagj:Lcom/google/android/gms/common/api/internal/zaak;
+.field private final zaa:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lcom/google/android/gms/common/api/Api$Client;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final synthetic zab:Lcom/google/android/gms/common/api/internal/zaaf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaak;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaaf;Ljava/util/ArrayList;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Lcom/google/android/gms/common/api/Api$Client;",
+            ">;)V"
+        }
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaal;->zagj:Lcom/google/android/gms/common/api/internal/zaak;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaal;->zab:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/common/api/internal/zaap;-><init>(Lcom/google/android/gms/common/api/internal/zaaf;Lcom/google/android/gms/common/api/internal/zaae;)V
+
+    .line 2
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zaal;->zaa:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final zaa()V
+    .locals 6
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaal;->zagj:Lcom/google/android/gms/common/api/internal/zaak;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaal;->zab:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/zaak;->zab(Lcom/google/android/gms/common/api/internal/zaak;)Lcom/google/android/gms/common/GoogleApiAvailabilityLight;
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/zaaf;->zad(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/common/api/internal/zaaz;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaal;->zagj:Lcom/google/android/gms/common/api/internal/zaak;
+    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zaaz;->zad:Lcom/google/android/gms/common/api/internal/zaar;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaak;->zaa(Lcom/google/android/gms/common/api/internal/zaak;)Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaal;->zab:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zag(Lcom/google/android/gms/common/api/internal/zaaf;)Ljava/util/Set;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/GoogleApiAvailabilityLight;->cancelAvailabilityErrorNotifications(Landroid/content/Context;)V
+    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/zaar;->zac:Ljava/util/Set;
 
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaal;->zaa:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    check-cast v3, Lcom/google/android/gms/common/api/Api$Client;
+
+    .line 3
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/zaal;->zab:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    invoke-static {v4}, Lcom/google/android/gms/common/api/internal/zaaf;->zah(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/common/internal/IAccountAccessor;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/google/android/gms/common/api/internal/zaal;->zab:Lcom/google/android/gms/common/api/internal/zaaf;
+
+    invoke-static {v5}, Lcom/google/android/gms/common/api/internal/zaaf;->zad(Lcom/google/android/gms/common/api/internal/zaaf;)Lcom/google/android/gms/common/api/internal/zaaz;
+
+    move-result-object v5
+
+    iget-object v5, v5, Lcom/google/android/gms/common/api/internal/zaaz;->zad:Lcom/google/android/gms/common/api/internal/zaar;
+
+    iget-object v5, v5, Lcom/google/android/gms/common/api/internal/zaar;->zac:Ljava/util/Set;
+
+    invoke-interface {v3, v4, v5}, Lcom/google/android/gms/common/api/Api$Client;->getRemoteService(Lcom/google/android/gms/common/internal/IAccountAccessor;Ljava/util/Set;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

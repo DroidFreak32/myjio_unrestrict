@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
 
     .line 4
@@ -102,7 +102,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/List;)V
+.method private constructor <init>(Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

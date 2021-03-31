@@ -80,6 +80,11 @@
 # virtual methods
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_0
 
@@ -93,7 +98,7 @@
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .locals 0
 
-    const-string p1, "string"
+    const-string/jumbo p1, "string"
 
     const/4 p2, 0x1
 
@@ -107,6 +112,11 @@
 
 .method public bridge synthetic serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Lorg/w3c/dom/Node;
@@ -118,6 +128,12 @@
 
 .method public serialize(Lorg/w3c/dom/Node;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonGenerationException;
+        }
+    .end annotation
 
     .line 2
     iget-object p3, p0, Lcom/fasterxml/jackson/databind/ext/DOMSerializer;->_domImpl:Lorg/w3c/dom/ls/DOMImplementationLS;

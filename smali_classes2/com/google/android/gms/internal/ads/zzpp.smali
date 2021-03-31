@@ -1,10 +1,14 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzpp;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzpo;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# virtual methods
-.method public abstract getImages()Ljava/util/List;
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation

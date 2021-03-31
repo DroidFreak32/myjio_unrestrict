@@ -24,11 +24,11 @@
 
 
 # instance fields
-.field public final duration:I
+.field private final duration:I
 
-.field public final isCrossFadeEnabled:Z
+.field private final isCrossFadeEnabled:Z
 
-.field public resourceTransition:Lcom/bumptech/glide/request/transition/DrawableCrossFadeTransition;
+.field private resourceTransition:Lcom/bumptech/glide/request/transition/DrawableCrossFadeTransition;
 
 
 # direct methods

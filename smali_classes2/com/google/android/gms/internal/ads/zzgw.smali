@@ -1,145 +1,96 @@
-.class public final Lcom/google/android/gms/internal/ads/zzgw;
-.super Ljava/lang/Object;
+.class public Lcom/google/android/gms/internal/ads/zzgw;
+.super Landroid/os/Binder;
+.source "com.google.android.gms:play-services-ads-base@@19.5.0"
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# annotations
-.annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-.end annotation
-
-
-# instance fields
-.field public zzajt:Ljava/io/ByteArrayOutputStream;
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
-.end field
-
-.field public zzaju:Landroid/util/Base64OutputStream;
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
-.end field
+# static fields
+.field private static zzacj:Lcom/google/android/gms/internal/ads/zzgx;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
     .line 2
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
-
-    const/16 v1, 0x1000
-
-    invoke-direct {v0, v1}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
-
-    .line 3
-    new-instance v0, Landroid/util/Base64OutputStream;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
-
-    const/16 v2, 0xa
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Base64OutputStream;-><init>(Ljava/io/OutputStream;I)V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzaju:Landroid/util/Base64OutputStream;
+    invoke-virtual {p0, p0, p1}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public asBinder()Landroid/os/IBinder;
+    .locals 0
 
-    const-string v0, "HashManager: Unable to convert to Base64."
+    return-object p0
+.end method
+
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    const v0, 0xffffff
+
+    if-le p1, v0, :cond_0
 
     .line 1
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzaju:Landroid/util/Base64OutputStream;
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    invoke-virtual {v1}, Landroid/util/Base64OutputStream;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v0
 
     goto :goto_0
 
-    :catch_0
-    move-exception v1
-
     .line 2
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    const/4 v1, 0x0
-
-    .line 3
-    :try_start_1
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
-
-    .line 4
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toString()Ljava/lang/String;
+    :cond_0
+    invoke-virtual {p0}, Landroid/os/Binder;->getInterfaceDescriptor()Ljava/lang/String;
 
     move-result-object v0
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 5
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 6
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzaju:Landroid/util/Base64OutputStream;
+    const/4 v0, 0x0
 
-    return-object v0
+    :goto_0
+    if-eqz v0, :cond_1
 
-    :catchall_0
-    move-exception v0
+    const/4 p1, 0x1
 
-    goto :goto_1
+    return p1
 
-    :catch_1
-    move-exception v2
+    .line 3
+    :cond_1
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/gms/internal/ads/zzgw;->zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 7
-    :try_start_2
-    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result p1
 
-    const-string v0, ""
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 8
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
-
-    .line 9
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzaju:Landroid/util/Base64OutputStream;
-
-    return-object v0
-
-    .line 10
-    :goto_1
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzajt:Ljava/io/ByteArrayOutputStream;
-
-    .line 11
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzaju:Landroid/util/Base64OutputStream;
-
-    throw v0
+    return p1
 .end method
 
-.method public final write([B)V
-    .locals 1
+.method public zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzgw;->zzaju:Landroid/util/Base64OutputStream;
+    const/4 p1, 0x0
 
-    invoke-virtual {v0, p1}, Landroid/util/Base64OutputStream;->write([B)V
-
-    return-void
+    return p1
 .end method

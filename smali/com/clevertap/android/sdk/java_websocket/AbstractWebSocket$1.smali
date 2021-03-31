@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public connections:Ljava/util/ArrayList;
+.field private connections:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",

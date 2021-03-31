@@ -16,17 +16,17 @@
 
 
 # instance fields
-.field public backImage:Landroid/widget/ImageView;
+.field private backImage:Landroid/widget/ImageView;
 
-.field public invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+.field private invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-.field public progressDialog:Landroid/app/ProgressDialog;
+.field private progressDialog:Landroid/app/ProgressDialog;
 
-.field public relativeLayout:Landroid/widget/RelativeLayout;
+.field private relativeLayout:Landroid/widget/RelativeLayout;
 
-.field public webView:Landroid/webkit/WebView;
+.field private webView:Landroid/webkit/WebView;
 
 
 # direct methods
@@ -82,6 +82,10 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "JavascriptInterface"
@@ -89,7 +93,7 @@
     .end annotation
 
     .line 1
-    invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 2
     sget p1, Lcom/app/cinemasdk/R$layout;->jio_main:I
@@ -104,8 +108,6 @@
     iput-object p1, p0, Lcom/app/cinemasdk/ui/JioCinemaActivity;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
     .line 4
-    iget-object p1, p0, Lcom/app/cinemasdk/ui/JioCinemaActivity;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
-
     invoke-virtual {p1}, Lcom/app/cinemasdk/datamanager/MainDataManager;->getInvokedContentData()Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
     move-result-object p1
@@ -146,8 +148,6 @@
     iput-object p1, p0, Lcom/app/cinemasdk/ui/JioCinemaActivity;->webView:Landroid/webkit/WebView;
 
     .line 8
-    iget-object p1, p0, Lcom/app/cinemasdk/ui/JioCinemaActivity;->webView:Landroid/webkit/WebView;
-
     invoke-virtual {p1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object p1
@@ -211,13 +211,13 @@
     invoke-virtual {p1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 15
-    invoke-static {p0}, Lme;->a(Landroidx/fragment/app/FragmentActivity;)Lle;
+    invoke-static {p0}, Landroidx/lifecycle/ViewModelProviders;->of(Landroidx/fragment/app/FragmentActivity;)Landroidx/lifecycle/ViewModelProvider;
 
     move-result-object p1
 
     const-class v0, Lcom/app/cinemasdk/viewmodel/JioCinemaViewModel;
 
-    invoke-virtual {p1, v0}, Lle;->a(Ljava/lang/Class;)Lje;
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p1
 
@@ -233,11 +233,9 @@
 
     iput-object p1, p0, Lcom/app/cinemasdk/ui/JioCinemaActivity;->progressDialog:Landroid/app/ProgressDialog;
 
-    .line 18
-    iget-object p1, p0, Lcom/app/cinemasdk/ui/JioCinemaActivity;->progressDialog:Landroid/app/ProgressDialog;
-
     const-string v0, "Please wait.."
 
+    .line 18
     invoke-virtual {p1, v0}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 19

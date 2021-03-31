@@ -29,64 +29,58 @@
 
 .field public static final enum ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
-.field public static final synthetic s:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+.field public static final synthetic a:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
-    const/4 v1, 0x0
+    const-string v1, "MITER"
 
-    const-string v2, "MITER"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->MITER:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
     .line 2
-    new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
     const-string v3, "ROUND"
 
-    invoke-direct {v0, v3, v2}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    invoke-direct {v1, v3, v4}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
     .line 3
-    new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    new-instance v3, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
-    const/4 v3, 0x2
+    const-string v5, "BEVEL"
 
-    const-string v4, "BEVEL"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->BEVEL:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    sput-object v3, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->BEVEL:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    new-array v5, v5, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->MITER:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->BEVEL:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->s:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    sput-object v5, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->a:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
     return-void
 .end method
@@ -124,7 +118,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->s:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    sget-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->a:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->clone()Ljava/lang/Object;
 

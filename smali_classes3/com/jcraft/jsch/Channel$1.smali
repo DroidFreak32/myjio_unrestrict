@@ -17,13 +17,13 @@
 # instance fields
 .field public b:[B
 
-.field public buffer:Lcom/jcraft/jsch/Buffer;
+.field private buffer:Lcom/jcraft/jsch/Buffer;
 
-.field public closed:Z
+.field private closed:Z
 
-.field public dataLen:I
+.field private dataLen:I
 
-.field public packet:Lcom/jcraft/jsch/Packet;
+.field private packet:Lcom/jcraft/jsch/Packet;
 
 .field public final synthetic this$0:Lcom/jcraft/jsch/Channel;
 
@@ -69,6 +69,11 @@
 
 .method private declared-synchronized init()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -147,6 +152,11 @@
 # virtual methods
 .method public close()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Channel$1;->packet:Lcom/jcraft/jsch/Packet;
@@ -198,6 +208,11 @@
 
 .method public flush()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/Channel$1;->closed:Z
@@ -332,6 +347,11 @@
 
 .method public write(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Channel$1;->b:[B
@@ -352,6 +372,11 @@
 
 .method public write([BII)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     iget-object v0, p0, Lcom/jcraft/jsch/Channel$1;->packet:Lcom/jcraft/jsch/Packet;
@@ -389,43 +414,41 @@
 
     if-le p3, v3, :cond_1
 
-    add-int/lit8 v2, v2, 0xe
+    add-int/lit8 v3, v2, 0xe
 
-    sub-int v2, v1, v2
+    sub-int v3, v1, v3
 
-    add-int/lit8 v2, v2, -0x54
+    add-int/lit8 v3, v3, -0x54
 
     goto :goto_1
 
     :cond_1
-    move v2, p3
+    move v3, p3
 
     :goto_1
-    if-gtz v2, :cond_2
+    if-gtz v3, :cond_2
 
     .line 9
     invoke-virtual {p0}, Lcom/jcraft/jsch/Channel$1;->flush()V
 
     goto :goto_0
 
-    .line 10
     :cond_2
-    iget v3, p0, Lcom/jcraft/jsch/Channel$1;->dataLen:I
+    add-int/lit8 v2, v2, 0xe
 
-    add-int/lit8 v3, v3, 0xe
-
-    invoke-static {p1, p2, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    .line 10
+    invoke-static {p1, p2, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 11
-    iget v3, p0, Lcom/jcraft/jsch/Channel$1;->dataLen:I
+    iget v2, p0, Lcom/jcraft/jsch/Channel$1;->dataLen:I
 
-    add-int/2addr v3, v2
+    add-int/2addr v2, v3
 
-    iput v3, p0, Lcom/jcraft/jsch/Channel$1;->dataLen:I
+    iput v2, p0, Lcom/jcraft/jsch/Channel$1;->dataLen:I
 
-    add-int/2addr p2, v2
+    add-int/2addr p2, v3
 
-    sub-int/2addr p3, v2
+    sub-int/2addr p3, v3
 
     goto :goto_0
 

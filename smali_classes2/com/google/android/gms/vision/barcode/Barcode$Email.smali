@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/barcode/Barcode$Email;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -72,9 +73,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/vision/barcode/zzh;
+    new-instance v0, Lcom/google/android/gms/vision/barcode/zzg;
 
-    invoke-direct {v0}, Lcom/google/android/gms/vision/barcode/zzh;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/vision/barcode/zzg;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/vision/barcode/Barcode$Email;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -153,25 +154,25 @@
     .line 3
     iget-object v0, p0, Lcom/google/android/gms/vision/barcode/Barcode$Email;->address:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 4
     iget-object v0, p0, Lcom/google/android/gms/vision/barcode/Barcode$Email;->subject:Ljava/lang/String;
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 5
     iget-object v0, p0, Lcom/google/android/gms/vision/barcode/Barcode$Email;->body:Ljava/lang/String;
 
-    const/4 v2, 0x5
+    const/4 v1, 0x5
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 6
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V

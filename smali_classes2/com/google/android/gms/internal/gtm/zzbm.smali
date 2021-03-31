@@ -13,58 +13,54 @@
 
 
 # static fields
-.field public static final enum zzyk:Lcom/google/android/gms/internal/gtm/zzbm;
+.field private static final enum zzyk:Lcom/google/android/gms/internal/gtm/zzbm;
 
 .field public static final enum zzyl:Lcom/google/android/gms/internal/gtm/zzbm;
 
-.field public static final synthetic zzym:[Lcom/google/android/gms/internal/gtm/zzbm;
+.field private static final synthetic zzym:[Lcom/google/android/gms/internal/gtm/zzbm;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/gtm/zzbm;
 
-    const/4 v1, 0x0
+    const-string v1, "NONE"
 
-    const-string v2, "NONE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/internal/gtm/zzbm;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/internal/gtm/zzbm;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzbm;->zzyk:Lcom/google/android/gms/internal/gtm/zzbm;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzbm;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzbm;
 
     const-string v3, "GZIP"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/android/gms/internal/gtm/zzbm;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbm;->zzyl:Lcom/google/android/gms/internal/gtm/zzbm;
+    invoke-direct {v1, v3, v4}, Lcom/google/android/gms/internal/gtm/zzbm;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/google/android/gms/internal/gtm/zzbm;->zzyl:Lcom/google/android/gms/internal/gtm/zzbm;
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzbm;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/google/android/gms/internal/gtm/zzbm;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/google/android/gms/internal/gtm/zzbm;->zzyk:Lcom/google/android/gms/internal/gtm/zzbm;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzbm;->zzyl:Lcom/google/android/gms/internal/gtm/zzbm;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzbm;->zzym:[Lcom/google/android/gms/internal/gtm/zzbm;
+    sput-object v3, Lcom/google/android/gms/internal/gtm/zzbm;->zzym:[Lcom/google/android/gms/internal/gtm/zzbm;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

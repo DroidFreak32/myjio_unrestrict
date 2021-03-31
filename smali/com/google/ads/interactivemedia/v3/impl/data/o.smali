@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public obstructions:Lcom/google/ads/interactivemedia/v3/internal/agb;
+.field private obstructions:Lcom/google/ads/interactivemedia/v3/internal/agb;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/agb<",

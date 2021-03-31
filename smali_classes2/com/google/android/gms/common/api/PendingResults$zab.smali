@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/PendingResults$zab;
 .super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -23,32 +24,16 @@
 .end annotation
 
 
-# instance fields
-.field public final zacj:Lcom/google/android/gms/common/api/Result;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TR;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/Result;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/GoogleApiClient;",
-            "TR;)V"
-        }
-    .end annotation
+    .param p1    # Lcom/google/android/gms/common/api/GoogleApiClient;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
-
-    .line 2
-    iput-object p2, p0, Lcom/google/android/gms/common/api/PendingResults$zab;->zacj:Lcom/google/android/gms/common/api/Result;
 
     return-void
 .end method
@@ -56,7 +41,7 @@
 
 # virtual methods
 .method public final createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +51,11 @@
     .end annotation
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/common/api/PendingResults$zab;->zacj:Lcom/google/android/gms/common/api/Result;
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    return-object p1
+    const-string v0, "Creating failed results is not supported"
+
+    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

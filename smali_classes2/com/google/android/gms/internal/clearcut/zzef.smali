@@ -46,6 +46,12 @@
             ")V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(Ljava/lang/Object;[BIILcom/google/android/gms/internal/clearcut/zzay;)V
@@ -54,6 +60,12 @@
             "(TT;[BII",
             "Lcom/google/android/gms/internal/clearcut/zzay;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

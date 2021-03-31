@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public height:Ljava/lang/Integer;
+.field private height:Ljava/lang/Integer;
 
-.field public left:Ljava/lang/Integer;
+.field private left:Ljava/lang/Integer;
 
-.field public top:Ljava/lang/Integer;
+.field private top:Ljava/lang/Integer;
 
-.field public width:Ljava/lang/Integer;
+.field private width:Ljava/lang/Integer;
 
 
 # direct methods

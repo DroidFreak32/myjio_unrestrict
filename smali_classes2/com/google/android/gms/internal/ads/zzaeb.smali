@@ -1,37 +1,33 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaeb;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaeb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaos;
-
-
-# instance fields
-.field public final zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaea;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaeb;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
-    .locals 1
+.method public abstract getText()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaeb;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+.method public abstract zzsm()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/internal/ads/zzaej;",
+            ">;"
+        }
+    .end annotation
 
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzasg;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzaea;->zzh(Lcom/google/android/gms/internal/ads/zzasg;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    return-object p1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

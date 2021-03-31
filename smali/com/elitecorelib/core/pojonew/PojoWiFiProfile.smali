@@ -1,8 +1,14 @@
 .class public Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Landroid/os/Parcelable;
+
+
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoWiFiProfile"
+.end annotation
 
 
 # static fields
@@ -18,19 +24,49 @@
 
 
 # instance fields
-.field public androidSettingName:Ljava/lang/String;
+.field private androidSettingName:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "androidSettingName"
+    .end annotation
+.end field
 
-.field public description:Ljava/lang/String;
+.field private description:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "description"
+    .end annotation
+.end field
 
-.field public isLocal:Z
+.field private isLocal:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isLocal"
+    .end annotation
+.end field
 
-.field public isPreferable:Z
+.field private isPreferable:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isPreferable"
+    .end annotation
+.end field
 
-.field public profileId:I
+.field private profileId:I
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
-.field public removeAllowFromApp:Ljava/lang/String;
+.field private removeAllowFromApp:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "removeAllowFromApp"
+    .end annotation
+.end field
 
-.field public wifiSettingSet:Ljava/util/List;
+.field private wifiSettingSet:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -57,7 +93,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method
@@ -65,7 +101,7 @@
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 3
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 

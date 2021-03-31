@@ -29,49 +29,52 @@
 
 
 # instance fields
-.field public bearing:F
+.field private bearing:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getBearing"
         id = 0x7
     .end annotation
 .end field
 
-.field public height:F
+.field private height:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getHeight"
         id = 0x5
     .end annotation
 .end field
 
-.field public width:F
+.field private width:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getWidth"
         id = 0x4
     .end annotation
 .end field
 
-.field public zzcs:F
+.field private zzcs:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getZIndex"
         id = 0x8
     .end annotation
 .end field
 
-.field public zzct:Z
+.field private zzct:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isVisible"
         id = 0x9
     .end annotation
 .end field
 
-.field public zzcu:Z
+.field private zzcu:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isClickable"
         id = 0xd
     .end annotation
 .end field
 
-.field public zzcx:Lcom/google/android/gms/maps/model/BitmapDescriptor;
+.field private zzcx:Lcom/google/android/gms/maps/model/BitmapDescriptor;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getWrappedImageDescriptorImplBinder"
         id = 0x2
@@ -79,35 +82,35 @@
     .end annotation
 .end field
 
-.field public zzcy:Lcom/google/android/gms/maps/model/LatLng;
+.field private zzcy:Lcom/google/android/gms/maps/model/LatLng;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getLocation"
         id = 0x3
     .end annotation
 .end field
 
-.field public zzcz:Lcom/google/android/gms/maps/model/LatLngBounds;
+.field private zzcz:Lcom/google/android/gms/maps/model/LatLngBounds;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getBounds"
         id = 0x6
     .end annotation
 .end field
 
-.field public zzda:F
+.field private zzda:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTransparency"
         id = 0xa
     .end annotation
 .end field
 
-.field public zzdb:F
+.field private zzdb:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getAnchorU"
         id = 0xb
     .end annotation
 .end field
 
-.field public zzdc:F
+.field private zzdc:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getAnchorV"
         id = 0xc
@@ -447,6 +450,10 @@
 
 .method public final image(Lcom/google/android/gms/maps/model/BitmapDescriptor;)Lcom/google/android/gms/maps/model/GroundOverlayOptions;
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "imageDescriptor must not be null"
 
@@ -632,21 +639,19 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->zzcy:Lcom/google/android/gms/maps/model/LatLng;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -664,13 +669,13 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(ZLjava/lang/Object;)V
 
     .line 2
     iput-object p1, p0, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->zzcz:Lcom/google/android/gms/maps/model/LatLngBounds;
@@ -741,52 +746,52 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     .line 4
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
 
     .line 5
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->getLocation()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v1
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
     .line 6
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 7
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->getWidth()F
 
     move-result v1
 
-    const/4 v3, 0x4
+    const/4 v2, 0x4
 
     .line 8
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
 
     .line 9
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->getHeight()F
 
     move-result v1
 
-    const/4 v3, 0x5
+    const/4 v2, 0x5
 
     .line 10
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloat(Landroid/os/Parcel;IF)V
 
     .line 11
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->getBounds()Lcom/google/android/gms/maps/model/LatLngBounds;
 
     move-result-object v1
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
     .line 12
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 13
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/GroundOverlayOptions;->getBearing()F

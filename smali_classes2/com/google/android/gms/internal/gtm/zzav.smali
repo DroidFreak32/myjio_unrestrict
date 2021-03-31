@@ -13,9 +13,9 @@
 # instance fields
 .field public final synthetic zzxe:Lcom/google/android/gms/internal/gtm/zzat;
 
-.field public volatile zzxf:Lcom/google/android/gms/internal/gtm/zzce;
+.field private volatile zzxf:Lcom/google/android/gms/internal/gtm/zzce;
 
-.field public volatile zzxg:Z
+.field private volatile zzxg:Z
 
 
 # direct methods
@@ -301,14 +301,14 @@
 
     move-result-object v1
 
+    const-string v2, "app_package_name"
+
     .line 5
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "app_package_name"
-
-    invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 6
     invoke-static {}, Lcom/google/android/gms/common/stats/ConnectionTracker;->getInstance()Lcom/google/android/gms/common/stats/ConnectionTracker;

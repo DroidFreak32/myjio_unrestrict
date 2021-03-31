@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method public static scoreMediaCodecInfo(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;)I
+.method private static scoreMediaCodecInfo(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;)I
     .locals 1
 
     .line 1

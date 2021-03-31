@@ -1,25 +1,29 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzhl;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Landroid/os/Bundle;
+.field private final synthetic zza:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+.field private final synthetic zzb:Z
+
+.field private final synthetic zzc:Lcom/google/android/gms/measurement/internal/zzhb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhc;Landroid/os/Bundle;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhb;Ljava/util/concurrent/atomic/AtomicReference;Z)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zzc:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zza:Landroid/os/Bundle;
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iput-boolean p3, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zzb:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,14 +33,20 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zzb:Lcom/google/android/gms/measurement/internal/zzhc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zzc:Lcom/google/android/gms/measurement/internal/zzhb;
 
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zza:Landroid/os/Bundle;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzd;->zzg()Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/measurement/internal/zzhc;->zza(Lcom/google/android/gms/measurement/internal/zzhc;Landroid/os/Bundle;)V
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzhl;->zzb:Z
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/measurement/internal/zzir;->zza(Ljava/util/concurrent/atomic/AtomicReference;Z)V
 
     return-void
 .end method

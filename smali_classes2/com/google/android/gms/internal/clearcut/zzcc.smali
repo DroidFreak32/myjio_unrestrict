@@ -22,23 +22,21 @@
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcc;->zzjf:[I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzcc;->zzjf:[I
-
     sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcq;->zzle:Lcom/google/android/gms/internal/clearcut/zzcq;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
-    aput v0, v1, v2
+    aput v1, v0, v2
     :try_end_0
     .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
     :try_start_1
     sget-object v2, Lcom/google/android/gms/internal/clearcut/zzcc;->zzjf:[I
@@ -49,7 +47,7 @@
 
     move-result v3
 
-    aput v1, v2, v3
+    aput v0, v2, v3
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -81,21 +79,19 @@
     sput-object v3, Lcom/google/android/gms/internal/clearcut/zzcc;->zzje:[I
 
     :try_start_3
-    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcc;->zzje:[I
-
     sget-object v4, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjj:Lcom/google/android/gms/internal/clearcut/zzcd;
 
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
-    aput v0, v3, v4
+    aput v1, v3, v4
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     :catch_3
     :try_start_4
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzcc;->zzje:[I
+    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzcc;->zzje:[I
 
     sget-object v3, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjh:Lcom/google/android/gms/internal/clearcut/zzcd;
 
@@ -103,7 +99,7 @@
 
     move-result v3
 
-    aput v1, v0, v3
+    aput v0, v1, v3
     :try_end_4
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 

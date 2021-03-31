@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method public static final _appendInt(I[BI)V
+.method private static final _appendInt(I[BI)V
     .locals 1
 
     shr-int/lit8 v0, p0, 0x18
@@ -82,7 +82,7 @@
     return-void
 .end method
 
-.method public static _appendInt(I[CI)V
+.method private static _appendInt(I[CI)V
     .locals 1
 
     shr-int/lit8 v0, p0, 0x10
@@ -98,7 +98,7 @@
     return-void
 .end method
 
-.method public static _appendShort(I[CI)V
+.method private static _appendShort(I[CI)V
     .locals 2
 
     .line 1
@@ -146,7 +146,7 @@
     return-void
 .end method
 
-.method public static final _asBytes(Ljava/util/UUID;)[B
+.method private static final _asBytes(Ljava/util/UUID;)[B
     .locals 7
 
     const/16 v0, 0x10
@@ -249,6 +249,11 @@
 
 .method public bridge synthetic serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     check-cast p1, Ljava/util/UUID;
@@ -260,6 +265,11 @@
 
 .method public serialize(Ljava/util/UUID;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonGenerator;->canWriteBinaryNatively()Z

@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Landroidx/viewpager/widget/ViewPager$f;",
+        "Landroidx/viewpager/widget/ViewPager$e;",
         ">;"
     }
 .end annotation
@@ -38,13 +38,13 @@
 
 
 # virtual methods
-.method public a(Landroidx/viewpager/widget/ViewPager$f;Landroidx/viewpager/widget/ViewPager$f;)I
+.method public a(Landroidx/viewpager/widget/ViewPager$e;Landroidx/viewpager/widget/ViewPager$e;)I
     .locals 0
 
     .line 1
-    iget p1, p1, Landroidx/viewpager/widget/ViewPager$f;->b:I
+    iget p1, p1, Landroidx/viewpager/widget/ViewPager$e;->b:I
 
-    iget p2, p2, Landroidx/viewpager/widget/ViewPager$f;->b:I
+    iget p2, p2, Landroidx/viewpager/widget/ViewPager$e;->b:I
 
     sub-int/2addr p1, p2
 
@@ -55,11 +55,11 @@
     .locals 0
 
     .line 1
-    check-cast p1, Landroidx/viewpager/widget/ViewPager$f;
+    check-cast p1, Landroidx/viewpager/widget/ViewPager$e;
 
-    check-cast p2, Landroidx/viewpager/widget/ViewPager$f;
+    check-cast p2, Landroidx/viewpager/widget/ViewPager$e;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/viewpager/widget/ViewPager$a;->a(Landroidx/viewpager/widget/ViewPager$f;Landroidx/viewpager/widget/ViewPager$f;)I
+    invoke-virtual {p0, p1, p2}, Landroidx/viewpager/widget/ViewPager$a;->a(Landroidx/viewpager/widget/ViewPager$e;Landroidx/viewpager/widget/ViewPager$e;)I
 
     move-result p1
 

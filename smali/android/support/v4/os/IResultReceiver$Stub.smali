@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static final DESCRIPTOR:Ljava/lang/String; = "android.support.v4.os.IResultReceiver"
+.field private static final DESCRIPTOR:Ljava/lang/String; = "android.support.v4.os.IResultReceiver"
 
 .field public static final TRANSACTION_send:I = 0x1
 
@@ -82,6 +82,38 @@
     return-object v0
 .end method
 
+.method public static getDefaultImpl()Landroid/support/v4/os/IResultReceiver;
+    .locals 1
+
+    .line 1
+    sget-object v0, Landroid/support/v4/os/IResultReceiver$Stub$Proxy;->sDefaultImpl:Landroid/support/v4/os/IResultReceiver;
+
+    return-object v0
+.end method
+
+.method public static setDefaultImpl(Landroid/support/v4/os/IResultReceiver;)Z
+    .locals 1
+
+    .line 1
+    sget-object v0, Landroid/support/v4/os/IResultReceiver$Stub$Proxy;->sDefaultImpl:Landroid/support/v4/os/IResultReceiver;
+
+    if-nez v0, :cond_0
+
+    if-eqz p0, :cond_0
+
+    .line 2
+    sput-object p0, Landroid/support/v4/os/IResultReceiver$Stub$Proxy;->sDefaultImpl:Landroid/support/v4/os/IResultReceiver;
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
@@ -92,6 +124,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 

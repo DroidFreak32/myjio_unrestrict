@@ -3,13 +3,13 @@
 
 
 # static fields
-.field public static final zzbdr:Lcom/google/android/gms/internal/gtm/zzsw;
+.field private static final zzbdr:Lcom/google/android/gms/internal/gtm/zzsw;
 
 
 # instance fields
-.field public final zzbds:Lcom/google/android/gms/internal/gtm/zzta;
+.field private final zzbds:Lcom/google/android/gms/internal/gtm/zzta;
 
-.field public final zzbdt:Ljava/util/concurrent/ConcurrentMap;
+.field private final zzbdt:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentMap<",
@@ -36,7 +36,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1

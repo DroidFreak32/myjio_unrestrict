@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final data:Ljava/lang/Object;
+.field private final data:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TDataType;"
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public final encoder:Lcom/bumptech/glide/load/Encoder;
+.field private final encoder:Lcom/bumptech/glide/load/Encoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Encoder<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public final options:Lcom/bumptech/glide/load/Options;
+.field private final options:Lcom/bumptech/glide/load/Options;
 
 
 # direct methods
@@ -71,6 +71,10 @@
 # virtual methods
 .method public write(Ljava/io/File;)Z
     .locals 3
+    .param p1    # Ljava/io/File;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DataCacheWriter;->encoder:Lcom/bumptech/glide/load/Encoder;

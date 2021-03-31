@@ -3,12 +3,12 @@
 .source "RoomDatabase.kt"
 
 # interfaces
-.implements Ldr3;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/room/RoomDatabaseKt;->a(Landroidx/room/RoomDatabase;Lxp3;)Ljava/lang/Object;
+    value = Landroidx/room/RoomDatabaseKt;->b(Landroidx/room/RoomDatabase;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,9 +19,9 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Ldr3<",
+        "Lkotlin/jvm/functions/Function1<",
         "Ljava/lang/Throwable;",
-        "Lno3;",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
@@ -33,14 +33,15 @@
         0x3
     }
     d1 = {
-        "\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\u0010\u0000\u001a\u00020\u00012\u0008\u0010\u0002\u001a\u0004\u0018\u00010\u0003H\n\u00a2\u0006\u0002\u0008\u0004"
+        "\u0000\u000e\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\u0002\n\u0002\u0008\u0003\u0010\u0005\u001a\u00020\u00022\u0008\u0010\u0001\u001a\u0004\u0018\u00010\u0000H\n\u00a2\u0006\u0004\u0008\u0003\u0010\u0004"
     }
     d2 = {
-        "<anonymous>",
         "",
         "it",
         "",
-        "invoke"
+        "invoke",
+        "(Ljava/lang/Throwable;)V",
+        "<anonymous>"
     }
     k = 0x3
     mv = {
@@ -52,14 +53,14 @@
 
 
 # instance fields
-.field public final synthetic $controlJob:Ldj4;
+.field public final synthetic $controlJob:Lkotlinx/coroutines/CompletableJob;
 
 
 # direct methods
-.method public constructor <init>(Ldj4;)V
+.method public constructor <init>(Lkotlinx/coroutines/CompletableJob;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/room/RoomDatabaseKt$createTransactionContext$2;->$controlJob:Ldj4;
+    iput-object p1, p0, Landroidx/room/RoomDatabaseKt$createTransactionContext$2;->$controlJob:Lkotlinx/coroutines/CompletableJob;
 
     const/4 p1, 0x1
 
@@ -77,22 +78,26 @@
 
     invoke-virtual {p0, p1}, Landroidx/room/RoomDatabaseKt$createTransactionContext$2;->invoke(Ljava/lang/Throwable;)V
 
-    sget-object p1, Lno3;->a:Lno3;
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
     .locals 2
+    .param p1    # Ljava/lang/Throwable;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object p1, p0, Landroidx/room/RoomDatabaseKt$createTransactionContext$2;->$controlJob:Ldj4;
+    iget-object p1, p0, Landroidx/room/RoomDatabaseKt$createTransactionContext$2;->$controlJob:Lkotlinx/coroutines/CompletableJob;
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v0, v1, v0}, Lbl4$a;->a(Lbl4;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
+    invoke-static {p1, v0, v1, v0}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     return-void
 .end method

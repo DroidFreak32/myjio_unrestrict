@@ -1,13 +1,18 @@
 .class public final Lcom/google/android/gms/vision/clearcut/zzb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # instance fields
-.field public final lock:Ljava/lang/Object;
+.field private final lock:Ljava/lang/Object;
 
-.field public final zzbu:J
+.field private final zzcb:J
 
-.field public zzbv:J
+.field private zzcc:J
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -27,7 +32,7 @@
     const-wide/high16 p1, -0x8000000000000000L
 
     .line 3
-    iput-wide p1, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzbv:J
+    iput-wide p1, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzcc:J
 
     const-wide p1, 0x40dd4c0000000000L    # 30000.0
 
@@ -36,7 +41,7 @@
 
     move-result-wide p1
 
-    iput-wide p1, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzbu:J
+    iput-wide p1, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzcb:J
 
     return-void
 .end method
@@ -58,9 +63,9 @@
     move-result-wide v1
 
     .line 3
-    iget-wide v3, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzbv:J
+    iget-wide v3, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzcc:J
 
-    iget-wide v5, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzbu:J
+    iget-wide v5, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzcb:J
 
     add-long/2addr v3, v5
 
@@ -77,7 +82,7 @@
 
     .line 5
     :cond_0
-    iput-wide v1, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzbv:J
+    iput-wide v1, p0, Lcom/google/android/gms/vision/clearcut/zzb;->zzcc:J
 
     const/4 v1, 0x1
 

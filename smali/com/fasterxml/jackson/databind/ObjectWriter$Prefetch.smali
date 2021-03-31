@@ -20,15 +20,15 @@
 # static fields
 .field public static final empty:Lcom/fasterxml/jackson/databind/ObjectWriter$Prefetch;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final rootType:Lcom/fasterxml/jackson/databind/JavaType;
+.field private final rootType:Lcom/fasterxml/jackson/databind/JavaType;
 
-.field public final typeSerializer:Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
+.field private final typeSerializer:Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
 
-.field public final valueSerializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
+.field private final valueSerializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/JsonSerializer<",
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JsonSerializer;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JsonSerializer;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -269,6 +269,11 @@
 
 .method public serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Object;Lcom/fasterxml/jackson/databind/ser/DefaultSerializerProvider;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v5, p0, Lcom/fasterxml/jackson/databind/ObjectWriter$Prefetch;->typeSerializer:Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;

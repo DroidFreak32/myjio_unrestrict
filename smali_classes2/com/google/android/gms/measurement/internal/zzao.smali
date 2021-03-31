@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzao;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/util/Iterator;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public zza:Ljava/util/Iterator;
+.field private zza:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -28,22 +28,20 @@
     .end annotation
 .end field
 
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzal;
+.field private final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzap;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzal;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzap;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzao;->zzb:Lcom/google/android/gms/measurement/internal/zzal;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzao;->zzb:Lcom/google/android/gms/measurement/internal/zzap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzao;->zzb:Lcom/google/android/gms/measurement/internal/zzal;
-
-    invoke-static {p1}, Lcom/google/android/gms/measurement/internal/zzal;->zza(Lcom/google/android/gms/measurement/internal/zzal;)Landroid/os/Bundle;
+    invoke-static {p1}, Lcom/google/android/gms/measurement/internal/zzap;->zza(Lcom/google/android/gms/measurement/internal/zzap;)Landroid/os/Bundle;
 
     move-result-object p1
 

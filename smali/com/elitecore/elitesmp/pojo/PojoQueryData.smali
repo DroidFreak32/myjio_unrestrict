@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public criteria:Ljava/util/List;
+.field private criteria:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -16,7 +16,7 @@
     .end annotation
 .end field
 
-.field public data:Ljava/util/List;
+.field private data:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field public order:Ljava/util/List;
+.field private order:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

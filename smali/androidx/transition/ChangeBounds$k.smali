@@ -45,33 +45,6 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
-
-    .line 6
-    iget-object v0, p0, Landroidx/transition/ChangeBounds$k;->e:Landroid/view/View;
-
-    iget v1, p0, Landroidx/transition/ChangeBounds$k;->a:I
-
-    iget v2, p0, Landroidx/transition/ChangeBounds$k;->b:I
-
-    iget v3, p0, Landroidx/transition/ChangeBounds$k;->c:I
-
-    iget v4, p0, Landroidx/transition/ChangeBounds$k;->d:I
-
-    invoke-static {v0, v1, v2, v3, v4}, Lxj;->a(Landroid/view/View;IIII)V
-
-    const/4 v0, 0x0
-
-    .line 7
-    iput v0, p0, Landroidx/transition/ChangeBounds$k;->f:I
-
-    .line 8
-    iput v0, p0, Landroidx/transition/ChangeBounds$k;->g:I
-
-    return-void
-.end method
-
 .method public a(Landroid/graphics/PointF;)V
     .locals 1
 
@@ -101,20 +74,45 @@
     iput p1, p0, Landroidx/transition/ChangeBounds$k;->g:I
 
     .line 4
-    iget p1, p0, Landroidx/transition/ChangeBounds$k;->f:I
+    iget v0, p0, Landroidx/transition/ChangeBounds$k;->f:I
 
-    iget v0, p0, Landroidx/transition/ChangeBounds$k;->g:I
-
-    if-ne p1, v0, :cond_0
+    if-ne v0, p1, :cond_0
 
     .line 5
-    invoke-virtual {p0}, Landroidx/transition/ChangeBounds$k;->a()V
+    invoke-virtual {p0}, Landroidx/transition/ChangeBounds$k;->b()V
 
     :cond_0
     return-void
 .end method
 
-.method public b(Landroid/graphics/PointF;)V
+.method public final b()V
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Landroidx/transition/ChangeBounds$k;->e:Landroid/view/View;
+
+    iget v1, p0, Landroidx/transition/ChangeBounds$k;->a:I
+
+    iget v2, p0, Landroidx/transition/ChangeBounds$k;->b:I
+
+    iget v3, p0, Landroidx/transition/ChangeBounds$k;->c:I
+
+    iget v4, p0, Landroidx/transition/ChangeBounds$k;->d:I
+
+    invoke-static {v0, v1, v2, v3, v4}, La6;->g(Landroid/view/View;IIII)V
+
+    const/4 v0, 0x0
+
+    .line 2
+    iput v0, p0, Landroidx/transition/ChangeBounds$k;->f:I
+
+    .line 3
+    iput v0, p0, Landroidx/transition/ChangeBounds$k;->g:I
+
+    return-void
+.end method
+
+.method public c(Landroid/graphics/PointF;)V
     .locals 1
 
     .line 1
@@ -143,14 +141,12 @@
     iput p1, p0, Landroidx/transition/ChangeBounds$k;->f:I
 
     .line 4
-    iget p1, p0, Landroidx/transition/ChangeBounds$k;->f:I
-
     iget v0, p0, Landroidx/transition/ChangeBounds$k;->g:I
 
     if-ne p1, v0, :cond_0
 
     .line 5
-    invoke-virtual {p0}, Landroidx/transition/ChangeBounds$k;->a()V
+    invoke-virtual {p0}, Landroidx/transition/ChangeBounds$k;->b()V
 
     :cond_0
     return-void

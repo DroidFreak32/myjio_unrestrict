@@ -5,16 +5,16 @@
 # static fields
 .field public static final zzdk:Lcom/google/android/gms/internal/gcm/zzl;
 
-.field public static final zzdl:Lcom/google/android/gms/internal/gcm/zzm;
+.field private static final zzdl:Lcom/google/android/gms/internal/gcm/zzm;
 
-.field public static volatile zzdm:Lcom/google/android/gms/internal/gcm/zzw;
+.field private static volatile zzdm:Lcom/google/android/gms/internal/gcm/zzw;
 
-.field public static volatile zzdn:Lcom/google/android/gms/internal/gcm/zzm;
+.field private static volatile zzdn:Lcom/google/android/gms/internal/gcm/zzm;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/gcm/zzn;
@@ -30,14 +30,12 @@
 
     sput-object v0, Lcom/google/android/gms/internal/gcm/zzm;->zzdl:Lcom/google/android/gms/internal/gcm/zzm;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 3
-    sput-object v0, Lcom/google/android/gms/internal/gcm/zzm;->zzdm:Lcom/google/android/gms/internal/gcm/zzw;
+    sput-object v1, Lcom/google/android/gms/internal/gcm/zzm;->zzdm:Lcom/google/android/gms/internal/gcm/zzw;
 
     .line 4
-    sget-object v0, Lcom/google/android/gms/internal/gcm/zzm;->zzdl:Lcom/google/android/gms/internal/gcm/zzm;
-
     sput-object v0, Lcom/google/android/gms/internal/gcm/zzm;->zzdn:Lcom/google/android/gms/internal/gcm/zzm;
 
     return-void

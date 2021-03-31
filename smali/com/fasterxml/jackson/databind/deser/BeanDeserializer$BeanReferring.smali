@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public _bean:Ljava/lang/Object;
+.field private _bean:Ljava/lang/Object;
 
-.field public final _context:Lcom/fasterxml/jackson/databind/DeserializationContext;
+.field private final _context:Lcom/fasterxml/jackson/databind/DeserializationContext;
 
-.field public final _prop:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+.field private final _prop:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
 
 # direct methods
@@ -42,6 +42,11 @@
 # virtual methods
 .method public handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializer$BeanReferring;->_bean:Ljava/lang/Object;

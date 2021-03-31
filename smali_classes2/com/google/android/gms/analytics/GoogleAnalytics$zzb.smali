@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public final synthetic zzrw:Lcom/google/android/gms/analytics/GoogleAnalytics;
+.field private final synthetic zzrw:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
 
 # direct methods

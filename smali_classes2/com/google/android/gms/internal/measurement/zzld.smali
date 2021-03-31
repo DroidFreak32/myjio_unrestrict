@@ -1,125 +1,50 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzld;
+.class public abstract Lcom/google/android/gms/internal/measurement/zzld;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzde;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/measurement/zzde<",
-        "Lcom/google/android/gms/internal/measurement/zzlc;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field public static zza:Lcom/google/android/gms/internal/measurement/zzld;
-
-
-# instance fields
-.field public final zzb:Lcom/google/android/gms/internal/measurement/zzde;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/measurement/zzde<",
-            "Lcom/google/android/gms/internal/measurement/zzlc;",
-            ">;"
-        }
-    .end annotation
-.end field
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzld;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzld;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzld;->zza:Lcom/google/android/gms/internal/measurement/zzld;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzlf;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzlf;-><init>()V
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzdh;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/measurement/zzde;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzld;-><init>(Lcom/google/android/gms/internal/measurement/zzde;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzde;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/measurement/zzde<",
-            "Lcom/google/android/gms/internal/measurement/zzlc;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzdh;->zza(Lcom/google/android/gms/internal/measurement/zzde;)Lcom/google/android/gms/internal/measurement/zzde;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzld;->zzb:Lcom/google/android/gms/internal/measurement/zzde;
-
     return-void
-.end method
-
-.method public static zzb()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzld;->zza:Lcom/google/android/gms/internal/measurement/zzld;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzld;->zza()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzlc;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzlc;->zza()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final synthetic zza()Ljava/lang/Object;
+.method public abstract zza(I[BII)I
+.end method
+
+.method public abstract zza(Ljava/lang/CharSequence;[BII)I
+.end method
+
+.method public abstract zza([BII)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/measurement/zzij;
+        }
+    .end annotation
+.end method
+
+.method public final zzb([BII)Z
     .locals 1
 
+    const/4 v0, 0x0
+
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzld;->zzb:Lcom/google/android/gms/internal/measurement/zzde;
+    invoke-virtual {p0, v0, p1, p2, p3}, Lcom/google/android/gms/internal/measurement/zzld;->zza(I[BII)I
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzde;->zza()Ljava/lang/Object;
+    move-result p1
 
-    move-result-object v0
+    if-nez p1, :cond_0
 
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzlc;
+    const/4 p1, 0x1
 
-    return-object v0
+    return p1
+
+    :cond_0
+    return v0
 .end method

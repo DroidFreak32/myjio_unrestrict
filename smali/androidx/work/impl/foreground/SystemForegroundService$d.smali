@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/work/impl/foreground/SystemForegroundService;->a(I)V
+    value = Landroidx/work/impl/foreground/SystemForegroundService;->cancelNotification(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final synthetic s:I
+.field public final synthetic a:I
 
-.field public final synthetic t:Landroidx/work/impl/foreground/SystemForegroundService;
+.field public final synthetic b:Landroidx/work/impl/foreground/SystemForegroundService;
 
 
 # direct methods
@@ -28,9 +28,9 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->t:Landroidx/work/impl/foreground/SystemForegroundService;
+    iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->b:Landroidx/work/impl/foreground/SystemForegroundService;
 
-    iput p2, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->s:I
+    iput p2, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,11 +43,11 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->t:Landroidx/work/impl/foreground/SystemForegroundService;
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->b:Landroidx/work/impl/foreground/SystemForegroundService;
 
-    iget-object v0, v0, Landroidx/work/impl/foreground/SystemForegroundService;->w:Landroid/app/NotificationManager;
+    iget-object v0, v0, Landroidx/work/impl/foreground/SystemForegroundService;->e:Landroid/app/NotificationManager;
 
-    iget v1, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->s:I
+    iget v1, p0, Landroidx/work/impl/foreground/SystemForegroundService$d;->a:I
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 

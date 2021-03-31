@@ -1,5 +1,6 @@
 .class public final enum Lcom/google/ads/AdRequest$ErrorCode;
 .super Ljava/lang/Enum;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
@@ -30,96 +31,88 @@
 
 .field public static final enum NO_FILL:Lcom/google/ads/AdRequest$ErrorCode;
 
-.field public static final synthetic zzcm:[Lcom/google/ads/AdRequest$ErrorCode;
+.field private static final synthetic zzdp:[Lcom/google/ads/AdRequest$ErrorCode;
 
 
 # instance fields
-.field public final description:Ljava/lang/String;
+.field private final description:Ljava/lang/String;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 10
 
     .line 1
     new-instance v0, Lcom/google/ads/AdRequest$ErrorCode;
 
-    const/4 v1, 0x0
+    const-string v1, "INVALID_REQUEST"
 
-    const-string v2, "INVALID_REQUEST"
+    const/4 v2, 0x0
 
     const-string v3, "Invalid Ad request."
 
-    invoke-direct {v0, v2, v1, v3}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/google/ads/AdRequest$ErrorCode;->INVALID_REQUEST:Lcom/google/ads/AdRequest$ErrorCode;
 
     .line 2
-    new-instance v0, Lcom/google/ads/AdRequest$ErrorCode;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/ads/AdRequest$ErrorCode;
 
     const-string v3, "NO_FILL"
 
-    const-string v4, "Ad request successful, but no ad returned due to lack of ad inventory."
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v3, v2, v4}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-string v5, "Ad request successful, but no ad returned due to lack of ad inventory."
 
-    sput-object v0, Lcom/google/ads/AdRequest$ErrorCode;->NO_FILL:Lcom/google/ads/AdRequest$ErrorCode;
+    invoke-direct {v1, v3, v4, v5}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lcom/google/ads/AdRequest$ErrorCode;->NO_FILL:Lcom/google/ads/AdRequest$ErrorCode;
 
     .line 3
-    new-instance v0, Lcom/google/ads/AdRequest$ErrorCode;
+    new-instance v3, Lcom/google/ads/AdRequest$ErrorCode;
 
-    const/4 v3, 0x2
+    const-string v5, "NETWORK_ERROR"
 
-    const-string v4, "NETWORK_ERROR"
+    const/4 v6, 0x2
 
-    const-string v5, "A network error occurred."
+    const-string v7, "A network error occurred."
 
-    invoke-direct {v0, v4, v3, v5}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v3, v5, v6, v7}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/google/ads/AdRequest$ErrorCode;->NETWORK_ERROR:Lcom/google/ads/AdRequest$ErrorCode;
+    sput-object v3, Lcom/google/ads/AdRequest$ErrorCode;->NETWORK_ERROR:Lcom/google/ads/AdRequest$ErrorCode;
 
     .line 4
-    new-instance v0, Lcom/google/ads/AdRequest$ErrorCode;
+    new-instance v5, Lcom/google/ads/AdRequest$ErrorCode;
 
-    const/4 v4, 0x3
+    const-string v7, "INTERNAL_ERROR"
 
-    const-string v5, "INTERNAL_ERROR"
+    const/4 v8, 0x3
 
-    const-string v6, "There was an internal error."
+    const-string v9, "There was an internal error."
 
-    invoke-direct {v0, v5, v4, v6}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v5, v7, v8, v9}, Lcom/google/ads/AdRequest$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/google/ads/AdRequest$ErrorCode;->INTERNAL_ERROR:Lcom/google/ads/AdRequest$ErrorCode;
+    sput-object v5, Lcom/google/ads/AdRequest$ErrorCode;->INTERNAL_ERROR:Lcom/google/ads/AdRequest$ErrorCode;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/google/ads/AdRequest$ErrorCode;
+    new-array v7, v7, [Lcom/google/ads/AdRequest$ErrorCode;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/google/ads/AdRequest$ErrorCode;->INVALID_REQUEST:Lcom/google/ads/AdRequest$ErrorCode;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/google/ads/AdRequest$ErrorCode;->NO_FILL:Lcom/google/ads/AdRequest$ErrorCode;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/ads/AdRequest$ErrorCode;->NETWORK_ERROR:Lcom/google/ads/AdRequest$ErrorCode;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/ads/AdRequest$ErrorCode;->INTERNAL_ERROR:Lcom/google/ads/AdRequest$ErrorCode;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/google/ads/AdRequest$ErrorCode;->zzcm:[Lcom/google/ads/AdRequest$ErrorCode;
+    sput-object v7, Lcom/google/ads/AdRequest$ErrorCode;->zzdp:[Lcom/google/ads/AdRequest$ErrorCode;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -157,7 +150,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/ads/AdRequest$ErrorCode;->zzcm:[Lcom/google/ads/AdRequest$ErrorCode;
+    sget-object v0, Lcom/google/ads/AdRequest$ErrorCode;->zzdp:[Lcom/google/ads/AdRequest$ErrorCode;
 
     invoke-virtual {v0}, [Lcom/google/ads/AdRequest$ErrorCode;->clone()Ljava/lang/Object;
 

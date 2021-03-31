@@ -1,17 +1,42 @@
-.class public final Lcom/google/android/gms/location/zzt;
-.super Lcom/google/android/gms/internal/location/zza;
+.class public final synthetic Lcom/google/android/gms/location/zzt;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Lcom/google/android/gms/location/zzr;
+.implements Lcom/google/android/gms/tasks/OnTokenCanceledListener;
+
+
+# instance fields
+.field private final zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+.field private final zzb:Lcom/google/android/gms/location/LocationCallback;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/location/LocationCallback;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.location.IDeviceOrientationListener"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/location/zza;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/location/zzt;->zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+    iput-object p2, p0, Lcom/google/android/gms/location/zzt;->zzb:Lcom/google/android/gms/location/LocationCallback;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onCanceled()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/zzt;->zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+    iget-object v1, p0, Lcom/google/android/gms/location/zzt;->zzb:Lcom/google/android/gms/location/LocationCallback;
+
+    .line 2
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/location/FusedLocationProviderClient;->removeLocationUpdates(Lcom/google/android/gms/location/LocationCallback;)Lcom/google/android/gms/tasks/Task;
 
     return-void
 .end method

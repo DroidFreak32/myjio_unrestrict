@@ -29,64 +29,58 @@
 
 .field public static final enum UNKNOWN:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-.field public static final synthetic s:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+.field public static final synthetic a:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-    const/4 v1, 0x0
+    const-string v1, "BUTT"
 
-    const-string v2, "BUTT"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->BUTT:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     .line 2
-    new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     const-string v3, "ROUND"
 
-    invoke-direct {v0, v3, v2}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    invoke-direct {v1, v3, v4}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     .line 3
-    new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    new-instance v3, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-    const/4 v3, 0x2
+    const-string v5, "UNKNOWN"
 
-    const-string v4, "UNKNOWN"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->UNKNOWN:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    sput-object v3, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->UNKNOWN:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-    const/4 v0, 0x3
+    const/4 v5, 0x3
 
-    new-array v0, v0, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    new-array v5, v5, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
 
     .line 4
-    sget-object v4, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->BUTT:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->ROUND:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->UNKNOWN:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->s:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    sput-object v5, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->a:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     return-void
 .end method
@@ -124,7 +118,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->s:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    sget-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->a:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->clone()Ljava/lang/Object;
 

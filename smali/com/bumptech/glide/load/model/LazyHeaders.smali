@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public volatile combinedHeaders:Ljava/util/Map;
+.field private volatile combinedHeaders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public final headers:Ljava/util/Map;
+.field private final headers:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -69,6 +69,13 @@
 
 .method private buildHeaderValue(Ljava/util/List;)Ljava/lang/String;
     .locals 5
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

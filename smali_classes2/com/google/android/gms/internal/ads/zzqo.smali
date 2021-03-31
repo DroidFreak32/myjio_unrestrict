@@ -1,25 +1,51 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzqo;
+.class public final Lcom/google/android/gms/internal/ads/zzqo;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic zzajh:Lcom/google/android/gms/internal/ads/zzjm;
+
+.field private final synthetic zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzqj;Lcom/google/android/gms/internal/ads/zzjm;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzqo;->zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzqo;->zzajh:Lcom/google/android/gms/internal/ads/zzjm;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract destroy()V
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract zza(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqo;->zzajh:Lcom/google/android/gms/internal/ads/zzjm;
 
-.method public abstract zzan(Ljava/lang/String;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzjm;->zzgn()V
 
-.method public abstract zzb(Lcom/google/android/gms/dynamic/IObjectWrapper;I)V
-.end method
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqo;->zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
 
-.method public abstract zzb(Ljava/lang/String;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzqj;->zza(Lcom/google/android/gms/internal/ads/zzqj;)Lcom/google/android/gms/internal/ads/zzqg;
 
-.method public abstract zzc(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzqo;->zzajh:Lcom/google/android/gms/internal/ads/zzjm;
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzqg;->zzf(Lcom/google/android/gms/internal/ads/zzjm;)V
+
+    return-void
 .end method

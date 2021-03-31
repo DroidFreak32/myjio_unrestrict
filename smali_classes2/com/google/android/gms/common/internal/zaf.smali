@@ -1,46 +1,49 @@
 .class public final Lcom/google/android/gms/common/internal/zaf;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
+.super Lcom/google/android/gms/common/internal/zad;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic zaoj:Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+.field private final synthetic zaa:Landroid/content/Intent;
+
+.field private final synthetic zab:Landroidx/fragment/app/Fragment;
+
+.field private final synthetic zac:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+.method public constructor <init>(Landroid/content/Intent;Landroidx/fragment/app/Fragment;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/zaf;->zaoj:Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zaf;->zaa:Landroid/content/Intent;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/zaf;->zab:Landroidx/fragment/app/Fragment;
+
+    iput p3, p0, Lcom/google/android/gms/common/internal/zaf;->zac:I
+
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/zad;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onConnected(Landroid/os/Bundle;)V
-    .locals 1
+.method public final zaa()V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zaf;->zaoj:Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zaf;->zaa:Landroid/content/Intent;
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;->onConnected(Landroid/os/Bundle;)V
+    if-eqz v0, :cond_0
 
-    return-void
-.end method
+    .line 2
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zaf;->zab:Landroidx/fragment/app/Fragment;
 
-.method public final onConnectionSuspended(I)V
-    .locals 1
+    iget v2, p0, Lcom/google/android/gms/common/internal/zaf;->zac:I
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zaf;->zaoj:Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+    invoke-virtual {v1, v0, v2}, Landroidx/fragment/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;->onConnectionSuspended(I)V
-
+    :cond_0
     return-void
 .end method

@@ -1,55 +1,39 @@
 .class public final Lcom/google/android/gms/internal/ads/zzse;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Lcom/google/android/gms/internal/ads/zzsp;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzsc;
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
+# instance fields
+.field private final zzbuh:Lcom/google/android/gms/ads/appopen/AppOpenAdPresentationCallback;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.IUnconfirmedClickListener"
+.method public constructor <init>(Lcom/google/android/gms/ads/appopen/AppOpenAdPresentationCallback;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzsp;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzse;->zzbuh:Lcom/google/android/gms/ads/appopen/AppOpenAdPresentationCallback;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onUnconfirmedClickCancelled()V
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    .line 2
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
-
-    return-void
-.end method
-
-.method public final onUnconfirmedClickReceived(Ljava/lang/String;)V
+.method public final onAppOpenAdClosed()V
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzse;->zzbuh:Lcom/google/android/gms/ads/appopen/AppOpenAdPresentationCallback;
 
-    move-result-object v0
-
-    .line 2
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    const/4 p1, 0x1
-
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/appopen/AppOpenAdPresentationCallback;->onAppOpenAdClosed()V
 
     return-void
 .end method

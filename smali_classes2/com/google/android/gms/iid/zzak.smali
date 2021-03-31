@@ -3,11 +3,15 @@
 
 
 # instance fields
-.field public zzde:Landroid/content/SharedPreferences;
+.field private zzde:Landroid/content/SharedPreferences;
 
-.field public final zzdf:Lcom/google/android/gms/iid/zzn;
+.field private final zzdf:Lcom/google/android/gms/iid/zzn;
 
-.field public final zzdg:Ljava/util/Map;
+.field private final zzdg:Ljava/util/Map;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -18,7 +22,7 @@
     .end annotation
 .end field
 
-.field public zzl:Landroid/content/Context;
+.field private zzl:Landroid/content/Context;
 
 
 # direct methods
@@ -35,7 +39,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/iid/zzn;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/iid/zzn;)V
     .locals 2
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -44,9 +48,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/gms/iid/zzak;->zzdg:Ljava/util/Map;
 
@@ -70,7 +74,7 @@
     .line 7
     iget-object p1, p0, Lcom/google/android/gms/iid/zzak;->zzl:Landroid/content/Context;
 
-    invoke-static {p1}, Lx6;->c(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Landroidx/core/content/ContextCompat;->getNoBackupFilesDir(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object p1
 
@@ -158,7 +162,7 @@
     return-void
 .end method
 
-.method public static zzd(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method private static zzd(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     .line 1
@@ -217,7 +221,7 @@
     return-object p0
 .end method
 
-.method public static zze(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method private static zze(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     .line 1
@@ -323,6 +327,8 @@
 # virtual methods
 .method public final declared-synchronized get(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     monitor-enter p0
 
@@ -425,6 +431,8 @@
 
 .method public final declared-synchronized zzf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     monitor-enter p0
 

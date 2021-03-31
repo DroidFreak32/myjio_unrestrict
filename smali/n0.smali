@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method public static a()Ln0;
+.method public static b()Ln0;
     .locals 1
 
     .line 1
@@ -74,7 +74,7 @@
 
     float-to-double v5, v4
 
-    .line 4
+    .line 1
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v7
@@ -91,7 +91,7 @@
 
     float-to-double v9, v9
 
-    .line 5
+    .line 2
     invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v9
@@ -142,7 +142,7 @@
 
     sub-double/2addr v11, v9
 
-    .line 6
+    .line 3
     invoke-static {v11, v12}, Ljava/lang/Math;->round(D)J
 
     move-result-wide v11
@@ -155,7 +155,7 @@
 
     add-double/2addr v3, v9
 
-    .line 7
+    .line 4
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v5
@@ -170,7 +170,7 @@
 
     mul-double v5, v5, v7
 
-    .line 8
+    .line 5
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v5
@@ -181,7 +181,7 @@
 
     add-double/2addr v3, v5
 
-    .line 9
+    .line 6
     invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v5
@@ -204,7 +204,7 @@
 
     const-wide v9, -0x4045311600000000L    # -0.10471975803375244
 
-    .line 10
+    .line 7
     invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v9
@@ -213,7 +213,7 @@
 
     move-result-wide v11
 
-    .line 11
+    .line 8
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v13
@@ -244,13 +244,13 @@
 
     if-ltz v8, :cond_0
 
-    .line 12
+    .line 9
     iput v5, v0, Ln0;->c:I
 
-    .line 13
+    .line 10
     iput-wide v6, v0, Ln0;->a:J
 
-    .line 14
+    .line 11
     iput-wide v6, v0, Ln0;->b:J
 
     return-void
@@ -264,18 +264,18 @@
 
     if-gtz v13, :cond_1
 
-    .line 15
+    .line 12
     iput v8, v0, Ln0;->c:I
 
-    .line 16
+    .line 13
     iput-wide v6, v0, Ln0;->a:J
 
-    .line 17
+    .line 14
     iput-wide v6, v0, Ln0;->b:J
 
     return-void
 
-    .line 18
+    .line 15
     :cond_1
     invoke-static {v9, v10}, Ljava/lang/Math;->acos(D)D
 
@@ -295,7 +295,7 @@
 
     mul-double v9, v9, v11
 
-    .line 19
+    .line 16
     invoke-static {v9, v10}, Ljava/lang/Math;->round(D)J
 
     move-result-wide v9
@@ -308,7 +308,7 @@
 
     mul-double v3, v3, v11
 
-    .line 20
+    .line 17
     invoke-static {v3, v4}, Ljava/lang/Math;->round(D)J
 
     move-result-wide v3
@@ -317,25 +317,23 @@
 
     iput-wide v3, v0, Ln0;->b:J
 
-    .line 21
-    iget-wide v1, v0, Ln0;->b:J
+    cmp-long v1, v3, p1
 
-    cmp-long v3, v1, p1
+    if-gez v1, :cond_2
 
-    if-gez v3, :cond_2
-
+    .line 18
     iget-wide v1, v0, Ln0;->a:J
 
     cmp-long v3, v1, p1
 
     if-lez v3, :cond_2
 
-    .line 22
+    .line 19
     iput v8, v0, Ln0;->c:I
 
     goto :goto_0
 
-    .line 23
+    .line 20
     :cond_2
     iput v5, v0, Ln0;->c:I
 

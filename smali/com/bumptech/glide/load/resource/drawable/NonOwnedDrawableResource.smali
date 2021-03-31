@@ -14,7 +14,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
+.method private constructor <init>(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
     .line 1
@@ -25,6 +25,13 @@
 
 .method public static newInstance(Landroid/graphics/drawable/Drawable;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 1
+    .param p0    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -56,6 +63,9 @@
 # virtual methods
 .method public getResourceClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -12,11 +12,11 @@
 
 
 # static fields
-.field public static final MINIMUM_SEARCH_RANGE_BYTES:I = 0x3e8
+.field private static final MINIMUM_SEARCH_RANGE_BYTES:I = 0x3e8
 
-.field public static final SEEK_TOLERANCE_US:J = 0x186a0L
+.field private static final SEEK_TOLERANCE_US:J = 0x186a0L
 
-.field public static final TIMESTAMP_SEARCH_BYTES:I = 0x4e20
+.field private static final TIMESTAMP_SEARCH_BYTES:I = 0x4e20
 
 
 # direct methods
@@ -70,7 +70,7 @@
     return p0
 .end method
 
-.method public static peekIntAtPosition([BI)I
+.method private static peekIntAtPosition([BI)I
     .locals 2
 
     .line 1

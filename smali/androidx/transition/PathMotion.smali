@@ -24,5 +24,5 @@
 
 
 # virtual methods
-.method public abstract a(FFFF)Landroid/graphics/Path;
+.method public abstract getPath(FFFF)Landroid/graphics/Path;
 .end method

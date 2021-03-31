@@ -1,47 +1,46 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzsz;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.class public final Lcom/google/android/gms/internal/ads/zzsz;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzsy;
+.implements Lcom/google/android/gms/internal/ads/zzrl;
+
+
+# instance fields
+.field private final synthetic zzbup:Lcom/google/android/gms/internal/ads/zzsx;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.httpcache.IHttpAssetsCacheCallback"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzsx;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzsz;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.method public final zzp(Z)V
     .locals 0
 
-    const/4 p3, 0x1
-
-    if-ne p1, p3, :cond_0
+    if-eqz p1, :cond_0
 
     .line 1
-    sget-object p1, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzsz;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
 
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzsx;->zzb(Lcom/google/android/gms/internal/ads/zzsx;)V
 
-    move-result-object p1
-
-    check-cast p1, Landroid/os/ParcelFileDescriptor;
+    return-void
 
     .line 2
-    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzsy;->zza(Landroid/os/ParcelFileDescriptor;)V
-
-    return p3
-
     :cond_0
-    const/4 p1, 0x0
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzsz;->zzbup:Lcom/google/android/gms/internal/ads/zzsx;
 
-    return p1
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzsx;->zza(Lcom/google/android/gms/internal/ads/zzsx;)V
+
+    return-void
 .end method

@@ -19,29 +19,29 @@
 
 
 # instance fields
-.field public authenMethod:Ljava/lang/String;
+.field private authenMethod:Ljava/lang/String;
 
-.field public autoLogin:Ljava/lang/Boolean;
+.field private autoLogin:Ljava/lang/Boolean;
 
-.field public autoRemovealTimerInterval:Ljava/lang/Integer;
+.field private autoRemovealTimerInterval:Ljava/lang/Integer;
 
-.field public delteOnTurnOffWiFi:Ljava/lang/Boolean;
+.field private delteOnTurnOffWiFi:Ljava/lang/Boolean;
 
-.field public identity:Ljava/lang/String;
+.field private identity:Ljava/lang/String;
 
-.field public operatorWifi:Ljava/lang/Boolean;
+.field private operatorWifi:Ljava/lang/Boolean;
 
-.field public password:Ljava/lang/String;
+.field private password:Ljava/lang/String;
 
-.field public phase2Authentication:Ljava/lang/String;
+.field private phase2Authentication:Ljava/lang/String;
 
-.field public priority:Ljava/lang/Integer;
+.field private priority:Ljava/lang/Integer;
 
-.field public securityMethod:Ljava/lang/String;
+.field private securityMethod:Ljava/lang/String;
 
-.field public ssidName:Ljava/lang/String;
+.field private ssidName:Ljava/lang/String;
 
-.field public wifiInfoId:Ljava/lang/Integer;
+.field private wifiInfoId:Ljava/lang/Integer;
 
 
 # direct methods

@@ -37,13 +37,10 @@
 
 
 # virtual methods
-.method public a()V
-    .locals 0
-
-    return-void
+.method public abstract a(Landroid/content/Intent;)V
 .end method
 
-.method public a(I)V
+.method public b(I)V
     .locals 3
 
     .line 1
@@ -101,16 +98,19 @@
     throw v0
 .end method
 
-.method public abstract a(Landroid/content/Intent;)V
-.end method
-
-.method public b()V
+.method public c()V
     .locals 0
 
     return-void
 .end method
 
-.method public c()V
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public e()V
     .locals 0
 
     return-void

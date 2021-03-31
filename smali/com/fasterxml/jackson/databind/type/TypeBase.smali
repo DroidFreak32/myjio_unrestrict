@@ -7,11 +7,11 @@
 
 
 # static fields
-.field public static final NO_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
+.field private static final NO_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-.field public static final NO_TYPES:[Lcom/fasterxml/jackson/databind/JavaType;
+.field private static final NO_TYPES:[Lcom/fasterxml/jackson/databind/JavaType;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -632,6 +632,12 @@
 
 .method public serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/type/TypeBase;->toCanonical()Ljava/lang/String;
@@ -645,6 +651,11 @@
 
 .method public serializeWithType(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/core/type/WritableTypeId;

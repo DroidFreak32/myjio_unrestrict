@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/Strings;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -11,7 +12,7 @@
 
 
 # static fields
-.field public static final zzhh:Ljava/util/regex/Pattern;
+.field private static final zza:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -25,12 +26,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/util/Strings;->zzhh:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/util/Strings;->zza:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -41,6 +42,13 @@
 
 .method public static emptyToNull(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -59,6 +67,13 @@
 
 .method public static isEmptyOrWhitespace(Ljava/lang/String;)Z
     .locals 0
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

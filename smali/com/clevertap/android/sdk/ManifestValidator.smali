@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final ourApplicationClassName:Ljava/lang/String; = "com.clevertap.android.sdk.Application"
+.field private static final ourApplicationClassName:Ljava/lang/String; = "com.clevertap.android.sdk.Application"
 
 
 # direct methods
@@ -17,7 +17,7 @@
     return-void
 .end method
 
-.method public static checkApplicationClass(Landroid/content/Context;)V
+.method private static checkApplicationClass(Landroid/content/Context;)V
     .locals 2
 
     .line 1
@@ -86,7 +86,7 @@
     return-void
 .end method
 
-.method public static checkReceiversServices(Landroid/content/Context;Lcom/clevertap/android/sdk/DeviceInfo;)V
+.method private static checkReceiversServices(Landroid/content/Context;Lcom/clevertap/android/sdk/pushnotification/PushProviders;)V
     .locals 4
 
     const-string v0, "Receiver/Service issue : "
@@ -99,43 +99,15 @@
 
     check-cast v1, Landroid/app/Application;
 
-    const-class v2, Lcom/clevertap/android/sdk/CTPushNotificationReceiver;
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateReceiverInManifest(Landroid/app/Application;Ljava/lang/String;)V
+    const-class v2, Lcom/clevertap/android/sdk/pushnotification/CTPushNotificationReceiver;
 
     .line 2
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/Application;
-
-    const-class v2, Lcom/clevertap/android/sdk/CTNotificationIntentService;
-
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
 
     .line 3
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/Application;
-
-    const-class v2, Lcom/clevertap/android/sdk/CTBackgroundJobService;
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateReceiverInManifest(Landroid/app/Application;Ljava/lang/String;)V
 
     .line 4
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -144,15 +116,51 @@
 
     check-cast v1, Landroid/app/Application;
 
-    const-class v2, Lcom/clevertap/android/sdk/CTBackgroundIntentService;
+    const-class v2, Lcom/clevertap/android/sdk/pushnotification/CTNotificationIntentService;
 
+    .line 5
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 6
     invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
 
-    .line 5
+    .line 7
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/Application;
+
+    const-class v2, Lcom/clevertap/android/sdk/pushnotification/amp/CTBackgroundJobService;
+
+    .line 8
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 9
+    invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
+
+    .line 10
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/Application;
+
+    const-class v2, Lcom/clevertap/android/sdk/pushnotification/amp/CTBackgroundIntentService;
+
+    .line 11
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 12
+    invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
+
+    .line 13
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -170,7 +178,7 @@
     :catch_0
     move-exception v1
 
-    .line 6
+    .line 14
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -189,9 +197,9 @@
 
     invoke-static {v1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 7
+    .line 15
     :goto_0
-    invoke-virtual {p1}, Lcom/clevertap/android/sdk/DeviceInfo;->getEnabledPushTypes()Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/pushnotification/PushProviders;->getAvailablePushTypes()Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -199,7 +207,7 @@
 
     return-void
 
-    .line 8
+    .line 16
     :cond_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -217,14 +225,14 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/clevertap/android/sdk/PushType;
+    check-cast v1, Lcom/clevertap/android/sdk/pushnotification/PushConstants$PushType;
 
-    .line 9
-    sget-object v2, Lcom/clevertap/android/sdk/PushType;->FCM:Lcom/clevertap/android/sdk/PushType;
+    .line 17
+    sget-object v2, Lcom/clevertap/android/sdk/pushnotification/PushConstants$PushType;->FCM:Lcom/clevertap/android/sdk/pushnotification/PushConstants$PushType;
 
     if-ne v1, v2, :cond_1
 
-    .line 10
+    .line 18
     :try_start_1
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -232,11 +240,11 @@
 
     check-cast v1, Landroid/app/Application;
 
-    const-string v2, "com.clevertap.android.sdk.FcmMessageListenerService"
+    const-string v2, "com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService"
 
     invoke-static {v1, v2}, Lcom/clevertap/android/sdk/ManifestValidator;->validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
 
-    .line 11
+    .line 19
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -255,7 +263,7 @@
     :catch_1
     move-exception v1
 
-    .line 12
+    .line 20
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -281,7 +289,7 @@
     :catch_2
     move-exception v1
 
-    .line 13
+    .line 21
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -306,7 +314,7 @@
     return-void
 .end method
 
-.method public static checkSDKVersion(Lcom/clevertap/android/sdk/DeviceInfo;)V
+.method private static checkSDKVersion(Lcom/clevertap/android/sdk/DeviceInfo;)V
     .locals 2
 
     .line 1
@@ -333,13 +341,13 @@
     return-void
 .end method
 
-.method public static validate(Landroid/content/Context;Lcom/clevertap/android/sdk/DeviceInfo;)V
+.method public static validate(Landroid/content/Context;Lcom/clevertap/android/sdk/DeviceInfo;Lcom/clevertap/android/sdk/pushnotification/PushProviders;)V
     .locals 1
 
     const-string v0, "android.permission.INTERNET"
 
     .line 1
-    invoke-virtual {p1, p0, v0}, Lcom/clevertap/android/sdk/DeviceInfo;->testPermission(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/clevertap/android/sdk/Utils;->hasPermission(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -358,13 +366,18 @@
     invoke-static {p0}, Lcom/clevertap/android/sdk/ManifestValidator;->validationApplicationLifecyleCallback(Landroid/content/Context;)V
 
     .line 5
-    invoke-static {p0, p1}, Lcom/clevertap/android/sdk/ManifestValidator;->checkReceiversServices(Landroid/content/Context;Lcom/clevertap/android/sdk/DeviceInfo;)V
+    invoke-static {p0, p2}, Lcom/clevertap/android/sdk/ManifestValidator;->checkReceiversServices(Landroid/content/Context;Lcom/clevertap/android/sdk/pushnotification/PushProviders;)V
 
     return-void
 .end method
 
-.method public static validateActivityInManifest(Landroid/app/Application;Ljava/lang/Class;)V
+.method private static validateActivityInManifest(Landroid/app/Application;Ljava/lang/Class;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Application;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -467,8 +480,13 @@
     return-void
 .end method
 
-.method public static validateReceiverInManifest(Landroid/app/Application;Ljava/lang/String;)V
+.method private static validateReceiverInManifest(Landroid/app/Application;Ljava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Application;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -566,8 +584,13 @@
     return-void
 .end method
 
-.method public static validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
+.method private static validateServiceInManifest(Landroid/app/Application;Ljava/lang/String;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Application;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -665,7 +688,7 @@
     return-void
 .end method
 
-.method public static validationApplicationLifecyleCallback(Landroid/content/Context;)V
+.method private static validationApplicationLifecyleCallback(Landroid/content/Context;)V
     .locals 1
 
     .line 1

@@ -8,13 +8,13 @@
 
 
 # static fields
-.field public static zzl:Lcom/google/android/gms/flags/Singletons;
+.field private static zzl:Lcom/google/android/gms/flags/Singletons;
 
 
 # instance fields
-.field public final zzm:Lcom/google/android/gms/flags/FlagRegistry;
+.field private final zzm:Lcom/google/android/gms/flags/FlagRegistry;
 
-.field public final zzn:Lcom/google/android/gms/flags/zzb;
+.field private final zzn:Lcom/google/android/gms/flags/zzb;
 
 
 # direct methods
@@ -50,7 +50,7 @@
     throw v0
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -88,7 +88,7 @@
     return-object v0
 .end method
 
-.method public static zzc()Lcom/google/android/gms/flags/Singletons;
+.method private static zzc()Lcom/google/android/gms/flags/Singletons;
     .locals 2
 
     .line 1

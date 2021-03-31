@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,46 +16,20 @@
     name = null
 .end annotation
 
-.annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
-    d1 = {
-        "\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0010\t\n\u0000\u0010\u0000\u001a\u00020\u00012\n\u0010\u0002\u001a\u0006\u0012\u0002\u0008\u00030\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0008\u001a\u00020\tH\n\u00a2\u0006\u0002\u0008\n"
-    }
-    d2 = {
-        "<anonymous>",
-        "",
-        "<anonymous parameter 0>",
-        "Landroid/widget/AdapterView;",
-        "<anonymous parameter 1>",
-        "Landroid/view/View;",
-        "pos",
-        "",
-        "<anonymous parameter 3>",
-        "",
-        "onItemClick"
-    }
-    k = 0x3
-    mv = {
-        0x1,
-        0x1,
-        0x10
-    }
-.end annotation
-
 
 # instance fields
-.field public final synthetic s:Ljava/util/List;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;
+
+.field public final synthetic b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;Ljava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->a:Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;
+
+    iput-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -65,7 +39,15 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 1
+    .locals 3
+    .param p1    # Landroid/widget/AdapterView;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/view/View;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,50 +60,119 @@
 
     const-string p4, "<anonymous parameter 0>"
 
-    invoke-static {p1, p4}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "<anonymous parameter 1>"
+    const-string p1, "v"
 
-    invoke-static {p2, p1}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$DagSelf;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->a:Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;
 
-    sget-object p2, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getItem()Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;
 
-    iget-object p4, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    move-result-object p1
 
-    invoke-interface {p4, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$MultiActionLink;
 
-    move-result-object p4
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$MultiActionLink;->getButtons()Ljava/util/List;
 
-    check-cast p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
+    move-result-object p1
 
-    invoke-virtual {p4}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;->getTitle()Ljava/lang/String;
+    const/4 p4, 0x0
 
-    move-result-object p4
+    if-eqz p1, :cond_0
 
-    if-eqz p4, :cond_0
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
     goto :goto_0
 
     :cond_0
-    const-string p4, ""
+    move-object p1, p4
 
     :goto_0
-    const/4 p5, 0x0
+    if-nez p1, :cond_1
+
+    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+
+    :cond_1
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;->isClickable()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_10
+
+    .line 2
+    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$DagSelf;
+
+    .line 3
+    sget-object p5, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
 
     const/16 v0, 0x88
 
-    invoke-direct {p1, p2, v0, p4, p5}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$DagSelf;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILjava/lang/String;Z)V
+    .line 4
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
-    .line 2
-    sget-object p2, Lar0;->b:Lar0;
+    invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p2, p1}, Lar0;->a(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+    move-result-object v1
 
-    .line 3
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    check-cast v1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
+
+    invoke-virtual {v1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;->getTitle()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    .line 5
+    invoke-direct {p1, p5, v0, v1, v2}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$DagSelf;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILjava/lang/String;Z)V
+
+    .line 6
+    sget-object v0, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
+
+    invoke-virtual {v0, p1}, Lcom/jio/jioml/hellojio/utils/Utility;->showOutput(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+
+    .line 7
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->a:Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask;
+
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getItem()Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$MultiActionLink;
+
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$MultiActionLink;->getButtons()Ljava/util/List;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
+
+    goto :goto_1
+
+    :cond_2
+    move-object p1, p4
+
+    :goto_1
+    if-nez p1, :cond_3
+
+    invoke-static {}, Lkotlin/jvm/internal/Intrinsics;->throwNpe()V
+
+    :cond_3
+    invoke-virtual {p1, v2}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;->setClickable(Z)V
+
+    .line 8
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
     invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -133,240 +184,220 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    .line 4
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p2
-
-    const/16 p4, 0x36
-
-    if-ne p2, p4, :cond_2
-
-    .line 5
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
-
-    sget-object p2, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
-
-    iget-object p5, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
-
-    invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
-
-    invoke-direct {p1, p2, p4, p3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
-
-    goto/16 :goto_7
-
-    :cond_2
-    :goto_1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_4
 
     goto :goto_2
 
-    .line 6
-    :cond_3
+    .line 9
+    :cond_4
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result p2
+    move-result v0
 
-    const/16 p4, 0x37
+    const/16 v1, 0x36
 
-    if-ne p2, p4, :cond_4
+    if-ne v0, v1, :cond_5
 
-    .line 7
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
+    .line 10
+    new-instance p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
 
-    sget-object p2, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
-    iget-object p5, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object p3
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
-    check-cast p3, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
-
-    invoke-direct {p1, p2, p4, p3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
+    invoke-direct {p4, p5, v1, p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
 
     goto/16 :goto_7
 
-    :cond_4
+    :cond_5
     :goto_2
-    if-nez p1, :cond_5
+    if-nez p1, :cond_6
 
     goto :goto_3
 
-    .line 8
-    :cond_5
+    .line 11
+    :cond_6
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result p2
+    move-result v0
 
-    const/16 p4, 0x34
+    const/16 v1, 0x37
 
-    if-ne p2, p4, :cond_6
+    if-ne v0, v1, :cond_7
 
-    .line 9
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
+    .line 12
+    new-instance p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
 
-    sget-object p2, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
-    iget-object p5, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object p3
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
-    check-cast p3, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
-
-    invoke-direct {p1, p2, p4, p3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
+    invoke-direct {p4, p5, v1, p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
 
     goto :goto_7
 
-    :cond_6
+    :cond_7
     :goto_3
-    if-nez p1, :cond_7
+    if-nez p1, :cond_8
 
     goto :goto_4
 
-    .line 10
-    :cond_7
+    .line 13
+    :cond_8
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result p2
+    move-result v0
 
-    const/16 p4, 0x35
+    const/16 v1, 0x34
 
-    if-ne p2, p4, :cond_8
+    if-ne v0, v1, :cond_9
 
-    .line 11
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
+    .line 14
+    new-instance p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
 
-    sget-object p2, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
-    iget-object p5, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object p3
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
-    check-cast p3, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
-
-    invoke-direct {p1, p2, p4, p3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
+    invoke-direct {p4, p5, v1, p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
 
     goto :goto_7
 
-    :cond_8
+    :cond_9
     :goto_4
-    if-nez p1, :cond_9
+    if-nez p1, :cond_a
 
     goto :goto_5
 
-    .line 12
-    :cond_9
+    .line 15
+    :cond_a
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result p2
+    move-result v0
 
-    const/4 p4, 0x4
+    const/16 v1, 0x35
 
-    if-ne p2, p4, :cond_a
+    if-ne v0, v1, :cond_b
 
-    .line 13
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
+    .line 16
+    new-instance p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
 
-    sget-object p2, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
-    iget-object p5, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object p3
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
-    check-cast p3, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
-
-    invoke-direct {p1, p2, p4, p3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
+    invoke-direct {p4, p5, v1, p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
 
     goto :goto_7
 
-    :cond_a
+    :cond_b
     :goto_5
-    if-nez p1, :cond_b
+    if-nez p1, :cond_c
 
     goto :goto_6
 
-    .line 14
-    :cond_b
+    .line 17
+    :cond_c
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_d
+
+    .line 18
+    new-instance p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
+
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
+
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
+
+    invoke-direct {p4, p5, v1, p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
+
+    goto :goto_7
+
+    :cond_d
+    :goto_6
+    if-nez p1, :cond_e
+
+    goto :goto_7
+
+    .line 19
+    :cond_e
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    const/16 p2, 0x13
+    const/16 v0, 0x13
 
-    if-ne p1, p2, :cond_c
+    if-ne p1, v0, :cond_f
 
-    .line 15
-    new-instance p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
+    .line 20
+    new-instance p4, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
 
-    sget-object p4, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->b:Ljava/util/List;
 
-    iget-object p5, p0, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1;->s:Ljava/util/List;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object p3
+    check-cast p1, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
-    check-cast p3, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
+    invoke-direct {p4, p5, v0, p1}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
 
-    invoke-direct {p1, p4, p2, p3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
-
-    goto :goto_7
-
-    :cond_c
-    :goto_6
-    const/4 p1, 0x0
-
-    .line 16
+    .line 21
+    :cond_f
     :goto_7
-    sget-object p2, Lmq0;->b:Lmq0;
+    sget-object p1, Lcom/jio/jioml/hellojio/utils/Console;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Console;
 
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p4, "common action: "
+    const-string p5, "common action: "
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p4
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p3
 
-    invoke-virtual {p2, p3}, Lmq0;->a(Ljava/lang/String;)V
+    invoke-virtual {p1, p3}, Lcom/jio/jioml/hellojio/utils/Console;->debug(Ljava/lang/String;)V
 
-    .line 17
-    sget-object p2, Lsq0;->b:Lsq0;
+    .line 22
+    sget-object p1, Lcom/jio/jioml/hellojio/utils/HandlerUtil;->INSTANCE:Lcom/jio/jioml/hellojio/utils/HandlerUtil;
 
-    const-wide/16 p3, 0x3e8
+    const-wide/16 v0, 0x3e8
 
-    new-instance p5, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1$1;
+    new-instance p3, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1$1;
 
-    invoke-direct {p5, p1}, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1$1;-><init>(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;)V
+    invoke-direct {p3, p4, p2}, Lcom/jio/jioml/hellojio/activities/tasks/MultiActionLinkTask$start$1$1;-><init>(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;Landroid/view/View;)V
 
-    invoke-virtual {p2, p3, p4, p5}, Lsq0;->a(JLsq3;)V
+    invoke-virtual {p1, v0, v1, p3}, Lcom/jio/jioml/hellojio/utils/HandlerUtil;->after(JLkotlin/jvm/functions/Function0;)V
 
+    :cond_10
     return-void
 .end method

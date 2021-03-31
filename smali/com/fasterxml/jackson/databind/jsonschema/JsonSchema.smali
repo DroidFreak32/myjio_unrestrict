@@ -9,7 +9,7 @@
 
 
 # instance fields
-.field public final schema:Lcom/fasterxml/jackson/databind/node/ObjectNode;
+.field private final schema:Lcom/fasterxml/jackson/databind/node/ObjectNode;
 
 
 # direct methods
@@ -37,7 +37,7 @@
 
     move-result-object v0
 
-    const-string v1, "type"
+    const-string/jumbo v1, "type"
 
     const-string v2, "any"
 

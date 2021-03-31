@@ -22,33 +22,33 @@
 # instance fields
 .field public backImage:Landroid/widget/ImageView;
 
-.field public connectivityReceiver:Lcom/app/cinemasdk/networkcheck/ConnectivityReceiver;
+.field private connectivityReceiver:Lcom/app/cinemasdk/networkcheck/ConnectivityReceiver;
 
-.field public errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
+.field private errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
-.field public id:Ljava/lang/String;
+.field private id:Ljava/lang/String;
 
-.field public invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+.field private invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
-.field public isEventSend:Z
+.field private isEventSend:Z
 
-.field public isLoginAvailable:Z
+.field private isLoginAvailable:Z
 
-.field public isZlaCalledOnce:Z
+.field private isZlaCalledOnce:Z
 
 .field public loginDetail:Lcom/app/cinemasdk/responsepojo/loginviasubid/LoginDetail;
 
-.field public logintype:Ljava/lang/String;
+.field private logintype:Ljava/lang/String;
 
-.field public mLastClickTime:J
+.field private mLastClickTime:J
 
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-.field public progressDialog:Landroid/app/ProgressDialog;
+.field private progressDialog:Landroid/app/ProgressDialog;
 
 .field public relativeLayout:Landroid/widget/RelativeLayout;
 
-.field public savedDateTime:J
+.field private savedDateTime:J
 
 .field public ssoRequestBody:Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SSORequestBody;
 
@@ -71,22 +71,20 @@
 
     iput-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 3
-    iput-boolean v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->isEventSend:Z
+    iput-boolean v1, p0, Lcom/app/cinemasdk/ui/MainActivity;->isEventSend:Z
 
     .line 4
-    iget-object v1, p0, Lcom/app/cinemasdk/ui/MainActivity;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+    invoke-virtual {v0}, Lcom/app/cinemasdk/datamanager/MainDataManager;->getInvokedContentData()Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
-    invoke-virtual {v1}, Lcom/app/cinemasdk/datamanager/MainDataManager;->getInvokedContentData()Lcom/app/cinemasdk/datamanager/InvokedContentData;
+    move-result-object v0
 
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/app/cinemasdk/ui/MainActivity;->invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+    iput-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
     .line 5
-    iput-boolean v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->isZlaCalledOnce:Z
+    iput-boolean v1, p0, Lcom/app/cinemasdk/ui/MainActivity;->isZlaCalledOnce:Z
 
     const-wide/16 v0, 0x0
 
@@ -340,6 +338,50 @@
     return v2
 .end method
 
+.method private synthetic j()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->webView:Landroid/webkit/WebView;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "http://jiosdk.jiocinema.com/?contentId="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/app/cinemasdk/ui/MainActivity;->invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+
+    invoke-virtual {v2}, Lcom/app/cinemasdk/datamanager/InvokedContentData;->getContentID()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private synthetic l()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->webView:Landroid/webkit/WebView;
+
+    const-string v1, "http://jiosdk.jiocinema.com/"
+
+    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method private playVideoContent()V
     .locals 7
 
@@ -379,7 +421,7 @@
 
     invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v2, "uniqueId"
+    const-string/jumbo v2, "uniqueId"
 
     .line 4
     invoke-virtual {v0}, Lcom/app/cinemasdk/model/LoginData;->getUniqueId()Ljava/lang/String;
@@ -393,7 +435,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "uniqueId - "
+    const-string/jumbo v3, "uniqueId - "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -414,7 +456,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "subscriber_id - "
+    const-string/jumbo v3, "subscriber_id - "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -432,7 +474,7 @@
 
     const-string v0, "bitrateProfile"
 
-    const-string v2, "xxhdpi"
+    const-string/jumbo v2, "xxhdpi"
 
     .line 7
     invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -581,9 +623,9 @@
     .line 3
     iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->webView:Landroid/webkit/WebView;
 
-    new-instance v1, Lbw;
+    new-instance v1, Lk8;
 
-    invoke-direct {v1, p0}, Lbw;-><init>(Lcom/app/cinemasdk/ui/MainActivity;)V
+    invoke-direct {v1, p0}, Lk8;-><init>(Lcom/app/cinemasdk/ui/MainActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->post(Ljava/lang/Runnable;)Z
 
@@ -593,9 +635,9 @@
     :cond_0
     iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->webView:Landroid/webkit/WebView;
 
-    new-instance v1, Law;
+    new-instance v1, Lj8;
 
-    invoke-direct {v1, p0}, Law;-><init>(Lcom/app/cinemasdk/ui/MainActivity;)V
+    invoke-direct {v1, p0}, Lj8;-><init>(Lcom/app/cinemasdk/ui/MainActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->post(Ljava/lang/Runnable;)Z
 
@@ -618,50 +660,6 @@
 
 
 # virtual methods
-.method public synthetic B()V
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->webView:Landroid/webkit/WebView;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "http://jiosdk.jiocinema.com/?contentId="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/app/cinemasdk/ui/MainActivity;->invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
-
-    invoke-virtual {v2}, Lcom/app/cinemasdk/datamanager/InvokedContentData;->getContentID()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public synthetic C()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->webView:Landroid/webkit/WebView;
-
-    const-string v1, "http://jiosdk.jiocinema.com/"
-
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method public ZLAFailed(Ljava/lang/String;I)V
     .locals 10
 
@@ -897,7 +895,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "zla_success - "
+    const-string/jumbo v1, "zla_success - "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1004,6 +1002,22 @@
     return-void
 .end method
 
+.method public synthetic k()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/app/cinemasdk/ui/MainActivity;->j()V
+
+    return-void
+.end method
+
+.method public synthetic m()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/app/cinemasdk/ui/MainActivity;->l()V
+
+    return-void
+.end method
+
 .method public onBackPressed()V
     .locals 0
 
@@ -1031,7 +1045,7 @@
     .end annotation
 
     .line 1
-    invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     const/4 p1, 0x1
 
@@ -1073,7 +1087,7 @@
 
     sget v2, Lcom/app/cinemasdk/R$color;->cinema_status_bar_color:I
 
-    invoke-static {p0, v2}, Lx6;->a(Landroid/content/Context;I)I
+    invoke-static {p0, v2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result v2
 
@@ -1106,7 +1120,7 @@
 
     if-ne v0, p1, :cond_1
 
-    const-string v0, "unpw"
+    const-string/jumbo v0, "unpw"
 
     .line 10
     iput-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->logintype:Ljava/lang/String;
@@ -1116,7 +1130,7 @@
     :cond_1
     if-ne v0, v1, :cond_2
 
-    const-string v0, "zla"
+    const-string/jumbo v0, "zla"
 
     .line 11
     iput-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->logintype:Ljava/lang/String;
@@ -1168,11 +1182,9 @@
 
     iput-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->backImage:Landroid/widget/ImageView;
 
-    .line 16
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->backImage:Landroid/widget/ImageView;
-
     const/4 v2, 0x0
 
+    .line 16
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 17
@@ -1183,8 +1195,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->progressDialog:Landroid/app/ProgressDialog;
 
     .line 18
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->progressDialog:Landroid/app/ProgressDialog;
-
     invoke-virtual {v0, p1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
     .line 19
@@ -1312,8 +1322,6 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->progressDialog:Landroid/app/ProgressDialog;
-
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->isShowing()Z
 
     move-result v0
@@ -1340,8 +1348,6 @@
     iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
     if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/MainActivity;->errorDialog:Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
@@ -1943,7 +1949,7 @@
 
     move-result-object p3
 
-    const-string v0, "url_subtitle"
+    const-string/jumbo v0, "url_subtitle"
 
     invoke-virtual {p2, v0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -1961,7 +1967,7 @@
 
     move-result-object p3
 
-    const-string v0, "vendorName"
+    const-string/jumbo v0, "vendorName"
 
     invoke-virtual {p2, v0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -2266,7 +2272,7 @@
     invoke-direct {v0, v1}, Lcom/app/cinemasdk/network/DataManager;-><init>(Ljava/lang/String;)V
 
     .line 5
-    invoke-virtual {v0, p1}, Lcom/app/cinemasdk/network/DataManager;->ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Ljr4;
+    invoke-virtual {v0, p1}, Lcom/app/cinemasdk/network/DataManager;->ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Lretrofit2/Call;
 
     move-result-object p1
 
@@ -2275,7 +2281,7 @@
 
     invoke-direct {v0, p0}, Lcom/app/cinemasdk/ui/MainActivity$4;-><init>(Lcom/app/cinemasdk/ui/MainActivity;)V
 
-    invoke-interface {p1, v0}, Ljr4;->a(Llr4;)V
+    invoke-interface {p1, v0}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method

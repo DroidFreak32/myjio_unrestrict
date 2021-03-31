@@ -16,11 +16,11 @@
 
 
 # instance fields
-.field public mApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
+.field private mApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
 .field public recognitionActivity:Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;
 
@@ -72,7 +72,7 @@
     const-string v1, "inside getResultFromAwarenessApi"
 
     .line 1
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2
     iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->mApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -86,7 +86,7 @@
     const-string v1, "Connected"
 
     .line 3
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 4
     sget-object v1, Lcom/google/android/gms/awareness/Awareness;->SnapshotApi:Lcom/google/android/gms/awareness/SnapshotApi;
@@ -107,20 +107,12 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    goto :goto_0
 
     :catch_0
     move-exception v1
 
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_1
-
     .line 6
-    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -139,12 +131,14 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_0
+
+    :catch_1
+    move-exception v1
 
     .line 7
-    :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -163,10 +157,10 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
-    :goto_2
+    :goto_0
     return-void
 .end method
 
@@ -276,8 +270,6 @@
     iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->mApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     .line 6
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->mApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
-
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->connect()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -376,18 +368,13 @@
 
     iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    .line 3
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
     const-wide/16 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 4
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
     const/4 v3, 0x0
 
+    .line 3
     aget-object v0, v0, v3
 
     invoke-virtual {v0}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->getConfidence()D
@@ -396,7 +383,7 @@
 
     add-double/2addr v3, v1
 
-    .line 5
+    .line 4
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     const/4 v5, 0x1
@@ -409,7 +396,7 @@
 
     add-double/2addr v5, v1
 
-    .line 6
+    .line 5
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->recognisationProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     const/4 v7, 0x2
@@ -477,7 +464,7 @@
     :catch_0
     move-exception v0
 
-    .line 7
+    .line 6
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     :cond_3
@@ -506,7 +493,7 @@
 
     const-string v2, "android.permission.ACCESS_FINE_LOCATION"
 
-    invoke-static {v1, v2}, Lx6;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v1
 
@@ -557,7 +544,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -583,7 +570,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     :goto_0
@@ -625,6 +612,10 @@
 
 .method public onConnected(Landroid/os/Bundle;)V
     .locals 0
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;->getResultFromAwarenessApi()V
@@ -634,6 +625,10 @@
 
 .method public onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/ConnectionResult;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

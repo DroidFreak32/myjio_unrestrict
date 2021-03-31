@@ -7,17 +7,17 @@
 
 
 # static fields
-.field public static final EMPTY:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+.field private static final EMPTY:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final _hashArea:[Ljava/lang/Object;
+.field private final _hashArea:[Ljava/lang/Object;
 
-.field public final _hashMask:I
+.field private final _hashMask:I
 
-.field public final _spillCount:I
+.field private final _spillCount:I
 
 
 # direct methods
@@ -42,7 +42,7 @@
     return-void
 .end method
 
-.method public constructor <init>(II[Ljava/lang/Object;)V
+.method private constructor <init>(II[Ljava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -302,7 +302,7 @@
     return-object p0
 .end method
 
-.method public static final findSize(I)I
+.method private static final findSize(I)I
     .locals 1
 
     const/4 v0, 0x5

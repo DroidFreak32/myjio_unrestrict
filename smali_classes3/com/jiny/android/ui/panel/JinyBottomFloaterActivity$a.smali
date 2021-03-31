@@ -1,5 +1,5 @@
 .class public Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;
-.super Lxl0;
+.super Lcom/jiny/android/ui/discovery/b;
 
 
 # annotations
@@ -14,16 +14,16 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
+.field public final synthetic a:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;->s:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
+    iput-object p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;->a:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
 
-    invoke-direct {p0}, Lxl0;-><init>()V
+    invoke-direct {p0}, Lcom/jiny/android/ui/discovery/b;-><init>()V
 
     return-void
 .end method
@@ -33,11 +33,11 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    iget-object p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;->s:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
+    iget-object p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;->a:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;)V
+    invoke-static {p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d(Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;)V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;->s:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
+    iget-object p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity$a;->a:Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;
 
     const/4 v0, 0x0
 

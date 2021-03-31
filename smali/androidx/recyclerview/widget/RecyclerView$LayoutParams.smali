@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public a:Landroidx/recyclerview/widget/RecyclerView$b0;
+.field public a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
 .field public final b:Landroid/graphics/Rect;
 
@@ -157,52 +157,93 @@
 
 
 # virtual methods
-.method public a()I
+.method public getViewAdapterPosition()I
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$b0;
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$b0;->getLayoutPosition()I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public b()Z
+.method public getViewLayoutPosition()I
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$b0;
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$b0;->isUpdated()Z
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getLayoutPosition()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public c()Z
+.method public getViewPosition()I
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$b0;
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$b0;->isRemoved()Z
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getPosition()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public d()Z
+.method public isItemChanged()Z
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$b0;
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$b0;->isInvalid()Z
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isUpdated()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isItemRemoved()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isRemoved()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isViewInvalid()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->isInvalid()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public viewNeedsUpdate()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;->a:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->needsUpdate()Z
 
     move-result v0
 

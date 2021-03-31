@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = -0x688320bbc28bbb6bL
+.field private static final serialVersionUID:J = -0x688320bbc28bbb6bL
 
 
 # direct methods

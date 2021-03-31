@@ -6,15 +6,15 @@
 # instance fields
 .field public in:Ljava/io/InputStream;
 
-.field public in_dontclose:Z
+.field private in_dontclose:Z
 
 .field public out:Ljava/io/OutputStream;
 
-.field public out_dontclose:Z
+.field private out_dontclose:Z
 
 .field public out_ext:Ljava/io/OutputStream;
 
-.field public out_ext_dontclose:Z
+.field private out_ext_dontclose:Z
 
 
 # direct methods
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public close()V
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -51,11 +51,9 @@
 
     if-eqz v1, :cond_0
 
-    iget-boolean v1, p0, Lcom/jcraft/jsch/IO;->in_dontclose:Z
+    iget-boolean v2, p0, Lcom/jcraft/jsch/IO;->in_dontclose:Z
 
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
+    if-nez v2, :cond_0
 
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
@@ -75,11 +73,9 @@
 
     if-eqz v1, :cond_1
 
-    iget-boolean v1, p0, Lcom/jcraft/jsch/IO;->out_ext_dontclose:Z
+    iget-boolean v2, p0, Lcom/jcraft/jsch/IO;->out_ext_dontclose:Z
 
-    if-nez v1, :cond_1
-
-    iget-object v1, p0, Lcom/jcraft/jsch/IO;->out_ext:Ljava/io/OutputStream;
+    if-nez v2, :cond_1
 
     invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
 
@@ -95,6 +91,11 @@
 
 .method public getByte()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
@@ -108,6 +109,11 @@
 
 .method public getByte([B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     array-length v0, p1
@@ -121,6 +127,11 @@
 
 .method public getByte([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     :cond_0
@@ -152,7 +163,7 @@
 .end method
 
 .method public out_close()V
-    .locals 1
+    .locals 2
 
     .line 1
     :try_start_0
@@ -160,11 +171,9 @@
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/jcraft/jsch/IO;->out_dontclose:Z
+    iget-boolean v1, p0, Lcom/jcraft/jsch/IO;->out_dontclose:Z
 
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/jcraft/jsch/IO;->out:Ljava/io/OutputStream;
+    if-nez v1, :cond_0
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
@@ -182,6 +191,12 @@
 
 .method public put(Lcom/jcraft/jsch/Packet;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/net/SocketException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/IO;->out:Ljava/io/OutputStream;
@@ -206,6 +221,11 @@
 
 .method public put([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     iget-object v0, p0, Lcom/jcraft/jsch/IO;->out:Ljava/io/OutputStream;
@@ -222,6 +242,11 @@
 
 .method public put_ext([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/IO;->out_ext:Ljava/io/OutputStream;

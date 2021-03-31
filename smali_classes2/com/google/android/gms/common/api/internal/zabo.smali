@@ -1,153 +1,252 @@
-.class public final Lcom/google/android/gms/common/api/internal/zabo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public Lcom/google/android/gms/common/api/internal/zabo;
+.super Lcom/google/android/gms/common/api/internal/zal;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic zaiz:Lcom/google/android/gms/common/ConnectionResult;
-
-.field public final synthetic zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+.field private zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/tasks/TaskCompletionSource<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;Lcom/google/android/gms/common/ConnectionResult;)V
-    .locals 0
+.method private constructor <init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/zal;-><init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zabo;->zaiz:Lcom/google/android/gms/common/ConnectionResult;
+    .line 2
+    new-instance p1, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    .line 3
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->mLifecycleFragment:Lcom/google/android/gms/common/api/internal/LifecycleFragment;
+
+    const-string v0, "GmsAvailabilityHelper"
+
+    invoke-interface {p1, v0, p0}, Lcom/google/android/gms/common/api/internal/LifecycleFragment;->addCallback(Ljava/lang/String;Lcom/google/android/gms/common/api/internal/LifecycleCallback;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final run()V
-    .locals 3
+.method public static zaa(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zabo;
+    .locals 2
+    .param p0    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zaiz:Lcom/google/android/gms/common/ConnectionResult;
+    invoke-static {p0}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->getFragment(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/LifecycleFragment;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->isSuccess()Z
+    move-result-object p0
 
-    move-result v0
+    .line 2
+    const-class v0, Lcom/google/android/gms/common/api/internal/zabo;
+
+    const-string v1, "GmsAvailabilityHelper"
+
+    .line 3
+    invoke-interface {p0, v1, v0}, Lcom/google/android/gms/common/api/internal/LifecycleFragment;->getCallbackOrNull(Ljava/lang/String;Ljava/lang/Class;)Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/api/internal/zabo;
 
     if-eqz v0, :cond_1
 
+    .line 4
+    iget-object p0, v0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->getTask()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/tasks/Task;->isComplete()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    .line 5
+    new-instance p0, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-direct {p0}, Lcom/google/android/gms/tasks/TaskCompletionSource;-><init>()V
+
+    iput-object p0, v0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    :cond_0
+    return-object v0
+
+    .line 6
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/common/api/internal/zabo;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/api/internal/zabo;-><init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public onDestroy()V
+    .locals 3
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->onDestroy()V
+
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    const/4 v1, 0x1
+    new-instance v1, Ljava/util/concurrent/CancellationException;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;Z)Z
+    const-string v2, "Host activity was destroyed before Google Play services could be made available."
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+    invoke-direct {v1, v2}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;)Lcom/google/android/gms/common/api/Api$Client;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetException(Ljava/lang/Exception;)Z
+
+    return-void
+.end method
+
+.method public final zaa()V
+    .locals 4
+
+    .line 12
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->mLifecycleFragment:Lcom/google/android/gms/common/api/internal/LifecycleFragment;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/internal/LifecycleFragment;->getLifecycleActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/Api$Client;->requiresSignIn()Z
+    if-nez v0, :cond_0
+
+    .line 13
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    new-instance v1, Lcom/google/android/gms/common/api/ApiException;
+
+    new-instance v2, Lcom/google/android/gms/common/api/Status;
+
+    const/16 v3, 0x8
+
+    invoke-direct {v2, v3}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
+
+    invoke-direct {v1, v2}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetException(Ljava/lang/Exception;)Z
+
+    return-void
+
+    .line 14
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zal;->zac:Lcom/google/android/gms/common/GoogleApiAvailability;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/common/GoogleApiAvailability;->isGooglePlayServicesAvailable(Landroid/content/Context;)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+    if-nez v0, :cond_1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zab(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;)V
+    .line 15
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetResult(Ljava/lang/Object;)Z
 
     return-void
 
-    .line 5
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+    .line 16
+    :cond_1
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;)Lcom/google/android/gms/common/api/Api$Client;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    .line 6
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+    invoke-virtual {v2}, Lcom/google/android/gms/tasks/TaskCompletionSource;->getTask()Lcom/google/android/gms/tasks/Task;
 
     move-result-object v2
 
-    .line 7
-    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/common/api/Api$Client;->getRemoteService(Lcom/google/android/gms/common/internal/IAccountAccessor;Ljava/util/Set;)V
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v2}, Lcom/google/android/gms/tasks/Task;->isComplete()Z
 
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    .line 17
+    new-instance v2, Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-direct {v2, v0, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    const/4 v0, 0x0
+
+    .line 18
+    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/common/api/internal/zal;->zab(Lcom/google/android/gms/common/ConnectionResult;I)V
+
+    :cond_2
     return-void
+.end method
+
+.method public final zaa(Lcom/google/android/gms/common/ConnectionResult;I)V
+    .locals 3
+
+    .line 7
+    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
     .line 8
-    :catch_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
-
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zaim:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaj(Lcom/google/android/gms/common/api/internal/GoogleApiManager;)Ljava/util/Map;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
 
     .line 9
-    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zac(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;)Lcom/google/android/gms/common/api/internal/zai;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/ConnectionResult;->getErrorCode()I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/ConnectionResult;->getErrorMessage()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/ConnectionResult;->getResolution()Landroid/app/PendingIntent;
 
-    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
+    move-result-object p1
 
-    const/16 v2, 0xa
-
-    invoke-direct {v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(I)V
+    invoke-direct {v0, v1, v2, p1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;Landroid/app/PendingIntent;)V
 
     .line 10
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/ApiExceptionUtil;->fromStatus(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
 
-    return-void
+    move-result-object p1
 
     .line 11
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
-
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zaim:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaj(Lcom/google/android/gms/common/api/internal/GoogleApiManager;)Ljava/util/Map;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zabo;->zajg:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;
-
-    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;->zac(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zac;)Lcom/google/android/gms/common/api/internal/zai;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zabo;->zaiz:Lcom/google/android/gms/common/ConnectionResult;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-virtual {p2, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setException(Ljava/lang/Exception;)V
 
     return-void
+.end method
+
+.method public final zac()Lcom/google/android/gms/tasks/Task;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/tasks/Task<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabo;->zad:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->getTask()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v0
+
+    return-object v0
 .end method

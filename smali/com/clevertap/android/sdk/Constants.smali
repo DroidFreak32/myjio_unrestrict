@@ -1,6 +1,14 @@
-.class public Lcom/clevertap/android/sdk/Constants;
+.class public interface abstract Lcom/clevertap/android/sdk/Constants;
 .super Ljava/lang/Object;
 .source "Constants.java"
+
+
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
 
 
 # static fields
@@ -12,9 +20,11 @@
 
 .field public static final BLUE:Ljava/lang/String; = "#0000FF"
 
-.field public static final BPS_PROPERTY_REG_ID:Ljava/lang/String; = "bps_token"
-
 .field public static final CACHED_GUIDS_KEY:Ljava/lang/String; = "cachedGUIDsKey"
+
+.field public static final CHANNEL_ID_MISSING_IN_PAYLOAD:I = 0x8
+
+.field public static final CHANNEL_ID_NOT_REGISTERED:I = 0x9
 
 .field public static final CHARGED_EVENT:Ljava/lang/String; = "Charged"
 
@@ -44,6 +54,10 @@
 
 .field public static final DEVICE_ID_TAG:Ljava/lang/String; = "deviceId"
 
+.field public static final DISCARDED_EVENT_JSON_KEY:Ljava/lang/String; = "d_e"
+
+.field public static final DISCARDED_EVENT_NAME:I = 0x11
+
 .field public static final DISPLAY_UNIT_JSON_RESPONSE_KEY:Ljava/lang/String; = "adUnit_notifs"
 
 .field public static final DISPLAY_UNIT_PREVIEW_PUSH_PAYLOAD_KEY:Ljava/lang/String; = "wzrk_adunit"
@@ -58,13 +72,29 @@
 
 .field public static final ERROR_PROFILE_PREFIX:Ljava/lang/String; = "__i"
 
+.field public static final EVENT_NAME_NULL:I = 0xe
+
 .field public static final FALLBACK_ID_TAG:Ljava/lang/String; = "fallbackId"
 
 .field public static final FB_DOB_DATE_FORMAT:Ljava/text/SimpleDateFormat;
 
-.field public static final FCM_PROPERTY_REG_ID:Ljava/lang/String; = "fcm_token"
-
 .field public static final FEATURE_DISPLAY_UNIT:Ljava/lang/String; = "DisplayUnit : "
+
+.field public static final FEATURE_FLAG_JSON_RESPONSE_KEY:Ljava/lang/String; = "ff_notifs"
+
+.field public static final FEATURE_FLAG_UNIT:Ljava/lang/String; = "Feature Flag : "
+
+.field public static final FETCH_EVENT:I = 0x7
+
+.field public static final FETCH_TYPE_FF:I = 0x1
+
+.field public static final FETCH_TYPE_PC:I = 0x0
+
+.field public static final GEOFENCES_JSON_RESPONSE_KEY:Ljava/lang/String; = "geofences"
+
+.field public static final GEOFENCE_ENTERED_EVENT_NAME:Ljava/lang/String; = "Geocluster Entered"
+
+.field public static final GEOFENCE_EXITED_EVENT_NAME:Ljava/lang/String; = "Geocluster Exited"
 
 .field public static final GP_DOB_DATE_FORMAT:Ljava/text/SimpleDateFormat;
 
@@ -73,8 +103,6 @@
 .field public static final HEADER_DOMAIN_NAME:Ljava/lang/String; = "X-WZRK-RD"
 
 .field public static final HEADER_MUTE:Ljava/lang/String; = "X-WZRK-MUTE"
-
-.field public static final HPS_PROPERTY_REG_ID:Ljava/lang/String; = "hps_token"
 
 .field public static final ICON_BASE_URL:Ljava/lang/String; = "http://static.wizrocket.com/android/ico/"
 
@@ -130,6 +158,18 @@
 
 .field public static final INBOX_PREVIEW_PUSH_PAYLOAD_KEY:Ljava/lang/String; = "wzrk_inbox"
 
+.field public static final INVALID_COUNTRY_CODE:I = 0x4
+
+.field public static final INVALID_CT_CUSTOM_ID:I = 0x15
+
+.field public static final INVALID_MULTI_VALUE:I = 0x1
+
+.field public static final INVALID_MULTI_VALUE_KEY:I = 0x17
+
+.field public static final INVALID_PHONE:I = 0x5
+
+.field public static final INVALID_PROFILE_PROP_ARRAY_COUNT:I = 0xd
+
 .field public static final KEY_ACCOUNT_ID:Ljava/lang/String; = "accountId"
 
 .field public static final KEY_ACCOUNT_REGION:Ljava/lang/String; = "accountRegion"
@@ -139,6 +179,8 @@
 .field public static final KEY_ACTION:Ljava/lang/String; = "action"
 
 .field public static final KEY_ACTIONS:Ljava/lang/String; = "actions"
+
+.field public static final KEY_ALLOWED_PUSH_TYPES:Ljava/lang/String; = "allowedPushTypes"
 
 .field public static final KEY_ANALYTICS_ONLY:Ljava/lang/String; = "analyticsOnly"
 
@@ -185,6 +227,8 @@
 .field public static final KEY_DOMAIN_NAME:Ljava/lang/String; = "comms_dmn"
 
 .field public static final KEY_EFC:Ljava/lang/String; = "efc"
+
+.field public static final KEY_EMPTY:I = 0x6
 
 .field public static final KEY_ENABLE_ABTEST:Ljava/lang/String; = "enableABTesting"
 
@@ -296,9 +340,17 @@
 
 .field public static final LABEL_USE_GOOGLE_AD_ID:Ljava/lang/String; = "CLEVERTAP_USE_GOOGLE_AD_ID"
 
+.field public static final LABEL_XIAOMI_APP_ID:Ljava/lang/String; = "CLEVERTAP_XIAOMI_APP_ID"
+
+.field public static final LABEL_XIAOMI_APP_KEY:Ljava/lang/String; = "CLEVERTAP_XIAOMI_APP_KEY"
+
 .field public static final LAST_SESSION_EPOCH:Ljava/lang/String; = "sexe"
 
 .field public static final LOCATION_PING_INTERVAL_IN_SECONDS:I = 0xa
+
+.field public static final LOG_TAG_GEOFENCES:Ljava/lang/String; = "Geofences : "
+
+.field public static final LOG_TAG_PRODUCT_CONFIG:Ljava/lang/String; = "Product Config : "
 
 .field public static final MAX_KEY_LENGTH:I = 0x78
 
@@ -309,6 +361,8 @@
 .field public static final MAX_VALUE_LENGTH:I = 0x200
 
 .field public static final MULTI_USER_PREFIX:Ljava/lang/String; = "mt_"
+
+.field public static final MULTI_VALUE_CHARS_LIMIT_EXCEEDED:I = 0xc
 
 .field public static final NAMESPACE_IJ:Ljava/lang/String; = "IJ"
 
@@ -321,6 +375,8 @@
 .field public static final NOTIFICATION_ID_TAG_INTERVAL:I = 0x1388
 
 .field public static final NOTIFICATION_TAG:Ljava/lang/String; = "wzrk_pn"
+
+.field public static final NOTIFICATION_VIEWED_DISABLED:I = 0xa
 
 .field public static final NOTIFICATION_VIEWED_EVENT_NAME:Ljava/lang/String; = "Notification Viewed"
 
@@ -335,6 +391,12 @@
 .field public static final NOTIF_TITLE:Ljava/lang/String; = "nt"
 
 .field public static final NV_EVENT:I = 0x6
+
+.field public static final OBJECT_VALUE_NOT_PRIMITIVE:I = 0xf
+
+.field public static final OBJECT_VALUE_NOT_PRIMITIVE_PROFILE:I = 0x3
+
+.field public static final ONE_DAY_IN_MILLIS:J = 0x5265c00L
 
 .field public static final ONE_MIN_IN_MILLIS:J = 0xea60L
 
@@ -366,9 +428,19 @@
     .end annotation
 .end field
 
+.field public static final PROP_VALUE_NOT_PRIMITIVE:I = 0x7
+
 .field public static final PUSH_DELAY_MS:I = 0x3e8
 
+.field public static final PUSH_KEY_EMPTY:I = 0x2
+
 .field public static final RAISED_EVENT:I = 0x4
+
+.field public static final REMOTE_CONFIG_FLAG_JSON_RESPONSE_KEY:Ljava/lang/String; = "pc_notifs"
+
+.field public static final RESTRICTED_EVENT_NAME:I = 0x10
+
+.field public static final RESTRICTED_MULTI_VALUE_KEY:I = 0x18
 
 .field public static final SESSION_ID_LAST:Ljava/lang/String; = "lastSessionId"
 
@@ -381,6 +453,14 @@
 .field public static final SYSTEM_EVENTS:[Ljava/lang/String;
 
 .field public static final TEST_IDENTIFIER:Ljava/lang/String; = "0_0"
+
+.field public static final UNABLE_TO_SET_CT_CUSTOM_ID:I = 0x14
+
+.field public static final USE_CUSTOM_ID_FALLBACK:I = 0x12
+
+.field public static final USE_CUSTOM_ID_MISSING_IN_MANIFEST:I = 0x13
+
+.field public static final VALUE_CHARS_LIMIT_EXCEEDED:I = 0xb
 
 .field public static final VIDEO_THUMBNAIL:Ljava/lang/String; = "ct_video_1"
 
@@ -402,6 +482,8 @@
 
 .field public static final WZRK_COLOR:Ljava/lang/String; = "wzrk_clr"
 
+.field public static final WZRK_FETCH:Ljava/lang/String; = "wzrk_fetch"
+
 .field public static final WZRK_FROM:Ljava/lang/String; = "CTPushNotificationReceiver"
 
 .field public static final WZRK_FROM_KEY:Ljava/lang/String; = "wzrk_from"
@@ -419,8 +501,6 @@
 .field public static final WZRK_SUBTITLE:Ljava/lang/String; = "wzrk_st"
 
 .field public static final WZRK_TIME_TO_LIVE:Ljava/lang/String; = "wzrk_ttl"
-
-.field public static final XPS_PROPERTY_REG_ID:Ljava/lang/String; = "xps_token"
 
 
 # direct methods
@@ -441,9 +521,7 @@
     .line 2
     new-instance v0, Ljava/text/SimpleDateFormat;
 
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const-string v2, "yyyy-MM-dd"
+    const-string/jumbo v2, "yyyy-MM-dd"
 
     invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
@@ -453,8 +531,12 @@
 
     const-string v1, "Notification Viewed"
 
+    const-string v2, "Geocluster Entered"
+
+    const-string v3, "Geocluster Exited"
+
     .line 3
-    filled-new-array {v0, v1}, [Ljava/lang/String;
+    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -482,15 +564,6 @@
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
     sput-object v0, Lcom/clevertap/android/sdk/Constants;->PROFILE_IDENTIFIER_KEYS:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

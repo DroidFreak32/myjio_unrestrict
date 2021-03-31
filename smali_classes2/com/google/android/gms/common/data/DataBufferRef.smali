@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/data/DataBufferRef;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -18,7 +19,7 @@
     .end annotation
 .end field
 
-.field public zaln:I
+.field private zaa:I
 
 
 # direct methods
@@ -40,7 +41,7 @@
     iput-object p1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
 
     .line 3
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/common/data/DataBufferRef;->zag(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/common/data/DataBufferRef;->zaa(I)V
 
     return-void
 .end method
@@ -57,7 +58,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2, p2}, Lcom/google/android/gms/common/data/DataHolder;->zaa(Ljava/lang/String;IILandroid/database/CharArrayBuffer;)V
 
@@ -66,6 +67,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/common/data/DataBufferRef;
@@ -96,14 +101,14 @@
 
     if-eqz v0, :cond_0
 
-    iget v0, p1, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v0, p1, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     .line 4
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -139,7 +144,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->getBoolean(Ljava/lang/String;II)Z
 
@@ -158,7 +163,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->getByteArray(Ljava/lang/String;II)[B
 
@@ -188,7 +193,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->zab(Ljava/lang/String;II)D
 
@@ -207,7 +212,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->zaa(Ljava/lang/String;II)F
 
@@ -226,7 +231,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->getInteger(Ljava/lang/String;II)I
 
@@ -245,7 +250,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->getLong(Ljava/lang/String;II)J
 
@@ -264,7 +269,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->getString(Ljava/lang/String;II)Ljava/lang/String;
 
@@ -298,7 +303,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->hasNull(Ljava/lang/String;II)Z
 
@@ -325,7 +330,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -374,6 +379,9 @@
 
 .method public parseUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 3
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -382,7 +390,7 @@
 
     iget v1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     .line 2
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/common/data/DataHolder;->getString(Ljava/lang/String;II)Ljava/lang/String;
@@ -404,7 +412,7 @@
     return-object p1
 .end method
 
-.method public final zag(I)V
+.method public final zaa(I)V
     .locals 1
 
     if-ltz p1, :cond_0
@@ -432,15 +440,13 @@
     iput p1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
 
-    iget v0, p0, Lcom/google/android/gms/common/data/DataBufferRef;->mDataRow:I
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/data/DataHolder;->getWindowIndex(I)I
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/data/DataHolder;->getWindowIndex(I)I
 
     move-result p1
 
-    iput p1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaln:I
+    iput p1, p0, Lcom/google/android/gms/common/data/DataBufferRef;->zaa:I
 
     return-void
 .end method

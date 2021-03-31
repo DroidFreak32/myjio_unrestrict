@@ -12,11 +12,11 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "WavHeaderReader"
+.field private static final TAG:Ljava/lang/String; = "WavHeaderReader"
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -27,6 +27,12 @@
 
 .method public static peek(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)Lcom/google/android/jioexoplayer2/extractor/wav/WavHeader;
     .locals 14
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/google/android/jioexoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -273,6 +279,12 @@
 
 .method public static skipToData(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/wav/WavHeader;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/google/android/jioexoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;

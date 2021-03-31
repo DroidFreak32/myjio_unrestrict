@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public _annotations:[Ljava/lang/annotation/Annotation;
+.field private _annotations:[Ljava/lang/annotation/Annotation;
 
 .field public final _ctor:Ljava/lang/reflect/Constructor;
     .annotation system Ldalvik/annotation/Signature;
@@ -26,9 +26,9 @@
     .end annotation
 .end field
 
-.field public _paramAnnotations:[[Ljava/lang/annotation/Annotation;
+.field private _paramAnnotations:[[Ljava/lang/annotation/Annotation;
 
-.field public _paramCount:I
+.field private _paramCount:I
 
 
 # direct methods

@@ -11,11 +11,11 @@
 
 
 # static fields
-.field public static final enum zzadf:I = 0x1
+.field private static final enum zzadf:I = 0x1
 
 .field public static final enum zzadg:I = 0x2
 
-.field public static final synthetic zzadh:[I
+.field private static final synthetic zzadh:[I
 
 
 # direct methods

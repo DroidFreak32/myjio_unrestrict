@@ -48,7 +48,7 @@
     .line 2
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNativeCoverFragment$1;->this$0:Lcom/clevertap/android/sdk/CTInAppNativeCoverFragment;
 
-    invoke-virtual {p1}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object p1
 

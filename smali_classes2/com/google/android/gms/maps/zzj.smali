@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzr:Lcom/google/android/gms/maps/GoogleMap$OnMyLocationClickListener;
+.field private final synthetic zzr:Lcom/google/android/gms/maps/GoogleMap$OnMyLocationClickListener;
 
 
 # direct methods
@@ -22,6 +22,15 @@
 # virtual methods
 .method public final onMyLocationClick(Landroid/location/Location;)V
     .locals 1
+    .param p1    # Landroid/location/Location;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/zzj;->zzr:Lcom/google/android/gms/maps/GoogleMap$OnMyLocationClickListener;

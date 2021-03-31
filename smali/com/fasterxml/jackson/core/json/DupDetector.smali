@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method private constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -107,6 +107,11 @@
 
 .method public isDup(Ljava/lang/String;)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/core/JsonParseException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/DupDetector;->_firstName:Ljava/lang/String;
@@ -169,8 +174,6 @@
     iput-object v0, p0, Lcom/fasterxml/jackson/core/json/DupDetector;->_seen:Ljava/util/HashSet;
 
     .line 9
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/json/DupDetector;->_seen:Ljava/util/HashSet;
-
     iget-object v1, p0, Lcom/fasterxml/jackson/core/json/DupDetector;->_firstName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z

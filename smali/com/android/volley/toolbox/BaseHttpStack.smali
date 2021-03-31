@@ -31,6 +31,13 @@
             "Lcom/android/volley/toolbox/HttpResponse;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
 .end method
 
 .method public final performRequest(Lcom/android/volley/Request;Ljava/util/Map;)Lorg/apache/http/HttpResponse;
@@ -48,6 +55,13 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -59,11 +73,11 @@
     .line 2
     new-instance p2, Lorg/apache/http/ProtocolVersion;
 
-    const/4 v0, 0x1
+    const-string v0, "HTTP"
 
-    const-string v1, "HTTP"
+    const/4 v1, 0x1
 
-    invoke-direct {p2, v1, v0, v0}, Lorg/apache/http/ProtocolVersion;-><init>(Ljava/lang/String;II)V
+    invoke-direct {p2, v0, v1, v1}, Lorg/apache/http/ProtocolVersion;-><init>(Ljava/lang/String;II)V
 
     .line 3
     new-instance v0, Lorg/apache/http/message/BasicStatusLine;
@@ -107,16 +121,16 @@
 
     move-result-object v2
 
-    check-cast v2, Lrv;
+    check-cast v2, Lcom/android/volley/Header;
 
     .line 8
     new-instance v3, Lorg/apache/http/message/BasicHeader;
 
-    invoke-virtual {v2}, Lrv;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/volley/Header;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v2}, Lrv;->b()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/volley/Header;->getValue()Ljava/lang/String;
 
     move-result-object v2
 

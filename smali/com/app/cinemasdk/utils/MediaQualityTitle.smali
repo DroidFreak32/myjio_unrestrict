@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/app/cinemasdk/utils/MediaQualityTitle;
+.field private static final synthetic $VALUES:[Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
 .field public static final enum AutoTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
@@ -33,87 +33,79 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 10
 
     .line 1
     new-instance v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
-    const/4 v1, 0x0
+    const-string v1, "AutoTitle"
 
-    const-string v2, "AutoTitle"
+    const/4 v2, 0x0
 
     const-string v3, ""
 
-    invoke-direct {v0, v2, v1, v1, v3}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v1, v2, v2, v3}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
     sput-object v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;->AutoTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
     .line 2
-    new-instance v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
     const-string v3, "LowTitle"
 
-    const-string v4, "Basic: uses upto 0.17 GB per hour"
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v3, v2, v2, v4}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    const-string v5, "Basic: uses upto 0.17 GB per hour"
 
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;->LowTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    invoke-direct {v1, v3, v4, v4, v5}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+
+    sput-object v1, Lcom/app/cinemasdk/utils/MediaQualityTitle;->LowTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
     .line 3
-    new-instance v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    new-instance v3, Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
-    const/4 v3, 0x2
+    const-string v5, "MediumTitle"
 
-    const-string v4, "MediumTitle"
+    const/4 v6, 0x2
 
-    const-string v5, "Standard: uses upto 0.51 GB per hour"
+    const-string v7, "Standard: uses upto 0.51 GB per hour"
 
-    invoke-direct {v0, v4, v3, v3, v5}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v3, v5, v6, v6, v7}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;->MediumTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    sput-object v3, Lcom/app/cinemasdk/utils/MediaQualityTitle;->MediumTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
     .line 4
-    new-instance v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    new-instance v5, Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
-    const/4 v4, 0x3
+    const-string v7, "HighTitle"
 
-    const-string v5, "HighTitle"
+    const/4 v8, 0x3
 
-    const-string v6, "Best: uses upto 1 GB per hour in HD"
+    const-string v9, "Best: uses upto 1 GB per hour in HD"
 
-    invoke-direct {v0, v5, v4, v4, v6}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v5, v7, v8, v8, v9}, Lcom/app/cinemasdk/utils/MediaQualityTitle;-><init>(Ljava/lang/String;IILjava/lang/String;)V
 
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;->HighTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    sput-object v5, Lcom/app/cinemasdk/utils/MediaQualityTitle;->HighTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
-    const/4 v0, 0x4
+    const/4 v7, 0x4
 
-    new-array v0, v0, [Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    new-array v7, v7, [Lcom/app/cinemasdk/utils/MediaQualityTitle;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 5
-    sget-object v5, Lcom/app/cinemasdk/utils/MediaQualityTitle;->AutoTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQualityTitle;->LowTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQualityTitle;->MediumTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/app/cinemasdk/utils/MediaQualityTitle;->HighTitle:Lcom/app/cinemasdk/utils/MediaQualityTitle;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/app/cinemasdk/utils/MediaQualityTitle;->$VALUES:[Lcom/app/cinemasdk/utils/MediaQualityTitle;
+    sput-object v7, Lcom/app/cinemasdk/utils/MediaQualityTitle;->$VALUES:[Lcom/app/cinemasdk/utils/MediaQualityTitle;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

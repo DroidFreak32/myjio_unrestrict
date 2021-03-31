@@ -27,7 +27,7 @@
     return-object p0
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/StringBuilder;I)V
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzdo;Ljava/lang/StringBuilder;I)V
     .locals 18
 
     move-object/from16 v0, p0
@@ -701,9 +701,7 @@
 
     invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v7
-
-    move v13, v7
+    move-result v13
 
     :goto_c
     if-eqz v13, :cond_2
@@ -1019,7 +1017,7 @@
     return-void
 .end method
 
-.method public static final zzj(Ljava/lang/String;)Ljava/lang/String;
+.method private static final zzj(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;

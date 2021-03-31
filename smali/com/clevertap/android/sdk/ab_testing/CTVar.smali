@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public _listValue:Ljava/util/List;
+.field private _listValue:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -21,7 +21,7 @@
     .end annotation
 .end field
 
-.field public _mapValue:Ljava/util/Map;
+.field private _mapValue:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -30,15 +30,15 @@
     .end annotation
 .end field
 
-.field public _numberValue:Ljava/lang/Double;
+.field private _numberValue:Ljava/lang/Double;
 
-.field public _stringValue:Ljava/lang/String;
+.field private _stringValue:Ljava/lang/String;
 
-.field public _value:Ljava/lang/Object;
+.field private _value:Ljava/lang/Object;
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
 
-.field public type:Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;
+.field private type:Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;
 
 
 # direct methods
@@ -100,8 +100,6 @@
 
     .line 8
     :try_start_0
-    iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/CTVar;->_stringValue:Ljava/lang/String;
-
     invoke-static {v0}, Ljava/lang/Double;->valueOf(Ljava/lang/String;)Ljava/lang/Double;
 
     move-result-object v0
@@ -429,14 +427,14 @@
 
     move-result-object v2
 
-    const-string v3, "{"
+    const-string/jumbo v3, "{"
 
     .line 2
     invoke-virtual {v2, v3, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "}"
+    const-string/jumbo v3, "}"
 
     .line 3
     invoke-virtual {v2, v3, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -739,7 +737,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string v1, "type"
+    const-string/jumbo v1, "type"
 
     .line 3
     iget-object v2, p0, Lcom/clevertap/android/sdk/ab_testing/CTVar;->type:Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;

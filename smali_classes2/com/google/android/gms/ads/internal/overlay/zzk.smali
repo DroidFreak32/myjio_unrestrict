@@ -1,49 +1,98 @@
 .class public final Lcom/google/android/gms/ads/internal/overlay/zzk;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# annotations
+.annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+.end annotation
 
 
 # instance fields
-.field public final synthetic zzcbu:Landroid/graphics/drawable/Drawable;
+.field public final context:Landroid/content/Context;
 
-.field public final synthetic zzcbv:Lcom/google/android/gms/ads/internal/overlay/zzj;
+.field public final index:I
+
+.field public final parent:Landroid/view/ViewGroup;
+
+.field public final zzdrc:Landroid/view/ViewGroup$LayoutParams;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/ads/internal/overlay/zzj;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbdv;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/ads/internal/overlay/zzi;
+        }
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->zzcbv:Lcom/google/android/gms/ads/internal/overlay/zzj;
-
-    iput-object p2, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->zzcbu:Landroid/graphics/drawable/Drawable;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->zzcbv:Lcom/google/android/gms/ads/internal/overlay/zzj;
-
-    iget-object v0, v0, Lcom/google/android/gms/ads/internal/overlay/zzj;->zzcbr:Lcom/google/android/gms/ads/internal/overlay/zzd;
-
-    iget-object v0, v0, Lcom/google/android/gms/ads/internal/overlay/zzd;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    .line 2
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbdv;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->zzcbu:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->zzdrc:Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .line 3
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbdv;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    .line 4
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbdv;->zzacn()Landroid/content/Context;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->context:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    .line 5
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    if-eqz v1, :cond_0
+
+    .line 6
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->parent:Landroid/view/ViewGroup;
+
+    .line 7
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbdv;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzk;->index:I
+
+    .line 8
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbdv;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    const/4 v0, 0x1
+
+    .line 9
+    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/ads/zzbdv;->zzaz(Z)V
 
     return-void
+
+    .line 10
+    :cond_0
+    new-instance p1, Lcom/google/android/gms/ads/internal/overlay/zzi;
+
+    const-string v0, "Could not get the parent of the WebView for an overlay."
+
+    invoke-direct {p1, v0}, Lcom/google/android/gms/ads/internal/overlay/zzi;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

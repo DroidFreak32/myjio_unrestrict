@@ -3,6 +3,9 @@
 
 
 # annotations
+.annotation build Landroidx/room/Dao;
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao<",

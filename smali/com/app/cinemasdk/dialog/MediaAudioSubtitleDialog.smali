@@ -17,27 +17,27 @@
 
 
 # instance fields
-.field public _btnCancel:Landroid/widget/Button;
+.field private _btnCancel:Landroid/widget/Button;
 
-.field public _btnOK:Landroid/widget/Button;
+.field private _btnOK:Landroid/widget/Button;
 
-.field public _defaultSelected:Z
+.field private _defaultSelected:Z
 
-.field public _defaultSubtitle:Ljava/lang/String;
+.field private _defaultSubtitle:Ljava/lang/String;
 
-.field public _mediaSubtitles:[Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
+.field private _mediaSubtitles:[Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$MediaSubtitle;
 
-.field public _menuAudioSelectedCallBack:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$IMenuAudioSelectedCallBack;
+.field private _menuAudioSelectedCallBack:Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog$IMenuAudioSelectedCallBack;
 
-.field public _radioGroupAudio:Landroid/widget/RadioGroup;
+.field private _radioGroupAudio:Landroid/widget/RadioGroup;
 
-.field public _radioGroupSubtitle:Landroid/widget/RadioGroup;
+.field private _radioGroupSubtitle:Landroid/widget/RadioGroup;
 
-.field public _rendererIndex:I
+.field private _rendererIndex:I
 
-.field public _srtOnOff:Z
+.field private _srtOnOff:Z
 
-.field public audioList:Ljava/util/ArrayList;
+.field private audioList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -47,17 +47,17 @@
     .end annotation
 .end field
 
-.field public defaultLanguage:Ljava/lang/String;
+.field private defaultLanguage:Ljava/lang/String;
 
-.field public defaultView:Landroid/widget/RadioButton;
+.field private defaultView:Landroid/widget/RadioButton;
 
-.field public radioButton:Landroid/widget/RadioButton;
+.field private radioButton:Landroid/widget/RadioButton;
 
 .field public radioGroupParams:Landroid/widget/RadioGroup$LayoutParams;
 
-.field public rbAudioValue:I
+.field private rbAudioValue:I
 
-.field public rbSubtitleValue:I
+.field private rbSubtitleValue:I
 
 
 # direct methods
@@ -369,8 +369,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->radioGroupParams:Landroid/widget/RadioGroup$LayoutParams;
 
     .line 2
-    iget-object v0, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->radioGroupParams:Landroid/widget/RadioGroup$LayoutParams;
-
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -396,7 +394,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "subtitle count - "
+    const-string/jumbo v1, "subtitle count - "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -439,8 +437,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->radioButton:Landroid/widget/RadioButton;
 
     .line 6
-    iget-object v0, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->radioButton:Landroid/widget/RadioButton;
-
     invoke-static {}, Lcom/app/cinemasdk/utils/FontUtil;->getFontInstance()Lcom/app/cinemasdk/utils/FontUtil;
 
     move-result-object v1
@@ -519,8 +515,6 @@
     iput-object v4, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->radioButton:Landroid/widget/RadioButton;
 
     .line 14
-    iget-object v4, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->radioButton:Landroid/widget/RadioButton;
-
     invoke-static {}, Lcom/app/cinemasdk/utils/FontUtil;->getFontInstance()Lcom/app/cinemasdk/utils/FontUtil;
 
     move-result-object v5
@@ -711,7 +705,7 @@
 
     const v3, 0x106000d
 
-    invoke-static {v2, v3}, Lx6;->a(Landroid/content/Context;I)I
+    invoke-static {v2, v3}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result v2
 
@@ -1075,8 +1069,6 @@
     iput-object p1, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->_btnCancel:Landroid/widget/Button;
 
     .line 8
-    iget-object p1, p0, Lcom/app/cinemasdk/dialog/MediaAudioSubtitleDialog;->_btnCancel:Landroid/widget/Button;
-
     invoke-virtual {p1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 9

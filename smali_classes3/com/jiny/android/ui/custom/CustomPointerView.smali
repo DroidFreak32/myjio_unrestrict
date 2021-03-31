@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public s:Landroid/graphics/Paint;
+.field public a:Landroid/graphics/Paint;
 
-.field public t:Landroid/animation/ObjectAnimator;
+.field public b:Landroid/animation/ObjectAnimator;
 
 
 # direct methods
@@ -24,6 +24,10 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -34,6 +38,10 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 0
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -47,7 +55,7 @@
 .method public a()V
     .locals 3
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -55,13 +63,13 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setRepeatCount(I)V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v1, 0x4b0
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0, p0}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -72,7 +80,7 @@
 .method public b()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -96,7 +104,7 @@
 .method public c()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -120,7 +128,7 @@
 .method public d()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -144,7 +152,7 @@
 .method public e()V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -157,7 +165,7 @@
 .method public f()V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -170,7 +178,7 @@
 .method public g()V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -187,9 +195,7 @@
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->s:Landroid/graphics/Paint;
-
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->s:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->a:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
@@ -229,7 +235,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     return-void
 
@@ -317,7 +323,7 @@
 
     int-to-float v1, v4
 
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->s:Landroid/graphics/Paint;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->a:Landroid/graphics/Paint;
 
     const/high16 v3, 0x41000000    # 8.0f
 
@@ -329,7 +335,7 @@
 .method public setAnimationDelay(J)V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->t:Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->b:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
@@ -342,7 +348,7 @@
 .method public setCircleColor(I)V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->s:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->a:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -354,11 +360,11 @@
 .method public setStrokeWidth(F)V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->s:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->a:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->s:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/CustomPointerView;->a:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 

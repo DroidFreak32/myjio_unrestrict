@@ -7,6 +7,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy;
 .end annotation
@@ -18,13 +21,13 @@
 
 
 # instance fields
-.field public config:Landroid/graphics/Bitmap$Config;
+.field private config:Landroid/graphics/Bitmap$Config;
 
-.field public height:I
+.field private height:I
 
-.field public final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
+.field private final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
 
-.field public width:I
+.field private width:I
 
 
 # direct methods

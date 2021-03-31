@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/firebase/jobdispatcher/JobService;->start(Lo50;Li50;)V
+    value = Lcom/firebase/jobdispatcher/JobService;->start(Lcom/firebase/jobdispatcher/JobParameters;Lcom/firebase/jobdispatcher/IJobCallback;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,19 +18,19 @@
 
 
 # instance fields
-.field public final synthetic s:Lo50;
+.field public final synthetic a:Lcom/firebase/jobdispatcher/JobParameters;
 
-.field public final synthetic t:Lcom/firebase/jobdispatcher/JobService;
+.field public final synthetic b:Lcom/firebase/jobdispatcher/JobService;
 
 
 # direct methods
-.method public constructor <init>(Lcom/firebase/jobdispatcher/JobService;Lo50;)V
+.method public constructor <init>(Lcom/firebase/jobdispatcher/JobService;Lcom/firebase/jobdispatcher/JobParameters;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/firebase/jobdispatcher/JobService$b;->t:Lcom/firebase/jobdispatcher/JobService;
+    iput-object p1, p0, Lcom/firebase/jobdispatcher/JobService$b;->b:Lcom/firebase/jobdispatcher/JobService;
 
-    iput-object p2, p0, Lcom/firebase/jobdispatcher/JobService$b;->s:Lo50;
+    iput-object p2, p0, Lcom/firebase/jobdispatcher/JobService$b;->a:Lcom/firebase/jobdispatcher/JobParameters;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,9 +43,9 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/firebase/jobdispatcher/JobService$b;->t:Lcom/firebase/jobdispatcher/JobService;
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/JobService$b;->b:Lcom/firebase/jobdispatcher/JobService;
 
-    invoke-static {v0}, Lcom/firebase/jobdispatcher/JobService;->access$100(Lcom/firebase/jobdispatcher/JobService;)Ls4;
+    invoke-static {v0}, Lcom/firebase/jobdispatcher/JobService;->access$100(Lcom/firebase/jobdispatcher/JobService;)Landroidx/collection/SimpleArrayMap;
 
     move-result-object v0
 
@@ -53,30 +53,30 @@
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/firebase/jobdispatcher/JobService$b;->t:Lcom/firebase/jobdispatcher/JobService;
+    iget-object v1, p0, Lcom/firebase/jobdispatcher/JobService$b;->b:Lcom/firebase/jobdispatcher/JobService;
 
-    iget-object v2, p0, Lcom/firebase/jobdispatcher/JobService$b;->s:Lo50;
+    iget-object v2, p0, Lcom/firebase/jobdispatcher/JobService$b;->a:Lcom/firebase/jobdispatcher/JobParameters;
 
-    invoke-virtual {v1, v2}, Lcom/firebase/jobdispatcher/JobService;->onStartJob(Lo50;)Z
+    invoke-virtual {v1, v2}, Lcom/firebase/jobdispatcher/JobService;->onStartJob(Lcom/firebase/jobdispatcher/JobParameters;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
     .line 3
-    iget-object v1, p0, Lcom/firebase/jobdispatcher/JobService$b;->t:Lcom/firebase/jobdispatcher/JobService;
+    iget-object v1, p0, Lcom/firebase/jobdispatcher/JobService$b;->b:Lcom/firebase/jobdispatcher/JobService;
 
-    invoke-static {v1}, Lcom/firebase/jobdispatcher/JobService;->access$100(Lcom/firebase/jobdispatcher/JobService;)Ls4;
+    invoke-static {v1}, Lcom/firebase/jobdispatcher/JobService;->access$100(Lcom/firebase/jobdispatcher/JobService;)Landroidx/collection/SimpleArrayMap;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/firebase/jobdispatcher/JobService$b;->s:Lo50;
+    iget-object v2, p0, Lcom/firebase/jobdispatcher/JobService$b;->a:Lcom/firebase/jobdispatcher/JobParameters;
 
-    invoke-interface {v2}, Lo50;->getTag()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/firebase/jobdispatcher/JobParameters;->getTag()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ls4;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 

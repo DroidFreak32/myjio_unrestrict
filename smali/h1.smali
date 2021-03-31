@@ -1,298 +1,86 @@
 .class public Lh1;
 .super Ljava/lang/Object;
-.source "ActionMenuItem.java"
-
-# interfaces
-.implements La8;
+.source "RtlSpacingHelper.java"
 
 
 # instance fields
-.field public final a:I
+.field public a:I
 
-.field public final b:I
+.field public b:I
 
-.field public final c:I
+.field public c:I
 
-.field public d:Ljava/lang/CharSequence;
+.field public d:I
 
-.field public e:Ljava/lang/CharSequence;
+.field public e:I
 
-.field public f:Landroid/content/Intent;
+.field public f:I
 
-.field public g:C
+.field public g:Z
 
-.field public h:I
-
-.field public i:C
-
-.field public j:I
-
-.field public k:Landroid/graphics/drawable/Drawable;
-
-.field public l:Landroid/content/Context;
-
-.field public m:Ljava/lang/CharSequence;
-
-.field public n:Ljava/lang/CharSequence;
-
-.field public o:Landroid/content/res/ColorStateList;
-
-.field public p:Landroid/graphics/PorterDuff$Mode;
-
-.field public q:Z
-
-.field public r:Z
-
-.field public s:I
+.field public h:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 p4, 0x1000
+    const/4 v0, 0x0
 
     .line 2
-    iput p4, p0, Lh1;->h:I
+    iput v0, p0, Lh1;->a:I
 
     .line 3
-    iput p4, p0, Lh1;->j:I
+    iput v0, p0, Lh1;->b:I
 
-    const/4 p4, 0x0
+    const/high16 v1, -0x80000000
 
     .line 4
-    iput-object p4, p0, Lh1;->o:Landroid/content/res/ColorStateList;
+    iput v1, p0, Lh1;->c:I
 
     .line 5
-    iput-object p4, p0, Lh1;->p:Landroid/graphics/PorterDuff$Mode;
-
-    const/4 p4, 0x0
+    iput v1, p0, Lh1;->d:I
 
     .line 6
-    iput-boolean p4, p0, Lh1;->q:Z
+    iput v0, p0, Lh1;->e:I
 
     .line 7
-    iput-boolean p4, p0, Lh1;->r:Z
-
-    const/16 p4, 0x10
+    iput v0, p0, Lh1;->f:I
 
     .line 8
-    iput p4, p0, Lh1;->s:I
+    iput-boolean v0, p0, Lh1;->g:Z
 
     .line 9
-    iput-object p1, p0, Lh1;->l:Landroid/content/Context;
-
-    .line 10
-    iput p3, p0, Lh1;->a:I
-
-    .line 11
-    iput p2, p0, Lh1;->b:I
-
-    .line 12
-    iput p5, p0, Lh1;->c:I
-
-    .line 13
-    iput-object p6, p0, Lh1;->d:Ljava/lang/CharSequence;
+    iput-boolean v0, p0, Lh1;->h:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lf9;)La8;
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public a()Lf9;
+.method public a()I
     .locals 1
 
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final b()V
-    .locals 2
-
     .line 1
-    iget-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
+    iget-boolean v0, p0, Lh1;->g:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lh1;->q:Z
+    iget v0, p0, Lh1;->a:I
 
-    if-nez v0, :cond_0
+    goto :goto_0
 
-    iget-boolean v0, p0, Lh1;->r:Z
-
-    if-eqz v0, :cond_2
-
-    .line 2
     :cond_0
-    iget-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v0}, Lp7;->i(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    .line 3
-    iget-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    .line 4
-    iget-boolean v0, p0, Lh1;->q:Z
-
-    if-eqz v0, :cond_1
-
-    .line 5
-    iget-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, p0, Lh1;->o:Landroid/content/res/ColorStateList;
-
-    invoke-static {v0, v1}, Lp7;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
-
-    .line 6
-    :cond_1
-    iget-boolean v0, p0, Lh1;->r:Z
-
-    if-eqz v0, :cond_2
-
-    .line 7
-    iget-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, p0, Lh1;->p:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-static {v0, v1}, Lp7;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
-
-    :cond_2
-    return-void
-.end method
-
-.method public collapseActionView()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public expandActionView()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getActionProvider()Landroid/view/ActionProvider;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public getActionView()Landroid/view/View;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getAlphabeticModifiers()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lh1;->j:I
-
-    return v0
-.end method
-
-.method public getAlphabeticShortcut()C
-    .locals 1
-
-    .line 1
-    iget-char v0, p0, Lh1;->i:C
-
-    return v0
-.end method
-
-.method public getContentDescription()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->m:Ljava/lang/CharSequence;
-
-    return-object v0
-.end method
-
-.method public getGroupId()I
-    .locals 1
-
-    .line 1
     iget v0, p0, Lh1;->b:I
 
+    :goto_0
     return v0
 .end method
 
-.method public getIcon()Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    return-object v0
-.end method
-
-.method public getIconTintList()Landroid/content/res/ColorStateList;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->o:Landroid/content/res/ColorStateList;
-
-    return-object v0
-.end method
-
-.method public getIconTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->p:Landroid/graphics/PorterDuff$Mode;
-
-    return-object v0
-.end method
-
-.method public getIntent()Landroid/content/Intent;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->f:Landroid/content/Intent;
-
-    return-object v0
-.end method
-
-.method public getItemId()I
+.method public b()I
     .locals 1
 
     .line 1
@@ -301,613 +89,205 @@
     return v0
 .end method
 
-.method public getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getNumericModifiers()I
+.method public c()I
     .locals 1
 
     .line 1
-    iget v0, p0, Lh1;->h:I
+    iget v0, p0, Lh1;->b:I
 
     return v0
 .end method
 
-.method public getNumericShortcut()C
+.method public d()I
     .locals 1
 
     .line 1
-    iget-char v0, p0, Lh1;->g:C
-
-    return v0
-.end method
-
-.method public getOrder()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lh1;->c:I
-
-    return v0
-.end method
-
-.method public getSubMenu()Landroid/view/SubMenu;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getTitle()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->d:Ljava/lang/CharSequence;
-
-    return-object v0
-.end method
-
-.method public getTitleCondensed()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->e:Ljava/lang/CharSequence;
+    iget-boolean v0, p0, Lh1;->g:Z
 
     if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lh1;->d:Ljava/lang/CharSequence;
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public getTooltipText()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lh1;->n:Ljava/lang/CharSequence;
-
-    return-object v0
-.end method
-
-.method public hasSubMenu()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public isActionViewExpanded()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public isCheckable()Z
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lh1;->s:I
-
-    const/4 v1, 0x1
-
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_0
+    iget v0, p0, Lh1;->b:I
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    return v1
-.end method
-
-.method public isChecked()Z
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lh1;->s:I
-
-    and-int/lit8 v0, v0, 0x2
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
+    iget v0, p0, Lh1;->a:I
 
     :goto_0
     return v0
 .end method
 
-.method public isEnabled()Z
+.method public e(II)V
     .locals 1
 
-    .line 1
-    iget v0, p0, Lh1;->s:I
-
-    and-int/lit8 v0, v0, 0x10
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    return v0
-.end method
-
-.method public isVisible()Z
-    .locals 1
-
     .line 1
-    iget v0, p0, Lh1;->s:I
+    iput-boolean v0, p0, Lh1;->h:Z
 
-    and-int/lit8 v0, v0, 0x8
+    const/high16 v0, -0x80000000
 
-    if-nez v0, :cond_0
+    if-eq p1, v0, :cond_0
 
-    const/4 v0, 0x1
+    .line 2
+    iput p1, p0, Lh1;->e:I
 
-    goto :goto_0
+    iput p1, p0, Lh1;->a:I
 
     :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public setActionView(I)La8;
-    .locals 0
-
-    .line 4
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public setActionView(Landroid/view/View;)La8;
-    .locals 0
+    if-eq p2, v0, :cond_1
 
     .line 3
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iput p2, p0, Lh1;->f:I
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    iput p2, p0, Lh1;->b:I
 
-    throw p1
-.end method
-
-.method public bridge synthetic setActionView(I)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lh1;->setActionView(I)La8;
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public bridge synthetic setActionView(Landroid/view/View;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 2
-    invoke-virtual {p0, p1}, Lh1;->setActionView(Landroid/view/View;)La8;
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public setAlphabeticShortcut(C)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    invoke-static {p1}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result p1
-
-    iput-char p1, p0, Lh1;->i:C
-
-    return-object p0
-.end method
-
-.method public setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 2
-    invoke-static {p1}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result p1
-
-    iput-char p1, p0, Lh1;->i:C
-
-    .line 3
-    invoke-static {p2}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
-
-    move-result p1
-
-    iput p1, p0, Lh1;->j:I
-
-    return-object p0
-.end method
-
-.method public setCheckable(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lh1;->s:I
-
-    and-int/lit8 v0, v0, -0x2
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lh1;->s:I
-
-    return-object p0
-.end method
-
-.method public setChecked(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lh1;->s:I
-
-    and-int/lit8 v0, v0, -0x3
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lh1;->s:I
-
-    return-object p0
-.end method
-
-.method public setContentDescription(Ljava/lang/CharSequence;)La8;
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lh1;->m:Ljava/lang/CharSequence;
-
-    return-object p0
-.end method
-
-.method public bridge synthetic setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lh1;->setContentDescription(Ljava/lang/CharSequence;)La8;
-
-    return-object p0
-.end method
-
-.method public setEnabled(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lh1;->s:I
-
-    and-int/lit8 v0, v0, -0x11
-
-    if-eqz p1, :cond_0
-
-    const/16 p1, 0x10
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lh1;->s:I
-
-    return-object p0
-.end method
-
-.method public setIcon(I)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 3
-    iget-object v0, p0, Lh1;->l:Landroid/content/Context;
-
-    invoke-static {v0, p1}, Lx6;->c(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    .line 4
-    invoke-virtual {p0}, Lh1;->b()V
-
-    return-object p0
-.end method
-
-.method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lh1;->k:Landroid/graphics/drawable/Drawable;
-
-    .line 2
-    invoke-virtual {p0}, Lh1;->b()V
-
-    return-object p0
-.end method
-
-.method public setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lh1;->o:Landroid/content/res/ColorStateList;
-
-    const/4 p1, 0x1
-
-    .line 2
-    iput-boolean p1, p0, Lh1;->q:Z
-
-    .line 3
-    invoke-virtual {p0}, Lh1;->b()V
-
-    return-object p0
-.end method
-
-.method public setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lh1;->p:Landroid/graphics/PorterDuff$Mode;
-
-    const/4 p1, 0x1
-
-    .line 2
-    iput-boolean p1, p0, Lh1;->r:Z
-
-    .line 3
-    invoke-virtual {p0}, Lh1;->b()V
-
-    return-object p0
-.end method
-
-.method public setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lh1;->f:Landroid/content/Intent;
-
-    return-object p0
-.end method
-
-.method public setNumericShortcut(C)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-char p1, p0, Lh1;->g:C
-
-    return-object p0
-.end method
-
-.method public setNumericShortcut(CI)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 2
-    iput-char p1, p0, Lh1;->g:C
-
-    .line 3
-    invoke-static {p2}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
-
-    move-result p1
-
-    iput p1, p0, Lh1;->h:I
-
-    return-object p0
-.end method
-
-.method public setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public setShortcut(CC)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-char p1, p0, Lh1;->g:C
-
-    .line 2
-    invoke-static {p2}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result p1
-
-    iput-char p1, p0, Lh1;->i:C
-
-    return-object p0
-.end method
-
-.method public setShortcut(CCII)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 3
-    iput-char p1, p0, Lh1;->g:C
-
-    .line 4
-    invoke-static {p3}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
-
-    move-result p1
-
-    iput p1, p0, Lh1;->h:I
-
-    .line 5
-    invoke-static {p2}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result p1
-
-    iput-char p1, p0, Lh1;->i:C
-
-    .line 6
-    invoke-static {p4}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
-
-    move-result p1
-
-    iput p1, p0, Lh1;->j:I
-
-    return-object p0
-.end method
-
-.method public setShowAsAction(I)V
-    .locals 0
-
+    :cond_1
     return-void
 .end method
 
-.method public setShowAsActionFlags(I)La8;
-    .locals 0
-
-    .line 2
-    invoke-virtual {p0, p1}, Lh1;->setShowAsAction(I)V
-
-    return-object p0
-.end method
-
-.method public bridge synthetic setShowAsActionFlags(I)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lh1;->setShowAsActionFlags(I)La8;
-
-    return-object p0
-.end method
-
-.method public setTitle(I)Landroid/view/MenuItem;
+.method public f(Z)V
     .locals 1
 
-    .line 2
-    iget-object v0, p0, Lh1;->l:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lh1;->d:Ljava/lang/CharSequence;
-
-    return-object p0
-.end method
-
-.method public setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 0
-
     .line 1
-    iput-object p1, p0, Lh1;->d:Ljava/lang/CharSequence;
+    iget-boolean v0, p0, Lh1;->g:Z
 
-    return-object p0
-.end method
+    if-ne p1, v0, :cond_0
 
-.method public setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lh1;->e:Ljava/lang/CharSequence;
-
-    return-object p0
-.end method
-
-.method public setTooltipText(Ljava/lang/CharSequence;)La8;
-    .locals 0
+    return-void
 
     .line 2
-    iput-object p1, p0, Lh1;->n:Ljava/lang/CharSequence;
+    :cond_0
+    iput-boolean p1, p0, Lh1;->g:Z
 
-    return-object p0
+    .line 3
+    iget-boolean v0, p0, Lh1;->h:Z
+
+    if-eqz v0, :cond_6
+
+    const/high16 v0, -0x80000000
+
+    if-eqz p1, :cond_3
+
+    .line 4
+    iget p1, p0, Lh1;->d:I
+
+    if-eq p1, v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget p1, p0, Lh1;->e:I
+
+    :goto_0
+    iput p1, p0, Lh1;->a:I
+
+    .line 5
+    iget p1, p0, Lh1;->c:I
+
+    if-eq p1, v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    iget p1, p0, Lh1;->f:I
+
+    :goto_1
+    iput p1, p0, Lh1;->b:I
+
+    goto :goto_4
+
+    .line 6
+    :cond_3
+    iget p1, p0, Lh1;->c:I
+
+    if-eq p1, v0, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    iget p1, p0, Lh1;->e:I
+
+    :goto_2
+    iput p1, p0, Lh1;->a:I
+
+    .line 7
+    iget p1, p0, Lh1;->d:I
+
+    if-eq p1, v0, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    iget p1, p0, Lh1;->f:I
+
+    :goto_3
+    iput p1, p0, Lh1;->b:I
+
+    goto :goto_4
+
+    .line 8
+    :cond_6
+    iget p1, p0, Lh1;->e:I
+
+    iput p1, p0, Lh1;->a:I
+
+    .line 9
+    iget p1, p0, Lh1;->f:I
+
+    iput p1, p0, Lh1;->b:I
+
+    :goto_4
+    return-void
 .end method
 
-.method public bridge synthetic setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lh1;->setTooltipText(Ljava/lang/CharSequence;)La8;
-
-    return-object p0
-.end method
-
-.method public setVisible(Z)Landroid/view/MenuItem;
+.method public g(II)V
     .locals 2
 
     .line 1
-    iget v0, p0, Lh1;->s:I
+    iput p1, p0, Lh1;->c:I
 
-    const/16 v1, 0x8
+    .line 2
+    iput p2, p0, Lh1;->d:I
 
-    and-int/2addr v0, v1
+    const/4 v0, 0x1
 
-    if-eqz p1, :cond_0
+    .line 3
+    iput-boolean v0, p0, Lh1;->h:Z
 
-    const/4 v1, 0x0
+    .line 4
+    iget-boolean v0, p0, Lh1;->g:Z
+
+    const/high16 v1, -0x80000000
+
+    if-eqz v0, :cond_1
+
+    if-eq p2, v1, :cond_0
+
+    .line 5
+    iput p2, p0, Lh1;->a:I
 
     :cond_0
-    or-int p1, v0, v1
+    if-eq p1, v1, :cond_3
 
-    iput p1, p0, Lh1;->s:I
+    .line 6
+    iput p1, p0, Lh1;->b:I
 
-    return-object p0
+    goto :goto_0
+
+    :cond_1
+    if-eq p1, v1, :cond_2
+
+    .line 7
+    iput p1, p0, Lh1;->a:I
+
+    :cond_2
+    if-eq p2, v1, :cond_3
+
+    .line 8
+    iput p2, p0, Lh1;->b:I
+
+    :cond_3
+    :goto_0
+    return-void
 .end method

@@ -40,9 +40,9 @@
 
 
 # instance fields
-.field public final mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
+.field private final mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
-.field public final mFlags:I
+.field private final mFlags:I
 
 
 # direct methods
@@ -88,6 +88,10 @@
 
 .method public constructor <init>(Landroid/support/v4/media/MediaDescriptionCompat;I)V
     .locals 1
+    .param p1    # Landroid/support/v4/media/MediaDescriptionCompat;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -259,6 +263,8 @@
 
 .method public getDescription()Landroid/support/v4/media/MediaDescriptionCompat;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
@@ -277,6 +283,8 @@
 
 .method public getMediaId()Ljava/lang/String;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;

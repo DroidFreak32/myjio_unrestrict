@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/IOUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -25,6 +26,10 @@
 
 .method public static closeQuietly(Landroid/os/ParcelFileDescriptor;)V
     .locals 0
+    .param p0    # Landroid/os/ParcelFileDescriptor;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -43,6 +48,10 @@
 
 .method public static closeQuietly(Ljava/io/Closeable;)V
     .locals 0
+    .param p0    # Ljava/io/Closeable;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -61,7 +70,24 @@
 
 .method public static copyStream(Ljava/io/InputStream;Ljava/io/OutputStream;)J
     .locals 1
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/io/OutputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -79,7 +105,32 @@
 
 .method public static copyStream(Ljava/io/InputStream;Ljava/io/OutputStream;ZI)J
     .locals 7
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/io/OutputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -137,12 +188,20 @@
     .line 8
     invoke-static {p1}, Lcom/google/android/gms/common/util/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
 
+    .line 9
     :cond_2
     throw p3
 .end method
 
 .method public static isGzipByteBuffer([B)Z
     .locals 3
+    .param p0    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -179,7 +238,20 @@
 
 .method public static readInputStreamFully(Ljava/io/InputStream;)[B
     .locals 1
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -197,7 +269,24 @@
 
 .method public static readInputStreamFully(Ljava/io/InputStream;Z)[B
     .locals 1
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -221,7 +310,20 @@
 
 .method public static toByteArray(Ljava/io/InputStream;)[B
     .locals 4
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -268,8 +370,14 @@
     return-object p0
 .end method
 
-.method public static zza(Ljava/io/InputStream;Ljava/io/OutputStream;Z)J
+.method private static zza(Ljava/io/InputStream;Ljava/io/OutputStream;Z)J
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

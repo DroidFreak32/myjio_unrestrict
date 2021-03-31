@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/config/GservicesValue;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -23,29 +24,54 @@
 
 
 # static fields
-.field public static final sLock:Ljava/lang/Object;
+.field private static final zzc:Ljava/lang/Object;
 
-.field public static zzbm:Lcom/google/android/gms/common/config/GservicesValue$zza;
+.field private static zzd:Lcom/google/android/gms/common/config/GservicesValue$zza;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzbn:I
+.field private static zze:I
 
-.field public static zzbo:Landroid/content/Context;
+.field private static zzf:Landroid/content/Context;
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "StaticFieldLeak"
+        }
+    .end annotation
 
-.field public static zzbp:Ljava/util/HashSet;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
+
+.field private static zzg:Ljava/util/Set;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/HashSet<",
+            "Ljava/util/Set<",
             "Ljava/lang/String;",
             ">;"
         }
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
     .end annotation
 .end field
 
 
 # instance fields
-.field public final mKey:Ljava/lang/String;
+.field public final zza:Ljava/lang/String;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
-.field public final zzbq:Ljava/lang/Object;
+.field public final zzb:Ljava/lang/Object;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -53,7 +79,10 @@
     .end annotation
 .end field
 
-.field public zzbr:Ljava/lang/Object;
+.field private zzh:Ljava/lang/Object;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -71,13 +100,21 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/config/GservicesValue;->sLock:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/config/GservicesValue;->zzc:Ljava/lang/Object;
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,24 +129,27 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-object v0, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzbr:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzh:Ljava/lang/Object;
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/config/GservicesValue;->mKey:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/config/GservicesValue;->zza:Ljava/lang/String;
 
     .line 4
-    iput-object p2, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzbq:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzb:Ljava/lang/Object;
 
     return-void
 .end method
 
 .method public static isInitialized()Z
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/config/GservicesValue;->sLock:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/config/GservicesValue;->zzc:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -134,6 +174,17 @@
 
 .method public static value(Ljava/lang/String;Ljava/lang/Float;)Lcom/google/android/gms/common/config/GservicesValue;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Float;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -150,15 +201,26 @@
     .end annotation
 
     .line 4
-    new-instance v0, Lcom/google/android/gms/common/config/zzd;
+    new-instance v0, Lcom/google/android/gms/common/config/zzc;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zzd;-><init>(Ljava/lang/String;Ljava/lang/Float;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zzc;-><init>(Ljava/lang/String;Ljava/lang/Float;)V
 
     return-object v0
 .end method
 
 .method public static value(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/gms/common/config/GservicesValue;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Integer;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -175,15 +237,26 @@
     .end annotation
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/common/config/zzc;
+    new-instance v0, Lcom/google/android/gms/common/config/zzd;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zzc;-><init>(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zzd;-><init>(Ljava/lang/String;Ljava/lang/Integer;)V
 
     return-object v0
 .end method
 
 .method public static value(Ljava/lang/String;Ljava/lang/Long;)Lcom/google/android/gms/common/config/GservicesValue;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Long;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -200,15 +273,26 @@
     .end annotation
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/common/config/zzb;
+    new-instance v0, Lcom/google/android/gms/common/config/zza;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zzb;-><init>(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zza;-><init>(Ljava/lang/String;Ljava/lang/Long;)V
 
     return-object v0
 .end method
 
 .method public static value(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/common/config/GservicesValue;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -234,6 +318,17 @@
 
 .method public static value(Ljava/lang/String;Z)Lcom/google/android/gms/common/config/GservicesValue;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -249,22 +344,22 @@
     .end annotation
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/common/config/zza;
+    new-instance v0, Lcom/google/android/gms/common/config/zzb;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zza;-><init>(Ljava/lang/String;Ljava/lang/Boolean;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/config/zzb;-><init>(Ljava/lang/String;Ljava/lang/Boolean;)V
 
     return-object v0
 .end method
 
-.method public static zzi()Z
+.method private static zza()Z
     .locals 2
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/config/GservicesValue;->sLock:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/config/GservicesValue;->zzc:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -291,6 +386,9 @@
 # virtual methods
 .method public final get()Ljava/lang/Object;
     .locals 4
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -301,7 +399,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzbr:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzh:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
@@ -314,7 +412,7 @@
     move-result-object v0
 
     .line 3
-    sget-object v1, Lcom/google/android/gms/common/config/GservicesValue;->sLock:Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/gms/common/config/GservicesValue;->zzc:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -325,29 +423,27 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 5
-    sget-object v2, Lcom/google/android/gms/common/config/GservicesValue;->sLock:Ljava/lang/Object;
+    monitor-enter v1
 
-    monitor-enter v2
-
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 6
     :try_start_1
-    sput-object v1, Lcom/google/android/gms/common/config/GservicesValue;->zzbp:Ljava/util/HashSet;
+    sput-object v2, Lcom/google/android/gms/common/config/GservicesValue;->zzg:Ljava/util/Set;
 
     .line 7
-    sput-object v1, Lcom/google/android/gms/common/config/GservicesValue;->zzbo:Landroid/content/Context;
+    sput-object v2, Lcom/google/android/gms/common/config/GservicesValue;->zzf:Landroid/content/Context;
 
     .line 8
-    monitor-exit v2
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 9
     :try_start_2
-    iget-object v1, p0, Lcom/google/android/gms/common/config/GservicesValue;->mKey:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/config/GservicesValue;->zza:Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/config/GservicesValue;->zzd(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/config/GservicesValue;->zza(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
     :try_end_2
@@ -375,9 +471,9 @@
 
     .line 12
     :try_start_4
-    iget-object v3, p0, Lcom/google/android/gms/common/config/GservicesValue;->mKey:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/common/config/GservicesValue;->zza:Ljava/lang/String;
 
-    invoke-virtual {p0, v3}, Lcom/google/android/gms/common/config/GservicesValue;->zzd(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v3}, Lcom/google/android/gms/common/config/GservicesValue;->zza(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
     :try_end_4
@@ -401,22 +497,24 @@
     :try_start_6
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 16
     throw v3
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 16
+    .line 17
     :goto_0
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 18
     throw v1
 
     :catchall_2
     move-exception v0
 
-    .line 17
+    .line 19
     :try_start_7
-    monitor-exit v2
+    monitor-exit v1
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
@@ -425,7 +523,7 @@
     :catchall_3
     move-exception v0
 
-    .line 18
+    .line 20
     :try_start_8
     monitor-exit v1
     :try_end_8
@@ -436,6 +534,9 @@
 
 .method public final getBinderSafe()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -458,6 +559,10 @@
 
 .method public override(Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -471,16 +576,16 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzbr:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzh:Ljava/lang/Object;
 
     .line 2
-    sget-object p1, Lcom/google/android/gms/common/config/GservicesValue;->sLock:Ljava/lang/Object;
+    sget-object p1, Lcom/google/android/gms/common/config/GservicesValue;->zzc:Ljava/lang/Object;
 
     monitor-enter p1
 
     .line 3
     :try_start_0
-    invoke-static {}, Lcom/google/android/gms/common/config/GservicesValue;->zzi()Z
+    invoke-static {}, Lcom/google/android/gms/common/config/GservicesValue;->zza()Z
 
     .line 4
     monitor-exit p1
@@ -508,12 +613,19 @@
     const/4 v0, 0x0
 
     .line 1
-    iput-object v0, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzbr:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/common/config/GservicesValue;->zzh:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public abstract zzd(Ljava/lang/String;)Ljava/lang/Object;
+.method public abstract zza(Ljava/lang/String;)Ljava/lang/Object;
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

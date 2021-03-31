@@ -7,27 +7,27 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final arrayValueSeparator:C
+.field private final arrayValueSeparator:C
 
-.field public final objectEntrySeparator:C
+.field private final objectEntrySeparator:C
 
-.field public final objectFieldValueSeparator:C
+.field private final objectFieldValueSeparator:C
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 2
 
-    const/16 v0, 0x2c
+    const/16 v0, 0x3a
 
-    const/16 v1, 0x3a
+    const/16 v1, 0x2c
 
     .line 1
-    invoke-direct {p0, v1, v0, v0}, Lcom/fasterxml/jackson/core/util/Separators;-><init>(CCC)V
+    invoke-direct {p0, v0, v1, v1}, Lcom/fasterxml/jackson/core/util/Separators;-><init>(CCC)V
 
     return-void
 .end method

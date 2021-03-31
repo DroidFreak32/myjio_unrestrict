@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final synthetic zzvw:Lcom/google/android/gms/internal/gtm/zzae;
+.field private final synthetic zzvw:Lcom/google/android/gms/internal/gtm/zzae;
 
-.field public final synthetic zzvy:Ljava/lang/String;
+.field private final synthetic zzvy:Ljava/lang/String;
 
-.field public final synthetic zzvz:Ljava/lang/Runnable;
+.field private final synthetic zzvz:Ljava/lang/Runnable;
 
 
 # direct methods

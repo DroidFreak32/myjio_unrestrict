@@ -1,6 +1,5 @@
 .class public final Lcom/bumptech/glide/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -82,7 +81,6 @@
 
     new-array v0, v0, [I
 
-    .line 1
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/bumptech/glide/R$styleable;->CoordinatorLayout:[I
@@ -91,7 +89,6 @@
 
     new-array v0, v0, [I
 
-    .line 2
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/bumptech/glide/R$styleable;->CoordinatorLayout_Layout:[I
@@ -100,7 +97,6 @@
 
     new-array v0, v0, [I
 
-    .line 3
     fill-array-data v0, :array_2
 
     sput-object v0, Lcom/bumptech/glide/R$styleable;->FontFamily:[I
@@ -109,7 +105,6 @@
 
     new-array v0, v0, [I
 
-    .line 4
     fill-array-data v0, :array_3
 
     sput-object v0, Lcom/bumptech/glide/R$styleable;->FontFamilyFont:[I
@@ -118,29 +113,29 @@
 
     :array_0
     .array-data 4
-        0x7f04022d
-        0x7f040424
+        0x7f04028a
+        0x7f0404b9
     .end array-data
 
     :array_1
     .array-data 4
         0x10100b3
-        0x7f040246
-        0x7f040247
-        0x7f040249
-        0x7f040275
-        0x7f04027f
-        0x7f040280
+        0x7f0402a7
+        0x7f0402a8
+        0x7f0402aa
+        0x7f0402d6
+        0x7f0402e0
+        0x7f0402e1
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f0401b3
-        0x7f0401b4
-        0x7f0401b5
-        0x7f0401b6
-        0x7f0401b7
-        0x7f0401b8
+        0x7f0401fd
+        0x7f0401fe
+        0x7f0401ff
+        0x7f040200
+        0x7f040201
+        0x7f040202
     .end array-data
 
     :array_3
@@ -150,18 +145,17 @@
         0x101053f
         0x101056f
         0x1010570
-        0x7f0401b0
-        0x7f0401b9
-        0x7f0401ba
-        0x7f0401bb
-        0x7f0404a0
+        0x7f0401fa
+        0x7f040203
+        0x7f040204
+        0x7f040205
+        0x7f040548
     .end array-data
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

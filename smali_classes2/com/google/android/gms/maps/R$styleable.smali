@@ -1,6 +1,5 @@
 .class public final Lcom/google/android/gms/maps/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -74,7 +73,6 @@
 
     new-array v0, v0, [I
 
-    .line 1
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/google/android/gms/maps/R$styleable;->MapAttrs:[I
@@ -83,37 +81,36 @@
 
     :array_0
     .array-data 4
-        0x7f04003e
-        0x7f04009e
-        0x7f04009f
-        0x7f0400a0
-        0x7f0400a1
-        0x7f0400a2
-        0x7f0400a3
-        0x7f0400a4
-        0x7f04023d
-        0x7f04023e
-        0x7f04023f
-        0x7f040240
-        0x7f0402cb
-        0x7f0402e9
-        0x7f0404aa
-        0x7f0404ab
-        0x7f0404ac
-        0x7f0404ad
-        0x7f0404ae
-        0x7f0404af
-        0x7f0404b0
-        0x7f0404b1
-        0x7f0404cb
-        0x7f0404e7
+        0x7f040041
+        0x7f0400b7
+        0x7f0400b8
+        0x7f0400b9
+        0x7f0400ba
+        0x7f0400bb
+        0x7f0400bc
+        0x7f0400bd
+        0x7f04029e
+        0x7f04029f
+        0x7f0402a0
+        0x7f0402a1
+        0x7f04032d
+        0x7f04034b
+        0x7f040552
+        0x7f040553
+        0x7f040554
+        0x7f040555
+        0x7f040556
+        0x7f040557
+        0x7f040558
+        0x7f040559
+        0x7f040574
+        0x7f040595
     .end array-data
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

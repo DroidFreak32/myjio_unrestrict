@@ -1,20 +1,20 @@
 .class public final Lcom/google/android/gms/measurement/internal/zziq;
 .super Lcom/google/android/gms/measurement/internal/zzai;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # instance fields
-.field public final synthetic zza:Lcom/google/android/gms/measurement/internal/zzin;
+.field private final synthetic zza:Lcom/google/android/gms/measurement/internal/zzir;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzin;Lcom/google/android/gms/measurement/internal/zzgu;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzir;Lcom/google/android/gms/measurement/internal/zzgt;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zziq;->zza:Lcom/google/android/gms/measurement/internal/zzin;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zziq;->zza:Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-direct {p0, p2}, Lcom/google/android/gms/measurement/internal/zzai;-><init>(Lcom/google/android/gms/measurement/internal/zzgu;)V
+    invoke-direct {p0, p2}, Lcom/google/android/gms/measurement/internal/zzai;-><init>(Lcom/google/android/gms/measurement/internal/zzgt;)V
 
     return-void
 .end method
@@ -25,9 +25,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziq;->zza:Lcom/google/android/gms/measurement/internal/zzin;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziq;->zza:Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzin;->zzc(Lcom/google/android/gms/measurement/internal/zzin;)V
+    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzir;->zzc(Lcom/google/android/gms/measurement/internal/zzir;)V
 
     return-void
 .end method

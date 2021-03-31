@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public final _property:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+.field private final _property:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-.field public final _typeDeserializer:Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
+.field private final _typeDeserializer:Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
 
-.field public _typeProperty:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+.field private _typeProperty:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-.field public final _typePropertyName:Ljava/lang/String;
+.field private final _typePropertyName:Ljava/lang/String;
 
 
 # direct methods

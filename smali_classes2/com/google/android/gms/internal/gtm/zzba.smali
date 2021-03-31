@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public final zzsu:Lcom/google/android/gms/internal/gtm/zzq;
+.field private final zzsu:Lcom/google/android/gms/internal/gtm/zzq;
 
 
 # direct methods

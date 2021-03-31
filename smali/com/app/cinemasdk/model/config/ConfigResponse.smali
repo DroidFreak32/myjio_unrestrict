@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public code:Ljava/lang/Integer;
+.field private code:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public message:Ljava/lang/String;
+.field private message:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public url:Lcom/app/cinemasdk/model/config/Url;
+.field private url:Lcom/app/cinemasdk/model/config/Url;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

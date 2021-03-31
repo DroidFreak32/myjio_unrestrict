@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/internal/firebase_messaging/zzf;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-iid@@20.2.0"
+.source "com.google.firebase:firebase-messaging@@21.0.0"
 
 
 # annotations
@@ -12,11 +12,11 @@
 
 
 # static fields
-.field public static final enum zza:I = 0x1
+.field public static final enum zza:I = 0x2
 
-.field public static final enum zzb:I = 0x2
+.field private static final enum zzb:I = 0x1
 
-.field public static final synthetic zzc:[I
+.field private static final synthetic zzc:[I
 
 
 # direct methods
@@ -30,6 +30,7 @@
     .line 1
     fill-array-data v0, :array_0
 
+    .line 2
     sput-object v0, Lcom/google/android/gms/internal/firebase_messaging/zzf;->zzc:[I
 
     return-void

@@ -1,34 +1,26 @@
-.class public final Lcom/google/android/gms/internal/ads/zzht;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzht;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzhq;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # virtual methods
-.method public final zze(Landroid/content/Context;)Lorg/json/JSONObject;
-    .locals 0
+.method public abstract onStopped()V
+.end method
 
-    .line 1
-    new-instance p1, Lorg/json/JSONObject;
+.method public abstract zza([Lcom/google/android/gms/internal/ads/zzhy;Lcom/google/android/gms/internal/ads/zznq;Lcom/google/android/gms/internal/ads/zzoe;)V
+.end method
 
-    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
+.method public abstract zzc(JZ)Z
+.end method
 
-    return-object p1
+.method public abstract zzdt(J)Z
+.end method
+
+.method public abstract zzfb()V
+.end method
+
+.method public abstract zzfc()V
+.end method
+
+.method public abstract zzfd()Lcom/google/android/gms/internal/ads/zzol;
 .end method

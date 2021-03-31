@@ -1,88 +1,106 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzsf;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/ads/zzsf;
+.super Lcom/google/android/gms/internal/ads/zzsk;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field private final zzbui:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference<",
+            "Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;)V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzsk;-><init>()V
+
+    .line 2
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzsf;->zzbui:Ljava/lang/ref/WeakReference;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract cancelUnconfirmedClick()V
+.method public final onAppOpenAdFailedToLoad(I)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzsf;->zzbui:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;->onAppOpenAdFailedToLoad(I)V
+
+    :cond_0
+    return-void
 .end method
 
-.method public abstract destroy()V
+.method public final zza(Lcom/google/android/gms/internal/ads/zzsg;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzsf;->zzbui:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzsr;
+
+    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/ads/zzsr;-><init>(Lcom/google/android/gms/internal/ads/zzsg;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;->onAppOpenAdLoaded(Lcom/google/android/gms/ads/appopen/AppOpenAd;)V
+
+    :cond_0
+    return-void
 .end method
 
-.method public abstract getAdvertiser()Ljava/lang/String;
-.end method
+.method public final zza(Lcom/google/android/gms/internal/ads/zzve;)V
+    .locals 1
 
-.method public abstract getBody()Ljava/lang/String;
-.end method
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzsf;->zzbui:Ljava/lang/ref/WeakReference;
 
-.method public abstract getCallToAction()Ljava/lang/String;
-.end method
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-.method public abstract getExtras()Landroid/os/Bundle;
-.end method
+    move-result-object v0
 
-.method public abstract getHeadline()Ljava/lang/String;
-.end method
+    check-cast v0, Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;
 
-.method public abstract getImages()Ljava/util/List;
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract getMediationAdapterClassName()Ljava/lang/String;
-.end method
+    .line 4
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzve;->zzpm()Lcom/google/android/gms/ads/LoadAdError;
 
-.method public abstract getMuteThisAdReasons()Ljava/util/List;
-.end method
+    move-result-object p1
 
-.method public abstract getPrice()Ljava/lang/String;
-.end method
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/appopen/AppOpenAd$AppOpenAdLoadCallback;->onAppOpenAdFailedToLoad(Lcom/google/android/gms/ads/LoadAdError;)V
 
-.method public abstract getStarRating()D
-.end method
-
-.method public abstract getStore()Ljava/lang/String;
-.end method
-
-.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzly;
-.end method
-
-.method public abstract isCustomMuteThisAdEnabled()Z
-.end method
-
-.method public abstract performClick(Landroid/os/Bundle;)V
-.end method
-
-.method public abstract recordImpression(Landroid/os/Bundle;)Z
-.end method
-
-.method public abstract reportTouchEvent(Landroid/os/Bundle;)V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzlq;)V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzlu;)V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzsc;)V
-.end method
-
-.method public abstract zzle()Lcom/google/android/gms/internal/ads/zzqk;
-.end method
-
-.method public abstract zzlf()Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
-
-.method public abstract zzlg()Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
-
-.method public abstract zzlh()Lcom/google/android/gms/internal/ads/zzqg;
-.end method
-
-.method public abstract zzll()V
-.end method
-
-.method public abstract zzlm()V
+    :cond_0
+    return-void
 .end method

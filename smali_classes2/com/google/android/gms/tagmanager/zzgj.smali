@@ -8,19 +8,19 @@
 
 
 # static fields
-.field public static final zzalo:Ljava/lang/Object;
+.field private static final zzalo:Ljava/lang/Object;
 
-.field public static zzalp:Ljava/lang/Long;
+.field private static zzalp:Ljava/lang/Long;
 
-.field public static zzalq:Ljava/lang/Double;
+.field private static zzalq:Ljava/lang/Double;
 
-.field public static zzalr:Lcom/google/android/gms/tagmanager/zzgi;
+.field private static zzalr:Lcom/google/android/gms/tagmanager/zzgi;
 
-.field public static zzals:Ljava/lang/String;
+.field private static zzals:Ljava/lang/String;
 
-.field public static zzalt:Ljava/lang/Boolean;
+.field private static zzalt:Ljava/lang/Boolean;
 
-.field public static zzalu:Ljava/util/List;
+.field private static zzalu:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -30,7 +30,7 @@
     .end annotation
 .end field
 
-.field public static zzalv:Ljava/util/Map;
+.field private static zzalv:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -41,7 +41,7 @@
     .end annotation
 .end field
 
-.field public static zzalw:Lcom/google/android/gms/internal/gtm/zzl;
+.field private static zzalw:Lcom/google/android/gms/internal/gtm/zzl;
 
 
 # direct methods
@@ -117,7 +117,7 @@
     return-void
 .end method
 
-.method public static getDouble(Ljava/lang/Object;)D
+.method private static getDouble(Ljava/lang/Object;)D
     .locals 2
 
     .line 1
@@ -164,7 +164,7 @@
     return-object v0
 .end method
 
-.method public static zzbq(Ljava/lang/String;)Lcom/google/android/gms/tagmanager/zzgi;
+.method private static zzbq(Ljava/lang/String;)Lcom/google/android/gms/tagmanager/zzgi;
     .locals 2
 
     .line 1
@@ -603,9 +603,9 @@
 
     iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
 
-    array-length v4, v3
+    array-length v3, v3
 
-    if-eq v1, v4, :cond_4
+    if-eq v1, v3, :cond_4
 
     const-string v1, "Converting an invalid value to object: "
 
@@ -643,6 +643,8 @@
     .line 16
     :cond_4
     new-instance v1, Ljava/util/HashMap;
+
+    iget-object v3, p0, Lcom/google/android/gms/internal/gtm/zzl;->zzqp:[Lcom/google/android/gms/internal/gtm/zzl;
 
     array-length v3, v3
 
@@ -754,7 +756,7 @@
     .end packed-switch
 .end method
 
-.method public static zzh(Ljava/lang/Object;)Ljava/lang/String;
+.method private static zzh(Ljava/lang/Object;)Ljava/lang/String;
     .locals 0
 
     if-nez p0, :cond_0
@@ -1019,17 +1021,14 @@
 
     goto :goto_3
 
-    .line 29
     :cond_a
     :goto_6
-    sget-object p0, Lcom/google/android/gms/tagmanager/zzgj;->zzalw:Lcom/google/android/gms/internal/gtm/zzl;
-
-    return-object p0
+    return-object v8
 
     :cond_b
     new-array p0, v3, [Lcom/google/android/gms/internal/gtm/zzl;
 
-    .line 30
+    .line 29
     invoke-interface {v1, p0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
@@ -1040,7 +1039,7 @@
 
     new-array p0, v3, [Lcom/google/android/gms/internal/gtm/zzl;
 
-    .line 31
+    .line 30
     invoke-interface {v4, p0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
@@ -1053,7 +1052,7 @@
 
     goto :goto_7
 
-    .line 32
+    .line 31
     :cond_c
     invoke-static {p0}, Lcom/google/android/gms/tagmanager/zzgj;->zzj(Ljava/lang/Object;)Z
 
@@ -1061,10 +1060,10 @@
 
     if-eqz v1, :cond_d
 
-    .line 33
+    .line 32
     iput v2, v0, Lcom/google/android/gms/internal/gtm/zzl;->type:I
 
-    .line 34
+    .line 33
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -1073,7 +1072,7 @@
 
     goto :goto_7
 
-    .line 35
+    .line 34
     :cond_d
     invoke-static {p0}, Lcom/google/android/gms/tagmanager/zzgj;->zzk(Ljava/lang/Object;)Z
 
@@ -1083,10 +1082,10 @@
 
     const/4 v1, 0x6
 
-    .line 36
+    .line 35
     iput v1, v0, Lcom/google/android/gms/internal/gtm/zzl;->type:I
 
-    .line 37
+    .line 36
     invoke-static {p0}, Lcom/google/android/gms/tagmanager/zzgj;->zzl(Ljava/lang/Object;)J
 
     move-result-wide v1
@@ -1095,7 +1094,7 @@
 
     goto :goto_7
 
-    .line 38
+    .line 37
     :cond_e
     instance-of v1, p0, Ljava/lang/Boolean;
 
@@ -1103,10 +1102,10 @@
 
     const/16 v1, 0x8
 
-    .line 39
+    .line 38
     iput v1, v0, Lcom/google/android/gms/internal/gtm/zzl;->type:I
 
-    .line 40
+    .line 39
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -1115,7 +1114,7 @@
 
     iput-boolean p0, v0, Lcom/google/android/gms/internal/gtm/zzl;->zzqt:Z
 
-    .line 41
+    .line 40
     :goto_7
     iput-boolean v3, v0, Lcom/google/android/gms/internal/gtm/zzl;->zzqw:Z
 
@@ -1130,7 +1129,7 @@
 
     goto :goto_8
 
-    .line 42
+    .line 41
     :cond_10
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1162,17 +1161,17 @@
 
     invoke-direct {p0, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    .line 43
+    .line 42
     :goto_9
     invoke-static {p0}, Lcom/google/android/gms/tagmanager/zzdi;->zzav(Ljava/lang/String;)V
 
-    .line 44
+    .line 43
     sget-object p0, Lcom/google/android/gms/tagmanager/zzgj;->zzalw:Lcom/google/android/gms/internal/gtm/zzl;
 
     return-object p0
 .end method
 
-.method public static zzj(Ljava/lang/Object;)Z
+.method private static zzj(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
@@ -1246,7 +1245,7 @@
     return-object v0
 .end method
 
-.method public static zzk(Ljava/lang/Object;)Z
+.method private static zzk(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
@@ -1320,7 +1319,7 @@
     return-object v0
 .end method
 
-.method public static zzl(Ljava/lang/Object;)J
+.method private static zzl(Ljava/lang/Object;)J
     .locals 2
 
     .line 1

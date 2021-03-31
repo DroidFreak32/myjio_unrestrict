@@ -19,7 +19,7 @@
     return-void
 .end method
 
-.method public static create(DDZ)Lcom/google/ads/interactivemedia/v3/impl/data/x;
+.method private static create(DDZ)Lcom/google/ads/interactivemedia/v3/impl/data/x;
     .locals 7
 
     .line 1

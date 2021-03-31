@@ -1,54 +1,46 @@
-.class public final Lcom/google/android/gms/internal/ads/zzale;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzale;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# instance fields
+.field private final zzdiq:Lcom/google/android/gms/internal/ads/zzalb;
+
+.field private final zzdiy:Lcom/google/android/gms/internal/ads/zzals;
+
+.field private final zzdiz:Lcom/google/android/gms/internal/ads/zzako;
 
 
 # direct methods
-.method public static zzaf(Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzalb;Lcom/google/android/gms/internal/ads/zzals;Lcom/google/android/gms/internal/ads/zzako;)V
+    .locals 0
 
-    .line 1
-    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzaoe;->zzbk(Landroid/content/Context;)Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzale;->zzdiq:Lcom/google/android/gms/internal/ads/zzalb;
 
-    if-nez v0, :cond_0
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzale;->zzdiy:Lcom/google/android/gms/internal/ads/zzals;
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzale;->zzdiz:Lcom/google/android/gms/internal/ads/zzako;
 
     return-void
+.end method
 
-    .line 2
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzaoe;->zzty()Z
 
-    move-result v0
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    if-nez v0, :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzale;->zzdiq:Lcom/google/android/gms/internal/ads/zzalb;
 
-    .line 3
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzalf;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzale;->zzdiy:Lcom/google/android/gms/internal/ads/zzals;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzalf;-><init>(Landroid/content/Context;)V
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzale;->zzdiz:Lcom/google/android/gms/internal/ads/zzako;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzalc;->zzpe()Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzalb;->zza(Lcom/google/android/gms/internal/ads/zzals;Lcom/google/android/gms/internal/ads/zzako;)V
 
-    move-result-object p0
-
-    check-cast p0, Lcom/google/android/gms/internal/ads/zzapi;
-
-    const-string v0, "Updating ad debug logging enablement."
-
-    .line 4
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzdo(Ljava/lang/String;)V
-
-    const-string v0, "AdDebugLogUpdater.updateEnablement"
-
-    .line 5
-    invoke-static {p0, v0}, Lcom/google/android/gms/internal/ads/zzaov;->zza(Lcom/google/android/gms/internal/ads/zzapi;Ljava/lang/String;)V
-
-    :cond_1
     return-void
 .end method

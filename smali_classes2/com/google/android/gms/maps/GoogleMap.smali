@@ -48,9 +48,9 @@
 
 
 # instance fields
-.field public final zzg:Lcom/google/android/gms/maps/internal/IGoogleMapDelegate;
+.field private final zzg:Lcom/google/android/gms/maps/internal/IGoogleMapDelegate;
 
-.field public zzh:Lcom/google/android/gms/maps/UiSettings;
+.field private zzh:Lcom/google/android/gms/maps/UiSettings;
 
 
 # direct methods
@@ -997,6 +997,10 @@
 
 .method public final setMapStyle(Lcom/google/android/gms/maps/model/MapStyleOptions;)Z
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/MapStyleOptions;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     :try_start_0
@@ -1095,6 +1099,12 @@
 
 .method public final setMyLocationEnabled(Z)V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        anyOf = {
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -1119,6 +1129,10 @@
 
 .method public final setOnCameraChangeListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraChangeListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnCameraChangeListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1161,6 +1175,10 @@
 
 .method public final setOnCameraIdleListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraIdleListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnCameraIdleListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1201,6 +1219,10 @@
 
 .method public final setOnCameraMoveCanceledListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveCanceledListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveCanceledListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1241,6 +1263,10 @@
 
 .method public final setOnCameraMoveListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1281,6 +1307,10 @@
 
 .method public final setOnCameraMoveStartedListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveStartedListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveStartedListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1441,6 +1471,10 @@
 
 .method public final setOnInfoWindowClickListener(Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1481,6 +1515,10 @@
 
 .method public final setOnInfoWindowCloseListener(Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowCloseListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowCloseListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1521,6 +1559,10 @@
 
 .method public final setOnInfoWindowLongClickListener(Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowLongClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowLongClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1561,6 +1603,10 @@
 
 .method public final setOnMapClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMapClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMapClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1641,6 +1687,10 @@
 
 .method public final setOnMapLongClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMapLongClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMapLongClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1681,6 +1731,10 @@
 
 .method public final setOnMarkerClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1721,6 +1775,10 @@
 
 .method public final setOnMarkerDragListener(Lcom/google/android/gms/maps/GoogleMap$OnMarkerDragListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMarkerDragListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1761,6 +1819,10 @@
 
 .method public final setOnMyLocationButtonClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMyLocationButtonClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMyLocationButtonClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -1801,6 +1863,10 @@
 
 .method public final setOnMyLocationChangeListener(Lcom/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1843,6 +1909,10 @@
 
 .method public final setOnMyLocationClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMyLocationClickListener;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/maps/GoogleMap$OnMyLocationClickListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 

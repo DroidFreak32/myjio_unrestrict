@@ -1,13 +1,14 @@
 .class public final Lcom/google/android/gms/common/internal/zac;
-.super Lcom/google/android/gms/common/internal/DialogRedirect;
+.super Lcom/google/android/gms/common/internal/zad;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic val$activity:Landroid/app/Activity;
+.field private final synthetic zaa:Landroid/content/Intent;
 
-.field public final synthetic val$requestCode:I
+.field private final synthetic zab:Landroid/app/Activity;
 
-.field public final synthetic zaoh:Landroid/content/Intent;
+.field private final synthetic zac:I
 
 
 # direct methods
@@ -15,31 +16,31 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/zac;->zaoh:Landroid/content/Intent;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zac;->zaa:Landroid/content/Intent;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/zac;->val$activity:Landroid/app/Activity;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/zac;->zab:Landroid/app/Activity;
 
-    iput p3, p0, Lcom/google/android/gms/common/internal/zac;->val$requestCode:I
+    iput p3, p0, Lcom/google/android/gms/common/internal/zac;->zac:I
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/DialogRedirect;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/zad;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final redirect()V
+.method public final zaa()V
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zac;->zaoh:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zac;->zaa:Landroid/content/Intent;
 
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zac;->val$activity:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zac;->zab:Landroid/app/Activity;
 
-    iget v2, p0, Lcom/google/android/gms/common/internal/zac;->val$requestCode:I
+    iget v2, p0, Lcom/google/android/gms/common/internal/zac;->zac:I
 
     invoke-virtual {v1, v0, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 

@@ -23,9 +23,9 @@
 
 
 # static fields
-.field public static final DEFAULT_PARSER_FACTORY:Ljavax/xml/parsers/DocumentBuilderFactory;
+.field private static final DEFAULT_PARSER_FACTORY:Ljavax/xml/parsers/DocumentBuilderFactory;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -94,6 +94,11 @@
 
 .method public documentBuilder()Ljavax/xml/parsers/DocumentBuilder;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/xml/parsers/ParserConfigurationException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/databind/ext/DOMDeserializer;->DEFAULT_PARSER_FACTORY:Ljavax/xml/parsers/DocumentBuilderFactory;
@@ -107,6 +112,11 @@
 
 .method public final parse(Ljava/lang/String;)Lorg/w3c/dom/Document;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0

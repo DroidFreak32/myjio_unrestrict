@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzav:Landroid/app/PendingIntent;
+.field private final zzav:Landroid/app/PendingIntent;
 
-.field public final zzl:Landroid/content/Context;
+.field private final zzl:Landroid/content/Context;
 
 
 # direct methods

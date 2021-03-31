@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzaiz:Ljava/lang/String;
+.field private static final zzaiz:Ljava/lang/String;
 
-.field public static final zzaja:Ljava/lang/String;
+.field private static final zzaja:Ljava/lang/String;
 
-.field public static final zzajb:Ljava/lang/String;
+.field private static final zzajb:Ljava/lang/String;
 
-.field public static final zzajc:Ljava/lang/String;
+.field private static final zzajc:Ljava/lang/String;
 
 
 # direct methods

@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public final zzbt:Lcom/google/android/gms/maps/StreetViewPanoramaFragment$zzb;
+.field private final zzbt:Lcom/google/android/gms/maps/StreetViewPanoramaFragment$zzb;
 
 
 # direct methods

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public appInfoHolders:Ljava/util/List;
+.field private appInfoHolders:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -27,7 +27,24 @@
 
 
 # virtual methods
-.method public a(Ljava/util/List;)V
+.method public getAppInfoHolders()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/inn/passivesdk/holders/AppInfoHolder;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/AppInfoParams;->appInfoHolders:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public setAppInfoHolders(Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

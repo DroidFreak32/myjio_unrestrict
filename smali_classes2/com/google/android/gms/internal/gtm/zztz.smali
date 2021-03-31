@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzbfo:Lcom/google/android/gms/internal/gtm/zzub;
+.field private static final zzbfo:Lcom/google/android/gms/internal/gtm/zzub;
 
 
 # direct methods
@@ -290,7 +290,7 @@
     return-void
 .end method
 
-.method public static zzbx(I)I
+.method private static zzbx(I)I
     .locals 1
 
     const/16 v0, -0xc
@@ -314,7 +314,7 @@
     return p0
 .end method
 
-.method public static zzc(III)I
+.method private static zzc(III)I
     .locals 1
 
     const/16 v0, -0xc
@@ -371,7 +371,7 @@
     return p0
 .end method
 
-.method public static zzg([BII)I
+.method private static zzg([BII)I
     .locals 3
 
     add-int/lit8 v0, p1, -0x1
@@ -433,6 +433,11 @@
 
 .method public static zzh([BII)Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/google/android/gms/internal/gtm/zztz;->zzbfo:Lcom/google/android/gms/internal/gtm/zzub;
@@ -472,7 +477,7 @@
     return p0
 .end method
 
-.method public static zzr(II)I
+.method private static zzr(II)I
     .locals 1
 
     const/16 v0, -0xc

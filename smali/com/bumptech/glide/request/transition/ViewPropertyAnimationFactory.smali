@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public animation:Lcom/bumptech/glide/request/transition/ViewPropertyTransition;
+.field private animation:Lcom/bumptech/glide/request/transition/ViewPropertyTransition;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/transition/ViewPropertyTransition<",
@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public final animator:Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;
+.field private final animator:Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;
 
 
 # direct methods

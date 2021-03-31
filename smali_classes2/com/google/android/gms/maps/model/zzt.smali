@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzen:Lcom/google/android/gms/maps/model/TileProvider;
+.field private final synthetic zzen:Lcom/google/android/gms/maps/model/TileProvider;
 
 
 # direct methods

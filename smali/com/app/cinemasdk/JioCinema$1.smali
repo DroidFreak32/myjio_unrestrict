@@ -3,7 +3,7 @@
 .source "JioCinema.java"
 
 # interfaces
-.implements Llr4;
+.implements Lretrofit2/Callback;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Llr4<",
+        "Lretrofit2/Callback<",
         "Lcom/app/cinemasdk/responsepojo/playbackrights/PlayBackRights;",
         ">;"
     }
@@ -44,12 +44,20 @@
 
 
 # virtual methods
-.method public onFailure(Ljr4;Ljava/lang/Throwable;)V
+.method public onFailure(Lretrofit2/Call;Ljava/lang/Throwable;)V
     .locals 0
+    .param p1    # Lretrofit2/Call;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Throwable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/playbackrights/PlayBackRights;",
             ">;",
             "Ljava/lang/Throwable;",
@@ -63,28 +71,36 @@
     return-void
 .end method
 
-.method public onResponse(Ljr4;Lxr4;)V
+.method public onResponse(Lretrofit2/Call;Lretrofit2/Response;)V
     .locals 2
+    .param p1    # Lretrofit2/Call;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lretrofit2/Response;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/playbackrights/PlayBackRights;",
             ">;",
-            "Lxr4<",
+            "Lretrofit2/Response<",
             "Lcom/app/cinemasdk/responsepojo/playbackrights/PlayBackRights;",
             ">;)V"
         }
     .end annotation
 
     .line 1
-    invoke-virtual {p2}, Lxr4;->e()Z
+    invoke-virtual {p2}, Lretrofit2/Response;->isSuccessful()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result p1
 
@@ -92,13 +108,13 @@
 
     if-ne p1, v0, :cond_0
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p1
 
@@ -111,7 +127,7 @@
     if-ne p1, v0, :cond_0
 
     .line 2
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p1
 
@@ -133,7 +149,7 @@
     invoke-direct {p1, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 4
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -152,7 +168,7 @@
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 5
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -171,7 +187,7 @@
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 6
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -190,7 +206,7 @@
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 7
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -209,7 +225,7 @@
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 8
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -224,7 +240,7 @@
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 9
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -234,12 +250,12 @@
 
     move-result-object v0
 
-    const-string v1, "url_subtitle"
+    const-string/jumbo v1, "url_subtitle"
 
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 10
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -254,7 +270,7 @@
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 11
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p2
 
@@ -298,7 +314,7 @@
     invoke-virtual {p1}, Landroid/widget/Toast;->show()V
 
     .line 14
-    invoke-virtual {p2}, Lxr4;->f()Ljava/lang/String;
+    invoke-virtual {p2}, Lretrofit2/Response;->message()Ljava/lang/String;
 
     :goto_0
     return-void

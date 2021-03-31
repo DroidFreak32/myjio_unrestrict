@@ -13,11 +13,11 @@
 
 
 # instance fields
-.field public final synthetic zzos:Lcom/google/android/gms/internal/clearcut/zzei;
+.field private final synthetic zzos:Lcom/google/android/gms/internal/clearcut/zzei;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/clearcut/zzei;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/clearcut/zzei;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzer;->zzos:Lcom/google/android/gms/internal/clearcut/zzei;

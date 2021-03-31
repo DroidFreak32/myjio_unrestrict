@@ -3,7 +3,7 @@
 .source "AppCompatDelegateImpl.java"
 
 # interfaces
-.implements Lu1$a;
+.implements Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+.field public final synthetic a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$i;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+    iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$i;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,13 +35,32 @@
 
 
 # virtual methods
-.method public a(Ln1;)Z
-    .locals 2
+.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
+    .locals 0
+    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$i;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+    iget-object p2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$i;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->y()Landroid/view/Window$Callback;
+    invoke-virtual {p2, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->j(Landroidx/appcompat/view/menu/MenuBuilder;)V
+
+    return-void
+.end method
+
+.method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+    .locals 2
+    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$i;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
+
+    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->C()Landroid/view/Window$Callback;
 
     move-result-object v0
 
@@ -56,15 +75,4 @@
     const/4 p1, 0x1
 
     return p1
-.end method
-
-.method public onCloseMenu(Ln1;Z)V
-    .locals 0
-
-    .line 1
-    iget-object p2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$i;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
-
-    invoke-virtual {p2, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->a(Ln1;)V
-
-    return-void
 .end method

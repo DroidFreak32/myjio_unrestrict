@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public mMessenger:Landroid/os/Messenger;
+.field private mMessenger:Landroid/os/Messenger;
 
-.field public mRootHints:Landroid/os/Bundle;
+.field private mRootHints:Landroid/os/Bundle;
 
 
 # direct methods
@@ -42,6 +42,11 @@
 
 .method private sendRequest(ILandroid/os/Bundle;Landroid/os/Messenger;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
@@ -74,6 +79,11 @@
 # virtual methods
 .method public addSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -88,7 +98,7 @@
     const-string p1, "data_callback_token"
 
     .line 3
-    invoke-static {v0, p1, p2}, Lm6;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+    invoke-static {v0, p1, p2}, Landroidx/core/app/BundleCompat;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 
     const-string p1, "data_options"
 
@@ -105,6 +115,11 @@
 
 .method public connect(Landroid/content/Context;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -137,6 +152,11 @@
 
 .method public disconnect(Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -150,6 +170,11 @@
 
 .method public getMediaItem(Ljava/lang/String;Landroid/support/v4/os/ResultReceiver;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -176,6 +201,11 @@
 
 .method public registerCallbackMessenger(Landroid/content/Context;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -208,6 +238,11 @@
 
 .method public removeSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -222,7 +257,7 @@
     const-string p1, "data_callback_token"
 
     .line 3
-    invoke-static {v0, p1, p2}, Lm6;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+    invoke-static {v0, p1, p2}, Landroidx/core/app/BundleCompat;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 
     const/4 p1, 0x4
 
@@ -234,6 +269,11 @@
 
 .method public search(Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/os/ResultReceiver;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -265,6 +305,11 @@
 
 .method public sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/os/ResultReceiver;Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -296,6 +341,11 @@
 
 .method public unregisterCallbackMessenger(Landroid/os/Messenger;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x7
 

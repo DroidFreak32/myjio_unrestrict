@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/work/Worker;->j()Lcom/google/common/util/concurrent/ListenableFuture;
+    value = Landroidx/work/Worker;->startWork()Lcom/google/common/util/concurrent/ListenableFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/work/Worker;
+.field public final synthetic a:Landroidx/work/Worker;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/work/Worker$a;->s:Landroidx/work/Worker;
+    iput-object p1, p0, Landroidx/work/Worker$a;->a:Landroidx/work/Worker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,18 +40,18 @@
 
     .line 1
     :try_start_0
-    iget-object v0, p0, Landroidx/work/Worker$a;->s:Landroidx/work/Worker;
+    iget-object v0, p0, Landroidx/work/Worker$a;->a:Landroidx/work/Worker;
 
-    invoke-virtual {v0}, Landroidx/work/Worker;->l()Landroidx/work/ListenableWorker$a;
+    invoke-virtual {v0}, Landroidx/work/Worker;->doWork()Landroidx/work/ListenableWorker$Result;
 
     move-result-object v0
 
     .line 2
-    iget-object v1, p0, Landroidx/work/Worker$a;->s:Landroidx/work/Worker;
+    iget-object v1, p0, Landroidx/work/Worker$a;->a:Landroidx/work/Worker;
 
-    iget-object v1, v1, Landroidx/work/Worker;->w:Lko;
+    iget-object v1, v1, Landroidx/work/Worker;->mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
 
-    invoke-virtual {v1, v0}, Lko;->b(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Landroidx/work/impl/utils/futures/SettableFuture;->set(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -61,11 +61,11 @@
     move-exception v0
 
     .line 3
-    iget-object v1, p0, Landroidx/work/Worker$a;->s:Landroidx/work/Worker;
+    iget-object v1, p0, Landroidx/work/Worker$a;->a:Landroidx/work/Worker;
 
-    iget-object v1, v1, Landroidx/work/Worker;->w:Lko;
+    iget-object v1, v1, Landroidx/work/Worker;->mFuture:Landroidx/work/impl/utils/futures/SettableFuture;
 
-    invoke-virtual {v1, v0}, Lko;->a(Ljava/lang/Throwable;)Z
+    invoke-virtual {v1, v0}, Landroidx/work/impl/utils/futures/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
     :goto_0
     return-void

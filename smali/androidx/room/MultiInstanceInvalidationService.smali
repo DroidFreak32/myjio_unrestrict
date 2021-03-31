@@ -3,10 +3,18 @@
 .source "MultiInstanceInvalidationService.java"
 
 
-# instance fields
-.field public s:I
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
 
-.field public final t:Ljava/util/HashMap;
+
+# instance fields
+.field public a:I
+
+.field public final b:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -17,17 +25,17 @@
     .end annotation
 .end field
 
-.field public final u:Landroid/os/RemoteCallbackList;
+.field public final c:Landroid/os/RemoteCallbackList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/RemoteCallbackList<",
-            "Lbh;",
+            "Landroidx/room/IMultiInstanceInvalidationCallback;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final v:Lch$a;
+.field public final d:Landroidx/room/IMultiInstanceInvalidationService$Stub;
 
 
 # direct methods
@@ -40,28 +48,28 @@
     const/4 v0, 0x0
 
     .line 2
-    iput v0, p0, Landroidx/room/MultiInstanceInvalidationService;->s:I
+    iput v0, p0, Landroidx/room/MultiInstanceInvalidationService;->a:I
 
     .line 3
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->t:Ljava/util/HashMap;
+    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->b:Ljava/util/HashMap;
 
     .line 4
     new-instance v0, Landroidx/room/MultiInstanceInvalidationService$a;
 
     invoke-direct {v0, p0}, Landroidx/room/MultiInstanceInvalidationService$a;-><init>(Landroidx/room/MultiInstanceInvalidationService;)V
 
-    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->u:Landroid/os/RemoteCallbackList;
+    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->c:Landroid/os/RemoteCallbackList;
 
     .line 5
     new-instance v0, Landroidx/room/MultiInstanceInvalidationService$b;
 
     invoke-direct {v0, p0}, Landroidx/room/MultiInstanceInvalidationService$b;-><init>(Landroidx/room/MultiInstanceInvalidationService;)V
 
-    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->v:Lch$a;
+    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->d:Landroidx/room/IMultiInstanceInvalidationService$Stub;
 
     return-void
 .end method
@@ -70,9 +78,11 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iget-object p1, p0, Landroidx/room/MultiInstanceInvalidationService;->v:Lch$a;
+    iget-object p1, p0, Landroidx/room/MultiInstanceInvalidationService;->d:Landroidx/room/IMultiInstanceInvalidationService$Stub;
 
     return-object p1
 .end method

@@ -1,269 +1,122 @@
-.class public Lcom/google/android/gms/internal/vision/zzfk;
+.class public final synthetic Lcom/google/android/gms/internal/vision/zzfk;
 .super Ljava/lang/Object;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/internal/vision/zzfk$zza;
-    }
-.end annotation
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # static fields
-.field public static volatile zztf:Z = false
-
-.field public static final zztg:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "*>;"
-        }
-    .end annotation
-.end field
-
-.field public static volatile zzth:Lcom/google/android/gms/internal/vision/zzfk;
-
-.field public static final zzti:Lcom/google/android/gms/internal/vision/zzfk;
-
-
-# instance fields
-.field public final zztj:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Lcom/google/android/gms/internal/vision/zzfk$zza;",
-            "Lcom/google/android/gms/internal/vision/zzfy$zzf<",
-            "**>;>;"
-        }
-    .end annotation
-.end field
+.field public static final synthetic zzbl:[I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzfk;->zzei()Ljava/lang/Class;
+    invoke-static {}, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzhf()[I
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zztg:Ljava/lang/Class;
+    array-length v0, v0
 
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzfk;
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/vision/zzfk;-><init>(Z)V
-
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzti:Lcom/google/android/gms/internal/vision/zzfk;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzfk;->zztj:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public constructor <init>(Z)V
-    .locals 0
-
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzfk;->zztj:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public static zzeh()Lcom/google/android/gms/internal/vision/zzfk;
-    .locals 1
-
-    .line 1
-    const-class v0, Lcom/google/android/gms/internal/vision/zzfk;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzfw;->zza(Ljava/lang/Class;)Lcom/google/android/gms/internal/vision/zzfk;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static zzei()Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "*>;"
-        }
-    .end annotation
-
-    const-string v0, "com.google.protobuf.Extension"
-
-    .line 1
     :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzyk:I
 
-    move-result-object v0
+    sub-int/2addr v2, v1
+
+    aput v1, v0, v2
     :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    const/4 v0, 0x0
+    :try_start_1
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
-    return-object v0
-.end method
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzyl:I
 
-.method public static zzej()Lcom/google/android/gms/internal/vision/zzfk;
-    .locals 1
+    sub-int/2addr v2, v1
 
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzfj;->zzef()Lcom/google/android/gms/internal/vision/zzfk;
+    const/4 v3, 0x2
 
-    move-result-object v0
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object v0
-.end method
+    :catch_1
+    :try_start_2
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
-.method public static zzek()Lcom/google/android/gms/internal/vision/zzfk;
-    .locals 1
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzyj:I
 
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzfj;->zzeg()Lcom/google/android/gms/internal/vision/zzfk;
+    sub-int/2addr v2, v1
 
-    move-result-object v0
+    const/4 v3, 0x3
 
-    return-object v0
-.end method
+    aput v3, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-.method public static zzel()Lcom/google/android/gms/internal/vision/zzfk;
-    .locals 2
+    :catch_2
+    :try_start_3
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzth:Lcom/google/android/gms/internal/vision/zzfk;
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzym:I
 
-    if-nez v0, :cond_1
+    sub-int/2addr v2, v1
 
-    .line 2
-    const-class v1, Lcom/google/android/gms/internal/vision/zzfk;
+    const/4 v3, 0x4
 
-    monitor-enter v1
+    aput v3, v0, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 3
-    :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzth:Lcom/google/android/gms/internal/vision/zzfk;
+    :catch_3
+    :try_start_4
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
-    if-nez v0, :cond_0
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzyn:I
 
-    .line 4
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzfj;->zzeh()Lcom/google/android/gms/internal/vision/zzfk;
+    sub-int/2addr v2, v1
 
-    move-result-object v0
+    const/4 v3, 0x5
 
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzth:Lcom/google/android/gms/internal/vision/zzfk;
+    aput v3, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    .line 5
-    :cond_0
-    monitor-exit v1
+    :catch_4
+    :try_start_5
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
-    goto :goto_0
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzyh:I
 
-    :catchall_0
-    move-exception v0
+    sub-int/2addr v2, v1
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v3, 0x6
 
-    throw v0
+    aput v3, v0, v2
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    :cond_1
-    :goto_0
-    return-object v0
-.end method
+    :catch_5
+    :try_start_6
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzfk;->zzbl:[I
 
+    sget v2, Lcom/google/android/gms/internal/vision/zzid$zzf;->zzyi:I
 
-# virtual methods
-.method public final zza(Lcom/google/android/gms/internal/vision/zzhf;I)Lcom/google/android/gms/internal/vision/zzfy$zzf;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<ContainingType::",
-            "Lcom/google/android/gms/internal/vision/zzhf;",
-            ">(TContainingType;I)",
-            "Lcom/google/android/gms/internal/vision/zzfy$zzf<",
-            "TContainingType;*>;"
-        }
-    .end annotation
+    sub-int/2addr v2, v1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzfk;->zztj:Ljava/util/Map;
+    const/4 v1, 0x7
 
-    new-instance v1, Lcom/google/android/gms/internal/vision/zzfk$zza;
+    aput v1, v0, v2
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    invoke-direct {v1, p1, p2}, Lcom/google/android/gms/internal/vision/zzfk$zza;-><init>(Ljava/lang/Object;I)V
-
-    .line 2
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzfy$zzf;
-
-    return-object p1
-.end method
-
-.method public final zza(Lcom/google/android/gms/internal/vision/zzfy$zzf;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/vision/zzfy$zzf<",
-            "**>;)V"
-        }
-    .end annotation
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzfk;->zztj:Ljava/util/Map;
-
-    new-instance v1, Lcom/google/android/gms/internal/vision/zzfk$zza;
-
-    .line 4
-    iget-object v2, p1, Lcom/google/android/gms/internal/vision/zzfy$zzf;->zzwu:Lcom/google/android/gms/internal/vision/zzhf;
-
-    .line 5
-    iget-object v3, p1, Lcom/google/android/gms/internal/vision/zzfy$zzf;->zzww:Lcom/google/android/gms/internal/vision/zzfy$zze;
-
-    .line 6
-    iget v3, v3, Lcom/google/android/gms/internal/vision/zzfy$zze;->number:I
-
-    .line 7
-    invoke-direct {v1, v2, v3}, Lcom/google/android/gms/internal/vision/zzfk$zza;-><init>(Ljava/lang/Object;I)V
-
-    .line 8
-    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
+    :catch_6
     return-void
 .end method

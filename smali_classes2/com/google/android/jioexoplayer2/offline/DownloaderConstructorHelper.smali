@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public final cache:Lcom/google/android/jioexoplayer2/upstream/cache/Cache;
+.field private final cache:Lcom/google/android/jioexoplayer2/upstream/cache/Cache;
 
-.field public final cacheReadDataSourceFactory:Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
+.field private final cacheReadDataSourceFactory:Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
 
-.field public final cacheWriteDataSinkFactory:Lcom/google/android/jioexoplayer2/upstream/DataSink$Factory;
+.field private final cacheWriteDataSinkFactory:Lcom/google/android/jioexoplayer2/upstream/DataSink$Factory;
 
-.field public final priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
+.field private final priorityTaskManager:Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
 
-.field public final upstreamDataSourceFactory:Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
+.field private final upstreamDataSourceFactory:Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
 
 
 # direct methods
@@ -39,6 +39,18 @@
 
 .method public constructor <init>(Lcom/google/android/jioexoplayer2/upstream/cache/Cache;Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;Lcom/google/android/jioexoplayer2/upstream/DataSink$Factory;Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;)V
     .locals 0
+    .param p3    # Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Lcom/google/android/jioexoplayer2/upstream/DataSink$Factory;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # Lcom/google/android/jioexoplayer2/util/PriorityTaskManager;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

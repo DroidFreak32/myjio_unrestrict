@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract analyticsAPIForBegin(Ljava/util/HashMap;)Ljr4;
+.method public abstract analyticsAPIForBegin(Ljava/util/HashMap;)Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -12,14 +12,14 @@
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lokhttp3/ResponseBody;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract analyticsAPIForEnd(Ljava/util/HashMap;)Ljr4;
+.method public abstract analyticsAPIForEnd(Ljava/util/HashMap;)Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -27,14 +27,14 @@
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lokhttp3/ResponseBody;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract analyticsAPIForEvent(Ljava/util/HashMap;)Ljr4;
+.method public abstract analyticsAPIForEvent(Ljava/util/HashMap;)Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,25 +42,25 @@
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lokhttp3/ResponseBody;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract getConfig()Ljr4;
+.method public abstract getConfig()Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/google/gson/JsonObject;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract getPlayBackData(Ljava/lang/String;Ljava/util/HashMap;)Ljr4;
+.method public abstract getPlayBackData(Ljava/lang/String;Ljava/util/HashMap;)Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,14 +69,14 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/playbackrights/PlayBackRights;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract loginViaSubId(Ljava/util/HashMap;)Ljr4;
+.method public abstract loginViaSubId(Ljava/util/HashMap;)Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,31 +84,31 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/loginviasubid/LoginDetail;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Ljr4;
+.method public abstract ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/app/cinemasdk/model/RefreshDeviceInfo;",
             ")",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SsoRefreshResponse;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract zlaNetworkCheck()Ljr4;
+.method public abstract zlaNetworkCheck()Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;",
             ">;"
         }

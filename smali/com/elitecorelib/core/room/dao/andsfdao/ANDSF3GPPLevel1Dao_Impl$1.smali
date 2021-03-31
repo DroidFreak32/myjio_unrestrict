@@ -1,11 +1,11 @@
 .class public Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$1;
-.super Lah;
+.super Landroidx/room/EntityInsertionAdapter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lah<",
+        "Landroidx/room/EntityInsertionAdapter<",
         "Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;",
         ">;"
     }
@@ -22,21 +22,21 @@
 
     iput-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$1;->this$0:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl;
 
-    invoke-direct {p0, p2}, Lah;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bind(Lfi;Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
+.method public bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
     .locals 3
 
     iget-wide v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->id:J
 
     const/4 v2, 0x1
 
-    invoke-interface {p1, v2, v0, v1}, Ldi;->a(IJ)V
+    invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->LAC:Ljava/lang/String;
 
@@ -44,12 +44,12 @@
 
     if-nez v0, :cond_0
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->TAC:Ljava/lang/String;
@@ -58,12 +58,12 @@
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
     :cond_1
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_1
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->GERAN_CI:Ljava/lang/String;
@@ -72,12 +72,12 @@
 
     if-nez v0, :cond_2
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_2
 
     :cond_2
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_2
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->UTRAN_CI:Ljava/lang/String;
@@ -86,12 +86,12 @@
 
     if-nez v0, :cond_3
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_3
 
     :cond_3
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_3
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->PLMN:Ljava/lang/String;
@@ -100,12 +100,12 @@
 
     if-nez v0, :cond_4
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_4
 
     :cond_4
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_4
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->EUTRA_CI:Ljava/lang/String;
@@ -114,12 +114,12 @@
 
     if-nez v0, :cond_5
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_5
 
     :cond_5
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_5
     iget-object v0, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->policyId:Ljava/lang/String;
@@ -128,35 +128,35 @@
 
     if-nez v0, :cond_6
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_6
 
     :cond_6
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_6
     const/16 v0, 0x9
 
     iget-wide v1, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->lastUpdatedDate:J
 
-    invoke-interface {p1, v0, v1, v2}, Ldi;->a(IJ)V
+    invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     const/16 v0, 0xa
 
     iget-wide v1, p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->counter:J
 
-    invoke-interface {p1, v0, v1, v2}, Ldi;->a(IJ)V
+    invoke-interface {p1, v0, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     return-void
 .end method
 
-.method public bridge synthetic bind(Lfi;Ljava/lang/Object;)V
+.method public bridge synthetic bind(Landroidx/sqlite/db/SupportSQLiteStatement;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
 
-    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$1;->bind(Lfi;Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
+    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSF3GPPLevel1Dao_Impl$1;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;)V
 
     return-void
 .end method

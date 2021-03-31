@@ -1,152 +1,168 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzeg;
-.super Lcom/google/android/gms/internal/measurement/zzej;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/measurement/zzec;
+.implements Ljava/io/Serializable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/measurement/zzec<",
+        "TT;>;",
+        "Ljava/io/Serializable;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final zzc:I
+.field private final zza:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
 
-.field public final zzd:I
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>([BII)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
 
     .line 1
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/measurement/zzej;-><init>([B)V
-
-    add-int v0, p2, p3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    array-length p1, p1
-
-    invoke-static {p2, v0, p1}, Lcom/google/android/gms/internal/measurement/zzdz;->zzb(III)I
-
-    .line 3
-    iput p2, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zzc:I
-
-    .line 4
-    iput p3, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zzd:I
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zza:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(I)B
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzeg;->zza()I
+    instance-of v0, p1, Lcom/google/android/gms/internal/measurement/zzeg;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    check-cast p1, Lcom/google/android/gms/internal/measurement/zzeg;
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zza:Ljava/lang/Object;
+
+    iget-object p1, p1, Lcom/google/android/gms/internal/measurement/zzeg;->zza:Ljava/lang/Object;
+
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/measurement/zzdz;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    .line 1
+    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zza:Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    .line 2
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
 
-    add-int/lit8 v1, p1, 0x1
+    return v0
+.end method
 
-    sub-int v1, v0, v1
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    or-int/2addr v1, p1
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zza:Ljava/lang/Object;
 
-    if-gez v1, :cond_1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-gez p1, :cond_0
+    move-result-object v0
 
-    .line 2
-    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/16 v1, 0x16
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x16
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v1, "Index < 0: "
+    const-string v1, "Suppliers.ofInstance("
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 3
-    :cond_0
-    new-instance v1, Ljava/lang/ArrayIndexOutOfBoundsException;
-
-    const/16 v2, 0x28
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Index > length: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ", "
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 4
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzej;->zzb:[B
-
-    iget v1, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zzc:I
-
-    add-int/2addr v1, p1
-
-    aget-byte p1, v0, v1
-
-    return p1
+    return-object v0
 .end method
 
-.method public final zza()I
+.method public final zza()Ljava/lang/Object;
     .locals 1
-
-    .line 5
-    iget v0, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zzd:I
-
-    return v0
-.end method
-
-.method public final zzb(I)B
-    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzej;->zzb:[B
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zza:Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zzc:I
-
-    add-int/2addr v1, p1
-
-    aget-byte p1, v0, v1
-
-    return p1
-.end method
-
-.method public final zze()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/measurement/zzeg;->zzc:I
-
-    return v0
+    return-object v0
 .end method

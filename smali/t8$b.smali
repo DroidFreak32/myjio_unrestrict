@@ -1,44 +1,33 @@
 .class public Lt8$b;
 .super Ljava/lang/Object;
-.source "TextDirectionHeuristicsCompat.java"
+.source "MorphingAnimation.java"
 
 # interfaces
-.implements Lt8$c;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lt8;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lt8;->q()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "b"
+    accessFlags = 0x1
+    name = null
 .end annotation
 
 
-# static fields
-.field public static final a:Lt8$b;
+# instance fields
+.field public final synthetic a:Lt8;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lt8$b;
-
-    invoke-direct {v0}, Lt8$b;-><init>()V
-
-    sput-object v0, Lt8$b;->a:Lt8$b;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lt8;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lt8$b;->a:Lt8;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,37 +35,45 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/CharSequence;II)I
-    .locals 2
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
-    add-int/2addr p3, p2
+    return-void
+.end method
 
-    const/4 v0, 0x2
-
-    const/4 v1, 0x2
-
-    :goto_0
-    if-ge p2, p3, :cond_0
-
-    if-ne v1, v0, :cond_0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 0
 
     .line 1
-    invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
+    iget-object p1, p0, Lt8$b;->a:Lt8;
 
-    move-result v1
+    invoke-static {p1}, Lt8;->e(Lt8;)Lu8;
 
-    invoke-static {v1}, Ljava/lang/Character;->getDirectionality(C)B
+    move-result-object p1
 
-    move-result v1
+    if-eqz p1, :cond_0
 
-    invoke-static {v1}, Lt8;->b(I)I
+    .line 2
+    iget-object p1, p0, Lt8$b;->a:Lt8;
 
-    move-result v1
+    invoke-static {p1}, Lt8;->e(Lt8;)Lu8;
 
-    add-int/lit8 p2, p2, 0x1
+    move-result-object p1
 
-    goto :goto_0
+    invoke-interface {p1}, Lu8;->onAnimationEnd()V
 
     :cond_0
-    return v1
+    return-void
+.end method
+
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
 .end method

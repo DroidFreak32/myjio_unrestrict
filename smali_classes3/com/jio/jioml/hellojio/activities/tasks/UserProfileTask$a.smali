@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final s:Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;
+.field public static final a:Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     invoke-direct {v0}, Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;-><init>()V
 
-    sput-object v0, Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;
+    sput-object v0, Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/UserProfileTask$a;
 
     return-void
 .end method
@@ -45,21 +45,22 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 17
+    .locals 19
 
     .line 1
     new-instance v0, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;
 
+    .line 2
     sget-object v1, Lcom/jio/jioml/hellojio/enums/ChatType;->CHAT_TYPE_RESPONSE:Lcom/jio/jioml/hellojio/enums/ChatType;
 
-    .line 2
+    .line 3
     new-instance v15, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;
 
-    sget-object v2, Lcom/jio/jioml/hellojio/data/Repository;->f:Lcom/jio/jioml/hellojio/data/Repository;
+    sget-object v2, Lcom/jio/jioml/hellojio/data/Repository;->INSTANCE:Lcom/jio/jioml/hellojio/data/Repository;
 
-    const-string/jumbo v3, "update_profile"
+    const-string v3, "update_profile"
 
-    invoke-virtual {v2, v3}, Lcom/jio/jioml/hellojio/data/Repository;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Lcom/jio/jioml/hellojio/data/Repository;->getDeepLink(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -83,31 +84,33 @@
 
     const/4 v13, 0x0
 
-    const/16 v14, 0x700
+    const/4 v14, 0x0
 
-    const/16 v16, 0x0
+    const/16 v16, 0xf00
+
+    const/16 v17, 0x0
 
     move-object v2, v15
 
-    move-object/from16 p1, v0
+    move-object/from16 v18, v15
 
-    move-object v0, v15
+    move/from16 v15, v16
 
-    move-object/from16 v15, v16
+    move-object/from16 v16, v17
 
-    invoke-direct/range {v2 .. v15}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;-><init>(ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v2 .. v16}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;-><init>(ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/16 v2, 0x34
 
-    move-object/from16 v3, p1
-
-    .line 3
-    invoke-direct {v3, v1, v2, v0}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
+    move-object/from16 v3, v18
 
     .line 4
-    sget-object v0, Lar0;->b:Lar0;
+    invoke-direct {v0, v1, v2, v3}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$CommonAction;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/datamodels/ChatDataModels$Button;)V
 
-    invoke-virtual {v0, v3}, Lar0;->a(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+    .line 5
+    sget-object v1, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
+
+    invoke-virtual {v1, v0}, Lcom/jio/jioml/hellojio/utils/Utility;->showOutput(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
 
     return-void
 .end method

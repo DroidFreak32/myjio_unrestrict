@@ -1,140 +1,93 @@
 .class public final Lcom/google/android/gms/internal/vision/zzp;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/vision/zzb;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/vision/zzn;
 
 
 # direct methods
-.method public static zza(Landroid/content/Context;Ljava/lang/String;)Z
+.method public constructor <init>(Landroid/os/IBinder;)V
     .locals 1
 
+    const-string v0, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetectorCreator"
+
     .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/dynamite/DynamiteModule;->getLocalVersion(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/vision/zzb;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
-    move-result p1
-
-    const-string v0, "com.google.android.gms.vision.dynamite"
-
-    .line 2
-    invoke-static {p0, v0}, Lcom/google/android/gms/dynamite/DynamiteModule;->getRemoteVersion(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result p0
-
-    if-le p1, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
+    return-void
 .end method
 
-.method public static zzb(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzn;)Landroid/graphics/Bitmap;
-    .locals 11
+
+# virtual methods
+.method public final zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzk;)Lcom/google/android/gms/internal/vision/zzl;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzb;->zza()Landroid/os/Parcel;
 
-    move-result v7
+    move-result-object v0
 
     .line 2
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v8
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/vision/zzd;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
     .line 3
-    iget v0, p1, Lcom/google/android/gms/internal/vision/zzn;->rotation:I
+    invoke-static {v0, p2}, Lcom/google/android/gms/internal/vision/zzd;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    const/4 v9, 0x3
-
-    const/4 v10, 0x1
-
-    if-eqz v0, :cond_4
+    const/4 p1, 0x1
 
     .line 4
-    new-instance v5, Landroid/graphics/Matrix;
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/vision/zzb;->zza(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
+    move-result-object p1
 
     .line 5
-    iget v0, p1, Lcom/google/android/gms/internal/vision/zzn;->rotation:I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    if-eqz v0, :cond_3
+    move-result-object p2
 
-    if-eq v0, v10, :cond_2
+    if-nez p2, :cond_0
 
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_1
-
-    if-ne v0, v9, :cond_0
-
-    const/16 v0, 0x10e
+    const/4 p2, 0x0
 
     goto :goto_0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector"
 
     .line 6
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    invoke-interface {p2, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    const-string p1, "Unsupported rotation degree."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    const/16 v0, 0xb4
-
-    goto :goto_0
-
-    :cond_2
-    const/16 v0, 0x5a
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v0, 0x0
-
-    :goto_0
-    int-to-float v0, v0
+    move-result-object v0
 
     .line 7
-    invoke-virtual {v5, v0}, Landroid/graphics/Matrix;->postRotate(F)Z
+    instance-of v1, v0, Lcom/google/android/gms/internal/vision/zzl;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move v3, v7
-
-    move v4, v8
+    if-eqz v1, :cond_1
 
     .line 8
-    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+    move-object p2, v0
 
-    move-result-object p0
+    check-cast p2, Lcom/google/android/gms/internal/vision/zzl;
+
+    goto :goto_0
 
     .line 9
-    :cond_4
-    iget v0, p1, Lcom/google/android/gms/internal/vision/zzn;->rotation:I
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzo;
 
-    if-eq v0, v10, :cond_5
+    invoke-direct {v0, p2}, Lcom/google/android/gms/internal/vision/zzo;-><init>(Landroid/os/IBinder;)V
 
-    if-ne v0, v9, :cond_6
+    move-object p2, v0
 
     .line 10
-    :cond_5
-    iput v8, p1, Lcom/google/android/gms/internal/vision/zzn;->width:I
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
 
-    .line 11
-    iput v7, p1, Lcom/google/android/gms/internal/vision/zzn;->height:I
-
-    :cond_6
-    return-object p0
+    return-object p2
 .end method

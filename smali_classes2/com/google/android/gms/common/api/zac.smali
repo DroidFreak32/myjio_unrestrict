@@ -1,52 +1,31 @@
-.class public abstract Lcom/google/android/gms/common/api/zac;
+.class public final synthetic Lcom/google/android/gms/common/api/zac;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
-
-# annotations
-.annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # static fields
-.field public static final sLock:Ljava/lang/Object;
-
-.field public static final zack:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/Object;",
-            "Lcom/google/android/gms/common/api/zac;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final zaa:Ljava/lang/Runnable;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    new-instance v0, Ljava/util/WeakHashMap;
+    new-instance v0, Lcom/google/android/gms/common/api/zac;
 
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/api/zac;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/api/zac;->zack:Ljava/util/Map;
-
-    .line 2
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/common/api/zac;->sLock:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/api/zac;->zaa:Ljava/lang/Runnable;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,5 +33,8 @@
 
 
 # virtual methods
-.method public abstract remove(I)V
+.method public final run()V
+    .locals 0
+
+    return-void
 .end method

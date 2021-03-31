@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/CameraSource$zzd;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
 .implements Landroid/hardware/Camera$ShutterCallback;
@@ -17,11 +18,11 @@
 
 
 # instance fields
-.field public zzaa:Lcom/google/android/gms/vision/CameraSource$ShutterCallback;
+.field private zzag:Lcom/google/android/gms/vision/CameraSource$ShutterCallback;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -43,7 +44,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzd;->zzaa:Lcom/google/android/gms/vision/CameraSource$ShutterCallback;
+    iput-object p1, p0, Lcom/google/android/gms/vision/CameraSource$zzd;->zzag:Lcom/google/android/gms/vision/CameraSource$ShutterCallback;
 
     return-object p1
 .end method
@@ -54,7 +55,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zzd;->zzaa:Lcom/google/android/gms/vision/CameraSource$ShutterCallback;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$zzd;->zzag:Lcom/google/android/gms/vision/CameraSource$ShutterCallback;
 
     if-eqz v0, :cond_0
 

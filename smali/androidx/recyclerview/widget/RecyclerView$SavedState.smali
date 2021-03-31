@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/recyclerview/widget/RecyclerView;
 .end annotation
@@ -56,7 +62,7 @@
 
     .line 2
     :cond_0
-    const-class p2, Landroidx/recyclerview/widget/RecyclerView$o;
+    const-class p2, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     .line 3
     invoke-virtual {p2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;

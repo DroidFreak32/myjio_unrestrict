@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static map:Ljava/util/Map;
+.field private static map:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -111,7 +111,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;)",
@@ -163,7 +163,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;",

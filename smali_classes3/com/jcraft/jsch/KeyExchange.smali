@@ -566,9 +566,19 @@
 .end method
 
 .method public abstract init(Lcom/jcraft/jsch/Session;[B[B[B[B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method
 
 .method public abstract next(Lcom/jcraft/jsch/Buffer;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method
 
 .method public normalize([B)[B
@@ -598,15 +608,13 @@
 
     sub-int/2addr v2, v1
 
-    new-array v2, v2, [B
+    new-array v3, v2, [B
 
     .line 3
-    array-length v3, v2
-
-    invoke-static {p1, v1, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v1, v3, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 4
-    invoke-virtual {p0, v2}, Lcom/jcraft/jsch/KeyExchange;->normalize([B)[B
+    invoke-virtual {p0, v3}, Lcom/jcraft/jsch/KeyExchange;->normalize([B)[B
 
     move-result-object p1
 

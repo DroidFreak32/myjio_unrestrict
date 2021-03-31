@@ -1,32 +1,24 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzkg;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzde;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/measurement/zzde<",
-        "Lcom/google/android/gms/internal/measurement/zzkj;",
-        ">;"
-    }
-.end annotation
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # static fields
-.field public static zza:Lcom/google/android/gms/internal/measurement/zzkg;
-
-
-# instance fields
-.field public final zzb:Lcom/google/android/gms/internal/measurement/zzde;
+.field private static final zza:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/internal/measurement/zzde<",
-            "Lcom/google/android/gms/internal/measurement/zzkj;",
+            "Ljava/util/Iterator<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final zzb:Ljava/lang/Iterable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Iterable<",
+            "Ljava/lang/Object;",
             ">;"
         }
     .end annotation
@@ -38,88 +30,45 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzkg;
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzkj;
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzkg;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzkj;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzkg;->zza:Lcom/google/android/gms/internal/measurement/zzkg;
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzkg;->zza:Ljava/util/Iterator;
 
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
+    .line 2
     new-instance v0, Lcom/google/android/gms/internal/measurement/zzki;
 
     invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzki;-><init>()V
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzdh;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/measurement/zzde;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzkg;-><init>(Lcom/google/android/gms/internal/measurement/zzde;)V
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzkg;->zzb:Ljava/lang/Iterable;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzde;)V
-    .locals 0
+.method public static zza()Ljava/lang/Iterable;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lcom/google/android/gms/internal/measurement/zzde<",
-            "Lcom/google/android/gms/internal/measurement/zzkj;",
-            ">;)V"
+            "<T:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Ljava/lang/Iterable<",
+            "TT;>;"
         }
     .end annotation
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzkg;->zzb:Ljava/lang/Iterable;
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzdh;->zza(Lcom/google/android/gms/internal/measurement/zzde;)Lcom/google/android/gms/internal/measurement/zzde;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzkg;->zzb:Lcom/google/android/gms/internal/measurement/zzde;
-
-    return-void
+    return-object v0
 .end method
 
-.method public static zzb()Z
+.method public static synthetic zzb()Ljava/util/Iterator;
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzkg;->zza:Lcom/google/android/gms/internal/measurement/zzkg;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzkg;->zza()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzkj;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzkj;->zza()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-
-# virtual methods
-.method public final synthetic zza()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzkg;->zzb:Lcom/google/android/gms/internal/measurement/zzde;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/measurement/zzde;->zza()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzkj;
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzkg;->zza:Ljava/util/Iterator;
 
     return-object v0
 .end method

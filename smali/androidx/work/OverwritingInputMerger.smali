@@ -1,5 +1,5 @@
 .class public final Landroidx/work/OverwritingInputMerger;
-.super Lzk;
+.super Landroidx/work/InputMerger;
 .source "OverwritingInputMerger.java"
 
 
@@ -8,29 +8,36 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lzk;-><init>()V
+    invoke-direct {p0}, Landroidx/work/InputMerger;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/util/List;)Lwk;
+.method public merge(Ljava/util/List;)Landroidx/work/Data;
     .locals 3
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lwk;",
+            "Landroidx/work/Data;",
             ">;)",
-            "Lwk;"
+            "Landroidx/work/Data;"
         }
     .end annotation
 
     .line 1
-    new-instance v0, Lwk$a;
+    new-instance v0, Landroidx/work/Data$Builder;
 
-    invoke-direct {v0}, Lwk$a;-><init>()V
+    invoke-direct {v0}, Landroidx/work/Data$Builder;-><init>()V
 
     .line 2
     new-instance v1, Ljava/util/HashMap;
@@ -53,10 +60,10 @@
 
     move-result-object v2
 
-    check-cast v2, Lwk;
+    check-cast v2, Landroidx/work/Data;
 
     .line 4
-    invoke-virtual {v2}, Lwk;->a()Ljava/util/Map;
+    invoke-virtual {v2}, Landroidx/work/Data;->getKeyValueMap()Ljava/util/Map;
 
     move-result-object v2
 
@@ -66,10 +73,10 @@
 
     .line 5
     :cond_0
-    invoke-virtual {v0, v1}, Lwk$a;->a(Ljava/util/Map;)Lwk$a;
+    invoke-virtual {v0, v1}, Landroidx/work/Data$Builder;->putAll(Ljava/util/Map;)Landroidx/work/Data$Builder;
 
     .line 6
-    invoke-virtual {v0}, Lwk$a;->a()Lwk;
+    invoke-virtual {v0}, Landroidx/work/Data$Builder;->build()Landroidx/work/Data;
 
     move-result-object p1
 

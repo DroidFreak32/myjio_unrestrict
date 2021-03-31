@@ -29,61 +29,55 @@
 
 .field public static final enum WEAK:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-.field public static final synthetic s:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+.field public static final synthetic a:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .line 1
     new-instance v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-    const/4 v1, 0x0
+    const-string v1, "NONE"
 
-    const-string v2, "NONE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->NONE:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-    new-instance v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-    const/4 v2, 0x1
+    new-instance v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
     const-string v3, "STRONG"
 
-    invoke-direct {v0, v3, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->STRONG:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    invoke-direct {v1, v3, v4}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    sput-object v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->STRONG:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-    const/4 v3, 0x2
+    new-instance v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-    const-string v4, "WEAK"
+    const-string v5, "WEAK"
 
-    invoke-direct {v0, v4, v3}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->WEAK:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    invoke-direct {v3, v5, v6}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x3
+    sput-object v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->WEAK:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-    new-array v0, v0, [Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    const/4 v5, 0x3
 
-    sget-object v4, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->NONE:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    new-array v5, v5, [Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
-    aput-object v4, v0, v1
+    aput-object v0, v5, v2
 
-    sget-object v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->STRONG:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    aput-object v1, v5, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v5, v6
 
-    sget-object v1, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->WEAK:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->s:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    sput-object v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->a:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
     return-void
 .end method
@@ -121,7 +115,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->s:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
+    sget-object v0, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->a:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;
 
     invoke-virtual {v0}, [Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Strength;->clone()Ljava/lang/Object;
 

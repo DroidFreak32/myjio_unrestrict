@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public appName:Ljava/lang/String;
+.field private appName:Ljava/lang/String;
 
-.field public appVersionName:Ljava/lang/String;
+.field private appVersionName:Ljava/lang/String;
 
 
 # direct methods
@@ -21,7 +21,25 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)V
+.method public getAppName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/AppInfoHolder;->appName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getAppVersionName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/AppInfoHolder;->appVersionName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setAppName(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -30,7 +48,7 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/String;)V
+.method public setAppVersionName(Ljava/lang/String;)V
     .locals 0
 
     .line 1

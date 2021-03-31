@@ -1,130 +1,125 @@
-.class public final Lcom/google/android/gms/internal/ads/zzsk;
-.super Lcom/google/android/gms/dynamic/RemoteCreator;
+.class public abstract Lcom/google/android/gms/internal/ads/zzsk;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/dynamic/RemoteCreator<",
-        "Lcom/google/android/gms/internal/ads/zzqw;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzsl;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
 
-    const-string v0, "com.google.android.gms.ads.NativeAdViewHolderDelegateCreatorImpl"
+    const-string v0, "com.google.android.gms.ads.internal.appopen.client.IAppOpenAdLoadCallback"
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/dynamic/RemoteCreator;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic getRemoteCreator(Landroid/os/IBinder;)Ljava/lang/Object;
+.method public static zzb(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzsl;
     .locals 2
 
-    if-nez p1, :cond_0
+    if-nez p0, :cond_0
 
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    return-object p1
+    return-object p0
 
     :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.INativeAdViewHolderDelegateCreator"
+    const-string v0, "com.google.android.gms.ads.internal.appopen.client.IAppOpenAdLoadCallback"
 
     .line 1
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
     .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzqw;
+    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzsl;
 
     if-eqz v1, :cond_1
 
     .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzqw;
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzsl;
 
     return-object v0
 
     .line 4
     :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzqx;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzsn;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzqx;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzsn;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 .end method
 
-.method public final zzb(Landroid/view/View;Ljava/util/HashMap;Ljava/util/HashMap;)Lcom/google/android/gms/internal/ads/zzqt;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
+
+# virtual methods
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Landroid/view/View;",
-            "Ljava/util/HashMap<",
-            "Ljava/lang/String;",
-            "Landroid/view/View;",
-            ">;",
-            "Ljava/util/HashMap<",
-            "Ljava/lang/String;",
-            "Landroid/view/View;",
-            ">;)",
-            "Lcom/google/android/gms/internal/ads/zzqt;"
+            Landroid/os/RemoteException;
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 p4, 0x1
+
+    if-eq p1, p4, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
 
     .line 1
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    :cond_0
+    sget-object p1, Lcom/google/android/gms/internal/ads/zzve;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result-object v1
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzve;
 
     .line 2
-    invoke-static {p2}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzsl;->zza(Lcom/google/android/gms/internal/ads/zzve;)V
 
-    move-result-object p2
+    goto :goto_1
 
     .line 3
-    invoke-static {p3}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    :cond_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object p3
+    move-result p1
 
     .line 4
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzsl;->onAppOpenAdFailedToLoad(I)V
 
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/dynamic/RemoteCreator;->getRemoteCreatorInstance(Landroid/content/Context;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzqw;
+    goto :goto_1
 
     .line 5
-    invoke-interface {p1, v1, p2, p3}, Lcom/google/android/gms/internal/ads/zzqw;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)Landroid/os/IBinder;
+    :cond_2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_3
 
-    return-object v0
+    const/4 p1, 0x0
 
-    :cond_0
-    const-string p2, "com.google.android.gms.ads.internal.formats.client.INativeAdViewHolderDelegate"
+    goto :goto_0
+
+    :cond_3
+    const-string p2, "com.google.android.gms.ads.internal.appopen.client.IAppOpenAd"
 
     .line 6
     invoke-interface {p1, p2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
@@ -132,39 +127,32 @@
     move-result-object p2
 
     .line 7
-    instance-of p3, p2, Lcom/google/android/gms/internal/ads/zzqt;
+    instance-of v0, p2, Lcom/google/android/gms/internal/ads/zzsg;
 
-    if-eqz p3, :cond_1
+    if-eqz v0, :cond_4
 
     .line 8
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzqt;
+    move-object p1, p2
 
-    return-object p2
-
-    .line 9
-    :cond_1
-    new-instance p2, Lcom/google/android/gms/internal/ads/zzqv;
-
-    invoke-direct {p2, p1}, Lcom/google/android/gms/internal/ads/zzqv;-><init>(Landroid/os/IBinder;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lcom/google/android/gms/dynamic/RemoteCreator$RemoteCreatorException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p2
-
-    :catch_0
-    move-exception p1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzsg;
 
     goto :goto_0
 
-    :catch_1
-    move-exception p1
+    .line 9
+    :cond_4
+    new-instance p2, Lcom/google/android/gms/internal/ads/zzsi;
 
-    :goto_0
-    const-string p2, "Could not create remote NativeAdViewHolderDelegate."
+    invoke-direct {p2, p1}, Lcom/google/android/gms/internal/ads/zzsi;-><init>(Landroid/os/IBinder;)V
+
+    move-object p1, p2
 
     .line 10
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :goto_0
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzsl;->zza(Lcom/google/android/gms/internal/ads/zzsg;)V
 
-    return-object v0
+    .line 11
+    :goto_1
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    return p4
 .end method

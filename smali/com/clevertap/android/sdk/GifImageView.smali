@@ -17,35 +17,35 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "GifDecoderView"
+.field private static final TAG:Ljava/lang/String; = "GifDecoderView"
 
 
 # instance fields
-.field public animating:Z
+.field private animating:Z
 
-.field public animationStartCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStart;
+.field private animationStartCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStart;
 
-.field public animationStopCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStop;
+.field private animationStopCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStop;
 
-.field public animationThread:Ljava/lang/Thread;
+.field private animationThread:Ljava/lang/Thread;
 
-.field public final cleanupRunnable:Ljava/lang/Runnable;
+.field private final cleanupRunnable:Ljava/lang/Runnable;
 
-.field public frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
+.field private frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
 
-.field public framesDisplayDuration:J
+.field private framesDisplayDuration:J
 
-.field public gifDecoder:Lcom/clevertap/android/sdk/GifDecoder;
+.field private gifDecoder:Lcom/clevertap/android/sdk/GifDecoder;
 
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public renderFrame:Z
+.field private renderFrame:Z
 
-.field public shouldClear:Z
+.field private shouldClear:Z
 
-.field public tmpBitmap:Landroid/graphics/Bitmap;
+.field private tmpBitmap:Landroid/graphics/Bitmap;
 
-.field public final updateResults:Ljava/lang/Runnable;
+.field private final updateResults:Ljava/lang/Runnable;
 
 
 # direct methods
@@ -55,7 +55,23 @@
     .line 9
     invoke-direct {p0, p1}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;)V
 
+    const/4 p1, 0x0
+
     .line 10
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStartCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStart;
+
+    .line 11
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStopCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStop;
+
+    .line 12
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
+
+    const-wide/16 v0, -0x1
+
+    .line 13
+    iput-wide v0, p0, Lcom/clevertap/android/sdk/GifImageView;->framesDisplayDuration:J
+
+    .line 14
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -66,46 +82,46 @@
 
     iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->handler:Landroid/os/Handler;
 
-    const/4 p1, 0x0
-
-    .line 11
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
-
-    const-wide/16 v0, -0x1
-
-    .line 12
-    iput-wide v0, p0, Lcom/clevertap/android/sdk/GifImageView;->framesDisplayDuration:J
-
-    .line 13
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStopCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStop;
-
-    .line 14
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStartCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStart;
-
     .line 15
     new-instance p1, Lcom/clevertap/android/sdk/GifImageView$1;
 
     invoke-direct {p1, p0}, Lcom/clevertap/android/sdk/GifImageView$1;-><init>(Lcom/clevertap/android/sdk/GifImageView;)V
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->updateResults:Ljava/lang/Runnable;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->cleanupRunnable:Ljava/lang/Runnable;
 
     .line 16
     new-instance p1, Lcom/clevertap/android/sdk/GifImageView$2;
 
     invoke-direct {p1, p0}, Lcom/clevertap/android/sdk/GifImageView$2;-><init>(Lcom/clevertap/android/sdk/GifImageView;)V
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->cleanupRunnable:Ljava/lang/Runnable;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->updateResults:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
+    const/4 p1, 0x0
+
     .line 2
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStartCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStart;
+
+    .line 3
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStopCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStop;
+
+    .line 4
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
+
+    const-wide/16 p1, -0x1
+
+    .line 5
+    iput-wide p1, p0, Lcom/clevertap/android/sdk/GifImageView;->framesDisplayDuration:J
+
+    .line 6
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -116,35 +132,19 @@
 
     iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->handler:Landroid/os/Handler;
 
-    const/4 p1, 0x0
-
-    .line 3
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
-
-    const-wide/16 v0, -0x1
-
-    .line 4
-    iput-wide v0, p0, Lcom/clevertap/android/sdk/GifImageView;->framesDisplayDuration:J
-
-    .line 5
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStopCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStop;
-
-    .line 6
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->animationStartCallback:Lcom/clevertap/android/sdk/GifImageView$OnAnimationStart;
-
     .line 7
     new-instance p1, Lcom/clevertap/android/sdk/GifImageView$1;
 
     invoke-direct {p1, p0}, Lcom/clevertap/android/sdk/GifImageView$1;-><init>(Lcom/clevertap/android/sdk/GifImageView;)V
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->updateResults:Ljava/lang/Runnable;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->cleanupRunnable:Ljava/lang/Runnable;
 
     .line 8
     new-instance p1, Lcom/clevertap/android/sdk/GifImageView$2;
 
     invoke-direct {p1, p0}, Lcom/clevertap/android/sdk/GifImageView$2;-><init>(Lcom/clevertap/android/sdk/GifImageView;)V
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->cleanupRunnable:Ljava/lang/Runnable;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/GifImageView;->updateResults:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -244,8 +244,6 @@
     iput-object v0, p0, Lcom/clevertap/android/sdk/GifImageView;->animationThread:Ljava/lang/Thread;
 
     .line 3
-    iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView;->animationThread:Ljava/lang/Thread;
-
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     :cond_0
@@ -477,16 +475,12 @@
     iput-object v5, p0, Lcom/clevertap/android/sdk/GifImageView;->tmpBitmap:Landroid/graphics/Bitmap;
 
     .line 7
-    iget-object v5, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
+    iget-object v6, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
 
-    if-eqz v5, :cond_2
+    if-eqz v6, :cond_2
 
     .line 8
-    iget-object v5, p0, Lcom/clevertap/android/sdk/GifImageView;->frameCallback:Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;
-
-    iget-object v6, p0, Lcom/clevertap/android/sdk/GifImageView;->tmpBitmap:Landroid/graphics/Bitmap;
-
-    invoke-interface {v5, v6}, Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;->onFrameAvailable(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    invoke-interface {v6, v5}, Lcom/clevertap/android/sdk/GifImageView$OnFrameAvailable;->onFrameAvailable(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
@@ -502,18 +496,18 @@
 
     const-wide/32 v3, 0xf4240
 
-    div-long v3, v5, v3
+    div-long/2addr v5, v3
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 10
     :try_start_1
-    iget-object v5, p0, Lcom/clevertap/android/sdk/GifImageView;->handler:Landroid/os/Handler;
+    iget-object v3, p0, Lcom/clevertap/android/sdk/GifImageView;->handler:Landroid/os/Handler;
 
-    iget-object v6, p0, Lcom/clevertap/android/sdk/GifImageView;->updateResults:Ljava/lang/Runnable;
+    iget-object v4, p0, Lcom/clevertap/android/sdk/GifImageView;->updateResults:Ljava/lang/Runnable;
 
-    invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_1
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
@@ -526,18 +520,18 @@
     goto :goto_0
 
     :catch_1
-    move-wide v3, v1
+    move-wide v5, v1
 
     :goto_0
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 11
-    iput-boolean v5, p0, Lcom/clevertap/android/sdk/GifImageView;->renderFrame:Z
+    iput-boolean v3, p0, Lcom/clevertap/android/sdk/GifImageView;->renderFrame:Z
 
     .line 12
-    iget-boolean v6, p0, Lcom/clevertap/android/sdk/GifImageView;->animating:Z
+    iget-boolean v4, p0, Lcom/clevertap/android/sdk/GifImageView;->animating:Z
 
-    if-eqz v6, :cond_6
+    if-eqz v4, :cond_6
 
     if-nez v0, :cond_3
 
@@ -552,11 +546,11 @@
 
     move-result v0
 
-    int-to-long v5, v0
+    int-to-long v3, v0
 
-    sub-long/2addr v5, v3
+    sub-long/2addr v3, v5
 
-    long-to-int v0, v5
+    long-to-int v0, v3
 
     if-lez v0, :cond_5
 
@@ -567,15 +561,13 @@
 
     if-lez v5, :cond_4
 
-    iget-wide v0, p0, Lcom/clevertap/android/sdk/GifImageView;->framesDisplayDuration:J
-
     goto :goto_1
 
     :cond_4
-    int-to-long v0, v0
+    int-to-long v3, v0
 
     :goto_1
-    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -596,7 +588,7 @@
     .line 16
     :cond_6
     :goto_3
-    iput-boolean v5, p0, Lcom/clevertap/android/sdk/GifImageView;->animating:Z
+    iput-boolean v3, p0, Lcom/clevertap/android/sdk/GifImageView;->animating:Z
 
     .line 17
     :goto_4
@@ -641,8 +633,6 @@
 
     .line 2
     :try_start_0
-    iget-object v0, p0, Lcom/clevertap/android/sdk/GifImageView;->gifDecoder:Lcom/clevertap/android/sdk/GifDecoder;
-
     invoke-virtual {v0, p1}, Lcom/clevertap/android/sdk/GifDecoder;->read([B)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0

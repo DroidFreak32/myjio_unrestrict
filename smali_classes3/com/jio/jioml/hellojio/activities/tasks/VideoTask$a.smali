@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,13 +38,13 @@
     .locals 1
 
     .line 1
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->progressBar:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->progressBar:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -52,31 +52,31 @@
 
     check-cast p1, Landroid/widget/ProgressBar;
 
-    const-string/jumbo v0, "view.progressBar"
+    const-string v0, "view.progressBar"
 
-    invoke-static {p1, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     .line 2
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
     move-result p1
 
     if-lez p1, :cond_0
 
     .line 3
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->video_view:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -84,9 +84,9 @@
 
     check-cast p1, Landroid/widget/VideoView;
 
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
+    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getMCurrentPosition$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)I
 
     move-result v0
 
@@ -96,13 +96,13 @@
 
     .line 4
     :cond_0
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->video_view:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -116,13 +116,13 @@
 
     .line 5
     :goto_0
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->video_view:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

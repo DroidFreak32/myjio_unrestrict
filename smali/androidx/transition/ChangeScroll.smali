@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final s:[Ljava/lang/String;
+.field public static final a:[Ljava/lang/String;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     move-result-object v0
 
-    sput-object v0, Landroidx/transition/ChangeScroll;->s:[Ljava/lang/String;
+    sput-object v0, Landroidx/transition/ChangeScroll;->a:[Ljava/lang/String;
 
     return-void
 .end method
@@ -45,31 +45,39 @@
 
 
 # virtual methods
-.method public captureEndValues(Llj;)V
+.method public captureEndValues(Landroidx/transition/TransitionValues;)V
     .locals 0
+    .param p1    # Landroidx/transition/TransitionValues;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/transition/ChangeScroll;->captureValues(Llj;)V
+    invoke-virtual {p0, p1}, Landroidx/transition/ChangeScroll;->captureValues(Landroidx/transition/TransitionValues;)V
 
     return-void
 .end method
 
-.method public captureStartValues(Llj;)V
+.method public captureStartValues(Landroidx/transition/TransitionValues;)V
     .locals 0
+    .param p1    # Landroidx/transition/TransitionValues;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/transition/ChangeScroll;->captureValues(Llj;)V
+    invoke-virtual {p0, p1}, Landroidx/transition/ChangeScroll;->captureValues(Landroidx/transition/TransitionValues;)V
 
     return-void
 .end method
 
-.method public final captureValues(Llj;)V
+.method public final captureValues(Landroidx/transition/TransitionValues;)V
     .locals 3
 
     .line 1
-    iget-object v0, p1, Llj;->a:Ljava/util/Map;
+    iget-object v0, p1, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
-    iget-object v1, p1, Llj;->b:Landroid/view/View;
+    iget-object v1, p1, Landroidx/transition/TransitionValues;->view:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getScrollX()I
 
@@ -84,9 +92,9 @@
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    iget-object v0, p1, Llj;->a:Ljava/util/Map;
+    iget-object v0, p1, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
-    iget-object p1, p1, Llj;->b:Landroid/view/View;
+    iget-object p1, p1, Landroidx/transition/TransitionValues;->view:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
@@ -103,8 +111,22 @@
     return-void
 .end method
 
-.method public createAnimator(Landroid/view/ViewGroup;Llj;Llj;)Landroid/animation/Animator;
+.method public createAnimator(Landroid/view/ViewGroup;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 7
+    .param p1    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/transition/TransitionValues;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Landroidx/transition/TransitionValues;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -116,10 +138,10 @@
 
     .line 1
     :cond_0
-    iget-object v0, p3, Llj;->b:Landroid/view/View;
+    iget-object v0, p3, Landroidx/transition/TransitionValues;->view:Landroid/view/View;
 
     .line 2
-    iget-object v1, p2, Llj;->a:Ljava/util/Map;
+    iget-object v1, p2, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v2, "android:changeScroll:x"
 
@@ -134,7 +156,7 @@
     move-result v1
 
     .line 3
-    iget-object v3, p3, Llj;->a:Ljava/util/Map;
+    iget-object v3, p3, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -147,7 +169,7 @@
     move-result v2
 
     .line 4
-    iget-object p2, p2, Llj;->a:Ljava/util/Map;
+    iget-object p2, p2, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string v3, "android:changeScroll:y"
 
@@ -162,7 +184,7 @@
     move-result p2
 
     .line 5
-    iget-object p3, p3, Llj;->a:Ljava/util/Map;
+    iget-object p3, p3, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
 
     invoke-interface {p3, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -224,7 +246,7 @@
 
     .line 10
     :cond_2
-    invoke-static {v1, p1}, Lkj;->a(Landroid/animation/Animator;Landroid/animation/Animator;)Landroid/animation/Animator;
+    invoke-static {v1, p1}, Lp5;->c(Landroid/animation/Animator;Landroid/animation/Animator;)Landroid/animation/Animator;
 
     move-result-object p1
 
@@ -235,9 +257,11 @@
 
 .method public getTransitionProperties()[Ljava/lang/String;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    sget-object v0, Landroidx/transition/ChangeScroll;->s:[Ljava/lang/String;
+    sget-object v0, Landroidx/transition/ChangeScroll;->a:[Ljava/lang/String;
 
     return-object v0
 .end method

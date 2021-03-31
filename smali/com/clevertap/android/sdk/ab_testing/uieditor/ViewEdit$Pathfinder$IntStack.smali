@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final MAX_SIZE:I = 0x100
+.field private static final MAX_SIZE:I = 0x100
 
 
 # instance fields
-.field public final stack:[I
+.field private final stack:[I
 
-.field public stackSize:I
+.field private stackSize:I
 
 .field public final synthetic this$1:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder;
 
@@ -83,20 +83,19 @@
 
     iput v0, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder$IntStack;->stackSize:I
 
-    .line 2
-    iget v0, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder$IntStack;->stackSize:I
-
     if-ltz v0, :cond_0
 
     return-void
 
-    .line 3
+    .line 2
     :cond_0
-    new-instance v1, Ljava/lang/ArrayIndexOutOfBoundsException;
+    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
-    invoke-direct {v1, v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(I)V
+    iget v1, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder$IntStack;->stackSize:I
 
-    throw v1
+    invoke-direct {v0, v1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(I)V
+
+    throw v0
 .end method
 
 .method public increment(I)V

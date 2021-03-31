@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final MINI_THUMB_HEIGHT:I = 0x180
+.field private static final MINI_THUMB_HEIGHT:I = 0x180
 
-.field public static final MINI_THUMB_WIDTH:I = 0x200
+.field private static final MINI_THUMB_WIDTH:I = 0x200
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -143,7 +143,7 @@
     return p0
 .end method
 
-.method public static isVideoUri(Landroid/net/Uri;)Z
+.method private static isVideoUri(Landroid/net/Uri;)Z
     .locals 1
 
     .line 1
@@ -151,7 +151,7 @@
 
     move-result-object p0
 
-    const-string v0, "video"
+    const-string/jumbo v0, "video"
 
     invoke-interface {p0, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 

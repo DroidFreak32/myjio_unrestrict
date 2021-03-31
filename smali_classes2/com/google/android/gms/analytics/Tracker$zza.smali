@@ -17,17 +17,17 @@
 
 
 # instance fields
-.field public final synthetic zztp:Lcom/google/android/gms/analytics/Tracker;
+.field private final synthetic zztp:Lcom/google/android/gms/analytics/Tracker;
 
-.field public zztq:Z
+.field private zztq:Z
 
-.field public zztr:I
+.field private zztr:I
 
-.field public zzts:J
+.field private zzts:J
 
-.field public zztt:Z
+.field private zztt:Z
 
-.field public zztu:J
+.field private zztu:J
 
 
 # direct methods
@@ -390,23 +390,18 @@
 
     iput p1, p0, Lcom/google/android/gms/analytics/Tracker$zza;->zztr:I
 
-    .line 2
-    iget p1, p0, Lcom/google/android/gms/analytics/Tracker$zza;->zztr:I
-
     const/4 v0, 0x0
 
+    .line 2
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     iput p1, p0, Lcom/google/android/gms/analytics/Tracker$zza;->zztr:I
 
-    .line 3
-    iget p1, p0, Lcom/google/android/gms/analytics/Tracker$zza;->zztr:I
-
     if-nez p1, :cond_0
 
-    .line 4
+    .line 3
     invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzam;->zzcn()Lcom/google/android/gms/common/util/Clock;
 
     move-result-object p1

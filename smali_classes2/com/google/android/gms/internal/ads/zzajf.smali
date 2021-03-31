@@ -1,54 +1,90 @@
-.class public final Lcom/google/android/gms/internal/ads/zzajf;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/android/gms/internal/ads/zzajf;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# instance fields
-.field public final zzbwy:Lcom/google/android/gms/internal/ads/zzyq;
-
-.field public final zzcps:Lcom/google/android/gms/internal/ads/zzaiz;
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzajc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzyq;Lcom/google/android/gms/internal/ads/zzaiy;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.initialization.IInitializationCallback"
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzajf;->zzbwy:Lcom/google/android/gms/internal/ads/zzyq;
-
-    .line 3
-    new-instance p1, Lcom/google/android/gms/internal/ads/zzaiz;
-
-    invoke-direct {p1, p2}, Lcom/google/android/gms/internal/ads/zzaiz;-><init>(Lcom/google/android/gms/internal/ads/zzaiy;)V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzajf;->zzcps:Lcom/google/android/gms/internal/ads/zzaiz;
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
+.method public static zzaa(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzajc;
+    .locals 2
 
-# virtual methods
-.method public final zzqr()Lcom/google/android/gms/internal/ads/zzyq;
-    .locals 1
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.ads.internal.initialization.IInitializationCallback"
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzajf;->zzbwy:Lcom/google/android/gms/internal/ads/zzyq;
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    .line 2
+    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzajc;
+
+    if-eqz v1, :cond_1
+
+    .line 3
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzajc;
+
+    return-object v0
+
+    .line 4
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzaje;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzaje;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 .end method
 
-.method public final zzqs()Lcom/google/android/gms/internal/ads/zzaiz;
-    .locals 1
+
+# virtual methods
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    const/4 p4, 0x1
+
+    if-ne p1, p4, :cond_0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzajf;->zzcps:Lcom/google/android/gms/internal/ads/zzaiz;
+    sget-object p1, Lcom/google/android/gms/internal/ads/zzaiz;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    return-object v0
+    invoke-virtual {p2, p1}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    .line 2
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzajc;->zze(Ljava/util/List;)V
+
+    .line 3
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    return p4
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

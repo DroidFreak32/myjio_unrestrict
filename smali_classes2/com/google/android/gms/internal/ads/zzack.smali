@@ -1,43 +1,67 @@
 .class public final Lcom/google/android/gms/internal/ads/zzack;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzacj;
+.implements Lcom/google/android/gms/internal/ads/zzacl;
 
 
 # direct methods
-.method public static zzaa(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzacj;
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.purchase.client.IPlayStorePurchaseListener"
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    return-void
+.end method
 
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzacj;
 
-    if-eqz v1, :cond_1
+# virtual methods
+.method public final zza(Landroid/content/Context;Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Lcom/google/android/gms/internal/ads/zzdyz;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Landroid/view/MotionEvent;",
+            "Landroid/view/MotionEvent;",
+            ")",
+            "Lcom/google/android/gms/internal/ads/zzdyz<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzacj;
+    const/4 p1, 0x0
 
-    return-object v0
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzdyr;->zzag(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzdyz;
 
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzacl;
+    move-result-object p1
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzacl;-><init>(Landroid/os/IBinder;)V
+    return-object p1
+.end method
 
-    return-object v0
+.method public final zzk(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzdyz;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            ")",
+            "Lcom/google/android/gms/internal/ads/zzdyz<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 p1, 0x0
+
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzdyr;->zzag(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzdyz;
+
+    move-result-object p1
+
+    return-object p1
 .end method

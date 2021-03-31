@@ -1,229 +1,80 @@
 .class public Lm1;
 .super Landroid/widget/BaseAdapter;
-.source "MenuAdapter.java"
+.source "BrowserActionsFallbackMenuAdapter.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lm1$a;
+    }
+.end annotation
 
 
 # instance fields
-.field public s:Ln1;
+.field public final a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Landroidx/browser/browseractions/BrowserActionItem;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public t:I
-
-.field public u:Z
-
-.field public final v:Z
-
-.field public final w:Landroid/view/LayoutInflater;
-
-.field public final x:I
+.field public final b:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ln1;Landroid/view/LayoutInflater;ZI)V
-    .locals 1
+.method public constructor <init>(Ljava/util/List;Landroid/content/Context;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Landroidx/browser/browseractions/BrowserActionItem;",
+            ">;",
+            "Landroid/content/Context;",
+            ")V"
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    const/4 v0, -0x1
-
     .line 2
-    iput v0, p0, Lm1;->t:I
+    iput-object p1, p0, Lm1;->a:Ljava/util/List;
 
     .line 3
-    iput-boolean p3, p0, Lm1;->v:Z
-
-    .line 4
-    iput-object p2, p0, Lm1;->w:Landroid/view/LayoutInflater;
-
-    .line 5
-    iput-object p1, p0, Lm1;->s:Ln1;
-
-    .line 6
-    iput p4, p0, Lm1;->x:I
-
-    .line 7
-    invoke-virtual {p0}, Lm1;->a()V
+    iput-object p2, p0, Lm1;->b:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 5
-
-    .line 2
-    iget-object v0, p0, Lm1;->s:Ln1;
-
-    invoke-virtual {v0}, Ln1;->getExpandedItem()Lq1;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 3
-    iget-object v1, p0, Lm1;->s:Ln1;
-
-    invoke-virtual {v1}, Ln1;->getNonActionItems()Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    .line 4
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v2, :cond_1
-
-    .line 5
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lq1;
-
-    if-ne v4, v0, :cond_0
-
-    .line 6
-    iput v3, p0, Lm1;->t:I
-
-    return-void
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, -0x1
-
-    .line 7
-    iput v0, p0, Lm1;->t:I
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .locals 0
-
-    .line 1
-    iput-boolean p1, p0, Lm1;->u:Z
-
-    return-void
-.end method
-
-.method public b()Ln1;
+.method public getCount()I
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lm1;->s:Ln1;
+    iget-object v0, p0, Lm1;->a:Ljava/util/List;
 
-    return-object v0
-.end method
-
-.method public getCount()I
-    .locals 2
-
-    .line 1
-    iget-boolean v0, p0, Lm1;->v:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lm1;->s:Ln1;
-
-    .line 2
-    invoke-virtual {v0}, Ln1;->getNonActionItems()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lm1;->s:Ln1;
-
-    invoke-virtual {v0}, Ln1;->getVisibleItems()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    .line 3
-    :goto_0
-    iget v1, p0, Lm1;->t:I
-
-    if-gez v1, :cond_1
-
-    .line 4
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
     return v0
-
-    .line 5
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    return v0
 .end method
 
-.method public bridge synthetic getItem(I)Ljava/lang/Object;
-    .locals 0
+.method public getItem(I)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-virtual {p0, p1}, Lm1;->getItem(I)Lq1;
+    iget-object v0, p0, Lm1;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
-
-    return-object p1
-.end method
-
-.method public getItem(I)Lq1;
-    .locals 2
-
-    .line 2
-    iget-boolean v0, p0, Lm1;->v:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lm1;->s:Ln1;
-
-    .line 3
-    invoke-virtual {v0}, Ln1;->getNonActionItems()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lm1;->s:Ln1;
-
-    invoke-virtual {v0}, Ln1;->getVisibleItems()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    .line 4
-    :goto_0
-    iget v1, p0, Lm1;->t:I
-
-    if-ltz v1, :cond_1
-
-    if-lt p1, v1, :cond_1
-
-    add-int/lit8 p1, p1, 0x1
-
-    .line 5
-    :cond_1
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lq1;
 
     return-object p1
 .end method
@@ -237,110 +88,123 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 5
-
-    const/4 v0, 0x0
-
-    if-nez p2, :cond_0
+    .locals 3
 
     .line 1
-    iget-object p2, p0, Lm1;->w:Landroid/view/LayoutInflater;
+    iget-object p3, p0, Lm1;->a:Ljava/util/List;
 
-    iget v1, p0, Lm1;->x:I
-
-    invoke-virtual {p2, v1, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p2
-
-    .line 2
-    :cond_0
-    invoke-virtual {p0, p1}, Lm1;->getItem(I)Lq1;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Lq1;->getGroupId()I
-
-    move-result p3
-
-    add-int/lit8 v1, p1, -0x1
-
-    if-ltz v1, :cond_1
-
-    .line 3
-    invoke-virtual {p0, v1}, Lm1;->getItem(I)Lq1;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lq1;->getGroupId()I
-
-    move-result v1
-
-    goto :goto_0
-
-    :cond_1
-    move v1, p3
-
-    .line 4
-    :goto_0
-    move-object v2, p2
-
-    check-cast v2, Landroidx/appcompat/view/menu/ListMenuItemView;
-
-    iget-object v3, p0, Lm1;->s:Ln1;
-
-    .line 5
-    invoke-virtual {v3}, Ln1;->isGroupDividerEnabled()Z
-
-    move-result v3
-
-    const/4 v4, 0x1
-
-    if-eqz v3, :cond_2
-
-    if-eq p3, v1, :cond_2
-
-    const/4 p3, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const/4 p3, 0x0
-
-    :goto_1
-    invoke-virtual {v2, p3}, Landroidx/appcompat/view/menu/ListMenuItemView;->setGroupDividerEnabled(Z)V
-
-    .line 6
-    move-object p3, p2
-
-    check-cast p3, Lv1$a;
-
-    .line 7
-    iget-boolean v1, p0, Lm1;->u:Z
-
-    if-eqz v1, :cond_3
-
-    .line 8
-    invoke-virtual {v2, v4}, Landroidx/appcompat/view/menu/ListMenuItemView;->setForceShowIcon(Z)V
-
-    .line 9
-    :cond_3
-    invoke-virtual {p0, p1}, Lm1;->getItem(I)Lq1;
+    invoke-interface {p3, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-interface {p3, p1, v0}, Lv1$a;->initialize(Lq1;I)V
+    check-cast p1, Landroidx/browser/browseractions/BrowserActionItem;
 
-    return-object p2
-.end method
+    const/4 p3, 0x0
 
-.method public notifyDataSetChanged()V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lm1;->a()V
+    if-nez p2, :cond_0
 
     .line 2
-    invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+    iget-object p2, p0, Lm1;->b:Landroid/content/Context;
 
-    return-void
+    invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object p2
+
+    sget v0, Landroidx/browser/R$layout;->browser_actions_context_menu_row:I
+
+    invoke-virtual {p2, v0, p3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object p2
+
+    .line 3
+    new-instance v0, Lm1$a;
+
+    invoke-direct {v0}, Lm1$a;-><init>()V
+
+    .line 4
+    sget v1, Landroidx/browser/R$id;->browser_actions_menu_item_icon:I
+
+    .line 5
+    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    iput-object v1, v0, Lm1$a;->a:Landroid/widget/ImageView;
+
+    .line 6
+    sget v1, Landroidx/browser/R$id;->browser_actions_menu_item_text:I
+
+    .line 7
+    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iput-object v1, v0, Lm1$a;->b:Landroid/widget/TextView;
+
+    .line 8
+    invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lm1$a;
+
+    .line 10
+    :goto_0
+    iget-object v1, v0, Lm1$a;->b:Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getTitle()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 11
+    invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getIconId()I
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 12
+    iget-object v1, p0, Lm1;->b:Landroid/content/Context;
+
+    .line 13
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getIconId()I
+
+    move-result p1
+
+    .line 14
+    invoke-static {v1, p1, p3}, Landroidx/core/content/res/ResourcesCompat;->getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    .line 15
+    iget-object p3, v0, Lm1$a;->a:Landroid/widget/ImageView;
+
+    invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_1
+
+    .line 16
+    :cond_1
+    iget-object p1, v0, Lm1$a;->a:Landroid/widget/ImageView;
+
+    invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :goto_1
+    return-object p2
 .end method

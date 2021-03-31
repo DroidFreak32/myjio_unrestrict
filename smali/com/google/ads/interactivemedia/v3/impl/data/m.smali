@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public adTagParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
+.field private adTagParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/age<",
@@ -18,17 +18,17 @@
     .end annotation
 .end field
 
-.field public adTagUrl:Ljava/lang/String;
+.field private adTagUrl:Ljava/lang/String;
 
-.field public adsResponse:Ljava/lang/String;
+.field private adsResponse:Ljava/lang/String;
 
-.field public apiKey:Ljava/lang/String;
+.field private apiKey:Ljava/lang/String;
 
-.field public assetKey:Ljava/lang/String;
+.field private assetKey:Ljava/lang/String;
 
-.field public authToken:Ljava/lang/String;
+.field private authToken:Ljava/lang/String;
 
-.field public companionSlots:Lcom/google/ads/interactivemedia/v3/internal/age;
+.field private companionSlots:Lcom/google/ads/interactivemedia/v3/internal/age;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/age<",
@@ -39,9 +39,9 @@
     .end annotation
 .end field
 
-.field public contentDuration:Ljava/lang/Float;
+.field private contentDuration:Ljava/lang/Float;
 
-.field public contentKeywords:Lcom/google/ads/interactivemedia/v3/internal/agb;
+.field private contentKeywords:Lcom/google/ads/interactivemedia/v3/internal/agb;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/agb<",
@@ -51,13 +51,13 @@
     .end annotation
 .end field
 
-.field public contentSourceId:Ljava/lang/String;
+.field private contentSourceId:Ljava/lang/String;
 
-.field public contentTitle:Ljava/lang/String;
+.field private contentTitle:Ljava/lang/String;
 
-.field public env:Ljava/lang/String;
+.field private env:Ljava/lang/String;
 
-.field public extraParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
+.field private extraParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/age<",
@@ -68,37 +68,37 @@
     .end annotation
 .end field
 
-.field public format:Ljava/lang/String;
+.field private format:Ljava/lang/String;
 
-.field public identifierInfo:Lcom/google/ads/interactivemedia/v3/internal/aet;
+.field private identifierInfo:Lcom/google/ads/interactivemedia/v3/internal/aet;
 
-.field public isTv:Ljava/lang/Boolean;
+.field private isTv:Ljava/lang/Boolean;
 
-.field public linearAdSlotHeight:Ljava/lang/Integer;
+.field private linearAdSlotHeight:Ljava/lang/Integer;
 
-.field public linearAdSlotWidth:Ljava/lang/Integer;
+.field private linearAdSlotWidth:Ljava/lang/Integer;
 
-.field public liveStreamPrefetchSeconds:Ljava/lang/Float;
+.field private liveStreamPrefetchSeconds:Ljava/lang/Float;
 
-.field public marketAppInfo:Lcom/google/ads/interactivemedia/v3/internal/acj;
+.field private marketAppInfo:Lcom/google/ads/interactivemedia/v3/internal/acj;
 
-.field public msParameter:Ljava/lang/String;
+.field private msParameter:Ljava/lang/String;
 
-.field public network:Ljava/lang/String;
+.field private network:Ljava/lang/String;
 
-.field public settings:Lcom/google/ads/interactivemedia/v3/api/ImaSdkSettings;
+.field private settings:Lcom/google/ads/interactivemedia/v3/api/ImaSdkSettings;
 
-.field public streamActivityMonitorId:Ljava/lang/String;
+.field private streamActivityMonitorId:Ljava/lang/String;
 
-.field public useQAStreamBaseUrl:Ljava/lang/Boolean;
+.field private useQAStreamBaseUrl:Ljava/lang/Boolean;
 
-.field public vastLoadTimeout:Ljava/lang/Float;
+.field private vastLoadTimeout:Ljava/lang/Float;
 
-.field public videoId:Ljava/lang/String;
+.field private videoId:Ljava/lang/String;
 
-.field public videoPlayActivation:Lcom/google/ads/interactivemedia/v3/internal/acp;
+.field private videoPlayActivation:Lcom/google/ads/interactivemedia/v3/internal/acp;
 
-.field public videoPlayMuted:Lcom/google/ads/interactivemedia/v3/internal/acq;
+.field private videoPlayMuted:Lcom/google/ads/interactivemedia/v3/internal/acq;
 
 
 # direct methods

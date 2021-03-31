@@ -1,56 +1,33 @@
 .class public final Lcom/google/android/gms/internal/ads/zzfj;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapx;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzapx<",
-        "Lcom/google/android/gms/internal/ads/zzwy;",
-        ">;"
-    }
-.end annotation
+.super Landroid/content/BroadcastReceiver;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzags:Lcom/google/android/gms/internal/ads/zzfi;
+.field private final synthetic zzaao:Lcom/google/android/gms/internal/ads/zzfh;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzfi;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzfh;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzfj;->zzags:Lcom/google/android/gms/internal/ads/zzfi;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzfj;->zzaao:Lcom/google/android/gms/internal/ads/zzfh;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zze(Ljava/lang/Object;)V
-    .locals 2
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 0
 
     .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzwy;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzfj;->zzaao:Lcom/google/android/gms/internal/ads/zzfh;
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzfj;->zzags:Lcom/google/android/gms/internal/ads/zzfi;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzfi;->zza(Lcom/google/android/gms/internal/ads/zzfi;Z)Z
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzfj;->zzags:Lcom/google/android/gms/internal/ads/zzfi;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzfi;->zza(Lcom/google/android/gms/internal/ads/zzwy;)V
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzfh;->zza(Lcom/google/android/gms/internal/ads/zzfh;)V
 
     return-void
 .end method

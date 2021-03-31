@@ -15,19 +15,19 @@
 
 
 # instance fields
-.field public final files:[Ljava/io/File;
+.field private final files:[Ljava/io/File;
 
-.field public final key:Ljava/lang/String;
+.field private final key:Ljava/lang/String;
 
-.field public final lengths:[J
+.field private final lengths:[J
 
-.field public final sequenceNumber:J
+.field private final sequenceNumber:J
 
 .field public final synthetic this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
 
 # direct methods
-.method public constructor <init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;J[Ljava/io/File;[J)V
+.method private constructor <init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;J[Ljava/io/File;[J)V
     .locals 0
 
     .line 2
@@ -63,6 +63,11 @@
 # virtual methods
 .method public edit()Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache$Value;->this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
@@ -102,6 +107,11 @@
 
 .method public getString(I)Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/FileInputStream;

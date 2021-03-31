@@ -1,136 +1,158 @@
-.class public final enum Lcom/google/android/gms/internal/measurement/zzfe;
-.super Ljava/lang/Enum;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.class public Lcom/google/android/gms/internal/measurement/zzfe;
+.super Lcom/google/android/gms/internal/measurement/zzek;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Enum<",
-        "Lcom/google/android/gms/internal/measurement/zzfe;",
-        ">;"
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lcom/google/android/gms/internal/measurement/zzek<",
+        "TK;TV;>;",
+        "Ljava/io/Serializable;"
     }
 .end annotation
 
 
-# static fields
-.field public static final enum zza:Lcom/google/android/gms/internal/measurement/zzfe;
-
-.field public static final enum zzb:Lcom/google/android/gms/internal/measurement/zzfe;
-
-.field public static final enum zzc:Lcom/google/android/gms/internal/measurement/zzfe;
-
-.field public static final enum zzd:Lcom/google/android/gms/internal/measurement/zzfe;
-
-.field public static final synthetic zzf:[Lcom/google/android/gms/internal/measurement/zzfe;
-
-
 # instance fields
-.field public final zze:Z
+.field private final transient zza:Lcom/google/android/gms/internal/measurement/zzfc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/measurement/zzfc<",
+            "TK;+",
+            "Lcom/google/android/gms/internal/measurement/zzey<",
+            "TV;>;>;"
+        }
+    .end annotation
+.end field
+
+.field private final transient zzb:I
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 6
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzfe;
-
-    const/4 v1, 0x0
-
-    const-string v2, "SCALAR"
-
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/internal/measurement/zzfe;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzfe;->zza:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzfe;
-
-    const/4 v2, 0x1
-
-    const-string v3, "VECTOR"
-
-    invoke-direct {v0, v3, v2, v2}, Lcom/google/android/gms/internal/measurement/zzfe;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzfe;->zzb:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    .line 3
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzfe;
-
-    const/4 v3, 0x2
-
-    const-string v4, "PACKED_VECTOR"
-
-    invoke-direct {v0, v4, v3, v2}, Lcom/google/android/gms/internal/measurement/zzfe;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzfe;->zzc:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    .line 4
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzfe;
-
-    const/4 v4, 0x3
-
-    const-string v5, "MAP"
-
-    invoke-direct {v0, v5, v4, v1}, Lcom/google/android/gms/internal/measurement/zzfe;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzfe;->zzd:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lcom/google/android/gms/internal/measurement/zzfe;
-
-    .line 5
-    sget-object v5, Lcom/google/android/gms/internal/measurement/zzfe;->zza:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzfe;->zzb:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzfe;->zzc:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/gms/internal/measurement/zzfe;->zzd:Lcom/google/android/gms/internal/measurement/zzfe;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzfe;->zzf:[Lcom/google/android/gms/internal/measurement/zzfe;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;IZ)V
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzfc;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(Z)V"
+            "(",
+            "Lcom/google/android/gms/internal/measurement/zzfc<",
+            "TK;+",
+            "Lcom/google/android/gms/internal/measurement/zzey<",
+            "TV;>;>;I)V"
         }
     .end annotation
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzek;-><init>()V
 
     .line 2
-    iput-boolean p3, p0, Lcom/google/android/gms/internal/measurement/zzfe;->zze:Z
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzfe;->zza:Lcom/google/android/gms/internal/measurement/zzfc;
+
+    .line 3
+    iput p2, p0, Lcom/google/android/gms/internal/measurement/zzfe;->zzb:I
 
     return-void
 .end method
 
-.method public static values()[Lcom/google/android/gms/internal/measurement/zzfe;
+
+# virtual methods
+.method public bridge synthetic equals(Ljava/lang/Object;)Z
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzel;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public bridge synthetic hashCode()I
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzfe;->zzf:[Lcom/google/android/gms/internal/measurement/zzfe;
+    invoke-super {p0}, Lcom/google/android/gms/internal/measurement/zzel;->hashCode()I
 
-    invoke-virtual {v0}, [Lcom/google/android/gms/internal/measurement/zzfe;->clone()Ljava/lang/Object;
+    move-result v0
+
+    return v0
+.end method
+
+.method public bridge synthetic toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/gms/internal/measurement/zzel;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lcom/google/android/gms/internal/measurement/zzfe;
+    return-object v0
+.end method
+
+.method public final synthetic zza()Ljava/util/Map;
+    .locals 1
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzfe;->zza:Lcom/google/android/gms/internal/measurement/zzfc;
 
     return-object v0
+.end method
+
+.method public final zza(Ljava/lang/Object;)Z
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-eqz p1, :cond_0
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/measurement/zzel;->zza(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final zzb()Ljava/util/Map;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "TK;",
+            "Ljava/util/Collection<",
+            "TV;>;>;"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "should never be called"
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
 .end method

@@ -26,8 +26,19 @@
 
 
 # virtual methods
-.method public build(Ljava/util/List;Lz8;)Lcom/bumptech/glide/load/model/MultiModelLoader;
+.method public build(Ljava/util/List;Landroidx/core/util/Pools$Pool;)Lcom/bumptech/glide/load/model/MultiModelLoader;
     .locals 1
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/core/util/Pools$Pool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -38,7 +49,7 @@
             "Ljava/util/List<",
             "Lcom/bumptech/glide/load/model/ModelLoader<",
             "TModel;TData;>;>;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;)",
@@ -50,7 +61,7 @@
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/model/MultiModelLoader;
 
-    invoke-direct {v0, p1, p2}, Lcom/bumptech/glide/load/model/MultiModelLoader;-><init>(Ljava/util/List;Lz8;)V
+    invoke-direct {v0, p1, p2}, Lcom/bumptech/glide/load/model/MultiModelLoader;-><init>(Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
 
     return-object v0
 .end method

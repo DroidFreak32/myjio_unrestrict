@@ -6,15 +6,15 @@
 
 
 # static fields
-.field public static zzrf:Ljava/text/DecimalFormat;
+.field private static zzrf:Ljava/text/DecimalFormat;
 
 
 # instance fields
-.field public final zzrb:Lcom/google/android/gms/internal/gtm/zzap;
+.field private final zzrb:Lcom/google/android/gms/internal/gtm/zzap;
 
-.field public final zzrg:Ljava/lang/String;
+.field private final zzrg:Ljava/lang/String;
 
-.field public final zzrh:Landroid/net/Uri;
+.field private final zzrh:Landroid/net/Uri;
 
 
 # direct methods
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zzap;Ljava/lang/String;ZZ)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zzap;Ljava/lang/String;ZZ)V
     .locals 0
 
     .line 2
@@ -47,9 +47,7 @@
     iput-object p2, p0, Lcom/google/android/gms/analytics/zzb;->zzrg:Ljava/lang/String;
 
     .line 6
-    iget-object p1, p0, Lcom/google/android/gms/analytics/zzb;->zzrg:Ljava/lang/String;
-
-    invoke-static {p1}, Lcom/google/android/gms/analytics/zzb;->zzb(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {p2}, Lcom/google/android/gms/analytics/zzb;->zzb(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
@@ -58,7 +56,7 @@
     return-void
 .end method
 
-.method public static zza(D)Ljava/lang/String;
+.method private static zza(D)Ljava/lang/String;
     .locals 2
 
     .line 3
@@ -86,7 +84,7 @@
     return-object p0
 .end method
 
-.method public static zza(Ljava/util/Map;Ljava/lang/String;D)V
+.method private static zza(Ljava/util/Map;Ljava/lang/String;D)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -117,7 +115,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/util/Map;Ljava/lang/String;II)V
+.method private static zza(Ljava/util/Map;Ljava/lang/String;II)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -160,7 +158,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+.method private static zza(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -189,7 +187,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/util/Map;Ljava/lang/String;Z)V
+.method private static zza(Ljava/util/Map;Ljava/lang/String;Z)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -246,7 +244,7 @@
     return-object p0
 .end method
 
-.method public static zzc(Lcom/google/android/gms/analytics/zzg;)Ljava/util/Map;
+.method private static zzc(Lcom/google/android/gms/analytics/zzg;)Ljava/util/Map;
     .locals 12
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation

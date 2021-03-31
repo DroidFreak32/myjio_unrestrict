@@ -1,91 +1,69 @@
-.class public interface abstract Lcom/google/android/gms/measurement/internal/zzhz;
+.class public final Lcom/google/android/gms/measurement/internal/zzhz;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic zza:Lcom/google/android/gms/measurement/internal/zzac;
+
+.field private final synthetic zzb:I
+
+.field private final synthetic zzc:J
+
+.field private final synthetic zzd:Z
+
+.field private final synthetic zze:Lcom/google/android/gms/measurement/internal/zzhb;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzhb;Lcom/google/android/gms/measurement/internal/zzac;IJZ)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
+
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zza:Lcom/google/android/gms/measurement/internal/zzac;
+
+    iput p3, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zzb:I
+
+    iput-wide p4, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zzc:J
+
+    iput-boolean p6, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zzd:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zza(I)Ljava/lang/Object;
-.end method
+.method public final run()V
+    .locals 9
 
-.method public abstract zza()Ljava/lang/String;
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
-.method public abstract zza(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/List<",
-            "Landroid/os/Bundle;",
-            ">;"
-        }
-    .end annotation
-.end method
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zza:Lcom/google/android/gms/measurement/internal/zzac;
 
-.method public abstract zza(Ljava/lang/String;Ljava/lang/String;Z)Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Z)",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end method
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(Lcom/google/android/gms/measurement/internal/zzac;)V
 
-.method public abstract zza(Landroid/os/Bundle;)V
-.end method
+    .line 2
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zze:Lcom/google/android/gms/measurement/internal/zzhb;
 
-.method public abstract zza(Lcom/google/android/gms/measurement/internal/zzgx;)V
-.end method
+    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zza:Lcom/google/android/gms/measurement/internal/zzac;
 
-.method public abstract zza(Lcom/google/android/gms/measurement/internal/zzha;)V
-.end method
+    iget v4, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zzb:I
 
-.method public abstract zza(Ljava/lang/String;)V
-.end method
+    iget-wide v5, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zzc:J
 
-.method public abstract zza(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-.end method
+    iget-boolean v8, p0, Lcom/google/android/gms/measurement/internal/zzhz;->zzd:Z
 
-.method public abstract zza(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;J)V
-.end method
+    const/4 v7, 0x0
 
-.method public abstract zza(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
-.end method
+    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/measurement/internal/zzhb;->zza(Lcom/google/android/gms/measurement/internal/zzhb;Lcom/google/android/gms/measurement/internal/zzac;IJZZ)V
 
-.method public abstract zza(Z)V
-.end method
-
-.method public abstract zzb()Ljava/lang/String;
-.end method
-
-.method public abstract zzb(Lcom/google/android/gms/measurement/internal/zzha;)V
-.end method
-
-.method public abstract zzb(Ljava/lang/String;)V
-.end method
-
-.method public abstract zzb(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-.end method
-
-.method public abstract zzb(Z)V
-.end method
-
-.method public abstract zzc(Ljava/lang/String;)I
-.end method
-
-.method public abstract zzc()Ljava/lang/String;
-.end method
-
-.method public abstract zzd()Ljava/lang/String;
-.end method
-
-.method public abstract zze()J
+    return-void
 .end method

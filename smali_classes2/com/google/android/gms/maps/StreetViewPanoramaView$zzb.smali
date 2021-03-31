@@ -25,7 +25,7 @@
 
 
 # instance fields
-.field public zzbd:Lcom/google/android/gms/dynamic/OnDelegateCreatedListener;
+.field private zzbd:Lcom/google/android/gms/dynamic/OnDelegateCreatedListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/dynamic/OnDelegateCreatedListener<",
@@ -35,11 +35,11 @@
     .end annotation
 .end field
 
-.field public final zzbj:Landroid/view/ViewGroup;
+.field private final zzbj:Landroid/view/ViewGroup;
 
-.field public final zzbk:Landroid/content/Context;
+.field private final zzbk:Landroid/content/Context;
 
-.field public final zzbw:Ljava/util/List;
+.field private final zzbw:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -49,7 +49,7 @@
     .end annotation
 .end field
 
-.field public final zzcg:Lcom/google/android/gms/maps/StreetViewPanoramaOptions;
+.field private final zzcg:Lcom/google/android/gms/maps/StreetViewPanoramaOptions;
 
 
 # direct methods
@@ -96,11 +96,9 @@
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaView$zzb;->zzbd:Lcom/google/android/gms/dynamic/OnDelegateCreatedListener;
 
-    .line 2
-    iget-object p1, p0, Lcom/google/android/gms/maps/StreetViewPanoramaView$zzb;->zzbd:Lcom/google/android/gms/dynamic/OnDelegateCreatedListener;
-
     if-eqz p1, :cond_1
 
+    .line 2
     invoke-virtual {p0}, Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;->getDelegate()Lcom/google/android/gms/dynamic/LifecycleDelegate;
 
     move-result-object p1

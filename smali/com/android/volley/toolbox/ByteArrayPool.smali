@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final mBuffersByLastUse:Ljava/util/List;
+.field private final mBuffersByLastUse:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public final mBuffersBySize:Ljava/util/List;
+.field private final mBuffersBySize:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -33,9 +33,9 @@
     .end annotation
 .end field
 
-.field public mCurrentSize:I
+.field private mCurrentSize:I
 
-.field public final mSizeLimit:I
+.field private final mSizeLimit:I
 
 
 # direct methods
@@ -59,9 +59,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Ljava/util/LinkedList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/volley/toolbox/ByteArrayPool;->mBuffersByLastUse:Ljava/util/List;
 

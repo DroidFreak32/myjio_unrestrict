@@ -28,21 +28,30 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "CustomViewTarget"
+.field private static final TAG:Ljava/lang/String; = "CustomViewTarget"
 
-.field public static final VIEW_TAG_ID:I
+.field private static final VIEW_TAG_ID:I
+    .annotation build Landroidx/annotation/IdRes;
+    .end annotation
+.end field
 
 
 # instance fields
-.field public attachStateListener:Landroid/view/View$OnAttachStateChangeListener;
+.field private attachStateListener:Landroid/view/View$OnAttachStateChangeListener;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public isAttachStateListenerAdded:Z
+.field private isAttachStateListenerAdded:Z
 
-.field public isClearedByUs:Z
+.field private isClearedByUs:Z
 
-.field public overrideTag:I
+.field private overrideTag:I
+    .annotation build Landroidx/annotation/IdRes;
+    .end annotation
+.end field
 
-.field public final sizeDeterminer:Lcom/bumptech/glide/request/target/CustomViewTarget$SizeDeterminer;
+.field private final sizeDeterminer:Lcom/bumptech/glide/request/target/CustomViewTarget$SizeDeterminer;
 
 .field public final view:Landroid/view/View;
     .annotation system Ldalvik/annotation/Signature;
@@ -67,6 +76,10 @@
 
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -97,6 +110,8 @@
 
 .method private getTag()Ljava/lang/Object;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/CustomViewTarget;->view:Landroid/view/View;
@@ -177,6 +192,10 @@
 
 .method private setTag(Ljava/lang/Object;)V
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/CustomViewTarget;->view:Landroid/view/View;
@@ -197,6 +216,9 @@
 # virtual methods
 .method public final clearOnDetach()Lcom/bumptech/glide/request/target/CustomViewTarget;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -228,6 +250,8 @@
 
 .method public final getRequest()Lcom/bumptech/glide/request/Request;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/request/target/CustomViewTarget;->getTag()Ljava/lang/Object;
@@ -264,6 +288,10 @@
 
 .method public final getSize(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/CustomViewTarget;->sizeDeterminer:Lcom/bumptech/glide/request/target/CustomViewTarget$SizeDeterminer;
@@ -275,6 +303,9 @@
 
 .method public final getView()Landroid/view/View;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -295,6 +326,10 @@
 
 .method public final onLoadCleared(Landroid/graphics/drawable/Drawable;)V
     .locals 1
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/CustomViewTarget;->sizeDeterminer:Lcom/bumptech/glide/request/target/CustomViewTarget$SizeDeterminer;
@@ -318,6 +353,10 @@
 
 .method public final onLoadStarted(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/request/target/CustomViewTarget;->maybeAddAttachStateListener()V
@@ -329,10 +368,18 @@
 .end method
 
 .method public abstract onResourceCleared(Landroid/graphics/drawable/Drawable;)V
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 .end method
 
 .method public onResourceLoading(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
@@ -378,6 +425,10 @@
 
 .method public final removeCallback(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/CustomViewTarget;->sizeDeterminer:Lcom/bumptech/glide/request/target/CustomViewTarget$SizeDeterminer;
@@ -413,6 +464,10 @@
 
 .method public final setRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Lcom/bumptech/glide/request/target/CustomViewTarget;->setTag(Ljava/lang/Object;)V
@@ -445,6 +500,10 @@
 
 .method public final useTagId(I)Lcom/bumptech/glide/request/target/CustomViewTarget;
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/IdRes;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -476,6 +535,9 @@
 
 .method public final waitForLayout()Lcom/bumptech/glide/request/target/CustomViewTarget;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

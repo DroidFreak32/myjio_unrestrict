@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static volatile handler:Landroid/os/Handler;
+.field private static volatile handler:Landroid/os/Handler;
 
 
 # instance fields
-.field public final zzwc:Lcom/google/android/gms/internal/gtm/zzap;
+.field private final zzwc:Lcom/google/android/gms/internal/gtm/zzap;
 
-.field public final zzys:Ljava/lang/Runnable;
+.field private final zzys:Ljava/lang/Runnable;
 
-.field public volatile zzyt:J
+.field private volatile zzyt:J
 
 
 # direct methods
@@ -309,45 +309,48 @@
 
     if-gez v2, :cond_2
 
-    move-wide p1, v0
+    goto :goto_0
+
+    :cond_2
+    move-wide v0, p1
 
     .line 4
-    :cond_2
+    :goto_0
     invoke-direct {p0}, Lcom/google/android/gms/internal/gtm/zzbs;->getHandler()Landroid/os/Handler;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzbs;->zzys:Ljava/lang/Runnable;
+    iget-object p2, p0, Lcom/google/android/gms/internal/gtm/zzbs;->zzys:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {p1, p2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 5
     invoke-direct {p0}, Lcom/google/android/gms/internal/gtm/zzbs;->getHandler()Landroid/os/Handler;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzbs;->zzys:Ljava/lang/Runnable;
+    iget-object p2, p0, Lcom/google/android/gms/internal/gtm/zzbs;->zzys:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p1, p2, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_3
+    if-nez p1, :cond_3
 
     .line 6
-    iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzbs;->zzwc:Lcom/google/android/gms/internal/gtm/zzap;
+    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzbs;->zzwc:Lcom/google/android/gms/internal/gtm/zzap;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzap;->zzco()Lcom/google/android/gms/internal/gtm/zzci;
-
-    move-result-object v0
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/gtm/zzap;->zzco()Lcom/google/android/gms/internal/gtm/zzci;
 
     move-result-object p1
 
-    const-string p2, "Failed to adjust delayed post. time"
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {v0, p2, p1}, Lcom/google/android/gms/internal/gtm/zzam;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    move-result-object p2
+
+    const-string v0, "Failed to adjust delayed post. time"
+
+    invoke-virtual {p1, v0, p2}, Lcom/google/android/gms/internal/gtm/zzam;->zze(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_3
     return-void

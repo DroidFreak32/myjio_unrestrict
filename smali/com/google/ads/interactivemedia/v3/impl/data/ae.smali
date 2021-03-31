@@ -47,7 +47,7 @@
     move-result-object v0
 
     .line 2
-    invoke-static {p1}, Lba;->E(Landroid/view/View;)Z
+    invoke-static {p1}, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
 
     move-result v1
 

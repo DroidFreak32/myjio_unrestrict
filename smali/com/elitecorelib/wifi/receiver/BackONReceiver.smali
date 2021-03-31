@@ -51,7 +51,7 @@
 
     if-eqz v2, :cond_3
 
-    invoke-static {}, Lc20;->R()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->d()Z
 
     move-result v2
 
@@ -77,7 +77,7 @@
 
     invoke-virtual {p2, v0, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    invoke-static {p1}, Lc20;->h(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->h(Landroid/content/Context;)V
 
     goto/16 :goto_1
 
@@ -96,7 +96,7 @@
 
     invoke-virtual {v2, v1, p2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {p2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     iget-object p2, p0, Lcom/elitecorelib/wifi/receiver/BackONReceiver;->a:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
@@ -138,7 +138,7 @@
     :cond_2
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string p2, "wifi manually not enable by user."
+    const-string/jumbo p2, "wifi manually not enable by user."
 
     :goto_0
     invoke-virtual {p1, v1, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -208,13 +208,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_1
-
     :catch_1
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_4
     :goto_1
     return-void

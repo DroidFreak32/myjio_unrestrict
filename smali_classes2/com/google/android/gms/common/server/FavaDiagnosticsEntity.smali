@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -30,19 +31,19 @@
 
 
 # instance fields
-.field public final zalf:I
+.field private final zaa:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$VersionField;
         id = 0x1
     .end annotation
 .end field
 
-.field public final zapj:Ljava/lang/String;
+.field private final zab:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x2
     .end annotation
 .end field
 
-.field public final zapk:I
+.field private final zac:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x3
     .end annotation
@@ -87,13 +88,13 @@
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zalf:I
+    iput p1, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zaa:I
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zapj:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zab:Ljava/lang/String;
 
     .line 4
-    iput p3, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zapk:I
+    iput p3, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zac:I
 
     return-void
 .end method
@@ -109,13 +110,13 @@
     const/4 v0, 0x1
 
     .line 6
-    iput v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zalf:I
+    iput v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zaa:I
 
     .line 7
-    iput-object p1, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zapj:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zab:Ljava/lang/String;
 
     .line 8
-    iput p2, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zapk:I
+    iput p2, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zac:I
 
     return-void
 .end method
@@ -131,14 +132,14 @@
     move-result p2
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zalf:I
+    iget v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zaa:I
 
     const/4 v1, 0x1
 
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zapj:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zab:Ljava/lang/String;
 
     const/4 v1, 0x2
 
@@ -147,7 +148,7 @@
     invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 4
-    iget v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zapk:I
+    iget v0, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->zac:I
 
     const/4 v1, 0x3
 

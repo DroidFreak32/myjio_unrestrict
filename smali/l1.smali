@@ -1,440 +1,627 @@
 .class public Ll1;
 .super Ljava/lang/Object;
-.source "ListMenuPresenter.java"
-
-# interfaces
-.implements Lu1;
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.source "TooltipPopup.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation build Landroidx/annotation/RestrictTo;
     value = {
-        Ll1$a;
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
     }
 .end annotation
 
 
 # instance fields
-.field public A:Ll1$a;
+.field public final a:Landroid/content/Context;
 
-.field public B:I
+.field public final b:Landroid/view/View;
 
-.field public s:Landroid/content/Context;
+.field public final c:Landroid/widget/TextView;
 
-.field public t:Landroid/view/LayoutInflater;
+.field public final d:Landroid/view/WindowManager$LayoutParams;
 
-.field public u:Ln1;
+.field public final e:Landroid/graphics/Rect;
 
-.field public v:Landroidx/appcompat/view/menu/ExpandedMenuView;
+.field public final f:[I
 
-.field public w:I
-
-.field public x:I
-
-.field public y:I
-
-.field public z:Lu1$a;
+.field public final g:[I
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 4
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-    .line 4
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2
+    new-instance v0, Landroid/view/WindowManager$LayoutParams;
+
+    invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
+
+    iput-object v0, p0, Ll1;->d:Landroid/view/WindowManager$LayoutParams;
+
+    .line 3
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v1, p0, Ll1;->e:Landroid/graphics/Rect;
+
+    const/4 v1, 0x2
+
+    new-array v2, v1, [I
+
+    .line 4
+    iput-object v2, p0, Ll1;->f:[I
+
+    new-array v1, v1, [I
+
     .line 5
-    iput p1, p0, Ll1;->y:I
+    iput-object v1, p0, Ll1;->g:[I
 
     .line 6
-    iput p2, p0, Ll1;->x:I
+    iput-object p1, p0, Ll1;->a:Landroid/content/Context;
+
+    .line 7
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v1
+
+    sget v2, Landroidx/appcompat/R$layout;->abc_tooltip:I
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v1
+
+    iput-object v1, p0, Ll1;->b:Landroid/view/View;
+
+    .line 8
+    sget v2, Landroidx/appcompat/R$id;->message:I
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iput-object v1, p0, Ll1;->c:Landroid/widget/TextView;
+
+    .line 9
+    const-class v1, Ll1;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
+
+    .line 10
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, v0, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
+
+    const/16 p1, 0x3ea
+
+    .line 11
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/4 p1, -0x2
+
+    .line 12
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+
+    .line 13
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+
+    const/4 p1, -0x3
+
+    .line 14
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
+
+    .line 15
+    sget p1, Landroidx/appcompat/R$style;->Animation_AppCompat_Tooltip:I
+
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
+
+    const/16 p1, 0x18
+
+    .line 16
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 1
-
-    const/4 v0, 0x0
+.method public static b(Landroid/view/View;)Landroid/view/View;
+    .locals 3
 
     .line 1
-    invoke-direct {p0, p2, v0}, Ll1;-><init>(II)V
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+
+    move-result-object v0
 
     .line 2
-    iput-object p1, p0, Ll1;->s:Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
 
     .line 3
-    iget-object p1, p0, Ll1;->s:Landroid/content/Context;
+    instance-of v2, v1, Landroid/view/WindowManager$LayoutParams;
 
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    if-eqz v2, :cond_0
 
-    move-result-object p1
+    check-cast v1, Landroid/view/WindowManager$LayoutParams;
 
-    iput-object p1, p0, Ll1;->t:Landroid/view/LayoutInflater;
+    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    return-void
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_0
+
+    return-object v0
+
+    .line 4
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    .line 5
+    :goto_0
+    instance-of v1, p0, Landroid/content/ContextWrapper;
+
+    if-eqz v1, :cond_2
+
+    .line 6
+    instance-of v1, p0, Landroid/app/Activity;
+
+    if-eqz v1, :cond_1
+
+    .line 7
+    check-cast p0, Landroid/app/Activity;
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 8
+    :cond_1
+    check-cast p0, Landroid/content/ContextWrapper;
+
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_2
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()Landroid/widget/ListAdapter;
-    .locals 1
-
-    .line 8
-    iget-object v0, p0, Ll1;->A:Ll1$a;
-
-    if-nez v0, :cond_0
-
-    .line 9
-    new-instance v0, Ll1$a;
-
-    invoke-direct {v0, p0}, Ll1$a;-><init>(Ll1;)V
-
-    iput-object v0, p0, Ll1;->A:Ll1$a;
-
-    .line 10
-    :cond_0
-    iget-object v0, p0, Ll1;->A:Ll1$a;
-
-    return-object v0
-.end method
-
-.method public a(Landroid/view/ViewGroup;)Lv1;
-    .locals 3
+.method public final a(Landroid/view/View;IIZLandroid/view/WindowManager$LayoutParams;)V
+    .locals 8
 
     .line 1
-    iget-object v0, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
+    invoke-virtual {p1}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
 
-    if-nez v0, :cond_1
+    move-result-object v0
+
+    iput-object v0, p5, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
     .line 2
-    iget-object v0, p0, Ll1;->t:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Ll1;->a:Landroid/content/Context;
 
-    sget v1, Lv;->abc_expanded_menu_layout:I
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    sget v1, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_threshold:I
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
-    check-cast p1, Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    iput-object p1, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
+    move-result v0
 
     .line 3
-    iget-object p1, p0, Ll1;->A:Ll1$a;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    if-nez p1, :cond_0
+    move-result v1
 
-    .line 4
-    new-instance p1, Ll1$a;
-
-    invoke-direct {p1, p0}, Ll1$a;-><init>(Ll1;)V
-
-    iput-object p1, p0, Ll1;->A:Ll1$a;
-
-    .line 5
-    :cond_0
-    iget-object p1, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    iget-object v0, p0, Ll1;->A:Ll1$a;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
-
-    .line 6
-    iget-object p1, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    invoke-virtual {p1, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
-
-    .line 7
-    :cond_1
-    iget-object p1, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    return-object p1
-.end method
-
-.method public a(Landroid/os/Bundle;)V
-    .locals 1
-
-    const-string v0, "android:menu:list"
-
-    .line 11
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    .line 12
-    iget-object v0, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(Landroid/os/Bundle;)V
-    .locals 2
-
-    .line 1
-    new-instance v0, Landroid/util/SparseArray;
-
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
-
-    .line 2
-    iget-object v1, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    invoke-virtual {v1, v0}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
-
-    :cond_0
-    const-string v1, "android:menu:list"
-
-    .line 4
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
-
-    return-void
-.end method
-
-.method public collapseItemActionView(Ln1;Lq1;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public expandItemActionView(Ln1;Lq1;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public flagActionItems()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getId()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Ll1;->B:I
-
-    return v0
-.end method
-
-.method public initForMenu(Landroid/content/Context;Ln1;)V
-    .locals 2
-
-    .line 1
-    iget v0, p0, Ll1;->x:I
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    new-instance v1, Landroid/view/ContextThemeWrapper;
-
-    invoke-direct {v1, p1, v0}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
-
-    iput-object v1, p0, Ll1;->s:Landroid/content/Context;
-
-    .line 3
-    iget-object p1, p0, Ll1;->s:Landroid/content/Context;
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ll1;->t:Landroid/view/LayoutInflater;
+    if-lt v1, v0, :cond_0
 
     goto :goto_0
 
     .line 4
     :cond_0
-    iget-object v0, p0, Ll1;->s:Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    if-eqz v0, :cond_1
+    move-result p2
+
+    div-int/lit8 p2, p2, 0x2
 
     .line 5
-    iput-object p1, p0, Ll1;->s:Landroid/content/Context;
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-lt v1, v0, :cond_1
 
     .line 6
-    iget-object p1, p0, Ll1;->t:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Ll1;->a:Landroid/content/Context;
 
-    if-nez p1, :cond_1
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_extra_offset:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v0
+
+    add-int v1, p3, v0
+
+    sub-int/2addr p3, v0
+
+    goto :goto_1
 
     .line 7
-    iget-object p1, p0, Ll1;->s:Landroid/content/Context;
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ll1;->t:Landroid/view/LayoutInflater;
-
-    .line 8
     :cond_1
-    :goto_0
-    iput-object p2, p0, Ll1;->u:Ln1;
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
-    .line 9
-    iget-object p1, p0, Ll1;->A:Ll1$a;
-
-    if-eqz p1, :cond_2
-
-    .line 10
-    invoke-virtual {p1}, Ll1$a;->notifyDataSetChanged()V
-
-    :cond_2
-    return-void
-.end method
-
-.method public onCloseMenu(Ln1;Z)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ll1;->z:Lu1$a;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-interface {v0, p1, p2}, Lu1$a;->onCloseMenu(Ln1;Z)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView<",
-            "*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
-
-    .line 1
-    iget-object p1, p0, Ll1;->u:Ln1;
-
-    iget-object p2, p0, Ll1;->A:Ll1$a;
-
-    invoke-virtual {p2, p3}, Ll1$a;->getItem(I)Lq1;
-
-    move-result-object p2
+    move-result v1
 
     const/4 p3, 0x0
 
-    invoke-virtual {p1, p2, p0, p3}, Ln1;->performItemAction(Landroid/view/MenuItem;Lu1;I)Z
+    :goto_1
+    const/16 v0, 0x31
 
+    .line 8
+    iput v0, p5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    .line 9
+    iget-object v0, p0, Ll1;->a:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    if-eqz p4, :cond_2
+
+    .line 10
+    sget v3, Landroidx/appcompat/R$dimen;->tooltip_y_offset_touch:I
+
+    goto :goto_2
+
+    :cond_2
+    sget v3, Landroidx/appcompat/R$dimen;->tooltip_y_offset_non_touch:I
+
+    .line 11
+    :goto_2
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v0
+
+    .line 12
+    invoke-static {p1}, Ll1;->b(Landroid/view/View;)Landroid/view/View;
+
+    move-result-object v3
+
+    if-nez v3, :cond_3
+
+    return-void
+
+    .line 13
+    :cond_3
+    iget-object v4, p0, Ll1;->e:Landroid/graphics/Rect;
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+
+    .line 14
+    iget-object v4, p0, Ll1;->e:Landroid/graphics/Rect;
+
+    iget v5, v4, Landroid/graphics/Rect;->left:I
+
+    if-gez v5, :cond_5
+
+    iget v4, v4, Landroid/graphics/Rect;->top:I
+
+    if-gez v4, :cond_5
+
+    .line 15
+    iget-object v4, p0, Ll1;->a:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const-string/jumbo v5, "status_bar_height"
+
+    const-string v6, "dimen"
+
+    const-string v7, "android"
+
+    .line 16
+    invoke-virtual {v4, v5, v6, v7}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
+    .line 17
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    goto :goto_3
+
+    :cond_4
+    const/4 v5, 0x0
+
+    .line 18
+    :goto_3
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    .line 19
+    iget-object v6, p0, Ll1;->e:Landroid/graphics/Rect;
+
+    iget v7, v4, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    iget v4, v4, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    invoke-virtual {v6, v2, v5, v7, v4}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 20
+    :cond_5
+    iget-object v4, p0, Ll1;->g:[I
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 21
+    iget-object v4, p0, Ll1;->f:[I
+
+    invoke-virtual {p1, v4}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 22
+    iget-object p1, p0, Ll1;->f:[I
+
+    aget v4, p1, v2
+
+    iget-object v5, p0, Ll1;->g:[I
+
+    aget v6, v5, v2
+
+    sub-int/2addr v4, v6
+
+    aput v4, p1, v2
+
+    const/4 v4, 0x1
+
+    .line 23
+    aget v6, p1, v4
+
+    aget v5, v5, v4
+
+    sub-int/2addr v6, v5
+
+    aput v6, p1, v4
+
+    .line 24
+    aget p1, p1, v2
+
+    add-int/2addr p1, p2
+
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
+
+    move-result p2
+
+    div-int/lit8 p2, p2, 0x2
+
+    sub-int/2addr p1, p2
+
+    iput p1, p5, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    .line 25
+    invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p1
+
+    .line 26
+    iget-object p2, p0, Ll1;->b:Landroid/view/View;
+
+    invoke-virtual {p2, p1, p1}, Landroid/view/View;->measure(II)V
+
+    .line 27
+    iget-object p1, p0, Ll1;->b:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result p1
+
+    .line 28
+    iget-object p2, p0, Ll1;->f:[I
+
+    aget v2, p2, v4
+
+    add-int/2addr v2, p3
+
+    sub-int/2addr v2, v0
+
+    sub-int/2addr v2, p1
+
+    .line 29
+    aget p2, p2, v4
+
+    add-int/2addr p2, v1
+
+    add-int/2addr p2, v0
+
+    if-eqz p4, :cond_7
+
+    if-ltz v2, :cond_6
+
+    .line 30
+    iput v2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    goto :goto_4
+
+    .line 31
+    :cond_6
+    iput p2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    goto :goto_4
+
+    :cond_7
+    add-int/2addr p1, p2
+
+    .line 32
+    iget-object p3, p0, Ll1;->e:Landroid/graphics/Rect;
+
+    invoke-virtual {p3}, Landroid/graphics/Rect;->height()I
+
+    move-result p3
+
+    if-gt p1, p3, :cond_8
+
+    .line 33
+    iput p2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    goto :goto_4
+
+    .line 34
+    :cond_8
+    iput v2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    :goto_4
     return-void
 .end method
 
-.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Landroid/os/Bundle;
-
-    invoke-virtual {p0, p1}, Ll1;->a(Landroid/os/Bundle;)V
-
-    return-void
-.end method
-
-.method public onSaveInstanceState()Landroid/os/Parcelable;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ll1;->v:Landroidx/appcompat/view/menu/ExpandedMenuView;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    .line 2
-    :cond_0
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    .line 3
-    invoke-virtual {p0, v0}, Ll1;->b(Landroid/os/Bundle;)V
-
-    return-object v0
-.end method
-
-.method public onSubMenuSelected(Lz1;)Z
+.method public c()V
     .locals 2
 
     .line 1
-    invoke-virtual {p1}, Ln1;->hasVisibleItems()Z
+    invoke-virtual {p0}, Ll1;->d()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 
     .line 2
     :cond_0
-    new-instance v0, Lo1;
+    iget-object v0, p0, Ll1;->a:Landroid/content/Context;
 
-    invoke-direct {v0, p1}, Lo1;-><init>(Ln1;)V
+    const-string/jumbo v1, "window"
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lo1;->a(Landroid/os/IBinder;)V
+    move-result-object v0
+
+    check-cast v0, Landroid/view/WindowManager;
 
     .line 3
-    iget-object v0, p0, Ll1;->z:Lu1$a;
+    iget-object v1, p0, Ll1;->b:Landroid/view/View;
 
-    if-eqz v0, :cond_1
-
-    .line 4
-    invoke-interface {v0, p1}, Lu1$a;->a(Ln1;)Z
-
-    :cond_1
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public setCallback(Lu1$a;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Ll1;->z:Lu1$a;
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public updateMenuView(Z)V
-    .locals 0
+.method public d()Z
+    .locals 1
 
     .line 1
-    iget-object p1, p0, Ll1;->A:Ll1$a;
+    iget-object v0, p0, Ll1;->b:Landroid/view/View;
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    invoke-virtual {p1}, Ll1$a;->notifyDataSetChanged()V
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 
     :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public e(Landroid/view/View;IIZLjava/lang/CharSequence;)V
+    .locals 7
+
+    .line 1
+    invoke-virtual {p0}, Ll1;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Ll1;->c()V
+
+    .line 3
+    :cond_0
+    iget-object v0, p0, Ll1;->c:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 4
+    iget-object v6, p0, Ll1;->d:Landroid/view/WindowManager$LayoutParams;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-virtual/range {v1 .. v6}, Ll1;->a(Landroid/view/View;IIZLandroid/view/WindowManager$LayoutParams;)V
+
+    .line 5
+    iget-object p1, p0, Ll1;->a:Landroid/content/Context;
+
+    const-string/jumbo p2, "window"
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/WindowManager;
+
+    .line 6
+    iget-object p2, p0, Ll1;->b:Landroid/view/View;
+
+    iget-object p3, p0, Ll1;->d:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-interface {p1, p2, p3}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
     return-void
 .end method

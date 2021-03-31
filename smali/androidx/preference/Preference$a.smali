@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/preference/Preference;
+.field public final synthetic a:Landroidx/preference/Preference;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/preference/Preference$a;->s:Landroidx/preference/Preference;
+    iput-object p1, p0, Landroidx/preference/Preference$a;->a:Landroidx/preference/Preference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/preference/Preference$a;->s:Landroidx/preference/Preference;
+    iget-object v0, p0, Landroidx/preference/Preference$a;->a:Landroidx/preference/Preference;
 
-    invoke-virtual {v0, p1}, Landroidx/preference/Preference;->a(Landroid/view/View;)V
+    invoke-virtual {v0, p1}, Landroidx/preference/Preference;->performClick(Landroid/view/View;)V
 
     return-void
 .end method

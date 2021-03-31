@@ -21,6 +21,9 @@
 .field public c:I
 
 .field public final d:I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
 .field public e:Z
 
@@ -28,6 +31,10 @@
 # direct methods
 .method public constructor <init>(ILcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;IZI)V
     .locals 0
+    .param p3    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public buttonObject:Lorg/json/JSONObject;
+.field private buttonObject:Lorg/json/JSONObject;
 
-.field public buttonText:Ljava/lang/String;
+.field private buttonText:Ljava/lang/String;
 
-.field public fragment:Lcom/clevertap/android/sdk/CTInboxListViewFragment;
+.field private fragment:Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
-.field public inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
+.field private inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
 
-.field public position:I
+.field private position:I
 
-.field public viewPager:Landroidx/viewpager/widget/ViewPager;
+.field private viewPager:Landroidx/viewpager/widget/ViewPager;
 
 
 # direct methods
@@ -86,6 +86,7 @@
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->inboxMessage:Lcom/clevertap/android/sdk/CTInboxMessage;
 
+    .line 3
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInboxMessage;->getInboxMessageContents()Ljava/util/ArrayList;
 
     move-result-object v2
@@ -104,18 +105,19 @@
 
     move-result-object v2
 
+    .line 4
     invoke-static {v1, v2}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
     move-result-object v1
 
     if-eqz v0, :cond_0
 
-    .line 3
+    .line 5
     invoke-virtual {v0, v1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
     const-string v0, "Text Copied to Clipboard"
 
-    .line 4
+    .line 6
     invoke-static {p1, v0, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object p1
@@ -276,18 +278,10 @@
 
     const-string v0, "copy"
 
+    .line 7
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p1
-
-    if-eqz p1, :cond_1
-
-    .line 7
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->fragment:Lcom/clevertap/android/sdk/CTInboxListViewFragment;
-
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object p1
 
     if-eqz p1, :cond_1
 
@@ -298,9 +292,18 @@
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->copyToClipboard(Landroid/content/Context;)V
+    if-eqz p1, :cond_1
 
     .line 9
+    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->fragment:Lcom/clevertap/android/sdk/CTInboxListViewFragment;
+
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->copyToClipboard(Landroid/content/Context;)V
+
+    .line 10
     :cond_1
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->fragment:Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
@@ -320,13 +323,13 @@
 
     goto :goto_0
 
-    .line 10
+    .line 11
     :cond_2
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->fragment:Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
     if-eqz p1, :cond_3
 
-    .line 11
+    .line 12
     iget v0, p0, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;->position:I
 
     const/4 v1, 0x0

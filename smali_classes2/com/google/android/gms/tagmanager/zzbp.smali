@@ -8,11 +8,11 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzaee:Lcom/google/android/gms/tagmanager/zzfb;
+.field private final zzaee:Lcom/google/android/gms/tagmanager/zzfb;
 
 
 # direct methods

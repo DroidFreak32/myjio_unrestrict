@@ -13,7 +13,7 @@
 
 
 # static fields
-.field public static final DEFAULT_T_SIZE:I = 0x40
+.field private static final DEFAULT_T_SIZE:I = 0x40
 
 .field public static final HASH_MULT:I = 0x21
 
@@ -21,35 +21,35 @@
 
 .field public static final MAX_ENTRIES_FOR_REUSE:I = 0x2ee0
 
-.field public static final MAX_T_SIZE:I = 0x10000
+.field private static final MAX_T_SIZE:I = 0x10000
 
 
 # instance fields
-.field public _buckets:[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
+.field private _buckets:[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
-.field public _canonicalize:Z
+.field private _canonicalize:Z
 
-.field public final _flags:I
+.field private final _flags:I
 
-.field public _hashShared:Z
+.field private _hashShared:Z
 
-.field public _indexMask:I
+.field private _indexMask:I
 
-.field public _longestCollisionList:I
+.field private _longestCollisionList:I
 
-.field public _overflows:Ljava/util/BitSet;
+.field private _overflows:Ljava/util/BitSet;
 
-.field public final _parent:Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
+.field private final _parent:Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
 
-.field public final _seed:I
+.field private final _seed:I
 
-.field public _size:I
+.field private _size:I
 
-.field public _sizeThreshold:I
+.field private _sizeThreshold:I
 
-.field public _symbols:[Ljava/lang/String;
+.field private _symbols:[Ljava/lang/String;
 
-.field public final _tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final _tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference<",
@@ -61,7 +61,7 @@
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 1
 
     .line 1
@@ -109,7 +109,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;IILcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;IILcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;)V
     .locals 0
 
     .line 9
@@ -144,23 +144,21 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_symbols:[Ljava/lang/String;
 
     .line 16
-    iget-object p1, p4, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;->buckets:[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
+    iget-object p2, p4, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;->buckets:[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
-    iput-object p1, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_buckets:[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
+    iput-object p2, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_buckets:[Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
     .line 17
-    iget p1, p4, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;->size:I
+    iget p2, p4, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;->size:I
 
-    iput p1, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_size:I
+    iput p2, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_size:I
 
     .line 18
-    iget p1, p4, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;->longestCollisionList:I
+    iget p2, p4, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$TableInfo;->longestCollisionList:I
 
-    iput p1, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_longestCollisionList:I
+    iput p2, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_longestCollisionList:I
 
     .line 19
-    iget-object p1, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_symbols:[Ljava/lang/String;
-
     array-length p1, p1
 
     .line 20
@@ -352,8 +350,6 @@
     iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_overflows:Ljava/util/BitSet;
 
     .line 3
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_overflows:Ljava/util/BitSet;
-
     invoke-virtual {v0, p1}, Ljava/util/BitSet;->set(I)V
 
     goto :goto_0
@@ -430,7 +426,7 @@
     return-void
 .end method
 
-.method public static _thresholdSize(I)I
+.method private static _thresholdSize(I)I
     .locals 1
 
     shr-int/lit8 v0, p0, 0x2
@@ -828,33 +824,35 @@
 
     .line 32
     :cond_7
-    new-instance v2, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v4, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->_size:I
 
-    move-result-object v1
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v1, v4, v3
+    move-result-object v4
+
+    aput-object v4, v2, v3
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    aput-object v1, v4, v0
+    aput-object v3, v2, v0
 
     const-string v0, "Internal error on SymbolTable.rehash(): had %d entries; now have %d"
 
-    invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v1
 .end method
 
 

@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public final zzaar:Ljava/lang/Object;
+.field private final zzaar:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TV;"
@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field public final zzaas:Lcom/google/android/gms/common/config/GservicesValue;
+.field private final zzaas:Lcom/google/android/gms/common/config/GservicesValue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/config/GservicesValue<",
@@ -39,7 +39,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/config/GservicesValue;Ljava/lang/Object;)V
+.method private constructor <init>(Lcom/google/android/gms/common/config/GservicesValue;Ljava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

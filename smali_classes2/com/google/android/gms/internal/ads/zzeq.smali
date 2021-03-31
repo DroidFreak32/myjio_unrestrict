@@ -1,28 +1,36 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzeq;
+.class public final Lcom/google/android/gms/internal/ads/zzeq;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lcom/google/android/gms/internal/ads/zzeu;
+
+
+# instance fields
+.field private final synthetic val$activity:Landroid/app/Activity;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
+    .locals 0
+
+    .line 1
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzeq;->val$activity:Landroid/app/Activity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;)V
-.end method
+.method public final zza(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    .locals 1
 
-.method public abstract zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;Ljava/lang/String;)V
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzeq;->val$activity:Landroid/app/Activity;
 
-.method public abstract zza([I)V
-.end method
+    invoke-interface {p1, v0}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityPaused(Landroid/app/Activity;)V
 
-.method public abstract zzbc()V
-.end method
-
-.method public abstract zzc([B)V
-.end method
-
-.method public abstract zzg(I)V
-.end method
-
-.method public abstract zzh(I)V
+    return-void
 .end method

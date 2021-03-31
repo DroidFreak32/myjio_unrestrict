@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/appcompat/widget/ActivityChooserView;
 .end annotation
@@ -15,7 +21,7 @@
 
 
 # static fields
-.field public static final s:[I
+.field public static final a:[I
 
 
 # direct methods
@@ -33,7 +39,7 @@
     aput v2, v0, v1
 
     .line 1
-    sput-object v0, Landroidx/appcompat/widget/ActivityChooserView$InnerLayout;->s:[I
+    sput-object v0, Landroidx/appcompat/widget/ActivityChooserView$InnerLayout;->a:[I
 
     return-void
 .end method
@@ -45,23 +51,23 @@
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 2
-    sget-object v0, Landroidx/appcompat/widget/ActivityChooserView$InnerLayout;->s:[I
+    sget-object v0, Landroidx/appcompat/widget/ActivityChooserView$InnerLayout;->a:[I
 
-    invoke-static {p1, p2, v0}, Lf3;->a(Landroid/content/Context;Landroid/util/AttributeSet;[I)Lf3;
+    invoke-static {p1, p2, v0}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object p1
 
     const/4 p2, 0x0
 
     .line 3
-    invoke-virtual {p1, p2}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 4
-    invoke-virtual {p1}, Lf3;->a()V
+    invoke-virtual {p1}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return-void
 .end method

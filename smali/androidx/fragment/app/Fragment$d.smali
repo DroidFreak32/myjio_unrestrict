@@ -1,91 +1,102 @@
 .class public Landroidx/fragment/app/Fragment$d;
-.super Ljava/lang/Object;
+.super Landroidx/fragment/app/FragmentContainer;
 .source "Fragment.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroidx/fragment/app/Fragment;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/fragment/app/Fragment;->createFragmentContainer()Landroidx/fragment/app/FragmentContainer;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "d"
+    accessFlags = 0x1
+    name = null
 .end annotation
 
 
 # instance fields
-.field public a:Landroid/view/View;
-
-.field public b:Landroid/animation/Animator;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:Ljava/lang/Object;
-
-.field public g:Ljava/lang/Object;
-
-.field public h:Ljava/lang/Object;
-
-.field public i:Ljava/lang/Object;
-
-.field public j:Ljava/lang/Object;
-
-.field public k:Ljava/lang/Object;
-
-.field public l:Ljava/lang/Boolean;
-
-.field public m:Ljava/lang/Boolean;
-
-.field public n:Lv6;
-
-.field public o:Lv6;
-
-.field public p:Z
-
-.field public q:Landroidx/fragment/app/Fragment$e;
-
-.field public r:Z
+.field public final synthetic a:Landroidx/fragment/app/Fragment;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Landroidx/fragment/app/Fragment;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Landroidx/fragment/app/Fragment$d;->a:Landroidx/fragment/app/Fragment;
 
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Landroidx/fragment/app/Fragment$d;->f:Ljava/lang/Object;
-
-    .line 3
-    sget-object v1, Landroidx/fragment/app/Fragment;->USE_DEFAULT_TRANSITION:Ljava/lang/Object;
-
-    iput-object v1, p0, Landroidx/fragment/app/Fragment$d;->g:Ljava/lang/Object;
-
-    .line 4
-    iput-object v0, p0, Landroidx/fragment/app/Fragment$d;->h:Ljava/lang/Object;
-
-    .line 5
-    iput-object v1, p0, Landroidx/fragment/app/Fragment$d;->i:Ljava/lang/Object;
-
-    .line 6
-    iput-object v0, p0, Landroidx/fragment/app/Fragment$d;->j:Ljava/lang/Object;
-
-    .line 7
-    iput-object v1, p0, Landroidx/fragment/app/Fragment$d;->k:Ljava/lang/Object;
-
-    .line 8
-    iput-object v0, p0, Landroidx/fragment/app/Fragment$d;->n:Lv6;
-
-    .line 9
-    iput-object v0, p0, Landroidx/fragment/app/Fragment$d;->o:Lv6;
+    invoke-direct {p0}, Landroidx/fragment/app/FragmentContainer;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public onFindViewById(I)Landroid/view/View;
+    .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Landroidx/fragment/app/Fragment$d;->a:Landroidx/fragment/app/Fragment;
+
+    iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 3
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Fragment "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment$d;->a:Landroidx/fragment/app/Fragment;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, " does not have a view"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public onHasView()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/fragment/app/Fragment$d;->a:Landroidx/fragment/app/Fragment;
+
+    iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method

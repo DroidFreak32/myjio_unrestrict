@@ -14,17 +14,25 @@
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Lorg/json/JSONObject;Lwv$b;Lwv$a;)V
+.method public constructor <init>(ILjava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
     .locals 6
+    .param p3    # Lorg/json/JSONObject;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # Lcom/android/volley/Response$ErrorListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
-            "Lwv$b<",
+            "Lcom/android/volley/Response$Listener<",
             "Lorg/json/JSONObject;",
             ">;",
-            "Lwv$a;",
+            "Lcom/android/volley/Response$ErrorListener;",
             ")V"
         }
     .end annotation
@@ -54,22 +62,31 @@
 
     move-object v5, p5
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/volley/toolbox/JsonRequest;-><init>(ILjava/lang/String;Ljava/lang/String;Lwv$b;Lwv$a;)V
+    .line 2
+    invoke-direct/range {v0 .. v5}, Lcom/android/volley/toolbox/JsonRequest;-><init>(ILjava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;Lwv$b;Lwv$a;)V
+.method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
     .locals 7
+    .param p2    # Lorg/json/JSONObject;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Lcom/android/volley/Response$ErrorListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
-            "Lwv$b<",
+            "Lcom/android/volley/Response$Listener<",
             "Lorg/json/JSONObject;",
             ">;",
-            "Lwv$a;",
+            "Lcom/android/volley/Response$ErrorListener;",
             ")V"
         }
     .end annotation
@@ -98,22 +115,22 @@
 
     move-object v6, p4
 
-    .line 2
-    invoke-direct/range {v1 .. v6}, Lcom/android/volley/toolbox/JsonObjectRequest;-><init>(ILjava/lang/String;Lorg/json/JSONObject;Lwv$b;Lwv$a;)V
+    .line 3
+    invoke-direct/range {v1 .. v6}, Lcom/android/volley/toolbox/JsonObjectRequest;-><init>(ILjava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public parseNetworkResponse(Luv;)Lwv;
+.method public parseNetworkResponse(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Luv;",
+            "Lcom/android/volley/NetworkResponse;",
             ")",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
             "Lorg/json/JSONObject;",
             ">;"
         }
@@ -123,11 +140,11 @@
     :try_start_0
     new-instance v0, Ljava/lang/String;
 
-    iget-object v1, p1, Luv;->b:[B
+    iget-object v1, p1, Lcom/android/volley/NetworkResponse;->data:[B
 
-    iget-object v2, p1, Luv;->c:Ljava/util/Map;
+    iget-object v2, p1, Lcom/android/volley/NetworkResponse;->headers:Ljava/util/Map;
 
-    const-string v3, "utf-8"
+    const-string/jumbo v3, "utf-8"
 
     .line 2
     invoke-static {v2, v3}, Lcom/android/volley/toolbox/HttpHeaderParser;->parseCharset(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
@@ -142,12 +159,12 @@
     invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     .line 4
-    invoke-static {p1}, Lcom/android/volley/toolbox/HttpHeaderParser;->parseCacheHeaders(Luv;)Lnv$a;
+    invoke-static {p1}, Lcom/android/volley/toolbox/HttpHeaderParser;->parseCacheHeaders(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Cache$Entry;
 
     move-result-object p1
 
     .line 5
-    invoke-static {v1, p1}, Lwv;->a(Ljava/lang/Object;Lnv$a;)Lwv;
+    invoke-static {v1, p1}, Lcom/android/volley/Response;->success(Ljava/lang/Object;Lcom/android/volley/Cache$Entry;)Lcom/android/volley/Response;
 
     move-result-object p1
     :try_end_0
@@ -164,7 +181,7 @@
 
     invoke-direct {v0, p1}, Lcom/android/volley/ParseError;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-static {v0}, Lwv;->a(Lcom/android/volley/VolleyError;)Lwv;
+    invoke-static {v0}, Lcom/android/volley/Response;->error(Lcom/android/volley/VolleyError;)Lcom/android/volley/Response;
 
     move-result-object p1
 
@@ -178,7 +195,7 @@
 
     invoke-direct {v0, p1}, Lcom/android/volley/ParseError;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-static {v0}, Lwv;->a(Lcom/android/volley/VolleyError;)Lwv;
+    invoke-static {v0}, Lcom/android/volley/Response;->error(Lcom/android/volley/VolleyError;)Lcom/android/volley/Response;
 
     move-result-object p1
 

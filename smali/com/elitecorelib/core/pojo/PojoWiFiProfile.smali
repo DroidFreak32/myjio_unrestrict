@@ -18,19 +18,19 @@
 
 
 # instance fields
-.field public androidSettingName:Ljava/lang/String;
+.field private androidSettingName:Ljava/lang/String;
 
-.field public description:Ljava/lang/String;
+.field private description:Ljava/lang/String;
 
-.field public isLocal:Z
+.field private isLocal:Z
 
-.field public isPreferable:Z
+.field private isPreferable:Z
 
-.field public profileId:I
+.field private profileId:I
 
-.field public removeAllowFromApp:Ljava/lang/String;
+.field private removeAllowFromApp:Ljava/lang/String;
 
-.field public wifiSettingSet:Ljava/util/List;
+.field private wifiSettingSet:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

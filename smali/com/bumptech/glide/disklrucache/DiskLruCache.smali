@@ -20,9 +20,9 @@
 # static fields
 .field public static final ANY_SEQUENCE_NUMBER:J = -0x1L
 
-.field public static final CLEAN:Ljava/lang/String; = "CLEAN"
+.field private static final CLEAN:Ljava/lang/String; = "CLEAN"
 
-.field public static final DIRTY:Ljava/lang/String; = "DIRTY"
+.field private static final DIRTY:Ljava/lang/String; = "DIRTY"
 
 .field public static final JOURNAL_FILE:Ljava/lang/String; = "journal"
 
@@ -32,17 +32,17 @@
 
 .field public static final MAGIC:Ljava/lang/String; = "libcore.io.DiskLruCache"
 
-.field public static final READ:Ljava/lang/String; = "READ"
+.field private static final READ:Ljava/lang/String; = "READ"
 
-.field public static final REMOVE:Ljava/lang/String; = "REMOVE"
+.field private static final REMOVE:Ljava/lang/String; = "REMOVE"
 
 .field public static final VERSION_1:Ljava/lang/String; = "1"
 
 
 # instance fields
-.field public final appVersion:I
+.field private final appVersion:I
 
-.field public final cleanupCallable:Ljava/util/concurrent/Callable;
+.field private final cleanupCallable:Ljava/util/concurrent/Callable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/Callable<",
@@ -52,19 +52,19 @@
     .end annotation
 .end field
 
-.field public final directory:Ljava/io/File;
+.field private final directory:Ljava/io/File;
 
 .field public final executorService:Ljava/util/concurrent/ThreadPoolExecutor;
 
-.field public final journalFile:Ljava/io/File;
+.field private final journalFile:Ljava/io/File;
 
-.field public final journalFileBackup:Ljava/io/File;
+.field private final journalFileBackup:Ljava/io/File;
 
-.field public final journalFileTmp:Ljava/io/File;
+.field private final journalFileTmp:Ljava/io/File;
 
-.field public journalWriter:Ljava/io/Writer;
+.field private journalWriter:Ljava/io/Writer;
 
-.field public final lruEntries:Ljava/util/LinkedHashMap;
+.field private final lruEntries:Ljava/util/LinkedHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/LinkedHashMap<",
@@ -75,19 +75,19 @@
     .end annotation
 .end field
 
-.field public maxSize:J
+.field private maxSize:J
 
-.field public nextSequenceNumber:J
+.field private nextSequenceNumber:J
 
-.field public redundantOpCount:I
+.field private redundantOpCount:I
 
-.field public size:J
+.field private size:J
 
-.field public final valueCount:I
+.field private final valueCount:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;IIJ)V
+.method private constructor <init>(Ljava/io/File;IIJ)V
     .locals 16
 
     move-object/from16 v0, p0
@@ -211,6 +211,11 @@
 
 .method public static synthetic access$1700(Lcom/bumptech/glide/disklrucache/DiskLruCache;Ljava/lang/String;J)Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->edit(Ljava/lang/String;J)Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
@@ -222,6 +227,11 @@
 
 .method public static synthetic access$1800(Ljava/io/InputStream;)Ljava/lang/String;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->inputStreamToString(Ljava/io/InputStream;)Ljava/lang/String;
@@ -242,6 +252,11 @@
 
 .method public static synthetic access$200(Lcom/bumptech/glide/disklrucache/DiskLruCache;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->trimToSize()V
@@ -260,6 +275,11 @@
 
 .method public static synthetic access$2100(Lcom/bumptech/glide/disklrucache/DiskLruCache;Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->completeEdit(Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;Z)V
@@ -280,6 +300,11 @@
 
 .method public static synthetic access$400(Lcom/bumptech/glide/disklrucache/DiskLruCache;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->rebuildJournal()V
@@ -319,6 +344,11 @@
 
 .method private declared-synchronized completeEdit(Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;Z)V
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -658,8 +688,13 @@
     throw p1
 .end method
 
-.method public static deleteIfExists(Ljava/io/File;)V
+.method private static deleteIfExists(Ljava/io/File;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
@@ -691,6 +726,11 @@
 
 .method private declared-synchronized edit(Ljava/lang/String;J)Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -822,8 +862,13 @@
     throw p1
 .end method
 
-.method public static inputStreamToString(Ljava/io/InputStream;)Ljava/lang/String;
+.method private static inputStreamToString(Ljava/io/InputStream;)Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/InputStreamReader;
@@ -871,6 +916,11 @@
 
 .method public static open(Ljava/io/File;IIJ)Lcom/bumptech/glide/disklrucache/DiskLruCache;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x0
 
@@ -1025,7 +1075,7 @@
     :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "valueCount <= 0"
+    const-string/jumbo p1, "valueCount <= 0"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1044,6 +1094,11 @@
 
 .method private processJournal()V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache;->journalFileTmp:Ljava/io/File;
@@ -1150,6 +1205,11 @@
 
 .method private readJournal()V
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-string v0, ", "
 
@@ -1329,7 +1389,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "unexpected journal header: ["
+    const-string/jumbo v8, "unexpected journal header: ["
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1373,6 +1433,11 @@
 
 .method private readJournalLine(Ljava/lang/String;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x20
 
@@ -1381,7 +1446,7 @@
 
     move-result v1
 
-    const-string v2, "unexpected journal line: "
+    const-string/jumbo v2, "unexpected journal line: "
 
     const/4 v3, -0x1
 
@@ -1578,6 +1643,11 @@
 
 .method private declared-synchronized rebuildJournal()V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -1588,8 +1658,6 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache;->journalWriter:Ljava/io/Writer;
-
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
 
     .line 3
@@ -1842,8 +1910,13 @@
     throw v0
 .end method
 
-.method public static renameTo(Ljava/io/File;Ljava/io/File;Z)V
+.method private static renameTo(Ljava/io/File;Ljava/io/File;Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p2, :cond_0
 
@@ -1871,6 +1944,11 @@
 
 .method private trimToSize()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0
@@ -1918,6 +1996,11 @@
 # virtual methods
 .method public declared-synchronized close()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -2012,6 +2095,11 @@
 
 .method public delete()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->close()V
@@ -2026,6 +2114,11 @@
 
 .method public edit(Ljava/lang/String;)Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-wide/16 v0, -0x1
 
@@ -2039,6 +2132,11 @@
 
 .method public declared-synchronized flush()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -2071,6 +2169,11 @@
 
 .method public declared-synchronized get(Ljava/lang/String;)Lcom/bumptech/glide/disklrucache/DiskLruCache$Value;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -2301,6 +2404,11 @@
 
 .method public declared-synchronized remove(Ljava/lang/String;)Z
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 

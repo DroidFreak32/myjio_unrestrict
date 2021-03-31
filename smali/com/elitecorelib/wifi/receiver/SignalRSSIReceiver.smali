@@ -40,9 +40,9 @@
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    new-instance v0, Lo40;
+    new-instance v0, Lsb;
 
-    invoke-direct {v0, p0}, Lo40;-><init>(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)V
+    invoke-direct {v0, p0}, Lsb;-><init>(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)V
 
     iput-object v0, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->d:Ljava/lang/Runnable;
 
@@ -57,7 +57,7 @@
     return p0
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)I
+.method public static synthetic b(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)I
     .locals 0
 
     iget p0, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->b:I
@@ -65,29 +65,13 @@
     return p0
 .end method
 
-.method public static synthetic a(J)J
+.method public static synthetic c(J)J
     .locals 0
 
     return-wide p0
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;IILandroid/content/Context;)V
-    .locals 0
-
-    invoke-virtual {p0, p1, p2, p3}, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->a(IILandroid/content/Context;)V
-
-    return-void
-.end method
-
-.method public static synthetic b(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)I
-    .locals 0
-
-    iget p0, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->a:I
-
-    return p0
-.end method
-
-.method public static synthetic b()Landroid/os/Handler;
+.method public static synthetic d()Landroid/os/Handler;
     .locals 1
 
     sget-object v0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->f:Landroid/os/Handler;
@@ -95,7 +79,23 @@
     return-object v0
 .end method
 
-.method public static synthetic c(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)Landroid/content/Context;
+.method public static synthetic f(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;IILandroid/content/Context;)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->e(IILandroid/content/Context;)V
+
+    return-void
+.end method
+
+.method public static synthetic g(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)I
+    .locals 0
+
+    iget p0, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->a:I
+
+    return p0
+.end method
+
+.method public static synthetic i(Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;)Landroid/content/Context;
     .locals 0
 
     iget-object p0, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->c:Landroid/content/Context;
@@ -105,12 +105,12 @@
 
 
 # virtual methods
-.method public final a(IILandroid/content/Context;)V
+.method public final e(IILandroid/content/Context;)V
     .locals 7
 
     const-string v0, ""
 
-    const-string v1, "signal_value_receiver"
+    const-string/jumbo v1, "signal_value_receiver"
 
     const-string v2, "event_constant_for_signallevelreceiver"
 
@@ -125,9 +125,9 @@
 
     const-string v4, "SkipCallRoveout"
 
-    const-string v5, "true"
+    const-string/jumbo v5, "true"
 
-    invoke-static {v4, v5}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -169,13 +169,13 @@
     :cond_0
     invoke-virtual {v3, v1, p1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
 
-    sput-object v0, Lc20;->d:Ljava/lang/String;
+    sput-object v0, Lcom/elitecorelib/andsf/utility/a;->d:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lc20;->c0()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->o()Ljava/lang/String;
 
     move-result-object v6
 
@@ -189,7 +189,7 @@
 
     move-result-object v4
 
-    invoke-static {v2, v4}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -215,13 +215,13 @@
 
     move-result-object p1
 
-    invoke-static {v2, p1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p1, "LTE check, Wifi signal not match, "
 
-    invoke-static {v2, p1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lc20;->h(Ljava/lang/String;)Z
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->h(Ljava/lang/String;)Z
 
     move-result p1
 
@@ -333,17 +333,17 @@
 
     const-string p1, "LTE signal strength higher than server value, WiFi disconnected."
 
-    invoke-static {v2, p1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
 
     sget-object p1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_RSSI_CATEGORY:Ljava/lang/String;
 
-    invoke-static {p3, p1}, Lc20;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p3, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -356,13 +356,13 @@
 
     const-string p1, "LTE signal strength lower than server value, WiFi connected."
 
-    invoke-static {v2, p1}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lc20;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Lc20;->f(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->f(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -377,14 +377,14 @@
     return-void
 .end method
 
-.method public final a()Z
+.method public final h()Z
     .locals 11
 
     const-string v0, "REGULATE_RSSI_QOE"
 
-    const-string v1, "true"
+    const-string/jumbo v1, "true"
 
-    invoke-static {v0, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -404,7 +404,7 @@
 
     const-string v4, "15"
 
-    invoke-static {v0, v4}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v4}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -416,7 +416,7 @@
 
     const-string v5, "60"
 
-    invoke-static {v4, v5}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -656,15 +656,15 @@
 
     invoke-virtual {v3, v1, v5}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->s()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->S()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {}, Lc20;->t()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->T()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-static {v3, v5}, Lc20;->b(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v3, v5}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
@@ -678,7 +678,7 @@
 
     if-nez v3, :cond_7
 
-    invoke-static {}, Lc20;->S()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->e()Z
 
     move-result v3
 
@@ -686,7 +686,7 @@
 
     iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->c:Landroid/content/Context;
 
-    invoke-static {v3}, Lo00;->a(Landroid/content/Context;)Z
+    invoke-static {v3}, Lcom/elitecore/wifi/api/b;->a(Landroid/content/Context;)Z
 
     move-result v3
 
@@ -766,7 +766,7 @@
 
     move-result p2
 
-    invoke-static {v0, v0}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v0}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -806,8 +806,6 @@
 
     if-ge p2, v0, :cond_1
 
-    iget p2, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->b:I
-
     const/16 v0, -0x7d
 
     if-lt p2, v0, :cond_1
@@ -818,7 +816,7 @@
 
     invoke-virtual {p2, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->a()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->h()Z
 
     move-result p2
     :try_end_0
@@ -857,7 +855,7 @@
 
     iget v0, p0, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->a:I
 
-    invoke-virtual {p0, p2, v0, p1}, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->a(IILandroid/content/Context;)V
+    invoke-virtual {p0, p2, v0, p1}, Lcom/elitecorelib/wifi/receiver/SignalRSSIReceiver;->e(IILandroid/content/Context;)V
 
     goto :goto_4
 

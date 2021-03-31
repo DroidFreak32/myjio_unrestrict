@@ -3,13 +3,13 @@
 .source "ReflectiveGenericLifecycleObserver.java"
 
 # interfaces
-.implements Ltd;
+.implements Landroidx/lifecycle/LifecycleEventObserver;
 
 
 # instance fields
-.field public final s:Ljava/lang/Object;
+.field public final a:Ljava/lang/Object;
 
-.field public final t:Lid$a;
+.field public final b:Ls3$a;
 
 
 # direct methods
@@ -20,37 +20,43 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->s:Ljava/lang/Object;
+    iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;
 
     .line 3
-    sget-object p1, Lid;->c:Lid;
+    sget-object v0, Ls3;->c:Ls3;
 
-    iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->s:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lid;->b(Ljava/lang/Class;)Lid$a;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->t:Lid$a;
+    invoke-virtual {v0, p1}, Ls3;->c(Ljava/lang/Class;)Ls3$a;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Ls3$a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lvd;Landroidx/lifecycle/Lifecycle$Event;)V
+.method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 2
+    .param p1    # Landroidx/lifecycle/LifecycleOwner;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/lifecycle/Lifecycle$Event;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->t:Lid$a;
+    iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Ls3$a;
 
-    iget-object v1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->s:Ljava/lang/Object;
+    iget-object v1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1, p2, v1}, Lid$a;->a(Lvd;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, p2, v1}, Ls3$a;->a(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
 
     return-void
 .end method

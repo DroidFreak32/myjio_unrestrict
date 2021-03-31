@@ -136,9 +136,7 @@
 
     iput p2, p0, Lcom/elitecorelib/wifi/receiver/StationaryActivityReceiver;->b:I
 
-    iget p2, p0, Lcom/elitecorelib/wifi/receiver/StationaryActivityReceiver;->b:I
-
-    invoke-static {p1, p2}, Lc20;->b(Landroid/content/Context;I)V
+    invoke-static {p1, p2}, Lcom/elitecorelib/andsf/utility/a;->b(Landroid/content/Context;I)V
 
     new-instance p1, Ljava/lang/StringBuilder;
 

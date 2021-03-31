@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;
 .super Lcom/google/android/gms/common/internal/BaseGmsClient$zza;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -20,23 +21,36 @@
 
 
 # instance fields
-.field public final synthetic zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+.field private final zza:Landroid/os/IBinder;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final zzcy:Landroid/os/IBinder;
+.field private final synthetic zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/internal/BaseGmsClient;ILandroid/os/IBinder;Landroid/os/Bundle;)V
     .locals 0
+    .param p2    # I
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/BinderThread;
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     .line 2
     invoke-direct {p0, p1, p2, p4}, Lcom/google/android/gms/common/internal/BaseGmsClient$zza;-><init>(Lcom/google/android/gms/common/internal/BaseGmsClient;ILandroid/os/Bundle;)V
 
     .line 3
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzcy:Landroid/os/IBinder;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zza:Landroid/os/IBinder;
 
     return-void
 .end method
@@ -47,7 +61,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzg(Lcom/google/android/gms/common/internal/BaseGmsClient;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
 
@@ -56,7 +70,7 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzg(Lcom/google/android/gms/common/internal/BaseGmsClient;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
 
@@ -66,21 +80,27 @@
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
 
     return-void
 .end method
 
-.method public final zzm()Z
+.method public final zza()Z
     .locals 5
 
     const/4 v0, 0x0
 
-    .line 1
+    .line 4
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzcy:Landroid/os/IBinder;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zza:Landroid/os/IBinder;
+
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/IBinder;
 
     invoke-interface {v1}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
 
@@ -88,8 +108,8 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    .line 5
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-virtual {v2}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getServiceDescriptor()Ljava/lang/String;
 
@@ -101,8 +121,8 @@
 
     if-nez v2, :cond_0
 
-    .line 3
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    .line 6
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-virtual {v2}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getServiceDescriptor()Ljava/lang/String;
 
@@ -148,11 +168,11 @@
 
     return v0
 
-    .line 4
+    .line 7
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzcy:Landroid/os/IBinder;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zza:Landroid/os/IBinder;
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/common/internal/BaseGmsClient;->createServiceInterface(Landroid/os/IBinder;)Landroid/os/IInterface;
 
@@ -160,8 +180,8 @@
 
     if-eqz v1, :cond_3
 
-    .line 5
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    .line 8
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     const/4 v3, 0x2
 
@@ -173,34 +193,34 @@
 
     if-nez v2, :cond_1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     const/4 v3, 0x3
 
-    .line 6
+    .line 9
     invoke-static {v2, v3, v4, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;IILandroid/os/IInterface;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 7
+    .line 10
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;Lcom/google/android/gms/common/ConnectionResult;)Lcom/google/android/gms/common/ConnectionResult;
 
-    .line 8
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    .line 11
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getConnectionHint()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 9
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    .line 12
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-static {v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zze(Lcom/google/android/gms/common/internal/BaseGmsClient;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
 
@@ -208,8 +228,8 @@
 
     if-eqz v1, :cond_2
 
-    .line 10
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzct:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    .line 13
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzf;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
     invoke-static {v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zze(Lcom/google/android/gms/common/internal/BaseGmsClient;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
 

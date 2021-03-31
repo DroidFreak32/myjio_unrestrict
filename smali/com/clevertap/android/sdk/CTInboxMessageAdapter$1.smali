@@ -34,8 +34,6 @@
     sput-object v0, Lcom/clevertap/android/sdk/CTInboxMessageAdapter$1;->$SwitchMap$com$clevertap$android$sdk$CTInboxMessageType:[I
 
     :try_start_0
-    sget-object v0, Lcom/clevertap/android/sdk/CTInboxMessageAdapter$1;->$SwitchMap$com$clevertap$android$sdk$CTInboxMessageType:[I
-
     sget-object v1, Lcom/clevertap/android/sdk/CTInboxMessageType;->SimpleMessage:Lcom/clevertap/android/sdk/CTInboxMessageType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

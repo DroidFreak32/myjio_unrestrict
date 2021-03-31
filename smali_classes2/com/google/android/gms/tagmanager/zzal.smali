@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public zzafk:Ljava/lang/String;
+.field private zzafk:Ljava/lang/String;
 
 
 # direct methods

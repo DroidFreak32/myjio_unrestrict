@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/face/Landmark;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # static fields
@@ -29,9 +30,9 @@
 
 
 # instance fields
-.field public final type:I
+.field private final type:I
 
-.field public final zzca:Landroid/graphics/PointF;
+.field private final zzcg:Landroid/graphics/PointF;
 
 
 # direct methods
@@ -42,7 +43,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/Landmark;->zzca:Landroid/graphics/PointF;
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/Landmark;->zzcg:Landroid/graphics/PointF;
 
     .line 3
     iput p2, p0, Lcom/google/android/gms/vision/face/Landmark;->type:I
@@ -56,7 +57,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/Landmark;->zzca:Landroid/graphics/PointF;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/Landmark;->zzcg:Landroid/graphics/PointF;
 
     return-object v0
 .end method

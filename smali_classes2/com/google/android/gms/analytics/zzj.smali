@@ -14,11 +14,11 @@
 
 
 # instance fields
-.field public final zzsn:Lcom/google/android/gms/analytics/zzk;
+.field private final zzsn:Lcom/google/android/gms/analytics/zzk;
 
 .field public final zzso:Lcom/google/android/gms/analytics/zzg;
 
-.field public final zzsp:Ljava/util/List;
+.field private final zzsp:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

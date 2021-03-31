@@ -1,32 +1,23 @@
-.class public interface abstract Lz8;
-.super Ljava/lang/Object;
-.source "Pools.java"
+.class public Lz8;
+.super Lcom/google/gson/reflect/TypeToken;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
+        "Lcom/google/gson/reflect/TypeToken<",
+        "Ljava/util/List<",
+        "Lcom/elitecore/elitesmp/pojo/Plan;",
+        ">;>;"
     }
 .end annotation
 
 
-# virtual methods
-.method public abstract acquire()Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-.end method
+# direct methods
+.method public constructor <init>(Lw8;)V
+    .locals 0
 
-.method public abstract release(Ljava/lang/Object;)Z
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)Z"
-        }
-    .end annotation
+    invoke-direct {p0}, Lcom/google/gson/reflect/TypeToken;-><init>()V
+
+    return-void
 .end method

@@ -1,42 +1,14 @@
-.class public final Lcom/google/android/gms/measurement/internal/zzju;
+.class public interface abstract Lcom/google/android/gms/measurement/internal/zzju;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic zza:J
-
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzjs;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzjs;J)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzju;->zzb:Lcom/google/android/gms/measurement/internal/zzjs;
-
-    iput-wide p2, p0, Lcom/google/android/gms/measurement/internal/zzju;->zza:J
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public abstract zza(Landroid/app/job/JobParameters;Z)V
+.end method
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzju;->zzb:Lcom/google/android/gms/measurement/internal/zzjs;
+.method public abstract zza(Landroid/content/Intent;)V
+.end method
 
-    iget-wide v1, p0, Lcom/google/android/gms/measurement/internal/zzju;->zza:J
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/measurement/internal/zzjs;->zzb(Lcom/google/android/gms/measurement/internal/zzjs;J)V
-
-    return-void
+.method public abstract zza(I)Z
 .end method

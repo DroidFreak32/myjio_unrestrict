@@ -14,7 +14,7 @@
     const-string v0, "ConstrntProxyUpdtRecvr"
 
     .line 1
-    invoke-static {v0}, Lbl;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Landroidx/work/Logger;->tagWithPrefix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;ZZZZ)Landroid/content/Intent;
+.method public static newConstraintProxyUpdateIntent(Landroid/content/Context;ZZZZ)Landroid/content/Intent;
     .locals 3
 
     .line 1
@@ -85,6 +85,14 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p2, :cond_0
 
@@ -109,7 +117,7 @@
     if-nez v1, :cond_1
 
     .line 3
-    invoke-static {}, Lbl;->a()Lbl;
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object p1
 
@@ -131,7 +139,7 @@
 
     new-array v1, v2, [Ljava/lang/Throwable;
 
-    invoke-virtual {p1, p2, v0, v1}, Lbl;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {p1, p2, v0, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     goto :goto_1
 
@@ -142,12 +150,12 @@
     move-result-object v0
 
     .line 5
-    invoke-static {p1}, Lvl;->a(Landroid/content/Context;)Lvl;
+    invoke-static {p1}, Landroidx/work/impl/WorkManagerImpl;->getInstance(Landroid/content/Context;)Landroidx/work/impl/WorkManagerImpl;
 
     move-result-object v1
 
     .line 6
-    invoke-virtual {v1}, Lvl;->h()Llo;
+    invoke-virtual {v1}, Landroidx/work/impl/WorkManagerImpl;->getWorkTaskExecutor()Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
 
     move-result-object v1
 
@@ -156,7 +164,7 @@
 
     invoke-direct {v2, p0, p2, p1, v0}, Landroidx/work/impl/background/systemalarm/ConstraintProxyUpdateReceiver$a;-><init>(Landroidx/work/impl/background/systemalarm/ConstraintProxyUpdateReceiver;Landroid/content/Intent;Landroid/content/Context;Landroid/content/BroadcastReceiver$PendingResult;)V
 
-    invoke-interface {v1, v2}, Llo;->a(Ljava/lang/Runnable;)V
+    invoke-interface {v1, v2}, Landroidx/work/impl/utils/taskexecutor/TaskExecutor;->executeOnBackgroundThread(Ljava/lang/Runnable;)V
 
     :goto_1
     return-void

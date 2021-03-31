@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final items:Ljava/util/HashMap;
+.field private final items:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -37,6 +37,9 @@
 # virtual methods
 .method public getAllDisplayUnits()Ljava/util/ArrayList;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -83,6 +86,8 @@
 
 .method public getDisplayUnitForID(Ljava/lang/String;)Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnit;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -135,6 +140,9 @@
 
 .method public updateDisplayUnits(Lorg/json/JSONArray;)Ljava/util/ArrayList;
     .locals 7
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,6 +276,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 12
     invoke-virtual {p1}, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -278,6 +287,7 @@
 
     move-result-object p1
 
+    .line 13
     invoke-static {v1, p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -285,7 +295,7 @@
     :cond_3
     const-string p1, "Null json array response can\'t parse Display Units "
 
-    .line 12
+    .line 14
     invoke-static {v1, p1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0

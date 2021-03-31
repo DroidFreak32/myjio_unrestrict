@@ -15,17 +15,17 @@
 
 
 # instance fields
-.field public committed:Z
+.field private committed:Z
 
-.field public final entry:Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;
+.field private final entry:Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;
 
 .field public final synthetic this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
-.field public final written:[Z
+.field private final written:[Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;)V
+.method private constructor <init>(Lcom/bumptech/glide/disklrucache/DiskLruCache;Lcom/bumptech/glide/disklrucache/DiskLruCache$Entry;)V
     .locals 0
 
     .line 2
@@ -89,6 +89,11 @@
 
 .method private newInputStream(I)Ljava/io/InputStream;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;->this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
@@ -173,6 +178,11 @@
 # virtual methods
 .method public abort()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;->this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
@@ -205,6 +215,11 @@
 
 .method public commit()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;->this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
@@ -221,6 +236,11 @@
 
 .method public getFile(I)Ljava/io/File;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;->this$0:Lcom/bumptech/glide/disklrucache/DiskLruCache;
@@ -310,6 +330,11 @@
 
 .method public getString(I)Ljava/lang/String;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/bumptech/glide/disklrucache/DiskLruCache$Editor;->newInputStream(I)Ljava/io/InputStream;
@@ -334,6 +359,11 @@
 
 .method public set(ILjava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

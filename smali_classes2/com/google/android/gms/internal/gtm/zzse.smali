@@ -17,11 +17,11 @@
 
 
 # static fields
-.field public static final zzbct:Lcom/google/android/gms/internal/gtm/zzse;
+.field private static final zzbct:Lcom/google/android/gms/internal/gtm/zzse;
 
 
 # instance fields
-.field public zzavs:Z
+.field private zzavs:Z
 
 
 # direct methods
@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/Map;)V
+.method private constructor <init>(Ljava/util/Map;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -118,7 +118,7 @@
     throw v0
 .end method
 
-.method public static zzw(Ljava/lang/Object;)I
+.method private static zzw(Ljava/lang/Object;)I
     .locals 1
 
     .line 1

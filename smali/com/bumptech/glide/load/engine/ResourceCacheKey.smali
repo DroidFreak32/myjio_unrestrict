@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final RESOURCE_CLASS_BYTES:Lcom/bumptech/glide/util/LruCache;
+.field private static final RESOURCE_CLASS_BYTES:Lcom/bumptech/glide/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/util/LruCache<",
@@ -19,9 +19,9 @@
 
 
 # instance fields
-.field public final arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+.field private final arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-.field public final decodedResourceClass:Ljava/lang/Class;
+.field private final decodedResourceClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -30,15 +30,15 @@
     .end annotation
 .end field
 
-.field public final height:I
+.field private final height:I
 
-.field public final options:Lcom/bumptech/glide/load/Options;
+.field private final options:Lcom/bumptech/glide/load/Options;
 
-.field public final signature:Lcom/bumptech/glide/load/Key;
+.field private final signature:Lcom/bumptech/glide/load/Key;
 
-.field public final sourceKey:Lcom/bumptech/glide/load/Key;
+.field private final sourceKey:Lcom/bumptech/glide/load/Key;
 
-.field public final transformation:Lcom/bumptech/glide/load/Transformation;
+.field private final transformation:Lcom/bumptech/glide/load/Transformation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Transformation<",
@@ -47,7 +47,7 @@
     .end annotation
 .end field
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
@@ -124,34 +124,32 @@
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, [B
+    check-cast v1, [B
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceCacheKey;->decodedResourceClass:Ljava/lang/Class;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/ResourceCacheKey;->decodedResourceClass:Ljava/lang/Class;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lcom/bumptech/glide/load/Key;->CHARSET:Ljava/nio/charset/Charset;
+    sget-object v2, Lcom/bumptech/glide/load/Key;->CHARSET:Ljava/nio/charset/Charset;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    invoke-virtual {v1, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    move-result-object v0
+    move-result-object v1
 
     .line 3
-    sget-object v1, Lcom/bumptech/glide/load/engine/ResourceCacheKey;->RESOURCE_CLASS_BYTES:Lcom/bumptech/glide/util/LruCache;
-
     iget-object v2, p0, Lcom/bumptech/glide/load/engine/ResourceCacheKey;->decodedResourceClass:Ljava/lang/Class;
 
-    invoke-virtual {v1, v2, v0}, Lcom/bumptech/glide/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v1}, Lcom/bumptech/glide/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    return-object v0
+    return-object v1
 .end method
 
 
@@ -399,6 +397,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 3
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceCacheKey;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;

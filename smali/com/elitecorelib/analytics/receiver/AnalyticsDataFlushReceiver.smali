@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public classes:[Ljava/lang/Class;
+.field private classes:[Ljava/lang/Class;
 
-.field public f:Ljava/text/SimpleDateFormat;
+.field private f:Ljava/text/SimpleDateFormat;
 
-.field public isRange:Z
+.field private isRange:Z
 
 
 # direct methods
@@ -26,41 +26,41 @@
 
     aput-object v1, v0, v2
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
+    const/4 v1, 0x1
 
-    const/4 v3, 0x1
+    const-class v3, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+    const/4 v1, 0x2
 
-    const/4 v3, 0x2
+    const-class v3, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
+    const/4 v1, 0x3
 
-    const/4 v3, 0x3
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
+    const/4 v1, 0x4
 
-    const/4 v3, 0x4
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
+    const/4 v1, 0x5
 
-    const/4 v3, 0x5
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
+    const/4 v1, 0x6
 
-    const/4 v3, 0x6
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
     iput-object v0, p0, Lcom/elitecorelib/analytics/receiver/AnalyticsDataFlushReceiver;->classes:[Ljava/lang/Class;
 
@@ -266,11 +266,11 @@
 
     invoke-virtual {v5, v0, v6}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v3, v4}, Lc20;->c(J)J
+    invoke-static {v3, v4}, Lcom/elitecorelib/andsf/utility/a;->c(J)J
 
     move-result-wide v5
 
-    invoke-static {v3, v4}, Lc20;->b(J)J
+    invoke-static {v3, v4}, Lcom/elitecorelib/andsf/utility/a;->b(J)J
 
     move-result-wide v7
 
@@ -297,7 +297,7 @@
     :goto_0
     new-instance v2, Ljava/util/Date;
 
-    invoke-static {v3, v4}, Lc20;->d(J)J
+    invoke-static {v3, v4}, Lcom/elitecorelib/andsf/utility/a;->d(J)J
 
     move-result-wide v3
 
@@ -323,13 +323,13 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lo00;->b(Ljava/lang/String;)Z
+    invoke-static {v3}, Lcom/elitecore/wifi/api/b;->b(Ljava/lang/String;)Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    invoke-static {}, Lc20;->c()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->C()Z
 
     move-result v3
 
@@ -342,7 +342,7 @@
 
     move-result-object v2
 
-    const-string v3, "true"
+    const-string/jumbo v3, "true"
 
     invoke-interface {p1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

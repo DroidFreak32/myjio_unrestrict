@@ -22,7 +22,7 @@
 
     move-result-object v0
 
-    sget v1, Lnh0;->ic_jiny_thought_bubble_cross:I
+    sget v1, Lcom/jiny/android/R$drawable;->ic_jiny_thought_bubble_cross:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -40,17 +40,17 @@
 
     iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v1
 
     const/4 v2, 0x5
 
-    invoke-static {v1, v2}, Lal0;->a(Landroid/content/Context;I)I
+    invoke-static {v1, v2}, Lcom/jiny/android/e/a;->a(Landroid/content/Context;I)I
 
     move-result v1
 
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lal0;->d(Landroid/content/Context;)Landroid/content/res/Resources;
+    invoke-static {v0}, Lcom/jiny/android/e/a;->d(Landroid/content/Context;)Landroid/content/res/Resources;
 
     move-result-object v0
 

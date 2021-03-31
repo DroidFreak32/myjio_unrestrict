@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/barcode/BarcodeDetector;
 .super Lcom/google/android/gms/vision/Detector;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -19,11 +20,11 @@
 
 
 # instance fields
-.field public final zzbl:Lcom/google/android/gms/internal/vision/zzg;
+.field private final zzbr:Lcom/google/android/gms/internal/vision/zzm;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .line 1
@@ -39,23 +40,23 @@
     throw v0
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzg;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/vision/zzm;)V
     .locals 0
 
     .line 3
     invoke-direct {p0}, Lcom/google/android/gms/vision/Detector;-><init>()V
 
     .line 4
-    iput-object p1, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbl:Lcom/google/android/gms/internal/vision/zzg;
+    iput-object p1, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbr:Lcom/google/android/gms/internal/vision/zzm;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/vision/zzg;Lcom/google/android/gms/vision/barcode/zzc;)V
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/vision/zzm;Lcom/google/android/gms/vision/barcode/zzc;)V
     .locals 0
 
     .line 5
-    invoke-direct {p0, p1}, Lcom/google/android/gms/vision/barcode/BarcodeDetector;-><init>(Lcom/google/android/gms/internal/vision/zzg;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/vision/barcode/BarcodeDetector;-><init>(Lcom/google/android/gms/internal/vision/zzm;)V
 
     return-void
 .end method
@@ -78,7 +79,7 @@
     if-eqz p1, :cond_3
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzn;->zzc(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzn;
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzu;->zzd(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzu;
 
     move-result-object v0
 
@@ -90,13 +91,13 @@
     if-eqz v1, :cond_1
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbl:Lcom/google/android/gms/internal/vision/zzg;
+    iget-object v1, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbr:Lcom/google/android/gms/internal/vision/zzm;
 
     invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1, v0}, Lcom/google/android/gms/internal/vision/zzg;->zza(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/barcode/Barcode;
+    invoke-virtual {v1, p1, v0}, Lcom/google/android/gms/internal/vision/zzm;->zza(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzu;)[Lcom/google/android/gms/vision/barcode/Barcode;
 
     move-result-object p1
 
@@ -121,9 +122,9 @@
     move-result-object p1
 
     .line 6
-    iget-object v1, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbl:Lcom/google/android/gms/internal/vision/zzg;
+    iget-object v1, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbr:Lcom/google/android/gms/internal/vision/zzm;
 
-    invoke-virtual {v1, p1, v0}, Lcom/google/android/gms/internal/vision/zzg;->zza(Ljava/nio/ByteBuffer;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/barcode/Barcode;
+    invoke-virtual {v1, p1, v0}, Lcom/google/android/gms/internal/vision/zzm;->zza(Ljava/nio/ByteBuffer;Lcom/google/android/gms/internal/vision/zzu;)[Lcom/google/android/gms/vision/barcode/Barcode;
 
     move-result-object p1
 
@@ -176,9 +177,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbl:Lcom/google/android/gms/internal/vision/zzg;
+    iget-object v0, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbr:Lcom/google/android/gms/internal/vision/zzm;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzm;->isOperational()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzs;->isOperational()Z
 
     move-result v0
 
@@ -192,9 +193,9 @@
     invoke-super {p0}, Lcom/google/android/gms/vision/Detector;->release()V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbl:Lcom/google/android/gms/internal/vision/zzg;
+    iget-object v0, p0, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->zzbr:Lcom/google/android/gms/internal/vision/zzm;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzm;->zzp()V
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzs;->zzq()V
 
     return-void
 .end method

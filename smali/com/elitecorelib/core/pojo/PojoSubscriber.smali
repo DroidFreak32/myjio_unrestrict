@@ -16,69 +16,69 @@
     .end annotation
 .end field
 
-.field public static final serialVersionUID:J = 0x2d864da735a2f2f5L
+.field private static final serialVersionUID:J = 0x2d864da735a2f2f5L
 
 
 # instance fields
-.field public ANDSF_userIdentity:Ljava/lang/String;
+.field private ANDSF_userIdentity:Ljava/lang/String;
 
-.field public LAC:I
+.field private LAC:I
 
-.field public MCC:Ljava/lang/String;
+.field private MCC:Ljava/lang/String;
 
-.field public MNC:Ljava/lang/String;
+.field private MNC:Ljava/lang/String;
 
-.field public OSVersion:Ljava/lang/String;
+.field private OSVersion:Ljava/lang/String;
 
-.field public Sdkversion:Ljava/lang/String;
+.field private Sdkversion:Ljava/lang/String;
 
-.field public SecretKey:Ljava/lang/String;
+.field private SecretKey:Ljava/lang/String;
 
-.field public appLanguage:Ljava/lang/String;
+.field private appLanguage:Ljava/lang/String;
 
-.field public appVersion:Ljava/lang/String;
+.field private appVersion:Ljava/lang/String;
 
-.field public brand:Ljava/lang/String;
+.field private brand:Ljava/lang/String;
 
-.field public cellId:I
+.field private cellId:I
 
-.field public firstName:Ljava/lang/String;
+.field private firstName:Ljava/lang/String;
 
-.field public gender:Ljava/lang/String;
+.field private gender:Ljava/lang/String;
 
-.field public im1:Ljava/lang/String;
+.field private im1:Ljava/lang/String;
 
-.field public im2:Ljava/lang/String;
+.field private im2:Ljava/lang/String;
 
-.field public lastName:Ljava/lang/String;
+.field private lastName:Ljava/lang/String;
 
-.field public manufacturer:Ljava/lang/String;
+.field private manufacturer:Ljava/lang/String;
 
-.field public minorVersion:Ljava/lang/String;
+.field private minorVersion:Ljava/lang/String;
 
-.field public model:Ljava/lang/String;
+.field private model:Ljava/lang/String;
 
-.field public networkOperator:Ljava/lang/String;
+.field private networkOperator:Ljava/lang/String;
 
-.field public operatingSystem:Ljava/lang/String;
+.field private operatingSystem:Ljava/lang/String;
 
-.field public registerWith:Ljava/lang/String;
+.field private registerWith:Ljava/lang/String;
 
-.field public registeredDeviceId:Ljava/lang/String;
+.field private registeredDeviceId:Ljava/lang/String;
 
-.field public registrationDate:Ljava/lang/String;
+.field private registrationDate:Ljava/lang/String;
 
-.field public screenDensity:I
+.field private screenDensity:I
 
-.field public screenHeight:I
+.field private screenHeight:I
 
-.field public screenWidth:I
+.field private screenWidth:I
 
-.field public simSlot:Ljava/lang/String;
+.field private simSlot:Ljava/lang/String;
 
-.field public softwareversion:Ljava/lang/String;
+.field private softwareversion:Ljava/lang/String;
 
-.field public userName:Ljava/lang/String;
+.field private userName:Ljava/lang/String;
 
 
 # direct methods

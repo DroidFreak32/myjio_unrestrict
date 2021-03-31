@@ -20,19 +20,23 @@
 
 
 # instance fields
-.field public componentName:Landroid/content/ComponentName;
+.field private componentName:Landroid/content/ComponentName;
 
-.field public final lock:Ljava/lang/Object;
+.field private final lock:Ljava/lang/Object;
 
-.field public zzg:Lcom/google/android/gms/internal/gcm/zzl;
+.field private zzg:Lcom/google/android/gms/internal/gcm/zzl;
 
-.field public zzu:I
+.field private zzu:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
+    .end annotation
+.end field
 
-.field public zzv:Ljava/util/concurrent/ExecutorService;
+.field private zzv:Ljava/util/concurrent/ExecutorService;
 
-.field public zzw:Landroid/os/Messenger;
+.field private zzw:Landroid/os/Messenger;
 
-.field public zzx:Lcom/google/android/gms/gcm/GcmNetworkManager;
+.field private zzx:Lcom/google/android/gms/gcm/GcmNetworkManager;
 
 
 # direct methods
@@ -277,6 +281,8 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     if-eqz p1, :cond_1
 
@@ -321,6 +327,8 @@
 
 .method public onCreate()V
     .locals 3
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -369,7 +377,9 @@
     .line 7
     new-instance v0, Landroid/content/ComponentName;
 
-    const-class v1, Lcom/google/android/gms/gcm/GcmTaskService;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
@@ -379,12 +389,9 @@
     invoke-static {}, Lcom/google/android/gms/internal/gcm/zzm;->zzab()Lcom/google/android/gms/internal/gcm/zzm;
 
     .line 9
-    const-class v0, Lcom/google/android/gms/gcm/GcmTaskService;
-
-    .line 10
     sget-object v0, Lcom/google/android/gms/internal/gcm/zzm;->zzdk:Lcom/google/android/gms/internal/gcm/zzl;
 
-    .line 11
+    .line 10
     iput-object v0, p0, Lcom/google/android/gms/gcm/GcmTaskService;->zzg:Lcom/google/android/gms/internal/gcm/zzl;
 
     return-void
@@ -392,6 +399,8 @@
 
 .method public onDestroy()V
     .locals 3
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
@@ -444,6 +453,8 @@
 
 .method public onStartCommand(Landroid/content/Intent;II)I
     .locals 9
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     const/4 p2, 0x2
 

@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public zzrd:Lcom/google/android/gms/internal/gtm/zzcq;
+.field private zzrd:Lcom/google/android/gms/internal/gtm/zzcq;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzcq<",
@@ -83,6 +83,12 @@
 
 .method public final onCreate()V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -99,6 +105,12 @@
 
 .method public final onDestroy()V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/analytics/AnalyticsService;->zzad()Lcom/google/android/gms/internal/gtm/zzcq;
@@ -115,6 +127,12 @@
 
 .method public final onStartCommand(Landroid/content/Intent;II)I
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/analytics/AnalyticsService;->zzad()Lcom/google/android/gms/internal/gtm/zzcq;

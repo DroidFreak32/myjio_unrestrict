@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final framesSize:I
+.field private final framesSize:I
 
-.field public final isUnsynchronized:Z
+.field private final isUnsynchronized:Z
 
-.field public final majorVersion:I
+.field private final majorVersion:I
 
 
 # direct methods

@@ -15,9 +15,9 @@
 
 
 # static fields
-.field public static final logger:Ljava/util/logging/Logger;
+.field private static final logger:Ljava/util/logging/Logger;
 
-.field public static final zzawt:Z
+.field private static final zzawt:Z
 
 
 # instance fields
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -450,7 +450,7 @@
     return p0
 .end method
 
-.method public static zzbi(I)I
+.method private static zzbi(I)I
     .locals 1
 
     shl-int/lit8 v0, p0, 0x1
@@ -1058,7 +1058,7 @@
     return p0
 .end method
 
-.method public static zzx(J)J
+.method private static zzx(J)J
     .locals 3
 
     const/4 v0, 0x1
@@ -1077,13 +1077,28 @@
 
 # virtual methods
 .method public abstract flush()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract write([BII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final zza(F)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 10
     invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
@@ -1097,6 +1112,11 @@
 
 .method public final zza(ID)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 9
     invoke-static {p2, p3}, Ljava/lang/Double;->doubleToRawLongBits(D)J
@@ -1110,6 +1130,11 @@
 
 .method public final zza(IF)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 8
     invoke-static {p2}, Ljava/lang/Float;->floatToRawIntBits(F)I
@@ -1122,28 +1147,68 @@
 .end method
 
 .method public abstract zza(IJ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(ILcom/google/android/gms/internal/gtm/zzps;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(ILcom/google/android/gms/internal/gtm/zzsk;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(ILcom/google/android/gms/internal/gtm/zzsk;Lcom/google/android/gms/internal/gtm/zzsz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(ILjava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/gtm/zzps;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/gtm/zzsk;Lcom/google/android/gms/internal/gtm/zzsz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final zza(Ljava/lang/String;Lcom/google/android/gms/internal/gtm/zzud;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 16
     sget-object v0, Lcom/google/android/gms/internal/gtm/zzqj;->logger:Ljava/util/logging/Logger;
@@ -1203,13 +1268,28 @@
 .end method
 
 .method public abstract zzax(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzay(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final zzaz(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzqj;->zzbi(I)I
@@ -1223,6 +1303,11 @@
 
 .method public final zzb(D)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
@@ -1236,6 +1321,11 @@
 
 .method public final zzb(IJ)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p2, p3}, Lcom/google/android/gms/internal/gtm/zzqj;->zzx(J)J
@@ -1248,43 +1338,108 @@
 .end method
 
 .method public abstract zzb(ILcom/google/android/gms/internal/gtm/zzps;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzb(ILcom/google/android/gms/internal/gtm/zzsk;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzb(IZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzb(Lcom/google/android/gms/internal/gtm/zzsk;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzba(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzc(B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzc(IJ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzcz(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzd(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zze(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zze([BII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzf(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final zzg(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     invoke-static {p2}, Lcom/google/android/gms/internal/gtm/zzqj;->zzbi(I)I
@@ -1297,10 +1452,20 @@
 .end method
 
 .method public abstract zzh(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final zzi(Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     int-to-byte p1, p1
 
@@ -1314,10 +1479,20 @@
 .end method
 
 .method public abstract zzp(J)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public final zzq(J)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1, p2}, Lcom/google/android/gms/internal/gtm/zzqj;->zzx(J)J
@@ -1330,4 +1505,9 @@
 .end method
 
 .method public abstract zzr(J)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method

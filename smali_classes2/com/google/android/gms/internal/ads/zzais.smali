@@ -1,28 +1,33 @@
 .class public final Lcom/google/android/gms/internal/ads/zzais;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/gms/internal/ads/zzdyb;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzdyb<",
+        "Lcom/google/android/gms/internal/ads/zzair;",
+        "Landroid/os/ParcelFileDescriptor;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic zzcpe:Lcom/google/android/gms/internal/ads/zzyq;
-
-.field public final synthetic zzcpf:Lcom/google/android/gms/internal/ads/zzair;
-
-.field public final synthetic zzyu:Lcom/google/android/gms/internal/ads/zzjk;
+.field private final synthetic zzdhk:Lcom/google/android/gms/internal/ads/zzail;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzair;Lcom/google/android/gms/internal/ads/zzjk;Lcom/google/android/gms/internal/ads/zzyq;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzait;Lcom/google/android/gms/internal/ads/zzail;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzais;->zzcpf:Lcom/google/android/gms/internal/ads/zzair;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzais;->zzyu:Lcom/google/android/gms/internal/ads/zzjk;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzais;->zzcpe:Lcom/google/android/gms/internal/ads/zzyq;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzais;->zzdhk:Lcom/google/android/gms/internal/ads/zzail;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,17 +36,30 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic zzf(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzdyz;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzais;->zzcpf:Lcom/google/android/gms/internal/ads/zzair;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzair;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzais;->zzyu:Lcom/google/android/gms/internal/ads/zzjk;
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzais;->zzcpe:Lcom/google/android/gms/internal/ads/zzyq;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzazq;-><init>()V
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzair;->zza(Lcom/google/android/gms/internal/ads/zzair;Lcom/google/android/gms/internal/ads/zzjk;Lcom/google/android/gms/internal/ads/zzyq;)V
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzais;->zzdhk:Lcom/google/android/gms/internal/ads/zzail;
 
-    return-void
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzaiv;
+
+    invoke-direct {v2, p0, v0}, Lcom/google/android/gms/internal/ads/zzaiv;-><init>(Lcom/google/android/gms/internal/ads/zzais;Lcom/google/android/gms/internal/ads/zzazq;)V
+
+    invoke-interface {p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzair;->zza(Lcom/google/android/gms/internal/ads/zzail;Lcom/google/android/gms/internal/ads/zzaip;)V
+
+    return-object v0
 .end method

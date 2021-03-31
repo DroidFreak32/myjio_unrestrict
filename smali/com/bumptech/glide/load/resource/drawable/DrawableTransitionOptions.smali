@@ -26,6 +26,13 @@
 
 .method public static with(Lcom/bumptech/glide/request/transition/TransitionFactory;)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .param p0    # Lcom/bumptech/glide/request/transition/TransitionFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,6 +59,8 @@
 
 .method public static withCrossFade()Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
@@ -67,6 +76,8 @@
 
 .method public static withCrossFade(I)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
@@ -82,6 +93,12 @@
 
 .method public static withCrossFade(Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .param p0    # Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 4
     new-instance v0, Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
@@ -97,6 +114,12 @@
 
 .method public static withCrossFade(Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory;)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .param p0    # Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 3
     new-instance v0, Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
@@ -114,6 +137,8 @@
 # virtual methods
 .method public crossFade()Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;
@@ -129,6 +154,8 @@
 
 .method public crossFade(I)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;
@@ -144,6 +171,12 @@
 
 .method public crossFade(Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 4
     invoke-virtual {p1}, Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder;->build()Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory;
@@ -159,6 +192,12 @@
 
 .method public crossFade(Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory;)Lcom/bumptech/glide/load/resource/drawable/DrawableTransitionOptions;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/transition/DrawableCrossFadeFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 3
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/TransitionOptions;->transition(Lcom/bumptech/glide/request/transition/TransitionFactory;)Lcom/bumptech/glide/TransitionOptions;

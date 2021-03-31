@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final info:Ljava/lang/String;
+.field private final info:Ljava/lang/String;
 
-.field public final zzmn:Lcom/google/android/gms/internal/clearcut/zzdo;
+.field private final zzmn:Lcom/google/android/gms/internal/clearcut/zzdo;
 
-.field public final zzng:Lcom/google/android/gms/internal/clearcut/zzed;
+.field private final zzng:Lcom/google/android/gms/internal/clearcut/zzed;
 
 
 # direct methods

@@ -15,51 +15,51 @@
 
 
 # static fields
-.field public static final FRAME_RATE_VALUES:[D
+.field private static final FRAME_RATE_VALUES:[D
 
-.field public static final START_EXTENSION:I = 0xb5
+.field private static final START_EXTENSION:I = 0xb5
 
-.field public static final START_GROUP:I = 0xb8
+.field private static final START_GROUP:I = 0xb8
 
-.field public static final START_PICTURE:I = 0x0
+.field private static final START_PICTURE:I = 0x0
 
-.field public static final START_SEQUENCE_HEADER:I = 0xb3
+.field private static final START_SEQUENCE_HEADER:I = 0xb3
 
-.field public static final START_USER_DATA:I = 0xb2
+.field private static final START_USER_DATA:I = 0xb2
 
 
 # instance fields
-.field public final csdBuffer:Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;
+.field private final csdBuffer:Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;
 
-.field public formatId:Ljava/lang/String;
+.field private formatId:Ljava/lang/String;
 
-.field public frameDurationUs:J
+.field private frameDurationUs:J
 
-.field public hasOutputFormat:Z
+.field private hasOutputFormat:Z
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public pesTimeUs:J
+.field private pesTimeUs:J
 
-.field public final prefixFlags:[Z
+.field private final prefixFlags:[Z
 
-.field public sampleHasPicture:Z
+.field private sampleHasPicture:Z
 
-.field public sampleIsKeyframe:Z
+.field private sampleIsKeyframe:Z
 
-.field public samplePosition:J
+.field private samplePosition:J
 
-.field public sampleTimeUs:J
+.field private sampleTimeUs:J
 
-.field public startedFirstSample:Z
+.field private startedFirstSample:Z
 
-.field public totalBytesWritten:J
+.field private totalBytesWritten:J
 
-.field public final userData:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
+.field private final userData:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-.field public final userDataParsable:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final userDataParsable:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final userDataReader:Lcom/google/android/jioexoplayer2/extractor/ts/UserDataReader;
+.field private final userDataReader:Lcom/google/android/jioexoplayer2/extractor/ts/UserDataReader;
 
 
 # direct methods
@@ -159,7 +159,7 @@
     return-void
 .end method
 
-.method public static parseCsdBuffer(Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;Ljava/lang/String;)Landroid/util/Pair;
+.method private static parseCsdBuffer(Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader$CsdBuffer;Ljava/lang/String;)Landroid/util/Pair;
     .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -679,9 +679,9 @@
 
     if-eqz v5, :cond_c
 
-    iget-boolean v5, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
+    iget-boolean v8, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
 
-    if-eqz v5, :cond_f
+    if-eqz v8, :cond_f
 
     .line 33
     :cond_c
@@ -705,9 +705,7 @@
     goto :goto_4
 
     :cond_d
-    iget-boolean v2, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
-
-    if-eqz v2, :cond_e
+    if-eqz v5, :cond_e
 
     iget-wide v8, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
 

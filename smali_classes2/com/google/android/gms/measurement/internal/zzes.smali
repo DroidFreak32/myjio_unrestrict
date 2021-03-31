@@ -1,192 +1,137 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzes;
-.super Landroid/database/sqlite/SQLiteOpenHelper;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-
-# annotations
-.annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-.end annotation
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # instance fields
-.field public final synthetic zza:Lcom/google/android/gms/measurement/internal/zzep;
+.field private final zza:I
+
+.field private final zzb:Z
+
+.field private final zzc:Z
+
+.field private final synthetic zzd:Lcom/google/android/gms/measurement/internal/zzeq;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzep;Landroid/content/Context;Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzeq;IZZ)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzd:Lcom/google/android/gms/measurement/internal/zzeq;
 
-    const/4 p1, 0x0
-
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-direct {p0, p2, p3, p1, v0}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+    iput p2, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:I
+
+    .line 3
+    iput-boolean p3, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzb:Z
+
+    .line 4
+    iput-boolean p4, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzc:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-    .locals 3
+.method public final zza(Ljava/lang/String;)V
+    .locals 8
 
     .line 1
-    :try_start_0
-    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzd:Lcom/google/android/gms/measurement/internal/zzeq;
 
-    move-result-object v0
-    :try_end_0
-    .catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
+    iget v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:I
 
-    return-object v0
+    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzb:Z
 
-    .line 2
-    :catch_0
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
+    iget-boolean v3, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzc:Z
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzep;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v0
-
-    const-string v1, "Opening the local database failed, dropping and recreating it"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;)V
-
-    const-string v0, "google_app_measurement_local.db"
-
-    .line 3
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzep;->zzn()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 4
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzep;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v1
-
-    const-string v2, "Failed to delete corrupted local db file"
-
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 5
-    :cond_0
-    :try_start_1
-    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-    :try_end_1
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_1
-
-    return-object v0
-
-    :catch_1
-    move-exception v0
-
-    .line 6
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzep;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v1
-
-    .line 7
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v1
-
-    const-string v2, "Failed to open local database. Events will bypass local storage"
-
-    .line 8
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;)V
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :catch_2
-    move-exception v0
-
-    .line 9
-    throw v0
-.end method
-
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzep;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/google/android/gms/measurement/internal/zzaf;->zza(Lcom/google/android/gms/measurement/internal/zzet;Landroid/database/sqlite/SQLiteDatabase;)V
-
-    return-void
-.end method
-
-.method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onOpen(Landroid/database/sqlite/SQLiteDatabase;)V
-    .locals 7
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:Lcom/google/android/gms/measurement/internal/zzep;
-
-    .line 2
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzep;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v1
-
-    const-string v3, "messages"
-
-    const-string v4, "create table if not exists messages ( type INTEGER NOT NULL, entry BLOB NOT NULL)"
-
-    const-string v5, "type,entry"
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    move-object v2, p1
+    const/4 v7, 0x0
 
-    .line 3
-    invoke-static/range {v1 .. v6}, Lcom/google/android/gms/measurement/internal/zzaf;->zza(Lcom/google/android/gms/measurement/internal/zzet;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    move-object v4, p1
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/gms/measurement/internal/zzeq;->zza(IZZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 0
+.method public final zza(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 8
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzd:Lcom/google/android/gms/measurement/internal/zzeq;
+
+    iget v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:I
+
+    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzb:Z
+
+    iget-boolean v3, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzc:Z
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/gms/measurement/internal/zzeq;->zza(IZZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 8
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzd:Lcom/google/android/gms/measurement/internal/zzeq;
+
+    iget v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:I
+
+    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzb:Z
+
+    iget-boolean v3, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzc:Z
+
+    const/4 v7, 0x0
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    move-object v6, p3
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/gms/measurement/internal/zzeq;->zza(IZZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 8
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzd:Lcom/google/android/gms/measurement/internal/zzeq;
+
+    iget v1, p0, Lcom/google/android/gms/measurement/internal/zzes;->zza:I
+
+    iget-boolean v2, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzb:Z
+
+    iget-boolean v3, p0, Lcom/google/android/gms/measurement/internal/zzes;->zzc:Z
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    move-object v6, p3
+
+    move-object v7, p4
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/gms/measurement/internal/zzeq;->zza(IZZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

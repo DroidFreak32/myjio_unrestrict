@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public final synthetic zzz:Lcom/google/android/gms/gcm/GcmTaskService;
+.field private final synthetic zzz:Lcom/google/android/gms/gcm/GcmTaskService;
 
 
 # direct methods

@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/location/LocationSettingsStatusCodes;
 .super Lcom/google/android/gms/common/api/CommonStatusCodes;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # static fields
@@ -7,9 +8,10 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/api/CommonStatusCodes;-><init>()V
 
     return-void

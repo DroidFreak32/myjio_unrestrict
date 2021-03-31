@@ -1,24 +1,25 @@
 .class public final Lcom/google/android/gms/tasks/zzf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zzg:Lcom/google/android/gms/tasks/Task;
+.field private final synthetic zza:Lcom/google/android/gms/tasks/Task;
 
-.field public final synthetic zzi:Lcom/google/android/gms/tasks/zze;
+.field private final synthetic zzb:Lcom/google/android/gms/tasks/zzd;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tasks/zze;Lcom/google/android/gms/tasks/Task;)V
+.method public constructor <init>(Lcom/google/android/gms/tasks/zzd;Lcom/google/android/gms/tasks/Task;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iput-object p1, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzf;->zzg:Lcom/google/android/gms/tasks/Task;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzf;->zza:Lcom/google/android/gms/tasks/Task;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,13 +33,13 @@
 
     .line 1
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
-    invoke-static {v0}, Lcom/google/android/gms/tasks/zze;->zza(Lcom/google/android/gms/tasks/zze;)Lcom/google/android/gms/tasks/Continuation;
+    invoke-static {v0}, Lcom/google/android/gms/tasks/zzd;->zza(Lcom/google/android/gms/tasks/zzd;)Lcom/google/android/gms/tasks/Continuation;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzg:Lcom/google/android/gms/tasks/Task;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zza:Lcom/google/android/gms/tasks/Task;
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/tasks/Continuation;->then(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;
 
@@ -52,7 +53,7 @@
     if-nez v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
     new-instance v1, Ljava/lang/NullPointerException;
 
@@ -60,29 +61,25 @@
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zze;->onFailure(Ljava/lang/Exception;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzd;->onFailure(Ljava/lang/Exception;)V
 
     return-void
 
     .line 3
     :cond_0
-    sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->zzw:Ljava/util/concurrent/Executor;
+    sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->zza:Ljava/util/concurrent/Executor;
 
-    iget-object v2, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
     .line 4
-    sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->zzw:Ljava/util/concurrent/Executor;
-
-    iget-object v2, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
 
     .line 5
-    sget-object v1, Lcom/google/android/gms/tasks/TaskExecutors;->zzw:Ljava/util/concurrent/Executor;
-
-    iget-object v2, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v2, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnCanceledListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCanceledListener;)Lcom/google/android/gms/tasks/Task;
 
@@ -92,13 +89,13 @@
     move-exception v0
 
     .line 6
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
-    invoke-static {v1}, Lcom/google/android/gms/tasks/zze;->zzb(Lcom/google/android/gms/tasks/zze;)Lcom/google/android/gms/tasks/zzu;
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzd;->zzb(Lcom/google/android/gms/tasks/zzd;)Lcom/google/android/gms/tasks/zzu;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
 
     return-void
 
@@ -115,9 +112,9 @@
     if-eqz v1, :cond_1
 
     .line 8
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
-    invoke-static {v1}, Lcom/google/android/gms/tasks/zze;->zzb(Lcom/google/android/gms/tasks/zze;)Lcom/google/android/gms/tasks/zzu;
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzd;->zzb(Lcom/google/android/gms/tasks/zzd;)Lcom/google/android/gms/tasks/zzu;
 
     move-result-object v1
 
@@ -127,19 +124,19 @@
 
     check-cast v0, Ljava/lang/Exception;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
 
     return-void
 
     .line 9
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzi:Lcom/google/android/gms/tasks/zze;
+    iget-object v1, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/tasks/zzd;
 
-    invoke-static {v1}, Lcom/google/android/gms/tasks/zze;->zzb(Lcom/google/android/gms/tasks/zze;)Lcom/google/android/gms/tasks/zzu;
+    invoke-static {v1}, Lcom/google/android/gms/tasks/zzd;->zzb(Lcom/google/android/gms/tasks/zzd;)Lcom/google/android/gms/tasks/zzu;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
 
     return-void
 .end method

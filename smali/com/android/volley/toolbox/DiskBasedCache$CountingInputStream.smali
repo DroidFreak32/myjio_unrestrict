@@ -4,6 +4,9 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/android/volley/toolbox/DiskBasedCache;
 .end annotation
@@ -15,9 +18,9 @@
 
 
 # instance fields
-.field public bytesRead:J
+.field private bytesRead:J
 
-.field public final length:J
+.field private final length:J
 
 
 # direct methods
@@ -37,6 +40,8 @@
 # virtual methods
 .method public bytesRead()J
     .locals 2
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iget-wide v0, p0, Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;->bytesRead:J
@@ -59,6 +64,11 @@
 
 .method public read()I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
@@ -84,6 +94,11 @@
 
 .method public read([BII)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I

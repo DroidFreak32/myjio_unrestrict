@@ -21,7 +21,7 @@
 
 .field public static final STD_REQUIRED_OR_OPTIONAL:Lcom/fasterxml/jackson/databind/PropertyMetadata;
 
-.field public static final serialVersionUID:J = -0x1L
+.field private static final serialVersionUID:J = -0x1L
 
 
 # instance fields

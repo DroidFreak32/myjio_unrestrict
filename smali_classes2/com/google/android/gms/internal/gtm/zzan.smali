@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public zzwd:Z
+.field private zzwd:Z
 
 
 # direct methods

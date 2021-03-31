@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public value:Ljava/lang/Object;
+.field private value:Ljava/lang/Object;
 
-.field public zzbhi:Lcom/google/android/gms/internal/gtm/zzur;
+.field private zzbhi:Lcom/google/android/gms/internal/gtm/zzur;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzur<",
@@ -17,7 +17,7 @@
     .end annotation
 .end field
 
-.field public zzbhj:Ljava/util/List;
+.field private zzbhj:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -47,6 +47,11 @@
 
 .method private final toByteArray()[B
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzut;->zzy()I
@@ -94,11 +99,9 @@
 
     .line 5
     :cond_0
-    iget-object v1, v0, Lcom/google/android/gms/internal/gtm/zzut;->zzbhj:Ljava/util/List;
+    iget-object v2, v0, Lcom/google/android/gms/internal/gtm/zzut;->zzbhj:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/gtm/zzut;->zzbhj:Ljava/util/List;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 6
     :goto_0
@@ -107,15 +110,11 @@
     if-eqz v1, :cond_9
 
     .line 7
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, Lcom/google/android/gms/internal/gtm/zzuw;
 
-    instance-of v1, v1, Lcom/google/android/gms/internal/gtm/zzuw;
-
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     .line 8
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, Lcom/google/android/gms/internal/gtm/zzuw;
 
     invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzuw;->clone()Ljava/lang/Object;
@@ -130,15 +129,11 @@
 
     .line 9
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [B
 
-    instance-of v1, v1, [B
-
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
     .line 10
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [B
 
     invoke-virtual {v1}, [B->clone()Ljava/lang/Object;
@@ -151,35 +146,31 @@
 
     .line 11
     :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [[B
 
-    instance-of v1, v1, [[B
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     .line 12
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [[B
 
     .line 13
-    array-length v3, v1
+    array-length v2, v1
 
-    new-array v3, v3, [[B
+    new-array v2, v2, [[B
 
     .line 14
-    iput-object v3, v0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    iput-object v2, v0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
 
     .line 15
     :goto_1
     array-length v4, v1
 
-    if-ge v2, v4, :cond_9
+    if-ge v3, v4, :cond_9
 
     .line 16
-    aget-object v4, v1, v2
+    aget-object v4, v1, v3
 
     invoke-virtual {v4}, [B->clone()Ljava/lang/Object;
 
@@ -187,23 +178,19 @@
 
     check-cast v4, [B
 
-    aput-object v4, v3, v2
+    aput-object v4, v2, v3
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     .line 17
     :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [Z
 
-    instance-of v1, v1, [Z
-
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
     .line 18
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [Z
 
     invoke-virtual {v1}, [Z->clone()Ljava/lang/Object;
@@ -216,15 +203,11 @@
 
     .line 19
     :cond_4
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [I
 
-    instance-of v1, v1, [I
-
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
     .line 20
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [I
 
     invoke-virtual {v1}, [I->clone()Ljava/lang/Object;
@@ -237,15 +220,11 @@
 
     .line 21
     :cond_5
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [J
 
-    instance-of v1, v1, [J
-
-    if-eqz v1, :cond_6
+    if-eqz v2, :cond_6
 
     .line 22
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [J
 
     invoke-virtual {v1}, [J->clone()Ljava/lang/Object;
@@ -258,15 +237,11 @@
 
     .line 23
     :cond_6
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [F
 
-    instance-of v1, v1, [F
-
-    if-eqz v1, :cond_7
+    if-eqz v2, :cond_7
 
     .line 24
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [F
 
     invoke-virtual {v1}, [F->clone()Ljava/lang/Object;
@@ -279,15 +254,11 @@
 
     .line 25
     :cond_7
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [D
 
-    instance-of v1, v1, [D
-
-    if-eqz v1, :cond_8
+    if-eqz v2, :cond_8
 
     .line 26
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [D
 
     invoke-virtual {v1}, [D->clone()Ljava/lang/Object;
@@ -300,33 +271,29 @@
 
     .line 27
     :cond_8
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    instance-of v2, v1, [Lcom/google/android/gms/internal/gtm/zzuw;
 
-    instance-of v1, v1, [Lcom/google/android/gms/internal/gtm/zzuw;
-
-    if-eqz v1, :cond_9
+    if-eqz v2, :cond_9
 
     .line 28
-    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
-
     check-cast v1, [Lcom/google/android/gms/internal/gtm/zzuw;
 
     .line 29
-    array-length v3, v1
+    array-length v2, v1
 
-    new-array v3, v3, [Lcom/google/android/gms/internal/gtm/zzuw;
+    new-array v2, v2, [Lcom/google/android/gms/internal/gtm/zzuw;
 
     .line 30
-    iput-object v3, v0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
+    iput-object v2, v0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
 
     .line 31
     :goto_2
     array-length v4, v1
 
-    if-ge v2, v4, :cond_9
+    if-ge v3, v4, :cond_9
 
     .line 32
-    aget-object v4, v1, v2
+    aget-object v4, v1, v3
 
     invoke-virtual {v4}, Lcom/google/android/gms/internal/gtm/zzuw;->clone()Ljava/lang/Object;
 
@@ -334,11 +301,11 @@
 
     check-cast v4, Lcom/google/android/gms/internal/gtm/zzuw;
 
-    aput-object v4, v3, v2
+    aput-object v4, v2, v3
     :try_end_0
     .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
@@ -361,6 +328,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/internal/gtm/zzut;->zzrz()Lcom/google/android/gms/internal/gtm/zzut;
@@ -641,6 +613,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/gtm/zzuo;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 32
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzut;->value:Ljava/lang/Object;
@@ -728,6 +705,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/gtm/zzuy;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzut;->zzbhj:Ljava/util/List;

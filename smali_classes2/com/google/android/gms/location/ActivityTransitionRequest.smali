@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/location/ActivityTransitionRequest;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -37,14 +38,7 @@
 
 
 # instance fields
-.field public final tag:Ljava/lang/String;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        getter = "getTag"
-        id = 0x2
-    .end annotation
-.end field
-
-.field public final zzl:Ljava/util/List;
+.field private final zza:Ljava/util/List;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getActivityTransitions"
         id = 0x1
@@ -59,7 +53,17 @@
     .end annotation
 .end field
 
-.field public final zzm:Ljava/util/List;
+.field private final zzb:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        getter = "getTag"
+        id = 0x2
+    .end annotation
+.end field
+
+.field private final zzc:Ljava/util/List;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getClients"
         id = 0x3
@@ -79,15 +83,17 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/location/zzf;
+    .line 1
+    new-instance v0, Lcom/google/android/gms/location/zzj;
 
-    invoke-direct {v0}, Lcom/google/android/gms/location/zzf;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/location/zzj;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/ActivityTransitionRequest;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    new-instance v0, Lcom/google/android/gms/location/zze;
+    .line 2
+    new-instance v0, Lcom/google/android/gms/location/zzi;
 
-    invoke-direct {v0}, Lcom/google/android/gms/location/zze;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/location/zzi;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/ActivityTransitionRequest;->IS_SAME_TRANSITION:Ljava/util/Comparator;
 
@@ -107,6 +113,7 @@
 
     const/4 v0, 0x0
 
+    .line 12
     invoke-direct {p0, p1, v0, v0}, Lcom/google/android/gms/location/ActivityTransitionRequest;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)V
 
     return-void
@@ -120,11 +127,17 @@
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
         .end annotation
     .end param
     .param p3    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x3
         .end annotation
@@ -145,12 +158,15 @@
         }
     .end annotation
 
+    .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     const-string v0, "transitions can\'t be null"
 
+    .line 2
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 3
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -173,12 +189,14 @@
 
     invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
+    .line 4
     new-instance v0, Ljava/util/TreeSet;
 
     sget-object v3, Lcom/google/android/gms/location/ActivityTransitionRequest;->IS_SAME_TRANSITION:Ljava/util/Comparator;
 
     invoke-direct {v0, v3}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
+    .line 5
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -196,6 +214,7 @@
 
     check-cast v4, Lcom/google/android/gms/location/ActivityTransition;
 
+    .line 6
     invoke-virtual {v0, v4}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     move-result v5
@@ -210,34 +229,39 @@
 
     move-result-object v4
 
+    .line 7
     invoke-static {v5, v4}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     goto :goto_1
 
+    .line 8
     :cond_1
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzl:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zza:Ljava/util/List;
 
-    iput-object p2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->tag:Ljava/lang/String;
+    .line 9
+    iput-object p2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzb:Ljava/lang/String;
 
     if-nez p3, :cond_2
 
+    .line 10
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
     goto :goto_2
 
+    .line 11
     :cond_2
     invoke-static {p3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
     :goto_2
-    iput-object p1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzm:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzc:Ljava/util/List;
 
     return-void
 .end method
@@ -258,7 +282,10 @@
 
     if-eqz p1, :cond_2
 
-    const-class v2, Lcom/google/android/gms/location/ActivityTransitionRequest;
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -268,22 +295,14 @@
 
     goto :goto_0
 
+    .line 2
     :cond_1
     check-cast p1, Lcom/google/android/gms/location/ActivityTransitionRequest;
 
-    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzl:Ljava/util/List;
+    .line 3
+    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zza:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzl:Ljava/util/List;
-
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->tag:Ljava/lang/String;
-
-    iget-object v3, p1, Lcom/google/android/gms/location/ActivityTransitionRequest;->tag:Ljava/lang/String;
+    iget-object v3, p1, Lcom/google/android/gms/location/ActivityTransitionRequest;->zza:Ljava/util/List;
 
     invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -291,10 +310,22 @@
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzm:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzb:Ljava/lang/String;
 
-    iget-object p1, p1, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzm:Ljava/util/List;
+    iget-object v3, p1, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzb:Ljava/lang/String;
 
+    .line 4
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzc:Ljava/util/List;
+
+    iget-object p1, p1, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzc:Ljava/util/List;
+
+    .line 5
     invoke-static {v2, p1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -311,7 +342,8 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzl:Ljava/util/List;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zza:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->hashCode()I
 
@@ -319,7 +351,8 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->tag:Ljava/lang/String;
+    .line 2
+    iget-object v1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzb:Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -339,7 +372,8 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzm:Ljava/util/List;
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzc:Ljava/util/List;
 
     if-eqz v1, :cond_1
 
@@ -358,6 +392,7 @@
 
     const-string v0, "com.google.android.location.internal.EXTRA_ACTIVITY_TRANSITION_REQUEST"
 
+    .line 1
     invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelableSerializer;->serializeToIntentExtra(Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;Landroid/content/Intent;Ljava/lang/String;)V
 
     return-void
@@ -366,15 +401,16 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzl:Ljava/util/List;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zza:Ljava/util/List;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->tag:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzb:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzm:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzc:Ljava/util/List;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -450,30 +486,38 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
+    .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
-    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzl:Ljava/util/List;
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zza:Ljava/util/List;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
+    .line 3
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->tag:Ljava/lang/String;
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzb:Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    .line 5
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzm:Ljava/util/List;
+    .line 6
+    iget-object v0, p0, Lcom/google/android/gms/location/ActivityTransitionRequest;->zzc:Ljava/util/List;
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
+    .line 7
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
 
+    .line 8
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
     return-void

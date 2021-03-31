@@ -1,35 +1,50 @@
-.class public final Lcom/google/android/gms/location/zzz;
-.super Lcom/google/android/gms/internal/location/zza;
+.class public final synthetic Lcom/google/android/gms/location/zzz;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Lcom/google/android/gms/location/zzx;
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+
+# instance fields
+.field private final zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+.field private final zzb:Lcom/google/android/gms/internal/location/zzbc;
+
+.field private final zzc:Landroid/app/PendingIntent;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/internal/location/zzbc;Landroid/app/PendingIntent;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.location.ILocationListener"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/location/zza;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/location/zzz;->zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+    iput-object p2, p0, Lcom/google/android/gms/location/zzz;->zzb:Lcom/google/android/gms/internal/location/zzbc;
+
+    iput-object p3, p0, Lcom/google/android/gms/location/zzz;->zzc:Landroid/app/PendingIntent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLocationChanged(Landroid/location/Location;)V
-    .locals 1
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/location/zza;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/location/zzz;->zza:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/gms/location/zzz;->zzb:Lcom/google/android/gms/internal/location/zzbc;
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/location/zzc;->zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    iget-object v2, p0, Lcom/google/android/gms/location/zzz;->zzc:Landroid/app/PendingIntent;
 
-    const/4 p1, 0x1
+    check-cast p1, Lcom/google/android/gms/internal/location/zzay;
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/location/zza;->transactOneway(ILandroid/os/Parcel;)V
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-virtual {v0, v1, v2, p1, p2}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/internal/location/zzbc;Landroid/app/PendingIntent;Lcom/google/android/gms/internal/location/zzay;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
     return-void
 .end method

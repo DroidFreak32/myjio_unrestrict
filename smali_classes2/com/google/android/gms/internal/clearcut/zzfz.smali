@@ -53,6 +53,11 @@
 # virtual methods
 .method public synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->zzep()Lcom/google/android/gms/internal/clearcut/zzfz;
 
@@ -73,6 +78,11 @@
 
 .method public zza(Lcom/google/android/gms/internal/clearcut/zzfs;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -99,6 +109,11 @@
 
 .method public zzep()Lcom/google/android/gms/internal/clearcut/zzfz;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 

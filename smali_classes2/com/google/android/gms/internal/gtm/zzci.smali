@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static zzabl:Lcom/google/android/gms/internal/gtm/zzci;
+.field private static zzabl:Lcom/google/android/gms/internal/gtm/zzci;
 
 
 # direct methods
@@ -16,7 +16,7 @@
     return-void
 .end method
 
-.method public static zzd(Ljava/lang/Object;)Ljava/lang/String;
+.method private static zzd(Ljava/lang/Object;)Ljava/lang/String;
     .locals 7
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation

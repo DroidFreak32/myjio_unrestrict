@@ -34,8 +34,6 @@
     sput-object v0, Lcom/daimajia/slider/library/SliderLayout$5;->$SwitchMap$com$daimajia$slider$library$SliderLayout$Transformer:[I
 
     :try_start_0
-    sget-object v0, Lcom/daimajia/slider/library/SliderLayout$5;->$SwitchMap$com$daimajia$slider$library$SliderLayout$Transformer:[I
-
     sget-object v1, Lcom/daimajia/slider/library/SliderLayout$Transformer;->Default:Lcom/daimajia/slider/library/SliderLayout$Transformer;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

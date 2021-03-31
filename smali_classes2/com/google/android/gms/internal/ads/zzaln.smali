@@ -1,84 +1,74 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaln;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
+.implements Lcom/google/android/gms/internal/ads/zzazs;
 
 
 # instance fields
-.field public final zzcrl:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final synthetic zzdjc:Lcom/google/android/gms/internal/ads/zzalb;
 
-.field public final synthetic zzcvh:Ljava/lang/String;
+.field private final synthetic zzdjg:Lcom/google/android/gms/internal/ads/zzals;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzalb;Lcom/google/android/gms/internal/ads/zzals;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzcvh:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzdjc:Lcom/google/android/gms/internal/ads/zzalb;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzdjg:Lcom/google/android/gms/internal/ads/zzals;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzcrl:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 5
+.method public final run()V
+    .locals 3
 
     .line 1
-    new-instance v0, Ljava/lang/Thread;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzdjc:Lcom/google/android/gms/internal/ads/zzalb;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzcvh:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalb;->zza(Lcom/google/android/gms/internal/ads/zzalb;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzcrl:Ljava/util/concurrent/atomic/AtomicInteger;
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    monitor-enter v0
 
-    move-result v2
+    .line 2
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzdjc:Lcom/google/android/gms/internal/ads/zzalb;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v3
+    invoke-static {v1, v2}, Lcom/google/android/gms/internal/ads/zzalb;->zza(Lcom/google/android/gms/internal/ads/zzalb;I)I
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    const-string v1, "Failed loading new engine. Marking new engine destroyable."
 
-    move-result v3
+    .line 3
+    invoke-static {v1}, Lcom/google/android/gms/ads/internal/util/zzd;->zzee(Ljava/lang/String;)V
 
-    add-int/lit8 v3, v3, 0x17
+    .line 4
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaln;->zzdjg:Lcom/google/android/gms/internal/ads/zzals;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzals;->zztx()V
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    .line 5
+    monitor-exit v0
 
-    const-string v3, "AdWorker("
+    return-void
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception v1
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v1, ") #"
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    return-object v0
+    throw v1
 .end method

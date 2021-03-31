@@ -1,11 +1,11 @@
 .class public Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao_Impl$1;
-.super Lah;
+.super Landroidx/room/EntityInsertionAdapter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lah<",
+        "Landroidx/room/EntityInsertionAdapter<",
         "Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;",
         ">;"
     }
@@ -22,21 +22,21 @@
 
     iput-object p1, p0, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao_Impl$1;->this$0:Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao_Impl;
 
-    invoke-direct {p0, p2}, Lah;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bind(Lfi;Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;)V
+.method public bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;)V
     .locals 4
 
     iget-wide v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->id:J
 
     const/4 v2, 0x1
 
-    invoke-interface {p1, v2, v0, v1}, Ldi;->a(IJ)V
+    invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->st:Ljava/lang/Long;
 
@@ -44,7 +44,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
@@ -53,7 +53,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_0
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->et:Ljava/lang/Long;
@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
@@ -71,7 +71,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_1
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->stime:Ljava/lang/Long;
@@ -80,7 +80,7 @@
 
     if-nez v0, :cond_2
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_2
 
@@ -89,7 +89,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_2
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->maxdspd:Ljava/lang/Long;
@@ -98,7 +98,7 @@
 
     if-nez v0, :cond_3
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_3
 
@@ -107,7 +107,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_3
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->mindspd:Ljava/lang/Long;
@@ -116,7 +116,7 @@
 
     if-nez v0, :cond_4
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_4
 
@@ -125,7 +125,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_4
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->adspd:Ljava/lang/Long;
@@ -134,7 +134,7 @@
 
     if-nez v0, :cond_5
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_5
 
@@ -143,7 +143,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_5
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->maxuspd:Ljava/lang/Long;
@@ -152,7 +152,7 @@
 
     if-nez v0, :cond_6
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_6
 
@@ -161,7 +161,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_6
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->minuspd:Ljava/lang/Long;
@@ -170,7 +170,7 @@
 
     if-nez v0, :cond_7
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_7
 
@@ -179,7 +179,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_7
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->auspd:Ljava/lang/Long;
@@ -188,7 +188,7 @@
 
     if-nez v0, :cond_8
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_8
 
@@ -197,7 +197,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     :goto_8
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->plmn:Ljava/lang/String;
@@ -206,12 +206,12 @@
 
     if-nez v0, :cond_9
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_9
 
     :cond_9
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_9
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->cell:Ljava/lang/String;
@@ -220,12 +220,12 @@
 
     if-nez v0, :cond_a
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_a
 
     :cond_a
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_a
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->ssid:Ljava/lang/String;
@@ -234,12 +234,12 @@
 
     if-nez v0, :cond_b
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_b
 
     :cond_b
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_b
     iget-object v0, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->pid:Ljava/lang/String;
@@ -248,12 +248,12 @@
 
     if-nez v0, :cond_c
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_c
 
     :cond_c
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_c
     iget-object p2, p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;->pname:Ljava/lang/String;
@@ -262,23 +262,23 @@
 
     if-nez p2, :cond_d
 
-    invoke-interface {p1, v0}, Ldi;->c(I)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_d
 
     :cond_d
-    invoke-interface {p1, v0, p2}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v0, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_d
     return-void
 .end method
 
-.method public bridge synthetic bind(Lfi;Ljava/lang/Object;)V
+.method public bridge synthetic bind(Landroidx/sqlite/db/SupportSQLiteStatement;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
 
-    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao_Impl$1;->bind(Lfi;Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;)V
+    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticOffloadSpeedDao_Impl$1;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;)V
 
     return-void
 .end method

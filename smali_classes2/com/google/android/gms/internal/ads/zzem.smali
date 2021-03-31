@@ -1,178 +1,184 @@
-.class public Lcom/google/android/gms/internal/ads/zzem;
+.class public final Lcom/google/android/gms/internal/ads/zzem;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
 # instance fields
-.field public final zzul:Landroid/os/IBinder;
+.field private final zzyh:Landroid/app/Application;
 
-.field public final zzum:Ljava/lang/String;
+.field private final zzyi:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference<",
+            "Landroid/app/Application$ActivityLifecycleCallbacks;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private zzyj:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Landroid/app/Application;Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x0
+
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzul:Landroid/os/IBinder;
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyj:Z
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzem;->zzum:Ljava/lang/String;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
+    invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyi:Ljava/lang/ref/WeakReference;
+
+    .line 4
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyh:Landroid/app/Application;
+
+    return-void
+.end method
+
+.method private final zza(Lcom/google/android/gms/internal/ads/zzeu;)V
+    .locals 1
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyi:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Application$ActivityLifecycleCallbacks;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/ads/zzeu;->zza(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    return-void
+
+    .line 3
+    :cond_0
+    iget-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyj:Z
+
+    if-nez p1, :cond_1
+
+    .line 4
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyh:Landroid/app/Application;
+
+    invoke-virtual {p1, p0}, Landroid/app/Application;->unregisterActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    const/4 p1, 0x1
+
+    .line 5
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzyj:Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
+.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzem;->zzul:Landroid/os/IBinder;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzel;
 
-    return-object v0
-.end method
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/gms/internal/ads/zzel;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;Landroid/os/Bundle;)V
 
-.method public final obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-    .locals 2
-
-    .line 1
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzum:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
-    .locals 3
-
-    .line 1
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzul:Landroid/os/IBinder;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 3
-    invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 4
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-
-    return-object v0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 5
-    :try_start_1
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 6
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 7
-    :goto_0
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-
-    throw p1
-.end method
-
-.method public final zza(ILandroid/os/Parcel;)V
-    .locals 3
-
-    .line 1
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzul:Landroid/os/IBinder;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 3
-    invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 4
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-
-    .line 5
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    .line 6
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-
-    .line 7
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw p1
 .end method
 
-.method public final zzb(ILandroid/os/Parcel;)V
-    .locals 3
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 1
 
     .line 1
-    :try_start_0
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzem;->zzul:Landroid/os/IBinder;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzer;
 
-    const/4 v0, 0x2
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzer;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-interface {p1, v0, p2, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 2
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception p1
+.method public final onActivityPaused(Landroid/app/Activity;)V
+    .locals 1
 
-    .line 3
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzeq;
 
-    throw p1
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzeq;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
+
+    return-void
+.end method
+
+.method public final onActivityResumed(Landroid/app/Activity;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzen;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
+
+    return-void
+.end method
+
+.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzes;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/gms/internal/ads/zzes;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;Landroid/os/Bundle;)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
+
+    return-void
+.end method
+
+.method public final onActivityStarted(Landroid/app/Activity;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzeo;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzeo;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
+
+    return-void
+.end method
+
+.method public final onActivityStopped(Landroid/app/Activity;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzep;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzep;-><init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(Lcom/google/android/gms/internal/ads/zzeu;)V
+
+    return-void
 .end method

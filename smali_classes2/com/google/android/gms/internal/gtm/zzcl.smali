@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public zzabs:I
+.field private zzabs:I
 
-.field public zzabt:Ljava/io/ByteArrayOutputStream;
+.field private zzabt:Ljava/io/ByteArrayOutputStream;
 
-.field public final synthetic zzabu:Lcom/google/android/gms/internal/gtm/zzck;
+.field private final synthetic zzabu:Lcom/google/android/gms/internal/gtm/zzck;
 
 
 # direct methods

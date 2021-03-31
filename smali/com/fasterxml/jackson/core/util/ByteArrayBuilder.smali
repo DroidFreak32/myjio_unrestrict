@@ -6,21 +6,21 @@
 # static fields
 .field public static final DEFAULT_BLOCK_ARRAY_SIZE:I = 0x28
 
-.field public static final INITIAL_BLOCK_SIZE:I = 0x1f4
+.field private static final INITIAL_BLOCK_SIZE:I = 0x1f4
 
-.field public static final MAX_BLOCK_SIZE:I = 0x40000
+.field private static final MAX_BLOCK_SIZE:I = 0x40000
 
 .field public static final NO_BYTES:[B
 
 
 # instance fields
-.field public final _bufferRecycler:Lcom/fasterxml/jackson/core/util/BufferRecycler;
+.field private final _bufferRecycler:Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
-.field public _currBlock:[B
+.field private _currBlock:[B
 
-.field public _currBlockPtr:I
+.field private _currBlockPtr:I
 
-.field public final _pastBlocks:Ljava/util/LinkedList;
+.field private final _pastBlocks:Ljava/util/LinkedList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/LinkedList<",
@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public _pastLen:I
+.field private _pastLen:I
 
 
 # direct methods
@@ -132,13 +132,11 @@
     .line 2
     iput v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastLen:I
 
-    .line 3
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastLen:I
-
     shr-int/lit8 v0, v0, 0x1
 
     const/16 v1, 0x3e8
 
+    .line 3
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -233,48 +231,42 @@
     .line 2
     iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    shr-int/lit8 v1, p1, 0x18
+    shr-int/lit8 v3, p1, 0x18
 
-    int-to-byte v1, v1
+    int-to-byte v3, v3
 
-    aput-byte v1, v2, v0
+    aput-byte v3, v2, v0
+
+    add-int/lit8 v0, v1, 0x1
 
     .line 3
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+
+    shr-int/lit8 v3, p1, 0x10
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v2, v1
 
     add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    shr-int/lit8 v1, p1, 0x10
-
-    int-to-byte v1, v1
-
-    aput-byte v1, v2, v0
 
     .line 4
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    add-int/lit8 v1, v0, 0x1
-
     iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    shr-int/lit8 v1, p1, 0x8
+    shr-int/lit8 v3, p1, 0x8
 
-    int-to-byte v1, v1
+    int-to-byte v3, v3
 
-    aput-byte v1, v2, v0
+    aput-byte v3, v2, v0
+
+    add-int/lit8 v0, v1, 0x1
 
     .line 5
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
     int-to-byte p1, p1
 
-    aput-byte p1, v2, v0
+    aput-byte p1, v2, v1
 
     goto :goto_0
 
@@ -320,30 +312,26 @@
     .line 2
     iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    shr-int/lit8 v1, p1, 0x10
+    shr-int/lit8 v3, p1, 0x10
 
-    int-to-byte v1, v1
+    int-to-byte v3, v3
 
-    aput-byte v1, v2, v0
+    aput-byte v3, v2, v0
+
+    add-int/lit8 v0, v1, 0x1
 
     .line 3
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+
+    shr-int/lit8 v3, p1, 0x8
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v2, v1
 
     add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    shr-int/lit8 v1, p1, 0x8
-
-    int-to-byte v1, v1
-
-    aput-byte v1, v2, v0
 
     .line 4
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    add-int/lit8 v1, v0, 0x1
-
     iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
     int-to-byte p1, p1
@@ -389,22 +377,20 @@
     .line 2
     iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    shr-int/lit8 v1, p1, 0x8
+    shr-int/lit8 v3, p1, 0x8
 
-    int-to-byte v1, v1
+    int-to-byte v3, v3
 
-    aput-byte v1, v2, v0
+    aput-byte v3, v2, v0
+
+    add-int/lit8 v0, v1, 0x1
 
     .line 3
-    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
     int-to-byte p1, p1
 
-    aput-byte p1, v2, v0
+    aput-byte p1, v2, v1
 
     goto :goto_0
 

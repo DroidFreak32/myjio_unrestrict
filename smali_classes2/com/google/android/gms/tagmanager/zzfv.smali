@@ -19,6 +19,11 @@
 # virtual methods
 .method public final zzc(Ljava/net/URL;)Ljava/net/HttpURLConnection;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;

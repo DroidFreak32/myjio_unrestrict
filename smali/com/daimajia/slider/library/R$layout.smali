@@ -1,6 +1,5 @@
 .class public final Lcom/daimajia/slider/library/R$layout;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -61,28 +60,27 @@
 
 .field public static final abc_select_dialog_material:I = 0x7f0e001a
 
-.field public static final indicator_layout:I = 0x7f0e0326
+.field public static final indicator_layout:I = 0x7f0e035f
 
-.field public static final render_type_default:I = 0x7f0e055e
+.field public static final render_type_default:I = 0x7f0e05e3
 
-.field public static final render_type_text:I = 0x7f0e055f
+.field public static final render_type_text:I = 0x7f0e05e4
 
-.field public static final select_dialog_item_material:I = 0x7f0e0581
+.field public static final select_dialog_item_material:I = 0x7f0e0607
 
-.field public static final select_dialog_multichoice_material:I = 0x7f0e0582
+.field public static final select_dialog_multichoice_material:I = 0x7f0e0608
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f0e0583
+.field public static final select_dialog_singlechoice_material:I = 0x7f0e0609
 
-.field public static final slider_layout:I = 0x7f0e05d1
+.field public static final slider_layout:I = 0x7f0e0625
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f0e05e8
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f0e063c
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

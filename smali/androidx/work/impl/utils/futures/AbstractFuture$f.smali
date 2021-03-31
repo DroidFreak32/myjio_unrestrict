@@ -28,7 +28,7 @@
 
 
 # instance fields
-.field public final s:Landroidx/work/impl/utils/futures/AbstractFuture;
+.field public final a:Landroidx/work/impl/utils/futures/AbstractFuture;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/work/impl/utils/futures/AbstractFuture<",
@@ -37,7 +37,7 @@
     .end annotation
 .end field
 
-.field public final t:Lcom/google/common/util/concurrent/ListenableFuture;
+.field public final b:Lcom/google/common/util/concurrent/ListenableFuture;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/common/util/concurrent/ListenableFuture<",
@@ -64,10 +64,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->s:Landroidx/work/impl/utils/futures/AbstractFuture;
+    iput-object p1, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->a:Landroidx/work/impl/utils/futures/AbstractFuture;
 
     .line 3
-    iput-object p2, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->t:Lcom/google/common/util/concurrent/ListenableFuture;
+    iput-object p2, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->b:Lcom/google/common/util/concurrent/ListenableFuture;
 
     return-void
 .end method
@@ -78,9 +78,9 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->s:Landroidx/work/impl/utils/futures/AbstractFuture;
+    iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->a:Landroidx/work/impl/utils/futures/AbstractFuture;
 
-    iget-object v0, v0, Landroidx/work/impl/utils/futures/AbstractFuture;->s:Ljava/lang/Object;
+    iget-object v0, v0, Landroidx/work/impl/utils/futures/AbstractFuture;->a:Ljava/lang/Object;
 
     if-eq v0, p0, :cond_0
 
@@ -88,27 +88,27 @@
 
     .line 2
     :cond_0
-    iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->t:Lcom/google/common/util/concurrent/ListenableFuture;
+    iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->b:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    invoke-static {v0}, Landroidx/work/impl/utils/futures/AbstractFuture;->b(Lcom/google/common/util/concurrent/ListenableFuture;)Ljava/lang/Object;
+    invoke-static {v0}, Landroidx/work/impl/utils/futures/AbstractFuture;->h(Lcom/google/common/util/concurrent/ListenableFuture;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 3
-    sget-object v1, Landroidx/work/impl/utils/futures/AbstractFuture;->x:Landroidx/work/impl/utils/futures/AbstractFuture$b;
+    sget-object v1, Landroidx/work/impl/utils/futures/AbstractFuture;->y:Landroidx/work/impl/utils/futures/AbstractFuture$b;
 
-    iget-object v2, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->s:Landroidx/work/impl/utils/futures/AbstractFuture;
+    iget-object v2, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->a:Landroidx/work/impl/utils/futures/AbstractFuture;
 
-    invoke-virtual {v1, v2, p0, v0}, Landroidx/work/impl/utils/futures/AbstractFuture$b;->a(Landroidx/work/impl/utils/futures/AbstractFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2, p0, v0}, Landroidx/work/impl/utils/futures/AbstractFuture$b;->b(Landroidx/work/impl/utils/futures/AbstractFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     .line 4
-    iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->s:Landroidx/work/impl/utils/futures/AbstractFuture;
+    iget-object v0, p0, Landroidx/work/impl/utils/futures/AbstractFuture$f;->a:Landroidx/work/impl/utils/futures/AbstractFuture;
 
-    invoke-static {v0}, Landroidx/work/impl/utils/futures/AbstractFuture;->a(Landroidx/work/impl/utils/futures/AbstractFuture;)V
+    invoke-static {v0}, Landroidx/work/impl/utils/futures/AbstractFuture;->e(Landroidx/work/impl/utils/futures/AbstractFuture;)V
 
     :cond_1
     return-void

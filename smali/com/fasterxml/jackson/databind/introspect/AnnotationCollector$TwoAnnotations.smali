@@ -19,11 +19,11 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final _type1:Ljava/lang/Class;
+.field private final _type1:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -32,7 +32,7 @@
     .end annotation
 .end field
 
-.field public final _type2:Ljava/lang/Class;
+.field private final _type2:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -41,9 +41,9 @@
     .end annotation
 .end field
 
-.field public final _value1:Ljava/lang/annotation/Annotation;
+.field private final _value1:Ljava/lang/annotation/Annotation;
 
-.field public final _value2:Ljava/lang/annotation/Annotation;
+.field private final _value2:Ljava/lang/annotation/Annotation;
 
 
 # direct methods

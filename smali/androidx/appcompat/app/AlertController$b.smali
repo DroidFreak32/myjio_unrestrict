@@ -3,12 +3,12 @@
 .source "AlertController.java"
 
 # interfaces
-.implements Landroidx/core/widget/NestedScrollView$b;
+.implements Landroidx/core/widget/NestedScrollView$OnScrollChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/app/AlertController;->a(Landroid/view/ViewGroup;Landroid/view/View;II)V
+    value = Landroidx/appcompat/app/AlertController;->q(Landroid/view/ViewGroup;Landroid/view/View;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public a(Landroidx/core/widget/NestedScrollView;IIII)V
+.method public onScrollChange(Landroidx/core/widget/NestedScrollView;IIII)V
     .locals 0
 
     .line 1
@@ -47,7 +47,7 @@
 
     iget-object p3, p0, Landroidx/appcompat/app/AlertController$b;->b:Landroid/view/View;
 
-    invoke-static {p1, p2, p3}, Landroidx/appcompat/app/AlertController;->a(Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
+    invoke-static {p1, p2, p3}, Landroidx/appcompat/app/AlertController;->g(Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
 
     return-void
 .end method

@@ -1,25 +1,38 @@
-.class public final enum Lcom/google/android/gms/internal/vision/zzje;
-.super Lcom/google/android/gms/internal/vision/zzjd;
+.class public final Lcom/google/android/gms/internal/vision/zzje;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/vision/zzji;I)V
-    .locals 6
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-    const/16 v2, 0x8
 
-    const/4 v4, 0x2
+# instance fields
+.field public final zzaac:Lcom/google/android/gms/internal/vision/zzlk;
 
-    const/4 v5, 0x0
+.field public final zzaad:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TK;"
+        }
+    .end annotation
+.end field
 
-    move-object v0, p0
+.field public final zzaae:Lcom/google/android/gms/internal/vision/zzlk;
 
-    move-object v1, p1
-
-    move-object v3, p3
-
-    .line 1
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/vision/zzjd;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/vision/zzji;ILcom/google/android/gms/internal/vision/zzjc;)V
-
-    return-void
-.end method
+.field public final zzgk:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TV;"
+        }
+    .end annotation
+.end field

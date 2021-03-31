@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/TransformedResult;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -26,6 +27,10 @@
 
 # virtual methods
 .method public abstract andFinally(Lcom/google/android/gms/common/api/ResultCallbacks;)V
+    .param p1    # Lcom/google/android/gms/common/api/ResultCallbacks;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,6 +41,13 @@
 .end method
 
 .method public abstract then(Lcom/google/android/gms/common/api/ResultTransform;)Lcom/google/android/gms/common/api/TransformedResult;
+    .param p1    # Lcom/google/android/gms/common/api/ResultTransform;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<S::",

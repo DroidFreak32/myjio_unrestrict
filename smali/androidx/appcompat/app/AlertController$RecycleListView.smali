@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final s:I
+.field public final a:I
 
-.field public final t:I
+.field public final b:I
 
 
 # direct methods
@@ -39,14 +39,14 @@
     invoke-direct {p0, p1, p2}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 3
-    sget-object v0, Lb0;->RecycleListView:[I
+    sget-object v0, Landroidx/appcompat/R$styleable;->RecycleListView:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
     .line 4
-    sget p2, Lb0;->RecycleListView_paddingBottomNoButtons:I
+    sget p2, Landroidx/appcompat/R$styleable;->RecycleListView_paddingBottomNoButtons:I
 
     const/4 v0, -0x1
 
@@ -54,16 +54,16 @@
 
     move-result p2
 
-    iput p2, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->t:I
+    iput p2, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->b:I
 
     .line 5
-    sget p2, Lb0;->RecycleListView_paddingTopNoTitle:I
+    sget p2, Landroidx/appcompat/R$styleable;->RecycleListView_paddingTopNoTitle:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result p1
 
-    iput p1, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->s:I
+    iput p1, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->a:I
 
     return-void
 .end method
@@ -93,7 +93,7 @@
     goto :goto_0
 
     :cond_1
-    iget p1, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->s:I
+    iget p1, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->a:I
 
     .line 3
     :goto_0
@@ -111,7 +111,7 @@
     goto :goto_1
 
     :cond_2
-    iget p2, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->t:I
+    iget p2, p0, Landroidx/appcompat/app/AlertController$RecycleListView;->b:I
 
     .line 5
     :goto_1

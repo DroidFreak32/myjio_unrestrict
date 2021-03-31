@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/ListenerHolder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -25,7 +26,7 @@
 
 
 # instance fields
-.field public final zajj:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
+.field private final zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;"
@@ -33,7 +34,10 @@
     .end annotation
 .end field
 
-.field public volatile zajk:Ljava/lang/Object;
+.field private volatile zab:Ljava/lang/Object;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "T",
@@ -42,7 +46,10 @@
     .end annotation
 .end field
 
-.field public final zajl:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+.field private volatile zac:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey<",
@@ -57,6 +64,18 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Looper;Ljava/lang/Object;Ljava/lang/String;)V
     .locals 1
+    .param p1    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -79,7 +98,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;-><init>(Lcom/google/android/gms/common/api/internal/ListenerHolder;Landroid/os/Looper;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajj:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
 
     const-string p1, "Listener must not be null"
 
@@ -88,7 +107,7 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajk:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zab:Ljava/lang/Object;
 
     .line 4
     new-instance p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
@@ -99,7 +118,7 @@
 
     invoke-direct {p1, p2, p3}, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajl:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zac:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
     return-void
 .end method
@@ -114,13 +133,19 @@
     const/4 v0, 0x0
 
     .line 1
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajk:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zab:Ljava/lang/Object;
+
+    .line 2
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zac:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
     return-void
 .end method
 
 .method public final getListenerKey()Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -135,7 +160,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajl:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zac:Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
     return-object v0
 .end method
@@ -146,7 +171,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajk:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zab:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
@@ -181,7 +206,7 @@
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajj:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
 
     const/4 v1, 0x1
 
@@ -190,7 +215,7 @@
     move-result-object p1
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajj:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
@@ -213,7 +238,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zajk:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder;->zab:Ljava/lang/Object;
 
     if-nez v0, :cond_0
 

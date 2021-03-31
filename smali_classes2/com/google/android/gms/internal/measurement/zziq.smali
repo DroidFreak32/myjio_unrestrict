@@ -1,26 +1,27 @@
-.class public final enum Lcom/google/android/gms/internal/measurement/zziq;
-.super Lcom/google/android/gms/internal/measurement/zzir;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zziq;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
+
+# interfaces
+.implements Ljava/util/List;
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;I)V
-    .locals 6
+# virtual methods
+.method public abstract h_()Lcom/google/android/gms/internal/measurement/zziq;
+.end method
 
-    const/16 v2, 0x8
+.method public abstract zza(Lcom/google/android/gms/internal/measurement/zzgp;)V
+.end method
 
-    const/4 v4, 0x2
+.method public abstract zzb(I)Ljava/lang/Object;
+.end method
 
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
-
-    .line 1
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/measurement/zzir;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/measurement/zziu;ILcom/google/android/gms/internal/measurement/zzio;)V
-
-    return-void
+.method public abstract zzb()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "*>;"
+        }
+    .end annotation
 .end method

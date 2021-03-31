@@ -3,7 +3,7 @@
 .source "NetworkCheck.java"
 
 # interfaces
-.implements Llr4;
+.implements Lretrofit2/Callback;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Llr4<",
+        "Lretrofit2/Callback<",
         "Lcom/app/cinemasdk/networkcheck/Models/JioNetworkData;",
         ">;"
     }
@@ -44,12 +44,12 @@
 
 
 # virtual methods
-.method public onFailure(Ljr4;Ljava/lang/Throwable;)V
+.method public onFailure(Lretrofit2/Call;Ljava/lang/Throwable;)V
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/networkcheck/Models/JioNetworkData;",
             ">;",
             "Ljava/lang/Throwable;",
@@ -70,7 +70,7 @@
 
     iget-boolean v5, v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->isVipUser:Z
 
-    invoke-interface {p1}, Ljr4;->request()Lokhttp3/Request;
+    invoke-interface {p1}, Lretrofit2/Call;->request()Lokhttp3/Request;
 
     move-result-object p1
 
@@ -107,22 +107,22 @@
     return-void
 .end method
 
-.method public onResponse(Ljr4;Lxr4;)V
+.method public onResponse(Lretrofit2/Call;Lretrofit2/Response;)V
     .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/networkcheck/Models/JioNetworkData;",
             ">;",
-            "Lxr4<",
+            "Lretrofit2/Response<",
             "Lcom/app/cinemasdk/networkcheck/Models/JioNetworkData;",
             ">;)V"
         }
     .end annotation
 
     .line 1
-    invoke-virtual {p2}, Lxr4;->e()Z
+    invoke-virtual {p2}, Lretrofit2/Response;->isSuccessful()Z
 
     move-result v0
 
@@ -132,13 +132,13 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -171,7 +171,7 @@
 
     iget-boolean v7, v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->isVipUser:Z
 
-    invoke-interface {p1}, Ljr4;->request()Lokhttp3/Request;
+    invoke-interface {p1}, Lretrofit2/Call;->request()Lokhttp3/Request;
 
     move-result-object p1
 
@@ -183,7 +183,7 @@
 
     move-result-object v8
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result v9
 
@@ -192,7 +192,7 @@
     invoke-direct {p1}, Lcom/google/gson/Gson;-><init>()V
 
     .line 3
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -206,13 +206,13 @@
     if-eqz p2, :cond_0
 
     .line 5
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p1
 
@@ -229,7 +229,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p2
 
@@ -255,7 +255,7 @@
 
     .line 8
     :cond_1
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -278,7 +278,7 @@
 
     iget-boolean v7, v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->isVipUser:Z
 
-    invoke-interface {p1}, Ljr4;->request()Lokhttp3/Request;
+    invoke-interface {p1}, Lretrofit2/Call;->request()Lokhttp3/Request;
 
     move-result-object p1
 
@@ -290,7 +290,7 @@
 
     move-result-object v8
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result v9
 
@@ -299,7 +299,7 @@
     invoke-direct {p1}, Lcom/google/gson/Gson;-><init>()V
 
     .line 10
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -313,13 +313,13 @@
     if-eqz p2, :cond_2
 
     .line 12
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p1
 
@@ -336,7 +336,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p2
 
@@ -378,7 +378,7 @@
 
     iget-boolean v7, v0, Lcom/app/cinemasdk/networkcheck/NetworkCheck;->isVipUser:Z
 
-    invoke-interface {p1}, Ljr4;->request()Lokhttp3/Request;
+    invoke-interface {p1}, Lretrofit2/Call;->request()Lokhttp3/Request;
 
     move-result-object p1
 
@@ -390,7 +390,7 @@
 
     move-result-object v8
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result v9
 
@@ -401,13 +401,13 @@
     if-eqz p2, :cond_4
 
     .line 16
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p1
 
     if-eqz p1, :cond_4
 
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p1
 
@@ -424,7 +424,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual {p2}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object p2
 

@@ -1,43 +1,120 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaqs;
+.class public final Lcom/google/android/gms/internal/ads/zzaqs;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final zzdca:Lcom/google/android/gms/internal/ads/zzaqp;
+.field private zzdpe:Z
+
+.field private zzdpf:Z
+
+.field private zzdpg:Z
+
+.field private zzdph:Z
+
+.field private zzdpi:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqp;)V
+.method public constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdca:Lcom/google/android/gms/internal/ads/zzaqp;
 
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/ads/zzaqp;)Ljava/lang/Runnable;
-    .locals 1
+.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zzaqs;)Z
+    .locals 0
 
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzaqs;
+    .line 1
+    iget-boolean p0, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpe:Z
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzaqs;-><init>(Lcom/google/android/gms/internal/ads/zzaqp;)V
+    return p0
+.end method
 
-    return-object v0
+.method public static synthetic zzb(Lcom/google/android/gms/internal/ads/zzaqs;)Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpf:Z
+
+    return p0
+.end method
+
+.method public static synthetic zzc(Lcom/google/android/gms/internal/ads/zzaqs;)Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpg:Z
+
+    return p0
+.end method
+
+.method public static synthetic zzd(Lcom/google/android/gms/internal/ads/zzaqs;)Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdph:Z
+
+    return p0
+.end method
+
+.method public static synthetic zze(Lcom/google/android/gms/internal/ads/zzaqs;)Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpi:Z
+
+    return p0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final zzad(Z)Lcom/google/android/gms/internal/ads/zzaqs;
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdca:Lcom/google/android/gms/internal/ads/zzaqp;
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpe:Z
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzaqp;->stop()V
+    return-object p0
+.end method
 
-    return-void
+.method public final zzae(Z)Lcom/google/android/gms/internal/ads/zzaqs;
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpf:Z
+
+    return-object p0
+.end method
+
+.method public final zzaf(Z)Lcom/google/android/gms/internal/ads/zzaqs;
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpg:Z
+
+    return-object p0
+.end method
+
+.method public final zzag(Z)Lcom/google/android/gms/internal/ads/zzaqs;
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdph:Z
+
+    return-object p0
+.end method
+
+.method public final zzah(Z)Lcom/google/android/gms/internal/ads/zzaqs;
+    .locals 0
+
+    const/4 p1, 0x1
+
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzaqs;->zzdpi:Z
+
+    return-object p0
 .end method

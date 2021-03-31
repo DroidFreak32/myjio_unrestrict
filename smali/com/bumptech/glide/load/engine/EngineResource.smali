@@ -26,19 +26,19 @@
 
 
 # instance fields
-.field public acquired:I
+.field private acquired:I
 
-.field public final isCacheable:Z
+.field private final isCacheable:Z
 
-.field public final isRecyclable:Z
+.field private final isRecyclable:Z
 
-.field public isRecycled:Z
+.field private isRecycled:Z
 
-.field public key:Lcom/bumptech/glide/load/Key;
+.field private key:Lcom/bumptech/glide/load/Key;
 
-.field public listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
+.field private listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
 
-.field public final resource:Lcom/bumptech/glide/load/engine/Resource;
+.field private final resource:Lcom/bumptech/glide/load/engine/Resource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/Resource<",
@@ -130,6 +130,9 @@
 
 .method public get()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TZ;"
@@ -164,6 +167,9 @@
 
 .method public getResourceClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -294,11 +300,9 @@
 
     if-lez v1, :cond_1
 
-    .line 4
-    iget v1, p0, Lcom/bumptech/glide/load/engine/EngineResource;->acquired:I
-
     add-int/lit8 v1, v1, -0x1
 
+    .line 4
     iput v1, p0, Lcom/bumptech/glide/load/engine/EngineResource;->acquired:I
 
     if-nez v1, :cond_0

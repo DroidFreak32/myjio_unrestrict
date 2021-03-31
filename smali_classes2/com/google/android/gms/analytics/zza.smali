@@ -16,9 +16,9 @@
 
 
 # instance fields
-.field public final zzrb:Lcom/google/android/gms/internal/gtm/zzap;
+.field private final zzrb:Lcom/google/android/gms/internal/gtm/zzap;
 
-.field public zzrc:Z
+.field private zzrc:Z
 
 
 # direct methods

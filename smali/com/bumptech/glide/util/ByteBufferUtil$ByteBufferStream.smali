@@ -15,18 +15,25 @@
 
 
 # static fields
-.field public static final UNSET:I = -0x1
+.field private static final UNSET:I = -0x1
 
 
 # instance fields
-.field public final byteBuffer:Ljava/nio/ByteBuffer;
+.field private final byteBuffer:Ljava/nio/ByteBuffer;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
-.field public markPos:I
+.field private markPos:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
     .locals 1
+    .param p1    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -124,6 +131,15 @@
 
 .method public read([BII)I
     .locals 1
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     iget-object v0, p0, Lcom/bumptech/glide/util/ByteBufferUtil$ByteBufferStream;->byteBuffer:Ljava/nio/ByteBuffer;
@@ -158,6 +174,11 @@
 
 .method public declared-synchronized reset()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -170,11 +191,9 @@
     if-eq v0, v1, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/bumptech/glide/util/ByteBufferUtil$ByteBufferStream;->byteBuffer:Ljava/nio/ByteBuffer;
+    iget-object v1, p0, Lcom/bumptech/glide/util/ByteBufferUtil$ByteBufferStream;->byteBuffer:Ljava/nio/ByteBuffer;
 
-    iget v1, p0, Lcom/bumptech/glide/util/ByteBufferUtil$ByteBufferStream;->markPos:I
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -206,6 +225,11 @@
 
 .method public skip(J)J
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/util/ByteBufferUtil$ByteBufferStream;->byteBuffer:Ljava/nio/ByteBuffer;

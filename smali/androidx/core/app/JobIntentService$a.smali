@@ -75,10 +75,10 @@
     return-object p1
 .end method
 
-.method public a(Ljava/lang/Void;)V
+.method public b(Ljava/lang/Void;)V
     .locals 0
 
-    .line 4
+    .line 1
     iget-object p1, p0, Landroidx/core/app/JobIntentService$a;->a:Landroidx/core/app/JobIntentService;
 
     invoke-virtual {p1}, Landroidx/core/app/JobIntentService;->processorFinished()V
@@ -86,7 +86,7 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/Void;)V
+.method public c(Ljava/lang/Void;)V
     .locals 0
 
     .line 1
@@ -116,7 +116,7 @@
     .line 1
     check-cast p1, Ljava/lang/Void;
 
-    invoke-virtual {p0, p1}, Landroidx/core/app/JobIntentService$a;->a(Ljava/lang/Void;)V
+    invoke-virtual {p0, p1}, Landroidx/core/app/JobIntentService$a;->b(Ljava/lang/Void;)V
 
     return-void
 .end method
@@ -127,7 +127,7 @@
     .line 1
     check-cast p1, Ljava/lang/Void;
 
-    invoke-virtual {p0, p1}, Landroidx/core/app/JobIntentService$a;->b(Ljava/lang/Void;)V
+    invoke-virtual {p0, p1}, Landroidx/core/app/JobIntentService$a;->c(Ljava/lang/Void;)V
 
     return-void
 .end method

@@ -1,79 +1,121 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzkb;
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zzkb;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzjy;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzcq;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/measurement/zzcq<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# direct methods
-.method public static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzcw;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lcom/google/android/gms/internal/measurement/zzcr;->zza(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzcw;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.upload.file_truncate_fix"
-
-    const/4 v2, 0x0
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/measurement/zzcw;->zza(Ljava/lang/String;Z)Lcom/google/android/gms/internal/measurement/zzcq;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzkb;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public final zza()Z
-    .locals 1
+.method public abstract zza(Ljava/lang/Object;)I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)I"
+        }
+    .end annotation
+.end method
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzkb;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
+.method public abstract zza()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzcq;->zzc()Ljava/lang/Object;
+.method public abstract zza(Ljava/lang/Object;Lcom/google/android/gms/internal/measurement/zzjy;Lcom/google/android/gms/internal/measurement/zzhl;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Lcom/google/android/gms/internal/measurement/zzjy;",
+            "Lcom/google/android/gms/internal/measurement/zzhl;",
+            ")V"
+        }
+    .end annotation
 
-    move-result-object v0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    check-cast v0, Ljava/lang/Boolean;
+.method public abstract zza(Ljava/lang/Object;Lcom/google/android/gms/internal/measurement/zzlm;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Lcom/google/android/gms/internal/measurement/zzlm;",
+            ")V"
+        }
+    .end annotation
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    move-result v0
+.method public abstract zza(Ljava/lang/Object;[BIILcom/google/android/gms/internal/measurement/zzgo;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;[BII",
+            "Lcom/google/android/gms/internal/measurement/zzgo;",
+            ")V"
+        }
+    .end annotation
 
-    return v0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)Z"
+        }
+    .end annotation
+.end method
+
+.method public abstract zzb(Ljava/lang/Object;)I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)I"
+        }
+    .end annotation
+.end method
+
+.method public abstract zzb(Ljava/lang/Object;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract zzc(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract zzd(Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)Z"
+        }
+    .end annotation
 .end method

@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public zzbep:Ljava/util/ListIterator;
+.field private zzbep:Ljava/util/ListIterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ListIterator<",
@@ -27,9 +27,9 @@
     .end annotation
 .end field
 
-.field public final synthetic zzbeq:I
+.field private final synthetic zzbeq:I
 
-.field public final synthetic zzber:Lcom/google/android/gms/internal/gtm/zztu;
+.field private final synthetic zzber:Lcom/google/android/gms/internal/gtm/zztu;
 
 
 # direct methods
@@ -44,13 +44,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zztv;->zzber:Lcom/google/android/gms/internal/gtm/zztu;
-
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zztu;->zza(Lcom/google/android/gms/internal/gtm/zztu;)Lcom/google/android/gms/internal/gtm/zzrt;
 
     move-result-object p1
-
-    iget p2, p0, Lcom/google/android/gms/internal/gtm/zztv;->zzbeq:I
 
     invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
 

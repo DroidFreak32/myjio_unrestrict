@@ -3,12 +3,12 @@
 .source "HelloJioActivity.kt"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->a(F)V
+    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->o()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,15 +17,25 @@
 .end annotation
 
 
-# instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+# static fields
+.field public static final a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;
 
 
 # direct methods
-.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    new-instance v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;
+
+    invoke-direct {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;-><init>()V
+
+    sput-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,22 +44,11 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lmq0;->b:Lmq0;
-
-    const-string v1, "my tts: animating"
-
-    invoke-virtual {v0, v1}, Lmq0;->a(Ljava/lang/String;)V
-
-    .line 2
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$c;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->b(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Z)V
+    invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
     return-void
 .end method

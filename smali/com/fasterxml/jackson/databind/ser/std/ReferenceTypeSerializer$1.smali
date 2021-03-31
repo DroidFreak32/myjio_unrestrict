@@ -34,8 +34,6 @@
     sput-object v0, Lcom/fasterxml/jackson/databind/ser/std/ReferenceTypeSerializer$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonInclude$Include:[I
 
     :try_start_0
-    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/ReferenceTypeSerializer$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonInclude$Include:[I
-
     sget-object v1, Lcom/fasterxml/jackson/annotation/JsonInclude$Include;->NON_DEFAULT:Lcom/fasterxml/jackson/annotation/JsonInclude$Include;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

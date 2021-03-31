@@ -1,170 +1,215 @@
 .class public Lo5;
 .super Ljava/lang/Object;
-.source "ResolutionNode.java"
+.source "Styleable.java"
 
 
-# instance fields
-.field public a:Ljava/util/HashSet;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashSet<",
-            "Lo5;",
-            ">;"
-        }
+# annotations
+.annotation build Landroid/annotation/SuppressLint;
+    value = {
+        "InlinedApi"
+    }
+.end annotation
+
+
+# static fields
+.field public static final a:[I
+    .annotation build Landroidx/annotation/StyleableRes;
     .end annotation
 .end field
 
-.field public b:I
+.field public static final b:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final c:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final d:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final e:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final f:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final g:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final h:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final i:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final j:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
+
+.field public static final k:[I
+    .annotation build Landroidx/annotation/StyleableRes;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public static constructor <clinit>()V
+    .locals 5
+
+    const/4 v0, 0x6
+
+    new-array v0, v0, [I
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lo5;->a:[I
+
+    const/4 v0, 0x3
+
+    new-array v1, v0, [I
 
     .line 2
-    new-instance v0, Ljava/util/HashSet;
+    fill-array-data v1, :array_1
 
-    const/4 v1, 0x2
+    sput-object v1, Lo5;->b:[I
 
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
+    const/4 v1, 0x4
 
-    iput-object v0, p0, Lo5;->a:Ljava/util/HashSet;
-
-    const/4 v0, 0x0
+    new-array v1, v1, [I
 
     .line 3
-    iput v0, p0, Lo5;->b:I
+    fill-array-data v1, :array_2
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    .line 2
-    iput v0, p0, Lo5;->b:I
-
-    .line 3
-    iget-object v0, p0, Lo5;->a:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lo5;
-
-    .line 4
-    invoke-virtual {v1}, Lo5;->e()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Lo5;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lo5;->a:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    .line 1
-    iput v0, p0, Lo5;->b:I
-
-    .line 2
-    iget-object v0, p0, Lo5;->a:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lo5;
-
-    .line 3
-    invoke-virtual {v1}, Lo5;->b()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public c()Z
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lo5;->b:I
+    sput-object v1, Lo5;->c:[I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_0
+    new-array v2, v1, [I
 
-    goto :goto_0
+    const v3, 0x10104cf
 
-    :cond_0
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
-    :goto_0
-    return v1
-.end method
+    aput v3, v2, v4
 
-.method public d()V
-    .locals 1
+    .line 4
+    sput-object v2, Lo5;->d:[I
 
-    const/4 v0, 0x0
+    new-array v2, v1, [I
 
-    .line 1
-    iput v0, p0, Lo5;->b:I
+    const v3, 0x101047c
 
-    .line 2
-    iget-object v0, p0, Lo5;->a:Ljava/util/HashSet;
+    aput v3, v2, v4
 
-    invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
+    .line 5
+    sput-object v2, Lo5;->e:[I
+
+    new-array v2, v1, [I
+
+    const v3, 0x10103e1
+
+    aput v3, v2, v4
+
+    .line 6
+    sput-object v2, Lo5;->f:[I
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [I
+
+    .line 7
+    fill-array-data v2, :array_3
+
+    sput-object v2, Lo5;->g:[I
+
+    new-array v2, v1, [I
+
+    const v3, 0x1010430
+
+    aput v3, v2, v4
+
+    .line 8
+    sput-object v2, Lo5;->h:[I
+
+    new-array v2, v1, [I
+
+    const v3, 0x10103e0
+
+    aput v3, v2, v4
+
+    .line 9
+    sput-object v2, Lo5;->i:[I
+
+    new-array v0, v0, [I
+
+    .line 10
+    fill-array-data v0, :array_4
+
+    sput-object v0, Lo5;->j:[I
+
+    new-array v0, v1, [I
+
+    const v1, 0x10104ca
+
+    aput v1, v0, v4
+
+    .line 11
+    sput-object v0, Lo5;->k:[I
 
     return-void
-.end method
 
-.method public e()V
-    .locals 0
+    :array_0
+    .array-data 4
+        0x101002f
+        0x10103dc
+        0x1010441
+        0x1010442
+        0x101044d
+        0x101044e
+    .end array-data
 
-    return-void
+    :array_1
+    .array-data 4
+        0x10103dd
+        0x10103de
+        0x10103df
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x1010141
+        0x1010198
+        0x10103e2
+        0x101044f
+    .end array-data
+
+    :array_3
+    .array-data 4
+        0x10104bc
+        0x10104bd
+    .end array-data
+
+    :array_4
+    .array-data 4
+        0x101047d
+        0x101047e
+        0x101047f
+    .end array-data
 .end method

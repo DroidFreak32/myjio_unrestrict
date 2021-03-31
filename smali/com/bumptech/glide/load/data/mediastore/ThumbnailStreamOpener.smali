@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final DEFAULT_SERVICE:Lcom/bumptech/glide/load/data/mediastore/FileService;
+.field private static final DEFAULT_SERVICE:Lcom/bumptech/glide/load/data/mediastore/FileService;
 
-.field public static final TAG:Ljava/lang/String; = "ThumbStreamOpener"
+.field private static final TAG:Ljava/lang/String; = "ThumbStreamOpener"
 
 
 # instance fields
-.field public final byteArrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+.field private final byteArrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-.field public final contentResolver:Landroid/content/ContentResolver;
+.field private final contentResolver:Landroid/content/ContentResolver;
 
-.field public final parsers:Ljava/util/List;
+.field private final parsers:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -24,9 +24,9 @@
     .end annotation
 .end field
 
-.field public final query:Lcom/bumptech/glide/load/data/mediastore/ThumbnailQuery;
+.field private final query:Lcom/bumptech/glide/load/data/mediastore/ThumbnailQuery;
 
-.field public final service:Lcom/bumptech/glide/load/data/mediastore/FileService;
+.field private final service:Lcom/bumptech/glide/load/data/mediastore/FileService;
 
 
 # direct methods
@@ -115,6 +115,12 @@
 
 .method private getPath(Landroid/net/Uri;)Ljava/lang/String;
     .locals 1
+    .param p1    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/data/mediastore/ThumbnailStreamOpener;->query:Lcom/bumptech/glide/load/data/mediastore/ThumbnailQuery;
@@ -310,6 +316,11 @@
 
 .method public open(Landroid/net/Uri;)Ljava/io/InputStream;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/bumptech/glide/load/data/mediastore/ThumbnailStreamOpener;->getPath(Landroid/net/Uri;)Ljava/lang/String;

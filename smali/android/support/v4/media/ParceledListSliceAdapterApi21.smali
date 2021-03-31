@@ -3,18 +3,24 @@
 .source "ParceledListSliceAdapterApi21.java"
 
 
+# annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x15
+.end annotation
+
+
 # static fields
-.field public static sConstructor:Ljava/lang/reflect/Constructor;
+.field private static sConstructor:Ljava/lang/reflect/Constructor;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 4
 
+    :try_start_0
     const-string v0, "android.content.pm.ParceledListSlice"
 
     .line 1
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -57,7 +63,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

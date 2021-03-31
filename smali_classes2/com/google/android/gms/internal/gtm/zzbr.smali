@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public zzrv:Z
+.field private zzrv:Z
 
-.field public zzyr:I
+.field private zzyr:I
 
 
 # direct methods

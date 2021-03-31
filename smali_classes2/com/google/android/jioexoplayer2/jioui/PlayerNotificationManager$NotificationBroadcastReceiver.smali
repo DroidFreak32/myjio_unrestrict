@@ -17,7 +17,7 @@
 # instance fields
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager;
 
-.field public final window:Lcom/google/android/jioexoplayer2/Timeline$Window;
+.field private final window:Lcom/google/android/jioexoplayer2/Timeline$Window;
 
 
 # direct methods

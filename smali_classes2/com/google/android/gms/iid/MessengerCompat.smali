@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public zzad:Landroid/os/Messenger;
+.field private zzad:Landroid/os/Messenger;
 
-.field public zzcd:Lcom/google/android/gms/iid/zzl;
+.field private zzcd:Lcom/google/android/gms/iid/zzl;
 
 
 # direct methods
@@ -186,6 +186,11 @@
 
 .method public final send(Landroid/os/Message;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->zzad:Landroid/os/Messenger;

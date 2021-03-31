@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "PLMNHelper"
+.field private static final MODULE:Ljava/lang/String; = "PLMNHelper"
 
 
 # direct methods
@@ -54,7 +54,7 @@
 
     move-result-object v9
 
-    invoke-static {}, Lk30;->e()Ljava/util/ArrayList;
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->e()Ljava/util/ArrayList;
 
     move-result-object v10
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {v9, v8, v11}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v4, v3}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v3}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -150,7 +150,7 @@
 
     if-eqz v9, :cond_2
 
-    invoke-static {v2, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -166,17 +166,17 @@
 
     invoke-virtual {v9, v8, v11}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v4, v3}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v3}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v2, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "#"
 
-    invoke-static {v3, v1, v2}, Lo00;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v3, v1, v2}, Lcom/elitecore/wifi/api/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v1
 
@@ -402,7 +402,7 @@
     :cond_1
     sget-object p0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string p1, "valid PLMNS are not found"
+    const-string/jumbo p1, "valid PLMNS are not found"
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -439,7 +439,7 @@
     return-object p0
 .end method
 
-.method public static getMCCMNCFromPLMN(Ljava/lang/String;)Ljava/util/ArrayList;
+.method private static getMCCMNCFromPLMN(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -513,7 +513,7 @@
 .end method
 
 .method public static getMobileDataPLNM(Landroid/content/Context;)Ljava/lang/String;
-    .locals 8
+    .locals 9
 
     const-string v0, "PLMNHelper"
 
@@ -526,62 +526,60 @@
 
     if-lt v2, v3, :cond_7
 
-    const-string v2, "telephony_subscription_service"
+    const-string/jumbo v4, "telephony_subscription_service"
 
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Landroid/telephony/SubscriptionManager;
+    check-cast v4, Landroid/telephony/SubscriptionManager;
 
-    invoke-static {v2}, Lk30;->a(Landroid/telephony/SubscriptionManager;)I
+    invoke-static {v4}, Lcom/elitecorelib/core/utility/f;->a(Landroid/telephony/SubscriptionManager;)I
 
-    move-result v4
+    move-result v5
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    invoke-static {v5}, Lcom/elitecorelib/etech/PLMNHelper;->getPLMNInfoFromCommand(Z)[Ljava/lang/String;
+    invoke-static {v6}, Lcom/elitecorelib/etech/PLMNHelper;->getPLMNInfoFromCommand(Z)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     return-object v1
 
     :cond_0
-    const/4 v6, -0x1
+    const/4 v7, -0x1
 
-    if-ne v4, v6, :cond_1
+    if-ne v5, v7, :cond_1
 
     return-object v1
 
     :cond_1
-    if-eqz v2, :cond_6
+    if-eqz v4, :cond_6
 
-    invoke-virtual {v2, v4}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfo(I)Landroid/telephony/SubscriptionInfo;
+    invoke-virtual {v4, v5}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfo(I)Landroid/telephony/SubscriptionInfo;
 
-    move-result-object v2
+    move-result-object v4
 
-    array-length v6, v5
+    array-length v7, v6
 
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
-    move-result v7
+    move-result v8
 
-    if-ge v6, v7, :cond_2
+    if-ge v7, v8, :cond_2
 
     return-object v1
 
     :cond_2
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
     const/16 v7, 0x18
 
-    if-lt v6, v7, :cond_4
+    if-lt v2, v7, :cond_4
 
-    const-string v3, "phone"
+    const-string v2, "phone"
 
-    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -589,7 +587,7 @@
 
     if-eqz p0, :cond_3
 
-    invoke-virtual {p0, v4}, Landroid/telephony/TelephonyManager;->createForSubscriptionId(I)Landroid/telephony/TelephonyManager;
+    invoke-virtual {p0, v5}, Landroid/telephony/TelephonyManager;->createForSubscriptionId(I)Landroid/telephony/TelephonyManager;
 
     move-result-object p0
 
@@ -605,71 +603,67 @@
 
     move-result p0
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-ne p0, v3, :cond_7
+    if-ne p0, v2, :cond_7
 
     sget-object p0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "sim slot "
+    const-string/jumbo v3, "sim slot "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, " has active network plmn is "
+    const-string v3, " has active network plmn is "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getMcc()I
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getMcc()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getMnc()I
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getMnc()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {p0, v0, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p0, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
     move-result p0
 
-    aget-object p0, v5, p0
+    aget-object p0, v6, p0
 
     return-object p0
 
     :cond_4
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-eq v2, v3, :cond_5
 
-    if-eq v4, v3, :cond_5
+    const/16 v5, 0x17
 
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v6, 0x17
-
-    if-ne v4, v6, :cond_7
+    if-ne v2, v5, :cond_7
 
     :cond_5
-    const-string v4, "connectivity"
+    const-string v5, "connectivity"
 
-    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -683,9 +677,9 @@
 
     invoke-virtual {p0}, Landroid/net/NetworkInfo;->isConnected()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_6
+    if-eqz v5, :cond_6
 
     invoke-virtual {p0}, Landroid/net/NetworkInfo;->getType()I
 
@@ -693,15 +687,13 @@
 
     if-nez p0, :cond_6
 
-    sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-lt v2, v3, :cond_6
 
-    if-lt p0, v3, :cond_6
-
-    invoke-virtual {v2}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
     move-result p0
 
-    aget-object p0, v5, p0
+    aget-object p0, v6, p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -878,24 +870,22 @@
 
     const/4 v3, 0x1
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     :goto_3
     array-length v5, v2
 
-    if-ge v3, v5, :cond_6
+    if-ge v4, v5, :cond_6
 
-    aget-object v5, v2, v3
+    aget-object v5, v2, v4
 
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v5
 
-    aput-object v5, v2, v3
+    aput-object v5, v2, v4
 
-    aget-object v5, v2, v3
+    aget-object v5, v2, v4
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -907,7 +897,7 @@
 
     if-nez v5, :cond_5
 
-    const-string v4, " MccMnc = "
+    const-string v3, " MccMnc = "
 
     const-string v5, "PLMNHelper"
 
@@ -920,24 +910,24 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "simcard no = "
+    const-string/jumbo v9, "simcard no = "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v4, v2, v3
+    aget-object v3, v2, v4
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     :goto_4
-    invoke-virtual {v7, v5, v4}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v7, v5, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_5
 
@@ -952,17 +942,17 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v4, v2, v3
+    aget-object v3, v2, v4
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
@@ -971,15 +961,15 @@
     goto :goto_4
 
     :goto_5
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :cond_5
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
     :cond_6
-    if-nez v4, :cond_8
+    if-nez v3, :cond_8
 
     if-eqz v1, :cond_7
 
@@ -1005,8 +995,6 @@
 
     :catchall_0
     move-exception p0
-
-    move-object v1, v0
 
     goto :goto_9
 
@@ -1044,10 +1032,12 @@
     :catchall_1
     move-exception p0
 
-    :goto_9
-    if-eqz v1, :cond_a
+    move-object v0, v1
 
-    invoke-virtual {v1}, Ljava/lang/Process;->destroy()V
+    :goto_9
+    if-eqz v0, :cond_a
+
+    invoke-virtual {v0}, Ljava/lang/Process;->destroy()V
 
     :cond_a
     throw p0
@@ -1145,7 +1135,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "user is in home network plmn = "
+    const-string/jumbo v9, "user is in home network plmn = "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1173,7 +1163,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "user is not in home network sim plmn = "
+    const-string/jumbo v9, "user is not in home network sim plmn = "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1537,7 +1527,7 @@
 
     const-string v7, "405"
 
-    invoke-static {v6, v7}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v7}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -1722,11 +1712,11 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     :try_start_1
-    invoke-static {v2, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v1, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

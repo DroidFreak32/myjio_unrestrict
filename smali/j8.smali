@@ -1,39 +1,34 @@
-.class public final Lj8;
+.class public final synthetic Lj8;
 .super Ljava/lang/Object;
-.source "TraceCompat.java"
+.source "lambda"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lcom/app/cinemasdk/ui/MainActivity;
 
 
 # direct methods
-.method public static a()V
-    .locals 2
+.method public synthetic constructor <init>(Lcom/app/cinemasdk/ui/MainActivity;)V
+    .locals 0
 
-    .line 3
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x12
+    iput-object p1, p0, Lj8;->a:Lcom/app/cinemasdk/ui/MainActivity;
 
-    if-lt v0, v1, :cond_0
-
-    .line 4
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    :cond_0
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)V
-    .locals 2
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+# virtual methods
+.method public final run()V
+    .locals 1
 
-    const/16 v1, 0x12
+    iget-object v0, p0, Lj8;->a:Lcom/app/cinemasdk/ui/MainActivity;
 
-    if-lt v0, v1, :cond_0
+    invoke-virtual {v0}, Lcom/app/cinemasdk/ui/MainActivity;->m()V
 
-    .line 2
-    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method

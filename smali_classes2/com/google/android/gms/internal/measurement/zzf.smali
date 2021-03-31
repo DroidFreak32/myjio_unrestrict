@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzf;
 .super Lcom/google/android/gms/internal/measurement/zza;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Lcom/google/android/gms/internal/measurement/zzd;
@@ -22,6 +22,11 @@
 # virtual methods
 .method public final zza(Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zza;->a_()Landroid/os/Parcel;

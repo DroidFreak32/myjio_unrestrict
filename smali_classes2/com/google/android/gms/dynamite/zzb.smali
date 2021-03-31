@@ -1,8 +1,9 @@
 .class public final Lcom/google/android/gms/dynamite/zzb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
-.implements Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy;
+.implements Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;
 
 
 # direct methods
@@ -17,52 +18,29 @@
 
 
 # virtual methods
-.method public final zza(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;)Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;
-
-    invoke-direct {v0}, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;-><init>()V
-
-    const/4 v1, 0x1
+.method public final zza(Landroid/content/Context;Ljava/lang/String;)I
+    .locals 0
 
     .line 2
-    invoke-interface {p3, p1, p2, v1}, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;->zza(Landroid/content/Context;Ljava/lang/String;Z)I
-
-    move-result v2
-
-    iput v2, v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;->zzis:I
-
-    .line 3
-    iget v2, v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;->zzis:I
-
-    if-eqz v2, :cond_0
-
-    .line 4
-    iput v1, v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;->zzit:I
-
-    goto :goto_0
-
-    .line 5
-    :cond_0
-    invoke-interface {p3, p1, p2}, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zza;->getLocalVersion(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {p1, p2}, Lcom/google/android/gms/dynamite/DynamiteModule;->getLocalVersion(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result p1
 
-    iput p1, v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;->zzir:I
+    return p1
+.end method
 
-    .line 6
-    iget p1, v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;->zzir:I
+.method public final zza(Landroid/content/Context;Ljava/lang/String;Z)I
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/dynamite/DynamiteModule$LoadingException;
+        }
+    .end annotation
 
-    if-eqz p1, :cond_1
+    .line 1
+    invoke-static {p1, p2, p3}, Lcom/google/android/gms/dynamite/DynamiteModule;->zza(Landroid/content/Context;Ljava/lang/String;Z)I
 
-    const/4 p1, -0x1
+    move-result p1
 
-    .line 7
-    iput p1, v0, Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy$zzb;->zzit:I
-
-    :cond_1
-    :goto_0
-    return-object v0
+    return p1
 .end method

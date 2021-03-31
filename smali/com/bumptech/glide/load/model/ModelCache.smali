@@ -23,11 +23,11 @@
 
 
 # static fields
-.field public static final DEFAULT_SIZE:I = 0xfa
+.field private static final DEFAULT_SIZE:I = 0xfa
 
 
 # instance fields
-.field public final cache:Lcom/bumptech/glide/util/LruCache;
+.field private final cache:Lcom/bumptech/glide/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/util/LruCache<",
@@ -81,6 +81,9 @@
 
 .method public get(Ljava/lang/Object;II)Ljava/lang/Object;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;II)TB;"

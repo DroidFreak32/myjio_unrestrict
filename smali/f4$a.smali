@@ -1,39 +1,40 @@
-.class public Lf4$a;
+.class public interface abstract Lf4$a;
 .super Ljava/lang/Object;
-.source "CardViewApi17Impl.java"
-
-# interfaces
-.implements Ll4$a;
+.source "AdapterHelper.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lf4;->a()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lf4;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
+    accessFlags = 0x609
+    name = "a"
 .end annotation
 
 
-# direct methods
-.method public constructor <init>(Lf4;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(II)V
 .end method
 
+.method public abstract b(Lf4$b;)V
+.end method
 
-# virtual methods
-.method public a(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/graphics/Paint;)V
-    .locals 0
+.method public abstract c(Lf4$b;)V
+.end method
 
-    .line 1
-    invoke-virtual {p1, p2, p3, p3, p4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+.method public abstract d(II)V
+.end method
 
-    return-void
+.method public abstract e(IILjava/lang/Object;)V
+.end method
+
+.method public abstract f(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+.end method
+
+.method public abstract g(II)V
+.end method
+
+.method public abstract h(II)V
 .end method

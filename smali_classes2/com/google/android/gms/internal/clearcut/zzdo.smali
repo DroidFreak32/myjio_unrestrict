@@ -10,6 +10,11 @@
 .end method
 
 .method public abstract zzb(Lcom/google/android/gms/internal/clearcut/zzbn;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzbc()Lcom/google/android/gms/internal/clearcut/zzdp;

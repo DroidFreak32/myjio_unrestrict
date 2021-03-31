@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+.annotation build Landroidx/annotation/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/appcompat/app/AppCompatDelegateImpl;
 .end annotation
@@ -46,7 +55,7 @@
     :try_start_0
     iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$m;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->w:Landroid/content/Context;
+    iget-object v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->e:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
     :try_end_0
@@ -63,6 +72,8 @@
 .end method
 
 .method public abstract b()Landroid/content/IntentFilter;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract c()I
@@ -110,7 +121,7 @@
     :cond_1
     iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$m;->b:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget-object v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->w:Landroid/content/Context;
+    iget-object v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->e:Landroid/content/Context;
 
     iget-object v2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$m;->a:Landroid/content/BroadcastReceiver;
 

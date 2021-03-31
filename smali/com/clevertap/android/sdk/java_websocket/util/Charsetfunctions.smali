@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final codingErrorAction:Ljava/nio/charset/CodingErrorAction;
+.field private static final codingErrorAction:Ljava/nio/charset/CodingErrorAction;
 
-.field public static final utf8d:[I
+.field private static final utf8d:[I
 
 
 # direct methods
@@ -434,7 +434,7 @@
     .end array-data
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -445,28 +445,18 @@
 
 .method public static asciiBytes(Ljava/lang/String;)[B
     .locals 1
-
-    :try_start_0
-    const-string v0, "ASCII"
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 1
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+    sget-object v0, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object p0
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
-
-    :catch_0
-    move-exception p0
-
-    .line 2
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidEncodingException;
-
-    invoke-direct {v0, p0}, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidEncodingException;-><init>(Ljava/io/UnsupportedEncodingException;)V
-
-    throw v0
 .end method
 
 .method public static isValidUTF8(Ljava/nio/ByteBuffer;)Z
@@ -538,6 +528,9 @@
 
 .method public static stringAscii([B)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 1
     array-length v0, p0
@@ -553,39 +546,34 @@
 
 .method public static stringAscii([BII)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 2
-    :try_start_0
     new-instance v0, Ljava/lang/String;
 
-    const-string v1, "ASCII"
+    sget-object v1, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
-    invoke-direct {v0, p0, p1, p2, v1}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v0, p0, p1, p2, v1}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     return-object v0
-
-    :catch_0
-    move-exception p0
-
-    .line 3
-    new-instance p1, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidEncodingException;
-
-    invoke-direct {p1, p0}, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidEncodingException;-><init>(Ljava/io/UnsupportedEncodingException;)V
-
-    throw p1
 .end method
 
 .method public static stringUtf8(Ljava/nio/ByteBuffer;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
-    const-string v0, "UTF8"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 2
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
+    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v0}, Ljava/nio/charset/Charset;->newDecoder()Ljava/nio/charset/CharsetDecoder;
 
@@ -597,8 +585,6 @@
     invoke-virtual {v0, v1}, Ljava/nio/charset/CharsetDecoder;->onMalformedInput(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetDecoder;
 
     .line 4
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/util/Charsetfunctions;->codingErrorAction:Ljava/nio/charset/CodingErrorAction;
-
     invoke-virtual {v0, v1}, Ljava/nio/charset/CharsetDecoder;->onUnmappableCharacter(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetDecoder;
 
     .line 5
@@ -636,6 +622,15 @@
 
 .method public static stringUtf8([B)Ljava/lang/String;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -651,26 +646,16 @@
 
 .method public static utf8Bytes(Ljava/lang/String;)[B
     .locals 1
-
-    :try_start_0
-    const-string v0, "UTF8"
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 1
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object p0
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
-
-    :catch_0
-    move-exception p0
-
-    .line 2
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidEncodingException;
-
-    invoke-direct {v0, p0}, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidEncodingException;-><init>(Ljava/io/UnsupportedEncodingException;)V
-
-    throw v0
 .end method

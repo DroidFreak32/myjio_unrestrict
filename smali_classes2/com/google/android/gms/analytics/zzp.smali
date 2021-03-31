@@ -6,21 +6,21 @@
 
 
 # instance fields
-.field public final synthetic zzti:Ljava/util/Map;
+.field private final synthetic zzti:Ljava/util/Map;
 
-.field public final synthetic zztj:Z
+.field private final synthetic zztj:Z
 
-.field public final synthetic zztk:Ljava/lang/String;
+.field private final synthetic zztk:Ljava/lang/String;
 
-.field public final synthetic zztl:J
+.field private final synthetic zztl:J
 
-.field public final synthetic zztm:Z
+.field private final synthetic zztm:Z
 
-.field public final synthetic zztn:Z
+.field private final synthetic zztn:Z
 
-.field public final synthetic zzto:Ljava/lang/String;
+.field private final synthetic zzto:Ljava/lang/String;
 
-.field public final synthetic zztp:Lcom/google/android/gms/analytics/Tracker;
+.field private final synthetic zztp:Lcom/google/android/gms/analytics/Tracker;
 
 
 # direct methods

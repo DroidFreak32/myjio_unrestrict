@@ -1,50 +1,51 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzavt;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/ads/zzavt;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzavq;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<P:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# direct methods
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.rewarded.client.IRewardedAdSkuListener"
+
+    .line 1
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract getKeyType()Ljava/lang/String;
-.end method
-
-.method public abstract getVersion()I
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzbbu;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
+.method public final zza(Lcom/google/android/gms/internal/ads/zzavc;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zzbbu;",
-            ")TP;"
+            Landroid/os/RemoteException;
         }
     .end annotation
-.end method
 
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzbel;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zzbel;",
-            ")TP;"
-        }
-    .end annotation
-.end method
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-.method public abstract zzb(Lcom/google/android/gms/internal/ads/zzbbu;)Lcom/google/android/gms/internal/ads/zzbel;
-.end method
+    move-result-object v0
 
-.method public abstract zzb(Lcom/google/android/gms/internal/ads/zzbel;)Lcom/google/android/gms/internal/ads/zzbel;
-.end method
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-.method public abstract zzc(Lcom/google/android/gms/internal/ads/zzbbu;)Lcom/google/android/gms/internal/ads/zzayv;
+    .line 3
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 4
+    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 p1, 0x2
+
+    .line 5
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
+
+    return-void
 .end method

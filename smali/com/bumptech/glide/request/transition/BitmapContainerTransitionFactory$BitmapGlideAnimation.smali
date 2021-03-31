@@ -28,7 +28,7 @@
 # instance fields
 .field public final synthetic this$0:Lcom/bumptech/glide/request/transition/BitmapContainerTransitionFactory;
 
-.field public final transition:Lcom/bumptech/glide/request/transition/Transition;
+.field private final transition:Lcom/bumptech/glide/request/transition/Transition;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/transition/Transition<",

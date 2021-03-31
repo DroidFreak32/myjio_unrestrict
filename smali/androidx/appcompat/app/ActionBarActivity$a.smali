@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public s:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.field public a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # direct methods
@@ -91,11 +91,11 @@
     if-eqz v0, :cond_0
 
     .line 2
-    new-instance v0, Lk0;
+    new-instance v0, Landroidx/appcompat/app/NpciLayoutChangeListener;
 
-    invoke-direct {v0, p1}, Lk0;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v0, p1}, Landroidx/appcompat/app/NpciLayoutChangeListener;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Landroidx/appcompat/app/ActionBarActivity$a;->s:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iput-object v0, p0, Landroidx/appcompat/app/ActionBarActivity$a;->a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     .line 3
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
@@ -110,7 +110,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/appcompat/app/ActionBarActivity$a;->s:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iget-object v1, p0, Landroidx/appcompat/app/ActionBarActivity$a;->a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 

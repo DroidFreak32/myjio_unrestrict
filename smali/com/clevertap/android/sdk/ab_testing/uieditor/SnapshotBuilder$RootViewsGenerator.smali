@@ -28,13 +28,13 @@
 
 
 # instance fields
-.field public activitySet:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$ActivitySet;
+.field private activitySet:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$ActivitySet;
 
-.field public final clientDensity:I
+.field private final clientDensity:I
 
-.field public final displayMetrics:Landroid/util/DisplayMetrics;
+.field private final displayMetrics:Landroid/util/DisplayMetrics;
 
-.field public final rootViews:Ljava/util/List;
+.field private final rootViews:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -44,7 +44,7 @@
     .end annotation
 .end field
 
-.field public final screenshot:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$Screenshot;
+.field private final screenshot:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$Screenshot;
 
 
 # direct methods
@@ -119,16 +119,17 @@
 
     aput-object v8, v7, v9
 
+    .line 3
     invoke-virtual {v4, v5, v7}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
 
-    .line 3
+    .line 4
     invoke-virtual {v4, v3}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     new-array v5, v6, [Ljava/lang/Object;
 
-    .line 4
+    .line 5
     sget-object v6, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     aput-object v6, v5, v2
@@ -141,9 +142,7 @@
 
     aput-object v6, v5, v3
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v6
+    sget-object v6, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     aput-object v6, v5, v9
 
@@ -164,7 +163,7 @@
     :catch_0
     move-exception v4
 
-    .line 5
+    .line 6
     invoke-virtual {v4}, Ljava/lang/ClassCastException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object v4
@@ -178,7 +177,7 @@
     :catch_1
     const-string v4, "Can\'t access createSnapshot, using drawCache"
 
-    .line 6
+    .line 7
     invoke-static {v4}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
     goto :goto_0
@@ -186,7 +185,7 @@
     :catch_2
     move-exception v4
 
-    .line 7
+    .line 8
     invoke-virtual {v4}, Ljava/lang/reflect/InvocationTargetException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object v4
@@ -200,7 +199,7 @@
     :catch_3
     const-string v4, "Can\'t call createSnapshot with arguments"
 
-    .line 8
+    .line 9
     invoke-static {v4}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
     goto :goto_0
@@ -208,7 +207,7 @@
     :catch_4
     const-string v4, "Can\'t call createSnapshot, will use drawCache"
 
-    .line 9
+    .line 10
     invoke-static {v4}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
     :goto_0
@@ -217,7 +216,7 @@
     :goto_1
     if-nez v4, :cond_0
 
-    .line 10
+    .line 11
     :try_start_1
     invoke-virtual {v0}, Landroid/view/View;->isDrawingCacheEnabled()Z
 
@@ -227,13 +226,13 @@
 
     move-result-object v1
 
-    .line 11
+    .line 12
     invoke-virtual {v0, v3}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
 
-    .line 12
+    .line 13
     invoke-virtual {v0, v3}, Landroid/view/View;->buildDrawingCache(Z)V
 
-    .line 13
+    .line 14
     invoke-virtual {v0}, Landroid/view/View;->getDrawingCache()Landroid/graphics/Bitmap;
 
     move-result-object v3
@@ -247,7 +246,7 @@
     :catch_5
     move-exception v3
 
-    .line 14
+    .line 15
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -274,7 +273,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 15
+    .line 16
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getDensity()I
 
     move-result v5
@@ -287,18 +286,18 @@
 
     div-float/2addr v3, v5
 
-    .line 16
+    .line 17
     :cond_1
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
 
-    .line 17
+    .line 18
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v6
 
-    .line 18
+    .line 19
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
@@ -315,7 +314,7 @@
 
     double-to-int v7, v7
 
-    .line 19
+    .line 20
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v8
@@ -338,7 +337,7 @@
 
     if-lez v8, :cond_2
 
-    .line 20
+    .line 21
     iget-object v5, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;->screenshot:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$Screenshot;
 
     const/16 v6, 0xa0
@@ -348,21 +347,21 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 21
+    .line 22
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     if-nez v1, :cond_3
 
-    .line 22
+    .line 23
     invoke-virtual {v0, v2}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
 
-    .line 23
+    .line 24
     :cond_3
     iput v3, p1, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootView;->scale:F
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;->screenshot:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$Screenshot;
 
     iput-object v0, p1, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootView;->screenshot:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$Screenshot;
@@ -374,6 +373,11 @@
 # virtual methods
 .method public bridge synthetic call()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$RootViewsGenerator;->call()Ljava/util/List;

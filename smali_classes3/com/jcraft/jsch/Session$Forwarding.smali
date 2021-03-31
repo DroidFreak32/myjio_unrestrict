@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/jcraft/jsch/Session;)V
+.method private constructor <init>(Lcom/jcraft/jsch/Session;)V
     .locals 1
 
     .line 1

@@ -73,6 +73,8 @@
 
 .method public checkConditions()V
     .locals 5
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/gcm/Task$Builder;->gcmTaskService:Ljava/lang/String;
@@ -310,6 +312,9 @@
 .end method
 
 .method public abstract setPersisted(Z)Lcom/google/android/gms/gcm/Task$Builder;
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.RECEIVE_BOOT_COMPLETED"
+    .end annotation
 .end method
 
 .method public abstract setRequiredNetwork(I)Lcom/google/android/gms/gcm/Task$Builder;

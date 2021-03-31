@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public constructor <init>(JJ)V
+.method private constructor <init>(JJ)V
     .locals 0
 
     .line 2

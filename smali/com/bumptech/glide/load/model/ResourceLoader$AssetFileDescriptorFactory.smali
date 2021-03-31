@@ -28,7 +28,7 @@
 
 
 # instance fields
-.field public final resources:Landroid/content/res/Resources;
+.field private final resources:Landroid/content/res/Resources;
 
 
 # direct methods

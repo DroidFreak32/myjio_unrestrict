@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final NO_ANNOTATIONS:Lcom/fasterxml/jackson/databind/util/Annotations;
+.field private static final NO_ANNOTATIONS:Lcom/fasterxml/jackson/databind/util/Annotations;
 
 
 # instance fields
-.field public final _bindings:Lcom/fasterxml/jackson/databind/type/TypeBindings;
+.field private final _bindings:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-.field public final _class:Ljava/lang/Class;
+.field private final _class:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -19,7 +19,7 @@
     .end annotation
 .end field
 
-.field public final _config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
+.field private final _config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final _intr:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+.field private final _intr:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-.field public final _mixInResolver:Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+.field private final _mixInResolver:Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
-.field public final _primaryMixin:Ljava/lang/Class;
+.field private final _primaryMixin:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -41,7 +41,7 @@
     .end annotation
 .end field
 
-.field public final _type:Lcom/fasterxml/jackson/databind/JavaType;
+.field private final _type:Lcom/fasterxml/jackson/databind/JavaType;
 
 
 # direct methods
@@ -106,22 +106,18 @@
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    move-result-object p1
+    move-result-object p2
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p2, 0x0
 
     :goto_0
-    iput-object p1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_intr:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+    iput-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_intr:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .line 8
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
-
-    iget-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_class:Ljava/lang/Class;
-
-    invoke-interface {p1, p2}, Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;->findMixInClassFor(Ljava/lang/Class;)Ljava/lang/Class;
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;->findMixInClassFor(Ljava/lang/Class;)Ljava/lang/Class;
 
     move-result-object p1
 
@@ -164,9 +160,9 @@
     .line 14
     invoke-static {}, Lcom/fasterxml/jackson/databind/type/TypeBindings;->emptyBindings()Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    move-result-object p2
+    move-result-object p3
 
-    iput-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_bindings:Lcom/fasterxml/jackson/databind/type/TypeBindings;
+    iput-object p3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_bindings:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
     if-nez p1, :cond_0
 
@@ -182,9 +178,9 @@
     :cond_0
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isAnnotationProcessingEnabled()Z
 
-    move-result p2
+    move-result p3
 
-    if-eqz p2, :cond_1
+    if-eqz p3, :cond_1
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
@@ -194,10 +190,6 @@
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_intr:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .line 18
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
-
-    iget-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->_class:Ljava/lang/Class;
-
     invoke-interface {p1, p2}, Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;->findMixInClassFor(Ljava/lang/Class;)Ljava/lang/Class;
 
     move-result-object p1
@@ -743,7 +735,7 @@
     return-object p0
 .end method
 
-.method public static skippableArray(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Ljava/lang/Class;)Z
+.method private static skippableArray(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Ljava/lang/Class;)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

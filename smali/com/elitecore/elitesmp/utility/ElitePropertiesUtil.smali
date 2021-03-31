@@ -3,13 +3,13 @@
 
 
 # static fields
-.field public static volatile elitePropertiesUtil:Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;
+.field private static volatile elitePropertiesUtil:Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;
 
 
 # instance fields
-.field public MODULE:Ljava/lang/String;
+.field private MODULE:Ljava/lang/String;
 
-.field public eliteSMPProperites:Ljava/util/Properties;
+.field private eliteSMPProperites:Ljava/util/Properties;
 
 
 # direct methods
@@ -104,8 +104,6 @@
     iget-object v1, p0, Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;->eliteSMPProperites:Ljava/util/Properties;
 
     if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/elitecore/elitesmp/utility/ElitePropertiesUtil;->eliteSMPProperites:Ljava/util/Properties;
 
     invoke-virtual {v1, p1}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
 

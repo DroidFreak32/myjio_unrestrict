@@ -12,27 +12,27 @@
 
 
 # instance fields
-.field public final _allocator:Lcom/fasterxml/jackson/core/util/BufferRecycler;
+.field private final _allocator:Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
-.field public _currentSegment:[C
+.field private _currentSegment:[C
 
-.field public _currentSize:I
+.field private _currentSize:I
 
-.field public _hasSegments:Z
+.field private _hasSegments:Z
 
-.field public _inputBuffer:[C
+.field private _inputBuffer:[C
 
-.field public _inputLen:I
+.field private _inputLen:I
 
-.field public _inputStart:I
+.field private _inputStart:I
 
-.field public _resultArray:[C
+.field private _resultArray:[C
 
-.field public _resultString:Ljava/lang/String;
+.field private _resultString:Ljava/lang/String;
 
-.field public _segmentSize:I
+.field private _segmentSize:I
 
-.field public _segments:Ljava/util/ArrayList;
+.field private _segments:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -665,6 +665,11 @@
 
 .method public contentsAsDecimal()Ljava/math/BigDecimal;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultArray:[C
@@ -733,6 +738,11 @@
 
 .method public contentsAsDouble()D
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NumberFormatException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsString()Ljava/lang/String;
@@ -908,11 +918,13 @@
     if-eqz v0, :cond_0
 
     .line 3
-    new-instance v1, Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    invoke-direct {v1, v0}, Ljava/lang/String;-><init>([C)V
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultArray:[C
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultString:Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultString:Ljava/lang/String;
 
     goto :goto_2
 
@@ -925,11 +937,11 @@
     if-ltz v0, :cond_2
 
     .line 5
-    iget v2, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputLen:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputLen:I
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    if-ge v2, v3, :cond_1
+    if-ge v0, v2, :cond_1
 
     .line 6
     iput-object v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultString:Ljava/lang/String;
@@ -938,13 +950,17 @@
 
     .line 7
     :cond_1
-    new-instance v1, Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputBuffer:[C
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputBuffer:[C
 
-    invoke-direct {v1, v3, v0, v2}, Ljava/lang/String;-><init>([CII)V
+    iget v2, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputStart:I
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultString:Ljava/lang/String;
+    iget v3, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputLen:I
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([CII)V
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultString:Ljava/lang/String;
 
     goto :goto_2
 
@@ -1042,6 +1058,11 @@
 
 .method public contentsToWriter(Ljava/io/Writer;)I
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultArray:[C
@@ -1875,9 +1896,9 @@
     iput p1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_currentSize:I
 
     .line 2
-    iget p1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_segmentSize:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_segmentSize:I
 
-    if-lez p1, :cond_0
+    if-lez v0, :cond_0
 
     .line 3
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsString()Ljava/lang/String;
@@ -1886,17 +1907,14 @@
 
     return-object p1
 
-    .line 4
     :cond_0
-    iget p1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_currentSize:I
-
     if-nez p1, :cond_1
 
     const-string p1, ""
 
     goto :goto_0
 
-    .line 5
+    .line 4
     :cond_1
     new-instance v0, Ljava/lang/String;
 
@@ -1908,7 +1926,7 @@
 
     move-object p1, v0
 
-    .line 6
+    .line 5
     :goto_0
     iput-object p1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultString:Ljava/lang/String;
 

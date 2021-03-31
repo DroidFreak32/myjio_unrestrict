@@ -26,6 +26,11 @@
 # virtual methods
 .method public init()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const-string v0, "SHA1withDSA"
 
@@ -50,6 +55,11 @@
 
 .method public setPrvKey([B[B[B[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/security/spec/DSAPrivateKeySpec;
@@ -89,6 +99,11 @@
 
 .method public setPubKey([B[B[B[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/security/spec/DSAPublicKeySpec;
@@ -128,6 +143,11 @@
 
 .method public sign()[B
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/SignatureDSA;->signature:Ljava/security/Signature;
@@ -146,125 +166,99 @@
     .line 3
     new-array v2, v1, [B
 
-    .line 4
-    array-length v3, v2
+    const/4 v3, 0x4
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x4
+    .line 4
+    invoke-static {v0, v3, v2, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v0, v5, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    add-int/2addr v3, v1
 
-    add-int/2addr v5, v1
+    const/4 v5, 0x1
 
-    const/4 v1, 0x1
+    add-int/2addr v3, v5
 
-    add-int/2addr v5, v1
-
-    add-int/lit8 v3, v5, 0x1
+    add-int/lit8 v6, v3, 0x1
 
     .line 5
-    aget-byte v5, v0, v5
+    aget-byte v3, v0, v3
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     .line 6
-    new-array v5, v5, [B
+    new-array v7, v3, [B
 
     .line 7
-    array-length v6, v5
-
-    invoke-static {v0, v3, v5, v4, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v6, v7, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     const/16 v0, 0x28
 
-    new-array v3, v0, [B
+    new-array v0, v0, [B
 
-    .line 8
-    array-length v6, v2
+    const/16 v6, 0x14
 
-    const/16 v7, 0x14
+    if-le v1, v6, :cond_0
 
-    if-le v6, v7, :cond_0
-
-    const/4 v6, 0x1
+    const/4 v8, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
     :goto_0
-    array-length v8, v2
+    if-le v1, v6, :cond_1
 
-    if-le v8, v7, :cond_1
-
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
     goto :goto_1
 
     :cond_1
-    array-length v8, v2
-
-    rsub-int/lit8 v8, v8, 0x14
+    rsub-int/lit8 v9, v1, 0x14
 
     :goto_1
-    array-length v9, v2
+    if-le v1, v6, :cond_2
 
-    if-le v9, v7, :cond_2
+    const/16 v1, 0x14
 
-    const/16 v9, 0x14
+    .line 8
+    :cond_2
+    invoke-static {v2, v8, v0, v9, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    if-le v3, v6, :cond_3
+
+    const/4 v4, 0x1
+
+    :cond_3
+    if-le v3, v6, :cond_4
+
+    const/16 v1, 0x14
 
     goto :goto_2
 
-    :cond_2
-    array-length v9, v2
+    :cond_4
+    rsub-int/lit8 v1, v3, 0x28
 
     :goto_2
-    invoke-static {v2, v6, v3, v8, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    if-le v3, v6, :cond_5
+
+    const/16 v3, 0x14
 
     .line 9
-    array-length v2, v5
-
-    if-le v2, v7, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    const/4 v1, 0x0
-
-    :goto_3
-    array-length v2, v5
-
-    if-le v2, v7, :cond_4
-
-    const/16 v0, 0x14
-
-    goto :goto_4
-
-    :cond_4
-    array-length v2, v5
-
-    sub-int/2addr v0, v2
-
-    :goto_4
-    array-length v2, v5
-
-    if-le v2, v7, :cond_5
-
-    goto :goto_5
-
     :cond_5
-    array-length v7, v5
+    invoke-static {v7, v4, v0, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    :goto_5
-    invoke-static {v5, v1, v3, v0, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v3
+    return-object v0
 .end method
 
 .method public update([B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/SignatureDSA;->signature:Ljava/security/Signature;
@@ -276,6 +270,11 @@
 
 .method public verify([B)Z
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

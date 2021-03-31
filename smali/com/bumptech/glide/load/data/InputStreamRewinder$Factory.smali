@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final byteArrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+.field private final byteArrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
 
 # direct methods
@@ -47,6 +47,9 @@
 # virtual methods
 .method public build(Ljava/io/InputStream;)Lcom/bumptech/glide/load/data/DataRewinder;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -70,6 +73,8 @@
 
 .method public bridge synthetic build(Ljava/lang/Object;)Lcom/bumptech/glide/load/data/DataRewinder;
     .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     check-cast p1, Ljava/io/InputStream;
@@ -83,6 +88,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

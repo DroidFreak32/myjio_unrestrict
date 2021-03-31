@@ -18,15 +18,15 @@
 
 
 # static fields
-.field public static final EMPTY_SEQUENCE:Ljava/lang/String; = ""
+.field private static final EMPTY_SEQUENCE:Ljava/lang/String; = ""
 
-.field public static final INDENT:Ljava/lang/String; = "  "
+.field private static final INDENT:Ljava/lang/String; = "  "
 
 
 # instance fields
-.field public final appendable:Ljava/lang/Appendable;
+.field private final appendable:Ljava/lang/Appendable;
 
-.field public printedNewLine:Z
+.field private printedNewLine:Z
 
 
 # direct methods
@@ -49,6 +49,12 @@
 
 .method private safeSequence(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 0
+    .param p1    # Ljava/lang/CharSequence;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     if-nez p1, :cond_0
 
@@ -62,6 +68,11 @@
 # virtual methods
 .method public append(C)Ljava/lang/Appendable;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/bumptech/glide/load/engine/GlideException$IndentedAppendable;->printedNewLine:Z
@@ -101,6 +112,15 @@
 
 .method public append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
     .locals 2
+    .param p1    # Ljava/lang/CharSequence;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 6
     invoke-direct {p0, p1}, Lcom/bumptech/glide/load/engine/GlideException$IndentedAppendable;->safeSequence(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -123,6 +143,15 @@
 
 .method public append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
     .locals 3
+    .param p1    # Ljava/lang/CharSequence;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 8
     invoke-direct {p0, p1}, Lcom/bumptech/glide/load/engine/GlideException$IndentedAppendable;->safeSequence(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;

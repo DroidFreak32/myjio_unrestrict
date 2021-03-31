@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/face/internal/client/zza;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -33,7 +34,7 @@
     .end annotation
 .end field
 
-.field public final zzcz:[Landroid/graphics/PointF;
+.field public final zzdf:[Landroid/graphics/PointF;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x2
     .end annotation
@@ -45,9 +46,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/vision/face/internal/client/zzb;
+    new-instance v0, Lcom/google/android/gms/vision/face/internal/client/zzc;
 
-    invoke-direct {v0}, Lcom/google/android/gms/vision/face/internal/client/zzb;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/vision/face/internal/client/zzc;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/vision/face/internal/client/zza;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -73,7 +74,7 @@
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/internal/client/zza;->zzcz:[Landroid/graphics/PointF;
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/internal/client/zza;->zzdf:[Landroid/graphics/PointF;
 
     .line 3
     iput p2, p0, Lcom/google/android/gms/vision/face/internal/client/zza;->type:I
@@ -92,7 +93,7 @@
     move-result v0
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/vision/face/internal/client/zza;->zzcz:[Landroid/graphics/PointF;
+    iget-object v1, p0, Lcom/google/android/gms/vision/face/internal/client/zza;->zzdf:[Landroid/graphics/PointF;
 
     const/4 v2, 0x2
 

@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "AnalyticsSyncRetryReceiver"
+.field private static final MODULE:Ljava/lang/String; = "AnalyticsSyncRetryReceiver"
 
 
 # instance fields
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
 
 # direct methods
@@ -42,7 +42,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
 
-    const-string p2, "syncRetriedEndTime"
+    const-string/jumbo p2, "syncRetriedEndTime"
 
     const-string v0, "AnalyticsSyncRetryReceiver"
 
@@ -186,13 +186,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_0
-
     :catch_1
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :goto_0
     return-void
 .end method

@@ -3,27 +3,27 @@
 
 
 # static fields
-.field public static instance:Lcom/elitecorelib/core/logger/EliteMail; = null
+.field private static instance:Lcom/elitecorelib/core/logger/EliteMail; = null
 
-.field public static mPassword:Ljava/lang/String; = ""
+.field private static mPassword:Ljava/lang/String; = ""
 
-.field public static mUserName:Ljava/lang/String; = ""
+.field private static mUserName:Ljava/lang/String; = ""
 
 
 # instance fields
 .field public AppName:Ljava/lang/String;
 
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public gMailSender:Lb30;
+.field private gMailSender:Lcom/elitecorelib/core/logger/d;
 
 .field public mailTaskCompleteListner:Lcom/elitecorelib/core/listner/OnMailTaskCompleteListner;
 
-.field public zipFolder:Ljava/io/File;
+.field private zipFolder:Ljava/io/File;
 
-.field public zipLocation:Ljava/io/File;
+.field private zipLocation:Ljava/io/File;
 
 
 # direct methods
@@ -55,18 +55,18 @@
     return-void
 .end method
 
-.method public static synthetic access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lb30;
+.method public static synthetic access$100(Lcom/elitecorelib/core/logger/EliteMail;)Lcom/elitecorelib/core/logger/d;
     .locals 0
 
-    iget-object p0, p0, Lcom/elitecorelib/core/logger/EliteMail;->gMailSender:Lb30;
+    iget-object p0, p0, Lcom/elitecorelib/core/logger/EliteMail;->gMailSender:Lcom/elitecorelib/core/logger/d;
 
     return-object p0
 .end method
 
-.method public static synthetic access$102(Lcom/elitecorelib/core/logger/EliteMail;Lb30;)Lb30;
+.method public static synthetic access$102(Lcom/elitecorelib/core/logger/EliteMail;Lcom/elitecorelib/core/logger/d;)Lcom/elitecorelib/core/logger/d;
     .locals 0
 
-    iput-object p1, p0, Lcom/elitecorelib/core/logger/EliteMail;->gMailSender:Lb30;
+    iput-object p1, p0, Lcom/elitecorelib/core/logger/EliteMail;->gMailSender:Lcom/elitecorelib/core/logger/d;
 
     return-object p1
 .end method
@@ -409,7 +409,7 @@
 
     if-eqz v0, :cond_0
 
-    new-instance v0, La30;
+    new-instance v0, Lsa;
 
     sget-object v7, Lcom/elitecorelib/core/logger/EliteMail;->mUserName:Ljava/lang/String;
 
@@ -421,7 +421,7 @@
 
     move-object v6, p1
 
-    invoke-direct/range {v4 .. v10}, La30;-><init>(Lcom/elitecorelib/core/logger/EliteMail;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lz20;)V
+    invoke-direct/range {v4 .. v10}, Lsa;-><init>(Lcom/elitecorelib/core/logger/EliteMail;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lra;)V
 
     const/4 p1, 0x0
 
@@ -446,25 +446,25 @@
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v0, "Username & Password required."
+    const-string v0, "EliteMail"
 
-    const-string v1, "EliteMail"
+    const-string v1, "Username & Password required."
 
-    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     const-string v2, "Please invoke userAuthontication method before call sendMail method."
 
-    invoke-virtual {p1, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    invoke-virtual {p1, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v0, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_2
     return-void
@@ -544,7 +544,7 @@
 
     invoke-direct {p0, p2, v1, p1}, Lcom/elitecorelib/core/logger/EliteMail;->zipSubFolder(Ljava/util/zip/ZipOutputStream;Ljava/io/File;I)V
 
-    move-object v0, v3
+    move-object v6, v3
 
     goto :goto_1
 
@@ -602,7 +602,7 @@
     goto :goto_0
 
     :cond_1
-    move-object v3, v6
+    move-object v3, v0
 
     :goto_1
     :try_start_5
@@ -610,14 +610,14 @@
 
     invoke-virtual {p2}, Ljava/util/zip/ZipOutputStream;->close()V
 
-    if-eqz v0, :cond_2
+    if-eqz v3, :cond_2
 
-    invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
     :cond_2
-    if-eqz v3, :cond_3
+    if-eqz v6, :cond_3
 
-    invoke-virtual {v3}, Ljava/io/BufferedInputStream;->close()V
+    invoke-virtual {v6}, Ljava/io/BufferedInputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
@@ -637,51 +637,42 @@
     :catchall_0
     move-exception p1
 
-    goto/16 :goto_9
+    goto :goto_4
 
     :catch_1
     move-exception p1
 
-    goto :goto_4
+    goto :goto_6
 
     :catchall_1
     move-exception p1
 
     move-object v6, v3
 
-    goto :goto_9
+    goto :goto_4
 
     :catch_2
     move-exception p1
 
     move-object v6, v3
 
-    goto :goto_4
+    goto :goto_6
 
     :catchall_2
-    move-exception p1
-
-    move-object v6, v3
-
-    goto :goto_a
-
-    :catch_3
     move-exception p1
 
     move-object v0, v3
 
     goto :goto_3
 
-    :catchall_3
+    :catch_3
     move-exception p1
 
-    move-object p2, v3
+    move-object v0, v3
 
-    move-object v6, p2
+    goto :goto_5
 
-    goto :goto_a
-
-    :catch_4
+    :catchall_3
     move-exception p1
 
     move-object p2, v3
@@ -694,18 +685,33 @@
     :goto_4
     move-object v3, v4
 
-    goto :goto_5
+    goto :goto_b
+
+    :catch_4
+    move-exception p1
+
+    move-object p2, v3
+
+    move-object v0, p2
+
+    :goto_5
+    move-object v6, v0
+
+    :goto_6
+    move-object v3, v4
+
+    goto :goto_7
 
     :catchall_4
     move-exception p1
 
     move-object p2, v3
 
-    move-object v4, p2
+    move-object v0, p2
 
-    move-object v6, v4
+    move-object v6, v0
 
-    goto :goto_a
+    goto :goto_b
 
     :catch_5
     move-exception p1
@@ -716,7 +722,7 @@
 
     move-object v6, v0
 
-    :goto_5
+    :goto_7
     :try_start_6
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
     :try_end_6
@@ -727,15 +733,15 @@
     :try_start_7
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
 
-    goto :goto_6
+    goto :goto_8
 
     :catch_6
     move-exception p1
 
-    goto :goto_7
+    goto :goto_9
 
     :cond_4
-    :goto_6
+    :goto_8
     if-eqz p2, :cond_5
 
     invoke-virtual {p2}, Ljava/util/zip/ZipOutputStream;->close()V
@@ -752,46 +758,41 @@
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
 
-    goto :goto_8
+    goto :goto_a
 
-    :goto_7
+    :goto_9
     invoke-virtual {p1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     :cond_7
-    :goto_8
+    :goto_a
     return v2
 
     :catchall_5
     move-exception p1
 
-    move-object v4, v3
-
-    :goto_9
-    move-object v3, v0
-
-    :goto_a
-    if-eqz v4, :cond_8
+    :goto_b
+    if-eqz v3, :cond_8
 
     :try_start_8
-    invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
 
-    goto :goto_b
+    goto :goto_c
 
     :catch_7
     move-exception p2
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_8
-    :goto_b
+    :goto_c
     if-eqz p2, :cond_9
 
     invoke-virtual {p2}, Ljava/util/zip/ZipOutputStream;->close()V
 
     :cond_9
-    if-eqz v3, :cond_a
+    if-eqz v0, :cond_a
 
-    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
 
     :cond_a
     if-eqz v6, :cond_b
@@ -800,12 +801,12 @@
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_7
 
-    goto :goto_d
+    goto :goto_e
 
-    :goto_c
+    :goto_d
     invoke-virtual {p2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     :cond_b
-    :goto_d
+    :goto_e
     throw p1
 .end method

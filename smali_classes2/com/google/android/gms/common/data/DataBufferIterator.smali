@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/data/DataBufferIterator;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Ljava/util/Iterator;
@@ -22,7 +23,7 @@
 
 
 # instance fields
-.field public final zalk:Lcom/google/android/gms/common/data/DataBuffer;
+.field public final zaa:Lcom/google/android/gms/common/data/DataBuffer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/data/DataBuffer<",
@@ -31,7 +32,7 @@
     .end annotation
 .end field
 
-.field public zall:I
+.field public zab:I
 
 
 # direct methods
@@ -55,12 +56,12 @@
 
     check-cast p1, Lcom/google/android/gms/common/data/DataBuffer;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zalk:Lcom/google/android/gms/common/data/DataBuffer;
+    iput-object p1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zaa:Lcom/google/android/gms/common/data/DataBuffer;
 
     const/4 p1, -0x1
 
     .line 3
-    iput p1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iput p1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     return-void
 .end method
@@ -71,9 +72,9 @@
     .locals 3
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iget v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
-    iget-object v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zalk:Lcom/google/android/gms/common/data/DataBuffer;
+    iget-object v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zaa:Lcom/google/android/gms/common/data/DataBuffer;
 
     invoke-interface {v1}, Lcom/google/android/gms/common/data/DataBuffer;->getCount()I
 
@@ -109,13 +110,13 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zalk:Lcom/google/android/gms/common/data/DataBuffer;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zaa:Lcom/google/android/gms/common/data/DataBuffer;
 
-    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iput v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/common/data/DataBuffer;->get(I)Ljava/lang/Object;
 
@@ -127,7 +128,7 @@
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
-    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     const/16 v2, 0x2e
 

@@ -1,21 +1,13 @@
-.class public final Lcom/google/android/gms/common/api/internal/zabk;
+.class public abstract Lcom/google/android/gms/common/api/internal/zabk;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabk;->zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,13 +15,5 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabk;->zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaf(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)V
-
-    return-void
+.method public abstract zaa()V
 .end method

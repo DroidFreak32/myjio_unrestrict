@@ -1,145 +1,99 @@
-.class public final Lj9;
+.class public Lj9;
 .super Ljava/lang/Object;
-.source "LayoutInflaterCompat.java"
+
+# interfaces
+.implements Lcom/elitecore/wifi/listener/HttpConnectionCheckListner;
 
 
-# static fields
-.field public static a:Ljava/lang/reflect/Field;
-
-.field public static b:Z
+# instance fields
+.field public final synthetic a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
 
 # direct methods
-.method public static a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-    .locals 4
+.method public constructor <init>(Lcom/elitecore/wifi/api/EliteWiFiAPI;)V
+    .locals 0
 
-    .line 1
-    sget-boolean v0, Lj9;->b:Z
+    iput-object p1, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    const-string v1, "; inflation may have unexpected results."
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 2
-    :try_start_0
-    const-class v2, Landroid/view/LayoutInflater;
-
-    const-string v3, "mFactory2"
-
-    invoke-virtual {v2, v3}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v2
-
-    sput-object v2, Lj9;->a:Ljava/lang/reflect/Field;
-
-    .line 3
-    sget-object v2, Lj9;->a:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v2, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 4
-    :catch_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "forceSetFactory2 Could not find field \'mFactory2\' on class "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-class v3, Landroid/view/LayoutInflater;
-
-    .line 5
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 6
-    :goto_0
-    sput-boolean v0, Lj9;->b:Z
-
-    .line 7
-    :cond_0
-    sget-object v0, Lj9;->a:Ljava/lang/reflect/Field;
-
-    if-eqz v0, :cond_1
-
-    .line 8
-    :try_start_1
-    invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    .line 9
-    :catch_1
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "forceSetFactory2 could not set the Factory2 on LayoutInflater "
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    :cond_1
-    :goto_1
     return-void
 .end method
 
-.method public static b(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-    .locals 2
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
+# virtual methods
+.method public onResponseReceived(ILjava/lang/String;)V
+    .locals 1
 
-    .line 2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v0, 0xc8
 
-    const/16 v1, 0x15
+    if-eq p1, v0, :cond_2
 
-    if-ge v0, v1, :cond_1
+    const/16 v0, 0xd0
 
-    .line 3
-    invoke-virtual {p0}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
+    if-ne p1, v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_0
+    iget-object p1, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    invoke-static {p1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$408(Lcom/elitecore/wifi/api/EliteWiFiAPI;)I
+
+    iget-object p1, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    invoke-static {p1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$400(Lcom/elitecore/wifi/api/EliteWiFiAPI;)I
+
+    move-result p1
+
+    iget-object v0, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    invoke-static {v0}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$500(Lcom/elitecore/wifi/api/EliteWiFiAPI;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4
-    instance-of v1, v0, Landroid/view/LayoutInflater$Factory2;
+    array-length v0, v0
 
-    if-eqz v1, :cond_0
+    if-ge p1, v0, :cond_1
 
-    .line 5
-    check-cast v0, Landroid/view/LayoutInflater$Factory2;
+    iget-object p1, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
 
-    invoke-static {p0, v0}, Lj9;->a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    invoke-static {p1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$600(Lcom/elitecore/wifi/api/EliteWiFiAPI;)V
+
+    goto :goto_2
+
+    :cond_1
+    iget-object p1, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    invoke-static {p1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$300(Lcom/elitecore/wifi/api/EliteWiFiAPI;)Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1, p2}, Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;->getResponseData(Ljava/lang/String;)V
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    iget-object p1, p0, Lj9;->a:Lcom/elitecore/wifi/api/EliteWiFiAPI;
+
+    invoke-static {p1}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$300(Lcom/elitecore/wifi/api/EliteWiFiAPI;)Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 6
-    :cond_0
-    invoke-static {p0, p1}, Lj9;->a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    :catch_0
+    move-exception p1
 
-    :cond_1
-    :goto_0
+    invoke-static {}, Lcom/elitecore/wifi/api/EliteWiFiAPI;->access$100()Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    :goto_2
     return-void
 .end method

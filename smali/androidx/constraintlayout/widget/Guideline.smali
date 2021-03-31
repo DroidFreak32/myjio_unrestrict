@@ -90,7 +90,7 @@
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
 
     .line 2
-    iput p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->a:I
+    iput p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideBegin:I
 
     .line 3
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -109,7 +109,7 @@
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
 
     .line 2
-    iput p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->b:I
+    iput p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guideEnd:I
 
     .line 3
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -128,7 +128,7 @@
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
 
     .line 2
-    iput p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->c:F
+    iput p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->guidePercent:F
 
     .line 3
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

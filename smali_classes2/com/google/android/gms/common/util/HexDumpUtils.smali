@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/HexDumpUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -19,6 +20,25 @@
 
 .method public static dump([BIIZ)Ljava/lang/String;
     .locals 11
+    .param p0    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -69,20 +89,18 @@
 
     const/4 v0, 0x0
 
-    move v5, p1
+    move v4, p2
 
-    move p1, p2
-
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
     :goto_0
-    if-lez p1, :cond_c
+    if-lez v4, :cond_c
 
     const/16 v7, 0x8
 
-    if-nez v4, :cond_3
+    if-nez v5, :cond_3
 
     const/high16 v6, 0x10000
 
@@ -91,7 +109,7 @@
     new-array v6, v2, [Ljava/lang/Object;
 
     .line 4
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
@@ -111,7 +129,7 @@
     new-array v6, v2, [Ljava/lang/Object;
 
     .line 5
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
@@ -126,12 +144,12 @@
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_1
-    move v6, v5
+    move v6, p1
 
     goto :goto_2
 
     :cond_3
-    if-ne v4, v7, :cond_4
+    if-ne v5, v7, :cond_4
 
     const-string v8, " -"
 
@@ -143,7 +161,7 @@
     new-array v8, v2, [Ljava/lang/Object;
 
     .line 7
-    aget-byte v9, p0, v5
+    aget-byte v9, p0, p1
 
     and-int/lit16 v9, v9, 0xff
 
@@ -161,18 +179,18 @@
 
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 p1, p1, -0x1
+    add-int/lit8 v4, v4, -0x1
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     if-eqz p3, :cond_9
 
-    if-eq v4, v3, :cond_5
+    if-eq v5, v3, :cond_5
 
-    if-nez p1, :cond_9
+    if-nez v4, :cond_9
 
     :cond_5
-    rsub-int/lit8 v8, v4, 0x10
+    rsub-int/lit8 v8, v5, 0x10
 
     if-lez v8, :cond_6
 
@@ -205,7 +223,7 @@
     const/4 v7, 0x0
 
     :goto_4
-    if-ge v7, v4, :cond_9
+    if-ge v7, v5, :cond_9
 
     add-int v8, v6, v7
 
@@ -236,20 +254,20 @@
     goto :goto_4
 
     :cond_9
-    if-eq v4, v3, :cond_a
+    if-eq v5, v3, :cond_a
 
-    if-nez p1, :cond_b
+    if-nez v4, :cond_b
 
     :cond_a
-    const/16 v4, 0xa
+    const/16 v5, 0xa
 
     .line 13
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     :cond_b
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 p1, p1, 0x1
 
     goto/16 :goto_0
 

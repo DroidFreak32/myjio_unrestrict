@@ -1,42 +1,50 @@
 .class public final Lcom/google/android/gms/internal/ads/zzle;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzlc;
+
+# instance fields
+.field public final zzaol:[I
+
+.field public final zzaom:[J
+
+.field public final zzaxg:I
+
+.field public final zzaxh:[J
+
+.field public final zzaxi:[I
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.client.IAppEventListener"
+.method private constructor <init>([J[II[J[I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzle;->zzaom:[J
+
+    .line 3
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzle;->zzaol:[I
+
+    .line 4
+    iput p3, p0, Lcom/google/android/gms/internal/ads/zzle;->zzaxg:I
+
+    .line 5
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzle;->zzaxh:[J
+
+    .line 6
+    iput-object p5, p0, Lcom/google/android/gms/internal/ads/zzle;->zzaxi:[I
 
     return-void
 .end method
 
+.method public synthetic constructor <init>([J[II[J[ILcom/google/android/gms/internal/ads/zzlf;)V
+    .locals 0
 
-# virtual methods
-.method public final onAppEvent(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 3
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    const/4 p1, 0x1
-
-    .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    .line 7
+    invoke-direct/range {p0 .. p5}, Lcom/google/android/gms/internal/ads/zzle;-><init>([J[II[J[I)V
 
     return-void
 .end method

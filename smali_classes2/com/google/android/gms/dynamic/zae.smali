@@ -1,24 +1,21 @@
 .class public final Lcom/google/android/gms/dynamic/zae;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/google/android/gms/dynamic/DeferredLifecycleHelper$zaa;
 
 
 # instance fields
-.field public final synthetic val$context:Landroid/content/Context;
-
-.field public final synthetic zaro:Landroid/content/Intent;
+.field private final synthetic zaa:Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/content/Intent;)V
+.method public constructor <init>(Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/dynamic/zae;->val$context:Landroid/content/Context;
-
-    iput-object p2, p0, Lcom/google/android/gms/dynamic/zae;->zaro:Landroid/content/Intent;
+    iput-object p1, p0, Lcom/google/android/gms/dynamic/zae;->zaa:Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,19 +24,25 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final zaa()I
     .locals 1
 
+    const/4 v0, 0x4
+
+    return v0
+.end method
+
+.method public final zaa(Lcom/google/android/gms/dynamic/LifecycleDelegate;)V
+    .locals 0
+
     .line 1
-    :try_start_0
-    iget-object p1, p0, Lcom/google/android/gms/dynamic/zae;->val$context:Landroid/content/Context;
+    iget-object p1, p0, Lcom/google/android/gms/dynamic/zae;->zaa:Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;
 
-    iget-object v0, p0, Lcom/google/android/gms/dynamic/zae;->zaro:Landroid/content/Intent;
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;->zab(Lcom/google/android/gms/dynamic/DeferredLifecycleHelper;)Lcom/google/android/gms/dynamic/LifecycleDelegate;
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object p1
 
-    :catch_0
+    invoke-interface {p1}, Lcom/google/android/gms/dynamic/LifecycleDelegate;->onStart()V
+
     return-void
 .end method

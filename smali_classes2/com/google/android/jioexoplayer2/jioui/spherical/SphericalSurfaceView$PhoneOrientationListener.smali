@@ -18,17 +18,17 @@
 
 
 # instance fields
-.field public final angles:[F
+.field private final angles:[F
 
-.field public final display:Landroid/view/Display;
+.field private final display:Landroid/view/Display;
 
-.field public final phoneInWorldSpaceMatrix:[F
+.field private final phoneInWorldSpaceMatrix:[F
 
-.field public final remappedPhoneMatrix:[F
+.field private final remappedPhoneMatrix:[F
 
-.field public final renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
+.field private final renderer:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;
 
-.field public final touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
+.field private final touchTracker:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;
 
 
 # direct methods
@@ -79,6 +79,8 @@
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 7
+    .annotation build Landroidx/annotation/BinderThread;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$PhoneOrientationListener;->remappedPhoneMatrix:[F

@@ -3,15 +3,15 @@
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
-.field public final zzabz:J
+.field private final zzabz:J
 
-.field public final synthetic zzaca:Lcom/google/android/gms/internal/gtm/zzcm;
+.field private final synthetic zzaca:Lcom/google/android/gms/internal/gtm/zzcm;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zzcm;Ljava/lang/String;J)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zzcm;Ljava/lang/String;J)V
     .locals 2
 
     .line 1

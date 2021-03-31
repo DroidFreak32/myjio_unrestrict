@@ -21,7 +21,7 @@
 # static fields
 .field public static final DEFAULT_PRETTY_PRINTER:Lcom/fasterxml/jackson/core/PrettyPrinter;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;IIIIII)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;IIIIII)V
     .locals 0
 
     .line 25
@@ -130,7 +130,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/PropertyName;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/PropertyName;)V
     .locals 0
 
     .line 57
@@ -174,7 +174,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/cfg/BaseSettings;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/cfg/BaseSettings;)V
     .locals 0
 
     .line 33
@@ -350,7 +350,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;)V
     .locals 0
 
     .line 17
@@ -394,7 +394,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/ser/FilterProvider;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/ser/FilterProvider;)V
     .locals 1
 
     .line 41
@@ -436,7 +436,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Ljava/lang/Class;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Ljava/lang/Class;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

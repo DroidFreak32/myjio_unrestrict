@@ -1,20 +1,21 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaqn;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+.field private final synthetic zzdpa:Lcom/google/android/gms/internal/ads/zzaqk;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqe;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqk;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqn;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqn;->zzdpa:Lcom/google/android/gms/internal/ads/zzaqk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,27 +24,15 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqn;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqn;->zzdpa:Lcom/google/android/gms/internal/ads/zzaqk;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zza(Lcom/google/android/gms/internal/ads/zzaqe;)Lcom/google/android/gms/internal/ads/zzaqo;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/ads/zzaqk;->zzac(Z)V
 
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqn;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zza(Lcom/google/android/gms/internal/ads/zzaqe;)Lcom/google/android/gms/internal/ads/zzaqo;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzaqo;->onPaused()V
-
-    :cond_0
     return-void
 .end method

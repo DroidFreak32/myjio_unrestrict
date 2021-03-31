@@ -1,4 +1,4 @@
-.class public final Lcom/clevertap/android/sdk/CTInboxController$1;
+.class public Lcom/clevertap/android/sdk/CTInboxController$1;
 .super Ljava/lang/Object;
 .source "CTInboxController.java"
 
@@ -8,29 +8,29 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CTInboxController;->postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
+    value = Lcom/clevertap/android/sdk/CTInboxController;->deleteMessageWithId(Ljava/lang/String;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field public final synthetic val$name:Ljava/lang/String;
+.field public final synthetic this$0:Lcom/clevertap/android/sdk/CTInboxController;
 
-.field public final synthetic val$runnable:Ljava/lang/Runnable;
+.field public final synthetic val$messageId:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CTInboxController;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->val$name:Ljava/lang/String;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->this$0:Lcom/clevertap/android/sdk/CTInboxController;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->val$runnable:Ljava/lang/Runnable;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->val$messageId:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,56 +40,24 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .line 1
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->this$0:Lcom/clevertap/android/sdk/CTInboxController;
+
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CTInboxController;->access$100(Lcom/clevertap/android/sdk/CTInboxController;)Lcom/clevertap/android/sdk/DBAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->val$messageId:Ljava/lang/String;
 
-    move-result-wide v0
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->this$0:Lcom/clevertap/android/sdk/CTInboxController;
 
-    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CTInboxController;->access$002(J)J
+    invoke-static {v2}, Lcom/clevertap/android/sdk/CTInboxController;->access$000(Lcom/clevertap/android/sdk/CTInboxController;)Ljava/lang/String;
 
-    .line 2
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, v1, v2}, Lcom/clevertap/android/sdk/DBAdapter;->deleteMessageForId(Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string v1, "CTInboxController Executor Service: Starting task - "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->val$name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
-
-    .line 3
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxController$1;->val$runnable:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    const-string v1, "CTInboxController Executor Service: Failed to complete the scheduled task"
-
-    .line 4
-    invoke-static {v1, v0}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
     return-void
 .end method

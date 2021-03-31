@@ -1,5 +1,5 @@
 .class public Lcom/jiny/android/ui/custom/DraggableLayout$c;
-.super Lmb$c;
+.super Landroidx/customview/widget/ViewDragHelper$Callback;
 
 
 # annotations
@@ -23,12 +23,12 @@
 
     iput-object p1, p0, Lcom/jiny/android/ui/custom/DraggableLayout$c;->a:Lcom/jiny/android/ui/custom/DraggableLayout;
 
-    invoke-direct {p0}, Lmb$c;-><init>()V
+    invoke-direct {p0}, Landroidx/customview/widget/ViewDragHelper$Callback;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/jiny/android/ui/custom/DraggableLayout;Lcom/jiny/android/ui/custom/DraggableLayout$a;)V
+.method public synthetic constructor <init>(Lcom/jiny/android/ui/custom/DraggableLayout;Lcom/jiny/android/ui/custom/DraggableLayout$b;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/jiny/android/ui/custom/DraggableLayout$c;-><init>(Lcom/jiny/android/ui/custom/DraggableLayout;)V
@@ -121,7 +121,7 @@
 
     iget-object p1, p0, Lcom/jiny/android/ui/custom/DraggableLayout$c;->a:Lcom/jiny/android/ui/custom/DraggableLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/custom/DraggableLayout;->b(Lcom/jiny/android/ui/custom/DraggableLayout;)Lcom/jiny/android/ui/custom/DraggableLayout$b;
+    invoke-static {p1}, Lcom/jiny/android/ui/custom/DraggableLayout;->c(Lcom/jiny/android/ui/custom/DraggableLayout;)Lcom/jiny/android/ui/custom/DraggableLayout$a;
 
     move-result-object p1
 
@@ -129,24 +129,24 @@
 
     iget-object p1, p0, Lcom/jiny/android/ui/custom/DraggableLayout$c;->a:Lcom/jiny/android/ui/custom/DraggableLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/custom/DraggableLayout;->b(Lcom/jiny/android/ui/custom/DraggableLayout;)Lcom/jiny/android/ui/custom/DraggableLayout$b;
+    invoke-static {p1}, Lcom/jiny/android/ui/custom/DraggableLayout;->c(Lcom/jiny/android/ui/custom/DraggableLayout;)Lcom/jiny/android/ui/custom/DraggableLayout$a;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lcom/jiny/android/ui/custom/DraggableLayout$b;->b()V
+    invoke-interface {p1}, Lcom/jiny/android/ui/custom/DraggableLayout$a;->b()V
 
     goto :goto_1
 
     :cond_1
     iget-object p1, p0, Lcom/jiny/android/ui/custom/DraggableLayout$c;->a:Lcom/jiny/android/ui/custom/DraggableLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/custom/DraggableLayout;->c(Lcom/jiny/android/ui/custom/DraggableLayout;)Lmb;
+    invoke-static {p1}, Lcom/jiny/android/ui/custom/DraggableLayout;->d(Lcom/jiny/android/ui/custom/DraggableLayout;)Landroidx/customview/widget/ViewDragHelper;
 
     move-result-object p1
 
     const/4 p2, 0x0
 
-    invoke-virtual {p1, p2, p2}, Lmb;->e(II)Z
+    invoke-virtual {p1, p2, p2}, Landroidx/customview/widget/ViewDragHelper;->settleCapturedViewAt(II)Z
 
     iget-object p1, p0, Lcom/jiny/android/ui/custom/DraggableLayout$c;->a:Lcom/jiny/android/ui/custom/DraggableLayout;
 

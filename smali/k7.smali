@@ -1,499 +1,514 @@
 .class public Lk7;
-.super Ln7;
-.source "TypefaceCompatApi24Impl.java"
+.super Ljava/lang/Object;
+.source "JsonUtils.java"
 
 
 # static fields
-.field public static final b:Ljava/lang/Class;
-
-.field public static final c:Ljava/lang/reflect/Constructor;
-
-.field public static final d:Ljava/lang/reflect/Method;
-
-.field public static final e:Ljava/lang/reflect/Method;
+.field public static final a:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 2
 
-    const-string v0, "android.graphics.FontFamily"
+    const-string/jumbo v0, "x"
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "y"
 
     .line 1
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    filled-new-array {v0, v1}, [Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    invoke-static {v0}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;->of([Ljava/lang/String;)Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    new-array v3, v2, [Ljava/lang/Class;
+    move-result-object v0
+
+    sput-object v0, Lk7;->a:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+
+    return-void
+.end method
+
+.method public static a(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
     .line 2
-    invoke-virtual {v0, v3}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-object v3
+    move-result-wide v0
 
-    const-string v4, "addFontWeightStyle"
-
-    const/4 v5, 0x5
-
-    new-array v5, v5, [Ljava/lang/Class;
+    double-to-float v0, v0
 
     .line 3
-    const-class v6, Ljava/nio/ByteBuffer;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    aput-object v6, v5, v2
+    move-result-wide v1
 
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v7, 0x1
-
-    aput-object v6, v5, v7
-
-    const/4 v6, 0x2
-
-    const-class v8, Ljava/util/List;
-
-    aput-object v8, v5, v6
-
-    const/4 v6, 0x3
-
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v5, v6
-
-    const/4 v6, 0x4
-
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v5, v6
-
-    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v4
+    double-to-float v1, v1
 
     .line 4
-    invoke-static {v0, v7}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
 
-    move-result-object v5
+    move-result-object v2
+
+    sget-object v3, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->END_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+
+    if-eq v2, v3, :cond_0
 
     .line 5
-    const-class v6, Landroid/graphics/Typeface;
-
-    const-string v8, "createFromFamiliesWithDefault"
-
-    new-array v7, v7, [Ljava/lang/Class;
-
-    .line 6
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    aput-object v5, v7, v2
-
-    .line 7
-    invoke-virtual {v6, v8, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v2, v1
-
-    move-object v1, v3
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
     goto :goto_0
 
-    :catch_1
-    move-exception v0
+    .line 6
+    :cond_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
-    .line 8
-    :goto_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 7
+    new-instance p0, Landroid/graphics/PointF;
 
-    move-result-object v0
+    mul-float v0, v0, p1
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    mul-float v1, v1, p1
 
-    move-object v0, v1
+    invoke-direct {p0, v0, v1}, Landroid/graphics/PointF;-><init>(FF)V
 
-    move-object v2, v0
-
-    move-object v4, v2
-
-    .line 9
-    :goto_1
-    sput-object v1, Lk7;->c:Ljava/lang/reflect/Constructor;
-
-    .line 10
-    sput-object v0, Lk7;->b:Ljava/lang/Class;
-
-    .line 11
-    sput-object v4, Lk7;->d:Ljava/lang/reflect/Method;
-
-    .line 12
-    sput-object v2, Lk7;->e:Ljava/lang/reflect/Method;
-
-    return-void
+    return-object p0
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method public static b(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Ln7;-><init>()V
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    return-void
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    .line 2
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
+
+    move-result-wide v1
+
+    double-to-float v1, v1
+
+    .line 3
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
+
+    goto :goto_0
+
+    .line 5
+    :cond_0
+    new-instance p0, Landroid/graphics/PointF;
+
+    mul-float v0, v0, p1
+
+    mul-float v1, v1, p1
+
+    invoke-direct {p0, v0, v1}, Landroid/graphics/PointF;-><init>(FF)V
+
+    return-object p0
 .end method
 
-.method public static a(Ljava/lang/Object;)Landroid/graphics/Typeface;
+.method public static c(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
 
     const/4 v0, 0x0
 
+    const/4 v1, 0x0
+
+    .line 2
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 3
+    sget-object v2, Lk7;->a:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+
+    invoke-virtual {p0, v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const/4 v3, 0x1
+
+    if-eq v2, v3, :cond_0
+
+    .line 4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
+
+    .line 5
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
+
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    invoke-static {p0}, Lk7;->g(Lcom/airbnb/lottie/parser/moshi/JsonReader;)F
+
+    move-result v1
+
+    goto :goto_0
+
     .line 7
-    :try_start_0
-    sget-object v1, Lk7;->b:Ljava/lang/Class;
+    :cond_1
+    invoke-static {p0}, Lk7;->g(Lcom/airbnb/lottie/parser/moshi/JsonReader;)F
 
-    const/4 v2, 0x1
+    move-result v0
 
-    invoke-static {v1, v2}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+    goto :goto_0
+
+    .line 8
+    :cond_2
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endObject()V
+
+    .line 9
+    new-instance p0, Landroid/graphics/PointF;
+
+    mul-float v0, v0, p1
+
+    mul-float v1, v1, p1
+
+    invoke-direct {p0, v0, v1}, Landroid/graphics/PointF;-><init>(FF)V
+
+    return-object p0
+.end method
+
+.method public static d(Lcom/airbnb/lottie/parser/moshi/JsonReader;)I
+    .locals 6
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
+
+    .line 2
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
+
+    move-result-wide v0
+
+    const-wide v2, 0x406fe00000000000L    # 255.0
+
+    mul-double v0, v0, v2
+
+    double-to-int v0, v0
+
+    .line 3
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
+
+    move-result-wide v4
+
+    mul-double v4, v4, v2
+
+    double-to-int v1, v4
+
+    .line 4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
+
+    move-result-wide v4
+
+    mul-double v4, v4, v2
+
+    double-to-int v2, v4
+
+    .line 5
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 6
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
+
+    goto :goto_0
+
+    .line 7
+    :cond_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
+
+    const/16 p0, 0xff
+
+    .line 8
+    invoke-static {p0, v0, v1, v2}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static e(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    sget-object v0, Lk7$a;->a:[I
+
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 8
-    invoke-static {v1, v3, p0}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
+    move-result v1
 
-    .line 9
-    sget-object p0, Lk7;->e:Ljava/lang/reflect/Method;
+    aget v0, v0, v1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    aput-object v1, v2, v3
+    if-eq v0, v1, :cond_2
 
-    invoke-virtual {p0, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    .line 2
+    invoke-static {p0, p1}, Lk7;->c(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
 
     move-result-object p0
-
-    check-cast p0, Landroid/graphics/Typeface;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_0
-    return-object v0
-.end method
-
-.method public static a()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lk7;->d:Ljava/lang/reflect/Method;
-
-    .line 2
-    sget-object v0, Lk7;->d:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public static a(Ljava/lang/Object;Ljava/nio/ByteBuffer;IIZ)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
     .line 3
-    :try_start_0
-    sget-object v1, Lk7;->d:Ljava/lang/reflect/Method;
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const/4 v2, 0x5
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    aput-object p1, v2, v0
+    const-string v1, "Unknown point starts with "
 
-    const/4 p1, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    aput-object p2, v2, p1
-
-    const/4 p1, 0x2
-
-    const/4 p2, 0x0
-
-    aput-object p2, v2, p1
-
-    const/4 p1, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    aput-object p2, v2, p1
-
-    const/4 p1, 0x4
-
-    invoke-static {p4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    aput-object p2, v2, p1
-
-    .line 5
-    invoke-virtual {v1, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
 
     move-result-object p0
 
-    check-cast p0, Ljava/lang/Boolean;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 6
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object p0
 
-    return p0
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    :catch_0
-    return v0
+    throw p1
+
+    .line 4
+    :cond_1
+    invoke-static {p0, p1}, Lk7;->a(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 5
+    :cond_2
+    invoke-static {p0, p1}, Lk7;->b(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public static b()Ljava/lang/Object;
-    .locals 2
+.method public static f(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/airbnb/lottie/parser/moshi/JsonReader;",
+            "F)",
+            "Ljava/util/List<",
+            "Landroid/graphics/PointF;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
-    :try_start_0
-    sget-object v0, Lk7;->c:Ljava/lang/reflect/Constructor;
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    new-array v1, v1, [Ljava/lang/Object;
+    .line 2
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    .line 3
+    :goto_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v1
 
-    return-object v0
+    sget-object v2, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
 
-    :catch_0
-    const/4 v0, 0x0
+    if-ne v1, v2, :cond_0
+
+    .line 4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
+
+    .line 5
+    invoke-static {p0, p1}, Lk7;->e(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Landroid/graphics/PointF;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 6
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
+
+    goto :goto_0
+
+    .line 7
+    :cond_0
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
     return-object v0
 .end method
 
+.method public static g(Lcom/airbnb/lottie/parser/moshi/JsonReader;)F
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-# virtual methods
-.method public a(Landroid/content/Context;Landroid/os/CancellationSignal;[Lm8$f;I)Landroid/graphics/Typeface;
-    .locals 9
-
-    .line 10
-    invoke-static {}, Lk7;->b()Ljava/lang/Object;
+    .line 1
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    .line 2
+    sget-object v1, Lk7$a;->a:[I
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
-    return-object v1
+    move-result v2
 
-    .line 11
-    :cond_0
-    new-instance v2, Ls4;
+    aget v1, v1, v2
 
-    invoke-direct {v2}, Ls4;-><init>()V
+    const/4 v2, 0x1
 
-    .line 12
-    array-length v3, p3
+    if-eq v1, v2, :cond_2
 
-    const/4 v4, 0x0
+    const/4 v2, 0x2
 
+    if-ne v1, v2, :cond_1
+
+    .line 3
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
+
+    .line 4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
+
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    .line 5
     :goto_0
-    if-ge v4, v3, :cond_4
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    aget-object v5, p3, v4
+    move-result v1
 
-    .line 13
-    invoke-virtual {v5}, Lm8$f;->c()Landroid/net/Uri;
+    if-eqz v1, :cond_0
 
-    move-result-object v6
-
-    .line 14
-    invoke-virtual {v2, v6}, Ls4;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/nio/ByteBuffer;
-
-    if-nez v7, :cond_1
-
-    .line 15
-    invoke-static {p1, p2, v6}, Lo7;->a(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
-
-    move-result-object v7
-
-    .line 16
-    invoke-virtual {v2, v6, v7}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    if-nez v7, :cond_2
-
-    return-object v1
-
-    .line 17
-    :cond_2
-    invoke-virtual {v5}, Lm8$f;->b()I
-
-    move-result v6
-
-    invoke-virtual {v5}, Lm8$f;->d()I
-
-    move-result v8
-
-    .line 18
-    invoke-virtual {v5}, Lm8$f;->e()Z
-
-    move-result v5
-
-    .line 19
-    invoke-static {v0, v7, v6, v8, v5}, Lk7;->a(Ljava/lang/Object;Ljava/nio/ByteBuffer;IIZ)Z
-
-    move-result v5
-
-    if-nez v5, :cond_3
-
-    return-object v1
-
-    :cond_3
-    add-int/lit8 v4, v4, 0x1
+    .line 6
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
     goto :goto_0
 
-    .line 20
-    :cond_4
-    invoke-static {v0}, Lk7;->a(Ljava/lang/Object;)Landroid/graphics/Typeface;
-
-    move-result-object p1
-
-    if-nez p1, :cond_5
-
-    return-object v1
-
-    .line 21
-    :cond_5
-    invoke-static {p1, p4}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(Landroid/content/Context;Lb7$b;Landroid/content/res/Resources;I)Landroid/graphics/Typeface;
-    .locals 7
-
-    .line 22
-    invoke-static {}, Lk7;->b()Ljava/lang/Object;
-
-    move-result-object p4
-
-    const/4 v0, 0x0
-
-    if-nez p4, :cond_0
-
-    return-object v0
-
-    .line 23
+    .line 7
     :cond_0
-    invoke-virtual {p2}, Lb7$b;->a()[Lb7$c;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
-    move-result-object p2
+    return v0
 
-    array-length v1, p2
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_3
-
-    aget-object v3, p2, v2
-
-    .line 24
-    invoke-virtual {v3}, Lb7$c;->b()I
-
-    move-result v4
-
-    invoke-static {p1, p3, v4}, Lo7;->a(Landroid/content/Context;Landroid/content/res/Resources;I)Ljava/nio/ByteBuffer;
-
-    move-result-object v4
-
-    if-nez v4, :cond_1
-
-    return-object v0
-
-    .line 25
+    .line 8
     :cond_1
-    invoke-virtual {v3}, Lb7$c;->c()I
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    move-result v5
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Lb7$c;->e()I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v6
+    const-string v2, "Unknown value for token of type "
 
-    invoke-virtual {v3}, Lb7$c;->f()Z
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v3
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {p4, v4, v5, v6, v3}, Lk7;->a(Ljava/lang/Object;Ljava/nio/ByteBuffer;IIZ)Z
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v3
+    move-result-object v0
 
-    if-nez v3, :cond_2
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    return-object v0
+    throw p0
 
+    .line 9
     :cond_2
-    add-int/lit8 v2, v2, 0x1
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    goto :goto_0
+    move-result-wide v0
 
-    .line 26
-    :cond_3
-    invoke-static {p4}, Lk7;->a(Ljava/lang/Object;)Landroid/graphics/Typeface;
+    double-to-float p0, v0
 
-    move-result-object p1
-
-    return-object p1
+    return p0
 .end method

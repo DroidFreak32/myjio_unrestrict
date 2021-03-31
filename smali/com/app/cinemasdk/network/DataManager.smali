@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
+.field private serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
 
 # direct methods
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public analyticsAPIForBegin(Ljava/util/HashMap;)Ljr4;
+.method public analyticsAPIForBegin(Ljava/util/HashMap;)Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,7 +43,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lokhttp3/ResponseBody;",
             ">;"
         }
@@ -52,14 +52,14 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->analyticsAPIForBegin(Ljava/util/HashMap;)Ljr4;
+    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->analyticsAPIForBegin(Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public analyticsAPIForEnd(Ljava/util/HashMap;)Ljr4;
+.method public analyticsAPIForEnd(Ljava/util/HashMap;)Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -68,7 +68,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lokhttp3/ResponseBody;",
             ">;"
         }
@@ -77,14 +77,14 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->analyticsAPIForEnd(Ljava/util/HashMap;)Ljr4;
+    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->analyticsAPIForEnd(Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public analyticsAPIForEvent(Ljava/util/HashMap;)Ljr4;
+.method public analyticsAPIForEvent(Ljava/util/HashMap;)Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -93,7 +93,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lokhttp3/ResponseBody;",
             ">;"
         }
@@ -102,19 +102,19 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->analyticsAPIForEvent(Ljava/util/HashMap;)Ljr4;
+    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->analyticsAPIForEvent(Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public getConfig()Ljr4;
+.method public getConfig()Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/google/gson/JsonObject;",
             ">;"
         }
@@ -123,14 +123,14 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0}, Lcom/app/cinemasdk/network/ServiceApi;->getConfig()Ljr4;
+    invoke-interface {v0}, Lcom/app/cinemasdk/network/ServiceApi;->getConfig()Lretrofit2/Call;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getPlayBackData(Ljava/lang/String;Ljava/util/HashMap;)Ljr4;
+.method public getPlayBackData(Ljava/lang/String;Ljava/util/HashMap;)Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -140,7 +140,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/playbackrights/PlayBackRights;",
             ">;"
         }
@@ -149,14 +149,14 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0, p1, p2}, Lcom/app/cinemasdk/network/ServiceApi;->getPlayBackData2(Ljava/lang/String;Ljava/util/HashMap;)Ljr4;
+    invoke-interface {v0, p1, p2}, Lcom/app/cinemasdk/network/ServiceApi;->getPlayBackData2(Ljava/lang/String;Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public loginViaSubId(Ljava/util/HashMap;)Ljr4;
+.method public loginViaSubId(Ljava/util/HashMap;)Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -165,7 +165,7 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;)",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/loginviasubid/LoginDetail;",
             ">;"
         }
@@ -174,21 +174,21 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->loginViaSubId(Ljava/util/HashMap;)Ljr4;
+    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->loginViaSubId(Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Ljr4;
+.method public ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/app/cinemasdk/model/RefreshDeviceInfo;",
             ")",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SsoRefreshResponse;",
             ">;"
         }
@@ -197,19 +197,19 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Ljr4;
+    invoke-interface {v0, p1}, Lcom/app/cinemasdk/network/ServiceApi;->ssoTokenRefresh(Lcom/app/cinemasdk/model/RefreshDeviceInfo;)Lretrofit2/Call;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public zlaNetworkCheck()Ljr4;
+.method public zlaNetworkCheck()Lretrofit2/Call;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;",
             ">;"
         }
@@ -218,7 +218,7 @@
     .line 1
     iget-object v0, p0, Lcom/app/cinemasdk/network/DataManager;->serviceApi:Lcom/app/cinemasdk/network/ServiceApi;
 
-    invoke-interface {v0}, Lcom/app/cinemasdk/network/ServiceApi;->zlaNetworkCheck()Ljr4;
+    invoke-interface {v0}, Lcom/app/cinemasdk/network/ServiceApi;->zlaNetworkCheck()Lretrofit2/Call;
 
     move-result-object v0
 

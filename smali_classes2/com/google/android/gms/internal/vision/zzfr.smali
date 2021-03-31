@@ -1,41 +1,56 @@
-.class public interface abstract Lcom/google/android/gms/internal/vision/zzfr;
+.class public final Lcom/google/android/gms/internal/vision/zzfr;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Lcom/google/android/gms/internal/vision/zzij;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/gms/internal/vision/zzfr<",
-        "TT;>;>",
-        "Ljava/lang/Object;",
-        "Ljava/lang/Comparable<",
-        "TT;>;"
-    }
-.end annotation
+# static fields
+.field public static final zzht:Lcom/google/android/gms/internal/vision/zzij;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzfr;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzfr;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzfr;->zzht:Lcom/google/android/gms/internal/vision/zzij;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/internal/vision/zzhg;Lcom/google/android/gms/internal/vision/zzhf;)Lcom/google/android/gms/internal/vision/zzhg;
-.end method
+.method public final zzg(I)Z
+    .locals 0
 
-.method public abstract zza(Lcom/google/android/gms/internal/vision/zzhm;Lcom/google/android/gms/internal/vision/zzhm;)Lcom/google/android/gms/internal/vision/zzhm;
-.end method
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzfl$zzg$zza;->zzab(I)Lcom/google/android/gms/internal/vision/zzfl$zzg$zza;
 
-.method public abstract zzes()Lcom/google/android/gms/internal/vision/zzjd;
-.end method
+    move-result-object p1
 
-.method public abstract zzet()Lcom/google/android/gms/internal/vision/zzji;
-.end method
+    if-eqz p1, :cond_0
 
-.method public abstract zzeu()Z
-.end method
+    const/4 p1, 0x1
 
-.method public abstract zzev()Z
-.end method
+    return p1
 
-.method public abstract zzr()I
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

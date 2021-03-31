@@ -1,33 +1,28 @@
 .class public Lcom/google/android/gms/common/ErrorDialogFragment;
 .super Landroid/app/DialogFragment;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public mDialog:Landroid/app/Dialog;
+.field private zaa:Landroid/app/Dialog;
 
-.field public zaan:Landroid/content/DialogInterface$OnCancelListener;
+.field private zab:Landroid/content/DialogInterface$OnCancelListener;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->mDialog:Landroid/app/Dialog;
-
-    .line 3
-    iput-object v0, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->zaan:Landroid/content/DialogInterface$OnCancelListener;
 
     return-void
 .end method
 
 .method public static newInstance(Landroid/app/Dialog;)Lcom/google/android/gms/common/ErrorDialogFragment;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -41,6 +36,12 @@
 
 .method public static newInstance(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/ErrorDialogFragment;
     .locals 2
+    .param p1    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/google/android/gms/common/ErrorDialogFragment;
@@ -65,12 +66,12 @@
     invoke-virtual {p0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 6
-    iput-object p0, v0, Lcom/google/android/gms/common/ErrorDialogFragment;->mDialog:Landroid/app/Dialog;
+    iput-object p0, v0, Lcom/google/android/gms/common/ErrorDialogFragment;->zaa:Landroid/app/Dialog;
 
     if-eqz p1, :cond_0
 
     .line 7
-    iput-object p1, v0, Lcom/google/android/gms/common/ErrorDialogFragment;->zaan:Landroid/content/DialogInterface$OnCancelListener;
+    iput-object p1, v0, Lcom/google/android/gms/common/ErrorDialogFragment;->zab:Landroid/content/DialogInterface$OnCancelListener;
 
     :cond_0
     return-object v0
@@ -82,7 +83,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->zaan:Landroid/content/DialogInterface$OnCancelListener;
+    iget-object v0, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->zab:Landroid/content/DialogInterface$OnCancelListener;
 
     if-eqz v0, :cond_0
 
@@ -95,9 +96,15 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 0
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object p1, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->zaa:Landroid/app/Dialog;
 
     if-nez p1, :cond_0
 
@@ -108,13 +115,17 @@
 
     .line 3
     :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object p1, p0, Lcom/google/android/gms/common/ErrorDialogFragment;->zaa:Landroid/app/Dialog;
 
     return-object p1
 .end method
 
 .method public show(Landroid/app/FragmentManager;Ljava/lang/String;)V
     .locals 0
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/app/DialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V

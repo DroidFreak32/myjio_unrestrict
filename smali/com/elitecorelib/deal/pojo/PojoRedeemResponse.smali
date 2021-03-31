@@ -6,17 +6,17 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public requestType:Ljava/lang/String;
+.field private requestType:Ljava/lang/String;
 
-.field public responseCode:I
+.field private responseCode:I
 
-.field public responseData:Ljava/lang/String;
+.field private responseData:Ljava/lang/String;
 
-.field public responseMessage:Ljava/lang/String;
+.field private responseMessage:Ljava/lang/String;
 
 
 # direct methods

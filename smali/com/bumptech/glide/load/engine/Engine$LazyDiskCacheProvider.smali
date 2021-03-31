@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public volatile diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+.field private volatile diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
-.field public final factory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
+.field private final factory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
 
 
 # direct methods
@@ -40,6 +40,8 @@
 # virtual methods
 .method public declared-synchronized clearDiskCacheIfCreated()V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     monitor-enter p0
 

@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public PassiveVersionName:Ljava/lang/Integer;
+.field private PassiveVersionName:Ljava/lang/Integer;
 
-.field public isEligibleToStartService:Z
+.field private isEligibleToStartService:Z
 
-.field public isStarterService:Z
+.field private isStarterService:Z
 
-.field public moduleName:Ljava/lang/String;
+.field private moduleName:Ljava/lang/String;
 
-.field public packegeName:Ljava/lang/String;
+.field private packegeName:Ljava/lang/String;
 
-.field public versionName:Ljava/lang/Integer;
+.field private versionName:Ljava/lang/Integer;
 
 
 # direct methods
@@ -29,6 +29,114 @@
 
 
 # virtual methods
+.method public getModuleName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->moduleName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPackegeName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->packegeName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPassiveVersionName()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->PassiveVersionName:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVersionName()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->versionName:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public isEligibleToStartService()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->isEligibleToStartService:Z
+
+    return v0
+.end method
+
+.method public isStarterService()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->isStarterService:Z
+
+    return v0
+.end method
+
+.method public setEligibleToStartService(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->isEligibleToStartService:Z
+
+    return-void
+.end method
+
+.method public setModuleName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->moduleName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setPackegeName(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->packegeName:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setPassiveVersionName(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->PassiveVersionName:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setStarterService(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->isStarterService:Z
+
+    return-void
+.end method
+
+.method public setVersionName(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/ApplicationParams;->versionName:Ljava/lang/Integer;
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 

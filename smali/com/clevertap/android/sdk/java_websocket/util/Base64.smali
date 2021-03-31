@@ -18,35 +18,35 @@
 
 .field public static final ENCODE:I = 0x1
 
-.field public static final EQUALS_SIGN:B = 0x3dt
+.field private static final EQUALS_SIGN:B = 0x3dt
 
 .field public static final GZIP:I = 0x2
 
-.field public static final MAX_LINE_LENGTH:I = 0x4c
+.field private static final MAX_LINE_LENGTH:I = 0x4c
 
-.field public static final NEW_LINE:B = 0xat
+.field private static final NEW_LINE:B = 0xat
 
 .field public static final NO_OPTIONS:I = 0x0
 
 .field public static final ORDERED:I = 0x20
 
-.field public static final PREFERRED_ENCODING:Ljava/lang/String; = "US-ASCII"
+.field private static final PREFERRED_ENCODING:Ljava/lang/String; = "US-ASCII"
 
 .field public static final URL_SAFE:I = 0x10
 
-.field public static final WHITE_SPACE_ENC:B = -0x5t
+.field private static final WHITE_SPACE_ENC:B = -0x5t
 
-.field public static final _ORDERED_ALPHABET:[B
+.field private static final _ORDERED_ALPHABET:[B
 
-.field public static final _ORDERED_DECODABET:[B
+.field private static final _ORDERED_DECODABET:[B
 
-.field public static final _STANDARD_ALPHABET:[B
+.field private static final _STANDARD_ALPHABET:[B
 
-.field public static final _STANDARD_DECODABET:[B
+.field private static final _STANDARD_DECODABET:[B
 
-.field public static final _URL_SAFE_ALPHABET:[B
+.field private static final _URL_SAFE_ALPHABET:[B
 
-.field public static final _URL_SAFE_DECODABET:[B
+.field private static final _URL_SAFE_DECODABET:[B
 
 
 # direct methods
@@ -1091,7 +1091,7 @@
     .end array-data
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -1133,7 +1133,7 @@
     return p0
 .end method
 
-.method public static decode4to3([BI[BII)I
+.method private static decode4to3([BI[BII)I
     .locals 7
 
     if-eqz p0, :cond_5
@@ -1413,10 +1413,10 @@
     throw p0
 .end method
 
-.method public static encode3to4([BII[BII)[B
+.method private static encode3to4([BII[BII)[B
     .locals 4
 
-    .line 2
+    .line 1
     invoke-static {p5}, Lcom/clevertap/android/sdk/java_websocket/util/Base64;->getAlphabet(I)[B
 
     move-result-object p5
@@ -1425,7 +1425,7 @@
 
     if-lez p2, :cond_0
 
-    .line 3
+    .line 2
     aget-byte v1, p0, p1
 
     shl-int/lit8 v1, v1, 0x18
@@ -1488,7 +1488,7 @@
     :cond_3
     ushr-int/lit8 p1, p0, 0x12
 
-    .line 4
+    .line 3
     aget-byte p1, p5, p1
 
     aput-byte p1, p3, p4
@@ -1499,7 +1499,7 @@
 
     and-int/lit8 p2, p2, 0x3f
 
-    .line 5
+    .line 4
     aget-byte p2, p5, p2
 
     aput-byte p2, p3, p1
@@ -1510,7 +1510,7 @@
 
     and-int/lit8 p2, p2, 0x3f
 
-    .line 6
+    .line 5
     aget-byte p2, p5, p2
 
     aput-byte p2, p3, p1
@@ -1519,7 +1519,7 @@
 
     and-int/lit8 p0, p0, 0x3f
 
-    .line 7
+    .line 6
     aget-byte p0, p5, p0
 
     aput-byte p0, p3, p4
@@ -1529,7 +1529,7 @@
     :cond_4
     ushr-int/lit8 p2, p0, 0x12
 
-    .line 8
+    .line 7
     aget-byte p2, p5, p2
 
     aput-byte p2, p3, p4
@@ -1540,7 +1540,7 @@
 
     and-int/lit8 v1, v1, 0x3f
 
-    .line 9
+    .line 8
     aget-byte v1, p5, v1
 
     aput-byte v1, p3, p2
@@ -1551,14 +1551,14 @@
 
     and-int/lit8 p0, p0, 0x3f
 
-    .line 10
+    .line 9
     aget-byte p0, p5, p0
 
     aput-byte p0, p3, p2
 
     add-int/2addr p4, v0
 
-    .line 11
+    .line 10
     aput-byte p1, p3, p4
 
     return-object p3
@@ -1566,7 +1566,7 @@
     :cond_5
     ushr-int/lit8 p2, p0, 0x12
 
-    .line 12
+    .line 11
     aget-byte p2, p5, p2
 
     aput-byte p2, p3, p4
@@ -1577,25 +1577,25 @@
 
     and-int/lit8 p0, p0, 0x3f
 
-    .line 13
+    .line 12
     aget-byte p0, p5, p0
 
     aput-byte p0, p3, p2
 
     add-int/lit8 p0, p4, 0x2
 
-    .line 14
+    .line 13
     aput-byte p1, p3, p0
 
     add-int/2addr p4, v0
 
-    .line 15
+    .line 14
     aput-byte p1, p3, p4
 
     return-object p3
 .end method
 
-.method public static encode3to4([B[BII)[B
+.method private static encode3to4([B[BII)[B
     .locals 6
 
     const/4 v1, 0x0
@@ -1610,7 +1610,7 @@
 
     move v5, p3
 
-    .line 1
+    .line 15
     invoke-static/range {v0 .. v5}, Lcom/clevertap/android/sdk/java_websocket/util/Base64;->encode3to4([BII[BII)[B
 
     return-object p0
@@ -1642,6 +1642,11 @@
 
 .method public static encodeBytes([BIII)Ljava/lang/String;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-static {p0, p1, p2, p3}, Lcom/clevertap/android/sdk/java_websocket/util/Base64;->encodeBytesToBytes([BIII)[B
@@ -1671,6 +1676,11 @@
 
 .method public static encodeBytesToBytes([BIII)[B
     .locals 18
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -1690,8 +1700,6 @@
     array-length v2, v0
 
     const/4 v9, 0x1
-
-    const/4 v10, 0x0
 
     if-gt v1, v2, :cond_b
 
@@ -1925,30 +1933,34 @@
 
     add-int/2addr v1, v2
 
-    .line 18
     :cond_6
-    new-array v13, v1, [B
+    move v13, v1
 
-    add-int/lit8 v14, v8, -0x2
+    .line 18
+    new-array v14, v13, [B
 
-    const/4 v15, 0x0
+    add-int/lit8 v15, v8, -0x2
+
+    const/4 v6, 0x0
 
     const/16 v16, 0x0
 
     const/16 v17, 0x0
 
     :goto_8
-    if-ge v15, v14, :cond_8
+    if-ge v6, v15, :cond_8
 
-    add-int v2, v15, v7
+    add-int v2, v6, v7
 
     const/4 v3, 0x3
 
     move-object/from16 v1, p0
 
-    move-object v4, v13
+    move-object v4, v14
 
     move/from16 v5, v16
+
+    move v10, v6
 
     move/from16 v6, p3
 
@@ -1968,7 +1980,7 @@
     const/16 v2, 0xa
 
     .line 20
-    aput-byte v2, v13, v1
+    aput-byte v2, v14, v1
 
     add-int/lit8 v16, v16, 0x1
 
@@ -1980,22 +1992,24 @@
     move/from16 v17, v1
 
     :goto_9
-    add-int/lit8 v15, v15, 0x3
+    add-int/lit8 v6, v10, 0x3
 
     add-int/lit8 v16, v16, 0x4
 
     goto :goto_8
 
     :cond_8
-    if-ge v15, v8, :cond_9
+    move v10, v6
 
-    add-int v2, v15, v7
+    if-ge v10, v8, :cond_9
 
-    sub-int v3, v8, v15
+    add-int v2, v10, v7
+
+    sub-int v3, v8, v10
 
     move-object/from16 v1, p0
 
-    move-object v4, v13
+    move-object v4, v14
 
     move/from16 v5, v16
 
@@ -2009,58 +2023,61 @@
     :cond_9
     move/from16 v0, v16
 
+    sub-int/2addr v13, v9
+
+    if-gt v0, v13, :cond_a
+
     .line 22
-    array-length v1, v13
-
-    sub-int/2addr v1, v9
-
-    if-gt v0, v1, :cond_a
-
-    .line 23
     new-array v1, v0, [B
 
-    .line 24
-    invoke-static {v13, v10, v1, v10, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    const/4 v2, 0x0
+
+    .line 23
+    invoke-static {v14, v2, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v1
 
     :cond_a
-    return-object v13
+    return-object v14
 
-    .line 25
     :cond_b
+    const/4 v2, 0x0
+
+    .line 24
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const/4 v2, 0x3
+    const/4 v3, 0x3
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    .line 26
+    .line 25
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
-    aput-object v3, v2, v10
+    aput-object v4, v3, v2
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v2, v9
+    aput-object v2, v3, v9
 
     array-length v0, v0
 
+    .line 26
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    aput-object v0, v2, v3
+    aput-object v0, v3, v2
 
     const-string v0, "Cannot have offset of %d and length of %d with array of length %d"
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    .line 27
+    invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2068,7 +2085,7 @@
 
     throw v1
 
-    .line 27
+    .line 28
     :cond_c
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2090,7 +2107,7 @@
 
     throw v0
 
-    .line 28
+    .line 29
     :cond_d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2112,7 +2129,7 @@
 
     throw v0
 
-    .line 29
+    .line 30
     :cond_e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2123,7 +2140,7 @@
     throw v0
 .end method
 
-.method public static final getAlphabet(I)[B
+.method private static final getAlphabet(I)[B
     .locals 2
 
     and-int/lit8 v0, p0, 0x10
@@ -2156,7 +2173,7 @@
     return-object p0
 .end method
 
-.method public static final getDecodabet(I)[B
+.method private static final getDecodabet(I)[B
     .locals 2
 
     and-int/lit8 v0, p0, 0x10

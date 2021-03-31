@@ -1,73 +1,44 @@
 .class public final synthetic Lcom/google/android/gms/internal/ads/zzawy;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzaxn;
 
 
-# static fields
-.field public static final synthetic zzdlo:[I
+# instance fields
+.field private final zzdih:Ljava/lang/String;
+
+.field private final zzdzz:Landroid/os/Bundle;
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzawy;->zzdih:Ljava/lang/String;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzawy;->zzdzz:Landroid/os/Bundle;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final zza(Lcom/google/android/gms/internal/ads/zzbgf;)V
     .locals 3
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzayn;->values()[Lcom/google/android/gms/internal/ads/zzayn;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzawy;->zzdih:Ljava/lang/String;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzawy;->zzdzz:Landroid/os/Bundle;
 
-    array-length v0, v0
+    const-string v2, "am"
 
-    new-array v0, v0, [I
+    .line 2
+    invoke-interface {p1, v2, v0, v1}, Lcom/google/android/gms/internal/ads/zzbgf;->logEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzawy;->zzdlo:[I
-
-    :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzawy;->zzdlo:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayn;->zzdnv:Lcom/google/android/gms/internal/ads/zzayn;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzawy;->zzdlo:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayn;->zzdnw:Lcom/google/android/gms/internal/ads/zzayn;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzawy;->zzdlo:[I
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayn;->zzdnx:Lcom/google/android/gms/internal/ads/zzayn;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
     return-void
 .end method

@@ -1,29 +1,57 @@
 .class public Lcom/elitecorelib/andsf/pojonew/ANDSFDiscoveryInformations;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Ljava/io/Serializable;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "ANDSFDiscoveryInformations"
+.end annotation
+
+
 # instance fields
 .field public PLMN:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "PLMN"
+    .end annotation
+.end field
 
 .field public accessNetworkArea:Lcom/elitecorelib/andsf/pojonew/ANDSFAccessNetworkArea;
+    .annotation build Landroidx/room/Embedded;
+    .end annotation
+.end field
 
 .field public accessNetworkInformationWLAN:Lcom/elitecorelib/andsf/pojonew/ANDSFAccessNetworkInformationWLAN;
+    .annotation build Landroidx/room/Embedded;
+    .end annotation
+.end field
 
 .field public accessNetworkType:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "accessNetworkType"
+    .end annotation
+.end field
 
 .field public name:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "disname"
+    .end annotation
+.end field
 
-.field public uid:I
+.field private uid:I
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     const-string v0, ""
 

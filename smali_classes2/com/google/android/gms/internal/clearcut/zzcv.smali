@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final zzez:Lcom/google/android/gms/internal/clearcut/zzbt;
+.field private static final zzez:Lcom/google/android/gms/internal/clearcut/zzbt;
 
 
 # instance fields
-.field public zzln:Lcom/google/android/gms/internal/clearcut/zzbb;
+.field private zzln:Lcom/google/android/gms/internal/clearcut/zzbb;
 
-.field public volatile zzlo:Lcom/google/android/gms/internal/clearcut/zzdo;
+.field private volatile zzlo:Lcom/google/android/gms/internal/clearcut/zzdo;
 
-.field public volatile zzlp:Lcom/google/android/gms/internal/clearcut/zzbb;
+.field private volatile zzlp:Lcom/google/android/gms/internal/clearcut/zzbb;
 
 
 # direct methods

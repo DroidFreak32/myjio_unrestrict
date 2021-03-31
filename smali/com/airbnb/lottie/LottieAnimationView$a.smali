@@ -3,7 +3,7 @@
 .source "LottieAnimationView.java"
 
 # interfaces
-.implements Lxo;
+.implements Lcom/airbnb/lottie/LottieListener;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lxo<",
+        "Lcom/airbnb/lottie/LottieListener<",
         "Ljava/lang/Throwable;",
         ">;"
     }
@@ -38,22 +38,11 @@
 
 
 # virtual methods
-.method public bridge synthetic a(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieAnimationView$a;->a(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
 .method public a(Ljava/lang/Throwable;)V
     .locals 2
 
-    .line 2
-    invoke-static {p1}, Leu;->a(Ljava/lang/Throwable;)Z
+    .line 1
+    invoke-static {p1}, Lcom/airbnb/lottie/utils/Utils;->isNetworkException(Ljava/lang/Throwable;)Z
 
     move-result v0
 
@@ -61,12 +50,12 @@
 
     const-string v0, "Unable to load composition."
 
-    .line 3
-    invoke-static {v0, p1}, Lau;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 2
+    invoke-static {v0, p1}, Lcom/airbnb/lottie/utils/Logger;->warning(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 
-    .line 4
+    .line 3
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -75,4 +64,15 @@
     invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
+.end method
+
+.method public bridge synthetic onResult(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljava/lang/Throwable;
+
+    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/LottieAnimationView$a;->a(Ljava/lang/Throwable;)V
+
+    return-void
 .end method

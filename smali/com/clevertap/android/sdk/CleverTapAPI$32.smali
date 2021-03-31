@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->setMultiValuesForKey(Ljava/lang/String;Ljava/util/ArrayList;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->displayNotification(Lcom/clevertap/android/sdk/CTInAppNotification;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,21 +20,17 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public final synthetic val$key:Ljava/lang/String;
-
-.field public final synthetic val$values:Ljava/util/ArrayList;
+.field public final synthetic val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Ljava/util/ArrayList;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/clevertap/android/sdk/CTInAppNotification;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->val$values:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->val$key:Ljava/lang/String;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,18 +40,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->val$values:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$32;->val$key:Ljava/lang/String;
-
-    const-string v3, "$set"
-
-    invoke-static {v0, v1, v2, v3}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$3900(Lcom/clevertap/android/sdk/CleverTapAPI;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$5000(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/clevertap/android/sdk/CTInAppNotification;)V
 
     return-void
 .end method

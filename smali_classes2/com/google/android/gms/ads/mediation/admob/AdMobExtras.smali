@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
 .implements Lcom/google/ads/mediation/NetworkExtras;
@@ -11,7 +12,7 @@
 
 
 # instance fields
-.field public final mExtras:Landroid/os/Bundle;
+.field private final extras:Landroid/os/Bundle;
 
 
 # direct methods
@@ -34,7 +35,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    iput-object v0, p0, Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;->mExtras:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;->extras:Landroid/os/Bundle;
 
     return-void
 .end method
@@ -45,7 +46,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;->mExtras:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;->extras:Landroid/os/Bundle;
 
     return-object v0
 .end method

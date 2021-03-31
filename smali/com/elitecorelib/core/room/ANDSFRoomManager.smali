@@ -6,7 +6,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
-        "Lgh;",
+        "Landroidx/room/Room;",
         ">",
         "Ljava/lang/Object;"
     }
@@ -14,15 +14,15 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public callback:Lcom/elitecorelib/core/room/DBTaskComplete;
+.field private callback:Lcom/elitecorelib/core/room/DBTaskComplete;
 
-.field public dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
+.field private dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-.field public requestId:I
+.field private requestId:I
 
-.field public tableName:Ljava/lang/String;
+.field private tableName:Ljava/lang/String;
 
 .field public final type:Ljava/lang/Class;
 
@@ -753,7 +753,7 @@
 
     const-string v1, "noOfRecordsStoreL1"
 
-    invoke-static {v1, v0}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -773,7 +773,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(ZI)V"
         }
     .end annotation
@@ -810,15 +810,15 @@
     :goto_1
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecordList(Lei;)Ljava/util/List;
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecordList(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
 
     move-result-object p1
 
@@ -893,15 +893,15 @@
 
     iget-object v1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v2, Lai;
+    new-instance v2, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->deleteRecord(Lei;)I
+    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -946,15 +946,15 @@
     :try_start_0
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-direct {p0}, Lcom/elitecorelib/core/room/ANDSFRoomManager;->deleteALL()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->deletebyField(Lei;)I
+    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->deletebyField(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1036,15 +1036,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->deletebyField(Lei;)I
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->deletebyField(Landroidx/sqlite/db/SupportSQLiteQuery;)I
 
     return-void
 .end method
@@ -1099,15 +1099,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object p1
 
@@ -1187,15 +1187,15 @@
 
     iget-object v1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v2, Lai;
+    new-instance v2, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object v1
 
@@ -1273,15 +1273,15 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-direct {p0}, Lcom/elitecorelib/core/room/ANDSFRoomManager;->getQueryStatement()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecordList(Lei;)Ljava/util/List;
+    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecordList(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
 
     move-result-object v0
 
@@ -1426,15 +1426,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object p1
 
@@ -1516,15 +1516,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object p1
 
@@ -1566,7 +1566,7 @@
     return-object p1
 .end method
 
-.method public insertData(Lgh;)V
+.method public insertData(Landroidx/room/Room;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1580,14 +1580,14 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    invoke-virtual {v0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Lgh;)V
+    invoke-virtual {v0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Landroidx/room/Room;)V
 
     goto :goto_0
 
     :cond_0
     new-instance v0, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;-><init>(Lcom/elitecorelib/core/room/ANDSFRoomManager;Lgh;)V
+    invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/ANDSFRoomManager$1;-><init>(Lcom/elitecorelib/core/room/ANDSFRoomManager;Landroidx/room/Room;)V
 
     sget-object p1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
@@ -1694,15 +1694,15 @@
 
     iget-object v1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v2, Lai;
+    new-instance v2, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {v1, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object v0
 
@@ -1800,15 +1800,15 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v3, Lai;
+    new-instance v3, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v3, v2}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v3}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->updateRecord(Lei;)I
+    invoke-virtual {v0, v3}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
 
     iput-wide v4, p1, Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;->counter:J
 
@@ -1820,7 +1820,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "update records in Level1 - "
+    const-string/jumbo v4, "update records in Level1 - "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1843,7 +1843,7 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    invoke-virtual {v0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Lgh;)V
+    invoke-virtual {v0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Landroidx/room/Room;)V
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -1927,7 +1927,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "ssidName = \'"
+    const-string/jumbo v2, "ssidName = \'"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1945,15 +1945,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object p1
 
@@ -2033,11 +2033,11 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {v1, p1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecordList(Lei;)Ljava/util/List;
+    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecordList(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
 
     move-result-object p1
 
@@ -2131,12 +2131,12 @@
     return-void
 .end method
 
-.method public searchForFields(Ljava/util/HashMap;)Lgh;
+.method public searchForFields(Ljava/util/HashMap;)Landroidx/room/Room;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/util/HashMap<",
             "Ljava/lang/String;",
@@ -2208,15 +2208,15 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v3, Lai;
+    new-instance v3, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v3, v2}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v3}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {v0, v3}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object v1
 
@@ -2244,15 +2244,15 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v2, Lai;
+    new-instance v2, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v2, p1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object v1
     :try_end_1
@@ -2297,7 +2297,7 @@
 
     const-string v0, "\'"
 
-    const-string v1, "updateSSIDHiddenStatus()  Error:"
+    const-string/jumbo v1, "updateSSIDHiddenStatus()  Error:"
 
     :try_start_0
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2336,7 +2336,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "ssidName = \'"
+    const-string/jumbo v3, "ssidName = \'"
 
     invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2358,7 +2358,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "updateSSIDHiddenStatus Query : "
+    const-string/jumbo v3, "updateSSIDHiddenStatus Query : "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2376,15 +2376,15 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance p2, Lai;
+    new-instance p2, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {p2, v0}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, v0}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->updateRecord(Lei;)I
+    invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2441,15 +2441,15 @@
     return-void
 .end method
 
-.method public valid3GPPLocationForPolicy(Lt10;)Lcom/elitecorelib/andsf/pojonew/ANDSFLocation3GPP;
+.method public valid3GPPLocationForPolicy(Lcom/elitecorelib/andsf/api/d;)Lcom/elitecorelib/andsf/pojonew/ANDSFLocation3GPP;
     .locals 4
 
     :try_start_0
-    invoke-virtual {p1}, Lt10;->b()Lcom/elitecorelib/andsf/pojonew/ANDSFLocation3GPP;
+    invoke-virtual {p1}, Lcom/elitecorelib/andsf/api/d;->c()Lcom/elitecorelib/andsf/pojonew/ANDSFLocation3GPP;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lt10;->c()Z
+    invoke-virtual {p1}, Lcom/elitecorelib/andsf/api/d;->d()Z
 
     move-result p1
 
@@ -2465,11 +2465,11 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/ANDSFRoomManager;->dao:Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {v1, p1}, Lai;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Lei;)Lgh;
+    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
 
     move-result-object p1
 

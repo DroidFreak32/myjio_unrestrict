@@ -21,74 +21,66 @@
 
 .field public static final enum OPTION:Lcom/jiny/android/data/models/DiscoveryState;
 
-.field public static final synthetic s:[Lcom/jiny/android/data/models/DiscoveryState;
+.field public static final synthetic a:[Lcom/jiny/android/data/models/DiscoveryState;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     new-instance v0, Lcom/jiny/android/data/models/DiscoveryState;
 
-    const/4 v1, 0x0
+    const-string v1, "DISCOVERY"
 
-    const-string v2, "DISCOVERY"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/jiny/android/data/models/DiscoveryState;->DISCOVERY:Lcom/jiny/android/data/models/DiscoveryState;
 
-    new-instance v0, Lcom/jiny/android/data/models/DiscoveryState;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/jiny/android/data/models/DiscoveryState;
 
     const-string v3, "NORMAL"
 
-    invoke-direct {v0, v3, v2}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/jiny/android/data/models/DiscoveryState;->NORMAL:Lcom/jiny/android/data/models/DiscoveryState;
+    invoke-direct {v1, v3, v4}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/data/models/DiscoveryState;
+    sput-object v1, Lcom/jiny/android/data/models/DiscoveryState;->NORMAL:Lcom/jiny/android/data/models/DiscoveryState;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/jiny/android/data/models/DiscoveryState;
 
-    const-string v4, "OPTION"
+    const-string v5, "OPTION"
 
-    invoke-direct {v0, v4, v3}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/jiny/android/data/models/DiscoveryState;->OPTION:Lcom/jiny/android/data/models/DiscoveryState;
+    invoke-direct {v3, v5, v6}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/data/models/DiscoveryState;
+    sput-object v3, Lcom/jiny/android/data/models/DiscoveryState;->OPTION:Lcom/jiny/android/data/models/DiscoveryState;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/jiny/android/data/models/DiscoveryState;
 
-    const-string v5, "MUTED"
+    const-string v7, "MUTED"
 
-    invoke-direct {v0, v5, v4}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/jiny/android/data/models/DiscoveryState;->MUTED:Lcom/jiny/android/data/models/DiscoveryState;
+    invoke-direct {v5, v7, v8}, Lcom/jiny/android/data/models/DiscoveryState;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/jiny/android/data/models/DiscoveryState;->MUTED:Lcom/jiny/android/data/models/DiscoveryState;
 
-    new-array v0, v0, [Lcom/jiny/android/data/models/DiscoveryState;
+    const/4 v7, 0x4
 
-    sget-object v5, Lcom/jiny/android/data/models/DiscoveryState;->DISCOVERY:Lcom/jiny/android/data/models/DiscoveryState;
+    new-array v7, v7, [Lcom/jiny/android/data/models/DiscoveryState;
 
-    aput-object v5, v0, v1
+    aput-object v0, v7, v2
 
-    sget-object v1, Lcom/jiny/android/data/models/DiscoveryState;->NORMAL:Lcom/jiny/android/data/models/DiscoveryState;
+    aput-object v1, v7, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v7, v6
 
-    sget-object v1, Lcom/jiny/android/data/models/DiscoveryState;->OPTION:Lcom/jiny/android/data/models/DiscoveryState;
+    aput-object v5, v7, v8
 
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/jiny/android/data/models/DiscoveryState;->MUTED:Lcom/jiny/android/data/models/DiscoveryState;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/jiny/android/data/models/DiscoveryState;->s:[Lcom/jiny/android/data/models/DiscoveryState;
+    sput-object v7, Lcom/jiny/android/data/models/DiscoveryState;->a:[Lcom/jiny/android/data/models/DiscoveryState;
 
     return-void
 .end method
@@ -123,7 +115,7 @@
 .method public static values()[Lcom/jiny/android/data/models/DiscoveryState;
     .locals 1
 
-    sget-object v0, Lcom/jiny/android/data/models/DiscoveryState;->s:[Lcom/jiny/android/data/models/DiscoveryState;
+    sget-object v0, Lcom/jiny/android/data/models/DiscoveryState;->a:[Lcom/jiny/android/data/models/DiscoveryState;
 
     invoke-virtual {v0}, [Lcom/jiny/android/data/models/DiscoveryState;->clone()Ljava/lang/Object;
 

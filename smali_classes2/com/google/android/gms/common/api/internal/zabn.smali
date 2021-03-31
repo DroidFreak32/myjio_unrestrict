@@ -1,41 +1,18 @@
-.class public final Lcom/google/android/gms/common/api/internal/zabn;
+.class public interface abstract Lcom/google/android/gms/common/api/internal/zabn;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic zaja:Lcom/google/android/gms/common/api/internal/zabm;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zabm;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabn;->zaja:Lcom/google/android/gms/common/api/internal/zabm;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public abstract zaa(IZ)V
+.end method
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabn;->zaja:Lcom/google/android/gms/common/api/internal/zabm;
+.method public abstract zaa(Landroid/os/Bundle;)V
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+.end method
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zabm;->zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zag(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)Lcom/google/android/gms/common/api/Api$Client;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/Api$Client;->disconnect()V
-
-    return-void
+.method public abstract zaa(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method

@@ -27,53 +27,49 @@
 
 .field public static final enum STAR:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
-.field public static final synthetic s:[Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+.field public static final synthetic a:[Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     .line 1
     new-instance v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
-    const/4 v1, 0x0
+    const-string v1, "STAR"
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const-string v3, "STAR"
+    const/4 v3, 0x1
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/airbnb/lottie/model/content/PolystarShape$Type;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/airbnb/lottie/model/content/PolystarShape$Type;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->STAR:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
     .line 2
-    new-instance v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;
-
-    const/4 v3, 0x2
+    new-instance v1, Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
     const-string v4, "POLYGON"
 
-    invoke-direct {v0, v4, v2, v3}, Lcom/airbnb/lottie/model/content/PolystarShape$Type;-><init>(Ljava/lang/String;II)V
+    const/4 v5, 0x2
 
-    sput-object v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->POLYGON:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+    invoke-direct {v1, v4, v3, v5}, Lcom/airbnb/lottie/model/content/PolystarShape$Type;-><init>(Ljava/lang/String;II)V
 
-    new-array v0, v3, [Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+    sput-object v1, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->POLYGON:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+
+    new-array v4, v5, [Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+
+    aput-object v0, v4, v2
+
+    aput-object v1, v4, v3
 
     .line 3
-    sget-object v3, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->STAR:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->POLYGON:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->s:[Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+    sput-object v4, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->a:[Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
     return-void
 .end method
@@ -149,7 +145,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->s:[Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+    sget-object v0, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->a:[Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/PolystarShape$Type;->clone()Ljava/lang/Object;
 

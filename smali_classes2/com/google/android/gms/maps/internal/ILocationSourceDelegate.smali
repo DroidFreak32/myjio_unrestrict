@@ -15,7 +15,17 @@
 
 # virtual methods
 .method public abstract activate(Lcom/google/android/gms/maps/internal/zzah;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
 .method public abstract deactivate()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

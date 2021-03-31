@@ -15,17 +15,17 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "SecureConnectionManagerTask"
+.field private static final MODULE:Ljava/lang/String; = "SecureConnectionManagerTask"
 
 
 # instance fields
-.field public final JSON:Lokhttp3/MediaType;
+.field private final JSON:Lokhttp3/MediaType;
 
-.field public final TEXT:Lokhttp3/MediaType;
+.field private final TEXT:Lokhttp3/MediaType;
 
-.field public final callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
+.field private final callback:Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;
 
-.field public headers:Ljava/util/Map;
+.field private headers:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public final requestId:I
+.field private final requestId:I
 
 
 # direct methods
@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/SecureConnectionManagerTask;->JSON:Lokhttp3/MediaType;
 
-    const-string v0, "text/plain"
+    const-string/jumbo v0, "text/plain"
 
     invoke-static {v0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -92,7 +92,7 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/SecureConnectionManagerTask;->JSON:Lokhttp3/MediaType;
 
-    const-string v0, "text/plain"
+    const-string/jumbo v0, "text/plain"
 
     invoke-static {v0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -457,8 +457,6 @@
     const/16 v2, 0x1c
 
     if-eq v1, v2, :cond_0
-
-    iget v1, p0, Lcom/elitecorelib/core/services/SecureConnectionManagerTask;->requestId:I
 
     const/16 v2, 0x1a
 

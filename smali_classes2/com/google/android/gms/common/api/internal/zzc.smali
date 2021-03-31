@@ -1,12 +1,13 @@
 .class public final Lcom/google/android/gms/common/api/internal/zzc;
 .super Landroidx/fragment/app/Fragment;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/internal/LifecycleFragment;
 
 
 # static fields
-.field public static zzbe:Ljava/util/WeakHashMap;
+.field private static zza:Ljava/util/WeakHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/WeakHashMap<",
@@ -20,7 +21,7 @@
 
 
 # instance fields
-.field public zzbf:Ljava/util/Map;
+.field private zzb:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -31,9 +32,12 @@
     .end annotation
 .end field
 
-.field public zzbg:I
+.field private zzc:I
 
-.field public zzbh:Landroid/os/Bundle;
+.field private zzd:Landroid/os/Bundle;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -45,7 +49,7 @@
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/api/internal/zzc;->zzbe:Ljava/util/WeakHashMap;
+    sput-object v0, Lcom/google/android/gms/common/api/internal/zzc;->zza:Ljava/util/WeakHashMap;
 
     return-void
 .end method
@@ -57,16 +61,21 @@
     invoke-direct {p0}, Landroidx/fragment/app/Fragment;-><init>()V
 
     .line 2
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    .line 3
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     const/4 v0, 0x0
 
-    .line 3
-    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    .line 4
+    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     return-void
 .end method
@@ -75,7 +84,7 @@
     .locals 0
 
     .line 9
-    iget p0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iget p0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     return p0
 .end method
@@ -86,7 +95,7 @@
     const-string v0, "SupportLifecycleFragmentImpl"
 
     .line 1
-    sget-object v1, Lcom/google/android/gms/common/api/internal/zzc;->zzbe:Ljava/util/WeakHashMap;
+    sget-object v1, Lcom/google/android/gms/common/api/internal/zzc;->zza:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -110,11 +119,11 @@
     .line 3
     :cond_0
     :try_start_0
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lrc;->b(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+    invoke-virtual {v1, v0}, Landroidx/fragment/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 
     move-result-object v1
 
@@ -138,21 +147,23 @@
     invoke-direct {v1}, Lcom/google/android/gms/common/api/internal/zzc;-><init>()V
 
     .line 6
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lrc;->b()Lyc;
+    invoke-virtual {v2}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1, v0}, Lyc;->a(Landroidx/fragment/app/Fragment;Ljava/lang/String;)Lyc;
+    invoke-virtual {v2, v1, v0}, Landroidx/fragment/app/FragmentTransaction;->add(Landroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
 
-    invoke-virtual {v2}, Lyc;->b()I
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I
 
     .line 7
     :cond_2
-    sget-object v0, Lcom/google/android/gms/common/api/internal/zzc;->zzbe:Ljava/util/WeakHashMap;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/zzc;->zza:Ljava/util/WeakHashMap;
 
     new-instance v2, Ljava/lang/ref/WeakReference;
 
@@ -179,7 +190,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbh:Landroid/os/Bundle;
+    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzd:Landroid/os/Bundle;
 
     return-object p0
 .end method
@@ -188,9 +199,13 @@
 # virtual methods
 .method public final addCallback(Ljava/lang/String;Lcom/google/android/gms/common/api/internal/LifecycleCallback;)V
     .locals 2
+    .param p2    # Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -199,23 +214,23 @@
     if-nez v0, :cond_1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    iget v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iget v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     if-lez v0, :cond_0
 
     .line 4
-    new-instance v0, Lcom/google/android/gms/internal/common/zze;
+    new-instance v0, Lcom/google/android/gms/internal/common/zzi;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/common/zze;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/common/zzi;-><init>(Landroid/os/Looper;)V
 
     new-instance v1, Lcom/google/android/gms/common/api/internal/zzd;
 
@@ -266,12 +281,20 @@
 
 .method public final dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 2
+    .param p2    # Ljava/io/FileDescriptor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/fragment/app/Fragment;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -305,6 +328,9 @@
 
 .method public final getCallbackOrNull(Ljava/lang/String;Ljava/lang/Class;)Lcom/google/android/gms/common/api/internal/LifecycleCallback;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -317,7 +343,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -347,7 +373,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iget v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     if-lez v0, :cond_0
 
@@ -365,7 +391,7 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iget v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     const/4 v1, 0x2
 
@@ -383,12 +409,16 @@
 
 .method public final onActivityResult(IILandroid/content/Intent;)V
     .locals 2
+    .param p3    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroidx/fragment/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -422,6 +452,10 @@
 
 .method public final onCreate(Landroid/os/Bundle;)V
     .locals 3
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1}, Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V
@@ -429,13 +463,13 @@
     const/4 v0, 0x1
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbh:Landroid/os/Bundle;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzd:Landroid/os/Bundle;
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -502,10 +536,10 @@
     const/4 v0, 0x5
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -546,10 +580,10 @@
     const/4 v0, 0x3
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -593,7 +627,7 @@
 
     .line 2
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -654,10 +688,10 @@
     const/4 v0, 0x2
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -698,10 +732,10 @@
     const/4 v0, 0x4
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbg:I
+    iput v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzc:I
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzbf:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zzc;->zzb:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 

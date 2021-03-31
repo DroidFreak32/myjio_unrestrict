@@ -1,13 +1,13 @@
 .class public abstract Lcom/clevertap/android/sdk/CTInAppBaseFragment;
-.super Landroid/app/Fragment;
+.super Landroidx/fragment/app/Fragment;
 .source "CTInAppBaseFragment.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/clevertap/android/sdk/CTInAppBaseFragment$CTInAppNativeButtonClickListener;,
-        Lcom/clevertap/android/sdk/CTInAppBaseFragment$InAppListener;
+        Lcom/clevertap/android/sdk/CTInAppBaseFragment$InAppListener;,
+        Lcom/clevertap/android/sdk/CTInAppBaseFragment$CTInAppNativeButtonClickListener;
     }
 .end annotation
 
@@ -17,13 +17,15 @@
 
 .field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
+.field public context:Landroid/content/Context;
+
 .field public currentOrientation:I
 
 .field public inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
 .field public isCleanedUp:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public listenerWeakReference:Ljava/lang/ref/WeakReference;
+.field private listenerWeakReference:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -33,15 +35,13 @@
     .end annotation
 .end field
 
-.field public parent:Landroid/app/Activity;
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;-><init>()V
 
     const/4 v0, 0x0
 
@@ -106,13 +106,13 @@
     if-eqz v0, :cond_0
 
     .line 3
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v1
 
@@ -123,7 +123,7 @@
     if-eqz v1, :cond_0
 
     .line 4
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v1
 
@@ -247,11 +247,18 @@
 
     .line 10
     :cond_1
-    invoke-virtual {p0, v0}, Landroid/app/Fragment;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object p1
+
+    invoke-static {p1, v0}, Lcom/clevertap/android/sdk/Utils;->setPackageNameFromResolveInfoList(Landroid/content/Context;Landroid/content/Intent;)V
+
+    .line 11
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 11
+    .line 12
     :catchall_0
     invoke-virtual {p0, p2}, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->didDismiss(Landroid/os/Bundle;)V
 
@@ -307,6 +314,7 @@
 
     iget-object v4, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
+    .line 3
     invoke-virtual {v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->getJsonDescription()Lorg/json/JSONObject;
 
     move-result-object v4
@@ -317,6 +325,7 @@
 
     move-result-object v3
 
+    .line 4
     invoke-virtual {v1, v2, v3}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
@@ -329,7 +338,7 @@
     int-to-float p1, p1
 
     .line 1
-    invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -371,7 +380,7 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const-string v1, "wzrk_id"
+    const-string/jumbo v1, "wzrk_id"
 
     .line 3
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
@@ -382,7 +391,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v1, "wzrk_c2a"
+    const-string/jumbo v1, "wzrk_c2a"
 
     .line 4
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->getText()Ljava/lang/String;
@@ -457,17 +466,17 @@
     return-void
 .end method
 
-.method public onAttach(Landroid/app/Activity;)V
+.method public onAttach(Landroid/content/Context;)V
     .locals 1
 
     .line 1
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onAttach(Landroid/app/Activity;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/Fragment;->onAttach(Landroid/content/Context;)V
 
     .line 2
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->parent:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->context:Landroid/content/Context;
 
     .line 3
-    invoke-virtual {p0}, Landroid/app/Fragment;->getArguments()Landroid/os/Bundle;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -494,7 +503,7 @@
     iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
     .line 6
-    invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
@@ -514,9 +523,13 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 0
+    .param p2    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0, p1, p2}, Landroid/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    invoke-super {p0, p1, p2}, Landroidx/fragment/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
     const/4 p1, 0x0
 

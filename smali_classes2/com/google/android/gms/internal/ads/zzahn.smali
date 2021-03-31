@@ -1,9 +1,19 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzahn;
+.class public final Lcom/google/android/gms/internal/ads/zzahn;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzahv;
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzahv<",
+        "Lcom/google/android/gms/internal/ads/zzbdv;",
+        ">;"
+    }
 .end annotation
 
 
@@ -19,13 +29,27 @@
 
 
 # virtual methods
-.method public abstract zzqc()Lcom/google/android/gms/internal/ads/zzapi;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/internal/ads/zzapi<",
-            "Ljava/lang/Void;",
-            ">;"
-        }
-    .end annotation
+.method public final synthetic zza(Ljava/lang/Object;Ljava/util/Map;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzbdv;
+
+    const-string v0, "custom_close"
+
+    .line 2
+    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    const-string v0, "1"
+
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    .line 3
+    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/ads/zzbdv;->zzal(Z)V
+
+    return-void
 .end method

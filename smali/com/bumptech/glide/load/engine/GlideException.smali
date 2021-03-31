@@ -12,13 +12,13 @@
 
 
 # static fields
-.field public static final EMPTY_ELEMENTS:[Ljava/lang/StackTraceElement;
+.field private static final EMPTY_ELEMENTS:[Ljava/lang/StackTraceElement;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final causes:Ljava/util/List;
+.field private final causes:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field public dataClass:Ljava/lang/Class;
+.field private dataClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -37,13 +37,16 @@
     .end annotation
 .end field
 
-.field public dataSource:Lcom/bumptech/glide/load/DataSource;
+.field private dataSource:Lcom/bumptech/glide/load/DataSource;
 
-.field public detailMessage:Ljava/lang/String;
+.field private detailMessage:Ljava/lang/String;
 
-.field public exception:Ljava/lang/Exception;
+.field private exception:Ljava/lang/Exception;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public key:Lcom/bumptech/glide/load/Key;
+.field private key:Lcom/bumptech/glide/load/Key;
 
 
 # direct methods
@@ -170,7 +173,7 @@
     return-void
 .end method
 
-.method public static appendCauses(Ljava/util/List;Ljava/lang/Appendable;)V
+.method private static appendCauses(Ljava/util/List;Ljava/lang/Appendable;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -202,7 +205,7 @@
     throw p1
 .end method
 
-.method public static appendCausesWrapped(Ljava/util/List;Ljava/lang/Appendable;)V
+.method private static appendCausesWrapped(Ljava/util/List;Ljava/lang/Appendable;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -212,6 +215,12 @@
             ">;",
             "Ljava/lang/Appendable;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -297,7 +306,7 @@
     return-void
 .end method
 
-.method public static appendExceptionMessage(Ljava/lang/Throwable;Ljava/lang/Appendable;)V
+.method private static appendExceptionMessage(Ljava/lang/Throwable;Ljava/lang/Appendable;)V
     .locals 1
 
     .line 1
@@ -604,6 +613,8 @@
 
 .method public getOrigin()Ljava/lang/Exception;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/GlideException;->exception:Ljava/lang/Exception;
@@ -756,6 +767,10 @@
 
 .method public setOrigin(Ljava/lang/Exception;)V
     .locals 0
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/GlideException;->exception:Ljava/lang/Exception;

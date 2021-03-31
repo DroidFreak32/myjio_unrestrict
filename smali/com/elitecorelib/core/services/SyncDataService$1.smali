@@ -25,7 +25,7 @@
 .method public run()V
     .locals 0
 
-    invoke-static {}, Lk30;->d()V
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->d()V
 
     return-void
 .end method

@@ -22,15 +22,15 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "SourceGenerator"
+.field private static final TAG:Ljava/lang/String; = "SourceGenerator"
 
 
 # instance fields
-.field public final cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
+.field private final cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;
 
-.field public dataToCache:Ljava/lang/Object;
+.field private dataToCache:Ljava/lang/Object;
 
-.field public final helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
+.field private final helper:Lcom/bumptech/glide/load/engine/DecodeHelper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/DecodeHelper<",
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public volatile loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
+.field private volatile loadData:Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader$LoadData<",
@@ -48,11 +48,11 @@
     .end annotation
 .end field
 
-.field public loadDataListIndex:I
+.field private loadDataListIndex:I
 
-.field public originalKey:Lcom/bumptech/glide/load/engine/DataCacheKey;
+.field private originalKey:Lcom/bumptech/glide/load/engine/DataCacheKey;
 
-.field public sourceCacheGenerator:Lcom/bumptech/glide/load/engine/DataCacheGenerator;
+.field private sourceCacheGenerator:Lcom/bumptech/glide/load/engine/DataCacheGenerator;
 
 
 # direct methods
@@ -416,6 +416,10 @@
 
 .method public onLoadFailed(Ljava/lang/Exception;)V
     .locals 4
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/SourceGenerator;->cb:Lcom/bumptech/glide/load/engine/DataFetcherGenerator$FetcherReadyCallback;

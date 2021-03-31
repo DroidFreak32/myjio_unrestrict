@@ -33,7 +33,7 @@
 
 
 # static fields
-.field public static volatile zznw:Lcom/google/android/gms/internal/gtm/zzsu;
+.field private static volatile zznw:Lcom/google/android/gms/internal/gtm/zzsu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzsu<",
@@ -43,23 +43,23 @@
     .end annotation
 .end field
 
-.field public static final zzoj:Lcom/google/android/gms/internal/gtm/zzc$zzb;
+.field private static final zzoj:Lcom/google/android/gms/internal/gtm/zzc$zzb;
 
 
 # instance fields
-.field public zznr:I
+.field private zznr:I
 
-.field public zzod:Lcom/google/android/gms/internal/gtm/zzri;
+.field private zzod:Lcom/google/android/gms/internal/gtm/zzri;
 
-.field public zzoe:I
+.field private zzoe:I
 
-.field public zzof:I
+.field private zzof:I
 
-.field public zzog:Z
+.field private zzog:Z
 
-.field public zzoh:Z
+.field private zzoh:Z
 
-.field public zzoi:B
+.field private zzoi:B
 
 
 # direct methods
@@ -74,16 +74,14 @@
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzc$zzb;->zzoj:Lcom/google/android/gms/internal/gtm/zzc$zzb;
 
     .line 2
-    const-class v0, Lcom/google/android/gms/internal/gtm/zzc$zzb;
+    const-class v1, Lcom/google/android/gms/internal/gtm/zzc$zzb;
 
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzc$zzb;->zzoj:Lcom/google/android/gms/internal/gtm/zzc$zzb;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/gtm/zzrc;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/gtm/zzrc;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -124,7 +122,7 @@
     const/4 v2, 0x0
 
     .line 17
-    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/gms/internal/gtm/zzc$zzb;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -173,13 +171,10 @@
     :pswitch_0
     if-nez p2, :cond_0
 
-    goto :goto_0
+    const/4 v0, 0x0
 
     :cond_0
-    const/4 p3, 0x1
-
-    :goto_0
-    int-to-byte p1, p3
+    int-to-byte p1, v0
 
     .line 3
     iput-byte p1, p0, Lcom/google/android/gms/internal/gtm/zzc$zzb;->zzoi:B
@@ -227,7 +222,7 @@
     :cond_1
     monitor-exit p2
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_0
     move-exception p1
@@ -239,7 +234,7 @@
     throw p1
 
     :cond_2
-    :goto_1
+    :goto_0
     return-object p1
 
     .line 11
@@ -285,12 +280,12 @@
 
     aput-object p3, p1, p2
 
+    const-string p2, "\u0001\u0005\u0000\u0001\u0001\u0006\u0005\u0000\u0001\u0001\u0001\u0007\u0003\u0002\u0504\u0000\u0003\u0016\u0004\u0004\u0001\u0006\u0007\u0002"
+
     .line 12
-    sget-object p2, Lcom/google/android/gms/internal/gtm/zzc$zzb;->zzoj:Lcom/google/android/gms/internal/gtm/zzc$zzb;
+    sget-object p3, Lcom/google/android/gms/internal/gtm/zzc$zzb;->zzoj:Lcom/google/android/gms/internal/gtm/zzc$zzb;
 
-    const-string p3, "\u0001\u0005\u0000\u0001\u0001\u0006\u0005\u0000\u0001\u0001\u0001\u0007\u0003\u0002\u0504\u0000\u0003\u0016\u0004\u0004\u0001\u0006\u0007\u0002"
-
-    invoke-static {p2, p3, p1}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Lcom/google/android/gms/internal/gtm/zzsk;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, p2, p1}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Lcom/google/android/gms/internal/gtm/zzsk;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -311,8 +306,6 @@
     invoke-direct {p1}, Lcom/google/android/gms/internal/gtm/zzc$zzb;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

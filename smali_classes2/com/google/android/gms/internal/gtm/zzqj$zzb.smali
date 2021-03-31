@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public final zzawv:Ljava/nio/ByteBuffer;
+.field private final zzawv:Ljava/nio/ByteBuffer;
 
-.field public zzaww:I
+.field private zzaww:I
 
 
 # direct methods

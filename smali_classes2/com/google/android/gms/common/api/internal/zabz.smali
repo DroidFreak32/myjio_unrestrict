@@ -1,37 +1,44 @@
-.class public final synthetic Lcom/google/android/gms/common/api/internal/zabz;
+.class public final Lcom/google/android/gms/common/api/internal/zabz;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
-# instance fields
-.field public final zakg:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+# static fields
+.field private static final zaa:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/internal/base/zal;->zaa()Lcom/google/android/gms/internal/base/zam;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabz;->zakg:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;
+
+    const-string v2, "GAC_Transform"
+
+    invoke-direct {v1, v2}, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;-><init>(Ljava/lang/String;)V
+
+    sget v2, Lcom/google/android/gms/internal/base/zaq;->zaa:I
+
+    .line 2
+    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/internal/base/zam;->zaa(Ljava/util/concurrent/ThreadFactory;I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/common/api/internal/zabz;->zaa:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public static zaa()Ljava/util/concurrent/ExecutorService;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabz;->zakg:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+    .line 1
+    sget-object v0, Lcom/google/android/gms/common/api/internal/zabz;->zaa:Ljava/util/concurrent/ExecutorService;
 
-    check-cast p1, Lcom/google/android/gms/common/api/Api$AnyClient;
-
-    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->zaa(Lcom/google/android/gms/common/api/Api$AnyClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
-
-    return-void
+    return-object v0
 .end method

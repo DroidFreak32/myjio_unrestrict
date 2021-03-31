@@ -48,12 +48,12 @@
 .method public final a()V
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Landroidx/media/session/MediaButtonReceiver$a;->d:Landroid/support/v4/media/MediaBrowserCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowserCompat;->disconnect()V
 
-    .line 3
+    .line 2
     iget-object v0, p0, Landroidx/media/session/MediaButtonReceiver$a;->c:Landroid/content/BroadcastReceiver$PendingResult;
 
     invoke-virtual {v0}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method public a(Landroid/support/v4/media/MediaBrowserCompat;)V
+.method public b(Landroid/support/v4/media/MediaBrowserCompat;)V
     .locals 0
 
     .line 1

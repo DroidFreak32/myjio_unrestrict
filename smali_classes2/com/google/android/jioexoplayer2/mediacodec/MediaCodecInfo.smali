@@ -19,10 +19,16 @@
 .field public final adaptive:Z
 
 .field public final capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final isVideo:Z
+.field private final isVideo:Z
 
 .field public final mimeType:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 .field public final name:Ljava/lang/String;
 
@@ -34,8 +40,16 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZ)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZ)V
     .locals 0
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Landroid/media/MediaCodecInfo$CodecCapabilities;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +146,7 @@
     return-void
 .end method
 
-.method public static adjustMaxInputChannelCount(Ljava/lang/String;Ljava/lang/String;I)I
+.method private static adjustMaxInputChannelCount(Ljava/lang/String;Ljava/lang/String;I)I
     .locals 2
 
     const/4 v0, 0x1
@@ -326,7 +340,7 @@
     return p2
 .end method
 
-.method public static areSizeAndRateSupportedV21(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)Z
+.method private static areSizeAndRateSupportedV21(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)Z
     .locals 3
     .annotation build Landroid/annotation/TargetApi;
         value = 0x15
@@ -365,7 +379,7 @@
     return p0
 .end method
 
-.method public static getMaxSupportedInstancesV23(Landroid/media/MediaCodecInfo$CodecCapabilities;)I
+.method private static getMaxSupportedInstancesV23(Landroid/media/MediaCodecInfo$CodecCapabilities;)I
     .locals 0
     .annotation build Landroid/annotation/TargetApi;
         value = 0x17
@@ -379,7 +393,7 @@
     return p0
 .end method
 
-.method public static isAdaptive(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+.method private static isAdaptive(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 2
 
     .line 1
@@ -406,7 +420,7 @@
     return p0
 .end method
 
-.method public static isAdaptiveV19(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+.method private static isAdaptiveV19(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 1
     .annotation build Landroid/annotation/TargetApi;
         value = 0x13
@@ -422,7 +436,7 @@
     return p0
 .end method
 
-.method public static isSecure(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+.method private static isSecure(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 2
 
     .line 1
@@ -449,7 +463,7 @@
     return p0
 .end method
 
-.method public static isSecureV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+.method private static isSecureV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 1
     .annotation build Landroid/annotation/TargetApi;
         value = 0x15
@@ -465,7 +479,7 @@
     return p0
 .end method
 
-.method public static isTunneling(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+.method private static isTunneling(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 2
 
     .line 1
@@ -492,7 +506,7 @@
     return p0
 .end method
 
-.method public static isTunnelingV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
+.method private static isTunnelingV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 1
     .annotation build Landroid/annotation/TargetApi;
         value = 0x15
@@ -1116,6 +1130,11 @@
 
 .method public isFormatSupported(Lcom/google/android/jioexoplayer2/Format;)Z
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p1, Lcom/google/android/jioexoplayer2/Format;->codecs:Ljava/lang/String;

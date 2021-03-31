@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public next:Lcom/fasterxml/jackson/databind/util/LinkedNode;
+.field private next:Lcom/fasterxml/jackson/databind/util/LinkedNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/util/LinkedNode<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public final value:Ljava/lang/Object;
+.field private final value:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"

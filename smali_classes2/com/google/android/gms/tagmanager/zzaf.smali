@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final synthetic zzafg:Lcom/google/android/gms/tagmanager/zzy;
+.field private final synthetic zzafg:Lcom/google/android/gms/tagmanager/zzy;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zzy;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zzy;)V
     .locals 0
 
     .line 1

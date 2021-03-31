@@ -11,9 +11,9 @@
 
 
 # static fields
-.field public static final zzavi:Lcom/google/android/gms/internal/gtm/zzpg;
+.field private static final zzavi:Lcom/google/android/gms/internal/gtm/zzpg;
 
-.field public static final zzavj:I
+.field private static final zzavj:I
 
 
 # direct methods
@@ -171,39 +171,39 @@
     return-void
 .end method
 
-.method public static zzmu()Ljava/lang/Integer;
+.method private static zzmu()Ljava/lang/Integer;
     .locals 4
 
-    const-string v0, "android.os.Build$VERSION"
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    :try_start_0
+    const-string v1, "android.os.Build$VERSION"
 
     .line 1
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v2, "SDK_INT"
 
     .line 2
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 3
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v1, Ljava/lang/Integer;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    return-object v1
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
     .line 4
     sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
@@ -215,7 +215,7 @@
     .line 5
     sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+    invoke-virtual {v1, v2}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
 
-    return-object v1
+    return-object v0
 .end method

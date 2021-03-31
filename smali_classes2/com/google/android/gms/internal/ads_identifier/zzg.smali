@@ -20,6 +20,11 @@
 # virtual methods
 .method public final getId()Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/ads_identifier/zza;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
 
@@ -42,6 +47,11 @@
 
 .method public final zzb(Z)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/ads_identifier/zza;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
 
@@ -68,6 +78,11 @@
 
 .method public final zzc()Z
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/ads_identifier/zza;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
 

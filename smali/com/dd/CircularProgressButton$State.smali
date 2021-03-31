@@ -31,76 +31,68 @@
 
 .field public static final enum PROGRESS:Lcom/dd/CircularProgressButton$State;
 
-.field public static final synthetic s:[Lcom/dd/CircularProgressButton$State;
+.field public static final synthetic a:[Lcom/dd/CircularProgressButton$State;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     .line 1
     new-instance v0, Lcom/dd/CircularProgressButton$State;
 
-    const/4 v1, 0x0
+    const-string v1, "PROGRESS"
 
-    const-string v2, "PROGRESS"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/dd/CircularProgressButton$State;->PROGRESS:Lcom/dd/CircularProgressButton$State;
 
-    new-instance v0, Lcom/dd/CircularProgressButton$State;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/dd/CircularProgressButton$State;
 
     const-string v3, "IDLE"
 
-    invoke-direct {v0, v3, v2}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/dd/CircularProgressButton$State;->IDLE:Lcom/dd/CircularProgressButton$State;
+    invoke-direct {v1, v3, v4}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/dd/CircularProgressButton$State;
+    sput-object v1, Lcom/dd/CircularProgressButton$State;->IDLE:Lcom/dd/CircularProgressButton$State;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/dd/CircularProgressButton$State;
 
-    const-string v4, "COMPLETE"
+    const-string v5, "COMPLETE"
 
-    invoke-direct {v0, v4, v3}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/dd/CircularProgressButton$State;->COMPLETE:Lcom/dd/CircularProgressButton$State;
+    invoke-direct {v3, v5, v6}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/dd/CircularProgressButton$State;
+    sput-object v3, Lcom/dd/CircularProgressButton$State;->COMPLETE:Lcom/dd/CircularProgressButton$State;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/dd/CircularProgressButton$State;
 
-    const-string v5, "ERROR"
+    const-string v7, "ERROR"
 
-    invoke-direct {v0, v5, v4}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/dd/CircularProgressButton$State;->ERROR:Lcom/dd/CircularProgressButton$State;
+    invoke-direct {v5, v7, v8}, Lcom/dd/CircularProgressButton$State;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/dd/CircularProgressButton$State;->ERROR:Lcom/dd/CircularProgressButton$State;
 
-    new-array v0, v0, [Lcom/dd/CircularProgressButton$State;
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lcom/dd/CircularProgressButton$State;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
 
     .line 2
-    sget-object v5, Lcom/dd/CircularProgressButton$State;->PROGRESS:Lcom/dd/CircularProgressButton$State;
-
-    aput-object v5, v0, v1
-
-    sget-object v1, Lcom/dd/CircularProgressButton$State;->IDLE:Lcom/dd/CircularProgressButton$State;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/dd/CircularProgressButton$State;->COMPLETE:Lcom/dd/CircularProgressButton$State;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/dd/CircularProgressButton$State;->ERROR:Lcom/dd/CircularProgressButton$State;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/dd/CircularProgressButton$State;->s:[Lcom/dd/CircularProgressButton$State;
+    sput-object v7, Lcom/dd/CircularProgressButton$State;->a:[Lcom/dd/CircularProgressButton$State;
 
     return-void
 .end method
@@ -138,7 +130,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/dd/CircularProgressButton$State;->s:[Lcom/dd/CircularProgressButton$State;
+    sget-object v0, Lcom/dd/CircularProgressButton$State;->a:[Lcom/dd/CircularProgressButton$State;
 
     invoke-virtual {v0}, [Lcom/dd/CircularProgressButton$State;->clone()Ljava/lang/Object;
 

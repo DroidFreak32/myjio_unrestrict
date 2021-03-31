@@ -5,4 +5,6 @@
 
 # virtual methods
 .method public abstract decode(Lcom/google/android/jioexoplayer2/metadata/MetadataInputBuffer;)Lcom/google/android/jioexoplayer2/metadata/Metadata;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method

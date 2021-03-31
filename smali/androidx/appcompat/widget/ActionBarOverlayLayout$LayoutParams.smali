@@ -41,3 +41,12 @@
 
     return-void
 .end method
+
+.method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+    .locals 0
+
+    .line 4
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+
+    return-void
+.end method

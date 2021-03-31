@@ -1,28 +1,27 @@
-.class public Lcom/google/android/gms/common/api/Api$zaa;
-.super Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
+.class public interface abstract Lcom/google/android/gms/common/api/Api$zaa;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/Api$AnyClient;
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/google/android/gms/common/api/Api;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
+    accessFlags = 0x609
     name = "zaa"
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T::",
-        "Lcom/google/android/gms/common/api/Api$SimpleClient;",
-        "O:",
-        "Ljava/lang/Object;",
+        "Landroid/os/IInterface;",
         ">",
-        "Lcom/google/android/gms/common/api/Api$BaseClientBuilder<",
-        "TT;TO;>;"
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/common/api/Api$AnyClient;"
     }
 .end annotation

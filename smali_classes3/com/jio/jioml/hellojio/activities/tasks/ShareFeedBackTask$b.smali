@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;->i()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;->oneTimeInit()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask$b;->s:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask$b;->a:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,9 +38,9 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask$b;->s:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask$b;->a:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
 
-    invoke-virtual {v0}, Lao0;->b()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -49,15 +49,15 @@
     check-cast v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
     .line 2
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask$b;->s:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask$b;->a:Lcom/jio/jioml/hellojio/activities/tasks/ShareFeedBackTask;
 
-    invoke-virtual {v0}, Lao0;->b()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/Activity;
 
-    sget v1, Ldn0;->mainRecycler:I
+    sget v1, Lcom/jio/jioml/hellojio/R$id;->mainRecycler:I
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -67,7 +67,7 @@
 
     const-string v1, "context.mainRecycler"
 
-    invoke-static {v0, v1}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/high16 v1, 0x40000
 

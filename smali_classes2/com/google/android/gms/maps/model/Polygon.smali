@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzdw:Lcom/google/android/gms/internal/maps/zzw;
+.field private final zzdw:Lcom/google/android/gms/internal/maps/zzw;
 
 
 # direct methods
@@ -242,6 +242,9 @@
 
 .method public final getStrokePattern()Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -306,6 +309,8 @@
 
 .method public final getTag()Ljava/lang/Object;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -676,6 +681,10 @@
 
 .method public final setStrokePattern(Ljava/util/List;)V
     .locals 1
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -732,6 +741,10 @@
 
 .method public final setTag(Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     :try_start_0

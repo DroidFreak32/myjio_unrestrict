@@ -15,37 +15,37 @@
 
 
 # static fields
-.field public static final MAXIMUM_GRAVITY:F = 11.8f
+.field private static final MAXIMUM_GRAVITY:F = 11.8f
 
-.field public static final MINIMUM_CANCEL_DURATION:J = 0x3b9aca00L
+.field private static final MINIMUM_CANCEL_DURATION:J = 0x3b9aca00L
 
-.field public static final MINIMUM_GRAVITY:F = 7.8f
+.field private static final MINIMUM_GRAVITY:F = 7.8f
 
-.field public static final MINIMUM_UP_DOWN_DURATION:J = 0xee6b280L
+.field private static final MINIMUM_UP_DOWN_DURATION:J = 0xee6b280L
 
-.field public static final SMOOTHING_FACTOR:F = 0.7f
+.field private static final SMOOTHING_FACTOR:F = 0.7f
 
-.field public static final STATE_DOWN:I = 0x1
+.field private static final STATE_DOWN:I = 0x1
 
-.field public static final STATE_NONE:I = 0x0
+.field private static final STATE_NONE:I = 0x0
 
-.field public static final STATE_UP:I = -0x1
+.field private static final STATE_UP:I = -0x1
 
-.field public static final TRIGGER_BEGIN:I = 0x1
+.field private static final TRIGGER_BEGIN:I = 0x1
 
-.field public static final TRIGGER_NONE:I
+.field private static final TRIGGER_NONE:I
 
 
 # instance fields
-.field public gestureState:I
+.field private gestureState:I
 
-.field public lastTime:J
+.field private lastTime:J
 
-.field public final listener:Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture$OnGestureListener;
+.field private final listener:Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture$OnGestureListener;
 
-.field public final smoothed:[F
+.field private final smoothed:[F
 
-.field public triggerState:I
+.field private triggerState:I
 
 
 # direct methods
@@ -55,27 +55,27 @@
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x3
-
-    new-array v0, v0, [F
-
-    .line 2
-    iput-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->smoothed:[F
-
-    const/4 v0, -0x1
-
-    .line 3
-    iput v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
-
     const/4 v0, 0x0
 
-    .line 4
+    .line 2
     iput v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->gestureState:I
 
     const-wide/16 v0, -0x1
 
-    .line 5
+    .line 3
     iput-wide v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->lastTime:J
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [F
+
+    .line 4
+    iput-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->smoothed:[F
+
+    const/4 v0, -0x1
+
+    .line 5
+    iput v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
     .line 6
     iput-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->listener:Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture$OnGestureListener;
@@ -131,7 +131,7 @@
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 9
+    .locals 10
 
     .line 1
     iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -188,21 +188,19 @@
 
     if-lez v6, :cond_0
 
-    aget v0, v0, v5
+    aget v6, v0, v5
 
-    const v6, 0x413ccccd    # 11.8f
+    const v8, 0x413ccccd    # 11.8f
 
-    cmpg-float v0, v0, v6
+    cmpg-float v6, v6, v8
 
-    if-gez v0, :cond_0
+    if-gez v6, :cond_0
 
     .line 6
     iput v7, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->gestureState:I
 
     .line 7
     :cond_0
-    iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->smoothed:[F
-
     aget v6, v0, v5
 
     const v8, -0x3f066666    # -7.8f
@@ -246,92 +244,89 @@
     if-eq v1, v0, :cond_4
 
     .line 11
-    iget-wide v0, p1, Landroid/hardware/SensorEvent;->timestamp:J
+    iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
-    iput-wide v0, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->lastTime:J
+    iput-wide v5, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->lastTime:J
 
     .line 12
     :cond_4
-    iget-wide v0, p1, Landroid/hardware/SensorEvent;->timestamp:J
+    iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
-    iget-wide v5, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->lastTime:J
+    iget-wide v8, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->lastTime:J
 
-    sub-long/2addr v0, v5
+    sub-long/2addr v5, v8
 
-    .line 13
-    iget p1, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->gestureState:I
+    const-wide/32 v8, 0xee6b280
 
-    const-wide/32 v5, 0xee6b280
+    if-eq v0, v7, :cond_7
 
-    if-eq p1, v7, :cond_7
+    if-eqz v0, :cond_6
 
-    if-eqz p1, :cond_6
-
-    if-eq p1, v4, :cond_5
+    if-eq v0, v4, :cond_5
 
     goto :goto_0
 
     :cond_5
-    cmp-long p1, v0, v5
+    cmp-long p1, v5, v8
 
     if-lez p1, :cond_8
 
-    .line 14
+    .line 13
     iget p1, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
     if-nez p1, :cond_8
 
     const-string p1, "Connection gesture started"
 
-    .line 15
+    .line 14
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 16
+    .line 15
     iput v4, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
     goto :goto_0
 
     :cond_6
-    const-wide/32 v3, 0x3b9aca00
+    const-wide/32 v0, 0x3b9aca00
 
-    cmp-long p1, v0, v3
+    cmp-long p1, v5, v0
 
     if-lez p1, :cond_8
 
-    .line 17
+    .line 16
     iget p1, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
     if-eqz p1, :cond_8
 
     const-string p1, "Connection gesture canceled"
 
-    .line 18
+    .line 17
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 19
+    .line 18
     iput v2, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
     goto :goto_0
 
     :cond_7
-    cmp-long p1, v0, v5
+    cmp-long p1, v5, v8
 
     if-lez p1, :cond_8
 
-    .line 20
+    .line 19
     iget p1, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
     if-ne p1, v4, :cond_8
 
     const-string p1, "Connection gesture completed"
 
-    .line 21
+    .line 20
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 22
+    .line 21
     iput v2, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->triggerState:I
 
-    .line 23
+    .line 22
     iget-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture;->listener:Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture$OnGestureListener;
 
     invoke-interface {p1}, Lcom/clevertap/android/sdk/ab_testing/gesture/ConnectionGesture$OnGestureListener;->onGesture()V

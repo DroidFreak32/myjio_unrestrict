@@ -16,27 +16,27 @@
 
 
 # static fields
-.field public static final ANIMATION_EXECUTOR_NAME:Ljava/lang/String; = "animation"
+.field private static final ANIMATION_EXECUTOR_NAME:Ljava/lang/String; = "animation"
 
-.field public static final DEFAULT_DISK_CACHE_EXECUTOR_NAME:Ljava/lang/String; = "disk-cache"
+.field private static final DEFAULT_DISK_CACHE_EXECUTOR_NAME:Ljava/lang/String; = "disk-cache"
 
-.field public static final DEFAULT_DISK_CACHE_EXECUTOR_THREADS:I = 0x1
+.field private static final DEFAULT_DISK_CACHE_EXECUTOR_THREADS:I = 0x1
 
-.field public static final DEFAULT_SOURCE_EXECUTOR_NAME:Ljava/lang/String; = "source"
+.field private static final DEFAULT_SOURCE_EXECUTOR_NAME:Ljava/lang/String; = "source"
 
-.field public static final KEEP_ALIVE_TIME_MS:J
+.field private static final KEEP_ALIVE_TIME_MS:J
 
-.field public static final MAXIMUM_AUTOMATIC_THREAD_COUNT:I = 0x4
+.field private static final MAXIMUM_AUTOMATIC_THREAD_COUNT:I = 0x4
 
-.field public static final SOURCE_UNLIMITED_EXECUTOR_NAME:Ljava/lang/String; = "source-unlimited"
+.field private static final SOURCE_UNLIMITED_EXECUTOR_NAME:Ljava/lang/String; = "source-unlimited"
 
-.field public static final TAG:Ljava/lang/String; = "GlideExecutor"
+.field private static final TAG:Ljava/lang/String; = "GlideExecutor"
 
-.field public static volatile bestThreadCount:I
+.field private static volatile bestThreadCount:I
 
 
 # instance fields
-.field public final delegate:Ljava/util/concurrent/ExecutorService;
+.field private final delegate:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
@@ -59,6 +59,8 @@
 
 .method public constructor <init>(Ljava/util/concurrent/ExecutorService;)V
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -241,7 +243,7 @@
 
     sget-object v1, Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;->DEFAULT:Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;
 
-    const-string v2, "source"
+    const-string/jumbo v2, "source"
 
     .line 2
     invoke-static {v0, v2, v1}, Lcom/bumptech/glide/load/engine/executor/GlideExecutor;->newSourceExecutor(ILjava/lang/String;Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;)Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
@@ -294,7 +296,7 @@
 
     move-result v0
 
-    const-string v1, "source"
+    const-string/jumbo v1, "source"
 
     .line 4
     invoke-static {v0, v1, p0}, Lcom/bumptech/glide/load/engine/executor/GlideExecutor;->newSourceExecutor(ILjava/lang/String;Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;)Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
@@ -324,7 +326,7 @@
 
     sget-object v1, Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;->DEFAULT:Lcom/bumptech/glide/load/engine/executor/GlideExecutor$UncaughtThrowableStrategy;
 
-    const-string v2, "source-unlimited"
+    const-string/jumbo v2, "source-unlimited"
 
     const/4 v3, 0x0
 
@@ -347,6 +349,15 @@
 # virtual methods
 .method public awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
     .locals 1
+    .param p3    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/executor/GlideExecutor;->delegate:Ljava/util/concurrent/ExecutorService;
@@ -360,6 +371,10 @@
 
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/executor/GlideExecutor;->delegate:Ljava/util/concurrent/ExecutorService;
@@ -371,6 +386,13 @@
 
 .method public invokeAll(Ljava/util/Collection;)Ljava/util/List;
     .locals 1
+    .param p1    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -386,6 +408,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/executor/GlideExecutor;->delegate:Ljava/util/concurrent/ExecutorService;
 
@@ -398,6 +426,17 @@
 
 .method public invokeAll(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/util/List;
     .locals 1
+    .param p1    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -415,6 +454,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
     .line 2
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/executor/GlideExecutor;->delegate:Ljava/util/concurrent/ExecutorService;
 
@@ -427,6 +472,13 @@
 
 .method public invokeAny(Ljava/util/Collection;)Ljava/lang/Object;
     .locals 1
+    .param p1    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -436,6 +488,13 @@
             "+",
             "Ljava/util/concurrent/Callable<",
             "TT;>;>;)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;
         }
     .end annotation
 
@@ -451,6 +510,14 @@
 
 .method public invokeAny(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
     .locals 1
+    .param p1    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -462,6 +529,14 @@
             "TT;>;>;J",
             "Ljava/util/concurrent/TimeUnit;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 
@@ -514,6 +589,9 @@
 
 .method public shutdownNow()Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -535,6 +613,13 @@
 
 .method public submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
     .locals 1
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -557,6 +642,13 @@
 
 .method public submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
     .locals 1
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -581,6 +673,10 @@
 
 .method public submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
     .locals 1
+    .param p1    # Ljava/util/concurrent/Callable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

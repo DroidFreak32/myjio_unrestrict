@@ -34,8 +34,6 @@
     sput-object v0, Landroidx/loader/content/ModernAsyncTask$d;->a:[I
 
     :try_start_0
-    sget-object v0, Landroidx/loader/content/ModernAsyncTask$d;->a:[I
-
     sget-object v1, Landroidx/loader/content/ModernAsyncTask$Status;->RUNNING:Landroidx/loader/content/ModernAsyncTask$Status;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

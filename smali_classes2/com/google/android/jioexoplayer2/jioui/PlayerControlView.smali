@@ -21,95 +21,98 @@
 
 .field public static final DEFAULT_SHOW_TIMEOUT_MS:I = 0x1388
 
-.field public static final MAX_POSITION_FOR_SEEK_TO_PREVIOUS:J = 0xbb8L
+.field private static final MAX_POSITION_FOR_SEEK_TO_PREVIOUS:J = 0xbb8L
 
 .field public static final MAX_WINDOWS_FOR_MULTI_WINDOW_TIME_BAR:I = 0x64
 
 
 # instance fields
-.field public adGroupTimesMs:[J
+.field private adGroupTimesMs:[J
 
-.field public final componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
+.field private final componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
 
-.field public controlDispatcher:Lcom/google/android/jioexoplayer2/ControlDispatcher;
+.field private controlDispatcher:Lcom/google/android/jioexoplayer2/ControlDispatcher;
 
-.field public final durationView:Landroid/widget/TextView;
+.field private final durationView:Landroid/widget/TextView;
 
-.field public extraAdGroupTimesMs:[J
+.field private extraAdGroupTimesMs:[J
 
-.field public extraPlayedAdGroups:[Z
+.field private extraPlayedAdGroups:[Z
 
-.field public final fastForwardButton:Landroid/view/View;
+.field private final fastForwardButton:Landroid/view/View;
 
-.field public fastForwardMs:I
+.field private fastForwardMs:I
 
-.field public final formatBuilder:Ljava/lang/StringBuilder;
+.field private final formatBuilder:Ljava/lang/StringBuilder;
 
-.field public final formatter:Ljava/util/Formatter;
+.field private final formatter:Ljava/util/Formatter;
 
-.field public final hideAction:Ljava/lang/Runnable;
+.field private final hideAction:Ljava/lang/Runnable;
 
-.field public hideAtMs:J
+.field private hideAtMs:J
 
-.field public isAttachedToWindow:Z
+.field private isAttachedToWindow:Z
 
-.field public multiWindowTimeBar:Z
+.field private multiWindowTimeBar:Z
 
-.field public final nextButton:Landroid/view/View;
+.field private final nextButton:Landroid/view/View;
 
-.field public final pauseButton:Landroid/view/View;
+.field private final pauseButton:Landroid/view/View;
 
-.field public final period:Lcom/google/android/jioexoplayer2/Timeline$Period;
+.field private final period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
-.field public final playButton:Landroid/view/View;
+.field private final playButton:Landroid/view/View;
 
-.field public playbackPreparer:Lcom/google/android/jioexoplayer2/PlaybackPreparer;
+.field private playbackPreparer:Lcom/google/android/jioexoplayer2/PlaybackPreparer;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public playedAdGroups:[Z
+.field private playedAdGroups:[Z
 
-.field public player:Lcom/google/android/jioexoplayer2/Player;
+.field private player:Lcom/google/android/jioexoplayer2/Player;
 
-.field public final positionView:Landroid/widget/TextView;
+.field private final positionView:Landroid/widget/TextView;
 
-.field public final previousButton:Landroid/view/View;
+.field private final previousButton:Landroid/view/View;
 
-.field public final repeatAllButtonContentDescription:Ljava/lang/String;
+.field private final repeatAllButtonContentDescription:Ljava/lang/String;
 
-.field public final repeatAllButtonDrawable:Landroid/graphics/drawable/Drawable;
+.field private final repeatAllButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-.field public final repeatOffButtonContentDescription:Ljava/lang/String;
+.field private final repeatOffButtonContentDescription:Ljava/lang/String;
 
-.field public final repeatOffButtonDrawable:Landroid/graphics/drawable/Drawable;
+.field private final repeatOffButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-.field public final repeatOneButtonContentDescription:Ljava/lang/String;
+.field private final repeatOneButtonContentDescription:Ljava/lang/String;
 
-.field public final repeatOneButtonDrawable:Landroid/graphics/drawable/Drawable;
+.field private final repeatOneButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-.field public final repeatToggleButton:Landroid/widget/ImageView;
+.field private final repeatToggleButton:Landroid/widget/ImageView;
 
-.field public repeatToggleModes:I
+.field private repeatToggleModes:I
 
-.field public final rewindButton:Landroid/view/View;
+.field private final rewindButton:Landroid/view/View;
 
-.field public rewindMs:I
+.field private rewindMs:I
 
-.field public scrubbing:Z
+.field private scrubbing:Z
 
-.field public showMultiWindowTimeBar:Z
+.field private showMultiWindowTimeBar:Z
 
-.field public showShuffleButton:Z
+.field private showShuffleButton:Z
 
-.field public showTimeoutMs:I
+.field private showTimeoutMs:I
 
-.field public final shuffleButton:Landroid/view/View;
+.field private final shuffleButton:Landroid/view/View;
 
-.field public final timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
+.field private final timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
-.field public final updateProgressAction:Ljava/lang/Runnable;
+.field private final updateProgressAction:Ljava/lang/Runnable;
 
-.field public visibilityListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$VisibilityListener;
+.field private visibilityListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$VisibilityListener;
 
-.field public final window:Lcom/google/android/jioexoplayer2/Timeline$Window;
+.field private final window:Lcom/google/android/jioexoplayer2/Timeline$Window;
 
 
 # direct methods
@@ -307,17 +310,15 @@
     iput-object p4, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatBuilder:Ljava/lang/StringBuilder;
 
     .line 28
-    new-instance p4, Ljava/util/Formatter;
-
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatBuilder:Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/util/Formatter;
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
 
-    invoke-direct {p4, v0, v1}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
+    invoke-direct {v0, p4, v1}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
 
-    iput-object p4, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatter:Ljava/util/Formatter;
+    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatter:Ljava/util/Formatter;
 
     new-array p4, p3, [J
 
@@ -349,32 +350,32 @@
     iput-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
 
     .line 34
-    new-instance p3, Lcom/google/android/jioexoplayer2/DefaultControlDispatcher;
+    new-instance p4, Lcom/google/android/jioexoplayer2/DefaultControlDispatcher;
 
-    invoke-direct {p3}, Lcom/google/android/jioexoplayer2/DefaultControlDispatcher;-><init>()V
+    invoke-direct {p4}, Lcom/google/android/jioexoplayer2/DefaultControlDispatcher;-><init>()V
 
-    iput-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->controlDispatcher:Lcom/google/android/jioexoplayer2/ControlDispatcher;
+    iput-object p4, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->controlDispatcher:Lcom/google/android/jioexoplayer2/ControlDispatcher;
 
     .line 35
-    new-instance p3, Lpc0;
+    new-instance p4, Lyi;
 
-    invoke-direct {p3, p0}, Lpc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;)V
+    invoke-direct {p4, p0}, Lyi;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;)V
 
-    iput-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->updateProgressAction:Ljava/lang/Runnable;
+    iput-object p4, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->updateProgressAction:Ljava/lang/Runnable;
 
     .line 36
-    new-instance p3, Lnc0;
+    new-instance p4, Lbj;
 
-    invoke-direct {p3, p0}, Lnc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;)V
+    invoke-direct {p4, p0}, Lbj;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;)V
 
-    iput-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->hideAction:Ljava/lang/Runnable;
+    iput-object p4, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->hideAction:Ljava/lang/Runnable;
 
     .line 37
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object p3
+    move-result-object p4
 
-    invoke-virtual {p3, p2, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {p4, p2, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     const/high16 p2, 0x40000
 
@@ -414,17 +415,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
-    .line 42
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
-
     if-eqz p2, :cond_1
 
-    .line 43
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 42
     invoke-interface {p2, p3}, Lcom/google/android/jioexoplayer2/jioui/TimeBar;->addListener(Lcom/google/android/jioexoplayer2/jioui/TimeBar$OnScrubListener;)V
 
-    .line 44
+    .line 43
     :cond_1
     sget p2, Lcom/app/cinemasdk/R$id;->exo_play_jio:I
 
@@ -434,17 +430,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playButton:Landroid/view/View;
 
-    .line 45
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playButton:Landroid/view/View;
-
     if-eqz p2, :cond_2
 
-    .line 46
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 44
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 47
+    .line 45
     :cond_2
     sget p2, Lcom/app/cinemasdk/R$id;->exo_pause_jio:I
 
@@ -454,17 +445,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->pauseButton:Landroid/view/View;
 
-    .line 48
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->pauseButton:Landroid/view/View;
-
     if-eqz p2, :cond_3
 
-    .line 49
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 46
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 50
+    .line 47
     :cond_3
     sget p2, Lcom/app/cinemasdk/R$id;->exo_prev_jio:I
 
@@ -474,17 +460,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->previousButton:Landroid/view/View;
 
-    .line 51
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->previousButton:Landroid/view/View;
-
     if-eqz p2, :cond_4
 
-    .line 52
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 48
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 53
+    .line 49
     :cond_4
     sget p2, Lcom/app/cinemasdk/R$id;->exo_next_jio:I
 
@@ -494,17 +475,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->nextButton:Landroid/view/View;
 
-    .line 54
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->nextButton:Landroid/view/View;
-
     if-eqz p2, :cond_5
 
-    .line 55
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 50
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 56
+    .line 51
     :cond_5
     sget p2, Lcom/app/cinemasdk/R$id;->exo_rew_jio:I
 
@@ -514,17 +490,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->rewindButton:Landroid/view/View;
 
-    .line 57
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->rewindButton:Landroid/view/View;
-
     if-eqz p2, :cond_6
 
-    .line 58
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 52
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 59
+    .line 53
     :cond_6
     sget p2, Lcom/app/cinemasdk/R$id;->exo_ffwd_jio:I
 
@@ -534,17 +505,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->fastForwardButton:Landroid/view/View;
 
-    .line 60
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->fastForwardButton:Landroid/view/View;
-
     if-eqz p2, :cond_7
 
-    .line 61
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 54
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 62
+    .line 55
     :cond_7
     sget p2, Lcom/app/cinemasdk/R$id;->exo_repeat_toggle_jio:I
 
@@ -556,17 +522,12 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatToggleButton:Landroid/widget/ImageView;
 
-    .line 63
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatToggleButton:Landroid/widget/ImageView;
-
     if-eqz p2, :cond_8
 
-    .line 64
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 56
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 65
+    .line 57
     :cond_8
     sget p2, Lcom/app/cinemasdk/R$id;->exo_shuffle_jio:I
 
@@ -576,23 +537,18 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->shuffleButton:Landroid/view/View;
 
-    .line 66
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->shuffleButton:Landroid/view/View;
-
     if-eqz p2, :cond_9
 
-    .line 67
-    iget-object p3, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView$ComponentListener;
-
+    .line 58
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 68
+    .line 59
     :cond_9
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    .line 69
+    .line 60
     sget p2, Lcom/app/cinemasdk/R$drawable;->exo_controls_repeat_off:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -601,7 +557,7 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatOffButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 70
+    .line 61
     sget p2, Lcom/app/cinemasdk/R$drawable;->exo_controls_repeat_one:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -610,7 +566,7 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatOneButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 71
+    .line 62
     sget p2, Lcom/app/cinemasdk/R$drawable;->exo_controls_repeat_all:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -619,30 +575,30 @@
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatAllButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 72
+    .line 63
     sget p2, Lcom/app/cinemasdk/R$string;->exo_controls_repeat_off_description:I
 
-    .line 73
+    .line 64
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatOffButtonContentDescription:Ljava/lang/String;
 
-    .line 74
+    .line 65
     sget p2, Lcom/app/cinemasdk/R$string;->exo_controls_repeat_one_description:I
 
-    .line 75
+    .line 66
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->repeatOneButtonContentDescription:Ljava/lang/String;
 
-    .line 76
+    .line 67
     sget p2, Lcom/app/cinemasdk/R$string;->exo_controls_repeat_all_description:I
 
-    .line 77
+    .line 68
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -903,7 +859,7 @@
     return-void
 .end method
 
-.method public static canShowMultiWindowTimeBar(Lcom/google/android/jioexoplayer2/Timeline;Lcom/google/android/jioexoplayer2/Timeline$Window;)Z
+.method private static canShowMultiWindowTimeBar(Lcom/google/android/jioexoplayer2/Timeline;Lcom/google/android/jioexoplayer2/Timeline$Window;)Z
     .locals 8
 
     .line 1
@@ -1005,7 +961,7 @@
     return-void
 .end method
 
-.method public static getRepeatToggleModes(Landroid/content/res/TypedArray;I)I
+.method private static getRepeatToggleModes(Landroid/content/res/TypedArray;I)I
     .locals 1
 
     .line 1
@@ -1069,7 +1025,7 @@
     return-void
 .end method
 
-.method public static isHandledMediaKey(I)Z
+.method private static isHandledMediaKey(I)Z
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -1901,7 +1857,7 @@
 
     if-nez v1, :cond_0
 
-    goto/16 :goto_d
+    goto/16 :goto_e
 
     .line 2
     :cond_0
@@ -1923,7 +1879,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_c
+    if-nez v5, :cond_d
 
     .line 5
     iget-object v5, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->player:Lcom/google/android/jioexoplayer2/Player;
@@ -1937,55 +1893,52 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     goto :goto_0
 
     :cond_1
-    move v7, v5
+    move v8, v5
+
+    :goto_0
+    if-eqz v7, :cond_2
 
     .line 7
-    :goto_0
-    iget-boolean v8, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->multiWindowTimeBar:Z
-
-    if-eqz v8, :cond_2
-
-    .line 8
     invoke-virtual {v1}, Lcom/google/android/jioexoplayer2/Timeline;->getWindowCount()I
 
-    move-result v8
+    move-result v7
 
-    sub-int/2addr v8, v4
+    sub-int/2addr v7, v4
 
     goto :goto_1
 
     :cond_2
-    move v8, v5
+    move v7, v5
 
     :goto_1
     move-wide v9, v2
 
-    move-wide v12, v9
+    move-wide v11, v9
 
-    const/4 v11, 0x0
+    const/4 v13, 0x0
 
     :goto_2
-    if-gt v7, v8, :cond_d
+    if-gt v8, v7, :cond_c
 
-    if-ne v7, v5, :cond_3
+    if-ne v8, v5, :cond_3
 
-    .line 9
+    .line 8
     invoke-static {v9, v10}, Lcom/google/android/jioexoplayer2/C;->usToMs(J)J
 
-    move-result-wide v12
+    move-result-wide v11
 
-    .line 10
+    .line 9
     :cond_3
     iget-object v14, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->window:Lcom/google/android/jioexoplayer2/Timeline$Window;
 
-    invoke-virtual {v1, v7, v14}, Lcom/google/android/jioexoplayer2/Timeline;->getWindow(ILcom/google/android/jioexoplayer2/Timeline$Window;)Lcom/google/android/jioexoplayer2/Timeline$Window;
+    invoke-virtual {v1, v8, v14}, Lcom/google/android/jioexoplayer2/Timeline;->getWindow(ILcom/google/android/jioexoplayer2/Timeline$Window;)Lcom/google/android/jioexoplayer2/Timeline$Window;
 
-    .line 11
+    .line 10
     iget-object v14, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->window:Lcom/google/android/jioexoplayer2/Timeline$Window;
 
     move/from16 v16, v7
@@ -1998,7 +1951,7 @@
 
     if-nez v19, :cond_4
 
-    .line 12
+    .line 11
     iget-boolean v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->multiWindowTimeBar:Z
 
     xor-int/2addr v1, v4
@@ -2007,7 +1960,7 @@
 
     goto/16 :goto_8
 
-    .line 13
+    .line 12
     :cond_4
     iget v6, v14, Lcom/google/android/jioexoplayer2/Timeline$Window;->firstPeriodIndex:I
 
@@ -2018,29 +1971,27 @@
 
     if-gt v6, v14, :cond_b
 
-    .line 14
+    .line 13
     iget-object v7, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
     invoke-virtual {v1, v6, v7}, Lcom/google/android/jioexoplayer2/Timeline;->getPeriod(ILcom/google/android/jioexoplayer2/Timeline$Period;)Lcom/google/android/jioexoplayer2/Timeline$Period;
 
-    .line 15
+    .line 14
     iget-object v7, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
     invoke-virtual {v7}, Lcom/google/android/jioexoplayer2/Timeline$Period;->getAdGroupCount()I
 
     move-result v7
 
-    move v14, v11
-
-    const/4 v11, 0x0
+    const/4 v14, 0x0
 
     :goto_4
-    if-ge v11, v7, :cond_a
+    if-ge v14, v7, :cond_a
 
-    .line 16
+    .line 15
     iget-object v15, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
-    invoke-virtual {v15, v11}, Lcom/google/android/jioexoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
+    invoke-virtual {v15, v14}, Lcom/google/android/jioexoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
 
     move-result-wide v20
 
@@ -2050,7 +2001,7 @@
 
     if-nez v15, :cond_6
 
-    .line 17
+    .line 16
     iget-object v15, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
     move/from16 v23, v5
@@ -2071,7 +2022,7 @@
     :cond_6
     move/from16 v23, v5
 
-    .line 18
+    .line 17
     :goto_5
     iget-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
@@ -2085,7 +2036,7 @@
 
     if-ltz v4, :cond_9
 
-    .line 19
+    .line 18
     iget-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->window:Lcom/google/android/jioexoplayer2/Timeline$Window;
 
     iget-wide v4, v4, Lcom/google/android/jioexoplayer2/Timeline$Window;->durationUs:J
@@ -2094,47 +2045,45 @@
 
     if-gtz v15, :cond_9
 
-    .line 20
+    .line 19
     iget-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
 
     array-length v5, v4
 
-    if-ne v14, v5, :cond_8
+    if-ne v13, v5, :cond_8
 
-    .line 21
+    .line 20
     array-length v5, v4
 
     if-nez v5, :cond_7
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     goto :goto_6
 
     :cond_7
-    array-length v4, v4
+    array-length v5, v4
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/lit8 v5, v5, 0x2
+
+    .line 21
+    :goto_6
+    invoke-static {v4, v5}, Ljava/util/Arrays;->copyOf([JI)[J
+
+    move-result-object v4
+
+    iput-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
 
     .line 22
-    :goto_6
-    iget-object v5, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
+    iget-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
 
-    invoke-static {v5, v4}, Ljava/util/Arrays;->copyOf([JI)[J
-
-    move-result-object v5
-
-    iput-object v5, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
-
-    .line 23
-    iget-object v5, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
-
-    invoke-static {v5, v4}, Ljava/util/Arrays;->copyOf([ZI)[Z
+    invoke-static {v4, v5}, Ljava/util/Arrays;->copyOf([ZI)[Z
 
     move-result-object v4
 
     iput-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
 
-    .line 24
+    .line 23
     :cond_8
     iget-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
 
@@ -2144,24 +2093,24 @@
 
     move-result-wide v20
 
-    aput-wide v20, v4, v14
+    aput-wide v20, v4, v13
 
-    .line 25
+    .line 24
     iget-object v4, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
 
     iget-object v5, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->period:Lcom/google/android/jioexoplayer2/Timeline$Period;
 
-    invoke-virtual {v5, v11}, Lcom/google/android/jioexoplayer2/Timeline$Period;->hasPlayedAdGroup(I)Z
+    invoke-virtual {v5, v14}, Lcom/google/android/jioexoplayer2/Timeline$Period;->hasPlayedAdGroup(I)Z
 
     move-result v5
 
-    aput-boolean v5, v4, v14
+    aput-boolean v5, v4, v13
 
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v13, v13, 0x1
 
     :cond_9
     :goto_7
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v14, v14, 0x1
 
     move/from16 v5, v23
 
@@ -2174,8 +2123,6 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    move v11, v14
-
     const/4 v4, 0x1
 
     goto/16 :goto_3
@@ -2183,12 +2130,14 @@
     :cond_b
     move/from16 v23, v5
 
-    .line 26
+    .line 25
     iget-wide v4, v7, Lcom/google/android/jioexoplayer2/Timeline$Window;->durationUs:J
 
     add-long/2addr v9, v4
 
-    add-int/lit8 v7, v16, 0x1
+    add-int/lit8 v8, v8, 0x1
+
+    move/from16 v7, v16
 
     move/from16 v5, v23
 
@@ -2197,64 +2146,67 @@
     goto/16 :goto_2
 
     :cond_c
-    move-wide v9, v2
-
-    move-wide v12, v9
-
-    const/4 v11, 0x0
-
-    .line 27
-    :cond_d
     :goto_8
-    invoke-static {v9, v10}, Lcom/google/android/jioexoplayer2/C;->usToMs(J)J
+    move-wide v2, v9
+
+    goto :goto_9
+
+    :cond_d
+    move-wide v11, v2
+
+    const/4 v13, 0x0
+
+    .line 26
+    :goto_9
+    invoke-static {v2, v3}, Lcom/google/android/jioexoplayer2/C;->usToMs(J)J
 
     move-result-wide v2
 
-    .line 28
+    .line 27
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->player:Lcom/google/android/jioexoplayer2/Player;
 
     invoke-interface {v1}, Lcom/google/android/jioexoplayer2/Player;->getContentPosition()J
 
     move-result-wide v4
 
-    add-long/2addr v4, v12
+    add-long/2addr v4, v11
 
-    .line 29
+    .line 28
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->player:Lcom/google/android/jioexoplayer2/Player;
 
     invoke-interface {v1}, Lcom/google/android/jioexoplayer2/Player;->getContentBufferedPosition()J
 
     move-result-wide v6
 
-    add-long/2addr v6, v12
+    add-long/2addr v6, v11
 
-    .line 30
+    .line 29
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
     if-eqz v1, :cond_10
 
-    .line 31
+    .line 30
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->extraAdGroupTimesMs:[J
 
     array-length v1, v1
 
-    add-int v8, v11, v1
+    add-int v8, v13, v1
 
-    .line 32
+    .line 31
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
 
     array-length v10, v9
 
     if-le v8, v10, :cond_e
 
-    .line 33
+    .line 32
     invoke-static {v9, v8}, Ljava/util/Arrays;->copyOf([JI)[J
 
     move-result-object v9
 
     iput-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
 
-    .line 34
+    .line 33
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
 
     invoke-static {v9, v8}, Ljava/util/Arrays;->copyOf([ZI)[Z
@@ -2263,24 +2215,24 @@
 
     iput-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
 
-    .line 35
+    .line 34
     :cond_e
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->extraAdGroupTimesMs:[J
 
     iget-object v10, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
 
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    invoke-static {v9, v12, v10, v11, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v11, v10, v13, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 36
+    .line 35
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->extraPlayedAdGroups:[Z
 
     iget-object v10, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playedAdGroups:[Z
 
-    invoke-static {v9, v12, v10, v11, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v11, v10, v13, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 37
+    .line 36
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->adGroupTimesMs:[J
@@ -2289,21 +2241,21 @@
 
     invoke-interface {v1, v9, v10, v8}, Lcom/google/android/jioexoplayer2/jioui/TimeBar;->setAdGroupTimesMs([J[ZI)V
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_f
     move-wide v4, v2
 
     move-wide v6, v4
 
-    .line 38
+    .line 37
     :cond_10
-    :goto_9
+    :goto_a
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->durationView:Landroid/widget/TextView;
 
     if-eqz v1, :cond_11
 
-    .line 39
+    .line 38
     iget-object v8, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatBuilder:Ljava/lang/StringBuilder;
 
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatter:Ljava/util/Formatter;
@@ -2314,7 +2266,7 @@
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 40
+    .line 39
     :cond_11
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->positionView:Landroid/widget/TextView;
 
@@ -2324,7 +2276,7 @@
 
     if-nez v8, :cond_12
 
-    .line 41
+    .line 40
     iget-object v8, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatBuilder:Ljava/lang/StringBuilder;
 
     iget-object v9, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->formatter:Ljava/util/Formatter;
@@ -2335,46 +2287,46 @@
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 42
+    .line 41
     :cond_12
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
     if-eqz v1, :cond_13
 
-    .line 43
+    .line 42
     invoke-interface {v1, v4, v5}, Lcom/google/android/jioexoplayer2/jioui/TimeBar;->setPosition(J)V
 
-    .line 44
+    .line 43
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
     invoke-interface {v1, v6, v7}, Lcom/google/android/jioexoplayer2/jioui/TimeBar;->setBufferedPosition(J)V
 
-    .line 45
+    .line 44
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->timeBar:Lcom/google/android/jioexoplayer2/jioui/TimeBar;
 
     invoke-interface {v1, v2, v3}, Lcom/google/android/jioexoplayer2/jioui/TimeBar;->setDuration(J)V
 
-    .line 46
+    .line 45
     :cond_13
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->updateProgressAction:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 47
+    .line 46
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->player:Lcom/google/android/jioexoplayer2/Player;
 
     if-nez v1, :cond_14
 
     const/4 v1, 0x1
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_14
     invoke-interface {v1}, Lcom/google/android/jioexoplayer2/Player;->getPlaybackState()I
 
     move-result v1
 
-    :goto_a
+    :goto_b
     const/4 v2, 0x1
 
     if-eq v1, v2, :cond_1a
@@ -2383,7 +2335,7 @@
 
     if-eq v1, v2, :cond_1a
 
-    .line 48
+    .line 47
     iget-object v2, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->player:Lcom/google/android/jioexoplayer2/Player;
 
     invoke-interface {v2}, Lcom/google/android/jioexoplayer2/Player;->getPlayWhenReady()Z
@@ -2398,7 +2350,7 @@
 
     if-ne v1, v2, :cond_19
 
-    .line 49
+    .line 48
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->player:Lcom/google/android/jioexoplayer2/Player;
 
     invoke-interface {v1}, Lcom/google/android/jioexoplayer2/Player;->getPlaybackParameters()Lcom/google/android/jioexoplayer2/PlaybackParameters;
@@ -2413,7 +2365,7 @@
 
     if-gtz v2, :cond_15
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_15
     const/high16 v2, 0x40a00000    # 5.0f
@@ -2428,7 +2380,7 @@
 
     div-float v6, v3, v1
 
-    .line 50
+    .line 49
     invoke-static {v6}, Ljava/lang/Math;->round(F)I
 
     move-result v6
@@ -2443,14 +2395,14 @@
 
     int-to-long v6, v2
 
-    .line 51
+    .line 50
     rem-long/2addr v4, v6
 
     sub-long v4, v6, v4
 
     const-wide/16 v8, 0x5
 
-    .line 52
+    .line 51
     div-long v8, v6, v8
 
     cmp-long v2, v4, v8
@@ -2464,7 +2416,7 @@
 
     if-nez v2, :cond_17
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_17
     long-to-float v2, v4
@@ -2473,25 +2425,25 @@
 
     float-to-long v4, v2
 
-    :goto_b
+    :goto_c
     move-wide v6, v4
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_18
     const-wide/16 v1, 0xc8
 
     move-wide v6, v1
 
-    .line 53
+    .line 52
     :cond_19
-    :goto_c
+    :goto_d
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->updateProgressAction:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1, v6, v7}, Landroid/widget/FrameLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_1a
-    :goto_d
+    :goto_e
     return-void
 .end method
 
@@ -3152,6 +3104,10 @@
 
 .method public setControlDispatcher(Lcom/google/android/jioexoplayer2/ControlDispatcher;)V
     .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/ControlDispatcher;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -3168,6 +3124,14 @@
 
 .method public setExtraAdGroupMarkers([J[Z)V
     .locals 3
+    .param p1    # [J
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # [Z
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -3225,6 +3189,10 @@
 
 .method public setPlaybackPreparer(Lcom/google/android/jioexoplayer2/PlaybackPreparer;)V
     .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/PlaybackPreparer;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;->playbackPreparer:Lcom/google/android/jioexoplayer2/PlaybackPreparer;
@@ -3234,6 +3202,10 @@
 
 .method public setPlayer(Lcom/google/android/jioexoplayer2/Player;)V
     .locals 4
+    .param p1    # Lcom/google/android/jioexoplayer2/Player;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/internal/vision/zzit;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
 .implements Ljava/util/Iterator;
@@ -8,49 +9,52 @@
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        ">",
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
-        "Ljava/lang/String;",
-        ">;"
+        "Ljava/util/Map$Entry<",
+        "TK;",
+        "Ljava/lang/Object;",
+        ">;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public final synthetic zzaax:Lcom/google/android/gms/internal/vision/zzir;
-
-.field public zzaay:Ljava/util/Iterator;
+.field private zzzq:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
-            "Ljava/lang/String;",
-            ">;"
+            "Ljava/util/Map$Entry<",
+            "TK;",
+            "Ljava/lang/Object;",
+            ">;>;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzir;)V
+.method public constructor <init>(Ljava/util/Iterator;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Iterator<",
+            "Ljava/util/Map$Entry<",
+            "TK;",
+            "Ljava/lang/Object;",
+            ">;>;)V"
+        }
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzit;->zzaax:Lcom/google/android/gms/internal/vision/zzir;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzit;->zzaax:Lcom/google/android/gms/internal/vision/zzir;
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzir;->zza(Lcom/google/android/gms/internal/vision/zzir;)Lcom/google/android/gms/internal/vision/zzgo;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzit;->zzaay:Ljava/util/Iterator;
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzit;->zzzq:Ljava/util/Iterator;
 
     return-void
 .end method
@@ -61,7 +65,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzit;->zzaay:Ljava/util/Iterator;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzit;->zzzq:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -71,17 +75,36 @@
 .end method
 
 .method public final synthetic next()Ljava/lang/Object;
-    .locals 1
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzit;->zzaay:Ljava/util/Iterator;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzit;->zzzq:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Ljava/util/Map$Entry;
 
+    .line 2
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v1, v1, Lcom/google/android/gms/internal/vision/zzio;
+
+    if-eqz v1, :cond_0
+
+    .line 3
+    new-instance v1, Lcom/google/android/gms/internal/vision/zziq;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v0, v2}, Lcom/google/android/gms/internal/vision/zziq;-><init>(Ljava/util/Map$Entry;Lcom/google/android/gms/internal/vision/zzir;)V
+
+    return-object v1
+
+    :cond_0
     return-object v0
 .end method
 
@@ -89,9 +112,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzit;->zzzq:Ljava/util/Iterator;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    throw v0
+    return-void
 .end method

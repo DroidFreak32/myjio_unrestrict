@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public handler:Landroid/os/Handler;
+.field private handler:Landroid/os/Handler;
 
 .field public final synthetic zzakz:Lcom/google/android/gms/tagmanager/zzfn;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zzfn;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zzfn;)V
     .locals 2
 
     .line 1
@@ -21,26 +21,24 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance p1, Lcom/google/android/gms/internal/gtm/zzdj;
-
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzfr;->zzakz:Lcom/google/android/gms/tagmanager/zzfn;
+    new-instance v0, Lcom/google/android/gms/internal/gtm/zzdj;
 
     .line 3
-    invoke-static {v0}, Lcom/google/android/gms/tagmanager/zzfn;->zza(Lcom/google/android/gms/tagmanager/zzfn;)Landroid/content/Context;
+    invoke-static {p1}, Lcom/google/android/gms/tagmanager/zzfn;->zza(Lcom/google/android/gms/tagmanager/zzfn;)Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v0
+    move-result-object p1
 
     new-instance v1, Lcom/google/android/gms/tagmanager/zzfs;
 
     invoke-direct {v1, p0}, Lcom/google/android/gms/tagmanager/zzfs;-><init>(Lcom/google/android/gms/tagmanager/zzfr;)V
 
-    invoke-direct {p1, v0, v1}, Lcom/google/android/gms/internal/gtm/zzdj;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+    invoke-direct {v0, p1, v1}, Lcom/google/android/gms/internal/gtm/zzdj;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
-    iput-object p1, p0, Lcom/google/android/gms/tagmanager/zzfr;->handler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/google/android/gms/tagmanager/zzfr;->handler:Landroid/os/Handler;
 
     return-void
 .end method

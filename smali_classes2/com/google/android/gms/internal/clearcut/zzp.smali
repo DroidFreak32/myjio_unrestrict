@@ -6,13 +6,13 @@
 
 
 # static fields
-.field public static final UTF_8:Ljava/nio/charset/Charset;
+.field private static final UTF_8:Ljava/nio/charset/Charset;
 
-.field public static final zzaq:Lcom/google/android/gms/internal/clearcut/zzao;
+.field private static final zzaq:Lcom/google/android/gms/internal/clearcut/zzao;
 
-.field public static final zzar:Lcom/google/android/gms/internal/clearcut/zzao;
+.field private static final zzar:Lcom/google/android/gms/internal/clearcut/zzao;
 
-.field public static final zzas:Ljava/util/concurrent/ConcurrentHashMap;
+.field private static final zzas:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public static final zzat:Ljava/util/HashMap;
+.field private static final zzat:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -36,17 +36,17 @@
     .end annotation
 .end field
 
-.field public static zzau:Ljava/lang/Boolean;
+.field private static zzau:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field
 
-.field public static zzav:Ljava/lang/Long;
+.field private static zzav:Ljava/lang/Long;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field
 
-.field public static final zzaw:Lcom/google/android/gms/internal/clearcut/zzae;
+.field private static final zzaw:Lcom/google/android/gms/internal/clearcut/zzae;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
@@ -61,7 +61,7 @@
 
 
 # instance fields
-.field public final zzh:Landroid/content/Context;
+.field private final zzh:Landroid/content/Context;
 
 
 # direct methods
@@ -100,47 +100,45 @@
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzaq:Lcom/google/android/gms/internal/clearcut/zzao;
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzao;
+    new-instance v2, Lcom/google/android/gms/internal/clearcut/zzao;
 
     invoke-static {v1}, Lcom/google/android/gms/phenotype/Phenotype;->getContentProviderUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzao;-><init>(Landroid/net/Uri;)V
+    invoke-direct {v2, v1}, Lcom/google/android/gms/internal/clearcut/zzao;-><init>(Landroid/net/Uri;)V
 
     const-string v1, "gms:playlog:service:sampling_"
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzao;->zzc(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzao;
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/clearcut/zzao;->zzc(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzao;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "LogSampling__"
+    const-string v2, "LogSampling__"
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzao;->zzd(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzao;
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/internal/clearcut/zzao;->zzd(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzao;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzar:Lcom/google/android/gms/internal/clearcut/zzao;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzp;->zzar:Lcom/google/android/gms/internal/clearcut/zzao;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzas:Ljava/util/concurrent/ConcurrentHashMap;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzp;->zzas:Ljava/util/concurrent/ConcurrentHashMap;
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v1, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzat:Ljava/util/HashMap;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzp;->zzat:Ljava/util/HashMap;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzau:Ljava/lang/Boolean;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzp;->zzau:Ljava/lang/Boolean;
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzav:Ljava/lang/Long;
-
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzaq:Lcom/google/android/gms/internal/clearcut/zzao;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzp;->zzav:Ljava/lang/Long;
 
     const-string v1, "enable_log_sampling_rules"
 
@@ -162,8 +160,6 @@
 
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzp;->zzh:Landroid/content/Context;
 
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzp;->zzh:Landroid/content/Context;
-
     if-eqz p1, :cond_0
 
     invoke-static {p1}, Lcom/google/android/gms/internal/clearcut/zzae;->maybeInit(Landroid/content/Context;)V
@@ -172,7 +168,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/String;J)J
+.method private static zza(Ljava/lang/String;J)J
     .locals 2
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -239,8 +235,8 @@
     return-wide p0
 .end method
 
-.method public static zza(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
-    .locals 10
+.method private static zza(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb;
+    .locals 9
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
@@ -267,19 +263,21 @@
 
     add-int/lit8 v1, v1, 0x1
 
+    move-object v8, v2
+
+    move v2, v1
+
+    move-object v1, v8
+
     goto :goto_0
 
     :cond_1
     const-string v1, ""
 
-    move-object v2, v1
-
-    const/4 v1, 0x0
-
     :goto_0
     const/16 v3, 0x2f
 
-    invoke-virtual {p0, v3, v1}, Ljava/lang/String;->indexOf(II)I
+    invoke-virtual {p0, v3, v2}, Ljava/lang/String;->indexOf(II)I
 
     move-result v3
 
@@ -311,11 +309,11 @@
 
     :cond_3
     :try_start_0
-    invoke-virtual {p0, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v4
 
@@ -323,21 +321,21 @@
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v6
+    move-result-wide v2
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long p0, v4, v8
+    cmp-long p0, v4, v6
 
     if-ltz p0, :cond_5
 
-    cmp-long p0, v6, v8
+    cmp-long p0, v2, v6
 
     if-gez p0, :cond_4
 
@@ -348,7 +346,7 @@
 
     move-result-object p0
 
-    invoke-virtual {p0, v2}, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;->zzn(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;->zzn(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;
 
     move-result-object p0
 
@@ -356,7 +354,7 @@
 
     move-result-object p0
 
-    invoke-virtual {p0, v6, v7}, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;->zzs(J)Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;->zzs(J)Lcom/google/android/gms/internal/clearcut/zzgw$zza$zzb$zza;
 
     move-result-object p0
 
@@ -386,7 +384,7 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -420,7 +418,7 @@
     return-object v0
 .end method
 
-.method public static zzb(JJJ)Z
+.method private static zzb(JJJ)Z
     .locals 6
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -479,7 +477,7 @@
     return p0
 .end method
 
-.method public static zzc(Landroid/content/Context;)Z
+.method private static zzc(Landroid/content/Context;)Z
     .locals 1
 
     sget-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzau:Ljava/lang/Boolean;
@@ -522,7 +520,7 @@
     return p0
 .end method
 
-.method public static zzd(Landroid/content/Context;)J
+.method private static zzd(Landroid/content/Context;)J
     .locals 3
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -657,24 +655,22 @@
 
     invoke-virtual {p1, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Lcom/google/android/gms/internal/clearcut/zzae;
+    check-cast v0, Lcom/google/android/gms/internal/clearcut/zzae;
 
-    if-nez p1, :cond_4
+    if-nez v0, :cond_4
 
-    sget-object p1, Lcom/google/android/gms/internal/clearcut/zzp;->zzar:Lcom/google/android/gms/internal/clearcut/zzao;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzar:Lcom/google/android/gms/internal/clearcut/zzao;
 
-    invoke-virtual {p1, v1, v4}, Lcom/google/android/gms/internal/clearcut/zzao;->zza(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzae;
+    invoke-virtual {v0, v1, v4}, Lcom/google/android/gms/internal/clearcut/zzao;->zza(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzae;
 
-    move-result-object p1
+    move-result-object v0
 
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzat:Ljava/util/HashMap;
-
-    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_4
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzae;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/clearcut/zzae;->get()Ljava/lang/Object;
 
     move-result-object p1
 
@@ -759,38 +755,36 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/gms/internal/clearcut/zzae;
+
+    if-nez v3, :cond_a
+
+    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzp;->zzaq:Lcom/google/android/gms/internal/clearcut/zzao;
+
+    invoke-static {}, Lcom/google/android/gms/internal/clearcut/zzgw$zza;->zzft()Lcom/google/android/gms/internal/clearcut/zzgw$zza;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/google/android/gms/internal/clearcut/zzq;->zzax:Lcom/google/android/gms/internal/clearcut/zzan;
+
+    invoke-virtual {v3, v1, v4, v5}, Lcom/google/android/gms/internal/clearcut/zzao;->zza(Ljava/lang/String;Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzan;)Lcom/google/android/gms/internal/clearcut/zzae;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v3}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     move-result-object v0
 
     check-cast v0, Lcom/google/android/gms/internal/clearcut/zzae;
 
-    if-nez v0, :cond_a
+    if-eqz v0, :cond_a
 
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzp;->zzaq:Lcom/google/android/gms/internal/clearcut/zzao;
-
-    invoke-static {}, Lcom/google/android/gms/internal/clearcut/zzgw$zza;->zzft()Lcom/google/android/gms/internal/clearcut/zzgw$zza;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/gms/internal/clearcut/zzq;->zzax:Lcom/google/android/gms/internal/clearcut/zzan;
-
-    invoke-virtual {v0, v1, v3, v4}, Lcom/google/android/gms/internal/clearcut/zzao;->zza(Ljava/lang/String;Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzan;)Lcom/google/android/gms/internal/clearcut/zzae;
-
-    move-result-object v0
-
-    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzp;->zzas:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v3, v1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/clearcut/zzae;
-
-    if-eqz v1, :cond_a
-
-    move-object v0, v1
+    move-object v3, v0
 
     :cond_a
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/clearcut/zzae;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/clearcut/zzae;->get()Ljava/lang/Object;
 
     move-result-object v0
 

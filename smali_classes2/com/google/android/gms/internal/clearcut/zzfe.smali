@@ -29,6 +29,11 @@
 # virtual methods
 .method public final synthetic run()Ljava/lang/Object;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const-class v0, Lsun/misc/Unsafe;
 

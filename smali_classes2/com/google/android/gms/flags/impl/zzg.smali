@@ -17,11 +17,11 @@
 
 
 # instance fields
-.field public final synthetic zzo:Landroid/content/SharedPreferences;
+.field private final synthetic zzo:Landroid/content/SharedPreferences;
 
-.field public final synthetic zzp:Ljava/lang/String;
+.field private final synthetic zzp:Ljava/lang/String;
 
-.field public final synthetic zzs:Ljava/lang/Long;
+.field private final synthetic zzs:Ljava/lang/Long;
 
 
 # direct methods
@@ -44,6 +44,11 @@
 # virtual methods
 .method public final synthetic call()Ljava/lang/Object;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/flags/impl/zzg;->zzo:Landroid/content/SharedPreferences;

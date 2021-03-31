@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final BSIZE:I = 0xc
+.field private static final BSIZE:I = 0xc
 
-.field public static final name:Ljava/lang/String; = "hmac-sha1-96"
+.field private static final name:Ljava/lang/String; = "hmac-sha1-96"
 
 
 # instance fields
-.field public final _buf16:[B
+.field private final _buf16:[B
 
 
 # direct methods

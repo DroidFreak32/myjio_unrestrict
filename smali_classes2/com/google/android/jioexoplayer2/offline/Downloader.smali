@@ -8,6 +8,12 @@
 .end method
 
 .method public abstract download()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getDownloadPercentage()F
@@ -17,4 +23,9 @@
 .end method
 
 .method public abstract remove()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 .end method

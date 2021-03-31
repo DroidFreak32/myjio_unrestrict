@@ -33,13 +33,18 @@
 
 
 # virtual methods
-.method public a(Lcom/caverock/androidsvg/SVG$l0;)V
+.method public g(Lcom/caverock/androidsvg/SVG$l0;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/caverock/androidsvg/SVGParseException;
+        }
+    .end annotation
 
     return-void
 .end method
 
-.method public b()Ljava/util/List;
+.method public getChildren()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -58,10 +63,10 @@
     return-object v0
 .end method
 
-.method public g()Ljava/lang/String;
+.method public m()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "stop"
+    const-string/jumbo v0, "stop"
 
     return-object v0
 .end method

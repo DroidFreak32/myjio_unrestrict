@@ -3,7 +3,11 @@
 
 
 # static fields
-.field public static zzbm:Z = false
+.field private static zzbm:Z = false
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "MapsInitializer.class"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -13,7 +17,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

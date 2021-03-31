@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public volatile recycledAtStackTraceException:Ljava/lang/RuntimeException;
+.field private volatile recycledAtStackTraceException:Ljava/lang/RuntimeException;
 
 
 # direct methods

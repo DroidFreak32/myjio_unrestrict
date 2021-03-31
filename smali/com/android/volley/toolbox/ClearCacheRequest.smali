@@ -14,13 +14,13 @@
 
 
 # instance fields
-.field public final mCache:Lnv;
+.field private final mCache:Lcom/android/volley/Cache;
 
-.field public final mCallback:Ljava/lang/Runnable;
+.field private final mCallback:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Lnv;Ljava/lang/Runnable;)V
+.method public constructor <init>(Lcom/android/volley/Cache;Ljava/lang/Runnable;)V
     .locals 2
 
     const/4 v0, 0x0
@@ -28,10 +28,10 @@
     const/4 v1, 0x0
 
     .line 1
-    invoke-direct {p0, v1, v0, v0}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lwv$a;)V
+    invoke-direct {p0, v0, v1, v1}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
 
     .line 2
-    iput-object p1, p0, Lcom/android/volley/toolbox/ClearCacheRequest;->mCache:Lnv;
+    iput-object p1, p0, Lcom/android/volley/toolbox/ClearCacheRequest;->mCache:Lcom/android/volley/Cache;
 
     .line 3
     iput-object p2, p0, Lcom/android/volley/toolbox/ClearCacheRequest;->mCallback:Ljava/lang/Runnable;
@@ -60,9 +60,9 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/android/volley/toolbox/ClearCacheRequest;->mCache:Lnv;
+    iget-object v0, p0, Lcom/android/volley/toolbox/ClearCacheRequest;->mCache:Lcom/android/volley/Cache;
 
-    invoke-interface {v0}, Lnv;->clear()V
+    invoke-interface {v0}, Lcom/android/volley/Cache;->clear()V
 
     .line 2
     iget-object v0, p0, Lcom/android/volley/toolbox/ClearCacheRequest;->mCallback:Ljava/lang/Runnable;
@@ -89,14 +89,14 @@
     return v0
 .end method
 
-.method public parseNetworkResponse(Luv;)Lwv;
+.method public parseNetworkResponse(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Luv;",
+            "Lcom/android/volley/NetworkResponse;",
             ")",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
             "Ljava/lang/Object;",
             ">;"
         }

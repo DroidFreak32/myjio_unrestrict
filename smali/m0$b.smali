@@ -3,7 +3,7 @@
 .source "ToolbarActionBar.java"
 
 # interfaces
-.implements Landroidx/appcompat/widget/Toolbar$e;
+.implements Landroidx/appcompat/widget/Toolbar$OnMenuItemClickListener;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Lm0;
+.field public final synthetic a:Lm0;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lm0$b;->s:Lm0;
+    iput-object p1, p0, Lm0$b;->a:Lm0;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,7 +39,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lm0$b;->s:Lm0;
+    iget-object v0, p0, Lm0$b;->a:Lm0;
 
     iget-object v0, v0, Lm0;->c:Landroid/view/Window$Callback;
 

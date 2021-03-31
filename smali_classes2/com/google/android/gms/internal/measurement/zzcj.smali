@@ -1,57 +1,56 @@
-.class public final synthetic Lcom/google/android/gms/internal/measurement/zzcj;
+.class public final Lcom/google/android/gms/internal/measurement/zzcj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/measurement/zzif;
+
+
+# static fields
+.field public static final zza:Lcom/google/android/gms/internal/measurement/zzif;
 
 
 # direct methods
-.method public static zza(Lcom/google/android/gms/internal/measurement/zzci;)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcom/google/android/gms/internal/measurement/zzci<",
-            "TV;>;)TV;"
-        }
-    .end annotation
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    :try_start_0
-    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zzci;->zza()Ljava/lang/Object;
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzcj;
 
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzcj;-><init>()V
 
-    goto :goto_0
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcj;->zza:Lcom/google/android/gms/internal/measurement/zzif;
 
-    .line 2
-    :catch_0
-    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+    return-void
+.end method
 
-    move-result-wide v0
+.method private constructor <init>()V
+    .locals 0
 
-    .line 3
-    :try_start_1
-    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zzci;->zza()Ljava/lang/Object;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return-void
+.end method
 
-    .line 4
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    :goto_0
-    return-object p0
+# virtual methods
+.method public final zza(I)Z
+    .locals 0
 
-    :catchall_0
-    move-exception p0
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzcd$zzh$zzb;->zza(I)Lcom/google/android/gms/internal/measurement/zzcd$zzh$zzb;
 
-    .line 5
-    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    move-result-object p1
 
-    .line 6
-    throw p0
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

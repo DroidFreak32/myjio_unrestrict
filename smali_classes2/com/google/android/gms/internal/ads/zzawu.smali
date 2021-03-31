@@ -1,297 +1,178 @@
 .class public final Lcom/google/android/gms/internal/ads/zzawu;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzqu;
+
+
+# instance fields
+.field private final lock:Ljava/lang/Object;
+
+.field private zzbum:Ljava/lang/String;
+
+.field private final zzcln:Landroid/content/Context;
+
+.field private zzdzj:Z
 
 
 # direct methods
-.method public static zza(Lcom/google/android/gms/internal/ads/zzayl;)Lcom/google/android/gms/internal/ads/zzbai;
-    .locals 3
-
-    .line 8
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzawv;->zzdlp:[I
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    .line 9
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzbai;->zzdrd:Lcom/google/android/gms/internal/ads/zzbai;
-
-    return-object p0
-
-    .line 10
-    :cond_0
-    new-instance v0, Ljava/security/GeneralSecurityException;
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x14
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "unknown curve type: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 11
-    :cond_1
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzbai;->zzdrc:Lcom/google/android/gms/internal/ads/zzbai;
-
-    return-object p0
-
-    .line 12
-    :cond_2
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzbai;->zzdrb:Lcom/google/android/gms/internal/ads/zzbai;
-
-    return-object p0
-.end method
-
-.method public static zza(Lcom/google/android/gms/internal/ads/zzaxx;)Lcom/google/android/gms/internal/ads/zzbaj;
-    .locals 3
-
-    .line 13
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzawv;->zzdlq:[I
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    .line 14
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzbaj;->zzdrg:Lcom/google/android/gms/internal/ads/zzbaj;
-
-    return-object p0
-
-    .line 15
-    :cond_0
-    new-instance v0, Ljava/security/GeneralSecurityException;
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x16
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "unknown point format: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 16
-    :cond_1
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzbaj;->zzdrh:Lcom/google/android/gms/internal/ads/zzbaj;
-
-    return-object p0
-
-    .line 17
-    :cond_2
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzbaj;->zzdrf:Lcom/google/android/gms/internal/ads/zzbaj;
-
-    return-object p0
-.end method
-
-.method public static zza(Lcom/google/android/gms/internal/ads/zzayn;)Ljava/lang/String;
-    .locals 3
-
-    .line 6
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzawv;->zzdlo:[I
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    const-string p0, "HmacSha512"
-
-    return-object p0
-
-    .line 7
-    :cond_0
-    new-instance v0, Ljava/security/NoSuchAlgorithmException;
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x1b
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "hash unsupported for HMAC: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/security/NoSuchAlgorithmException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const-string p0, "HmacSha256"
-
-    return-object p0
-
-    :cond_2
-    const-string p0, "HmacSha1"
-
-    return-object p0
-.end method
-
-.method public static zza(Lcom/google/android/gms/internal/ads/zzayd;)V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzayd;->zzzo()Lcom/google/android/gms/internal/ads/zzayj;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzayj;->zzaab()Lcom/google/android/gms/internal/ads/zzayl;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzawu;->zza(Lcom/google/android/gms/internal/ads/zzayl;)Lcom/google/android/gms/internal/ads/zzbai;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbag;->zza(Lcom/google/android/gms/internal/ads/zzbai;)Ljava/security/spec/ECParameterSpec;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzayd;->zzzo()Lcom/google/android/gms/internal/ads/zzayj;
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzayj;->zzaac()Lcom/google/android/gms/internal/ads/zzayn;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzawu;->zza(Lcom/google/android/gms/internal/ads/zzayn;)Ljava/lang/String;
+    move-result-object p1
+
+    :cond_0
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzcln:Landroid/content/Context;
 
     .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzayd;->zzzq()Lcom/google/android/gms/internal/ads/zzaxx;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzbum:Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    .line 4
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzdzj:Z
+
+    .line 5
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzawu;->lock:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getAdUnitId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzbum:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final zza(Lcom/google/android/gms/internal/ads/zzqv;)V
+    .locals 0
+
+    .line 1
+    iget-boolean p1, p1, Lcom/google/android/gms/internal/ads/zzqv;->zzbqz:Z
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ads/zzawu;->zzam(Z)V
+
+    return-void
+.end method
+
+.method public final zzam(Z)V
+    .locals 3
+
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzlo()Lcom/google/android/gms/internal/ads/zzawx;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzaxx;->zzdmr:Lcom/google/android/gms/internal/ads/zzaxx;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzcln:Landroid/content/Context;
 
-    if-eq v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzawx;->zzz(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 2
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzawu;->lock:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 3
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzdzj:Z
+
+    if-ne v1, p1, :cond_1
 
     .line 4
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzayd;->zzzp()Lcom/google/android/gms/internal/ads/zzaxz;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaxz;->zzzj()Lcom/google/android/gms/internal/ads/zzaza;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzawb;->zza(Lcom/google/android/gms/internal/ads/zzaza;)Lcom/google/android/gms/internal/ads/zzayv;
+    monitor-exit v0
 
     return-void
 
     .line 5
-    :cond_0
-    new-instance p0, Ljava/security/GeneralSecurityException;
+    :cond_1
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzdzj:Z
 
-    const-string v0, "unknown EC point format"
+    .line 6
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzbum:Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    throw p0
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    .line 7
+    monitor-exit v0
+
+    return-void
+
+    .line 8
+    :cond_2
+    iget-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzdzj:Z
+
+    if-eqz p1, :cond_3
+
+    .line 9
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzlo()Lcom/google/android/gms/internal/ads/zzawx;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzcln:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzbum:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzawx;->zzd(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 10
+    :cond_3
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzlo()Lcom/google/android/gms/internal/ads/zzawx;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzcln:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzawu;->zzbum:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzawx;->zze(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 11
+    :goto_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

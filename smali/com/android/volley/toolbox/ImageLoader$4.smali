@@ -67,11 +67,11 @@
     check-cast v1, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;
 
     .line 2
-    invoke-static {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$300(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/LinkedList;
+    invoke-static {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$300(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/List;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -133,7 +133,7 @@
 
     move-result-object v4
 
-    invoke-interface {v3, v4}, Lwv$a;->onErrorResponse(Lcom/android/volley/VolleyError;)V
+    invoke-interface {v3, v4}, Lcom/android/volley/Response$ErrorListener;->onErrorResponse(Lcom/android/volley/VolleyError;)V
 
     goto :goto_0
 

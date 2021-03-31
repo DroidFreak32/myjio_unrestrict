@@ -34,8 +34,6 @@
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzao;->VERSION:Ljava/lang/String;
 
     .line 4
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzao;->VERSION:Ljava/lang/String;
-
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

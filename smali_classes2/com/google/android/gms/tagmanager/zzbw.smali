@@ -8,13 +8,13 @@
 
 
 # instance fields
-.field public final zzabb:J
+.field private final zzabb:J
 
-.field public final zzagy:J
+.field private final zzagy:J
 
-.field public final zzagz:J
+.field private final zzagz:J
 
-.field public zzaha:Ljava/lang/String;
+.field private zzaha:Ljava/lang/String;
 
 
 # direct methods

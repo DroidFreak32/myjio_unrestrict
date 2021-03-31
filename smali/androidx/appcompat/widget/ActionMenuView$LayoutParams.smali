@@ -15,32 +15,32 @@
 
 
 # instance fields
-.field public c:Z
+.field public a:Z
+
+.field public cellsUsed:I
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
     .end annotation
 .end field
 
-.field public d:I
+.field public expandable:Z
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
     .end annotation
 .end field
 
-.field public e:I
+.field public extraPixels:I
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
     .end annotation
 .end field
 
-.field public f:Z
+.field public isOverflowButton:Z
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
     .end annotation
 .end field
 
-.field public g:Z
+.field public preventEdgeOffset:Z
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
     .end annotation
 .end field
-
-.field public h:Z
 
 
 # direct methods
@@ -53,7 +53,7 @@
     const/4 p1, 0x0
 
     .line 6
-    iput-boolean p1, p0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->c:Z
+    iput-boolean p1, p0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
     return-void
 .end method
@@ -83,9 +83,9 @@
     invoke-direct {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 4
-    iget-boolean p1, p1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->c:Z
+    iget-boolean p1, p1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
-    iput-boolean p1, p0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->c:Z
+    iput-boolean p1, p0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
     return-void
 .end method

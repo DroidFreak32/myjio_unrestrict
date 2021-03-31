@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/ScopeUtil;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -19,6 +20,13 @@
 
 .method public static fromScopeString(Ljava/util/Collection;)Ljava/util/Set;
     .locals 1
+    .param p0    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -61,6 +69,13 @@
 
 .method public static varargs fromScopeString([Ljava/lang/String;)Ljava/util/Set;
     .locals 5
+    .param p0    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -123,6 +138,13 @@
 
 .method public static toScopeString(Ljava/util/Set;)[Ljava/lang/String;
     .locals 1
+    .param p0    # Ljava/util/Set;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -163,6 +185,13 @@
 
 .method public static toScopeString([Lcom/google/android/gms/common/api/Scope;)[Ljava/lang/String;
     .locals 3
+    .param p0    # [Lcom/google/android/gms/common/api/Scope;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

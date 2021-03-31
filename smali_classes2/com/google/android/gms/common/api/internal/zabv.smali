@@ -1,46 +1,38 @@
-.class public final Lcom/google/android/gms/common/api/internal/zabv;
+.class public final synthetic Lcom/google/android/gms/common/api/internal/zabv;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
 # instance fields
-.field public final zajr:Lcom/google/android/gms/common/api/internal/zab;
-
-.field public final zajs:I
-
-.field public final zajt:Lcom/google/android/gms/common/api/GoogleApi;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/GoogleApi<",
-            "*>;"
-        }
-    .end annotation
-.end field
+.field private final zaa:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zab;ILcom/google/android/gms/common/api/GoogleApi;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/internal/zab;",
-            "I",
-            "Lcom/google/android/gms/common/api/GoogleApi<",
-            "*>;)V"
-        }
-    .end annotation
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabv;->zajr:Lcom/google/android/gms/common/api/internal/zab;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabv;->zaa:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
 
-    .line 3
-    iput p2, p0, Lcom/google/android/gms/common/api/internal/zabv;->zajs:I
+    return-void
+.end method
 
-    .line 4
-    iput-object p3, p0, Lcom/google/android/gms/common/api/internal/zabv;->zajt:Lcom/google/android/gms/common/api/GoogleApi;
+
+# virtual methods
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabv;->zaa:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
+
+    check-cast p1, Lcom/google/android/gms/common/api/Api$AnyClient;
+
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->zaa(Lcom/google/android/gms/common/api/Api$AnyClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
     return-void
 .end method

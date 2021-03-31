@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static a:Z
+.field public static capturePassive:Z
 
 
 # direct methods
@@ -17,7 +17,7 @@
     const/4 v0, 0x0
 
     .line 2
-    sput-boolean v0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sput-boolean v0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     return-void
 .end method
@@ -50,11 +50,11 @@
     if-eqz p2, :cond_1
 
     .line 2
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lhf0;->Y()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PreferenceHelper;->isReceiverRegister()Z
 
     move-result p2
 
@@ -64,7 +64,7 @@
 
     .line 3
     :cond_0
-    sget-boolean p2, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sget-boolean p2, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     if-nez p2, :cond_1
 
@@ -77,14 +77,14 @@
 
     .line 5
     :try_start_0
-    sput-boolean v0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sput-boolean v0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     .line 6
-    invoke-static {p1}, Lvf0;->b(Landroid/content/Context;)Lvf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/location/SdkPassiveLocationService;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lvf0;->c()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->requestLocationUpdates()V
 
     .line 7
     new-instance v0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;
@@ -108,7 +108,7 @@
     const/4 p1, 0x0
 
     .line 9
-    sput-boolean p1, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sput-boolean p1, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     :cond_1
     :goto_0

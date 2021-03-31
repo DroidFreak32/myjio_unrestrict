@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/tasks/CancellationToken;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # direct methods
@@ -18,4 +19,10 @@
 .end method
 
 .method public abstract onCanceledRequested(Lcom/google/android/gms/tasks/OnTokenCanceledListener;)Lcom/google/android/gms/tasks/CancellationToken;
+    .param p1    # Lcom/google/android/gms/tasks/OnTokenCanceledListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method

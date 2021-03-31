@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "EventMessageDecoder"
+.field private static final TAG:Ljava/lang/String; = "EventMessageDecoder"
 
 
 # direct methods

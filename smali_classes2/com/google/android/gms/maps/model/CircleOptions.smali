@@ -27,63 +27,66 @@
 
 
 # instance fields
-.field public fillColor:I
+.field private fillColor:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getFillColor"
         id = 0x6
     .end annotation
 .end field
 
-.field public strokeColor:I
+.field private strokeColor:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getStrokeColor"
         id = 0x5
     .end annotation
 .end field
 
-.field public zzcp:Lcom/google/android/gms/maps/model/LatLng;
+.field private zzcp:Lcom/google/android/gms/maps/model/LatLng;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getCenter"
         id = 0x2
     .end annotation
 .end field
 
-.field public zzcq:D
+.field private zzcq:D
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getRadius"
         id = 0x3
     .end annotation
 .end field
 
-.field public zzcr:F
+.field private zzcr:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getStrokeWidth"
         id = 0x4
     .end annotation
 .end field
 
-.field public zzcs:F
+.field private zzcs:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getZIndex"
         id = 0x7
     .end annotation
 .end field
 
-.field public zzct:Z
+.field private zzct:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isVisible"
         id = 0x8
     .end annotation
 .end field
 
-.field public zzcu:Z
+.field private zzcu:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isClickable"
         id = 0x9
     .end annotation
 .end field
 
-.field public zzcv:Ljava/util/List;
+.field private zzcv:Ljava/util/List;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getStrokePattern"
         id = 0xa
@@ -206,6 +209,9 @@
         .end annotation
     .end param
     .param p10    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0xa
         .end annotation
@@ -365,6 +371,9 @@
 
 .method public final getStrokePattern()Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -436,6 +445,10 @@
 
 .method public final strokePattern(Ljava/util/List;)Lcom/google/android/gms/maps/model/CircleOptions;
     .locals 0
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -471,7 +484,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 5
+    .locals 4
 
     .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
@@ -483,22 +496,22 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     .line 3
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 4
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/CircleOptions;->getRadius()D
 
-    move-result-wide v3
+    move-result-wide v1
 
     const/4 p2, 0x3
 
     .line 5
-    invoke-static {p1, p2, v3, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeDouble(Landroid/os/Parcel;ID)V
+    invoke-static {p1, p2, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeDouble(Landroid/os/Parcel;ID)V
 
     .line 6
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/CircleOptions;->getStrokeWidth()F
@@ -568,7 +581,7 @@
     const/16 v1, 0xa
 
     .line 19
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedList(Landroid/os/Parcel;ILjava/util/List;Z)V
 
     .line 20
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V

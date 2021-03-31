@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final zzpb:Lcom/google/android/gms/internal/clearcut/zzcx;
+.field private final zzpb:Lcom/google/android/gms/internal/clearcut/zzcx;
 
 
 # direct methods

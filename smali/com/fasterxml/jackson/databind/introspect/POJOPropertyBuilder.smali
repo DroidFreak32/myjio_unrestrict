@@ -26,7 +26,7 @@
 
 
 # static fields
-.field public static final NOT_REFEFERENCE_PROP:Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
+.field private static final NOT_REFEFERENCE_PROP:Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
 
 
 # instance fields
@@ -865,7 +865,7 @@
     return-object p1
 .end method
 
-.method public static merge(Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;)Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;
+.method private static merge(Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;)Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1053,7 +1053,7 @@
 
     if-eqz v3, :cond_3
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_6
 
     .line 10
     :cond_3
@@ -1091,23 +1091,23 @@
     move-result-object v0
 
     :cond_5
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_6
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     .line 15
     invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/cfg/ConfigOverride;->getMergeable()Ljava/lang/Boolean;
 
     move-result-object v5
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_6
 
     .line 16
     invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_8
 
     .line 17
     invoke-static {v1}, Lcom/fasterxml/jackson/databind/PropertyMetadata$MergeInfo;->createForTypeOverride(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/PropertyMetadata$MergeInfo;
@@ -1118,17 +1118,21 @@
 
     move-result-object p1
 
+    goto :goto_1
+
     :cond_6
-    const/4 v4, 0x0
+    move v2, v4
 
     goto :goto_1
 
     :cond_7
     move-object v0, v3
 
+    const/4 v2, 0x1
+
     :cond_8
     :goto_1
-    if-nez v4, :cond_9
+    if-nez v2, :cond_9
 
     if-eqz v3, :cond_9
 
@@ -1136,16 +1140,16 @@
 
     .line 18
     :cond_9
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;->_config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
+    iget-object v4, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;->_config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getDefaultSetterInfo()Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getDefaultSetterInfo()Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
 
-    move-result-object v2
+    move-result-object v4
 
     if-nez v3, :cond_a
 
     .line 19
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->nonDefaultValueNulls()Lcom/fasterxml/jackson/annotation/Nulls;
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->nonDefaultValueNulls()Lcom/fasterxml/jackson/annotation/Nulls;
 
     move-result-object v3
 
@@ -1153,12 +1157,12 @@
     if-nez v0, :cond_b
 
     .line 20
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->nonDefaultContentNulls()Lcom/fasterxml/jackson/annotation/Nulls;
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->nonDefaultContentNulls()Lcom/fasterxml/jackson/annotation/Nulls;
 
     move-result-object v0
 
     :cond_b
-    if-eqz v4, :cond_c
+    if-eqz v2, :cond_c
 
     .line 21
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;->_config:Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
@@ -2754,7 +2758,7 @@
 
     .line 5
     :cond_0
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
@@ -2762,7 +2766,7 @@
 
     .line 6
     :cond_1
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 

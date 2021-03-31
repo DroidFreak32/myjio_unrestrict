@@ -14,31 +14,31 @@
 
 
 # instance fields
-.field public mBundle:Landroid/os/Bundle;
+.field private mBundle:Landroid/os/Bundle;
 
 .field public mContext:Landroid/content/Context;
 
-.field public mDescription:Ljava/lang/String;
+.field private mDescription:Ljava/lang/String;
 
-.field public mEmptyPlaceHolderRes:I
+.field private mEmptyPlaceHolderRes:I
 
-.field public mErrorDisappear:Z
+.field private mErrorDisappear:Z
 
-.field public mErrorPlaceHolderRes:I
+.field private mErrorPlaceHolderRes:I
 
-.field public mFile:Ljava/io/File;
+.field private mFile:Ljava/io/File;
 
-.field public mLoadListener:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ImageLoadListener;
+.field private mLoadListener:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ImageLoadListener;
 
 .field public mOnSliderClickListener:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$OnSliderClickListener;
 
-.field public mPicasso:Lcom/squareup/picasso/Picasso;
+.field private mPicasso:Lcom/squareup/picasso/Picasso;
 
-.field public mRes:I
+.field private mRes:I
 
-.field public mScaleType:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
+.field private mScaleType:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
-.field public mUrl:Ljava/lang/String;
+.field private mUrl:Ljava/lang/String;
 
 
 # direct methods
@@ -115,7 +115,7 @@
     if-eqz v1, :cond_3
 
     .line 6
-    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->a(Ljava/lang/String;)Lb83;
+    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->load(Ljava/lang/String;)Lcom/squareup/picasso/RequestCreator;
 
     move-result-object v0
 
@@ -128,7 +128,7 @@
     if-eqz v1, :cond_4
 
     .line 8
-    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->a(Ljava/io/File;)Lb83;
+    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->load(Ljava/io/File;)Lcom/squareup/picasso/RequestCreator;
 
     move-result-object v0
 
@@ -141,7 +141,7 @@
     if-eqz v1, :cond_b
 
     .line 10
-    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->a(I)Lb83;
+    invoke-virtual {v0, v1}, Lcom/squareup/picasso/Picasso;->load(I)Lcom/squareup/picasso/RequestCreator;
 
     move-result-object v0
 
@@ -163,7 +163,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lb83;->b(I)Lb83;
+    invoke-virtual {v0, v1}, Lcom/squareup/picasso/RequestCreator;->placeholder(I)Lcom/squareup/picasso/RequestCreator;
 
     .line 13
     :cond_6
@@ -178,7 +178,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lb83;->a(I)Lb83;
+    invoke-virtual {v0, v1}, Lcom/squareup/picasso/RequestCreator;->error(I)Lcom/squareup/picasso/RequestCreator;
 
     .line 15
     :cond_7
@@ -208,23 +208,27 @@
 
     .line 16
     :cond_8
-    invoke-virtual {v0}, Lb83;->d()Lb83;
+    invoke-virtual {v0}, Lcom/squareup/picasso/RequestCreator;->fit()Lcom/squareup/picasso/RequestCreator;
 
-    invoke-virtual {v0}, Lb83;->b()Lb83;
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/squareup/picasso/RequestCreator;->centerInside()Lcom/squareup/picasso/RequestCreator;
 
     goto :goto_2
 
     .line 17
     :cond_9
-    invoke-virtual {v0}, Lb83;->d()Lb83;
+    invoke-virtual {v0}, Lcom/squareup/picasso/RequestCreator;->fit()Lcom/squareup/picasso/RequestCreator;
 
-    invoke-virtual {v0}, Lb83;->a()Lb83;
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/squareup/picasso/RequestCreator;->centerCrop()Lcom/squareup/picasso/RequestCreator;
 
     goto :goto_2
 
     .line 18
     :cond_a
-    invoke-virtual {v0}, Lb83;->d()Lb83;
+    invoke-virtual {v0}, Lcom/squareup/picasso/RequestCreator;->fit()Lcom/squareup/picasso/RequestCreator;
 
     .line 19
     :goto_2
@@ -232,7 +236,7 @@
 
     invoke-direct {v1, p0, p1, p0}, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$2;-><init>(Lcom/daimajia/slider/library/SliderTypes/BaseSliderView;Landroid/view/View;Lcom/daimajia/slider/library/SliderTypes/BaseSliderView;)V
 
-    invoke-virtual {v0, p2, v1}, Lb83;->a(Landroid/widget/ImageView;Ln73;)V
+    invoke-virtual {v0, p2, v1}, Lcom/squareup/picasso/RequestCreator;->into(Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
 
     :cond_b
     return-void

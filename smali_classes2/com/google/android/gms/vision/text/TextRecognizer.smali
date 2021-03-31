@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/text/TextRecognizer;
 .super Lcom/google/android/gms/vision/Detector;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -19,11 +20,11 @@
 
 
 # instance fields
-.field public final zzez:Lcom/google/android/gms/internal/vision/zzak;
+.field private final zzel:Lcom/google/android/gms/internal/vision/zzan;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .line 1
@@ -39,23 +40,23 @@
     throw v0
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzak;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/vision/zzan;)V
     .locals 0
 
     .line 3
     invoke-direct {p0}, Lcom/google/android/gms/vision/Detector;-><init>()V
 
     .line 4
-    iput-object p1, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzez:Lcom/google/android/gms/internal/vision/zzak;
+    iput-object p1, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzel:Lcom/google/android/gms/internal/vision/zzan;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/vision/zzak;Lcom/google/android/gms/vision/text/zzb;)V
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/vision/zzan;Lcom/google/android/gms/vision/text/zzb;)V
     .locals 0
 
     .line 5
-    invoke-direct {p0, p1}, Lcom/google/android/gms/vision/text/TextRecognizer;-><init>(Lcom/google/android/gms/internal/vision/zzak;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/vision/text/TextRecognizer;-><init>(Lcom/google/android/gms/internal/vision/zzan;)V
 
     return-void
 .end method
@@ -76,18 +77,18 @@
     .end annotation
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzag;
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzaj;
 
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/vision/zzag;-><init>(Landroid/graphics/Rect;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/vision/zzaj;-><init>(Landroid/graphics/Rect;)V
 
     if-eqz p1, :cond_9
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzn;->zzc(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzn;
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzu;->zzd(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzu;
 
     move-result-object v1
 
@@ -123,9 +124,9 @@
 
     move-result v7
 
-    iget v2, v1, Lcom/google/android/gms/internal/vision/zzn;->width:I
+    iget v2, v1, Lcom/google/android/gms/internal/vision/zzu;->width:I
 
-    iget v11, v1, Lcom/google/android/gms/internal/vision/zzn;->height:I
+    iget v11, v1, Lcom/google/android/gms/internal/vision/zzu;->height:I
 
     .line 8
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->hasArray()Z
@@ -204,12 +205,12 @@
 
     .line 17
     :goto_1
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/vision/zzp;->zzb(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzn;)Landroid/graphics/Bitmap;
+    invoke-static {v2, v1}, Lcom/google/android/gms/internal/vision/zzv;->zzb(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzu;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
     .line 18
-    iget-object v4, v0, Lcom/google/android/gms/internal/vision/zzag;->zzfl:Landroid/graphics/Rect;
+    iget-object v4, v0, Lcom/google/android/gms/internal/vision/zzaj;->zzex:Landroid/graphics/Rect;
 
     invoke-virtual {v4}, Landroid/graphics/Rect;->isEmpty()Z
 
@@ -218,7 +219,7 @@
     if-nez v4, :cond_5
 
     .line 19
-    iget-object v4, v0, Lcom/google/android/gms/internal/vision/zzag;->zzfl:Landroid/graphics/Rect;
+    iget-object v4, v0, Lcom/google/android/gms/internal/vision/zzaj;->zzex:Landroid/graphics/Rect;
 
     .line 20
     invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getMetadata()Lcom/google/android/gms/vision/Frame$Metadata;
@@ -239,7 +240,7 @@
     move-result p1
 
     .line 22
-    iget v6, v1, Lcom/google/android/gms/internal/vision/zzn;->rotation:I
+    iget v6, v1, Lcom/google/android/gms/internal/vision/zzu;->rotation:I
 
     const/4 v7, 0x1
 
@@ -252,8 +253,6 @@
     const/4 p1, 0x3
 
     if-eq v6, p1, :cond_2
-
-    move-object p1, v4
 
     goto :goto_2
 
@@ -274,6 +273,8 @@
     sub-int/2addr v5, v4
 
     invoke-direct {p1, v6, v7, v8, v5}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    move-object v4, p1
 
     goto :goto_2
 
@@ -299,7 +300,7 @@
 
     invoke-direct {v6, v7, v8, v5, p1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    move-object p1, v6
+    move-object v4, v6
 
     goto :goto_2
 
@@ -321,22 +322,22 @@
 
     invoke-direct {v5, v6, v7, p1, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    move-object p1, v5
+    move-object v4, v5
 
     .line 26
     :goto_2
-    iget-object v4, v0, Lcom/google/android/gms/internal/vision/zzag;->zzfl:Landroid/graphics/Rect;
+    iget-object p1, v0, Lcom/google/android/gms/internal/vision/zzaj;->zzex:Landroid/graphics/Rect;
 
-    invoke-virtual {v4, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    invoke-virtual {p1, v4}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     .line 27
     :cond_5
-    iput v3, v1, Lcom/google/android/gms/internal/vision/zzn;->rotation:I
+    iput v3, v1, Lcom/google/android/gms/internal/vision/zzu;->rotation:I
 
     .line 28
-    iget-object p1, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzez:Lcom/google/android/gms/internal/vision/zzak;
+    iget-object p1, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzel:Lcom/google/android/gms/internal/vision/zzan;
 
-    invoke-virtual {p1, v2, v1, v0}, Lcom/google/android/gms/internal/vision/zzak;->zza(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzn;Lcom/google/android/gms/internal/vision/zzag;)[Lcom/google/android/gms/internal/vision/zzae;
+    invoke-virtual {p1, v2, v1, v0}, Lcom/google/android/gms/internal/vision/zzan;->zza(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzu;Lcom/google/android/gms/internal/vision/zzaj;)[Lcom/google/android/gms/internal/vision/zzah;
 
     move-result-object p1
 
@@ -356,7 +357,7 @@
     aget-object v4, p1, v2
 
     .line 31
-    iget v5, v4, Lcom/google/android/gms/internal/vision/zzae;->zzfj:I
+    iget v5, v4, Lcom/google/android/gms/internal/vision/zzah;->zzev:I
 
     invoke-virtual {v0, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -372,13 +373,13 @@
     invoke-direct {v5}, Landroid/util/SparseArray;-><init>()V
 
     .line 33
-    iget v6, v4, Lcom/google/android/gms/internal/vision/zzae;->zzfj:I
+    iget v6, v4, Lcom/google/android/gms/internal/vision/zzah;->zzev:I
 
     invoke-virtual {v0, v6, v5}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
     .line 34
     :cond_6
-    iget v6, v4, Lcom/google/android/gms/internal/vision/zzae;->zzfk:I
+    iget v6, v4, Lcom/google/android/gms/internal/vision/zzah;->zzew:I
 
     invoke-virtual {v5, v6, v4}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
@@ -443,9 +444,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzez:Lcom/google/android/gms/internal/vision/zzak;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzel:Lcom/google/android/gms/internal/vision/zzan;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzm;->isOperational()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzs;->isOperational()Z
 
     move-result v0
 
@@ -459,9 +460,9 @@
     invoke-super {p0}, Lcom/google/android/gms/vision/Detector;->release()V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzez:Lcom/google/android/gms/internal/vision/zzak;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/TextRecognizer;->zzel:Lcom/google/android/gms/internal/vision/zzan;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzm;->zzp()V
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzs;->zzq()V
 
     return-void
 .end method

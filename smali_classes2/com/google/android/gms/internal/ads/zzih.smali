@@ -1,27 +1,23 @@
-.class public final Lcom/google/android/gms/internal/ads/zzih;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzih;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbdh;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzbdh<",
-        "Lcom/google/android/gms/internal/ads/zzif$zza$zza;",
-        ">;"
-    }
-.end annotation
+# virtual methods
+.method public abstract zza(IJJ)V
+.end method
 
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzjm;)V
+.end method
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public abstract zza(Ljava/lang/String;JJ)V
+.end method
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract zzb(Lcom/google/android/gms/internal/ads/zzhp;)V
+.end method
 
-    return-void
+.method public abstract zzb(Lcom/google/android/gms/internal/ads/zzjm;)V
+.end method
+
+.method public abstract zzw(I)V
 .end method

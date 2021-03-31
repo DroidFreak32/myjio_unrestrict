@@ -57,6 +57,11 @@
 
 .method private final _checkDup(Lcom/fasterxml/jackson/core/json/DupDetector;Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/core/json/DupDetector;->isDup(Ljava/lang/String;)Z
@@ -362,6 +367,11 @@
 
 .method public writeFieldName(Ljava/lang/String;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/JsonStreamContext;->_type:I
@@ -474,9 +484,6 @@
     add-int/2addr v0, v3
 
     iput v0, p0, Lcom/fasterxml/jackson/core/JsonStreamContext;->_index:I
-
-    .line 8
-    iget v0, p0, Lcom/fasterxml/jackson/core/JsonStreamContext;->_index:I
 
     if-nez v0, :cond_4
 

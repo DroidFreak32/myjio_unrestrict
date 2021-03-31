@@ -56,10 +56,6 @@
 .method public onPlayerStateChanged(ZI)V
     .locals 2
 
-    const/4 p1, 0x1
-
-    if-eq p2, p1, :cond_3
-
     const/4 p1, 0x2
 
     if-eq p2, p1, :cond_2
@@ -185,8 +181,10 @@
     return-void
 .end method
 
-.method public onTimelineChanged(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)V
+.method public synthetic onTimelineChanged(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)V
     .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lad;->$default$onTimelineChanged(Lcom/google/android/exoplayer2/Player$EventListener;Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)V
 
     return-void
 .end method

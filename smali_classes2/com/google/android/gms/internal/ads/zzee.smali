@@ -1,89 +1,59 @@
 .class public final Lcom/google/android/gms/internal/ads/zzee;
-.super Lcom/google/android/gms/internal/ads/zzek;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zzrb:Lcom/google/android/gms/internal/ads/zzdk;
-
-.field public zztm:J
+.field private final synthetic zzxt:Landroid/view/MotionEvent;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzdb;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzbb;IILcom/google/android/gms/internal/ads/zzdk;)V
-    .locals 7
-
-    const/16 v6, 0x35
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move v5, p5
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzdx;Landroid/view/MotionEvent;)V
+    .locals 0
 
     .line 1
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/internal/ads/zzek;-><init>(Lcom/google/android/gms/internal/ads/zzdb;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzbb;II)V
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzee;->zzxt:Landroid/view/MotionEvent;
 
-    .line 2
-    iput-object p7, p0, Lcom/google/android/gms/internal/ads/zzee;->zzrb:Lcom/google/android/gms/internal/ads/zzdk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p7, :cond_0
-
-    .line 3
-    invoke-virtual {p7}, Lcom/google/android/gms/internal/ads/zzdk;->zzap()J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lcom/google/android/gms/internal/ads/zzee;->zztm:J
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzar()V
-    .locals 7
+.method public final run()V
+    .locals 5
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzee;->zzrb:Lcom/google/android/gms/internal/ads/zzdk;
+    :try_start_0
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzdx;->zzbx()Lcom/google/android/gms/internal/ads/zzdp;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzee;->zzxt:Landroid/view/MotionEvent;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzdp;->zza(Landroid/view/MotionEvent;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzek;->zztv:Lcom/google/android/gms/internal/ads/zzbb;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzek;->zzue:Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    iget-wide v5, p0, Lcom/google/android/gms/internal/ads/zzee;->zztm:J
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzdx;->zzby()Lcom/google/android/gms/internal/ads/zzdsi;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/Long;
+    const/16 v2, 0x7e6
 
-    iput-object v1, v0, Lcom/google/android/gms/internal/ads/zzbb;->zzer:Ljava/lang/Long;
+    const-wide/16 v3, -0x1
 
-    :cond_0
+    invoke-virtual {v1, v2, v3, v4, v0}, Lcom/google/android/gms/internal/ads/zzdsi;->zza(IJLjava/lang/Exception;)Lcom/google/android/gms/tasks/Task;
+
     return-void
 .end method

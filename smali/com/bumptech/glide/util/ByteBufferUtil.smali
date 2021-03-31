@@ -13,7 +13,7 @@
 
 
 # static fields
-.field public static final BUFFER_REF:Ljava/util/concurrent/atomic/AtomicReference;
+.field private static final BUFFER_REF:Ljava/util/concurrent/atomic/AtomicReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference<",
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public static final BUFFER_SIZE:I = 0x4000
+.field private static final BUFFER_SIZE:I = 0x4000
 
 
 # direct methods
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -49,7 +49,19 @@
 .end method
 
 .method public static fromFile(Ljava/io/File;)Ljava/nio/ByteBuffer;
-    .locals 9
+    .locals 8
+    .param p0    # Ljava/io/File;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -78,72 +90,58 @@
 
     invoke-direct {v7, p0, v1}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 3
     :try_start_1
     invoke-virtual {v7}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    move-result-object v0
 
     .line 4
-    :try_start_2
     sget-object v2, Ljava/nio/channels/FileChannel$MapMode;->READ_ONLY:Ljava/nio/channels/FileChannel$MapMode;
 
     const-wide/16 v3, 0x0
 
-    move-object v1, p0
+    move-object v1, v0
 
     invoke-virtual/range {v1 .. v6}, Ljava/nio/channels/FileChannel;->map(Ljava/nio/channels/FileChannel$MapMode;JJ)Ljava/nio/MappedByteBuffer;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/nio/MappedByteBuffer;->load()Ljava/nio/MappedByteBuffer;
+    invoke-virtual {p0}, Ljava/nio/MappedByteBuffer;->load()Ljava/nio/MappedByteBuffer;
 
-    move-result-object v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    move-result-object p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz p0, :cond_0
+    if-eqz v0, :cond_0
 
     .line 5
-    :try_start_3
-    invoke-virtual {p0}, Ljava/nio/channels/FileChannel;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    :try_start_2
+    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 6
     :catch_0
     :cond_0
-    :try_start_4
+    :try_start_3
     invoke-virtual {v7}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     :catch_1
-    return-object v0
+    return-object p0
 
     :catchall_0
-    move-exception v0
-
-    move-object v8, v0
-
-    move-object v0, p0
-
-    move-object p0, v8
-
-    goto :goto_0
-
-    :catchall_1
     move-exception p0
 
     goto :goto_0
 
     .line 7
     :cond_1
-    :try_start_5
+    :try_start_4
     new-instance p0, Ljava/io/IOException;
 
     const-string v1, "File unsuitable for memory mapping"
@@ -161,10 +159,10 @@
     invoke-direct {p0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    :catchall_2
+    :catchall_1
     move-exception p0
 
     move-object v7, v0
@@ -173,10 +171,10 @@
     if-eqz v0, :cond_3
 
     .line 9
-    :try_start_6
+    :try_start_5
     invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
     goto :goto_1
 
@@ -188,10 +186,10 @@
     if-eqz v7, :cond_4
 
     .line 10
-    :try_start_7
+    :try_start_6
     invoke-virtual {v7}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
     .line 11
     :catch_3
@@ -201,6 +199,18 @@
 
 .method public static fromStream(Ljava/io/InputStream;)Ljava/nio/ByteBuffer;
     .locals 4
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -271,8 +281,14 @@
     return-object p0
 .end method
 
-.method public static getSafeArray(Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;
+.method private static getSafeArray(Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;
     .locals 3
+    .param p0    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->isReadOnly()Z
@@ -314,6 +330,12 @@
 
 .method public static toBytes(Ljava/nio/ByteBuffer;)[B
     .locals 2
+    .param p0    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/bumptech/glide/util/ByteBufferUtil;->getSafeArray(Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;
@@ -371,6 +393,19 @@
 
 .method public static toFile(Ljava/nio/ByteBuffer;Ljava/io/File;)V
     .locals 4
+    .param p0    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/io/File;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -470,6 +505,12 @@
 
 .method public static toStream(Ljava/nio/ByteBuffer;)Ljava/io/InputStream;
     .locals 1
+    .param p0    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 9
     new-instance v0, Lcom/bumptech/glide/util/ByteBufferUtil$ByteBufferStream;
@@ -481,6 +522,19 @@
 
 .method public static toStream(Ljava/nio/ByteBuffer;Ljava/io/OutputStream;)V
     .locals 3
+    .param p0    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/io/OutputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/bumptech/glide/util/ByteBufferUtil;->getSafeArray(Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/util/ByteBufferUtil$SafeArray;

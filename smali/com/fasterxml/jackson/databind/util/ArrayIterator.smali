@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field public final _a:[Ljava/lang/Object;
+.field private final _a:[Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[TT;"
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public _index:I
+.field private _index:I
 
 
 # direct methods

@@ -25,7 +25,7 @@
 .method public onSyncCompleted(I)V
     .locals 10
 
-    const-string v0, "syncCurrentRetry"
+    const-string/jumbo v0, "syncCurrentRetry"
 
     const-string v1, "AnalyticsSyncRetryReceiver"
 
@@ -36,7 +36,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "success:"
+    const-string/jumbo v4, "success:"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -58,13 +58,13 @@
 
     move-result-object v2
 
-    const-string v3, "synctotalTimecount"
+    const-string/jumbo v3, "synctotalTimecount"
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
     move-result v3
 
-    const-string v4, "syncRetriedCount"
+    const-string/jumbo v4, "syncRetriedCount"
 
     invoke-virtual {v2, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
@@ -152,7 +152,7 @@
     goto :goto_1
 
     :cond_0
-    const-string p1, "syncfinishallcounter"
+    const-string/jumbo p1, "syncfinishallcounter"
 
     const/4 v0, 0x1
 
@@ -186,7 +186,7 @@
 
     const-string p1, "Analytic record not sync, Error/Record not available"
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -6,18 +6,20 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/inn/passivesdk/service/GlobalService$a;,
-        Lcom/inn/passivesdk/service/GlobalService$b;
+        Lcom/inn/passivesdk/service/GlobalService$CheckPassiveUpload;,
+        Lcom/inn/passivesdk/service/GlobalService$a;
     }
 .end annotation
 
 
 # static fields
-.field public static s:Lcom/inn/passivesdk/service/GlobalService$b;
+.field public static checkPassiveUpload:Lcom/inn/passivesdk/service/GlobalService$CheckPassiveUpload;
 
-.field public static t:Lcom/inn/passivesdk/service/GlobalService$a;
+.field public static isZipCreationProgress:Z
 
-.field public static u:Z
+.field public static passiveDataSyncTask:Lcom/inn/passivesdk/service/GlobalService$a;
+
+.field public static signalParamsHolder:Lcom/inn/passivesdk/holders/SignalParamsHolder;
 
 
 # direct methods
@@ -30,7 +32,7 @@
     const/4 v0, 0x0
 
     .line 2
-    sput-boolean v0, Lcom/inn/passivesdk/service/GlobalService;->u:Z
+    sput-boolean v0, Lcom/inn/passivesdk/service/GlobalService;->isZipCreationProgress:Z
 
     return-void
 .end method
@@ -48,15 +50,15 @@
     .locals 0
 
     .line 1
-    invoke-static {p0}, Lcom/inn/passivesdk/service/GlobalService;->b(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/inn/passivesdk/service/GlobalService;->c(Landroid/content/Context;)V
 
     return-void
 .end method
 
-.method public static b(Landroid/content/Context;)V
+.method public static c(Landroid/content/Context;)V
     .locals 5
 
-    .line 2
+    .line 1
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -64,7 +66,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 3
+    .line 2
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
@@ -77,15 +79,15 @@
 
     goto :goto_0
 
-    .line 4
+    .line 3
     :cond_0
     new-instance v0, Ljava/io/File;
 
-    sget-object p0, Lcom/inn/passivesdk/Constants/SdkAppConstants;->f:Ljava/lang/String;
+    sget-object p0, Lcom/inn/passivesdk/Constants/SdkAppConstants;->PASSIVE_DATA_FILE_DIR:Ljava/lang/String;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 5
+    .line 4
     :goto_0
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -93,7 +95,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 6
+    .line 5
     invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object p0
@@ -109,7 +111,7 @@
 
     const-string v3, "PASSIVE_DATA.csv"
 
-    .line 7
+    .line 6
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v4
@@ -128,7 +130,7 @@
 
     if-nez v3, :cond_1
 
-    .line 8
+    .line 7
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -144,7 +146,7 @@
     return-void
 .end method
 
-.method public static c(Landroid/content/Context;)V
+.method public static deleteFile(Landroid/content/Context;)V
     .locals 3
 
     .line 1
@@ -172,7 +174,7 @@
     :cond_0
     new-instance v0, Ljava/io/File;
 
-    sget-object p0, Lcom/inn/passivesdk/Constants/SdkAppConstants;->f:Ljava/lang/String;
+    sget-object p0, Lcom/inn/passivesdk/Constants/SdkAppConstants;->PASSIVE_DATA_FILE_DIR:Ljava/lang/String;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -213,7 +215,7 @@
     return-void
 .end method
 
-.method public static declared-synchronized d(Landroid/content/Context;)V
+.method public static declared-synchronized syncPassiveData(Landroid/content/Context;)V
     .locals 5
 
     const-class v0, Lcom/inn/passivesdk/service/GlobalService;
@@ -222,27 +224,27 @@
 
     .line 1
     :try_start_0
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lmg0;->N()V
+    invoke-virtual {v1}, Lcom/inn/passivesdk/util/SdkAppUtil;->setInternationalRoamingToPreference()V
 
     .line 2
-    invoke-static {p0}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p0}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lhf0;->V()Z
+    invoke-virtual {v1}, Lcom/inn/passivesdk/PreferenceHelper;->isInternationalRoaming()Z
 
     move-result v1
 
     .line 3
-    invoke-static {p0}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v2
 
-    invoke-virtual {v2, p0}, Log0;->a(Landroid/content/Context;)Z
+    invoke-virtual {v2, p0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->isConnectedToWifi(Landroid/content/Context;)Z
 
     move-result v2
     :try_end_0
@@ -311,7 +313,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/inn/passivesdk/Constants/SdkAppConstants;->f:Ljava/lang/String;
+    sget-object v3, Lcom/inn/passivesdk/Constants/SdkAppConstants;->PASSIVE_DATA_FILE_DIR:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -347,11 +349,9 @@
 
     .line 9
     :try_start_2
-    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->s:Lcom/inn/passivesdk/service/GlobalService$b;
+    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->passiveDataSyncTask:Lcom/inn/passivesdk/service/GlobalService$a;
 
     if-eqz v2, :cond_2
-
-    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->s:Lcom/inn/passivesdk/service/GlobalService$b;
 
     invoke-virtual {v2}, Landroid/os/AsyncTask;->getStatus()Landroid/os/AsyncTask$Status;
 
@@ -361,7 +361,7 @@
 
     if-eq v2, v3, :cond_4
 
-    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->s:Lcom/inn/passivesdk/service/GlobalService$b;
+    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->passiveDataSyncTask:Lcom/inn/passivesdk/service/GlobalService$a;
 
     invoke-virtual {v2}, Landroid/os/AsyncTask;->getStatus()Landroid/os/AsyncTask$Status;
 
@@ -373,7 +373,7 @@
 
     .line 10
     :cond_2
-    new-instance v2, Lcom/inn/passivesdk/service/GlobalService$b;
+    new-instance v2, Lcom/inn/passivesdk/service/GlobalService$a;
 
     const/4 v3, 0x1
 
@@ -383,36 +383,32 @@
 
     aput-object v1, v3, v4
 
-    invoke-direct {v2, p0, v3}, Lcom/inn/passivesdk/service/GlobalService$b;-><init>(Landroid/content/Context;[Ljava/io/File;)V
+    invoke-direct {v2, p0, v3}, Lcom/inn/passivesdk/service/GlobalService$a;-><init>(Landroid/content/Context;[Ljava/io/File;)V
 
-    sput-object v2, Lcom/inn/passivesdk/service/GlobalService;->s:Lcom/inn/passivesdk/service/GlobalService$b;
+    sput-object v2, Lcom/inn/passivesdk/service/GlobalService;->passiveDataSyncTask:Lcom/inn/passivesdk/service/GlobalService$a;
 
     .line 11
-    sget-object v1, Lcom/inn/passivesdk/service/GlobalService;->s:Lcom/inn/passivesdk/service/GlobalService$b;
-
-    sget-object v2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v3, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v3}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v2, v1, v3}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 12
-    new-instance v1, Lcom/inn/passivesdk/service/GlobalService$a;
+    new-instance v1, Lcom/inn/passivesdk/service/GlobalService$CheckPassiveUpload;
 
-    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->s:Lcom/inn/passivesdk/service/GlobalService$b;
+    sget-object v2, Lcom/inn/passivesdk/service/GlobalService;->passiveDataSyncTask:Lcom/inn/passivesdk/service/GlobalService$a;
 
-    invoke-direct {v1, p0, v2}, Lcom/inn/passivesdk/service/GlobalService$a;-><init>(Landroid/content/Context;Lcom/inn/passivesdk/service/GlobalService$b;)V
+    invoke-direct {v1, p0, v2}, Lcom/inn/passivesdk/service/GlobalService$CheckPassiveUpload;-><init>(Landroid/content/Context;Lcom/inn/passivesdk/service/GlobalService$a;)V
 
-    sput-object v1, Lcom/inn/passivesdk/service/GlobalService;->t:Lcom/inn/passivesdk/service/GlobalService$a;
+    sput-object v1, Lcom/inn/passivesdk/service/GlobalService;->checkPassiveUpload:Lcom/inn/passivesdk/service/GlobalService$CheckPassiveUpload;
 
     .line 13
-    sget-object p0, Lcom/inn/passivesdk/service/GlobalService;->t:Lcom/inn/passivesdk/service/GlobalService$a;
-
-    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+    sget-object p0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v1, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, p0, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Error; {:try_start_2 .. :try_end_2} :catch_1
@@ -431,11 +427,11 @@
 
     .line 15
     :cond_3
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lmg0;->q()V
+    invoke-virtual {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getProfileFromServer()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/Error; {:try_start_3 .. :try_end_3} :catch_1
@@ -461,34 +457,34 @@
 
 
 # virtual methods
-.method public final a()V
+.method public final b()V
     .locals 2
 
-    .line 2
-    invoke-static {}, Lug0;->a()Lug0;
+    .line 1
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lug0;->b(Landroid/content/Context;)Z
+    invoke-virtual {v0, p0}, Lcom/inn/passivesdk/util/ServiceUtil;->isAbleToCaptureScreenOnEvent(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3
-    invoke-static {}, Lug0;->a()Lug0;
+    .line 2
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, p0, v1}, Lug0;->a(Landroid/content/Context;Z)V
+    invoke-virtual {v0, p0, v1}, Lcom/inn/passivesdk/util/ServiceUtil;->captureScreenOnEventAfterDelay(Landroid/content/Context;Z)V
 
     :cond_0
     return-void
 .end method
 
-.method public final b()V
+.method public final d()V
     .locals 1
 
     .line 1
@@ -496,6 +492,8 @@
     new-instance v0, Lcom/inn/passivesdk/holders/SignalParamsHolder;
 
     invoke-direct {v0}, Lcom/inn/passivesdk/holders/SignalParamsHolder;-><init>()V
+
+    sput-object v0, Lcom/inn/passivesdk/service/GlobalService;->signalParamsHolder:Lcom/inn/passivesdk/holders/SignalParamsHolder;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
@@ -504,23 +502,23 @@
     return-void
 .end method
 
-.method public final c()V
+.method public final e()V
     .locals 1
 
-    .line 7
+    .line 1
     :try_start_0
-    invoke-static {}, Lug0;->a()Lug0;
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lug0;->f(Landroid/content/Context;)V
+    invoke-virtual {v0, p0}, Lcom/inn/passivesdk/util/ServiceUtil;->stopSignalListeners(Landroid/content/Context;)V
 
-    .line 8
-    invoke-static {p0}, Lvf0;->b(Landroid/content/Context;)Lvf0;
+    .line 2
+    invoke-static {p0}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/location/SdkPassiveLocationService;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lvf0;->d()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->stopLocationListener()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
@@ -529,9 +527,19 @@
     return-void
 .end method
 
-.method public final d()V
-    .locals 0
+.method public final f()V
+    .locals 1
 
+    const/4 v0, 0x0
+
+    .line 1
+    :try_start_0
+    sput-object v0, Lcom/inn/passivesdk/service/GlobalService;->signalParamsHolder:Lcom/inn/passivesdk/holders/SignalParamsHolder;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
     return-void
 .end method
 
@@ -551,86 +559,86 @@
 
     .line 2
     :try_start_0
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->e()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->deletePassiveZipFile()V
 
     .line 3
-    new-instance v0, Lgg0;
+    new-instance v0, Lcom/inn/passivesdk/util/CustomExceptionHandler;
 
-    invoke-direct {v0, p0}, Lgg0;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lcom/inn/passivesdk/util/CustomExceptionHandler;-><init>(Landroid/content/Context;)V
 
     invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
     .line 4
-    invoke-static {p0}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p0}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lhf0;->Y()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/PreferenceHelper;->isReceiverRegister()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 5
-    invoke-static {p0}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p0}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lhf0;->h(Z)V
+    invoke-virtual {v0, v1}, Lcom/inn/passivesdk/PreferenceHelper;->setReceiverRegister(Z)V
 
     .line 6
     :cond_0
-    invoke-static {p0}, Lng0;->a(Landroid/content/Context;)Lng0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkNetworkParameterUtils;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkParameterUtils;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lng0;->i()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkNetworkParameterUtils;->isPhoneDualSim()Z
 
     .line 7
-    invoke-static {p0}, Lpg0;->a(Landroid/content/Context;)Lpg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkPassiveAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lpg0;->a()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->checkForDeviceIdInFile()V
 
     .line 8
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->L()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->registerDevice()V
 
     .line 9
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->z()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->globalSyncMethod()V
 
     .line 10
-    invoke-static {p0}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Log0;->A()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->setMacAddress()V
 
     .line 11
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p0, v1}, Lmg0;->a(Landroid/content/Context;Z)V
+    invoke-virtual {v0, p0, v1}, Lcom/inn/passivesdk/util/SdkAppUtil;->registerReceivers(Landroid/content/Context;Z)V
 
     .line 12
-    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->a()V
+    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->b()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
@@ -647,17 +655,17 @@
 
     .line 2
     :try_start_0
-    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->d()V
+    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->f()V
 
     .line 3
-    invoke-static {p0}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lmg0;->b(Landroid/content/Context;)V
+    invoke-virtual {v0, p0}, Lcom/inn/passivesdk/util/SdkAppUtil;->unregisterReceivers(Landroid/content/Context;)V
 
     .line 4
-    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->c()V
+    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->e()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
@@ -693,10 +701,10 @@
 
     .line 3
     :try_start_1
-    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->b()V
+    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->d()V
 
     .line 4
-    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->a()V
+    invoke-virtual {p0}, Lcom/inn/passivesdk/service/GlobalService;->b()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_1

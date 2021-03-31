@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzah:Lcom/google/android/gms/maps/GoogleMap$OnMapLongClickListener;
+.field private final synthetic zzah:Lcom/google/android/gms/maps/GoogleMap$OnMapLongClickListener;
 
 
 # direct methods

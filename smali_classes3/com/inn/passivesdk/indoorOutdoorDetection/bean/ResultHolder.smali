@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field public accuracy:Ljava/lang/String;
+.field private accuracy:Ljava/lang/String;
 
-.field public date:Ljava/lang/String;
+.field private date:Ljava/lang/String;
 
-.field public result:Ljava/lang/String;
+.field private result:Ljava/lang/String;
 
-.field public source:Ljava/lang/String;
+.field private source:Ljava/lang/String;
 
-.field public timeStamp:Ljava/lang/Long;
+.field private timeStamp:Ljava/lang/Long;
 
 
 # direct methods

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/DataUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -19,6 +20,14 @@
 
 .method public static copyStringToBuffer(Ljava/lang/String;Landroid/database/CharArrayBuffer;)V
     .locals 3
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroid/database/CharArrayBuffer;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -86,6 +95,13 @@
 
 .method public static loadImageBytes(Landroid/graphics/Bitmap;)[B
     .locals 3
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

@@ -3,7 +3,7 @@
 .source "BaseSliderView.java"
 
 # interfaces
-.implements Ln73;
+.implements Lcom/squareup/picasso/Callback;
 
 
 # annotations
@@ -83,8 +83,6 @@
     .line 4
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$2;->val$v:Landroid/view/View;
 
-    sget v1, Lcom/daimajia/slider/library/R$id;->loading_bar:I
-
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -113,8 +111,6 @@
 
     .line 2
     iget-object v0, p0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$2;->val$v:Landroid/view/View;
-
-    sget v1, Lcom/daimajia/slider/library/R$id;->loading_bar:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

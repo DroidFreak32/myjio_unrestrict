@@ -1,70 +1,40 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzzf;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzzf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final zzckk:Lcom/google/android/gms/internal/ads/zzzd;
+
+.field private final zzckl:Lcom/google/android/gms/ads/initialization/OnInitializationCompleteListener;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzzd;Lcom/google/android/gms/ads/initialization/OnInitializationCompleteListener;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzzf;->zzckk:Lcom/google/android/gms/internal/ads/zzzd;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzzf;->zzckl:Lcom/google/android/gms/ads/initialization/OnInitializationCompleteListener;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract getAdvertiser()Ljava/lang/String;
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract getBody()Ljava/lang/String;
-.end method
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzzf;->zzckk:Lcom/google/android/gms/internal/ads/zzzd;
 
-.method public abstract getCallToAction()Ljava/lang/String;
-.end method
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzzf;->zzckl:Lcom/google/android/gms/ads/initialization/OnInitializationCompleteListener;
 
-.method public abstract getExtras()Landroid/os/Bundle;
-.end method
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzzd;->zza(Lcom/google/android/gms/ads/initialization/OnInitializationCompleteListener;)V
 
-.method public abstract getHeadline()Ljava/lang/String;
-.end method
-
-.method public abstract getImages()Ljava/util/List;
-.end method
-
-.method public abstract getOverrideClickHandling()Z
-.end method
-
-.method public abstract getOverrideImpressionRecording()Z
-.end method
-
-.method public abstract getPrice()Ljava/lang/String;
-.end method
-
-.method public abstract getStarRating()D
-.end method
-
-.method public abstract getStore()Ljava/lang/String;
-.end method
-
-.method public abstract getVideoController()Lcom/google/android/gms/internal/ads/zzly;
-.end method
-
-.method public abstract recordImpression()V
-.end method
-
-.method public abstract zzb(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzk(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzle()Lcom/google/android/gms/internal/ads/zzqk;
-.end method
-
-.method public abstract zzlg()Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
-
-.method public abstract zzlh()Lcom/google/android/gms/internal/ads/zzqg;
-.end method
-
-.method public abstract zzm(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzof()Lcom/google/android/gms/dynamic/IObjectWrapper;
-.end method
-
-.method public abstract zzog()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    return-void
 .end method

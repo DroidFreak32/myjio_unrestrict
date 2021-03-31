@@ -1,26 +1,34 @@
 .class public final Lcom/google/android/gms/common/internal/zan;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Lcom/google/android/gms/common/api/PendingResult$StatusListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/common/internal/ResolveAccountResponse;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/PendingResult;
+
+.field private final synthetic zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+.field private final synthetic zac:Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;
+
+.field private final synthetic zad:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/common/api/PendingResult;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zan;->zaa:Lcom/google/android/gms/common/api/PendingResult;
+
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/zan;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/zan;->zac:Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;
+
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/zan;->zad:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,137 +36,51 @@
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 9
+.method public final onComplete(Lcom/google/android/gms/common/api/Status;)V
+    .locals 3
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->isSuccess()Z
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v5, v1
-
-    move-object v6, v5
-
-    const/4 v4, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
+    if-eqz v0, :cond_0
 
     .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/zan;->zaa:Lcom/google/android/gms/common/api/PendingResult;
 
-    move-result v1
+    const-wide/16 v0, 0x0
 
-    if-ge v1, v0, :cond_5
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {p1, v0, v1, v2}, Lcom/google/android/gms/common/api/PendingResult;->await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
+
+    move-result-object p1
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zan;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    move-result v1
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zan;->zac:Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;
+
+    invoke-interface {v1, p1}, Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;->convert(Lcom/google/android/gms/common/api/Result;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setResult(Ljava/lang/Object;)V
+
+    return-void
 
     .line 4
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    if-eq v2, v3, :cond_4
-
-    const/4 v3, 0x2
-
-    if-eq v2, v3, :cond_3
-
-    const/4 v3, 0x3
-
-    if-eq v2, v3, :cond_2
-
-    const/4 v3, 0x4
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v3, 0x5
-
-    if-eq v2, v3, :cond_0
-
-    .line 5
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    .line 6
     :cond_0
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zan;->zab:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    move-result v8
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zan;->zad:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
 
-    goto :goto_0
+    invoke-interface {v1, p1}, Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;->zaa(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
 
-    .line 7
-    :cond_1
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+    move-result-object p1
 
-    move-result v7
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setException(Ljava/lang/Exception;)V
 
-    goto :goto_0
-
-    .line 8
-    :cond_2
-    sget-object v2, Lcom/google/android/gms/common/ConnectionResult;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 9
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Lcom/google/android/gms/common/ConnectionResult;
-
-    goto :goto_0
-
-    .line 10
-    :cond_3
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
-
-    move-result-object v5
-
-    goto :goto_0
-
-    .line 11
-    :cond_4
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v4
-
-    goto :goto_0
-
-    .line 12
-    :cond_5
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    .line 13
-    new-instance p1, Lcom/google/android/gms/common/internal/ResolveAccountResponse;
-
-    move-object v3, p1
-
-    invoke-direct/range {v3 .. v8}, Lcom/google/android/gms/common/internal/ResolveAccountResponse;-><init>(ILandroid/os/IBinder;Lcom/google/android/gms/common/ConnectionResult;ZZ)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-array p1, p1, [Lcom/google/android/gms/common/internal/ResolveAccountResponse;
-
-    return-object p1
+    return-void
 .end method

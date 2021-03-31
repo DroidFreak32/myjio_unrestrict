@@ -46,6 +46,10 @@
 # virtual methods
 .method public onResult(Lcom/google/android/gms/awareness/snapshot/WeatherResult;)V
     .locals 7
+    .param p1    # Lcom/google/android/gms/awareness/snapshot/WeatherResult;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-interface {p1}, Lcom/google/android/gms/awareness/snapshot/WeatherResult;->getStatus()Lcom/google/android/gms/common/api/Status;
@@ -73,7 +77,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "weather : "
+    const-string v2, "weather : "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -151,7 +155,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "status : "
+    const-string v6, "status : "
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -327,7 +331,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v0, "weatherRes : "
+    const-string v0, "weatherRes : "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -345,6 +349,10 @@
 
 .method public bridge synthetic onResult(Lcom/google/android/gms/common/api/Result;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/google/android/gms/awareness/snapshot/WeatherResult;

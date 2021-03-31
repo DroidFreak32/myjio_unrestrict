@@ -1,33 +1,28 @@
 .class public final Lcom/google/android/gms/internal/ads/zzug;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzur;
+.implements Lcom/google/android/gms/internal/ads/zzekm;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzekm<",
+        "Lcom/google/android/gms/internal/ads/zzue$zza$zza;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzuf;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final zzb(Lcom/google/android/gms/internal/ads/zzus;)V
-    .locals 0
-
-    .line 1
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzus;->zzbrf:Lcom/google/android/gms/internal/ads/zzkg;
-
-    if-eqz p1, :cond_0
-
-    .line 2
-    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzkg;->onAdClicked()V
-
-    :cond_0
     return-void
 .end method

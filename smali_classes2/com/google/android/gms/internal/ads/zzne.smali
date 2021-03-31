@@ -1,77 +1,42 @@
 .class public final Lcom/google/android/gms/internal/ads/zzne;
-.super Lcom/google/android/gms/internal/ads/zzmc;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zznd;
 
 
 # instance fields
-.field public final zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
+.field private final synthetic zzbfa:I
+
+.field private final synthetic zzbfb:Lcom/google/android/gms/internal/ads/zznf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zznf;I)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzmc;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzne;->zzbfb:Lcom/google/android/gms/internal/ads/zznf;
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzne;->zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
+    iput p2, p0, Lcom/google/android/gms/internal/ads/zzne;->zzbfa:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onVideoEnd()V
-    .locals 1
+.method public final zzb(Lcom/google/android/gms/internal/ads/zzhz;Ljava/lang/Object;)V
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzne;->zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzne;->zzbfb:Lcom/google/android/gms/internal/ads/zznf;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;->onVideoEnd()V
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzne;->zzbfa:I
 
-    return-void
-.end method
-
-.method public final onVideoMute(Z)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzne;->zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;->onVideoMute(Z)V
-
-    return-void
-.end method
-
-.method public final onVideoPause()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzne;->zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;->onVideoPause()V
-
-    return-void
-.end method
-
-.method public final onVideoPlay()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzne;->zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;->onVideoPlay()V
-
-    return-void
-.end method
-
-.method public final onVideoStart()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzne;->zzvk:Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/ads/VideoController$VideoLifecycleCallbacks;->onVideoStart()V
+    invoke-static {v0, v1, p1, p2}, Lcom/google/android/gms/internal/ads/zznf;->zza(Lcom/google/android/gms/internal/ads/zznf;ILcom/google/android/gms/internal/ads/zzhz;Ljava/lang/Object;)V
 
     return-void
 .end method

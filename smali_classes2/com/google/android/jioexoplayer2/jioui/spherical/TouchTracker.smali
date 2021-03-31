@@ -19,19 +19,22 @@
 
 
 # instance fields
-.field public final accumulatedTouchOffsetDegrees:Landroid/graphics/PointF;
+.field private final accumulatedTouchOffsetDegrees:Landroid/graphics/PointF;
 
-.field public final gestureDetector:Landroid/view/GestureDetector;
+.field private final gestureDetector:Landroid/view/GestureDetector;
 
-.field public final listener:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker$Listener;
+.field private final listener:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker$Listener;
 
-.field public final previousTouchPointPx:Landroid/graphics/PointF;
+.field private final previousTouchPointPx:Landroid/graphics/PointF;
 
-.field public final pxPerDegrees:F
+.field private final pxPerDegrees:F
 
-.field public volatile roll:F
+.field private volatile roll:F
 
-.field public singleTapListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;
+.field private singleTapListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -190,13 +193,10 @@
 
     iput v1, v0, Landroid/graphics/PointF;->y:F
 
+    const/high16 p1, 0x42340000    # 45.0f
+
     .line 9
-    iget p1, v0, Landroid/graphics/PointF;->y:F
-
-    const/high16 p2, 0x42340000    # 45.0f
-
-    .line 10
-    invoke-static {p2, p1}, Ljava/lang/Math;->min(FF)F
+    invoke-static {p1, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result p1
 
@@ -208,7 +208,7 @@
 
     iput p1, v0, Landroid/graphics/PointF;->y:F
 
-    .line 11
+    .line 10
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;->listener:Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker$Listener;
 
     iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;->accumulatedTouchOffsetDegrees:Landroid/graphics/PointF;
@@ -256,6 +256,8 @@
 
 .method public setRoll(F)V
     .locals 0
+    .annotation build Landroidx/annotation/BinderThread;
+    .end annotation
 
     neg-float p1, p1
 
@@ -267,6 +269,10 @@
 
 .method public setSingleTapListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;)V
     .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/TouchTracker;->singleTapListener:Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;

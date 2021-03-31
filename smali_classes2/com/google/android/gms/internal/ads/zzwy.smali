@@ -1,34 +1,48 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzwy;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzvd;
-.implements Lcom/google/android/gms/internal/ads/zzwb;
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public abstract zza(Ljava/lang/String;Lcom/google/android/gms/ads/internal/gmsg/zzu;)V
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract getMediationAdapterClassName()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            "Lcom/google/android/gms/ads/internal/gmsg/zzu<",
-            "-",
-            "Lcom/google/android/gms/internal/ads/zzwy;",
-            ">;)V"
+            Landroid/os/RemoteException;
         }
     .end annotation
 .end method
 
-.method public abstract zzb(Ljava/lang/String;Lcom/google/android/gms/ads/internal/gmsg/zzu;)V
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract isLoading()Z
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            "Lcom/google/android/gms/ads/internal/gmsg/zzu<",
-            "-",
-            "Lcom/google/android/gms/internal/ads/zzwy;",
-            ">;)V"
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzvk;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzb(Lcom/google/android/gms/internal/ads/zzvk;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzkg()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
         }
     .end annotation
 .end method

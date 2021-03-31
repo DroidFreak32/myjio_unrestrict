@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field public hashCode:I
+.field private hashCode:I
 
-.field public final height:I
+.field private final height:I
 
-.field public final model:Ljava/lang/Object;
+.field private final model:Ljava/lang/Object;
 
-.field public final options:Lcom/bumptech/glide/load/Options;
+.field private final options:Lcom/bumptech/glide/load/Options;
 
-.field public final resourceClass:Ljava/lang/Class;
+.field private final resourceClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -24,9 +24,9 @@
     .end annotation
 .end field
 
-.field public final signature:Lcom/bumptech/glide/load/Key;
+.field private final signature:Lcom/bumptech/glide/load/Key;
 
-.field public final transcodeClass:Ljava/lang/Class;
+.field private final transcodeClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public final transformations:Ljava/util/Map;
+.field private final transformations:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -47,7 +47,7 @@
     .end annotation
 .end field
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
@@ -259,11 +259,9 @@
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 3
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 3
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->signature:Lcom/bumptech/glide/load/Key;
 
     invoke-interface {v1}, Lcom/bumptech/glide/load/Key;->hashCode()I
@@ -274,33 +272,27 @@
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 4
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 4
     iget v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->width:I
 
     add-int/2addr v0, v1
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 5
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 5
     iget v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->height:I
 
     add-int/2addr v0, v1
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 6
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 6
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->transformations:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->hashCode()I
@@ -311,11 +303,9 @@
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 7
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 7
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->resourceClass:Ljava/lang/Class;
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
@@ -326,11 +316,9 @@
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 8
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 8
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->transcodeClass:Ljava/lang/Class;
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
@@ -341,11 +329,9 @@
 
     iput v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
 
-    .line 9
-    iget v0, p0, Lcom/bumptech/glide/load/engine/EngineKey;->hashCode:I
-
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 9
     iget-object v1, p0, Lcom/bumptech/glide/load/engine/EngineKey;->options:Lcom/bumptech/glide/load/Options;
 
     invoke-virtual {v1}, Lcom/bumptech/glide/load/Options;->hashCode()I
@@ -456,6 +442,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 0
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;

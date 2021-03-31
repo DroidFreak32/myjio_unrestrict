@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public s:Landroid/widget/TextView;
+.field public a:Landroid/widget/TextView;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 .method public settextValue(Ljava/lang/String;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/elitecorelib/core/utility/SnackbarView;->s:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/elitecorelib/core/utility/SnackbarView;->a:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

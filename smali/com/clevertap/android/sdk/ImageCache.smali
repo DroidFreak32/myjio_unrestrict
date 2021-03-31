@@ -4,19 +4,19 @@
 
 
 # static fields
-.field public static final DIRECTORY_NAME:Ljava/lang/String; = "CleverTap.Images."
+.field private static final DIRECTORY_NAME:Ljava/lang/String; = "CleverTap.Images."
 
-.field public static final FILE_PREFIX:Ljava/lang/String; = "CT_IMAGE_"
+.field private static final FILE_PREFIX:Ljava/lang/String; = "CT_IMAGE_"
 
-.field public static final MAX_BITMAP_SIZE:I = 0x989680
+.field private static final MAX_BITMAP_SIZE:I = 0x989680
 
-.field public static final MIN_CACHE_SIZE:I = 0x2800
+.field private static final MIN_CACHE_SIZE:I = 0x5000
 
-.field public static final cacheSize:I
+.field private static final cacheSize:I
 
-.field public static imageFileDirectory:Ljava/io/File;
+.field private static imageFileDirectory:Ljava/io/File;
 
-.field public static mMemoryCache:Landroid/util/LruCache;
+.field private static mMemoryCache:Landroid/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/LruCache<",
@@ -27,9 +27,9 @@
     .end annotation
 .end field
 
-.field public static final maxMemory:I
+.field private static final maxMemory:I
 
-.field public static messageDigest:Ljava/security/MessageDigest;
+.field private static messageDigest:Ljava/security/MessageDigest;
 
 
 # direct methods
@@ -52,13 +52,11 @@
     sput v1, Lcom/clevertap/android/sdk/ImageCache;->maxMemory:I
 
     .line 2
-    sget v0, Lcom/clevertap/android/sdk/ImageCache;->maxMemory:I
+    div-int/lit8 v1, v1, 0x20
 
-    div-int/lit8 v0, v0, 0x20
+    const/16 v0, 0x5000
 
-    const/16 v1, 0x2800
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -223,7 +221,7 @@
     return p0
 .end method
 
-.method public static cleanup()V
+.method private static cleanup()V
     .locals 2
 
     .line 1
@@ -265,7 +263,7 @@
     throw v1
 .end method
 
-.method public static decodeImageFromFile(Ljava/io/File;)Landroid/graphics/Bitmap;
+.method private static decodeImageFromFile(Ljava/io/File;)Landroid/graphics/Bitmap;
     .locals 2
 
     .line 1
@@ -343,7 +341,7 @@
     return-object v0
 .end method
 
-.method public static getAvailableMemory()I
+.method private static getAvailableMemory()I
     .locals 3
 
     .line 1
@@ -362,15 +360,13 @@
     goto :goto_0
 
     :cond_0
-    sget v1, Lcom/clevertap/android/sdk/ImageCache;->cacheSize:I
+    sget v2, Lcom/clevertap/android/sdk/ImageCache;->cacheSize:I
 
-    sget-object v2, Lcom/clevertap/android/sdk/ImageCache;->mMemoryCache:Landroid/util/LruCache;
+    invoke-virtual {v1}, Landroid/util/LruCache;->size()I
 
-    invoke-virtual {v2}, Landroid/util/LruCache;->size()I
+    move-result v1
 
-    move-result v2
-
-    sub-int/2addr v1, v2
+    sub-int v1, v2, v1
 
     :goto_0
     monitor-exit v0
@@ -409,9 +405,7 @@
     goto :goto_0
 
     :cond_0
-    sget-object v1, Lcom/clevertap/android/sdk/ImageCache;->mMemoryCache:Landroid/util/LruCache;
-
-    invoke-virtual {v1, p0}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p0}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -441,7 +435,7 @@
     throw p0
 .end method
 
-.method public static getBitmapFromMemCache(Ljava/lang/String;)Landroid/graphics/Bitmap;
+.method private static getBitmapFromMemCache(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .locals 2
 
     const/4 v0, 0x0
@@ -469,7 +463,7 @@
     return-object v0
 .end method
 
-.method public static getFile(Ljava/lang/String;)Ljava/io/File;
+.method private static getFile(Ljava/lang/String;)Ljava/io/File;
     .locals 2
 
     .line 1
@@ -522,7 +516,7 @@
     return-object v0
 .end method
 
-.method public static getImageSizeInKB(Landroid/graphics/Bitmap;)I
+.method private static getImageSizeInKB(Landroid/graphics/Bitmap;)I
     .locals 0
 
     .line 1
@@ -535,7 +529,7 @@
     return p0
 .end method
 
-.method public static getOrFetchAndWriteImageFile(Ljava/lang/String;)Ljava/io/File;
+.method private static getOrFetchAndWriteImageFile(Ljava/lang/String;)Ljava/io/File;
     .locals 5
 
     const-string v0, "CleverTap.ImageCache: error writing image file"
@@ -612,6 +606,8 @@
     :catchall_0
     move-exception p0
 
+    move-object v3, v4
+
     goto :goto_4
 
     :catch_1
@@ -626,8 +622,6 @@
 
     :catchall_1
     move-exception p0
-
-    move-object v4, v3
 
     goto :goto_4
 
@@ -696,11 +690,11 @@
     return-object v3
 
     :goto_4
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_3
 
     .line 15
     :try_start_7
-    invoke-virtual {v4}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/OutputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_7
 
@@ -760,7 +754,7 @@
 .end method
 
 .method public static init()V
-    .locals 3
+    .locals 4
 
     .line 1
     const-class v0, Lcom/clevertap/android/sdk/ImageCache;
@@ -794,9 +788,9 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, "KB"
+    const-string v3, "KB"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -809,8 +803,6 @@
     .line 4
     :try_start_1
     new-instance v1, Lcom/clevertap/android/sdk/ImageCache$1;
-
-    sget v2, Lcom/clevertap/android/sdk/ImageCache;->cacheSize:I
 
     invoke-direct {v1, v2}, Lcom/clevertap/android/sdk/ImageCache$1;-><init>(I)V
 
@@ -929,7 +921,7 @@
     throw p0
 .end method
 
-.method public static isEmpty()Z
+.method private static isEmpty()Z
     .locals 2
 
     .line 1
@@ -990,17 +982,16 @@
 
     if-nez p1, :cond_1
 
+    .line 4
     monitor-exit v0
 
     return-void
 
-    .line 4
+    .line 5
     :cond_1
-    sget-object p1, Lcom/clevertap/android/sdk/ImageCache;->mMemoryCache:Landroid/util/LruCache;
-
     invoke-virtual {p1, p0}, Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5
+    .line 6
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1017,10 +1008,10 @@
 
     invoke-static {p0}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 6
+    .line 7
     invoke-static {}, Lcom/clevertap/android/sdk/ImageCache;->cleanup()V
 
-    .line 7
+    .line 8
     monitor-exit v0
 
     return-void
@@ -1035,7 +1026,7 @@
     throw p0
 .end method
 
-.method public static removeFromFileSystem(Ljava/lang/String;)V
+.method private static removeFromFileSystem(Ljava/lang/String;)V
     .locals 1
 
     .line 1

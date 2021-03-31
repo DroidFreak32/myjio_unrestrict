@@ -1,212 +1,684 @@
 .class public Lo4;
 .super Ljava/lang/Object;
-.source "ContainerHelpers.java"
+.source "ViewInfoStore.java"
 
 
-# static fields
-.field public static final a:[I
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lo4$a;,
+        Lo4$b;
+    }
+.end annotation
 
-.field public static final b:[J
 
-.field public static final c:[Ljava/lang/Object;
+# instance fields
+.field public final a:Landroidx/collection/SimpleArrayMap;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/collection/SimpleArrayMap<",
+            "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;",
+            "Lo4$a;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final b:Landroidx/collection/LongSparseArray;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/collection/LongSparseArray<",
+            "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    new-array v1, v0, [I
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    sput-object v1, Lo4;->a:[I
-
-    new-array v1, v0, [J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    sput-object v1, Lo4;->b:[J
+    new-instance v0, Landroidx/collection/SimpleArrayMap;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-direct {v0}, Landroidx/collection/SimpleArrayMap;-><init>()V
+
+    iput-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
 
     .line 3
-    sput-object v0, Lo4;->c:[Ljava/lang/Object;
+    new-instance v0, Landroidx/collection/LongSparseArray;
+
+    invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
+
+    iput-object v0, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
 
     return-void
 .end method
 
-.method public static a(I)I
+
+# virtual methods
+.method public a(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
     .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo4$a;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-static {}, Lo4$a;->b()Lo4$a;
+
+    move-result-object v0
+
+    .line 3
+    iget-object v1, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    :cond_0
+    iget p1, v0, Lo4$a;->a:I
+
+    or-int/lit8 p1, p1, 0x2
+
+    iput p1, v0, Lo4$a;->a:I
+
+    .line 5
+    iput-object p2, v0, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    return-void
+.end method
+
+.method public b(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo4$a;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-static {}, Lo4$a;->b()Lo4$a;
+
+    move-result-object v0
+
+    .line 3
+    iget-object v1, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    :cond_0
+    iget p1, v0, Lo4$a;->a:I
+
+    or-int/lit8 p1, p1, 0x1
+
+    iput p1, v0, Lo4$a;->a:I
+
+    return-void
+.end method
+
+.method public c(JLandroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v0, p1, p2, p3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public d(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo4$a;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-static {}, Lo4$a;->b()Lo4$a;
+
+    move-result-object v0
+
+    .line 3
+    iget-object v1, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    :cond_0
+    iput-object p2, v0, Lo4$a;->c:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    .line 5
+    iget p1, v0, Lo4$a;->a:I
+
+    or-int/lit8 p1, p1, 0x8
+
+    iput p1, v0, Lo4$a;->a:I
+
+    return-void
+.end method
+
+.method public e(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo4$a;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-static {}, Lo4$a;->b()Lo4$a;
+
+    move-result-object v0
+
+    .line 3
+    iget-object v1, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    :cond_0
+    iput-object p2, v0, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    .line 5
+    iget p1, v0, Lo4$a;->a:I
+
+    or-int/lit8 p1, p1, 0x4
+
+    iput p1, v0, Lo4$a;->a:I
+
+    return-void
+.end method
+
+.method public f()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
+
+    .line 2
+    iget-object v0, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
+
+    return-void
+.end method
+
+.method public g(J)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    return-object p1
+.end method
+
+.method public h(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lo4$a;
+
+    const/4 v0, 0x1
+
+    if-eqz p1, :cond_0
+
+    .line 2
+    iget p1, p1, Lo4$a;->a:I
+
+    and-int/2addr p1, v0
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public i(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lo4$a;
+
+    if-eqz p1, :cond_0
+
+    .line 2
+    iget p1, p1, Lo4$a;->a:I
+
+    and-int/lit8 p1, p1, 0x4
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public j()V
+    .locals 0
+
+    .line 1
+    invoke-static {}, Lo4$a;->a()V
+
+    return-void
+.end method
+
+.method public k(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lo4;->p(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+
+    return-void
+.end method
+
+.method public final l(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->indexOfKey(Ljava/lang/Object;)I
+
+    move-result p1
+
+    const/4 v0, 0x0
+
+    if-gez p1, :cond_0
+
+    return-object v0
+
+    .line 2
+    :cond_0
+    iget-object v1, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lo4$a;
+
+    if-eqz v1, :cond_4
+
+    .line 3
+    iget v2, v1, Lo4$a;->a:I
+
+    and-int v3, v2, p2
+
+    if-eqz v3, :cond_4
+
+    not-int v0, p2
+
+    and-int/2addr v0, v2
+
+    .line 4
+    iput v0, v1, Lo4$a;->a:I
+
+    const/4 v2, 0x4
+
+    if-ne p2, v2, :cond_1
+
+    .line 5
+    iget-object p2, v1, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v2, 0x8
+
+    if-ne p2, v2, :cond_3
+
+    .line 6
+    iget-object p2, v1, Lo4$a;->c:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    :goto_0
+    and-int/lit8 v0, v0, 0xc
+
+    if-nez v0, :cond_2
+
+    .line 7
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
+
+    .line 8
+    invoke-static {v1}, Lo4$a;->c(Lo4$a;)V
+
+    :cond_2
+    return-object p2
+
+    .line 9
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "Must provide flag PRE or POST"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_4
+    return-object v0
+.end method
+
+.method public m(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+    .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    const/16 v0, 0x8
+
+    .line 1
+    invoke-virtual {p0, p1, v0}, Lo4;->l(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public n(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+    .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     const/4 v0, 0x4
 
-    :goto_0
-    const/16 v1, 0x20
+    .line 1
+    invoke-virtual {p0, p1, v0}, Lo4;->l(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    if-ge v0, v1, :cond_1
+    move-result-object p1
 
-    const/4 v1, 0x1
-
-    shl-int/2addr v1, v0
-
-    add-int/lit8 v1, v1, -0xc
-
-    if-gt p0, v1, :cond_0
-
-    return v1
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return p0
+    return-object p1
 .end method
 
-.method public static a([III)I
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-gt v0, p1, :cond_2
-
-    add-int v1, v0, p1
-
-    ushr-int/lit8 v1, v1, 0x1
-
-    .line 2
-    aget v2, p0, v1
-
-    if-ge v2, p2, :cond_0
-
-    add-int/lit8 v1, v1, 0x1
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    if-le v2, p2, :cond_1
-
-    add-int/lit8 v1, v1, -0x1
-
-    move p1, v1
-
-    goto :goto_0
-
-    :cond_1
-    return v1
-
-    :cond_2
-    not-int p0, v0
-
-    return p0
-.end method
-
-.method public static a([JIJ)I
-    .locals 5
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-gt v0, p1, :cond_2
-
-    add-int v1, v0, p1
-
-    ushr-int/lit8 v1, v1, 0x1
-
-    .line 3
-    aget-wide v2, p0, v1
-
-    cmp-long v4, v2, p2
-
-    if-gez v4, :cond_0
-
-    add-int/lit8 v1, v1, 0x1
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    if-lez v4, :cond_1
-
-    add-int/lit8 v1, v1, -0x1
-
-    move p1, v1
-
-    goto :goto_0
-
-    :cond_1
-    return v1
-
-    :cond_2
-    not-int p0, v0
-
-    return p0
-.end method
-
-.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 0
-
-    if-eq p0, p1, :cond_1
-
-    if-eqz p0, :cond_0
+.method public o(Lo4$b;)V
+    .locals 6
 
     .line 1
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
 
-    move-result p0
+    invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->size()I
 
-    if-eqz p0, :cond_0
+    move-result v0
 
-    goto :goto_0
+    add-int/lit8 v0, v0, -0x1
 
-    :cond_0
-    const/4 p0, 0x0
+    :goto_0
+    if-ltz v0, :cond_7
+
+    .line 2
+    iget-object v1, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v1, v0}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    .line 3
+    iget-object v2, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v2, v0}, Landroidx/collection/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lo4$a;
+
+    .line 4
+    iget v3, v2, Lo4$a;->a:I
+
+    and-int/lit8 v4, v3, 0x3
+
+    const/4 v5, 0x3
+
+    if-ne v4, v5, :cond_0
+
+    .line 5
+    invoke-interface {p1, v1}, Lo4$b;->b(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
     goto :goto_1
 
+    :cond_0
+    and-int/lit8 v4, v3, 0x1
+
+    if-eqz v4, :cond_2
+
+    .line 6
+    iget-object v3, v2, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    if-nez v3, :cond_1
+
+    .line 7
+    invoke-interface {p1, v1}, Lo4$b;->b(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+
+    goto :goto_1
+
+    .line 8
     :cond_1
-    :goto_0
-    const/4 p0, 0x1
+    iget-object v4, v2, Lo4$a;->c:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
+    invoke-interface {p1, v1, v3, v4}, Lo4$b;->c(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+
+    goto :goto_1
+
+    :cond_2
+    and-int/lit8 v4, v3, 0xe
+
+    const/16 v5, 0xe
+
+    if-ne v4, v5, :cond_3
+
+    .line 9
+    iget-object v3, v2, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    iget-object v4, v2, Lo4$a;->c:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    invoke-interface {p1, v1, v3, v4}, Lo4$b;->a(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+
+    goto :goto_1
+
+    :cond_3
+    and-int/lit8 v4, v3, 0xc
+
+    const/16 v5, 0xc
+
+    if-ne v4, v5, :cond_4
+
+    .line 10
+    iget-object v3, v2, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    iget-object v4, v2, Lo4$a;->c:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    invoke-interface {p1, v1, v3, v4}, Lo4$b;->d(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+
+    goto :goto_1
+
+    :cond_4
+    and-int/lit8 v4, v3, 0x4
+
+    if-eqz v4, :cond_5
+
+    .line 11
+    iget-object v3, v2, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    const/4 v4, 0x0
+
+    invoke-interface {p1, v1, v3, v4}, Lo4$b;->c(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+
+    goto :goto_1
+
+    :cond_5
+    and-int/lit8 v3, v3, 0x8
+
+    if-eqz v3, :cond_6
+
+    .line 12
+    iget-object v3, v2, Lo4$a;->b:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    iget-object v4, v2, Lo4$a;->c:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    invoke-interface {p1, v1, v3, v4}, Lo4$b;->a(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;)V
+
+    .line 13
+    :cond_6
     :goto_1
-    return p0
+    invoke-static {v2}, Lo4$a;->c(Lo4$a;)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_7
+    return-void
 .end method
 
-.method public static b(I)I
-    .locals 0
-
-    mul-int/lit8 p0, p0, 0x4
+.method public p(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .locals 1
 
     .line 1
-    invoke-static {p0}, Lo4;->a(I)I
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
 
-    move-result p0
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    div-int/lit8 p0, p0, 0x4
+    move-result-object p1
 
-    return p0
+    check-cast p1, Lo4$a;
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    .line 2
+    :cond_0
+    iget v0, p1, Lo4$a;->a:I
+
+    and-int/lit8 v0, v0, -0x2
+
+    iput v0, p1, Lo4$a;->a:I
+
+    return-void
 .end method
 
-.method public static c(I)I
-    .locals 0
-
-    mul-int/lit8 p0, p0, 0x8
+.method public q(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
+    .locals 2
 
     .line 1
-    invoke-static {p0}, Lo4;->a(I)I
+    iget-object v0, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
 
-    move-result p0
+    invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
 
-    div-int/lit8 p0, p0, 0x8
+    move-result v0
 
-    return p0
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_1
+
+    .line 2
+    iget-object v1, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v1, v0}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-ne p1, v1, :cond_0
+
+    .line 3
+    iget-object v1, p0, Lo4;->b:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v1, v0}, Landroidx/collection/LongSparseArray;->removeAt(I)V
+
+    goto :goto_1
+
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    .line 4
+    :cond_1
+    :goto_1
+    iget-object v0, p0, Lo4;->a:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lo4$a;
+
+    if-eqz p1, :cond_2
+
+    .line 5
+    invoke-static {p1}, Lo4$a;->c(Lo4$a;)V
+
+    :cond_2
+    return-void
 .end method

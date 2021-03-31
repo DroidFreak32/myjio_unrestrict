@@ -13,7 +13,7 @@
 
 
 # static fields
-.field public static volatile I:Lcom/jiny/android/ui/custom/NegativeUIView;
+.field public static volatile J:Lcom/jiny/android/ui/custom/NegativeUIView;
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "StaticFieldLeak"
@@ -27,31 +27,31 @@
 
 .field public B:F
 
-.field public C:Z
+.field public C:F
 
 .field public D:Z
 
-.field public E:F
+.field public E:Z
 
 .field public F:F
 
-.field public G:I
+.field public G:F
 
-.field public H:Lel0$b;
+.field public H:I
 
-.field public s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+.field public I:Lcom/jiny/android/e/e$a;
 
-.field public t:Landroid/graphics/Canvas;
+.field public a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
-.field public u:Landroid/graphics/Bitmap;
+.field public b:Landroid/graphics/Canvas;
 
-.field public v:I
+.field public c:Landroid/graphics/Bitmap;
 
-.field public w:I
+.field public d:I
 
-.field public x:Landroid/graphics/Paint;
+.field public e:I
 
-.field public y:F
+.field public y:Landroid/graphics/Paint;
 
 .field public z:F
 
@@ -64,17 +64,17 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
-
     iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
+
+    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:Z
 
     invoke-static {}, Lcom/jiny/android/ui/custom/NegativeUIView;->getDefaultProps()Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->b(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -86,17 +86,17 @@
 
     const/4 p2, 0x1
 
-    iput-boolean p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
-
     iput-boolean p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
+
+    iput-boolean p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:Z
 
     invoke-static {}, Lcom/jiny/android/ui/custom/NegativeUIView;->getDefaultProps()Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iput-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->b(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -108,35 +108,39 @@
 
     const/4 p2, 0x1
 
-    iput-boolean p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
-
     iput-boolean p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
+
+    iput-boolean p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:Z
 
     invoke-static {}, Lcom/jiny/android/ui/custom/NegativeUIView;->getDefaultProps()Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iput-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->b(Landroid/content/Context;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/jiny/android/ui/custom/NegativeUIView$b;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
-
     iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
 
-    iput-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:Z
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Landroid/content/Context;)V
+    iput-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->b(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -144,7 +148,7 @@
 .method public static synthetic a(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
     .locals 0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
 
     return p1
 .end method
@@ -160,11 +164,11 @@
 
     new-instance v6, Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->a()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->c()Landroid/content/Context;
 
     move-result-object v0
 
@@ -172,7 +176,7 @@
 
     move-result-object v0
 
-    sget v1, Lmh0;->jiny_negative_ui_bg:I
+    sget v1, Lcom/jiny/android/R$color;->jiny_negative_ui_bg:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -199,15 +203,15 @@
     monitor-enter v0
 
     :try_start_0
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v1
 
-    sget-object v2, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/ui/custom/NegativeUIView;
+    sget-object v2, Lcom/jiny/android/ui/custom/NegativeUIView;->J:Lcom/jiny/android/ui/custom/NegativeUIView;
 
     if-nez v2, :cond_0
 
@@ -222,7 +226,7 @@
 
     invoke-direct {v3, v1, p0}, Lcom/jiny/android/ui/custom/NegativeUIView;-><init>(Landroid/content/Context;Lcom/jiny/android/ui/custom/NegativeUIView$b;)V
 
-    sput-object v3, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/ui/custom/NegativeUIView;
+    sput-object v3, Lcom/jiny/android/ui/custom/NegativeUIView;->J:Lcom/jiny/android/ui/custom/NegativeUIView;
 
     monitor-exit v2
 
@@ -239,12 +243,12 @@
     throw p0
 
     :cond_0
-    sget-object p0, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/ui/custom/NegativeUIView;
+    sget-object p0, Lcom/jiny/android/ui/custom/NegativeUIView;->J:Lcom/jiny/android/ui/custom/NegativeUIView;
 
-    invoke-virtual {p0, v1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Landroid/content/Context;)V
+    invoke-virtual {p0, v1}, Lcom/jiny/android/ui/custom/NegativeUIView;->b(Landroid/content/Context;)V
 
     :goto_0
-    sget-object p0, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/ui/custom/NegativeUIView;
+    sget-object p0, Lcom/jiny/android/ui/custom/NegativeUIView;->J:Lcom/jiny/android/ui/custom/NegativeUIView;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -260,31 +264,7 @@
     throw p0
 .end method
 
-.method public static synthetic b(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
-    .locals 0
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
-
-    return p1
-.end method
-
-.method public static synthetic c(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
-    .locals 0
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
-
-    return p1
-.end method
-
-.method public static synthetic d(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
-    .locals 0
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
-
-    return p1
-.end method
-
-.method private d()V
+.method private a()V
     .locals 2
 
     new-instance v0, Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
@@ -293,13 +273,37 @@
 
     invoke-direct {v0, v1, v1, v1, v1}, Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;-><init>(FFFF)V
 
-    iget-object v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iput-object v0, v1, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
-    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
+    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;->c(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
 
     return-void
+.end method
+
+.method public static synthetic e(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
+    .locals 0
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+
+    return p1
+.end method
+
+.method public static synthetic f(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
+    .locals 0
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+
+    return p1
+.end method
+
+.method public static synthetic g(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
+    .locals 0
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
+
+    return p1
 .end method
 
 .method public static getDefaultProps()Lcom/jiny/android/ui/custom/NegativeUIView$b;
@@ -316,84 +320,6 @@
 
 
 # virtual methods
-.method public a()V
-    .locals 1
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    invoke-direct {p0}, Lcom/jiny/android/ui/custom/NegativeUIView;->d()V
-
-    return-void
-.end method
-
-.method public a(Landroid/content/Context;)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
-
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClickable(Z)V
-
-    new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
-
-    const/4 v2, -0x1
-
-    invoke-direct {v1, v2, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    iget-object v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
-
-    iget-object v1, v1, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
-
-    invoke-virtual {p0, v1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
-
-    new-instance v1, Landroid/graphics/Paint;
-
-    invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->x:Landroid/graphics/Paint;
-
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->x:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
-
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->x:Landroid/graphics/Paint;
-
-    new-instance v1, Landroid/graphics/PorterDuffXfermode;
-
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v1, v2}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
-
-    const/4 v0, 0x5
-
-    invoke-static {p1, v0}, Lal0;->a(Landroid/content/Context;I)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->G:I
-
-    int-to-float p1, p1
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->F:F
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:F
-
-    invoke-direct {p0}, Lcom/jiny/android/ui/custom/NegativeUIView;->d()V
-
-    return-void
-.end method
-
 .method public a(Landroid/graphics/Rect;)V
     .locals 1
 
@@ -417,90 +343,15 @@
 
     invoke-direct {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;-><init>(Landroid/graphics/Rect;)V
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iput-object v0, p1, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
-    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
+    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;->c(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
 
     :cond_0
     invoke-virtual {p0, p2}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Landroid/graphics/Rect;)V
 
-    return-void
-.end method
-
-.method public final a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
-    .locals 2
-
-    iget v0, p1, Landroid/graphics/RectF;->left:F
-
-    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
-
-    iget v0, p1, Landroid/graphics/RectF;->top:F
-
-    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
-
-    iget v0, p1, Landroid/graphics/RectF;->right:F
-
-    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
-
-    iget v0, p1, Landroid/graphics/RectF;->bottom:F
-
-    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
-
-    move-result p1
-
-    cmpl-float p1, p1, v1
-
-    if-eqz p1, :cond_0
-
-    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
-
-    iget v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->G:I
-
-    int-to-float v1, v0
-
-    sub-float/2addr p1, v1
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
-
-    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
-
-    int-to-float v1, v0
-
-    sub-float/2addr p1, v1
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
-
-    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
-
-    int-to-float v1, v0
-
-    add-float/2addr p1, v1
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
-
-    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
-
-    int-to-float v0, v0
-
-    add-float/2addr p1, v0
-
-    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
-
-    :cond_0
     return-void
 .end method
 
@@ -509,23 +360,23 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, p2, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;ZLxl0;)V
+    invoke-virtual {p0, p1, p2, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;ZLcom/jiny/android/ui/discovery/b;)V
 
     return-void
 .end method
 
-.method public a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;ZLxl0;)V
+.method public a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;ZLcom/jiny/android/ui/discovery/b;)V
     .locals 8
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
+    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
 
     if-nez p2, :cond_0
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->c(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
 
-    iget-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iput-object p1, p2, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
@@ -538,7 +389,7 @@
 
     new-array v1, p2, [F
 
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget-object v2, v2, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
@@ -560,7 +411,7 @@
 
     new-array v2, p2, [F
 
-    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget-object v4, v4, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
@@ -572,7 +423,7 @@
 
     aput v4, v2, v0
 
-    const-string/jumbo v4, "top"
+    const-string v4, "top"
 
     invoke-static {p1, v4, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -580,7 +431,7 @@
 
     new-array v4, p2, [F
 
-    iget-object v5, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v5, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget-object v5, v5, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
@@ -600,7 +451,7 @@
 
     new-array v5, p2, [F
 
-    iget-object v6, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v6, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget-object v6, v6, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
@@ -681,17 +532,182 @@
 
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->start()V
 
-    iget-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iput-object p1, p2, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
     return-void
 .end method
 
-.method public final a(FF)Z
+.method public b(Landroid/content/Context;)V
+    .locals 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClickable(Z)V
+
+    new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v2, -0x1
+
+    invoke-direct {v1, v2, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+
+    iget-object v1, v1, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
+
+    invoke-virtual {p0, v1}, Lcom/jiny/android/ui/custom/NegativeUIView;->c(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
+
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(I)V
+
+    iput-object v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:Landroid/graphics/Paint;
+
+    new-instance v1, Landroid/graphics/PorterDuffXfermode;
+
+    sget-object v2, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v1, v2}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
+
+    const/4 v0, 0x5
+
+    invoke-static {p1, v0}, Lcom/jiny/android/e/a;->a(Landroid/content/Context;I)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->H:I
+
+    int-to-float p1, p1
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->G:F
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->F:F
+
+    invoke-direct {p0}, Lcom/jiny/android/ui/custom/NegativeUIView;->a()V
+
+    return-void
+.end method
+
+.method public c()V
+    .locals 1
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    invoke-direct {p0}, Lcom/jiny/android/ui/custom/NegativeUIView;->a()V
+
+    return-void
+.end method
+
+.method public final c(Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget v0, p1, Landroid/graphics/RectF;->left:F
+
+    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
+
+    iget v0, p1, Landroid/graphics/RectF;->top:F
+
+    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+
+    iget v0, p1, Landroid/graphics/RectF;->right:F
+
+    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+
+    iget v0, p1, Landroid/graphics/RectF;->bottom:F
+
+    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+
+    move-result p1
+
+    cmpl-float p1, p1, v1
+
+    if-eqz p1, :cond_0
+
+    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
+
+    iget v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->H:I
+
+    int-to-float v1, v0
+
+    sub-float/2addr p1, v1
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
+
+    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+
+    int-to-float v1, v0
+
+    sub-float/2addr p1, v1
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+
+    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+
+    int-to-float v1, v0
+
+    add-float/2addr p1, v1
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+
+    iget p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
+
+    int-to-float v0, v0
+
+    add-float/2addr p1, v0
+
+    iput p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
+
+    :cond_0
+    return-void
+.end method
+
+.method public d()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    return-void
+.end method
+
+.method public final d(FF)Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget-object v0, v0, Lcom/jiny/android/ui/custom/NegativeUIView$b;->a:Lcom/jiny/android/ui/custom/NegativeUIView$AnimatableRect;
 
@@ -730,22 +746,12 @@
     return p1
 .end method
 
-.method public b()V
+.method public f()V
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public c()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
+    iput-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:Z
 
     return-void
 .end method
@@ -753,7 +759,7 @@
 .method public getHighlightPadding()I
     .locals 1
 
-    iget v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->G:I
+    iget v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->H:I
 
     return v0
 .end method
@@ -763,13 +769,13 @@
 
     new-instance v0, Landroid/graphics/RectF;
 
-    iget v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
+    iget v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
 
-    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
+    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
 
-    iget v3, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+    iget v3, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
 
-    iget v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+    iget v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
@@ -827,7 +833,7 @@
 .method public getProps()Lcom/jiny/android/ui/custom/NegativeUIView$b;
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     return-object v0
 .end method
@@ -850,25 +856,25 @@
     goto/16 :goto_2
 
     :cond_0
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->u:Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->c:Landroid/graphics/Bitmap;
 
     const/4 v3, 0x0
 
     if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->b:Landroid/graphics/Canvas;
 
     if-eqz v2, :cond_1
 
-    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->v:I
+    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->d:I
 
     if-ne v2, v1, :cond_1
 
-    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->w:I
+    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->e:I
 
     if-ne v2, v0, :cond_1
 
-    iget-boolean v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
+    iget-boolean v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
 
     if-eqz v2, :cond_6
 
@@ -879,57 +885,55 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->u:Landroid/graphics/Bitmap;
+    iput-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->c:Landroid/graphics/Bitmap;
 
     new-instance v2, Landroid/graphics/Canvas;
 
-    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->u:Landroid/graphics/Bitmap;
+    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->c:Landroid/graphics/Bitmap;
 
     invoke-direct {v2, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    iput-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    iput-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->b:Landroid/graphics/Canvas;
 
-    iput v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->v:I
+    iput v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->d:I
 
-    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->w:I
+    iput v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->e:I
 
-    iget v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+    iget v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
 
-    iget v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
+    iget v1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
 
     sub-float/2addr v0, v1
 
-    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+    iget v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
 
-    iget v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
+    iget v5, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
 
-    sub-float/2addr v2, v4
+    sub-float/2addr v4, v5
 
-    const/high16 v5, 0x40000000    # 2.0f
+    const/high16 v6, 0x40000000    # 2.0f
 
-    div-float/2addr v0, v5
+    div-float/2addr v0, v6
 
     add-float/2addr v1, v0
 
-    div-float/2addr v2, v5
+    div-float/2addr v4, v6
 
-    add-float/2addr v4, v2
+    add-float/2addr v5, v4
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    sget-object v0, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
+    invoke-virtual {v2, v3, v0}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v0, v3, v2}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
-
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget v2, v0, Lcom/jiny/android/ui/custom/NegativeUIView$b;->c:I
 
-    const/4 v5, 0x3
+    const/4 v4, 0x3
 
-    if-ne v2, v5, :cond_2
+    if-ne v2, v4, :cond_2
 
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->b:Landroid/graphics/Canvas;
 
     iget v0, v0, Lcom/jiny/android/ui/custom/NegativeUIView$b;->d:I
 
@@ -942,19 +946,19 @@
 
     if-ne v2, v0, :cond_3
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->a()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->c()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lal0;->d(Landroid/content/Context;)Landroid/content/res/Resources;
+    invoke-static {v0}, Lcom/jiny/android/e/a;->d(Landroid/content/Context;)Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sget v2, Lnh0;->shape_jiny_radial_bg:I
+    sget v2, Lcom/jiny/android/R$drawable;->shape_jiny_radial_bg:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -962,47 +966,47 @@
 
     const/high16 v2, 0x40400000    # 3.0f
 
-    invoke-static {}, Lal0;->a()I
+    invoke-static {}, Lcom/jiny/android/e/a;->a()I
 
-    move-result v5
+    move-result v4
 
-    int-to-float v5, v5
+    int-to-float v4, v4
 
-    mul-float v5, v5, v2
+    mul-float v4, v4, v2
 
-    sub-float v2, v1, v5
+    sub-float v2, v1, v4
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    sub-float v6, v4, v5
+    sub-float v6, v5, v4
 
     invoke-static {v6}, Ljava/lang/Math;->round(F)I
 
     move-result v6
 
-    add-float v7, v1, v5
+    add-float v7, v1, v4
 
     invoke-static {v7}, Ljava/lang/Math;->round(F)I
 
     move-result v7
 
-    add-float/2addr v5, v4
+    add-float/2addr v4, v5
 
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
+    invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
-    move-result v5
+    move-result v4
 
-    invoke-virtual {v0, v2, v6, v7, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v0, v2, v6, v7, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->b:Landroid/graphics/Canvas;
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_3
     :goto_0
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget v0, v0, Lcom/jiny/android/ui/custom/NegativeUIView$b;->b:I
 
@@ -1015,28 +1019,28 @@
     goto :goto_1
 
     :cond_4
-    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->b:Landroid/graphics/Canvas;
 
-    iget v5, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:F
+    iget v5, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
 
-    iget v6, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->z:F
+    iget v6, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
 
-    iget v7, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->A:F
+    iget v7, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
 
-    iget v8, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->B:F
+    iget v8, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:F
 
-    iget v9, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:F
+    iget v9, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->F:F
 
-    iget v10, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->F:F
+    iget v10, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->G:F
 
-    iget-object v11, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->x:Landroid/graphics/Paint;
+    iget-object v11, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:Landroid/graphics/Paint;
 
     invoke-virtual/range {v4 .. v11}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
 
     goto :goto_1
 
     :cond_5
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->t:Landroid/graphics/Canvas;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->b:Landroid/graphics/Canvas;
 
     invoke-virtual {p0}, Lcom/jiny/android/ui/custom/NegativeUIView;->getPreferredRadius()I
 
@@ -1044,13 +1048,13 @@
 
     int-to-float v2, v2
 
-    iget-object v5, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->x:Landroid/graphics/Paint;
+    iget-object v4, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->y:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v1, v4, v2, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v0, v1, v5, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     :cond_6
     :goto_1
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->u:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->c:Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
 
@@ -1060,7 +1064,7 @@
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    iput-boolean v3, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
+    iput-boolean v3, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
 
     :cond_7
     :goto_2
@@ -1078,7 +1082,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iget-boolean v2, v2, Lcom/jiny/android/ui/custom/NegativeUIView$b;->e:Z
 
@@ -1090,25 +1094,25 @@
 
     if-nez v2, :cond_2
 
-    invoke-virtual {p0, v0, v1}, Lcom/jiny/android/ui/custom/NegativeUIView;->a(FF)Z
+    invoke-virtual {p0, v0, v1}, Lcom/jiny/android/ui/custom/NegativeUIView;->d(FF)Z
 
     move-result p1
 
-    iget-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
+    iget-boolean v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->E:Z
 
     if-eqz v0, :cond_1
 
     if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->H:Lel0$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/e/e$a;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Lel0$b;->k()V
+    invoke-interface {v0}, Lcom/jiny/android/e/e$a;->k()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->H:Lel0$b;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/e/e$a;
 
     :cond_0
     const/4 v0, 0x4
@@ -1131,17 +1135,17 @@
 .method public setBgType(I)V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iput p1, v0, Lcom/jiny/android/ui/custom/NegativeUIView$b;->c:I
 
     return-void
 .end method
 
-.method public setPointerViewClickListener(Lel0$b;)V
+.method public setPointerViewClickListener(Lcom/jiny/android/e/e$a;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->H:Lel0$b;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->I:Lcom/jiny/android/e/e$a;
 
     return-void
 .end method
@@ -1149,7 +1153,7 @@
 .method public setShouldHighlightAreaBeClickable(Z)V
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->s:Lcom/jiny/android/ui/custom/NegativeUIView$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView;->a:Lcom/jiny/android/ui/custom/NegativeUIView$b;
 
     iput-boolean p1, v0, Lcom/jiny/android/ui/custom/NegativeUIView$b;->e:Z
 

@@ -1,4 +1,4 @@
-.class public final Lcom/clevertap/android/sdk/CleverTapAPI$14;
+.class public Lcom/clevertap/android/sdk/CleverTapAPI$14;
 .super Ljava/lang/Object;
 .source "CleverTapAPI.java"
 
@@ -8,33 +8,29 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->deleteNotificationChannelGroup(Landroid/content/Context;Ljava/lang/String;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->deleteInboxMessage(Lcom/clevertap/android/sdk/CTInboxMessage;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field public final synthetic val$context:Landroid/content/Context;
+.field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public final synthetic val$groupId:Ljava/lang/String;
-
-.field public final synthetic val$instance:Lcom/clevertap/android/sdk/CleverTapAPI;
+.field public final synthetic val$message:Lcom/clevertap/android/sdk/CTInboxMessage;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/clevertap/android/sdk/CleverTapAPI;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/clevertap/android/sdk/CTInboxMessage;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$context:Landroid/content/Context;
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$groupId:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$instance:Lcom/clevertap/android/sdk/CleverTapAPI;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$message:Lcom/clevertap/android/sdk/CTInboxMessage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,60 +43,81 @@
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$context:Landroid/content/Context;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    const-string v1, "notification"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1000(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
-
-    if-nez v0, :cond_0
-
-    return-void
+    monitor-enter v0
 
     .line 2
-    :cond_0
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$groupId:Ljava/lang/String;
+    :try_start_0
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->deleteNotificationChannelGroup(Ljava/lang/String;)V
-
-    .line 3
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$instance:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$instance:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$900(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1100(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/CTInboxController;
 
     move-result-object v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_0
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 3
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    const-string v3, "Notification channel group "
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1100(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/CTInboxController;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$groupId:Ljava/lang/String;
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->val$message:Lcom/clevertap/android/sdk/CTInboxMessage;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, " has been deleted"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInboxMessage;->getMessageId()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/clevertap/android/sdk/Logger;->info(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lcom/clevertap/android/sdk/CTInboxController;->deleteMessageWithId(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 4
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1200(Lcom/clevertap/android/sdk/CleverTapAPI;)V
+
+    goto :goto_0
+
+    .line 5
+    :cond_0
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$14;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->getAccountId()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "Notification Inbox not initialized"
+
+    invoke-virtual {v1, v2, v3}, Lcom/clevertap/android/sdk/Logger;->debug(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 6
+    :cond_1
+    :goto_0
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final ROT_MOD:F = -15.0f
+.field private static final ROT_MOD:F = -15.0f
 
 
 # direct methods
@@ -46,18 +46,18 @@
     mul-float v0, v0, v1
 
     .line 2
-    invoke-static {p1, v0}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     const/4 v0, 0x0
 
     .line 3
-    invoke-static {p1, v0}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     .line 4
-    invoke-static {p1, v0}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     .line 5
-    invoke-static {p1, p2}, La53;->d(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setRotation(Landroid/view/View;F)V
 
     return-void
 .end method

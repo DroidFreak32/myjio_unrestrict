@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public content:[B
+.field private content:[B
 
-.field public map:Ljava/util/TreeMap;
+.field private map:Ljava/util/TreeMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/TreeMap<",

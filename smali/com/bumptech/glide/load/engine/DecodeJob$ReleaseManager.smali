@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public isEncodeComplete:Z
+.field private isEncodeComplete:Z
 
-.field public isFailed:Z
+.field private isFailed:Z
 
-.field public isReleased:Z
+.field private isReleased:Z
 
 
 # direct methods

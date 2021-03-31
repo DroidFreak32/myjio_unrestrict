@@ -3,13 +3,21 @@
 
 
 # instance fields
-.field public final zzce:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final zzce:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field public zzcf:Lcom/google/android/gms/iid/zzt;
+.field private zzcf:Lcom/google/android/gms/iid/zzt;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
-.field public zzcg:I
+.field private zzcg:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
 
-.field public final zzl:Landroid/content/Context;
+.field private final zzl:Landroid/content/Context;
 
 
 # direct methods
@@ -42,8 +50,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;)V
     .locals 2
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -159,8 +169,6 @@
     iput-object v0, p0, Lcom/google/android/gms/iid/zzr;->zzcf:Lcom/google/android/gms/iid/zzt;
 
     .line 6
-    iget-object v0, p0, Lcom/google/android/gms/iid/zzr;->zzcf:Lcom/google/android/gms/iid/zzt;
-
     invoke-virtual {v0, p1}, Lcom/google/android/gms/iid/zzt;->zze(Lcom/google/android/gms/iid/zzz;)Z
 
     .line 7

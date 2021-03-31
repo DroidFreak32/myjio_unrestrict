@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/preference/DropDownPreference;
+.field public final synthetic a:Landroidx/preference/DropDownPreference;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/preference/DropDownPreference$a;->s:Landroidx/preference/DropDownPreference;
+    iput-object p1, p0, Landroidx/preference/DropDownPreference$a;->a:Landroidx/preference/DropDownPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,9 +50,9 @@
     if-ltz p3, :cond_0
 
     .line 1
-    iget-object p1, p0, Landroidx/preference/DropDownPreference$a;->s:Landroidx/preference/DropDownPreference;
+    iget-object p1, p0, Landroidx/preference/DropDownPreference$a;->a:Landroidx/preference/DropDownPreference;
 
-    invoke-virtual {p1}, Landroidx/preference/ListPreference;->y()[Ljava/lang/CharSequence;
+    invoke-virtual {p1}, Landroidx/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object p1
 
@@ -63,9 +63,9 @@
     move-result-object p1
 
     .line 2
-    iget-object p2, p0, Landroidx/preference/DropDownPreference$a;->s:Landroidx/preference/DropDownPreference;
+    iget-object p2, p0, Landroidx/preference/DropDownPreference$a;->a:Landroidx/preference/DropDownPreference;
 
-    invoke-virtual {p2}, Landroidx/preference/ListPreference;->z()Ljava/lang/String;
+    invoke-virtual {p2}, Landroidx/preference/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object p2
 
@@ -75,18 +75,18 @@
 
     if-nez p2, :cond_0
 
-    iget-object p2, p0, Landroidx/preference/DropDownPreference$a;->s:Landroidx/preference/DropDownPreference;
+    iget-object p2, p0, Landroidx/preference/DropDownPreference$a;->a:Landroidx/preference/DropDownPreference;
 
-    invoke-virtual {p2, p1}, Landroidx/preference/Preference;->a(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p1}, Landroidx/preference/Preference;->callChangeListener(Ljava/lang/Object;)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
     .line 3
-    iget-object p2, p0, Landroidx/preference/DropDownPreference$a;->s:Landroidx/preference/DropDownPreference;
+    iget-object p2, p0, Landroidx/preference/DropDownPreference$a;->a:Landroidx/preference/DropDownPreference;
 
-    invoke-virtual {p2, p1}, Landroidx/preference/ListPreference;->d(Ljava/lang/String;)V
+    invoke-virtual {p2, p1}, Landroidx/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
     :cond_0
     return-void

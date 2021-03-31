@@ -11,21 +11,21 @@
 
 
 # instance fields
-.field public final zzabf:J
+.field private final zzabf:J
 
-.field public final zzabg:I
+.field private final zzabg:I
 
-.field public zzabh:D
+.field private zzabh:D
 
-.field public zzabi:J
+.field private zzabi:J
 
-.field public final zzabj:Ljava/lang/Object;
+.field private final zzabj:Ljava/lang/Object;
 
-.field public final zzaia:J
+.field private final zzaia:J
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
-.field public final zzup:Ljava/lang/String;
+.field private final zzup:Ljava/lang/String;
 
 
 # direct methods
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public final zzfm()Z
-    .locals 10
+    .locals 12
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabj:Ljava/lang/Object;
@@ -98,15 +98,15 @@
     .line 3
     iget-wide v3, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabi:J
 
-    sub-long v3, v1, v3
+    sub-long v5, v1, v3
 
-    iget-wide v5, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzaia:J
+    iget-wide v7, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzaia:J
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    cmp-long v8, v3, v5
+    cmp-long v10, v5, v7
 
-    if-gez v8, :cond_0
+    if-gez v10, :cond_0
 
     .line 4
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzup:Ljava/lang/String;
@@ -144,60 +144,53 @@
     .line 5
     monitor-exit v0
 
-    return v7
+    return v9
 
     .line 6
     :cond_0
-    iget-wide v3, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
+    iget-wide v5, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
 
-    iget v5, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabg:I
+    iget v7, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabg:I
 
-    int-to-double v5, v5
+    int-to-double v10, v7
 
-    cmpg-double v8, v3, v5
+    cmpg-double v8, v5, v10
 
     if-gez v8, :cond_1
-
-    .line 7
-    iget-wide v3, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabi:J
 
     sub-long v3, v1, v3
 
     long-to-double v3, v3
 
-    .line 8
-    iget-wide v5, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabf:J
+    .line 7
+    iget-wide v10, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabf:J
 
-    long-to-double v5, v5
+    long-to-double v10, v10
 
-    div-double/2addr v3, v5
+    div-double/2addr v3, v10
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v10, 0x0
 
-    cmpl-double v8, v3, v5
+    cmpl-double v8, v3, v10
 
     if-lez v8, :cond_1
 
-    .line 9
-    iget v5, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabg:I
+    int-to-double v7, v7
 
-    int-to-double v5, v5
+    add-double/2addr v5, v3
 
-    iget-wide v8, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
-
-    add-double/2addr v8, v3
-
-    invoke-static {v5, v6, v8, v9}, Ljava/lang/Math;->min(DD)D
+    .line 8
+    invoke-static {v7, v8, v5, v6}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
 
-    .line 10
+    .line 9
     :cond_1
     iput-wide v1, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabi:J
 
-    .line 11
+    .line 10
     iget-wide v1, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
 
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
@@ -206,21 +199,19 @@
 
     if-ltz v5, :cond_2
 
-    .line 12
-    iget-wide v1, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
-
     sub-double/2addr v1, v3
 
+    .line 11
     iput-wide v1, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzabh:D
 
     const/4 v1, 0x1
 
-    .line 13
+    .line 12
     monitor-exit v0
 
     return v1
 
-    .line 14
+    .line 13
     :cond_2
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzdg;->zzup:Ljava/lang/String;
 
@@ -254,15 +245,15 @@
 
     invoke-static {v1}, Lcom/google/android/gms/tagmanager/zzdi;->zzac(Ljava/lang/String;)V
 
-    .line 15
+    .line 14
     monitor-exit v0
 
-    return v7
+    return v9
 
     :catchall_0
     move-exception v1
 
-    .line 16
+    .line 15
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

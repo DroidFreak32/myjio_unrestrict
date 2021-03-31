@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static final zzgw:Lcom/google/android/gms/internal/clearcut/zzby;
+.field private static final zzgw:Lcom/google/android/gms/internal/clearcut/zzby;
 
 
 # instance fields
-.field public final zzgt:Lcom/google/android/gms/internal/clearcut/zzei;
+.field private final zzgt:Lcom/google/android/gms/internal/clearcut/zzei;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzei<",
@@ -29,9 +29,9 @@
     .end annotation
 .end field
 
-.field public zzgu:Z
+.field private zzgu:Z
 
-.field public zzgv:Z
+.field private zzgv:Z
 
 
 # direct methods
@@ -49,7 +49,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Z)V
+.method private constructor <init>(Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -147,6 +147,11 @@
 
 .method public static zza(Lcom/google/android/gms/internal/clearcut/zzbn;Lcom/google/android/gms/internal/clearcut/zzfl;ILjava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     sget-object v0, Lcom/google/android/gms/internal/clearcut/zzfl;->zzql:Lcom/google/android/gms/internal/clearcut/zzfl;
 
@@ -523,7 +528,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzfl;Ljava/lang/Object;)V
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzfl;Ljava/lang/Object;)V
     .locals 2
 
     invoke-static {p1}, Lcom/google/android/gms/internal/clearcut/zzci;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -546,78 +551,79 @@
 
     packed-switch p0, :pswitch_data_0
 
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_0
     instance-of p0, p1, Lcom/google/android/gms/internal/clearcut/zzdo;
 
-    if-nez p0, :cond_0
+    if-nez p0, :cond_1
 
     instance-of p0, p1, Lcom/google/android/gms/internal/clearcut/zzcr;
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :pswitch_1
     instance-of p0, p1, Ljava/lang/Integer;
 
-    if-nez p0, :cond_0
+    if-nez p0, :cond_1
 
     instance-of p0, p1, Lcom/google/android/gms/internal/clearcut/zzcj;
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
-    :cond_0
-    :goto_0
-    const/4 v1, 0x1
-
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_2
     instance-of p0, p1, Lcom/google/android/gms/internal/clearcut/zzbb;
 
-    if-nez p0, :cond_0
+    if-nez p0, :cond_1
 
     instance-of p0, p1, [B
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
     :pswitch_3
     instance-of v0, p1, Ljava/lang/String;
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_4
     instance-of v0, p1, Ljava/lang/Boolean;
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_5
     instance-of v0, p1, Ljava/lang/Double;
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_6
     instance-of v0, p1, Ljava/lang/Float;
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_7
     instance-of v0, p1, Ljava/lang/Long;
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_8
     instance-of v0, p1, Ljava/lang/Integer;
 
-    :goto_1
+    :cond_1
+    :goto_0
     move v1, v0
 
-    :cond_1
-    :goto_2
+    :goto_1
     if-eqz v1, :cond_2
 
     return-void
@@ -630,6 +636,8 @@
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -662,7 +670,7 @@
     return-object v0
 .end method
 
-.method public static zzb(Lcom/google/android/gms/internal/clearcut/zzca;Ljava/lang/Object;)I
+.method private static zzb(Lcom/google/android/gms/internal/clearcut/zzca;Ljava/lang/Object;)I
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -771,7 +779,7 @@
     return p0
 .end method
 
-.method public static zzb(Lcom/google/android/gms/internal/clearcut/zzfl;Ljava/lang/Object;)I
+.method private static zzb(Lcom/google/android/gms/internal/clearcut/zzfl;Ljava/lang/Object;)I
     .locals 1
 
     sget-object v0, Lcom/google/android/gms/internal/clearcut/zzbz;->zzgq:[I
@@ -1091,7 +1099,7 @@
     .end packed-switch
 .end method
 
-.method public static zzb(Ljava/util/Map$Entry;)Z
+.method private static zzb(Ljava/util/Map$Entry;)Z
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1353,7 +1361,7 @@
     return-void
 .end method
 
-.method public static zzd(Ljava/util/Map$Entry;)I
+.method private static zzd(Ljava/util/Map$Entry;)I
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1434,7 +1442,7 @@
     return p0
 .end method
 
-.method public static zzd(Ljava/lang/Object;)Ljava/lang/Object;
+.method private static zzd(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
     instance-of v0, p0, Lcom/google/android/gms/internal/clearcut/zzdv;
@@ -1476,6 +1484,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzby;
 

@@ -34,8 +34,6 @@
     sput-object v0, Lcom/clevertap/android/sdk/ab_testing/CTVar$1;->$SwitchMap$com$clevertap$android$sdk$ab_testing$CTVar$CTVarType:[I
 
     :try_start_0
-    sget-object v0, Lcom/clevertap/android/sdk/ab_testing/CTVar$1;->$SwitchMap$com$clevertap$android$sdk$ab_testing$CTVar$CTVarType:[I
-
     sget-object v1, Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;->CTVarTypeListOfBool:Lcom/clevertap/android/sdk/ab_testing/CTVar$CTVarType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

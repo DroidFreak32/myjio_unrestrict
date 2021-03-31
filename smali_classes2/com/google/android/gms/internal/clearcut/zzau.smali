@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final zzez:Lcom/google/android/gms/internal/clearcut/zzbt;
+.field private static final zzez:Lcom/google/android/gms/internal/clearcut/zzbt;
 
 
 # direct methods

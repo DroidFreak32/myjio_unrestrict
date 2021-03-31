@@ -3,17 +3,17 @@
 
 
 # instance fields
-.field public OTP:Ljava/lang/String;
+.field private OTP:Ljava/lang/String;
 
-.field public channel:Ljava/lang/Integer;
+.field private channel:Ljava/lang/Integer;
 
-.field public ipAddress:Ljava/lang/String;
+.field private ipAddress:Ljava/lang/String;
 
-.field public offload:Ljava/lang/Boolean;
+.field private offload:Ljava/lang/Boolean;
 
-.field public packageId:Ljava/lang/String;
+.field private packageId:Ljava/lang/String;
 
-.field public phoneNumber:Ljava/lang/String;
+.field private phoneNumber:Ljava/lang/String;
 
 
 # direct methods

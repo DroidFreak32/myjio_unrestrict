@@ -17,15 +17,15 @@
 
 
 # instance fields
-.field public a:Z
+.field private a:Z
 
-.field public b:Ljava/lang/String;
+.field private b:Ljava/lang/String;
 
-.field public c:Z
+.field private c:Z
 
-.field public d:Ljava/lang/String;
+.field private d:Ljava/lang/String;
 
-.field public e:Ljava/util/List;
+.field private e:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -35,17 +35,17 @@
     .end annotation
 .end field
 
-.field public f:Z
+.field private f:Z
 
-.field public g:Ljava/lang/String;
+.field private g:Ljava/lang/String;
 
-.field public h:Z
+.field private h:Z
 
-.field public i:Z
+.field private i:Z
 
-.field public j:Z
+.field private j:Z
 
-.field public k:Ljava/lang/String;
+.field private k:Ljava/lang/String;
 
 
 # direct methods
@@ -153,6 +153,11 @@
 
 .method public readExternal(Ljava/io/ObjectInput;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
 
@@ -225,6 +230,11 @@
 
 .method public writeExternal(Ljava/io/ObjectOutput;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/a/a/i$a;->b:Ljava/lang/String;
 

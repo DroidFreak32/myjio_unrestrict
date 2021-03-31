@@ -5,6 +5,11 @@
 # direct methods
 .method public static zza(I[BIILcom/google/android/gms/internal/clearcut/zzay;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/clearcut/zzco;
+        }
+    .end annotation
 
     ushr-int/lit8 v0, p0, 0x3
 
@@ -155,6 +160,11 @@
 
 .method public static zza(I[BIILcom/google/android/gms/internal/clearcut/zzey;Lcom/google/android/gms/internal/clearcut/zzay;)I
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     ushr-int/lit8 v0, p0, 0x3
 
@@ -460,6 +470,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     check-cast p2, Lcom/google/android/gms/internal/clearcut/zzch;
 
     invoke-static {p0, p1, p3}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
@@ -640,6 +656,11 @@
 
 .method public static zzd([BILcom/google/android/gms/internal/clearcut/zzay;)I
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-static {p0, p1, p2}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
 

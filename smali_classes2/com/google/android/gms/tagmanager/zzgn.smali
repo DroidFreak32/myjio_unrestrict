@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static zza(Lcom/google/android/gms/tagmanager/zzdz;)Lcom/google/android/gms/tagmanager/zzdz;
+.method private static zza(Lcom/google/android/gms/tagmanager/zzdz;)Lcom/google/android/gms/tagmanager/zzdz;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -151,6 +151,11 @@
 
 .method public static zzbs(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     const-string v0, "UTF-8"
 

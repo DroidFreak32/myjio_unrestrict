@@ -34,8 +34,6 @@
     sput-object v0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher$2;->$SwitchMap$com$bumptech$glide$Priority:[I
 
     :try_start_0
-    sget-object v0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher$2;->$SwitchMap$com$bumptech$glide$Priority:[I
-
     sget-object v1, Lcom/bumptech/glide/Priority;->LOW:Lcom/bumptech/glide/Priority;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

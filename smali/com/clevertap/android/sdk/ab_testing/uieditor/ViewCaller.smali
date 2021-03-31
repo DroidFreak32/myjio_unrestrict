@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final methodArgs:[Ljava/lang/Object;
+.field private final methodArgs:[Ljava/lang/Object;
 
-.field public final methodName:Ljava/lang/String;
+.field private final methodName:Ljava/lang/String;
 
-.field public final methodResultType:Ljava/lang/Class;
+.field private final methodResultType:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -17,7 +17,7 @@
     .end annotation
 .end field
 
-.field public final targetClass:Ljava/lang/Class;
+.field private final targetClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field public final targetMethod:Ljava/lang/reflect/Method;
+.field private final targetMethod:Ljava/lang/reflect/Method;
 
 
 # direct methods
@@ -42,6 +42,12 @@
             "Ljava/lang/Object;",
             "Ljava/lang/Class<",
             "*>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NoSuchMethodException;
         }
     .end annotation
 
@@ -64,12 +70,9 @@
 
     iput-object p3, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;->targetMethod:Ljava/lang/reflect/Method;
 
-    .line 6
-    iget-object p3, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;->targetMethod:Ljava/lang/reflect/Method;
-
     if-eqz p3, :cond_0
 
-    .line 7
+    .line 6
     invoke-virtual {p3}, Ljava/lang/reflect/Method;->getDeclaringClass()Ljava/lang/Class;
 
     move-result-object p1
@@ -78,7 +81,7 @@
 
     return-void
 
-    .line 8
+    .line 7
     :cond_0
     new-instance p3, Ljava/lang/NoSuchMethodException;
 
@@ -115,7 +118,7 @@
     throw p3
 .end method
 
-.method public static assignableArgType(Ljava/lang/Class;)Ljava/lang/Class;
+.method private static assignableArgType(Ljava/lang/Class;)Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -333,43 +336,41 @@
     :cond_2
     const/4 v5, 0x1
 
-    const/4 v5, 0x0
-
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     .line 11
     :goto_2
     array-length v8, v6
 
-    if-ge v5, v8, :cond_3
+    if-ge v7, v8, :cond_3
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
     .line 12
-    aget-object v7, v0, v5
+    aget-object v5, v0, v7
 
-    invoke-static {v7}, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;->assignableArgType(Ljava/lang/Class;)Ljava/lang/Class;
+    invoke-static {v5}, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;->assignableArgType(Ljava/lang/Class;)Ljava/lang/Class;
 
-    move-result-object v7
+    move-result-object v5
 
     .line 13
-    aget-object v8, v6, v5
+    aget-object v8, v6, v7
 
     invoke-static {v8}, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;->assignableArgType(Ljava/lang/Class;)Ljava/lang/Class;
 
     move-result-object v8
 
     .line 14
-    invoke-virtual {v8, v7}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v8, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v7
+    move-result v5
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_2
 
     :cond_3
-    if-nez v7, :cond_4
+    if-nez v5, :cond_4
 
     goto :goto_3
 

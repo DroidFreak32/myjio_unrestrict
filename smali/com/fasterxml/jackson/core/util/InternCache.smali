@@ -15,15 +15,15 @@
 
 
 # static fields
-.field public static final MAX_ENTRIES:I = 0xb4
+.field private static final MAX_ENTRIES:I = 0xb4
 
 .field public static final instance:Lcom/fasterxml/jackson/core/util/InternCache;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final lock:Ljava/lang/Object;
+.field private final lock:Ljava/lang/Object;
 
 
 # direct methods
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 3
 
     const/16 v0, 0xb4

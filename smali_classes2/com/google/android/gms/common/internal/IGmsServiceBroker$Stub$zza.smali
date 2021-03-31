@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/IGmsServiceBroker$Stub$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/IGmsServiceBroker;
@@ -17,7 +18,7 @@
 
 
 # instance fields
-.field public final zza:Landroid/os/IBinder;
+.field private final zza:Landroid/os/IBinder;
 
 
 # direct methods
@@ -46,6 +47,15 @@
 
 .method public final getService(Lcom/google/android/gms/common/internal/IGmsCallbacks;Lcom/google/android/gms/common/internal/GetServiceRequest;)V
     .locals 3
+    .param p2    # Lcom/google/android/gms/common/internal/GetServiceRequest;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -126,5 +136,6 @@
     .line 13
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 14
     throw p1
 .end method

@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract a(Landroidx/databinding/ViewDataBinding;I)Landroidx/databinding/ViewDataBinding$o;
+.method public abstract a(Landroidx/databinding/ViewDataBinding;I)Landroidx/databinding/ViewDataBinding$m;
 .end method

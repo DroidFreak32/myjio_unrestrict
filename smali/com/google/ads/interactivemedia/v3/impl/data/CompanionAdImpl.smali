@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field public apiFramework:Ljava/lang/String;
+.field private apiFramework:Ljava/lang/String;
 
-.field public height:I
+.field private height:I
 
-.field public resourceValue:Ljava/lang/String;
+.field private resourceValue:Ljava/lang/String;
 
-.field public width:I
+.field private width:I
 
 
 # direct methods

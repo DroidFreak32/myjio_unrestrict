@@ -12,21 +12,21 @@
 
 
 # instance fields
-.field public _bigEndian:Z
+.field private _bigEndian:Z
 
-.field public final _bufferRecyclable:Z
+.field private final _bufferRecyclable:Z
 
-.field public _bytesPerChar:I
+.field private _bytesPerChar:I
 
-.field public final _context:Lcom/fasterxml/jackson/core/io/IOContext;
+.field private final _context:Lcom/fasterxml/jackson/core/io/IOContext;
 
-.field public final _in:Ljava/io/InputStream;
+.field private final _in:Ljava/io/InputStream;
 
-.field public final _inputBuffer:[B
+.field private final _inputBuffer:[B
 
-.field public _inputEnd:I
+.field private _inputEnd:I
 
-.field public _inputPtr:I
+.field private _inputPtr:I
 
 
 # direct methods
@@ -145,6 +145,11 @@
 
 .method private checkUTF32(I)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     shr-int/lit8 v0, p1, 0x8
 
@@ -211,6 +216,11 @@
 
 .method private handleBOM(I)Z
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/high16 v0, -0x1010000
 
@@ -350,6 +360,11 @@
 
 .method public static hasJSONFormat(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p0}, Lcom/fasterxml/jackson/core/format/InputAccessor;->hasMoreBytes()Z
@@ -595,7 +610,7 @@
 
     if-ne v0, v2, :cond_15
 
-    const-string v0, "ull"
+    const-string/jumbo v0, "ull"
 
     .line 29
     invoke-static {p0, v0, v1}, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->tryMatch(Lcom/fasterxml/jackson/core/format/InputAccessor;Ljava/lang/String;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/MatchStrength;
@@ -641,6 +656,11 @@
 
 .method private reportWeirdUCS4(Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/io/CharConversionException;
@@ -668,8 +688,13 @@
     throw v0
 .end method
 
-.method public static skipSpace(Lcom/fasterxml/jackson/core/format/InputAccessor;)I
+.method private static skipSpace(Lcom/fasterxml/jackson/core/format/InputAccessor;)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p0}, Lcom/fasterxml/jackson/core/format/InputAccessor;->hasMoreBytes()Z
@@ -695,8 +720,13 @@
     return p0
 .end method
 
-.method public static skipSpace(Lcom/fasterxml/jackson/core/format/InputAccessor;B)I
+.method private static skipSpace(Lcom/fasterxml/jackson/core/format/InputAccessor;B)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     :goto_0
     and-int/lit16 p1, p1, 0xff
@@ -742,6 +772,11 @@
 
 .method public static skipUTF8BOM(Ljava/io/DataInput;)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
@@ -839,8 +874,13 @@
     throw p0
 .end method
 
-.method public static tryMatch(Lcom/fasterxml/jackson/core/format/InputAccessor;Ljava/lang/String;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/MatchStrength;
+.method private static tryMatch(Lcom/fasterxml/jackson/core/format/InputAccessor;Ljava/lang/String;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/MatchStrength;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -894,6 +934,11 @@
 # virtual methods
 .method public constructParser(ILcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;I)Lcom/fasterxml/jackson/core/JsonParser;
     .locals 18
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -977,6 +1022,11 @@
 
 .method public constructReader()Ljava/io/Reader;
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_context:Lcom/fasterxml/jackson/core/io/IOContext;
@@ -1060,11 +1110,11 @@
 
     .line 7
     :cond_2
-    iget v6, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputPtr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputPtr:I
 
-    iget v7, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputEnd:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputEnd:I
 
-    if-ge v6, v7, :cond_3
+    if-ge v1, v2, :cond_3
 
     .line 8
     new-instance v1, Lcom/fasterxml/jackson/core/io/MergedStream;
@@ -1072,6 +1122,10 @@
     iget-object v3, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_context:Lcom/fasterxml/jackson/core/io/IOContext;
 
     iget-object v5, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputBuffer:[B
+
+    iget v6, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputPtr:I
+
+    iget v7, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputEnd:I
 
     move-object v2, v1
 
@@ -1095,6 +1149,11 @@
 
 .method public detectEncoding()Lcom/fasterxml/jackson/core/JsonEncoding;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -1288,6 +1347,11 @@
 
 .method public ensureLoaded(I)Z
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/fasterxml/jackson/core/json/ByteSourceJsonBootstrapper;->_inputEnd:I

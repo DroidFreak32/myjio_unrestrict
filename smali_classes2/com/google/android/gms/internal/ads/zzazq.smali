@@ -1,274 +1,224 @@
-.class public final enum Lcom/google/android/gms/internal/ads/zzazq;
-.super Ljava/lang/Enum;
+.class public Lcom/google/android/gms/internal/ads/zzazq;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbdg;
+.implements Lcom/google/android/gms/internal/ads/zzdyz;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Enum<",
-        "Lcom/google/android/gms/internal/ads/zzazq;",
-        ">;",
-        "Lcom/google/android/gms/internal/ads/zzbdg;"
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzdyz<",
+        "TT;>;"
     }
 .end annotation
 
+.annotation runtime Ljavax/annotation/ParametersAreNonnullByDefault;
+.end annotation
 
-# static fields
-.field public static final zzamd:Lcom/google/android/gms/internal/ads/zzbdh;
+
+# instance fields
+.field private final zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/internal/ads/zzbdh<",
-            "Lcom/google/android/gms/internal/ads/zzazq;",
-            ">;"
+            "Lcom/google/android/gms/internal/ads/zzdzh<",
+            "TT;>;"
         }
     .end annotation
 .end field
 
-.field public static final enum zzdpx:Lcom/google/android/gms/internal/ads/zzazq;
-
-.field public static final enum zzdpy:Lcom/google/android/gms/internal/ads/zzazq;
-
-.field public static final enum zzdpz:Lcom/google/android/gms/internal/ads/zzazq;
-
-.field public static final enum zzdqa:Lcom/google/android/gms/internal/ads/zzazq;
-
-.field public static final enum zzdqb:Lcom/google/android/gms/internal/ads/zzazq;
-
-.field public static final enum zzdqc:Lcom/google/android/gms/internal/ads/zzazq;
-
-.field public static final synthetic zzdqd:[Lcom/google/android/gms/internal/ads/zzazq;
-
-
-# instance fields
-.field public final value:I
-
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 9
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v1, 0x0
-
-    const-string v2, "UNKNOWN_PREFIX"
-
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/internal/ads/zzazq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdpx:Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v2, 0x1
-
-    const-string v3, "TINK"
-
-    invoke-direct {v0, v3, v2, v2}, Lcom/google/android/gms/internal/ads/zzazq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdpy:Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 3
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v3, 0x2
-
-    const-string v4, "LEGACY"
-
-    invoke-direct {v0, v4, v3, v3}, Lcom/google/android/gms/internal/ads/zzazq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdpz:Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 4
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v4, 0x3
-
-    const-string v5, "RAW"
-
-    invoke-direct {v0, v5, v4, v4}, Lcom/google/android/gms/internal/ads/zzazq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqa:Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 5
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v5, 0x4
-
-    const-string v6, "CRUNCHY"
-
-    invoke-direct {v0, v6, v5, v5}, Lcom/google/android/gms/internal/ads/zzazq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqb:Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 6
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v6, 0x5
-
-    const-string v7, "UNRECOGNIZED"
-
-    const/4 v8, -0x1
-
-    invoke-direct {v0, v7, v6, v8}, Lcom/google/android/gms/internal/ads/zzazq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqc:Lcom/google/android/gms/internal/ads/zzazq;
-
-    const/4 v0, 0x6
-
-    new-array v0, v0, [Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 7
-    sget-object v7, Lcom/google/android/gms/internal/ads/zzazq;->zzdpx:Lcom/google/android/gms/internal/ads/zzazq;
-
-    aput-object v7, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazq;->zzdpy:Lcom/google/android/gms/internal/ads/zzazq;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazq;->zzdpz:Lcom/google/android/gms/internal/ads/zzazq;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazq;->zzdqa:Lcom/google/android/gms/internal/ads/zzazq;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazq;->zzdqb:Lcom/google/android/gms/internal/ads/zzazq;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazq;->zzdqc:Lcom/google/android/gms/internal/ads/zzazq;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqd:[Lcom/google/android/gms/internal/ads/zzazq;
-
-    .line 8
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzazr;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzazr;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzamd:Lcom/google/android/gms/internal/ads/zzbdh;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)V"
-        }
-    .end annotation
-
-    .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    iput p3, p0, Lcom/google/android/gms/internal/ads/zzazq;->value:I
-
-    return-void
-.end method
-
-.method public static values()[Lcom/google/android/gms/internal/ads/zzazq;
+.method public constructor <init>()V
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqd:[Lcom/google/android/gms/internal/ads/zzazq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, [Lcom/google/android/gms/internal/ads/zzazq;->clone()Ljava/lang/Object;
+    .line 2
+    invoke-static {}, Lcom/google/android/gms/internal/ads/zzdzh;->zzazp()Lcom/google/android/gms/internal/ads/zzdzh;
 
     move-result-object v0
 
-    check-cast v0, [Lcom/google/android/gms/internal/ads/zzazq;
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
 
-    return-object v0
+    return-void
 .end method
 
-.method public static zzbn(I)Lcom/google/android/gms/internal/ads/zzazq;
-    .locals 1
+.method private static zzar(Z)Z
+    .locals 3
 
-    if-eqz p0, :cond_4
-
-    const/4 v0, 0x1
-
-    if-eq p0, v0, :cond_3
-
-    const/4 v0, 0x2
-
-    if-eq p0, v0, :cond_2
-
-    const/4 v0, 0x3
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x4
-
-    if-eq p0, v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
+    if-nez p0, :cond_0
 
     .line 1
-    :cond_0
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqb:Lcom/google/android/gms/internal/ads/zzazq;
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzku()Lcom/google/android/gms/internal/ads/zzayg;
 
-    return-object p0
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "Provided SettableFuture with multiple values."
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "SettableFuture"
 
     .line 2
-    :cond_1
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqa:Lcom/google/android/gms/internal/ads/zzazq;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzayg;->zzb(Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    return-object p0
-
-    .line 3
-    :cond_2
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzazq;->zzdpz:Lcom/google/android/gms/internal/ads/zzazq;
-
-    return-object p0
-
-    .line 4
-    :cond_3
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzazq;->zzdpy:Lcom/google/android/gms/internal/ads/zzazq;
-
-    return-object p0
-
-    .line 5
-    :cond_4
-    sget-object p0, Lcom/google/android/gms/internal/ads/zzazq;->zzdpx:Lcom/google/android/gms/internal/ads/zzazq;
-
-    return-object p0
+    :cond_0
+    return p0
 .end method
 
 
 # virtual methods
-.method public final zzhq()I
-    .locals 2
+.method public addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzazq;->zzdqc:Lcom/google/android/gms/internal/ads/zzazq;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
 
-    if-eq p0, v0, :cond_0
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzdxo;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    return-void
+.end method
+
+.method public cancel(Z)Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzdxo;->cancel(Z)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public get()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzdxo;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/util/concurrent/TimeUnit;",
+            ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/util/concurrent/ExecutionException;,
+            Ljava/lang/InterruptedException;,
+            Ljava/util/concurrent/TimeoutException;
+        }
+    .end annotation
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->value:I
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/internal/ads/zzdxo;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public isCancelled()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzdxo;->isCancelled()Z
+
+    move-result v0
 
     return v0
+.end method
 
-    .line 3
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+.method public isDone()Z
+    .locals 1
 
-    const-string v1, "Can\'t get the number of an unknown enum value."
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzdxo;->isDone()Z
 
-    throw v0
+    move-result v0
+
+    return v0
+.end method
+
+.method public final set(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)Z"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzdzh;->set(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzazq;->zzar(Z)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final setException(Ljava/lang/Throwable;)Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzazq;->zzegz:Lcom/google/android/gms/internal/ads/zzdzh;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzdzh;->setException(Ljava/lang/Throwable;)Z
+
+    move-result p1
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzazq;->zzar(Z)Z
+
+    move-result p1
+
+    return p1
 .end method

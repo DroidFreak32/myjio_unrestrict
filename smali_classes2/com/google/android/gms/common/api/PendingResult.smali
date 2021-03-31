@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/PendingResult;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -36,6 +37,10 @@
 # virtual methods
 .method public addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/PendingResult$StatusListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -48,6 +53,9 @@
 .end method
 
 .method public abstract await()Lcom/google/android/gms/common/api/Result;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TR;"
@@ -56,6 +64,13 @@
 .end method
 
 .method public abstract await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
+    .param p3    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -72,6 +87,10 @@
 .end method
 
 .method public abstract setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;)V
+    .param p1    # Lcom/google/android/gms/common/api/ResultCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,6 +101,14 @@
 .end method
 
 .method public abstract setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;JLjava/util/concurrent/TimeUnit;)V
+    .param p1    # Lcom/google/android/gms/common/api/ResultCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,6 +122,13 @@
 
 .method public then(Lcom/google/android/gms/common/api/ResultTransform;)Lcom/google/android/gms/common/api/TransformedResult;
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/ResultTransform;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<S::",
@@ -113,15 +147,4 @@
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw p1
-.end method
-
-.method public zam()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
 .end method

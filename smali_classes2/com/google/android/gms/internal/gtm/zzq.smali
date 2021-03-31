@@ -19,13 +19,13 @@
 
 
 # instance fields
-.field public zztv:Ljava/lang/String;
+.field private zztv:Ljava/lang/String;
 
-.field public zztw:Ljava/lang/String;
+.field private zztw:Ljava/lang/String;
 
-.field public zztx:Ljava/lang/String;
+.field private zztx:Ljava/lang/String;
 
-.field public zzty:Ljava/lang/String;
+.field private zzty:Ljava/lang/String;
 
 
 # direct methods

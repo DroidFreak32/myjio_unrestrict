@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzn:Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowCloseListener;
+.field private final synthetic zzn:Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowCloseListener;
 
 
 # direct methods

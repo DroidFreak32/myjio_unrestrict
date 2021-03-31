@@ -1,144 +1,52 @@
 .class public final Lcom/google/android/gms/internal/ads/zzqn;
-.super Lcom/google/android/gms/ads/formats/NativeAd$Image;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final mDrawable:Landroid/graphics/drawable/Drawable;
+.field private final synthetic zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
 
-.field public final mUri:Landroid/net/Uri;
+.field private final synthetic zzbnc:I
 
-.field public final zzbkz:D
-
-.field public final zzbnv:Lcom/google/android/gms/internal/ads/zzqk;
+.field private final synthetic zzbnd:J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzqk;)V
-    .locals 3
-
-    const-string v0, ""
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzqj;IJ)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/ads/formats/NativeAd$Image;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnv:Lcom/google/android/gms/internal/ads/zzqk;
+    iput p2, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnc:I
 
-    const/4 p1, 0x0
+    iput-wide p3, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnd:J
 
-    .line 3
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnv:Lcom/google/android/gms/internal/ads/zzqk;
-
-    invoke-interface {v1}, Lcom/google/android/gms/internal/ads/zzqk;->zzld()Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 4
-    invoke-static {v1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->unwrap(Lcom/google/android/gms/dynamic/IObjectWrapper;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/graphics/drawable/Drawable;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    .line 5
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_0
-    move-object v1, p1
-
-    .line 6
-    :goto_0
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzqn;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 7
-    :try_start_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnv:Lcom/google/android/gms/internal/ads/zzqk;
-
-    invoke-interface {v1}, Lcom/google/android/gms/internal/ads/zzqk;->getUri()Landroid/net/Uri;
-
-    move-result-object p1
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v1
-
-    .line 8
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 9
-    :goto_1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzqn;->mUri:Landroid/net/Uri;
-
-    const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
-
-    .line 10
-    :try_start_2
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnv:Lcom/google/android/gms/internal/ads/zzqk;
-
-    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzqk;->getScale()D
-
-    move-result-wide v1
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
-
-    goto :goto_2
-
-    :catch_2
-    move-exception p1
-
-    .line 11
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 12
-    :goto_2
-    iput-wide v1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbkz:D
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 1
+.method public final run()V
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqn;->mDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
 
-    return-object v0
-.end method
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzqj;->zza(Lcom/google/android/gms/internal/ads/zzqj;)Lcom/google/android/gms/internal/ads/zzqg;
 
-.method public final getScale()D
-    .locals 2
+    move-result-object v0
 
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbkz:D
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnc:I
 
-    return-wide v0
-.end method
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ads/zzqn;->zzbnd:J
 
-.method public final getUri()Landroid/net/Uri;
-    .locals 1
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzqg;->zzf(IJ)V
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzqn;->mUri:Landroid/net/Uri;
-
-    return-object v0
+    return-void
 .end method

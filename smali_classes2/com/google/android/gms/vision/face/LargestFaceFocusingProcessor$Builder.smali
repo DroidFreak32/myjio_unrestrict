@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public zzcp:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
+.field private zzcx:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
 
 
 # direct methods
@@ -40,7 +41,7 @@
 
     invoke-direct {v0, p1, p2}, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;-><init>(Lcom/google/android/gms/vision/Detector;Lcom/google/android/gms/vision/Tracker;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;->zzcp:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
+    iput-object v0, p0, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;->zzcx:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
 
     return-void
 .end method
@@ -51,7 +52,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;->zzcp:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;->zzcx:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
 
     return-object v0
 .end method
@@ -60,7 +61,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;->zzcp:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor$Builder;->zzcx:Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
 
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;->zza(Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;I)V
 

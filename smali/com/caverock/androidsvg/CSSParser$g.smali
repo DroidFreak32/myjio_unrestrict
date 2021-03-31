@@ -52,45 +52,6 @@
 
 
 # virtual methods
-.method public a()I
-    .locals 3
-
-    .line 3
-    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$g;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    const/high16 v1, -0x80000000
-
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/caverock/androidsvg/CSSParser$o;
-
-    .line 4
-    iget v2, v2, Lcom/caverock/androidsvg/CSSParser$o;->b:I
-
-    if-le v2, v1, :cond_0
-
-    move v1, v2
-
-    goto :goto_0
-
-    :cond_1
-    return v1
-.end method
-
 .method public a(Lcom/caverock/androidsvg/CSSParser$m;Lcom/caverock/androidsvg/SVG$j0;)Z
     .locals 2
 
@@ -115,7 +76,7 @@
     check-cast v1, Lcom/caverock/androidsvg/CSSParser$o;
 
     .line 2
-    invoke-static {p1, v1, p2}, Lcom/caverock/androidsvg/CSSParser;->a(Lcom/caverock/androidsvg/CSSParser$m;Lcom/caverock/androidsvg/CSSParser$o;Lcom/caverock/androidsvg/SVG$j0;)Z
+    invoke-static {p1, v1, p2}, Lcom/caverock/androidsvg/CSSParser;->l(Lcom/caverock/androidsvg/CSSParser$m;Lcom/caverock/androidsvg/CSSParser$o;Lcom/caverock/androidsvg/SVG$j0;)Z
 
     move-result v1
 
@@ -129,6 +90,45 @@
     const/4 p1, 0x1
 
     return p1
+.end method
+
+.method public b()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$g;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    const/high16 v1, -0x80000000
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/caverock/androidsvg/CSSParser$o;
+
+    .line 2
+    iget v2, v2, Lcom/caverock/androidsvg/CSSParser$o;->b:I
+
+    if-le v2, v1, :cond_0
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_1
+    return v1
 .end method
 
 .method public toString()Ljava/lang/String;

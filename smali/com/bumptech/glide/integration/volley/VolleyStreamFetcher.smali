@@ -26,11 +26,11 @@
 # static fields
 .field public static final DEFAULT_REQUEST_FACTORY:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
 
-.field public static final TAG:Ljava/lang/String; = "VolleyStreamFetcher"
+.field private static final TAG:Ljava/lang/String; = "VolleyStreamFetcher"
 
 
 # instance fields
-.field public volatile request:Lcom/android/volley/Request;
+.field private volatile request:Lcom/android/volley/Request;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/android/volley/Request<",
@@ -39,11 +39,11 @@
     .end annotation
 .end field
 
-.field public final requestFactory:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
+.field private final requestFactory:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
 
-.field public final requestQueue:Lvv;
+.field private final requestQueue:Lcom/android/volley/RequestQueue;
 
-.field public final url:Lcom/bumptech/glide/load/model/GlideUrl;
+.field private final url:Lcom/bumptech/glide/load/model/GlideUrl;
 
 
 # direct methods
@@ -60,25 +60,25 @@
     return-void
 .end method
 
-.method public constructor <init>(Lvv;Lcom/bumptech/glide/load/model/GlideUrl;)V
+.method public constructor <init>(Lcom/android/volley/RequestQueue;Lcom/bumptech/glide/load/model/GlideUrl;)V
     .locals 1
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->DEFAULT_REQUEST_FACTORY:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;-><init>(Lvv;Lcom/bumptech/glide/load/model/GlideUrl;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;-><init>(Lcom/android/volley/RequestQueue;Lcom/bumptech/glide/load/model/GlideUrl;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lvv;Lcom/bumptech/glide/load/model/GlideUrl;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
+.method public constructor <init>(Lcom/android/volley/RequestQueue;Lcom/bumptech/glide/load/model/GlideUrl;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
     .locals 0
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    iput-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->requestQueue:Lvv;
+    iput-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->requestQueue:Lcom/android/volley/RequestQueue;
 
     .line 4
     iput-object p2, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->url:Lcom/bumptech/glide/load/model/GlideUrl;
@@ -89,8 +89,12 @@
     return-void
 .end method
 
-.method public static glideToVolleyPriority(Lcom/bumptech/glide/Priority;)Lcom/android/volley/Request$Priority;
+.method private static glideToVolleyPriority(Lcom/bumptech/glide/Priority;)Lcom/android/volley/Request$Priority;
     .locals 1
+    .param p0    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher$2;->$SwitchMap$com$bumptech$glide$Priority:[I
@@ -162,6 +166,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -179,6 +186,8 @@
 
 .method public getDataSource()Lcom/bumptech/glide/load/DataSource;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/DataSource;->REMOTE:Lcom/bumptech/glide/load/DataSource;
@@ -188,6 +197,14 @@
 
 .method public loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
     .locals 3
+    .param p1    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -227,11 +244,11 @@
     iput-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->request:Lcom/android/volley/Request;
 
     .line 4
-    iget-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->requestQueue:Lvv;
+    iget-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->requestQueue:Lcom/android/volley/RequestQueue;
 
     iget-object p2, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->request:Lcom/android/volley/Request;
 
-    invoke-virtual {p1, p2}, Lvv;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
+    invoke-virtual {p1, p2}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
     return-void
 .end method

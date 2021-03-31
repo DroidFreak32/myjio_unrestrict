@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field public disableExperiments:Ljava/lang/Boolean;
+.field private disableExperiments:Ljava/lang/Boolean;
 
-.field public disableOnScreenDetection:Ljava/lang/Boolean;
+.field private disableOnScreenDetection:Ljava/lang/Boolean;
 
-.field public enableMonitorAppLifecycle:Ljava/lang/Boolean;
+.field private enableMonitorAppLifecycle:Ljava/lang/Boolean;
 
-.field public extraParams:Ljava/util/Map;
+.field private extraParams:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public forceExperimentIds:Ljava/util/List;
+.field private forceExperimentIds:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -34,15 +34,15 @@
     .end annotation
 .end field
 
-.field public forceTvMode:Ljava/lang/Boolean;
+.field private forceTvMode:Ljava/lang/Boolean;
 
-.field public ignoreStrictModeFalsePositives:Ljava/lang/Boolean;
+.field private ignoreStrictModeFalsePositives:Ljava/lang/Boolean;
 
-.field public useTestStreamManager:Ljava/lang/Boolean;
+.field private useTestStreamManager:Ljava/lang/Boolean;
 
-.field public useVideoElementMock:Ljava/lang/Boolean;
+.field private useVideoElementMock:Ljava/lang/Boolean;
 
-.field public videoElementMockDuration:Ljava/lang/Float;
+.field private videoElementMockDuration:Ljava/lang/Float;
 
 
 # direct methods

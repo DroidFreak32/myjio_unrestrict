@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/app/cinemasdk/ui/JioCinemaActivity;)V
+.method private constructor <init>(Lcom/app/cinemasdk/ui/JioCinemaActivity;)V
     .locals 0
 
     .line 1

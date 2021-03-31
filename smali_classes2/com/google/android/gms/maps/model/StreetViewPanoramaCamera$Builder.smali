@@ -33,6 +33,10 @@
 
 .method public constructor <init>(Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

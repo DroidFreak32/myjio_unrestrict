@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/internal/ClientIdentity;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -33,17 +34,20 @@
 
 
 # instance fields
-.field public final packageName:Ljava/lang/String;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        defaultValueUnchecked = "null"
-        id = 0x2
-    .end annotation
-.end field
-
-.field public final uid:I
+.field private final zaa:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValueUnchecked = "0"
         id = 0x1
+    .end annotation
+.end field
+
+.field private final zab:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        defaultValueUnchecked = "null"
+        id = 0x2
     .end annotation
 .end field
 
@@ -53,9 +57,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/common/internal/zab;
+    new-instance v0, Lcom/google/android/gms/common/internal/zaa;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/internal/zab;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/internal/zaa;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/internal/ClientIdentity;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -70,6 +74,9 @@
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
         .end annotation
@@ -81,10 +88,10 @@
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->uid:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zaa:I
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->packageName:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zab:Ljava/lang/String;
 
     return-void
 .end method
@@ -93,6 +100,10 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 
@@ -100,34 +111,32 @@
 
     return v0
 
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
-
     .line 1
-    instance-of v2, p1, Lcom/google/android/gms/common/internal/ClientIdentity;
+    :cond_0
+    instance-of v1, p1, Lcom/google/android/gms/common/internal/ClientIdentity;
 
-    if-nez v2, :cond_1
+    const/4 v2, 0x0
 
-    goto :goto_0
+    if-nez v1, :cond_1
+
+    return v2
 
     .line 2
     :cond_1
     check-cast p1, Lcom/google/android/gms/common/internal/ClientIdentity;
 
     .line 3
-    iget v2, p1, Lcom/google/android/gms/common/internal/ClientIdentity;->uid:I
+    iget v1, p1, Lcom/google/android/gms/common/internal/ClientIdentity;->zaa:I
 
-    iget v3, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->uid:I
+    iget v3, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zaa:I
 
-    if-ne v2, v3, :cond_2
+    if-ne v1, v3, :cond_2
 
-    iget-object p1, p1, Lcom/google/android/gms/common/internal/ClientIdentity;->packageName:Ljava/lang/String;
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/ClientIdentity;->zab:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->packageName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zab:Ljava/lang/String;
 
-    invoke-static {p1, v2}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -136,15 +145,14 @@
     return v0
 
     :cond_2
-    :goto_0
-    return v1
+    return v2
 .end method
 
 .method public hashCode()I
     .locals 1
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->uid:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zaa:I
 
     return v0
 .end method
@@ -153,9 +161,9 @@
     .locals 4
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->uid:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zaa:I
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->packageName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zab:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -195,14 +203,14 @@
     move-result p2
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->uid:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zaa:I
 
     const/4 v1, 0x1
 
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->packageName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ClientIdentity;->zab:Ljava/lang/String;
 
     const/4 v1, 0x2
 

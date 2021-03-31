@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+.field private static final synthetic $VALUES:[Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
 .field public static final enum Center_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
@@ -39,128 +39,116 @@
 
 
 # instance fields
-.field public final id:I
+.field private final id:I
 
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 14
 
     .line 1
     new-instance v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     sget v1, Lcom/daimajia/slider/library/R$id;->default_center_bottom_indicator:I
 
-    const/4 v2, 0x0
+    const-string v2, "Center_Bottom"
 
-    const-string v3, "Center_Bottom"
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v3, v2, v3, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+    invoke-direct {v0, v2, v3, v2, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
     sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Center_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     .line 2
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    new-instance v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
-    sget v1, Lcom/daimajia/slider/library/R$id;->default_bottom_right_indicator:I
-
-    const/4 v3, 0x1
+    sget v2, Lcom/daimajia/slider/library/R$id;->default_bottom_right_indicator:I
 
     const-string v4, "Right_Bottom"
 
-    invoke-direct {v0, v4, v3, v4, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+    const/4 v5, 0x1
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Right_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    invoke-direct {v1, v4, v5, v4, v2}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+
+    sput-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Right_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     .line 3
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    new-instance v2, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
-    sget v1, Lcom/daimajia/slider/library/R$id;->default_bottom_left_indicator:I
+    sget v4, Lcom/daimajia/slider/library/R$id;->default_bottom_left_indicator:I
 
-    const/4 v4, 0x2
+    const-string v6, "Left_Bottom"
 
-    const-string v5, "Left_Bottom"
+    const/4 v7, 0x2
 
-    invoke-direct {v0, v5, v4, v5, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+    invoke-direct {v2, v6, v7, v6, v4}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Left_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    sput-object v2, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Left_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     .line 4
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    new-instance v4, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
-    sget v1, Lcom/daimajia/slider/library/R$id;->default_center_top_indicator:I
+    sget v6, Lcom/daimajia/slider/library/R$id;->default_center_top_indicator:I
 
-    const/4 v5, 0x3
+    const-string v8, "Center_Top"
 
-    const-string v6, "Center_Top"
+    const/4 v9, 0x3
 
-    invoke-direct {v0, v6, v5, v6, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+    invoke-direct {v4, v8, v9, v8, v6}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Center_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    sput-object v4, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Center_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     .line 5
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    new-instance v6, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
-    sget v1, Lcom/daimajia/slider/library/R$id;->default_center_top_right_indicator:I
+    sget v8, Lcom/daimajia/slider/library/R$id;->default_center_top_right_indicator:I
 
-    const/4 v6, 0x4
+    const-string v10, "Right_Top"
 
-    const-string v7, "Right_Top"
+    const/4 v11, 0x4
 
-    invoke-direct {v0, v7, v6, v7, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+    invoke-direct {v6, v10, v11, v10, v8}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Right_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    sput-object v6, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Right_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     .line 6
-    new-instance v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    new-instance v8, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
-    sget v1, Lcom/daimajia/slider/library/R$id;->default_center_top_left_indicator:I
+    sget v10, Lcom/daimajia/slider/library/R$id;->default_center_top_left_indicator:I
 
-    const/4 v7, 0x5
+    const-string v12, "Left_Top"
 
-    const-string v8, "Left_Top"
+    const/4 v13, 0x5
 
-    invoke-direct {v0, v8, v7, v8, v1}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
+    invoke-direct {v8, v12, v13, v12, v10}, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Left_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    sput-object v8, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Left_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
-    const/4 v0, 0x6
+    const/4 v10, 0x6
 
-    new-array v0, v0, [Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    new-array v10, v10, [Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+
+    aput-object v0, v10, v3
+
+    aput-object v1, v10, v5
+
+    aput-object v2, v10, v7
+
+    aput-object v4, v10, v9
+
+    aput-object v6, v10, v11
+
+    aput-object v8, v10, v13
 
     .line 7
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Center_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Right_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Left_Bottom:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Center_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Right_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->Left_Top:Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
-
-    aput-object v1, v0, v7
-
-    sput-object v0, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->$VALUES:[Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
+    sput-object v10, Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;->$VALUES:[Lcom/daimajia/slider/library/SliderLayout$PresetIndicators;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

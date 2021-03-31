@@ -1,188 +1,295 @@
 .class public final Lcom/google/android/gms/ads/internal/overlay/zzb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
+    creator = "AdLauncherIntentInfoCreator"
+.end annotation
+
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
     value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/ads/internal/overlay/zzc;",
-        ">;"
+        0x1
     }
 .end annotation
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/ads/internal/overlay/zzb;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public final intent:Landroid/content/Intent;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x9
+    .end annotation
+.end field
+
+.field public final mimeType:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x4
+    .end annotation
+.end field
+
+.field public final packageName:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x5
+    .end annotation
+.end field
+
+.field public final url:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x3
+    .end annotation
+.end field
+
+.field private final zzdqc:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x2
+    .end annotation
+.end field
+
+.field public final zzdqd:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x6
+    .end annotation
+.end field
+
+.field public final zzdqe:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x7
+    .end annotation
+.end field
+
+.field private final zzdqf:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x8
+    .end annotation
+.end field
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/ads/internal/overlay/zzc;
+
+    invoke-direct {v0}, Lcom/google/android/gms/ads/internal/overlay/zzc;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/ads/internal/overlay/zzb;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 9
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, p0
+
+    move-object v8, p1
+
+    .line 2
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/ads/internal/overlay/zzb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 9
+
+    const/4 v8, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    move-object/from16 v7, p7
+
+    .line 1
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/ads/internal/overlay/zzb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Intent;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x2
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x3
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x4
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x5
+        .end annotation
+    .end param
+    .param p5    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x6
+        .end annotation
+    .end param
+    .param p6    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x7
+        .end annotation
+    .end param
+    .param p7    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x8
+        .end annotation
+    .end param
+    .param p8    # Landroid/content/Intent;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x9
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
+    .end annotation
+
+    .line 3
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+
+    .line 4
+    iput-object p1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqc:Ljava/lang/String;
+
+    .line 5
+    iput-object p2, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->url:Ljava/lang/String;
+
+    .line 6
+    iput-object p3, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->mimeType:Ljava/lang/String;
+
+    .line 7
+    iput-object p4, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->packageName:Ljava/lang/String;
+
+    .line 8
+    iput-object p5, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqd:Ljava/lang/String;
+
+    .line 9
+    iput-object p6, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqe:Ljava/lang/String;
+
+    .line 10
+    iput-object p7, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqf:Ljava/lang/String;
+
+    .line 11
+    iput-object p8, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->intent:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 11
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 4
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    move-object v3, v1
-
-    move-object v4, v3
-
-    move-object v5, v4
-
-    move-object v6, v5
-
-    move-object v7, v6
-
-    move-object v8, v7
-
-    move-object v9, v8
-
-    move-object v10, v9
-
     .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqc:Ljava/lang/String;
 
-    move-result v1
+    const/4 v2, 0x2
 
-    if-ge v1, v0, :cond_0
+    const/4 v3, 0x0
+
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->url:Ljava/lang/String;
 
-    move-result v1
+    const/4 v2, 0x3
+
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 4
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->mimeType:Ljava/lang/String;
 
-    move-result v2
+    const/4 v2, 0x4
 
-    packed-switch v2, :pswitch_data_0
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 5
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->packageName:Ljava/lang/String;
 
-    goto :goto_0
+    const/4 v2, 0x5
+
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 6
-    :pswitch_0
-    sget-object v2, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqd:Ljava/lang/String;
+
+    const/4 v2, 0x6
+
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 7
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqe:Ljava/lang/String;
 
-    move-result-object v1
+    const/4 v2, 0x7
 
-    move-object v10, v1
-
-    check-cast v10, Landroid/content/Intent;
-
-    goto :goto_0
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 8
-    :pswitch_1
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->zzdqf:Ljava/lang/String;
 
-    move-result-object v9
+    const/16 v2, 0x8
 
-    goto :goto_0
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 9
-    :pswitch_2
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/ads/internal/overlay/zzb;->intent:Landroid/content/Intent;
 
-    move-result-object v8
+    const/16 v2, 0x9
 
-    goto :goto_0
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 10
-    :pswitch_3
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
-    move-result-object v7
-
-    goto :goto_0
-
-    .line 11
-    :pswitch_4
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v6
-
-    goto :goto_0
-
-    .line 12
-    :pswitch_5
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    goto :goto_0
-
-    .line 13
-    :pswitch_6
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_0
-
-    .line 14
-    :pswitch_7
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    .line 15
-    :cond_0
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    .line 16
-    new-instance p1, Lcom/google/android/gms/ads/internal/overlay/zzc;
-
-    move-object v2, p1
-
-    invoke-direct/range {v2 .. v10}, Lcom/google/android/gms/ads/internal/overlay/zzc;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Intent;)V
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-array p1, p1, [Lcom/google/android/gms/ads/internal/overlay/zzc;
-
-    return-object p1
+    return-void
 .end method

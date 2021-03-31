@@ -4,83 +4,83 @@
 
 
 # static fields
-.field public static final INNER_PADDING_RATIO:F = 0.125f
+.field private static final INNER_PADDING_RATIO:F = 0.125f
 
-.field public static final TAG:Ljava/lang/String; = "SubtitlePainter"
+.field private static final TAG:Ljava/lang/String; = "SubtitlePainter"
 
 
 # instance fields
-.field public applyEmbeddedFontSizes:Z
+.field private applyEmbeddedFontSizes:Z
 
-.field public applyEmbeddedStyles:Z
+.field private applyEmbeddedStyles:Z
 
-.field public backgroundColor:I
+.field private backgroundColor:I
 
-.field public bitmapRect:Landroid/graphics/Rect;
+.field private bitmapRect:Landroid/graphics/Rect;
 
-.field public bottomPaddingFraction:F
+.field private bottomPaddingFraction:F
 
-.field public cueBitmap:Landroid/graphics/Bitmap;
+.field private cueBitmap:Landroid/graphics/Bitmap;
 
-.field public cueBitmapHeight:F
+.field private cueBitmapHeight:F
 
-.field public cueLine:F
+.field private cueLine:F
 
-.field public cueLineAnchor:I
+.field private cueLineAnchor:I
 
-.field public cueLineType:I
+.field private cueLineType:I
 
-.field public cuePosition:F
+.field private cuePosition:F
 
-.field public cuePositionAnchor:I
+.field private cuePositionAnchor:I
 
-.field public cueSize:F
+.field private cueSize:F
 
-.field public cueText:Ljava/lang/CharSequence;
+.field private cueText:Ljava/lang/CharSequence;
 
-.field public cueTextAlignment:Landroid/text/Layout$Alignment;
+.field private cueTextAlignment:Landroid/text/Layout$Alignment;
 
-.field public cueTextSizePx:F
+.field private cueTextSizePx:F
 
-.field public defaultTextSizePx:F
+.field private defaultTextSizePx:F
 
-.field public edgeColor:I
+.field private edgeColor:I
 
-.field public edgeType:I
+.field private edgeType:I
 
-.field public foregroundColor:I
+.field private foregroundColor:I
 
-.field public final outlineWidth:F
+.field private final outlineWidth:F
 
-.field public final paint:Landroid/graphics/Paint;
+.field private final paint:Landroid/graphics/Paint;
 
-.field public parentBottom:I
+.field private parentBottom:I
 
-.field public parentLeft:I
+.field private parentLeft:I
 
-.field public parentRight:I
+.field private parentRight:I
 
-.field public parentTop:I
+.field private parentTop:I
 
-.field public final shadowOffset:F
+.field private final shadowOffset:F
 
-.field public final shadowRadius:F
+.field private final shadowRadius:F
 
-.field public final spacingAdd:F
+.field private final spacingAdd:F
 
-.field public final spacingMult:F
+.field private final spacingMult:F
 
-.field public textLayout:Landroid/text/StaticLayout;
+.field private textLayout:Landroid/text/StaticLayout;
 
-.field public textLeft:I
+.field private textLeft:I
 
-.field public textPaddingX:I
+.field private textPaddingX:I
 
-.field public final textPaint:Landroid/text/TextPaint;
+.field private final textPaint:Landroid/text/TextPaint;
 
-.field public textTop:I
+.field private textTop:I
 
-.field public windowColor:I
+.field private windowColor:I
 
 
 # direct methods
@@ -102,12 +102,12 @@
     const/4 v2, 0x0
 
     .line 3
-    invoke-virtual {p1, v2, v0, v1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v1, v0, v2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 4
-    invoke-virtual {v0, v1, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v1
 
@@ -175,13 +175,9 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     .line 14
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
-
     invoke-virtual {p1, v1}, Landroid/text/TextPaint;->setAntiAlias(Z)V
 
     .line 15
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
-
     invoke-virtual {p1, v1}, Landroid/text/TextPaint;->setSubpixelText(Z)V
 
     .line 16
@@ -192,13 +188,9 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->paint:Landroid/graphics/Paint;
 
     .line 17
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->paint:Landroid/graphics/Paint;
-
     invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 18
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->paint:Landroid/graphics/Paint;
-
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -212,7 +204,7 @@
     .end array-data
 .end method
 
-.method public static areCharSequencesEqual(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+.method private static areCharSequencesEqual(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
     .locals 0
 
     if-eq p0, p1, :cond_1
@@ -418,10 +410,7 @@
 
     if-ne v2, v6, :cond_8
 
-    .line 14
     :cond_4
-    iget v2, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->edgeType:I
-
     if-ne v2, v5, :cond_5
 
     goto :goto_0
@@ -438,17 +427,17 @@
 
     goto :goto_1
 
-    .line 15
+    .line 14
     :cond_6
     iget v5, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->edgeColor:I
 
     :goto_1
     if-eqz v4, :cond_7
 
-    .line 16
+    .line 15
     iget v2, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->edgeColor:I
 
-    .line 17
+    .line 16
     :cond_7
     iget v4, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->shadowRadius:F
 
@@ -456,21 +445,21 @@
 
     div-float/2addr v4, v6
 
-    .line 18
+    .line 17
     iget-object v6, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     iget v7, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->foregroundColor:I
 
     invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 19
+    .line 18
     iget-object v6, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     sget-object v7, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 20
+    .line 19
     iget-object v6, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     iget v7, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->shadowRadius:F
@@ -479,17 +468,17 @@
 
     invoke-virtual {v6, v7, v8, v8, v5}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
 
-    .line 21
+    .line 20
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 22
+    .line 21
     iget-object v5, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     iget v6, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->shadowRadius:F
 
     invoke-virtual {v5, v6, v4, v4, v2}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
 
-    .line 23
+    .line 22
     :cond_8
     :goto_2
     iget-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
@@ -498,24 +487,24 @@
 
     invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 24
+    .line 23
     iget-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     sget-object v4, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 25
+    .line 24
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 26
+    .line 25
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textPaint:Landroid/text/TextPaint;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2, v2, v2, v3}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
 
-    .line 27
+    .line 26
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     return-void
@@ -966,8 +955,6 @@
     iput-object v7, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textLayout:Landroid/text/StaticLayout;
 
     .line 31
-    iget-object v7, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textLayout:Landroid/text/StaticLayout;
-
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getHeight()I
 
     move-result v7
@@ -981,31 +968,31 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    const/4 v15, 0x0
 
     :goto_4
-    if-ge v9, v8, :cond_9
+    if-ge v15, v8, :cond_9
 
     .line 33
-    iget-object v11, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textLayout:Landroid/text/StaticLayout;
+    iget-object v10, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->textLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v11, v9}, Landroid/text/StaticLayout;->getLineWidth(I)F
-
-    move-result v11
-
-    float-to-double v11, v11
-
-    invoke-static {v11, v12}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v11
-
-    double-to-int v11, v11
-
-    invoke-static {v11, v10}, Ljava/lang/Math;->max(II)I
+    invoke-virtual {v10, v15}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v10
 
-    add-int/lit8 v9, v9, 0x1
+    float-to-double v10, v10
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v10
+
+    double-to-int v10, v10
+
+    invoke-static {v10, v9}, Ljava/lang/Math;->max(II)I
+
+    move-result v9
+
+    add-int/lit8 v15, v15, 0x1
 
     goto :goto_4
 
@@ -1013,18 +1000,18 @@
     :cond_9
     iget v8, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->cueSize:F
 
-    const/4 v9, 0x1
+    const/4 v10, 0x1
 
-    cmpl-float v8, v8, v9
+    cmpl-float v8, v8, v10
 
     if-eqz v8, :cond_a
 
-    if-ge v10, v5, :cond_a
+    if-ge v9, v5, :cond_a
 
     goto :goto_5
 
     :cond_a
-    move v5, v10
+    move v5, v9
 
     :goto_5
     add-int/2addr v5, v4
@@ -1034,9 +1021,9 @@
 
     const/4 v8, 0x1
 
-    const/4 v10, 0x2
+    const/4 v9, 0x2
 
-    cmpl-float v11, v4, v9
+    cmpl-float v11, v4, v10
 
     if-eqz v11, :cond_d
 
@@ -1054,28 +1041,26 @@
     add-int/2addr v1, v4
 
     .line 37
-    iget v4, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->cuePositionAnchor:I
+    iget v10, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->cuePositionAnchor:I
 
-    if-ne v4, v10, :cond_b
+    if-ne v10, v9, :cond_b
 
     sub-int/2addr v1, v5
 
     goto :goto_6
 
     :cond_b
-    if-ne v4, v8, :cond_c
+    if-ne v10, v8, :cond_c
 
     mul-int/lit8 v1, v1, 0x2
 
     sub-int/2addr v1, v5
 
-    div-int/2addr v1, v10
+    div-int/2addr v1, v9
 
     .line 38
     :cond_c
     :goto_6
-    iget v4, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->parentLeft:I
-
     invoke-static {v1, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v1
@@ -1095,7 +1080,7 @@
     sub-int/2addr v1, v5
 
     .line 40
-    div-int/2addr v1, v10
+    div-int/2addr v1, v9
 
     iget v4, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->parentLeft:I
 
@@ -1204,7 +1189,7 @@
     :goto_9
     iget v3, v0, Lcom/google/android/jioexoplayer2/jioui/SubtitlePainter;->cueLineAnchor:I
 
-    if-ne v3, v10, :cond_11
+    if-ne v3, v9, :cond_11
 
     sub-int/2addr v2, v7
 
@@ -1217,7 +1202,7 @@
 
     sub-int/2addr v2, v7
 
-    div-int/2addr v2, v10
+    div-int/2addr v2, v9
 
     :cond_12
     :goto_a

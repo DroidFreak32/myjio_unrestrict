@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final encodingException:Ljava/io/UnsupportedEncodingException;
+.field private final encodingException:Ljava/io/UnsupportedEncodingException;
 
 
 # direct methods

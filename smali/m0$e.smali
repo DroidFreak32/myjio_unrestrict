@@ -1,5 +1,5 @@
 .class public Lm0$e;
-.super Lg1;
+.super Landroidx/appcompat/view/WindowCallbackWrapper;
 .source "ToolbarActionBar.java"
 
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic t:Lm0;
+.field public final synthetic b:Lm0;
 
 
 # direct methods
@@ -23,10 +23,10 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lm0$e;->t:Lm0;
+    iput-object p1, p0, Lm0$e;->b:Lm0;
 
     .line 2
-    invoke-direct {p0, p2}, Lg1;-><init>(Landroid/view/Window$Callback;)V
+    invoke-direct {p0, p2}, Landroidx/appcompat/view/WindowCallbackWrapper;-><init>(Landroid/view/Window$Callback;)V
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     .line 1
     new-instance p1, Landroid/view/View;
 
-    iget-object v0, p0, Lm0$e;->t:Lm0;
+    iget-object v0, p0, Lm0$e;->b:Lm0;
 
-    iget-object v0, v0, Lm0;->a:Lp2;
+    iget-object v0, v0, Lm0;->a:Landroidx/appcompat/widget/DecorToolbar;
 
-    invoke-interface {v0}, Lp2;->getContext()Landroid/content/Context;
+    invoke-interface {v0}, Landroidx/appcompat/widget/DecorToolbar;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -55,7 +55,7 @@
 
     .line 2
     :cond_0
-    invoke-super {p0, p1}, Lg1;->onCreatePanelView(I)Landroid/view/View;
+    invoke-super {p0, p1}, Landroidx/appcompat/view/WindowCallbackWrapper;->onCreatePanelView(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -66,26 +66,26 @@
     .locals 0
 
     .line 1
-    invoke-super {p0, p1, p2, p3}, Lg1;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
+    invoke-super {p0, p1, p2, p3}, Landroidx/appcompat/view/WindowCallbackWrapper;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
     .line 2
-    iget-object p2, p0, Lm0$e;->t:Lm0;
+    iget-object p2, p0, Lm0$e;->b:Lm0;
 
     iget-boolean p3, p2, Lm0;->b:Z
 
     if-nez p3, :cond_0
 
     .line 3
-    iget-object p2, p2, Lm0;->a:Lp2;
+    iget-object p2, p2, Lm0;->a:Landroidx/appcompat/widget/DecorToolbar;
 
-    invoke-interface {p2}, Lp2;->setMenuPrepared()V
+    invoke-interface {p2}, Landroidx/appcompat/widget/DecorToolbar;->setMenuPrepared()V
 
     .line 4
-    iget-object p2, p0, Lm0$e;->t:Lm0;
+    iget-object p2, p0, Lm0$e;->b:Lm0;
 
     const/4 p3, 0x1
 

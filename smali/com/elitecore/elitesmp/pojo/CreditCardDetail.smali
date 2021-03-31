@@ -6,17 +6,17 @@
 
 
 # instance fields
-.field public creditCardNumber:Ljava/lang/String;
+.field private creditCardNumber:Ljava/lang/String;
 
-.field public cvvNumber:Ljava/lang/String;
+.field private cvvNumber:Ljava/lang/String;
 
-.field public expMonth:Ljava/lang/String;
+.field private expMonth:Ljava/lang/String;
 
-.field public expYear:Ljava/lang/String;
+.field private expYear:Ljava/lang/String;
 
-.field public pg_AuthStatu:Ljava/lang/String;
+.field private pg_AuthStatu:Ljava/lang/String;
 
-.field public pg_selectedPayGw:Ljava/lang/String;
+.field private pg_selectedPayGw:Ljava/lang/String;
 
 
 # direct methods

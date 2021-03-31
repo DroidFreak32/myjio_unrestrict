@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/location/ActivityTransitionEvent;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -27,21 +28,21 @@
 
 
 # instance fields
-.field public final zzi:I
+.field private final zza:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getActivityType"
         id = 0x1
     .end annotation
 .end field
 
-.field public final zzj:I
+.field private final zzb:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTransitionType"
         id = 0x2
     .end annotation
 .end field
 
-.field public final zzk:J
+.field private final zzc:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getElapsedRealTimeNanos"
         id = 0x3
@@ -53,9 +54,10 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/location/zzd;
+    .line 1
+    new-instance v0, Lcom/google/android/gms/location/zzh;
 
-    invoke-direct {v0}, Lcom/google/android/gms/location/zzd;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/location/zzh;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/ActivityTransitionEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -82,17 +84,20 @@
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
     .end annotation
 
+    .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/location/DetectedActivity;->zzb(I)V
-
+    .line 2
     invoke-static {p2}, Lcom/google/android/gms/location/ActivityTransition;->zza(I)V
 
-    iput p1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzi:I
+    .line 3
+    iput p1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zza:I
 
-    iput p2, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzj:I
+    .line 4
+    iput p2, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzb:I
 
-    iput-wide p3, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzk:J
+    .line 5
+    iput-wide p3, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzc:J
 
     return-void
 .end method
@@ -108,6 +113,7 @@
 
     return v0
 
+    .line 1
     :cond_0
     instance-of v1, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;
 
@@ -117,24 +123,26 @@
 
     return v2
 
+    .line 2
     :cond_1
     check-cast p1, Lcom/google/android/gms/location/ActivityTransitionEvent;
 
-    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzi:I
+    .line 3
+    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zza:I
 
-    iget v3, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzi:I
-
-    if-ne v1, v3, :cond_2
-
-    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzj:I
-
-    iget v3, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzj:I
+    iget v3, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;->zza:I
 
     if-ne v1, v3, :cond_2
 
-    iget-wide v3, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzk:J
+    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzb:I
 
-    iget-wide v5, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzk:J
+    iget v3, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzb:I
+
+    if-ne v1, v3, :cond_2
+
+    iget-wide v3, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzc:J
+
+    iget-wide v5, p1, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzc:J
 
     cmp-long p1, v3, v5
 
@@ -149,7 +157,8 @@
 .method public getActivityType()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzi:I
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zza:I
 
     return v0
 .end method
@@ -157,7 +166,8 @@
 .method public getElapsedRealTimeNanos()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzk:J
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzc:J
 
     return-wide v0
 .end method
@@ -165,7 +175,8 @@
 .method public getTransitionType()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzj:I
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzb:I
 
     return v0
 .end method
@@ -177,7 +188,8 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzi:I
+    .line 1
+    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zza:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -187,7 +199,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzj:I
+    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzb:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -197,7 +209,7 @@
 
     aput-object v1, v0, v2
 
-    iget-wide v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzk:J
+    iget-wide v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzc:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -217,11 +229,13 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
+    .line 1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzi:I
+    .line 2
+    iget v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zza:I
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -243,9 +257,11 @@
 
     const-string v1, " "
 
+    .line 3
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v2, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzj:I
+    .line 4
+    iget v2, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzb:I
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -265,9 +281,11 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 5
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzk:J
+    .line 6
+    iget-wide v1, p0, Lcom/google/android/gms/location/ActivityTransitionEvent;->zzc:J
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -287,6 +305,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 7
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -297,34 +316,42 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
+    .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
+    .line 2
     invoke-virtual {p0}, Lcom/google/android/gms/location/ActivityTransitionEvent;->getActivityType()I
 
     move-result v0
 
     const/4 v1, 0x1
 
+    .line 3
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
+    .line 4
     invoke-virtual {p0}, Lcom/google/android/gms/location/ActivityTransitionEvent;->getTransitionType()I
 
     move-result v0
 
     const/4 v1, 0x2
 
+    .line 5
     invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
+    .line 6
     invoke-virtual {p0}, Lcom/google/android/gms/location/ActivityTransitionEvent;->getElapsedRealTimeNanos()J
 
     move-result-wide v0
 
     const/4 v2, 0x3
 
+    .line 7
     invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
 
+    .line 8
     invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
     return-void

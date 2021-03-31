@@ -12,13 +12,13 @@
 
 .field public static final ANALYTIC_INVOKE_SYNC:I = 0x2
 
-.field public static analyticsSyncPojo:Lcom/elitecorelib/analytics/pojo/AnalyticsSyncPojo;
+.field private static analyticsSyncPojo:Lcom/elitecorelib/analytics/pojo/AnalyticsSyncPojo;
 
 
 # instance fields
-.field public ANALYTIC_INVOKE:I
+.field private ANALYTIC_INVOKE:I
 
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
 .field public classes:[Ljava/lang/Class;
 
@@ -60,35 +60,35 @@
 
     aput-object v1, v0, v2
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
+    const/4 v1, 0x1
 
-    const/4 v3, 0x1
+    const-class v3, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+    const/4 v1, 0x2
 
-    const/4 v3, 0x2
+    const-class v3, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
+    const/4 v1, 0x3
 
-    const/4 v3, 0x3
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoUptimeDetails;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
+    const/4 v1, 0x4
 
-    const/4 v3, 0x4
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
-    const-class v1, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
+    const/4 v1, 0x5
 
-    const/4 v3, 0x5
+    const-class v3, Lcom/elitecorelib/core/room/pojo/PojoOffloadSpeed;
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v1
 
     iput-object v0, p0, Lcom/elitecorelib/analytics/services/AnalyticsSyncService;->classes:[Ljava/lang/Class;
 
@@ -100,11 +100,11 @@
 
     const-string v0, "false"
 
-    invoke-static {p1, v0}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    const-string v0, "true"
+    const-string/jumbo v0, "true"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -252,7 +252,7 @@
 
     if-eqz v1, :cond_6
 
-    invoke-static {}, Lc20;->h()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->H()V
 
     new-instance v1, Lcom/elitecorelib/analytics/pojo/AnalyticsSyncPojo;
 
@@ -531,7 +531,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;JJ)V"
@@ -638,7 +638,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/util/List<",
             "+",
@@ -913,7 +913,7 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v0}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -962,7 +962,7 @@
 
     const-string v4, "10"
 
-    invoke-static {v3, v4}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1068,7 +1068,7 @@
 
     const-string v2, "Analytics data purged successfully."
 
-    invoke-static {v2}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -1310,7 +1310,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
-            "Lgh;",
+            "Landroidx/room/Room;",
             ">(",
             "Ljava/lang/Class<",
             "TT;>;I)",
@@ -1528,7 +1528,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Lc20;->c(J)J
+    invoke-static {v0, v1}, Lcom/elitecorelib/andsf/utility/a;->c(J)J
 
     move-result-wide v4
 
@@ -1538,7 +1538,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Lc20;->b(J)J
+    invoke-static {v0, v1}, Lcom/elitecorelib/andsf/utility/a;->b(J)J
 
     move-result-wide v4
 
@@ -1550,11 +1550,11 @@
 
     invoke-virtual {v2, v8, v3}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v0, v1}, Lc20;->c(J)J
+    invoke-static {v0, v1}, Lcom/elitecorelib/andsf/utility/a;->c(J)J
 
     move-result-wide v2
 
-    invoke-static {v0, v1}, Lc20;->b(J)J
+    invoke-static {v0, v1}, Lcom/elitecorelib/andsf/utility/a;->b(J)J
 
     move-result-wide v4
 
@@ -1756,7 +1756,7 @@
 
     invoke-virtual {v0, v2, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {p1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/elitecorelib/analytics/services/AnalyticsSyncService;->performCirculerBuffer()V
 
@@ -1771,7 +1771,7 @@
 
     if-nez p1, :cond_7
 
-    invoke-static {}, Lk40;->b()V
+    invoke-static {}, Lcom/elitecorelib/wifi/receiver/f;->b()V
 
     :cond_7
     if-ne v1, p2, :cond_8

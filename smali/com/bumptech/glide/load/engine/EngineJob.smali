@@ -32,17 +32,17 @@
 
 
 # static fields
-.field public static final DEFAULT_FACTORY:Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;
+.field private static final DEFAULT_FACTORY:Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;
 
 
 # instance fields
-.field public final animationExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private final animationExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
 .field public final cbs:Lcom/bumptech/glide/load/engine/EngineJob$ResourceCallbacksAndExecutors;
 
 .field public dataSource:Lcom/bumptech/glide/load/DataSource;
 
-.field public decodeJob:Lcom/bumptech/glide/load/engine/DecodeJob;
+.field private decodeJob:Lcom/bumptech/glide/load/engine/DecodeJob;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/DecodeJob<",
@@ -51,7 +51,7 @@
     .end annotation
 .end field
 
-.field public final diskCacheExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private final diskCacheExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
 .field public engineResource:Lcom/bumptech/glide/load/engine/EngineResource;
     .annotation system Ldalvik/annotation/Signature;
@@ -62,37 +62,37 @@
     .end annotation
 .end field
 
-.field public final engineResourceFactory:Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;
+.field private final engineResourceFactory:Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;
 
 .field public exception:Lcom/bumptech/glide/load/engine/GlideException;
 
-.field public hasLoadFailed:Z
+.field private hasLoadFailed:Z
 
-.field public hasResource:Z
+.field private hasResource:Z
 
-.field public isCacheable:Z
+.field private isCacheable:Z
 
-.field public volatile isCancelled:Z
+.field private volatile isCancelled:Z
 
-.field public key:Lcom/bumptech/glide/load/Key;
+.field private key:Lcom/bumptech/glide/load/Key;
 
-.field public final listener:Lcom/bumptech/glide/load/engine/EngineJobListener;
+.field private final listener:Lcom/bumptech/glide/load/engine/EngineJobListener;
 
-.field public onlyRetrieveFromCache:Z
+.field private onlyRetrieveFromCache:Z
 
-.field public final pendingCallbacks:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final pendingCallbacks:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public final pool:Lz8;
+.field private final pool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/EngineJob<",
             "*>;>;"
         }
     .end annotation
 .end field
 
-.field public resource:Lcom/bumptech/glide/load/engine/Resource;
+.field private resource:Lcom/bumptech/glide/load/engine/Resource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/Resource<",
@@ -101,15 +101,15 @@
     .end annotation
 .end field
 
-.field public final sourceExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private final sourceExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
-.field public final sourceUnlimitedExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private final sourceUnlimitedExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
-.field public final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
+.field private final stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
 
-.field public useAnimationPool:Z
+.field private useAnimationPool:Z
 
-.field public useUnlimitedSourceGeneratorPool:Z
+.field private useUnlimitedSourceGeneratorPool:Z
 
 
 # direct methods
@@ -126,7 +126,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/EngineJobListener;Lz8;)V
+.method public constructor <init>(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/EngineJobListener;Landroidx/core/util/Pools$Pool;)V
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -136,7 +136,7 @@
             "Lcom/bumptech/glide/load/engine/executor/GlideExecutor;",
             "Lcom/bumptech/glide/load/engine/executor/GlideExecutor;",
             "Lcom/bumptech/glide/load/engine/EngineJobListener;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/EngineJob<",
             "*>;>;)V"
         }
@@ -159,13 +159,16 @@
 
     move-object v6, p6
 
-    invoke-direct/range {v0 .. v7}, Lcom/bumptech/glide/load/engine/EngineJob;-><init>(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/EngineJobListener;Lz8;Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;)V
+    invoke-direct/range {v0 .. v7}, Lcom/bumptech/glide/load/engine/EngineJob;-><init>(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/EngineJobListener;Landroidx/core/util/Pools$Pool;Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/EngineJobListener;Lz8;Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;)V
+.method public constructor <init>(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/executor/GlideExecutor;Lcom/bumptech/glide/load/engine/EngineJobListener;Landroidx/core/util/Pools$Pool;Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;)V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -174,7 +177,7 @@
             "Lcom/bumptech/glide/load/engine/executor/GlideExecutor;",
             "Lcom/bumptech/glide/load/engine/executor/GlideExecutor;",
             "Lcom/bumptech/glide/load/engine/EngineJobListener;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Lcom/bumptech/glide/load/engine/EngineJob<",
             "*>;>;",
             "Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;",
@@ -222,7 +225,7 @@
     iput-object p5, p0, Lcom/bumptech/glide/load/engine/EngineJob;->listener:Lcom/bumptech/glide/load/engine/EngineJobListener;
 
     .line 11
-    iput-object p6, p0, Lcom/bumptech/glide/load/engine/EngineJob;->pool:Lz8;
+    iput-object p6, p0, Lcom/bumptech/glide/load/engine/EngineJob;->pool:Landroidx/core/util/Pools$Pool;
 
     .line 12
     iput-object p7, p0, Lcom/bumptech/glide/load/engine/EngineJob;->engineResourceFactory:Lcom/bumptech/glide/load/engine/EngineJob$EngineResourceFactory;
@@ -343,9 +346,9 @@
     iput-object v0, p0, Lcom/bumptech/glide/load/engine/EngineJob;->dataSource:Lcom/bumptech/glide/load/DataSource;
 
     .line 13
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/EngineJob;->pool:Lz8;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/EngineJob;->pool:Landroidx/core/util/Pools$Pool;
 
-    invoke-interface {v0, p0}, Lz8;->release(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Landroidx/core/util/Pools$Pool;->release(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -623,8 +626,6 @@
     if-eqz v0, :cond_1
 
     .line 6
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/EngineJob;->engineResource:Lcom/bumptech/glide/load/engine/EngineResource;
-
     invoke-virtual {v0}, Lcom/bumptech/glide/load/engine/EngineResource;->release()V
 
     .line 7
@@ -649,6 +650,8 @@
 
 .method public getVerifier()Lcom/bumptech/glide/util/pool/StateVerifier;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/EngineJob;->stateVerifier:Lcom/bumptech/glide/util/pool/StateVerifier;
@@ -685,8 +688,6 @@
     if-eqz p1, :cond_0
 
     .line 3
-    iget-object p1, p0, Lcom/bumptech/glide/load/engine/EngineJob;->engineResource:Lcom/bumptech/glide/load/engine/EngineResource;
-
     invoke-virtual {p1}, Lcom/bumptech/glide/load/engine/EngineResource;->acquire()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -707,6 +708,9 @@
 
 .method public declared-synchronized init(Lcom/bumptech/glide/load/Key;ZZZZ)Lcom/bumptech/glide/load/engine/EngineJob;
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

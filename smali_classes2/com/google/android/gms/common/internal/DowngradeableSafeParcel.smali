@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -11,15 +12,21 @@
 
 
 # static fields
-.field public static final zzdc:Ljava/lang/Object;
+.field private static final zza:Ljava/lang/Object;
 
-.field public static zzdd:Ljava/lang/ClassLoader;
+.field private static zzb:Ljava/lang/ClassLoader;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public static zzde:Ljava/lang/Integer;
+.field private static zzc:Ljava/lang/Integer;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # instance fields
-.field public zzdf:Z
+.field private zzd:Z
 
 
 # direct methods
@@ -31,7 +38,7 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzdc:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zza:Ljava/lang/Object;
 
     return-void
 .end method
@@ -45,18 +52,25 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-boolean v0, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzdf:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzd:Z
 
     return-void
 .end method
 
 .method public static canUnparcelSafely(Ljava/lang/String;)Z
     .locals 0
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzp()Ljava/lang/ClassLoader;
+    invoke-static {}, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zza()Ljava/lang/ClassLoader;
 
     const/4 p0, 0x1
 
@@ -65,11 +79,14 @@
 
 .method public static getUnparcelClientVersion()Ljava/lang/Integer;
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzdc:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -92,11 +109,13 @@
     throw v1
 .end method
 
-.method public static zzp()Ljava/lang/ClassLoader;
+.method private static zza()Ljava/lang/ClassLoader;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzdc:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -122,28 +141,42 @@
 
 # virtual methods
 .method public abstract prepareForClientVersion(I)Z
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end method
 
 .method public setShouldDowngrade(Z)V
     .locals 0
+    .param p1    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzdf:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzd:Z
 
     return-void
 .end method
 
 .method public shouldDowngrade()Z
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzdf:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->zzd:Z
 
     return v0
 .end method

@@ -11,7 +11,7 @@
     invoke-direct {p0}, Landroidx/transition/TransitionSet;-><init>()V
 
     .line 2
-    invoke-virtual {p0}, Landroidx/transition/AutoTransition;->c()V
+    invoke-virtual {p0}, Landroidx/transition/AutoTransition;->d()V
 
     return-void
 .end method
@@ -23,20 +23,20 @@
     invoke-direct {p0, p1, p2}, Landroidx/transition/TransitionSet;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 4
-    invoke-virtual {p0}, Landroidx/transition/AutoTransition;->c()V
+    invoke-virtual {p0}, Landroidx/transition/AutoTransition;->d()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
+.method public final d()V
     .locals 3
 
     const/4 v0, 0x1
 
     .line 1
-    invoke-virtual {p0, v0}, Landroidx/transition/TransitionSet;->b(I)Landroidx/transition/TransitionSet;
+    invoke-virtual {p0, v0}, Landroidx/transition/TransitionSet;->setOrdering(I)Landroidx/transition/TransitionSet;
 
     .line 2
     new-instance v1, Landroidx/transition/Fade;
@@ -45,7 +45,7 @@
 
     invoke-direct {v1, v2}, Landroidx/transition/Fade;-><init>(I)V
 
-    invoke-virtual {p0, v1}, Landroidx/transition/TransitionSet;->a(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
+    invoke-virtual {p0, v1}, Landroidx/transition/TransitionSet;->addTransition(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
 
     move-result-object v1
 
@@ -54,7 +54,7 @@
     invoke-direct {v2}, Landroidx/transition/ChangeBounds;-><init>()V
 
     .line 3
-    invoke-virtual {v1, v2}, Landroidx/transition/TransitionSet;->a(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
+    invoke-virtual {v1, v2}, Landroidx/transition/TransitionSet;->addTransition(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
 
     move-result-object v1
 
@@ -63,7 +63,7 @@
     invoke-direct {v2, v0}, Landroidx/transition/Fade;-><init>(I)V
 
     .line 4
-    invoke-virtual {v1, v2}, Landroidx/transition/TransitionSet;->a(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
+    invoke-virtual {v1, v2}, Landroidx/transition/TransitionSet;->addTransition(Landroidx/transition/Transition;)Landroidx/transition/TransitionSet;
 
     return-void
 .end method

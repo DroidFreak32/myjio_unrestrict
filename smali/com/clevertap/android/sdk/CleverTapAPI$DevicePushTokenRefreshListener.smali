@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract devicePushTokenDidRefresh(Ljava/lang/String;Lcom/clevertap/android/sdk/PushType;)V
+.method public abstract devicePushTokenDidRefresh(Ljava/lang/String;Lcom/clevertap/android/sdk/pushnotification/PushConstants$PushType;)V
 .end method

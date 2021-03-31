@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field public currentTime:F
+.field private currentTime:F
 
-.field public duration:F
+.field private duration:F
 
 
 # direct methods

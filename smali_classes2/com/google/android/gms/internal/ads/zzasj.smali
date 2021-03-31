@@ -1,55 +1,60 @@
 .class public final Lcom/google/android/gms/internal/ads/zzasj;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Lcom/google/android/gms/internal/ads/zzasd;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # instance fields
-.field public final synthetic val$view:Landroid/view/View;
-
-.field public final synthetic zzdgi:Lcom/google/android/gms/internal/ads/zzajy;
-
-.field public final synthetic zzdgj:I
-
-.field public final synthetic zzdgk:Lcom/google/android/gms/internal/ads/zzash;
+.field private final synthetic zzdsg:Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzash;Landroid/view/View;Lcom/google/android/gms/internal/ads/zzajy;I)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzash;Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdgk:Lcom/google/android/gms/internal/ads/zzash;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdsg:Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzasj;->val$view:Landroid/view/View;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdgi:Lcom/google/android/gms/internal/ads/zzajy;
-
-    iput p4, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdgj:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzasd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final onError(Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdgk:Lcom/google/android/gms/internal/ads/zzash;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdsg:Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzasj;->val$view:Landroid/view/View;
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;->onFailure(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdgi:Lcom/google/android/gms/internal/ads/zzajy;
+    return-void
+.end method
 
-    iget v3, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdgj:I
+.method public final onSuccess(Ljava/util/List;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Landroid/net/Uri;",
+            ">;)V"
+        }
+    .end annotation
 
-    add-int/lit8 v3, v3, -0x1
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasj;->zzdsg:Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzash;->zza(Lcom/google/android/gms/internal/ads/zzash;Landroid/view/View;Lcom/google/android/gms/internal/ads/zzajy;I)V
+    const/4 v1, 0x0
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/net/Uri;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/query/UpdateClickUrlCallback;->onSuccess(Landroid/net/Uri;)V
 
     return-void
 .end method

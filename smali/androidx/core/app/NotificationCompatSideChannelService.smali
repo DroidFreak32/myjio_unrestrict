@@ -87,13 +87,13 @@
     throw v0
 .end method
 
-.method public abstract a(Ljava/lang/String;)V
+.method public abstract cancel(Ljava/lang/String;ILjava/lang/String;)V
 .end method
 
-.method public abstract a(Ljava/lang/String;ILjava/lang/String;)V
+.method public abstract cancelAll(Ljava/lang/String;)V
 .end method
 
-.method public abstract a(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
+.method public abstract notify(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;

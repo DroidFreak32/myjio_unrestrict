@@ -13,15 +13,15 @@
 
 
 # instance fields
-.field public final accessor:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;
+.field private final accessor:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public final mutator:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;
+.field private final mutator:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;
 
-.field public final originalValueHolder:[Ljava/lang/Object;
+.field private final originalValueHolder:[Ljava/lang/Object;
 
-.field public final originalValues:Ljava/util/WeakHashMap;
+.field private final originalValues:Ljava/util/WeakHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/WeakHashMap<",
@@ -32,7 +32,7 @@
     .end annotation
 .end field
 
-.field public final path:Ljava/util/List;
+.field private final path:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -42,7 +42,7 @@
     .end annotation
 .end field
 
-.field public final pathFinder:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder;
+.field private final pathFinder:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit$Pathfinder;
 
 
 # direct methods

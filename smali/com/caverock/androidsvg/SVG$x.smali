@@ -47,7 +47,7 @@
 
 
 # virtual methods
-.method public g()Ljava/lang/String;
+.method public m()Ljava/lang/String;
     .locals 1
 
     const-string v0, "pattern"

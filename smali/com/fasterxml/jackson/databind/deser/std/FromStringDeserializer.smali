@@ -204,84 +204,84 @@
 
     new-array v0, v0, [Ljava/lang/Class;
 
+    const/4 v1, 0x0
+
     .line 1
-    const-class v1, Ljava/io/File;
+    const-class v2, Ljava/io/File;
 
-    const/4 v2, 0x0
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x1
 
-    const-class v1, Ljava/net/URL;
+    const-class v2, Ljava/net/URL;
 
-    const/4 v2, 0x1
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x2
 
-    const-class v1, Ljava/net/URI;
+    const-class v2, Ljava/net/URI;
 
-    const/4 v2, 0x2
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x3
 
-    const-class v1, Ljava/lang/Class;
+    const-class v2, Ljava/lang/Class;
 
-    const/4 v2, 0x3
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x4
 
-    const-class v1, Lcom/fasterxml/jackson/databind/JavaType;
+    const-class v2, Lcom/fasterxml/jackson/databind/JavaType;
 
-    const/4 v2, 0x4
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x5
 
-    const-class v1, Ljava/util/Currency;
+    const-class v2, Ljava/util/Currency;
 
-    const/4 v2, 0x5
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x6
 
-    const-class v1, Ljava/util/regex/Pattern;
+    const-class v2, Ljava/util/regex/Pattern;
 
-    const/4 v2, 0x6
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/4 v1, 0x7
 
-    const-class v1, Ljava/util/Locale;
+    const-class v2, Ljava/util/Locale;
 
-    const/4 v2, 0x7
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/16 v1, 0x8
 
-    const-class v1, Ljava/nio/charset/Charset;
+    const-class v2, Ljava/nio/charset/Charset;
 
-    const/16 v2, 0x8
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/16 v1, 0x9
 
-    const-class v1, Ljava/util/TimeZone;
+    const-class v2, Ljava/util/TimeZone;
 
-    const/16 v2, 0x9
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/16 v1, 0xa
 
-    const-class v1, Ljava/net/InetAddress;
+    const-class v2, Ljava/net/InetAddress;
 
-    const/16 v2, 0xa
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/16 v1, 0xb
 
-    const-class v1, Ljava/net/InetSocketAddress;
+    const-class v2, Ljava/net/InetSocketAddress;
 
-    const/16 v2, 0xb
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v2
+    const/16 v1, 0xc
 
-    const-class v1, Ljava/lang/StringBuilder;
+    const-class v2, Ljava/lang/StringBuilder;
 
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     return-object v0
 .end method
@@ -297,6 +297,12 @@
             ")TT;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public _deserializeEmbedded(Ljava/lang/Object;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
@@ -307,6 +313,12 @@
             "Ljava/lang/Object;",
             "Lcom/fasterxml/jackson/databind/DeserializationContext;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -354,6 +366,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     return-object v0
@@ -367,6 +385,12 @@
             "Lcom/fasterxml/jackson/core/JsonParser;",
             "Lcom/fasterxml/jackson/databind/DeserializationContext;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static volatile zzdj:Lcom/google/android/gms/internal/gcm/zzk;
+.field private static volatile zzdj:Lcom/google/android/gms/internal/gcm/zzk;
 
 
 # direct methods

@@ -6,43 +6,43 @@
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field private a:Ljava/lang/String;
 
-.field public b:Ljava/lang/String;
+.field private b:Ljava/lang/String;
 
-.field public c:Ljava/lang/String;
+.field private c:Ljava/lang/String;
 
-.field public d:Ljava/lang/String;
+.field private d:Ljava/lang/String;
 
-.field public e:Ljava/lang/String;
+.field private e:Ljava/lang/String;
 
-.field public f:Ljava/lang/String;
+.field private f:Ljava/lang/String;
 
-.field public g:Ljava/lang/String;
+.field private g:Ljava/lang/String;
 
-.field public h:Ljava/lang/String;
+.field private h:Ljava/lang/String;
 
-.field public i:Z
+.field private i:Z
 
-.field public j:Z
+.field private j:Z
 
-.field public k:Z
+.field private k:Z
 
-.field public l:Z
+.field private l:Z
 
-.field public m:Z
+.field private m:Z
 
-.field public n:Ljava/lang/String;
+.field private n:Ljava/lang/String;
 
-.field public o:Ljava/lang/String;
+.field private o:Ljava/lang/String;
 
-.field public p:Ljava/lang/String;
+.field private p:Ljava/lang/String;
 
-.field public q:Z
+.field private q:Z
 
-.field public r:I
+.field private r:I
 
-.field public s:Z
+.field private s:Z
 
 
 # direct methods

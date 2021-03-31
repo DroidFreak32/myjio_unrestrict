@@ -19,11 +19,11 @@
 
 
 # instance fields
-.field public final zzmn:Lcom/google/android/gms/internal/clearcut/zzdo;
+.field private final zzmn:Lcom/google/android/gms/internal/clearcut/zzdo;
 
-.field public final zzmo:Z
+.field private final zzmo:Z
 
-.field public final zzmx:Lcom/google/android/gms/internal/clearcut/zzex;
+.field private final zzmx:Lcom/google/android/gms/internal/clearcut/zzex;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzex<",
@@ -32,7 +32,7 @@
     .end annotation
 .end field
 
-.field public final zzmy:Lcom/google/android/gms/internal/clearcut/zzbu;
+.field private final zzmy:Lcom/google/android/gms/internal/clearcut/zzbu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzbu<",
@@ -43,7 +43,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/clearcut/zzex;Lcom/google/android/gms/internal/clearcut/zzbu;Lcom/google/android/gms/internal/clearcut/zzdo;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/clearcut/zzex;Lcom/google/android/gms/internal/clearcut/zzbu;Lcom/google/android/gms/internal/clearcut/zzdo;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -231,6 +231,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzdu;->zzmy:Lcom/google/android/gms/internal/clearcut/zzbu;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/clearcut/zzbu;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzby;
@@ -338,6 +344,12 @@
             "(TT;[BII",
             "Lcom/google/android/gms/internal/clearcut/zzay;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

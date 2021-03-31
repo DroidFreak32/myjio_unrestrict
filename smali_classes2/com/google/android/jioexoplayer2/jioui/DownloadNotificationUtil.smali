@@ -4,11 +4,14 @@
 
 
 # static fields
-.field public static final NULL_STRING_ID:I
+.field private static final NULL_STRING_ID:I
+    .annotation build Landroidx/annotation/StringRes;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -19,6 +22,18 @@
 
 .method public static buildDownloadCompletedNotification(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;)Landroid/app/Notification;
     .locals 6
+    .param p1    # I
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+    .end param
+    .param p3    # Landroid/app/PendingIntent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     sget v5, Lcom/app/cinemasdk/R$string;->exo_download_completed:I
@@ -34,12 +49,12 @@
     move-object v4, p4
 
     .line 2
-    invoke-static/range {v0 .. v5}, Lcom/google/android/jioexoplayer2/jioui/DownloadNotificationUtil;->newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Lq6$d;
+    invoke-static/range {v0 .. v5}, Lcom/google/android/jioexoplayer2/jioui/DownloadNotificationUtil;->newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p0
 
     .line 3
-    invoke-virtual {p0}, Lq6$d;->a()Landroid/app/Notification;
+    invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p0
 
@@ -48,6 +63,18 @@
 
 .method public static buildDownloadFailedNotification(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;)Landroid/app/Notification;
     .locals 6
+    .param p1    # I
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+    .end param
+    .param p3    # Landroid/app/PendingIntent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     sget v5, Lcom/app/cinemasdk/R$string;->exo_download_failed:I
@@ -63,12 +90,12 @@
     move-object v4, p4
 
     .line 2
-    invoke-static/range {v0 .. v5}, Lcom/google/android/jioexoplayer2/jioui/DownloadNotificationUtil;->newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Lq6$d;
+    invoke-static/range {v0 .. v5}, Lcom/google/android/jioexoplayer2/jioui/DownloadNotificationUtil;->newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p0
 
     .line 3
-    invoke-virtual {p0}, Lq6$d;->a()Landroid/app/Notification;
+    invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p0
 
@@ -77,6 +104,18 @@
 
 .method public static buildProgressNotification(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;[Lcom/google/android/jioexoplayer2/offline/DownloadManager$TaskState;)Landroid/app/Notification;
     .locals 17
+    .param p1    # I
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+    .end param
+    .param p3    # Landroid/app/PendingIntent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     move-object/from16 v0, p5
 
@@ -86,8 +125,6 @@
     const/4 v2, 0x1
 
     const/4 v3, 0x0
-
-    const/4 v4, 0x0
 
     const/4 v4, 0x0
 
@@ -104,9 +141,9 @@
     const/4 v10, 0x0
 
     :goto_0
-    if-ge v4, v1, :cond_4
+    if-ge v5, v1, :cond_4
 
-    aget-object v11, v0, v4
+    aget-object v11, v0, v5
 
     .line 2
     iget v12, v11, Lcom/google/android/jioexoplayer2/offline/DownloadManager$TaskState;->state:I
@@ -127,21 +164,21 @@
 
     if-eqz v12, :cond_1
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     goto :goto_2
 
     .line 4
     :cond_1
-    iget v5, v11, Lcom/google/android/jioexoplayer2/offline/DownloadManager$TaskState;->downloadPercentage:F
+    iget v6, v11, Lcom/google/android/jioexoplayer2/offline/DownloadManager$TaskState;->downloadPercentage:F
 
     const/high16 v12, -0x40800000    # -1.0f
 
-    cmpl-float v12, v5, v12
+    cmpl-float v12, v6, v12
 
     if-eqz v12, :cond_2
 
-    add-float/2addr v7, v5
+    add-float/2addr v4, v6
 
     const/4 v9, 0x0
 
@@ -151,33 +188,31 @@
 
     const-wide/16 v13, 0x0
 
-    cmp-long v5, v11, v13
+    cmp-long v6, v11, v13
 
-    if-lez v5, :cond_3
+    if-lez v6, :cond_3
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    or-int/2addr v5, v10
+    or-int/2addr v10, v6
 
     add-int/lit8 v8, v8, 0x1
 
-    move v10, v5
-
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     :goto_2
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
     :cond_4
-    if-eqz v5, :cond_5
+    if-eqz v6, :cond_5
 
     .line 6
     sget v0, Lcom/app/cinemasdk/R$string;->exo_download_downloading:I
@@ -188,7 +223,7 @@
     goto :goto_4
 
     :cond_5
-    if-eqz v6, :cond_6
+    if-eqz v7, :cond_6
 
     sget v0, Lcom/app/cinemasdk/R$string;->exo_download_removing:I
 
@@ -209,17 +244,17 @@
     move-object/from16 v15, p4
 
     .line 7
-    invoke-static/range {v11 .. v16}, Lcom/google/android/jioexoplayer2/jioui/DownloadNotificationUtil;->newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Lq6$d;
+    invoke-static/range {v11 .. v16}, Lcom/google/android/jioexoplayer2/jioui/DownloadNotificationUtil;->newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object v0
 
-    if-eqz v5, :cond_8
+    if-eqz v6, :cond_8
 
     int-to-float v1, v8
 
-    div-float/2addr v7, v1
+    div-float/2addr v4, v1
 
-    float-to-int v1, v7
+    float-to-int v1, v4
 
     if-eqz v9, :cond_7
 
@@ -242,32 +277,50 @@
     const/16 v5, 0x64
 
     .line 8
-    invoke-virtual {v0, v5, v1, v4}, Lq6$d;->a(IIZ)Lq6$d;
+    invoke-virtual {v0, v5, v1, v4}, Landroidx/core/app/NotificationCompat$Builder;->setProgress(IIZ)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 9
-    invoke-virtual {v0, v2}, Lq6$d;->d(Z)Lq6$d;
+    invoke-virtual {v0, v2}, Landroidx/core/app/NotificationCompat$Builder;->setOngoing(Z)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 10
-    invoke-virtual {v0, v3}, Lq6$d;->e(Z)Lq6$d;
+    invoke-virtual {v0, v3}, Landroidx/core/app/NotificationCompat$Builder;->setShowWhen(Z)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 11
-    invoke-virtual {v0}, Lq6$d;->a()Landroid/app/Notification;
+    invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Lq6$d;
+.method private static newNotificationBuilder(Landroid/content/Context;ILjava/lang/String;Landroid/app/PendingIntent;Ljava/lang/String;I)Landroidx/core/app/NotificationCompat$Builder;
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+    .end param
+    .param p3    # Landroid/app/PendingIntent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # I
+        .annotation build Landroidx/annotation/StringRes;
+        .end annotation
+    .end param
 
     .line 1
-    new-instance v0, Lq6$d;
+    new-instance v0, Landroidx/core/app/NotificationCompat$Builder;
 
-    invoke-direct {v0, p0, p2}, Lq6$d;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 2
-    invoke-virtual {v0, p1}, Lq6$d;->f(I)Lq6$d;
+    invoke-virtual {v0, p1}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object p1
 
     if-eqz p5, :cond_0
 
@@ -280,26 +333,28 @@
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Lq6$d;->b(Ljava/lang/CharSequence;)Lq6$d;
+    invoke-virtual {p1, p0}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_0
     if-eqz p3, :cond_1
 
     .line 4
-    invoke-virtual {v0, p3}, Lq6$d;->a(Landroid/app/PendingIntent;)Lq6$d;
+    invoke-virtual {p1, p3}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_1
     if-eqz p4, :cond_2
 
     .line 5
-    new-instance p0, Lq6$c;
+    new-instance p0, Landroidx/core/app/NotificationCompat$BigTextStyle;
 
-    invoke-direct {p0}, Lq6$c;-><init>()V
+    invoke-direct {p0}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
 
-    invoke-virtual {p0, p4}, Lq6$c;->a(Ljava/lang/CharSequence;)Lq6$c;
+    invoke-virtual {p0, p4}, Landroidx/core/app/NotificationCompat$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
 
-    invoke-virtual {v0, p0}, Lq6$d;->a(Lq6$g;)Lq6$d;
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_2
-    return-object v0
+    return-object p1
 .end method

@@ -1,6 +1,9 @@
 .class public Lo8$b;
 .super Ljava/lang/Object;
-.source "BidiFormatter.java"
+.source "SVGAndroidRenderer.java"
+
+# interfaces
+.implements Lcom/caverock/androidsvg/SVG$w;
 
 
 # annotations
@@ -9,830 +12,454 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = "b"
 .end annotation
 
 
-# static fields
-.field public static final f:[B
-
-
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lo8$c;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final b:Z
+.field public b:F
 
-.field public final c:I
+.field public c:F
 
-.field public d:I
+.field public d:Lo8$c;
 
-.field public e:C
+.field public e:Z
+
+.field public f:Z
+
+.field public g:I
+
+.field public h:Z
+
+.field public final synthetic i:Lo8;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
-
-    const/16 v0, 0x700
-
-    new-array v1, v0, [B
+.method public constructor <init>(Lo8;Lcom/caverock/androidsvg/SVG$v;)V
+    .locals 2
 
     .line 1
-    sput-object v1, Lo8$b;->f:[B
+    iput-object p1, p0, Lo8$b;->i:Lo8;
 
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    .line 2
-    sget-object v2, Lo8$b;->f:[B
-
-    invoke-static {v1}, Ljava/lang/Character;->getDirectionality(I)B
-
-    move-result v3
-
-    aput-byte v3, v2, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/CharSequence;Z)V
-    .locals 0
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lo8$b;->a:Ljava/lang/CharSequence;
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Lo8$b;->a:Ljava/util/List;
+
+    const/4 p1, 0x0
 
     .line 3
-    iput-boolean p2, p0, Lo8$b;->b:Z
+    iput-object p1, p0, Lo8$b;->d:Lo8$c;
+
+    const/4 p1, 0x0
 
     .line 4
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    iput-boolean p1, p0, Lo8$b;->e:Z
 
-    move-result p1
+    const/4 v0, 0x1
 
-    iput p1, p0, Lo8$b;->c:I
+    iput-boolean v0, p0, Lo8$b;->f:Z
+
+    const/4 v0, -0x1
+
+    .line 5
+    iput v0, p0, Lo8$b;->g:I
+
+    if-nez p2, :cond_0
 
     return-void
-.end method
 
-.method public static a(C)B
-    .locals 1
-
-    const/16 v0, 0x700
-
-    if-ge p0, v0, :cond_0
-
-    .line 1
-    sget-object v0, Lo8$b;->f:[B
-
-    aget-byte p0, v0, p0
-
-    goto :goto_0
-
+    .line 6
     :cond_0
-    invoke-static {p0}, Ljava/lang/Character;->getDirectionality(C)B
+    invoke-virtual {p2, p0}, Lcom/caverock/androidsvg/SVG$v;->h(Lcom/caverock/androidsvg/SVG$w;)V
 
-    move-result p0
+    .line 7
+    iget-boolean p2, p0, Lo8$b;->h:Z
 
-    :goto_0
-    return p0
+    if-eqz p2, :cond_1
+
+    .line 8
+    iget-object p2, p0, Lo8$b;->d:Lo8$c;
+
+    iget-object v0, p0, Lo8$b;->a:Ljava/util/List;
+
+    iget v1, p0, Lo8$b;->g:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo8$c;
+
+    invoke-virtual {p2, v0}, Lo8$c;->b(Lo8$c;)V
+
+    .line 9
+    iget-object p2, p0, Lo8$b;->a:Ljava/util/List;
+
+    iget v0, p0, Lo8$b;->g:I
+
+    iget-object v1, p0, Lo8$b;->d:Lo8$c;
+
+    invoke-interface {p2, v0, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 10
+    iput-boolean p1, p0, Lo8$b;->h:Z
+
+    .line 11
+    :cond_1
+    iget-object p1, p0, Lo8$b;->d:Lo8$c;
+
+    if-eqz p1, :cond_2
+
+    .line 12
+    iget-object p2, p0, Lo8$b;->a:Ljava/util/List;
+
+    invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()B
-    .locals 3
-
-    .line 2
-    iget-object v0, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    iget v1, p0, Lo8$b;->d:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    iput-char v0, p0, Lo8$b;->e:C
-
-    .line 3
-    iget-char v0, p0, Lo8$b;->e:C
-
-    invoke-static {v0}, Ljava/lang/Character;->isLowSurrogate(C)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 4
-    iget-object v0, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    iget v1, p0, Lo8$b;->d:I
-
-    invoke-static {v0, v1}, Ljava/lang/Character;->codePointBefore(Ljava/lang/CharSequence;I)I
-
-    move-result v0
-
-    .line 5
-    iget v1, p0, Lo8$b;->d:I
-
-    invoke-static {v0}, Ljava/lang/Character;->charCount(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    iput v1, p0, Lo8$b;->d:I
-
-    .line 6
-    invoke-static {v0}, Ljava/lang/Character;->getDirectionality(I)B
-
-    move-result v0
-
-    return v0
-
-    .line 7
-    :cond_0
-    iget v0, p0, Lo8$b;->d:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lo8$b;->d:I
-
-    .line 8
-    iget-char v0, p0, Lo8$b;->e:C
-
-    invoke-static {v0}, Lo8$b;->a(C)B
-
-    move-result v0
-
-    .line 9
-    iget-boolean v1, p0, Lo8$b;->b:Z
-
-    if-eqz v1, :cond_2
-
-    .line 10
-    iget-char v1, p0, Lo8$b;->e:C
-
-    const/16 v2, 0x3e
-
-    if-ne v1, v2, :cond_1
-
-    .line 11
-    invoke-virtual {p0}, Lo8$b;->g()B
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v2, 0x3b
-
-    if-ne v1, v2, :cond_2
-
-    .line 12
-    invoke-virtual {p0}, Lo8$b;->e()B
-
-    move-result v0
-
-    :cond_2
-    :goto_0
-    return v0
-.end method
-
-.method public b()B
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    iget v1, p0, Lo8$b;->d:I
-
-    invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    iput-char v0, p0, Lo8$b;->e:C
-
-    .line 2
-    iget-char v0, p0, Lo8$b;->e:C
-
-    invoke-static {v0}, Ljava/lang/Character;->isHighSurrogate(C)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    iget v1, p0, Lo8$b;->d:I
-
-    invoke-static {v0, v1}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I
-
-    move-result v0
-
-    .line 4
-    iget v1, p0, Lo8$b;->d:I
-
-    invoke-static {v0}, Ljava/lang/Character;->charCount(I)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lo8$b;->d:I
-
-    .line 5
-    invoke-static {v0}, Ljava/lang/Character;->getDirectionality(I)B
-
-    move-result v0
-
-    return v0
-
-    .line 6
-    :cond_0
-    iget v0, p0, Lo8$b;->d:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lo8$b;->d:I
-
-    .line 7
-    iget-char v0, p0, Lo8$b;->e:C
-
-    invoke-static {v0}, Lo8$b;->a(C)B
-
-    move-result v0
-
-    .line 8
-    iget-boolean v1, p0, Lo8$b;->b:Z
-
-    if-eqz v1, :cond_2
-
-    .line 9
-    iget-char v1, p0, Lo8$b;->e:C
-
-    const/16 v2, 0x3c
-
-    if-ne v1, v2, :cond_1
-
-    .line 10
-    invoke-virtual {p0}, Lo8$b;->h()B
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v2, 0x26
-
-    if-ne v1, v2, :cond_2
-
-    .line 11
-    invoke-virtual {p0}, Lo8$b;->f()B
-
-    move-result v0
-
-    :cond_2
-    :goto_0
-    return v0
-.end method
-
-.method public c()I
+.method public a(FFFF)V
     .locals 8
 
-    const/4 v0, 0x0
-
     .line 1
-    iput v0, p0, Lo8$b;->d:I
+    iget-object v0, p0, Lo8$b;->d:Lo8$c;
 
-    const/4 v1, -0x1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
+    invoke-virtual {v0, p1, p2}, Lo8$c;->a(FF)V
 
     .line 2
-    :cond_0
-    :goto_0
-    iget v6, p0, Lo8$b;->d:I
+    iget-object v0, p0, Lo8$b;->a:Ljava/util/List;
 
-    iget v7, p0, Lo8$b;->c:I
+    iget-object v1, p0, Lo8$b;->d:Lo8$c;
 
-    if-ge v6, v7, :cond_4
-
-    if-nez v3, :cond_4
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 3
-    invoke-virtual {p0}, Lo8$b;->b()B
+    new-instance v0, Lo8$c;
 
-    move-result v6
+    iget-object v3, p0, Lo8$b;->i:Lo8;
 
-    if-eqz v6, :cond_2
+    sub-float v6, p3, p1
 
-    if-eq v6, v2, :cond_1
+    sub-float v7, p4, p2
 
-    const/4 v7, 0x2
+    move-object v2, v0
 
-    if-eq v6, v7, :cond_1
+    move v4, p3
 
-    const/16 v7, 0x9
+    move v5, p4
 
-    if-eq v6, v7, :cond_0
+    invoke-direct/range {v2 .. v7}, Lo8$c;-><init>(Lo8;FFFF)V
 
-    packed-switch v6, :pswitch_data_0
+    iput-object v0, p0, Lo8$b;->d:Lo8$c;
 
-    goto :goto_1
-
-    :pswitch_0
-    add-int/lit8 v5, v5, -0x1
-
-    const/4 v4, 0x0
-
-    goto :goto_0
-
-    :pswitch_1
-    add-int/lit8 v5, v5, 0x1
-
-    const/4 v4, 0x1
-
-    goto :goto_0
-
-    :pswitch_2
-    add-int/lit8 v5, v5, 0x1
-
-    const/4 v4, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    if-nez v5, :cond_3
-
-    return v2
-
-    :cond_2
-    if-nez v5, :cond_3
-
-    return v1
-
-    :cond_3
-    :goto_1
-    move v3, v5
-
-    goto :goto_0
-
-    :cond_4
-    if-nez v3, :cond_5
-
-    return v0
-
-    :cond_5
-    if-eqz v4, :cond_6
-
-    return v4
+    const/4 p1, 0x0
 
     .line 4
-    :cond_6
-    :goto_2
-    iget v4, p0, Lo8$b;->d:I
+    iput-boolean p1, p0, Lo8$b;->h:Z
 
-    if-lez v4, :cond_8
-
-    .line 5
-    invoke-virtual {p0}, Lo8$b;->a()B
-
-    move-result v4
-
-    packed-switch v4, :pswitch_data_1
-
-    goto :goto_2
-
-    :pswitch_3
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_2
-
-    :pswitch_4
-    if-ne v3, v5, :cond_7
-
-    return v2
-
-    :pswitch_5
-    if-ne v3, v5, :cond_7
-
-    return v1
-
-    :cond_7
-    add-int/lit8 v5, v5, -0x1
-
-    goto :goto_2
-
-    :cond_8
-    return v0
-
-    :pswitch_data_0
-    .packed-switch 0xe
-        :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0xe
-        :pswitch_5
-        :pswitch_5
-        :pswitch_4
-        :pswitch_4
-        :pswitch_3
-    .end packed-switch
+    return-void
 .end method
 
-.method public d()I
-    .locals 7
+.method public b(FF)V
+    .locals 8
 
     .line 1
-    iget v0, p0, Lo8$b;->c:I
+    iget-boolean v0, p0, Lo8$b;->h:Z
 
-    iput v0, p0, Lo8$b;->d:I
+    if-eqz v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lo8$b;->d:Lo8$c;
+
+    iget-object v1, p0, Lo8$b;->a:Ljava/util/List;
+
+    iget v2, p0, Lo8$b;->g:I
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lo8$c;
+
+    invoke-virtual {v0, v1}, Lo8$c;->b(Lo8$c;)V
+
+    .line 3
+    iget-object v0, p0, Lo8$b;->a:Ljava/util/List;
+
+    iget v1, p0, Lo8$b;->g:I
+
+    iget-object v2, p0, Lo8$b;->d:Lo8$c;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
+
+    .line 4
+    iput-boolean v0, p0, Lo8$b;->h:Z
+
+    .line 5
+    :cond_0
+    iget-object v0, p0, Lo8$b;->d:Lo8$c;
+
+    if-eqz v0, :cond_1
+
+    .line 6
+    iget-object v1, p0, Lo8$b;->a:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 7
+    :cond_1
+    iput p1, p0, Lo8$b;->b:F
+
+    .line 8
+    iput p2, p0, Lo8$b;->c:F
+
+    .line 9
+    new-instance v0, Lo8$c;
+
+    iget-object v3, p0, Lo8$b;->i:Lo8;
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v2, v0
+
+    move v4, p1
+
+    move v5, p2
+
+    invoke-direct/range {v2 .. v7}, Lo8$c;-><init>(Lo8;FFFF)V
+
+    iput-object v0, p0, Lo8$b;->d:Lo8$c;
+
+    .line 10
+    iget-object p1, p0, Lo8$b;->a:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    iput p1, p0, Lo8$b;->g:I
+
+    return-void
+.end method
+
+.method public c(FFFFFF)V
+    .locals 8
+
+    .line 1
+    iget-boolean v0, p0, Lo8$b;->f:Z
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p0, Lo8$b;->e:Z
+
+    if-eqz v0, :cond_1
 
     .line 2
     :cond_0
-    :goto_0
-    iget v3, p0, Lo8$b;->d:I
+    iget-object v0, p0, Lo8$b;->d:Lo8$c;
 
-    if-lez v3, :cond_6
+    invoke-virtual {v0, p1, p2}, Lo8$c;->a(FF)V
 
     .line 3
-    invoke-virtual {p0}, Lo8$b;->a()B
+    iget-object p1, p0, Lo8$b;->a:Ljava/util/List;
 
-    move-result v3
+    iget-object p2, p0, Lo8$b;->d:Lo8$c;
 
-    const/4 v4, -0x1
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz v3, :cond_4
+    .line 4
+    iput-boolean v1, p0, Lo8$b;->e:Z
 
-    const/4 v5, 0x1
-
-    if-eq v3, v5, :cond_2
-
-    const/4 v6, 0x2
-
-    if-eq v3, v6, :cond_2
-
-    const/16 v6, 0x9
-
-    if-eq v3, v6, :cond_0
-
-    packed-switch v3, :pswitch_data_0
-
-    if-nez v1, :cond_0
-
-    goto :goto_1
-
-    :pswitch_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :pswitch_1
-    if-ne v1, v2, :cond_1
-
-    return v5
-
-    :pswitch_2
-    if-ne v1, v2, :cond_1
-
-    return v4
-
+    .line 5
     :cond_1
-    add-int/lit8 v2, v2, -0x1
+    new-instance p1, Lo8$c;
 
-    goto :goto_0
+    iget-object v3, p0, Lo8$b;->i:Lo8;
 
-    :cond_2
-    if-nez v2, :cond_3
+    sub-float v6, p5, p3
 
-    return v5
+    sub-float v7, p6, p4
 
-    :cond_3
-    if-nez v1, :cond_0
+    move-object v2, p1
 
-    goto :goto_1
+    move v4, p5
 
-    :cond_4
-    if-nez v2, :cond_5
+    move v5, p6
 
-    return v4
+    invoke-direct/range {v2 .. v7}, Lo8$c;-><init>(Lo8;FFFF)V
 
-    :cond_5
-    if-nez v1, :cond_0
+    iput-object p1, p0, Lo8$b;->d:Lo8$c;
 
-    :goto_1
+    .line 6
+    iput-boolean v1, p0, Lo8$b;->h:Z
+
+    return-void
+.end method
+
+.method public close()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo8$b;->a:Ljava/util/List;
+
+    iget-object v1, p0, Lo8$b;->d:Lo8$c;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 2
+    iget v0, p0, Lo8$b;->b:F
+
+    iget v1, p0, Lo8$b;->c:F
+
+    invoke-virtual {p0, v0, v1}, Lo8$b;->e(FF)V
+
+    const/4 v0, 0x1
+
+    .line 3
+    iput-boolean v0, p0, Lo8$b;->h:Z
+
+    return-void
+.end method
+
+.method public d(FFFZZFF)V
+    .locals 13
+
+    move-object v10, p0
+
+    const/4 v11, 0x1
+
+    .line 1
+    iput-boolean v11, v10, Lo8$b;->e:Z
+
+    const/4 v12, 0x0
+
+    .line 2
+    iput-boolean v12, v10, Lo8$b;->f:Z
+
+    .line 3
+    iget-object v0, v10, Lo8$b;->d:Lo8$c;
+
+    iget v1, v0, Lo8$c;->a:F
+
+    iget v2, v0, Lo8$c;->b:F
+
+    move v0, v1
+
     move v1, v2
 
-    goto :goto_0
+    move v2, p1
 
-    :cond_6
-    return v0
+    move v3, p2
 
-    :pswitch_data_0
-    .packed-switch 0xe
-        :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    move/from16 v4, p3
 
-.method public final e()B
-    .locals 4
+    move/from16 v5, p4
 
-    .line 1
-    iget v0, p0, Lo8$b;->d:I
+    move/from16 v6, p5
 
-    .line 2
-    :cond_0
-    iget v1, p0, Lo8$b;->d:I
+    move/from16 v7, p6
 
-    const/16 v2, 0x3b
+    move/from16 v8, p7
 
-    if-lez v1, :cond_2
+    move-object v9, p0
 
-    .line 3
-    iget-object v3, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, p0, Lo8$b;->d:I
-
-    invoke-interface {v3, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v1
-
-    iput-char v1, p0, Lo8$b;->e:C
+    invoke-static/range {v0 .. v9}, Lo8;->f(FFFFFZZFFLcom/caverock/androidsvg/SVG$w;)V
 
     .line 4
-    iget-char v1, p0, Lo8$b;->e:C
-
-    const/16 v3, 0x26
-
-    if-ne v1, v3, :cond_1
-
-    const/16 v0, 0xc
-
-    return v0
-
-    :cond_1
-    if-ne v1, v2, :cond_0
+    iput-boolean v11, v10, Lo8$b;->f:Z
 
     .line 5
-    :cond_2
-    iput v0, p0, Lo8$b;->d:I
+    iput-boolean v12, v10, Lo8$b;->h:Z
 
-    .line 6
-    iput-char v2, p0, Lo8$b;->e:C
-
-    const/16 v0, 0xd
-
-    return v0
+    return-void
 .end method
 
-.method public final f()B
-    .locals 3
+.method public e(FF)V
+    .locals 8
 
     .line 1
-    :goto_0
-    iget v0, p0, Lo8$b;->d:I
+    iget-object v0, p0, Lo8$b;->d:Lo8$c;
 
-    iget v1, p0, Lo8$b;->c:I
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v1, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Lo8$b;->d:I
-
-    invoke-interface {v1, v0}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    iput-char v0, p0, Lo8$b;->e:C
-
-    const/16 v1, 0x3b
-
-    if-eq v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v0, 0xc
-
-    return v0
-.end method
-
-.method public final g()B
-    .locals 4
-
-    .line 1
-    iget v0, p0, Lo8$b;->d:I
+    invoke-virtual {v0, p1, p2}, Lo8$c;->a(FF)V
 
     .line 2
-    :cond_0
-    iget v1, p0, Lo8$b;->d:I
+    iget-object v0, p0, Lo8$b;->a:Ljava/util/List;
 
-    const/16 v2, 0x3e
+    iget-object v1, p0, Lo8$b;->d:Lo8$c;
 
-    if-lez v1, :cond_4
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 3
-    iget-object v3, p0, Lo8$b;->a:Ljava/lang/CharSequence;
+    new-instance v0, Lo8$c;
 
-    add-int/lit8 v1, v1, -0x1
+    iget-object v3, p0, Lo8$b;->i:Lo8;
 
-    iput v1, p0, Lo8$b;->d:I
+    iget-object v1, p0, Lo8$b;->d:Lo8$c;
 
-    invoke-interface {v3, v1}, Ljava/lang/CharSequence;->charAt(I)C
+    iget v2, v1, Lo8$c;->a:F
 
-    move-result v1
+    sub-float v6, p1, v2
 
-    iput-char v1, p0, Lo8$b;->e:C
+    iget v1, v1, Lo8$c;->b:F
+
+    sub-float v7, p2, v1
+
+    move-object v2, v0
+
+    move v4, p1
+
+    move v5, p2
+
+    invoke-direct/range {v2 .. v7}, Lo8$c;-><init>(Lo8;FFFF)V
+
+    iput-object v0, p0, Lo8$b;->d:Lo8$c;
+
+    const/4 p1, 0x0
 
     .line 4
-    iget-char v1, p0, Lo8$b;->e:C
+    iput-boolean p1, p0, Lo8$b;->h:Z
 
-    const/16 v3, 0x3c
-
-    if-ne v1, v3, :cond_1
-
-    const/16 v0, 0xc
-
-    return v0
-
-    :cond_1
-    if-ne v1, v2, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    const/16 v2, 0x22
-
-    if-eq v1, v2, :cond_3
-
-    const/16 v2, 0x27
-
-    if-ne v1, v2, :cond_0
-
-    .line 5
-    :cond_3
-    iget-char v1, p0, Lo8$b;->e:C
-
-    .line 6
-    :goto_0
-    iget v2, p0, Lo8$b;->d:I
-
-    if-lez v2, :cond_0
-
-    iget-object v3, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    add-int/lit8 v2, v2, -0x1
-
-    iput v2, p0, Lo8$b;->d:I
-
-    invoke-interface {v3, v2}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    iput-char v2, p0, Lo8$b;->e:C
-
-    if-eq v2, v1, :cond_0
-
-    goto :goto_0
-
-    .line 7
-    :cond_4
-    :goto_1
-    iput v0, p0, Lo8$b;->d:I
-
-    .line 8
-    iput-char v2, p0, Lo8$b;->e:C
-
-    const/16 v0, 0xd
-
-    return v0
+    return-void
 .end method
 
-.method public final h()B
-    .locals 5
+.method public f()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lo8$c;",
+            ">;"
+        }
+    .end annotation
 
     .line 1
-    iget v0, p0, Lo8$b;->d:I
+    iget-object v0, p0, Lo8$b;->a:Ljava/util/List;
 
-    .line 2
-    :cond_0
-    iget v1, p0, Lo8$b;->d:I
-
-    iget v2, p0, Lo8$b;->c:I
-
-    if-ge v1, v2, :cond_3
-
-    .line 3
-    iget-object v2, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    add-int/lit8 v3, v1, 0x1
-
-    iput v3, p0, Lo8$b;->d:I
-
-    invoke-interface {v2, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v1
-
-    iput-char v1, p0, Lo8$b;->e:C
-
-    .line 4
-    iget-char v1, p0, Lo8$b;->e:C
-
-    const/16 v2, 0x3e
-
-    if-ne v1, v2, :cond_1
-
-    const/16 v0, 0xc
-
-    return v0
-
-    :cond_1
-    const/16 v2, 0x22
-
-    if-eq v1, v2, :cond_2
-
-    const/16 v2, 0x27
-
-    if-ne v1, v2, :cond_0
-
-    .line 5
-    :cond_2
-    iget-char v1, p0, Lo8$b;->e:C
-
-    .line 6
-    :goto_0
-    iget v2, p0, Lo8$b;->d:I
-
-    iget v3, p0, Lo8$b;->c:I
-
-    if-ge v2, v3, :cond_0
-
-    iget-object v3, p0, Lo8$b;->a:Ljava/lang/CharSequence;
-
-    add-int/lit8 v4, v2, 0x1
-
-    iput v4, p0, Lo8$b;->d:I
-
-    invoke-interface {v3, v2}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    iput-char v2, p0, Lo8$b;->e:C
-
-    if-eq v2, v1, :cond_0
-
-    goto :goto_0
-
-    .line 7
-    :cond_3
-    iput v0, p0, Lo8$b;->d:I
-
-    const/16 v0, 0x3c
-
-    .line 8
-    iput-char v0, p0, Lo8$b;->e:C
-
-    const/16 v0, 0xd
-
-    return v0
+    return-object v0
 .end method

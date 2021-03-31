@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "ScheduleManager"
+.field private static final MODULE:Ljava/lang/String; = "ScheduleManager"
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "setTaskScheduler > Error : Invalid class, "
+    const-string/jumbo v0, "setTaskScheduler > Error : Invalid class, "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -126,7 +126,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "setTaskScheduler > Error : "
+    const-string/jumbo p2, "setTaskScheduler > Error : "
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -174,7 +174,7 @@
 
     const-string v1, "false"
 
-    invoke-static {v0, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

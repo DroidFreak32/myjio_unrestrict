@@ -1,5 +1,5 @@
 .class public Landroidx/transition/TransitionSet$b;
-.super Lhj;
+.super Landroidx/transition/TransitionListenerAdapter;
 .source "TransitionSet.java"
 
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public s:Landroidx/transition/TransitionSet;
+.field public a:Landroidx/transition/TransitionSet;
 
 
 # direct methods
@@ -23,23 +23,60 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lhj;-><init>()V
+    invoke-direct {p0}, Landroidx/transition/TransitionListenerAdapter;-><init>()V
 
     .line 2
-    iput-object p1, p0, Landroidx/transition/TransitionSet$b;->s:Landroidx/transition/TransitionSet;
+    iput-object p1, p0, Landroidx/transition/TransitionSet$b;->a:Landroidx/transition/TransitionSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Landroidx/transition/Transition;)V
-    .locals 1
+.method public onTransitionEnd(Landroidx/transition/Transition;)V
+    .locals 2
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object p1, p0, Landroidx/transition/TransitionSet$b;->s:Landroidx/transition/TransitionSet;
+    iget-object v0, p0, Landroidx/transition/TransitionSet$b;->a:Landroidx/transition/TransitionSet;
 
-    iget-boolean v0, p1, Landroidx/transition/TransitionSet;->v:Z
+    iget v1, v0, Landroidx/transition/TransitionSet;->c:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, v0, Landroidx/transition/TransitionSet;->c:I
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    .line 2
+    iput-boolean v1, v0, Landroidx/transition/TransitionSet;->d:Z
+
+    .line 3
+    invoke-virtual {v0}, Landroidx/transition/Transition;->end()V
+
+    .line 4
+    :cond_0
+    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
+
+    return-void
+.end method
+
+.method public onTransitionStart(Landroidx/transition/Transition;)V
+    .locals 1
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object p1, p0, Landroidx/transition/TransitionSet$b;->a:Landroidx/transition/TransitionSet;
+
+    iget-boolean v0, p1, Landroidx/transition/TransitionSet;->d:Z
 
     if-nez v0, :cond_0
 
@@ -47,44 +84,12 @@
     invoke-virtual {p1}, Landroidx/transition/Transition;->start()V
 
     .line 3
-    iget-object p1, p0, Landroidx/transition/TransitionSet$b;->s:Landroidx/transition/TransitionSet;
+    iget-object p1, p0, Landroidx/transition/TransitionSet$b;->a:Landroidx/transition/TransitionSet;
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p1, Landroidx/transition/TransitionSet;->v:Z
+    iput-boolean v0, p1, Landroidx/transition/TransitionSet;->d:Z
 
     :cond_0
-    return-void
-.end method
-
-.method public d(Landroidx/transition/Transition;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Landroidx/transition/TransitionSet$b;->s:Landroidx/transition/TransitionSet;
-
-    iget v1, v0, Landroidx/transition/TransitionSet;->u:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, v0, Landroidx/transition/TransitionSet;->u:I
-
-    .line 2
-    iget v1, v0, Landroidx/transition/TransitionSet;->u:I
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    .line 3
-    iput-boolean v1, v0, Landroidx/transition/TransitionSet;->v:Z
-
-    .line 4
-    invoke-virtual {v0}, Landroidx/transition/Transition;->end()V
-
-    .line 5
-    :cond_0
-    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$g;)Landroidx/transition/Transition;
-
     return-void
 .end method

@@ -7,4 +7,9 @@
 
 # virtual methods
 .method public abstract onCameraMove()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

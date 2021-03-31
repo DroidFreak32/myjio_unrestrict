@@ -14,15 +14,15 @@
 
 
 # static fields
-.field public static final zzdn:Ljava/lang/Object;
+.field private static final zzdn:Ljava/lang/Object;
 
-.field public static zzdo:Z = false
+.field private static zzdo:Z = false
 
-.field public static volatile zzdp:Ljava/lang/Boolean;
+.field private static volatile zzdp:Ljava/lang/Boolean;
 
-.field public static volatile zzdq:Ljava/lang/Boolean;
+.field private static volatile zzdq:Ljava/lang/Boolean;
 
-.field public static zzh:Landroid/content/Context;
+.field private static zzh:Landroid/content/Context;
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "StaticFieldLeak"
@@ -32,13 +32,13 @@
 
 
 # instance fields
-.field public final zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
+.field private final zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
 
 .field public final zzds:Ljava/lang/String;
 
-.field public final zzdt:Ljava/lang/String;
+.field private final zzdt:Ljava/lang/String;
 
-.field public final zzdu:Ljava/lang/Object;
+.field private final zzdu:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -46,7 +46,7 @@
     .end annotation
 .end field
 
-.field public zzdv:Ljava/lang/Object;
+.field private zzdv:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -54,9 +54,9 @@
     .end annotation
 .end field
 
-.field public volatile zzdw:Lcom/google/android/gms/internal/clearcut/zzab;
+.field private volatile zzdw:Lcom/google/android/gms/internal/clearcut/zzab;
 
-.field public volatile zzdx:Landroid/content/SharedPreferences;
+.field private volatile zzdx:Landroid/content/SharedPreferences;
 
 
 # direct methods
@@ -72,7 +72,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Ljava/lang/Object;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -301,7 +301,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzan;)Lcom/google/android/gms/internal/clearcut/zzae;
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzan;)Lcom/google/android/gms/internal/clearcut/zzae;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -325,7 +325,7 @@
     return-object v0
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzae;
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzae;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -347,7 +347,7 @@
     return-object v0
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Z)Lcom/google/android/gms/internal/clearcut/zzae;
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzao;Ljava/lang/String;Z)Lcom/google/android/gms/internal/clearcut/zzae;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -372,7 +372,7 @@
     return-object v0
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzam;)Ljava/lang/Object;
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzam;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -515,25 +515,28 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
-    const-string v1, "gms:phenotype:phenotype_flag:debug_bypass_phenotype"
+    const-string v0, "gms:phenotype:phenotype_flag:debug_bypass_phenotype"
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/internal/clearcut/zzae;->zza(Ljava/lang/String;Z)Z
+    const/4 v1, 0x0
 
-    move-result v1
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzae;->zza(Ljava/lang/String;Z)Z
+
+    move-result v0
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_7
+    if-nez v0, :cond_7
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
+    iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/clearcut/zzao;->zzb(Lcom/google/android/gms/internal/clearcut/zzao;)Landroid/net/Uri;
+    invoke-static {v0}, Lcom/google/android/gms/internal/clearcut/zzao;->zzb(Lcom/google/android/gms/internal/clearcut/zzao;)Landroid/net/Uri;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdw:Lcom/google/android/gms/internal/clearcut/zzab;
 
@@ -579,84 +582,84 @@
     return-object v0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
+    iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/clearcut/zzao;->zza(Lcom/google/android/gms/internal/clearcut/zzao;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/clearcut/zzao;->zza(Lcom/google/android/gms/internal/clearcut/zzao;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_9
+    if-eqz v0, :cond_9
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x18
 
-    if-lt v1, v3, :cond_4
+    if-lt v0, v3, :cond_4
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzh:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzh:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->isDeviceProtectedStorage()Z
+    invoke-virtual {v0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_4
+    if-nez v0, :cond_4
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     :cond_2
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzh:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzh:Landroid/content/Context;
 
     const-class v3, Landroid/os/UserManager;
 
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/os/UserManager;
+    check-cast v0, Landroid/os/UserManager;
 
-    invoke-virtual {v1}, Landroid/os/UserManager;->isUserUnlocked()Z
+    invoke-virtual {v0}, Landroid/os/UserManager;->isUserUnlocked()Z
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
+    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
 
     :cond_3
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdq:Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_0
-    if-nez v1, :cond_5
+    if-nez v0, :cond_5
 
     return-object v2
 
     :cond_5
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdx:Landroid/content/SharedPreferences;
+    iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdx:Landroid/content/SharedPreferences;
 
-    if-nez v1, :cond_6
+    if-nez v0, :cond_6
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzae;->zzh:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzh:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
 
@@ -664,7 +667,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v3, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -724,6 +727,9 @@
         }
     .end annotation
 
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdr:Lcom/google/android/gms/internal/clearcut/zzao;
 
     invoke-static {v0}, Lcom/google/android/gms/internal/clearcut/zzao;->zzf(Lcom/google/android/gms/internal/clearcut/zzao;)Z
@@ -762,7 +768,7 @@
     return-object v0
 .end method
 
-.method public static zzn()Z
+.method private static zzn()Z
     .locals 3
 
     sget-object v0, Lcom/google/android/gms/internal/clearcut/zzae;->zzdp:Ljava/lang/Boolean;
@@ -777,7 +783,7 @@
 
     const-string v2, "com.google.android.providers.gsf.permission.READ_GSERVICES"
 
-    invoke-static {v0, v2}, Ly6;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroidx/core/content/PermissionChecker;->checkCallingOrSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 

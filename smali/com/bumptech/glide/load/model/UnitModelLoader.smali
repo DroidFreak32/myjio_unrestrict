@@ -27,7 +27,7 @@
 
 
 # static fields
-.field public static final INSTANCE:Lcom/bumptech/glide/load/model/UnitModelLoader;
+.field private static final INSTANCE:Lcom/bumptech/glide/load/model/UnitModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/UnitModelLoader<",
@@ -84,6 +84,14 @@
 # virtual methods
 .method public buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;II",
@@ -112,6 +120,10 @@
 
 .method public handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;)Z"

@@ -1,883 +1,353 @@
 .class public Lr1;
-.super Lj1;
-.source "MenuItemWrapperICS.java"
+.super Ljava/lang/Object;
+.source "CardViewBaseImpl.java"
 
 # interfaces
-.implements Landroid/view/MenuItem;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lr1$c;,
-        Lr1$b;,
-        Lr1$a;,
-        Lr1$d;,
-        Lr1$e;
-    }
-.end annotation
+.implements Lt1;
 
 
 # instance fields
-.field public final d:La8;
-
-.field public e:Ljava/lang/reflect/Method;
+.field public final a:Landroid/graphics/RectF;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;La8;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0, p1}, Lj1;-><init>(Landroid/content/Context;)V
-
-    if-eqz p2, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p2, p0, Lr1;->d:La8;
+    new-instance v0, Landroid/graphics/RectF;
+
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object v0, p0, Lr1;->a:Landroid/graphics/RectF;
 
     return-void
-
-    .line 3
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Wrapped Object can not be null."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public a(Z)V
+.method public a(Ls1;F)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lv1;->p(F)V
+
+    .line 2
+    invoke-virtual {p0, p1}, Lr1;->k(Ls1;)V
+
+    return-void
+.end method
+
+.method public b(Ls1;)F
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lv1;->g()F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public c(Ls1;F)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lv1;->r(F)V
+
+    return-void
+.end method
+
+.method public d(Ls1;)F
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lv1;->i()F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public e(Ls1;)Landroid/content/res/ColorStateList;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lv1;->f()Landroid/content/res/ColorStateList;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public f(Ls1;)F
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lv1;->j()F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public g(Ls1;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Ls1;->e()Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lv1;->m(Z)V
+
+    .line 2
+    invoke-virtual {p0, p1}, Lr1;->k(Ls1;)V
+
+    return-void
+.end method
+
+.method public h(Ls1;Landroid/content/Context;Landroid/content/res/ColorStateList;FFF)V
     .locals 6
 
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move v5, p6
+
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lr1;->e:Ljava/lang/reflect/Method;
+    invoke-virtual/range {v0 .. v5}, Lr1;->p(Landroid/content/Context;Landroid/content/res/ColorStateList;FFF)Lv1;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-nez v0, :cond_0
+    move-result-object p2
 
     .line 2
-    iget-object v0, p0, Lr1;->d:La8;
+    invoke-interface {p1}, Ls1;->e()Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result p3
 
-    move-result-object v0
-
-    const-string v3, "setExclusiveCheckable"
-
-    new-array v4, v2, [Ljava/lang/Class;
-
-    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v5, v4, v1
+    invoke-virtual {p2, p3}, Lv1;->m(Z)V
 
     .line 3
-    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lr1;->e:Ljava/lang/reflect/Method;
+    invoke-interface {p1, p2}, Ls1;->a(Landroid/graphics/drawable/Drawable;)V
 
     .line 4
-    :cond_0
-    iget-object v0, p0, Lr1;->e:Ljava/lang/reflect/Method;
+    invoke-virtual {p0, p1}, Lr1;->k(Ls1;)V
 
-    iget-object v3, p0, Lr1;->d:La8;
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    aput-object p1, v2, v1
-
-    invoke-virtual {v0, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
     return-void
 .end method
 
-.method public collapseActionView()Z
-    .locals 1
+.method public i(Ls1;)F
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lr1;->d:La8;
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
 
-    invoke-interface {v0}, La8;->collapseActionView()Z
+    move-result-object p1
 
-    move-result v0
+    invoke-virtual {p1}, Lv1;->l()F
 
-    return v0
+    move-result p1
+
+    return p1
 .end method
 
-.method public expandActionView()Z
-    .locals 1
+.method public j(Ls1;)V
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->expandActionView()Z
-
-    move-result v0
-
-    return v0
+    return-void
 .end method
 
-.method public getActionProvider()Landroid/view/ActionProvider;
-    .locals 2
+.method public k(Ls1;)V
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lr1;->d:La8;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-interface {v0}, La8;->a()Lf9;
-
-    move-result-object v0
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     .line 2
-    instance-of v1, v0, Lr1$a;
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
 
-    if-eqz v1, :cond_0
+    move-result-object v1
 
-    .line 3
-    check-cast v0, Lr1$a;
-
-    iget-object v0, v0, Lr1$a;->c:Landroid/view/ActionProvider;
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getActionView()Landroid/view/View;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getActionView()Landroid/view/View;
-
-    move-result-object v0
-
-    .line 2
-    instance-of v1, v0, Lr1$c;
-
-    if-eqz v1, :cond_0
+    invoke-virtual {v1, v0}, Lv1;->h(Landroid/graphics/Rect;)V
 
     .line 3
-    check-cast v0, Lr1$c;
+    invoke-virtual {p0, p1}, Lr1;->m(Ls1;)F
 
-    invoke-virtual {v0}, Lr1$c;->c()Landroid/view/View;
+    move-result v1
 
-    move-result-object v0
+    float-to-double v1, v1
 
-    :cond_0
-    return-object v0
-.end method
+    invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
 
-.method public getAlphabeticModifiers()I
-    .locals 1
+    move-result-wide v1
 
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getAlphabeticModifiers()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getAlphabeticShortcut()C
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getAlphabeticShortcut()C
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getContentDescription()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getContentDescription()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getGroupId()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getGroupId()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getIcon()Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getIconTintList()Landroid/content/res/ColorStateList;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getIconTintList()Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getIconTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getIconTintMode()Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getIntent()Landroid/content/Intent;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getItemId()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getItemId()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getNumericModifiers()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getNumericModifiers()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getNumericShortcut()C
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getNumericShortcut()C
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getOrder()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getOrder()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getSubMenu()Landroid/view/SubMenu;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lj1;->a(Landroid/view/SubMenu;)Landroid/view/SubMenu;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getTitle()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getTitle()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getTitleCondensed()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->getTitleCondensed()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getTooltipText()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->getTooltipText()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public hasSubMenu()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->hasSubMenu()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isActionViewExpanded()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, La8;->isActionViewExpanded()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isCheckable()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->isCheckable()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isChecked()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->isChecked()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isEnabled()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->isEnabled()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isVisible()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0}, Landroid/view/MenuItem;->isVisible()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem;
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
-
-    .line 2
-    new-instance v0, Lr1$b;
-
-    iget-object v1, p0, Lj1;->a:Landroid/content/Context;
-
-    invoke-direct {v0, p0, v1, p1}, Lr1$b;-><init>(Lr1;Landroid/content/Context;Landroid/view/ActionProvider;)V
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    new-instance v0, Lr1$a;
-
-    iget-object v1, p0, Lj1;->a:Landroid/content/Context;
-
-    invoke-direct {v0, p0, v1, p1}, Lr1$a;-><init>(Lr1;Landroid/content/Context;Landroid/view/ActionProvider;)V
+    double-to-int v1, v1
 
     .line 4
-    :goto_0
-    iget-object v1, p0, Lr1;->d:La8;
+    invoke-virtual {p0, p1}, Lr1;->f(Ls1;)F
 
-    if-eqz p1, :cond_1
+    move-result v2
 
-    goto :goto_1
+    float-to-double v2, v2
 
-    :cond_1
-    const/4 v0, 0x0
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
-    :goto_1
-    invoke-interface {v1, v0}, La8;->a(Lf9;)La8;
+    move-result-wide v2
 
-    return-object p0
-.end method
-
-.method public setActionView(I)Landroid/view/MenuItem;
-    .locals 2
-
-    .line 4
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setActionView(I)Landroid/view/MenuItem;
+    double-to-int v2, v2
 
     .line 5
-    iget-object p1, p0, Lr1;->d:La8;
-
-    invoke-interface {p1}, La8;->getActionView()Landroid/view/View;
-
-    move-result-object p1
+    invoke-interface {p1, v1, v2}, Ls1;->d(II)V
 
     .line 6
-    instance-of v0, p1, Landroid/view/CollapsibleActionView;
+    iget v1, v0, Landroid/graphics/Rect;->left:I
 
-    if-eqz v0, :cond_0
+    iget v2, v0, Landroid/graphics/Rect;->top:I
 
-    .line 7
-    iget-object v0, p0, Lr1;->d:La8;
+    iget v3, v0, Landroid/graphics/Rect;->right:I
 
-    new-instance v1, Lr1$c;
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
-    invoke-direct {v1, p1}, Lr1$c;-><init>(Landroid/view/View;)V
-
-    invoke-interface {v0, v1}, La8;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public setActionView(Landroid/view/View;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Landroid/view/CollapsibleActionView;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    new-instance v0, Lr1$c;
-
-    invoke-direct {v0, p1}, Lr1$c;-><init>(Landroid/view/View;)V
-
-    move-object p1, v0
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setAlphabeticShortcut(C)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1, p2}, La8;->setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setCheckable(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setCheckable(Z)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setChecked(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setChecked(Z)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setContentDescription(Ljava/lang/CharSequence;)La8;
-
-    return-object p0
-.end method
-
-.method public setEnabled(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setIcon(I)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setNumericShortcut(C)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setNumericShortcut(C)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setNumericShortcut(CI)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1, p2}, La8;->setNumericShortcut(CI)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    if-eqz p1, :cond_0
-
-    new-instance v1, Lr1$d;
-
-    invoke-direct {v1, p0, p1}, Lr1$d;-><init>(Lr1;Landroid/view/MenuItem$OnActionExpandListener;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    if-eqz p1, :cond_0
-
-    new-instance v1, Lr1$e;
-
-    invoke-direct {v1, p0, p1}, Lr1$e;-><init>(Lr1;Landroid/view/MenuItem$OnMenuItemClickListener;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setShortcut(CC)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1, p2}, Landroid/view/MenuItem;->setShortcut(CC)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setShortcut(CCII)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1, p2, p3, p4}, La8;->setShortcut(CCII)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setShowAsAction(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setShowAsAction(I)V
+    invoke-interface {p1, v1, v2, v3, v0}, Ls1;->setShadowPadding(IIII)V
 
     return-void
 .end method
 
-.method public setShowAsActionFlags(I)Landroid/view/MenuItem;
+.method public l()V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lr1;->d:La8;
+    new-instance v0, Lr1$a;
 
-    invoke-interface {v0, p1}, La8;->setShowAsActionFlags(I)Landroid/view/MenuItem;
+    invoke-direct {v0, p0}, Lr1$a;-><init>(Lr1;)V
 
-    return-object p0
+    sput-object v0, Lv1;->r:Lv1$a;
+
+    return-void
 .end method
 
-.method public setTitle(I)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 1
+.method public m(Ls1;)F
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, La8;->setTooltipText(Ljava/lang/CharSequence;)La8;
-
-    return-object p0
-.end method
-
-.method public setVisible(Z)Landroid/view/MenuItem;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr1;->d:La8;
-
-    invoke-interface {v0, p1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
 
     move-result-object p1
+
+    invoke-virtual {p1}, Lv1;->k()F
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public n(Ls1;Landroid/content/res/ColorStateList;)V
+    .locals 0
+    .param p2    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lv1;->o(Landroid/content/res/ColorStateList;)V
+
+    return-void
+.end method
+
+.method public o(Ls1;F)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0, p1}, Lr1;->q(Ls1;)Lv1;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lv1;->q(F)V
+
+    .line 2
+    invoke-virtual {p0, p1}, Lr1;->k(Ls1;)V
+
+    return-void
+.end method
+
+.method public final p(Landroid/content/Context;Landroid/content/res/ColorStateList;FFF)Lv1;
+    .locals 7
+
+    .line 1
+    new-instance v6, Lv1;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    move-object v0, v6
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    invoke-direct/range {v0 .. v5}, Lv1;-><init>(Landroid/content/res/Resources;Landroid/content/res/ColorStateList;FFF)V
+
+    return-object v6
+.end method
+
+.method public final q(Ls1;)Lv1;
+    .locals 0
+
+    .line 1
+    invoke-interface {p1}, Ls1;->c()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    check-cast p1, Lv1;
 
     return-object p1
 .end method

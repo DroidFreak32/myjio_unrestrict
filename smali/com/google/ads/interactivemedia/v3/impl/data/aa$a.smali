@@ -56,7 +56,7 @@
     .line 2
     iget-object v1, p0, Lcom/google/ads/interactivemedia/v3/impl/data/aa$a;->type:Ljava/lang/String;
 
-    const-string v2, "type"
+    const-string/jumbo v2, "type"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

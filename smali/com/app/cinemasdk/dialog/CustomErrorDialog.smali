@@ -20,19 +20,19 @@
 
 .field public cancel:Landroid/widget/Button;
 
-.field public code:I
+.field private code:I
 
-.field public customErrorListener:Lcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;
+.field private customErrorListener:Lcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;
 
 .field public dialog:Landroid/app/Dialog;
 
-.field public listener:Lcom/app/cinemasdk/dialog/CustomErrorDialog$CustomRetryListener;
+.field private listener:Lcom/app/cinemasdk/dialog/CustomErrorDialog$CustomRetryListener;
 
 .field public msg:Ljava/lang/String;
 
 .field public retry:Landroid/widget/Button;
 
-.field public showRetry:Z
+.field private showRetry:Z
 
 .field public txtDia:Landroid/widget/TextView;
 
@@ -163,8 +163,6 @@
     iput-object p1, p0, Lcom/app/cinemasdk/dialog/CustomErrorDialog;->txtDia:Landroid/widget/TextView;
 
     .line 7
-    iget-object p1, p0, Lcom/app/cinemasdk/dialog/CustomErrorDialog;->txtDia:Landroid/widget/TextView;
-
     iget-object v0, p0, Lcom/app/cinemasdk/dialog/CustomErrorDialog;->msg:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

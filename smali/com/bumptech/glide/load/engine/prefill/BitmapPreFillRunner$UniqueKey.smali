@@ -31,6 +31,10 @@
 # virtual methods
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 0
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;

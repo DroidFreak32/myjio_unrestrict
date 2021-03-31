@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -101,7 +101,7 @@
     return-void
 .end method
 
-.method public static final _convert(Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
+.method private static final _convert(Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
     .locals 0
 
     .line 9
@@ -112,7 +112,7 @@
     return-object p0
 .end method
 
-.method public static final _convert(Ljava/util/Map;)Ljava/util/Map;
+.method private static final _convert(Ljava/util/Map;)Ljava/util/Map;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {

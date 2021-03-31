@@ -16,6 +16,10 @@
 
 # virtual methods
 .method public abstract onResourceRemoved(Lcom/bumptech/glide/load/engine/Resource;)V
+    .param p1    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

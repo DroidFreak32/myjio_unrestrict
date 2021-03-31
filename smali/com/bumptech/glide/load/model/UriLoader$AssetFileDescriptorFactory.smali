@@ -32,7 +32,7 @@
 
 
 # instance fields
-.field public final contentResolver:Landroid/content/ContentResolver;
+.field private final contentResolver:Landroid/content/ContentResolver;
 
 
 # direct methods

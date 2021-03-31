@@ -1,12 +1,13 @@
 .class public final synthetic Lcom/google/android/gms/auth/api/signin/zaa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Ljava/util/Comparator;
 
 
 # static fields
-.field public static final zaq:Ljava/util/Comparator;
+.field public static final zaa:Ljava/util/Comparator;
 
 
 # direct methods
@@ -17,12 +18,12 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/auth/api/signin/zaa;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/auth/api/signin/zaa;->zaq:Ljava/util/Comparator;
+    sput-object v0, Lcom/google/android/gms/auth/api/signin/zaa;->zaa:Ljava/util/Comparator;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -3,15 +3,15 @@
 
 
 # instance fields
-.field public bounds:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoArea;
+.field private bounds:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoArea;
 
-.field public location:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoLocation;
+.field private location:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoLocation;
 
-.field public locationType:Ljava/lang/String;
+.field private locationType:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse;
 
-.field public viewport:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoArea;
+.field private viewport:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse$PojoGeoArea;
 
 
 # direct methods

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public messageCode:Ljava/lang/Integer;
+.field private messageCode:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public ssoExpired:Z
+.field private ssoExpired:Z
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public ssoToken:Ljava/lang/String;
+.field private ssoToken:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public subscriberId:Ljava/lang/String;
+.field private subscriberId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -49,7 +49,7 @@
     .end annotation
 .end field
 
-.field public unique:Ljava/lang/String;
+.field private unique:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -58,7 +58,7 @@
     .end annotation
 .end field
 
-.field public username:Ljava/lang/String;
+.field private username:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

@@ -8,16 +8,23 @@
 
 
 # instance fields
-.field public error:Lcom/bumptech/glide/request/Request;
+.field private error:Lcom/bumptech/glide/request/Request;
 
-.field public final parent:Lcom/bumptech/glide/request/RequestCoordinator;
+.field private final parent:Lcom/bumptech/glide/request/RequestCoordinator;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public primary:Lcom/bumptech/glide/request/Request;
+.field private primary:Lcom/bumptech/glide/request/Request;
 
 
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/request/RequestCoordinator;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/RequestCoordinator;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final ANNOTATIONS_TO_INFER_DESER:[Ljava/lang/Class;
+.field private static final ANNOTATIONS_TO_INFER_DESER:[Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -19,7 +19,7 @@
     .end annotation
 .end field
 
-.field public static final ANNOTATIONS_TO_INFER_SER:[Ljava/lang/Class;
+.field private static final ANNOTATIONS_TO_INFER_SER:[Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -31,9 +31,9 @@
     .end annotation
 .end field
 
-.field public static final _java7Helper:Lcom/fasterxml/jackson/databind/ext/Java7Support;
+.field private static final _java7Helper:Lcom/fasterxml/jackson/databind/ext/Java7Support;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -1094,34 +1094,32 @@
 
     const/4 v5, 0x0
 
-    move-object v6, v2
-
-    const/4 v2, 0x0
+    const/4 v6, 0x0
 
     :goto_0
-    if-ge v2, v4, :cond_3
+    if-ge v6, v4, :cond_3
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     .line 5
-    const-class v6, Ljava/lang/Object;
+    const-class v2, Ljava/lang/Object;
 
-    invoke-virtual {p1, v6}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
-    move-result-object v6
+    move-result-object v2
 
     .line 6
     :cond_1
-    aget-object v7, v3, v2
+    aget-object v7, v3, v6
 
-    invoke-virtual {p0, v7, p1, p2, v6}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_constructVirtualProperty(Lcom/fasterxml/jackson/databind/annotation/JsonAppend$Attr;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+    invoke-virtual {p0, v7, p1, p2, v2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_constructVirtualProperty(Lcom/fasterxml/jackson/databind/annotation/JsonAppend$Attr;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     move-result-object v7
 
     if-eqz v1, :cond_2
 
     .line 7
-    invoke-interface {p3, v2, v7}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    invoke-interface {p3, v6, v7}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     goto :goto_1
 
@@ -1130,7 +1128,7 @@
     invoke-interface {p3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
@@ -1693,14 +1691,12 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v2
-
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    if-ge v2, v0, :cond_4
+    if-ge v3, v0, :cond_4
 
-    aget-object v4, p1, v2
+    aget-object v4, p1, v3
 
     .line 2
     invoke-virtual {v4}, Ljava/lang/reflect/Field;->isEnumConstant()Z
@@ -1741,12 +1737,12 @@
     goto :goto_1
 
     :cond_2
-    if-nez v3, :cond_3
+    if-nez v2, :cond_3
 
     .line 6
-    new-instance v3, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     .line 7
     :cond_3
@@ -1754,15 +1750,15 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_4
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     .line 8
     array-length p1, p2
@@ -1778,7 +1774,7 @@
     move-result-object v0
 
     .line 10
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2656,10 +2652,13 @@
 
     if-eqz v1, :cond_1
 
-    move-object p1, v0
+    goto :goto_0
 
     :cond_1
-    return-object p1
+    move-object v0, p1
+
+    :goto_0
+    return-object v0
 .end method
 
 .method public findPropertyDescription(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/String;
@@ -3872,6 +3871,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
     .line 1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getTypeFactory()Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
@@ -4179,6 +4184,12 @@
             "Lcom/fasterxml/jackson/databind/JavaType;",
             ")",
             "Lcom/fasterxml/jackson/databind/JavaType;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
         }
     .end annotation
 
@@ -4701,7 +4712,7 @@
 .end method
 
 .method public resolveSetterConflict(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -4714,62 +4725,55 @@
         }
     .end annotation
 
-    const/4 p1, 0x0
-
     .line 1
-    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getRawParameterType(I)Ljava/lang/Class;
+    const-class p1, Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getRawParameterType(I)Ljava/lang/Class;
+
+    move-result-object v1
+
+    .line 2
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getRawParameterType(I)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 2
-    invoke-virtual {p3, p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getRawParameterType(I)Ljava/lang/Class;
-
-    move-result-object p1
-
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
+    invoke-virtual {v1}, Ljava/lang/Class;->isPrimitive()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     .line 4
-    invoke-virtual {p1}, Ljava/lang/Class;->isPrimitive()Z
+    invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
     return-object p2
 
     .line 5
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Class;->isPrimitive()Z
+    invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     return-object p3
 
-    .line 6
     :cond_1
-    const-class v1, Ljava/lang/String;
+    if-ne v1, p1, :cond_2
 
-    if-ne v0, v1, :cond_2
-
-    .line 7
-    const-class p3, Ljava/lang/String;
-
-    if-eq p1, p3, :cond_3
+    if-eq v0, p1, :cond_3
 
     return-object p2
 
-    .line 8
     :cond_2
-    const-class p2, Ljava/lang/String;
-
-    if-ne p1, p2, :cond_3
+    if-ne v0, p1, :cond_3
 
     return-object p3
 

@@ -1,149 +1,228 @@
-.class public final Lwa;
+.class public Lwa;
 .super Ljava/lang/Object;
-.source "CompoundButtonCompat.java"
+
+# interfaces
+.implements Lfr/bmartel/speedtest/inter/ISpeedTestListener;
 
 
-# static fields
-.field public static a:Ljava/lang/reflect/Field;
-
-.field public static b:Z
+# instance fields
+.field public final synthetic a:Lcom/elitecorelib/core/utility/g;
 
 
 # direct methods
-.method public static a(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
-    .locals 3
+.method public constructor <init>(Lcom/elitecorelib/core/utility/g;)V
+    .locals 0
 
-    .line 9
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lwa;->a:Lcom/elitecorelib/core/utility/g;
 
-    const/16 v1, 0x17
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-lt v0, v1, :cond_0
-
-    .line 10
-    invoke-virtual {p0}, Landroid/widget/CompoundButton;->getButtonDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 11
-    :cond_0
-    sget-boolean v0, Lwa;->b:Z
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    .line 12
-    :try_start_0
-    const-class v1, Landroid/widget/CompoundButton;
-
-    const-string v2, "mButtonDrawable"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    sput-object v1, Lwa;->a:Ljava/lang/reflect/Field;
-
-    .line 13
-    sget-object v1, Lwa;->a:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 14
-    :catch_0
-    sput-boolean v0, Lwa;->b:Z
-
-    .line 15
-    :cond_1
-    sget-object v0, Lwa;->a:Ljava/lang/reflect/Field;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_2
-
-    .line 16
-    :try_start_1
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/graphics/drawable/Drawable;
-    :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
-
-    return-object p0
-
-    .line 17
-    :catch_1
-    sput-object v1, Lwa;->a:Ljava/lang/reflect/Field;
-
-    :cond_2
-    return-object v1
-.end method
-
-.method public static a(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
-
-    .line 2
-    invoke-virtual {p0, p1}, Landroid/widget/CompoundButton;->setButtonTintList(Landroid/content/res/ColorStateList;)V
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    instance-of v0, p0, Leb;
-
-    if-eqz v0, :cond_1
-
-    .line 4
-    check-cast p0, Leb;
-
-    invoke-interface {p0, p1}, Leb;->setSupportButtonTintList(Landroid/content/res/ColorStateList;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public static a(Landroid/widget/CompoundButton;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 2
 
-    .line 5
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+# virtual methods
+.method public onCompletion(Lfr/bmartel/speedtest/SpeedTestReport;)V
+    .locals 4
 
-    const/16 v1, 0x15
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    if-lt v0, v1, :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 6
-    invoke-virtual {p0, p1}, Landroid/widget/CompoundButton;->setButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Download Speed Rate Bit: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lfr/bmartel/speedtest/SpeedTestReport;->getTransferRateBit()Ljava/math/BigDecimal;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " :: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lfr/bmartel/speedtest/SpeedTestReport;->getTotalPacketSize()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, " ::"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lfr/bmartel/speedtest/SpeedTestReport;->getTransferRateOctet()Ljava/math/BigDecimal;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "ElitelibUtility "
+
+    invoke-virtual {v0, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p1}, Lfr/bmartel/speedtest/SpeedTestReport;->getTransferRateBit()Ljava/math/BigDecimal;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, ""
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v0
+
+    const-wide/high16 v2, 0x4090000000000000L    # 1024.0
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v0
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/f;->l(Ljava/lang/String;)Ljava/lang/String;
+
+    new-instance p1, Lxa;
+
+    iget-object v0, p0, Lwa;->a:Lcom/elitecorelib/core/utility/g;
+
+    iget-object v0, v0, Lcom/elitecorelib/core/utility/g;->a:Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    invoke-direct {p1, v0}, Lxa;-><init>(Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;)V
+
+    invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    return-void
+.end method
+
+.method public onError(Lfr/bmartel/speedtest/model/SpeedTestError;Ljava/lang/String;)V
+    .locals 4
+
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v0, "ElitelibUtility "
+
+    invoke-virtual {p1, v0, p2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance p1, Lorg/json/JSONObject;
+
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
+
+    :try_start_0
+    const-string p2, "ResponseMessage"
+
+    const-string v1, "Fail on getting Download and Upload speed"
+
+    invoke-virtual {p1, p2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string p2, "RequestId"
+
+    const/16 v1, 0x7d4
+
+    invoke-virtual {p1, p2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 7
-    :cond_0
-    instance-of v0, p0, Leb;
+    :catch_0
+    move-exception p2
 
-    if-eqz v0, :cond_1
+    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    .line 8
-    check-cast p0, Leb;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-interface {p0, p1}, Leb;->setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_1
+    sget-object v3, Lcom/elitecorelib/andsf/a/a;->aA:Lcom/elitecorelib/andsf/a/a;
+
+    invoke-static {v3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "Error while testing Download Speed : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v1, v0, p2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
     :goto_0
+    iget-object p2, p0, Lwa;->a:Lcom/elitecorelib/core/utility/g;
+
+    iget-object p2, p2, Lcom/elitecorelib/core/utility/g;->a:Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;
+
+    invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {p2, p1}, Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;->getResponseData(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onProgress(FLfr/bmartel/speedtest/SpeedTestReport;)V
+    .locals 0
+
     return-void
 .end method

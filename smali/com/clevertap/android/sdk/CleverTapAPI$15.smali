@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->activityResumed(Landroid/app/Activity;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->inAppNotificationDidDismiss(Landroid/content/Context;Lcom/clevertap/android/sdk/CTInAppNotification;Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,13 +20,21 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
+.field public final synthetic val$context:Landroid/content/Context;
+
+.field public final synthetic val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
+
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;Lcom/clevertap/android/sdk/CTInAppNotification;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->val$context:Landroid/content/Context;
+
+    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,30 +44,27 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->val$context:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1200(Lcom/clevertap/android/sdk/CleverTapAPI;)Z
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    move-result v0
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1300(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-    if-nez v0, :cond_0
+    move-result-object v1
 
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1300(Lcom/clevertap/android/sdk/CleverTapAPI;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    invoke-static {v0, v1, v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1400(Landroid/content/Context;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;Lcom/clevertap/android/sdk/CTInAppNotification;)V
 
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1400(Lcom/clevertap/android/sdk/CleverTapAPI;)V
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$15;->val$context:Landroid/content/Context;
 
-    :cond_0
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1500(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;)V
+
     return-void
 .end method

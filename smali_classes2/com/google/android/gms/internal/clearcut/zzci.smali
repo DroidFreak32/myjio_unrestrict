@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final ISO_8859_1:Ljava/nio/charset/Charset;
+.field private static final ISO_8859_1:Ljava/nio/charset/Charset;
 
 .field public static final UTF_8:Ljava/nio/charset/Charset;
 
 .field public static final zzkt:[B
 
-.field public static final zzku:Ljava/nio/ByteBuffer;
+.field private static final zzku:Ljava/nio/ByteBuffer;
 
-.field public static final zzkv:Lcom/google/android/gms/internal/clearcut/zzbk;
+.field private static final zzkv:Lcom/google/android/gms/internal/clearcut/zzbk;
 
 
 # direct methods
@@ -42,11 +42,9 @@
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
-    move-result-object v1
+    move-result-object v2
 
-    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzci;->zzku:Ljava/nio/ByteBuffer;
-
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzci;->zzkt:[B
+    sput-object v2, Lcom/google/android/gms/internal/clearcut/zzci;->zzku:Ljava/nio/ByteBuffer;
 
     array-length v2, v1
 
@@ -69,16 +67,9 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    invoke-direct {p0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p0
 .end method
 
 .method public static hashCode([B)I
@@ -103,27 +94,25 @@
 .method public static zza(I[BII)I
     .locals 2
 
-    move v0, p0
-
-    move p0, p2
+    move v0, p2
 
     :goto_0
     add-int v1, p2, p3
 
-    if-ge p0, v1, :cond_0
+    if-ge v0, v1, :cond_0
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/lit8 p0, p0, 0x1f
 
-    aget-byte v1, p1, p0
+    aget-byte v1, p1, v0
 
-    add-int/2addr v0, v1
+    add-int/2addr p0, v1
 
-    add-int/lit8 p0, p0, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    return v0
+    return p0
 .end method
 
 .method public static zza(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -160,16 +149,9 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_0
+    invoke-static {p0, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method public static zzc(Z)I

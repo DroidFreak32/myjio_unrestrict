@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
+.field private static final synthetic $VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
 .field public static final enum Oval:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
@@ -32,48 +32,44 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
-    const/4 v1, 0x0
+    const-string v1, "Oval"
 
-    const-string v2, "Oval"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->Oval:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
-    new-instance v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
     const-string v3, "Rectangle"
 
-    invoke-direct {v0, v3, v2}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->Rectangle:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
+    invoke-direct {v1, v3, v4}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->Rectangle:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
-    new-array v0, v0, [Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 2
-    sget-object v3, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->Oval:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->Rectangle:Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->$VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
+    sput-object v3, Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;->$VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$Shape;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

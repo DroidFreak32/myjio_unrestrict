@@ -23,13 +23,13 @@
 
 
 # static fields
-.field public static final zzbck:Lcom/google/android/gms/internal/gtm/zzry;
+.field private static final zzbck:Lcom/google/android/gms/internal/gtm/zzry;
 
 
 # instance fields
-.field public size:I
+.field private size:I
 
-.field public zzbcl:[J
+.field private zzbcl:[J
 
 
 # direct methods
@@ -68,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>([JI)V
+.method private constructor <init>([JI)V
     .locals 0
 
     .line 2

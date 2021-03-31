@@ -166,60 +166,53 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    goto :goto_6
+    goto :goto_7
 
     :goto_1
     invoke-virtual {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_1
     move-exception v1
 
-    goto :goto_2
+    goto :goto_3
 
     :catch_2
     move-exception v1
 
-    goto :goto_3
+    goto :goto_4
 
     :catchall_0
     move-exception v0
 
-    goto :goto_7
+    goto :goto_2
 
     :catch_3
     move-exception v1
 
     move-object v0, v4
 
-    goto :goto_2
+    goto :goto_3
 
     :catch_4
     move-exception v1
 
     move-object v0, v4
 
-    goto :goto_3
+    goto :goto_4
 
     :catchall_1
     move-exception v0
 
-    goto :goto_8
-
-    :catch_5
-    move-exception v1
-
     move-object p0, v4
-
-    move-object v0, p0
 
     :goto_2
     move-object v4, v3
 
-    goto :goto_4
+    goto :goto_8
 
-    :catch_6
+    :catch_5
     move-exception v1
 
     move-object p0, v4
@@ -231,10 +224,22 @@
 
     goto :goto_5
 
+    :catch_6
+    move-exception v1
+
+    move-object p0, v4
+
+    move-object v0, p0
+
+    :goto_4
+    move-object v4, v3
+
+    goto :goto_6
+
     :catchall_2
     move-exception v0
 
-    move-object v3, v4
+    move-object p0, v4
 
     goto :goto_8
 
@@ -245,18 +250,7 @@
 
     move-object v0, p0
 
-    goto :goto_4
-
-    :catch_8
-    move-exception v1
-
-    move-object p0, v4
-
-    move-object v0, p0
-
-    goto :goto_5
-
-    :goto_4
+    :goto_5
     :try_start_5
     invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
     :try_end_5
@@ -274,9 +268,16 @@
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
-    goto :goto_6
+    goto :goto_7
 
-    :goto_5
+    :catch_8
+    move-exception v1
+
+    move-object p0, v4
+
+    move-object v0, p0
+
+    :goto_6
     :try_start_7
     invoke-virtual {v1}, Ljava/security/cert/CertificateException;->getMessage()Ljava/lang/String;
     :try_end_7
@@ -295,22 +296,17 @@
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
 
     :cond_3
-    :goto_6
+    :goto_7
     return-object v0
 
     :catchall_3
     move-exception v0
 
-    move-object v3, v4
-
-    :goto_7
-    move-object v4, p0
-
     :goto_8
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     :try_start_9
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto :goto_9
 
@@ -321,9 +317,9 @@
 
     :cond_4
     :goto_9
-    if-eqz v4, :cond_5
+    if-eqz p0, :cond_5
 
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
+    invoke-virtual {p0}, Ljava/io/InputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_9
 

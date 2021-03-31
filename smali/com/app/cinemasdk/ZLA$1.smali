@@ -3,7 +3,7 @@
 .source "ZLA.java"
 
 # interfaces
-.implements Llr4;
+.implements Lretrofit2/Callback;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Llr4<",
+        "Lretrofit2/Callback<",
         "Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;",
         ">;"
     }
@@ -44,12 +44,20 @@
 
 
 # virtual methods
-.method public onFailure(Ljr4;Ljava/lang/Throwable;)V
+.method public onFailure(Lretrofit2/Call;Ljava/lang/Throwable;)V
     .locals 2
+    .param p1    # Lretrofit2/Call;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Throwable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;",
             ">;",
             "Ljava/lang/Throwable;",
@@ -76,22 +84,30 @@
     return-void
 .end method
 
-.method public onResponse(Ljr4;Lxr4;)V
+.method public onResponse(Lretrofit2/Call;Lretrofit2/Response;)V
     .locals 1
+    .param p1    # Lretrofit2/Call;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lretrofit2/Response;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;",
             ">;",
-            "Lxr4<",
+            "Lretrofit2/Response<",
             "Lcom/app/cinemasdk/responsepojo/zla/ZLAResPojo;",
             ">;)V"
         }
     .end annotation
 
     .line 1
-    invoke-virtual {p2}, Lxr4;->e()Z
+    invoke-virtual {p2}, Lretrofit2/Response;->isSuccessful()Z
 
     move-result p1
 
@@ -104,7 +120,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p2
 

@@ -15,25 +15,25 @@
 
 
 # static fields
-.field public static final PES_SCRATCH_SIZE:I = 0x40
+.field private static final PES_SCRATCH_SIZE:I = 0x40
 
 
 # instance fields
-.field public dtsFlag:Z
+.field private dtsFlag:Z
 
-.field public extendedHeaderLength:I
+.field private extendedHeaderLength:I
 
-.field public final pesPayloadReader:Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;
+.field private final pesPayloadReader:Lcom/google/android/jioexoplayer2/extractor/ts/ElementaryStreamReader;
 
-.field public final pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-.field public ptsFlag:Z
+.field private ptsFlag:Z
 
-.field public seenFirstDts:Z
+.field private seenFirstDts:Z
 
-.field public timeUs:J
+.field private timeUs:J
 
-.field public final timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private final timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -278,6 +278,11 @@
 # virtual methods
 .method public consume(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ParserException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PsExtractor$PesReader;->pesScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;

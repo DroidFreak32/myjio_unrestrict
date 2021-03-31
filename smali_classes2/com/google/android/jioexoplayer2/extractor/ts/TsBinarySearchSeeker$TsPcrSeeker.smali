@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final pcrPid:I
+.field private final pcrPid:I
 
-.field public final pcrTimestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private final pcrTimestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -66,9 +66,9 @@
 
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    move-wide v11, v5
+    move-wide v9, v5
 
-    move-wide v9, v7
+    move-wide v11, v7
 
     .line 2
     :goto_0
@@ -121,7 +121,7 @@
 
     if-lez v15, :cond_2
 
-    cmp-long v1, v9, v7
+    cmp-long v1, v11, v7
 
     if-nez v1, :cond_1
 
@@ -133,7 +133,7 @@
     return-object v1
 
     :cond_1
-    add-long v1, v2, v11
+    add-long v1, v2, v9
 
     .line 8
     invoke-static {v1, v2}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->targetFoundResult(J)Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
@@ -165,9 +165,7 @@
     :cond_3
     int-to-long v9, v13
 
-    move-wide v11, v9
-
-    move-wide v9, v5
+    move-wide v11, v5
 
     .line 10
     :cond_4
@@ -179,14 +177,14 @@
 
     :cond_5
     :goto_1
-    cmp-long v1, v9, v7
+    cmp-long v1, v11, v7
 
     if-eqz v1, :cond_6
 
     add-long v1, v2, v5
 
     .line 11
-    invoke-static {v9, v10, v1, v2}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->underestimatedResult(JJ)Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
+    invoke-static {v11, v12, v1, v2}, Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->underestimatedResult(JJ)Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     move-result-object v1
 
@@ -216,6 +214,12 @@
 
 .method public searchForTimestamp(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;JLcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$OutputFrameHolder;)Lcom/google/android/jioexoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getPosition()J

@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static final asciiEscapes:[I
+.field private static final asciiEscapes:[I
 
-.field public static final escapeFor2028:Lcom/fasterxml/jackson/core/io/SerializedString;
+.field private static final escapeFor2028:Lcom/fasterxml/jackson/core/io/SerializedString;
 
-.field public static final escapeFor2029:Lcom/fasterxml/jackson/core/io/SerializedString;
+.field private static final escapeFor2029:Lcom/fasterxml/jackson/core/io/SerializedString;
 
-.field public static final sInstance:Lcom/fasterxml/jackson/core/JsonpCharacterEscapes;
+.field private static final sInstance:Lcom/fasterxml/jackson/core/JsonpCharacterEscapes;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods

@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
+.field private static final LOCAL_MAXIMUM_PACKET_SIZE:I = 0x4000
 
-.field public static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
+.field private static final LOCAL_WINDOW_SIZE_MAX:I = 0x20000
 
-.field public static final _type:[B
+.field private static final _type:[B
 
 
 # instance fields
@@ -78,6 +78,11 @@
 # virtual methods
 .method public connect(I)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iput p1, p0, Lcom/jcraft/jsch/Channel;->connectTimeout:I
@@ -110,8 +115,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/Channel;->thread:Ljava/lang/Thread;
 
     .line 6
-    iget-object v0, p0, Lcom/jcraft/jsch/Channel;->thread:Ljava/lang/Thread;
-
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -133,14 +136,12 @@
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
     .line 7
-    iget-boolean v0, p1, Lcom/jcraft/jsch/Session;->daemon_thread:Z
+    iget-boolean p1, p1, Lcom/jcraft/jsch/Session;->daemon_thread:Z
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     .line 8
     iget-object v0, p0, Lcom/jcraft/jsch/Channel;->thread:Ljava/lang/Thread;
-
-    iget-boolean p1, p1, Lcom/jcraft/jsch/Session;->daemon_thread:Z
 
     invoke-virtual {v0, p1}, Ljava/lang/Thread;->setDaemon(Z)V
 
@@ -344,22 +345,14 @@
 
     if-eqz v3, :cond_2
 
-    iget-object v3, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
     iget-object v3, v3, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
 
     if-eqz v3, :cond_2
 
     .line 6
-    iget-object v3, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v3, v3, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
-
     iget-object v4, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v5, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v5, v5
+    array-length v5, v4
 
     const/16 v6, 0xe
 

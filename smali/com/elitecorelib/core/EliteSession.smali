@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "EliteSession"
+.field private static final MODULE:Ljava/lang/String; = "EliteSession"
 
 .field public static eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-.field public static session:Lcom/elitecorelib/core/EliteSession;
+.field private static session:Lcom/elitecorelib/core/EliteSession;
 
 
 # direct methods

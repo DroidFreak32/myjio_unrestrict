@@ -35,18 +35,18 @@
     if-eqz v0, :cond_0
 
     .line 3
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lmg0;->d()V
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->checkGlobalServiceStatus()V
 
     .line 4
-    invoke-static {p1}, Lff0;->a(Landroid/content/Context;)Lff0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lff0;->a()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/PassiveManager;->captureAppLaunchRow()V
 
     goto :goto_0
 
@@ -63,17 +63,13 @@
     if-eqz v0, :cond_1
 
     .line 6
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p1
 
-    const/4 p2, 0x1
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lmg0;->c(Ljava/lang/Boolean;)V
+    invoke-virtual {p1, p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->startPassiveServiceByBoardCast(Ljava/lang/Boolean;)V
 
     goto :goto_0
 
@@ -90,17 +86,13 @@
     if-eqz v0, :cond_2
 
     .line 8
-    new-instance p2, Lgf0;
+    new-instance p2, Lcom/inn/passivesdk/PassiveStarter;
 
-    const/4 v0, 0x0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-direct {p2, p1, v0}, Lcom/inn/passivesdk/PassiveStarter;-><init>(Landroid/content/Context;Ljava/lang/Boolean;)V
 
-    move-result-object v0
-
-    invoke-direct {p2, p1, v0}, Lgf0;-><init>(Landroid/content/Context;Ljava/lang/Boolean;)V
-
-    invoke-virtual {p2}, Lgf0;->a()V
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PassiveStarter;->stopPassiveService()V
 
     goto :goto_0
 
@@ -130,11 +122,11 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 11
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmg0;->a()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->CheckGlobalServiceForNotification()V
 
     :cond_3
     :goto_0

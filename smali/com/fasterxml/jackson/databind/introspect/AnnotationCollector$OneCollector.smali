@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public _type:Ljava/lang/Class;
+.field private _type:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public _value:Ljava/lang/annotation/Annotation;
+.field private _value:Ljava/lang/annotation/Annotation;
 
 
 # direct methods

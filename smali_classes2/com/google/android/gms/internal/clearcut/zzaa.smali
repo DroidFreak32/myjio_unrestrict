@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static volatile zzdc:Landroid/os/UserManager;
+.field private static volatile zzdc:Landroid/os/UserManager;
 
-.field public static volatile zzdd:Z
+.field private static volatile zzdd:Z
 
 
 # direct methods
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
     return p0
 .end method
 
-.method public static zzf()Z
+.method private static zzf()Z
     .locals 2
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -75,7 +75,7 @@
     return v0
 .end method
 
-.method public static zzf(Landroid/content/Context;)Z
+.method private static zzf(Landroid/content/Context;)Z
     .locals 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0x18

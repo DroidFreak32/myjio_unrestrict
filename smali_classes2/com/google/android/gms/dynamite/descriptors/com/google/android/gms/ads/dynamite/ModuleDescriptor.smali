@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/dynamite/descriptors/com/google/android/gms/ads/dynamite/ModuleDescriptor;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
@@ -16,7 +17,7 @@
     .end annotation
 .end field
 
-.field public static final MODULE_VERSION:I = 0x136
+.field public static final MODULE_VERSION:I = 0xc1fb538
     .annotation build Lcom/google/android/gms/common/util/RetainForClient;
     .end annotation
 .end field

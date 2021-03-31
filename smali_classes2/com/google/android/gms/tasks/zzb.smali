@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/tasks/zzb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 # interfaces
 .implements Lcom/google/android/gms/tasks/OnSuccessListener;
@@ -17,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic zzb:Lcom/google/android/gms/tasks/OnTokenCanceledListener;
+.field private final synthetic zza:Lcom/google/android/gms/tasks/OnTokenCanceledListener;
 
 
 # direct methods
@@ -25,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzb;->zzb:Lcom/google/android/gms/tasks/OnTokenCanceledListener;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzb;->zza:Lcom/google/android/gms/tasks/OnTokenCanceledListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +39,10 @@
     .locals 0
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/tasks/zzb;->zzb:Lcom/google/android/gms/tasks/OnTokenCanceledListener;
+    check-cast p1, Ljava/lang/Void;
+
+    .line 2
+    iget-object p1, p0, Lcom/google/android/gms/tasks/zzb;->zza:Lcom/google/android/gms/tasks/OnTokenCanceledListener;
 
     invoke-interface {p1}, Lcom/google/android/gms/tasks/OnTokenCanceledListener;->onCanceled()V
 

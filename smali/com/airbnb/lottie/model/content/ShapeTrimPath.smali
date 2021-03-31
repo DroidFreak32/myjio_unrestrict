@@ -3,7 +3,7 @@
 .source "ShapeTrimPath.java"
 
 # interfaces
-.implements Lsr;
+.implements Lcom/airbnb/lottie/model/content/ContentModel;
 
 
 # annotations
@@ -19,17 +19,17 @@
 
 .field public final b:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
-.field public final c:Ler;
+.field public final c:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-.field public final d:Ler;
+.field public final d:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-.field public final e:Ler;
+.field public final e:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
 .field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;Ler;Ler;Ler;Z)V
+.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
     .locals 0
 
     .line 1
@@ -42,13 +42,13 @@
     iput-object p2, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->b:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
     .line 4
-    iput-object p3, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->c:Ler;
+    iput-object p3, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->c:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     .line 5
-    iput-object p4, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->d:Ler;
+    iput-object p4, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->d:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     .line 6
-    iput-object p5, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->e:Ler;
+    iput-object p5, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->e:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     .line 7
     iput-boolean p6, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->f:Z
@@ -58,27 +58,16 @@
 
 
 # virtual methods
-.method public a()Ler;
+.method public getEnd()Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->d:Ler;
+    iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->d:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     return-object v0
 .end method
 
-.method public a(Lvo;Lcs;)Llp;
-    .locals 0
-
-    .line 2
-    new-instance p1, Lcq;
-
-    invoke-direct {p1, p2, p0}, Lcq;-><init>(Lcs;Lcom/airbnb/lottie/model/content/ShapeTrimPath;)V
-
-    return-object p1
-.end method
-
-.method public b()Ljava/lang/String;
+.method public getName()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -87,25 +76,25 @@
     return-object v0
 .end method
 
-.method public c()Ler;
+.method public getOffset()Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->e:Ler;
+    iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->e:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     return-object v0
 .end method
 
-.method public d()Ler;
+.method public getStart()Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->c:Ler;
+    iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->c:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     return-object v0
 .end method
 
-.method public e()Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
+.method public getType()Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
     .locals 1
 
     .line 1
@@ -114,13 +103,24 @@
     return-object v0
 .end method
 
-.method public f()Z
+.method public isHidden()Z
     .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->f:Z
 
     return v0
+.end method
+
+.method public toContent(Lcom/airbnb/lottie/LottieDrawable;Lcom/airbnb/lottie/model/layer/BaseLayer;)Lcom/airbnb/lottie/animation/content/Content;
+    .locals 0
+
+    .line 1
+    new-instance p1, Lcom/airbnb/lottie/animation/content/TrimPathContent;
+
+    invoke-direct {p1, p2, p0}, Lcom/airbnb/lottie/animation/content/TrimPathContent;-><init>(Lcom/airbnb/lottie/model/layer/BaseLayer;Lcom/airbnb/lottie/model/content/ShapeTrimPath;)V
+
+    return-object p1
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -135,7 +135,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->c:Ler;
+    iget-object v1, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->c:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->d:Ler;
+    iget-object v1, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->d:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -151,11 +151,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->e:Ler;
+    iget-object v1, p0, Lcom/airbnb/lottie/model/content/ShapeTrimPath;->e:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

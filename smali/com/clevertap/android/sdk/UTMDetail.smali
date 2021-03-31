@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public campaign:Ljava/lang/String;
+.field private campaign:Ljava/lang/String;
 
-.field public medium:Ljava/lang/String;
+.field private medium:Ljava/lang/String;
 
-.field public source:Ljava/lang/String;
+.field private source:Ljava/lang/String;
 
 
 # direct methods

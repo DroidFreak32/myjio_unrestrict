@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final volume:F
+.field private final volume:F
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method private constructor <init>(F)V
     .locals 0
 
     .line 1
@@ -109,7 +109,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

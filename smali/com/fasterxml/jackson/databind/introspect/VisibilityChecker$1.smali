@@ -34,8 +34,6 @@
     sput-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$1;->$SwitchMap$com$fasterxml$jackson$annotation$PropertyAccessor:[I
 
     :try_start_0
-    sget-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$1;->$SwitchMap$com$fasterxml$jackson$annotation$PropertyAccessor:[I
-
     sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->GETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

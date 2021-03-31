@@ -1,4 +1,4 @@
-.class public final Landroidx/core/widget/NestedScrollView$SavedState$a;
+.class public Landroidx/core/widget/NestedScrollView$SavedState$a;
 .super Ljava/lang/Object;
 .source "NestedScrollView.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/core/widget/NestedScrollView$SavedState;
+.method public a(Landroid/os/Parcel;)Landroidx/core/widget/NestedScrollView$SavedState;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/core/widget/NestedScrollView$SavedState;
 
     invoke-direct {v0, p1}, Landroidx/core/widget/NestedScrollView$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -49,22 +49,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/core/widget/NestedScrollView$SavedState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/core/widget/NestedScrollView$SavedState$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/core/widget/NestedScrollView$SavedState;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/core/widget/NestedScrollView$SavedState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/core/widget/NestedScrollView$SavedState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/core/widget/NestedScrollView$SavedState;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/core/widget/NestedScrollView$SavedState$a;->a(Landroid/os/Parcel;)Landroidx/core/widget/NestedScrollView$SavedState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -73,7 +73,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/core/widget/NestedScrollView$SavedState$a;->newArray(I)[Landroidx/core/widget/NestedScrollView$SavedState;
+    invoke-virtual {p0, p1}, Landroidx/core/widget/NestedScrollView$SavedState$a;->b(I)[Landroidx/core/widget/NestedScrollView$SavedState;
 
     move-result-object p1
 

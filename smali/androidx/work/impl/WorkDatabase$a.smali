@@ -3,12 +3,12 @@
 .source "WorkDatabase.java"
 
 # interfaces
-.implements Lci$c;
+.implements Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/work/impl/WorkDatabase;->a(Landroid/content/Context;Ljava/util/concurrent/Executor;Z)Landroidx/work/impl/WorkDatabase;
+    value = Landroidx/work/impl/WorkDatabase;->create(Landroid/content/Context;Ljava/util/concurrent/Executor;Z)Landroidx/work/impl/WorkDatabase;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,43 +35,53 @@
 
 
 # virtual methods
-.method public a(Lci$b;)Lci;
+.method public create(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
     .locals 2
+    .param p1    # Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroidx/work/impl/WorkDatabase$a;->a:Landroid/content/Context;
 
     .line 2
-    invoke-static {v0}, Lci$b;->a(Landroid/content/Context;)Lci$b$a;
+    invoke-static {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->builder(Landroid/content/Context;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
     move-result-object v0
 
     .line 3
-    iget-object v1, p1, Lci$b;->b:Ljava/lang/String;
+    iget-object v1, p1, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->name:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lci$b$a;->a(Ljava/lang/String;)Lci$b$a;
+    invoke-virtual {v0, v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->name(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
-    iget-object p1, p1, Lci$b;->c:Lci$a;
+    move-result-object v1
+
+    iget-object p1, p1, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->callback:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;
 
     .line 4
-    invoke-virtual {v0, p1}, Lci$b$a;->a(Lci$a;)Lci$b$a;
+    invoke-virtual {v1, p1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->callback(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
-    const/4 p1, 0x1
+    move-result-object p1
+
+    const/4 v1, 0x1
 
     .line 5
-    invoke-virtual {v0, p1}, Lci$b$a;->a(Z)Lci$b$a;
+    invoke-virtual {p1, v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->noBackupDirectory(Z)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
     .line 6
-    new-instance p1, Lii;
+    new-instance p1, Landroidx/sqlite/db/framework/FrameworkSQLiteOpenHelperFactory;
 
-    invoke-direct {p1}, Lii;-><init>()V
+    invoke-direct {p1}, Landroidx/sqlite/db/framework/FrameworkSQLiteOpenHelperFactory;-><init>()V
 
     .line 7
-    invoke-virtual {v0}, Lci$b$a;->a()Lci$b;
+    invoke-virtual {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->build()Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lii;->a(Lci$b;)Lci;
+    invoke-virtual {p1, v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteOpenHelperFactory;->create(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     move-result-object p1
 

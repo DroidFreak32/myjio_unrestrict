@@ -23,11 +23,11 @@
 
 .field public static final HUE_YELLOW:F = 60.0f
 
-.field public static zzcm:Lcom/google/android/gms/internal/maps/zze;
+.field private static zzcm:Lcom/google/android/gms/internal/maps/zze;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -283,7 +283,7 @@
     return-void
 .end method
 
-.method public static zzg()Lcom/google/android/gms/internal/maps/zze;
+.method private static zzg()Lcom/google/android/gms/internal/maps/zze;
     .locals 2
 
     .line 1

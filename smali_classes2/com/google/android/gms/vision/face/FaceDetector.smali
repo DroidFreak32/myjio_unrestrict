@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/face/FaceDetector;
 .super Lcom/google/android/gms/vision/Detector;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -37,17 +38,25 @@
 
 
 # instance fields
-.field public final lock:Ljava/lang/Object;
+.field private final lock:Ljava/lang/Object;
 
-.field public final zzcj:Lcom/google/android/gms/vision/zzc;
+.field private final zzcr:Lcom/google/android/gms/vision/zzc;
 
-.field public final zzck:Lcom/google/android/gms/vision/face/internal/client/zzc;
+.field private final zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
+    .end annotation
+.end field
 
-.field public zzcl:Z
+.field private zzct:Z
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "lock"
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .line 1
@@ -58,7 +67,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/vision/zzc;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcj:Lcom/google/android/gms/vision/zzc;
+    iput-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcr:Lcom/google/android/gms/vision/zzc;
 
     .line 3
     new-instance v0, Ljava/lang/Object;
@@ -70,7 +79,7 @@
     const/4 v0, 0x1
 
     .line 4
-    iput-boolean v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
     .line 5
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -82,7 +91,7 @@
     throw v0
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/vision/face/internal/client/zzc;)V
+.method private constructor <init>(Lcom/google/android/gms/vision/face/internal/client/zzb;)V
     .locals 1
 
     .line 6
@@ -93,7 +102,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/vision/zzc;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcj:Lcom/google/android/gms/vision/zzc;
+    iput-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcr:Lcom/google/android/gms/vision/zzc;
 
     .line 8
     new-instance v0, Ljava/lang/Object;
@@ -105,28 +114,28 @@
     const/4 v0, 0x1
 
     .line 9
-    iput-boolean v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
     .line 10
-    iput-object p1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzck:Lcom/google/android/gms/vision/face/internal/client/zzc;
+    iput-object p1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/vision/face/internal/client/zzc;Lcom/google/android/gms/vision/face/zza;)V
+.method public synthetic constructor <init>(Lcom/google/android/gms/vision/face/internal/client/zzb;Lcom/google/android/gms/vision/face/zza;)V
     .locals 0
 
     .line 11
-    invoke-direct {p0, p1}, Lcom/google/android/gms/vision/face/FaceDetector;-><init>(Lcom/google/android/gms/vision/face/internal/client/zzc;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/vision/face/FaceDetector;-><init>(Lcom/google/android/gms/vision/face/internal/client/zzb;)V
 
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/vision/face/internal/client/zze;)Z
+.method private static zza(Lcom/google/android/gms/vision/face/internal/client/zzf;)Z
     .locals 5
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->mode:I
+    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zzf;->mode:I
 
     const/4 v1, 0x0
 
@@ -136,7 +145,7 @@
 
     if-eq v0, v3, :cond_0
 
-    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->landmarkType:I
+    iget v0, p0, Lcom/google/android/gms/vision/face/internal/client/zzf;->landmarkType:I
 
     if-ne v0, v3, :cond_0
 
@@ -149,25 +158,28 @@
 
     .line 2
     :goto_0
-    iget v4, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->landmarkType:I
+    iget v4, p0, Lcom/google/android/gms/vision/face/internal/client/zzf;->landmarkType:I
 
     if-ne v4, v3, :cond_1
 
-    iget p0, p0, Lcom/google/android/gms/vision/face/internal/client/zze;->zzcn:I
+    iget p0, p0, Lcom/google/android/gms/vision/face/internal/client/zzf;->zzcw:I
 
     if-ne p0, v2, :cond_1
 
-    const/4 v0, 0x0
+    goto :goto_1
 
     :cond_1
-    return v0
+    move v1, v0
+
+    :goto_1
+    return v1
 .end method
 
-.method public static synthetic zzb(Lcom/google/android/gms/vision/face/internal/client/zze;)Z
+.method public static synthetic zzb(Lcom/google/android/gms/vision/face/internal/client/zzf;)Z
     .locals 0
 
     .line 1
-    invoke-static {p0}, Lcom/google/android/gms/vision/face/FaceDetector;->zza(Lcom/google/android/gms/vision/face/internal/client/zze;)Z
+    invoke-static {p0}, Lcom/google/android/gms/vision/face/FaceDetector;->zza(Lcom/google/android/gms/vision/face/internal/client/zzf;)Z
 
     move-result p0
 
@@ -189,37 +201,116 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_8
 
     .line 1
-    invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getBitmap()Landroid/graphics/Bitmap;
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x13
+
+    const/4 v2, 0x0
+
+    if-lt v0, v1, :cond_1
+
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getPlanes()[Landroid/media/Image$Plane;
 
     move-result-object v0
-
-    const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 2
+    .line 3
+    invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getPlanes()[Landroid/media/Image$Plane;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_1
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->lock:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 5
+    :try_start_0
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
+
+    if-eqz v1, :cond_0
+
+    .line 6
+    iget-object v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
+
+    .line 7
+    invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getPlanes()[Landroid/media/Image$Plane;
+
+    move-result-object v3
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzu;->zzd(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzu;
+
+    move-result-object p1
+
+    .line 8
+    invoke-virtual {v1, v3, p1}, Lcom/google/android/gms/vision/face/internal/client/zzb;->zza([Landroid/media/Image$Plane;Lcom/google/android/gms/internal/vision/zzu;)[Lcom/google/android/gms/vision/face/Face;
+
+    move-result-object p1
+
+    .line 9
+    monitor-exit v0
+
+    goto/16 :goto_1
+
+    .line 10
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Cannot use detector after release()"
+
+    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :catchall_0
+    move-exception p1
+
+    .line 11
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    .line 12
+    :cond_1
     invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 3
+    if-eqz v0, :cond_3
+
+    .line 13
+    invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 14
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v2
+    move-result v1
 
-    .line 4
+    .line 15
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v3
 
-    mul-int v4, v2, v3
+    mul-int v4, v1, v3
 
-    add-int/lit8 v5, v2, 0x1
+    add-int/lit8 v5, v1, 0x1
 
-    .line 5
+    .line 16
     div-int/lit8 v5, v5, 0x2
 
     add-int/lit8 v3, v3, 0x1
@@ -232,7 +323,7 @@
 
     add-int/2addr v3, v4
 
-    .line 6
+    .line 17
     invoke-static {v3}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v3
@@ -242,28 +333,28 @@
     const/4 v5, 0x0
 
     :goto_0
-    if-ge v5, v4, :cond_2
+    if-ge v5, v4, :cond_4
 
-    .line 7
-    rem-int v7, v5, v2
+    .line 18
+    rem-int v7, v5, v1
 
-    div-int v8, v5, v2
+    div-int v8, v5, v1
 
     invoke-virtual {v0, v7, v8}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     move-result v9
 
-    .line 8
+    .line 19
     invoke-static {v9}, Landroid/graphics/Color;->red(I)I
 
     move-result v10
 
-    .line 9
+    .line 20
     invoke-static {v9}, Landroid/graphics/Color;->green(I)I
 
     move-result v11
 
-    .line 10
+    .line 21
     invoke-static {v9}, Landroid/graphics/Color;->blue(I)I
 
     move-result v9
@@ -294,17 +385,17 @@
 
     int-to-byte v12, v12
 
-    .line 11
+    .line 22
     invoke-virtual {v3, v5, v12}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    .line 12
+    .line 23
     rem-int/lit8 v8, v8, 0x2
 
-    if-nez v8, :cond_0
+    if-nez v8, :cond_2
 
     rem-int/lit8 v7, v7, 0x2
 
-    if-nez v7, :cond_0
+    if-nez v7, :cond_2
 
     const v7, -0x41d2f1aa    # -0.169f
 
@@ -348,7 +439,7 @@
 
     int-to-byte v7, v7
 
-    .line 13
+    .line 24
     invoke-virtual {v3, v6, v7}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
     add-int/lit8 v6, v8, 0x1
@@ -357,81 +448,82 @@
 
     int-to-byte v7, v7
 
-    .line 14
+    .line 25
     invoke-virtual {v3, v8, v7}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    :cond_0
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 15
-    :cond_1
+    .line 26
+    :cond_3
     invoke-virtual {p1}, Lcom/google/android/gms/vision/Frame;->getGrayscaleImageData()Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
-    .line 16
-    :cond_2
+    .line 27
+    :cond_4
     iget-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->lock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 17
-    :try_start_0
-    iget-boolean v2, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    .line 28
+    :try_start_1
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v1, :cond_7
 
-    .line 18
-    iget-object v2, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzck:Lcom/google/android/gms/vision/face/internal/client/zzc;
+    .line 29
+    iget-object v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzn;->zzc(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzn;
-
-    move-result-object p1
-
-    invoke-virtual {v2, v3, p1}, Lcom/google/android/gms/vision/face/internal/client/zzc;->zzb(Ljava/nio/ByteBuffer;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/face/Face;
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzu;->zzd(Lcom/google/android/gms/vision/Frame;)Lcom/google/android/gms/internal/vision/zzu;
 
     move-result-object p1
 
-    .line 19
+    invoke-virtual {v1, v3, p1}, Lcom/google/android/gms/vision/face/internal/client/zzb;->zzb(Ljava/nio/ByteBuffer;Lcom/google/android/gms/internal/vision/zzu;)[Lcom/google/android/gms/vision/face/Face;
+
+    move-result-object p1
+
+    .line 30
     monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 20
+    .line 31
+    :goto_1
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 21
-    new-instance v2, Landroid/util/SparseArray;
+    .line 32
+    new-instance v1, Landroid/util/SparseArray;
 
     array-length v3, p1
 
-    invoke-direct {v2, v3}, Landroid/util/SparseArray;-><init>(I)V
+    invoke-direct {v1, v3}, Landroid/util/SparseArray;-><init>(I)V
 
-    .line 22
+    .line 33
     array-length v3, p1
 
     const/4 v4, 0x0
 
-    :goto_1
-    if-ge v1, v3, :cond_4
+    :goto_2
+    if-ge v2, v3, :cond_6
 
-    aget-object v5, p1, v1
+    aget-object v5, p1, v2
 
-    .line 23
+    .line 34
     invoke-virtual {v5}, Lcom/google/android/gms/vision/face/Face;->getId()I
 
     move-result v6
 
-    .line 24
+    .line 35
     invoke-static {v4, v6}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
-    .line 25
+    .line 36
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -440,60 +532,60 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
     add-int/lit8 v6, v4, 0x1
 
     move v4, v6
 
-    .line 26
-    :cond_3
+    .line 37
+    :cond_5
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     invoke-interface {v0, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 27
-    iget-object v7, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcj:Lcom/google/android/gms/vision/zzc;
+    .line 38
+    iget-object v7, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcr:Lcom/google/android/gms/vision/zzc;
 
     invoke-virtual {v7, v6}, Lcom/google/android/gms/vision/zzc;->zzb(I)I
 
     move-result v6
 
-    .line 28
-    invoke-virtual {v2, v6, v5}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+    .line 39
+    invoke-virtual {v1, v6, v5}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_4
-    return-object v2
+    :cond_6
+    return-object v1
 
-    .line 29
-    :cond_5
-    :try_start_1
-    new-instance p1, Ljava/lang/RuntimeException;
+    .line 40
+    :cond_7
+    :try_start_2
+    new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v1, "Cannot use detector after release()"
 
-    invoke-direct {p1, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
-    :catchall_0
+    :catchall_1
     move-exception p1
 
-    .line 30
+    .line 41
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     throw p1
 
-    .line 31
-    :cond_6
+    .line 42
+    :cond_8
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "No frame supplied."
@@ -505,6 +597,11 @@
 
 .method public final finalize()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Throwable;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -516,12 +613,12 @@
 
     .line 2
     :try_start_1
-    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
     if-eqz v1, :cond_0
 
     .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/vision/face/FaceDetector;->release()V
+    invoke-virtual {p0}, Lcom/google/android/gms/vision/Detector;->release()V
 
     .line 4
     :cond_0
@@ -554,6 +651,7 @@
     .line 7
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 8
     throw v0
 .end method
 
@@ -561,9 +659,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzck:Lcom/google/android/gms/vision/face/internal/client/zzc;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzm;->isOperational()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzs;->isOperational()Z
 
     move-result v0
 
@@ -583,7 +681,7 @@
 
     .line 3
     :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
     if-nez v1, :cond_0
 
@@ -594,14 +692,14 @@
 
     .line 5
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzck:Lcom/google/android/gms/vision/face/internal/client/zzc;
+    iget-object v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzm;->zzp()V
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzs;->zzq()V
 
     const/4 v1, 0x0
 
     .line 6
-    iput-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
     .line 7
     monitor-exit v0
@@ -622,7 +720,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcj:Lcom/google/android/gms/vision/zzc;
+    iget-object v0, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcr:Lcom/google/android/gms/vision/zzc;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/vision/zzc;->zzc(I)I
 
@@ -635,14 +733,14 @@
 
     .line 3
     :try_start_0
-    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcl:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzct:Z
 
     if-eqz v1, :cond_0
 
     .line 4
-    iget-object v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzck:Lcom/google/android/gms/vision/face/internal/client/zzc;
+    iget-object v1, p0, Lcom/google/android/gms/vision/face/FaceDetector;->zzcs:Lcom/google/android/gms/vision/face/internal/client/zzb;
 
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/vision/face/internal/client/zzc;->zzd(I)Z
+    invoke-virtual {v1, p1}, Lcom/google/android/gms/vision/face/internal/client/zzb;->zzd(I)Z
 
     move-result p1
 

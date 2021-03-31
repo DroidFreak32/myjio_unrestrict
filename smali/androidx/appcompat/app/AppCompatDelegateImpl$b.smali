@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+.field public final synthetic a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+    iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->m0:I
+    iget v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->n0:I
 
     and-int/lit8 v1, v1, 0x1
 
@@ -50,13 +50,13 @@
     if-eqz v1, :cond_0
 
     .line 2
-    invoke-virtual {v0, v2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->f(I)V
+    invoke-virtual {v0, v2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->r(I)V
 
     .line 3
     :cond_0
-    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iget v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->m0:I
+    iget v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->n0:I
 
     and-int/lit16 v1, v1, 0x1000
 
@@ -65,16 +65,16 @@
     const/16 v1, 0x6c
 
     .line 4
-    invoke-virtual {v0, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->f(I)V
+    invoke-virtual {v0, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->r(I)V
 
     .line 5
     :cond_1
-    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->s:Landroidx/appcompat/app/AppCompatDelegateImpl;
+    iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$b;->a:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    iput-boolean v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->l0:Z
+    iput-boolean v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->m0:Z
 
     .line 6
-    iput v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->m0:I
+    iput v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->n0:I
 
     return-void
 .end method

@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String; = "com.bumptech.glide.load.resource.bitmap.Rotate"
+.field private static final ID:Ljava/lang/String; = "com.bumptech.glide.load.resource.bitmap.Rotate"
 
-.field public static final ID_BYTES:[B
+.field private static final ID_BYTES:[B
 
 
 # instance fields
-.field public final degreesToRotate:I
+.field private final degreesToRotate:I
 
 
 # direct methods
@@ -74,22 +74,18 @@
 .method public hashCode()I
     .locals 2
 
-    const-string v0, "com.bumptech.glide.load.resource.bitmap.Rotate"
-
     .line 1
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    iget v0, p0, Lcom/bumptech/glide/load/resource/bitmap/Rotate;->degreesToRotate:I
+
+    .line 2
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->hashCode(I)I
 
     move-result v0
 
-    iget v1, p0, Lcom/bumptech/glide/load/resource/bitmap/Rotate;->degreesToRotate:I
-
-    .line 2
-    invoke-static {v1}, Lcom/bumptech/glide/util/Util;->hashCode(I)I
-
-    move-result v1
+    const v1, -0x38a7c59c
 
     .line 3
-    invoke-static {v0, v1}, Lcom/bumptech/glide/util/Util;->hashCode(II)I
+    invoke-static {v1, v0}, Lcom/bumptech/glide/util/Util;->hashCode(II)I
 
     move-result v0
 
@@ -98,6 +94,14 @@
 
 .method public transform(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget p1, p0, Lcom/bumptech/glide/load/resource/bitmap/Rotate;->degreesToRotate:I
@@ -111,6 +115,10 @@
 
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .locals 2
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/Rotate;->ID_BYTES:[B

@@ -15,38 +15,45 @@
 
 
 # static fields
-.field public static final MAX_PENDING_METADATA_COUNT:I = 0x5
+.field private static final MAX_PENDING_METADATA_COUNT:I = 0x5
 
-.field public static final MSG_INVOKE_RENDERER:I
+.field private static final MSG_INVOKE_RENDERER:I
 
 
 # instance fields
-.field public final buffer:Lcom/google/android/jioexoplayer2/metadata/MetadataInputBuffer;
+.field private final buffer:Lcom/google/android/jioexoplayer2/metadata/MetadataInputBuffer;
 
-.field public decoder:Lcom/google/android/jioexoplayer2/metadata/MetadataDecoder;
+.field private decoder:Lcom/google/android/jioexoplayer2/metadata/MetadataDecoder;
 
-.field public final decoderFactory:Lcom/google/android/jioexoplayer2/metadata/MetadataDecoderFactory;
+.field private final decoderFactory:Lcom/google/android/jioexoplayer2/metadata/MetadataDecoderFactory;
 
-.field public final formatHolder:Lcom/google/android/jioexoplayer2/FormatHolder;
+.field private final formatHolder:Lcom/google/android/jioexoplayer2/FormatHolder;
 
-.field public inputStreamEnded:Z
+.field private inputStreamEnded:Z
 
-.field public final output:Lcom/google/android/jioexoplayer2/metadata/MetadataOutput;
+.field private final output:Lcom/google/android/jioexoplayer2/metadata/MetadataOutput;
 
-.field public final outputHandler:Landroid/os/Handler;
+.field private final outputHandler:Landroid/os/Handler;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final pendingMetadata:[Lcom/google/android/jioexoplayer2/metadata/Metadata;
+.field private final pendingMetadata:[Lcom/google/android/jioexoplayer2/metadata/Metadata;
 
-.field public pendingMetadataCount:I
+.field private pendingMetadataCount:I
 
-.field public pendingMetadataIndex:I
+.field private pendingMetadataIndex:I
 
-.field public final pendingMetadataTimestamps:[J
+.field private final pendingMetadataTimestamps:[J
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/jioexoplayer2/metadata/MetadataOutput;Landroid/os/Looper;)V
     .locals 1
+    .param p2    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     sget-object v0, Lcom/google/android/jioexoplayer2/metadata/MetadataDecoderFactory;->DEFAULT:Lcom/google/android/jioexoplayer2/metadata/MetadataDecoderFactory;
@@ -58,6 +65,10 @@
 
 .method public constructor <init>(Lcom/google/android/jioexoplayer2/metadata/MetadataOutput;Landroid/os/Looper;Lcom/google/android/jioexoplayer2/metadata/MetadataDecoderFactory;)V
     .locals 1
+    .param p2    # Landroid/os/Looper;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x4
 
@@ -262,6 +273,11 @@
 
 .method public onStreamChanged([Lcom/google/android/jioexoplayer2/Format;J)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-object p2, p0, Lcom/google/android/jioexoplayer2/metadata/MetadataRenderer;->decoderFactory:Lcom/google/android/jioexoplayer2/metadata/MetadataDecoderFactory;
@@ -281,6 +297,11 @@
 
 .method public render(JJ)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean p3, p0, Lcom/google/android/jioexoplayer2/metadata/MetadataRenderer;->inputStreamEnded:Z

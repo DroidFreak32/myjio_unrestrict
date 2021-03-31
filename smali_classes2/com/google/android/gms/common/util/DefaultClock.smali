@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/DefaultClock;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/util/Clock;
@@ -11,7 +12,7 @@
 
 
 # static fields
-.field public static final zzgm:Lcom/google/android/gms/common/util/DefaultClock;
+.field private static final zza:Lcom/google/android/gms/common/util/DefaultClock;
 
 
 # direct methods
@@ -23,12 +24,12 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/util/DefaultClock;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/util/DefaultClock;->zzgm:Lcom/google/android/gms/common/util/DefaultClock;
+    sput-object v0, Lcom/google/android/gms/common/util/DefaultClock;->zza:Lcom/google/android/gms/common/util/DefaultClock;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -39,11 +40,14 @@
 
 .method public static getInstance()Lcom/google/android/gms/common/util/Clock;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/DefaultClock;->zzgm:Lcom/google/android/gms/common/util/DefaultClock;
+    sget-object v0, Lcom/google/android/gms/common/util/DefaultClock;->zza:Lcom/google/android/gms/common/util/DefaultClock;
 
     return-object v0
 .end method
@@ -52,6 +56,8 @@
 # virtual methods
 .method public currentThreadTimeMillis()J
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/SystemClock;->currentThreadTimeMillis()J
@@ -63,6 +69,8 @@
 
 .method public currentTimeMillis()J
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -74,6 +82,8 @@
 
 .method public elapsedRealtime()J
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -85,6 +95,8 @@
 
 .method public nanoTime()J
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     invoke-static {}, Ljava/lang/System;->nanoTime()J

@@ -7,46 +7,46 @@
 
 
 # instance fields
-.field public final THRESHOLD:I
+.field private final THRESHOLD:I
 
-.field public f1x:D
+.field private f1x:D
 
-.field public f2y:D
+.field private f2y:D
 
-.field public f3z:D
+.field private f3z:D
 
-.field public indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public indoorVar:D
+.field private indoorVar:D
 
-.field public listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public magnetSensor:Landroid/hardware/Sensor;
+.field private magnetSensor:Landroid/hardware/Sensor;
 
-.field public magnetValue:D
+.field private magnetValue:D
 
-.field public magnetVariation:D
+.field private magnetVariation:D
 
-.field public magnetism:[D
+.field private magnetism:[D
 
-.field public outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public outdoorVar:D
+.field private outdoorVar:D
 
-.field public semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public sensorManager:Landroid/hardware/SensorManager;
+.field private sensorManager:Landroid/hardware/SensorManager;
 
-.field public time:I
+.field private time:I
 
-.field public timer:I
+.field private timer:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,96 +65,90 @@
 
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->sensorManager:Landroid/hardware/SensorManager;
 
-    const/4 p1, 0x3
+    const/4 v0, 0x3
 
-    new-array p1, p1, [Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    new-array v0, v0, [Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 4
-    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
     .line 5
-    iput p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->time:I
+    iput v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->time:I
 
     .line 6
-    iput p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->timer:I
+    iput v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->timer:I
 
-    const/16 v0, 0xa
+    const/16 v1, 0xa
 
-    new-array v0, v0, [D
+    new-array v1, v1, [D
 
     .line 7
-    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetism:[D
+    iput-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetism:[D
 
-    const/16 v0, 0x46
+    const/16 v1, 0x46
 
     .line 8
-    iput v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->THRESHOLD:I
-
-    .line 9
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->sensorManager:Landroid/hardware/SensorManager;
+    iput v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->THRESHOLD:I
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+    .line 9
+    invoke-virtual {p1, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetSensor:Landroid/hardware/Sensor;
+    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetSensor:Landroid/hardware/Sensor;
 
     .line 10
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->sensorManager:Landroid/hardware/SensorManager;
+    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->sensorManager:Landroid/hardware/SensorManager;
 
-    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetSensor:Landroid/hardware/Sensor;
-
-    invoke-virtual {v0, p0, v2, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+    invoke-virtual {v2, p0, p1, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
     .line 11
-    new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    new-instance p1, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     const-string v2, "indoor"
 
-    invoke-direct {v0, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 12
-    new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    new-instance p1, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     const-string v2, "semi-outdoor"
 
-    invoke-direct {v0, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 13
-    new-instance v0, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    new-instance p1, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     const-string v2, "outdoor"
 
-    invoke-direct {v0, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 14
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    aput-object v2, v0, p1
+    aput-object v3, v2, v0
 
     .line 15
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    aput-object p1, v0, v2
+    aput-object v0, v2, v3
 
     .line 16
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
-    aput-object p1, v0, v1
+    aput-object p1, v2, v1
 
     return-void
 .end method
@@ -463,7 +457,7 @@
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 4
+    .locals 6
 
     .line 1
     iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -476,41 +470,35 @@
 
     iput-wide v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f1x:D
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     .line 2
-    aget v0, p1, v0
+    aget v2, p1, v2
 
-    float-to-double v0, v0
+    float-to-double v2, v2
 
-    iput-wide v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f2y:D
+    iput-wide v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f2y:D
 
-    const/4 v0, 0x2
+    const/4 v4, 0x2
 
     .line 3
-    aget p1, p1, v0
+    aget p1, p1, v4
 
-    float-to-double v0, p1
+    float-to-double v4, p1
 
-    iput-wide v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f3z:D
-
-    .line 4
-    iget-wide v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f1x:D
+    iput-wide v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f3z:D
 
     mul-double v0, v0, v0
 
-    iget-wide v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f2y:D
-
     mul-double v2, v2, v2
 
     add-double/2addr v0, v2
 
-    iget-wide v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->f3z:D
+    mul-double v4, v4, v4
 
-    mul-double v2, v2, v2
+    add-double/2addr v0, v4
 
-    add-double/2addr v0, v2
-
+    .line 4
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v0
@@ -571,9 +559,6 @@
 
     iput-wide v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetVariation:D
 
-    .line 3
-    iget-wide v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->magnetVariation:D
-
     const-wide v2, 0x3fd6666666666666L    # 0.35
 
     const-wide v4, 0x3fe4cccccccccccdL    # 0.65
@@ -584,22 +569,22 @@
 
     if-ltz v8, :cond_0
 
-    .line 4
+    .line 3
     iput-wide v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->indoorVar:D
 
-    .line 5
+    .line 4
     iput-wide v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->outdoorVar:D
 
     goto :goto_0
 
-    .line 6
+    .line 5
     :cond_0
     iput-wide v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->outdoorVar:D
 
-    .line 7
+    .line 6
     iput-wide v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->indoorVar:D
 
-    .line 8
+    .line 7
     :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -617,7 +602,7 @@
 
     const/4 v0, 0x0
 
-    .line 9
+    .line 8
     iput v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;->timer:I
 
     return-void

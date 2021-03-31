@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroidx/work/impl/utils/ForceStopRunnable;
 .end annotation
@@ -25,7 +31,7 @@
     const-string v0, "ForceStopRunnable$Rcvr"
 
     .line 1
-    invoke-static {v0}, Lbl;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Landroidx/work/Logger;->tagWithPrefix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -65,7 +71,7 @@
     if-eqz p2, :cond_0
 
     .line 3
-    invoke-static {}, Lbl;->a()Lbl;
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object p2
 
@@ -77,10 +83,10 @@
 
     const-string v2, "Rescheduling alarm that keeps track of force-stops."
 
-    invoke-virtual {p2, v0, v2, v1}, Lbl;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {p2, v0, v2, v1}, Landroidx/work/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     .line 4
-    invoke-static {p1}, Landroidx/work/impl/utils/ForceStopRunnable;->b(Landroid/content/Context;)V
+    invoke-static {p1}, Landroidx/work/impl/utils/ForceStopRunnable;->c(Landroid/content/Context;)V
 
     :cond_0
     return-void

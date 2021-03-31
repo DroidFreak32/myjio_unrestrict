@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -26,7 +27,7 @@
 
 
 # instance fields
-.field public final zajk:Ljava/lang/Object;
+.field private final zaa:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "T",
@@ -35,7 +36,7 @@
     .end annotation
 .end field
 
-.field public final zajn:Ljava/lang/String;
+.field private final zab:Ljava/lang/String;
 
 
 # direct methods
@@ -57,10 +58,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajk:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zaa:Ljava/lang/Object;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajn:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zab:Ljava/lang/String;
 
     return-void
 .end method
@@ -69,6 +70,12 @@
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -91,15 +98,15 @@
     check-cast p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajk:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zaa:Ljava/lang/Object;
 
-    iget-object v3, p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajk:Ljava/lang/Object;
+    iget-object v3, p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zaa:Ljava/lang/Object;
 
     if-ne v1, v3, :cond_2
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajn:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zab:Ljava/lang/String;
 
-    iget-object p1, p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajn:Ljava/lang/String;
+    iget-object p1, p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zab:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -115,9 +122,11 @@
 
 .method public final hashCode()I
     .locals 2
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajk:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zaa:Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
@@ -126,7 +135,7 @@
     mul-int/lit8 v0, v0, 0x1f
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zajn:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;->zab:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 

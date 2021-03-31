@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public mMediaControllerImpl:Ljava/lang/ref/WeakReference;
+.field private mMediaControllerImpl:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -78,7 +78,7 @@
     const-string v2, "android.support.v4.media.session.EXTRA_BINDER"
 
     .line 4
-    invoke-static {p2, v2}, Lm6;->a(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {p2, v2}, Landroidx/core/app/BundleCompat;->getBinder(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v2
 

@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public final disableExperiments:Z
+.field private final disableExperiments:Z
 
-.field public final disableOnScreenDetection:Z
+.field private final disableOnScreenDetection:Z
 
-.field public final enableMonitorAppLifecycle:Z
+.field private final enableMonitorAppLifecycle:Z
 
-.field public final extraParams:Ljava/util/Map;
+.field private final extraParams:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -21,7 +21,7 @@
     .end annotation
 .end field
 
-.field public final forceExperimentIds:Ljava/util/List;
+.field private final forceExperimentIds:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -31,19 +31,19 @@
     .end annotation
 .end field
 
-.field public final forceTvMode:Z
+.field private final forceTvMode:Z
 
-.field public final ignoreStrictModeFalsePositives:Z
+.field private final ignoreStrictModeFalsePositives:Z
 
-.field public final useTestStreamManager:Z
+.field private final useTestStreamManager:Z
 
-.field public final useVideoElementMock:Z
+.field private final useVideoElementMock:Z
 
-.field public final videoElementMockDuration:F
+.field private final videoElementMockDuration:F
 
 
 # direct methods
-.method public constructor <init>(ZZZFZZLjava/util/List;ZZLjava/util/Map;)V
+.method private constructor <init>(ZZZFZZLjava/util/List;ZZLjava/util/Map;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -633,7 +633,7 @@
 
     invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

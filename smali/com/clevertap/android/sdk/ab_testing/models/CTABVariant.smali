@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public actions:Ljava/util/ArrayList;
+.field private actions:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -22,13 +22,13 @@
     .end annotation
 .end field
 
-.field public final actionsLock:Ljava/lang/Object;
+.field private final actionsLock:Ljava/lang/Object;
 
-.field public experimentId:Ljava/lang/String;
+.field private experimentId:Ljava/lang/String;
 
-.field public id:Ljava/lang/String;
+.field private id:Ljava/lang/String;
 
-.field public imageUrls:Ljava/util/ArrayList;
+.field private imageUrls:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -38,15 +38,15 @@
     .end annotation
 .end field
 
-.field public variantId:Ljava/lang/String;
+.field private variantId:Ljava/lang/String;
 
-.field public vars:Lorg/json/JSONArray;
+.field private vars:Lorg/json/JSONArray;
 
-.field public version:I
+.field private version:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILorg/json/JSONArray;Lorg/json/JSONArray;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;ILorg/json/JSONArray;Lorg/json/JSONArray;)V
     .locals 1
 
     .line 1
@@ -130,14 +130,14 @@
 
     move-result-object v3
 
-    const-string v1, "var_id"
+    const-string/jumbo v1, "var_id"
 
     .line 2
     invoke-virtual {p0, v1, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v0, "version"
+    const-string/jumbo v0, "version"
 
     const/4 v1, 0x0
 
@@ -153,7 +153,7 @@
 
     move-result-object v6
 
-    const-string v0, "vars"
+    const-string/jumbo v0, "vars"
 
     .line 5
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
@@ -253,7 +253,7 @@
     goto :goto_2
 
     :cond_1
-    const-string v5, "target_activity"
+    const-string/jumbo v5, "target_activity"
 
     .line 5
     invoke-static {v4, v5}, Lcom/clevertap/android/sdk/Utils;->optionalStringKey(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -716,6 +716,8 @@
 
 .method public toString()Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -758,6 +760,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 2
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/ab_testing/models/CTABVariant;->getVars()Lorg/json/JSONArray;
 
     move-result-object v1

@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final t:Lcom/caverock/androidsvg/SVG$f;
+.field public static final b:Lcom/caverock/androidsvg/SVG$f;
 
-.field public static final u:Lcom/caverock/androidsvg/SVG$f;
+.field public static final c:Lcom/caverock/androidsvg/SVG$f;
 
 
 # instance fields
-.field public s:I
+.field public a:I
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     invoke-direct {v0, v1}, Lcom/caverock/androidsvg/SVG$f;-><init>(I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$f;->t:Lcom/caverock/androidsvg/SVG$f;
+    sput-object v0, Lcom/caverock/androidsvg/SVG$f;->b:Lcom/caverock/androidsvg/SVG$f;
 
     .line 2
     new-instance v0, Lcom/caverock/androidsvg/SVG$f;
@@ -44,7 +44,7 @@
 
     invoke-direct {v0, v1}, Lcom/caverock/androidsvg/SVG$f;-><init>(I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$f;->u:Lcom/caverock/androidsvg/SVG$f;
+    sput-object v0, Lcom/caverock/androidsvg/SVG$f;->c:Lcom/caverock/androidsvg/SVG$f;
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$m0;-><init>()V
 
     .line 2
-    iput p1, p0, Lcom/caverock/androidsvg/SVG$f;->s:I
+    iput p1, p0, Lcom/caverock/androidsvg/SVG$f;->a:I
 
     return-void
 .end method
@@ -71,7 +71,7 @@
     new-array v0, v0, [Ljava/lang/Object;
 
     .line 1
-    iget v1, p0, Lcom/caverock/androidsvg/SVG$f;->s:I
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$f;->a:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

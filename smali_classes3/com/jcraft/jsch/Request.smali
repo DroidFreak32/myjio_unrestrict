@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public channel:Lcom/jcraft/jsch/Channel;
+.field private channel:Lcom/jcraft/jsch/Channel;
 
-.field public reply:Z
+.field private reply:Z
 
-.field public session:Lcom/jcraft/jsch/Session;
+.field private session:Lcom/jcraft/jsch/Session;
 
 
 # direct methods
@@ -38,6 +38,11 @@
 # virtual methods
 .method public request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/jcraft/jsch/Request;->session:Lcom/jcraft/jsch/Session;
@@ -79,6 +84,11 @@
 
 .method public write(Lcom/jcraft/jsch/Packet;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/Request;->reply:Z

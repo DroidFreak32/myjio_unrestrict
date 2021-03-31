@@ -1,179 +1,133 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbfy;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/ListIterator;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/ListIterator<",
-        "Ljava/lang/String;",
-        ">;"
-    }
+.annotation runtime Ljavax/annotation/ParametersAreNonnullByDefault;
 .end annotation
 
 
 # instance fields
-.field public zzeby:Ljava/util/ListIterator;
+.field private final method:Ljava/lang/String;
+
+.field public final uri:Landroid/net/Uri;
+
+.field public final url:Ljava/lang/String;
+
+.field public final zzal:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/ListIterator<",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final synthetic zzebz:I
-
-.field public final synthetic zzeca:Lcom/google/android/gms/internal/ads/zzbfx;
-
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbfx;I)V
-    .locals 0
+.method public constructor <init>(Landroid/webkit/WebResourceRequest;)V
+    .locals 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x15
+    .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeca:Lcom/google/android/gms/internal/ads/zzbfx;
+    invoke-interface {p1}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
 
-    iput p2, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzebz:I
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeca:Lcom/google/android/gms/internal/ads/zzbfx;
+    invoke-interface {p1}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzbfx;->zza(Lcom/google/android/gms/internal/ads/zzbfx;)Lcom/google/android/gms/internal/ads/zzbdu;
+    move-result-object v1
+
+    .line 3
+    invoke-interface {p1}, Landroid/webkit/WebResourceRequest;->getMethod()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 4
+    invoke-interface {p1}, Landroid/webkit/WebResourceRequest;->getRequestHeaders()Ljava/util/Map;
 
     move-result-object p1
 
-    iget p2, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzebz:I
-
-    invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
+    .line 5
+    invoke-direct {p0, v0, v1, v2, p1}, Lcom/google/android/gms/internal/ads/zzbfy;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/Map;)V
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 2
 
-# virtual methods
-.method public final synthetic add(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final hasPrevious()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+    .line 6
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    const/4 v1, 0x0
 
-    return-object v0
+    invoke-direct {p0, p1, v0, v1, v1}, Lcom/google/android/gms/internal/ads/zzbfy;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/Map;)V
+
+    return-void
 .end method
 
-.method public final nextIndex()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final synthetic previous()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final previousIndex()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzeby:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final synthetic set(Ljava/lang/Object;)V
+.method private constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/Map;)V
     .locals 0
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Ljava/util/Map;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Landroid/net/Uri;",
+            "Ljava/lang/String;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
-    .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    .line 8
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfy;->url:Ljava/lang/String;
 
-    throw p1
+    .line 9
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzbfy;->uri:Landroid/net/Uri;
+
+    if-nez p3, :cond_0
+
+    const-string p3, "GET"
+
+    .line 10
+    :cond_0
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzbfy;->method:Ljava/lang/String;
+
+    if-nez p4, :cond_1
+
+    .line 11
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object p4
+
+    :cond_1
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzbfy;->zzal:Ljava/util/Map;
+
+    return-void
 .end method

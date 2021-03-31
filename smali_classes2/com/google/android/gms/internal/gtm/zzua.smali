@@ -3,8 +3,13 @@
 
 
 # direct methods
-.method public static zza(BBBB[CI)V
+.method private static zza(BBBB[CI)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 9
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzua;->zzg(B)Z
@@ -92,8 +97,13 @@
     throw p0
 .end method
 
-.method public static zza(BBB[CI)V
+.method private static zza(BBB[CI)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 5
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzua;->zzg(B)Z
@@ -155,8 +165,13 @@
     throw p0
 .end method
 
-.method public static zza(BB[CI)V
+.method private static zza(BB[CI)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     const/16 v0, -0x3e
 
@@ -193,7 +208,7 @@
     throw p0
 .end method
 
-.method public static zza(B[CI)V
+.method private static zza(B[CI)V
     .locals 0
 
     int-to-char p0, p0
@@ -206,6 +221,11 @@
 
 .method public static synthetic zzb(BBBB[CI)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 4
     invoke-static/range {p0 .. p5}, Lcom/google/android/gms/internal/gtm/zzua;->zza(BBBB[CI)V
@@ -215,6 +235,11 @@
 
 .method public static synthetic zzb(BBB[CI)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 3
     invoke-static {p0, p1, p2, p3, p4}, Lcom/google/android/gms/internal/gtm/zzua;->zza(BBB[CI)V
@@ -224,6 +249,11 @@
 
 .method public static synthetic zzb(BB[CI)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
+        }
+    .end annotation
 
     .line 2
     invoke-static {p0, p1, p2, p3}, Lcom/google/android/gms/internal/gtm/zzua;->zza(BB[CI)V
@@ -240,7 +270,7 @@
     return-void
 .end method
 
-.method public static zzd(B)Z
+.method private static zzd(B)Z
     .locals 0
 
     if-ltz p0, :cond_0
@@ -255,7 +285,7 @@
     return p0
 .end method
 
-.method public static zze(B)Z
+.method private static zze(B)Z
     .locals 1
 
     const/16 v0, -0x20
@@ -272,7 +302,7 @@
     return p0
 .end method
 
-.method public static zzf(B)Z
+.method private static zzf(B)Z
     .locals 1
 
     const/16 v0, -0x10
@@ -289,7 +319,7 @@
     return p0
 .end method
 
-.method public static zzg(B)Z
+.method private static zzg(B)Z
     .locals 1
 
     const/16 v0, -0x41

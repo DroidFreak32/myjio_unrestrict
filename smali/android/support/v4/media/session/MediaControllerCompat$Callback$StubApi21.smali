@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final mCallback:Ljava/lang/ref/WeakReference;
+.field private final mCallback:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",

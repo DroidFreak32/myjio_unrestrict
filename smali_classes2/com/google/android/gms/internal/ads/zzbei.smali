@@ -1,86 +1,40 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbei;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final zzeac:Lcom/google/android/gms/internal/ads/zzbeg;
-
-.field public static final zzead:Lcom/google/android/gms/internal/ads/zzbeg;
+# instance fields
+.field private final synthetic zzeqx:Lcom/google/android/gms/internal/ads/zzbeg;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbeg;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbei;->zzagi()Lcom/google/android/gms/internal/ads/zzbeg;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbei;->zzeqx:Lcom/google/android/gms/internal/ads/zzbeg;
 
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbei;->zzeac:Lcom/google/android/gms/internal/ads/zzbeg;
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbeh;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzbeh;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbei;->zzead:Lcom/google/android/gms/internal/ads/zzbeg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zzagg()Lcom/google/android/gms/internal/ads/zzbeg;
+
+# virtual methods
+.method public final run()V
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzbei;->zzeac:Lcom/google/android/gms/internal/ads/zzbeg;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbei;->zzeqx:Lcom/google/android/gms/internal/ads/zzbeg;
 
-    return-object v0
-.end method
-
-.method public static zzagh()Lcom/google/android/gms/internal/ads/zzbeg;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzbei;->zzead:Lcom/google/android/gms/internal/ads/zzbeg;
-
-    return-object v0
-.end method
-
-.method public static zzagi()Lcom/google/android/gms/internal/ads/zzbeg;
-    .locals 3
-
-    const-string v0, "com.google.protobuf.MapFieldSchemaFull"
-
-    .line 1
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbeg;->zza(Lcom/google/android/gms/internal/ads/zzbeg;)Lcom/google/android/gms/internal/ads/zzbdv;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzbdv;->destroy()V
 
-    new-array v2, v1, [Ljava/lang/Class;
-
-    .line 2
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzbeg;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method

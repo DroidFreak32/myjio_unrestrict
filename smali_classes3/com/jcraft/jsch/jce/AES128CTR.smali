@@ -7,13 +7,13 @@
 
 
 # static fields
-.field public static final bsize:I = 0x10
+.field private static final bsize:I = 0x10
 
-.field public static final ivsize:I = 0x10
+.field private static final ivsize:I = 0x10
 
 
 # instance fields
-.field public cipher:Ljavax/crypto/Cipher;
+.field private cipher:Ljavax/crypto/Cipher;
 
 
 # direct methods
@@ -45,7 +45,12 @@
 .end method
 
 .method public init(I[B[B)V
-    .locals 5
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     const-string v0, "NoPadding"
 
@@ -61,9 +66,7 @@
     new-array v1, v3, [B
 
     .line 2
-    array-length v4, v1
-
-    invoke-static {p3, v2, v1, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p3, v2, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move-object p3, v1
 
@@ -76,8 +79,6 @@
     new-array v1, v3, [B
 
     .line 4
-    array-length v3, v1
-
     invoke-static {p2, v2, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move-object p2, v1
@@ -178,6 +179,11 @@
 
 .method public update([BII[BI)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jce/AES128CTR;->cipher:Ljavax/crypto/Cipher;

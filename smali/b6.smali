@@ -1,49 +1,132 @@
-.class public final Lb6;
-.super Ljava/lang/Object;
-.source "R.java"
+.class public Lb6;
+.super Lg6;
+.source "ViewUtilsApi19.java"
+
+
+# annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x13
+.end annotation
 
 
 # static fields
-.field public static final compat_button_inset_horizontal_material:I = 0x7f07010c
+.field public static f:Z = true
 
-.field public static final compat_button_inset_vertical_material:I = 0x7f07010d
 
-.field public static final compat_button_padding_horizontal_material:I = 0x7f07010e
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 0
 
-.field public static final compat_button_padding_vertical_material:I = 0x7f07010f
+    return-void
+.end method
 
-.field public static final compat_control_corner_material:I = 0x7f070110
+.method public constructor <init>()V
+    .locals 0
 
-.field public static final compat_notification_large_icon_max_height:I = 0x7f070111
+    .line 1
+    invoke-direct {p0}, Lg6;-><init>()V
 
-.field public static final compat_notification_large_icon_max_width:I = 0x7f070112
+    return-void
+.end method
 
-.field public static final notification_action_icon_size:I = 0x7f0703bd
 
-.field public static final notification_action_text_size:I = 0x7f0703c0
+# virtual methods
+.method public a(Landroid/view/View;)V
+    .locals 0
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-.field public static final notification_big_circle_margin:I = 0x7f0703c1
+    return-void
+.end method
 
-.field public static final notification_content_margin_start:I = 0x7f0703c8
+.method public c(Landroid/view/View;)F
+    .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
-.field public static final notification_large_icon_height:I = 0x7f0703cc
+    .line 1
+    sget-boolean v0, Lb6;->f:Z
 
-.field public static final notification_large_icon_width:I = 0x7f0703cd
+    if-eqz v0, :cond_0
 
-.field public static final notification_main_column_padding_top:I = 0x7f0703ce
+    .line 2
+    :try_start_0
+    invoke-virtual {p1}, Landroid/view/View;->getTransitionAlpha()F
 
-.field public static final notification_media_narrow_margin:I = 0x7f0703d0
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-.field public static final notification_right_icon_size:I = 0x7f0703d1
+    return p1
 
-.field public static final notification_right_side_padding_top:I = 0x7f0703d2
+    :catch_0
+    const/4 v0, 0x0
 
-.field public static final notification_small_icon_background_padding:I = 0x7f0703d4
+    .line 3
+    sput-boolean v0, Lb6;->f:Z
 
-.field public static final notification_small_icon_size_as_large:I = 0x7f0703d5
+    .line 4
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
 
-.field public static final notification_subtext_size:I = 0x7f0703d6
+    move-result p1
 
-.field public static final notification_top_pad:I = 0x7f0703d7
+    return p1
+.end method
 
-.field public static final notification_top_pad_large_text:I = 0x7f0703d8
+.method public d(Landroid/view/View;)V
+    .locals 0
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    return-void
+.end method
+
+.method public g(Landroid/view/View;F)V
+    .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
+
+    .line 1
+    sget-boolean v0, Lb6;->f:Z
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    :try_start_0
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionAlpha(F)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    const/4 v0, 0x0
+
+    .line 3
+    sput-boolean v0, Lb6;->f:Z
+
+    .line 4
+    :cond_0
+    invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+.end method

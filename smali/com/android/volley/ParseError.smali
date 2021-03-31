@@ -13,20 +13,20 @@
     return-void
 .end method
 
+.method public constructor <init>(Lcom/android/volley/NetworkResponse;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Lcom/android/volley/NetworkResponse;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
     .line 3
     invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Luv;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Luv;)V
 
     return-void
 .end method

@@ -1,40 +1,44 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaaj;
-.super Lcom/google/android/gms/common/api/internal/zabf;
+.super Lcom/google/android/gms/common/api/internal/zaay;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic zafv:Lcom/google/android/gms/common/api/internal/zaah;
+.field private final synthetic zaa:Lcom/google/android/gms/common/ConnectionResult;
+
+.field private final synthetic zab:Lcom/google/android/gms/common/api/internal/zaag;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaah;Lcom/google/android/gms/common/api/internal/zabd;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaag;Lcom/google/android/gms/common/api/internal/zaaw;Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaaj;->zafv:Lcom/google/android/gms/common/api/internal/zaah;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaaj;->zab:Lcom/google/android/gms/common/api/internal/zaag;
 
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/zabf;-><init>(Lcom/google/android/gms/common/api/internal/zabd;)V
+    iput-object p3, p0, Lcom/google/android/gms/common/api/internal/zaaj;->zaa:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/zaay;-><init>(Lcom/google/android/gms/common/api/internal/zaaw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zaan()V
+.method public final zaa()V
     .locals 2
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaaj;->zafv:Lcom/google/android/gms/common/api/internal/zaah;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaaj;->zab:Lcom/google/android/gms/common/api/internal/zaag;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/zaah;->zaa(Lcom/google/android/gms/common/api/internal/zaah;)Lcom/google/android/gms/common/api/internal/zabe;
+    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zaag;->zaa:Lcom/google/android/gms/common/api/internal/zaaf;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaaj;->zaa:Lcom/google/android/gms/common/ConnectionResult;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zabe;->zaht:Lcom/google/android/gms/common/api/internal/zabt;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/internal/zabt;->zab(Landroid/os/Bundle;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/api/internal/zaaf;->zaa(Lcom/google/android/gms/common/api/internal/zaaf;Lcom/google/android/gms/common/ConnectionResult;)V
 
     return-void
 .end method

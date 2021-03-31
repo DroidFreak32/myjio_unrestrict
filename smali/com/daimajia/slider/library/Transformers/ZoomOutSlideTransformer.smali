@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final MIN_ALPHA:F = 0.5f
+.field private static final MIN_ALPHA:F = 0.5f
 
-.field public static final MIN_SCALE:F = 0.85f
+.field private static final MIN_SCALE:F = 0.85f
 
 
 # direct methods
@@ -81,7 +81,7 @@
     mul-float v1, v1, v0
 
     .line 4
-    invoke-static {p1, v1}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     const/4 v1, 0x0
 
@@ -94,7 +94,7 @@
     sub-float/2addr v6, v4
 
     .line 5
-    invoke-static {p1, v6}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, v6}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     goto :goto_0
 
@@ -106,14 +106,14 @@
     add-float/2addr p2, v4
 
     .line 6
-    invoke-static {p1, p2}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     .line 7
     :goto_0
-    invoke-static {p1, v2}, La53;->g(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleX(Landroid/view/View;F)V
 
     .line 8
-    invoke-static {p1, v2}, La53;->h(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleY(Landroid/view/View;F)V
 
     sub-float/2addr v2, v3
 
@@ -126,7 +126,7 @@
     add-float/2addr v2, v0
 
     .line 9
-    invoke-static {p1, v2}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     :cond_2
     return-void

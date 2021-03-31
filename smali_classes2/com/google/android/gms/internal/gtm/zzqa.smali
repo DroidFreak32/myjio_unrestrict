@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public final buffer:[B
+.field private final buffer:[B
 
-.field public final zzawd:Lcom/google/android/gms/internal/gtm/zzqj;
+.field private final zzawd:Lcom/google/android/gms/internal/gtm/zzqj;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -21,8 +21,6 @@
     iput-object p1, p0, Lcom/google/android/gms/internal/gtm/zzqa;->buffer:[B
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzqa;->buffer:[B
-
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzqj;->zzg([B)Lcom/google/android/gms/internal/gtm/zzqj;
 
     move-result-object p1

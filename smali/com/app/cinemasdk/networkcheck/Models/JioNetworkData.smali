@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public errors:Ljava/util/List;
+.field private errors:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -21,7 +21,7 @@
     .end annotation
 .end field
 
-.field public success:Ljava/lang/Boolean;
+.field private success:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

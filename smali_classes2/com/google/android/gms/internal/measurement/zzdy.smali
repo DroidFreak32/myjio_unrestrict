@@ -1,53 +1,84 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzdy;
+.class public abstract Lcom/google/android/gms/internal/measurement/zzdy;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
-# instance fields
-.field public zza:I
-
-.field public zzb:J
-
-.field public zzc:Ljava/lang/Object;
-
-.field public final zzd:Lcom/google/android/gms/internal/measurement/zzev;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/io/Serializable;"
+    }
+.end annotation
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzev;->zza()Lcom/google/android/gms/internal/measurement/zzev;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzdy;->zzd:Lcom/google/android/gms/internal/measurement/zzev;
-
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzev;)V
-    .locals 0
+.method public static zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/measurement/zzdy;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Lcom/google/android/gms/internal/measurement/zzdy<",
+            "TT;>;"
+        }
+    .end annotation
 
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzea;
 
-    if-eqz p1, :cond_0
+    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzeb;->zza(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzdy;->zzd:Lcom/google/android/gms/internal/measurement/zzev;
+    move-result-object p0
 
-    return-void
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/measurement/zzea;-><init>(Ljava/lang/Object;)V
 
-    .line 5
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    return-object v0
+.end method
 
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
+.method public static zzc()Lcom/google/android/gms/internal/measurement/zzdy;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lcom/google/android/gms/internal/measurement/zzdy<",
+            "TT;>;"
+        }
+    .end annotation
 
-    throw p1
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzdu;->zza:Lcom/google/android/gms/internal/measurement/zzdu;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract zza()Z
+.end method
+
+.method public abstract zzb()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 .end method

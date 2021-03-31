@@ -18,29 +18,29 @@
 
 
 # static fields
-.field public static final TS_PMT_DESC_AC3:I = 0x6a
+.field private static final TS_PMT_DESC_AC3:I = 0x6a
 
-.field public static final TS_PMT_DESC_DTS:I = 0x7b
+.field private static final TS_PMT_DESC_DTS:I = 0x7b
 
-.field public static final TS_PMT_DESC_DVBSUBS:I = 0x59
+.field private static final TS_PMT_DESC_DVBSUBS:I = 0x59
 
-.field public static final TS_PMT_DESC_EAC3:I = 0x7a
+.field private static final TS_PMT_DESC_EAC3:I = 0x7a
 
-.field public static final TS_PMT_DESC_ISO639_LANG:I = 0xa
+.field private static final TS_PMT_DESC_ISO639_LANG:I = 0xa
 
-.field public static final TS_PMT_DESC_REGISTRATION:I = 0x5
+.field private static final TS_PMT_DESC_REGISTRATION:I = 0x5
 
 
 # instance fields
-.field public final pid:I
+.field private final pid:I
 
-.field public final pmtScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final pmtScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;
 
-.field public final trackIdToPidScratch:Landroid/util/SparseIntArray;
+.field private final trackIdToPidScratch:Landroid/util/SparseIntArray;
 
-.field public final trackIdToReaderScratch:Landroid/util/SparseArray;
+.field private final trackIdToReaderScratch:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -105,7 +105,9 @@
 
     const/4 v2, -0x1
 
-    move-object v3, v1
+    move-object v2, v1
+
+    const/4 v3, -0x1
 
     .line 2
     :goto_0
@@ -180,7 +182,7 @@
 
     if-nez v9, :cond_8
 
-    const/16 v2, 0x24
+    const/16 v3, 0x24
 
     goto :goto_4
 
@@ -190,7 +192,7 @@
     if-ne v4, v5, :cond_3
 
     :goto_1
-    const/16 v2, 0x81
+    const/16 v3, 0x81
 
     goto :goto_4
 
@@ -200,7 +202,7 @@
     if-ne v4, v5, :cond_4
 
     :goto_2
-    const/16 v2, 0x87
+    const/16 v3, 0x87
 
     goto :goto_4
 
@@ -209,7 +211,7 @@
 
     if-ne v4, v5, :cond_5
 
-    const/16 v2, 0x8a
+    const/16 v3, 0x8a
 
     goto :goto_4
 
@@ -280,9 +282,7 @@
     goto :goto_3
 
     :cond_7
-    move-object v3, v2
-
-    const/16 v2, 0x59
+    const/16 v3, 0x59
 
     .line 17
     :cond_8
@@ -311,7 +311,7 @@
 
     move-result-object p1
 
-    invoke-direct {v4, v2, v1, v3, p1}, Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$EsInfo;-><init>(ILjava/lang/String;Ljava/util/List;[B)V
+    invoke-direct {v4, v3, v1, v2, p1}, Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$EsInfo;-><init>(ILjava/lang/String;Ljava/util/List;[B)V
 
     return-object v4
 .end method

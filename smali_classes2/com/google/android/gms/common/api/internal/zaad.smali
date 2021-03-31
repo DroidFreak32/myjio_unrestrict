@@ -1,62 +1,35 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaad;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/tasks/OnCompleteListener;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/OnCompleteListener<",
-        "TTResult;>;"
-    }
-.end annotation
+.super Lcom/google/android/gms/common/api/internal/zaay;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final synthetic zafn:Lcom/google/android/gms/common/api/internal/zaab;
-
-.field public final synthetic zafo:Lcom/google/android/gms/tasks/TaskCompletionSource;
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/internal/zaaa;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaab;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaaa;Lcom/google/android/gms/common/api/internal/zaaw;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaad;->zafn:Lcom/google/android/gms/common/api/internal/zaab;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaad;->zaa:Lcom/google/android/gms/common/api/internal/zaaa;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zaad;->zafo:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/zaay;-><init>(Lcom/google/android/gms/common/api/internal/zaaw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/tasks/Task<",
-            "TTResult;>;)V"
-        }
-    .end annotation
+.method public final zaa()V
+    .locals 2
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zaad;->zafn:Lcom/google/android/gms/common/api/internal/zaab;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaad;->zaa:Lcom/google/android/gms/common/api/internal/zaaa;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zaab;->zab(Lcom/google/android/gms/common/api/internal/zaab;)Ljava/util/Map;
+    const/4 v1, 0x1
 
-    move-result-object p1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaad;->zafo:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-interface {p1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/zaaa;->zaa(I)V
 
     return-void
 .end method

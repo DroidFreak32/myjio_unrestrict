@@ -20,6 +20,11 @@
 # virtual methods
 .method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     packed-switch p1, :pswitch_data_0
 

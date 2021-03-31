@@ -1,35 +1,34 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzadf;
+.class public final Lcom/google/android/gms/internal/ads/zzadf;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzato;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final zzcdr:Lcom/google/android/gms/internal/ads/zzapr;
+# static fields
+.field public static zzddc:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzapr;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "gads:separate_url_generation:enabled"
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzadf;->zzcdr:Lcom/google/android/gms/internal/ads/zzapr;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final zze(Z)V
-    .locals 0
+    const/4 v1, 0x0
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzadf;->zzcdr:Lcom/google/android/gms/internal/ads/zzapr;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzapr;->zzub()V
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadf;->zzddc:Lcom/google/android/gms/internal/ads/zzacn;
 
     return-void
 .end method

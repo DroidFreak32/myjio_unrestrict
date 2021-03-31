@@ -1,145 +1,76 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbfg;
-.super Lcom/google/android/gms/internal/ads/zzbff;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzbfg;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzbff<",
-        "TFieldDescriptorType;",
-        "Ljava/lang/Object;",
-        ">;"
-    }
-.end annotation
-
-
-# direct methods
-.method public constructor <init>(I)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbff;-><init>(ILcom/google/android/gms/internal/ads/zzbfg;)V
-
-    return-void
-.end method
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzva;
 
 
 # virtual methods
-.method public final zzact()V
-    .locals 3
+.method public abstract zza(IIZ)V
+.end method
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbff;->isImmutable()Z
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzbfi;)V
+.end method
 
-    move-result v0
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzbfj;)V
+.end method
 
-    if-nez v0, :cond_3
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzva;Lcom/google/android/gms/internal/ads/zzagy;Lcom/google/android/gms/ads/internal/overlay/zzp;Lcom/google/android/gms/internal/ads/zzaha;Lcom/google/android/gms/ads/internal/overlay/zzu;ZLcom/google/android/gms/internal/ads/zzahu;Lcom/google/android/gms/ads/internal/zza;Lcom/google/android/gms/internal/ads/zzaqx;Lcom/google/android/gms/internal/ads/zzawq;Lcom/google/android/gms/internal/ads/zzcqo;Lcom/google/android/gms/internal/ads/zzdrz;Lcom/google/android/gms/internal/ads/zzckq;)V
+    .param p7    # Lcom/google/android/gms/internal/ads/zzahu;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p10    # Lcom/google/android/gms/internal/ads/zzawq;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p11    # Lcom/google/android/gms/internal/ads/zzcqo;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p12    # Lcom/google/android/gms/internal/ads/zzdrz;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p13    # Lcom/google/android/gms/internal/ads/zzckq;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+.end method
 
-    const/4 v0, 0x0
+.method public abstract zzabx()Lcom/google/android/gms/ads/internal/zza;
+.end method
 
-    .line 2
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbff;->zzagz()I
+.method public abstract zzaby()Z
+.end method
 
-    move-result v1
+.method public abstract zzace()V
+.end method
 
-    if-ge v0, v1, :cond_1
+.method public abstract zzacf()V
+.end method
 
-    .line 3
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/ads/zzbff;->zzdg(I)Ljava/util/Map$Entry;
+.method public abstract zzacg()V
+.end method
 
-    move-result-object v1
+.method public abstract zzach()V
+.end method
 
-    .line 4
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+.method public abstract zzack()Lcom/google/android/gms/internal/ads/zzawq;
+.end method
 
-    move-result-object v2
+.method public abstract zzax(Z)V
+.end method
 
-    check-cast v2, Lcom/google/android/gms/internal/ads/zzbcw;
+.method public abstract zzay(Z)V
+.end method
 
-    invoke-interface {v2}, Lcom/google/android/gms/internal/ads/zzbcw;->zzaex()Z
+.method public abstract zzh(Landroid/net/Uri;)V
+.end method
 
-    move-result v2
+.method public abstract zzi(II)V
+.end method
 
-    if-eqz v2, :cond_0
-
-    .line 5
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/List;
-
-    .line 6
-    invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 7
-    :cond_1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbff;->zzaha()Ljava/lang/Iterable;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_2
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Map$Entry;
-
-    .line 8
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/internal/ads/zzbcw;
-
-    invoke-interface {v2}, Lcom/google/android/gms/internal/ads/zzbcw;->zzaex()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 9
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/List;
-
-    .line 10
-    invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_1
-
-    .line 11
-    :cond_3
-    invoke-super {p0}, Lcom/google/android/gms/internal/ads/zzbff;->zzact()V
-
-    return-void
+.method public abstract zzvf()V
 .end method

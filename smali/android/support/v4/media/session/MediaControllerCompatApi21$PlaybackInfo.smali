@@ -15,15 +15,15 @@
 
 
 # static fields
-.field public static final FLAG_SCO:I = 0x4
+.field private static final FLAG_SCO:I = 0x4
 
-.field public static final STREAM_BLUETOOTH_SCO:I = 0x6
+.field private static final STREAM_BLUETOOTH_SCO:I = 0x6
 
-.field public static final STREAM_SYSTEM_ENFORCED:I = 0x7
+.field private static final STREAM_SYSTEM_ENFORCED:I = 0x7
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -113,7 +113,7 @@
     return p0
 .end method
 
-.method public static toLegacyStreamType(Landroid/media/AudioAttributes;)I
+.method private static toLegacyStreamType(Landroid/media/AudioAttributes;)I
     .locals 3
 
     .line 1
@@ -153,58 +153,52 @@
 
     move-result p0
 
-    const/4 v0, 0x3
+    const/16 v0, 0xd
+
+    if-eq p0, v0, :cond_2
 
     packed-switch p0, :pswitch_data_0
 
-    return v0
+    const/4 p0, 0x3
+
+    return p0
 
     :pswitch_0
-    return v1
-
-    :pswitch_1
     const/4 p0, 0x2
 
     return p0
 
-    :pswitch_2
+    :pswitch_1
     const/4 p0, 0x5
 
     return p0
 
-    :pswitch_3
+    :pswitch_2
     return v2
 
-    :pswitch_4
+    :pswitch_3
     const/16 p0, 0x8
 
     return p0
 
-    :pswitch_5
+    :pswitch_4
     const/4 p0, 0x0
 
     return p0
 
-    :pswitch_6
-    return v0
-
-    nop
+    :cond_2
+    return v1
 
     :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
+    .packed-switch 0x2
         :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_6
-        :pswitch_6
         :pswitch_0
-        :pswitch_6
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method

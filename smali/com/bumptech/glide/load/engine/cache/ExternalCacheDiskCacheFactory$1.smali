@@ -62,11 +62,13 @@
     if-eqz v1, :cond_1
 
     .line 3
-    new-instance v2, Ljava/io/File;
+    new-instance v1, Ljava/io/File;
 
-    invoke-direct {v2, v0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/cache/ExternalCacheDiskCacheFactory$1;->val$diskCacheName:Ljava/lang/String;
 
-    return-object v2
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    return-object v1
 
     :cond_1
     return-object v0

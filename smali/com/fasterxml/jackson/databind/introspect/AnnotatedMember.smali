@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -169,6 +169,12 @@
 .end method
 
 .method public abstract getValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/UnsupportedOperationException;,
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 .end method
 
 .method public final hasAnnotation(Ljava/lang/Class;)Z
@@ -230,6 +236,12 @@
 .end method
 
 .method public abstract setValue(Ljava/lang/Object;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/UnsupportedOperationException;,
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 .end method
 
 .method public abstract withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/Annotated;

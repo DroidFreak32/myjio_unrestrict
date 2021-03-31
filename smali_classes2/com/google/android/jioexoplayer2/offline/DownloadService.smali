@@ -20,13 +20,13 @@
 
 .field public static final ACTION_RELOAD_REQUIREMENTS:Ljava/lang/String; = "com.google.android.exoplayer.downloadService.action.RELOAD_REQUIREMENTS"
 
-.field public static final ACTION_RESTART:Ljava/lang/String; = "com.google.android.exoplayer.downloadService.action.RESTART"
+.field private static final ACTION_RESTART:Ljava/lang/String; = "com.google.android.exoplayer.downloadService.action.RESTART"
 
-.field public static final DEBUG:Z = false
+.field private static final DEBUG:Z = false
 
 .field public static final DEFAULT_FOREGROUND_NOTIFICATION_UPDATE_INTERVAL:J = 0x3e8L
 
-.field public static final DEFAULT_REQUIREMENTS:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
+.field private static final DEFAULT_REQUIREMENTS:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
 
 .field public static final FOREGROUND_NOTIFICATION_ID_NONE:I = 0x0
 
@@ -34,9 +34,9 @@
 
 .field public static final KEY_FOREGROUND:Ljava/lang/String; = "foreground"
 
-.field public static final TAG:Ljava/lang/String; = "DownloadService"
+.field private static final TAG:Ljava/lang/String; = "DownloadService"
 
-.field public static final requirementsHelpers:Ljava/util/HashMap;
+.field private static final requirementsHelpers:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -52,21 +52,30 @@
 
 
 # instance fields
-.field public final channelId:Ljava/lang/String;
+.field private final channelId:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final channelName:I
+.field private final channelName:I
+    .annotation build Landroidx/annotation/StringRes;
+    .end annotation
+.end field
 
-.field public downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
+.field private downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
 
-.field public downloadManagerListener:Lcom/google/android/jioexoplayer2/offline/DownloadService$DownloadManagerListener;
+.field private downloadManagerListener:Lcom/google/android/jioexoplayer2/offline/DownloadService$DownloadManagerListener;
 
-.field public final foregroundNotificationUpdater:Lcom/google/android/jioexoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
+.field private final foregroundNotificationUpdater:Lcom/google/android/jioexoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public lastStartId:I
+.field private lastStartId:I
 
-.field public startedInForeground:Z
+.field private startedInForeground:Z
 
-.field public taskRemoved:Z
+.field private taskRemoved:Z
 
 
 # direct methods
@@ -83,11 +92,11 @@
     .line 2
     new-instance v0, Lcom/google/android/jioexoplayer2/scheduler/Requirements;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/jioexoplayer2/scheduler/Requirements;-><init>(IZZ)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/google/android/jioexoplayer2/scheduler/Requirements;-><init>(IZZ)V
 
     sput-object v0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->DEFAULT_REQUIREMENTS:Lcom/google/android/jioexoplayer2/scheduler/Requirements;
 
@@ -126,6 +135,14 @@
 
 .method public constructor <init>(IJLjava/lang/String;I)V
     .locals 1
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # I
+        .annotation build Landroidx/annotation/StringRes;
+        .end annotation
+    .end param
 
     .line 3
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -247,7 +264,7 @@
     return-object p0
 .end method
 
-.method public static getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
+.method private static getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -282,7 +299,7 @@
 .end method
 
 .method private maybeStartWatchingRequirements(Lcom/google/android/jioexoplayer2/scheduler/Requirements;)V
-    .locals 8
+    .locals 9
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
@@ -297,12 +314,14 @@
 
     .line 2
     :cond_0
-    const-class v0, Lcom/google/android/jioexoplayer2/offline/DownloadService;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     .line 3
-    sget-object v1, Lcom/google/android/jioexoplayer2/offline/DownloadService;->requirementsHelpers:Ljava/util/HashMap;
+    sget-object v7, Lcom/google/android/jioexoplayer2/offline/DownloadService;->requirementsHelpers:Ljava/util/HashMap;
 
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -311,7 +330,7 @@
     if-nez v1, :cond_1
 
     .line 4
-    new-instance v7, Lcom/google/android/jioexoplayer2/offline/DownloadService$RequirementsHelper;
+    new-instance v8, Lcom/google/android/jioexoplayer2/offline/DownloadService$RequirementsHelper;
 
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/offline/DownloadService;->getScheduler()Lcom/google/android/jioexoplayer2/scheduler/Scheduler;
 
@@ -319,7 +338,7 @@
 
     const/4 v6, 0x0
 
-    move-object v1, v7
+    move-object v1, v8
 
     move-object v2, p0
 
@@ -330,12 +349,10 @@
     invoke-direct/range {v1 .. v6}, Lcom/google/android/jioexoplayer2/offline/DownloadService$RequirementsHelper;-><init>(Landroid/content/Context;Lcom/google/android/jioexoplayer2/scheduler/Requirements;Lcom/google/android/jioexoplayer2/scheduler/Scheduler;Ljava/lang/Class;Lcom/google/android/jioexoplayer2/offline/DownloadService$1;)V
 
     .line 5
-    sget-object p1, Lcom/google/android/jioexoplayer2/offline/DownloadService;->requirementsHelpers:Ljava/util/HashMap;
-
-    invoke-virtual {p1, v0, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, v0, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
-    invoke-virtual {v7}, Lcom/google/android/jioexoplayer2/offline/DownloadService$RequirementsHelper;->start()V
+    invoke-virtual {v8}, Lcom/google/android/jioexoplayer2/offline/DownloadService$RequirementsHelper;->start()V
 
     const-string p1, "started watching requirements"
 
@@ -553,7 +570,9 @@
     .line 1
     sget-object v0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->requirementsHelpers:Ljava/util/HashMap;
 
-    const-class v1, Lcom/google/android/jioexoplayer2/offline/DownloadService;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -591,7 +610,9 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 2
-    const-class v1, Lcom/google/android/jioexoplayer2/offline/DownloadService;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -622,10 +643,14 @@
 .end method
 
 .method public abstract getScheduler()Lcom/google/android/jioexoplayer2/scheduler/Scheduler;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -670,11 +695,9 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->downloadManagerListener:Lcom/google/android/jioexoplayer2/offline/DownloadService$DownloadManagerListener;
 
     .line 6
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
+    iget-object v1, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->downloadManagerListener:Lcom/google/android/jioexoplayer2/offline/DownloadService$DownloadManagerListener;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/jioexoplayer2/offline/DownloadManager;->addListener(Lcom/google/android/jioexoplayer2/offline/DownloadManager$Listener;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/jioexoplayer2/offline/DownloadManager;->addListener(Lcom/google/android/jioexoplayer2/offline/DownloadManager$Listener;)V
 
     return-void
 .end method
@@ -710,7 +733,7 @@
 .end method
 
 .method public onStartCommand(Landroid/content/Intent;II)I
-    .locals 7
+    .locals 6
 
     .line 1
     iput p3, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->lastStartId:I
@@ -801,27 +824,33 @@
 
     invoke-direct {p0, p3}, Lcom/google/android/jioexoplayer2/offline/DownloadService;->logd(Ljava/lang/String;)V
 
+    .line 7
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
     const/4 p3, -0x1
 
-    .line 7
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v4
 
-    const/4 v5, 0x3
-
-    const/4 v6, 0x2
-
     sparse-switch v4, :sswitch_data_0
 
-    goto :goto_3
+    :goto_3
+    const/4 p2, -0x1
+
+    goto :goto_4
 
     :sswitch_0
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p2
 
-    if-eqz v0, :cond_4
+    if-nez p2, :cond_4
+
+    goto :goto_3
+
+    :cond_4
+    const/4 p2, 0x3
 
     goto :goto_4
 
@@ -832,8 +861,11 @@
 
     move-result p2
 
-    if-eqz p2, :cond_4
+    if-nez p2, :cond_5
 
+    goto :goto_3
+
+    :cond_5
     const/4 p2, 0x2
 
     goto :goto_4
@@ -845,37 +877,29 @@
 
     move-result p2
 
-    if-eqz p2, :cond_4
+    if-nez p2, :cond_6
 
-    const/4 p2, 0x3
+    goto :goto_3
+
+    :cond_6
+    const/4 p2, 0x1
 
     goto :goto_4
 
     :sswitch_3
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p2
+    move-result v0
 
-    if-eqz p2, :cond_4
+    if-nez v0, :cond_7
 
-    const/4 p2, 0x1
+    goto :goto_3
 
-    goto :goto_4
-
-    :cond_4
-    :goto_3
-    const/4 p2, -0x1
-
+    :cond_7
     :goto_4
-    if-eqz p2, :cond_8
-
-    if-eq p2, v1, :cond_8
-
     const-string p3, "DownloadService"
 
-    if-eq p2, v6, :cond_6
-
-    if-eq p2, v5, :cond_5
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     new-instance p1, Ljava/lang/StringBuilder;
@@ -896,31 +920,25 @@
 
     goto :goto_5
 
-    .line 9
-    :cond_5
-    invoke-direct {p0}, Lcom/google/android/jioexoplayer2/offline/DownloadService;->stopWatchingRequirements()V
-
-    goto :goto_5
-
-    :cond_6
+    :pswitch_0
     const-string p2, "download_action"
 
-    .line 10
+    .line 9
     invoke-virtual {p1, p2}, Landroid/content/Intent;->getByteArrayExtra(Ljava/lang/String;)[B
 
     move-result-object p1
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_8
 
     const-string p1, "Ignoring ADD action with no action data"
 
-    .line 11
+    .line 10
     invoke-static {p3, p1}, Lcom/google/android/jioexoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_5
 
-    .line 12
-    :cond_7
+    .line 11
+    :cond_8
     :try_start_0
     iget-object p2, p0, Lcom/google/android/jioexoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/jioexoplayer2/offline/DownloadManager;
 
@@ -935,12 +953,18 @@
 
     const-string p2, "Failed to handle ADD action"
 
-    .line 13
+    .line 12
     invoke-static {p3, p2, p1}, Lcom/google/android/jioexoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    goto :goto_5
+
+    .line 13
+    :pswitch_1
+    invoke-direct {p0}, Lcom/google/android/jioexoplayer2/offline/DownloadService;->stopWatchingRequirements()V
+
     .line 14
-    :cond_8
     :goto_5
+    :pswitch_2
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/offline/DownloadService;->getRequirements()Lcom/google/android/jioexoplayer2/scheduler/Requirements;
 
     move-result-object p1
@@ -984,6 +1008,8 @@
     :cond_a
     return v1
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x33ed2c70 -> :sswitch_3
@@ -991,6 +1017,14 @@
         -0x16d2615e -> :sswitch_1
         0x3c89ff0f -> :sswitch_0
     .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method public onTaskRemoved(Landroid/content/Intent;)V

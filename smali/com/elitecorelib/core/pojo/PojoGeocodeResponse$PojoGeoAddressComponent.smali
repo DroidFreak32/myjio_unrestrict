@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public long_name:Ljava/lang/String;
+.field private long_name:Ljava/lang/String;
 
-.field public short_name:Ljava/lang/String;
+.field private short_name:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse;
 
-.field public types:Ljava/util/Collection;
+.field private types:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",

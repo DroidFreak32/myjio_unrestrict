@@ -1,130 +1,80 @@
 .class public final Lcom/google/android/gms/location/zzag;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+.super Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/location/LocationSettingsRequest;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zza:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+
+.field private final synthetic zzb:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/common/api/internal/ListenerHolder;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/location/zzag;->zzb:Lcom/google/android/gms/location/FusedLocationProviderClient;
+
+    iput-object p2, p0, Lcom/google/android/gms/location/zzag;->zza:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+
+    invoke-direct {p0}, Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 8
+.method public final synthetic accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/location/zzay;
+
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FusedLocationProviderClient$zzc;->zza()Z
 
     move-result v0
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x0
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/location/zzag;->zzb:Lcom/google/android/gms/location/FusedLocationProviderClient;
 
-    move-object v4, v2
+    .line 4
+    invoke-static {v0, p2}, Lcom/google/android/gms/location/FusedLocationProviderClient;->zza(Lcom/google/android/gms/location/FusedLocationProviderClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)Lcom/google/android/gms/internal/location/zzai;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    .line 5
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/location/zzag;->zza:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
-    move-result v5
+    .line 6
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->getListenerKey()Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;
 
-    if-ge v5, v0, :cond_4
+    move-result-object v1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
+    .line 7
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/location/zzay;->zzb(Lcom/google/android/gms/common/api/internal/ListenerHolder$ListenerKey;Lcom/google/android/gms/internal/location/zzai;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v5
+    return-void
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
+    :catch_0
+    move-exception p1
 
-    move-result v6
-
-    const/4 v7, 0x1
-
-    if-eq v6, v7, :cond_3
-
-    const/4 v7, 0x2
-
-    if-eq v6, v7, :cond_2
-
-    const/4 v7, 0x3
-
-    if-eq v6, v7, :cond_1
-
-    const/4 v7, 0x5
-
-    if-eq v6, v7, :cond_0
-
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
+    .line 8
+    invoke-virtual {p2, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetException(Ljava/lang/Exception;)Z
 
     :cond_0
-    sget-object v4, Lcom/google/android/gms/location/zzae;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v5, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/google/android/gms/location/zzae;
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
-
-    move-result v3
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
-
-    move-result v1
-
-    goto :goto_0
-
-    :cond_3
-    sget-object v2, Lcom/google/android/gms/location/LocationRequest;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v5, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedList(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_4
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    new-instance p1, Lcom/google/android/gms/location/LocationSettingsRequest;
-
-    invoke-direct {p1, v2, v1, v3, v4}, Lcom/google/android/gms/location/LocationSettingsRequest;-><init>(Ljava/util/List;ZZLcom/google/android/gms/location/zzae;)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    new-array p1, p1, [Lcom/google/android/gms/location/LocationSettingsRequest;
-
-    return-object p1
+    return-void
 .end method

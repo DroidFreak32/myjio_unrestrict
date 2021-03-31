@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->pushGooglePlusPerson(Lcom/google/android/gms/plus/model/people/Person;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->notifyDisplayUnitsLoaded(Ljava/util/ArrayList;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,17 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public final synthetic val$person:Lcom/google/android/gms/plus/model/people/Person;
+.field public final synthetic val$displayUnits:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/google/android/gms/plus/model/people/Person;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Ljava/util/ArrayList;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->val$person:Lcom/google/android/gms/plus/model/people/Person;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->val$displayUnits:Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,9 +45,42 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->val$person:Lcom/google/android/gms/plus/model/people/Person;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$5600(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/ref/WeakReference;
 
-    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$4300(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/google/android/gms/plus/model/people/Person;)V
+    move-result-object v0
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    .line 2
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$5600(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/ref/WeakReference;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$5600(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/ref/WeakReference;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/clevertap/android/sdk/displayunits/DisplayUnitListener;
+
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$37;->val$displayUnits:Ljava/util/ArrayList;
+
+    invoke-interface {v0, v1}, Lcom/clevertap/android/sdk/displayunits/DisplayUnitListener;->onDisplayUnitsLoaded(Ljava/util/ArrayList;)V
+
+    :cond_0
     return-void
 .end method

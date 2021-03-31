@@ -3,7 +3,7 @@
 .source "ToolbarActionBar.java"
 
 # interfaces
-.implements Lu1$a;
+.implements Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
 
 # annotations
@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public s:Z
+.field public a:Z
 
-.field public final synthetic t:Lm0;
+.field public final synthetic b:Lm0;
 
 
 # direct methods
@@ -28,7 +28,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lm0$c;->t:Lm0;
+    iput-object p1, p0, Lm0$c;->b:Lm0;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,11 +37,63 @@
 
 
 # virtual methods
-.method public a(Ln1;)Z
-    .locals 2
+.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
+    .locals 1
+    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Lm0$c;->t:Lm0;
+    iget-boolean p2, p0, Lm0$c;->a:Z
+
+    if-eqz p2, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 p2, 0x1
+
+    .line 2
+    iput-boolean p2, p0, Lm0$c;->a:Z
+
+    .line 3
+    iget-object p2, p0, Lm0$c;->b:Lm0;
+
+    iget-object p2, p2, Lm0;->a:Landroidx/appcompat/widget/DecorToolbar;
+
+    invoke-interface {p2}, Landroidx/appcompat/widget/DecorToolbar;->dismissPopupMenus()V
+
+    .line 4
+    iget-object p2, p0, Lm0$c;->b:Lm0;
+
+    iget-object p2, p2, Lm0;->c:Landroid/view/Window$Callback;
+
+    if-eqz p2, :cond_1
+
+    const/16 v0, 0x6c
+
+    .line 5
+    invoke-interface {p2, v0, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
+
+    :cond_1
+    const/4 p1, 0x0
+
+    .line 6
+    iput-boolean p1, p0, Lm0$c;->a:Z
+
+    return-void
+.end method
+
+.method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+    .locals 2
+    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lm0$c;->b:Lm0;
 
     iget-object v0, v0, Lm0;->c:Landroid/view/Window$Callback;
 
@@ -60,48 +112,4 @@
     const/4 p1, 0x0
 
     return p1
-.end method
-
-.method public onCloseMenu(Ln1;Z)V
-    .locals 1
-
-    .line 1
-    iget-boolean p2, p0, Lm0$c;->s:Z
-
-    if-eqz p2, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 p2, 0x1
-
-    .line 2
-    iput-boolean p2, p0, Lm0$c;->s:Z
-
-    .line 3
-    iget-object p2, p0, Lm0$c;->t:Lm0;
-
-    iget-object p2, p2, Lm0;->a:Lp2;
-
-    invoke-interface {p2}, Lp2;->k()V
-
-    .line 4
-    iget-object p2, p0, Lm0$c;->t:Lm0;
-
-    iget-object p2, p2, Lm0;->c:Landroid/view/Window$Callback;
-
-    if-eqz p2, :cond_1
-
-    const/16 v0, 0x6c
-
-    .line 5
-    invoke-interface {p2, v0, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
-
-    :cond_1
-    const/4 p1, 0x0
-
-    .line 6
-    iput-boolean p1, p0, Lm0$c;->s:Z
-
-    return-void
 .end method

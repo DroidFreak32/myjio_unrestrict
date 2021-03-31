@@ -16,9 +16,9 @@
 
 
 # instance fields
-.field public zzrx:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
+.field private zzrx:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
 
-.field public final zzry:Ljava/util/Map;
+.field private final zzry:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -30,7 +30,7 @@
     .end annotation
 .end field
 
-.field public final zzrz:Ljava/util/List;
+.field private final zzrz:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public final zzsa:Ljava/util/List;
+.field private final zzsa:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

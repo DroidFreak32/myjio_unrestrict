@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzdy:Lcom/google/android/gms/internal/clearcut/zzae;
+.field private final zzdy:Lcom/google/android/gms/internal/clearcut/zzae;
 
-.field public final zzdz:Lcom/google/android/gms/internal/clearcut/zzab;
+.field private final zzdz:Lcom/google/android/gms/internal/clearcut/zzab;
 
 
 # direct methods

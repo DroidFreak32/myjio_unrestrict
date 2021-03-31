@@ -60,7 +60,7 @@
     :try_start_0
     aget-object v1, p1, v0
 
-    invoke-static {v1}, Lcom/caverock/androidsvg/SVG;->a(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
+    invoke-static {v1}, Lcom/caverock/androidsvg/SVG;->getFromInputStream(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
 
     move-result-object v1
     :try_end_0
@@ -132,18 +132,18 @@
     throw v1
 .end method
 
-.method public a(Lcom/caverock/androidsvg/SVG;)V
+.method public b(Lcom/caverock/androidsvg/SVG;)V
     .locals 1
 
-    .line 6
+    .line 1
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGImageView$c;->a:Lcom/caverock/androidsvg/SVGImageView;
 
     invoke-static {v0, p1}, Lcom/caverock/androidsvg/SVGImageView;->a(Lcom/caverock/androidsvg/SVGImageView;Lcom/caverock/androidsvg/SVG;)Lcom/caverock/androidsvg/SVG;
 
-    .line 7
+    .line 2
     iget-object p1, p0, Lcom/caverock/androidsvg/SVGImageView$c;->a:Lcom/caverock/androidsvg/SVGImageView;
 
-    invoke-static {p1}, Lcom/caverock/androidsvg/SVGImageView;->a(Lcom/caverock/androidsvg/SVGImageView;)V
+    invoke-static {p1}, Lcom/caverock/androidsvg/SVGImageView;->b(Lcom/caverock/androidsvg/SVGImageView;)V
 
     return-void
 .end method
@@ -167,7 +167,7 @@
     .line 1
     check-cast p1, Lcom/caverock/androidsvg/SVG;
 
-    invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVGImageView$c;->a(Lcom/caverock/androidsvg/SVG;)V
+    invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVGImageView$c;->b(Lcom/caverock/androidsvg/SVG;)V
 
     return-void
 .end method

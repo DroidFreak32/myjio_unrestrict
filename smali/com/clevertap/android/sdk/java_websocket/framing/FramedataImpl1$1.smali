@@ -34,8 +34,6 @@
     sput-object v0, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1$1;->$SwitchMap$com$clevertap$android$sdk$java_websocket$enums$Opcode:[I
 
     :try_start_0
-    sget-object v0, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1$1;->$SwitchMap$com$clevertap$android$sdk$java_websocket$enums$Opcode:[I
-
     sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

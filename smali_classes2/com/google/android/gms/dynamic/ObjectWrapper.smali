@@ -1,9 +1,13 @@
 .class public final Lcom/google/android/gms/dynamic/ObjectWrapper;
 .super Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
 .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+.end annotation
+
+.annotation build Lcom/google/android/gms/common/util/RetainForClient;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -17,7 +21,7 @@
 
 
 # instance fields
-.field public final zzib:Ljava/lang/Object;
+.field private final zza:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -27,7 +31,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method private constructor <init>(Ljava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -39,13 +43,20 @@
     invoke-direct {p0}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/dynamic/ObjectWrapper;->zzib:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/dynamic/ObjectWrapper;->zza:Ljava/lang/Object;
 
     return-void
 .end method
 
 .method public static unwrap(Lcom/google/android/gms/dynamic/IObjectWrapper;)Ljava/lang/Object;
     .locals 7
+    .param p0    # Lcom/google/android/gms/dynamic/IObjectWrapper;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -67,7 +78,7 @@
     .line 2
     check-cast p0, Lcom/google/android/gms/dynamic/ObjectWrapper;
 
-    iget-object p0, p0, Lcom/google/android/gms/dynamic/ObjectWrapper;->zzib:Ljava/lang/Object;
+    iget-object p0, p0, Lcom/google/android/gms/dynamic/ObjectWrapper;->zza:Ljava/lang/Object;
 
     return-object p0
 
@@ -94,9 +105,7 @@
 
     const/4 v3, 0x0
 
-    move-object v4, v1
-
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     :goto_0
     if-ge v3, v2, :cond_2
@@ -110,9 +119,9 @@
 
     if-nez v6, :cond_1
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    move-object v4, v5
+    move-object v1, v5
 
     :cond_1
     add-int/lit8 v3, v3, 0x1
@@ -122,21 +131,27 @@
     :cond_2
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_4
+    if-ne v4, v2, :cond_4
 
     .line 8
-    invoke-virtual {v4}, Ljava/lang/reflect/Field;->isAccessible()Z
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/reflect/Field;
+
+    invoke-virtual {v0}, Ljava/lang/reflect/Field;->isAccessible()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
     .line 9
-    invoke-virtual {v4, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 10
     :try_start_0
-    invoke-virtual {v4, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
     :try_end_0
@@ -208,6 +223,13 @@
 
 .method public static wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
     .locals 1
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

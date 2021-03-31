@@ -34,8 +34,6 @@
     sput-object v0, Landroidx/transition/ChangeImageTransform$c;->a:[I
 
     :try_start_0
-    sget-object v0, Landroidx/transition/ChangeImageTransform$c;->a:[I
-
     sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I

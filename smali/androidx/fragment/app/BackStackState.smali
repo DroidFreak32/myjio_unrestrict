@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public static final TAG:Ljava/lang/String; = "FragmentManager"
+.field private static final TAG:Ljava/lang/String; = "FragmentManager"
 
 
 # instance fields
@@ -221,14 +221,14 @@
     return-void
 .end method
 
-.method public constructor <init>(Lic;)V
+.method public constructor <init>(Ld3;)V
     .locals 7
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iget-object v0, p1, Lyc;->a:Ljava/util/ArrayList;
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -242,7 +242,7 @@
     iput-object v1, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
 
     .line 4
-    iget-boolean v1, p1, Lyc;->g:Z
+    iget-boolean v1, p1, Landroidx/fragment/app/FragmentTransaction;->i:Z
 
     if-eqz v1, :cond_2
 
@@ -271,27 +271,27 @@
     if-ge v1, v0, :cond_1
 
     .line 8
-    iget-object v3, p1, Lyc;->a:Ljava/util/ArrayList;
+    iget-object v3, p1, Landroidx/fragment/app/FragmentTransaction;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lyc$a;
+    check-cast v3, Landroidx/fragment/app/FragmentTransaction$a;
 
     .line 9
     iget-object v4, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
 
     add-int/lit8 v5, v2, 0x1
 
-    iget v6, v3, Lyc$a;->a:I
+    iget v6, v3, Landroidx/fragment/app/FragmentTransaction$a;->a:I
 
     aput v6, v4, v2
 
     .line 10
     iget-object v2, p0, Landroidx/fragment/app/BackStackState;->mFragmentWhos:Ljava/util/ArrayList;
 
-    iget-object v4, v3, Lyc$a;->b:Landroidx/fragment/app/Fragment;
+    iget-object v4, v3, Landroidx/fragment/app/FragmentTransaction$a;->b:Landroidx/fragment/app/Fragment;
 
     if-eqz v4, :cond_0
 
@@ -310,35 +310,35 @@
 
     add-int/lit8 v4, v5, 0x1
 
-    iget v6, v3, Lyc$a;->c:I
+    iget v6, v3, Landroidx/fragment/app/FragmentTransaction$a;->c:I
 
     aput v6, v2, v5
 
     add-int/lit8 v5, v4, 0x1
 
     .line 12
-    iget v6, v3, Lyc$a;->d:I
+    iget v6, v3, Landroidx/fragment/app/FragmentTransaction$a;->d:I
 
     aput v6, v2, v4
 
     add-int/lit8 v4, v5, 0x1
 
     .line 13
-    iget v6, v3, Lyc$a;->e:I
+    iget v6, v3, Landroidx/fragment/app/FragmentTransaction$a;->e:I
 
     aput v6, v2, v5
 
     add-int/lit8 v5, v4, 0x1
 
     .line 14
-    iget v6, v3, Lyc$a;->f:I
+    iget v6, v3, Landroidx/fragment/app/FragmentTransaction$a;->f:I
 
     aput v6, v2, v4
 
     .line 15
     iget-object v2, p0, Landroidx/fragment/app/BackStackState;->mOldMaxLifecycleStates:[I
 
-    iget-object v4, v3, Lyc$a;->g:Landroidx/lifecycle/Lifecycle$State;
+    iget-object v4, v3, Landroidx/fragment/app/FragmentTransaction$a;->g:Landroidx/lifecycle/Lifecycle$State;
 
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
@@ -349,7 +349,7 @@
     .line 16
     iget-object v2, p0, Landroidx/fragment/app/BackStackState;->mCurrentMaxLifecycleStates:[I
 
-    iget-object v3, v3, Lyc$a;->h:Landroidx/lifecycle/Lifecycle$State;
+    iget-object v3, v3, Landroidx/fragment/app/FragmentTransaction$a;->h:Landroidx/lifecycle/Lifecycle$State;
 
     invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
@@ -365,52 +365,52 @@
 
     .line 17
     :cond_1
-    iget v0, p1, Lyc;->f:I
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction;->h:I
 
     iput v0, p0, Landroidx/fragment/app/BackStackState;->mTransition:I
 
     .line 18
-    iget-object v0, p1, Lyc;->i:Ljava/lang/String;
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction;->k:Ljava/lang/String;
 
     iput-object v0, p0, Landroidx/fragment/app/BackStackState;->mName:Ljava/lang/String;
 
     .line 19
-    iget v0, p1, Lic;->t:I
+    iget v0, p1, Ld3;->v:I
 
     iput v0, p0, Landroidx/fragment/app/BackStackState;->mIndex:I
 
     .line 20
-    iget v0, p1, Lyc;->j:I
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction;->l:I
 
     iput v0, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbTitleRes:I
 
     .line 21
-    iget-object v0, p1, Lyc;->k:Ljava/lang/CharSequence;
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction;->m:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbTitleText:Ljava/lang/CharSequence;
 
     .line 22
-    iget v0, p1, Lyc;->l:I
+    iget v0, p1, Landroidx/fragment/app/FragmentTransaction;->n:I
 
     iput v0, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbShortTitleRes:I
 
     .line 23
-    iget-object v0, p1, Lyc;->m:Ljava/lang/CharSequence;
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction;->o:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbShortTitleText:Ljava/lang/CharSequence;
 
     .line 24
-    iget-object v0, p1, Lyc;->n:Ljava/util/ArrayList;
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction;->p:Ljava/util/ArrayList;
 
     iput-object v0, p0, Landroidx/fragment/app/BackStackState;->mSharedElementSourceNames:Ljava/util/ArrayList;
 
     .line 25
-    iget-object v0, p1, Lyc;->o:Ljava/util/ArrayList;
+    iget-object v0, p1, Landroidx/fragment/app/FragmentTransaction;->q:Ljava/util/ArrayList;
 
     iput-object v0, p0, Landroidx/fragment/app/BackStackState;->mSharedElementTargetNames:Ljava/util/ArrayList;
 
     .line 26
-    iget-boolean p1, p1, Lyc;->p:Z
+    iget-boolean p1, p1, Landroidx/fragment/app/FragmentTransaction;->r:Z
 
     iput-boolean p1, p0, Landroidx/fragment/app/BackStackState;->mReorderingAllowed:Z
 
@@ -437,13 +437,13 @@
     return v0
 .end method
 
-.method public instantiate(Lrc;)Lic;
-    .locals 6
+.method public instantiate(Landroidx/fragment/app/FragmentManager;)Ld3;
+    .locals 9
 
     .line 1
-    new-instance v0, Lic;
+    new-instance v0, Ld3;
 
-    invoke-direct {v0, p1}, Lic;-><init>(Lrc;)V
+    invoke-direct {v0, p1}, Ld3;-><init>(Landroidx/fragment/app/FragmentManager;)V
 
     const/4 v1, 0x0
 
@@ -453,28 +453,26 @@
     :goto_0
     iget-object v3, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
 
-    array-length v3, v3
+    array-length v4, v3
 
-    if-ge v1, v3, :cond_2
+    if-ge v1, v4, :cond_2
 
     .line 3
-    new-instance v3, Lyc$a;
+    new-instance v4, Landroidx/fragment/app/FragmentTransaction$a;
 
-    invoke-direct {v3}, Lyc$a;-><init>()V
-
-    .line 4
-    iget-object v4, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
+    invoke-direct {v4}, Landroidx/fragment/app/FragmentTransaction$a;-><init>()V
 
     add-int/lit8 v5, v1, 0x1
 
-    aget v1, v4, v1
+    .line 4
+    aget v1, v3, v1
 
-    iput v1, v3, Lyc$a;->a:I
+    iput v1, v4, Landroidx/fragment/app/FragmentTransaction$a;->a:I
 
     const/4 v1, 0x2
 
     .line 5
-    invoke-static {v1}, Lrc;->d(I)Z
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
 
     move-result v1
 
@@ -485,27 +483,27 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Instantiate "
+    const-string v3, "Instantiate "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v4, " op #"
+    const-string v3, " op #"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, " base fragment #"
+    const-string v3, " base fragment #"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
+    iget-object v3, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
 
-    aget v4, v4, v5
+    aget v3, v3, v5
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -522,12 +520,12 @@
     if-eqz v1, :cond_1
 
     .line 8
-    invoke-virtual {p1, v1}, Lrc;->a(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+    invoke-virtual {p1, v1}, Landroidx/fragment/app/FragmentManager;->c0(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 
     move-result-object v1
 
     .line 9
-    iput-object v1, v3, Lyc$a;->b:Landroidx/fragment/app/Fragment;
+    iput-object v1, v4, Landroidx/fragment/app/FragmentTransaction$a;->b:Landroidx/fragment/app/Fragment;
 
     goto :goto_1
 
@@ -535,7 +533,7 @@
     const/4 v1, 0x0
 
     .line 10
-    iput-object v1, v3, Lyc$a;->b:Landroidx/fragment/app/Fragment;
+    iput-object v1, v4, Landroidx/fragment/app/FragmentTransaction$a;->b:Landroidx/fragment/app/Fragment;
 
     .line 11
     :goto_1
@@ -543,83 +541,75 @@
 
     move-result-object v1
 
-    iget-object v4, p0, Landroidx/fragment/app/BackStackState;->mOldMaxLifecycleStates:[I
+    iget-object v3, p0, Landroidx/fragment/app/BackStackState;->mOldMaxLifecycleStates:[I
 
-    aget v4, v4, v2
+    aget v3, v3, v2
 
-    aget-object v1, v1, v4
+    aget-object v1, v1, v3
 
-    iput-object v1, v3, Lyc$a;->g:Landroidx/lifecycle/Lifecycle$State;
+    iput-object v1, v4, Landroidx/fragment/app/FragmentTransaction$a;->g:Landroidx/lifecycle/Lifecycle$State;
 
     .line 12
     invoke-static {}, Landroidx/lifecycle/Lifecycle$State;->values()[Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v1
 
-    iget-object v4, p0, Landroidx/fragment/app/BackStackState;->mCurrentMaxLifecycleStates:[I
+    iget-object v3, p0, Landroidx/fragment/app/BackStackState;->mCurrentMaxLifecycleStates:[I
 
-    aget v4, v4, v2
+    aget v3, v3, v2
 
-    aget-object v1, v1, v4
+    aget-object v1, v1, v3
 
-    iput-object v1, v3, Lyc$a;->h:Landroidx/lifecycle/Lifecycle$State;
+    iput-object v1, v4, Landroidx/fragment/app/FragmentTransaction$a;->h:Landroidx/lifecycle/Lifecycle$State;
 
     .line 13
     iget-object v1, p0, Landroidx/fragment/app/BackStackState;->mOps:[I
 
-    add-int/lit8 v4, v5, 0x1
+    add-int/lit8 v3, v5, 0x1
 
     aget v5, v1, v5
 
-    iput v5, v3, Lyc$a;->c:I
+    iput v5, v4, Landroidx/fragment/app/FragmentTransaction$a;->c:I
 
-    add-int/lit8 v5, v4, 0x1
+    add-int/lit8 v6, v3, 0x1
 
     .line 14
-    aget v4, v1, v4
+    aget v3, v1, v3
 
-    iput v4, v3, Lyc$a;->d:I
+    iput v3, v4, Landroidx/fragment/app/FragmentTransaction$a;->d:I
 
-    add-int/lit8 v4, v5, 0x1
+    add-int/lit8 v7, v6, 0x1
 
     .line 15
-    aget v5, v1, v5
+    aget v6, v1, v6
 
-    iput v5, v3, Lyc$a;->e:I
+    iput v6, v4, Landroidx/fragment/app/FragmentTransaction$a;->e:I
 
-    add-int/lit8 v5, v4, 0x1
+    add-int/lit8 v8, v7, 0x1
 
     .line 16
-    aget v1, v1, v4
+    aget v1, v1, v7
 
-    iput v1, v3, Lyc$a;->f:I
+    iput v1, v4, Landroidx/fragment/app/FragmentTransaction$a;->f:I
 
     .line 17
-    iget v1, v3, Lyc$a;->c:I
-
-    iput v1, v0, Lyc;->b:I
+    iput v5, v0, Landroidx/fragment/app/FragmentTransaction;->d:I
 
     .line 18
-    iget v1, v3, Lyc$a;->d:I
-
-    iput v1, v0, Lyc;->c:I
+    iput v3, v0, Landroidx/fragment/app/FragmentTransaction;->e:I
 
     .line 19
-    iget v1, v3, Lyc$a;->e:I
-
-    iput v1, v0, Lyc;->d:I
+    iput v6, v0, Landroidx/fragment/app/FragmentTransaction;->f:I
 
     .line 20
-    iget v1, v3, Lyc$a;->f:I
-
-    iput v1, v0, Lyc;->e:I
+    iput v1, v0, Landroidx/fragment/app/FragmentTransaction;->g:I
 
     .line 21
-    invoke-virtual {v0, v3}, Lyc;->a(Lyc$a;)V
+    invoke-virtual {v0, v4}, Landroidx/fragment/app/FragmentTransaction;->c(Landroidx/fragment/app/FragmentTransaction$a;)V
 
     add-int/lit8 v2, v2, 0x1
 
-    move v1, v5
+    move v1, v8
 
     goto/16 :goto_0
 
@@ -627,60 +617,60 @@
     :cond_2
     iget p1, p0, Landroidx/fragment/app/BackStackState;->mTransition:I
 
-    iput p1, v0, Lyc;->f:I
+    iput p1, v0, Landroidx/fragment/app/FragmentTransaction;->h:I
 
     .line 23
     iget-object p1, p0, Landroidx/fragment/app/BackStackState;->mName:Ljava/lang/String;
 
-    iput-object p1, v0, Lyc;->i:Ljava/lang/String;
+    iput-object p1, v0, Landroidx/fragment/app/FragmentTransaction;->k:Ljava/lang/String;
 
     .line 24
     iget p1, p0, Landroidx/fragment/app/BackStackState;->mIndex:I
 
-    iput p1, v0, Lic;->t:I
+    iput p1, v0, Ld3;->v:I
 
     const/4 p1, 0x1
 
     .line 25
-    iput-boolean p1, v0, Lyc;->g:Z
+    iput-boolean p1, v0, Landroidx/fragment/app/FragmentTransaction;->i:Z
 
     .line 26
     iget v1, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbTitleRes:I
 
-    iput v1, v0, Lyc;->j:I
+    iput v1, v0, Landroidx/fragment/app/FragmentTransaction;->l:I
 
     .line 27
     iget-object v1, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbTitleText:Ljava/lang/CharSequence;
 
-    iput-object v1, v0, Lyc;->k:Ljava/lang/CharSequence;
+    iput-object v1, v0, Landroidx/fragment/app/FragmentTransaction;->m:Ljava/lang/CharSequence;
 
     .line 28
     iget v1, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbShortTitleRes:I
 
-    iput v1, v0, Lyc;->l:I
+    iput v1, v0, Landroidx/fragment/app/FragmentTransaction;->n:I
 
     .line 29
     iget-object v1, p0, Landroidx/fragment/app/BackStackState;->mBreadCrumbShortTitleText:Ljava/lang/CharSequence;
 
-    iput-object v1, v0, Lyc;->m:Ljava/lang/CharSequence;
+    iput-object v1, v0, Landroidx/fragment/app/FragmentTransaction;->o:Ljava/lang/CharSequence;
 
     .line 30
     iget-object v1, p0, Landroidx/fragment/app/BackStackState;->mSharedElementSourceNames:Ljava/util/ArrayList;
 
-    iput-object v1, v0, Lyc;->n:Ljava/util/ArrayList;
+    iput-object v1, v0, Landroidx/fragment/app/FragmentTransaction;->p:Ljava/util/ArrayList;
 
     .line 31
     iget-object v1, p0, Landroidx/fragment/app/BackStackState;->mSharedElementTargetNames:Ljava/util/ArrayList;
 
-    iput-object v1, v0, Lyc;->o:Ljava/util/ArrayList;
+    iput-object v1, v0, Landroidx/fragment/app/FragmentTransaction;->q:Ljava/util/ArrayList;
 
     .line 32
     iget-boolean v1, p0, Landroidx/fragment/app/BackStackState;->mReorderingAllowed:Z
 
-    iput-boolean v1, v0, Lyc;->p:Z
+    iput-boolean v1, v0, Landroidx/fragment/app/FragmentTransaction;->r:Z
 
     .line 33
-    invoke-virtual {v0, p1}, Lic;->c(I)V
+    invoke-virtual {v0, p1}, Ld3;->f(I)V
 
     return-object v0
 .end method

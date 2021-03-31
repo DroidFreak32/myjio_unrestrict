@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public final zzga:Ljava/nio/ByteBuffer;
+.field private final zzga:Ljava/nio/ByteBuffer;
 
-.field public zzgb:I
+.field private zzgb:I
 
 
 # direct methods

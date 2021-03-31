@@ -1,116 +1,104 @@
 .class public final Lcom/google/android/gms/internal/ads/zzwj;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzwn;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/internal/ads/zzwn<",
+        "Lcom/google/android/gms/internal/ads/zzxw;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic zzbtl:Lcom/google/android/gms/internal/ads/zzwt;
+.field private final synthetic val$context:Landroid/content/Context;
 
-.field public final synthetic zzbtm:Lcom/google/android/gms/internal/ads/zzvr;
-
-.field public final synthetic zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+.field private final synthetic zzcin:Lcom/google/android/gms/internal/ads/zzvx;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzwc;Lcom/google/android/gms/internal/ads/zzwt;Lcom/google/android/gms/internal/ads/zzvr;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzvx;Landroid/content/Context;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzcin:Lcom/google/android/gms/internal/ads/zzvx;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtl:Lcom/google/android/gms/internal/ads/zzwt;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzwj;->val$context:Landroid/content/Context;
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtm:Lcom/google/android/gms/internal/ads/zzvr;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzwn;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzxp;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwj;->val$context:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzwc;->zza(Lcom/google/android/gms/internal/ads/zzwc;)Ljava/lang/Object;
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object v0
 
-    monitor-enter v0
-
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtl:Lcom/google/android/gms/internal/ads/zzwt;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzapy;->getStatus()I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-eq v1, v2, :cond_1
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtl:Lcom/google/android/gms/internal/ads/zzwt;
+    const v1, 0xc1fb2e0
 
     .line 3
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzapy;->getStatus()I
+    invoke-interface {p1, v0, v1}, Lcom/google/android/gms/internal/ads/zzxp;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;I)Lcom/google/android/gms/internal/ads/zzxw;
 
-    move-result v1
+    move-result-object p1
 
-    const/4 v2, 0x1
+    return-object p1
+.end method
 
-    if-ne v1, v2, :cond_0
+.method public final synthetic zzpt()Ljava/lang/Object;
+    .locals 2
 
-    goto :goto_0
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwj;->val$context:Landroid/content/Context;
 
-    .line 4
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtl:Lcom/google/android/gms/internal/ads/zzwt;
+    const-string v1, "mobile_ads_settings"
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzapy;->reject()V
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzvx;->zzb(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 5
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzapn;->zzczw:Ljava/util/concurrent/Executor;
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzzu;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzbtm:Lcom/google/android/gms/internal/ads/zzvr;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzzu;-><init>()V
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v0
+.end method
 
-    invoke-static {v2}, Lcom/google/android/gms/internal/ads/zzwk;->zza(Lcom/google/android/gms/internal/ads/zzvr;)Ljava/lang/Runnable;
+.method public final synthetic zzpu()Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    move-result-object v2
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwj;->zzcin:Lcom/google/android/gms/internal/ads/zzvx;
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzvx;->zzc(Lcom/google/android/gms/internal/ads/zzvx;)Lcom/google/android/gms/internal/ads/zzzp;
 
-    const-string v1, "Could not receive loaded message in a timely manner. Rejecting."
+    move-result-object v0
 
-    .line 6
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwj;->val$context:Landroid/content/Context;
 
-    .line 7
-    monitor-exit v0
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzzp;->zzh(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzxw;
 
-    return-void
+    move-result-object v0
 
-    .line 8
-    :cond_1
-    :goto_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    .line 9
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-object v0
 .end method

@@ -32,77 +32,75 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 2
-    invoke-static {v0}, La53;->a(Landroid/view/View;)F
+    invoke-static {v1}, Lcom/nineoldandroids/view/ViewHelper;->getY(Landroid/view/View;)F
 
-    move-result v1
+    move-result v2
 
     .line 3
-    sget v2, Lcom/daimajia/slider/library/R$id;->description_layout:I
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [F
 
     .line 4
-    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
     int-to-float v3, v3
 
-    add-float/2addr v3, v1
+    add-float/2addr v3, v2
 
-    aput v3, p1, v2
+    aput v3, p1, v0
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    aput v1, p1, v2
+    aput v2, p1, v0
 
-    const-string v1, "y"
+    const-string/jumbo v0, "y"
 
-    invoke-static {v0, v1, p1}, Ls43;->a(Ljava/lang/Object;Ljava/lang/String;[F)Ls43;
+    invoke-static {v1, v0, p1}, Lcom/nineoldandroids/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/nineoldandroids/animation/ObjectAnimator;
 
     move-result-object p1
 
     const-wide/16 v0, 0x1f4
 
-    invoke-virtual {p1, v0, v1}, Ls43;->d(J)Ls43;
+    invoke-virtual {p1, v0, v1}, Lcom/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/nineoldandroids/animation/ObjectAnimator;
+
+    move-result-object p1
 
     .line 5
-    invoke-virtual {p1}, Ls43;->e()V
+    invoke-virtual {p1}, Lcom/nineoldandroids/animation/ValueAnimator;->start()V
 
     :cond_0
     return-void
 .end method
 
 .method public onPrepareCurrentItemLeaveScreen(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     .line 1
     sget v0, Lcom/daimajia/slider/library/R$id;->description_layout:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 2
-    sget v0, Lcom/daimajia/slider/library/R$id;->description_layout:I
-
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
@@ -116,20 +114,18 @@
 .end method
 
 .method public onPrepareNextItemShowInScreen(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     .line 1
     sget v0, Lcom/daimajia/slider/library/R$id;->description_layout:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 2
-    sget v0, Lcom/daimajia/slider/library/R$id;->description_layout:I
-
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1

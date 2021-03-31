@@ -1,614 +1,271 @@
 .class public final Lcom/google/android/gms/common/internal/zze;
-.super Lcom/google/android/gms/common/internal/GmsClientSupervisor;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
-.implements Landroid/os/Handler$Callback;
+.implements Landroid/os/Parcelable$Creator;
 
 
-# instance fields
-.field public final mHandler:Landroid/os/Handler;
-
-.field public final zzdu:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap<",
-            "Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;",
-            "Lcom/google/android/gms/common/internal/zzf;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final zzdv:Landroid/content/Context;
-
-.field public final zzdw:Lcom/google/android/gms/common/stats/ConnectionTracker;
-
-.field public final zzdx:J
-
-.field public final zzdy:J
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/common/internal/GetServiceRequest;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/GmsClientSupervisor;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    .line 3
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdv:Landroid/content/Context;
-
-    .line 4
-    new-instance v0, Lcom/google/android/gms/internal/common/zze;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1, p0}, Lcom/google/android/gms/internal/common/zze;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/zze;->mHandler:Landroid/os/Handler;
-
-    .line 5
-    invoke-static {}, Lcom/google/android/gms/common/stats/ConnectionTracker;->getInstance()Lcom/google/android/gms/common/stats/ConnectionTracker;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/zze;->zzdw:Lcom/google/android/gms/common/stats/ConnectionTracker;
-
-    const-wide/16 v0, 0x1388
-
-    .line 6
-    iput-wide v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdx:J
-
-    const-wide/32 v0, 0x493e0
-
-    .line 7
-    iput-wide v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdy:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static synthetic zza(Lcom/google/android/gms/common/internal/zze;)Ljava/util/HashMap;
-    .locals 0
-
-    .line 17
-    iget-object p0, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    return-object p0
-.end method
-
-.method public static synthetic zzb(Lcom/google/android/gms/common/internal/zze;)Landroid/os/Handler;
-    .locals 0
-
-    .line 13
-    iget-object p0, p0, Lcom/google/android/gms/common/internal/zze;->mHandler:Landroid/os/Handler;
-
-    return-object p0
-.end method
-
-.method public static synthetic zzc(Lcom/google/android/gms/common/internal/zze;)Landroid/content/Context;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/internal/zze;->zzdv:Landroid/content/Context;
-
-    return-object p0
-.end method
-
-.method public static synthetic zzd(Lcom/google/android/gms/common/internal/zze;)Lcom/google/android/gms/common/stats/ConnectionTracker;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/internal/zze;->zzdw:Lcom/google/android/gms/common/stats/ConnectionTracker;
-
-    return-object p0
-.end method
-
-.method public static synthetic zze(Lcom/google/android/gms/common/internal/zze;)J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdy:J
-
-    return-wide v0
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
-    .locals 6
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 18
+
+    move-object/from16 v0, p1
 
     .line 1
-    iget v0, p1, Landroid/os/Message;->what:I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
-    const/4 v1, 0x1
+    move-result v1
 
-    if-eqz v0, :cond_4
-
-    if-eq v0, v1, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    .line 2
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast p1, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;
-
-    .line 4
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/common/internal/zzf;
-
-    if-eqz v2, :cond_3
-
-    .line 5
-    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/zzf;->getState()I
-
-    move-result v3
-
-    const/4 v4, 0x3
-
-    if-ne v3, v4, :cond_3
-
-    .line 6
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/lit8 v4, v4, 0x2f
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v4, "Timeout waiting for ServiceConnection callback "
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    new-instance v3, Ljava/lang/Exception;
-
-    invoke-direct {v3}, Ljava/lang/Exception;-><init>()V
-
-    .line 7
-    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/zzf;->getComponentName()Landroid/content/ComponentName;
-
-    move-result-object v3
-
-    if-nez v3, :cond_1
-
-    .line 8
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;->getComponentName()Landroid/content/ComponentName;
-
-    move-result-object v3
-
-    :cond_1
-    if-nez v3, :cond_2
-
-    .line 9
-    new-instance v3, Landroid/content/ComponentName;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;->getPackage()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v4, "unknown"
-
-    invoke-direct {v3, p1, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 10
-    :cond_2
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/common/internal/zzf;->onServiceDisconnected(Landroid/content/ComponentName;)V
-
-    .line 11
-    :cond_3
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    .line 12
-    :cond_4
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    monitor-enter v0
-
-    .line 13
-    :try_start_1
-    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast p1, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;
-
-    .line 14
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/common/internal/zzf;
-
-    if-eqz v2, :cond_6
-
-    .line 15
-    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/zzf;->zzr()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    .line 16
-    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/zzf;->isBound()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    const-string v3, "GmsClientSupervisor"
-
-    .line 17
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/common/internal/zzf;->zzf(Ljava/lang/String;)V
-
-    .line 18
-    :cond_5
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 19
-    :cond_6
-    monitor-exit v0
-
-    return v1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p1
-.end method
-
-.method public final zza(Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;Landroid/content/ServiceConnection;Ljava/lang/String;)Z
-    .locals 4
-
-    const-string v0, "ServiceConnection must not be null"
-
-    .line 1
-    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/internal/zzf;
-
-    if-nez v1, :cond_0
-
-    .line 4
-    new-instance v1, Lcom/google/android/gms/common/internal/zzf;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/common/internal/zzf;-><init>(Lcom/google/android/gms/common/internal/zze;Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;)V
-
-    .line 5
-    invoke-virtual {v1, p2, p3}, Lcom/google/android/gms/common/internal/zzf;->zza(Landroid/content/ServiceConnection;Ljava/lang/String;)V
-
-    .line 6
-    invoke-virtual {v1, p3}, Lcom/google/android/gms/common/internal/zzf;->zze(Ljava/lang/String;)V
-
-    .line 7
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    invoke-virtual {p2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zze;->mHandler:Landroid/os/Handler;
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
+    move-object v8, v3
 
-    .line 9
-    invoke-virtual {v1, p2}, Lcom/google/android/gms/common/internal/zzf;->zza(Landroid/content/ServiceConnection;)Z
+    move-object v9, v8
+
+    move-object v10, v9
+
+    move-object v11, v10
+
+    move-object v12, v11
+
+    move-object v13, v12
+
+    move-object v14, v13
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    .line 2
+    :goto_0
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-ge v2, v1, :cond_0
 
-    .line 10
-    invoke-virtual {v1, p2, p3}, Lcom/google/android/gms/common/internal/zzf;->zza(Landroid/content/ServiceConnection;Ljava/lang/String;)V
+    .line 3
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
 
-    .line 11
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zzf;->getState()I
+    move-result v2
 
-    move-result p1
+    .line 4
+    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
 
-    const/4 v2, 0x1
+    move-result v3
 
-    if-eq p1, v2, :cond_2
+    packed-switch v3, :pswitch_data_0
 
-    const/4 p2, 0x2
-
-    if-eq p1, p2, :cond_1
+    .line 5
+    :pswitch_0
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
+    .line 6
+    :pswitch_1
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v17
+
+    goto :goto_0
+
+    .line 7
+    :pswitch_2
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v16
+
+    goto :goto_0
+
+    .line 8
+    :pswitch_3
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v15
+
+    goto :goto_0
+
+    .line 9
+    :pswitch_4
+    sget-object v3, Lcom/google/android/gms/common/Feature;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 10
+    invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v14, v2
+
+    check-cast v14, [Lcom/google/android/gms/common/Feature;
+
+    goto :goto_0
+
+    .line 11
+    :pswitch_5
+    sget-object v3, Lcom/google/android/gms/common/Feature;->CREATOR:Landroid/os/Parcelable$Creator;
+
     .line 12
-    :cond_1
-    invoke-virtual {v1, p3}, Lcom/google/android/gms/common/internal/zzf;->zze(Ljava/lang/String;)V
+    invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v13, v2
+
+    check-cast v13, [Lcom/google/android/gms/common/Feature;
 
     goto :goto_0
 
     .line 13
-    :cond_2
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zzf;->getComponentName()Landroid/content/ComponentName;
-
-    move-result-object p1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zzf;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p3
-
-    invoke-interface {p2, p1, p3}, Landroid/content/ServiceConnection;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    :pswitch_6
+    sget-object v3, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 14
-    :goto_0
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zzf;->isBound()Z
+    invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    move-result p1
+    move-result-object v2
 
-    monitor-exit v0
+    move-object v12, v2
 
-    return p1
+    check-cast v12, Landroid/accounts/Account;
+
+    goto :goto_0
 
     .line 15
-    :cond_3
-    new-instance p2, Ljava/lang/IllegalStateException;
+    :pswitch_7
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createBundle(Landroid/os/Parcel;I)Landroid/os/Bundle;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v11
 
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p3
-
-    add-int/lit8 p3, p3, 0x51
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1, p3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string p3, "Trying to bind a GmsServiceConnection that was already connected before.  config="
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p2
-
-    :catchall_0
-    move-exception p1
+    goto :goto_0
 
     .line 16
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :pswitch_8
+    sget-object v3, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    throw p1
+    .line 17
+    invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v10, v2
+
+    check-cast v10, [Lcom/google/android/gms/common/api/Scope;
+
+    goto :goto_0
+
+    .line 18
+    :pswitch_9
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
+
+    move-result-object v9
+
+    goto :goto_0
+
+    .line 19
+    :pswitch_a
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v8
+
+    goto :goto_0
+
+    .line 20
+    :pswitch_b
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v7
+
+    goto :goto_0
+
+    .line 21
+    :pswitch_c
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v6
+
+    goto :goto_0
+
+    .line 22
+    :pswitch_d
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v5
+
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    .line 24
+    new-instance v0, Lcom/google/android/gms/common/internal/GetServiceRequest;
+
+    move-object v4, v0
+
+    invoke-direct/range {v4 .. v17}, Lcom/google/android/gms/common/internal/GetServiceRequest;-><init>(IIILjava/lang/String;Landroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;Landroid/os/Bundle;Landroid/accounts/Account;[Lcom/google/android/gms/common/Feature;[Lcom/google/android/gms/common/Feature;ZIZ)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method
 
-.method public final zzb(Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;Landroid/content/ServiceConnection;Ljava/lang/String;)V
-    .locals 3
-
-    const-string v0, "ServiceConnection must not be null"
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-array p1, p1, [Lcom/google/android/gms/common/internal/GetServiceRequest;
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze;->zzdu:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/internal/zzf;
-
-    if-eqz v1, :cond_2
-
-    .line 4
-    invoke-virtual {v1, p2}, Lcom/google/android/gms/common/internal/zzf;->zza(Landroid/content/ServiceConnection;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 5
-    invoke-virtual {v1, p2, p3}, Lcom/google/android/gms/common/internal/zzf;->zzb(Landroid/content/ServiceConnection;Ljava/lang/String;)V
-
-    .line 6
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zzf;->zzr()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    .line 7
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/zze;->mHandler:Landroid/os/Handler;
-
-    const/4 p3, 0x0
-
-    invoke-virtual {p2, p3, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object p1
-
-    .line 8
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/zze;->mHandler:Landroid/os/Handler;
-
-    iget-wide v1, p0, Lcom/google/android/gms/common/internal/zze;->zzdx:J
-
-    invoke-virtual {p2, p1, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 9
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    .line 10
-    :cond_1
-    new-instance p2, Ljava/lang/IllegalStateException;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p3
-
-    add-int/lit8 p3, p3, 0x4c
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1, p3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string p3, "Trying to unbind a GmsServiceConnection  that was not bound before.  config="
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p2
-
-    .line 11
-    :cond_2
-    new-instance p2, Ljava/lang/IllegalStateException;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p3
-
-    add-int/lit8 p3, p3, 0x32
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1, p3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string p3, "Nonexistent connection status for service config: "
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p2
-
-    :catchall_0
-    move-exception p1
-
-    .line 12
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return-object p1
 .end method

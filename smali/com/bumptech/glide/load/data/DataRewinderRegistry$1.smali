@@ -40,6 +40,13 @@
 # virtual methods
 .method public build(Ljava/lang/Object;)Lcom/bumptech/glide/load/data/DataRewinder;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,6 +68,9 @@
 
 .method public getDataClass()Ljava/lang/Class;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

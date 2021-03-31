@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field public final zzta:Ljava/util/TreeSet;
+.field private final zzta:Ljava/util/TreeSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/TreeSet<",

@@ -427,7 +427,7 @@
     return-object p0
 .end method
 
-.method public static getCompanionSlots(Lcom/google/ads/interactivemedia/v3/internal/act;)Ljava/util/Map;
+.method private static getCompanionSlots(Lcom/google/ads/interactivemedia/v3/internal/act;)Ljava/util/Map;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -506,7 +506,7 @@
 
     invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v4, "x"
+    const-string/jumbo v4, "x"
 
     invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

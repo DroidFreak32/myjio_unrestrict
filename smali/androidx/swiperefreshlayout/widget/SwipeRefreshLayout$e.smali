@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->a(F)V
+    value = Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->e(F)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+.field public final synthetic a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$e;->s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$e;->a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,16 +39,16 @@
     .locals 1
 
     .line 1
-    iget-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$e;->s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iget-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$e;->a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    iget-boolean v0, p1, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->J:Z
+    iget-boolean v0, p1, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->K:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     .line 2
-    invoke-virtual {p1, v0}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->a(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {p1, v0}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->p(Landroid/view/animation/Animation$AnimationListener;)V
 
     :cond_0
     return-void

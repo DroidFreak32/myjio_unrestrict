@@ -15,15 +15,15 @@
 
 
 # instance fields
-.field public final SWIPE_MIN_DISTANCE:I
+.field private final SWIPE_MIN_DISTANCE:I
 
-.field public final SWIPE_THRESHOLD_VELOCITY:I
+.field private final SWIPE_THRESHOLD_VELOCITY:I
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;)V
+.method private constructor <init>(Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;)V
     .locals 0
 
     .line 1
@@ -134,7 +134,7 @@
     .line 10
     iget-object p3, p0, Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment$GestureListener;->this$0:Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;
 
-    invoke-static {p3}, Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;->access$100(Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;)Lcom/clevertap/android/sdk/CTInAppWebView;
+    invoke-static {p3}, Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;->access$000(Lcom/clevertap/android/sdk/CTInAppBasePartialHtmlFragment;)Lcom/clevertap/android/sdk/CTInAppWebView;
 
     move-result-object p3
 

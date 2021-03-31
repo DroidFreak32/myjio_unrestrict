@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public final buffer:[B
+.field private final buffer:[B
 
-.field public final zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
+.field private final zzfo:Lcom/google/android/gms/internal/clearcut/zzbn;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,8 +17,6 @@
     new-array p1, p1, [B
 
     iput-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzbg;->buffer:[B
-
-    iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zzbg;->buffer:[B
 
     invoke-static {p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzc([B)Lcom/google/android/gms/internal/clearcut/zzbn;
 

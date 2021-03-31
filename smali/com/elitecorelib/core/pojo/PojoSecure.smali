@@ -6,41 +6,41 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x7e3e8b23bf824911L
+.field private static final serialVersionUID:J = 0x7e3e8b23bf824911L
 
 
 # instance fields
-.field public AESSECUREKEY:Ljava/lang/String;
+.field private AESSECUREKEY:Ljava/lang/String;
 
-.field public AUTHENTICATION_METHOD:Ljava/lang/String;
+.field private AUTHENTICATION_METHOD:Ljava/lang/String;
 
-.field public HOSTNAME:Ljava/lang/String;
+.field private HOSTNAME:Ljava/lang/String;
 
-.field public LICENSE_SECURE_KEY:Ljava/lang/String;
+.field private LICENSE_SECURE_KEY:Ljava/lang/String;
 
-.field public LOGGER_ENCRYPTION_KEY:Ljava/lang/String;
+.field private LOGGER_ENCRYPTION_KEY:Ljava/lang/String;
 
-.field public PACKAGENAME:Ljava/lang/String;
+.field private PACKAGENAME:Ljava/lang/String;
 
-.field public PASSWORD:Ljava/lang/String;
+.field private PASSWORD:Ljava/lang/String;
 
-.field public PHASE2AUTHETICATION:Ljava/lang/String;
+.field private PHASE2AUTHETICATION:Ljava/lang/String;
 
-.field public REGISTRATIONMETHOD:Ljava/lang/String;
+.field private REGISTRATIONMETHOD:Ljava/lang/String;
 
-.field public SECURITY_METHOD:Ljava/lang/String;
+.field private SECURITY_METHOD:Ljava/lang/String;
 
-.field public SERVERHOSTMONETIZATION:Ljava/lang/String;
+.field private SERVERHOSTMONETIZATION:Ljava/lang/String;
 
-.field public SERVERHOST_WEBIN_SMP:Ljava/lang/String;
+.field private SERVERHOST_WEBIN_SMP:Ljava/lang/String;
 
-.field public SERVERIPPORTURL:Ljava/lang/String;
+.field private SERVERIPPORTURL:Ljava/lang/String;
 
-.field public SHAREDSECRETKEY:Ljava/lang/String;
+.field private SHAREDSECRETKEY:Ljava/lang/String;
 
-.field public SIMOPERATORNAME:Ljava/lang/String;
+.field private SIMOPERATORNAME:Ljava/lang/String;
 
-.field public SSIDNAME:Ljava/lang/String;
+.field private SSIDNAME:Ljava/lang/String;
 
 
 # direct methods

@@ -1,106 +1,46 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaba;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/api/ResultCallback;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/common/api/ResultCallback<",
-        "Lcom/google/android/gms/common/api/Status;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic zahh:Lcom/google/android/gms/common/api/internal/zaaw;
-
-.field public final synthetic zahj:Lcom/google/android/gms/common/api/internal/StatusPendingResult;
-
-.field public final synthetic zahk:Z
-
-.field public final synthetic zahl:Lcom/google/android/gms/common/api/GoogleApiClient;
+# static fields
+.field private static final zaa:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaaw;Lcom/google/android/gms/common/api/internal/StatusPendingResult;ZLcom/google/android/gms/common/api/GoogleApiClient;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahh:Lcom/google/android/gms/common/api/internal/zaaw;
+    invoke-static {}, Lcom/google/android/gms/internal/base/zal;->zaa()Lcom/google/android/gms/internal/base/zam;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahj:Lcom/google/android/gms/common/api/internal/StatusPendingResult;
+    move-result-object v0
 
-    iput-boolean p3, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahk:Z
+    new-instance v1, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;
 
-    iput-object p4, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahl:Lcom/google/android/gms/common/api/GoogleApiClient;
+    const-string v2, "GAC_Executor"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v1, v2}, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;-><init>(Ljava/lang/String;)V
+
+    sget v2, Lcom/google/android/gms/internal/base/zaq;->zab:I
+
+    const/4 v3, 0x2
+
+    .line 2
+    invoke-interface {v0, v3, v1, v2}, Lcom/google/android/gms/internal/base/zam;->zaa(ILjava/util/concurrent/ThreadFactory;I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/common/api/internal/zaba;->zaa:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic onResult(Lcom/google/android/gms/common/api/Result;)V
+.method public static zaa()Ljava/util/concurrent/ExecutorService;
     .locals 1
 
     .line 1
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/zaba;->zaa:Ljava/util/concurrent/ExecutorService;
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahh:Lcom/google/android/gms/common/api/internal/zaaw;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/zaaw;->zac(Lcom/google/android/gms/common/api/internal/zaaw;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;->getInstance(Landroid/content/Context;)Lcom/google/android/gms/auth/api/signin/internal/Storage;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zaf()V
-
-    .line 3
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->isSuccess()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahh:Lcom/google/android/gms/common/api/internal/zaaw;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/zaaw;->isConnected()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahh:Lcom/google/android/gms/common/api/internal/zaaw;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/zaaw;->reconnect()V
-
-    .line 5
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahj:Lcom/google/android/gms/common/api/internal/StatusPendingResult;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
-
-    .line 6
-    iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahk:Z
-
-    if-eqz p1, :cond_1
-
-    .line 7
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zaba;->zahl:Lcom/google/android/gms/common/api/GoogleApiClient;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/GoogleApiClient;->disconnect()V
-
-    :cond_1
-    return-void
+    return-object v0
 .end method

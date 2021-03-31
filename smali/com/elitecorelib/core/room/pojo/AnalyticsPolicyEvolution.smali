@@ -1,93 +1,251 @@
 .class public Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyEvolution;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "AnalyticsPolicyEvolution"
+.end annotation
+
+
 # instance fields
 .field public bssid:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "bssid"
+    .end annotation
+.end field
 
 .field public btry:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "btry"
+    .end annotation
+.end field
 
 .field public cell:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "cell"
+    .end annotation
+.end field
 
 .field public csts:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "csts"
+    .end annotation
+.end field
 
 .field public ctype:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ctype"
+    .end annotation
+.end field
 
 .field public ect:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ect"
+    .end annotation
+.end field
 
 .field public esrc:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "esrc"
+    .end annotation
+.end field
 
 .field public et:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "et"
+    .end annotation
+.end field
 
 .field public fcat:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "fcat"
+    .end annotation
+.end field
 
 .field public frsn:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "frsn"
+    .end annotation
+.end field
 
 .field public hover:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "hover"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public lac:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "lac"
+    .end annotation
+.end field
 
 .field public lrsrp:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "lrsrp"
+    .end annotation
+.end field
 
 .field public lrsrq:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "lrsrq"
+    .end annotation
+.end field
 
 .field public lsinr:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "lsinr"
+    .end annotation
+.end field
 
 .field public mcc:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "mcc"
+    .end annotation
+.end field
 
 .field public mnc:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "mnc"
+    .end annotation
+.end field
 
 .field public pcat:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "pcat"
+    .end annotation
+.end field
 
 .field public plmn:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "plmn"
+    .end annotation
+.end field
 
 .field public sct:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "sct"
+    .end annotation
+.end field
 
 .field public slot:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "slot"
+    .end annotation
+.end field
 
 .field public ssid:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ssid"
+    .end annotation
+.end field
 
 .field public st:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "st"
+    .end annotation
+.end field
 
 .field public tac:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "tac"
+    .end annotation
+.end field
 
 .field public tstime:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "tstime"
+    .end annotation
+.end field
 
 .field public wadspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wadspd"
+    .end annotation
+.end field
 
 .field public wauspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wauspd"
+    .end annotation
+.end field
 
 .field public wcf:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wcf"
+    .end annotation
+.end field
 
 .field public wdspd:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wdspd"
+    .end annotation
+.end field
 
 .field public wjit:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wjit"
+    .end annotation
+.end field
 
 .field public wlat:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wlat"
+    .end annotation
+.end field
 
 .field public wpdspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wpdspd"
+    .end annotation
+.end field
 
 .field public wpls:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wpls"
+    .end annotation
+.end field
 
 .field public wpuspd:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wpuspd"
+    .end annotation
+.end field
 
 .field public wrssi:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wrssi"
+    .end annotation
+.end field
 
 .field public wspflg:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wspflg"
+    .end annotation
+.end field
 
 .field public wuspd:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wuspd"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method
@@ -97,7 +255,7 @@
 
     move-object v0, p0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     move-object v1, p10
 

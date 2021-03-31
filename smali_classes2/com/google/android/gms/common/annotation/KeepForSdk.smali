@@ -1,5 +1,6 @@
 .class public interface abstract annotation Lcom/google/android/gms/common/annotation/KeepForSdk;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;

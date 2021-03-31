@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public activateConnection:Lcom/elitecore/wifi/a/a;
+.field private activateConnection:Lcom/elitecore/wifi/a/a;
 
-.field public final api:Lcom/elitecore/wifi/api/IWiFiConfiguration;
+.field private final api:Lcom/elitecore/wifi/api/IWiFiConfiguration;
 
-.field public locationServiceCheck:Lcom/elitecorelib/core/utility/LocationServiceCheck;
+.field private locationServiceCheck:Lcom/elitecorelib/core/utility/LocationServiceCheck;
 
 
 # direct methods
@@ -41,7 +41,7 @@
 
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lk30;->a(I)Lcom/elitecore/wifi/a/a;
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/f;->a(I)Lcom/elitecore/wifi/a/a;
 
     move-result-object v0
 
@@ -69,7 +69,7 @@
 
     const-string v2, "checkSIMOperator"
 
-    invoke-static {v2, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -99,7 +99,7 @@
 
     const-string v7, "MCC"
 
-    invoke-static {v7, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -111,13 +111,13 @@
 
     const-string v8, "MNC"
 
-    invoke-static {v8, v7}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v7}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
     const-string v8, "#"
 
-    invoke-static {v1, v7, v8}, Lo00;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, v7, v8}, Lcom/elitecore/wifi/api/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v1
 
@@ -127,11 +127,11 @@
 
     move-result-object v0
 
-    invoke-static {v5, v0}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v0}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lk30;->d(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/f;->d(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -172,11 +172,11 @@
 
     move-result-object v0
 
-    invoke-static {v5, v0}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v0}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lk30;->d(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/elitecorelib/core/utility/f;->d(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -251,9 +251,7 @@
 
     if-eqz v3, :cond_0
 
-    iget-object v2, p0, Lcom/elitecorelib/core/services/AutoConnectWiFiService;->activateConnection:Lcom/elitecore/wifi/a/a;
-
-    invoke-virtual {v2}, Lcom/elitecore/wifi/a/a;->j()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/elitecore/wifi/a/a;->j()Ljava/lang/String;
 
     move-result-object v2
 
@@ -271,7 +269,7 @@
 
     move-result-object v2
 
-    invoke-static {v3, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
     :try_end_0
@@ -400,6 +398,10 @@
 
 .method public onHandleIntent(Landroid/content/Intent;)V
     .locals 0
+    .param p1    # Landroid/content/Intent;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     invoke-direct {p0}, Lcom/elitecorelib/core/services/AutoConnectWiFiService;->bsnlMCCMNCvalidate()V
 

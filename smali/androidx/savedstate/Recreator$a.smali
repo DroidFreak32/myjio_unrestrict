@@ -3,7 +3,7 @@
 .source "Recreator.java"
 
 # interfaces
-.implements Landroidx/savedstate/SavedStateRegistry$b;
+.implements Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
 
 # annotations
@@ -46,15 +46,28 @@
     const-string v0, "androidx.savedstate.Restarter"
 
     .line 3
-    invoke-virtual {p1, v0, p0}, Landroidx/savedstate/SavedStateRegistry;->a(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$b;)V
+    invoke-virtual {p1, v0, p0}, Landroidx/savedstate/SavedStateRegistry;->registerSavedStateProvider(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroid/os/Bundle;
+.method public a(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/savedstate/Recreator$a;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public saveState()Landroid/os/Bundle;
     .locals 3
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -73,15 +86,4 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     return-object v0
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 1
-
-    .line 3
-    iget-object v0, p0, Landroidx/savedstate/Recreator$a;->a:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    return-void
 .end method

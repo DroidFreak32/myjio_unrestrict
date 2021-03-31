@@ -12,11 +12,11 @@
 
 
 # instance fields
-.field public final s:Ls4;
+.field public final a:Landroidx/collection/SimpleArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls4<",
-            "Lo50;",
+            "Landroidx/collection/SimpleArrayMap<",
+            "Lcom/firebase/jobdispatcher/JobParameters;",
             "Lcom/firebase/jobdispatcher/SimpleJobService$b;",
             ">;"
         }
@@ -32,57 +32,54 @@
     invoke-direct {p0}, Lcom/firebase/jobdispatcher/JobService;-><init>()V
 
     .line 2
-    new-instance v0, Ls4;
+    new-instance v0, Landroidx/collection/SimpleArrayMap;
 
-    invoke-direct {v0}, Ls4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/SimpleArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    iput-object v0, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
     return-void
 .end method
 
-.method public static synthetic a(Lcom/firebase/jobdispatcher/SimpleJobService;Lo50;Z)V
+.method public static synthetic a(Lcom/firebase/jobdispatcher/SimpleJobService;Lcom/firebase/jobdispatcher/JobParameters;Z)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1, p2}, Lcom/firebase/jobdispatcher/SimpleJobService;->a(Lo50;Z)V
+    invoke-virtual {p0, p1, p2}, Lcom/firebase/jobdispatcher/SimpleJobService;->b(Lcom/firebase/jobdispatcher/JobParameters;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lo50;)I
-.end method
-
-.method public final a(Lo50;Z)V
+.method public final b(Lcom/firebase/jobdispatcher/JobParameters;Z)V
     .locals 2
 
-    .line 2
-    iget-object v0, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    .line 1
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
     monitor-enter v0
 
-    .line 3
+    .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    iget-object v1, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v1, p1}, Ls4;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4
+    .line 3
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5
-    invoke-virtual {p0, p1, p2}, Lcom/firebase/jobdispatcher/JobService;->jobFinished(Lo50;Z)V
+    .line 4
+    invoke-virtual {p0, p1, p2}, Lcom/firebase/jobdispatcher/JobService;->jobFinished(Lcom/firebase/jobdispatcher/JobParameters;Z)V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    .line 6
+    .line 5
     :try_start_1
     monitor-exit v0
     :try_end_1
@@ -91,26 +88,31 @@
     throw p1
 .end method
 
-.method public onStartJob(Lo50;)Z
+.method public abstract onRunJob(Lcom/firebase/jobdispatcher/JobParameters;)I
+.end method
+
+.method public onStartJob(Lcom/firebase/jobdispatcher/JobParameters;)Z
     .locals 3
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/firebase/jobdispatcher/SimpleJobService$b;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lcom/firebase/jobdispatcher/SimpleJobService$b;-><init>(Lcom/firebase/jobdispatcher/SimpleJobService;Lo50;Lcom/firebase/jobdispatcher/SimpleJobService$a;)V
+    invoke-direct {v0, p0, p1, v1}, Lcom/firebase/jobdispatcher/SimpleJobService$b;-><init>(Lcom/firebase/jobdispatcher/SimpleJobService;Lcom/firebase/jobdispatcher/JobParameters;Lcom/firebase/jobdispatcher/SimpleJobService$a;)V
 
     .line 2
-    iget-object v1, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    iget-object v1, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
     monitor-enter v1
 
     .line 3
     :try_start_0
-    iget-object v2, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    iget-object v2, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v2, p1, v0}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
     monitor-exit v1
@@ -140,19 +142,21 @@
     throw p1
 .end method
 
-.method public onStopJob(Lo50;)Z
+.method public onStopJob(Lcom/firebase/jobdispatcher/JobParameters;)Z
     .locals 2
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->s:Ls4;
+    iget-object v1, p0, Lcom/firebase/jobdispatcher/SimpleJobService;->a:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v1, p1}, Ls4;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

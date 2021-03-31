@@ -1,37 +1,14 @@
-.class public final Lcom/google/android/gms/internal/base/zam;
+.class public interface abstract Lcom/google/android/gms/internal/base/zam;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
-# static fields
-.field public static final zarp:Lcom/google/android/gms/internal/base/zal;
-
-.field public static volatile zarq:Lcom/google/android/gms/internal/base/zal;
-
-
-# direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/base/zao;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/base/zao;-><init>(Lcom/google/android/gms/internal/base/zan;)V
-
-    .line 2
-    sput-object v0, Lcom/google/android/gms/internal/base/zam;->zarp:Lcom/google/android/gms/internal/base/zal;
-
-    sput-object v0, Lcom/google/android/gms/internal/base/zam;->zarq:Lcom/google/android/gms/internal/base/zal;
-
-    return-void
+# virtual methods
+.method public abstract zaa(II)Ljava/util/concurrent/ExecutorService;
 .end method
 
-.method public static zacv()Lcom/google/android/gms/internal/base/zal;
-    .locals 1
+.method public abstract zaa(ILjava/util/concurrent/ThreadFactory;I)Ljava/util/concurrent/ExecutorService;
+.end method
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/base/zam;->zarq:Lcom/google/android/gms/internal/base/zal;
-
-    return-object v0
+.method public abstract zaa(Ljava/util/concurrent/ThreadFactory;I)Ljava/util/concurrent/ExecutorService;
 .end method

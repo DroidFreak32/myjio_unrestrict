@@ -14,6 +14,11 @@
 .end method
 
 .method public abstract init([B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method
 
 .method public abstract update(I)V

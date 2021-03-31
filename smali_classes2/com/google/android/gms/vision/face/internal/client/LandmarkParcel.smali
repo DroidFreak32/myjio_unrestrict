@@ -1,8 +1,13 @@
 .class public final Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
+.annotation build Lcom/google/android/apps/common/proguard/UsedByNative;
+    value = "wrapper.cc"
+.end annotation
+
 .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
     creator = "LandmarkParcelCreator"
 .end annotation
@@ -27,7 +32,7 @@
     .end annotation
 .end field
 
-.field public final versionCode:I
+.field private final versionCode:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$VersionField;
         id = 0x1
     .end annotation
@@ -82,6 +87,10 @@
             id = 0x4
         .end annotation
     .end param
+    .annotation build Lcom/google/android/apps/common/proguard/UsedByNative;
+        value = "wrapper.cc"
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
     .end annotation
 

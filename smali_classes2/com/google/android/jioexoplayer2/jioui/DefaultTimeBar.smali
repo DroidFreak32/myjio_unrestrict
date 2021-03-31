@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final ACCESSIBILITY_CLASS_NAME:Ljava/lang/String; = "android.widget.SeekBar"
+.field private static final ACCESSIBILITY_CLASS_NAME:Ljava/lang/String; = "android.widget.SeekBar"
 
 .field public static final DEFAULT_AD_MARKER_COLOR:I = -0x4d000100
 
@@ -15,7 +15,7 @@
 
 .field public static final DEFAULT_BAR_HEIGHT_DP:I = 0x4
 
-.field public static final DEFAULT_INCREMENT_COUNT:I = 0x14
+.field private static final DEFAULT_INCREMENT_COUNT:I = 0x14
 
 .field public static final DEFAULT_PLAYED_COLOR:I = -0x1
 
@@ -27,45 +27,48 @@
 
 .field public static final DEFAULT_TOUCH_TARGET_HEIGHT_DP:I = 0x1a
 
-.field public static final FINE_SCRUB_RATIO:I = 0x3
+.field private static final FINE_SCRUB_RATIO:I = 0x3
 
-.field public static final FINE_SCRUB_Y_THRESHOLD_DP:I = -0x32
+.field private static final FINE_SCRUB_Y_THRESHOLD_DP:I = -0x32
 
-.field public static final STOP_SCRUBBING_TIMEOUT_MS:J = 0x3e8L
+.field private static final STOP_SCRUBBING_TIMEOUT_MS:J = 0x3e8L
 
 
 # instance fields
-.field public adGroupCount:I
+.field private adGroupCount:I
 
-.field public adGroupTimesMs:[J
+.field private adGroupTimesMs:[J
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final adMarkerPaint:Landroid/graphics/Paint;
+.field private final adMarkerPaint:Landroid/graphics/Paint;
 
-.field public final adMarkerWidth:I
+.field private final adMarkerWidth:I
 
-.field public final barHeight:I
+.field private final barHeight:I
 
-.field public final bufferedBar:Landroid/graphics/Rect;
+.field private final bufferedBar:Landroid/graphics/Rect;
 
-.field public final bufferedPaint:Landroid/graphics/Paint;
+.field private final bufferedPaint:Landroid/graphics/Paint;
 
-.field public bufferedPosition:J
+.field private bufferedPosition:J
 
-.field public duration:J
+.field private duration:J
 
-.field public final fineScrubYThreshold:I
+.field private final fineScrubYThreshold:I
 
-.field public final formatBuilder:Ljava/lang/StringBuilder;
+.field private final formatBuilder:Ljava/lang/StringBuilder;
 
-.field public final formatter:Ljava/util/Formatter;
+.field private final formatter:Ljava/util/Formatter;
 
-.field public keyCountIncrement:I
+.field private keyCountIncrement:I
 
-.field public keyTimeIncrement:J
+.field private keyTimeIncrement:J
 
-.field public lastCoarseScrubXPosition:I
+.field private lastCoarseScrubXPosition:I
 
-.field public final listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field private final listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/CopyOnWriteArraySet<",
@@ -75,586 +78,591 @@
     .end annotation
 .end field
 
-.field public final locationOnScreen:[I
+.field private final locationOnScreen:[I
 
-.field public playedAdGroups:[Z
+.field private playedAdGroups:[Z
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final playedAdMarkerPaint:Landroid/graphics/Paint;
+.field private final playedAdMarkerPaint:Landroid/graphics/Paint;
 
-.field public final playedPaint:Landroid/graphics/Paint;
+.field private final playedPaint:Landroid/graphics/Paint;
 
-.field public position:J
+.field private position:J
 
-.field public final progressBar:Landroid/graphics/Rect;
+.field private final progressBar:Landroid/graphics/Rect;
 
-.field public scrubPosition:J
+.field private scrubPosition:J
 
-.field public final scrubberBar:Landroid/graphics/Rect;
+.field private final scrubberBar:Landroid/graphics/Rect;
 
-.field public final scrubberDisabledSize:I
+.field private final scrubberDisabledSize:I
 
-.field public final scrubberDraggedSize:I
+.field private final scrubberDraggedSize:I
 
-.field public final scrubberDrawable:Landroid/graphics/drawable/Drawable;
+.field private final scrubberDrawable:Landroid/graphics/drawable/Drawable;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final scrubberEnabledSize:I
+.field private final scrubberEnabledSize:I
 
-.field public final scrubberPadding:I
+.field private final scrubberPadding:I
 
-.field public final scrubberPaint:Landroid/graphics/Paint;
+.field private final scrubberPaint:Landroid/graphics/Paint;
 
-.field public scrubbing:Z
+.field private scrubbing:Z
 
-.field public final seekBounds:Landroid/graphics/Rect;
+.field private final seekBounds:Landroid/graphics/Rect;
 
-.field public final stopScrubbingRunnable:Ljava/lang/Runnable;
+.field private final stopScrubbingRunnable:Ljava/lang/Runnable;
 
-.field public final touchPosition:Landroid/graphics/Point;
+.field private final touchPosition:Landroid/graphics/Point;
 
-.field public final touchTargetHeight:I
+.field private final touchTargetHeight:I
 
-.field public final unplayedPaint:Landroid/graphics/Paint;
+.field private final unplayedPaint:Landroid/graphics/Paint;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 13
+    .locals 17
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v0, p2
 
     .line 1
-    invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct/range {p0 .. p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 2
-    new-instance v0, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->seekBounds:Landroid/graphics/Rect;
+    iput-object v2, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->seekBounds:Landroid/graphics/Rect;
 
     .line 3
-    new-instance v0, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->progressBar:Landroid/graphics/Rect;
+    iput-object v2, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->progressBar:Landroid/graphics/Rect;
 
     .line 4
-    new-instance v0, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedBar:Landroid/graphics/Rect;
+    iput-object v2, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedBar:Landroid/graphics/Rect;
 
     .line 5
-    new-instance v0, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberBar:Landroid/graphics/Rect;
+    iput-object v2, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberBar:Landroid/graphics/Rect;
 
     .line 6
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v2, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedPaint:Landroid/graphics/Paint;
+    iput-object v2, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedPaint:Landroid/graphics/Paint;
 
     .line 7
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v3, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedPaint:Landroid/graphics/Paint;
+    iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedPaint:Landroid/graphics/Paint;
 
     .line 8
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v4, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v4}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->unplayedPaint:Landroid/graphics/Paint;
+    iput-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->unplayedPaint:Landroid/graphics/Paint;
 
     .line 9
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v5, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v5}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerPaint:Landroid/graphics/Paint;
+    iput-object v5, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerPaint:Landroid/graphics/Paint;
 
     .line 10
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v6, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v6}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedAdMarkerPaint:Landroid/graphics/Paint;
+    iput-object v6, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedAdMarkerPaint:Landroid/graphics/Paint;
 
     .line 11
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v7, Landroid/graphics/Paint;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPaint:Landroid/graphics/Paint;
+    iput-object v7, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPaint:Landroid/graphics/Paint;
+
+    const/4 v8, 0x1
 
     .line 12
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPaint:Landroid/graphics/Paint;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 13
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    new-instance v9, Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    invoke-direct {v9}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-object v9, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    const/4 v0, 0x2
+    const/4 v9, 0x2
 
-    new-array v2, v0, [I
+    new-array v10, v9, [I
 
     .line 14
-    iput-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->locationOnScreen:[I
+    iput-object v10, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->locationOnScreen:[I
 
     .line 15
-    new-instance v2, Landroid/graphics/Point;
+    new-instance v10, Landroid/graphics/Point;
 
-    invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
+    invoke-direct {v10}, Landroid/graphics/Point;-><init>()V
 
-    iput-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->touchPosition:Landroid/graphics/Point;
+    iput-object v10, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->touchPosition:Landroid/graphics/Point;
 
     .line 16
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v10
 
     .line 17
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v2
+    move-result-object v10
 
-    const/16 v3, -0x32
+    const/16 v11, -0x32
 
     .line 18
-    invoke-static {v2, v3}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v3
+    move-result v11
 
-    iput v3, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->fineScrubYThreshold:I
+    iput v11, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->fineScrubYThreshold:I
 
-    const/4 v3, 0x4
+    const/4 v11, 0x4
 
     .line 19
-    invoke-static {v2, v3}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v4
+    move-result v12
 
-    const/16 v5, 0x1a
+    const/16 v13, 0x1a
 
     .line 20
-    invoke-static {v2, v5}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v13}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v5
+    move-result v13
 
     .line 21
-    invoke-static {v2, v3}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v3
+    move-result v11
 
-    const/16 v6, 0xc
+    const/16 v14, 0xc
 
     .line 22
-    invoke-static {v2, v6}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v14}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v6
+    move-result v14
 
-    const/4 v7, 0x0
+    const/4 v15, 0x0
 
     .line 23
-    invoke-static {v2, v7}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v15}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v8
+    move-result v9
 
-    const/16 v9, 0x10
+    const/16 v8, 0x10
 
     .line 24
-    invoke-static {v2, v9}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
+    invoke-static {v10, v8}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->dpToPx(Landroid/util/DisplayMetrics;I)I
 
-    move-result v2
+    move-result v10
 
-    const v10, -0x4d000100
-
-    const/4 v11, -0x1
-
-    if-eqz p2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 25
-    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object p1
+    move-result-object v8
 
-    sget-object v12, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar:[I
+    move-object/from16 v16, v6
 
-    invoke-virtual {p1, p2, v12, v7, v7}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    sget-object v6, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar:[I
 
-    move-result-object p1
+    invoke-virtual {v8, v0, v6, v15, v15}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v6
 
     .line 26
     :try_start_0
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_drawable:I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_drawable:I
 
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p2
+    move-result-object v0
 
-    iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
 
     .line 27
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p2, :cond_0
+    invoke-direct {v1, v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->setDrawableLayoutDirection(Landroid/graphics/drawable/Drawable;)Z
 
     .line 28
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
 
-    invoke-direct {p0, p2}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->setDrawableLayoutDirection(Landroid/graphics/drawable/Drawable;)Z
+    move-result v0
+
+    invoke-static {v0, v13}, Ljava/lang/Math;->max(II)I
+
+    move-result v13
 
     .line 29
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
+    :cond_0
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_bar_height:I
+
+    invoke-virtual {v6, v0, v12}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v0
+
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->barHeight:I
 
     .line 30
-    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_touch_target_height:I
 
-    move-result p2
+    invoke-virtual {v6, v0, v13}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    invoke-static {p2, v5}, Ljava/lang/Math;->max(II)I
+    move-result v0
 
-    move-result v5
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->touchTargetHeight:I
 
     .line 31
-    :cond_0
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_bar_height:I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_ad_marker_width:I
 
-    invoke-virtual {p1, p2, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v6, v0, v11}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->barHeight:I
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerWidth:I
 
     .line 32
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_touch_target_height:I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_enabled_size:I
 
-    invoke-virtual {p1, p2, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v6, v0, v14}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->touchTargetHeight:I
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberEnabledSize:I
 
     .line 33
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_ad_marker_width:I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_disabled_size:I
 
-    invoke-virtual {p1, p2, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v6, v0, v9}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerWidth:I
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDisabledSize:I
 
     .line 34
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_enabled_size:I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_dragged_size:I
 
-    invoke-virtual {p1, p2, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v6, v0, v10}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberEnabledSize:I
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDraggedSize:I
 
     .line 35
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_disabled_size:I
+    sget v0, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_played_color:I
 
-    invoke-virtual {p1, p2, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    const/4 v8, -0x1
 
-    move-result p2
+    invoke-virtual {v6, v0, v8}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDisabledSize:I
+    move-result v0
 
     .line 36
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_dragged_size:I
-
-    invoke-virtual {p1, p2, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result p2
-
-    iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDraggedSize:I
+    sget v8, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_color:I
 
     .line 37
-    sget p2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_played_color:I
+    invoke-static {v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultScrubberColor(I)I
 
-    invoke-virtual {p1, p2, v11}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result p2
+    move-result v9
 
     .line 38
-    sget v2, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_scrubber_color:I
+    invoke-virtual {v6, v8, v9}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v8
 
     .line 39
-    invoke-static {p2}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultScrubberColor(I)I
-
-    move-result v3
+    sget v9, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_buffered_color:I
 
     .line 40
-    invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-static {v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultBufferedColor(I)I
 
-    move-result v2
+    move-result v10
 
     .line 41
-    sget v3, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_buffered_color:I
+    invoke-virtual {v6, v9, v10}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v9
 
     .line 42
-    invoke-static {p2}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultBufferedColor(I)I
-
-    move-result v4
+    sget v10, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_unplayed_color:I
 
     .line 43
-    invoke-virtual {p1, v3, v4}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-static {v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultUnplayedColor(I)I
 
-    move-result v3
+    move-result v11
 
     .line 44
-    sget v4, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_unplayed_color:I
+    invoke-virtual {v6, v10, v11}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v10
 
     .line 45
-    invoke-static {p2}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultUnplayedColor(I)I
+    sget v11, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_ad_marker_color:I
 
-    move-result v5
+    const v12, -0x4d000100
+
+    invoke-virtual {v6, v11, v12}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v11
 
     .line 46
-    invoke-virtual {p1, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v4
+    sget v12, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_played_ad_marker_color:I
 
     .line 47
-    sget v5, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_ad_marker_color:I
+    invoke-static {v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultPlayedAdMarkerColor(I)I
 
-    invoke-virtual {p1, v5, v10}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v5
+    move-result v13
 
     .line 48
-    sget v6, Lcom/app/cinemasdk/R$styleable;->DefaultTimeBar_played_ad_marker_color:I
+    invoke-virtual {v6, v12, v13}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v12
 
     .line 49
-    invoke-static {v5}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultPlayedAdMarkerColor(I)I
-
-    move-result v7
+    invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 50
-    invoke-virtual {p1, v6, v7}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v6
+    invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 51
-    iget-object v7, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v7, p2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v3, v9}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 52
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p2, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v4, v10}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 53
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedPaint:Landroid/graphics/Paint;
+    invoke-virtual {v5, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {p2, v3}, Landroid/graphics/Paint;->setColor(I)V
+    move-object/from16 v0, v16
 
     .line 54
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->unplayedPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p2, v4}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 55
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p2, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 56
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedAdMarkerPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p2, v6}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v12}, Landroid/graphics/Paint;->setColor(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 57
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    .line 55
+    invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_0
 
     :catchall_0
-    move-exception p2
+    move-exception v0
 
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
+
+    .line 56
+    throw v0
+
+    .line 57
+    :cond_1
+    iput v12, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->barHeight:I
 
     .line 58
-    throw p2
+    iput v13, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->touchTargetHeight:I
 
     .line 59
-    :cond_1
-    iput v4, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->barHeight:I
+    iput v11, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerWidth:I
 
     .line 60
-    iput v5, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->touchTargetHeight:I
+    iput v14, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberEnabledSize:I
 
     .line 61
-    iput v3, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerWidth:I
+    iput v9, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDisabledSize:I
 
     .line 62
-    iput v6, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberEnabledSize:I
+    iput v10, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDraggedSize:I
+
+    const/4 v0, -0x1
 
     .line 63
-    iput v8, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDisabledSize:I
+    invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 64
-    iput v2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDraggedSize:I
+    invoke-static {v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultScrubberColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v7, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 65
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedPaint:Landroid/graphics/Paint;
+    invoke-static {v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultBufferedColor(I)I
 
-    invoke-virtual {p1, v11}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v2
+
+    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 66
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPaint:Landroid/graphics/Paint;
+    invoke-static {v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultUnplayedColor(I)I
 
-    invoke-static {v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultScrubberColor(I)I
+    move-result v0
 
-    move-result p2
+    invoke-virtual {v4, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
+    const v0, -0x4d000100
 
     .line 67
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedPaint:Landroid/graphics/Paint;
+    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-static {v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultBufferedColor(I)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
+    const/4 v0, 0x0
 
     .line 68
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->unplayedPaint:Landroid/graphics/Paint;
-
-    invoke-static {v11}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->getDefaultUnplayedColor(I)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
+    iput-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 69
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerPaint:Landroid/graphics/Paint;
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v10}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->formatBuilder:Ljava/lang/StringBuilder;
 
     .line 70
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 71
-    :goto_0
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->formatBuilder:Ljava/lang/StringBuilder;
-
-    .line 72
-    new-instance p1, Ljava/util/Formatter;
-
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->formatBuilder:Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/util/Formatter;
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-direct {p1, p2, v2}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
+    invoke-direct {v2, v0, v3}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
 
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->formatter:Ljava/util/Formatter;
+    iput-object v2, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->formatter:Ljava/util/Formatter;
+
+    .line 71
+    new-instance v0, Lxi;
+
+    invoke-direct {v0, v1}, Lxi;-><init>(Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;)V
+
+    iput-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->stopScrubbingRunnable:Ljava/lang/Runnable;
+
+    .line 72
+    iget-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_2
 
     .line 73
-    new-instance p1, Loc0;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
 
-    invoke-direct {p1, p0}, Loc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;)V
+    move-result v0
 
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->stopScrubbingRunnable:Ljava/lang/Runnable;
+    const/4 v2, 0x1
 
-    .line 74
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDrawable:Landroid/graphics/drawable/Drawable;
+    add-int/2addr v0, v2
 
-    if-eqz p1, :cond_2
+    const/4 v3, 0x2
 
-    .line 75
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+    div-int/2addr v0, v3
 
-    move-result p1
-
-    add-int/2addr p1, v1
-
-    div-int/2addr p1, v0
-
-    iput p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPadding:I
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPadding:I
 
     goto :goto_1
 
-    .line 76
     :cond_2
-    iget p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDisabledSize:I
+    const/4 v2, 0x1
 
-    iget p2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberEnabledSize:I
+    const/4 v3, 0x2
 
-    iget v2, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDraggedSize:I
+    .line 74
+    iget v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDisabledSize:I
 
-    .line 77
-    invoke-static {p2, v2}, Ljava/lang/Math;->max(II)I
+    iget v4, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberEnabledSize:I
 
-    move-result p2
+    iget v5, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberDraggedSize:I
 
-    invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
+    .line 75
+    invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
-    move-result p1
+    move-result v4
 
-    add-int/2addr p1, v1
+    invoke-static {v0, v4}, Ljava/lang/Math;->max(II)I
 
-    div-int/2addr p1, v0
+    move-result v0
 
-    iput p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPadding:I
+    add-int/2addr v0, v2
+
+    div-int/2addr v0, v3
+
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPadding:I
 
     :goto_1
-    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 76
+    iput-wide v3, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->duration:J
+
+    .line 77
+    iput-wide v3, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->keyTimeIncrement:J
+
+    const/16 v0, 0x14
 
     .line 78
-    iput-wide p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->duration:J
+    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->keyCountIncrement:I
 
     .line 79
-    iput-wide p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->keyTimeIncrement:J
-
-    const/16 p1, 0x14
+    invoke-virtual {v1, v2}, Landroid/view/View;->setFocusable(Z)V
 
     .line 80
-    iput p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->keyCountIncrement:I
+    sget v0, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v2, 0x10
+
+    if-lt v0, v2, :cond_3
 
     .line 81
-    invoke-virtual {p0, v1}, Landroid/view/View;->setFocusable(Z)V
-
-    .line 82
-    sget p1, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
-
-    if-lt p1, v9, :cond_3
-
-    .line 83
-    invoke-direct {p0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->maybeSetImportantForAccessibilityV16()V
+    invoke-direct/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->maybeSetImportantForAccessibilityV16()V
 
     :cond_3
     return-void
 .end method
 
-.method public static dpToPx(Landroid/util/DisplayMetrics;I)I
+.method private synthetic a()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-direct {p0, v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->stopScrubbing(Z)V
+
+    return-void
+.end method
+
+.method private static dpToPx(Landroid/util/DisplayMetrics;I)I
     .locals 0
 
     int-to-float p1, p1
@@ -1412,25 +1420,22 @@
 
     iput-wide p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubPosition:J
 
-    .line 4
-    iget-wide p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubPosition:J
-
     cmp-long v3, p1, v0
 
     if-nez v3, :cond_1
 
     return v2
 
-    .line 5
+    .line 4
     :cond_1
     iget-boolean p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubbing:Z
 
     if-nez p1, :cond_2
 
-    .line 6
+    .line 5
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->startScrubbing()V
 
-    .line 7
+    .line 6
     :cond_2
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
 
@@ -1451,14 +1456,14 @@
 
     check-cast p2, Lcom/google/android/jioexoplayer2/jioui/TimeBar$OnScrubListener;
 
-    .line 8
+    .line 7
     iget-wide v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubPosition:J
 
     invoke-interface {p2, p0, v0, v1}, Lcom/google/android/jioexoplayer2/jioui/TimeBar$OnScrubListener;->onScrubMove(Lcom/google/android/jioexoplayer2/jioui/TimeBar;J)V
 
     goto :goto_0
 
-    .line 9
+    .line 8
     :cond_3
     invoke-direct {p0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->update()V
 
@@ -1498,7 +1503,7 @@
     return p1
 .end method
 
-.method public static setDrawableLayoutDirection(Landroid/graphics/drawable/Drawable;I)Z
+.method private static setDrawableLayoutDirection(Landroid/graphics/drawable/Drawable;I)Z
     .locals 2
 
     .line 2
@@ -1809,17 +1814,6 @@
 
 
 # virtual methods
-.method public synthetic a()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->stopScrubbing(Z)V
-
-    return-void
-.end method
-
 .method public addListener(Lcom/google/android/jioexoplayer2/jioui/TimeBar$OnScrubListener;)V
     .locals 1
 
@@ -1827,6 +1821,14 @@
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public synthetic b()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->a()V
 
     return-void
 .end method
@@ -2410,6 +2412,10 @@
 
 .method public performAccessibilityAction(ILandroid/os/Bundle;)Z
     .locals 6
+    .param p2    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x10
     .end annotation
@@ -2507,6 +2513,14 @@
 
 .method public setAdGroupTimesMs([J[ZI)V
     .locals 1
+    .param p1    # [J
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # [Z
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p3, :cond_1
 
@@ -2546,6 +2560,10 @@
 
 .method public setAdMarkerColor(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->adMarkerPaint:Landroid/graphics/Paint;
@@ -2562,6 +2580,10 @@
 
 .method public setBufferedColor(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->bufferedPaint:Landroid/graphics/Paint;
@@ -2699,6 +2721,10 @@
 
 .method public setPlayedAdMarkerColor(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedAdMarkerPaint:Landroid/graphics/Paint;
@@ -2715,6 +2741,10 @@
 
 .method public setPlayedColor(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->playedPaint:Landroid/graphics/Paint;
@@ -2750,6 +2780,10 @@
 
 .method public setScrubberColor(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->scrubberPaint:Landroid/graphics/Paint;
@@ -2766,6 +2800,10 @@
 
 .method public setUnplayedColor(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorInt;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/DefaultTimeBar;->unplayedPaint:Landroid/graphics/Paint;

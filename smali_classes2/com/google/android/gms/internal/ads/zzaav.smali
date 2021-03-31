@@ -1,68 +1,194 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaav;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaup;
+.super Lcom/google/android/gms/internal/ads/zzaaq;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzaup<",
-        "Lcom/google/android/gms/internal/ads/zzauq;",
-        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzaaq<",
+        "Ljava/lang/Long;",
         ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public final synthetic zzbyt:Lcom/google/android/gms/internal/ads/zzyt;
-
-.field public final synthetic zzbyu:Lcom/google/android/gms/internal/ads/zzaah;
-
-.field public final synthetic zzbyv:Lcom/google/android/gms/internal/ads/zzaat;
-
-
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaat;Lcom/google/android/gms/internal/ads/zzaah;Lcom/google/android/gms/internal/ads/zzyt;)V
-    .locals 0
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/Long;)V
+    .locals 1
+
+    const/4 p1, 0x1
+
+    const/4 v0, 0x0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaav;->zzbyv:Lcom/google/android/gms/internal/ads/zzaat;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaav;->zzbyu:Lcom/google/android/gms/internal/ads/zzaah;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaav;->zzbyt:Lcom/google/android/gms/internal/ads/zzyt;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/gms/internal/ads/zzaaq;-><init>(ILjava/lang/String;Ljava/lang/Object;Lcom/google/android/gms/internal/ads/zzaat;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzax(Ljava/lang/String;)V
-    .locals 1
+.method public final synthetic zza(Landroid/content/SharedPreferences;)Ljava/lang/Object;
+    .locals 3
+
+    .line 6
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->getKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->zzrk()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final synthetic zza(Landroid/os/Bundle;)Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaav;->zzbyu:Lcom/google/android/gms/internal/ads/zzaah;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->getKey()Ljava/lang/String;
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzaah;->zzbv(Ljava/lang/String;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
-    return-void
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :catch_0
-    move-exception p1
+    move-result-object v0
 
-    const-string v0, ""
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    const-string v2, "com.google.android.gms.ads.flag."
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
 
     .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->getKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 3
+    :cond_2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->zzrk()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Long;
+
+    return-object p1
+.end method
+
+.method public final synthetic zza(Landroid/content/SharedPreferences$Editor;Ljava/lang/Object;)V
+    .locals 3
+
+    .line 4
+    check-cast p2, Ljava/lang/Long;
+
+    .line 5
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->getKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     return-void
+.end method
+
+.method public final synthetic zzb(Lorg/json/JSONObject;)Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->getKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaaq;->zzrk()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
 .end method

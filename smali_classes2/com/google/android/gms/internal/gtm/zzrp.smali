@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field public zzbbz:Ljava/util/Map$Entry;
+.field private zzbbz:Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map$Entry<",
@@ -34,7 +34,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map$Entry;)V
+.method private constructor <init>(Ljava/util/Map$Entry;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

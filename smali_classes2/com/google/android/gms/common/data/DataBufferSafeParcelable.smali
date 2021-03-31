@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/data/DataBufferSafeParcelable;
 .super Lcom/google/android/gms/common/data/AbstractDataBuffer;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -18,11 +19,11 @@
 
 
 # static fields
-.field public static final zalo:[Ljava/lang/String;
+.field private static final zaa:[Ljava/lang/String;
 
 
 # instance fields
-.field public final zalp:Landroid/os/Parcelable$Creator;
+.field private final zab:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -43,7 +44,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zalo:[Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zaa:[Ljava/lang/String;
 
     return-void
 .end method
@@ -66,7 +67,7 @@
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/data/AbstractDataBuffer;-><init>(Lcom/google/android/gms/common/data/DataHolder;)V
 
     .line 2
-    iput-object p2, p0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zalp:Landroid/os/Parcelable$Creator;
+    iput-object p2, p0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zab:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
@@ -125,7 +126,7 @@
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zalo:[Ljava/lang/String;
+    sget-object v0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zaa:[Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/gms/common/data/DataHolder;->builder([Ljava/lang/String;)Lcom/google/android/gms/common/data/DataHolder$Builder;
 
@@ -150,6 +151,13 @@
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/common/data/AbstractDataBuffer;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
 
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/data/DataHolder;
+
+    .line 2
     invoke-virtual {v0, p1}, Lcom/google/android/gms/common/data/DataHolder;->getWindowIndex(I)I
 
     move-result v1
@@ -160,23 +168,23 @@
 
     move-result-object p1
 
-    .line 2
+    .line 3
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 3
+    .line 4
     array-length v1, p1
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, p1, v2, v1}, Landroid/os/Parcel;->unmarshall([BII)V
 
-    .line 4
+    .line 5
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 5
-    iget-object p1, p0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zalp:Landroid/os/Parcelable$Creator;
+    .line 6
+    iget-object p1, p0, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->zab:Landroid/os/Parcelable$Creator;
 
     invoke-interface {p1, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
@@ -184,7 +192,7 @@
 
     check-cast p1, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
 
-    .line 6
+    .line 7
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-object p1
@@ -195,7 +203,7 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
-    .line 7
+    .line 8
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/data/DataBufferSafeParcelable;->get(I)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
 
     move-result-object p1

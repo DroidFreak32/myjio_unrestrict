@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public fieldName:Ljava/lang/String;
+.field private fieldName:Ljava/lang/String;
 
-.field public paramKey:Ljava/lang/String;
+.field private paramKey:Ljava/lang/String;
 
-.field public paramValue:Ljava/lang/String;
+.field private paramValue:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoServerKeyMapping;
 

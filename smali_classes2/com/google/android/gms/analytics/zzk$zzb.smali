@@ -17,7 +17,7 @@
 
 
 # static fields
-.field public static final zzsz:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private static final zzsz:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
@@ -34,7 +34,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

@@ -3,10 +3,18 @@
 .source "BrowserActionsFallbackMenuView.java"
 
 
-# instance fields
-.field public final s:I
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
 
-.field public final t:I
+
+# instance fields
+.field public final a:I
+
+.field public final b:I
 
 
 # direct methods
@@ -21,26 +29,26 @@
 
     move-result-object p1
 
-    sget p2, Lt3;->browser_actions_context_menu_min_padding:I
+    sget p2, Landroidx/browser/R$dimen;->browser_actions_context_menu_min_padding:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result p1
 
-    iput p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->s:I
+    iput p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->a:I
 
     .line 3
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    sget p2, Lt3;->browser_actions_context_menu_max_width:I
+    sget p2, Landroidx/browser/R$dimen;->browser_actions_context_menu_max_width:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result p1
 
-    iput p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->t:I
+    iput p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->b:I
 
     return-void
 .end method
@@ -62,13 +70,13 @@
     iget p1, p1, Landroid/util/DisplayMetrics;->widthPixels:I
 
     .line 2
-    iget v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->s:I
+    iget v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->a:I
 
     mul-int/lit8 v0, v0, 0x2
 
     sub-int/2addr p1, v0
 
-    iget v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->t:I
+    iget v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;->b:I
 
     invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 

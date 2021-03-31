@@ -4,25 +4,25 @@
 
 
 # static fields
-.field public static final TIMESTAMP_SEARCH_BYTES:I = 0x1b8a0
+.field private static final TIMESTAMP_SEARCH_BYTES:I = 0x1b8a0
 
 
 # instance fields
-.field public durationUs:J
+.field private durationUs:J
 
-.field public firstPcrValue:J
+.field private firstPcrValue:J
 
-.field public isDurationRead:Z
+.field private isDurationRead:Z
 
-.field public isFirstPcrValueRead:Z
+.field private isFirstPcrValueRead:Z
 
-.field public isLastPcrValueRead:Z
+.field private isLastPcrValueRead:Z
 
-.field public lastPcrValue:J
+.field private lastPcrValue:J
 
-.field public final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final pcrTimestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private final pcrTimestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -87,6 +87,12 @@
 
 .method private readFirstPcrValue(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;I)I
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getLength()J
@@ -205,6 +211,12 @@
 
 .method private readLastPcrValue(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;I)I
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getLength()J
@@ -357,6 +369,12 @@
 
 .method public readDuration(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;I)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     if-gtz p3, :cond_0
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public deviceInfo:Lcom/app/cinemasdk/model/DeviceInfo;
+.field private deviceInfo:Lcom/app/cinemasdk/model/DeviceInfo;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public loginType:I
+.field private loginType:I
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public ssoExpired:Ljava/lang/Boolean;
+.field private ssoExpired:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public ssoLevel:Ljava/lang/String;
+.field private ssoLevel:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -49,7 +49,7 @@
     .end annotation
 .end field
 
-.field public ssoToken:Ljava/lang/String;
+.field private ssoToken:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -58,7 +58,7 @@
     .end annotation
 .end field
 
-.field public subscriberId:Ljava/lang/String;
+.field private subscriberId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -67,7 +67,7 @@
     .end annotation
 .end field
 
-.field public uId:Ljava/lang/String;
+.field private uId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -76,7 +76,7 @@
     .end annotation
 .end field
 
-.field public uniqueId:Ljava/lang/String;
+.field private uniqueId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

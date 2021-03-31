@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final zzace:Lcom/google/android/gms/internal/gtm/zzcq;
+.field private final zzace:Lcom/google/android/gms/internal/gtm/zzcq;
 
-.field public final zzacf:I
+.field private final zzacf:I
 
-.field public final zzacg:Lcom/google/android/gms/internal/gtm/zzci;
+.field private final zzacg:Lcom/google/android/gms/internal/gtm/zzci;
 
 
 # direct methods

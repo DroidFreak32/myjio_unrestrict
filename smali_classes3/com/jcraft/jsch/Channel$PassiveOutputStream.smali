@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public _sink:Lcom/jcraft/jsch/Channel$MyPipedInputStream;
+.field private _sink:Lcom/jcraft/jsch/Channel$MyPipedInputStream;
 
 .field public final synthetic this$0:Lcom/jcraft/jsch/Channel;
 
@@ -23,6 +23,11 @@
 # direct methods
 .method public constructor <init>(Lcom/jcraft/jsch/Channel;Ljava/io/PipedInputStream;Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/jcraft/jsch/Channel$PassiveOutputStream;->this$0:Lcom/jcraft/jsch/Channel;
@@ -55,6 +60,11 @@
 # virtual methods
 .method public write(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Channel$PassiveOutputStream;->_sink:Lcom/jcraft/jsch/Channel$MyPipedInputStream;
@@ -75,6 +85,11 @@
 
 .method public write([BII)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 4
     iget-object v0, p0, Lcom/jcraft/jsch/Channel$PassiveOutputStream;->_sink:Lcom/jcraft/jsch/Channel$MyPipedInputStream;

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->a(Landroid/view/animation/Animation$AnimationListener;)V
+    value = Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->p(Landroid/view/animation/Animation$AnimationListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+.field public final synthetic a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$c;->s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$c;->a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
@@ -36,7 +36,7 @@
     .locals 1
 
     .line 1
-    iget-object p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$c;->s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iget-object p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$c;->a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     const/high16 v0, 0x3f800000    # 1.0f
 

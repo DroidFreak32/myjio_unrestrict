@@ -19,25 +19,25 @@
 
 
 # instance fields
-.field public actionUrl:Ljava/lang/String;
+.field private actionUrl:Ljava/lang/String;
 
-.field public contentType:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
 
-.field public error:Ljava/lang/String;
+.field private error:Ljava/lang/String;
 
-.field public icon:Ljava/lang/String;
+.field private icon:Ljava/lang/String;
 
-.field public media:Ljava/lang/String;
+.field private media:Ljava/lang/String;
 
-.field public message:Ljava/lang/String;
+.field private message:Ljava/lang/String;
 
-.field public messageColor:Ljava/lang/String;
+.field private messageColor:Ljava/lang/String;
 
-.field public posterUrl:Ljava/lang/String;
+.field private posterUrl:Ljava/lang/String;
 
-.field public title:Ljava/lang/String;
+.field private title:Ljava/lang/String;
 
-.field public titleColor:Ljava/lang/String;
+.field private titleColor:Ljava/lang/String;
 
 
 # direct methods
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
     .line 13
@@ -142,7 +142,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 2
@@ -200,7 +200,7 @@
 
     const-string v7, "message"
 
-    const-string v8, "title"
+    const-string/jumbo v8, "title"
 
     .line 1
     :try_start_0
@@ -212,6 +212,7 @@
 
     if-eqz v9, :cond_0
 
+    .line 2
     invoke-virtual {v0, v8}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v8
@@ -226,13 +227,13 @@
     :goto_0
     const-string v9, "color"
 
-    const-string v11, "text"
+    const-string/jumbo v11, "text"
 
     const-string v12, ""
 
     if-eqz v8, :cond_3
 
-    .line 2
+    .line 3
     :try_start_1
     invoke-virtual {v8, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -249,7 +250,7 @@
     :cond_1
     move-object v13, v12
 
-    .line 3
+    .line 4
     :goto_1
     invoke-virtual {v8, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -278,7 +279,7 @@
 
     move-object/from16 v16, v15
 
-    .line 4
+    .line 5
     :goto_3
     invoke-virtual {v0, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -286,6 +287,7 @@
 
     if-eqz v8, :cond_4
 
+    .line 6
     invoke-virtual {v0, v7}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v7
@@ -298,7 +300,7 @@
     :goto_4
     if-eqz v7, :cond_7
 
-    .line 5
+    .line 7
     invoke-virtual {v7, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v8
@@ -314,7 +316,7 @@
     :cond_5
     move-object v8, v12
 
-    .line 6
+    .line 8
     :goto_5
     invoke-virtual {v7, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -343,7 +345,7 @@
 
     move-object/from16 v18, v17
 
-    .line 7
+    .line 9
     :goto_7
     invoke-virtual {v0, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -351,6 +353,7 @@
 
     if-eqz v7, :cond_8
 
+    .line 10
     invoke-virtual {v0, v6}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v6
@@ -363,11 +366,11 @@
     move-object v6, v10
 
     :goto_8
-    const-string v7, "url"
+    const-string/jumbo v7, "url"
 
     if-eqz v6, :cond_a
 
-    .line 8
+    .line 11
     :try_start_2
     invoke-virtual {v6, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -392,7 +395,7 @@
     :cond_a
     move-object/from16 v19, v12
 
-    .line 9
+    .line 12
     :goto_a
     invoke-virtual {v0, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -400,6 +403,7 @@
 
     if-eqz v6, :cond_b
 
+    .line 13
     invoke-virtual {v0, v5}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v5
@@ -412,7 +416,7 @@
     :goto_b
     if-eqz v5, :cond_f
 
-    .line 10
+    .line 14
     invoke-virtual {v5, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v6
@@ -428,7 +432,7 @@
     :cond_c
     move-object v6, v12
 
-    .line 11
+    .line 15
     :goto_c
     invoke-virtual {v5, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -436,6 +440,7 @@
 
     if-eqz v8, :cond_d
 
+    .line 16
     invoke-virtual {v5, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -445,7 +450,7 @@
     :cond_d
     move-object v3, v12
 
-    .line 12
+    .line 17
     :goto_d
     invoke-virtual {v5, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -453,6 +458,7 @@
 
     if-eqz v8, :cond_e
 
+    .line 18
     invoke-virtual {v5, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -478,7 +484,7 @@
 
     move-object/from16 v22, v21
 
-    .line 13
+    .line 19
     :goto_f
     invoke-virtual {v0, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -486,6 +492,7 @@
 
     if-eqz v2, :cond_10
 
+    .line 20
     invoke-virtual {v0, v4}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
@@ -498,13 +505,14 @@
     :goto_10
     if-eqz v0, :cond_13
 
-    .line 14
+    .line 21
     invoke-virtual {v0, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_11
 
+    .line 22
     invoke-virtual {v0, v7}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
@@ -517,13 +525,14 @@
     :goto_11
     if-eqz v0, :cond_13
 
-    .line 15
+    .line 23
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_12
 
+    .line 24
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v10
@@ -531,13 +540,14 @@
     :cond_12
     if-eqz v10, :cond_13
 
-    .line 16
+    .line 25
     invoke-virtual {v10, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_13
 
+    .line 26
     invoke-virtual {v10, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -547,7 +557,7 @@
     :cond_13
     move-object/from16 v23, v12
 
-    .line 17
+    .line 27
     new-instance v0, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnitContent;
 
     const/16 v24, 0x0
@@ -563,7 +573,7 @@
     :catch_0
     move-exception v0
 
-    .line 18
+    .line 28
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -572,6 +582,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 29
     invoke-virtual {v0}, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object v2
@@ -584,9 +595,10 @@
 
     const-string v2, "DisplayUnit : "
 
+    .line 30
     invoke-static {v2, v1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 19
+    .line 31
     new-instance v1, Lcom/clevertap/android/sdk/displayunits/model/CleverTapDisplayUnitContent;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -597,6 +609,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 32
     invoke-virtual {v0}, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -818,6 +831,7 @@
 
     const-string v1, "image/gif"
 
+    .line 2
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -847,7 +861,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "video"
+    const-string/jumbo v1, "video"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -868,6 +882,8 @@
 
 .method public toString()Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

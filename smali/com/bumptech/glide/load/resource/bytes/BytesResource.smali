@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public final bytes:[B
+.field private final bytes:[B
 
 
 # direct methods
@@ -43,6 +43,8 @@
 # virtual methods
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bytes/BytesResource;->get()[B
@@ -54,6 +56,8 @@
 
 .method public get()[B
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bytes/BytesResource;->bytes:[B
@@ -63,6 +67,9 @@
 
 .method public getResourceClass()Ljava/lang/Class;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final MAX_DESC_LENGTH:I = 0x3e8
+.field private static final MAX_DESC_LENGTH:I = 0x3e8
 
 
 # instance fields

@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static version()I
+.method private static version()I
     .locals 3
 
     .line 1

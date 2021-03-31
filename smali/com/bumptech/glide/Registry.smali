@@ -16,7 +16,7 @@
 
 
 # static fields
-.field public static final BUCKET_APPEND_ALL:Ljava/lang/String; = "legacy_append"
+.field private static final BUCKET_APPEND_ALL:Ljava/lang/String; = "legacy_append"
 
 .field public static final BUCKET_BITMAP:Ljava/lang/String; = "Bitmap"
 
@@ -24,30 +24,30 @@
 
 .field public static final BUCKET_GIF:Ljava/lang/String; = "Gif"
 
-.field public static final BUCKET_PREPEND_ALL:Ljava/lang/String; = "legacy_prepend_all"
+.field private static final BUCKET_PREPEND_ALL:Ljava/lang/String; = "legacy_prepend_all"
 
 
 # instance fields
-.field public final dataRewinderRegistry:Lcom/bumptech/glide/load/data/DataRewinderRegistry;
+.field private final dataRewinderRegistry:Lcom/bumptech/glide/load/data/DataRewinderRegistry;
 
-.field public final decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
+.field private final decoderRegistry:Lcom/bumptech/glide/provider/ResourceDecoderRegistry;
 
-.field public final encoderRegistry:Lcom/bumptech/glide/provider/EncoderRegistry;
+.field private final encoderRegistry:Lcom/bumptech/glide/provider/EncoderRegistry;
 
-.field public final imageHeaderParserRegistry:Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
+.field private final imageHeaderParserRegistry:Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
 
-.field public final loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
+.field private final loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
 
-.field public final modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
+.field private final modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
-.field public final modelToResourceClassCache:Lcom/bumptech/glide/provider/ModelToResourceClassCache;
+.field private final modelToResourceClassCache:Lcom/bumptech/glide/provider/ModelToResourceClassCache;
 
-.field public final resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
+.field private final resourceEncoderRegistry:Lcom/bumptech/glide/provider/ResourceEncoderRegistry;
 
-.field public final throwableListPool:Lz8;
+.field private final throwableListPool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;"
@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field public final transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
+.field private final transcoderRegistry:Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;
 
 
 # direct methods
@@ -80,20 +80,18 @@
     iput-object v0, p0, Lcom/bumptech/glide/Registry;->loadPathCache:Lcom/bumptech/glide/provider/LoadPathCache;
 
     .line 4
-    invoke-static {}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafeList()Lz8;
+    invoke-static {}, Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafeList()Landroidx/core/util/Pools$Pool;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Lz8;
+    iput-object v0, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
     .line 5
-    new-instance v0, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
+    new-instance v1, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
-    iget-object v1, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Lz8;
+    invoke-direct {v1, v0}, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;-><init>(Landroidx/core/util/Pools$Pool;)V
 
-    invoke-direct {v0, v1}, Lcom/bumptech/glide/load/model/ModelLoaderRegistry;-><init>(Lz8;)V
-
-    iput-object v0, p0, Lcom/bumptech/glide/Registry;->modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
+    iput-object v1, p0, Lcom/bumptech/glide/Registry;->modelLoaderRegistry:Lcom/bumptech/glide/load/model/ModelLoaderRegistry;
 
     .line 6
     new-instance v0, Lcom/bumptech/glide/provider/EncoderRegistry;
@@ -161,6 +159,21 @@
 
 .method private getDecodePaths(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
     .locals 11
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -260,7 +273,7 @@
     .line 12
     new-instance v10, Lcom/bumptech/glide/load/engine/DecodePath;
 
-    iget-object v8, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Lz8;
+    iget-object v8, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
     move-object v2, v10
 
@@ -268,7 +281,7 @@
 
     move-object v4, v1
 
-    invoke-direct/range {v2 .. v8}, Lcom/bumptech/glide/load/engine/DecodePath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Lz8;)V
+    invoke-direct/range {v2 .. v8}, Lcom/bumptech/glide/load/engine/DecodePath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Landroidx/core/util/Pools$Pool;)V
 
     .line 13
     invoke-interface {v0, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -283,6 +296,17 @@
 # virtual methods
 .method public append(Ljava/lang/Class;Lcom/bumptech/glide/load/Encoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Encoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -306,6 +330,17 @@
 
 .method public append(Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceEncoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/ResourceEncoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TResource:",
@@ -329,6 +364,21 @@
 
 .method public append(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceDecoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/ResourceDecoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -356,6 +406,21 @@
 
 .method public append(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -383,6 +448,25 @@
 
 .method public append(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceDecoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/ResourceDecoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -411,6 +495,9 @@
 
 .method public getImageHeaderParsers()Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -447,6 +534,21 @@
 
 .method public getLoadPath(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/engine/LoadPath;
     .locals 9
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -511,7 +613,7 @@
     :cond_1
     new-instance v0, Lcom/bumptech/glide/load/engine/LoadPath;
 
-    iget-object v8, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Lz8;
+    iget-object v8, p0, Lcom/bumptech/glide/Registry;->throwableListPool:Landroidx/core/util/Pools$Pool;
 
     move-object v3, v0
 
@@ -521,7 +623,7 @@
 
     move-object v6, p3
 
-    invoke-direct/range {v3 .. v8}, Lcom/bumptech/glide/load/engine/LoadPath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lz8;)V
+    invoke-direct/range {v3 .. v8}, Lcom/bumptech/glide/load/engine/LoadPath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
 
     .line 7
     :goto_0
@@ -535,6 +637,13 @@
 
 .method public getModelLoaders(Ljava/lang/Object;)Ljava/util/List;
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -573,6 +682,21 @@
 
 .method public getRegisteredResourceClasses(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
     .locals 5
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -705,6 +829,13 @@
 
 .method public getResultEncoder(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/ResourceEncoder;
     .locals 2
+    .param p1    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -714,6 +845,12 @@
             "TX;>;)",
             "Lcom/bumptech/glide/load/ResourceEncoder<",
             "TX;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/Registry$NoResultEncoderAvailableException;
         }
     .end annotation
 
@@ -747,6 +884,13 @@
 
 .method public getRewinder(Ljava/lang/Object;)Lcom/bumptech/glide/load/data/DataRewinder;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -769,6 +913,13 @@
 
 .method public getSourceEncoder(Ljava/lang/Object;)Lcom/bumptech/glide/load/Encoder;
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -776,6 +927,12 @@
             ">(TX;)",
             "Lcom/bumptech/glide/load/Encoder<",
             "TX;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/Registry$NoSourceEncoderAvailableException;
         }
     .end annotation
 
@@ -809,6 +966,10 @@
 
 .method public isResourceEncoderAvailable(Lcom/bumptech/glide/load/engine/Resource;)Z
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -843,6 +1004,17 @@
 
 .method public prepend(Ljava/lang/Class;Lcom/bumptech/glide/load/Encoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Encoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -866,6 +1038,17 @@
 
 .method public prepend(Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceEncoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/ResourceEncoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TResource:",
@@ -889,6 +1072,21 @@
 
 .method public prepend(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceDecoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/ResourceDecoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -916,6 +1114,21 @@
 
 .method public prepend(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -943,6 +1156,25 @@
 
 .method public prepend(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceDecoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/ResourceDecoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -971,6 +1203,12 @@
 
 .method public register(Lcom/bumptech/glide/load/ImageHeaderParser;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/ImageHeaderParser;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 5
     iget-object v0, p0, Lcom/bumptech/glide/Registry;->imageHeaderParserRegistry:Lcom/bumptech/glide/provider/ImageHeaderParserRegistry;
@@ -982,6 +1220,13 @@
 
 .method public register(Lcom/bumptech/glide/load/data/DataRewinder$Factory;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/data/DataRewinder$Factory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1001,6 +1246,17 @@
 
 .method public register(Ljava/lang/Class;Lcom/bumptech/glide/load/Encoder;)Lcom/bumptech/glide/Registry;
     .locals 0
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/Encoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -1027,6 +1283,17 @@
 
 .method public register(Ljava/lang/Class;Lcom/bumptech/glide/load/ResourceEncoder;)Lcom/bumptech/glide/Registry;
     .locals 0
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/ResourceEncoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TResource:",
@@ -1053,6 +1320,21 @@
 
 .method public register(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TResource:",
@@ -1080,6 +1362,21 @@
 
 .method public replace(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/model/ModelLoaderFactory;)Lcom/bumptech/glide/Registry;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/load/model/ModelLoaderFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Model:",
@@ -1107,6 +1404,13 @@
 
 .method public final setResourceDecoderBucketPriorityList(Ljava/util/List;)Lcom/bumptech/glide/Registry;
     .locals 2
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

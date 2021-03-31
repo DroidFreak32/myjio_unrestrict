@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final errorName:Ljava/lang/String;
+.field private final errorName:Ljava/lang/String;
 
-.field public final errorType:Ljava/lang/String;
+.field private final errorType:Ljava/lang/String;
 
 
 # direct methods

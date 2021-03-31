@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public final synthetic zzafg:Lcom/google/android/gms/tagmanager/zzy;
+.field private final synthetic zzafg:Lcom/google/android/gms/tagmanager/zzy;
 
-.field public zzafh:Ljava/lang/Long;
+.field private zzafh:Ljava/lang/Long;
 
-.field public final synthetic zzafi:Z
+.field private final synthetic zzafi:Z
 
 
 # direct methods

@@ -1,26 +1,22 @@
 .class public final Lcom/google/android/gms/internal/ads/zzban;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbam;
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzbam<",
-        "Ljavax/crypto/Cipher;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zzeib:Lcom/google/android/gms/internal/ads/zzbac;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbac;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzban;->zzeib:Lcom/google/android/gms/internal/ads/zzbac;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,23 +24,27 @@
 
 
 # virtual methods
-.method public final synthetic zzb(Ljava/lang/String;Ljava/security/Provider;)Ljava/lang/Object;
-    .locals 0
-
-    if-nez p2, :cond_0
+.method public final run()V
+    .locals 1
 
     .line 1
-    invoke-static {p1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzban;->zzeib:Lcom/google/android/gms/internal/ads/zzbac;
 
-    move-result-object p1
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbac;->zza(Lcom/google/android/gms/internal/ads/zzbac;)Lcom/google/android/gms/internal/ads/zzbam;
 
-    return-object p1
+    move-result-object v0
+
+    if-eqz v0, :cond_0
 
     .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzban;->zzeib:Lcom/google/android/gms/internal/ads/zzbac;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbac;->zza(Lcom/google/android/gms/internal/ads/zzbac;)Lcom/google/android/gms/internal/ads/zzbam;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzbam;->onPaused()V
+
     :cond_0
-    invoke-static {p1, p2}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final is:Ljava/io/InputStream;
+.field private final is:Ljava/io/InputStream;
 
 
 # direct methods
@@ -38,6 +38,11 @@
 # virtual methods
 .method public getByte()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
@@ -51,6 +56,11 @@
 
 .method public getUInt16()I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
@@ -80,6 +90,11 @@
 
 .method public getUInt8()S
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;->is:Ljava/io/InputStream;
@@ -97,6 +112,11 @@
 
 .method public read([BI)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     move v0, p2
 
@@ -128,6 +148,11 @@
 
 .method public skip(J)J
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x0
 

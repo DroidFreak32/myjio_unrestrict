@@ -14,13 +14,13 @@
 
 
 # instance fields
-.field public bearing:F
+.field private bearing:F
 
-.field public target:Lcom/google/android/gms/maps/model/LatLng;
+.field private target:Lcom/google/android/gms/maps/model/LatLng;
 
-.field public tilt:F
+.field private tilt:F
 
-.field public zoom:F
+.field private zoom:F
 
 
 # direct methods

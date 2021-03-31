@@ -1,105 +1,55 @@
-.class public abstract Lz0;
+.class public Lz0;
 .super Ljava/lang/Object;
-.source "ActionMode.java"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lz0$a;
-    }
-.end annotation
-
-
-# instance fields
-.field public s:Ljava/lang/Object;
-
-.field public t:Z
+.source "AppCompatHintHelper.java"
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/view/View;)Landroid/view/inputmethod/InputConnection;
+    .locals 1
+
+    if-eqz p0, :cond_1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract a(I)V
-.end method
-
-.method public abstract a(Landroid/view/View;)V
-.end method
-
-.method public abstract a(Ljava/lang/CharSequence;)V
-.end method
-
-.method public a(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lz0;->s:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .locals 0
+    if-nez v0, :cond_1
 
     .line 2
-    iput-boolean p1, p0, Lz0;->t:Z
+    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    return-void
-.end method
+    move-result-object p2
 
-.method public abstract b()Landroid/view/View;
-.end method
+    .line 3
+    :goto_0
+    instance-of v0, p2, Landroid/view/View;
 
-.method public abstract b(I)V
-.end method
+    if-eqz v0, :cond_1
 
-.method public abstract b(Ljava/lang/CharSequence;)V
-.end method
+    .line 4
+    instance-of v0, p2, Landroidx/appcompat/widget/WithHint;
 
-.method public abstract c()Landroid/view/Menu;
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract d()Landroid/view/MenuInflater;
-.end method
+    .line 5
+    check-cast p2, Landroidx/appcompat/widget/WithHint;
 
-.method public abstract e()Ljava/lang/CharSequence;
-.end method
+    invoke-interface {p2}, Landroidx/appcompat/widget/WithHint;->getHint()Ljava/lang/CharSequence;
 
-.method public f()Ljava/lang/Object;
-    .locals 1
+    move-result-object p2
 
-    .line 1
-    iget-object v0, p0, Lz0;->s:Ljava/lang/Object;
+    iput-object p2, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
 
-    return-object v0
-.end method
+    goto :goto_1
 
-.method public abstract g()Ljava/lang/CharSequence;
-.end method
+    .line 6
+    :cond_0
+    invoke-interface {p2}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
-.method public h()Z
-    .locals 1
+    move-result-object p2
 
-    .line 1
-    iget-boolean v0, p0, Lz0;->t:Z
+    goto :goto_0
 
-    return v0
-.end method
-
-.method public abstract i()V
-.end method
-
-.method public abstract j()Z
+    :cond_1
+    :goto_1
+    return-object p0
 .end method

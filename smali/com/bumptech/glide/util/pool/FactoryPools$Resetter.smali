@@ -25,6 +25,10 @@
 
 # virtual methods
 .method public abstract reset(Ljava/lang/Object;)V
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"

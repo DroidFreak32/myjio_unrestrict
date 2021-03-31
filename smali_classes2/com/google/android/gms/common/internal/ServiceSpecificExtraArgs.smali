@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/ServiceSpecificExtraArgs;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -16,7 +17,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

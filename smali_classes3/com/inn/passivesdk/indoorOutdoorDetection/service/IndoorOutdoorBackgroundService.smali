@@ -12,11 +12,11 @@
 
 
 # instance fields
-.field public isRunning:Z
+.field private isRunning:Z
 
-.field public looper:Landroid/os/Looper;
+.field private looper:Landroid/os/Looper;
 
-.field public myServiceHandler:Lcom/inn/passivesdk/indoorOutdoorDetection/service/IndoorOutdoorBackgroundService$MyServiceHandler;
+.field private myServiceHandler:Lcom/inn/passivesdk/indoorOutdoorDetection/service/IndoorOutdoorBackgroundService$MyServiceHandler;
 
 
 # direct methods

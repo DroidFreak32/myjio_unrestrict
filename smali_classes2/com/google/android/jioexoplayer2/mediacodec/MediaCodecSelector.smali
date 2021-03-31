@@ -43,7 +43,21 @@
             ">;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getPassthroughDecoderInfo()Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
 .end method

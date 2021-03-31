@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/images/ImageManager$zab;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -17,27 +18,34 @@
 
 
 # instance fields
-.field public final mUri:Landroid/net/Uri;
+.field private final zaa:Landroid/net/Uri;
 
-.field public final synthetic zamr:Lcom/google/android/gms/common/images/ImageManager;
+.field private final zab:Landroid/os/ParcelFileDescriptor;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final zams:Landroid/os/ParcelFileDescriptor;
+.field private final synthetic zac:Lcom/google/android/gms/common/images/ImageManager;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/images/ImageManager;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;)V
     .locals 0
+    .param p2    # Landroid/net/Uri;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zamr:Lcom/google/android/gms/common/images/ImageManager;
+    iput-object p1, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zac:Lcom/google/android/gms/common/images/ImageManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p2, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->mUri:Landroid/net/Uri;
+    iput-object p2, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zaa:Landroid/net/Uri;
 
     .line 3
-    iput-object p3, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zams:Landroid/os/ParcelFileDescriptor;
+    iput-object p3, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zab:Landroid/os/ParcelFileDescriptor;
 
     return-void
 .end method
@@ -53,7 +61,7 @@
     invoke-static {v0}, Lcom/google/android/gms/common/internal/Asserts;->checkNotMainThread(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zams:Landroid/os/ParcelFileDescriptor;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zab:Landroid/os/ParcelFileDescriptor;
 
     const/4 v1, 0x1
 
@@ -79,7 +87,7 @@
 
     .line 4
     :catch_0
-    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->mUri:Landroid/net/Uri;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zaa:Landroid/net/Uri;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -112,7 +120,7 @@
     .line 5
     :goto_0
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zams:Landroid/os/ParcelFileDescriptor;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zab:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_1
@@ -137,23 +145,23 @@
     invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
     .line 7
-    iget-object v1, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zamr:Lcom/google/android/gms/common/images/ImageManager;
+    iget-object v1, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zac:Lcom/google/android/gms/common/images/ImageManager;
 
     invoke-static {v1}, Lcom/google/android/gms/common/images/ImageManager;->zag(Lcom/google/android/gms/common/images/ImageManager;)Landroid/os/Handler;
 
     move-result-object v1
 
-    new-instance v2, Lcom/google/android/gms/common/images/ImageManager$zad;
+    new-instance v2, Lcom/google/android/gms/common/images/ImageManager$zac;
 
-    iget-object v5, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zamr:Lcom/google/android/gms/common/images/ImageManager;
+    iget-object v5, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zac:Lcom/google/android/gms/common/images/ImageManager;
 
-    iget-object v6, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->mUri:Landroid/net/Uri;
+    iget-object v6, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zaa:Landroid/net/Uri;
 
     move-object v4, v2
 
     move-object v9, v0
 
-    invoke-direct/range {v4 .. v9}, Lcom/google/android/gms/common/images/ImageManager$zad;-><init>(Lcom/google/android/gms/common/images/ImageManager;Landroid/net/Uri;Landroid/graphics/Bitmap;ZLjava/util/concurrent/CountDownLatch;)V
+    invoke-direct/range {v4 .. v9}, Lcom/google/android/gms/common/images/ImageManager$zac;-><init>(Lcom/google/android/gms/common/images/ImageManager;Landroid/net/Uri;Landroid/graphics/Bitmap;ZLjava/util/concurrent/CountDownLatch;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -167,7 +175,7 @@
 
     .line 9
     :catch_2
-    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->mUri:Landroid/net/Uri;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$zab;->zaa:Landroid/net/Uri;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

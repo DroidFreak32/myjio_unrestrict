@@ -1,315 +1,511 @@
 .class public Lb1;
-.super Landroid/content/ContextWrapper;
-.source "ContextThemeWrapper.java"
+.super La1;
+.source "AppCompatSeekBarHelper.java"
 
 
 # instance fields
-.field public a:I
+.field public final d:Landroid/widget/SeekBar;
 
-.field public b:Landroid/content/res/Resources$Theme;
+.field public e:Landroid/graphics/drawable/Drawable;
 
-.field public c:Landroid/view/LayoutInflater;
+.field public f:Landroid/content/res/ColorStateList;
 
-.field public d:Landroid/content/res/Configuration;
+.field public g:Landroid/graphics/PorterDuff$Mode;
 
-.field public e:Landroid/content/res/Resources;
+.field public h:Z
+
+.field public i:Z
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/widget/SeekBar;)V
     .locals 1
+
+    .line 1
+    invoke-direct {p0, p1}, La1;-><init>(Landroid/widget/ProgressBar;)V
 
     const/4 v0, 0x0
 
-    .line 1
-    invoke-direct {p0, v0}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 0
-
     .line 2
-    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    iput-object v0, p0, Lb1;->f:Landroid/content/res/ColorStateList;
 
     .line 3
-    iput p2, p0, Lb1;->a:I
+    iput-object v0, p0, Lb1;->g:Landroid/graphics/PorterDuff$Mode;
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
-    .locals 0
+    const/4 v0, 0x0
 
     .line 4
-    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    iput-boolean v0, p0, Lb1;->h:Z
 
     .line 5
-    iput-object p2, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
+    iput-boolean v0, p0, Lb1;->i:Z
+
+    .line 6
+    iput-object p1, p0, Lb1;->d:Landroid/widget/SeekBar;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/content/res/Resources;
-    .locals 3
+.method public c(Landroid/util/AttributeSet;I)V
+    .locals 8
 
     .line 1
-    iget-object v0, p0, Lb1;->e:Landroid/content/res/Resources;
-
-    if-nez v0, :cond_1
+    invoke-super {p0, p1, p2}, La1;->c(Landroid/util/AttributeSet;I)V
 
     .line 2
-    iget-object v0, p0, Lb1;->d:Landroid/content/res/Configuration;
+    iget-object v0, p0, Lb1;->d:Landroid/widget/SeekBar;
 
-    if-nez v0, :cond_0
-
-    .line 3
-    invoke-super {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Landroid/widget/SeekBar;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iput-object v0, p0, Lb1;->e:Landroid/content/res/Resources;
+    sget-object v3, Landroidx/appcompat/R$styleable;->AppCompatSeekBar:[I
 
-    goto :goto_0
+    const/4 v1, 0x0
+
+    invoke-static {v0, p1, v3, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+
+    move-result-object v0
+
+    .line 3
+    iget-object v1, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->getContext()Landroid/content/Context;
+
+    move-result-object v2
 
     .line 4
-    :cond_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-virtual {v0}, Landroidx/appcompat/widget/TintTypedArray;->getWrappedTypeArray()Landroid/content/res/TypedArray;
 
-    const/16 v2, 0x11
+    move-result-object v5
 
-    if-lt v1, v2, :cond_1
+    const/4 v7, 0x0
+
+    move-object v4, p1
+
+    move v6, p2
 
     .line 5
-    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
-
-    move-result-object v0
+    invoke-static/range {v1 .. v7}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
     .line 6
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    sget p1, Landroidx/appcompat/R$styleable;->AppCompatSeekBar_android_thumb:I
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 7
+    iget-object p2, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {p2, p1}, Landroid/widget/SeekBar;->setThumb(Landroid/graphics/drawable/Drawable;)V
+
+    .line 8
+    :cond_0
+    sget p1, Landroidx/appcompat/R$styleable;->AppCompatSeekBar_tickMark:I
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    .line 9
+    invoke-virtual {p0, p1}, Lb1;->j(Landroid/graphics/drawable/Drawable;)V
+
+    .line 10
+    sget p1, Landroidx/appcompat/R$styleable;->AppCompatSeekBar_tickMarkTintMode:I
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+
+    move-result p2
+
+    const/4 v1, 0x1
+
+    if-eqz p2, :cond_1
+
+    const/4 p2, -0x1
+
+    .line 11
+    invoke-virtual {v0, p1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getInt(II)I
+
+    move-result p1
+
+    iget-object p2, p0, Lb1;->g:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-static {p1, p2}, Landroidx/appcompat/widget/DrawableUtils;->parseTintMode(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lb1;->g:Landroid/graphics/PorterDuff$Mode;
+
+    .line 12
+    iput-boolean v1, p0, Lb1;->i:Z
+
+    .line 13
+    :cond_1
+    sget p1, Landroidx/appcompat/R$styleable;->AppCompatSeekBar_tickMarkTint:I
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    .line 14
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lb1;->f:Landroid/content/res/ColorStateList;
+
+    .line 15
+    iput-boolean v1, p0, Lb1;->h:Z
+
+    .line 16
+    :cond_2
+    invoke-virtual {v0}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+
+    .line 17
+    invoke-virtual {p0}, Lb1;->f()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_3
+
+    iget-boolean v1, p0, Lb1;->h:Z
+
+    if-nez v1, :cond_0
+
+    iget-boolean v1, p0, Lb1;->i:Z
+
+    if-eqz v1, :cond_3
+
+    .line 2
+    :cond_0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    iput-object v0, p0, Lb1;->e:Landroid/content/res/Resources;
+    invoke-static {v0}, Landroidx/core/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 7
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lb1;->e:Landroid/content/res/Resources;
+    move-result-object v0
 
-    return-object v0
-.end method
-
-.method public a(Landroid/content/res/Resources$Theme;IZ)V
-    .locals 0
-
-    const/4 p3, 0x1
-
-    .line 8
-    invoke-virtual {p1, p2, p3}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
-
-    return-void
-.end method
-
-.method public attachBaseContext(Landroid/content/Context;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
-
-    return-void
-.end method
-
-.method public b()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lb1;->a:I
-
-    return v0
-.end method
-
-.method public final c()V
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 2
-    invoke-virtual {p0}, Lb1;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
+    iput-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
 
     .line 3
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v1
+    iget-boolean v1, p0, Lb1;->h:Z
 
     if-eqz v1, :cond_1
 
     .line 4
-    iget-object v2, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
+    iget-object v1, p0, Lb1;->f:Landroid/content/res/ColorStateList;
 
-    invoke-virtual {v2, v1}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+    invoke-static {v0, v1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     .line 5
     :cond_1
-    iget-object v1, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
+    iget-boolean v0, p0, Lb1;->i:Z
 
-    iget v2, p0, Lb1;->a:I
+    if-eqz v0, :cond_2
 
-    invoke-virtual {p0, v1, v2, v0}, Lb1;->a(Landroid/content/res/Resources$Theme;IZ)V
+    .line 6
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
 
+    iget-object v1, p0, Lb1;->g:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-static {v0, v1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+
+    .line 7
+    :cond_2
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 8
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    iget-object v1, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->getDrawableState()[I
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    :cond_3
     return-void
 .end method
 
-.method public getAssets()Landroid/content/res/AssetManager;
-    .locals 1
+.method public g(Landroid/graphics/Canvas;)V
+    .locals 6
 
     .line 1
-    invoke-virtual {p0}, Lb1;->getResources()Landroid/content/res/Resources;
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    if-eqz v0, :cond_3
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
+    .line 2
+    iget-object v0, p0, Lb1;->d:Landroid/widget/SeekBar;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/SeekBar;->getMax()I
 
-    return-object v0
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-le v0, v1, :cond_3
+
+    .line 3
+    iget-object v2, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v2
+
+    .line 4
+    iget-object v3, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v3
+
+    if-ltz v2, :cond_0
+
+    .line 5
+    div-int/lit8 v2, v2, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x1
+
+    :goto_0
+    if-ltz v3, :cond_1
+
+    .line 6
+    div-int/lit8 v1, v3, 0x2
+
+    .line 7
+    :cond_1
+    iget-object v3, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    neg-int v4, v2
+
+    neg-int v5, v1
+
+    invoke-virtual {v3, v4, v5, v2, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 8
+    iget-object v1, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->getWidth()I
+
+    move-result v1
+
+    iget-object v2, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v2}, Landroid/widget/SeekBar;->getPaddingLeft()I
+
+    move-result v2
+
+    sub-int/2addr v1, v2
+
+    iget-object v2, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    .line 9
+    invoke-virtual {v2}, Landroid/widget/SeekBar;->getPaddingRight()I
+
+    move-result v2
+
+    sub-int/2addr v1, v2
+
+    int-to-float v1, v1
+
+    int-to-float v2, v0
+
+    div-float/2addr v1, v2
+
+    .line 10
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    move-result v2
+
+    .line 11
+    iget-object v3, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v3}, Landroid/widget/SeekBar;->getPaddingLeft()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    iget-object v4, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v4}, Landroid/widget/SeekBar;->getHeight()I
+
+    move-result v4
+
+    div-int/lit8 v4, v4, 0x2
+
+    int-to-float v4, v4
+
+    invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
+
+    const/4 v3, 0x0
+
+    :goto_1
+    if-gt v3, v0, :cond_2
+
+    .line 12
+    iget-object v4, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v4, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    const/4 v4, 0x0
+
+    .line 13
+    invoke-virtual {p1, v1, v4}, Landroid/graphics/Canvas;->translate(FF)V
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    .line 14
+    :cond_2
+    invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    :cond_3
+    return-void
 .end method
 
-.method public getResources()Landroid/content/res/Resources;
-    .locals 1
+.method public h()V
+    .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lb1;->a()Landroid/content/res/Resources;
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    return-object v0
+    .line 2
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    .line 3
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->getDrawableState()[I
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 4
+    iget-object v1, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_0
+    return-void
 .end method
 
-.method public getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+.method public i()V
     .locals 1
 
-    const-string v0, "layout_inflater"
+    .line 1
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public j(Landroid/graphics/drawable/Drawable;)V
+    .locals 2
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    .line 2
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 3
+    :cond_0
+    iput-object p1, p0, Lb1;->e:Landroid/graphics/drawable/Drawable;
+
+    if-eqz p1, :cond_2
+
+    .line 4
+    iget-object v0, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 5
+    iget-object v0, p0, Lb1;->d:Landroid/widget/SeekBar;
+
+    invoke-static {v0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Landroidx/core/graphics/drawable/DrawableCompat;->setLayoutDirection(Landroid/graphics/drawable/Drawable;I)Z
+
+    .line 6
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 2
-    iget-object p1, p0, Lb1;->c:Landroid/view/LayoutInflater;
+    .line 7
+    iget-object v0, p0, Lb1;->d:Landroid/widget/SeekBar;
 
-    if-nez p1, :cond_0
-
-    .line 3
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lb1;->c:Landroid/view/LayoutInflater;
-
-    .line 4
-    :cond_0
-    iget-object p1, p0, Lb1;->c:Landroid/view/LayoutInflater;
-
-    return-object p1
-
-    .line 5
-    :cond_1
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/widget/SeekBar;->getDrawableState()[I
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public getTheme()Landroid/content/res/Resources$Theme;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    .line 2
-    :cond_0
-    iget v0, p0, Lb1;->a:I
-
-    if-nez v0, :cond_1
-
-    .line 3
-    sget v0, Ly;->Theme_AppCompat_Light:I
-
-    iput v0, p0, Lb1;->a:I
-
-    .line 4
+    .line 8
     :cond_1
-    invoke-virtual {p0}, Lb1;->c()V
+    invoke-virtual {p0}, Lb1;->f()V
 
-    .line 5
-    iget-object v0, p0, Lb1;->b:Landroid/content/res/Resources$Theme;
+    .line 9
+    :cond_2
+    iget-object p1, p0, Lb1;->d:Landroid/widget/SeekBar;
 
-    return-object v0
-.end method
+    invoke-virtual {p1}, Landroid/widget/SeekBar;->invalidate()V
 
-.method public setTheme(I)V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lb1;->a:I
-
-    if-eq v0, p1, :cond_0
-
-    .line 2
-    iput p1, p0, Lb1;->a:I
-
-    .line 3
-    invoke-virtual {p0}, Lb1;->c()V
-
-    :cond_0
     return-void
 .end method

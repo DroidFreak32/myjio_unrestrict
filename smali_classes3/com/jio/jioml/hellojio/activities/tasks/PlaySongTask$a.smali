@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->l()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,17 +38,17 @@
     .locals 3
 
     .line 1
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
 
-    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->k()Z
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->getLikeState()Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
 
-    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->j()Z
+    invoke-virtual {p1}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->getDisLikeState()Z
 
     move-result p1
 
@@ -66,18 +66,18 @@
     invoke-direct {p1, v0, v1, v2}, Lcom/jio/jioml/hellojio/datamodels/ChatDataModels$Feedback;-><init>(Lcom/jio/jioml/hellojio/enums/ChatType;ILcom/jio/jioml/hellojio/enums/Feedback;)V
 
     .line 3
-    sget-object v0, Lar0;->b:Lar0;
+    sget-object v0, Lcom/jio/jioml/hellojio/utils/Utility;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Utility;
 
-    invoke-virtual {v0, p1}, Lar0;->a(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+    invoke-virtual {v0, p1}, Lcom/jio/jioml/hellojio/utils/Utility;->showOutput(Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
 
     .line 4
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->feedback_like:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->feedback_like:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -85,16 +85,16 @@
 
     check-cast p1, Landroid/widget/ImageView;
 
-    sget v0, Lbn0;->hj_feedback_like_selected:I
+    sget v0, Lcom/jio/jioml/hellojio/R$drawable;->hj_feedback_like_selected:I
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 5
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->s:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask$a;->a:Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;
 
     const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->d(Z)V
+    invoke-virtual {p1, v0}, Lcom/jio/jioml/hellojio/activities/tasks/PlaySongTask;->setLikeState(Z)V
 
     :cond_0
     return-void

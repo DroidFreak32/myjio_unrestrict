@@ -60,337 +60,227 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 16
+    .locals 3
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v1, 0x0
+    const-string v1, "BASE"
 
-    const-string v2, "BASE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->a:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
+    const-string v1, "BASE_1"
+
     const/4 v2, 0x1
 
-    const-string v3, "BASE_1"
-
-    invoke-direct {v0, v3, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->b:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v3, 0x2
+    const-string v1, "CUPCAKE"
 
-    const-string v4, "CUPCAKE"
+    const/4 v2, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->c:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v4, 0x3
+    const-string v1, "DONUT"
 
-    const-string v5, "DONUT"
+    const/4 v2, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->d:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v5, 0x4
+    const-string v1, "ECLAIR"
 
-    const-string v6, "ECLAIR"
+    const/4 v2, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->e:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v6, 0x5
+    const-string v1, "ECLAIR_MR1"
 
-    const-string v7, "ECLAIR_MR1"
+    const/4 v2, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->f:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v7, 0x6
+    const-string v1, "ECLAIR_MR2"
 
-    const-string v8, "ECLAIR_MR2"
+    const/4 v2, 0x6
 
-    invoke-direct {v0, v8, v7}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->g:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/4 v8, 0x7
+    const-string v1, "FROYO"
 
-    const-string v9, "FROYO"
+    const/4 v2, 0x7
 
-    invoke-direct {v0, v9, v8}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->h:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v9, 0x8
+    const-string v1, "GINGERBREAD"
 
-    const-string v10, "GINGERBREAD"
+    const/16 v2, 0x8
 
-    invoke-direct {v0, v10, v9}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->i:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v10, 0x9
+    const-string v1, "GINGERBREAD_MR1"
 
-    const-string v11, "GINGERBREAD_MR1"
+    const/16 v2, 0x9
 
-    invoke-direct {v0, v11, v10}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->j:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v11, 0xa
+    const-string v1, "HONEYCOMB"
 
-    const-string v12, "HONEYCOMB"
+    const/16 v2, 0xa
 
-    invoke-direct {v0, v12, v11}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->k:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v12, 0xb
+    const-string v1, "HONEYCOMB_MR1"
 
-    const-string v13, "HONEYCOMB_MR1"
+    const/16 v2, 0xb
 
-    invoke-direct {v0, v13, v12}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->l:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v13, 0xc
+    const-string v1, "HONEYCOMB_MR2"
 
-    const-string v14, "HONEYCOMB_MR2"
+    const/16 v2, 0xc
 
-    invoke-direct {v0, v14, v13}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->m:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v14, 0xd
+    const-string v1, "ICE_CREAM_SANDWICH"
 
-    const-string v15, "ICE_CREAM_SANDWICH"
+    const/16 v2, 0xd
 
-    invoke-direct {v0, v15, v14}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->n:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const/16 v15, 0xe
+    const-string v1, "ICE_CREAM_SANDWICH_MR1"
 
-    const-string v14, "ICE_CREAM_SANDWICH_MR1"
+    const/16 v2, 0xe
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->o:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "JELLY_BEAN"
+    const-string v1, "JELLY_BEAN"
 
-    const/16 v15, 0xf
+    const/16 v2, 0xf
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->p:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "KITKAT"
+    const-string v1, "KITKAT"
 
-    const/16 v15, 0x10
+    const/16 v2, 0x10
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->q:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "LOLLIPOP"
+    const-string v1, "LOLLIPOP"
 
-    const/16 v15, 0x11
+    const/16 v2, 0x11
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->r:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "MARSHMALLOW"
+    const-string v1, "MARSHMALLOW"
 
-    const/16 v15, 0x12
+    const/16 v2, 0x12
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->s:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "NOUGAT"
+    const-string v1, "NOUGAT"
 
-    const/16 v15, 0x13
+    const/16 v2, 0x13
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->t:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "OREO"
+    const-string v1, "OREO"
 
-    const/16 v15, 0x14
+    const/16 v2, 0x14
 
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/c;->u:Lcom/elitecorelib/core/c;
 
     new-instance v0, Lcom/elitecorelib/core/c;
 
-    const-string v14, "Pie"
-
-    const/16 v15, 0x15
-
-    invoke-direct {v0, v14, v15}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/elitecorelib/core/c;->v:Lcom/elitecorelib/core/c;
-
-    const/16 v0, 0x16
-
-    new-array v0, v0, [Lcom/elitecorelib/core/c;
-
-    sget-object v14, Lcom/elitecorelib/core/c;->a:Lcom/elitecorelib/core/c;
-
-    aput-object v14, v0, v1
-
-    sget-object v1, Lcom/elitecorelib/core/c;->b:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->c:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/elitecorelib/core/c;->d:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/elitecorelib/core/c;->e:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/elitecorelib/core/c;->f:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/elitecorelib/core/c;->g:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, Lcom/elitecorelib/core/c;->h:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/elitecorelib/core/c;->i:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/elitecorelib/core/c;->j:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v10
-
-    sget-object v1, Lcom/elitecorelib/core/c;->k:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v11
-
-    sget-object v1, Lcom/elitecorelib/core/c;->l:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v12
-
-    sget-object v1, Lcom/elitecorelib/core/c;->m:Lcom/elitecorelib/core/c;
-
-    aput-object v1, v0, v13
-
-    sget-object v1, Lcom/elitecorelib/core/c;->n:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->o:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->p:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->q:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0x10
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->r:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0x11
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->s:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0x12
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->t:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0x13
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->u:Lcom/elitecorelib/core/c;
-
-    const/16 v2, 0x14
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/c;->v:Lcom/elitecorelib/core/c;
+    const-string v1, "Pie"
 
     const/16 v2, 0x15
 
-    aput-object v1, v0, v2
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/c;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/elitecorelib/core/c;->v:Lcom/elitecorelib/core/c;
 
     return-void
 .end method

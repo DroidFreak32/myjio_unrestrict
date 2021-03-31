@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzain:Lcom/google/android/gms/internal/gtm/zzl;
+.field private static final zzain:Lcom/google/android/gms/internal/gtm/zzl;
 
 
 # direct methods

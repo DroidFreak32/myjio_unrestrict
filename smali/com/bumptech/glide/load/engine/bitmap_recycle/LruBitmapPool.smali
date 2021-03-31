@@ -17,13 +17,13 @@
 
 
 # static fields
-.field public static final DEFAULT_CONFIG:Landroid/graphics/Bitmap$Config;
+.field private static final DEFAULT_CONFIG:Landroid/graphics/Bitmap$Config;
 
-.field public static final TAG:Ljava/lang/String; = "LruBitmapPool"
+.field private static final TAG:Ljava/lang/String; = "LruBitmapPool"
 
 
 # instance fields
-.field public final allowedConfigs:Ljava/util/Set;
+.field private final allowedConfigs:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -33,23 +33,23 @@
     .end annotation
 .end field
 
-.field public currentSize:J
+.field private currentSize:J
 
-.field public evictions:I
+.field private evictions:I
 
-.field public hits:I
+.field private hits:I
 
-.field public final initialMaxSize:J
+.field private final initialMaxSize:J
 
-.field public maxSize:J
+.field private maxSize:J
 
-.field public misses:I
+.field private misses:I
 
-.field public puts:I
+.field private puts:I
 
-.field public final strategy:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruPoolStrategy;
+.field private final strategy:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruPoolStrategy;
 
-.field public final tracker:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool$BitmapTracker;
+.field private final tracker:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool$BitmapTracker;
 
 
 # direct methods
@@ -139,7 +139,7 @@
     return-void
 .end method
 
-.method public static assertNotHardwareConfig(Landroid/graphics/Bitmap$Config;)V
+.method private static assertNotHardwareConfig(Landroid/graphics/Bitmap$Config;)V
     .locals 3
     .annotation build Landroid/annotation/TargetApi;
         value = 0x1a
@@ -189,8 +189,14 @@
     throw v0
 .end method
 
-.method public static createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.method private static createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 0
+    .param p2    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     if-eqz p2, :cond_0
 
@@ -309,7 +315,7 @@
     return-void
 .end method
 
-.method public static getDefaultAllowedConfigs()Ljava/util/Set;
+.method private static getDefaultAllowedConfigs()Ljava/util/Set;
     .locals 3
     .annotation build Landroid/annotation/TargetApi;
         value = 0x1a
@@ -344,25 +350,22 @@
 
     if-lt v1, v2, :cond_0
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 3
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 4
     :cond_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
     const/16 v2, 0x1a
 
     if-lt v1, v2, :cond_1
 
-    .line 5
+    .line 4
     sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 6
+    .line 5
     :cond_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
@@ -371,7 +374,7 @@
     return-object v0
 .end method
 
-.method public static getDefaultStrategy()Lcom/bumptech/glide/load/engine/bitmap_recycle/LruPoolStrategy;
+.method private static getDefaultStrategy()Lcom/bumptech/glide/load/engine/bitmap_recycle/LruPoolStrategy;
     .locals 2
 
     .line 1
@@ -400,6 +403,12 @@
 
 .method private declared-synchronized getDirtyOrNull(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 5
+    .param p3    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     monitor-enter p0
 
@@ -547,7 +556,7 @@
     throw p1
 .end method
 
-.method public static maybeSetPreMultiplied(Landroid/graphics/Bitmap;)V
+.method private static maybeSetPreMultiplied(Landroid/graphics/Bitmap;)V
     .locals 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0x13
@@ -569,7 +578,7 @@
     return-void
 .end method
 
-.method public static normalize(Landroid/graphics/Bitmap;)V
+.method private static normalize(Landroid/graphics/Bitmap;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -741,6 +750,8 @@
 
 .method public get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool;->getDirtyOrNull(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -768,6 +779,8 @@
 
 .method public getDirty(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool;->getDirtyOrNull(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -1091,7 +1104,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "trimMemory, level="
+    const-string/jumbo v1, "trimMemory, level="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

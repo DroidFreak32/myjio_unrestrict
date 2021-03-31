@@ -11,9 +11,9 @@
 
 
 # static fields
-.field public static final zzags:Ljava/lang/String;
+.field private static final zzags:Ljava/lang/String;
 
-.field public static final zzaio:Ljava/lang/String;
+.field private static final zzaio:Ljava/lang/String;
 
 
 # direct methods
@@ -83,7 +83,7 @@
 .end method
 
 .method public final zzb(Ljava/util/Map;)Lcom/google/android/gms/internal/gtm/zzl;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,8 +109,6 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
     if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -122,14 +120,12 @@
     .line 2
     invoke-static {}, Lcom/google/android/gms/tagmanager/zzgj;->zzkc()Lcom/google/android/gms/internal/gtm/zzl;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-ne v1, v3, :cond_0
+    if-ne v1, v2, :cond_0
 
     .line 3
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-static {p1}, Lcom/google/android/gms/tagmanager/zzgj;->zzi(Ljava/lang/Object;)Lcom/google/android/gms/internal/gtm/zzl;
 
@@ -166,12 +162,17 @@
     :cond_2
     invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/gms/tagmanager/zzef;->zza(Lcom/google/android/gms/internal/gtm/zzl;Lcom/google/android/gms/internal/gtm/zzl;Ljava/util/Map;)Z
 
-    move-result v2
+    move-result p1
 
-    .line 7
+    goto :goto_1
+
     :cond_3
     :goto_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 p1, 0x0
+
+    .line 7
+    :goto_1
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 

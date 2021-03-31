@@ -26,38 +26,40 @@
     invoke-virtual {v0}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
     move-result-object v0
-
-    const-string v1, "DO_REGISTER"
-
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
-
-    move-result v1
     :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v2, "FtpClientServerReceiver"
+    const-string v1, "FtpClientServerReceiver"
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
     :try_start_1
-    const-string v1, "RealTime"
+    const-string v2, "DO_REGISTER"
+
+    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    const-string v2, "RealTime"
 
     const/4 v3, 0x0
 
-    invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    invoke-static {}, Lc20;->b0()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->n()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
     :cond_0
-    sget-object v1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+    sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -77,14 +79,14 @@
 
     move-result-object v4
 
-    invoke-virtual {v1, v2, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     if-nez p2, :cond_1
 
-    invoke-static {p1}, Lc20;->g(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->g(Landroid/content/Context;)V
 
     :cond_1
-    invoke-static {}, Lc20;->l()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->L()Z
 
     move-result p1
 
@@ -94,7 +96,7 @@
 
     const-string p2, "10240"
 
-    invoke-static {p1, p2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -102,53 +104,53 @@
 
     move-result-wide p1
 
-    const-string v1, "current_data_usage"
+    const-string v2, "current_data_usage"
 
-    invoke-virtual {v0, v1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getLong(Ljava/lang/String;)J
+    invoke-virtual {v0, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getLong(Ljava/lang/String;)J
 
     move-result-wide v4
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v6, "Log sync process is on hold as the used data ("
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v6, " Bytes) is more than "
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-wide/16 v6, 0x400
 
     mul-long v8, p1, v6
 
-    invoke-virtual {v1, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v8, " Bytes"
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
     sget-object v8, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    invoke-virtual {v8, v2, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v8, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v1}, Lc20;->e(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
 
-    new-instance v1, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;
+    new-instance v2, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;
 
-    invoke-direct {v1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;-><init>()V
+    invoke-direct {v2}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;-><init>()V
 
     sget-object v8, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->ANALYTIC_DATAUSAGE_CATEGORY_HOLD:Ljava/lang/String;
 
-    invoke-virtual {v1, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setCat(Ljava/lang/String;)V
+    invoke-virtual {v2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setCat(Ljava/lang/String;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -158,7 +160,7 @@
 
     move-result-object v8
 
-    invoke-virtual {v1, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setEt(Ljava/lang/Long;)V
+    invoke-virtual {v2, v8}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setEt(Ljava/lang/Long;)V
 
     sget-object v8, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -188,9 +190,9 @@
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setMsg(Ljava/lang/String;)V
+    invoke-virtual {v2, p1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setMsg(Ljava/lang/String;)V
 
-    const-string p1, "usageResetTime"
+    const-string/jumbo p1, "usageResetTime"
 
     invoke-virtual {v0, p1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getLong(Ljava/lang/String;)J
 
@@ -200,7 +202,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setRt(Ljava/lang/Long;)V
+    invoke-virtual {v2, p1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setRt(Ljava/lang/Long;)V
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -226,20 +228,20 @@
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setPLMN(Ljava/lang/String;)V
+    invoke-virtual {v2, p1}, Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;->setPLMN(Ljava/lang/String;)V
 
     new-instance p1, Lcom/elitecorelib/core/room/AnalyticsDBRep;
 
     invoke-direct {p1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
 
-    invoke-virtual {p1, v1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+    invoke-virtual {p1, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    new-instance p1, Lc30;
+    new-instance p1, Lcom/elitecorelib/core/receiver/a;
 
-    invoke-direct {p1}, Lc30;-><init>()V
+    invoke-direct {p1}, Lcom/elitecorelib/core/receiver/a;-><init>()V
 
     invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
@@ -271,7 +273,7 @@
     move-result-object p2
 
     :goto_1
-    invoke-virtual {p1, v2, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1, v1, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_2
 
@@ -280,15 +282,11 @@
 
     const-string p2, "ANDSF disabled"
     :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/NumberFormatException;->getMessage()Ljava/lang/String;
-
     :cond_4
     :goto_2
     return-void

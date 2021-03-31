@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public latitude:Ljava/lang/String;
+.field private latitude:Ljava/lang/String;
 
-.field public longitude:Ljava/lang/String;
+.field private longitude:Ljava/lang/String;
 
-.field public radius:Ljava/lang/String;
+.field private radius:Ljava/lang/String;
 
 
 # direct methods

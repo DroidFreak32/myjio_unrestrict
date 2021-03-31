@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzbcj:Ljava/lang/Class;
+.field private static final zzbcj:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     const/4 v0, 0x0
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/Object;JI)Ljava/util/List;
+.method private static zza(Ljava/lang/Object;JI)Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -184,7 +184,7 @@
     .line 16
     check-cast v0, Lcom/google/android/gms/internal/gtm/zztu;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/gtm/zzrs;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/gtm/zzpo;->addAll(Ljava/util/Collection;)Z
 
     .line 17
     invoke-static {p0, p1, p2, v1}, Lcom/google/android/gms/internal/gtm/zztx;->zza(Ljava/lang/Object;JLjava/lang/Object;)V
@@ -231,7 +231,7 @@
     return-object v0
 .end method
 
-.method public static zzc(Ljava/lang/Object;J)Ljava/util/List;
+.method private static zzc(Ljava/lang/Object;J)Ljava/util/List;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

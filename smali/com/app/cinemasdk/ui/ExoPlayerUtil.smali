@@ -12,57 +12,57 @@
 
 
 # static fields
-.field public static final BANDWIDTH_METER:Lcom/google/android/jioexoplayer2/upstream/DefaultBandwidthMeter;
+.field private static final BANDWIDTH_METER:Lcom/google/android/jioexoplayer2/upstream/DefaultBandwidthMeter;
 
 
 # instance fields
-.field public adUiViewGroup:Landroid/view/ViewGroup;
+.field private adUiViewGroup:Landroid/view/ViewGroup;
 
-.field public adsLoader:Lcom/google/android/jioexoplayer2/source/ads/AdsLoader;
+.field private adsLoader:Lcom/google/android/jioexoplayer2/source/ads/AdsLoader;
 
-.field public isDRMEnable:Z
+.field private isDRMEnable:Z
 
-.field public lastSeenTrackGroupArray:Lcom/google/android/jioexoplayer2/source/TrackGroupArray;
+.field private lastSeenTrackGroupArray:Lcom/google/android/jioexoplayer2/source/TrackGroupArray;
 
-.field public loadedAdTagUri:Landroid/net/Uri;
+.field private loadedAdTagUri:Landroid/net/Uri;
 
-.field public mAdListener:Lcom/app/cinemasdk/ui/ExoPlayerUtil$AdListener;
+.field private mAdListener:Lcom/app/cinemasdk/ui/ExoPlayerUtil$AdListener;
 
-.field public mAdUri:Landroid/net/Uri;
+.field private mAdUri:Landroid/net/Uri;
 
-.field public mChannelId:J
+.field private mChannelId:J
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public mDrmLicenseUrl:Ljava/lang/String;
+.field private mDrmLicenseUrl:Ljava/lang/String;
 
-.field public mEventListener:Lcom/google/android/jioexoplayer2/Player$EventListener;
+.field private mEventListener:Lcom/google/android/jioexoplayer2/Player$EventListener;
 
-.field public mSrno:J
+.field private mSrno:J
 
-.field public mUri:Landroid/net/Uri;
+.field private mUri:Landroid/net/Uri;
 
-.field public mappedTrackInfo:Lcom/google/android/jioexoplayer2/trackselection/MappingTrackSelector$MappedTrackInfo;
+.field private mappedTrackInfo:Lcom/google/android/jioexoplayer2/trackselection/MappingTrackSelector$MappedTrackInfo;
 
-.field public mediaDataSourceFactory:Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
+.field private mediaDataSourceFactory:Lcom/google/android/jioexoplayer2/upstream/DataSource$Factory;
 
-.field public mediaSource:Lcom/google/android/jioexoplayer2/source/MediaSource;
+.field private mediaSource:Lcom/google/android/jioexoplayer2/source/MediaSource;
 
-.field public player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
+.field private player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
-.field public playerView:Lcom/google/android/jioexoplayer2/jioui/PlayerView;
+.field private playerView:Lcom/google/android/jioexoplayer2/jioui/PlayerView;
 
-.field public programType:I
+.field private programType:I
 
-.field public startAutoPlay:Z
+.field private startAutoPlay:Z
 
-.field public startPosition:J
+.field private startPosition:J
 
-.field public startWindow:I
+.field private startWindow:I
 
-.field public trackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
+.field private trackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
 
-.field public trackSelectorParameters:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;
+.field private trackSelectorParameters:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;
 
 
 # direct methods
@@ -123,7 +123,7 @@
 
     move-result-object p1
 
-    const-string p2, "toilet:ekpremkatha11082017"
+    const-string/jumbo p2, "toilet:ekpremkatha11082017"
 
     invoke-virtual {p1, p2}, Lcom/google/android/jioexoplayer2/upstream/token/TokenController;->setTokenId(Ljava/lang/String;)V
 
@@ -191,6 +191,12 @@
             "Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager<",
             "Lcom/google/android/jioexoplayer2/drm/FrameworkMediaCrypto;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/drm/UnsupportedDrmException;
         }
     .end annotation
 
@@ -627,11 +633,9 @@
     iput-object v4, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->trackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
 
     .line 7
-    iget-object v3, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->trackSelector:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;
+    iget-object v3, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->trackSelectorParameters:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;
 
-    iget-object v4, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->trackSelectorParameters:Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;
-
-    invoke-virtual {v3, v4}, Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;->setParameters(Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;)V
+    invoke-virtual {v4, v3}, Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector;->setParameters(Lcom/google/android/jioexoplayer2/trackselection/DefaultTrackSelector$Parameters;)V
 
     .line 8
     iget-boolean v3, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->isDRMEnable:Z
@@ -721,8 +725,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
     .line 16
-    iget-object v0, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
-
     iget-object v1, p0, Lcom/app/cinemasdk/ui/ExoPlayerUtil;->mEventListener:Lcom/google/android/jioexoplayer2/Player$EventListener;
 
     invoke-virtual {v0, v1}, Lcom/google/android/jioexoplayer2/SimpleExoPlayer;->addListener(Lcom/google/android/jioexoplayer2/Player$EventListener;)V

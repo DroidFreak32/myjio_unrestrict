@@ -17,6 +17,11 @@
 # virtual methods
 .method public isFrameValid(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     instance-of v0, p1, Lcom/clevertap/android/sdk/java_websocket/framing/DataFrame;
@@ -53,6 +58,7 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 3
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV1()Z
 
     move-result v3
@@ -69,6 +75,7 @@
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 4
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV3()Z
 
     move-result p1
@@ -83,7 +90,7 @@
 
     throw v0
 
-    .line 3
+    .line 5
     :cond_1
     :goto_0
     instance-of v0, p1, Lcom/clevertap/android/sdk/java_websocket/framing/ControlFrame;
@@ -102,6 +109,7 @@
 
     if-nez v0, :cond_2
 
+    .line 6
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV3()Z
 
     move-result v0
@@ -110,7 +118,7 @@
 
     goto :goto_1
 
-    .line 4
+    .line 7
     :cond_2
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidFrameException;
 
@@ -120,6 +128,7 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 8
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV1()Z
 
     move-result v3
@@ -136,6 +145,7 @@
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 9
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV3()Z
 
     move-result p1

@@ -8,33 +8,33 @@
 
 
 # static fields
-.field public static zzadq:Ljava/lang/Object;
+.field private static zzadq:Ljava/lang/Object;
 
-.field public static zzadr:Lcom/google/android/gms/tagmanager/zza;
+.field private static zzadr:Lcom/google/android/gms/tagmanager/zza;
 
 
 # instance fields
-.field public volatile closed:Z
+.field private volatile closed:Z
 
-.field public volatile zzadj:J
+.field private volatile zzadj:J
 
-.field public volatile zzadk:J
+.field private volatile zzadk:J
 
-.field public volatile zzadl:J
+.field private volatile zzadl:J
 
-.field public volatile zzadm:J
+.field private volatile zzadm:J
 
-.field public final zzadn:Ljava/lang/Thread;
+.field private final zzadn:Ljava/lang/Thread;
 
-.field public final zzado:Ljava/lang/Object;
+.field private final zzado:Ljava/lang/Object;
 
-.field public zzadp:Lcom/google/android/gms/tagmanager/zzd;
+.field private zzadp:Lcom/google/android/gms/tagmanager/zzd;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
-.field public volatile zzvp:Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+.field private volatile zzvp:Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
 
 # direct methods
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 2
 
     .line 1
@@ -66,7 +66,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/zzd;Lcom/google/android/gms/common/util/Clock;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/zzd;Lcom/google/android/gms/common/util/Clock;)V
     .locals 2
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -123,9 +123,7 @@
 
     .line 11
     :goto_0
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/zza;->zzsd:Lcom/google/android/gms/common/util/Clock;
-
-    invoke-interface {p1}, Lcom/google/android/gms/common/util/Clock;->currentTimeMillis()J
+    invoke-interface {p3}, Lcom/google/android/gms/common/util/Clock;->currentTimeMillis()J
 
     move-result-wide p1
 

@@ -24,11 +24,11 @@
 
 
 # virtual methods
-.method public setAdapter(Lsk;)V
+.method public setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
     .locals 0
 
     .line 1
-    invoke-super {p0, p1}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->setAdapter(Lsk;)V
+    invoke-super {p0, p1}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
     return-void
 .end method

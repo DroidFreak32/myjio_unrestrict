@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final synthetic val$name:Landroid/content/ComponentName;
+.field private final synthetic val$name:Landroid/content/ComponentName;
 
-.field public final synthetic zzxi:Lcom/google/android/gms/internal/gtm/zzav;
+.field private final synthetic zzxi:Lcom/google/android/gms/internal/gtm/zzav;
 
 
 # direct methods

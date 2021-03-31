@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzadt:Lcom/google/android/gms/tagmanager/zza;
+.field private final zzadt:Lcom/google/android/gms/tagmanager/zza;
 
 
 # direct methods
@@ -39,7 +39,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zza;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zza;)V
     .locals 2
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -57,8 +57,6 @@
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/zze;->zzadt:Lcom/google/android/gms/tagmanager/zza;
 
     .line 4
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/zze;->zzadt:Lcom/google/android/gms/tagmanager/zza;
-
     invoke-virtual {p1}, Lcom/google/android/gms/tagmanager/zza;->zzgq()Ljava/lang/String;
 
     return-void

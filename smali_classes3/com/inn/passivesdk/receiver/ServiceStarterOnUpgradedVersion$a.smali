@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroid/content/Context;
+.field public final synthetic a:Landroid/content/Context;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion$a;->s:Landroid/content/Context;
+    iput-object p2, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion$a;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,20 +41,20 @@
     const/4 v0, 0x1
 
     .line 1
-    sput-boolean v0, Lff0;->d:Z
+    sput-boolean v0, Lcom/inn/passivesdk/PassiveManager;->isStarterService:Z
 
     .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion$a;->s:Landroid/content/Context;
+    iget-object v0, p0, Lcom/inn/passivesdk/receiver/ServiceStarterOnUpgradedVersion$a;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lff0;->a(Landroid/content/Context;)Lff0;
+    invoke-static {v0}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lff0;->i()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/PassiveManager;->startMonitoring()V
 
     return-void
 .end method

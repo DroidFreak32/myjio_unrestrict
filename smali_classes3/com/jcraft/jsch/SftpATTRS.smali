@@ -60,7 +60,7 @@
 
 .field public static final S_IXUSR:I = 0x40
 
-.field public static final pmask:I = 0xfff
+.field private static final pmask:I = 0xfff
 
 
 # instance fields
@@ -82,7 +82,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -116,13 +116,11 @@
 
     iput v1, v0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
 
-    .line 3
-    iget v1, v0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
-
     and-int/lit8 v1, v1, 0x1
 
     if-eqz v1, :cond_0
 
+    .line 3
     invoke-virtual {p0}, Lcom/jcraft/jsch/Buffer;->getLong()J
 
     move-result-wide v1
@@ -865,78 +863,66 @@
     .line 1
     iget v0, p0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
 
-    and-int/lit8 v0, v0, 0x1
+    and-int/lit8 v1, v0, 0x1
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    const/16 v0, 0xc
+    const/16 v1, 0xc
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x4
+    const/4 v1, 0x4
 
-    .line 2
     :goto_0
-    iget v2, p0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
+    and-int/lit8 v3, v0, 0x2
 
-    and-int/lit8 v2, v2, 0x2
+    if-eqz v3, :cond_1
 
-    if-eqz v2, :cond_1
+    add-int/lit8 v1, v1, 0x8
 
-    add-int/lit8 v0, v0, 0x8
-
-    .line 3
     :cond_1
-    iget v2, p0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
+    and-int/lit8 v3, v0, 0x4
 
-    and-int/2addr v2, v1
+    if-eqz v3, :cond_2
 
-    if-eqz v2, :cond_2
+    add-int/lit8 v1, v1, 0x4
 
-    add-int/lit8 v0, v0, 0x4
-
-    .line 4
     :cond_2
-    iget v2, p0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
+    and-int/lit8 v3, v0, 0x8
 
-    and-int/lit8 v2, v2, 0x8
+    if-eqz v3, :cond_3
 
-    if-eqz v2, :cond_3
+    add-int/lit8 v1, v1, 0x8
 
-    add-int/lit8 v0, v0, 0x8
-
-    .line 5
     :cond_3
-    iget v2, p0, Lcom/jcraft/jsch/SftpATTRS;->flags:I
-
     const/high16 v3, -0x80000000
 
-    and-int/2addr v2, v3
+    and-int/2addr v0, v3
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
-    add-int/lit8 v0, v0, 0x4
+    add-int/lit8 v1, v1, 0x4
 
-    .line 6
-    iget-object v2, p0, Lcom/jcraft/jsch/SftpATTRS;->extended:[Ljava/lang/String;
+    .line 2
+    iget-object v0, p0, Lcom/jcraft/jsch/SftpATTRS;->extended:[Ljava/lang/String;
 
-    array-length v2, v2
+    array-length v0, v0
 
-    div-int/lit8 v2, v2, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    if-lez v2, :cond_4
+    if-lez v0, :cond_4
 
     const/4 v3, 0x0
 
     :goto_1
-    if-ge v3, v2, :cond_4
+    if-ge v3, v0, :cond_4
 
-    add-int/lit8 v0, v0, 0x4
+    add-int/lit8 v1, v1, 0x4
 
-    .line 7
+    .line 3
     iget-object v4, p0, Lcom/jcraft/jsch/SftpATTRS;->extended:[Ljava/lang/String;
 
     mul-int/lit8 v5, v3, 0x2
@@ -947,11 +933,11 @@
 
     move-result v4
 
-    add-int/2addr v0, v4
+    add-int/2addr v1, v4
 
-    add-int/2addr v0, v1
+    add-int/2addr v1, v2
 
-    .line 8
+    .line 4
     iget-object v4, p0, Lcom/jcraft/jsch/SftpATTRS;->extended:[Ljava/lang/String;
 
     add-int/lit8 v5, v5, 0x1
@@ -962,14 +948,14 @@
 
     move-result v4
 
-    add-int/2addr v0, v4
+    add-int/2addr v1, v4
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_4
-    return v0
+    return v1
 .end method
 
 .method public setACMODTIME(II)V

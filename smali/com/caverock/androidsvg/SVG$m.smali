@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract a(Landroid/graphics/Matrix;)V
+.method public abstract j(Landroid/graphics/Matrix;)V
 .end method

@@ -1,6 +1,5 @@
 .class public final Lcom/daimajia/slider/library/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -584,7 +583,6 @@
 
     new-array v0, v0, [I
 
-    .line 1
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/daimajia/slider/library/R$styleable;->ActionBar:[I
@@ -593,43 +591,38 @@
 
     new-array v1, v0, [I
 
-    const/4 v2, 0x0
+    const v2, 0x10100b3
 
-    const v3, 0x10100b3
+    const/4 v3, 0x0
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    .line 2
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->ActionBarLayout:[I
 
     new-array v1, v0, [I
 
-    const v3, 0x101013f
+    const v2, 0x101013f
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    .line 3
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->ActionMenuItemView:[I
 
-    new-array v1, v2, [I
+    new-array v1, v3, [I
 
-    .line 4
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->ActionMenuView:[I
 
     const/4 v1, 0x6
 
-    new-array v3, v1, [I
+    new-array v2, v1, [I
 
-    .line 5
-    fill-array-data v3, :array_1
+    fill-array-data v2, :array_1
 
-    sput-object v3, Lcom/daimajia/slider/library/R$styleable;->ActionMode:[I
+    sput-object v2, Lcom/daimajia/slider/library/R$styleable;->ActionMode:[I
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    new-array v4, v3, [I
+    new-array v4, v2, [I
 
-    .line 6
     fill-array-data v4, :array_2
 
     sput-object v4, Lcom/daimajia/slider/library/R$styleable;->ActivityChooserView:[I
@@ -638,7 +631,6 @@
 
     new-array v5, v4, [I
 
-    .line 7
     fill-array-data v5, :array_3
 
     sput-object v5, Lcom/daimajia/slider/library/R$styleable;->AlertDialog:[I
@@ -647,14 +639,12 @@
 
     new-array v5, v5, [I
 
-    .line 8
     fill-array-data v5, :array_4
 
     sput-object v5, Lcom/daimajia/slider/library/R$styleable;->AppCompatTextView:[I
 
     new-array v4, v4, [I
 
-    .line 9
     fill-array-data v4, :array_5
 
     sput-object v4, Lcom/daimajia/slider/library/R$styleable;->DrawerArrowToggle:[I
@@ -663,7 +653,6 @@
 
     new-array v5, v4, [I
 
-    .line 10
     fill-array-data v5, :array_6
 
     sput-object v5, Lcom/daimajia/slider/library/R$styleable;->LinearLayoutCompat:[I
@@ -672,21 +661,18 @@
 
     new-array v6, v5, [I
 
-    .line 11
     fill-array-data v6, :array_7
 
     sput-object v6, Lcom/daimajia/slider/library/R$styleable;->LinearLayoutCompat_Layout:[I
 
-    new-array v6, v3, [I
+    new-array v6, v2, [I
 
-    .line 12
     fill-array-data v6, :array_8
 
     sput-object v6, Lcom/daimajia/slider/library/R$styleable;->ListPopupWindow:[I
 
     new-array v1, v1, [I
 
-    .line 13
     fill-array-data v1, :array_9
 
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->MenuGroup:[I
@@ -695,14 +681,12 @@
 
     new-array v1, v1, [I
 
-    .line 14
     fill-array-data v1, :array_a
 
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->MenuItem:[I
 
     new-array v1, v4, [I
 
-    .line 15
     fill-array-data v1, :array_b
 
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->MenuView:[I
@@ -711,7 +695,6 @@
 
     new-array v1, v1, [I
 
-    .line 16
     fill-array-data v1, :array_c
 
     sput-object v1, Lcom/daimajia/slider/library/R$styleable;->PagerIndicator:[I
@@ -720,32 +703,28 @@
 
     new-array v4, v1, [I
 
-    .line 17
     fill-array-data v4, :array_d
 
     sput-object v4, Lcom/daimajia/slider/library/R$styleable;->PopupWindow:[I
 
     new-array v4, v0, [I
 
-    const v6, 0x7f04041f
+    const v6, 0x7f0404b3
 
-    aput v6, v4, v2
+    aput v6, v4, v3
 
-    .line 18
     sput-object v4, Lcom/daimajia/slider/library/R$styleable;->PopupWindowBackgroundState:[I
 
     const/16 v4, 0x11
 
     new-array v4, v4, [I
 
-    .line 19
     fill-array-data v4, :array_e
 
     sput-object v4, Lcom/daimajia/slider/library/R$styleable;->SearchView:[I
 
     new-array v4, v5, [I
 
-    .line 20
     fill-array-data v4, :array_f
 
     sput-object v4, Lcom/daimajia/slider/library/R$styleable;->SliderLayout:[I
@@ -754,7 +733,6 @@
 
     new-array v5, v4, [I
 
-    .line 21
     fill-array-data v5, :array_10
 
     sput-object v5, Lcom/daimajia/slider/library/R$styleable;->Spinner:[I
@@ -763,7 +741,6 @@
 
     new-array v5, v5, [I
 
-    .line 22
     fill-array-data v5, :array_11
 
     sput-object v5, Lcom/daimajia/slider/library/R$styleable;->SwitchCompat:[I
@@ -772,23 +749,20 @@
 
     new-array v5, v5, [I
 
-    .line 23
     fill-array-data v5, :array_12
 
     sput-object v5, Lcom/daimajia/slider/library/R$styleable;->TextAppearance:[I
 
     new-array v0, v0, [I
 
-    const v5, 0x7f0400d7
+    const v5, 0x7f0400f5
 
-    aput v5, v0, v2
+    aput v5, v0, v3
 
-    .line 24
     sput-object v0, Lcom/daimajia/slider/library/R$styleable;->Theme:[I
 
-    new-array v0, v3, [I
+    new-array v0, v2, [I
 
-    .line 25
     fill-array-data v0, :array_13
 
     sput-object v0, Lcom/daimajia/slider/library/R$styleable;->Themes:[I
@@ -797,21 +771,18 @@
 
     new-array v0, v0, [I
 
-    .line 26
     fill-array-data v0, :array_14
 
     sput-object v0, Lcom/daimajia/slider/library/R$styleable;->Toolbar:[I
 
     new-array v0, v4, [I
 
-    .line 27
     fill-array-data v0, :array_15
 
     sput-object v0, Lcom/daimajia/slider/library/R$styleable;->View:[I
 
     new-array v0, v1, [I
 
-    .line 28
     fill-array-data v0, :array_16
 
     sput-object v0, Lcom/daimajia/slider/library/R$styleable;->ViewStubCompat:[I
@@ -822,100 +793,100 @@
 
     :array_0
     .array-data 4
-        0x7f040051
-        0x7f040055
-        0x7f040056
-        0x7f040105
-        0x7f040106
-        0x7f040107
-        0x7f040108
-        0x7f040109
-        0x7f04010a
-        0x7f040149
-        0x7f04015d
-        0x7f04015e
-        0x7f040176
-        0x7f0401e2
-        0x7f0401e7
-        0x7f0401f0
-        0x7f0401f1
-        0x7f0401f4
-        0x7f040209
-        0x7f04021c
-        0x7f0402cd
-        0x7f040307
-        0x7f040345
-        0x7f04035b
-        0x7f04035c
-        0x7f04042b
-        0x7f04042e
-        0x7f040487
-        0x7f040492
+        0x7f040058
+        0x7f040061
+        0x7f040062
+        0x7f04012d
+        0x7f04012e
+        0x7f04012f
+        0x7f040130
+        0x7f040131
+        0x7f040132
+        0x7f04017d
+        0x7f040195
+        0x7f040196
+        0x7f0401ae
+        0x7f04022f
+        0x7f040235
+        0x7f04023f
+        0x7f040240
+        0x7f040244
+        0x7f040259
+        0x7f04026f
+        0x7f04032f
+        0x7f04037e
+        0x7f0403c4
+        0x7f0403dd
+        0x7f0403de
+        0x7f0404c1
+        0x7f0404c4
+        0x7f040529
+        0x7f040534
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f040051
-        0x7f040055
-        0x7f0400e1
-        0x7f0401e2
-        0x7f04042e
-        0x7f040492
+        0x7f040058
+        0x7f040061
+        0x7f0400ff
+        0x7f04022f
+        0x7f0404c4
+        0x7f040534
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f040187
-        0x7f04020e
+        0x7f0401cd
+        0x7f04025e
     .end array-data
 
     :array_3
     .array-data 4
         0x10100f2
-        0x7f04008e
-        0x7f04008f
-        0x7f0402a5
-        0x7f0402a6
-        0x7f040301
-        0x7f0403bd
-        0x7f0403c3
+        0x7f0400a7
+        0x7f0400a8
+        0x7f040307
+        0x7f040308
+        0x7f040378
+        0x7f040448
+        0x7f04044f
     .end array-data
 
     :array_4
     .array-data 4
         0x1010034
-        0x7f04004a
-        0x7f04004b
-        0x7f04004c
-        0x7f04004d
-        0x7f04004e
-        0x7f040163
-        0x7f040164
-        0x7f040165
-        0x7f040166
-        0x7f040168
-        0x7f040169
-        0x7f04016a
-        0x7f04016b
-        0x7f0401aa
-        0x7f0401b2
-        0x7f0401ba
-        0x7f04023c
+        0x7f040051
+        0x7f040052
+        0x7f040053
+        0x7f040054
+        0x7f040055
+        0x7f04019b
+        0x7f04019c
+        0x7f04019d
+        0x7f04019e
+        0x7f0401a0
+        0x7f0401a1
+        0x7f0401a2
+        0x7f0401a3
+        0x7f0401f4
+        0x7f0401fc
+        0x7f040204
         0x7f04029d
-        0x7f04045c
-        0x7f040476
+        0x7f0402ff
+        0x7f0404f5
+        0x7f040511
     .end array-data
 
     :array_5
     .array-data 4
-        0x7f040045
-        0x7f040046
-        0x7f040059
-        0x7f0400e6
-        0x7f040167
-        0x7f0401dd
-        0x7f0403d5
-        0x7f04047e
+        0x7f04004a
+        0x7f04004b
+        0x7f040068
+        0x7f040104
+        0x7f04019f
+        0x7f040227
+        0x7f040463
+        0x7f04051a
     .end array-data
 
     :array_6
@@ -925,10 +896,10 @@
         0x1010126
         0x1010127
         0x1010128
-        0x7f04015e
-        0x7f040160
-        0x7f0402f6
-        0x7f0403b9
+        0x7f040196
+        0x7f040198
+        0x7f04036c
+        0x7f040444
     .end array-data
 
     :array_7
@@ -971,15 +942,15 @@
         0x10101e5
         0x101026f
         0x7f040014
-        0x7f040026
-        0x7f040027
-        0x7f04003d
-        0x7f040104
-        0x7f040201
-        0x7f040202
-        0x7f04030b
-        0x7f0403b7
-        0x7f040499
+        0x7f040028
+        0x7f04002a
+        0x7f040040
+        0x7f04012c
+        0x7f040251
+        0x7f040252
+        0x7f040383
+        0x7f040442
+        0x7f04053c
     .end array-data
 
     :array_b
@@ -991,41 +962,41 @@
         0x101012f
         0x1010130
         0x1010131
-        0x7f040352
-        0x7f040429
+        0x7f0403d4
+        0x7f0404bf
     .end array-data
 
     :array_c
     .array-data 4
-        0x7f040317
-        0x7f040318
-        0x7f040319
-        0x7f04031a
-        0x7f040397
-        0x7f040398
-        0x7f040399
-        0x7f04039a
-        0x7f04039b
-        0x7f04039c
-        0x7f04039d
-        0x7f04039e
-        0x7f0403a0
-        0x7f0404c0
-        0x7f0404c1
-        0x7f0404c2
-        0x7f0404c3
-        0x7f0404c4
-        0x7f0404c5
-        0x7f0404c6
-        0x7f0404c7
-        0x7f0404d3
+        0x7f040392
+        0x7f040393
+        0x7f040394
+        0x7f040395
+        0x7f04041c
+        0x7f04041d
+        0x7f04041e
+        0x7f04041f
+        0x7f040420
+        0x7f040421
+        0x7f040422
+        0x7f040423
+        0x7f040426
+        0x7f040568
+        0x7f040569
+        0x7f04056a
+        0x7f04056b
+        0x7f04056c
+        0x7f04056d
+        0x7f04056e
+        0x7f04056f
+        0x7f04057e
     .end array-data
 
     :array_d
     .array-data 4
         0x1010176
         0x10102c9
-        0x7f040312
+        0x7f04038a
     .end array-data
 
     :array_e
@@ -1034,27 +1005,27 @@
         0x101011f
         0x1010220
         0x1010264
-        0x7f0400da
-        0x7f0400f3
-        0x7f04014a
-        0x7f0401e0
-        0x7f040205
-        0x7f040241
-        0x7f040366
-        0x7f040367
-        0x7f040385
-        0x7f040386
-        0x7f04042a
-        0x7f04042f
-        0x7f0404d4
+        0x7f0400f8
+        0x7f04011b
+        0x7f040182
+        0x7f04022b
+        0x7f040255
+        0x7f0402a2
+        0x7f0403e8
+        0x7f0403e9
+        0x7f04040a
+        0x7f04040b
+        0x7f0404c0
+        0x7f0404c8
+        0x7f04057f
     .end array-data
 
     :array_f
     .array-data 4
-        0x7f04004f
-        0x7f04020d
-        0x7f04031d
-        0x7f04031e
+        0x7f040056
+        0x7f04025d
+        0x7f040398
+        0x7f040399
     .end array-data
 
     :array_10
@@ -1063,7 +1034,7 @@
         0x1010176
         0x101017b
         0x1010262
-        0x7f040345
+        0x7f0403c4
     .end array-data
 
     :array_11
@@ -1071,17 +1042,17 @@
         0x1010124
         0x1010125
         0x1010142
-        0x7f0403bc
-        0x7f0403d8
-        0x7f040438
-        0x7f040439
-        0x7f04043d
-        0x7f04047f
-        0x7f040480
-        0x7f040481
-        0x7f04049d
-        0x7f04049e
-        0x7f04049f
+        0x7f040447
+        0x7f040466
+        0x7f0404d1
+        0x7f0404d2
+        0x7f0404d6
+        0x7f04051e
+        0x7f04051f
+        0x7f040520
+        0x7f040540
+        0x7f040545
+        0x7f040546
     .end array-data
 
     :array_12
@@ -1098,10 +1069,10 @@
         0x1010164
         0x10103ac
         0x1010585
-        0x7f0401b2
-        0x7f0401ba
-        0x7f04045c
-        0x7f040476
+        0x7f0401fc
+        0x7f040204
+        0x7f0404f5
+        0x7f040511
     .end array-data
 
     :array_13
@@ -1114,43 +1085,43 @@
     .array-data 4
         0x10100af
         0x1010140
-        0x7f04008d
-        0x7f0400e2
-        0x7f0400e3
-        0x7f040105
-        0x7f040106
-        0x7f040107
-        0x7f040108
-        0x7f040109
-        0x7f04010a
-        0x7f0402cd
-        0x7f0402ce
-        0x7f0402ee
-        0x7f0402f7
-        0x7f040305
-        0x7f040306
-        0x7f040345
-        0x7f04042b
-        0x7f04042c
-        0x7f04042d
-        0x7f040487
-        0x7f040489
-        0x7f04048a
-        0x7f04048b
-        0x7f04048c
-        0x7f04048d
-        0x7f04048e
-        0x7f040490
-        0x7f040491
+        0x7f0400a6
+        0x7f040100
+        0x7f040101
+        0x7f04012d
+        0x7f04012e
+        0x7f04012f
+        0x7f040130
+        0x7f040131
+        0x7f040132
+        0x7f04032f
+        0x7f040330
+        0x7f040363
+        0x7f04036d
+        0x7f04037c
+        0x7f04037d
+        0x7f0403c4
+        0x7f0404c1
+        0x7f0404c2
+        0x7f0404c3
+        0x7f040529
+        0x7f04052b
+        0x7f04052c
+        0x7f04052d
+        0x7f04052e
+        0x7f04052f
+        0x7f040530
+        0x7f040532
+        0x7f040533
     .end array-data
 
     :array_15
     .array-data 4
         0x1010000
         0x10100da
-        0x7f040314
-        0x7f040315
-        0x7f04047d
+        0x7f04038d
+        0x7f040390
+        0x7f040518
     .end array-data
 
     :array_16
@@ -1161,10 +1132,9 @@
     .end array-data
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

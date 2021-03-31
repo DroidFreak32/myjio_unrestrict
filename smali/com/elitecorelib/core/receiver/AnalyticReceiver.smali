@@ -151,13 +151,13 @@
 
     invoke-virtual {p1, v0, p2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lk30;->a()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->a()Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    invoke-static {}, Lk30;->a()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->a()Ljava/lang/String;
 
     move-result-object p1
 
@@ -195,7 +195,7 @@
 
     iget-object p1, p0, Lcom/elitecorelib/core/receiver/AnalyticReceiver;->a:Landroid/content/Context;
 
-    invoke-static {p1}, Lk30;->b(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/f;->b(Landroid/content/Context;)Z
 
     move-result p1
 

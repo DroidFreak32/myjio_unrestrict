@@ -3,7 +3,11 @@
 
 
 # static fields
-.field public static zzdd:Lcom/google/android/gms/iid/zzai;
+.field private static zzdd:Lcom/google/android/gms/iid/zzai;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "SdkFlagFactory.class"
+    .end annotation
+.end field
 
 
 # direct methods

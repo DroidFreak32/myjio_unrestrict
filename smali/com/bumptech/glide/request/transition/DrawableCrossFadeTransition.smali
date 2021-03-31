@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final duration:I
+.field private final duration:I
 
-.field public final isCrossFadeEnabled:Z
+.field private final isCrossFadeEnabled:Z
 
 
 # direct methods

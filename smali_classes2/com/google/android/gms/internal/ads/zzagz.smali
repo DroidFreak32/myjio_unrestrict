@@ -1,101 +1,136 @@
 .class public final Lcom/google/android/gms/internal/ads/zzagz;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/gms/internal/ads/zzahv;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzahv<",
+        "Ljava/lang/Object;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic zzcld:Lcom/google/android/gms/internal/ads/zzafp;
-
-.field public final synthetic zzcle:Lcom/google/android/gms/internal/ads/zzaga;
-
-.field public final synthetic zzclf:Lcom/google/android/gms/internal/ads/zzagx;
+.field private final zzdfr:Lcom/google/android/gms/internal/ads/zzagy;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzagx;Lcom/google/android/gms/internal/ads/zzafp;Lcom/google/android/gms/internal/ads/zzaga;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzagy;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzclf:Lcom/google/android/gms/internal/ads/zzagx;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzcld:Lcom/google/android/gms/internal/ads/zzafp;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzcle:Lcom/google/android/gms/internal/ads/zzaga;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzdfr:Lcom/google/android/gms/internal/ads/zzagy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final zza(Ljava/lang/Object;Ljava/util/Map;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
     .line 1
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzdfr:Lcom/google/android/gms/internal/ads/zzagy;
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    const-string p1, "name"
+
+    .line 2
+    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    if-nez p1, :cond_1
+
+    const-string p1, "Ad metadata with no name parameter."
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzez(Ljava/lang/String;)V
+
+    const-string p1, ""
+
+    :cond_1
+    const-string v0, "info"
+
+    .line 4
+    invoke-interface {p2, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    .line 5
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzclf:Lcom/google/android/gms/internal/ads/zzagx;
+    new-instance v1, Lorg/json/JSONObject;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzcld:Lcom/google/android/gms/internal/ads/zzafp;
+    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzagx;->zzb(Lcom/google/android/gms/internal/ads/zzafp;)Lcom/google/android/gms/internal/ads/zzaft;
+    move-result-object p2
 
-    move-result-object v0
+    check-cast p2, Ljava/lang/String;
+
+    invoke-direct {v1, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/google/android/gms/ads/internal/util/zzbk;->zzh(Lorg/json/JSONObject;)Landroid/os/Bundle;
+
+    move-result-object v2
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception p2
 
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzeo()Lcom/google/android/gms/internal/ads/zzakr;
-
-    move-result-object v1
-
-    const-string v2, "AdRequestServiceImpl.loadAdAsync"
-
-    .line 3
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/internal/ads/zzakr;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    const-string v1, "Could not fetch ad response due to an Exception."
-
-    .line 4
-    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_0
-
-    .line 5
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzaft;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/ads/zzaft;-><init>(I)V
+    const-string v0, "Failed to convert ad metadata to JSON."
 
     .line 6
-    :cond_0
-    :try_start_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzcle:Lcom/google/android/gms/internal/ads/zzaga;
+    invoke-static {v0, p2}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-interface {v1, v0}, Lcom/google/android/gms/internal/ads/zzaga;->zza(Lcom/google/android/gms/internal/ads/zzaft;)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+    :cond_2
+    :goto_0
+    if-nez v2, :cond_3
+
+    const-string p1, "Failed to convert ad metadata to Bundle."
+
+    .line 7
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzey(Ljava/lang/String;)V
 
     return-void
 
-    :catch_1
-    move-exception v0
+    .line 8
+    :cond_3
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzagz;->zzdfr:Lcom/google/android/gms/internal/ads/zzagy;
 
-    const-string v1, "Fail to forward ad response."
-
-    .line 7
-    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p2, p1, v2}, Lcom/google/android/gms/internal/ads/zzagy;->zza(Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-void
 .end method

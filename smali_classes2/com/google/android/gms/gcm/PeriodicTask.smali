@@ -42,7 +42,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -90,7 +90,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/gcm/PeriodicTask$Builder;)V
+.method private constructor <init>(Lcom/google/android/gms/gcm/PeriodicTask$Builder;)V
     .locals 4
 
     .line 1

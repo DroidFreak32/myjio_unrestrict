@@ -17,21 +17,21 @@
 
 
 # instance fields
-.field public attachment:Ljava/lang/Object;
+.field private attachment:Ljava/lang/Object;
 
-.field public channel:Ljava/nio/channels/ByteChannel;
+.field private channel:Ljava/nio/channels/ByteChannel;
 
-.field public closecode:Ljava/lang/Integer;
+.field private closecode:Ljava/lang/Integer;
 
-.field public closedremotely:Ljava/lang/Boolean;
+.field private closedremotely:Ljava/lang/Boolean;
 
-.field public closemessage:Ljava/lang/String;
+.field private closemessage:Ljava/lang/String;
 
-.field public draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
+.field private draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
-.field public flushandclosestate:Z
+.field private flushandclosestate:Z
 
-.field public handshakerequest:Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
+.field private handshakerequest:Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
 
 .field public final inQueue:Ljava/util/concurrent/BlockingQueue;
     .annotation system Ldalvik/annotation/Signature;
@@ -43,9 +43,9 @@
     .end annotation
 .end field
 
-.field public key:Ljava/nio/channels/SelectionKey;
+.field private key:Ljava/nio/channels/SelectionKey;
 
-.field public knownDrafts:Ljava/util/List;
+.field private knownDrafts:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field public lastPong:J
+.field private lastPong:J
 
 .field public final outQueue:Ljava/util/concurrent/BlockingQueue;
     .annotation system Ldalvik/annotation/Signature;
@@ -67,19 +67,19 @@
     .end annotation
 .end field
 
-.field public pingFrame:Lcom/clevertap/android/sdk/java_websocket/framing/PingFrame;
+.field private pingFrame:Lcom/clevertap/android/sdk/java_websocket/framing/PingFrame;
 
-.field public volatile readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+.field private volatile readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
 
-.field public resourceDescriptor:Ljava/lang/String;
+.field private resourceDescriptor:Ljava/lang/String;
 
-.field public role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
+.field private role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
 
-.field public final synchronizeWriteObject:Ljava/lang/Object;
+.field private final synchronizeWriteObject:Ljava/lang/Object;
 
-.field public tmpHandshakeBytes:Ljava/nio/ByteBuffer;
+.field private tmpHandshakeBytes:Ljava/nio/ByteBuffer;
 
-.field public final wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
+.field private final wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
 
 # direct methods
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;)V
-    .locals 2
+    .locals 4
 
     .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,53 +98,53 @@
     const/4 v0, 0x0
 
     .line 8
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushandclosestate:Z
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closecode:Ljava/lang/Integer;
 
     .line 9
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->NOT_YET_CONNECTED:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closedremotely:Ljava/lang/Boolean;
 
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+    .line 10
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closemessage:Ljava/lang/String;
+
+    .line 11
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
     const/4 v1, 0x0
 
-    .line 10
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
-
-    .line 11
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
-
     .line 12
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->handshakerequest:Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
+    iput-boolean v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushandclosestate:Z
 
     .line 13
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closemessage:Ljava/lang/String;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->handshakerequest:Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
 
     .line 14
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closecode:Ljava/lang/Integer;
-
-    .line 15
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closedremotely:Ljava/lang/Boolean;
-
-    .line 16
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->resourceDescriptor:Ljava/lang/String;
-
-    .line 17
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iput-wide v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->lastPong:J
+    iput-wide v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->lastPong:J
 
-    .line 18
+    .line 15
+    sget-object v2, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->NOT_YET_CONNECTED:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+
+    iput-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+
+    .line 16
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->resourceDescriptor:Ljava/lang/String;
+
+    .line 17
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->synchronizeWriteObject:Ljava/lang/Object;
+
+    .line 18
+    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
 
     if-eqz p1, :cond_2
 
@@ -252,8 +252,6 @@
     iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->knownDrafts:Ljava/util/List;
 
     .line 6
-    iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->knownDrafts:Ljava/util/List;
-
     new-instance p2, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;
 
     invoke-direct {p2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;-><init>()V
@@ -266,6 +264,9 @@
 
 .method private closeConnectionDueToInternalServerError(Ljava/lang/RuntimeException;)V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     const/16 v0, 0x1f4
 
@@ -292,6 +293,9 @@
 
 .method private closeConnectionDueToWrongHandshake(Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;)V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     const/16 v0, 0x194
 
@@ -398,6 +402,9 @@
 
 .method private decodeHandshake(Ljava/nio/ByteBuffer;)Z
     .locals 10
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
@@ -487,7 +494,7 @@
 
     const/4 v4, 0x1
 
-    const-string v5, "wrong http function"
+    const-string/jumbo v5, "wrong http function"
 
     const/16 v6, 0x3ea
 
@@ -597,16 +604,17 @@
 
     move-result-object v8
 
+    .line 26
     invoke-virtual {v3, v8}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->createHandshake(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)Ljava/util/List;
 
     move-result-object v8
 
     invoke-direct {p0, v8}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->write(Ljava/util/List;)V
 
-    .line 26
+    .line 27
     iput-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
-    .line 27
+    .line 28
     invoke-direct {p0, v7}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->open(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)V
 
     return v4
@@ -614,12 +622,12 @@
     :catch_1
     move-exception v3
 
-    .line 28
+    .line 29
     iget-object v7, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
     invoke-interface {v7, p0, v3}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketError(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/Exception;)V
 
-    .line 29
+    .line 30
     invoke-direct {p0, v3}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closeConnectionDueToInternalServerError(Ljava/lang/RuntimeException;)V
 
     return v1
@@ -627,7 +635,7 @@
     :catch_2
     move-exception v3
 
-    .line 30
+    .line 31
     invoke-direct {p0, v3}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closeConnectionDueToWrongHandshake(Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;)V
     :try_end_4
     .catch Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException; {:try_start_4 .. :try_end_4} :catch_0
@@ -635,14 +643,14 @@
 
     return v1
 
-    .line 31
+    .line 32
     :cond_4
     :try_start_5
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
     if-nez v2, :cond_5
 
-    .line 32
+    .line 33
     new-instance v2, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
 
     const-string v3, "no draft matches"
@@ -654,90 +662,84 @@
     :cond_5
     return v1
 
-    .line 33
+    .line 34
     :cond_6
-    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
-
     invoke-virtual {v2, v0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->translateHandshake(Ljava/nio/ByteBuffer;)Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;
 
     move-result-object v2
 
-    .line 34
+    .line 35
     instance-of v3, v2, Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
 
     if-nez v3, :cond_7
 
-    .line 35
+    .line 36
     invoke-virtual {p0, v6, v5, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
 
     return v1
 
-    .line 36
+    .line 37
     :cond_7
     check-cast v2, Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
 
-    .line 37
+    .line 38
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
     invoke-virtual {v3, v2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->acceptHandshakeAsServer(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;)Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     move-result-object v3
 
-    .line 38
+    .line 39
     sget-object v5, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     if-ne v3, v5, :cond_8
 
-    .line 39
+    .line 40
     invoke-direct {p0, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->open(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)V
 
     return v4
 
     :cond_8
-    const-string v2, "the handshake did finally not match"
+    const-string/jumbo v2, "the handshake did finally not match"
 
-    .line 40
+    .line 41
     invoke-virtual {p0, v6, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->close(ILjava/lang/String;)V
 
     return v1
 
-    .line 41
+    .line 42
     :cond_9
-    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
-
     sget-object v3, Lcom/clevertap/android/sdk/java_websocket/enums/Role;->CLIENT:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
 
     if-ne v2, v3, :cond_e
 
-    .line 42
-    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
-
-    iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
-
-    invoke-virtual {v2, v3}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->setParseMode(Lcom/clevertap/android/sdk/java_websocket/enums/Role;)V
-
     .line 43
+    iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
+
+    invoke-virtual {v3, v2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->setParseMode(Lcom/clevertap/android/sdk/java_websocket/enums/Role;)V
+
+    .line 44
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
     invoke-virtual {v2, v0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->translateHandshake(Ljava/nio/ByteBuffer;)Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;
 
     move-result-object v2
 
-    .line 44
+    .line 45
     instance-of v3, v2, Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshake;
 
     if-nez v3, :cond_a
 
-    .line 45
+    .line 46
     invoke-virtual {p0, v6, v5, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
 
     return v1
 
-    .line 46
+    .line 47
     :cond_a
     check-cast v2, Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshake;
 
-    .line 47
+    .line 48
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
     iget-object v5, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->handshakerequest:Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;
@@ -746,7 +748,7 @@
 
     move-result-object v3
 
-    .line 48
+    .line 49
     sget-object v5, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
     :try_end_5
     .catch Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException; {:try_start_5 .. :try_end_5} :catch_6
@@ -754,7 +756,7 @@
 
     if-ne v3, v5, :cond_b
 
-    .line 49
+    .line 50
     :try_start_6
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
@@ -765,7 +767,7 @@
     .catch Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException; {:try_start_6 .. :try_end_6} :catch_4
     .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_3
 
-    .line 50
+    .line 51
     :try_start_7
     invoke-direct {p0, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->open(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)V
 
@@ -774,14 +776,14 @@
     :catch_3
     move-exception v2
 
-    .line 51
+    .line 52
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
     invoke-interface {v3, p0, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketError(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/Exception;)V
 
     const/4 v3, -0x1
 
-    .line 52
+    .line 53
     invoke-virtual {v2}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
     move-result-object v2
@@ -793,7 +795,7 @@
     :catch_4
     move-exception v2
 
-    .line 53
+    .line 54
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;->getCloseCode()I
 
     move-result v3
@@ -806,7 +808,7 @@
 
     return v1
 
-    .line 54
+    .line 55
     :cond_b
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -843,7 +845,7 @@
     :catch_6
     move-exception v2
 
-    .line 55
+    .line 56
     :try_start_8
     invoke-virtual {p0, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->close(Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;)V
     :try_end_8
@@ -851,7 +853,7 @@
 
     goto :goto_2
 
-    .line 56
+    .line 57
     :goto_1
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
 
@@ -861,24 +863,24 @@
 
     if-nez v3, :cond_d
 
-    .line 57
+    .line 58
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->reset()Ljava/nio/Buffer;
 
-    .line 58
+    .line 59
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteHandshakeException;->getPreferredSize()I
 
     move-result v2
 
     if-nez v2, :cond_c
 
-    .line 59
+    .line 60
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v0
 
     add-int/lit8 v2, v0, 0x10
 
-    .line 60
+    .line 61
     :cond_c
     invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
@@ -886,14 +888,12 @@
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
 
-    .line 61
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
-
+    .line 62
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     goto :goto_2
 
-    .line 62
+    .line 63
     :cond_d
     iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
 
@@ -903,7 +903,7 @@
 
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 63
+    .line 64
     iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->tmpHandshakeBytes:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->capacity()I
@@ -919,6 +919,9 @@
 
 .method private generateHttpResponseDueToError(I)Ljava/nio/ByteBuffer;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     const/16 v0, 0x194
 
@@ -947,6 +950,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 2
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -969,6 +973,7 @@
 
     move-result-object p1
 
+    .line 3
     invoke-static {p1}, Lcom/clevertap/android/sdk/java_websocket/util/Charsetfunctions;->asciiBytes(Ljava/lang/String;)[B
 
     move-result-object p1
@@ -1090,12 +1095,12 @@
 .method private write(Ljava/nio/ByteBuffer;)V
     .locals 1
 
-    .line 1
+    .line 5
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->outQueue:Ljava/util/concurrent/BlockingQueue;
 
     invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingQueue;->add(Ljava/lang/Object;)Z
 
-    .line 2
+    .line 6
     iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
     invoke-interface {p1, p0}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWriteDemand(Lcom/clevertap/android/sdk/java_websocket/WebSocket;)V
@@ -1114,12 +1119,12 @@
         }
     .end annotation
 
-    .line 3
+    .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->synchronizeWriteObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 4
+    .line 2
     :try_start_0
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1138,12 +1143,12 @@
 
     check-cast v1, Ljava/nio/ByteBuffer;
 
-    .line 5
+    .line 3
     invoke-direct {p0, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->write(Ljava/nio/ByteBuffer;)V
 
     goto :goto_0
 
-    .line 6
+    .line 4
     :cond_0
     monitor-exit v0
 
@@ -1211,30 +1216,28 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
 
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->CLOSED:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+    sget-object v2, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->CLOSED:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
 
-    if-eq v0, v1, :cond_6
+    if-eq v0, v2, :cond_6
 
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
 
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->OPEN:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+    sget-object v2, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->OPEN:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    if-ne v0, v1, :cond_3
+    if-ne v0, v2, :cond_3
 
     const/16 v0, 0x3ee
 
     if-ne p1, v0, :cond_0
 
     .line 3
-    sget-object p3, Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;->CLOSING:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
-
-    iput-object p3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
+    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
 
     .line 4
-    invoke-virtual {p0, p1, p2, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
+    invoke-virtual {p0, p1, p2, v3}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1252,11 +1255,11 @@
 
     move-result-object v1
 
-    sget-object v3, Lcom/clevertap/android/sdk/java_websocket/enums/CloseHandshakeType;->NONE:Lcom/clevertap/android/sdk/java_websocket/enums/CloseHandshakeType;
+    sget-object v2, Lcom/clevertap/android/sdk/java_websocket/enums/CloseHandshakeType;->NONE:Lcom/clevertap/android/sdk/java_websocket/enums/CloseHandshakeType;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eq v1, v3, :cond_2
+    if-eq v1, v2, :cond_2
 
     if-nez p3, :cond_1
 
@@ -1277,9 +1280,9 @@
 
     .line 8
     :try_start_3
-    iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
+    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
-    invoke-interface {v3, p0, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketError(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/Exception;)V
+    invoke-interface {v2, p0, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketError(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/Exception;)V
 
     .line 9
     :cond_1
@@ -1317,14 +1320,14 @@
 
     .line 15
     :try_start_4
-    iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
+    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->wsl:Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
-    invoke-interface {v3, p0, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketError(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/Exception;)V
+    invoke-interface {v2, p0, v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketError(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/Exception;)V
 
     const-string v1, "generated frame is invalid"
 
     .line 16
-    invoke-virtual {p0, v0, v1, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
+    invoke-virtual {p0, v0, v1, v3}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
 
     .line 17
     :cond_2
@@ -1359,7 +1362,7 @@
     const/4 p1, -0x1
 
     .line 20
-    invoke-virtual {p0, p1, p2, v2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
+    invoke-virtual {p0, p1, p2, v3}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->flushAndClose(ILjava/lang/String;Z)V
 
     .line 21
     :goto_2
@@ -1415,12 +1418,12 @@
 .method public closeConnection()V
     .locals 3
 
-    .line 19
+    .line 18
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closedremotely:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closecode:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1439,11 +1442,11 @@
 
     return-void
 
-    .line 21
+    .line 20
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "this method must be used in conjunction with flushAndClose"
+    const-string/jumbo v1, "this method must be used in conjunction with flushAndClose"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -1455,7 +1458,7 @@
 
     const/4 v0, 0x0
 
-    .line 22
+    .line 21
     invoke-virtual {p0, p1, p2, v0}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closeConnection(ILjava/lang/String;Z)V
 
     return-void
@@ -1506,8 +1509,6 @@
     if-eqz v0, :cond_2
 
     .line 6
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->key:Ljava/nio/channels/SelectionKey;
-
     invoke-virtual {v0}, Ljava/nio/channels/SelectionKey;->cancel()V
 
     .line 7
@@ -1520,8 +1521,6 @@
 
     .line 8
     :try_start_2
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->channel:Ljava/nio/channels/ByteChannel;
-
     invoke-interface {v0}, Ljava/nio/channels/ByteChannel;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
@@ -1585,8 +1584,6 @@
     if-eqz p1, :cond_5
 
     .line 14
-    iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
-
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->reset()V
 
     :cond_5
@@ -1620,7 +1617,7 @@
 
     const-string v0, ""
 
-    .line 18
+    .line 22
     invoke-virtual {p0, p1, v0, p2}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->closeConnection(ILjava/lang/String;Z)V
 
     return-void
@@ -1628,6 +1625,9 @@
 
 .method public decode(Ljava/nio/ByteBuffer;)V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->readyState:Lcom/clevertap/android/sdk/java_websocket/enums/ReadyState;
@@ -1879,8 +1879,6 @@
     if-eqz p1, :cond_1
 
     .line 11
-    iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
-
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->reset()V
 
     :cond_1
@@ -2296,6 +2294,15 @@
 
 .method public startHandshake(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshakeBuilder;)V
     .locals 3
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;

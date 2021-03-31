@@ -17,11 +17,11 @@
 
 
 # instance fields
-.field public zzaut:Z
+.field private zzaut:Z
 
-.field public final zzbdy:I
+.field private final zzbdy:I
 
-.field public zzbdz:Ljava/util/List;
+.field private zzbdz:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public zzbea:Ljava/util/Map;
+.field private zzbea:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public volatile zzbeb:Lcom/google/android/gms/internal/gtm/zztl;
+.field private volatile zzbeb:Lcom/google/android/gms/internal/gtm/zztl;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zztl;"
@@ -48,7 +48,7 @@
     .end annotation
 .end field
 
-.field public zzbec:Ljava/util/Map;
+.field private zzbec:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -57,7 +57,7 @@
     .end annotation
 .end field
 
-.field public volatile zzbed:Lcom/google/android/gms/internal/gtm/zztf;
+.field private volatile zzbed:Lcom/google/android/gms/internal/gtm/zztf;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zztf;"
@@ -67,7 +67,7 @@
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method private constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -406,8 +406,6 @@
     iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zztc;->zzbea:Ljava/util/Map;
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zztc;->zzbea:Ljava/util/Map;
-
     check-cast v0, Ljava/util/TreeMap;
 
     invoke-virtual {v0}, Ljava/util/TreeMap;->descendingMap()Ljava/util/NavigableMap;

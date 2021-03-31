@@ -3,13 +3,13 @@
 
 
 # static fields
-.field public static final zznc:Lcom/google/android/gms/internal/clearcut/zzea;
+.field private static final zznc:Lcom/google/android/gms/internal/clearcut/zzea;
 
 
 # instance fields
-.field public final zznd:Lcom/google/android/gms/internal/clearcut/zzeg;
+.field private final zznd:Lcom/google/android/gms/internal/clearcut/zzeg;
 
-.field public final zzne:Ljava/util/concurrent/ConcurrentMap;
+.field private final zzne:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentMap<",
@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,34 +56,32 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v2
-
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    if-gtz v2, :cond_0
+    if-gtz v3, :cond_0
 
-    aget-object v3, v0, v1
+    aget-object v2, v0, v1
 
-    invoke-static {v3}, Lcom/google/android/gms/internal/clearcut/zzea;->zzk(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzeg;
+    invoke-static {v2}, Lcom/google/android/gms/internal/clearcut/zzea;->zzk(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzeg;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_0
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
-    new-instance v3, Lcom/google/android/gms/internal/clearcut/zzdd;
+    new-instance v2, Lcom/google/android/gms/internal/clearcut/zzdd;
 
-    invoke-direct {v3}, Lcom/google/android/gms/internal/clearcut/zzdd;-><init>()V
+    invoke-direct {v2}, Lcom/google/android/gms/internal/clearcut/zzdd;-><init>()V
 
     :cond_1
-    iput-object v3, p0, Lcom/google/android/gms/internal/clearcut/zzea;->zznd:Lcom/google/android/gms/internal/clearcut/zzeg;
+    iput-object v2, p0, Lcom/google/android/gms/internal/clearcut/zzea;->zznd:Lcom/google/android/gms/internal/clearcut/zzeg;
 
     return-void
 .end method
@@ -96,7 +94,7 @@
     return-object v0
 .end method
 
-.method public static zzk(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzeg;
+.method private static zzk(Ljava/lang/String;)Lcom/google/android/gms/internal/clearcut/zzeg;
     .locals 2
 
     :try_start_0

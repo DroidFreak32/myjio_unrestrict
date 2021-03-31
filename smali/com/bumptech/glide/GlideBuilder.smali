@@ -4,15 +4,18 @@
 
 
 # instance fields
-.field public animationExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private animationExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
-.field public arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+.field private arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-.field public bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-.field public connectivityMonitorFactory:Lcom/bumptech/glide/manager/ConnectivityMonitorFactory;
+.field private connectivityMonitorFactory:Lcom/bumptech/glide/manager/ConnectivityMonitorFactory;
 
-.field public defaultRequestListeners:Ljava/util/List;
+.field private defaultRequestListeners:Ljava/util/List;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -23,9 +26,9 @@
     .end annotation
 .end field
 
-.field public defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
+.field private defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
 
-.field public final defaultTransitionOptions:Ljava/util/Map;
+.field private final defaultTransitionOptions:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -37,25 +40,28 @@
     .end annotation
 .end field
 
-.field public diskCacheExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private diskCacheExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
-.field public diskCacheFactory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
+.field private diskCacheFactory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
 
-.field public engine:Lcom/bumptech/glide/load/engine/Engine;
+.field private engine:Lcom/bumptech/glide/load/engine/Engine;
 
-.field public isActiveResourceRetentionAllowed:Z
+.field private isActiveResourceRetentionAllowed:Z
 
-.field public isLoggingRequestOriginsEnabled:Z
+.field private isLoggingRequestOriginsEnabled:Z
 
-.field public logLevel:I
+.field private logLevel:I
 
-.field public memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
+.field private memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
 
-.field public memorySizeCalculator:Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator;
+.field private memorySizeCalculator:Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator;
 
-.field public requestManagerFactory:Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;
+.field private requestManagerFactory:Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public sourceExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+.field private sourceExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
 
 
 # direct methods
@@ -66,9 +72,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/bumptech/glide/GlideBuilder;->defaultTransitionOptions:Ljava/util/Map;
 
@@ -91,6 +97,13 @@
 # virtual methods
 .method public addGlobalRequestListener(Lcom/bumptech/glide/request/RequestListener;)Lcom/bumptech/glide/GlideBuilder;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/RequestListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,6 +137,12 @@
 
 .method public build(Landroid/content/Context;)Lcom/bumptech/glide/Glide;
     .locals 14
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/GlideBuilder;->sourceExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
@@ -390,6 +409,12 @@
 
 .method public setAnimationExecutor(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->animationExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
@@ -399,6 +424,12 @@
 
 .method public setArrayPool(Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
@@ -408,6 +439,12 @@
 
 .method public setBitmapPool(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
@@ -417,6 +454,12 @@
 
 .method public setConnectivityMonitorFactory(Lcom/bumptech/glide/manager/ConnectivityMonitorFactory;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/manager/ConnectivityMonitorFactory;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->connectivityMonitorFactory:Lcom/bumptech/glide/manager/ConnectivityMonitorFactory;
@@ -426,6 +469,12 @@
 
 .method public setDefaultRequestOptions(Lcom/bumptech/glide/request/RequestOptions;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/RequestOptions;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
@@ -435,6 +484,17 @@
 
 .method public setDefaultTransitionOptions(Ljava/lang/Class;Lcom/bumptech/glide/TransitionOptions;)Lcom/bumptech/glide/GlideBuilder;
     .locals 1
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/TransitionOptions;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -458,6 +518,12 @@
 
 .method public setDiskCache(Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->diskCacheFactory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
@@ -467,6 +533,12 @@
 
 .method public setDiskCacheExecutor(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->diskCacheExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
@@ -485,6 +557,8 @@
 
 .method public setIsActiveResourceRetentionAllowed(Z)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-boolean p1, p0, Lcom/bumptech/glide/GlideBuilder;->isActiveResourceRetentionAllowed:Z
@@ -494,6 +568,8 @@
 
 .method public setLogLevel(I)Lcom/bumptech/glide/GlideBuilder;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -530,6 +606,12 @@
 
 .method public setMemoryCache(Lcom/bumptech/glide/load/engine/cache/MemoryCache;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/cache/MemoryCache;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->memoryCache:Lcom/bumptech/glide/load/engine/cache/MemoryCache;
@@ -539,6 +621,12 @@
 
 .method public setMemorySizeCalculator(Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator$Builder;->build()Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator;
@@ -554,6 +642,12 @@
 
 .method public setMemorySizeCalculator(Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->memorySizeCalculator:Lcom/bumptech/glide/load/engine/cache/MemorySizeCalculator;
@@ -563,6 +657,10 @@
 
 .method public setRequestManagerFactory(Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->requestManagerFactory:Lcom/bumptech/glide/manager/RequestManagerRetriever$RequestManagerFactory;
@@ -572,6 +670,10 @@
 
 .method public setResizeExecutor(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -585,6 +687,12 @@
 
 .method public setSourceExecutor(Lcom/bumptech/glide/load/engine/executor/GlideExecutor;)Lcom/bumptech/glide/GlideBuilder;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/engine/executor/GlideExecutor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/GlideBuilder;->sourceExecutor:Lcom/bumptech/glide/load/engine/executor/GlideExecutor;

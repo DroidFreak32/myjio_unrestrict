@@ -15,53 +15,53 @@
 
 
 # static fields
-.field public static final BLA_W_LP:I = 0x10
+.field private static final BLA_W_LP:I = 0x10
 
-.field public static final CRA_NUT:I = 0x15
+.field private static final CRA_NUT:I = 0x15
 
-.field public static final PPS_NUT:I = 0x22
+.field private static final PPS_NUT:I = 0x22
 
-.field public static final PREFIX_SEI_NUT:I = 0x27
+.field private static final PREFIX_SEI_NUT:I = 0x27
 
-.field public static final RASL_R:I = 0x9
+.field private static final RASL_R:I = 0x9
 
-.field public static final SPS_NUT:I = 0x21
+.field private static final SPS_NUT:I = 0x21
 
-.field public static final SUFFIX_SEI_NUT:I = 0x28
+.field private static final SUFFIX_SEI_NUT:I = 0x28
 
-.field public static final TAG:Ljava/lang/String; = "H265Reader"
+.field private static final TAG:Ljava/lang/String; = "H265Reader"
 
-.field public static final VPS_NUT:I = 0x20
+.field private static final VPS_NUT:I = 0x20
 
 
 # instance fields
-.field public formatId:Ljava/lang/String;
+.field private formatId:Ljava/lang/String;
 
-.field public hasOutputFormat:Z
+.field private hasOutputFormat:Z
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public pesTimeUs:J
+.field private pesTimeUs:J
 
-.field public final pps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
+.field private final pps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-.field public final prefixFlags:[Z
+.field private final prefixFlags:[Z
 
-.field public final prefixSei:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
+.field private final prefixSei:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-.field public sampleReader:Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;
+.field private sampleReader:Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;
 
-.field public final seiReader:Lcom/google/android/jioexoplayer2/extractor/ts/SeiReader;
+.field private final seiReader:Lcom/google/android/jioexoplayer2/extractor/ts/SeiReader;
 
-.field public final seiWrapper:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final seiWrapper:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final sps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
+.field private final sps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-.field public final suffixSei:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
+.field private final suffixSei:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-.field public totalBytesWritten:J
+.field private totalBytesWritten:J
 
-.field public final vps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
+.field private final vps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
 
 # direct methods
@@ -84,47 +84,47 @@
     .line 4
     new-instance p1, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    const/16 v0, 0x80
+    const/16 v0, 0x20
 
-    const/16 v1, 0x20
+    const/16 v1, 0x80
 
-    invoke-direct {p1, v1, v0}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->vps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     .line 5
     new-instance p1, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    const/16 v1, 0x21
+    const/16 v0, 0x21
 
-    invoke-direct {p1, v1, v0}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->sps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     .line 6
     new-instance p1, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    const/16 v1, 0x22
+    const/16 v0, 0x22
 
-    invoke-direct {p1, v1, v0}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->pps:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     .line 7
     new-instance p1, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    const/16 v1, 0x27
+    const/16 v0, 0x27
 
-    invoke-direct {p1, v1, v0}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->prefixSei:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     .line 8
     new-instance p1, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    const/16 v1, 0x28
+    const/16 v0, 0x28
 
-    invoke-direct {p1, v1, v0}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;-><init>(II)V
 
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->suffixSei:Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;
 
@@ -352,7 +352,7 @@
     return-void
 .end method
 
-.method public static parseMediaFormat(Ljava/lang/String;Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;)Lcom/google/android/jioexoplayer2/Format;
+.method private static parseMediaFormat(Ljava/lang/String;Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;Lcom/google/android/jioexoplayer2/extractor/ts/NalUnitTargetBuffer;)Lcom/google/android/jioexoplayer2/Format;
     .locals 23
 
     move-object/from16 v0, p1
@@ -834,7 +834,7 @@
     return-object v0
 .end method
 
-.method public static skipScalingList(Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;)V
+.method private static skipScalingList(Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;)V
     .locals 7
 
     const/4 v0, 0x0
@@ -905,13 +905,10 @@
 
     if-ne v1, v4, :cond_3
 
-    goto :goto_4
+    const/4 v5, 0x3
 
     :cond_3
-    const/4 v4, 0x1
-
-    :goto_4
-    add-int/2addr v3, v4
+    add-int/2addr v3, v5
 
     goto :goto_1
 
@@ -924,7 +921,7 @@
     return-void
 .end method
 
-.method public static skipShortTermRefPicSets(Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;)V
+.method private static skipShortTermRefPicSets(Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;)V
     .locals 8
 
     .line 1
@@ -1247,13 +1244,11 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
     .line 4
-    new-instance v0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;
+    new-instance v1, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+    invoke-direct {v1, v0}, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;-><init>(Lcom/google/android/jioexoplayer2/extractor/TrackOutput;)V
 
-    invoke-direct {v0, v1}, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;-><init>(Lcom/google/android/jioexoplayer2/extractor/TrackOutput;)V
-
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->sampleReader:Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;
+    iput-object v1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->sampleReader:Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader$SampleReader;
 
     .line 5
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H265Reader;->seiReader:Lcom/google/android/jioexoplayer2/extractor/ts/SeiReader;

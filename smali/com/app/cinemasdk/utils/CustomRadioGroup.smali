@@ -15,15 +15,15 @@
 
 
 # instance fields
-.field public mCheckedId:I
+.field private mCheckedId:I
 
-.field public mChildOnCheckedChangeListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.field private mChildOnCheckedChangeListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
-.field public mOnCheckedChangeListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$OnCheckedChangeListener;
+.field private mOnCheckedChangeListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$OnCheckedChangeListener;
 
-.field public mPassThroughListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$PassThroughHierarchyChangeListener;
+.field private mPassThroughListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$PassThroughHierarchyChangeListener;
 
-.field public mProtectFromCheckedChange:Z
+.field private mProtectFromCheckedChange:Z
 
 
 # direct methods
@@ -150,8 +150,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mPassThroughListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$PassThroughHierarchyChangeListener;
 
     .line 3
-    iget-object v0, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mPassThroughListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$PassThroughHierarchyChangeListener;
-
     invoke-super {p0, v0}, Landroid/widget/LinearLayout;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
     return-void
@@ -159,19 +157,21 @@
 
 .method private setCheckedId(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/IdRes;
+        .end annotation
+    .end param
 
     .line 1
     iput p1, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mCheckedId:I
 
     .line 2
-    iget-object p1, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mOnCheckedChangeListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$OnCheckedChangeListener;
+    iget-object v0, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mOnCheckedChangeListener:Lcom/app/cinemasdk/utils/CustomRadioGroup$OnCheckedChangeListener;
 
-    if-eqz p1, :cond_0
+    if-eqz v0, :cond_0
 
     .line 3
-    iget v0, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mCheckedId:I
-
-    invoke-interface {p1, p0, v0}, Lcom/app/cinemasdk/utils/CustomRadioGroup$OnCheckedChangeListener;->onCheckedChanged(Lcom/app/cinemasdk/utils/CustomRadioGroup;I)V
+    invoke-interface {v0, p0, p1}, Lcom/app/cinemasdk/utils/CustomRadioGroup$OnCheckedChangeListener;->onCheckedChanged(Lcom/app/cinemasdk/utils/CustomRadioGroup;I)V
 
     :cond_0
     return-void
@@ -260,6 +260,10 @@
 
 .method public check(I)V
     .locals 3
+    .param p1    # I
+        .annotation build Landroidx/annotation/IdRes;
+        .end annotation
+    .end param
 
     const/4 v0, -0x1
 
@@ -394,6 +398,8 @@
 
 .method public getCheckedRadioButtonId()I
     .locals 1
+    .annotation build Landroidx/annotation/IdRes;
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/app/cinemasdk/utils/CustomRadioGroup;->mCheckedId:I

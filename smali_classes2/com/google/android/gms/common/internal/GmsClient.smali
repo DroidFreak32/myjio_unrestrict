@@ -1,9 +1,10 @@
 .class public abstract Lcom/google/android/gms/common/internal/GmsClient;
 .super Lcom/google/android/gms/common/internal/BaseGmsClient;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$Client;
-.implements Lcom/google/android/gms/common/internal/GmsClientEventManager$GmsClientEventState;
+.implements Lcom/google/android/gms/common/internal/zai;
 
 
 # annotations
@@ -18,13 +19,15 @@
         "Lcom/google/android/gms/common/internal/BaseGmsClient<",
         "TT;>;",
         "Lcom/google/android/gms/common/api/Api$Client;",
-        "Lcom/google/android/gms/common/internal/GmsClientEventManager$GmsClientEventState;"
+        "Lcom/google/android/gms/common/internal/zai;"
     }
 .end annotation
 
 
 # instance fields
-.field public final mScopes:Ljava/util/Set;
+.field private final zaa:Lcom/google/android/gms/common/internal/ClientSettings;
+
+.field private final zab:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -34,9 +37,10 @@
     .end annotation
 .end field
 
-.field public final zaet:Lcom/google/android/gms/common/internal/ClientSettings;
-
-.field public final zax:Landroid/accounts/Account;
+.field private final zac:Landroid/accounts/Account;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -78,20 +82,70 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
     .locals 9
+    .param p7    # Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p8    # Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move v5, p5
+
+    move-object v6, p6
+
+    .line 27
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
+    .locals 9
+    .param p7    # Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p8    # Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
     move-object v8, p0
 
-    .line 19
-    invoke-static/range {p7 .. p7}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
+    const/4 v0, 0x0
+
+    .line 21
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
 
     move-result-object v6
 
-    .line 20
-    invoke-static/range {p8 .. p8}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
+    .line 22
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
 
     move-result-object v7
 
@@ -107,26 +161,26 @@
 
     move v5, p5
 
-    .line 21
+    .line 23
     invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/common/internal/BaseGmsClient;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailabilityLight;ILcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;)V
 
-    .line 22
+    .line 24
     invoke-static {p6}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/gms/common/internal/ClientSettings;
 
-    iput-object v0, v8, Lcom/google/android/gms/common/internal/GmsClient;->zaet:Lcom/google/android/gms/common/internal/ClientSettings;
+    iput-object v0, v8, Lcom/google/android/gms/common/internal/GmsClient;->zaa:Lcom/google/android/gms/common/internal/ClientSettings;
 
-    .line 23
+    .line 25
     invoke-virtual {p6}, Lcom/google/android/gms/common/internal/ClientSettings;->getAccount()Landroid/accounts/Account;
 
     move-result-object v0
 
-    iput-object v0, v8, Lcom/google/android/gms/common/internal/GmsClient;->zax:Landroid/accounts/Account;
+    iput-object v0, v8, Lcom/google/android/gms/common/internal/GmsClient;->zac:Landroid/accounts/Account;
 
-    .line 24
+    .line 26
     invoke-virtual {p6}, Lcom/google/android/gms/common/internal/ClientSettings;->getAllRequestedScopes()Ljava/util/Set;
 
     move-result-object v0
@@ -135,7 +189,7 @@
 
     move-result-object v0
 
-    iput-object v0, v8, Lcom/google/android/gms/common/internal/GmsClient;->mScopes:Ljava/util/Set;
+    iput-object v0, v8, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
 
     return-void
 .end method
@@ -145,12 +199,12 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
-    .line 9
+    .line 10
     invoke-static {p1}, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->getInstance(Landroid/content/Context;)Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 
     move-result-object v3
 
-    .line 10
+    .line 11
     invoke-static {}, Lcom/google/android/gms/common/GoogleApiAvailability;->getInstance()Lcom/google/android/gms/common/GoogleApiAvailability;
 
     move-result-object v4
@@ -169,13 +223,27 @@
 
     move-object v6, p4
 
-    .line 11
+    .line 12
     invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    .locals 0
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 9
+    invoke-direct/range {p0 .. p6}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
     .locals 9
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
@@ -197,7 +265,7 @@
 
     move-object v7, p5
 
-    check-cast v7, Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+    check-cast v7, Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
 
     .line 7
     invoke-static {p6}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -206,7 +274,7 @@
 
     move-object v8, p5
 
-    check-cast v8, Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
+    check-cast v8, Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
 
     move-object v0, p0
 
@@ -219,30 +287,75 @@
     move-object v6, p4
 
     .line 8
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    .locals 9
+    .param p7    # Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p8    # Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move v5, p5
+
+    move-object v6, p6
+
+    .line 20
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/GmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailability;ILcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
     .locals 10
+    .param p7    # Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p8    # Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
     move-object v9, p0
 
-    .line 12
-    invoke-static/range {p7 .. p7}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
+    .line 13
+    invoke-static/range {p7 .. p7}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
 
     move-result-object v6
 
-    .line 13
-    invoke-static/range {p8 .. p8}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
+    .line 14
+    invoke-static/range {p8 .. p8}, Lcom/google/android/gms/common/internal/GmsClient;->zaa(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
 
     move-result-object v7
 
-    .line 14
-    invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/ClientSettings;->getRealClientClassName()Ljava/lang/String;
+    .line 15
+    invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/ClientSettings;->zab()Ljava/lang/String;
 
     move-result-object v8
 
@@ -258,22 +371,22 @@
 
     move v5, p5
 
-    .line 15
+    .line 16
     invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/BaseGmsClient;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/GmsClientSupervisor;Lcom/google/android/gms/common/GoogleApiAvailabilityLight;ILcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;Ljava/lang/String;)V
 
     move-object/from16 v0, p6
 
-    .line 16
-    iput-object v0, v9, Lcom/google/android/gms/common/internal/GmsClient;->zaet:Lcom/google/android/gms/common/internal/ClientSettings;
-
     .line 17
+    iput-object v0, v9, Lcom/google/android/gms/common/internal/GmsClient;->zaa:Lcom/google/android/gms/common/internal/ClientSettings;
+
+    .line 18
     invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/ClientSettings;->getAccount()Landroid/accounts/Account;
 
     move-result-object v1
 
-    iput-object v1, v9, Lcom/google/android/gms/common/internal/GmsClient;->zax:Landroid/accounts/Account;
+    iput-object v1, v9, Lcom/google/android/gms/common/internal/GmsClient;->zac:Landroid/accounts/Account;
 
-    .line 18
+    .line 19
     invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/ClientSettings;->getAllRequestedScopes()Ljava/util/Set;
 
     move-result-object v0
@@ -282,13 +395,19 @@
 
     move-result-object v0
 
-    iput-object v0, v9, Lcom/google/android/gms/common/internal/GmsClient;->mScopes:Ljava/util/Set;
+    iput-object v0, v9, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
 
     return-void
 .end method
 
-.method public static zaa(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
+.method private static zaa(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;
     .locals 1
+    .param p0    # Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     if-nez p0, :cond_0
 
@@ -298,15 +417,21 @@
 
     .line 5
     :cond_0
-    new-instance v0, Lcom/google/android/gms/common/internal/zaf;
+    new-instance v0, Lcom/google/android/gms/common/internal/zah;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/zaf;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/zah;-><init>(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)V
 
     return-object v0
 .end method
 
-.method public static zaa(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
+.method private static zaa(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;
     .locals 1
+    .param p0    # Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     if-nez p0, :cond_0
 
@@ -318,13 +443,17 @@
     :cond_0
     new-instance v0, Lcom/google/android/gms/common/internal/zag;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/zag;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/zag;-><init>(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
 
     return-object v0
 .end method
 
 .method private final zaa(Ljava/util/Set;)Ljava/util/Set;
     .locals 3
+    .param p1    # Ljava/util/Set;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -387,9 +516,11 @@
 # virtual methods
 .method public final getAccount()Landroid/accounts/Account;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zax:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zac:Landroid/accounts/Account;
 
     return-object v0
 .end method
@@ -400,20 +531,9 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zaet:Lcom/google/android/gms/common/internal/ClientSettings;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zaa:Lcom/google/android/gms/common/internal/ClientSettings;
 
     return-object v0
-.end method
-
-.method public getMinApkVersion()I
-    .locals 1
-
-    .line 1
-    invoke-super {p0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getMinApkVersion()I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public getRequiredFeatures()[Lcom/google/android/gms/common/Feature;
@@ -430,6 +550,9 @@
 
 .method public final getScopes()Ljava/util/Set;
     .locals 1
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -440,13 +563,56 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->mScopes:Ljava/util/Set;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public getScopesForConnectionlessNonSignIn()Ljava/util/Set;
+    .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Lcom/google/android/gms/common/api/Scope;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->requiresSignIn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
+
+    return-object v0
+
+    :cond_0
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public validateScopes(Ljava/util/Set;)Ljava/util/Set;
     .locals 0
+    .param p1    # Ljava/util/Set;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

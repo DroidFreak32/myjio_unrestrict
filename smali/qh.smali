@@ -1,31 +1,16 @@
-.class public abstract Lqh;
+.class public final synthetic Lqh;
 .super Ljava/lang/Object;
-.source "Migration.java"
-
-
-# instance fields
-.field public final endVersion:I
-
-.field public final startVersion:I
+.source "Renderer.java"
 
 
 # direct methods
-.method public constructor <init>(II)V
+.method public static $default$setOperatingRate(Lcom/google/android/jioexoplayer2/Renderer;F)V
     .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput p1, p0, Lqh;->startVersion:I
-
-    .line 3
-    iput p2, p0, Lqh;->endVersion:I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ExoPlaybackException;
+        }
+    .end annotation
 
     return-void
-.end method
-
-
-# virtual methods
-.method public abstract migrate(Lbi;)V
 .end method

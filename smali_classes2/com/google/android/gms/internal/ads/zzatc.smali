@@ -1,10 +1,19 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzatc;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/ads/zzatc;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzatd;
 
 
-# virtual methods
-.method public abstract getContext()Landroid/content/Context;
-.end method
+# direct methods
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-.method public abstract zzvc()Landroid/app/Activity;
+    const-string v0, "com.google.android.gms.ads.internal.request.IAdResponseListener"
+
+    .line 1
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+
+    return-void
 .end method

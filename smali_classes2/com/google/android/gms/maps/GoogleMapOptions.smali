@@ -30,14 +30,14 @@
 
 
 # instance fields
-.field public mapType:I
+.field private mapType:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getMapType"
         id = 0x4
     .end annotation
 .end field
 
-.field public zzaj:Ljava/lang/Boolean;
+.field private zzaj:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getZOrderOnTopForParcel"
@@ -46,7 +46,7 @@
     .end annotation
 .end field
 
-.field public zzak:Ljava/lang/Boolean;
+.field private zzak:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getUseViewLifecycleInFragmentForParcel"
@@ -55,14 +55,14 @@
     .end annotation
 .end field
 
-.field public zzal:Lcom/google/android/gms/maps/model/CameraPosition;
+.field private zzal:Lcom/google/android/gms/maps/model/CameraPosition;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getCamera"
         id = 0x5
     .end annotation
 .end field
 
-.field public zzam:Ljava/lang/Boolean;
+.field private zzam:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getZoomControlsEnabledForParcel"
@@ -71,7 +71,7 @@
     .end annotation
 .end field
 
-.field public zzan:Ljava/lang/Boolean;
+.field private zzan:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getCompassEnabledForParcel"
@@ -80,7 +80,7 @@
     .end annotation
 .end field
 
-.field public zzao:Ljava/lang/Boolean;
+.field private zzao:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getScrollGesturesEnabledForParcel"
@@ -89,7 +89,7 @@
     .end annotation
 .end field
 
-.field public zzap:Ljava/lang/Boolean;
+.field private zzap:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getZoomGesturesEnabledForParcel"
@@ -98,7 +98,7 @@
     .end annotation
 .end field
 
-.field public zzaq:Ljava/lang/Boolean;
+.field private zzaq:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getTiltGesturesEnabledForParcel"
@@ -107,7 +107,7 @@
     .end annotation
 .end field
 
-.field public zzar:Ljava/lang/Boolean;
+.field private zzar:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getRotateGesturesEnabledForParcel"
@@ -116,7 +116,7 @@
     .end annotation
 .end field
 
-.field public zzas:Ljava/lang/Boolean;
+.field private zzas:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getLiteModeForParcel"
@@ -125,7 +125,7 @@
     .end annotation
 .end field
 
-.field public zzat:Ljava/lang/Boolean;
+.field private zzat:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getMapToolbarEnabledForParcel"
@@ -134,7 +134,7 @@
     .end annotation
 .end field
 
-.field public zzau:Ljava/lang/Boolean;
+.field private zzau:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getAmbientEnabledForParcel"
@@ -143,28 +143,28 @@
     .end annotation
 .end field
 
-.field public zzav:Ljava/lang/Float;
+.field private zzav:Ljava/lang/Float;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getMinZoomPreference"
         id = 0x10
     .end annotation
 .end field
 
-.field public zzaw:Ljava/lang/Float;
+.field private zzaw:Ljava/lang/Float;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getMaxZoomPreference"
         id = 0x11
     .end annotation
 .end field
 
-.field public zzax:Lcom/google/android/gms/maps/model/LatLngBounds;
+.field private zzax:Lcom/google/android/gms/maps/model/LatLngBounds;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getLatLngBoundsForCameraTarget"
         id = 0x12
     .end annotation
 .end field
 
-.field public zzay:Ljava/lang/Boolean;
+.field private zzay:Ljava/lang/Boolean;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getScrollGesturesEnabledDuringRotateOrZoomForParcel"
@@ -437,7 +437,7 @@
 .end method
 
 .method public static createFromAttributes(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/GoogleMapOptions;
-    .locals 5
+    .locals 6
 
     if-eqz p0, :cond_10
 
@@ -467,15 +467,13 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
-
-    .line 4
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_mapType:I
+    if-eqz v3, :cond_1
 
     const/4 v3, -0x1
 
+    .line 4
     invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v2
@@ -488,16 +486,14 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     .line 6
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_zOrderOnTop:I
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
@@ -509,279 +505,250 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_3
+    if-eqz v3, :cond_3
 
     .line 8
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_useViewLifecycle:I
-
-    .line 9
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
-    .line 10
+    .line 9
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->useViewLifecycleInFragment(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 11
+    .line 10
     :cond_3
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiCompass:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
-    .line 12
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiCompass:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 11
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->compassEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 13
+    .line 12
     :cond_4
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiRotateGestures:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_5
+    if-eqz v3, :cond_5
 
-    .line 14
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiRotateGestures:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 13
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->rotateGesturesEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 15
+    .line 14
     :cond_5
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiScrollGesturesDuringRotateOrZoom:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_6
+    if-eqz v3, :cond_6
+
+    .line 15
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v2
 
     .line 16
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiScrollGesturesDuringRotateOrZoom:I
-
-    .line 17
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v2
-
-    .line 18
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->scrollGesturesEnabledDuringRotateOrZoom(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 19
+    .line 17
     :cond_6
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiScrollGestures:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_7
+    if-eqz v3, :cond_7
 
-    .line 20
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiScrollGestures:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 18
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->scrollGesturesEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 21
+    .line 19
     :cond_7
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiTiltGestures:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_8
+    if-eqz v3, :cond_8
 
-    .line 22
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiTiltGestures:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 20
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->tiltGesturesEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 23
+    .line 21
     :cond_8
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiZoomGestures:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_9
+    if-eqz v3, :cond_9
 
-    .line 24
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiZoomGestures:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 22
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->zoomGesturesEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 25
+    .line 23
     :cond_9
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiZoomControls:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_a
+    if-eqz v3, :cond_a
 
-    .line 26
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiZoomControls:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 24
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->zoomControlsEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 27
+    .line 25
     :cond_a
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_liteMode:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_b
+    if-eqz v3, :cond_b
 
-    .line 28
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_liteMode:I
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 26
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->liteMode(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 29
+    .line 27
     :cond_b
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiMapToolbar:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_c
+    if-eqz v3, :cond_c
 
-    .line 30
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_uiMapToolbar:I
-
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 28
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->mapToolbarEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 31
+    .line 29
     :cond_c
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_ambientEnabled:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_d
+    if-eqz v3, :cond_d
 
-    .line 32
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_ambientEnabled:I
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 30
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->ambientEnabled(Z)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 33
+    .line 31
     :cond_d
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraMinZoomPreference:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_e
-
-    .line 34
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraMinZoomPreference:I
+    if-eqz v3, :cond_e
 
     const/high16 v3, -0x800000    # Float.NEGATIVE_INFINITY
 
-    .line 35
+    .line 32
     invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    move-result v2
+    move-result v3
 
-    .line 36
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->minZoomPreference(F)Lcom/google/android/gms/maps/GoogleMapOptions;
+    .line 33
+    invoke-virtual {v1, v3}, Lcom/google/android/gms/maps/GoogleMapOptions;->minZoomPreference(F)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 37
+    .line 34
     :cond_e
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraMinZoomPreference:I
-
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_f
 
-    .line 38
+    .line 35
     sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraMaxZoomPreference:I
 
     const/high16 v3, 0x7f800000    # Float.POSITIVE_INFINITY
 
-    .line 39
+    .line 36
     invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v2
 
-    .line 40
+    .line 37
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->maxZoomPreference(F)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 41
+    .line 38
     :cond_f
     invoke-static {p0, p1}, Lcom/google/android/gms/maps/GoogleMapOptions;->zza(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/model/LatLngBounds;
 
     move-result-object v2
 
-    .line 42
+    .line 39
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMapOptions;->latLngBoundsForCameraTarget(Lcom/google/android/gms/maps/model/LatLngBounds;)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 43
+    .line 40
     invoke-static {p0, p1}, Lcom/google/android/gms/maps/GoogleMapOptions;->zzb(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/model/CameraPosition;
 
     move-result-object p0
 
-    .line 44
+    .line 41
     invoke-virtual {v1, p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->camera(Lcom/google/android/gms/maps/model/CameraPosition;)Lcom/google/android/gms/maps/GoogleMapOptions;
 
-    .line 45
+    .line 42
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     return-object v1
@@ -794,7 +761,7 @@
 .end method
 
 .method public static zza(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/google/android/gms/maps/model/LatLngBounds;
-    .locals 8
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -821,16 +788,14 @@
 
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result p1
+    move-result v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_1
 
     .line 3
-    sget p1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_latLngBoundsSouthWestLatitude:I
-
-    invoke-virtual {p0, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p0, p1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
@@ -845,29 +810,27 @@
 
     .line 4
     :goto_0
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_latLngBoundsSouthWestLongitude:I
+    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_latLngBoundsSouthWestLongitude:I
 
-    invoke-virtual {p0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     .line 5
-    sget v2, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_latLngBoundsSouthWestLongitude:I
+    invoke-virtual {p0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    invoke-virtual {p0, v2, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    move-result v1
 
-    move-result v2
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v2
+    move-result-object v1
 
     goto :goto_1
 
     :cond_2
-    move-object v2, v0
+    move-object v1, v0
 
     .line 6
     :goto_1
@@ -875,14 +838,12 @@
 
     invoke-virtual {p0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
     .line 7
-    sget v3, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_latLngBoundsNorthEastLatitude:I
-
-    invoke-virtual {p0, v3, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p0, v3, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v3
 
@@ -901,25 +862,23 @@
 
     invoke-virtual {p0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_4
+    if-eqz v5, :cond_4
 
     .line 9
-    sget v4, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_latLngBoundsNorthEastLongitude:I
+    invoke-virtual {p0, v4, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    invoke-virtual {p0, v4, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    move-result v2
 
-    move-result v1
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
+    move-result-object v2
 
     goto :goto_3
 
     :cond_4
-    move-object v1, v0
+    move-object v2, v0
 
     .line 10
     :goto_3
@@ -927,11 +886,11 @@
 
     if-eqz p1, :cond_6
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_6
 
     if-eqz v3, :cond_6
 
-    if-nez v1, :cond_5
+    if-nez v2, :cond_5
 
     goto :goto_4
 
@@ -945,13 +904,13 @@
 
     float-to-double v4, p1
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
     move-result p1
 
-    float-to-double v6, p1
+    float-to-double v0, p1
 
-    invoke-direct {p0, v4, v5, v6, v7}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
+    invoke-direct {p0, v4, v5, v0, v1}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
     .line 12
     new-instance p1, Lcom/google/android/gms/maps/model/LatLng;
@@ -960,15 +919,15 @@
 
     move-result v0
 
-    float-to-double v2, v0
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
     float-to-double v0, v0
 
-    invoke-direct {p1, v2, v3, v0, v1}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    float-to-double v2, v2
+
+    invoke-direct {p1, v0, v1, v2, v3}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
     .line 13
     new-instance v0, Lcom/google/android/gms/maps/model/LatLngBounds;
@@ -987,7 +946,7 @@
 
     if-nez p1, :cond_0
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 1
     :cond_0
@@ -1006,16 +965,14 @@
 
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result p1
+    move-result v0
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    if-eqz p1, :cond_1
+    if-eqz v0, :cond_1
 
     .line 3
-    sget p1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTargetLat:I
-
-    invoke-virtual {p0, p1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p0, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
@@ -1026,25 +983,23 @@
 
     .line 4
     :goto_0
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTargetLng:I
+    sget v0, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTargetLng:I
 
-    invoke-virtual {p0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
     .line 5
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTargetLng:I
+    invoke-virtual {p0, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    invoke-virtual {p0, v1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v1
+    move-result v0
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 6
     :goto_1
@@ -1052,7 +1007,7 @@
 
     float-to-double v3, p1
 
-    float-to-double v5, v1
+    float-to-double v5, v0
 
     invoke-direct {v2, v3, v4, v5, v6}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
@@ -1065,56 +1020,50 @@
     invoke-virtual {p1, v2}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->target(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
     .line 9
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraZoom:I
+    sget v0, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraZoom:I
 
-    invoke-virtual {p0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     .line 10
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraZoom:I
+    invoke-virtual {p0, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    invoke-virtual {p0, v1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    move-result v0
 
-    move-result v1
-
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->zoom(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->zoom(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
     .line 11
     :cond_3
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraBearing:I
+    sget v0, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraBearing:I
 
-    invoke-virtual {p0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
     .line 12
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraBearing:I
+    invoke-virtual {p0, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    invoke-virtual {p0, v1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    move-result v0
 
-    move-result v1
-
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->bearing(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->bearing(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
     .line 13
     :cond_4
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTilt:I
+    sget v0, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTilt:I
 
-    invoke-virtual {p0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
     .line 14
-    sget v1, Lcom/google/android/gms/maps/R$styleable;->MapAttrs_cameraTilt:I
-
-    invoke-virtual {p0, v1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p0, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v0
 
@@ -1683,12 +1632,12 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x5
 
-    const/4 v3, 0x5
+    const/4 v3, 0x0
 
     .line 9
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 10
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzam:Ljava/lang/Boolean;
@@ -1697,10 +1646,10 @@
 
     move-result v1
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
     .line 11
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 12
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzan:Ljava/lang/Boolean;
@@ -1709,10 +1658,10 @@
 
     move-result v1
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
     .line 13
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 14
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzao:Ljava/lang/Boolean;
@@ -1721,10 +1670,10 @@
 
     move-result v1
 
-    const/16 v3, 0x8
+    const/16 v2, 0x8
 
     .line 15
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 16
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzap:Ljava/lang/Boolean;
@@ -1733,10 +1682,10 @@
 
     move-result v1
 
-    const/16 v3, 0x9
+    const/16 v2, 0x9
 
     .line 17
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 18
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzaq:Ljava/lang/Boolean;
@@ -1745,10 +1694,10 @@
 
     move-result v1
 
-    const/16 v3, 0xa
+    const/16 v2, 0xa
 
     .line 19
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 20
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzar:Ljava/lang/Boolean;
@@ -1757,10 +1706,10 @@
 
     move-result v1
 
-    const/16 v3, 0xb
+    const/16 v2, 0xb
 
     .line 21
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 22
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzas:Ljava/lang/Boolean;
@@ -1769,10 +1718,10 @@
 
     move-result v1
 
-    const/16 v3, 0xc
+    const/16 v2, 0xc
 
     .line 23
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 24
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzat:Ljava/lang/Boolean;
@@ -1781,10 +1730,10 @@
 
     move-result v1
 
-    const/16 v3, 0xe
+    const/16 v2, 0xe
 
     .line 25
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 26
     iget-object v1, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzau:Ljava/lang/Boolean;
@@ -1793,40 +1742,40 @@
 
     move-result v1
 
-    const/16 v3, 0xf
+    const/16 v2, 0xf
 
     .line 27
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByte(Landroid/os/Parcel;IB)V
 
     .line 28
     invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->getMinZoomPreference()Ljava/lang/Float;
 
     move-result-object v1
 
-    const/16 v3, 0x10
+    const/16 v2, 0x10
 
     .line 29
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
 
     .line 30
     invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->getMaxZoomPreference()Ljava/lang/Float;
 
     move-result-object v1
 
-    const/16 v3, 0x11
+    const/16 v2, 0x11
 
     .line 31
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeFloatObject(Landroid/os/Parcel;ILjava/lang/Float;Z)V
 
     .line 32
     invoke-virtual {p0}, Lcom/google/android/gms/maps/GoogleMapOptions;->getLatLngBoundsForCameraTarget()Lcom/google/android/gms/maps/model/LatLngBounds;
 
     move-result-object v1
 
-    const/16 v3, 0x12
+    const/16 v2, 0x12
 
     .line 33
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 34
     iget-object p2, p0, Lcom/google/android/gms/maps/GoogleMapOptions;->zzay:Ljava/lang/Boolean;

@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public httpstatus:S
+.field private httpstatus:S
 
-.field public httpstatusmessage:Ljava/lang/String;
+.field private httpstatusmessage:Ljava/lang/String;
 
 
 # direct methods

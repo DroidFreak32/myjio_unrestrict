@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
 .field public final synthetic this$0:Lcom/app/cinemasdk/ui/JioCinemaActivity;
 

@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)V
+.method private constructor <init>(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)V
     .locals 0
 
     .line 1

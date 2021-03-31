@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final zzaeb:Lcom/google/android/gms/tagmanager/zzs;
+.field private final zzaeb:Lcom/google/android/gms/tagmanager/zzs;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 

@@ -4,19 +4,25 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/appcompat/widget/ViewStubCompat$a;
+        Landroidx/appcompat/widget/ViewStubCompat$OnInflateListener;
     }
 .end annotation
 
 
 # instance fields
-.field public s:I
+.field public a:I
 
-.field public t:I
+.field public b:I
 
-.field public u:Ljava/lang/ref/WeakReference;
+.field public c:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -26,14 +32,22 @@
     .end annotation
 .end field
 
-.field public v:Landroid/view/LayoutInflater;
+.field public d:Landroid/view/LayoutInflater;
 
-.field public w:Landroidx/appcompat/widget/ViewStubCompat$a;
+.field public e:Landroidx/appcompat/widget/ViewStubCompat$OnInflateListener;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -45,6 +59,14 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -52,17 +74,17 @@
     const/4 v0, 0x0
 
     .line 3
-    iput v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->s:I
+    iput v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
     .line 4
-    sget-object v1, Lb0;->ViewStubCompat:[I
+    sget-object v1, Landroidx/appcompat/R$styleable;->ViewStubCompat:[I
 
     invoke-virtual {p1, p2, v1, p3, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
     .line 5
-    sget p2, Lb0;->ViewStubCompat_android_inflatedId:I
+    sget p2, Landroidx/appcompat/R$styleable;->ViewStubCompat_android_inflatedId:I
 
     const/4 p3, -0x1
 
@@ -70,19 +92,19 @@
 
     move-result p2
 
-    iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->t:I
+    iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->b:I
 
     .line 6
-    sget p2, Lb0;->ViewStubCompat_android_layout:I
+    sget p2, Landroidx/appcompat/R$styleable;->ViewStubCompat_android_layout:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p2
 
-    iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->s:I
+    iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
     .line 7
-    sget p2, Lb0;->ViewStubCompat_android_id:I
+    sget p2, Landroidx/appcompat/R$styleable;->ViewStubCompat_android_id:I
 
     invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -108,7 +130,51 @@
 
 
 # virtual methods
-.method public a()Landroid/view/View;
+.method public dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public draw(Landroid/graphics/Canvas;)V
+    .locals 0
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "MissingSuperCall"
+        }
+    .end annotation
+
+    return-void
+.end method
+
+.method public getInflatedId()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->b:I
+
+    return v0
+.end method
+
+.method public getLayoutInflater()Landroid/view/LayoutInflater;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->d:Landroid/view/LayoutInflater;
+
+    return-object v0
+.end method
+
+.method public getLayoutResource()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
+
+    return v0
+.end method
+
+.method public inflate()Landroid/view/View;
     .locals 4
 
     .line 1
@@ -122,7 +188,7 @@
     if-eqz v1, :cond_5
 
     .line 3
-    iget v1, p0, Landroidx/appcompat/widget/ViewStubCompat;->s:I
+    iget v1, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
     if-eqz v1, :cond_4
 
@@ -130,7 +196,7 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 5
-    iget-object v1, p0, Landroidx/appcompat/widget/ViewStubCompat;->v:Landroid/view/LayoutInflater;
+    iget-object v1, p0, Landroidx/appcompat/widget/ViewStubCompat;->d:Landroid/view/LayoutInflater;
 
     if-eqz v1, :cond_0
 
@@ -148,7 +214,7 @@
 
     .line 7
     :goto_0
-    iget v2, p0, Landroidx/appcompat/widget/ViewStubCompat;->s:I
+    iget v2, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
     const/4 v3, 0x0
 
@@ -157,7 +223,7 @@
     move-result-object v1
 
     .line 8
-    iget v2, p0, Landroidx/appcompat/widget/ViewStubCompat;->t:I
+    iget v2, p0, Landroidx/appcompat/widget/ViewStubCompat;->b:I
 
     const/4 v3, -0x1
 
@@ -197,15 +263,15 @@
 
     invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->u:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->c:Ljava/lang/ref/WeakReference;
 
     .line 16
-    iget-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->w:Landroidx/appcompat/widget/ViewStubCompat$a;
+    iget-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->e:Landroidx/appcompat/widget/ViewStubCompat$OnInflateListener;
 
     if-eqz v0, :cond_3
 
     .line 17
-    invoke-interface {v0, p0, v1}, Landroidx/appcompat/widget/ViewStubCompat$a;->a(Landroidx/appcompat/widget/ViewStubCompat;Landroid/view/View;)V
+    invoke-interface {v0, p0, v1}, Landroidx/appcompat/widget/ViewStubCompat$OnInflateListener;->onInflate(Landroidx/appcompat/widget/ViewStubCompat;Landroid/view/View;)V
 
     :cond_3
     return-object v1
@@ -231,50 +297,6 @@
     throw v0
 .end method
 
-.method public dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public draw(Landroid/graphics/Canvas;)V
-    .locals 0
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "MissingSuperCall"
-        }
-    .end annotation
-
-    return-void
-.end method
-
-.method public getInflatedId()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->t:I
-
-    return v0
-.end method
-
-.method public getLayoutInflater()Landroid/view/LayoutInflater;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->v:Landroid/view/LayoutInflater;
-
-    return-object v0
-.end method
-
-.method public getLayoutResource()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->s:I
-
-    return v0
-.end method
-
 .method public onMeasure(II)V
     .locals 0
 
@@ -290,7 +312,7 @@
     .locals 0
 
     .line 1
-    iput p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->t:I
+    iput p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->b:I
 
     return-void
 .end method
@@ -299,7 +321,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->v:Landroid/view/LayoutInflater;
+    iput-object p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->d:Landroid/view/LayoutInflater;
 
     return-void
 .end method
@@ -308,16 +330,16 @@
     .locals 0
 
     .line 1
-    iput p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->s:I
+    iput p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
     return-void
 .end method
 
-.method public setOnInflateListener(Landroidx/appcompat/widget/ViewStubCompat$a;)V
+.method public setOnInflateListener(Landroidx/appcompat/widget/ViewStubCompat$OnInflateListener;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->w:Landroidx/appcompat/widget/ViewStubCompat$a;
+    iput-object p1, p0, Landroidx/appcompat/widget/ViewStubCompat;->e:Landroidx/appcompat/widget/ViewStubCompat$OnInflateListener;
 
     return-void
 .end method
@@ -326,7 +348,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->u:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->c:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_1
 
@@ -348,7 +370,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "setVisibility called on un-referenced view"
+    const-string/jumbo v0, "setVisibility called on un-referenced view"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -366,7 +388,7 @@
 
     .line 6
     :cond_2
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ViewStubCompat;->a()Landroid/view/View;
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ViewStubCompat;->inflate()Landroid/view/View;
 
     :cond_3
     :goto_0

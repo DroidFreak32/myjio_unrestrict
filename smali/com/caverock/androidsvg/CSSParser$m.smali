@@ -45,7 +45,7 @@
     const/4 v2, 0x0
 
     .line 2
-    invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG$j0;->g()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG$j0;->m()Ljava/lang/String;
 
     move-result-object v0
 

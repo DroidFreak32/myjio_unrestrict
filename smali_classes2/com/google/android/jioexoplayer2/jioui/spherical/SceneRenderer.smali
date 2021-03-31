@@ -8,17 +8,17 @@
 
 
 # instance fields
-.field public volatile defaultStereoMode:I
+.field private volatile defaultStereoMode:I
 
-.field public final frameAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final frameAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final frameRotationQueue:Lcom/google/android/jioexoplayer2/video/spherical/FrameRotationQueue;
+.field private final frameRotationQueue:Lcom/google/android/jioexoplayer2/video/spherical/FrameRotationQueue;
 
-.field public lastProjectionData:[B
+.field private lastProjectionData:[B
 
-.field public lastStereoMode:I
+.field private lastStereoMode:I
 
-.field public final projectionQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
+.field private final projectionQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/util/TimedValueQueue<",
@@ -28,13 +28,13 @@
     .end annotation
 .end field
 
-.field public final projectionRenderer:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;
+.field private final projectionRenderer:Lcom/google/android/jioexoplayer2/jioui/spherical/ProjectionRenderer;
 
-.field public final resetRotationAtNextFrame:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final resetRotationAtNextFrame:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final rotationMatrix:[F
+.field private final rotationMatrix:[F
 
-.field public final sampleTimestampQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
+.field private final sampleTimestampQueue:Lcom/google/android/jioexoplayer2/util/TimedValueQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/util/TimedValueQueue<",
@@ -44,11 +44,11 @@
     .end annotation
 .end field
 
-.field public surfaceTexture:Landroid/graphics/SurfaceTexture;
+.field private surfaceTexture:Landroid/graphics/SurfaceTexture;
 
-.field public final tempMatrix:[F
+.field private final tempMatrix:[F
 
-.field public textureId:I
+.field private textureId:I
 
 
 # direct methods
@@ -127,6 +127,19 @@
     return-void
 .end method
 
+.method private synthetic a(Landroid/graphics/SurfaceTexture;)V
+    .locals 1
+
+    .line 1
+    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->frameAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
+.end method
+
 .method private setProjection([BIJ)V
     .locals 2
 
@@ -149,11 +162,9 @@
     :cond_0
     iput p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->lastStereoMode:I
 
+    if-ne v1, p2, :cond_1
+
     .line 5
-    iget p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->lastStereoMode:I
-
-    if-ne v1, p1, :cond_1
-
     iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->lastProjectionData:[B
 
     invoke-static {v0, p1}, Ljava/util/Arrays;->equals([B[B)Z
@@ -210,15 +221,10 @@
 
 
 # virtual methods
-.method public synthetic a(Landroid/graphics/SurfaceTexture;)V
-    .locals 1
+.method public synthetic b(Landroid/graphics/SurfaceTexture;)V
+    .locals 0
 
-    .line 1
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->frameAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->a(Landroid/graphics/SurfaceTexture;)V
 
     return-void
 .end method
@@ -388,11 +394,9 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     .line 7
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
+    new-instance v1, Ldj;
 
-    new-instance v1, Ltc0;
-
-    invoke-direct {v1, p0}, Ltc0;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;)V
+    invoke-direct {v1, p0}, Ldj;-><init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;)V
 
     invoke-virtual {v0, v1}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 

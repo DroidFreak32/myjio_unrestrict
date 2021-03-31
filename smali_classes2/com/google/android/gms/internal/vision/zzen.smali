@@ -1,18 +1,30 @@
-.class public abstract Lcom/google/android/gms/internal/vision/zzen;
+.class public interface abstract Lcom/google/android/gms/internal/vision/zzen;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public abstract zza([BII)V
+.method public abstract zzcc()Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "TK;",
+            "Ljava/util/Collection<",
+            "TV;>;>;"
+        }
+    .end annotation
 .end method

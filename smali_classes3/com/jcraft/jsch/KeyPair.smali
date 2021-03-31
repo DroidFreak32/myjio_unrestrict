@@ -29,39 +29,39 @@
 
 .field public static final VENDOR_PUTTY:I = 0x2
 
-.field public static final cr:[B
+.field private static final cr:[B
 
 .field public static header:[[B
 
-.field public static final header1:[Ljava/lang/String;
+.field private static final header1:[Ljava/lang/String;
 
-.field public static final header2:[Ljava/lang/String;
+.field private static final header2:[Ljava/lang/String;
 
-.field public static final header3:[Ljava/lang/String;
+.field private static final header3:[Ljava/lang/String;
 
-.field public static space:[B
+.field private static space:[B
 
 
 # instance fields
-.field public cipher:Lcom/jcraft/jsch/Cipher;
+.field private cipher:Lcom/jcraft/jsch/Cipher;
 
 .field public data:[B
 
 .field public encrypted:Z
 
-.field public hash:Lcom/jcraft/jsch/HASH;
+.field private hash:Lcom/jcraft/jsch/HASH;
 
-.field public iv:[B
+.field private iv:[B
 
 .field public jsch:Lcom/jcraft/jsch/JSch;
 
-.field public passphrase:[B
+.field private passphrase:[B
 
 .field public publicKeyComment:Ljava/lang/String;
 
-.field public publickeyblob:[B
+.field private publickeyblob:[B
 
-.field public random:Lcom/jcraft/jsch/Random;
+.field private random:Lcom/jcraft/jsch/Random;
 
 .field public vendor:I
 
@@ -190,7 +190,7 @@
     return-void
 .end method
 
-.method public static a2b(B)B
+.method private static a2b(B)B
     .locals 2
 
     const/16 v0, 0x30
@@ -216,7 +216,7 @@
     goto :goto_0
 .end method
 
-.method public static b2a(B)B
+.method private static b2a(B)B
     .locals 1
 
     if-ltz p0, :cond_0
@@ -316,11 +316,11 @@
 
     move-result v0
 
-    new-array v0, v0, [B
+    new-array v1, v0, [B
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    aput-object v0, p2, v1
+    aput-object v1, p2, v2
 
     .line 3
     iget-object p2, p0, Lcom/jcraft/jsch/KeyPair;->random:Lcom/jcraft/jsch/Random;
@@ -337,12 +337,10 @@
     :cond_2
     iget-object p2, p0, Lcom/jcraft/jsch/KeyPair;->random:Lcom/jcraft/jsch/Random;
 
-    array-length v2, v0
-
-    invoke-interface {p2, v0, v1, v2}, Lcom/jcraft/jsch/Random;->fill([BII)V
+    invoke-interface {p2, v1, v2, v0}, Lcom/jcraft/jsch/Random;->fill([BII)V
 
     .line 5
-    invoke-virtual {p0, p3, v0}, Lcom/jcraft/jsch/KeyPair;->genKey([B[B)[B
+    invoke-virtual {p0, p3, v1}, Lcom/jcraft/jsch/KeyPair;->genKey([B[B)[B
 
     move-result-object p2
 
@@ -354,20 +352,20 @@
     move-result p3
 
     .line 7
-    array-length v2, p1
+    array-length v0, p1
 
-    div-int/2addr v2, p3
+    div-int/2addr v0, p3
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    mul-int v2, v2, p3
+    mul-int v6, v0, p3
 
-    new-array v2, v2, [B
+    new-array v0, v6, [B
 
     .line 8
     array-length v3, p1
 
-    invoke-static {p1, v1, v2, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v2, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 9
     array-length p1, p1
@@ -376,56 +374,49 @@
 
     sub-int/2addr p3, p1
 
-    .line 10
-    array-length p1, v2
-
-    add-int/lit8 p1, p1, -0x1
+    add-int/lit8 p1, v6, -0x1
 
     :goto_0
-    array-length v3, v2
-
-    sub-int/2addr v3, p3
+    sub-int v3, v6, p3
 
     if-gt v3, p1, :cond_3
 
     int-to-byte v3, p3
 
-    .line 11
-    aput-byte v3, v2, p1
+    .line 10
+    aput-byte v3, v0, p1
 
     add-int/lit8 p1, p1, -0x1
 
     goto :goto_0
 
-    .line 12
+    .line 11
     :cond_3
     :try_start_0
     iget-object p1, p0, Lcom/jcraft/jsch/KeyPair;->cipher:Lcom/jcraft/jsch/Cipher;
 
-    invoke-interface {p1, v1, p2, v0}, Lcom/jcraft/jsch/Cipher;->init(I[B[B)V
+    invoke-interface {p1, v2, p2, v1}, Lcom/jcraft/jsch/Cipher;->init(I[B[B)V
 
-    .line 13
+    .line 12
     iget-object v3, p0, Lcom/jcraft/jsch/KeyPair;->cipher:Lcom/jcraft/jsch/Cipher;
 
     const/4 v5, 0x0
 
-    array-length v6, v2
-
     const/4 v8, 0x0
 
-    move-object v4, v2
+    move-object v4, v0
 
-    move-object v7, v2
+    move-object v7, v0
 
     invoke-interface/range {v3 .. v8}, Lcom/jcraft/jsch/Cipher;->update([BII[BI)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 14
+    .line 13
     :catch_0
     invoke-static {p2}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
-    return-object v2
+    return-object v0
 .end method
 
 .method private genCipher()Lcom/jcraft/jsch/Cipher;
@@ -486,8 +477,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
 
     .line 3
-    iget-object v0, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
-
     invoke-interface {v0}, Lcom/jcraft/jsch/HASH;->init()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -501,6 +490,11 @@
 
 .method public static genKeyPair(Lcom/jcraft/jsch/JSch;I)Lcom/jcraft/jsch/KeyPair;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/16 v0, 0x400
 
@@ -514,6 +508,11 @@
 
 .method public static genKeyPair(Lcom/jcraft/jsch/JSch;II)Lcom/jcraft/jsch/KeyPair;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -616,6 +615,11 @@
 
 .method public static load(Lcom/jcraft/jsch/JSch;Ljava/lang/String;)Lcom/jcraft/jsch/KeyPair;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -656,6 +660,11 @@
 
 .method public static load(Lcom/jcraft/jsch/JSch;Ljava/lang/String;Ljava/lang/String;)Lcom/jcraft/jsch/KeyPair;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 4
     :try_start_0
@@ -755,6 +764,11 @@
 
 .method public static load(Lcom/jcraft/jsch/JSch;[B[B)Lcom/jcraft/jsch/KeyPair;
     .locals 19
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     move-object/from16 v0, p0
 
@@ -827,7 +841,7 @@
     .line 15
     invoke-virtual {v2}, Lcom/jcraft/jsch/Buffer;->rewind()V
 
-    const-string/jumbo v4, "ssh-rsa"
+    const-string v4, "ssh-rsa"
 
     .line 16
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -844,7 +858,7 @@
     goto :goto_0
 
     :cond_0
-    const-string/jumbo v4, "ssh-dss"
+    const-string v4, "ssh-dss"
 
     .line 18
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -968,270 +982,273 @@
     :goto_3
     const/4 v14, 0x0
 
-    move-object/from16 v17, v14
-
     const/4 v15, 0x0
 
     const/16 v16, 0x1
 
-    move-object v14, v4
-
-    const/4 v4, 0x0
+    const/16 v17, 0x0
 
     :goto_4
-    const-string v5, "invalid privatekey: "
+    const-string v3, "invalid privatekey: "
 
     if-ge v12, v11, :cond_1e
 
     .line 24
     :try_start_1
-    aget-byte v7, v1, v12
+    aget-byte v10, v1, v12
 
-    const/16 v10, 0x42
+    const/16 v9, 0x42
 
-    const/16 v9, 0x41
+    const/16 v7, 0x43
 
-    const/16 v3, 0x53
+    const/16 v5, 0x41
 
-    const/16 v6, 0x45
+    const/16 v6, 0x53
 
-    if-ne v7, v10, :cond_d
+    const/16 v13, 0x45
 
-    add-int/lit8 v7, v12, 0x3
+    if-ne v10, v9, :cond_d
 
-    if-ge v7, v11, :cond_d
+    add-int/lit8 v10, v12, 0x3
 
-    add-int/lit8 v10, v12, 0x1
+    if-ge v10, v11, :cond_d
 
-    aget-byte v10, v1, v10
+    add-int/lit8 v18, v12, 0x1
 
-    if-ne v10, v6, :cond_d
+    aget-byte v9, v1, v18
 
-    add-int/lit8 v10, v12, 0x2
+    if-ne v9, v13, :cond_d
 
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x47
-
-    if-ne v10, v13, :cond_d
-
-    aget-byte v7, v1, v7
-
-    const/16 v10, 0x49
-
-    if-ne v7, v10, :cond_d
-
-    add-int/lit8 v12, v12, 0x6
-
-    add-int/lit8 v4, v12, 0x2
-
-    if-ge v4, v11, :cond_c
-
-    .line 25
-    aget-byte v7, v1, v12
-
-    const/16 v10, 0x44
-
-    if-ne v7, v10, :cond_7
-
-    add-int/lit8 v7, v12, 0x1
-
-    aget-byte v7, v1, v7
-
-    if-ne v7, v3, :cond_7
-
-    aget-byte v7, v1, v4
-
-    if-ne v7, v9, :cond_7
-
-    const/4 v4, 0x1
-
-    goto/16 :goto_5
-
-    .line 26
-    :cond_7
-    aget-byte v7, v1, v12
-
-    const/16 v10, 0x52
-
-    if-ne v7, v10, :cond_8
-
-    add-int/lit8 v7, v12, 0x1
-
-    aget-byte v7, v1, v7
-
-    if-ne v7, v3, :cond_8
-
-    aget-byte v7, v1, v4
-
-    if-ne v7, v9, :cond_8
-
-    const/4 v4, 0x2
-
-    goto/16 :goto_5
-
-    .line 27
-    :cond_8
-    aget-byte v7, v1, v12
-
-    if-ne v7, v3, :cond_9
-
-    add-int/lit8 v7, v12, 0x1
-
-    aget-byte v7, v1, v7
-
-    if-ne v7, v3, :cond_9
-
-    aget-byte v3, v1, v4
-
-    const/16 v7, 0x48
-
-    if-ne v3, v7, :cond_9
-
-    const/4 v4, 0x3
-
-    const/4 v15, 0x1
-
-    goto/16 :goto_5
-
-    :cond_9
-    add-int/lit8 v3, v12, 0x6
-
-    if-ge v3, v11, :cond_a
-
-    .line 28
-    aget-byte v7, v1, v12
-
-    const/16 v10, 0x50
-
-    if-ne v7, v10, :cond_a
-
-    add-int/lit8 v7, v12, 0x1
-
-    aget-byte v7, v1, v7
-
-    const/16 v10, 0x52
-
-    if-ne v7, v10, :cond_a
-
-    aget-byte v7, v1, v4
-
-    const/16 v10, 0x49
-
-    if-ne v7, v10, :cond_a
-
-    add-int/lit8 v7, v12, 0x3
-
-    aget-byte v10, v1, v7
-
-    const/16 v13, 0x56
-
-    if-ne v10, v13, :cond_a
-
-    add-int/lit8 v10, v12, 0x4
-
-    aget-byte v10, v1, v10
-
-    if-ne v10, v9, :cond_a
-
-    add-int/lit8 v9, v12, 0x5
+    add-int/lit8 v9, v12, 0x2
 
     aget-byte v9, v1, v9
 
-    const/16 v10, 0x54
+    const/16 v8, 0x47
 
-    if-ne v9, v10, :cond_a
+    if-ne v9, v8, :cond_d
 
-    aget-byte v9, v1, v3
+    aget-byte v8, v1, v10
 
-    if-ne v9, v6, :cond_a
+    const/16 v9, 0x49
 
-    move v12, v7
+    if-ne v8, v9, :cond_d
 
-    const/4 v4, 0x3
+    add-int/lit8 v12, v12, 0x6
 
-    const/4 v15, 0x3
+    add-int/lit8 v8, v12, 0x2
 
-    const/16 v16, 0x0
+    if-ge v8, v11, :cond_c
 
-    goto :goto_5
-
-    :cond_a
-    add-int/lit8 v7, v12, 0x8
-
-    if-ge v7, v11, :cond_b
-
-    .line 29
+    .line 25
     aget-byte v9, v1, v12
 
-    if-ne v9, v6, :cond_b
+    const/16 v10, 0x44
+
+    if-ne v9, v10, :cond_7
 
     add-int/lit8 v9, v12, 0x1
 
     aget-byte v9, v1, v9
 
-    const/16 v10, 0x4e
+    if-ne v9, v6, :cond_7
 
-    if-ne v9, v10, :cond_b
+    aget-byte v9, v1, v8
 
-    aget-byte v4, v1, v4
+    if-ne v9, v5, :cond_7
 
-    const/16 v9, 0x43
+    const/4 v3, 0x3
 
-    if-ne v4, v9, :cond_b
+    const/4 v15, 0x1
 
-    add-int/lit8 v4, v12, 0x3
+    goto/16 :goto_6
 
-    aget-byte v4, v1, v4
+    .line 26
+    :cond_7
+    aget-byte v9, v1, v12
 
-    const/16 v9, 0x52
+    const/16 v10, 0x52
 
-    if-ne v4, v9, :cond_b
+    if-ne v9, v10, :cond_8
 
-    add-int/lit8 v4, v12, 0x4
+    add-int/lit8 v9, v12, 0x1
 
-    aget-byte v4, v1, v4
+    aget-byte v9, v1, v9
 
-    const/16 v9, 0x59
+    if-ne v9, v6, :cond_8
 
-    if-ne v4, v9, :cond_b
+    aget-byte v9, v1, v8
 
-    add-int/lit8 v4, v12, 0x5
+    if-ne v9, v5, :cond_8
 
-    aget-byte v9, v1, v4
+    const/4 v3, 0x3
 
-    const/16 v10, 0x50
+    const/4 v15, 0x2
 
-    if-ne v9, v10, :cond_b
+    goto/16 :goto_6
 
-    aget-byte v3, v1, v3
+    .line 27
+    :cond_8
+    aget-byte v9, v1, v12
 
-    const/16 v9, 0x54
+    if-ne v9, v6, :cond_9
 
-    if-ne v3, v9, :cond_b
+    add-int/lit8 v9, v12, 0x1
 
-    add-int/lit8 v12, v12, 0x7
+    aget-byte v9, v1, v9
 
-    aget-byte v3, v1, v12
+    if-ne v9, v6, :cond_9
 
-    if-ne v3, v6, :cond_b
+    aget-byte v6, v1, v8
 
-    aget-byte v3, v1, v7
+    const/16 v9, 0x48
 
-    const/16 v6, 0x44
+    if-ne v6, v9, :cond_9
 
-    if-ne v3, v6, :cond_b
+    const/4 v3, 0x3
 
-    move v12, v4
+    const/4 v14, 0x1
 
-    const/4 v4, 0x3
+    :goto_5
+    const/4 v15, 0x3
+
+    goto/16 :goto_6
+
+    :cond_9
+    add-int/lit8 v6, v12, 0x6
+
+    if-ge v6, v11, :cond_a
+
+    .line 28
+    aget-byte v9, v1, v12
+
+    const/16 v14, 0x50
+
+    if-ne v9, v14, :cond_a
+
+    add-int/lit8 v9, v12, 0x1
+
+    aget-byte v9, v1, v9
+
+    if-ne v9, v10, :cond_a
+
+    aget-byte v9, v1, v8
+
+    const/16 v14, 0x49
+
+    if-ne v9, v14, :cond_a
+
+    add-int/lit8 v9, v12, 0x3
+
+    aget-byte v14, v1, v9
+
+    const/16 v15, 0x56
+
+    if-ne v14, v15, :cond_a
+
+    add-int/lit8 v14, v12, 0x4
+
+    aget-byte v14, v1, v14
+
+    if-ne v14, v5, :cond_a
+
+    add-int/lit8 v5, v12, 0x5
+
+    aget-byte v5, v1, v5
+
+    const/16 v14, 0x54
+
+    if-ne v5, v14, :cond_a
+
+    aget-byte v5, v1, v6
+
+    if-ne v5, v13, :cond_a
+
+    move v12, v9
+
+    const/4 v3, 0x3
+
+    const/4 v14, 0x3
 
     const/4 v15, 0x3
 
-    :goto_5
-    add-int/2addr v12, v8
+    const/16 v16, 0x0
 
-    goto/16 :goto_a
+    goto :goto_6
+
+    :cond_a
+    add-int/lit8 v5, v12, 0x8
+
+    if-ge v5, v11, :cond_b
+
+    .line 29
+    aget-byte v9, v1, v12
+
+    if-ne v9, v13, :cond_b
+
+    add-int/lit8 v9, v12, 0x1
+
+    aget-byte v9, v1, v9
+
+    const/16 v14, 0x4e
+
+    if-ne v9, v14, :cond_b
+
+    aget-byte v8, v1, v8
+
+    if-ne v8, v7, :cond_b
+
+    add-int/lit8 v7, v12, 0x3
+
+    aget-byte v7, v1, v7
+
+    if-ne v7, v10, :cond_b
+
+    add-int/lit8 v7, v12, 0x4
+
+    aget-byte v7, v1, v7
+
+    const/16 v8, 0x59
+
+    if-ne v7, v8, :cond_b
+
+    add-int/lit8 v7, v12, 0x5
+
+    aget-byte v8, v1, v7
+
+    const/16 v9, 0x50
+
+    if-ne v8, v9, :cond_b
+
+    aget-byte v6, v1, v6
+
+    const/16 v8, 0x54
+
+    if-ne v6, v8, :cond_b
+
+    add-int/lit8 v12, v12, 0x7
+
+    aget-byte v6, v1, v12
+
+    if-ne v6, v13, :cond_b
+
+    aget-byte v5, v1, v5
+
+    const/16 v6, 0x44
+
+    if-ne v5, v6, :cond_b
+
+    move v12, v7
+
+    const/4 v3, 0x3
+
+    const/4 v14, 0x3
+
+    goto :goto_5
+
+    :goto_6
+    add-int/2addr v12, v3
+
+    goto/16 :goto_b
 
     .line 30
     :cond_b
@@ -1241,7 +1258,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1261,7 +1278,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1275,63 +1292,63 @@
 
     .line 32
     :cond_d
-    aget-byte v7, v1, v12
+    aget-byte v8, v1, v12
 
-    if-ne v7, v9, :cond_f
+    const/16 v9, 0x32
 
-    add-int/lit8 v7, v12, 0x7
+    if-ne v8, v5, :cond_f
 
-    if-ge v7, v11, :cond_f
+    add-int/lit8 v8, v12, 0x7
+
+    if-ge v8, v11, :cond_f
 
     add-int/lit8 v10, v12, 0x1
 
     aget-byte v10, v1, v10
 
-    if-ne v10, v6, :cond_f
+    if-ne v10, v13, :cond_f
 
     add-int/lit8 v10, v12, 0x2
 
     aget-byte v10, v1, v10
 
-    if-ne v10, v3, :cond_f
+    if-ne v10, v6, :cond_f
 
     add-int/lit8 v10, v12, 0x3
 
     aget-byte v10, v1, v10
 
-    const/16 v13, 0x2d
+    const/16 v7, 0x2d
 
-    if-ne v10, v13, :cond_f
+    if-ne v10, v7, :cond_f
 
-    add-int/lit8 v10, v12, 0x4
-
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x32
-
-    if-ne v10, v13, :cond_f
-
-    add-int/lit8 v10, v12, 0x5
-
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x35
-
-    if-ne v10, v13, :cond_f
-
-    add-int/lit8 v10, v12, 0x6
-
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x36
-
-    if-ne v10, v13, :cond_f
+    add-int/lit8 v7, v12, 0x4
 
     aget-byte v7, v1, v7
 
-    const/16 v10, 0x2d
+    if-ne v7, v9, :cond_f
+
+    add-int/lit8 v7, v12, 0x5
+
+    aget-byte v7, v1, v7
+
+    const/16 v10, 0x35
 
     if-ne v7, v10, :cond_f
+
+    add-int/lit8 v7, v12, 0x6
+
+    aget-byte v7, v1, v7
+
+    const/16 v10, 0x36
+
+    if-ne v7, v10, :cond_f
+
+    aget-byte v7, v1, v8
+
+    const/16 v8, 0x2d
+
+    if-ne v7, v8, :cond_f
 
     add-int/lit8 v12, v12, 0x8
 
@@ -1373,9 +1390,9 @@
 
     move-result v3
 
-    new-array v14, v3, [B
+    new-array v4, v3, [B
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
     .line 37
     :cond_e
@@ -1403,61 +1420,59 @@
     :cond_f
     aget-byte v7, v1, v12
 
-    if-ne v7, v9, :cond_11
+    if-ne v7, v5, :cond_11
 
     add-int/lit8 v7, v12, 0x7
 
     if-ge v7, v11, :cond_11
 
-    add-int/lit8 v10, v12, 0x1
+    add-int/lit8 v8, v12, 0x1
 
-    aget-byte v10, v1, v10
+    aget-byte v8, v1, v8
 
-    if-ne v10, v6, :cond_11
+    if-ne v8, v13, :cond_11
 
-    add-int/lit8 v10, v12, 0x2
+    add-int/lit8 v8, v12, 0x2
 
-    aget-byte v10, v1, v10
+    aget-byte v8, v1, v8
 
-    if-ne v10, v3, :cond_11
+    if-ne v8, v6, :cond_11
 
-    add-int/lit8 v10, v12, 0x3
+    add-int/lit8 v8, v12, 0x3
 
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x2d
-
-    if-ne v10, v13, :cond_11
-
-    add-int/lit8 v10, v12, 0x4
-
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x31
-
-    if-ne v10, v13, :cond_11
-
-    add-int/lit8 v10, v12, 0x5
-
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x39
-
-    if-ne v10, v13, :cond_11
-
-    add-int/lit8 v10, v12, 0x6
-
-    aget-byte v10, v1, v10
-
-    const/16 v13, 0x32
-
-    if-ne v10, v13, :cond_11
-
-    aget-byte v7, v1, v7
+    aget-byte v8, v1, v8
 
     const/16 v10, 0x2d
 
-    if-ne v7, v10, :cond_11
+    if-ne v8, v10, :cond_11
+
+    add-int/lit8 v8, v12, 0x4
+
+    aget-byte v8, v1, v8
+
+    const/16 v10, 0x31
+
+    if-ne v8, v10, :cond_11
+
+    add-int/lit8 v8, v12, 0x5
+
+    aget-byte v8, v1, v8
+
+    const/16 v10, 0x39
+
+    if-ne v8, v10, :cond_11
+
+    add-int/lit8 v8, v12, 0x6
+
+    aget-byte v8, v1, v8
+
+    if-ne v8, v9, :cond_11
+
+    aget-byte v7, v1, v7
+
+    const/16 v8, 0x2d
+
+    if-ne v7, v8, :cond_11
 
     add-int/lit8 v12, v12, 0x8
 
@@ -1499,9 +1514,9 @@
 
     move-result v3
 
-    new-array v14, v3, [B
+    new-array v4, v3, [B
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
     .line 43
     :cond_10
@@ -1529,61 +1544,59 @@
     :cond_11
     aget-byte v7, v1, v12
 
-    if-ne v7, v9, :cond_13
+    if-ne v7, v5, :cond_13
 
-    add-int/lit8 v7, v12, 0x7
+    add-int/lit8 v5, v12, 0x7
 
-    if-ge v7, v11, :cond_13
+    if-ge v5, v11, :cond_13
 
-    add-int/lit8 v9, v12, 0x1
+    add-int/lit8 v7, v12, 0x1
 
-    aget-byte v9, v1, v9
+    aget-byte v7, v1, v7
 
-    if-ne v9, v6, :cond_13
+    if-ne v7, v13, :cond_13
 
-    add-int/lit8 v6, v12, 0x2
+    add-int/lit8 v7, v12, 0x2
+
+    aget-byte v7, v1, v7
+
+    if-ne v7, v6, :cond_13
+
+    add-int/lit8 v6, v12, 0x3
 
     aget-byte v6, v1, v6
 
-    if-ne v6, v3, :cond_13
+    const/16 v7, 0x2d
 
-    add-int/lit8 v3, v12, 0x3
+    if-ne v6, v7, :cond_13
 
-    aget-byte v3, v1, v3
+    add-int/lit8 v6, v12, 0x4
 
-    const/16 v6, 0x2d
+    aget-byte v6, v1, v6
 
-    if-ne v3, v6, :cond_13
+    const/16 v7, 0x31
 
-    add-int/lit8 v3, v12, 0x4
+    if-ne v6, v7, :cond_13
 
-    aget-byte v3, v1, v3
+    add-int/lit8 v6, v12, 0x5
 
-    const/16 v6, 0x31
+    aget-byte v6, v1, v6
 
-    if-ne v3, v6, :cond_13
+    if-ne v6, v9, :cond_13
 
-    add-int/lit8 v3, v12, 0x5
+    add-int/lit8 v6, v12, 0x6
 
-    aget-byte v3, v1, v3
+    aget-byte v6, v1, v6
 
-    const/16 v6, 0x32
+    const/16 v7, 0x38
 
-    if-ne v3, v6, :cond_13
+    if-ne v6, v7, :cond_13
 
-    add-int/lit8 v3, v12, 0x6
-
-    aget-byte v3, v1, v3
-
-    const/16 v6, 0x38
-
-    if-ne v3, v6, :cond_13
-
-    aget-byte v3, v1, v7
+    aget-byte v5, v1, v5
 
     const/16 v6, 0x2d
 
-    if-ne v3, v6, :cond_13
+    if-ne v5, v6, :cond_13
 
     add-int/lit8 v12, v12, 0x8
 
@@ -1625,9 +1638,9 @@
 
     move-result v3
 
-    new-array v14, v3, [B
+    new-array v4, v3, [B
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
     .line 49
     :cond_12
@@ -1653,15 +1666,15 @@
 
     .line 50
     :cond_13
-    aget-byte v3, v1, v12
+    aget-byte v5, v1, v12
 
     const/16 v6, 0x43
 
-    if-ne v3, v6, :cond_14
+    if-ne v5, v6, :cond_14
 
-    add-int/lit8 v3, v12, 0x3
+    add-int/lit8 v5, v12, 0x3
 
-    if-ge v3, v11, :cond_14
+    if-ge v5, v11, :cond_14
 
     add-int/lit8 v6, v12, 0x1
 
@@ -1679,19 +1692,19 @@
 
     if-ne v6, v7, :cond_14
 
-    aget-byte v3, v1, v3
+    aget-byte v5, v1, v5
 
     const/16 v6, 0x2c
 
-    if-ne v3, v6, :cond_14
+    if-ne v5, v6, :cond_14
 
     add-int/lit8 v12, v12, 0x4
 
     const/4 v3, 0x0
 
     .line 51
-    :goto_6
-    array-length v5, v14
+    :goto_7
+    array-length v5, v4
 
     if-ge v3, v5, :cond_1d
 
@@ -1724,63 +1737,63 @@
 
     int-to-byte v5, v6
 
-    aput-byte v5, v14, v3
+    aput-byte v5, v4, v3
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_6
+    goto :goto_7
 
     .line 53
     :cond_14
-    aget-byte v3, v1, v12
+    aget-byte v5, v1, v12
 
     const/16 v6, 0xd
 
-    if-ne v3, v6, :cond_15
+    if-ne v5, v6, :cond_15
 
-    add-int/lit8 v3, v12, 0x1
+    add-int/lit8 v5, v12, 0x1
 
     array-length v6, v1
 
-    if-ge v3, v6, :cond_15
+    if-ge v5, v6, :cond_15
 
-    aget-byte v6, v1, v3
+    aget-byte v6, v1, v5
 
     const/16 v7, 0xa
 
     if-ne v6, v7, :cond_16
 
-    move v12, v3
+    move v12, v5
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_15
     const/16 v7, 0xa
 
     .line 54
     :cond_16
-    aget-byte v3, v1, v12
+    aget-byte v5, v1, v12
 
-    if-ne v3, v7, :cond_1c
+    if-ne v5, v7, :cond_1c
 
-    add-int/lit8 v3, v12, 0x1
+    add-int/lit8 v5, v12, 0x1
 
     array-length v6, v1
 
-    if-ge v3, v6, :cond_1c
+    if-ge v5, v6, :cond_1c
 
     .line 55
-    aget-byte v6, v1, v3
+    aget-byte v6, v1, v5
 
     if-ne v6, v7, :cond_17
 
     add-int/lit8 v12, v12, 0x2
 
-    goto :goto_b
+    goto :goto_c
 
     .line 56
     :cond_17
-    aget-byte v6, v1, v3
+    aget-byte v6, v1, v5
 
     const/16 v7, 0xd
 
@@ -1800,13 +1813,13 @@
 
     add-int/lit8 v12, v12, 0x3
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_18
-    move v6, v3
+    move v6, v5
 
     .line 57
-    :goto_7
+    :goto_8
     array-length v7, v1
 
     if-ge v6, v7, :cond_1b
@@ -1814,41 +1827,43 @@
     .line 58
     aget-byte v7, v1, v6
 
-    const/16 v9, 0xa
+    const/16 v8, 0xa
 
-    if-ne v7, v9, :cond_19
+    if-ne v7, v8, :cond_19
 
-    goto :goto_8
+    goto :goto_9
 
     .line 59
     :cond_19
     aget-byte v7, v1, v6
 
-    const/16 v9, 0x3a
+    const/16 v8, 0x3a
 
-    if-ne v7, v9, :cond_1a
+    if-ne v7, v8, :cond_1a
 
     const/4 v6, 0x1
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_1a
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_1b
-    :goto_8
+    :goto_9
     const/4 v6, 0x0
 
-    :goto_9
+    :goto_a
     if-nez v6, :cond_1c
 
-    move v12, v3
+    const/4 v6, 0x3
 
-    if-eq v15, v8, :cond_1e
+    move v12, v5
 
-    const/4 v9, 0x0
+    if-eq v14, v6, :cond_1e
+
+    const/16 v16, 0x0
 
     goto :goto_c
 
@@ -1856,12 +1871,14 @@
     add-int/lit8 v12, v12, 0x1
 
     :cond_1d
-    :goto_a
+    :goto_b
     const/16 v3, 0x8
 
     const/4 v6, 0x4
 
     const/4 v7, 0x2
+
+    const/4 v8, 0x3
 
     const/4 v9, 0x0
 
@@ -1872,122 +1889,112 @@
     goto/16 :goto_4
 
     :cond_1e
-    :goto_b
-    move/from16 v9, v16
-
     :goto_c
     if-eqz v1, :cond_2a
 
-    if-eqz v4, :cond_29
+    if-eqz v15, :cond_29
 
-    move v6, v12
+    move v5, v12
 
     :goto_d
-    if-ge v6, v11, :cond_20
+    if-ge v5, v11, :cond_20
 
     .line 60
-    aget-byte v7, v1, v6
+    aget-byte v6, v1, v5
 
-    const/16 v10, 0x2d
+    const/16 v7, 0x2d
 
-    if-ne v7, v10, :cond_1f
+    if-ne v6, v7, :cond_1f
 
     goto :goto_e
 
     :cond_1f
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_d
 
     :cond_20
     :goto_e
-    sub-int/2addr v11, v6
+    sub-int/2addr v11, v5
 
     if-eqz v11, :cond_28
 
-    sub-int/2addr v6, v12
+    sub-int/2addr v5, v12
 
-    if-eqz v6, :cond_28
+    if-eqz v5, :cond_28
 
     .line 61
-    new-array v6, v6, [B
+    new-array v6, v5, [B
+
+    const/4 v7, 0x0
 
     .line 62
-    array-length v7, v6
-
-    const/4 v10, 0x0
-
-    invoke-static {v1, v12, v6, v10, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 63
-    array-length v7, v6
-
-    move v10, v7
+    invoke-static {v1, v12, v6, v7, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     const/4 v7, 0x0
 
     :goto_f
-    if-ge v7, v10, :cond_26
+    if-ge v7, v5, :cond_26
+
+    .line 63
+    aget-byte v8, v6, v7
+
+    const/16 v9, 0xa
+
+    if-ne v8, v9, :cond_24
+
+    add-int/lit8 v8, v7, -0x1
 
     .line 64
-    aget-byte v11, v6, v7
+    aget-byte v8, v6, v8
 
-    const/16 v12, 0xa
+    const/16 v9, 0xd
 
-    if-ne v11, v12, :cond_24
+    if-ne v8, v9, :cond_21
 
-    add-int/lit8 v11, v7, -0x1
-
-    .line 65
-    aget-byte v11, v6, v11
-
-    const/16 v12, 0xd
-
-    if-ne v11, v12, :cond_21
-
-    const/4 v11, 0x1
+    const/4 v8, 0x1
 
     goto :goto_10
 
     :cond_21
-    const/4 v11, 0x0
+    const/4 v8, 0x0
 
     :goto_10
-    add-int/lit8 v12, v7, 0x1
+    add-int/lit8 v9, v7, 0x1
 
-    if-eqz v11, :cond_22
+    if-eqz v8, :cond_22
 
-    const/4 v13, 0x1
+    const/4 v10, 0x1
 
     goto :goto_11
 
     :cond_22
-    const/4 v13, 0x0
+    const/4 v10, 0x0
 
     :goto_11
-    sub-int v13, v7, v13
+    sub-int v10, v7, v10
 
-    sub-int v3, v10, v12
+    sub-int v11, v5, v9
 
-    .line 66
-    invoke-static {v6, v12, v6, v13, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    .line 65
+    invoke-static {v6, v9, v6, v10, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    if-eqz v11, :cond_23
+    if-eqz v8, :cond_23
 
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v5, v5, -0x1
 
     :cond_23
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v5, v5, -0x1
 
     goto :goto_f
 
-    .line 67
+    .line 66
     :cond_24
-    aget-byte v3, v6, v7
+    aget-byte v8, v6, v7
 
-    const/16 v11, 0x2d
+    const/16 v9, 0x2d
 
-    if-ne v3, v11, :cond_25
+    if-ne v8, v9, :cond_25
 
     goto :goto_12
 
@@ -1998,31 +2005,29 @@
 
     :cond_26
     :goto_12
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    sub-int/2addr v7, v3
+    sub-int/2addr v7, v5
 
     if-lez v7, :cond_27
 
-    .line 68
-    invoke-static {v6, v3, v7}, Lcom/jcraft/jsch/Util;->fromBase64([BII)[B
+    .line 67
+    invoke-static {v6, v5, v7}, Lcom/jcraft/jsch/Util;->fromBase64([BII)[B
 
     move-result-object v7
-
-    move-object v3, v7
 
     goto :goto_13
 
     :cond_27
-    const/4 v3, 0x0
+    const/4 v7, 0x0
 
-    .line 69
+    .line 68
     :goto_13
     invoke-static {v6}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
     goto :goto_14
 
-    .line 70
+    .line 69
     :cond_28
     new-instance v0, Lcom/jcraft/jsch/JSchException;
 
@@ -2030,7 +2035,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -2042,7 +2047,7 @@
 
     throw v0
 
-    .line 71
+    .line 70
     :cond_29
     new-instance v0, Lcom/jcraft/jsch/JSchException;
 
@@ -2050,7 +2055,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -2063,121 +2068,123 @@
     throw v0
 
     :cond_2a
-    const/4 v3, 0x0
+    const/4 v7, 0x0
 
     :goto_14
-    if-eqz v3, :cond_2d
-
-    .line 72
-    array-length v6, v3
-
-    const/4 v7, 0x4
-
-    if-le v6, v7, :cond_2d
-
-    const/4 v6, 0x0
-
-    aget-byte v7, v3, v6
-
-    const/16 v6, 0x3f
-
-    if-ne v7, v6, :cond_2d
-
-    const/4 v6, 0x1
-
-    aget-byte v7, v3, v6
-
-    const/16 v6, 0x6f
-
-    if-ne v7, v6, :cond_2d
-
-    const/4 v6, 0x2
-
-    aget-byte v7, v3, v6
-
-    const/4 v6, -0x7
-
-    if-ne v7, v6, :cond_2d
-
-    aget-byte v6, v3, v8
-
-    const/16 v7, -0x15
-
-    if-ne v6, v7, :cond_2d
-
-    .line 73
-    new-instance v6, Lcom/jcraft/jsch/Buffer;
-
-    invoke-direct {v6, v3}, Lcom/jcraft/jsch/Buffer;-><init>([B)V
-
-    .line 74
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getInt()I
-
-    .line 75
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getInt()I
-
-    .line 76
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getString()[B
-
-    .line 77
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getString()[B
-
-    move-result-object v7
-
-    invoke-static {v7}, Lcom/jcraft/jsch/Util;->byte2str([B)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v10, "3des-cbc"
-
-    .line 78
-    invoke-virtual {v7, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_2b
-
-    const-string v10, "none"
-
-    .line 79
-    invoke-virtual {v7, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
     if-eqz v7, :cond_2d
 
+    .line 71
+    array-length v5, v7
+
+    const/4 v6, 0x4
+
+    if-le v5, v6, :cond_2d
+
+    const/4 v5, 0x0
+
+    aget-byte v6, v7, v5
+
+    const/16 v5, 0x3f
+
+    if-ne v6, v5, :cond_2d
+
+    const/4 v5, 0x1
+
+    aget-byte v6, v7, v5
+
+    const/16 v5, 0x6f
+
+    if-ne v6, v5, :cond_2d
+
+    const/4 v5, 0x2
+
+    aget-byte v6, v7, v5
+
+    const/4 v5, -0x7
+
+    if-ne v6, v5, :cond_2d
+
+    const/4 v5, 0x3
+
+    aget-byte v6, v7, v5
+
+    const/16 v5, -0x15
+
+    if-ne v6, v5, :cond_2d
+
+    .line 72
+    new-instance v5, Lcom/jcraft/jsch/Buffer;
+
+    invoke-direct {v5, v7}, Lcom/jcraft/jsch/Buffer;-><init>([B)V
+
+    .line 73
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getInt()I
+
+    .line 74
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getInt()I
+
+    .line 75
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getString()[B
+
+    .line 76
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getString()[B
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/jcraft/jsch/Util;->byte2str([B)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v8, "3des-cbc"
+
+    .line 77
+    invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_2b
+
+    const-string v8, "none"
+
+    .line 78
+    invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2d
+
+    .line 79
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getInt()I
+
     .line 80
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getInt()I
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
     .line 81
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getInt()I
+    array-length v6, v7
 
-    .line 82
-    array-length v3, v3
-
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getOffSet()I
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getOffSet()I
 
     move-result v7
 
-    sub-int/2addr v3, v7
+    sub-int/2addr v6, v7
 
-    new-array v3, v3, [B
+    new-array v7, v6, [B
 
-    .line 83
-    invoke-virtual {v6, v3}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
+    .line 82
+    invoke-virtual {v5, v7}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
 
-    const/4 v9, 0x0
+    const/4 v5, 0x0
 
     goto :goto_16
 
-    .line 84
+    .line 83
     :cond_2b
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getInt()I
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    .line 85
-    array-length v0, v3
+    .line 84
+    array-length v0, v7
 
-    invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getOffSet()I
+    invoke-virtual {v5}, Lcom/jcraft/jsch/Buffer;->getOffSet()I
 
     move-result v2
 
@@ -2185,17 +2192,17 @@
 
     new-array v0, v0, [B
 
-    .line 86
-    invoke-virtual {v6, v0}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
+    .line 85
+    invoke-virtual {v5, v0}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
 
-    .line 87
+    .line 86
     new-instance v0, Lcom/jcraft/jsch/JSchException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "unknown privatekey format: "
+    const-string v3, "unknown privatekey format: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2211,13 +2218,13 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 88
+    .line 87
     :goto_15
     instance-of v1, v0, Lcom/jcraft/jsch/JSchException;
 
     if-nez v1, :cond_2c
 
-    .line 89
+    .line 88
     new-instance v1, Lcom/jcraft/jsch/JSchException;
 
     invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
@@ -2228,146 +2235,149 @@
 
     throw v1
 
-    .line 90
+    .line 89
     :cond_2c
     check-cast v0, Lcom/jcraft/jsch/JSchException;
 
     throw v0
 
     :cond_2d
-    :goto_16
-    const-string v7, ""
+    move/from16 v5, v16
 
-    if-eqz v2, :cond_3d
+    :goto_16
+    const-string v6, ""
+
+    if-eqz v2, :cond_4c
+
+    .line 90
+    :try_start_2
+    array-length v8, v2
 
     .line 91
-    :try_start_2
-    array-length v10, v2
+    array-length v9, v2
 
-    .line 92
-    array-length v11, v2
+    const/4 v10, 0x4
 
-    const/4 v12, 0x4
+    if-le v9, v10, :cond_3e
 
-    if-le v11, v12, :cond_3e
+    const/4 v9, 0x0
 
-    const/4 v11, 0x0
+    aget-byte v10, v2, v9
+
+    const/16 v9, 0x2d
+
+    if-ne v10, v9, :cond_3e
+
+    const/4 v10, 0x1
+
+    aget-byte v11, v2, v10
+
+    if-ne v11, v9, :cond_3e
+
+    const/4 v11, 0x2
 
     aget-byte v12, v2, v11
 
-    const/16 v11, 0x2d
+    if-ne v12, v9, :cond_3e
 
-    if-ne v12, v11, :cond_3e
+    const/4 v11, 0x3
 
-    const/4 v12, 0x1
+    aget-byte v12, v2, v11
 
-    aget-byte v13, v2, v12
+    if-ne v12, v9, :cond_3e
 
-    if-ne v13, v11, :cond_3e
-
-    const/4 v13, 0x2
-
-    aget-byte v6, v2, v13
-
-    if-ne v6, v11, :cond_3e
-
-    aget-byte v6, v2, v8
-
-    if-ne v6, v11, :cond_3e
-
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     :goto_17
-    add-int/2addr v6, v12
+    add-int/2addr v9, v10
 
-    .line 93
-    array-length v11, v2
+    .line 92
+    array-length v10, v2
 
-    if-le v11, v6, :cond_2f
+    if-le v10, v9, :cond_2f
 
-    aget-byte v11, v2, v6
+    aget-byte v10, v2, v9
 
-    const/16 v12, 0xa
+    const/16 v11, 0xa
 
-    if-ne v11, v12, :cond_2e
+    if-ne v10, v11, :cond_2e
 
     goto :goto_18
 
     :cond_2e
-    const/4 v12, 0x1
+    const/4 v10, 0x1
 
     goto :goto_17
 
-    .line 94
+    .line 93
     :cond_2f
     :goto_18
-    array-length v11, v2
+    array-length v10, v2
 
-    if-gt v11, v6, :cond_30
+    if-gt v10, v9, :cond_30
 
-    move v11, v6
-
-    const/4 v6, 0x0
+    const/4 v10, 0x0
 
     goto :goto_19
 
     :cond_30
-    move v11, v6
-
-    const/4 v6, 0x1
+    const/4 v10, 0x1
 
     :goto_19
-    if-eqz v6, :cond_36
+    if-eqz v10, :cond_36
+
+    .line 94
+    aget-byte v11, v2, v9
+
+    const/16 v12, 0xa
+
+    if-ne v11, v12, :cond_34
+
+    add-int/lit8 v11, v9, 0x1
+
+    move v13, v11
 
     .line 95
-    aget-byte v12, v2, v11
+    :goto_1a
+    array-length v12, v2
 
-    const/16 v13, 0xa
-
-    if-ne v12, v13, :cond_34
-
-    add-int/lit8 v12, v11, 0x1
-
-    move v8, v12
+    if-ge v13, v12, :cond_33
 
     .line 96
-    :goto_1a
-    array-length v13, v2
+    aget-byte v12, v2, v13
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
-    if-ge v8, v13, :cond_33
-
-    .line 97
-    aget-byte v13, v2, v8
-
-    move/from16 v18, v6
+    move-object/from16 v16, v6
 
     const/16 v6, 0xa
 
-    if-ne v13, v6, :cond_31
+    if-ne v12, v6, :cond_31
 
     goto :goto_1b
 
-    .line 98
+    .line 97
     :cond_31
-    aget-byte v6, v2, v8
+    :try_start_3
+    aget-byte v6, v2, v13
 
-    const/16 v13, 0x3a
+    const/16 v12, 0x3a
 
-    if-ne v6, v13, :cond_32
+    if-ne v6, v12, :cond_32
 
     const/4 v6, 0x1
 
     goto :goto_1c
 
     :cond_32
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v13, v13, 0x1
 
-    move/from16 v6, v18
+    move-object/from16 v6, v16
 
     goto :goto_1a
 
     :cond_33
-    move/from16 v18, v6
+    move-object/from16 v16, v6
 
     :goto_1b
     const/4 v6, 0x0
@@ -2375,70 +2385,68 @@
     :goto_1c
     if-nez v6, :cond_35
 
-    move v11, v12
+    move v9, v11
 
     goto :goto_1d
 
     :cond_34
-    move/from16 v18, v6
+    move-object/from16 v16, v6
 
     :cond_35
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v9, v9, 0x1
 
-    move/from16 v6, v18
-
-    const/4 v8, 0x3
+    move-object/from16 v6, v16
 
     goto :goto_19
 
     :cond_36
-    move/from16 v18, v6
+    move-object/from16 v16, v6
 
-    .line 99
+    .line 98
     :goto_1d
     array-length v6, v2
 
-    if-gt v6, v11, :cond_37
+    if-gt v6, v9, :cond_37
 
-    const/16 v18, 0x0
+    const/4 v10, 0x0
 
     :cond_37
-    move v6, v11
+    move v6, v9
 
     :goto_1e
-    if-eqz v18, :cond_3a
+    if-eqz v10, :cond_3a
 
-    if-ge v6, v10, :cond_3a
+    if-ge v6, v8, :cond_3a
 
-    .line 100
-    aget-byte v8, v2, v6
+    .line 99
+    aget-byte v11, v2, v6
 
     const/16 v12, 0xa
 
-    if-ne v8, v12, :cond_38
+    if-ne v11, v12, :cond_38
 
-    add-int/lit8 v8, v6, 0x1
+    add-int/lit8 v11, v6, 0x1
 
-    sub-int v12, v10, v6
+    sub-int v12, v8, v6
 
     const/4 v13, 0x1
 
     sub-int/2addr v12, v13
 
-    .line 101
-    invoke-static {v2, v8, v2, v6, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    .line 100
+    invoke-static {v2, v11, v2, v6, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v8, v8, -0x1
 
     goto :goto_1e
 
-    .line 102
+    .line 101
     :cond_38
-    aget-byte v8, v2, v6
+    aget-byte v11, v2, v6
 
     const/16 v12, 0x2d
 
-    if-ne v8, v12, :cond_39
+    if-ne v11, v12, :cond_39
 
     goto :goto_1f
 
@@ -2449,349 +2457,377 @@
 
     :cond_3a
     :goto_1f
-    if-eqz v18, :cond_3d
+    if-eqz v10, :cond_3d
 
-    sub-int/2addr v6, v11
+    sub-int/2addr v6, v9
 
-    .line 103
-    invoke-static {v2, v11, v6}, Lcom/jcraft/jsch/Util;->fromBase64([BII)[B
+    .line 102
+    invoke-static {v2, v9, v6}, Lcom/jcraft/jsch/Util;->fromBase64([BII)[B
 
-    move-result-object v6
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    move-result-object v2
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     if-eqz v1, :cond_3b
 
-    const/4 v2, 0x3
+    const/4 v6, 0x3
 
-    if-ne v4, v2, :cond_4a
+    if-ne v15, v6, :cond_4b
 
     :cond_3b
-    const/16 v2, 0x8
+    const/16 v6, 0x8
 
-    .line 104
-    :try_start_3
-    aget-byte v8, v6, v2
-
-    const/16 v10, 0x64
-
-    if-ne v8, v10, :cond_3c
-
-    const/4 v4, 0x1
-
-    goto/16 :goto_28
-
-    .line 105
-    :cond_3c
-    aget-byte v2, v6, v2
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
-
-    const/16 v8, 0x72
-
-    if-ne v2, v8, :cond_4a
-
-    const/4 v4, 0x2
-
-    goto/16 :goto_28
-
-    :catch_1
-    :cond_3d
-    const/4 v6, 0x0
-
-    goto/16 :goto_28
-
-    :cond_3e
-    const/4 v6, 0x0
-
-    .line 106
+    .line 103
     :try_start_4
     aget-byte v8, v2, v6
 
-    const/16 v6, 0x73
+    const/16 v9, 0x64
 
-    if-ne v8, v6, :cond_3d
+    if-ne v8, v9, :cond_3c
 
-    const/4 v6, 0x1
+    const/4 v15, 0x1
 
-    aget-byte v8, v2, v6
+    goto/16 :goto_29
 
-    const/16 v6, 0x73
-
-    if-ne v8, v6, :cond_3d
-
-    const/4 v6, 0x2
-
-    aget-byte v8, v2, v6
-
-    const/16 v6, 0x68
-
-    if-ne v8, v6, :cond_3d
-
-    const/4 v6, 0x3
-
-    aget-byte v8, v2, v6
-
-    const/16 v6, 0x2d
-
-    if-ne v8, v6, :cond_3d
-
-    if-nez v1, :cond_40
-
-    .line 107
-    array-length v6, v2
-
-    const/4 v8, 0x7
-
-    if-le v6, v8, :cond_40
-
-    const/4 v6, 0x4
-
-    .line 108
-    aget-byte v8, v2, v6
-
-    const/16 v11, 0x64
-
-    if-ne v8, v11, :cond_3f
-
-    const/4 v4, 0x1
-
-    goto :goto_20
-
-    .line 109
-    :cond_3f
+    .line 104
+    :cond_3c
     aget-byte v6, v2, v6
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
 
     const/16 v8, 0x72
 
-    if-ne v6, v8, :cond_40
+    if-ne v6, v8, :cond_4b
 
-    const/4 v4, 0x2
+    const/4 v15, 0x2
 
-    :cond_40
+    goto/16 :goto_29
+
+    :catch_1
+    :cond_3d
     :goto_20
+    const/4 v2, 0x0
+
+    goto/16 :goto_29
+
+    :cond_3e
+    move-object/from16 v16, v6
+
     const/4 v6, 0x0
 
+    .line 105
+    :try_start_5
+    aget-byte v9, v2, v6
+
+    const/16 v6, 0x73
+
+    if-ne v9, v6, :cond_4a
+
+    const/4 v6, 0x1
+
+    aget-byte v9, v2, v6
+
+    const/16 v6, 0x73
+
+    if-ne v9, v6, :cond_4a
+
+    const/4 v6, 0x2
+
+    aget-byte v9, v2, v6
+
+    const/16 v6, 0x68
+
+    if-ne v9, v6, :cond_4a
+
+    const/4 v6, 0x3
+
+    aget-byte v9, v2, v6
+
+    const/16 v6, 0x2d
+
+    if-ne v9, v6, :cond_4a
+
+    if-nez v1, :cond_40
+
+    .line 106
+    array-length v6, v2
+
+    const/4 v9, 0x7
+
+    if-le v6, v9, :cond_40
+
+    const/4 v6, 0x4
+
+    .line 107
+    aget-byte v9, v2, v6
+
+    const/16 v10, 0x64
+
+    if-ne v9, v10, :cond_3f
+
+    const/4 v15, 0x1
+
+    goto :goto_21
+
+    .line 108
+    :cond_3f
+    aget-byte v6, v2, v6
+
+    const/16 v9, 0x72
+
+    if-ne v6, v9, :cond_40
+
+    const/4 v15, 0x2
+
+    :cond_40
     :goto_21
-    if-ge v6, v10, :cond_42
+    const/4 v6, 0x0
 
-    .line 110
-    aget-byte v8, v2, v6
+    :goto_22
+    if-ge v6, v8, :cond_42
 
-    const/16 v11, 0x20
+    .line 109
+    aget-byte v9, v2, v6
 
-    if-ne v8, v11, :cond_41
+    const/16 v10, 0x20
 
-    goto :goto_22
+    if-ne v9, v10, :cond_41
+
+    goto :goto_23
 
     :cond_41
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_21
+    goto :goto_22
 
     :cond_42
-    :goto_22
-    const/4 v8, 0x1
-
-    add-int/2addr v6, v8
-
-    if-ge v6, v10, :cond_45
-
-    move v8, v6
-
     :goto_23
-    if-ge v8, v10, :cond_44
+    const/4 v9, 0x1
 
-    .line 111
-    aget-byte v11, v2, v8
+    add-int/2addr v6, v9
 
-    const/16 v12, 0x20
+    move v9, v6
 
-    if-ne v11, v12, :cond_43
+    if-ge v6, v8, :cond_45
 
-    goto :goto_24
-
-    :cond_43
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_23
-
-    :cond_44
     :goto_24
-    sub-int v11, v8, v6
+    if-ge v9, v8, :cond_44
 
-    .line 112
-    invoke-static {v2, v6, v11}, Lcom/jcraft/jsch/Util;->fromBase64([BII)[B
+    .line 110
+    aget-byte v10, v2, v9
 
-    move-result-object v6
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+    const/16 v11, 0x20
 
-    move-object/from16 v16, v6
-
-    move v6, v8
+    if-ne v10, v11, :cond_43
 
     goto :goto_25
 
-    :cond_45
-    const/16 v16, 0x0
+    :cond_43
+    add-int/lit8 v9, v9, 0x1
 
+    goto :goto_24
+
+    :cond_44
     :goto_25
-    add-int/lit8 v8, v6, 0x1
+    sub-int v10, v9, v6
 
-    if-ge v6, v10, :cond_49
+    .line 111
+    invoke-static {v2, v6, v10}, Lcom/jcraft/jsch/Util;->fromBase64([BII)[B
 
-    move v6, v8
+    move-result-object v6
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
+
+    goto :goto_26
+
+    :cond_45
+    const/4 v6, 0x0
 
     :goto_26
-    if-ge v6, v10, :cond_47
+    add-int/lit8 v10, v9, 0x1
 
-    .line 113
-    :try_start_5
-    aget-byte v11, v2, v6
+    if-ge v9, v8, :cond_49
+
+    move v9, v10
+
+    :goto_27
+    if-ge v9, v8, :cond_47
+
+    .line 112
+    :try_start_6
+    aget-byte v11, v2, v9
 
     const/16 v12, 0xa
 
     if-ne v11, v12, :cond_46
 
-    goto :goto_27
+    goto :goto_28
 
     :cond_46
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v9, v9, 0x1
 
-    goto :goto_26
+    goto :goto_27
 
     :cond_47
-    :goto_27
-    if-lez v6, :cond_48
+    :goto_28
+    if-lez v9, :cond_48
 
-    add-int/lit8 v10, v6, -0x1
+    add-int/lit8 v8, v9, -0x1
 
-    .line 114
-    aget-byte v10, v2, v10
+    .line 113
+    aget-byte v8, v2, v8
 
     const/16 v11, 0xd
 
-    if-ne v10, v11, :cond_48
+    if-ne v8, v11, :cond_48
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v9, v9, -0x1
 
     :cond_48
-    if-ge v8, v6, :cond_49
+    if-ge v10, v9, :cond_49
 
-    .line 115
-    new-instance v10, Ljava/lang/String;
+    .line 114
+    new-instance v8, Ljava/lang/String;
 
-    sub-int/2addr v6, v8
+    sub-int/2addr v9, v10
 
-    invoke-direct {v10, v2, v8, v6}, Ljava/lang/String;-><init>([BII)V
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
+    invoke-direct {v8, v2, v10, v9}, Ljava/lang/String;-><init>([BII)V
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
 
-    move-object v7, v10
+    move-object v2, v6
+
+    move-object v6, v8
+
+    goto :goto_2b
 
     :catch_2
     :cond_49
-    move-object/from16 v6, v16
+    move-object v2, v6
 
-    :catch_3
+    goto :goto_29
+
     :cond_4a
-    :goto_28
-    const/4 v2, 0x0
-
-    const/4 v8, 0x1
-
-    if-ne v4, v8, :cond_4b
-
-    .line 116
-    new-instance v2, Lcom/jcraft/jsch/KeyPairDSA;
-
-    invoke-direct {v2, v0}, Lcom/jcraft/jsch/KeyPairDSA;-><init>(Lcom/jcraft/jsch/JSch;)V
-
-    goto :goto_29
-
-    :cond_4b
-    const/4 v8, 0x2
-
-    if-ne v4, v8, :cond_4c
-
-    .line 117
-    new-instance v2, Lcom/jcraft/jsch/KeyPairRSA;
-
-    invoke-direct {v2, v0}, Lcom/jcraft/jsch/KeyPairRSA;-><init>(Lcom/jcraft/jsch/JSch;)V
-
-    goto :goto_29
-
-    :cond_4c
-    const/4 v4, 0x3
-
-    if-ne v15, v4, :cond_4d
-
-    .line 118
-    new-instance v2, Lcom/jcraft/jsch/KeyPairPKCS8;
-
-    invoke-direct {v2, v0}, Lcom/jcraft/jsch/KeyPairPKCS8;-><init>(Lcom/jcraft/jsch/JSch;)V
-
-    :cond_4d
-    :goto_29
-    if-eqz v2, :cond_50
-
-    .line 119
-    iput-boolean v9, v2, Lcom/jcraft/jsch/KeyPair;->encrypted:Z
-
-    .line 120
-    iput-object v6, v2, Lcom/jcraft/jsch/KeyPair;->publickeyblob:[B
-
-    .line 121
-    iput v15, v2, Lcom/jcraft/jsch/KeyPair;->vendor:I
-
-    .line 122
-    iput-object v7, v2, Lcom/jcraft/jsch/KeyPair;->publicKeyComment:Ljava/lang/String;
-
-    move-object/from16 v0, v17
-
-    .line 123
-    iput-object v0, v2, Lcom/jcraft/jsch/KeyPair;->cipher:Lcom/jcraft/jsch/Cipher;
-
-    if-eqz v9, :cond_4e
-
-    const/4 v0, 0x1
-
-    .line 124
-    iput-boolean v0, v2, Lcom/jcraft/jsch/KeyPair;->encrypted:Z
-
-    .line 125
-    iput-object v14, v2, Lcom/jcraft/jsch/KeyPair;->iv:[B
-
-    .line 126
-    iput-object v3, v2, Lcom/jcraft/jsch/KeyPair;->data:[B
+    move-object/from16 v6, v16
 
     goto :goto_2a
 
-    .line 127
+    :catch_3
+    move-object/from16 v16, v6
+
+    goto/16 :goto_20
+
+    :catch_4
+    :cond_4b
+    :goto_29
+    move-object/from16 v6, v16
+
+    goto :goto_2b
+
+    :cond_4c
+    move-object/from16 v16, v6
+
+    :goto_2a
+    const/4 v2, 0x0
+
+    :goto_2b
+    const/4 v8, 0x1
+
+    if-ne v15, v8, :cond_4d
+
+    .line 115
+    new-instance v8, Lcom/jcraft/jsch/KeyPairDSA;
+
+    invoke-direct {v8, v0}, Lcom/jcraft/jsch/KeyPairDSA;-><init>(Lcom/jcraft/jsch/JSch;)V
+
+    goto :goto_2c
+
+    :cond_4d
+    const/4 v8, 0x2
+
+    if-ne v15, v8, :cond_4e
+
+    .line 116
+    new-instance v8, Lcom/jcraft/jsch/KeyPairRSA;
+
+    invoke-direct {v8, v0}, Lcom/jcraft/jsch/KeyPairRSA;-><init>(Lcom/jcraft/jsch/JSch;)V
+
+    goto :goto_2c
+
     :cond_4e
-    invoke-virtual {v2, v3}, Lcom/jcraft/jsch/KeyPair;->parse([B)Z
+    const/4 v8, 0x3
+
+    if-ne v14, v8, :cond_4f
+
+    .line 117
+    new-instance v8, Lcom/jcraft/jsch/KeyPairPKCS8;
+
+    invoke-direct {v8, v0}, Lcom/jcraft/jsch/KeyPairPKCS8;-><init>(Lcom/jcraft/jsch/JSch;)V
+
+    goto :goto_2c
+
+    :cond_4f
+    const/4 v8, 0x0
+
+    :goto_2c
+    if-eqz v8, :cond_52
+
+    .line 118
+    iput-boolean v5, v8, Lcom/jcraft/jsch/KeyPair;->encrypted:Z
+
+    .line 119
+    iput-object v2, v8, Lcom/jcraft/jsch/KeyPair;->publickeyblob:[B
+
+    .line 120
+    iput v14, v8, Lcom/jcraft/jsch/KeyPair;->vendor:I
+
+    .line 121
+    iput-object v6, v8, Lcom/jcraft/jsch/KeyPair;->publicKeyComment:Ljava/lang/String;
+
+    move-object/from16 v14, v17
+
+    .line 122
+    iput-object v14, v8, Lcom/jcraft/jsch/KeyPair;->cipher:Lcom/jcraft/jsch/Cipher;
+
+    if-eqz v5, :cond_50
+
+    const/4 v0, 0x1
+
+    .line 123
+    iput-boolean v0, v8, Lcom/jcraft/jsch/KeyPair;->encrypted:Z
+
+    .line 124
+    iput-object v4, v8, Lcom/jcraft/jsch/KeyPair;->iv:[B
+
+    .line 125
+    iput-object v7, v8, Lcom/jcraft/jsch/KeyPair;->data:[B
+
+    goto :goto_2d
+
+    .line 126
+    :cond_50
+    invoke-virtual {v8, v7}, Lcom/jcraft/jsch/KeyPair;->parse([B)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_51
 
     const/4 v0, 0x0
 
+    .line 127
+    iput-boolean v0, v8, Lcom/jcraft/jsch/KeyPair;->encrypted:Z
+
+    return-object v8
+
     .line 128
-    iput-boolean v0, v2, Lcom/jcraft/jsch/KeyPair;->encrypted:Z
-
-    return-object v2
-
-    .line 129
-    :cond_4f
+    :cond_51
     new-instance v0, Lcom/jcraft/jsch/JSchException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -2803,13 +2839,18 @@
 
     throw v0
 
-    :cond_50
-    :goto_2a
-    return-object v2
+    :cond_52
+    :goto_2d
+    return-object v8
 .end method
 
 .method public static loadPPK(Lcom/jcraft/jsch/JSch;[B)Lcom/jcraft/jsch/KeyPair;
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/Buffer;
@@ -2913,7 +2954,7 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "ssh-rsa"
+    const-string v4, "ssh-rsa"
 
     .line 13
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2970,7 +3011,7 @@
     goto :goto_0
 
     :cond_4
-    const-string/jumbo v4, "ssh-dss"
+    const-string v4, "ssh-dss"
 
     .line 23
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3124,8 +3165,6 @@
     iput-object p0, v1, Lcom/jcraft/jsch/KeyPair;->cipher:Lcom/jcraft/jsch/Cipher;
 
     .line 44
-    iget-object p0, v1, Lcom/jcraft/jsch/KeyPair;->cipher:Lcom/jcraft/jsch/Cipher;
-
     invoke-interface {p0}, Lcom/jcraft/jsch/Cipher;->getIVSize()I
 
     move-result p0
@@ -3171,7 +3210,7 @@
     return-object v2
 .end method
 
-.method public static parseHeader(Lcom/jcraft/jsch/Buffer;Ljava/util/Hashtable;)Z
+.method private static parseHeader(Lcom/jcraft/jsch/Buffer;Ljava/util/Hashtable;)Z
     .locals 9
 
     .line 1
@@ -3313,13 +3352,16 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v2, 0x1
+    goto :goto_5
 
     :cond_9
-    return v2
+    const/4 v6, 0x0
+
+    :goto_5
+    return v6
 .end method
 
-.method public static parseLines(Lcom/jcraft/jsch/Buffer;I)[B
+.method private static parseLines(Lcom/jcraft/jsch/Buffer;I)[B
     .locals 8
 
     .line 1
@@ -3367,6 +3409,8 @@
     invoke-static {v0, v1, v5, p1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :cond_0
+    move p1, v4
+
     move-object v2, v5
 
     goto :goto_3
@@ -3416,21 +3460,19 @@
 
     goto :goto_1
 
-    :cond_3
-    move v4, p1
-
     .line 11
+    :cond_3
     :goto_3
-    aget-byte p1, v0, v4
+    aget-byte v1, v0, p1
 
-    const/16 v1, 0xa
+    const/16 v4, 0xa
 
-    if-ne p1, v1, :cond_4
+    if-ne v1, v4, :cond_4
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 p1, p1, 0x1
 
     :cond_4
-    move v1, v4
+    move v1, p1
 
     move p1, v3
 
@@ -3558,26 +3600,24 @@
     :cond_1
     array-length v0, p1
 
-    new-array v0, v0, [B
-
-    .line 11
-    array-length v2, v0
+    new-array v2, v0, [B
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    .line 11
+    invoke-static {p1, v3, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 12
     iget-object p1, p0, Lcom/jcraft/jsch/KeyPair;->data:[B
 
-    iget-object v2, p0, Lcom/jcraft/jsch/KeyPair;->iv:[B
+    iget-object v0, p0, Lcom/jcraft/jsch/KeyPair;->iv:[B
 
-    invoke-direct {p0, p1, v0, v2}, Lcom/jcraft/jsch/KeyPair;->decrypt([B[B[B)[B
+    invoke-direct {p0, p1, v2, v0}, Lcom/jcraft/jsch/KeyPair;->decrypt([B[B[B)[B
 
     move-result-object p1
 
     .line 13
-    invoke-static {v0}, Lcom/jcraft/jsch/Util;->bzero([B)V
+    invoke-static {v2}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
     .line 14
     invoke-virtual {p0, p1}, Lcom/jcraft/jsch/KeyPair;->parse([B)Z
@@ -3619,10 +3659,15 @@
 .end method
 
 .method public abstract forSSHAgent()[B
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 .end method
 
 .method public declared-synchronized genKey([B[B)[B
-    .locals 8
+    .locals 10
 
     monitor-enter p0
 
@@ -3658,267 +3703,243 @@
 
     move-result v0
 
-    new-array v0, v0, [B
+    new-array v1, v0, [B
 
     .line 4
-    iget-object v1, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+    iget-object v2, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
 
-    invoke-interface {v1}, Lcom/jcraft/jsch/HASH;->getBlockSize()I
+    invoke-interface {v2}, Lcom/jcraft/jsch/HASH;->getBlockSize()I
 
-    move-result v1
+    move-result v2
 
     .line 5
-    array-length v2, v0
+    div-int v3, v0, v2
 
-    div-int/2addr v2, v1
+    mul-int v3, v3, v2
 
-    mul-int v2, v2, v1
+    rem-int v4, v0, v2
 
-    array-length v3, v0
+    const/4 v5, 0x0
 
-    rem-int/2addr v3, v1
+    if-nez v4, :cond_2
 
     const/4 v4, 0x0
-
-    if-nez v3, :cond_2
-
-    const/4 v3, 0x0
 
     goto :goto_0
 
     :cond_2
-    move v3, v1
+    move v4, v2
 
     :goto_0
-    add-int/2addr v2, v3
+    add-int/2addr v3, v4
 
-    new-array v2, v2, [B
+    new-array v4, v3, [B
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
     .line 6
     :try_start_1
-    iget v5, p0, Lcom/jcraft/jsch/KeyPair;->vendor:I
+    iget v7, p0, Lcom/jcraft/jsch/KeyPair;->vendor:I
 
-    if-nez v5, :cond_6
+    if-nez v7, :cond_6
 
-    move-object v5, v3
-
-    const/4 v3, 0x0
+    const/4 v7, 0x0
 
     :goto_1
-    add-int v6, v3, v1
+    add-int v8, v7, v2
+
+    if-gt v8, v3, :cond_5
+
+    if-eqz v6, :cond_3
 
     .line 7
-    array-length v7, v2
+    iget-object v8, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
 
-    if-gt v6, v7, :cond_5
+    array-length v9, v6
 
-    if-eqz v5, :cond_3
+    invoke-interface {v8, v6, v5, v9}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
     .line 8
+    :cond_3
     iget-object v6, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
 
-    array-length v7, v5
+    array-length v8, p1
 
-    invoke-interface {v6, v5, v4, v7}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    invoke-interface {v6, p1, v5, v8}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
     .line 9
-    :cond_3
-    iget-object v5, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+    iget-object v6, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
 
-    array-length v6, p1
+    array-length v8, p2
 
-    invoke-interface {v5, p1, v4, v6}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    const/16 v9, 0x8
 
-    .line 10
-    iget-object v5, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
-
-    array-length v6, p2
-
-    const/16 v7, 0x8
-
-    if-le v6, v7, :cond_4
+    if-le v8, v9, :cond_4
 
     goto :goto_2
 
     :cond_4
-    array-length v7, p2
+    array-length v9, p2
 
     :goto_2
-    invoke-interface {v5, p2, v4, v7}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    invoke-interface {v6, p2, v5, v9}, Lcom/jcraft/jsch/HASH;->update([BII)V
+
+    .line 10
+    iget-object v6, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+
+    invoke-interface {v6}, Lcom/jcraft/jsch/HASH;->digest()[B
+
+    move-result-object v6
 
     .line 11
-    iget-object v5, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+    array-length v8, v6
 
-    invoke-interface {v5}, Lcom/jcraft/jsch/HASH;->digest()[B
-
-    move-result-object v5
+    invoke-static {v6, v5, v4, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 12
-    array-length v6, v5
+    array-length v8, v6
 
-    invoke-static {v5, v4, v2, v3, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 13
-    array-length v6, v5
-
-    add-int/2addr v3, v6
+    add-int/2addr v7, v8
 
     goto :goto_1
 
-    .line 14
+    .line 13
     :cond_5
-    array-length p1, v0
-
-    invoke-static {v2, v4, v0, v4, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v4, v5, v1, v5, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     goto :goto_5
 
-    .line 15
     :cond_6
-    iget p2, p0, Lcom/jcraft/jsch/KeyPair;->vendor:I
+    const/4 p2, 0x1
 
-    const/4 v5, 0x1
-
-    if-ne p2, v5, :cond_9
+    if-ne v7, p2, :cond_9
 
     const/4 p2, 0x0
 
     :goto_3
-    add-int v5, p2, v1
+    add-int v7, p2, v2
+
+    if-gt v7, v3, :cond_8
+
+    if-eqz v6, :cond_7
+
+    .line 14
+    iget-object v7, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+
+    array-length v8, v6
+
+    invoke-interface {v7, v6, v5, v8}, Lcom/jcraft/jsch/HASH;->update([BII)V
+
+    .line 15
+    :cond_7
+    iget-object v6, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+
+    array-length v7, p1
+
+    invoke-interface {v6, p1, v5, v7}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
     .line 16
-    array-length v6, v2
+    iget-object v6, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
 
-    if-gt v5, v6, :cond_8
+    invoke-interface {v6}, Lcom/jcraft/jsch/HASH;->digest()[B
 
-    if-eqz v3, :cond_7
+    move-result-object v6
 
     .line 17
-    iget-object v5, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+    array-length v7, v6
 
-    array-length v6, v3
-
-    invoke-interface {v5, v3, v4, v6}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    invoke-static {v6, v5, v4, p2, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 18
-    :cond_7
-    iget-object v3, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
+    array-length v7, v6
 
-    array-length v5, p1
-
-    invoke-interface {v3, p1, v4, v5}, Lcom/jcraft/jsch/HASH;->update([BII)V
-
-    .line 19
-    iget-object v3, p0, Lcom/jcraft/jsch/KeyPair;->hash:Lcom/jcraft/jsch/HASH;
-
-    invoke-interface {v3}, Lcom/jcraft/jsch/HASH;->digest()[B
-
-    move-result-object v3
-
-    .line 20
-    array-length v5, v3
-
-    invoke-static {v3, v4, v2, p2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 21
-    array-length v5, v3
-
-    add-int/2addr p2, v5
+    add-int/2addr p2, v7
 
     goto :goto_3
 
-    .line 22
+    .line 19
     :cond_8
-    array-length p1, v0
-
-    invoke-static {v2, v4, v0, v4, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v4, v5, v1, v5, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     goto :goto_5
 
-    .line 23
     :cond_9
-    iget p2, p0, Lcom/jcraft/jsch/KeyPair;->vendor:I
+    const/4 p2, 0x2
 
-    const/4 v1, 0x2
+    if-ne v7, p2, :cond_a
 
-    if-ne p2, v1, :cond_a
+    const-string v0, "sha-1"
 
-    const-string/jumbo p2, "sha-1"
+    .line 20
+    invoke-static {v0}, Lcom/jcraft/jsch/JSch;->getConfig(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 24
-    invoke-static {p2}, Lcom/jcraft/jsch/JSch;->getConfig(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object p2
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    invoke-static {p2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    move-result-object v0
 
-    move-result-object p2
+    .line 21
+    invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
-    .line 25
-    invoke-virtual {p2}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object p2
-
-    check-cast p2, Lcom/jcraft/jsch/HASH;
+    check-cast v0, Lcom/jcraft/jsch/HASH;
 
     const/4 v2, 0x4
 
-    new-array v2, v2, [B
+    new-array v3, v2, [B
 
-    const/16 v3, 0x28
+    const/16 v4, 0x28
 
-    new-array v0, v3, [B
+    new-array v1, v4, [B
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     :goto_4
-    if-ge v3, v1, :cond_a
+    if-ge v4, p2, :cond_a
 
-    .line 26
-    invoke-interface {p2}, Lcom/jcraft/jsch/HASH;->init()V
+    .line 22
+    invoke-interface {v0}, Lcom/jcraft/jsch/HASH;->init()V
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    int-to-byte v6, v3
+    int-to-byte v7, v4
 
-    aput-byte v6, v2, v5
+    aput-byte v7, v3, v6
 
-    .line 27
-    array-length v5, v2
+    .line 23
+    invoke-interface {v0, v3, v5, v2}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
-    invoke-interface {p2, v2, v4, v5}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    .line 24
+    array-length v6, p1
 
-    .line 28
-    array-length v5, p1
+    invoke-interface {v0, p1, v5, v6}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
-    invoke-interface {p2, p1, v4, v5}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    .line 25
+    invoke-interface {v0}, Lcom/jcraft/jsch/HASH;->digest()[B
 
-    .line 29
-    invoke-interface {p2}, Lcom/jcraft/jsch/HASH;->digest()[B
+    move-result-object v6
 
-    move-result-object v5
+    mul-int/lit8 v7, v4, 0x14
 
-    mul-int/lit8 v6, v3, 0x14
+    const/16 v8, 0x14
 
-    const/16 v7, 0x14
-
-    invoke-static {v5, v4, v0, v6, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v6, v5, v1, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_4
 
     :catch_0
     move-exception p1
 
-    .line 30
+    .line 26
     :try_start_2
     sget-object p2, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
@@ -3926,12 +3947,12 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 31
+    .line 27
     :cond_a
     :goto_5
     monitor-exit p0
 
-    return-object v0
+    return-object v1
 
     :catchall_0
     move-exception p1
@@ -3942,6 +3963,11 @@
 .end method
 
 .method public abstract generate(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 .end method
 
 .method public abstract getBegin()[B
@@ -4260,9 +4286,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write([B)V
 
-    sget-object p2, Lcom/jcraft/jsch/KeyPair;->cr:[B
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {p1, v4}, Ljava/io/OutputStream;->write([B)V
 
     .line 10
     sget-object p2, Lcom/jcraft/jsch/KeyPair;->header:[[B
@@ -4318,8 +4342,6 @@
     invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write([B)V
 
     .line 15
-    sget-object p2, Lcom/jcraft/jsch/KeyPair;->cr:[B
-
     invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write([B)V
 
     .line 16
@@ -4383,6 +4405,12 @@
 
 .method public writePrivateKey(Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -4394,6 +4422,12 @@
 
 .method public writePrivateKey(Ljava/lang/String;[B)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 24
     new-instance v0, Ljava/io/FileOutputStream;
@@ -4467,6 +4501,12 @@
 
 .method public writePublicKey(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 7
     new-instance v0, Ljava/io/FileOutputStream;
@@ -4483,7 +4523,7 @@
 .end method
 
 .method public writeSECSHPublicKey(Ljava/io/OutputStream;Ljava/lang/String;)V
-    .locals 4
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/KeyPair;->getPublicKeyBlob()[B
@@ -4514,21 +4554,21 @@
     invoke-virtual {p1, v1}, Ljava/io/OutputStream;->write([B)V
 
     .line 4
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Comment: \""
+    const-string v4, "Comment: \""
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p2, "\""
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
@@ -4538,9 +4578,7 @@
 
     invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write([B)V
 
-    sget-object p2, Lcom/jcraft/jsch/KeyPair;->cr:[B
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {p1, v1}, Ljava/io/OutputStream;->write([B)V
 
     .line 5
     :goto_0
@@ -4595,6 +4633,12 @@
 
 .method public writeSECSHPublicKey(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 9
     new-instance v0, Ljava/io/FileOutputStream;

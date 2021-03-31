@@ -65,7 +65,7 @@
 
 
 # virtual methods
-.method public a(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Ll$b;)Lyp4;
+.method public a(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;Ll$b;)Lm;
     .locals 1
 
     .line 2
@@ -86,25 +86,25 @@
     if-eq p3, v0, :cond_0
 
     .line 3
-    new-instance p3, Lhq4;
+    new-instance p3, Ln;
 
-    invoke-direct {p3, p1, p2}, Lhq4;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;)V
+    invoke-direct {p3, p1, p2}, Ln;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;)V
 
     goto :goto_0
 
     .line 4
     :cond_0
-    new-instance p3, Lhq4;
+    new-instance p3, Ln;
 
-    invoke-direct {p3, p1, p2}, Lhq4;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;)V
+    invoke-direct {p3, p1, p2}, Ln;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;)V
 
     goto :goto_0
 
     .line 5
     :cond_1
-    new-instance p3, Lhq4;
+    new-instance p3, Ln;
 
-    invoke-direct {p3, p1, p2}, Lhq4;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;)V
+    invoke-direct {p3, p1, p2}, Ln;-><init>(Landroid/content/Context;Lcom/ril/jio/jiosdk/http/IHttpManager;)V
 
     :goto_0
     return-object p3

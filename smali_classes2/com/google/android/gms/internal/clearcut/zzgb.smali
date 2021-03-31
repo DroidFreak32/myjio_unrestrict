@@ -3,23 +3,23 @@
 
 
 # static fields
-.field public static final zzrt:I = 0xb
+.field private static final zzrt:I = 0xb
 
-.field public static final zzru:I = 0xc
+.field private static final zzru:I = 0xc
 
-.field public static final zzrv:I = 0x10
+.field private static final zzrv:I = 0x10
 
-.field public static final zzrw:I = 0x1a
+.field private static final zzrw:I = 0x1a
 
 .field public static final zzrx:[I
 
 .field public static final zzry:[J
 
-.field public static final zzrz:[F
+.field private static final zzrz:[F
 
-.field public static final zzsa:[D
+.field private static final zzsa:[D
 
-.field public static final zzsb:[Z
+.field private static final zzsb:[Z
 
 .field public static final zzsc:[Ljava/lang/String;
 

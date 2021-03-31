@@ -1,39 +1,47 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaai;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Lcom/google/android/gms/internal/ads/zzagc;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaah;
+
+# instance fields
+.field private final zzclb:Lcom/google/android/gms/ads/formats/ShouldDelayBannerRenderingListener;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.mediation.client.rtb.IInterstitialCallback"
+.method public constructor <init>(Lcom/google/android/gms/ads/formats/ShouldDelayBannerRenderingListener;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzagc;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaai;->zzclb:Lcom/google/android/gms/ads/formats/ShouldDelayBannerRenderingListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzbv(Ljava/lang/String;)V
+.method public final zzm(Lcom/google/android/gms/dynamic/IObjectWrapper;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaai;->zzclb:Lcom/google/android/gms/ads/formats/ShouldDelayBannerRenderingListener;
 
-    move-result-object v0
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->unwrap(Lcom/google/android/gms/dynamic/IObjectWrapper;)Ljava/lang/Object;
 
-    .line 2
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    move-result-object p1
 
-    const/4 p1, 0x3
+    check-cast p1, Ljava/lang/Runnable;
 
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/ads/formats/ShouldDelayBannerRenderingListener;->shouldDelayBannerRendering(Ljava/lang/Runnable;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

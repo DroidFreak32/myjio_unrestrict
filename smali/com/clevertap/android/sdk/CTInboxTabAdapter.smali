@@ -1,12 +1,12 @@
 .class public Lcom/clevertap/android/sdk/CTInboxTabAdapter;
-.super Luc;
+.super Landroidx/fragment/app/FragmentPagerAdapter;
 .source "CTInboxTabAdapter.java"
 
 
 # instance fields
-.field public final fragmentList:[Landroidx/fragment/app/Fragment;
+.field private final fragmentList:[Landroidx/fragment/app/Fragment;
 
-.field public final fragmentTitleList:Ljava/util/List;
+.field private final fragmentTitleList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -18,11 +18,11 @@
 
 
 # direct methods
-.method public constructor <init>(Lrc;I)V
+.method public constructor <init>(Landroidx/fragment/app/FragmentManager;I)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Luc;-><init>(Lrc;)V
+    invoke-direct {p0, p1}, Landroidx/fragment/app/FragmentPagerAdapter;-><init>(Landroidx/fragment/app/FragmentManager;)V
 
     .line 2
     new-instance p1, Ljava/util/ArrayList;
@@ -70,6 +70,8 @@
 
 .method public getItem(I)Landroidx/fragment/app/Fragment;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxTabAdapter;->fragmentList:[Landroidx/fragment/app/Fragment;
@@ -81,6 +83,8 @@
 
 .method public getPageTitle(I)Ljava/lang/CharSequence;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxTabAdapter;->fragmentTitleList:Ljava/util/List;
@@ -96,9 +100,15 @@
 
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 2
+    .param p1    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    invoke-super {p0, p1, p2}, Luc;->instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
+    invoke-super {p0, p1, p2}, Landroidx/fragment/app/FragmentPagerAdapter;->instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,21 +1,30 @@
 .class public Lrb;
-.super Lvb;
-.source "DataBinderMapperImpl.java"
+.super Landroid/os/CountDownTimer;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqb;JJ)V
+    .locals 0
+
+    invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onFinish()V
     .locals 1
 
-    .line 1
-    invoke-direct {p0}, Lvb;-><init>()V
+    const/4 v0, 0x1
 
-    .line 2
-    new-instance v0, Ltr0;
+    invoke-static {v0}, Lcom/elitecorelib/andsf/utility/a;->c(Z)V
 
-    invoke-direct {v0}, Ltr0;-><init>()V
+    return-void
+.end method
 
-    invoke-virtual {p0, v0}, Lvb;->a(Lqb;)V
+.method public onTick(J)V
+    .locals 0
 
     return-void
 .end method

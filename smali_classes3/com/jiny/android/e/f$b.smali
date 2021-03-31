@@ -26,7 +26,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/Exception;Lcom/jiny/android/e/f$a;)V
+.method public synthetic constructor <init>(Ljava/lang/Exception;Lcom/jiny/android/e/f$d;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/jiny/android/e/f$b;-><init>(Ljava/lang/Exception;)V

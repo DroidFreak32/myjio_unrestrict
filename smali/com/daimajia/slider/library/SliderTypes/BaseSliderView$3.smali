@@ -34,8 +34,6 @@
     sput-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$3;->$SwitchMap$com$daimajia$slider$library$SliderTypes$BaseSliderView$ScaleType:[I
 
     :try_start_0
-    sget-object v0, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$3;->$SwitchMap$com$daimajia$slider$library$SliderTypes$BaseSliderView$ScaleType:[I
-
     sget-object v1, Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;->Fit:Lcom/daimajia/slider/library/SliderTypes/BaseSliderView$ScaleType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

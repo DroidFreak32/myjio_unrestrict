@@ -1,40 +1,148 @@
 .class public final Lcom/google/android/gms/internal/ads/zzub;
-.super Lcom/google/android/gms/internal/ads/zzld;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzbqv:Lcom/google/android/gms/internal/ads/zzts;
+.field private final zzbxw:[B
+
+.field private zzbxx:I
+
+.field private zzbxy:I
+
+.field private final synthetic zzbxz:Lcom/google/android/gms/internal/ads/zztx;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzts;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/ads/zztx;[B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbqv:Lcom/google/android/gms/internal/ads/zzts;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxz:Lcom/google/android/gms/internal/ads/zztx;
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzld;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxw:[B
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/ads/zztx;[BLcom/google/android/gms/internal/ads/zzuc;)V
+    .locals 0
+
+    .line 3
+    invoke-direct {p0, p1, p2}, Lcom/google/android/gms/internal/ads/zzub;-><init>(Lcom/google/android/gms/internal/ads/zztx;[B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAppEvent(Ljava/lang/String;Ljava/lang/String;)V
+.method public final declared-synchronized log()V
     .locals 2
 
+    monitor-enter p0
+
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbqv:Lcom/google/android/gms/internal/ads/zzts;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxz:Lcom/google/android/gms/internal/ads/zztx;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzts;->zza(Lcom/google/android/gms/internal/ads/zzts;)Ljava/util/List;
+    iget-boolean v1, v0, Lcom/google/android/gms/internal/ads/zztx;->zzbxu:Z
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    new-instance v1, Lcom/google/android/gms/internal/ads/zzuc;
+    .line 2
+    iget-object v0, v0, Lcom/google/android/gms/internal/ads/zztx;->zzbxt:Lcom/google/android/gms/internal/ads/zzgy;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/google/android/gms/internal/ads/zzuc;-><init>(Lcom/google/android/gms/internal/ads/zzub;Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxw:[B
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzgy;->zzc([B)V
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxz:Lcom/google/android/gms/internal/ads/zztx;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/ads/zztx;->zzbxt:Lcom/google/android/gms/internal/ads/zzgy;
+
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxx:I
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzgy;->zzs(I)V
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxz:Lcom/google/android/gms/internal/ads/zztx;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/ads/zztx;->zzbxt:Lcom/google/android/gms/internal/ads/zzgy;
+
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxy:I
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzgy;->zzt(I)V
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxz:Lcom/google/android/gms/internal/ads/zztx;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/ads/zztx;->zzbxt:Lcom/google/android/gms/internal/ads/zzgy;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzgy;->zza([I)V
+
+    .line 6
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxz:Lcom/google/android/gms/internal/ads/zztx;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/ads/zztx;->zzbxt:Lcom/google/android/gms/internal/ads/zzgy;
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzgy;->log()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 7
+    :cond_0
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    const-string v1, "Clearcut log failed"
+
+    .line 8
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 9
+    monitor-exit p0
+
+    return-void
+
+    :goto_0
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final zzbu(I)Lcom/google/android/gms/internal/ads/zzub;
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxx:I
+
+    return-object p0
+.end method
+
+.method public final zzbv(I)Lcom/google/android/gms/internal/ads/zzub;
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzub;->zzbxy:I
+
+    return-object p0
 .end method

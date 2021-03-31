@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final _parent:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReferenceProperty;
+.field private final _parent:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReferenceProperty;
 
 .field public final _pojo:Ljava/lang/Object;
 
@@ -51,6 +51,11 @@
 # virtual methods
 .method public handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId$Referring;->hasId(Ljava/lang/Object;)Z

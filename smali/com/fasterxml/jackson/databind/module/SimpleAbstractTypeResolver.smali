@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x77d76620fcbdac67L
+.field private static final serialVersionUID:J = 0x77d76620fcbdac67L
 
 
 # instance fields

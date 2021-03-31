@@ -19,11 +19,11 @@
 
 
 # instance fields
-.field public cacheKey:Ljava/lang/String;
+.field private cacheKey:Ljava/lang/String;
 
-.field public contentType:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
 
-.field public mediaUrl:Ljava/lang/String;
+.field private mediaUrl:Ljava/lang/String;
 
 .field public orientation:I
 
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
     .line 3
@@ -148,7 +148,7 @@
 
     const-string v0, "key"
 
-    const-string v1, "url"
+    const-string/jumbo v1, "url"
 
     const-string v2, "content_type"
 
@@ -167,6 +167,7 @@
 
     if-eqz p2, :cond_0
 
+    .line 3
     :try_start_1
     invoke-virtual {p1, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -180,7 +181,7 @@
     :goto_0
     iput-object p2, p0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->contentType:Ljava/lang/String;
 
-    .line 3
+    .line 4
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result p2
@@ -191,7 +192,7 @@
 
     move-result-object v3
 
-    .line 4
+    .line 5
     :cond_1
     invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
@@ -199,7 +200,7 @@
 
     if-nez p2, :cond_4
 
-    .line 5
+    .line 6
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->contentType:Ljava/lang/String;
 
     const-string v1, "image"
@@ -210,17 +211,17 @@
 
     if-eqz p2, :cond_3
 
-    .line 6
+    .line 7
     iput-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->mediaUrl:Ljava/lang/String;
 
-    .line 7
+    .line 8
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
-    .line 8
+    .line 9
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -249,7 +250,7 @@
 
     goto :goto_1
 
-    .line 9
+    .line 10
     :cond_2
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
@@ -263,7 +264,7 @@
 
     goto :goto_1
 
-    .line 10
+    .line 11
     :cond_3
     iput-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->mediaUrl:Ljava/lang/String;
     :try_end_1
@@ -274,7 +275,7 @@
     :catch_0
     move-exception p1
 
-    .line 11
+    .line 12
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -295,7 +296,7 @@
 
     invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 12
+    .line 13
     :cond_4
     :goto_1
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->contentType:Ljava/lang/String;
@@ -407,6 +408,7 @@
 
     const-string v1, "image/gif"
 
+    .line 3
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -439,7 +441,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "video"
+    const-string/jumbo v1, "video"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

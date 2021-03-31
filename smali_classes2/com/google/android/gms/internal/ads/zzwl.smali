@@ -1,115 +1,132 @@
 .class public final Lcom/google/android/gms/internal/ads/zzwl;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapx;
+.super Lcom/google/android/gms/internal/ads/zzwn;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzapx<",
-        "Lcom/google/android/gms/internal/ads/zzvr;",
+        "Lcom/google/android/gms/internal/ads/zzwn<",
+        "Lcom/google/android/gms/internal/ads/zzaeq;",
         ">;"
     }
 .end annotation
 
 
 # instance fields
-.field public final synthetic zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+.field private final synthetic zzcin:Lcom/google/android/gms/internal/ads/zzvx;
 
-.field public final synthetic zzbtq:Lcom/google/android/gms/internal/ads/zzwt;
+.field private final synthetic zzcip:Landroid/view/View;
+
+.field private final synthetic zzciq:Ljava/util/HashMap;
+
+.field private final synthetic zzcir:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzwc;Lcom/google/android/gms/internal/ads/zzwt;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzvx;Landroid/view/View;Ljava/util/HashMap;Ljava/util/HashMap;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcin:Lcom/google/android/gms/internal/ads/zzvx;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtq:Lcom/google/android/gms/internal/ads/zzwt;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcip:Landroid/view/View;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzciq:Ljava/util/HashMap;
+
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcir:Ljava/util/HashMap;
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzwn;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zze(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzxp;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzwc;->zza(Lcom/google/android/gms/internal/ads/zzwc;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    monitor-enter p1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcip:Landroid/view/View;
 
     .line 2
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzwc;->zza(Lcom/google/android/gms/internal/ads/zzwc;I)I
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzwc;->zzb(Lcom/google/android/gms/internal/ads/zzwc;)Lcom/google/android/gms/internal/ads/zzwt;
+    invoke-static {v0}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzciq:Ljava/util/HashMap;
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtq:Lcom/google/android/gms/internal/ads/zzwt;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzwc;->zzb(Lcom/google/android/gms/internal/ads/zzwc;)Lcom/google/android/gms/internal/ads/zzwt;
+    .line 3
+    invoke-static {v1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_0
-
-    const-string v0, "New JS engine is loaded, marking previous one as destroyable."
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcir:Ljava/util/HashMap;
 
     .line 4
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object v2
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzxp;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)Lcom/google/android/gms/internal/ads/zzaeq;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzwc;->zzb(Lcom/google/android/gms/internal/ads/zzwc;)Lcom/google/android/gms/internal/ads/zzwt;
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final synthetic zzpt()Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcip:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzwt;->zznj()V
+    const-string v1, "native_ad_view_holder_delegate"
 
-    .line 6
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtn:Lcom/google/android/gms/internal/ads/zzwc;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzvx;->zzb(Landroid/content/Context;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzbtq:Lcom/google/android/gms/internal/ads/zzwt;
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzzz;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzwc;->zza(Lcom/google/android/gms/internal/ads/zzwc;Lcom/google/android/gms/internal/ads/zzwt;)Lcom/google/android/gms/internal/ads/zzwt;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzzz;-><init>()V
 
-    .line 7
-    monitor-exit p1
+    return-object v0
+.end method
 
-    return-void
+.method public final synthetic zzpu()Ljava/lang/Object;
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    :catchall_0
-    move-exception v0
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcin:Lcom/google/android/gms/internal/ads/zzvx;
 
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzvx;->zze(Lcom/google/android/gms/internal/ads/zzvx;)Lcom/google/android/gms/internal/ads/zzagm;
 
-    throw v0
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcip:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzciq:Ljava/util/HashMap;
+
+    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzwl;->zzcir:Ljava/util/HashMap;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzagm;->zzb(Landroid/view/View;Ljava/util/HashMap;Ljava/util/HashMap;)Lcom/google/android/gms/internal/ads/zzaeq;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,49 +1,42 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzht;
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zzht;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 # interfaces
-.implements Ljava/lang/Iterable;
+.implements Ljava/lang/Comparable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<T::",
+        "Lcom/google/android/gms/internal/measurement/zzht<",
+        "TT;>;>",
         "Ljava/lang/Object;",
-        "Ljava/lang/Iterable<",
-        "Ljava/lang/Object;",
-        ">;"
+        "Ljava/lang/Comparable<",
+        "TT;>;"
     }
 .end annotation
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract zza()I
 .end method
 
+.method public abstract zza(Lcom/google/android/gms/internal/measurement/zzji;Lcom/google/android/gms/internal/measurement/zzjj;)Lcom/google/android/gms/internal/measurement/zzji;
+.end method
 
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Iterator<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
+.method public abstract zza(Lcom/google/android/gms/internal/measurement/zzjo;Lcom/google/android/gms/internal/measurement/zzjo;)Lcom/google/android/gms/internal/measurement/zzjo;
+.end method
 
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhr;->zzb()Ljava/util/Iterator;
+.method public abstract zzb()Lcom/google/android/gms/internal/measurement/zzlg;
+.end method
 
-    move-result-object v0
+.method public abstract zzc()Lcom/google/android/gms/internal/measurement/zzln;
+.end method
 
-    return-object v0
+.method public abstract zzd()Z
+.end method
+
+.method public abstract zze()Z
 .end method

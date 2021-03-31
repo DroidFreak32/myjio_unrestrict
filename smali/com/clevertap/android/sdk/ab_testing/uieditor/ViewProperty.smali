@@ -6,7 +6,7 @@
 # instance fields
 .field public final accessor:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;
 
-.field public final mutator:Ljava/lang/String;
+.field private final mutator:Ljava/lang/String;
 
 .field public final name:Ljava/lang/String;
 
@@ -57,6 +57,11 @@
 # virtual methods
 .method public createMutator([Ljava/lang/Object;)Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewCaller;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/NoSuchMethodException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewProperty;->mutator:Ljava/lang/String;
@@ -84,6 +89,8 @@
 
 .method public toString()Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

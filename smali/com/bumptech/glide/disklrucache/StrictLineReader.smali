@@ -7,21 +7,21 @@
 
 
 # static fields
-.field public static final CR:B = 0xdt
+.field private static final CR:B = 0xdt
 
-.field public static final LF:B = 0xat
+.field private static final LF:B = 0xat
 
 
 # instance fields
-.field public buf:[B
+.field private buf:[B
 
-.field public final charset:Ljava/nio/charset/Charset;
+.field private final charset:Ljava/nio/charset/Charset;
 
-.field public end:I
+.field private end:I
 
-.field public final in:Ljava/io/InputStream;
+.field private final in:Ljava/io/InputStream;
 
-.field public pos:I
+.field private pos:I
 
 
 # direct methods
@@ -79,12 +79,10 @@
 
     throw p1
 
-    .line 9
     :cond_2
-    new-instance p1, Ljava/lang/NullPointerException;
+    const/4 p1, 0x0
 
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
+    .line 9
     throw p1
 .end method
 
@@ -110,6 +108,11 @@
 
 .method private fillBuf()V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->in:Ljava/io/InputStream;
@@ -149,6 +152,11 @@
 # virtual methods
 .method public close()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->in:Ljava/io/InputStream;
@@ -210,6 +218,11 @@
 
 .method public readLine()Ljava/lang/String;
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->in:Ljava/io/InputStream;
@@ -246,16 +259,14 @@
     .line 6
     iget-object v2, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->buf:[B
 
-    aget-byte v2, v2, v1
+    aget-byte v4, v2, v1
 
-    if-ne v2, v3, :cond_2
+    if-ne v4, v3, :cond_2
 
     .line 7
-    iget v2, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
+    iget v3, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
 
-    if-eq v1, v2, :cond_1
-
-    iget-object v2, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->buf:[B
+    if-eq v1, v3, :cond_1
 
     add-int/lit8 v3, v1, -0x1
 
@@ -278,9 +289,7 @@
 
     iget v5, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
 
-    iget v6, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
-
-    sub-int/2addr v3, v6
+    sub-int/2addr v3, v5
 
     iget-object v6, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->charset:Ljava/nio/charset/Charset;
 
@@ -327,9 +336,7 @@
 
     iget v5, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->end:I
 
-    iget v6, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
-
-    sub-int/2addr v5, v6
+    sub-int/2addr v5, v4
 
     invoke-virtual {v1, v2, v4, v5}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
@@ -352,25 +359,19 @@
     .line 16
     iget-object v4, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->buf:[B
 
-    aget-byte v4, v4, v2
+    aget-byte v5, v4, v2
 
-    if-ne v4, v3, :cond_6
+    if-ne v5, v3, :cond_6
 
     .line 17
     iget v3, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
 
     if-eq v2, v3, :cond_5
 
+    sub-int v5, v2, v3
+
     .line 18
-    iget-object v3, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->buf:[B
-
-    iget v4, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
-
-    iget v5, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
-
-    sub-int v5, v2, v5
-
-    invoke-virtual {v1, v3, v4, v5}, Ljava/io/ByteArrayOutputStream;->write([BII)V
+    invoke-virtual {v1, v4, v3, v5}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     :cond_5
     add-int/lit8 v2, v2, 0x1
@@ -379,7 +380,7 @@
     iput v2, p0, Lcom/bumptech/glide/disklrucache/StrictLineReader;->pos:I
 
     .line 20
-    invoke-virtual {v1}, Lcom/bumptech/glide/disklrucache/StrictLineReader$1;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toString()Ljava/lang/String;
 
     move-result-object v1
 

@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzeb:Lcom/google/android/gms/internal/maps/zzz;
+.field private final zzeb:Lcom/google/android/gms/internal/maps/zzz;
 
 
 # direct methods
@@ -95,6 +95,8 @@
 
 .method public final getEndCap()Lcom/google/android/gms/maps/model/Cap;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -177,6 +179,9 @@
 
 .method public final getPattern()Ljava/util/List;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -249,6 +254,8 @@
 
 .method public final getStartCap()Lcom/google/android/gms/maps/model/Cap;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -279,6 +286,8 @@
 
 .method public final getTag()Ljava/lang/Object;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -537,6 +546,10 @@
 
 .method public final setEndCap(Lcom/google/android/gms/maps/model/Cap;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/Cap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "endCap must not be null"
 
@@ -614,6 +627,10 @@
 
 .method public final setPattern(Ljava/util/List;)V
     .locals 1
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -678,6 +695,10 @@
 
 .method public final setStartCap(Lcom/google/android/gms/maps/model/Cap;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/Cap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "startCap must not be null"
 
@@ -707,6 +728,10 @@
 
 .method public final setTag(Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     :try_start_0

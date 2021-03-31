@@ -45,6 +45,12 @@
             "TUT;TUB;>;)TUB;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/gtm/zzps;Ljava/lang/Object;Lcom/google/android/gms/internal/gtm/zzqp;Lcom/google/android/gms/internal/gtm/zzqt;)V
@@ -56,6 +62,12 @@
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             "Lcom/google/android/gms/internal/gtm/zzqt<",
             "TT;>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -71,6 +83,12 @@
             "TT;>;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/gtm/zzum;Ljava/util/Map$Entry;)V
@@ -80,6 +98,12 @@
             "Lcom/google/android/gms/internal/gtm/zzum;",
             "Ljava/util/Map$Entry<",
             "**>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

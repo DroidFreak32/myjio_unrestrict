@@ -1,356 +1,194 @@
 .class public final Lcom/google/android/gms/internal/ads/zzjl;
-.super Ljava/lang/Object;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.super Lcom/google/android/gms/internal/ads/zzji;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public mExtras:Landroid/os/Bundle;
+.field public final zzany:Lcom/google/android/gms/internal/ads/zzjh;
 
-.field public zzaty:I
+.field public zzanz:J
 
-.field public zzatz:Ljava/lang/String;
+.field private final zzaoa:I
 
-.field public zzaua:J
-
-.field public zzaub:I
-
-.field public zzauc:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public zzaud:Z
-
-.field public zzaue:I
-
-.field public zzauf:Ljava/lang/String;
-
-.field public zzaug:Lcom/google/android/gms/internal/ads/zznb;
-
-.field public zzauh:Ljava/lang/String;
-
-.field public zzaui:Landroid/os/Bundle;
-
-.field public zzauj:Landroid/os/Bundle;
-
-.field public zzauk:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public zzaul:Ljava/lang/String;
-
-.field public zzaum:Ljava/lang/String;
-
-.field public zzaun:Z
-
-.field public zzauo:Lcom/google/android/gms/internal/ads/zzje;
-
-.field public zzht:Landroid/location/Location;
-
-.field public zzvz:Z
+.field public zzda:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method public constructor <init>(I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/16 v0, -0x1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzji;-><init>()V
 
     .line 2
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaua:J
+    new-instance p1, Lcom/google/android/gms/internal/ads/zzjh;
+
+    invoke-direct {p1}, Lcom/google/android/gms/internal/ads/zzjh;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzany:Lcom/google/android/gms/internal/ads/zzjh;
+
+    const/4 p1, 0x0
 
     .line 3
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->mExtras:Landroid/os/Bundle;
-
-    const/4 v0, -0x1
-
-    .line 4
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaub:I
-
-    .line 5
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauc:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    .line 6
-    iput-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaud:Z
-
-    .line 7
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaue:I
-
-    .line 8
-    iput-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzvz:Z
-
-    const/4 v2, 0x0
-
-    .line 9
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauf:Ljava/lang/String;
-
-    .line 10
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaug:Lcom/google/android/gms/internal/ads/zznb;
-
-    .line 11
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzht:Landroid/location/Location;
-
-    .line 12
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauh:Ljava/lang/String;
-
-    .line 13
-    new-instance v3, Landroid/os/Bundle;
-
-    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
-
-    iput-object v3, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaui:Landroid/os/Bundle;
-
-    .line 14
-    new-instance v3, Landroid/os/Bundle;
-
-    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
-
-    iput-object v3, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauj:Landroid/os/Bundle;
-
-    .line 15
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v3, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauk:Ljava/util/List;
-
-    .line 16
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaul:Ljava/lang/String;
-
-    .line 17
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaum:Ljava/lang/String;
-
-    .line 18
-    iput-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaun:Z
-
-    .line 19
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaty:I
-
-    .line 20
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzatz:Ljava/lang/String;
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaoa:I
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzjk;)V
-    .locals 2
+.method private final zzad(I)Ljava/nio/ByteBuffer;
+    .locals 4
 
-    .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    .line 22
-    iget-wide v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzath:J
+    if-nez v0, :cond_0
 
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaua:J
+    const/4 v0, 0x0
 
-    .line 23
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->extras:Landroid/os/Bundle;
+    goto :goto_0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->mExtras:Landroid/os/Bundle;
+    :cond_0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
-    .line 24
-    iget v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzati:I
+    move-result v0
 
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaub:I
+    .line 2
+    :goto_0
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    .line 25
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatj:Ljava/util/List;
+    const/16 v2, 0x2c
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauc:Ljava/util/List;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    .line 26
-    iget-boolean v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatk:Z
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaud:Z
+    const-string v2, "Buffer too small ("
 
-    .line 27
-    iget v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatl:I
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaue:I
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 28
-    iget-boolean v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatm:Z
+    const-string v0, " < "
 
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzvz:Z
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 29
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatn:Ljava/lang/String;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauf:Ljava/lang/String;
+    const-string p1, ")"
 
-    .line 30
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzato:Lcom/google/android/gms/internal/ads/zznb;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaug:Lcom/google/android/gms/internal/ads/zznb;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 31
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatp:Landroid/location/Location;
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzht:Landroid/location/Location;
+    invoke-direct {v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 32
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatq:Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauh:Ljava/lang/String;
-
-    .line 33
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatr:Landroid/os/Bundle;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaui:Landroid/os/Bundle;
-
-    .line 34
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzats:Landroid/os/Bundle;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauj:Landroid/os/Bundle;
-
-    .line 35
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatt:Ljava/util/List;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauk:Ljava/util/List;
-
-    .line 36
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatu:Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaul:Ljava/lang/String;
-
-    .line 37
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatv:Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaum:Ljava/lang/String;
-
-    .line 38
-    iget-boolean v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatw:Z
-
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaun:Z
-
-    .line 39
-    iget-object v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatx:Lcom/google/android/gms/internal/ads/zzje;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzauo:Lcom/google/android/gms/internal/ads/zzje;
-
-    .line 40
-    iget v0, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzaty:I
-
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzaty:I
-
-    .line 41
-    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzjk;->zzatz:Ljava/lang/String;
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzatz:Ljava/lang/String;
-
-    return-void
+    throw v1
 .end method
 
 
 # virtual methods
-.method public final zza(Landroid/location/Location;)Lcom/google/android/gms/internal/ads/zzjl;
-    .locals 0
-
-    const/4 p1, 0x0
+.method public final clear()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzht:Landroid/location/Location;
+    invoke-super {p0}, Lcom/google/android/gms/internal/ads/zzji;->clear()V
 
-    return-object p0
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+
+    :cond_0
+    return-void
 .end method
 
-.method public final zzir()Lcom/google/android/gms/internal/ads/zzjk;
-    .locals 25
+.method public final isEncrypted()Z
+    .locals 1
 
-    move-object/from16 v0, p0
+    const/high16 v0, 0x40000000    # 2.0f
 
     .line 1
-    new-instance v24, Lcom/google/android/gms/internal/ads/zzjk;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/ads/zzji;->zzab(I)Z
 
-    move-object/from16 v1, v24
+    move-result v0
 
-    iget-wide v3, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaua:J
+    return v0
+.end method
 
-    iget-object v5, v0, Lcom/google/android/gms/internal/ads/zzjl;->mExtras:Landroid/os/Bundle;
+.method public final zzac(I)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalStateException;
+        }
+    .end annotation
 
-    iget v6, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaub:I
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    iget-object v7, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzauc:Ljava/util/List;
+    if-nez v0, :cond_0
 
-    iget-boolean v8, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaud:Z
+    .line 2
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzjl;->zzad(I)Ljava/nio/ByteBuffer;
 
-    iget v9, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaue:I
+    move-result-object p1
 
-    iget-boolean v10, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzvz:Z
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    iget-object v11, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzauf:Ljava/lang/String;
+    return-void
 
-    iget-object v12, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaug:Lcom/google/android/gms/internal/ads/zznb;
+    .line 3
+    :cond_0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
-    iget-object v13, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzht:Landroid/location/Location;
+    move-result v0
 
-    iget-object v14, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzauh:Ljava/lang/String;
+    .line 4
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    iget-object v15, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaui:Landroid/os/Bundle;
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzauj:Landroid/os/Bundle;
+    move-result v1
 
-    move-object/from16 v16, v2
+    add-int/2addr p1, v1
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzauk:Ljava/util/List;
+    if-lt v0, p1, :cond_1
 
-    move-object/from16 v17, v2
+    return-void
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaul:Ljava/lang/String;
+    .line 5
+    :cond_1
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzjl;->zzad(I)Ljava/nio/ByteBuffer;
 
-    move-object/from16 v18, v2
+    move-result-object p1
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaum:Ljava/lang/String;
+    if-lez v1, :cond_2
 
-    move-object/from16 v19, v2
+    .line 6
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    iget-boolean v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaun:Z
+    const/4 v2, 0x0
 
-    move/from16 v20, v2
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzauo:Lcom/google/android/gms/internal/ads/zzje;
+    .line 7
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    move-object/from16 v21, v2
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    iget v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzaty:I
+    .line 8
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    move/from16 v22, v2
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/ads/zzjl;->zzatz:Ljava/lang/String;
+    .line 9
+    :cond_2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzjl;->zzda:Ljava/nio/ByteBuffer;
 
-    move-object/from16 v23, v2
-
-    const/16 v2, 0x8
-
-    invoke-direct/range {v1 .. v23}, Lcom/google/android/gms/internal/ads/zzjk;-><init>(IJLandroid/os/Bundle;ILjava/util/List;ZIZLjava/lang/String;Lcom/google/android/gms/internal/ads/zznb;Landroid/location/Location;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ZLcom/google/android/gms/internal/ads/zzje;ILjava/lang/String;)V
-
-    return-object v24
+    return-void
 .end method

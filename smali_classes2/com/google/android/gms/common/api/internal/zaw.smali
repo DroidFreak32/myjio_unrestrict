@@ -1,128 +1,67 @@
 .class public final Lcom/google/android/gms/common/api/internal/zaw;
-.super Lcom/google/android/gms/common/api/GoogleApi;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+# interfaces
+.implements Lcom/google/android/gms/tasks/OnCompleteListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<O::",
-        "Lcom/google/android/gms/common/api/Api$ApiOptions;",
-        ">",
-        "Lcom/google/android/gms/common/api/GoogleApi<",
-        "TO;>;"
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/tasks/OnCompleteListener<",
+        "TTResult;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public final zace:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-            "+",
-            "Lcom/google/android/gms/signin/zad;",
-            "Lcom/google/android/gms/signin/SignInOptions;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic zaa:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-.field public final zaer:Lcom/google/android/gms/common/api/Api$Client;
-
-.field public final zaes:Lcom/google/android/gms/common/api/internal/zaq;
-
-.field public final zaet:Lcom/google/android/gms/common/internal/ClientSettings;
+.field private final synthetic zab:Lcom/google/android/gms/common/api/internal/zav;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/common/api/Api;Landroid/os/Looper;Lcom/google/android/gms/common/api/Api$Client;Lcom/google/android/gms/common/api/internal/zaq;Lcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zav;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Lcom/google/android/gms/common/api/Api<",
-            "TO;>;",
-            "Landroid/os/Looper;",
-            "Lcom/google/android/gms/common/api/Api$Client;",
-            "Lcom/google/android/gms/common/api/internal/zaq;",
-            "Lcom/google/android/gms/common/internal/ClientSettings;",
-            "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-            "+",
-            "Lcom/google/android/gms/signin/zad;",
-            "Lcom/google/android/gms/signin/SignInOptions;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/gms/common/api/GoogleApi;-><init>(Landroid/content/Context;Lcom/google/android/gms/common/api/Api;Landroid/os/Looper;)V
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaw;->zab:Lcom/google/android/gms/common/api/internal/zav;
 
-    .line 2
-    iput-object p4, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaer:Lcom/google/android/gms/common/api/Api$Client;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaa:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    .line 3
-    iput-object p5, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaes:Lcom/google/android/gms/common/api/internal/zaq;
-
-    .line 4
-    iput-object p6, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaet:Lcom/google/android/gms/common/internal/ClientSettings;
-
-    .line 5
-    iput-object p7, p0, Lcom/google/android/gms/common/api/internal/zaw;->zace:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    .line 6
-    iget-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zabm:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
-
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa(Lcom/google/android/gms/common/api/GoogleApi;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zaa(Landroid/os/Looper;Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)Lcom/google/android/gms/common/api/Api$Client;
-    .locals 0
+.method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
+    .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/Task;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Landroid/os/Looper;",
-            "Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa<",
-            "TO;>;)",
-            "Lcom/google/android/gms/common/api/Api$Client;"
+            "Lcom/google/android/gms/tasks/Task<",
+            "TTResult;>;)V"
         }
     .end annotation
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaes:Lcom/google/android/gms/common/api/internal/zaq;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zaw;->zab:Lcom/google/android/gms/common/api/internal/zav;
 
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/common/api/internal/zaq;->zaa(Lcom/google/android/gms/common/api/internal/zar;)V
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/zav;->zab(Lcom/google/android/gms/common/api/internal/zav;)Ljava/util/Map;
 
-    .line 2
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaer:Lcom/google/android/gms/common/api/Api$Client;
+    move-result-object p1
 
-    return-object p1
-.end method
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaa:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-.method public final zaa(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/zace;
-    .locals 3
+    invoke-interface {p1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
-    new-instance v0, Lcom/google/android/gms/common/api/internal/zace;
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaet:Lcom/google/android/gms/common/internal/ClientSettings;
-
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/zaw;->zace:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-
-    invoke-direct {v0, p1, p2, v1, v2}, Lcom/google/android/gms/common/api/internal/zace;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;)V
-
-    return-object v0
-.end method
-
-.method public final zaab()Lcom/google/android/gms/common/api/Api$Client;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaw;->zaer:Lcom/google/android/gms/common/api/Api$Client;
-
-    return-object v0
+    return-void
 .end method

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+.field private static final synthetic $VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
 .field public static final enum MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
@@ -23,49 +23,45 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
-    const/4 v1, 0x0
+    const-string v1, "MATCHED"
 
-    const-string v2, "MATCHED"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     .line 2
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     const-string v3, "NOT_MATCHED"
 
-    invoke-direct {v0, v3, v2}, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->NOT_MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+    invoke-direct {v1, v3, v4}, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->NOT_MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
-    new-array v0, v0, [Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->NOT_MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->$VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+    sput-object v3, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->$VALUES:[Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

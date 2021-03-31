@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public wifiScanHolderList:Ljava/util/List;
+.field private wifiScanHolderList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public a()Ljava/util/List;
+.method public getSdkWifiScanHolderList()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -49,6 +49,23 @@
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanList;->wifiScanHolderList:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public setSdkWifiScanHolderList(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/inn/passivesdk/holders/SdkWifiScanHolder;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanList;->wifiScanHolderList:Ljava/util/List;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

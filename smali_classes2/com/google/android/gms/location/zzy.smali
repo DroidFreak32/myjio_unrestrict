@@ -1,76 +1,73 @@
-.class public abstract Lcom/google/android/gms/location/zzy;
-.super Lcom/google/android/gms/internal/location/zzb;
+.class public final synthetic Lcom/google/android/gms/location/zzy;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Lcom/google/android/gms/location/zzx;
+.implements Lcom/google/android/gms/tasks/Continuation;
+
+
+# instance fields
+.field private final zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.location.ILocationListener"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/location/zzb;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/location/zzy;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
     return-void
 .end method
 
-.method public static zzc(Landroid/os/IBinder;)Lcom/google/android/gms/location/zzx;
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.location.ILocationListener"
-
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lcom/google/android/gms/location/zzx;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lcom/google/android/gms/location/zzx;
-
-    return-object v0
-
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/location/zzz;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/location/zzz;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
+.method public final then(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;
+    .locals 2
 
-    const/4 p3, 0x1
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/zzy;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    if-ne p1, p3, :cond_0
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->isSuccessful()Z
 
-    sget-object p1, Landroid/location/Location;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result v1
 
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/location/zzc;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    if-eqz v1, :cond_0
+
+    .line 3
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getResult()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/location/Location;
 
-    invoke-interface {p0, p1}, Lcom/google/android/gms/location/zzx;->onLocationChanged(Landroid/location/Location;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetResult(Ljava/lang/Object;)Z
 
-    return p3
+    goto :goto_0
 
+    .line 4
     :cond_0
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getException()Ljava/lang/Exception;
 
-    return p1
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    .line 5
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getException()Ljava/lang/Exception;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setException(Ljava/lang/Exception;)V
+
+    .line 6
+    :cond_1
+    :goto_0
+    invoke-virtual {v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->getTask()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p1
+
+    return-object p1
 .end method

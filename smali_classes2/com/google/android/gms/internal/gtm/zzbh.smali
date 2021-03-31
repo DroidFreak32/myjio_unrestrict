@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public volatile zzut:Ljava/lang/String;
+.field private volatile zzut:Ljava/lang/String;
 
-.field public zzyh:Ljava/util/concurrent/Future;
+.field private zzyh:Ljava/util/concurrent/Future;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/Future<",
@@ -361,8 +361,6 @@
     :catchall_0
     move-exception p1
 
-    move-object v3, v2
-
     goto :goto_5
 
     :catch_5
@@ -405,12 +403,14 @@
     :catchall_1
     move-exception p1
 
+    move-object v2, v3
+
     :goto_5
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     .line 24
     :try_start_9
-    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_7
 
@@ -557,8 +557,6 @@
 
     .line 7
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzbh;->zzyh:Ljava/util/concurrent/Future;
-
     invoke-interface {v0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
 
     move-result-object v0

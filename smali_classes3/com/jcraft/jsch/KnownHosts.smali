@@ -15,21 +15,21 @@
 
 
 # static fields
-.field public static final _known_hosts:Ljava/lang/String; = "known_hosts"
+.field private static final _known_hosts:Ljava/lang/String; = "known_hosts"
 
-.field public static final cr:[B
+.field private static final cr:[B
 
-.field public static final space:[B
+.field private static final space:[B
 
 
 # instance fields
-.field public hmacsha1:Lcom/jcraft/jsch/MAC;
+.field private hmacsha1:Lcom/jcraft/jsch/MAC;
 
-.field public jsch:Lcom/jcraft/jsch/JSch;
+.field private jsch:Lcom/jcraft/jsch/JSch;
 
-.field public known_hosts:Ljava/lang/String;
+.field private known_hosts:Ljava/lang/String;
 
-.field public pool:Ljava/util/Vector;
+.field private pool:Ljava/util/Vector;
 
 
 # direct methods
@@ -107,6 +107,11 @@
 
 .method private addInvalidLine(Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/HostKey;
@@ -215,18 +220,18 @@
 
     if-ne v0, v1, :cond_3
 
-    const/4 p2, 0x0
+    const/4 v1, 0x0
 
     goto :goto_2
 
     :cond_3
     sub-int/2addr v1, v0
 
-    add-int/lit8 p2, v1, -0x1
+    add-int/lit8 v1, v1, -0x1
 
     .line 7
     :goto_2
-    invoke-virtual {p1, v2, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
@@ -594,7 +599,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "sync known_hosts: "
+    const-string v1, "sync known_hosts: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -760,6 +765,11 @@
 
 .method public createHashedHostKey(Ljava/lang/String;[B)Lcom/jcraft/jsch/HostKey;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;
@@ -774,6 +784,11 @@
 
 .method public dump(Ljava/io/OutputStream;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -884,13 +899,11 @@
     .line 16
     invoke-static {v5}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {p1, v3}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {p1, v4}, Ljava/io/OutputStream;->write([B)V
 
     .line 17
-    sget-object v3, Lcom/jcraft/jsch/KnownHosts;->space:[B
-
     invoke-virtual {p1, v3}, Ljava/io/OutputStream;->write([B)V
 
     .line 18
@@ -907,9 +920,7 @@
     if-eqz v6, :cond_2
 
     .line 19
-    sget-object v2, Lcom/jcraft/jsch/KnownHosts;->space:[B
-
-    invoke-virtual {p1, v2}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {p1, v3}, Ljava/io/OutputStream;->write([B)V
 
     .line 20
     invoke-static {v6}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
@@ -1056,28 +1067,28 @@
 
     move-result v3
 
-    new-array v3, v3, [Lcom/jcraft/jsch/HostKey;
+    new-array v4, v3, [Lcom/jcraft/jsch/HostKey;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 10
     :goto_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v5
+    move-result v6
 
-    if-ge v4, v5, :cond_4
+    if-ge v5, v6, :cond_4
 
     .line 11
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Lcom/jcraft/jsch/HostKey;
+    check-cast v6, Lcom/jcraft/jsch/HostKey;
 
-    aput-object v5, v3, v4
+    aput-object v6, v4, v5
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
@@ -1099,9 +1110,9 @@
 
     move-result v1
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    if-le v1, v4, :cond_5
+    if-le v1, v5, :cond_5
 
     const-string v1, "]:"
 
@@ -1110,7 +1121,7 @@
 
     move-result v1
 
-    invoke-virtual {p1, v4, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v5, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1124,36 +1135,27 @@
     if-lez p2, :cond_5
 
     .line 15
-    array-length p2, v3
+    array-length p2, p1
 
-    array-length v1, p1
-
-    add-int/2addr p2, v1
+    add-int/2addr p2, v3
 
     new-array p2, p2, [Lcom/jcraft/jsch/HostKey;
 
     .line 16
-    array-length v1, v3
-
-    invoke-static {v3, v2, p2, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v4, v2, p2, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 17
-    array-length v1, v3
+    array-length v1, p1
 
-    array-length v3, p1
+    invoke-static {p1, v2, p2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {p1, v2, p2, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    goto :goto_3
-
-    :cond_5
-    move-object p2, v3
+    move-object v4, p2
 
     .line 18
-    :goto_3
+    :cond_5
     monitor-exit v0
 
-    return-object p2
+    return-object v4
 
     :catchall_0
     move-exception p1
@@ -1344,6 +1346,11 @@
 
 .method public setKnownHosts(Ljava/io/InputStream;)V
     .locals 17
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     move-object/from16 v8, p0
 
@@ -1467,7 +1474,7 @@
 
     invoke-direct {v8, v1}, Lcom/jcraft/jsch/KnownHosts;->addInvalidLine(Ljava/lang/String;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     :cond_5
     :goto_4
@@ -1485,7 +1492,7 @@
 
     invoke-direct {v8, v1}, Lcom/jcraft/jsch/KnownHosts;->addInvalidLine(Ljava/lang/String;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     .line 14
     :cond_7
@@ -1534,7 +1541,7 @@
 
     if-nez v13, :cond_b
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     :cond_b
     :goto_7
@@ -1562,7 +1569,7 @@
 
     const/16 v15, 0x40
 
-    if-ne v14, v15, :cond_15
+    if-ne v14, v15, :cond_14
 
     .line 21
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->setLength(I)V
@@ -1601,7 +1608,7 @@
 
     move-result-object v13
 
-    if-ge v3, v1, :cond_14
+    if-ge v3, v1, :cond_13
 
     .line 25
     invoke-virtual {v13}, Ljava/lang/String;->length()I
@@ -1614,31 +1621,22 @@
 
     :cond_11
     :goto_a
-    if-ge v3, v1, :cond_13
+    if-ge v3, v1, :cond_15
 
     .line 26
     aget-byte v14, v9, v3
 
     if-eq v14, v11, :cond_12
 
-    if-ne v14, v10, :cond_13
+    if-ne v14, v10, :cond_15
 
     :cond_12
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_a
 
-    :cond_13
-    move-object/from16 v16, v13
-
-    move-object v13, v12
-
-    move-object/from16 v12, v16
-
-    goto :goto_c
-
     .line 27
-    :cond_14
+    :cond_13
     :goto_b
     invoke-static {v9, v2, v1}, Lcom/jcraft/jsch/Util;->byte2str([BII)Ljava/lang/String;
 
@@ -1646,26 +1644,32 @@
 
     invoke-direct {v8, v1}, Lcom/jcraft/jsch/KnownHosts;->addInvalidLine(Ljava/lang/String;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
+
+    :cond_14
+    move-object/from16 v16, v13
+
+    move-object v13, v12
+
+    move-object/from16 v12, v16
 
     .line 28
     :cond_15
-    :goto_c
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->setLength(I)V
 
-    :goto_d
-    if-ge v3, v1, :cond_17
+    :goto_c
+    if-ge v3, v1, :cond_18
 
     add-int/lit8 v14, v3, 0x1
 
     .line 29
     aget-byte v3, v9, v3
 
-    if-eq v3, v11, :cond_18
+    if-eq v3, v11, :cond_17
 
     if-ne v3, v10, :cond_16
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_16
     int-to-char v3, v3
@@ -1675,55 +1679,55 @@
 
     move v3, v14
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_17
-    move v14, v3
+    :goto_d
+    move v3, v14
 
     .line 31
     :cond_18
-    :goto_e
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v14
 
-    const-string/jumbo v15, "ssh-dss"
+    const-string v15, "ssh-dss"
 
-    invoke-virtual {v3, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v14
 
-    if-eqz v3, :cond_19
+    if-eqz v14, :cond_19
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     const/4 v5, 0x1
 
-    goto :goto_f
+    goto :goto_e
 
     .line 32
     :cond_19
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v14
 
-    const-string/jumbo v15, "ssh-rsa"
+    const-string v15, "ssh-rsa"
 
-    invoke-virtual {v3, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v14
 
-    if-eqz v3, :cond_1a
+    if-eqz v14, :cond_1a
 
     const/4 v5, 0x2
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_1a
-    move v14, v1
+    move v3, v1
 
-    :goto_f
-    if-lt v14, v1, :cond_1b
+    :goto_e
+    if-lt v3, v1, :cond_1b
 
     .line 33
     invoke-static {v9, v2, v1}, Lcom/jcraft/jsch/Util;->byte2str([BII)Ljava/lang/String;
@@ -1732,79 +1736,79 @@
 
     invoke-direct {v8, v1}, Lcom/jcraft/jsch/KnownHosts;->addInvalidLine(Ljava/lang/String;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_19
 
     :cond_1b
-    :goto_10
-    if-ge v14, v1, :cond_1d
+    :goto_f
+    if-ge v3, v1, :cond_1d
 
     .line 34
-    aget-byte v3, v9, v14
+    aget-byte v4, v9, v3
 
-    if-eq v3, v11, :cond_1c
+    if-eq v4, v11, :cond_1c
 
-    if-ne v3, v10, :cond_1d
+    if-ne v4, v10, :cond_1d
 
     :cond_1c
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_f
 
     .line 35
     :cond_1d
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->setLength(I)V
 
-    :goto_11
-    if-ge v14, v1, :cond_22
+    :goto_10
+    if-ge v3, v1, :cond_22
 
-    add-int/lit8 v3, v14, 0x1
+    add-int/lit8 v4, v3, 0x1
 
     .line 36
-    aget-byte v4, v9, v14
+    aget-byte v3, v9, v3
 
-    if-ne v4, v7, :cond_1e
-
-    goto :goto_12
-
-    :cond_1e
-    if-ne v4, v6, :cond_1f
-
-    goto :goto_13
-
-    :cond_1f
-    if-eq v4, v11, :cond_21
-
-    if-ne v4, v10, :cond_20
-
-    goto :goto_13
-
-    :cond_20
-    int-to-char v4, v4
-
-    .line 37
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    :goto_12
-    move v14, v3
+    if-ne v3, v7, :cond_1e
 
     goto :goto_11
 
+    :cond_1e
+    if-ne v3, v6, :cond_1f
+
+    goto :goto_12
+
+    :cond_1f
+    if-eq v3, v11, :cond_21
+
+    if-ne v3, v10, :cond_20
+
+    goto :goto_12
+
+    :cond_20
+    int-to-char v3, v3
+
+    .line 37
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    :goto_11
+    move v3, v4
+
+    goto :goto_10
+
     :cond_21
-    :goto_13
-    move v14, v3
+    :goto_12
+    move v3, v4
 
     .line 38
     :cond_22
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 39
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v14
 
-    if-nez v4, :cond_23
+    if-nez v14, :cond_23
 
     .line 40
     invoke-static {v9, v2, v1}, Lcom/jcraft/jsch/Util;->byte2str([BII)Ljava/lang/String;
@@ -1813,83 +1817,83 @@
 
     invoke-direct {v8, v1}, Lcom/jcraft/jsch/KnownHosts;->addInvalidLine(Ljava/lang/String;)V
 
-    goto :goto_1a
+    goto :goto_19
 
     :cond_23
-    :goto_14
-    if-ge v14, v1, :cond_25
+    :goto_13
+    if-ge v3, v1, :cond_25
 
     .line 41
-    aget-byte v4, v9, v14
+    aget-byte v14, v9, v3
 
-    if-eq v4, v11, :cond_24
+    if-eq v14, v11, :cond_24
 
-    if-ne v4, v10, :cond_25
+    if-ne v14, v10, :cond_25
 
     :cond_24
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_25
-    const/4 v4, 0x0
+    const/4 v10, 0x0
 
-    if-ge v14, v1, :cond_29
+    if-ge v3, v1, :cond_29
 
     .line 42
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->setLength(I)V
 
-    :goto_15
-    if-ge v14, v1, :cond_28
+    :goto_14
+    if-ge v3, v1, :cond_28
 
-    add-int/lit8 v4, v14, 0x1
+    add-int/lit8 v10, v3, 0x1
 
     .line 43
-    aget-byte v10, v9, v14
+    aget-byte v3, v9, v3
 
-    if-ne v10, v7, :cond_26
-
-    goto :goto_16
-
-    :cond_26
-    if-ne v10, v6, :cond_27
-
-    goto :goto_17
-
-    :cond_27
-    int-to-char v10, v10
-
-    .line 44
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    :goto_16
-    move v14, v4
+    if-ne v3, v7, :cond_26
 
     goto :goto_15
 
+    :cond_26
+    if-ne v3, v6, :cond_27
+
+    goto :goto_16
+
+    :cond_27
+    int-to-char v3, v3
+
+    .line 44
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    :goto_15
+    move v3, v10
+
+    goto :goto_14
+
     .line 45
     :cond_28
-    :goto_17
+    :goto_16
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     move-object v7, v1
 
-    goto :goto_18
+    goto :goto_17
 
     :cond_29
-    move-object v7, v4
+    move-object v7, v10
 
     .line 46
-    :goto_18
+    :goto_17
     new-instance v10, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;
 
-    invoke-static {v3}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
+    invoke-static {v4}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v3
 
@@ -1901,9 +1905,9 @@
 
     move-object/from16 v2, p0
 
-    move-object v3, v13
+    move-object v3, v12
 
-    move-object v4, v12
+    move-object v4, v13
 
     invoke-direct/range {v1 .. v7}, Lcom/jcraft/jsch/KnownHosts$HashedHostKey;-><init>(Lcom/jcraft/jsch/KnownHosts;Ljava/lang/String;Ljava/lang/String;I[BLjava/lang/String;)V
 
@@ -1912,18 +1916,18 @@
 
     invoke-virtual {v1, v10}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 48
     :cond_2a
-    :goto_19
+    :goto_18
     invoke-static {v9, v2, v1}, Lcom/jcraft/jsch/Util;->byte2str([BII)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v8, v1}, Lcom/jcraft/jsch/KnownHosts;->addInvalidLine(Ljava/lang/String;)V
 
-    :goto_1a
+    :goto_19
     move-object v1, v9
 
     goto/16 :goto_0
@@ -1961,7 +1965,7 @@
     :catchall_0
     move-exception v0
 
-    goto :goto_1b
+    goto :goto_1a
 
     :catch_1
     move-exception v0
@@ -1992,7 +1996,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 55
-    :goto_1b
+    :goto_1a
     :try_start_4
     invoke-virtual/range {p1 .. p1}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -2019,6 +2023,11 @@
 
 .method public setKnownHosts(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -2057,6 +2066,11 @@
 
 .method public sync()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/KnownHosts;->known_hosts:Ljava/lang/String;
@@ -2072,6 +2086,11 @@
 
 .method public declared-synchronized sync(Ljava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 

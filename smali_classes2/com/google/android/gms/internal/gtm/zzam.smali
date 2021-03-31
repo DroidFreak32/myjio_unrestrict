@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzwc:Lcom/google/android/gms/internal/gtm/zzap;
+.field private final zzwc:Lcom/google/android/gms/internal/gtm/zzap;
 
 
 # direct methods
@@ -119,7 +119,7 @@
     return-void
 .end method
 
-.method public static zzb(Ljava/lang/Object;)Ljava/lang/String;
+.method private static zzb(Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
 
     if-nez p0, :cond_0
@@ -258,10 +258,13 @@
     .line 14
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v0, v2
+    goto :goto_0
+
+    :cond_3
+    move-object v2, v0
 
     .line 15
-    :cond_3
+    :goto_0
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -269,7 +272,7 @@
     if-nez p0, :cond_4
 
     .line 16
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 17
     invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

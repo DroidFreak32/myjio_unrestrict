@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->flushQueueAsync(Landroid/content/Context;Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->removeMultiValuesForKey(Ljava/lang/String;Ljava/util/ArrayList;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,21 +20,21 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public final synthetic val$context:Landroid/content/Context;
+.field public final synthetic val$key:Ljava/lang/String;
 
-.field public final synthetic val$eventGroup:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+.field public final synthetic val$values:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;Landroid/content/Context;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Ljava/util/ArrayList;Ljava/lang/String;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$eventGroup:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$values:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$context:Landroid/content/Context;
+    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$key:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,61 +44,18 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$eventGroup:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
-
-    sget-object v1, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->PUSH_NOTIFICATION_VIEWED:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
-
-    if-ne v0, v1, :cond_0
-
-    .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$values:Ljava/util/ArrayList;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$key:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
+    const-string v3, "$remove"
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$900(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "Pushing Notification Viewed event onto queue flush sync"
-
-    invoke-virtual {v0, v1, v2}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$900(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "Pushing event onto queue flush sync"
-
-    invoke-virtual {v0, v1, v2}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4
-    :goto_0
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$context:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$24;->val$eventGroup:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
-
-    invoke-static {v0, v1, v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$3300(Lcom/clevertap/android/sdk/CleverTapAPI;Landroid/content/Context;Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$900(Lcom/clevertap/android/sdk/CleverTapAPI;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

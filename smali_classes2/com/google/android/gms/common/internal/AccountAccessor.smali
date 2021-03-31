@@ -1,10 +1,18 @@
 .class public Lcom/google/android/gms/common/internal/AccountAccessor;
 .super Lcom/google/android/gms/common/internal/IAccountAccessor$Stub;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # direct methods
 .method public static getAccountBinderSafe(Lcom/google/android/gms/common/internal/IAccountAccessor;)Landroid/accounts/Account;
     .locals 2
+    .param p0    # Lcom/google/android/gms/common/internal/IAccountAccessor;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -17,7 +25,7 @@
 
     .line 2
     :try_start_0
-    invoke-interface {p0}, Lcom/google/android/gms/common/internal/IAccountAccessor;->getAccount()Landroid/accounts/Account;
+    invoke-interface {p0}, Lcom/google/android/gms/common/internal/IAccountAccessor;->zza()Landroid/accounts/Account;
 
     move-result-object p0
     :try_end_0
@@ -35,9 +43,10 @@
     .line 4
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 5
     throw p0
 
-    .line 5
+    .line 6
     :catch_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -52,6 +61,12 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     new-instance p1, Ljava/lang/NoSuchMethodError;
@@ -61,8 +76,10 @@
     throw p1
 .end method
 
-.method public final getAccount()Landroid/accounts/Account;
+.method public final zza()Landroid/accounts/Account;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/NoSuchMethodError;

@@ -34,8 +34,6 @@
     sput-object v0, Lcom/clevertap/android/sdk/InAppNotificationActivity$6;->$SwitchMap$com$clevertap$android$sdk$CTInAppType:[I
 
     :try_start_0
-    sget-object v0, Lcom/clevertap/android/sdk/InAppNotificationActivity$6;->$SwitchMap$com$clevertap$android$sdk$CTInAppType:[I
-
     sget-object v1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeCoverHTML:Lcom/clevertap/android/sdk/CTInAppType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

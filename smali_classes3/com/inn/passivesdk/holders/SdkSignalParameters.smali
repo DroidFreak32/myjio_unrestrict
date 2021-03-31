@@ -7,45 +7,45 @@
 
 
 # instance fields
-.field public cqi:Ljava/lang/Integer;
+.field private cqi:Ljava/lang/Integer;
 
-.field public ecIo:Ljava/lang/Integer;
+.field private ecIo:Ljava/lang/Integer;
 
-.field public ecNo:Ljava/lang/Integer;
+.field private ecNo:Ljava/lang/Integer;
 
-.field public rscp:Ljava/lang/Integer;
+.field private rscp:Ljava/lang/Integer;
 
-.field public rsrp:Ljava/lang/Integer;
+.field private rsrp:Ljava/lang/Integer;
 
-.field public rsrq:Ljava/lang/Integer;
+.field private rsrq:Ljava/lang/Integer;
 
-.field public rssi:Ljava/lang/Integer;
+.field private rssi:Ljava/lang/Integer;
 
-.field public rxLevel:Ljava/lang/Integer;
+.field private rxLevel:Ljava/lang/Integer;
 
-.field public rxquality:Ljava/lang/Integer;
+.field private rxquality:Ljava/lang/Integer;
 
-.field public sinr:Ljava/lang/Double;
+.field private sinr:Ljava/lang/Double;
 
-.field public voiceCqi:Ljava/lang/Integer;
+.field private voiceCqi:Ljava/lang/Integer;
 
-.field public voiceEcIo:Ljava/lang/Integer;
+.field private voiceEcIo:Ljava/lang/Integer;
 
-.field public voiceEcNo:Ljava/lang/Integer;
+.field private voiceEcNo:Ljava/lang/Integer;
 
-.field public voiceRscp:Ljava/lang/Integer;
+.field private voiceRscp:Ljava/lang/Integer;
 
-.field public voiceRsrp:Ljava/lang/Integer;
+.field private voiceRsrp:Ljava/lang/Integer;
 
-.field public voiceRsrq:Ljava/lang/Integer;
+.field private voiceRsrq:Ljava/lang/Integer;
 
-.field public voiceRssi:Ljava/lang/Integer;
+.field private voiceRssi:Ljava/lang/Integer;
 
-.field public voiceRxLevel:Ljava/lang/Integer;
+.field private voiceRxLevel:Ljava/lang/Integer;
 
-.field public voiceRxquality:Ljava/lang/Integer;
+.field private voiceRxquality:Ljava/lang/Integer;
 
-.field public voiceSinr:Ljava/lang/Double;
+.field private voiceSinr:Ljava/lang/Double;
 
 
 # direct methods
@@ -60,80 +60,13 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecNo:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public a(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->sinr:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->cqi:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rscp:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public b(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceSinr:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecIo:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rsrp:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public c(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecNo:Ljava/lang/Integer;
-
-    return-void
-.end method
-
 .method public clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
@@ -143,7 +76,52 @@
     return-object v0
 .end method
 
-.method public d()Ljava/lang/Integer;
+.method public getCqi()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->cqi:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getEcIo()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecIo:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getEcNo()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecNo:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRscp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rscp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRsrp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rsrp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRsrq()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -152,34 +130,16 @@
     return-object v0
 .end method
 
-.method public d(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rscp:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public e()Ljava/lang/Integer;
+.method public getRssi()Ljava/lang/Integer;
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rssi:Ljava/lang/Integer;
 
     return-object v0
 .end method
 
-.method public e(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rsrp:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public f()Ljava/lang/Integer;
+.method public getRxLevel()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -188,16 +148,7 @@
     return-object v0
 .end method
 
-.method public f(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rsrq:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public g()Ljava/lang/Integer;
+.method public getRxquality()Ljava/lang/Integer;
     .locals 1
 
     .line 1
@@ -206,25 +157,169 @@
     return-object v0
 .end method
 
-.method public g(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rssi:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public h()Ljava/lang/Double;
+.method public getSinr()Ljava/lang/Double;
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->sinr:Ljava/lang/Double;
 
     return-object v0
 .end method
 
-.method public h(Ljava/lang/Integer;)V
+.method public getVoiceCqi()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceCqi:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceEcIo()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceEcIo:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceEcNo()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceEcNo:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceRscp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRscp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceRsrp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRsrp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceRsrq()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRsrq:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceRssi()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRssi:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceRxLevel()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRxLevel:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceRxquality()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRxquality:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVoiceSinr()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceSinr:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public setCqi(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->cqi:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setEcIo(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecIo:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setEcNo(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->ecNo:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRscp(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rscp:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRsrp(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rsrp:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRsrq(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rsrq:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRssi(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->rssi:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setRxLevel(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -233,16 +328,7 @@
     return-void
 .end method
 
-.method public i()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceEcNo:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public i(Ljava/lang/Integer;)V
+.method public setRxquality(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -251,16 +337,16 @@
     return-void
 .end method
 
-.method public j()Ljava/lang/Integer;
-    .locals 1
+.method public setSinr(Ljava/lang/Double;)V
+    .locals 0
 
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRscp:Ljava/lang/Integer;
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->sinr:Ljava/lang/Double;
 
-    return-object v0
+    return-void
 .end method
 
-.method public j(Ljava/lang/Integer;)V
+.method public setVoiceCqi(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -269,16 +355,7 @@
     return-void
 .end method
 
-.method public k()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRsrp:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public k(Ljava/lang/Integer;)V
+.method public setVoiceEcIo(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -287,16 +364,7 @@
     return-void
 .end method
 
-.method public l()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRsrq:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public l(Ljava/lang/Integer;)V
+.method public setVoiceEcNo(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -305,16 +373,7 @@
     return-void
 .end method
 
-.method public m()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRssi:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public m(Ljava/lang/Integer;)V
+.method public setVoiceRscp(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -323,16 +382,7 @@
     return-void
 .end method
 
-.method public n()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRxLevel:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public n(Ljava/lang/Integer;)V
+.method public setVoiceRsrp(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -341,16 +391,7 @@
     return-void
 .end method
 
-.method public o()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRxquality:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public o(Ljava/lang/Integer;)V
+.method public setVoiceRsrq(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -359,16 +400,7 @@
     return-void
 .end method
 
-.method public p()Ljava/lang/Double;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceSinr:Ljava/lang/Double;
-
-    return-object v0
-.end method
-
-.method public p(Ljava/lang/Integer;)V
+.method public setVoiceRssi(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -377,7 +409,7 @@
     return-void
 .end method
 
-.method public q(Ljava/lang/Integer;)V
+.method public setVoiceRxLevel(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -386,11 +418,20 @@
     return-void
 .end method
 
-.method public r(Ljava/lang/Integer;)V
+.method public setVoiceRxquality(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceRxquality:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setVoiceSinr(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkSignalParameters;->voiceSinr:Ljava/lang/Double;
 
     return-void
 .end method

@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -12,8 +12,12 @@
     return-void
 .end method
 
-.method public static zza(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/Parcelable;
+.method private static zza(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/Parcelable;
     .locals 3
+    .param p0    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -72,6 +76,14 @@
 
 .method public static zza(Landroid/os/Bundle;Landroid/os/Bundle;)V
     .locals 2
+    .param p0    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p0, :cond_5
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public h:Ljava/util/HashMap;
+.field private h:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -23,7 +23,7 @@
 
 .field public isDis:Z
 
-.field public mCustomAnimationInterface:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
+.field private mCustomAnimationInterface:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
 
 
 # direct methods
@@ -103,9 +103,7 @@
     .line 4
     :cond_1
     :goto_0
-    iget-object p2, p0, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->mCustomAnimationInterface:Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;
-
-    invoke-interface {p2, p1}, Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;->onCurrentItemDisappear(Landroid/view/View;)V
+    invoke-interface {v0, p1}, Lcom/daimajia/slider/library/Animations/BaseAnimationInterface;->onCurrentItemDisappear(Landroid/view/View;)V
 
     .line 5
     iput-boolean v2, p0, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->isApp:Z
@@ -151,30 +149,30 @@
     const/4 v1, 0x0
 
     .line 2
-    invoke-static {p1, v1}, La53;->e(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setRotationX(Landroid/view/View;F)V
 
     .line 3
-    invoke-static {p1, v1}, La53;->f(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 
     .line 4
-    invoke-static {p1, v1}, La53;->d(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setRotation(Landroid/view/View;F)V
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     .line 5
-    invoke-static {p1, v2}, La53;->g(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleX(Landroid/view/View;F)V
 
     .line 6
-    invoke-static {p1, v2}, La53;->h(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleY(Landroid/view/View;F)V
 
     .line 7
-    invoke-static {p1, v1}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     .line 8
-    invoke-static {p1, v1}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     .line 9
-    invoke-static {p1, v1}, La53;->j(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationY(Landroid/view/View;F)V
 
     .line 10
     invoke-virtual {p0}, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->isPagingEnabled()Z
@@ -193,7 +191,7 @@
     mul-float v0, v0, p2
 
     :goto_0
-    invoke-static {p1, v0}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     .line 11
     invoke-virtual {p0}, Lcom/daimajia/slider/library/Transformers/BaseTransformer;->hideOffscreenPages()Z
@@ -225,13 +223,13 @@
 
     .line 12
     :goto_2
-    invoke-static {p1, v0}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     goto :goto_3
 
     .line 13
     :cond_3
-    invoke-static {p1, v2}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, v2}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     .line 14
     :goto_3

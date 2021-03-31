@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public zzre:Lcom/google/android/gms/internal/gtm/zzcp;
+.field private zzre:Lcom/google/android/gms/internal/gtm/zzcp;
 
 
 # direct methods
@@ -20,6 +20,12 @@
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzre:Lcom/google/android/gms/internal/gtm/zzcp;

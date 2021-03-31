@@ -97,12 +97,9 @@
 
     if-eqz p4, :cond_3
 
-    .line 5
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;->name:Lcom/fasterxml/jackson/databind/PropertyName;
-
     if-eqz p1, :cond_2
 
-    .line 6
+    .line 5
     invoke-virtual {p3}, Lcom/fasterxml/jackson/databind/PropertyName;->hasSimpleName()Z
 
     move-result p1
@@ -113,7 +110,7 @@
 
     goto :goto_2
 
-    .line 7
+    .line 6
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -123,15 +120,15 @@
 
     throw p1
 
-    .line 8
+    .line 7
     :cond_3
     :goto_2
     iput-boolean p4, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;->isNameExplicit:Z
 
-    .line 9
+    .line 8
     iput-boolean p5, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;->isVisible:Z
 
-    .line 10
+    .line 9
     iput-boolean p6, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$Linked;->isMarkedIgnored:Z
 
     return-void

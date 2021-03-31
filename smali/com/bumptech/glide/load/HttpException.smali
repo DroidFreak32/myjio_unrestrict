@@ -6,11 +6,11 @@
 # static fields
 .field public static final UNKNOWN:I = -0x1
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final statusCode:I
+.field private final statusCode:I
 
 
 # direct methods
@@ -61,6 +61,10 @@
 
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/Throwable;)V
     .locals 0
+    .param p3    # Ljava/lang/Throwable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 4
     invoke-direct {p0, p1, p3}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V

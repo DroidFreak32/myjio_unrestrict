@@ -1,53 +1,131 @@
 .class public Lcom/elitecorelib/core/room/pojo/PojoTempUptimeDetails;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoTempUptimeDetails"
+.end annotation
+
+
 # instance fields
 .field public ANDSF_userIdentity:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ANDSF_userIdentity"
+    .end annotation
+.end field
 
 .field public OSVersion:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "OSVersion"
+    .end annotation
+.end field
 
 .field public PLMN:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "PLMN"
+    .end annotation
+.end field
 
 .field public appVersion:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "appVersion"
+    .end annotation
+.end field
 
 .field public brand:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "brand"
+    .end annotation
+.end field
 
 .field public cellId:Ljava/lang/Integer;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "cellId"
+    .end annotation
+.end field
 
 .field public dataCaptureTime:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "dataCaptureTime"
+    .end annotation
+.end field
 
 .field public duration:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "duration"
+    .end annotation
+.end field
 
 .field public endTime:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "endTime"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public imei:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "imei"
+    .end annotation
+.end field
 
 .field public imsi:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "imsi"
+    .end annotation
+.end field
 
 .field public isDestroyed:Ljava/lang/Integer;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isDestroyed"
+    .end annotation
+.end field
 
 .field public minorVersion:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "minorVersion"
+    .end annotation
+.end field
 
 .field public model:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "model"
+    .end annotation
+.end field
 
 .field public operatingSystem:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "operatingSystem"
+    .end annotation
+.end field
 
 .field public sdkversion:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "sdkversion"
+    .end annotation
+.end field
 
 .field public startTime:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "startTime"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method

@@ -27,54 +27,50 @@
 
 .field public static final enum PLAY:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
-.field public static final synthetic a:[Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
+.field private static final synthetic a:[Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
-    const/4 v1, 0x0
+    const-string v1, "LOAD"
 
-    const-string v2, "LOAD"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->LOAD:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
     .line 2
-    new-instance v0, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
     const-string v3, "PLAY"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->PLAY:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
+    invoke-direct {v1, v3, v4}, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->PLAY:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
-    new-array v0, v0, [Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->LOAD:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->PLAY:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->a:[Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
+    sput-object v3, Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;->a:[Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -1,27 +1,28 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzcn;
-.super Landroid/database/ContentObserver;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/measurement/zzic;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/measurement/zzic<",
+        "Lcom/google/android/gms/internal/measurement/zzck$zzd$zza;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzcl;Landroid/os/Handler;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    .line 1
-    invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onChange(Z)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzcq;->zza()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

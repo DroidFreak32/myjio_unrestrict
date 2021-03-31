@@ -1,217 +1,68 @@
 .class public final Lcom/google/android/gms/internal/vision/zzg;
-.super Lcom/google/android/gms/internal/vision/zzm;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/vision/zzm<",
-        "Lcom/google/android/gms/internal/vision/zzh;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final zzbm:Lcom/google/android/gms/internal/vision/zze;
+# interfaces
+.implements Lcom/google/android/gms/internal/vision/zzf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/internal/vision/zze;)V
-    .locals 2
-
-    const-string v0, "BarcodeNativeHandle"
-
-    const-string v1, "barcode"
+.method private constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0, v1}, Lcom/google/android/gms/internal/vision/zzm;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/vision/zzh;)V
+    .locals 0
 
     .line 2
-    iput-object p2, p0, Lcom/google/android/gms/internal/vision/zzg;->zzbm:Lcom/google/android/gms/internal/vision/zze;
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->zzq()Ljava/lang/Object;
+    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzg;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/dynamite/DynamiteModule;Landroid/content/Context;)Ljava/lang/Object;
-    .locals 3
-
-    const-string v0, "com.google.android.gms.vision.barcode.ChimeraNativeBarcodeDetectorCreator"
-
-    .line 7
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/dynamite/DynamiteModule;->instantiate(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    move-object p1, v0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetectorCreator"
-
-    .line 8
-    invoke-interface {p1, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v1
-
-    .line 9
-    instance-of v2, v1, Lcom/google/android/gms/internal/vision/zzj;
-
-    if-eqz v2, :cond_1
-
-    .line 10
-    move-object p1, v1
-
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzj;
-
-    goto :goto_0
-
-    .line 11
-    :cond_1
-    new-instance v1, Lcom/google/android/gms/internal/vision/zzk;
-
-    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/vision/zzk;-><init>(Landroid/os/IBinder;)V
-
-    move-object p1, v1
-
-    :goto_0
-    if-nez p1, :cond_2
-
-    return-object v0
-
-    .line 12
-    :cond_2
-    invoke-static {p2}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p2
-
-    .line 13
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzg;->zzbm:Lcom/google/android/gms/internal/vision/zze;
-
-    invoke-interface {p1, p2, v0}, Lcom/google/android/gms/internal/vision/zzj;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zze;)Lcom/google/android/gms/internal/vision/zzh;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final zza(Landroid/graphics/Bitmap;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/barcode/Barcode;
-    .locals 2
-
-    .line 4
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->isOperational()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    new-array p1, v1, [Lcom/google/android/gms/vision/barcode/Barcode;
-
-    return-object p1
-
-    .line 5
-    :cond_0
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p1
-
-    .line 6
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->zzq()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzh;
-
-    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/internal/vision/zzh;->zzb(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/barcode/Barcode;
-
-    move-result-object p1
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p1
-
-    :catch_0
-    new-array p1, v1, [Lcom/google/android/gms/vision/barcode/Barcode;
-
-    return-object p1
-.end method
-
-.method public final zza(Ljava/nio/ByteBuffer;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/barcode/Barcode;
-    .locals 2
+.method public final zza(II)Ljava/util/concurrent/ExecutorService;
+    .locals 8
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->isOperational()Z
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
 
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    new-array p1, v1, [Lcom/google/android/gms/vision/barcode/Barcode;
-
-    return-object p1
+    move-result-object v7
 
     .line 2
-    :cond_0
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    new-instance p1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    move-result-object p1
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x2
+
+    const-wide/16 v3, 0x3c
+
+    move-object v0, p1
+
+    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+
+    const/4 p2, 0x1
 
     .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->zzq()Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzh;
-
-    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/internal/vision/zzh;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/vision/zzn;)[Lcom/google/android/gms/vision/barcode/Barcode;
+    .line 4
+    invoke-static {p1}, Ljava/util/concurrent/Executors;->unconfigurableExecutorService(Ljava/util/concurrent/ExecutorService;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object p1
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
-
-    :catch_0
-    new-array p1, v1, [Lcom/google/android/gms/vision/barcode/Barcode;
-
-    return-object p1
-.end method
-
-.method public final zzm()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->isOperational()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzm;->zzq()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzh;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzh;->zzn()V
-
-    :cond_0
-    return-void
 .end method

@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public alpha:F
+.field private alpha:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "1.0f"
         getter = "getAlpha"
@@ -35,56 +35,56 @@
     .end annotation
 .end field
 
-.field public position:Lcom/google/android/gms/maps/model/LatLng;
+.field private position:Lcom/google/android/gms/maps/model/LatLng;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getPosition"
         id = 0x2
     .end annotation
 .end field
 
-.field public zzcs:F
+.field private zzcs:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getZIndex"
         id = 0xf
     .end annotation
 .end field
 
-.field public zzct:Z
+.field private zzct:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isVisible"
         id = 0x9
     .end annotation
 .end field
 
-.field public zzdb:F
+.field private zzdb:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getAnchorU"
         id = 0x6
     .end annotation
 .end field
 
-.field public zzdc:F
+.field private zzdc:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getAnchorV"
         id = 0x7
     .end annotation
 .end field
 
-.field public zzdn:Ljava/lang/String;
+.field private zzdn:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getTitle"
         id = 0x3
     .end annotation
 .end field
 
-.field public zzdo:Ljava/lang/String;
+.field private zzdo:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getSnippet"
         id = 0x4
     .end annotation
 .end field
 
-.field public zzdp:Lcom/google/android/gms/maps/model/BitmapDescriptor;
+.field private zzdp:Lcom/google/android/gms/maps/model/BitmapDescriptor;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getWrappedIconDescriptorImplBinder"
         id = 0x5
@@ -92,28 +92,28 @@
     .end annotation
 .end field
 
-.field public zzdq:Z
+.field private zzdq:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isDraggable"
         id = 0x8
     .end annotation
 .end field
 
-.field public zzdr:Z
+.field private zzdr:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "isFlat"
         id = 0xa
     .end annotation
 .end field
 
-.field public zzds:F
+.field private zzds:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getRotation"
         id = 0xb
     .end annotation
 .end field
 
-.field public zzdt:F
+.field private zzdt:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "0.5f"
         getter = "getInfoWindowAnchorU"
@@ -121,7 +121,7 @@
     .end annotation
 .end field
 
-.field public zzdu:F
+.field private zzdu:F
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getInfoWindowAnchorV"
         id = 0xd
@@ -533,6 +533,10 @@
 
 .method public final icon(Lcom/google/android/gms/maps/model/BitmapDescriptor;)Lcom/google/android/gms/maps/model/MarkerOptions;
     .locals 0
+    .param p1    # Lcom/google/android/gms/maps/model/BitmapDescriptor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/maps/model/MarkerOptions;->zzdp:Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -581,6 +585,10 @@
 
 .method public final position(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/MarkerOptions;
     .locals 1
+    .param p1    # Lcom/google/android/gms/maps/model/LatLng;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_0
 
@@ -611,6 +619,10 @@
 
 .method public final snippet(Ljava/lang/String;)Lcom/google/android/gms/maps/model/MarkerOptions;
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/maps/model/MarkerOptions;->zzdo:Ljava/lang/String;
@@ -620,6 +632,10 @@
 
 .method public final title(Ljava/lang/String;)Lcom/google/android/gms/maps/model/MarkerOptions;
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/maps/model/MarkerOptions;->zzdn:Ljava/lang/String;
@@ -649,12 +665,12 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     .line 3
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     .line 4
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->getTitle()Ljava/lang/String;
@@ -664,7 +680,7 @@
     const/4 v1, 0x3
 
     .line 5
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 6
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->getSnippet()Ljava/lang/String;
@@ -674,7 +690,7 @@
     const/4 v1, 0x4
 
     .line 7
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 8
     iget-object p2, p0, Lcom/google/android/gms/maps/model/MarkerOptions;->zzdp:Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -700,7 +716,7 @@
     const/4 v1, 0x5
 
     .line 11
-    invoke-static {p1, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    invoke-static {p1, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIBinder(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
 
     const/4 p2, 0x6
 

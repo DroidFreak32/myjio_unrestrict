@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+.field private static final synthetic $VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
 .field public static final enum PUSH_NOTIFICATION_VIEWED:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
@@ -31,58 +31,54 @@
 
 
 # instance fields
-.field public final httpResource:Ljava/lang/String;
+.field private final httpResource:Ljava/lang/String;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     .line 1
     new-instance v0, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
-    const/4 v1, 0x0
+    const-string v1, "REGULAR"
 
-    const-string v2, "REGULAR"
+    const/4 v2, 0x0
 
     const-string v3, ""
 
-    invoke-direct {v0, v2, v1, v3}, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->REGULAR:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
     .line 2
-    new-instance v0, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
     const-string v3, "PUSH_NOTIFICATION_VIEWED"
 
-    const-string v4, "-spiky"
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v3, v2, v4}, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-string v5, "-spiky"
 
-    sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->PUSH_NOTIFICATION_VIEWED:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+    invoke-direct {v1, v3, v4, v5}, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->PUSH_NOTIFICATION_VIEWED:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
-    new-array v0, v0, [Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->REGULAR:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->PUSH_NOTIFICATION_VIEWED:Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->$VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
+    sput-object v3, Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;->$VALUES:[Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,7 +97,7 @@
     return-void
 .end method
 
-.method public static synthetic access$3500(Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;)Ljava/lang/String;
+.method public static synthetic access$5200(Lcom/clevertap/android/sdk/CleverTapAPI$EventGroup;)Ljava/lang/String;
     .locals 0
 
     .line 1

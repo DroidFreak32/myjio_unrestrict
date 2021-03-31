@@ -11,27 +11,27 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzalx:Ljava/lang/String;
+.field private static final zzalx:Ljava/lang/String;
 
-.field public static final zzaly:Ljava/lang/String;
+.field private static final zzaly:Ljava/lang/String;
 
-.field public static final zzalz:Ljava/lang/String;
+.field private static final zzalz:Ljava/lang/String;
 
-.field public static final zzama:Ljava/lang/String;
+.field private static final zzama:Ljava/lang/String;
 
-.field public static final zzamb:Ljava/lang/String;
+.field private static final zzamb:Ljava/lang/String;
 
-.field public static final zzamc:Ljava/lang/String;
+.field private static final zzamc:Ljava/lang/String;
 
-.field public static final zzamd:Ljava/lang/String;
+.field private static final zzamd:Ljava/lang/String;
 
-.field public static final zzame:Ljava/lang/String;
+.field private static final zzame:Ljava/lang/String;
 
-.field public static final zzamf:Ljava/lang/String;
+.field private static final zzamf:Ljava/lang/String;
 
-.field public static final zzamg:Ljava/util/List;
+.field private static final zzamg:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -41,11 +41,11 @@
     .end annotation
 .end field
 
-.field public static final zzamh:Ljava/util/regex/Pattern;
+.field private static final zzamh:Ljava/util/regex/Pattern;
 
-.field public static final zzami:Ljava/util/regex/Pattern;
+.field private static final zzami:Ljava/util/regex/Pattern;
 
-.field public static zzamj:Ljava/util/Map;
+.field private static zzamj:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -56,7 +56,7 @@
     .end annotation
 .end field
 
-.field public static zzamk:Ljava/util/Map;
+.field private static zzamk:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -69,9 +69,9 @@
 
 
 # instance fields
-.field public final zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
+.field private final zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
 
-.field public final zzaml:Ljava/util/Set;
+.field private final zzaml:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -81,7 +81,7 @@
     .end annotation
 .end field
 
-.field public final zzamm:Lcom/google/android/gms/tagmanager/zzgf;
+.field private final zzamm:Lcom/google/android/gms/tagmanager/zzgf;
 
 
 # direct methods
@@ -242,7 +242,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/DataLayer;Lcom/google/android/gms/tagmanager/zzgf;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/DataLayer;Lcom/google/android/gms/tagmanager/zzgf;)V
     .locals 1
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -269,25 +269,19 @@
 
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/zzgk;->zzaml:Ljava/util/Set;
 
-    .line 6
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/zzgk;->zzaml:Ljava/util/Set;
-
     const-string p2, ""
 
+    .line 6
     invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 7
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/zzgk;->zzaml:Ljava/util/Set;
 
     const-string p2, "0"
 
+    .line 7
     invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 8
-    iget-object p1, p0, Lcom/google/android/gms/tagmanager/zzgk;->zzaml:Ljava/util/Set;
 
     const-string p2, "false"
 
+    .line 8
     invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     return-void
@@ -318,7 +312,7 @@
     return-object p1
 .end method
 
-.method public static zzc(Ljava/util/Map;Ljava/lang/String;)Z
+.method private static zzc(Ljava/util/Map;Ljava/lang/String;)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -358,7 +352,7 @@
     return p0
 .end method
 
-.method public static zzd(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+.method private static zzd(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -382,7 +376,7 @@
     return-void
 .end method
 
-.method public static zzf(Ljava/util/Map;)Lcom/google/android/gms/analytics/ecommerce/Product;
+.method private static zzf(Ljava/util/Map;)Lcom/google/android/gms/analytics/ecommerce/Product;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -741,7 +735,7 @@
     return-object v0
 .end method
 
-.method public static zzi(Lcom/google/android/gms/internal/gtm/zzl;)Ljava/util/Map;
+.method private static zzi(Lcom/google/android/gms/internal/gtm/zzl;)Ljava/util/Map;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -895,7 +889,7 @@
     return-object p1
 .end method
 
-.method public static zzm(Ljava/lang/Object;)Ljava/lang/Double;
+.method private static zzm(Ljava/lang/Object;)Ljava/lang/Double;
     .locals 3
 
     .line 1
@@ -1019,7 +1013,7 @@
     throw v0
 .end method
 
-.method public static zzn(Ljava/lang/Object;)Ljava/lang/Integer;
+.method private static zzn(Ljava/lang/Object;)Ljava/lang/Integer;
     .locals 3
 
     .line 1
@@ -1157,7 +1151,7 @@
 .end method
 
 .method public final zzd(Ljava/util/Map;)V
-    .locals 13
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2070,10 +2064,15 @@
     move-result-object v10
 
     check-cast v10, Lcom/google/android/gms/internal/gtm/zzl;
+    :try_end_4
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_4
+
+    const-string v11, "&ti"
 
     if-eqz v10, :cond_22
 
     .line 87
+    :try_start_5
     invoke-static {v10}, Lcom/google/android/gms/tagmanager/zzgk;->zzi(Lcom/google/android/gms/internal/gtm/zzl;)Ljava/util/Map;
 
     move-result-object v0
@@ -2091,38 +2090,36 @@
 
     invoke-direct {v10}, Ljava/util/HashMap;-><init>()V
 
-    const-string v11, "&ti"
-
     .line 90
     invoke-virtual {v10, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "transactionAffiliation"
 
-    const-string v11, "&ta"
+    const-string v12, "&ta"
 
     .line 91
-    invoke-virtual {v10, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v0, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "transactionTax"
 
-    const-string v11, "&tt"
+    const-string v12, "&tt"
 
     .line 92
-    invoke-virtual {v10, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v0, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "transactionShipping"
 
-    const-string v11, "&ts"
+    const-string v12, "&ts"
 
     .line 93
-    invoke-virtual {v10, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v0, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "transactionTotal"
 
-    const-string v11, "&tr"
+    const-string v12, "&tr"
 
     .line 94
-    invoke-virtual {v10, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v0, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "transactionCurrency"
 
@@ -2162,9 +2159,9 @@
     .line 99
     invoke-interface {v10}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v12
 
-    check-cast v11, Ljava/lang/String;
+    check-cast v12, Ljava/lang/String;
 
     invoke-interface {v10}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -2176,7 +2173,7 @@
 
     move-result-object v10
 
-    invoke-static {v9, v11, v10}, Lcom/google/android/gms/tagmanager/zzgk;->zzd(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v12, v10}, Lcom/google/android/gms/tagmanager/zzgk;->zzd(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_d
 
@@ -2301,10 +2298,8 @@
     .line 112
     invoke-interface {v9, v1, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v10, "&ti"
-
     .line 113
-    invoke-interface {v9, v10, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v9, v11, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 114
     sget-object v10, Lcom/google/android/gms/tagmanager/zzgk;->zzamf:Ljava/lang/String;
@@ -2335,43 +2330,43 @@
 
     invoke-direct {v10}, Ljava/util/HashMap;-><init>()V
 
-    const-string v11, "&in"
+    const-string v12, "&in"
 
     .line 118
-    invoke-virtual {v10, v5, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v5, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v11, "sku"
+    const-string v12, "sku"
 
-    const-string v12, "&ic"
+    const-string v13, "&ic"
 
     .line 119
-    invoke-virtual {v10, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v11, "category"
+    const-string v12, "category"
 
-    const-string v12, "&iv"
+    const-string v13, "&iv"
 
     .line 120
-    invoke-virtual {v10, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v11, "price"
+    const-string v12, "price"
 
-    const-string v12, "&ip"
+    const-string v13, "&ip"
 
     .line 121
-    invoke-virtual {v10, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v11, "quantity"
+    const-string v12, "quantity"
 
-    const-string v12, "&iq"
+    const-string v13, "&iq"
 
     .line 122
-    invoke-virtual {v10, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v11, "currency"
+    const-string v12, "currency"
 
     .line 123
-    invoke-virtual {v10, v11, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v12, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 124
     sput-object v10, Lcom/google/android/gms/tagmanager/zzgk;->zzamk:Ljava/util/Map;
@@ -2393,34 +2388,34 @@
     :goto_12
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_2b
+    if-eqz v12, :cond_2b
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v12
 
-    check-cast v11, Ljava/util/Map$Entry;
+    check-cast v12, Ljava/util/Map$Entry;
 
     .line 127
-    invoke-interface {v11}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v12}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Ljava/lang/String;
+
+    invoke-interface {v12}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v12
+
+    invoke-interface {v6, v12}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v12
 
     check-cast v12, Ljava/lang/String;
 
-    invoke-interface {v11}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v11
-
-    invoke-interface {v6, v11}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Ljava/lang/String;
-
-    invoke-static {v9, v12, v11}, Lcom/google/android/gms/tagmanager/zzgk;->zzd(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v13, v12}, Lcom/google/android/gms/tagmanager/zzgk;->zzd(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_12
 
@@ -2464,8 +2459,8 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_4
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_4
+    :try_end_5
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_5} :catch_4
 
     :catch_4
     move-exception p1

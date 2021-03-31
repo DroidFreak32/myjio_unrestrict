@@ -1,67 +1,46 @@
 .class public final Lcom/google/android/gms/internal/common/zzg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
-
-# static fields
-.field public static volatile zziy:Z
+# interfaces
+.implements Lcom/google/android/gms/internal/common/zzf;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/common/zzg;->zzam()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    sput-boolean v0, Lcom/google/android/gms/internal/common/zzg;->zziy:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static getDeviceProtectedStorageContext(Landroid/content/Context;)Landroid/content/Context;
-    .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x18
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-object p0
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/common/zzh;)V
+    .locals 0
 
     .line 2
-    :cond_0
-    invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
+    invoke-direct {p0}, Lcom/google/android/gms/internal/common/zzg;-><init>()V
 
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
-.method public static zzam()Z
-    .locals 2
+
+# virtual methods
+.method public final zza(II)Ljava/util/concurrent/ScheduledExecutorService;
+    .locals 0
+
+    const/4 p1, 0x1
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {p1}, Ljava/util/concurrent/Executors;->newScheduledThreadPool(I)Ljava/util/concurrent/ScheduledExecutorService;
 
-    const/16 v1, 0x18
+    move-result-object p1
 
-    if-lt v0, v1, :cond_0
+    .line 2
+    invoke-static {p1}, Ljava/util/concurrent/Executors;->unconfigurableScheduledExecutorService(Ljava/util/concurrent/ScheduledExecutorService;)Ljava/util/concurrent/ScheduledExecutorService;
 
-    const/4 v0, 0x1
+    move-result-object p1
 
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-object p1
 .end method

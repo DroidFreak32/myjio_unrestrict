@@ -1,59 +1,36 @@
-.class public Lcom/google/android/gms/internal/ads/zzamd;
-.super Lcom/google/android/gms/internal/ads/zzamc;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzamd;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzdyb;
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x12
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<I:",
+        "Ljava/lang/Object;",
+        "O:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzdyb<",
+        "TI;TO;>;"
+    }
+.end annotation
+
+.annotation runtime Ljavax/annotation/ParametersAreNonnullByDefault;
 .end annotation
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzamc;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public isAttachedToWindow(Landroid/view/View;)Z
-    .locals 1
-
-    .line 1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/ads/zzalw;->isAttachedToWindow(Landroid/view/View;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1}, Landroid/view/View;->getWindowId()Landroid/view/WindowId;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final zztc()I
-    .locals 1
-
-    const/16 v0, 0xe
-
-    return v0
+.method public abstract zzi(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzdyz;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TI;)",
+            "Lcom/google/android/gms/internal/ads/zzdyz<",
+            "TO;>;"
+        }
+    .end annotation
 .end method

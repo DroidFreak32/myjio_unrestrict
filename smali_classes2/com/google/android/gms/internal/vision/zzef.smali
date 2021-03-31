@@ -1,382 +1,555 @@
 .class public abstract Lcom/google/android/gms/internal/vision/zzef;
-.super Ljava/util/AbstractList;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/vision/zzge;
+.implements Ljava/io/Serializable;
+.implements Ljava/util/Map;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<E:",
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/util/AbstractList<",
-        "TE;>;",
-        "Lcom/google/android/gms/internal/vision/zzge<",
-        "TE;>;"
+        "Ljava/lang/Object;",
+        "Ljava/io/Serializable;",
+        "Ljava/util/Map<",
+        "TK;TV;>;"
     }
 .end annotation
 
 
+# static fields
+.field private static final zzmx:[Ljava/util/Map$Entry;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Ljava/util/Map$Entry<",
+            "**>;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public zzrl:Z
+.field private transient zzmy:Lcom/google/android/gms/internal/vision/zzej;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/vision/zzej<",
+            "Ljava/util/Map$Entry<",
+            "TK;TV;>;>;"
+        }
+    .end annotation
+.end field
+
+.field private transient zzmz:Lcom/google/android/gms/internal/vision/zzej;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/vision/zzej<",
+            "TK;>;"
+        }
+    .end annotation
+.end field
+
+.field private transient zzna:Lcom/google/android/gms/internal/vision/zzeb;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/vision/zzeb<",
+            "TV;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method public static constructor <clinit>()V
     .locals 1
 
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/util/Map$Entry;
+
     .line 1
-    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzef;->zzmx:[Ljava/util/Map$Entry;
 
-    const/4 v0, 0x1
+    return-void
+.end method
 
-    .line 2
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzrl:Z
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public add(ILjava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(ITE;)V"
-        }
-    .end annotation
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 4
-    invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->add(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public add(Ljava/lang/Object;)Z
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TE;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->add(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public addAll(ILjava/util/Collection;)Z
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/Collection<",
-            "+TE;>;)Z"
-        }
-    .end annotation
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 4
-    invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->addAll(ILjava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public addAll(Ljava/util/Collection;)Z
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection<",
-            "+TE;>;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->addAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public clear()V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0}, Ljava/util/AbstractList;->clear()V
-
-    return-void
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 6
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    .line 1
-    :cond_0
-    instance-of v1, p1, Ljava/util/List;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    .line 2
-    :cond_1
-    instance-of v1, p1, Ljava/util/RandomAccess;
-
-    if-nez v1, :cond_2
-
-    .line 3
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    .line 4
-    :cond_2
-    check-cast p1, Ljava/util/List;
-
-    .line 5
-    invoke-virtual {p0}, Ljava/util/AbstractList;->size()I
-
-    move-result v1
-
-    .line 6
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v1, :cond_5
-
-    .line 7
-    invoke-virtual {p0, v3}, Ljava/util/AbstractList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
-    return v2
-
-    :cond_4
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_5
-    return v0
-.end method
-
-.method public hashCode()I
-    .locals 4
-
-    .line 1
-    invoke-virtual {p0}, Ljava/util/AbstractList;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    .line 2
-    invoke-virtual {p0, v2}, Ljava/util/AbstractList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v1, v3
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-.end method
-
-.method public remove(I)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)TE;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->remove(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public remove(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 4
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->remove(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public removeAll(Ljava/util/Collection;)Z
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection<",
-            "*>;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->removeAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public retainAll(Ljava/util/Collection;)Z
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection<",
-            "*>;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->retainAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(ITE;)TE;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcj()V
-
-    .line 2
-    invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public zzch()Z
+.method public final clear()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzrl:Z
-
-    return v0
-.end method
-
-.method public final zzci()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzrl:Z
-
-    return-void
-.end method
-
-.method public final zzcj()V
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzrl:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    .line 2
-    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
+
+.method public containsKey(Ljava/lang/Object;)Z
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzef;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public containsValue(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/vision/zzeb;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzeb;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic entrySet()Ljava/util/Set;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzmy:Lcom/google/android/gms/internal/vision/zzej;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcw()Lcom/google/android/gms/internal/vision/zzej;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzmy:Lcom/google/android/gms/internal/vision/zzej;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    .line 1
+    :cond_0
+    instance-of v0, p1, Ljava/util/Map;
+
+    if-eqz v0, :cond_1
+
+    .line 2
+    check-cast p1, Ljava/util/Map;
+
+    .line 3
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")TV;"
+        }
+    .end annotation
+.end method
+
+.method public final getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "TV;)TV;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzef;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    return-object p1
+
+    :cond_0
+    return-object p2
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/vision/zzej;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzey;->zza(Ljava/util/Set;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isEmpty()Z
+    .locals 1
+
+    .line 1
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public synthetic keySet()Ljava/util/Set;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzmz:Lcom/google/android/gms/internal/vision/zzej;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcx()Lcom/google/android/gms/internal/vision/zzej;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzmz:Lcom/google/android/gms/internal/vision/zzej;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;TV;)TV;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final putAll(Ljava/util/Map;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "+TK;+TV;>;)V"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")TV;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 6
+
+    .line 1
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    if-ltz v0, :cond_2
+
+    .line 2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    int-to-long v2, v0
+
+    const/4 v0, 0x3
+
+    shl-long/2addr v2, v0
+
+    const-wide/32 v4, 0x40000000
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v2
+
+    long-to-int v0, v2
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const/16 v0, 0x7b
+
+    .line 3
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const/4 v0, 0x1
+
+    .line 4
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map$Entry;
+
+    if-nez v0, :cond_0
+
+    const-string v0, ", "
+
+    .line 5
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 6
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v4, 0x3d
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v0, 0x7d
+
+    .line 7
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 8
+    :cond_2
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "size"
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x28
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " cannot be negative but was: "
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public synthetic values()Ljava/util/Collection;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzna:Lcom/google/android/gms/internal/vision/zzeb;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzef;->zzcy()Lcom/google/android/gms/internal/vision/zzeb;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzef;->zzna:Lcom/google/android/gms/internal/vision/zzeb;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public abstract zzcw()Lcom/google/android/gms/internal/vision/zzej;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/vision/zzej<",
+            "Ljava/util/Map$Entry<",
+            "TK;TV;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract zzcx()Lcom/google/android/gms/internal/vision/zzej;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/vision/zzej<",
+            "TK;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract zzcy()Lcom/google/android/gms/internal/vision/zzeb;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/vision/zzeb<",
+            "TV;>;"
+        }
+    .end annotation
 .end method

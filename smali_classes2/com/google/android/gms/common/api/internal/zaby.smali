@@ -1,39 +1,62 @@
-.class public final synthetic Lcom/google/android/gms/common/api/internal/zaby;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/common/api/internal/zaby;
+.super Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
-# interfaces
-.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/common/api/internal/RegisterListenerMethod<",
+        "TA;T",
+        "L;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final zakf:Lcom/google/android/gms/common/util/BiConsumer;
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/util/BiConsumer;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;Lcom/google/android/gms/common/api/internal/ListenerHolder;[Lcom/google/android/gms/common/Feature;Z)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaby;->zaa:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaby;->zakf:Lcom/google/android/gms/common/util/BiConsumer;
+    invoke-direct {p0, p2, p3, p4}, Lcom/google/android/gms/common/api/internal/RegisterListenerMethod;-><init>(Lcom/google/android/gms/common/api/internal/ListenerHolder;[Lcom/google/android/gms/common/Feature;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final registerListener(Lcom/google/android/gms/common/api/Api$AnyClient;Lcom/google/android/gms/tasks/TaskCompletionSource;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TA;",
+            "Lcom/google/android/gms/tasks/TaskCompletionSource<",
+            "Ljava/lang/Void;",
+            ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaby;->zakf:Lcom/google/android/gms/common/util/BiConsumer;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaby;->zaa:Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;
 
-    check-cast p1, Lcom/google/android/gms/common/api/Api$AnyClient;
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;->zaa(Lcom/google/android/gms/common/api/internal/RegistrationMethods$Builder;)Lcom/google/android/gms/common/api/internal/RemoteCall;
 
-    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
+    move-result-object v0
 
-    .line 2
-    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/common/util/BiConsumer;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/common/api/internal/RemoteCall;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

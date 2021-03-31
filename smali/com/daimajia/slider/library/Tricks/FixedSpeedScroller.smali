@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mDuration:I
+.field private mDuration:I
 
 
 # direct methods

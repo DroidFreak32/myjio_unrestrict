@@ -19,43 +19,56 @@
 
 
 # instance fields
-.field public accountId:Ljava/lang/String;
+.field private accountId:Ljava/lang/String;
 
-.field public accountRegion:Ljava/lang/String;
+.field private accountRegion:Ljava/lang/String;
 
-.field public accountToken:Ljava/lang/String;
+.field private accountToken:Ljava/lang/String;
 
-.field public analyticsOnly:Z
+.field private allowedPushTypes:Ljava/util/ArrayList;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
-.field public backgroundSync:Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public beta:Z
+.field private analyticsOnly:Z
 
-.field public createdPostAppLaunch:Z
+.field private backgroundSync:Z
 
-.field public debugLevel:I
+.field private beta:Z
 
-.field public disableAppLaunchedEvent:Z
+.field private createdPostAppLaunch:Z
 
-.field public enableABTesting:Z
+.field private debugLevel:I
 
-.field public enableCustomCleverTapId:Z
+.field private disableAppLaunchedEvent:Z
 
-.field public enableUIEditor:Z
+.field private enableABTesting:Z
 
-.field public fcmSenderId:Ljava/lang/String;
+.field private enableCustomCleverTapId:Z
 
-.field public isDefaultInstance:Z
+.field private enableUIEditor:Z
 
-.field public logger:Lcom/clevertap/android/sdk/Logger;
+.field private fcmSenderId:Ljava/lang/String;
 
-.field public packageName:Ljava/lang/String;
+.field private isDefaultInstance:Z
 
-.field public personalization:Z
+.field private logger:Lcom/clevertap/android/sdk/Logger;
 
-.field public sslPinning:Z
+.field private packageName:Ljava/lang/String;
 
-.field public useGoogleAdId:Z
+.field private personalization:Z
+
+.field private sslPinning:Z
+
+.field private useGoogleAdId:Z
 
 
 # direct methods
@@ -72,35 +85,42 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 0
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .locals 1
 
-    .line 2
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3
+    .line 25
+    invoke-static {}, Lcom/clevertap/android/sdk/pushnotification/PushNotificationUtil;->getAll()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    .line 26
     iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
 
-    .line 4
+    .line 27
     iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
 
-    .line 5
+    .line 28
     iput-object p4, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountRegion:Ljava/lang/String;
 
-    .line 6
+    .line 29
     iput-boolean p5, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isDefaultInstance:Z
 
     const/4 p2, 0x0
 
-    .line 7
+    .line 30
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->analyticsOnly:Z
 
     const/4 p3, 0x1
 
-    .line 8
+    .line 31
     iput-boolean p3, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->personalization:Z
 
-    .line 9
+    .line 32
     sget-object p3, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->INFO:Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;
 
     invoke-virtual {p3}, Lcom/clevertap/android/sdk/CleverTapAPI$LogLevel;->intValue()I
@@ -109,83 +129,79 @@
 
     iput p3, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
 
-    .line 10
-    new-instance p3, Lcom/clevertap/android/sdk/Logger;
+    .line 33
+    new-instance p4, Lcom/clevertap/android/sdk/Logger;
 
-    iget p4, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
+    invoke-direct {p4, p3}, Lcom/clevertap/android/sdk/Logger;-><init>(I)V
 
-    invoke-direct {p3, p4}, Lcom/clevertap/android/sdk/Logger;-><init>(I)V
+    iput-object p4, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
 
-    iput-object p3, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
-
-    .line 11
+    .line 34
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->createdPostAppLaunch:Z
 
-    .line 12
+    .line 35
     iget-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isDefaultInstance:Z
 
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
 
-    .line 13
-    iget-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
-
+    .line 36
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableUIEditor:Z
 
-    .line 14
+    .line 37
     invoke-static {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->getInstance(Landroid/content/Context;)Lcom/clevertap/android/sdk/ManifestInfo;
 
     move-result-object p1
 
-    .line 15
+    .line 38
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->useGoogleAdId()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->useGoogleAdId:Z
 
-    .line 16
+    .line 39
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->isAppLaunchedDisabled()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->disableAppLaunchedEvent:Z
 
-    .line 17
+    .line 40
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->isSSLPinningEnabled()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->sslPinning:Z
 
-    .line 18
+    .line 41
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->isBackgroundSync()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->backgroundSync:Z
 
-    .line 19
+    .line 42
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->getFCMSenderId()Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->fcmSenderId:Ljava/lang/String;
 
-    .line 20
+    .line 43
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->getPackageName()Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->packageName:Ljava/lang/String;
 
-    .line 21
+    .line 44
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->useCustomId()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableCustomCleverTapId:Z
 
-    .line 22
+    .line 45
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/ManifestInfo;->enableBeta()Z
 
     move-result p1
@@ -195,34 +211,41 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 4
 
-    .line 84
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
+    .line 92
+    invoke-static {}, Lcom/clevertap/android/sdk/pushnotification/PushNotificationUtil;->getAll()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    .line 93
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
 
-    .line 86
+    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
 
-    .line 87
+    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountRegion:Ljava/lang/String;
 
-    .line 88
+    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -243,7 +266,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->analyticsOnly:Z
 
-    .line 89
+    .line 97
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -260,7 +283,7 @@
     :goto_1
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isDefaultInstance:Z
 
-    .line 90
+    .line 98
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -277,7 +300,7 @@
     :goto_2
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->useGoogleAdId:Z
 
-    .line 91
+    .line 99
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -294,7 +317,7 @@
     :goto_3
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->disableAppLaunchedEvent:Z
 
-    .line 92
+    .line 100
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -311,14 +334,14 @@
     :goto_4
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->personalization:Z
 
-    .line 93
+    .line 101
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
 
-    .line 94
+    .line 102
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -335,7 +358,7 @@
     :goto_5
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->createdPostAppLaunch:Z
 
-    .line 95
+    .line 103
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -352,7 +375,7 @@
     :goto_6
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->sslPinning:Z
 
-    .line 96
+    .line 104
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -369,7 +392,7 @@
     :goto_7
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->backgroundSync:Z
 
-    .line 97
+    .line 105
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -386,14 +409,14 @@
     :goto_8
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableCustomCleverTapId:Z
 
-    .line 98
+    .line 106
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->fcmSenderId:Ljava/lang/String;
 
-    .line 99
+    .line 107
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -410,7 +433,7 @@
     :goto_9
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
 
-    .line 100
+    .line 108
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -427,14 +450,14 @@
     :goto_a
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableUIEditor:Z
 
-    .line 101
+    .line 109
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->packageName:Ljava/lang/String;
 
-    .line 102
+    .line 110
     new-instance v0, Lcom/clevertap/android/sdk/Logger;
 
     iget v3, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
@@ -443,12 +466,12 @@
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
 
-    .line 103
+    .line 111
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_b
+    if-eqz v0, :cond_b
 
     goto :goto_b
 
@@ -457,6 +480,22 @@
 
     :goto_b
     iput-boolean v1, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->beta:Z
+
+    .line 112
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    .line 113
+    const-class v1, Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->readList(Ljava/util/List;Ljava/lang/ClassLoader;)V
 
     return-void
 .end method
@@ -473,460 +512,516 @@
 .method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)V
     .locals 1
 
-    .line 23
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
+    .line 3
+    invoke-static {}, Lcom/clevertap/android/sdk/pushnotification/PushNotificationUtil;->getAll()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    .line 4
     iget-object v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
 
-    .line 25
+    .line 5
     iget-object v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
 
-    .line 26
+    .line 6
     iget-object v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountRegion:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountRegion:Ljava/lang/String;
 
-    .line 27
+    .line 7
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isDefaultInstance:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isDefaultInstance:Z
 
-    .line 28
+    .line 8
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->analyticsOnly:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->analyticsOnly:Z
 
-    .line 29
+    .line 9
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->personalization:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->personalization:Z
 
-    .line 30
+    .line 10
     iget v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
 
     iput v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
 
-    .line 31
+    .line 11
     iget-object v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
 
-    .line 32
+    .line 12
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->useGoogleAdId:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->useGoogleAdId:Z
 
-    .line 33
+    .line 13
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->disableAppLaunchedEvent:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->disableAppLaunchedEvent:Z
 
-    .line 34
+    .line 14
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->createdPostAppLaunch:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->createdPostAppLaunch:Z
 
-    .line 35
+    .line 15
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->sslPinning:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->sslPinning:Z
 
-    .line 36
+    .line 16
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->backgroundSync:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->backgroundSync:Z
 
-    .line 37
+    .line 17
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableCustomCleverTapId:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableCustomCleverTapId:Z
 
-    .line 38
+    .line 18
     iget-object v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->fcmSenderId:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->fcmSenderId:Ljava/lang/String;
 
-    .line 39
+    .line 19
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
 
-    .line 40
+    .line 20
     iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableUIEditor:Z
 
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableUIEditor:Z
 
-    .line 41
+    .line 21
     iget-object v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->packageName:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->packageName:Ljava/lang/String;
 
-    .line 42
-    iget-boolean p1, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->beta:Z
+    .line 22
+    iget-boolean v0, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->beta:Z
 
-    iput-boolean p1, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->beta:Z
+    iput-boolean v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->beta:Z
+
+    .line 23
+    iget-object p1, p1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 19
+.method private constructor <init>(Ljava/lang/String;)V
+    .locals 23
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Throwable;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
 
-    const-string v0, "backgroundSync"
+    const-string v0, "allowedPushTypes"
 
-    const-string v3, "sslPinning"
+    const-string v3, "beta"
 
-    const-string v4, "createdPostAppLaunch"
+    const-string v4, "fcmSenderId"
 
-    const-string v5, "packageName"
+    const-string v5, "getEnableCustomCleverTapId"
 
-    const-string v6, "enableUIEditor"
+    const-string v6, "backgroundSync"
 
-    const-string v7, "enableABTesting"
+    const-string/jumbo v7, "sslPinning"
 
-    const-string v8, "debugLevel"
+    const-string v8, "createdPostAppLaunch"
 
-    const-string v9, "personalization"
+    const-string v9, "packageName"
 
-    const-string v10, "disableAppLaunchedEvent"
+    const-string v10, "enableUIEditor"
 
-    const-string v11, "useGoogleAdId"
+    const-string v11, "enableABTesting"
 
-    const-string v12, "isDefaultInstance"
+    const-string v12, "debugLevel"
 
-    const-string v13, "analyticsOnly"
+    const-string v13, "personalization"
 
-    const-string v14, "accountRegion"
+    const-string v14, "disableAppLaunchedEvent"
 
-    const-string v15, "accountToken"
+    const-string/jumbo v15, "useGoogleAdId"
 
     move-object/from16 v16, v0
 
-    const-string v0, "accountId"
-
-    .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "isDefaultInstance"
 
     move-object/from16 v17, v3
 
-    .line 44
-    :try_start_0
-    new-instance v3, Lorg/json/JSONObject;
+    const-string v3, "analyticsOnly"
 
-    invoke-direct {v3, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    move-object/from16 v18, v4
 
-    .line 45
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    const-string v4, "accountRegion"
 
-    move-result v18
+    move-object/from16 v19, v5
 
-    if-eqz v18, :cond_0
+    const-string v5, "accountToken"
+
+    move-object/from16 v20, v6
+
+    const-string v6, "accountId"
 
     .line 46
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
+    move-object/from16 v21, v7
 
     .line 47
-    :cond_0
-    invoke-virtual {v3, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-static {}, Lcom/clevertap/android/sdk/pushnotification/PushNotificationUtil;->getAll()Ljava/util/ArrayList;
 
-    move-result v0
+    move-result-object v7
 
-    if-eqz v0, :cond_1
+    iput-object v7, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
 
     .line 48
-    invoke-virtual {v3, v15}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    :try_start_0
+    new-instance v7, Lorg/json/JSONObject;
 
-    move-result-object v0
-
-    iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
+    invoke-direct {v7, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     .line 49
-    :cond_1
-    invoke-virtual {v3, v14}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v22
 
-    if-eqz v0, :cond_2
+    if-eqz v22, :cond_0
 
     .line 50
-    invoke-virtual {v3, v14}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v6
 
-    iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountRegion:Ljava/lang/String;
+    iput-object v6, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
 
     .line 51
-    :cond_2
-    invoke-virtual {v3, v13}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    :cond_0
+    invoke-virtual {v7, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v6
 
-    if-eqz v0, :cond_3
+    if-eqz v6, :cond_1
 
     .line 52
-    invoke-virtual {v3, v13}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v7, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v5
 
-    iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->analyticsOnly:Z
+    iput-object v5, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
 
     .line 53
-    :cond_3
-    invoke-virtual {v3, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    :cond_1
+    invoke-virtual {v7, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v5
 
-    if-eqz v0, :cond_4
+    if-eqz v5, :cond_2
 
     .line 54
-    invoke-virtual {v3, v12}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v7, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iput-object v4, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountRegion:Ljava/lang/String;
+
+    .line 55
+    :cond_2
+    invoke-virtual {v7, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    .line 56
+    invoke-virtual {v7, v3}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v3
+
+    iput-boolean v3, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->analyticsOnly:Z
+
+    .line 57
+    :cond_3
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    .line 58
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isDefaultInstance:Z
 
-    .line 55
+    .line 59
     :cond_4
-    invoke-virtual {v3, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 56
-    invoke-virtual {v3, v11}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 60
+    invoke-virtual {v7, v15}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->useGoogleAdId:Z
 
-    .line 57
+    .line 61
     :cond_5
-    invoke-virtual {v3, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v14}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 58
-    invoke-virtual {v3, v10}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 62
+    invoke-virtual {v7, v14}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->disableAppLaunchedEvent:Z
 
-    .line 59
+    .line 63
     :cond_6
-    invoke-virtual {v3, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v13}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 60
-    invoke-virtual {v3, v9}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 64
+    invoke-virtual {v7, v13}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->personalization:Z
 
-    .line 61
+    .line 65
     :cond_7
-    invoke-virtual {v3, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 62
-    invoke-virtual {v3, v8}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    .line 66
+    invoke-virtual {v7, v12}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
     iput v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
 
-    .line 63
+    .line 67
     :cond_8
     new-instance v0, Lcom/clevertap/android/sdk/Logger;
 
-    iget v8, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
+    iget v3, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->debugLevel:I
 
-    invoke-direct {v0, v8}, Lcom/clevertap/android/sdk/Logger;-><init>(I)V
+    invoke-direct {v0, v3}, Lcom/clevertap/android/sdk/Logger;-><init>(I)V
 
     iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
 
-    .line 64
-    invoke-virtual {v3, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 68
+    invoke-virtual {v7, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 65
-    invoke-virtual {v3, v7}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 69
+    invoke-virtual {v7, v11}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
 
-    .line 66
+    .line 70
     :cond_9
-    invoke-virtual {v3, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 67
-    invoke-virtual {v3, v6}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 71
+    invoke-virtual {v7, v10}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableUIEditor:Z
 
-    .line 68
+    .line 72
     :cond_a
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 69
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 73
+    invoke-virtual {v7, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->packageName:Ljava/lang/String;
 
-    .line 70
+    .line 74
     :cond_b
-    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v7, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 71
-    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 75
+    invoke-virtual {v7, v8}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->createdPostAppLaunch:Z
 
     :cond_c
-    move-object/from16 v0, v17
+    move-object/from16 v0, v21
 
-    .line 72
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 76
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_d
+    if-eqz v3, :cond_d
 
-    .line 73
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 77
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->sslPinning:Z
 
     :cond_d
-    move-object/from16 v0, v16
+    move-object/from16 v0, v20
 
-    .line 74
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 78
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_e
+    if-eqz v3, :cond_e
 
-    .line 75
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 79
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->backgroundSync:Z
 
     :cond_e
-    const-string v0, "getEnableCustomCleverTapId"
+    move-object/from16 v0, v19
 
-    .line 76
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 80
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_f
+    if-eqz v3, :cond_f
 
-    const-string v0, "getEnableCustomCleverTapId"
-
-    .line 77
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 81
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableCustomCleverTapId:Z
 
     :cond_f
-    const-string v0, "fcmSenderId"
+    move-object/from16 v0, v18
 
-    .line 78
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 82
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_10
+    if-eqz v3, :cond_10
 
-    const-string v0, "fcmSenderId"
-
-    .line 79
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 83
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->fcmSenderId:Ljava/lang/String;
 
     :cond_10
-    const-string v0, "beta"
+    move-object/from16 v0, v17
 
-    .line 80
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 84
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_11
+    if-eqz v3, :cond_11
 
-    const-string v0, "beta"
-
-    .line 81
-    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 85
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     iput-boolean v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->beta:Z
+
+    :cond_11
+    move-object/from16 v0, v16
+
+    .line 86
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_12
+
+    .line 87
+    invoke-virtual {v7, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v0
+
+    .line 88
+    invoke-static {v0}, Lcom/clevertap/android/sdk/JsonUtil;->toList(Lorg/json/JSONArray;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_11
+    :cond_12
     return-void
 
     :catchall_0
     move-exception v0
 
-    .line 82
+    .line 89
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -951,12 +1046,20 @@
 
     invoke-static {v2, v3}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 83
+    .line 90
     throw v0
 .end method
 
 .method public static createDefaultInstance(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
     .locals 7
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v6, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
@@ -980,6 +1083,14 @@
 
 .method public static createInstance(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
     .locals 7
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_1
 
@@ -1021,6 +1132,14 @@
 
 .method public static createInstance(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
     .locals 7
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_1
 
@@ -1062,6 +1181,10 @@
 
 .method public static createInstance(Ljava/lang/String;)Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
     .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 5
     :try_start_0
@@ -1077,6 +1200,69 @@
     const/4 p0, 0x0
 
     return-object p0
+.end method
+
+.method private getDefaultSuffix(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, ": "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const-string p1, ""
+
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, ":"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p1, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountId:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "]"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 
@@ -1121,6 +1307,26 @@
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->accountToken:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getAllowedPushTypes()Ljava/util/ArrayList;
+    .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -1284,6 +1490,52 @@
     return v0
 .end method
 
+.method public log(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
+
+    invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getDefaultSuffix(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1, p2}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 2
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->logger:Lcom/clevertap/android/sdk/Logger;
+
+    invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getDefaultSuffix(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
 .method public setAnalyticsOnly(Z)V
     .locals 0
 
@@ -1346,6 +1598,11 @@
 
 .method public setEnableABTesting(Z)V
     .locals 0
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
 
     .line 1
     iput-boolean p1, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableABTesting:Z
@@ -1364,6 +1621,11 @@
 
 .method public setEnableUIEditor(Z)V
     .locals 0
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
 
     .line 1
     iput-boolean p1, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->enableUIEditor:Z
@@ -1434,7 +1696,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    const-string v1, "useGoogleAdId"
+    const-string/jumbo v1, "useGoogleAdId"
 
     .line 8
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isUseGoogleAdId()Z
@@ -1479,7 +1741,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    const-string v1, "sslPinning"
+    const-string/jumbo v1, "sslPinning"
 
     .line 13
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->isSslPinningEnabled()Z
@@ -1542,7 +1804,18 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
+    const-string v1, "allowedPushTypes"
+
     .line 20
+    iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    invoke-static {v2}, Lcom/clevertap/android/sdk/JsonUtil;->toJsonArray(Ljava/util/List;)Lorg/json/JSONArray;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 21
     invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1554,7 +1827,7 @@
     :catchall_0
     move-exception v0
 
-    .line 21
+    .line 22
     invoke-virtual {v0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -1693,6 +1966,11 @@
     int-to-byte p2, p2
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 19
+    iget-object p2, p0, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->allowedPushTypes:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
     return-void
 .end method

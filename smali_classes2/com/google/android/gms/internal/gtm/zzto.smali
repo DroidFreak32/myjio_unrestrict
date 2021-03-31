@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzbek:Lcom/google/android/gms/internal/gtm/zzps;
+.field private final synthetic zzbek:Lcom/google/android/gms/internal/gtm/zzps;
 
 
 # direct methods

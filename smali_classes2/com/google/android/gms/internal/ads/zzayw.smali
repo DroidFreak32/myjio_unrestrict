@@ -1,123 +1,40 @@
 .class public final synthetic Lcom/google/android/gms/internal/ads/zzayw;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzazb;
 
 
-# static fields
-.field public static final synthetic zzakw:[I
+# instance fields
+.field private final zzegh:I
+
+.field private final zzegi:Ljava/util/Map;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(ILjava/util/Map;)V
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbdd$zze;->values$50KLMJ33DTMIUPRFDTJMOP9FE1P6UT3FC9QMCBQ7CLN6ASJ1EHIM8JB5EDPM2PR59HKN8P949LIN8Q3FCHA6UIBEEPNMMP9R0()[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzayw;->zzegh:I
 
-    array-length v0, v0
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzayw;->zzegi:Ljava/util/Map;
 
-    new-array v0, v0, [I
+    return-void
+.end method
 
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
 
-    const/4 v0, 0x1
+# virtual methods
+.method public final zzb(Landroid/util/JsonWriter;)V
+    .locals 2
 
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzayw;->zzegh:I
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyc:I
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzayw;->zzegi:Ljava/util/Map;
 
-    sub-int/2addr v2, v0
+    invoke-static {v0, v1, p1}, Lcom/google/android/gms/internal/ads/zzayu;->zza(ILjava/util/Map;Landroid/util/JsonWriter;)V
 
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyd:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x2
-
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyb:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x3
-
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdye:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x4
-
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyf:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x5
-
-    aput v3, v1, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdxz:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x6
-
-    aput v3, v1, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzayw;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdya:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v0, 0x7
-
-    aput v0, v1, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
     return-void
 .end method

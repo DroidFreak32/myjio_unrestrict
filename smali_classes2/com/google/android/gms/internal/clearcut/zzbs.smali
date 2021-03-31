@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzgl:Ljava/lang/Class;
+.field private static final zzgl:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -26,7 +26,7 @@
     return-void
 .end method
 
-.method public static zzak()Ljava/lang/Class;
+.method private static zzak()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -36,9 +36,9 @@
         }
     .end annotation
 
+    :try_start_0
     const-string v0, "com.google.protobuf.ExtensionRegistry"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

@@ -27,15 +27,17 @@
         0x3
     }
     d1 = {
-        "\u0000 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u00086\u0018\u0000*\n\u0008\u0000\u0010\u0001 \u0001*\u00020\u00022\u00020\u0002:\u0002\u0006\u0007B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0003J\u0008\u0010\u0004\u001a\u00020\u0005H\u0016\u0082\u0001\u0002\u0008\t\u00a8\u0006\n"
+        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u00086\u0018\u0000*\n\u0008\u0000\u0010\u0002 \u0001*\u00020\u00012\u00020\u0001:\u0002\u0008\tB\t\u0008\u0002\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\u000f\u0010\u0004\u001a\u00020\u0003H\u0016\u00a2\u0006\u0004\u0008\u0004\u0010\u0005\u0082\u0001\u0002\n\u000b\u00a8\u0006\u000c"
     }
     d2 = {
         "Lcom/jio/jioml/hellojio/data/Result;",
+        "",
         "T",
         "",
-        "()V",
         "toString",
-        "",
+        "()Ljava/lang/String;",
+        "<init>",
+        "()V",
         "Error",
         "Success",
         "Lcom/jio/jioml/hellojio/data/Result$Success;",
@@ -46,13 +48,13 @@
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -74,6 +76,8 @@
 # virtual methods
 .method public toString()Ljava/lang/String;
     .locals 3
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
 
     .line 1
     instance-of v0, p0, Lcom/jio/jioml/hellojio/data/Result$Success;
@@ -94,7 +98,7 @@
 
     check-cast v2, Lcom/jio/jioml/hellojio/data/Result$Success;
 
-    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/data/Result$Success;->a()Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/data/Result$Success;->getData()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -126,7 +130,7 @@
 
     check-cast v2, Lcom/jio/jioml/hellojio/data/Result$Error;
 
-    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/data/Result$Error;->a()Ljava/lang/Exception;
+    invoke-virtual {v2}, Lcom/jio/jioml/hellojio/data/Result$Error;->getException()Ljava/lang/Exception;
 
     move-result-object v2
 

@@ -8,7 +8,7 @@
 
 
 # static fields
-.field public static zzri:Ljava/lang/Boolean;
+.field private static zzri:Ljava/lang/Boolean;
 
 
 # direct methods
@@ -63,6 +63,12 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzap;->zzc(Landroid/content/Context;)Lcom/google/android/gms/internal/gtm/zzap;

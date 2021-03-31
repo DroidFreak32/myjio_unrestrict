@@ -1,42 +1,89 @@
 .class public final Lcom/google/android/gms/internal/ads/zzry;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzrw;
+
+# instance fields
+.field public final value:J
+
+.field public final zzbts:I
+
+.field public final zzbtz:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.IOnPublisherAdViewLoadedListener"
+.method public constructor <init>(JLjava/lang/String;I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-wide p1, p0, Lcom/google/android/gms/internal/ads/zzry;->value:J
+
+    .line 3
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzry;->zzbtz:Ljava/lang/String;
+
+    .line 4
+    iput p4, p0, Lcom/google/android/gms/internal/ads/zzry;->zzbts:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/internal/ads/zzku;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_1
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    instance-of v1, p1, Lcom/google/android/gms/internal/ads/zzry;
 
-    move-result-object v0
+    if-nez v1, :cond_0
+
+    goto :goto_0
 
     .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    :cond_0
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzry;
 
-    .line 3
-    invoke-static {v0, p2}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    iget-wide v1, p1, Lcom/google/android/gms/internal/ads/zzry;->value:J
+
+    iget-wide v3, p0, Lcom/google/android/gms/internal/ads/zzry;->value:J
+
+    cmp-long v5, v1, v3
+
+    if-nez v5, :cond_1
+
+    iget p1, p1, Lcom/google/android/gms/internal/ads/zzry;->zzbts:I
+
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzry;->zzbts:I
+
+    if-ne p1, v1, :cond_1
 
     const/4 p1, 0x1
 
-    .line 4
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    return p1
 
-    return-void
+    :cond_1
+    :goto_0
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzry;->value:J
+
+    long-to-int v1, v0
+
+    return v1
 .end method

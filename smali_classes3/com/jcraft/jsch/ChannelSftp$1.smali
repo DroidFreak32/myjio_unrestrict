@@ -15,21 +15,21 @@
 
 
 # instance fields
-.field public _ackid:I
+.field private _ackid:I
 
 .field public _data:[B
 
-.field public ackcount:I
+.field private ackcount:I
 
-.field public ackid:[I
+.field private ackid:[I
 
-.field public header:Lcom/jcraft/jsch/ChannelSftp$Header;
+.field private header:Lcom/jcraft/jsch/ChannelSftp$Header;
 
-.field public init:Z
+.field private init:Z
 
-.field public isClosed:Z
+.field private isClosed:Z
 
-.field public startid:I
+.field private startid:I
 
 .field public final synthetic this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -39,7 +39,7 @@
 
 .field public final synthetic val$monitor:Lcom/jcraft/jsch/SftpProgressMonitor;
 
-.field public writecount:I
+.field private writecount:I
 
 
 # direct methods
@@ -57,43 +57,41 @@
 
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    const/4 p1, 0x1
+    const/4 p2, 0x1
 
     .line 2
-    iput-boolean p1, p0, Lcom/jcraft/jsch/ChannelSftp$1;->init:Z
+    iput-boolean p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->init:Z
 
-    const/4 p2, 0x0
+    const/4 p3, 0x0
 
     .line 3
-    iput-boolean p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->isClosed:Z
+    iput-boolean p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->isClosed:Z
 
-    new-array p3, p1, [I
+    new-array p4, p2, [I
 
     .line 4
-    iput-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->ackid:[I
+    iput-object p4, p0, Lcom/jcraft/jsch/ChannelSftp$1;->ackid:[I
 
     .line 5
-    iput p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->startid:I
+    iput p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->startid:I
 
     .line 6
-    iput p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_ackid:I
+    iput p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_ackid:I
 
     .line 7
-    iput p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->ackcount:I
+    iput p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->ackcount:I
 
     .line 8
-    iput p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->writecount:I
+    iput p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->writecount:I
 
     .line 9
-    new-instance p2, Lcom/jcraft/jsch/ChannelSftp$Header;
+    new-instance p3, Lcom/jcraft/jsch/ChannelSftp$Header;
 
-    iget-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->this$0:Lcom/jcraft/jsch/ChannelSftp;
+    invoke-direct {p3, p1}, Lcom/jcraft/jsch/ChannelSftp$Header;-><init>(Lcom/jcraft/jsch/ChannelSftp;)V
 
-    invoke-direct {p2, p3}, Lcom/jcraft/jsch/ChannelSftp$Header;-><init>(Lcom/jcraft/jsch/ChannelSftp;)V
+    iput-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->header:Lcom/jcraft/jsch/ChannelSftp$Header;
 
-    iput-object p2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->header:Lcom/jcraft/jsch/ChannelSftp$Header;
-
-    new-array p1, p1, [B
+    new-array p1, p2, [B
 
     .line 10
     iput-object p1, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_data:[B
@@ -105,6 +103,11 @@
 # virtual methods
 .method public close()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp$1;->isClosed:Z
@@ -168,6 +171,11 @@
 
 .method public flush()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp$1;->isClosed:Z
@@ -237,7 +245,7 @@
     :cond_2
     new-instance v0, Ljava/io/IOException;
 
-    const-string/jumbo v1, "stream already closed"
+    const-string v1, "stream already closed"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -246,6 +254,11 @@
 
 .method public write(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 23
     iget-object v0, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_data:[B
@@ -266,6 +279,11 @@
 
 .method public write([B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     array-length v0, p1
@@ -279,6 +297,11 @@
 
 .method public write([BII)V
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp$1;->init:Z
@@ -314,12 +337,10 @@
 
     if-nez v0, :cond_7
 
-    move v0, p2
-
-    move p2, p3
+    move v0, p3
 
     :cond_1
-    if-lez p2, :cond_4
+    if-lez v0, :cond_4
 
     .line 7
     :try_start_0
@@ -335,9 +356,9 @@
 
     move-object v6, p1
 
-    move v7, v0
+    move v7, p2
 
-    move v8, p2
+    move v8, v0
 
     invoke-static/range {v2 .. v8}, Lcom/jcraft/jsch/ChannelSftp;->access$100(Lcom/jcraft/jsch/ChannelSftp;[BJ[BII)I
 
@@ -361,9 +382,9 @@
 
     aput-wide v4, v3, v1
 
-    add-int/2addr v0, v2
+    add-int/2addr p2, v2
 
-    sub-int/2addr p2, v2
+    sub-int/2addr v0, v2
 
     .line 10
     iget-object v2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->this$0:Lcom/jcraft/jsch/ChannelSftp;
@@ -428,13 +449,9 @@
     iput v2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_ackid:I
 
     .line 14
-    iget v2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->startid:I
+    iget v3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->startid:I
 
-    iget v3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_ackid:I
-
-    if-gt v2, v3, :cond_3
-
-    iget v2, p0, Lcom/jcraft/jsch/ChannelSftp$1;->_ackid:I
+    if-gt v3, v2, :cond_3
 
     iget-object v3, p0, Lcom/jcraft/jsch/ChannelSftp$1;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -472,8 +489,6 @@
     iget-object p1, p0, Lcom/jcraft/jsch/ChannelSftp$1;->val$monitor:Lcom/jcraft/jsch/SftpProgressMonitor;
 
     if-eqz p1, :cond_6
-
-    iget-object p1, p0, Lcom/jcraft/jsch/ChannelSftp$1;->val$monitor:Lcom/jcraft/jsch/SftpProgressMonitor;
 
     int-to-long p2, p3
 
@@ -529,7 +544,7 @@
     :cond_7
     new-instance p1, Ljava/io/IOException;
 
-    const-string/jumbo p2, "stream already closed"
+    const-string p2, "stream already closed"
 
     invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

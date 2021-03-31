@@ -1,85 +1,74 @@
 .class public final Lcom/google/android/gms/internal/ads/zzadk;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final synthetic zzceh:Ljava/util/concurrent/atomic/AtomicInteger;
+# static fields
+.field private static zzddq:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final synthetic zzcei:I
+.field public static zzddr:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final synthetic zzcej:Lcom/google/android/gms/internal/ads/zzaps;
-
-.field public final synthetic zzcek:Ljava/util/List;
+.field private static zzdds:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;ILcom/google/android/gms/internal/ads/zzaps;Ljava/util/List;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
+
+    const-string v0, "gads:ad_loader:timeout_ms"
+
+    const-wide/32 v1, 0xea60
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzceh:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzb(Ljava/lang/String;J)Lcom/google/android/gms/internal/ads/zzacn;
 
-    iput p2, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzcei:I
+    move-result-object v0
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzcej:Lcom/google/android/gms/internal/ads/zzaps;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadk;->zzddq:Lcom/google/android/gms/internal/ads/zzacn;
 
-    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzcek:Ljava/util/List;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzceh:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
-
-    move-result v0
-
-    iget v1, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzcei:I
-
-    if-lt v0, v1, :cond_0
+    const-string v0, "gads:rendering:timeout_ms"
 
     .line 2
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzcej:Lcom/google/android/gms/internal/ads/zzaps;
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzb(Ljava/lang/String;J)Lcom/google/android/gms/internal/ads/zzacn;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzadk;->zzcek:Ljava/util/List;
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzadd;->zzk(Ljava/util/List;)Ljava/util/List;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadk;->zzddr:Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object v1
+    const-string v0, "gads:resolve_future:default_timeout_ms"
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzaps;->set(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    :goto_0
-    const-string v1, "Unable to convert list of futures to a future of list"
+    const-wide/16 v1, 0x7530
 
     .line 3
-    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzacn;->zzb(Ljava/lang/String;J)Lcom/google/android/gms/internal/ads/zzacn;
 
-    :cond_0
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadk;->zzdds:Lcom/google/android/gms/internal/ads/zzacn;
+
     return-void
 .end method

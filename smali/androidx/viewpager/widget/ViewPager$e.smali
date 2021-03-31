@@ -1,9 +1,6 @@
-.class public interface abstract annotation Landroidx/viewpager/widget/ViewPager$e;
+.class public Landroidx/viewpager/widget/ViewPager$e;
 .super Ljava/lang/Object;
 .source "ViewPager.java"
-
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
 
 
 # annotations
@@ -12,19 +9,29 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2609
+    accessFlags = 0x9
     name = "e"
 .end annotation
 
-.annotation runtime Ljava/lang/annotation/Inherited;
-.end annotation
 
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+# instance fields
+.field public a:Ljava/lang/Object;
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+.field public b:I
+
+.field public c:Z
+
+.field public d:F
+
+.field public e:F
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

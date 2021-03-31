@@ -4,19 +4,19 @@
 
 
 # static fields
-.field public static final B:I = 0x40
+.field private static final B:I = 0x40
 
 
 # instance fields
-.field public bsize:I
+.field private bsize:I
 
-.field public k_ipad:[B
+.field private k_ipad:[B
 
-.field public k_opad:[B
+.field private k_opad:[B
 
-.field public md:Ljava/security/MessageDigest;
+.field private md:Ljava/security/MessageDigest;
 
-.field public final tmp:[B
+.field private final tmp:[B
 
 
 # direct methods
@@ -69,18 +69,18 @@
 
     iget-object v2, p0, Lcom/jcraft/jsch/jcraft/HMAC;->k_opad:[B
 
-    const/16 v3, 0x40
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x40
 
-    invoke-virtual {v1, v2, v4, v3}, Ljava/security/MessageDigest;->update([BII)V
+    invoke-virtual {v1, v2, v3, v4}, Ljava/security/MessageDigest;->update([BII)V
 
     .line 3
     iget-object v1, p0, Lcom/jcraft/jsch/jcraft/HMAC;->md:Ljava/security/MessageDigest;
 
     iget v2, p0, Lcom/jcraft/jsch/jcraft/HMAC;->bsize:I
 
-    invoke-virtual {v1, v0, v4, v2}, Ljava/security/MessageDigest;->update([BII)V
+    invoke-virtual {v1, v0, v3, v2}, Ljava/security/MessageDigest;->update([BII)V
 
     .line 4
     :try_start_0
@@ -98,7 +98,7 @@
 
     iget-object p2, p0, Lcom/jcraft/jsch/jcraft/HMAC;->k_ipad:[B
 
-    invoke-virtual {p1, p2, v4, v3}, Ljava/security/MessageDigest;->update([BII)V
+    invoke-virtual {p1, p2, v3, v4}, Ljava/security/MessageDigest;->update([BII)V
 
     return-void
 .end method
@@ -114,6 +114,11 @@
 
 .method public init([B)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/jcraft/HMAC;->md:Ljava/security/MessageDigest;
@@ -166,8 +171,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/jcraft/HMAC;->k_ipad:[B
 
     .line 9
-    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/HMAC;->k_ipad:[B
-
     array-length v3, p1
 
     invoke-static {p1, v2, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -178,8 +181,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/jcraft/HMAC;->k_opad:[B
 
     .line 11
-    iget-object v0, p0, Lcom/jcraft/jsch/jcraft/HMAC;->k_opad:[B
-
     array-length v3, p1
 
     invoke-static {p1, v2, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V

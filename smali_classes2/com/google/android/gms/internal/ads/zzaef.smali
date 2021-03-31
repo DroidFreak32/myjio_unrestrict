@@ -1,43 +1,98 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaef;
+.class public final Lcom/google/android/gms/internal/ads/zzaef;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaos;
+.implements Lcom/google/android/gms/ads/formats/NativeCustomTemplateAd$DisplayOpenMeasurement;
 
 
 # instance fields
-.field public final zzcew:Lorg/json/JSONObject;
-
-.field public final zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+.field private final zzder:Lcom/google/android/gms/internal/ads/zzaff;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaea;Lorg/json/JSONObject;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaff;)V
+    .locals 1
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzder:Lcom/google/android/gms/internal/ads/zzaff;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzcew:Lorg/json/JSONObject;
+    .line 3
+    :try_start_0
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzaff;->zztd()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, ""
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
-    .locals 2
+.method public final setView(Landroid/view/View;)V
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzcfe:Lcom/google/android/gms/internal/ads/zzaea;
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzder:Lcom/google/android/gms/internal/ads/zzaff;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzcew:Lorg/json/JSONObject;
-
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzasg;
-
-    invoke-virtual {v0, v1, p1}, Lcom/google/android/gms/internal/ads/zzaea;->zza(Lorg/json/JSONObject;Lcom/google/android/gms/internal/ads/zzasg;)Lcom/google/android/gms/internal/ads/zzapi;
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object p1
 
-    return-object p1
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzaff;->zzq(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, ""
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final start()Z
+    .locals 2
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaef;->zzder:Lcom/google/android/gms/internal/ads/zzaff;
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzaff;->zztc()Z
+
+    move-result v0
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, ""
+
+    .line 2
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

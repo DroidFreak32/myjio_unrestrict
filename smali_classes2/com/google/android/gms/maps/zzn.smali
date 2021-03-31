@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzv:Lcom/google/android/gms/maps/GoogleMap$OnGroundOverlayClickListener;
+.field private final synthetic zzv:Lcom/google/android/gms/maps/GoogleMap$OnGroundOverlayClickListener;
 
 
 # direct methods

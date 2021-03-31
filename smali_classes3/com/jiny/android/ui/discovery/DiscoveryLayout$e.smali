@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lzl0$b;
+.implements Lcom/jiny/android/ui/discovery/d$a;
 
 
 # annotations
@@ -40,7 +40,7 @@
 
     sget-object v1, Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;->DRAGGED:Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;
 
-    invoke-static {v0, v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;)Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;
+    invoke-static {v0, v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->e(Lcom/jiny/android/ui/discovery/DiscoveryLayout;Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;)Lcom/jiny/android/ui/discovery/DiscoveryLayout$DiscoveryIconState;
 
     return-void
 .end method
@@ -69,7 +69,7 @@
 
     iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
 
     move-result-object p1
 
@@ -85,7 +85,7 @@
     :cond_2
     iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
 
     move-result-object p1
 
@@ -93,7 +93,7 @@
 
     iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
 
     move-result-object p1
 
@@ -101,7 +101,7 @@
 
     iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->b(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
+    invoke-static {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->v(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
 
     move-result-object p1
 
@@ -114,7 +114,7 @@
 
     iget-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-virtual {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c()V
+    invoke-virtual {p1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->w()V
 
     const/4 p1, 0x4
 
@@ -129,7 +129,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
 
     move-result-object v0
 
@@ -139,7 +139,7 @@
 
     iget-object v1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->b(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
+    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->v(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
 
     move-result-object v1
 
@@ -159,7 +159,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->y(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
 
     move-result-object v0
 
@@ -169,7 +169,7 @@
 
     iget-object v1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
+    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->y(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
 
     move-result-object v1
 
@@ -187,7 +187,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->y(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
 
     move-result-object v0
 
@@ -197,7 +197,7 @@
 
     iget-object v1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->c(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
+    invoke-static {v1}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->y(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Landroid/view/View;
 
     move-result-object v1
 
@@ -217,7 +217,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
 
     move-result-object v0
 
@@ -231,7 +231,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->d(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/custom/TrashView;
 
     move-result-object v0
 
@@ -239,7 +239,7 @@
 
     iget-object v0, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$e;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->b(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
+    invoke-static {v0}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->v(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)Lcom/jiny/android/ui/shape/JinyBgShapeView;
 
     move-result-object v0
 

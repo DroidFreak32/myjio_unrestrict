@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/data/DataBufferUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # static fields
@@ -15,7 +16,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -91,6 +92,7 @@
     .line 5
     invoke-interface {p0}, Lcom/google/android/gms/common/data/DataBuffer;->close()V
 
+    .line 6
     throw v0
 .end method
 

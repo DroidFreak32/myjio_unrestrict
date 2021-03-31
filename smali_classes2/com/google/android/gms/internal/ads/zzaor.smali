@@ -1,148 +1,53 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzaor;
-.super Ljava/util/concurrent/AbstractExecutorService;
+.class public final Lcom/google/android/gms/internal/ads/zzaor;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapm;
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# instance fields
+.field private final synthetic zzdnk:Lcom/google/android/gms/internal/ads/zzaop;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaop;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/util/concurrent/AbstractExecutorService;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaor;->zzdnk:Lcom/google/android/gms/internal/ads/zzaop;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Runnable;",
-            "TT;)",
-            "Ljava/util/concurrent/RunnableFuture<",
-            "TT;>;"
-        }
-    .end annotation
+.method public final run()V
+    .locals 2
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzapl;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaor;->zzdnk:Lcom/google/android/gms/internal/ads/zzaop;
 
-    invoke-direct {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzapl;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaop;->zza(Lcom/google/android/gms/internal/ads/zzaop;)Lcom/google/android/gms/internal/ads/zzano;
 
-    return-object v0
-.end method
+    move-result-object v0
 
-.method public final newTaskFor(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/RunnableFuture;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/concurrent/Callable<",
-            "TT;>;)",
-            "Ljava/util/concurrent/RunnableFuture<",
-            "TT;>;"
-        }
-    .end annotation
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzano;->onAdOpened()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "#007 Could not call remote method."
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzapl;
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzapl;-><init>(Ljava/util/concurrent/Callable;)V
-
-    return-object v0
-.end method
-
-.method public synthetic submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-    .locals 0
-
-    .line 3
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ads/zzaor;->zzd(Ljava/lang/Runnable;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
-    .locals 0
-
-    .line 2
-    invoke-super {p0, p1, p2}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzapi;
-
-    return-object p1
-.end method
-
-.method public synthetic submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ads/zzaor;->zza(Ljava/util/concurrent/Callable;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final zza(Ljava/util/concurrent/Callable;)Lcom/google/android/gms/internal/ads/zzapi;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/concurrent/Callable<",
-            "TT;>;)",
-            "Lcom/google/android/gms/internal/ads/zzapi<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzapi;
-
-    return-object p1
-.end method
-
-.method public final zzd(Ljava/lang/Runnable;)Lcom/google/android/gms/internal/ads/zzapi;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Runnable;",
-            ")",
-            "Lcom/google/android/gms/internal/ads/zzapi<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzapi;
-
-    return-object p1
+    return-void
 .end method

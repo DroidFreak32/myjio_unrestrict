@@ -1,6 +1,6 @@
 .class public interface abstract Lv1$a;
 .super Ljava/lang/Object;
-.source "MenuView.java"
+.source "RoundRectDrawableWithShadow.java"
 
 
 # annotations
@@ -15,11 +15,5 @@
 
 
 # virtual methods
-.method public abstract getItemData()Lq1;
-.end method
-
-.method public abstract initialize(Lq1;I)V
-.end method
-
-.method public abstract prefersCondensedTitle()Z
+.method public abstract a(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/graphics/Paint;)V
 .end method

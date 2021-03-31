@@ -3,7 +3,7 @@
 .source "ImageLoader.java"
 
 # interfaces
-.implements Lwv$a;
+.implements Lcom/android/volley/Response$ErrorListener;
 
 
 # annotations

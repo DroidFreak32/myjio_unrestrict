@@ -1,39 +1,89 @@
 .class public Lcom/elitecorelib/core/room/pojo/PojoDeviceInfo;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoDeviceInfo"
+.end annotation
+
+
 # instance fields
 .field public app:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "app"
+    .end annotation
+.end field
 
 .field public brand:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "brand"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public im1:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "imei"
+    .end annotation
+.end field
 
 .field public im2:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "imsi"
+    .end annotation
+.end field
 
 .field public mdl:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "mdl"
+    .end annotation
+.end field
 
 .field public mv:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "mv"
+    .end annotation
+.end field
 
 .field public os:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "os"
+    .end annotation
+.end field
 
 .field public sdk:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "sdk"
+    .end annotation
+.end field
 
 .field public st:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "st"
+    .end annotation
+.end field
 
 .field public uid:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "uid"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method

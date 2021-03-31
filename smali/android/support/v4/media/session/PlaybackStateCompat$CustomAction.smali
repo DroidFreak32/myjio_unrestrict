@@ -36,15 +36,15 @@
 
 
 # instance fields
-.field public final mAction:Ljava/lang/String;
+.field private final mAction:Ljava/lang/String;
 
-.field public mCustomActionObj:Ljava/lang/Object;
+.field private mCustomActionObj:Ljava/lang/Object;
 
-.field public final mExtras:Landroid/os/Bundle;
+.field private final mExtras:Landroid/os/Bundle;
 
-.field public final mIcon:I
+.field private final mIcon:I
 
-.field public final mName:Ljava/lang/CharSequence;
+.field private final mName:Ljava/lang/CharSequence;
 
 
 # direct methods
@@ -208,11 +208,11 @@
 
     if-nez v0, :cond_1
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0x15
+    const/16 v2, 0x15
 
-    if-ge v0, v1, :cond_0
+    if-ge v1, v2, :cond_0
 
     goto :goto_0
 
@@ -232,16 +232,8 @@
 
     iput-object v0, p0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;->mCustomActionObj:Ljava/lang/Object;
 
-    .line 3
-    iget-object v0, p0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;->mCustomActionObj:Ljava/lang/Object;
-
-    return-object v0
-
-    .line 4
     :cond_1
     :goto_0
-    iget-object v0, p0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;->mCustomActionObj:Ljava/lang/Object;
-
     return-object v0
 .end method
 

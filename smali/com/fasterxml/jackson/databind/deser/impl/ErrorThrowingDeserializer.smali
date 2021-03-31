@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public final _cause:Ljava/lang/Error;
+.field private final _cause:Ljava/lang/Error;
 
 
 # direct methods
@@ -34,6 +34,11 @@
 # virtual methods
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ErrorThrowingDeserializer;->_cause:Ljava/lang/Error;

@@ -8,13 +8,13 @@
 
 .field public static final RSA:I = 0x0
 
-.field public static final SSH_MSG_KEX_DH_GEX_GROUP:I = 0x1f
+.field private static final SSH_MSG_KEX_DH_GEX_GROUP:I = 0x1f
 
-.field public static final SSH_MSG_KEX_DH_GEX_INIT:I = 0x20
+.field private static final SSH_MSG_KEX_DH_GEX_INIT:I = 0x20
 
-.field public static final SSH_MSG_KEX_DH_GEX_REPLY:I = 0x21
+.field private static final SSH_MSG_KEX_DH_GEX_REPLY:I = 0x21
 
-.field public static final SSH_MSG_KEX_DH_GEX_REQUEST:I = 0x22
+.field private static final SSH_MSG_KEX_DH_GEX_REQUEST:I = 0x22
 
 .field public static max:I = 0x400
 
@@ -32,21 +32,21 @@
 
 .field public V_S:[B
 
-.field public buf:Lcom/jcraft/jsch/Buffer;
+.field private buf:Lcom/jcraft/jsch/Buffer;
 
 .field public dh:Lcom/jcraft/jsch/DH;
 
-.field public e:[B
+.field private e:[B
 
-.field public g:[B
+.field private g:[B
 
-.field public p:[B
+.field private p:[B
 
-.field public packet:Lcom/jcraft/jsch/Packet;
+.field private packet:Lcom/jcraft/jsch/Packet;
 
-.field public state:I
+.field private state:I
 
-.field public type:I
+.field private type:I
 
 
 # direct methods
@@ -103,6 +103,11 @@
 
 .method public init(Lcom/jcraft/jsch/Session;[B[B[B[B)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/jcraft/jsch/KeyExchange;->session:Lcom/jcraft/jsch/Session;
@@ -120,7 +125,7 @@
     iput-object p5, p0, Lcom/jcraft/jsch/DHGEX256;->I_C:[B
 
     :try_start_0
-    const-string/jumbo p2, "sha-256"
+    const-string p2, "sha-256"
 
     .line 6
     invoke-virtual {p1, p2}, Lcom/jcraft/jsch/Session;->getConfig(Ljava/lang/String;)Ljava/lang/String;
@@ -141,8 +146,6 @@
     iput-object p2, p0, Lcom/jcraft/jsch/KeyExchange;->sha:Lcom/jcraft/jsch/HASH;
 
     .line 8
-    iget-object p2, p0, Lcom/jcraft/jsch/KeyExchange;->sha:Lcom/jcraft/jsch/HASH;
-
     invoke-interface {p2}, Lcom/jcraft/jsch/HASH;->init()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -196,8 +199,6 @@
     iput-object p2, p0, Lcom/jcraft/jsch/DHGEX256;->dh:Lcom/jcraft/jsch/DH;
 
     .line 14
-    iget-object p2, p0, Lcom/jcraft/jsch/DHGEX256;->dh:Lcom/jcraft/jsch/DH;
-
     invoke-interface {p2}, Lcom/jcraft/jsch/DH;->init()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -320,6 +321,11 @@
 
 .method public next(Lcom/jcraft/jsch/Buffer;)Z
     .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/jcraft/jsch/DHGEX256;->state:I
@@ -359,7 +365,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "type: must be SSH_MSG_KEX_DH_GEX_REPLY "
+    const-string v2, "type: must be SSH_MSG_KEX_DH_GEX_REPLY "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -503,19 +509,17 @@
 
     move-result v0
 
-    new-array v0, v0, [B
+    new-array v1, v0, [B
 
     .line 19
-    iget-object v1, p0, Lcom/jcraft/jsch/DHGEX256;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v2, p0, Lcom/jcraft/jsch/DHGEX256;->buf:Lcom/jcraft/jsch/Buffer;
 
-    invoke-virtual {v1, v0}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
+    invoke-virtual {v2, v1}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
 
     .line 20
-    iget-object v1, p0, Lcom/jcraft/jsch/KeyExchange;->sha:Lcom/jcraft/jsch/HASH;
+    iget-object v2, p0, Lcom/jcraft/jsch/KeyExchange;->sha:Lcom/jcraft/jsch/HASH;
 
-    array-length v2, v0
-
-    invoke-interface {v1, v0, v3, v2}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    invoke-interface {v2, v1, v3, v0}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
     .line 21
     iget-object v0, p0, Lcom/jcraft/jsch/KeyExchange;->sha:Lcom/jcraft/jsch/HASH;
@@ -576,7 +580,7 @@
 
     add-int/2addr v5, v1
 
-    const-string/jumbo v1, "ssh-rsa"
+    const-string v1, "ssh-rsa"
 
     .line 24
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -684,7 +688,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/jcraft/jsch/KeyExchange;->session:Lcom/jcraft/jsch/Session;
 
-    const-string/jumbo v1, "signature.rsa"
+    const-string v1, "signature.rsa"
 
     invoke-virtual {v0, v1}, Lcom/jcraft/jsch/Session;->getConfig(Ljava/lang/String;)Ljava/lang/String;
 
@@ -714,18 +718,20 @@
     :catch_0
     move-exception v1
 
+    move-object v6, v0
+
     goto :goto_0
 
     :catch_1
     move-exception v1
 
-    move-object v0, v6
-
     .line 33
     :goto_0
-    sget-object v6, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-virtual {v6, v1}, Ljava/io/PrintStream;->println(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/Object;)V
+
+    move-object v0, v6
 
     .line 34
     :goto_1
@@ -761,7 +767,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "ssh_rsa_verify: signature "
+    const-string v2, "ssh_rsa_verify: signature "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -776,7 +782,7 @@
     goto/16 :goto_4
 
     :cond_2
-    const-string/jumbo v1, "ssh-dss"
+    const-string v1, "ssh-dss"
 
     .line 39
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -980,7 +986,7 @@
     :try_start_2
     iget-object v0, p0, Lcom/jcraft/jsch/KeyExchange;->session:Lcom/jcraft/jsch/Session;
 
-    const-string/jumbo v1, "signature.dss"
+    const-string v1, "signature.dss"
 
     invoke-virtual {v0, v1}, Lcom/jcraft/jsch/Session;->getConfig(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1010,18 +1016,20 @@
     :catch_2
     move-exception v1
 
+    move-object v6, v0
+
     goto :goto_2
 
     :catch_3
     move-exception v1
 
-    move-object v0, v6
-
     .line 54
     :goto_2
-    sget-object v6, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-virtual {v6, v1}, Ljava/io/PrintStream;->println(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/Object;)V
+
+    move-object v0, v6
 
     .line 55
     :goto_3
@@ -1061,7 +1069,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "ssh_dss_verify: signature "
+    const-string v2, "ssh_dss_verify: signature "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1079,7 +1087,7 @@
     :cond_3
     sget-object p1, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    const-string/jumbo v0, "unknown alg"
+    const-string v0, "unknown alg"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -1113,7 +1121,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "type: must be SSH_MSG_KEX_DH_GEX_GROUP "
+    const-string v2, "type: must be SSH_MSG_KEX_DH_GEX_GROUP "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

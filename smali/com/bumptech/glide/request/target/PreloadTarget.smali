@@ -16,13 +16,13 @@
 
 
 # static fields
-.field public static final HANDLER:Landroid/os/Handler;
+.field private static final HANDLER:Landroid/os/Handler;
 
-.field public static final MESSAGE_CLEAR:I = 0x1
+.field private static final MESSAGE_CLEAR:I = 0x1
 
 
 # instance fields
-.field public final requestManager:Lcom/bumptech/glide/RequestManager;
+.field private final requestManager:Lcom/bumptech/glide/RequestManager;
 
 
 # direct methods
@@ -47,7 +47,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/bumptech/glide/RequestManager;II)V
+.method private constructor <init>(Lcom/bumptech/glide/RequestManager;II)V
     .locals 0
 
     .line 1
@@ -96,6 +96,14 @@
 
 .method public onResourceReady(Ljava/lang/Object;Lcom/bumptech/glide/request/transition/Transition;)V
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/transition/Transition;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TZ;",

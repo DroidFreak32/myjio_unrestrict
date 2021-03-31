@@ -1,40 +1,49 @@
 .class public final Lcom/google/android/gms/internal/vision/zzdz;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/vision/zzgc;
+.super Lcom/google/android/gms/internal/vision/zzem;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "Lcom/google/android/gms/internal/vision/zzem<",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/vision/zzgc<",
-        "Lcom/google/android/gms/internal/vision/zzdy;",
+        "Ljava/lang/Object;",
         ">;"
     }
 .end annotation
 
 
+# static fields
+.field public static final zzmt:Lcom/google/android/gms/internal/vision/zzdz;
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzdz;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzdz;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzdz;->zzmt:Lcom/google/android/gms/internal/vision/zzdz;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic zzf(I)Lcom/google/android/gms/internal/vision/zzgb;
-    .locals 0
+.method private constructor <init>()V
+    .locals 3
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzdy;->zzw(I)Lcom/google/android/gms/internal/vision/zzdy;
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzes;->zznn:Lcom/google/android/gms/internal/vision/zzef;
 
-    move-result-object p1
+    const/4 v1, 0x0
 
-    return-object p1
+    const/4 v2, 0x0
+
+    .line 2
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/gms/internal/vision/zzem;-><init>(Lcom/google/android/gms/internal/vision/zzef;ILjava/util/Comparator;)V
+
+    return-void
 .end method

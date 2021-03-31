@@ -1,107 +1,37 @@
 .class public final Lcom/google/android/gms/internal/vision/zzeq;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "Lcom/google/android/gms/internal/vision/zzeo;",
-        ">;"
-    }
-.end annotation
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static zzb(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 2
+
+    if-eqz p0, :cond_0
+
+    return-object p0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 4
-
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzeo;
-
-    check-cast p2, Lcom/google/android/gms/internal/vision/zzeo;
-
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzeo;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzeu;
-
-    .line 3
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/vision/zzeo;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/vision/zzeu;
-
-    .line 4
     :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    new-instance p0, Ljava/lang/NullPointerException;
 
-    move-result v2
+    const/16 v0, 0x14
 
-    if-eqz v2, :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result v2
+    const-string v0, "at index "
 
-    if-eqz v2, :cond_1
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5
-    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzeu;->nextByte()B
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v2}, Lcom/google/android/gms/internal/vision/zzeo;->zzb(B)I
+    move-result-object p1
 
-    move-result v2
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v1}, Lcom/google/android/gms/internal/vision/zzeu;->nextByte()B
-
-    move-result v3
-
-    invoke-static {v3}, Lcom/google/android/gms/internal/vision/zzeo;->zzb(B)I
-
-    move-result v3
-
-    invoke-static {v2, v3}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    return v2
-
-    .line 6
-    :cond_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzeo;->size()I
-
-    move-result p1
-
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/vision/zzeo;->size()I
-
-    move-result p2
-
-    invoke-static {p1, p2}, Ljava/lang/Integer;->compare(II)I
-
-    move-result p1
-
-    return p1
+    throw p0
 .end method

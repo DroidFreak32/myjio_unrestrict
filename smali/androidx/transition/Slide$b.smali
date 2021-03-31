@@ -32,7 +32,7 @@
     .locals 2
 
     .line 1
-    invoke-static {p1}, Lba;->m(Landroid/view/View;)I
+    invoke-static {p1}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
     move-result v0
 

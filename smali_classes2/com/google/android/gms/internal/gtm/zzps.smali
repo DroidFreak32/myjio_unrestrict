@@ -21,9 +21,9 @@
 # static fields
 .field public static final zzavx:Lcom/google/android/gms/internal/gtm/zzps;
 
-.field public static final zzavy:Lcom/google/android/gms/internal/gtm/zzpy;
+.field private static final zzavy:Lcom/google/android/gms/internal/gtm/zzpy;
 
-.field public static final zzavz:Ljava/util/Comparator;
+.field private static final zzavz:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Comparator<",
@@ -35,7 +35,7 @@
 
 
 # instance fields
-.field public zzavn:I
+.field private zzavn:I
 
 
 # direct methods
@@ -98,7 +98,7 @@
     return-void
 .end method
 
-.method public static zza(B)I
+.method private static zza(B)I
     .locals 0
 
     and-int/lit16 p0, p0, 0xff
@@ -392,6 +392,11 @@
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/gtm/zzpr;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public abstract zzak(I)B

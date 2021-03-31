@@ -5,6 +5,11 @@
 
 # virtual methods
 .method public abstract consume(Lcom/google/android/jioexoplayer2/util/ParsableByteArray;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/ParserException;
+        }
+    .end annotation
 .end method
 
 .method public abstract createTracks(Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V

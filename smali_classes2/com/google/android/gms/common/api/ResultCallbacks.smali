@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/ResultCallbacks;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/ResultCallback;
@@ -31,10 +32,18 @@
 
 # virtual methods
 .method public abstract onFailure(Lcom/google/android/gms/common/api/Status;)V
+    .param p1    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public final onResult(Lcom/google/android/gms/common/api/Result;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -115,6 +124,10 @@
 .end method
 
 .method public abstract onSuccess(Lcom/google/android/gms/common/api/Result;)V
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"

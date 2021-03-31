@@ -1,5 +1,5 @@
 .class public final Landroidx/databinding/ViewDataBinding$e;
-.super Lpb$a;
+.super Landroidx/databinding/CallbackRegistry$NotifierCallback;
 .source "ViewDataBinding.java"
 
 
@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lpb$a<",
-        "Lzb;",
+        "Landroidx/databinding/CallbackRegistry$NotifierCallback<",
+        "Landroidx/databinding/OnRebindCallback;",
         "Landroidx/databinding/ViewDataBinding;",
         "Ljava/lang/Void;",
         ">;"
@@ -29,29 +29,14 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lpb$a;-><init>()V
+    invoke-direct {p0}, Landroidx/databinding/CallbackRegistry$NotifierCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lzb;
-
-    check-cast p2, Landroidx/databinding/ViewDataBinding;
-
-    check-cast p4, Ljava/lang/Void;
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/databinding/ViewDataBinding$e;->a(Lzb;Landroidx/databinding/ViewDataBinding;ILjava/lang/Void;)V
-
-    return-void
-.end method
-
-.method public a(Lzb;Landroidx/databinding/ViewDataBinding;ILjava/lang/Void;)V
+.method public a(Landroidx/databinding/OnRebindCallback;Landroidx/databinding/ViewDataBinding;ILjava/lang/Void;)V
     .locals 0
 
     const/4 p4, 0x1
@@ -68,30 +53,45 @@
 
     goto :goto_0
 
-    .line 2
+    .line 1
     :cond_0
-    invoke-virtual {p1, p2}, Lzb;->a(Landroidx/databinding/ViewDataBinding;)V
+    invoke-virtual {p1, p2}, Landroidx/databinding/OnRebindCallback;->onBound(Landroidx/databinding/ViewDataBinding;)V
+
+    goto :goto_0
+
+    .line 2
+    :cond_1
+    invoke-virtual {p1, p2}, Landroidx/databinding/OnRebindCallback;->onCanceled(Landroidx/databinding/ViewDataBinding;)V
 
     goto :goto_0
 
     .line 3
-    :cond_1
-    invoke-virtual {p1, p2}, Lzb;->b(Landroidx/databinding/ViewDataBinding;)V
-
-    goto :goto_0
-
-    .line 4
     :cond_2
-    invoke-virtual {p1, p2}, Lzb;->c(Landroidx/databinding/ViewDataBinding;)Z
+    invoke-virtual {p1, p2}, Landroidx/databinding/OnRebindCallback;->onPreBind(Landroidx/databinding/ViewDataBinding;)Z
 
     move-result p1
 
     if-nez p1, :cond_3
 
-    .line 5
+    .line 4
     invoke-static {p2, p4}, Landroidx/databinding/ViewDataBinding;->access$002(Landroidx/databinding/ViewDataBinding;Z)Z
 
     :cond_3
     :goto_0
+    return-void
+.end method
+
+.method public bridge synthetic onNotifyCallback(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Landroidx/databinding/OnRebindCallback;
+
+    check-cast p2, Landroidx/databinding/ViewDataBinding;
+
+    check-cast p4, Ljava/lang/Void;
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/databinding/ViewDataBinding$e;->a(Landroidx/databinding/OnRebindCallback;Landroidx/databinding/ViewDataBinding;ILjava/lang/Void;)V
+
     return-void
 .end method

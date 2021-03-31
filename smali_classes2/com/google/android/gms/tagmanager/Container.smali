@@ -17,13 +17,13 @@
 
 
 # instance fields
-.field public final zzaec:Ljava/lang/String;
+.field private final zzaec:Ljava/lang/String;
 
-.field public final zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
+.field private final zzaed:Lcom/google/android/gms/tagmanager/DataLayer;
 
-.field public zzaee:Lcom/google/android/gms/tagmanager/zzfb;
+.field private zzaee:Lcom/google/android/gms/tagmanager/zzfb;
 
-.field public zzaef:Ljava/util/Map;
+.field private zzaef:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -34,7 +34,7 @@
     .end annotation
 .end field
 
-.field public zzaeg:Ljava/util/Map;
+.field private zzaeg:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -45,11 +45,11 @@
     .end annotation
 .end field
 
-.field public volatile zzaeh:J
+.field private volatile zzaeh:J
 
-.field public volatile zzaei:Ljava/lang/String;
+.field private volatile zzaei:Ljava/lang/String;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -93,9 +93,10 @@
     .line 18
     iget-object p1, p6, Lcom/google/android/gms/internal/gtm/zzk;->zzqk:Lcom/google/android/gms/internal/gtm/zzi;
 
-    if-eqz p1, :cond_2
-
     .line 19
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 20
     :try_start_0
     invoke-static {p1}, Lcom/google/android/gms/internal/gtm/zzor;->zza(Lcom/google/android/gms/internal/gtm/zzi;)Lcom/google/android/gms/internal/gtm/zzov;
 
@@ -103,7 +104,7 @@
     :try_end_0
     .catch Lcom/google/android/gms/internal/gtm/zzoz; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 20
+    .line 21
     invoke-direct {p0, p1}, Lcom/google/android/gms/tagmanager/Container;->zza(Lcom/google/android/gms/internal/gtm/zzov;)V
 
     goto :goto_0
@@ -111,7 +112,7 @@
     :catch_0
     move-exception p2
 
-    .line 21
+    .line 22
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -162,18 +163,18 @@
 
     invoke-static {p1}, Lcom/google/android/gms/tagmanager/zzdi;->zzav(Ljava/lang/String;)V
 
-    .line 22
+    .line 23
     :goto_0
     iget-object p1, p6, Lcom/google/android/gms/internal/gtm/zzk;->zzqj:[Lcom/google/android/gms/internal/gtm/zzj;
 
     if-eqz p1, :cond_1
 
-    .line 23
+    .line 24
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 24
+    .line 25
     array-length p3, p1
 
     const/4 p4, 0x0
@@ -183,14 +184,14 @@
 
     aget-object p5, p1, p4
 
-    .line 25
+    .line 26
     invoke-interface {p2, p5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 p4, p4, 0x1
 
     goto :goto_1
 
-    .line 26
+    .line 27
     :cond_0
     invoke-direct {p0}, Lcom/google/android/gms/tagmanager/Container;->zzhb()Lcom/google/android/gms/tagmanager/zzfb;
 
@@ -200,14 +201,6 @@
 
     :cond_1
     return-void
-
-    .line 27
-    :cond_2
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/DataLayer;Ljava/lang/String;JLcom/google/android/gms/internal/gtm/zzov;)V
@@ -841,20 +834,23 @@
 .method public registerFunctionCallMacroCallback(Ljava/lang/String;Lcom/google/android/gms/tagmanager/Container$FunctionCallMacroCallback;)V
     .locals 2
 
-    if-eqz p2, :cond_0
+    const-string v0, "Macro handler must be non-null"
 
     .line 1
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/tagmanager/Container;->zzaef:Ljava/util/Map;
 
     monitor-enter v0
 
-    .line 2
+    .line 3
     :try_start_0
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/Container;->zzaef:Ljava/util/Map;
 
     invoke-interface {v1, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
+    .line 4
     monitor-exit v0
 
     return-void
@@ -865,16 +861,6 @@
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    .line 4
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Macro handler must be non-null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method
@@ -882,20 +868,23 @@
 .method public registerFunctionCallTagCallback(Ljava/lang/String;Lcom/google/android/gms/tagmanager/Container$FunctionCallTagCallback;)V
     .locals 2
 
-    if-eqz p2, :cond_0
+    const-string v0, "Tag callback must be non-null"
 
     .line 1
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/tagmanager/Container;->zzaeg:Ljava/util/Map;
 
     monitor-enter v0
 
-    .line 2
+    .line 3
     :try_start_0
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/Container;->zzaeg:Ljava/util/Map;
 
     invoke-interface {v1, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
+    .line 4
     monitor-exit v0
 
     return-void
@@ -906,16 +895,6 @@
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    .line 4
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Tag callback must be non-null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method

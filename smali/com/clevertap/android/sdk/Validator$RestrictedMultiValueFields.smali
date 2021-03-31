@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+.field private static final synthetic $VALUES:[Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
 .field public static final enum Age:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
@@ -50,176 +50,168 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 13
+    .locals 16
 
     .line 1
     new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v1, 0x0
+    const-string v1, "Name"
 
-    const-string v2, "Name"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Name:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
     const-string v3, "Email"
 
-    invoke-direct {v0, v3, v2}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Email:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    invoke-direct {v1, v3, v4}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Email:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const-string v4, "Education"
+    const-string v5, "Education"
 
-    invoke-direct {v0, v4, v3}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Education:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    invoke-direct {v3, v5, v6}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Education:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
     .line 2
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v5, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v4, 0x3
+    const-string v7, "Married"
 
-    const-string v5, "Married"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Married:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v5, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Married:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v7, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v5, 0x4
+    const-string v9, "DOB"
 
-    const-string v6, "DOB"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->DOB:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v7, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->DOB:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v9, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v6, 0x5
+    const-string v11, "Gender"
 
-    const-string v7, "Gender"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Gender:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v9, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Gender:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
     .line 3
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v11, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v7, 0x6
+    const-string v13, "Phone"
 
-    const-string v8, "Phone"
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v8, v7}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v11, v13, v14}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Phone:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v11, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Phone:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v13, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/4 v8, 0x7
+    const-string v15, "Age"
 
-    const-string v9, "Age"
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v9, v8}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v13, v15, v14}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Age:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v13, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Age:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v15, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    const/16 v9, 0x8
+    const-string v14, "FBID"
 
-    const-string v10, "FBID"
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v10, v9}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v15, v14, v12}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->FBID:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v15, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->FBID:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v14, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+
+    const-string v12, "GPID"
 
     const/16 v10, 0x9
 
-    const-string v11, "GPID"
+    invoke-direct {v14, v12, v10}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v11, v10}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    sput-object v14, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->GPID:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->GPID:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    new-instance v12, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-instance v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    const-string v10, "Birthday"
 
-    const/16 v11, 0xa
+    const/16 v8, 0xa
 
-    const-string v12, "Birthday"
+    invoke-direct {v12, v10, v8}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v12, v11}, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;-><init>(Ljava/lang/String;I)V
+    sput-object v12, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Birthday:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Birthday:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    const/16 v10, 0xb
 
-    const/16 v0, 0xb
+    new-array v10, v10, [Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
-    new-array v0, v0, [Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    aput-object v0, v10, v2
+
+    aput-object v1, v10, v4
+
+    aput-object v3, v10, v6
+
+    const/4 v0, 0x3
+
+    aput-object v5, v10, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v10, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v10, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v10, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v10, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v10, v0
+
+    const/16 v0, 0x9
+
+    aput-object v14, v10, v0
+
+    aput-object v12, v10, v8
 
     .line 4
-    sget-object v12, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Name:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v12, v0, v1
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Email:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Education:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Married:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->DOB:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Gender:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Phone:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v7
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Age:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->FBID:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->GPID:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v10
-
-    sget-object v1, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->Birthday:Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
-
-    aput-object v1, v0, v11
-
-    sput-object v0, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->$VALUES:[Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
+    sput-object v10, Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;->$VALUES:[Lcom/clevertap/android/sdk/Validator$RestrictedMultiValueFields;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

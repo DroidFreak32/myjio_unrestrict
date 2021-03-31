@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final ISO_8859_1:Ljava/nio/charset/Charset;
+.field private static final ISO_8859_1:Ljava/nio/charset/Charset;
 
 .field public static final UTF_8:Ljava/nio/charset/Charset;
 
 .field public static final zzbbh:[B
 
-.field public static final zzbbi:Ljava/nio/ByteBuffer;
+.field private static final zzbbi:Ljava/nio/ByteBuffer;
 
-.field public static final zzbbj:Lcom/google/android/gms/internal/gtm/zzqe;
+.field private static final zzbbj:Lcom/google/android/gms/internal/gtm/zzqe;
 
 
 # direct methods
@@ -45,22 +45,19 @@
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
-    move-result-object v1
+    move-result-object v2
 
-    sput-object v1, Lcom/google/android/gms/internal/gtm/zzre;->zzbbi:Ljava/nio/ByteBuffer;
+    sput-object v2, Lcom/google/android/gms/internal/gtm/zzre;->zzbbi:Ljava/nio/ByteBuffer;
 
     .line 4
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzre;->zzbbh:[B
-
-    .line 5
     array-length v2, v1
 
-    .line 6
+    .line 5
     invoke-static {v1, v0, v2, v0}, Lcom/google/android/gms/internal/gtm/zzqe;->zza([BIIZ)Lcom/google/android/gms/internal/gtm/zzqe;
 
     move-result-object v0
 
-    .line 7
+    .line 6
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzre;->zzbbj:Lcom/google/android/gms/internal/gtm/zzqe;
 
     return-void
@@ -76,17 +73,10 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_0
+    .line 1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
-
-    .line 1
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    invoke-direct {p0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p0
 .end method
 
 .method public static hashCode([B)I
@@ -113,28 +103,26 @@
 .method public static zza(I[BII)I
     .locals 2
 
-    move v0, p0
-
-    move p0, p2
+    move v0, p2
 
     :goto_0
     add-int v1, p2, p3
 
-    if-ge p0, v1, :cond_0
+    if-ge v0, v1, :cond_0
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/lit8 p0, p0, 0x1f
 
     .line 2
-    aget-byte v1, p1, p0
+    aget-byte v1, p1, v0
 
-    add-int/2addr v0, v1
+    add-int/2addr p0, v1
 
-    add-int/lit8 p0, p0, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    return v0
+    return p0
 .end method
 
 .method public static zza(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -149,17 +137,10 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_0
+    .line 1
+    invoke-static {p0, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     return-object p0
-
-    .line 1
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method public static zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

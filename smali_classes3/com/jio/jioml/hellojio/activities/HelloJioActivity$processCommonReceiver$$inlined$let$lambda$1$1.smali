@@ -3,7 +3,7 @@
 .source "HelloJioActivity.kt"
 
 # interfaces
-.implements Lsq3;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # annotations
@@ -19,8 +19,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lsq3<",
-        "Lno3;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
@@ -32,19 +32,20 @@
         0x3
     }
     d1 = {
-        "\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0008\u0002\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002\u00a8\u0006\u0003"
+        "\u0000\u0008\n\u0002\u0010\u0002\n\u0002\u0008\u0004\u0010\u0004\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002\u00a8\u0006\u0003"
     }
     d2 = {
-        "<anonymous>",
         "",
         "invoke",
-        "com/jio/jioml/hellojio/activities/HelloJioActivity$processCommonReceiver$2$1$1"
+        "()V",
+        "com/jio/jioml/hellojio/activities/HelloJioActivity$processCommonReceiver$2$1$1",
+        "<anonymous>"
     }
     k = 0x3
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
@@ -74,7 +75,7 @@
     .line 1
     invoke-virtual {p0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$processCommonReceiver$$inlined$let$lambda$1$1;->invoke()V
 
-    sget-object v0, Lno3;->a:Lno3;
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
@@ -89,7 +90,7 @@
 
     iget-object v0, v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$processCommonReceiver$$inlined$let$lambda$1;->$model$inlined:Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;
 
-    invoke-static {v1, v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->a(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
+    invoke-static {v1, v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->access$updateChatList(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;)V
 
     return-void
 .end method

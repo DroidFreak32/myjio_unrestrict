@@ -29,11 +29,11 @@
 
 
 # instance fields
-.field public final mKey:Ljava/lang/String;
+.field private final mKey:Ljava/lang/String;
 
-.field public final zze:I
+.field private final zze:I
 
-.field public final zzf:Ljava/lang/Object;
+.field private final zzf:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -43,7 +43,7 @@
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/Object;)V
+.method private constructor <init>(ILjava/lang/String;Ljava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

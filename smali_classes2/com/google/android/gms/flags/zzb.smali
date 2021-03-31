@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public zzj:Z
+.field private zzj:Z
 
-.field public zzk:Lcom/google/android/gms/flags/zzc;
+.field private zzk:Lcom/google/android/gms/flags/zzc;
 
 
 # direct methods
@@ -76,8 +76,6 @@
     iput-object v0, p0, Lcom/google/android/gms/flags/zzb;->zzk:Lcom/google/android/gms/flags/zzc;
 
     .line 8
-    iget-object v0, p0, Lcom/google/android/gms/flags/zzb;->zzk:Lcom/google/android/gms/flags/zzc;
-
     invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
 
     move-result-object p1

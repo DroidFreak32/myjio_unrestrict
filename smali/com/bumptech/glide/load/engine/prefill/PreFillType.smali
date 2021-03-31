@@ -13,16 +13,19 @@
 
 # static fields
 .field public static final DEFAULT_CONFIG:Landroid/graphics/Bitmap$Config;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final config:Landroid/graphics/Bitmap$Config;
+.field private final config:Landroid/graphics/Bitmap$Config;
 
-.field public final height:I
+.field private final height:I
 
-.field public final weight:I
+.field private final weight:I
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods

@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public connectivityReceiverListener:Lcom/app/cinemasdk/networkcheck/ConnectivityReceiver$ConnectivityReceiverListener;
+.field private connectivityReceiverListener:Lcom/app/cinemasdk/networkcheck/ConnectivityReceiver$ConnectivityReceiverListener;
 
 
 # direct methods

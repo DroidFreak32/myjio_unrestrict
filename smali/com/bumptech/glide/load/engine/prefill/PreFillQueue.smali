@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final bitmapsPerType:Ljava/util/Map;
+.field private final bitmapsPerType:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -15,11 +15,11 @@
     .end annotation
 .end field
 
-.field public bitmapsRemaining:I
+.field private bitmapsRemaining:I
 
-.field public keyIndex:I
+.field private keyIndex:I
 
-.field public final keyList:Ljava/util/List;
+.field private final keyList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

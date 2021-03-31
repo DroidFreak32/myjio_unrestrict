@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final EMPTY:Lcom/fasterxml/jackson/core/sym/Name1;
+.field private static final EMPTY:Lcom/fasterxml/jackson/core/sym/Name1;
 
 
 # instance fields
-.field public final q:I
+.field private final q:I
 
 
 # direct methods
@@ -18,11 +18,11 @@
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/core/sym/Name1;
 
-    const/4 v1, 0x0
+    const-string v1, ""
 
-    const-string v2, ""
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/fasterxml/jackson/core/sym/Name1;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/fasterxml/jackson/core/sym/Name1;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/fasterxml/jackson/core/sym/Name1;->EMPTY:Lcom/fasterxml/jackson/core/sym/Name1;
 

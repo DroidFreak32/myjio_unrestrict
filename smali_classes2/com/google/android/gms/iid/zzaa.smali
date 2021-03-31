@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final errorCode:I
+.field private final errorCode:I
 
 
 # direct methods

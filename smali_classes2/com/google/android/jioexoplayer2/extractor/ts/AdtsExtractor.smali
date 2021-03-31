@@ -19,41 +19,44 @@
 
 .field public static final FLAG_ENABLE_CONSTANT_BITRATE_SEEKING:I = 0x1
 
-.field public static final ID3_TAG:I
+.field private static final ID3_TAG:I
 
-.field public static final MAX_PACKET_SIZE:I = 0x800
+.field private static final MAX_PACKET_SIZE:I = 0x800
 
-.field public static final MAX_SNIFF_BYTES:I = 0x2000
+.field private static final MAX_SNIFF_BYTES:I = 0x2000
 
-.field public static final NUM_FRAMES_FOR_AVERAGE_FRAME_SIZE:I = 0x3e8
+.field private static final NUM_FRAMES_FOR_AVERAGE_FRAME_SIZE:I = 0x3e8
 
 
 # instance fields
-.field public averageFrameSize:I
+.field private averageFrameSize:I
 
-.field public extractorOutput:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
+.field private extractorOutput:Lcom/google/android/jioexoplayer2/extractor/ExtractorOutput;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public firstFramePosition:J
+.field private firstFramePosition:J
 
-.field public firstSampleTimestampUs:J
+.field private firstSampleTimestampUs:J
 
-.field public final firstStreamSampleTimestampUs:J
+.field private final firstStreamSampleTimestampUs:J
 
-.field public final flags:I
+.field private final flags:I
 
-.field public hasCalculatedAverageFrameSize:Z
+.field private hasCalculatedAverageFrameSize:Z
 
-.field public hasOutputSeekMap:Z
+.field private hasOutputSeekMap:Z
 
-.field public final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final reader:Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;
+.field private final reader:Lcom/google/android/jioexoplayer2/extractor/ts/AdtsReader;
 
-.field public final scratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final scratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final scratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final scratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-.field public startedPacket:Z
+.field private startedPacket:Z
 
 
 # direct methods
@@ -61,7 +64,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Ljc0;->a:Ljc0;
+    sget-object v0, Lti;->a:Lti;
 
     sput-object v0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->FACTORY:Lcom/google/android/jioexoplayer2/extractor/ExtractorsFactory;
 
@@ -152,15 +155,13 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->scratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
     .line 12
-    new-instance p1, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+    new-instance p2, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->scratch:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+    iget-object p1, p1, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->data:[B
 
-    iget-object p2, p2, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->data:[B
+    invoke-direct {p2, p1}, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;-><init>([B)V
 
-    invoke-direct {p1, p2}, Lcom/google/android/jioexoplayer2/util/ParsableBitArray;-><init>([B)V
-
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->scratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+    iput-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->scratchBits:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
     return-void
 .end method
@@ -186,6 +187,12 @@
 
 .method private calculateAverageFrameSize(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)V
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->hasCalculatedAverageFrameSize:Z
@@ -257,9 +264,7 @@
 
     if-nez v5, :cond_3
 
-    const/4 v2, 0x0
-
-    goto :goto_0
+    goto :goto_2
 
     .line 10
     :cond_3
@@ -275,7 +280,7 @@
 
     if-nez v5, :cond_4
 
-    goto :goto_0
+    goto :goto_1
 
     .line 11
     :cond_4
@@ -320,7 +325,8 @@
 
     if-nez v5, :cond_2
 
-    goto :goto_0
+    :goto_0
+    goto :goto_1
 
     .line 14
     :cond_6
@@ -335,14 +341,17 @@
 
     throw p1
 
-    .line 16
     :cond_7
-    :goto_0
+    :goto_1
+    move v1, v2
+
+    .line 16
+    :goto_2
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    if-lez v2, :cond_8
+    if-lez v1, :cond_8
 
-    int-to-long v0, v2
+    int-to-long v0, v1
 
     .line 17
     div-long/2addr v3, v0
@@ -351,20 +360,20 @@
 
     iput p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->averageFrameSize:I
 
-    goto :goto_1
+    goto :goto_3
 
     .line 18
     :cond_8
     iput v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->averageFrameSize:I
 
     .line 19
-    :goto_1
+    :goto_3
     iput-boolean v7, p0, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->hasCalculatedAverageFrameSize:Z
 
     return-void
 .end method
 
-.method public static getBitrateFromFrameSize(IJ)I
+.method private static getBitrateFromFrameSize(IJ)I
     .locals 4
 
     mul-int/lit8 p0, p0, 0x8
@@ -512,6 +521,12 @@
 
 .method private peekId3Header(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)I
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -620,6 +635,12 @@
 
 .method public read(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getLength()J
@@ -757,6 +778,12 @@
 
 .method public sniff(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)Z
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/extractor/ts/AdtsExtractor;->peekId3Header(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;)I

@@ -10,7 +10,7 @@
 
 
 # instance fields
-.field public final _value:Z
+.field private final _value:Z
 
 
 # direct methods
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Z)V
+.method private constructor <init>(Z)V
     .locals 0
 
     .line 1
@@ -159,7 +159,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "true"
+    const-string/jumbo v0, "true"
 
     goto :goto_0
 
@@ -271,6 +271,11 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean p2, p0, Lcom/fasterxml/jackson/databind/node/BooleanNode;->_value:Z

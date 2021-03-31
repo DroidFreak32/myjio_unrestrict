@@ -1,446 +1,397 @@
 .class public Lf3;
 .super Ljava/lang/Object;
-.source "TintTypedArray.java"
+.source "FragmentAnim.java"
 
 
-# instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Landroid/content/res/TypedArray;
-
-.field public c:Landroid/util/TypedValue;
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lf3$e;,
+        Lf3$f;,
+        Lf3$d;
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
-    .locals 0
+.method public static a(Landroidx/fragment/app/Fragment;Lf3$d;Lm3$g;)V
+    .locals 7
+    .param p0    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Lf3$d;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lm3$g;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
     .line 2
-    iput-object p1, p0, Lf3;->a:Landroid/content/Context;
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
 
     .line 3
-    iput-object p2, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->startViewTransition(Landroid/view/View;)V
 
+    .line 4
+    new-instance v5, Landroidx/core/os/CancellationSignal;
+
+    invoke-direct {v5}, Landroidx/core/os/CancellationSignal;-><init>()V
+
+    .line 5
+    new-instance v0, Lf3$a;
+
+    invoke-direct {v0, p0}, Lf3$a;-><init>(Landroidx/fragment/app/Fragment;)V
+
+    invoke-virtual {v5, v0}, Landroidx/core/os/CancellationSignal;->setOnCancelListener(Landroidx/core/os/CancellationSignal$OnCancelListener;)V
+
+    .line 6
+    invoke-interface {p2, p0, v5}, Lm3$g;->b(Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
+
+    .line 7
+    iget-object v0, p1, Lf3$d;->a:Landroid/view/animation/Animation;
+
+    if-eqz v0, :cond_0
+
+    .line 8
+    new-instance v0, Lf3$e;
+
+    iget-object p1, p1, Lf3$d;->a:Landroid/view/animation/Animation;
+
+    invoke-direct {v0, p1, v1, v2}, Lf3$e;-><init>(Landroid/view/animation/Animation;Landroid/view/ViewGroup;Landroid/view/View;)V
+
+    .line 9
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->setAnimatingAway(Landroid/view/View;)V
+
+    .line 10
+    new-instance p1, Lf3$b;
+
+    invoke-direct {p1, v1, p0, p2, v5}, Lf3$b;-><init>(Landroid/view/ViewGroup;Landroidx/fragment/app/Fragment;Lm3$g;Landroidx/core/os/CancellationSignal;)V
+
+    invoke-virtual {v0, p1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    .line 11
+    iget-object p0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    iget-object p1, p1, Lf3$d;->b:Landroid/animation/Animator;
+
+    .line 13
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->setAnimator(Landroid/animation/Animator;)V
+
+    .line 14
+    new-instance v6, Lf3$c;
+
+    move-object v0, v6
+
+    move-object v3, p0
+
+    move-object v4, p2
+
+    invoke-direct/range {v0 .. v5}, Lf3$c;-><init>(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/fragment/app/Fragment;Lm3$g;Landroidx/core/os/CancellationSignal;)V
+
+    invoke-virtual {p1, v6}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 15
+    iget-object p0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-virtual {p1, p0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
+
+    .line 16
+    invoke-virtual {p1}, Landroid/animation/Animator;->start()V
+
+    :goto_0
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;I[I)Lf3;
-    .locals 1
-
-    .line 4
-    new-instance v0, Lf3;
-
-    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
-
-    move-result-object p1
-
-    invoke-direct {v0, p0, p1}, Lf3;-><init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
-
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/util/AttributeSet;[I)Lf3;
-    .locals 1
+.method public static b(Landroid/content/Context;Landroidx/fragment/app/Fragment;Z)Lf3$d;
+    .locals 6
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    new-instance v0, Lf3;
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getNextTransition()I
 
-    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object p1
-
-    invoke-direct {v0, p0, p1}, Lf3;-><init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
-
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Lf3;
-    .locals 1
+    move-result v0
 
     .line 2
-    new-instance v0, Lf3;
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getNextAnim()I
+
+    move-result v1
+
+    const/4 v2, 0x0
 
     .line 3
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v2}, Landroidx/fragment/app/Fragment;->setNextAnim(I)V
 
-    move-result-object p1
+    .line 4
+    iget-object v3, p1, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
 
-    invoke-direct {v0, p0, p1}, Lf3;-><init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
+    const/4 v4, 0x0
 
-    return-object v0
-.end method
+    if-eqz v3, :cond_0
 
-
-# virtual methods
-.method public a(IF)F
-    .locals 1
-
-    .line 16
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public a(II)I
-    .locals 1
-
-    .line 10
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public a(I)Landroid/content/res/ColorStateList;
-    .locals 2
-
-    .line 11
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 12
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 13
-    iget-object v1, p0, Lf3;->a:Landroid/content/Context;
-
-    .line 14
-    invoke-static {v1, v0}, Lq0;->b(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    .line 15
-    :cond_0
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(IILe7$a;)Landroid/graphics/Typeface;
-    .locals 2
+    sget v5, Landroidx/fragment/R$id;->visible_removing_fragment_view_tag:I
 
     .line 5
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->getTag(I)Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v3
 
-    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
+    if-eqz v3, :cond_0
 
     .line 6
-    :cond_0
-    iget-object v0, p0, Lf3;->c:Landroid/util/TypedValue;
+    iget-object v3, p1, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
 
-    if-nez v0, :cond_1
+    invoke-virtual {v3, v5, v4}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
 
     .line 7
-    new-instance v0, Landroid/util/TypedValue;
+    :cond_0
+    iget-object v3, p1, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
 
-    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
+    if-eqz v3, :cond_1
 
-    iput-object v0, p0, Lf3;->c:Landroid/util/TypedValue;
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getLayoutTransition()Landroid/animation/LayoutTransition;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1
+
+    return-object v4
 
     .line 8
     :cond_1
-    iget-object v0, p0, Lf3;->a:Landroid/content/Context;
+    invoke-virtual {p1, v0, p2, v1}, Landroidx/fragment/app/Fragment;->onCreateAnimation(IZI)Landroid/view/animation/Animation;
 
-    iget-object v1, p0, Lf3;->c:Landroid/util/TypedValue;
+    move-result-object v3
 
-    invoke-static {v0, p1, v1, p2, p3}, Le7;->a(Landroid/content/Context;ILandroid/util/TypedValue;ILe7$a;)Landroid/graphics/Typeface;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a()V
-    .locals 1
-
-    .line 17
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    return-void
-.end method
-
-.method public a(IZ)Z
-    .locals 1
+    if-eqz v3, :cond_2
 
     .line 9
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    new-instance p0, Lf3$d;
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-direct {p0, v3}, Lf3$d;-><init>(Landroid/view/animation/Animation;)V
 
-    move-result p1
+    return-object p0
 
-    return p1
-.end method
-
-.method public b(IF)F
-    .locals 1
-
-    .line 5
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public b(II)I
-    .locals 1
-
-    .line 6
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public b(I)Landroid/graphics/drawable/Drawable;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object p1, p0, Lf3;->a:Landroid/content/Context;
-
-    invoke-static {p1, v0}, Lq0;->c(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    .line 10
+    :cond_2
+    invoke-virtual {p1, v0, p2, v1}, Landroidx/fragment/app/Fragment;->onCreateAnimator(IZI)Landroid/animation/Animator;
 
     move-result-object p1
 
-    return-object p1
+    if-eqz p1, :cond_3
 
-    .line 4
-    :cond_0
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    .line 11
+    new-instance p0, Lf3$d;
 
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, p1}, Lf3$d;-><init>(Landroid/animation/Animator;)V
+
+    return-object p0
+
+    :cond_3
+    if-eqz v1, :cond_7
+
+    .line 12
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
 
-.method public c(II)I
-    .locals 1
+    move-result-object p1
 
-    .line 4
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    const-string v3, "anim"
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    .line 13
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    return p1
-.end method
+    if-eqz p1, :cond_5
 
-.method public c(I)Landroid/graphics/drawable/Drawable;
-    .locals 3
+    .line 14
+    :try_start_0
+    invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
-    .line 1
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    move-result-object v3
 
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    if-eqz v3, :cond_4
 
-    move-result v0
+    .line 15
+    new-instance v5, Lf3$d;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v5, v3}, Lf3$d;-><init>(Landroid/view/animation/Animation;)V
+    :try_end_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    return-object v5
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 3
-    invoke-static {}, Lg2;->b()Lg2;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lf3;->a:Landroid/content/Context;
-
+    :cond_4
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, p1, v2}, Lg2;->a(Landroid/content/Context;IZ)Landroid/graphics/drawable/Drawable;
+    goto :goto_0
+
+    :catch_0
+    nop
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p0
+
+    .line 16
+    throw p0
+
+    :cond_5
+    :goto_0
+    if-nez v2, :cond_7
+
+    .line 17
+    :try_start_1
+    invoke-static {p0, v1}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_7
+
+    .line 18
+    new-instance v3, Lf3$d;
+
+    invoke-direct {v3, v2}, Lf3$d;-><init>(Landroid/animation/Animator;)V
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_2
+
+    return-object v3
+
+    :catch_2
+    move-exception v2
+
+    if-nez p1, :cond_6
+
+    .line 19
+    invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object p1
 
-    return-object p1
+    if-eqz p1, :cond_7
+
+    .line 20
+    new-instance p0, Lf3$d;
+
+    invoke-direct {p0, p1}, Lf3$d;-><init>(Landroid/view/animation/Animation;)V
+
+    return-object p0
+
+    .line 21
+    :cond_6
+    throw v2
+
+    :cond_7
+    if-nez v0, :cond_8
+
+    return-object v4
+
+    .line 22
+    :cond_8
+    invoke-static {v0, p2}, Lf3;->c(IZ)I
+
+    move-result p1
+
+    if-gez p1, :cond_9
+
+    return-object v4
+
+    .line 23
+    :cond_9
+    new-instance p2, Lf3$d;
+
+    invoke-static {p0, p1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object p0
+
+    invoke-direct {p2, p0}, Lf3$d;-><init>(Landroid/view/animation/Animation;)V
+
+    return-object p2
+.end method
+
+.method public static c(IZ)I
+    .locals 1
+    .annotation build Landroidx/annotation/AnimRes;
+    .end annotation
+
+    const/16 v0, 0x1001
+
+    if-eq p0, v0, :cond_4
+
+    const/16 v0, 0x1003
+
+    if-eq p0, v0, :cond_2
+
+    const/16 v0, 0x2002
+
+    if-eq p0, v0, :cond_0
+
+    const/4 p0, -0x1
+
+    goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public d(II)I
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public d(I)Ljava/lang/String;
-    .locals 1
+    if-eqz p1, :cond_1
 
     .line 1
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    sget p0, Landroidx/fragment/R$anim;->fragment_close_enter:I
 
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_1
+    sget p0, Landroidx/fragment/R$anim;->fragment_close_exit:I
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public e(II)I
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public e(I)Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public f(II)I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public f(I)[Ljava/lang/CharSequence;
-    .locals 1
+    :cond_2
+    if-eqz p1, :cond_3
 
     .line 2
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    sget p0, Landroidx/fragment/R$anim;->fragment_fade_enter:I
 
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_3
+    sget p0, Landroidx/fragment/R$anim;->fragment_fade_exit:I
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public g(II)I
-    .locals 1
+    :cond_4
+    if-eqz p1, :cond_5
 
-    .line 1
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
+    .line 3
+    sget p0, Landroidx/fragment/R$anim;->fragment_open_enter:I
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    goto :goto_0
 
-    move-result p1
+    :cond_5
+    sget p0, Landroidx/fragment/R$anim;->fragment_open_exit:I
 
-    return p1
-.end method
-
-.method public g(I)Z
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lf3;->b:Landroid/content/res/TypedArray;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result p1
-
-    return p1
+    :goto_0
+    return p0
 .end method

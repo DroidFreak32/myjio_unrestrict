@@ -1,43 +1,36 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzer;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.class public final Lcom/google/android/gms/internal/ads/zzer;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzeq;
+.implements Lcom/google/android/gms/internal/ads/zzeu;
+
+
+# instance fields
+.field private final synthetic val$activity:Landroid/app/Activity;
 
 
 # direct methods
-.method public static zza(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzeq;
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.clearcut.IClearcut"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzem;Landroid/app/Activity;)V
+    .locals 0
 
     .line 1
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzer;->val$activity:Landroid/app/Activity;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzeq;
+    return-void
+.end method
 
-    if-eqz v1, :cond_1
 
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzeq;
+# virtual methods
+.method public final zza(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    .locals 1
 
-    return-object v0
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzer;->val$activity:Landroid/app/Activity;
 
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzes;
+    invoke-interface {p1, v0}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityDestroyed(Landroid/app/Activity;)V
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzes;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
+    return-void
 .end method

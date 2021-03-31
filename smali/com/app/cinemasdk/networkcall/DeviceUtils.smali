@@ -31,13 +31,18 @@
 
 .method private getDeviceInformation(Landroid/content/Context;)Lorg/json/JSONObject;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
 
     .line 4
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v1, "type"
+    const-string/jumbo v1, "type"
 
     const-string v2, "android"
 
@@ -82,13 +87,18 @@
 
 .method public getDeviceInformation(Ljava/lang/String;)Lorg/json/JSONObject;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v1, "type"
+    const-string/jumbo v1, "type"
 
     const-string v2, "android"
 
@@ -214,7 +224,7 @@
     .line 4
     invoke-virtual {v1, p2, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string p2, "upgradeAuth"
+    const-string/jumbo p2, "upgradeAuth"
 
     const-string p3, "Y"
 
@@ -300,7 +310,7 @@
     .line 4
     invoke-virtual {v1, p2, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string p2, "upgradeAuth"
+    const-string/jumbo p2, "upgradeAuth"
 
     const-string p3, "Y"
 

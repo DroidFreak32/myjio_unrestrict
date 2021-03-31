@@ -1,625 +1,1145 @@
-.class public Lj3;
-.super Ljava/lang/Object;
-.source "TooltipPopup.java"
+.class public final Lj3;
+.super Landroidx/lifecycle/ViewModel;
+.source "FragmentManagerViewModel.java"
+
+
+# static fields
+.field public static final h:Landroidx/lifecycle/ViewModelProvider$Factory;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Landroidx/fragment/app/Fragment;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final b:Landroid/view/View;
+.field public final b:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Lj3;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final c:Landroid/widget/TextView;
+.field public final c:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Landroidx/lifecycle/ViewModelStore;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final d:Landroid/view/WindowManager$LayoutParams;
+.field public final d:Z
 
-.field public final e:Landroid/graphics/Rect;
+.field public e:Z
 
-.field public final f:[I
+.field public f:Z
 
-.field public final g:[I
+.field public g:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lj3$a;
 
-    .line 2
-    new-instance v0, Landroid/view/WindowManager$LayoutParams;
+    invoke-direct {v0}, Lj3$a;-><init>()V
 
-    invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
-
-    iput-object v0, p0, Lj3;->d:Landroid/view/WindowManager$LayoutParams;
-
-    .line 3
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Lj3;->e:Landroid/graphics/Rect;
-
-    const/4 v0, 0x2
-
-    new-array v1, v0, [I
-
-    .line 4
-    iput-object v1, p0, Lj3;->f:[I
-
-    new-array v0, v0, [I
-
-    .line 5
-    iput-object v0, p0, Lj3;->g:[I
-
-    .line 6
-    iput-object p1, p0, Lj3;->a:Landroid/content/Context;
-
-    .line 7
-    iget-object p1, p0, Lj3;->a:Landroid/content/Context;
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    sget v0, Lv;->abc_tooltip:I
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lj3;->b:Landroid/view/View;
-
-    .line 8
-    iget-object p1, p0, Lj3;->b:Landroid/view/View;
-
-    sget v0, Lu;->message:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/TextView;
-
-    iput-object p1, p0, Lj3;->c:Landroid/widget/TextView;
-
-    .line 9
-    iget-object p1, p0, Lj3;->d:Landroid/view/WindowManager$LayoutParams;
-
-    const-class v0, Lj3;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
-
-    .line 10
-    iget-object p1, p0, Lj3;->d:Landroid/view/WindowManager$LayoutParams;
-
-    iget-object v0, p0, Lj3;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p1, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
-
-    .line 11
-    iget-object p1, p0, Lj3;->d:Landroid/view/WindowManager$LayoutParams;
-
-    const/16 v0, 0x3ea
-
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/4 v0, -0x2
-
-    .line 12
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->width:I
-
-    .line 13
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->height:I
-
-    const/4 v0, -0x3
-
-    .line 14
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->format:I
-
-    .line 15
-    sget v0, Ly;->Animation_AppCompat_Tooltip:I
-
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
-
-    const/16 v0, 0x18
-
-    .line 16
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
+    sput-object v0, Lj3;->h:Landroidx/lifecycle/ViewModelProvider$Factory;
 
     return-void
 .end method
 
-.method public static a(Landroid/view/View;)Landroid/view/View;
-    .locals 3
+.method public constructor <init>(Z)V
+    .locals 1
 
-    .line 42
-    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+    .line 1
+    invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
 
-    move-result-object v0
+    .line 2
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 43
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-result-object v1
+    iput-object v0, p0, Lj3;->a:Ljava/util/HashMap;
 
-    .line 44
-    instance-of v2, v1, Landroid/view/WindowManager$LayoutParams;
+    .line 3
+    new-instance v0, Ljava/util/HashMap;
 
-    if-eqz v2, :cond_0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    check-cast v1, Landroid/view/WindowManager$LayoutParams;
+    iput-object v0, p0, Lj3;->b:Ljava/util/HashMap;
 
-    iget v1, v1, Landroid/view/WindowManager$LayoutParams;->type:I
+    .line 4
+    new-instance v0, Ljava/util/HashMap;
 
-    const/4 v2, 0x2
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    if-ne v1, v2, :cond_0
+    iput-object v0, p0, Lj3;->c:Ljava/util/HashMap;
 
-    return-object v0
+    const/4 v0, 0x0
 
-    .line 45
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    .line 5
+    iput-boolean v0, p0, Lj3;->e:Z
+
+    .line 6
+    iput-boolean v0, p0, Lj3;->f:Z
+
+    .line 7
+    iput-boolean v0, p0, Lj3;->g:Z
+
+    .line 8
+    iput-boolean p1, p0, Lj3;->d:Z
+
+    return-void
+.end method
+
+.method public static e(Landroidx/lifecycle/ViewModelStore;)Lj3;
+    .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    new-instance v0, Landroidx/lifecycle/ViewModelProvider;
+
+    sget-object v1, Lj3;->h:Landroidx/lifecycle/ViewModelProvider$Factory;
+
+    invoke-direct {v0, p0, v1}, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStore;Landroidx/lifecycle/ViewModelProvider$Factory;)V
+
+    .line 2
+    const-class p0, Lj3;
+
+    invoke-virtual {v0, p0}, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p0
 
-    .line 46
-    :goto_0
-    instance-of v1, p0, Landroid/content/ContextWrapper;
-
-    if-eqz v1, :cond_2
-
-    .line 47
-    instance-of v1, p0, Landroid/app/Activity;
-
-    if-eqz v1, :cond_1
-
-    .line 48
-    check-cast p0, Landroid/app/Activity;
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
+    check-cast p0, Lj3;
 
     return-object p0
-
-    .line 49
-    :cond_1
-    check-cast p0, Landroid/content/ContextWrapper;
-
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_2
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 2
-
-    .line 7
-    invoke-virtual {p0}, Lj3;->b()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 8
-    :cond_0
-    iget-object v0, p0, Lj3;->a:Landroid/content/Context;
-
-    const-string v1, "window"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    .line 9
-    iget-object v1, p0, Lj3;->b:Landroid/view/View;
-
-    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public final a(Landroid/view/View;IIZLandroid/view/WindowManager$LayoutParams;)V
-    .locals 8
-
-    .line 10
-    invoke-virtual {p1}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    iput-object v0, p5, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
-
-    .line 11
-    iget-object v0, p0, Lj3;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Ls;->tooltip_precise_anchor_threshold:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v0
-
-    .line 12
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
-
-    move-result v1
-
-    if-lt v1, v0, :cond_0
-
-    goto :goto_0
-
-    .line 13
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
-
-    move-result p2
-
-    div-int/lit8 p2, p2, 0x2
-
-    .line 14
-    :goto_0
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-lt v1, v0, :cond_1
-
-    .line 15
-    iget-object v0, p0, Lj3;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Ls;->tooltip_precise_anchor_extra_offset:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v0
-
-    add-int v1, p3, v0
-
-    sub-int/2addr p3, v0
-
-    goto :goto_1
-
-    .line 16
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    const/4 p3, 0x0
-
-    :goto_1
-    const/16 v0, 0x31
-
-    .line 17
-    iput v0, p5, Landroid/view/WindowManager$LayoutParams;->gravity:I
-
-    .line 18
-    iget-object v0, p0, Lj3;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    if-eqz p4, :cond_2
-
-    sget v3, Ls;->tooltip_y_offset_touch:I
-
-    goto :goto_2
-
-    :cond_2
-    sget v3, Ls;->tooltip_y_offset_non_touch:I
-
-    :goto_2
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v0
-
-    .line 19
-    invoke-static {p1}, Lj3;->a(Landroid/view/View;)Landroid/view/View;
-
-    move-result-object v3
-
-    if-nez v3, :cond_3
-
-    return-void
-
-    .line 20
-    :cond_3
-    iget-object v4, p0, Lj3;->e:Landroid/graphics/Rect;
-
-    invoke-virtual {v3, v4}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
-
-    .line 21
-    iget-object v4, p0, Lj3;->e:Landroid/graphics/Rect;
-
-    iget v5, v4, Landroid/graphics/Rect;->left:I
-
-    if-gez v5, :cond_5
-
-    iget v4, v4, Landroid/graphics/Rect;->top:I
-
-    if-gez v4, :cond_5
-
-    .line 22
-    iget-object v4, p0, Lj3;->a:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const-string v5, "status_bar_height"
-
-    const-string v6, "dimen"
-
-    const-string v7, "android"
-
-    .line 23
-    invoke-virtual {v4, v5, v6, v7}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    .line 24
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v5
-
-    goto :goto_3
-
-    :cond_4
-    const/4 v5, 0x0
-
-    .line 25
-    :goto_3
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v4
-
-    .line 26
-    iget-object v6, p0, Lj3;->e:Landroid/graphics/Rect;
-
-    iget v7, v4, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget v4, v4, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-virtual {v6, v2, v5, v7, v4}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 27
-    :cond_5
-    iget-object v4, p0, Lj3;->g:[I
-
-    invoke-virtual {v3, v4}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 28
-    iget-object v4, p0, Lj3;->f:[I
-
-    invoke-virtual {p1, v4}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 29
-    iget-object p1, p0, Lj3;->f:[I
-
-    aget v4, p1, v2
-
-    iget-object v5, p0, Lj3;->g:[I
-
-    aget v6, v5, v2
-
-    sub-int/2addr v4, v6
-
-    aput v4, p1, v2
-
-    const/4 v4, 0x1
-
-    .line 30
-    aget v6, p1, v4
-
-    aget v5, v5, v4
-
-    sub-int/2addr v6, v5
-
-    aput v6, p1, v4
-
-    .line 31
-    aget p1, p1, v2
-
-    add-int/2addr p1, p2
-
-    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
-
-    move-result p2
-
-    div-int/lit8 p2, p2, 0x2
-
-    sub-int/2addr p1, p2
-
-    iput p1, p5, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    .line 32
-    invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result p1
-
-    .line 33
-    iget-object p2, p0, Lj3;->b:Landroid/view/View;
-
-    invoke-virtual {p2, p1, p1}, Landroid/view/View;->measure(II)V
-
-    .line 34
-    iget-object p1, p0, Lj3;->b:Landroid/view/View;
-
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p1
-
-    .line 35
-    iget-object p2, p0, Lj3;->f:[I
-
-    aget v2, p2, v4
-
-    add-int/2addr v2, p3
-
-    sub-int/2addr v2, v0
-
-    sub-int/2addr v2, p1
-
-    .line 36
-    aget p2, p2, v4
-
-    add-int/2addr p2, v1
-
-    add-int/2addr p2, v0
-
-    if-eqz p4, :cond_7
-
-    if-ltz v2, :cond_6
-
-    .line 37
-    iput v2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    goto :goto_4
-
-    .line 38
-    :cond_6
-    iput p2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    goto :goto_4
-
-    :cond_7
-    add-int/2addr p1, p2
-
-    .line 39
-    iget-object p3, p0, Lj3;->e:Landroid/graphics/Rect;
-
-    invoke-virtual {p3}, Landroid/graphics/Rect;->height()I
-
-    move-result p3
-
-    if-gt p1, p3, :cond_8
-
-    .line 40
-    iput p2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    goto :goto_4
-
-    .line 41
-    :cond_8
-    iput v2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    :goto_4
-    return-void
-.end method
-
-.method public a(Landroid/view/View;IIZLjava/lang/CharSequence;)V
-    .locals 7
+.method public a(Landroidx/fragment/app/Fragment;)V
+    .locals 3
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-virtual {p0}, Lj3;->b()Z
+    iget-boolean v0, p0, Lj3;->g:Z
+
+    const/4 v1, 0x2
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
+
+    move-result p1
+
+    return-void
+
+    .line 3
+    :cond_0
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    iget-object v2, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    return-void
+
+    .line 4
+    :cond_1
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    iget-object v2, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 5
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 6
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Updating retained Fragments: Added "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    :cond_2
+    return-void
+.end method
+
+.method public b(Landroidx/fragment/app/Fragment;)V
+    .locals 2
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x3
+
+    .line 1
+    invoke-static {v0}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-virtual {p0}, Lj3;->a()V
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Clearing non-config state for "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lj3;->c:Landroid/widget/TextView;
+    iget-object v0, p0, Lj3;->b:Ljava/util/HashMap;
 
-    invoke-virtual {v0, p5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object v1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lj3;
+
+    if-eqz v0, :cond_1
 
     .line 4
-    iget-object v6, p0, Lj3;->d:Landroid/view/WindowManager$LayoutParams;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    invoke-virtual/range {v1 .. v6}, Lj3;->a(Landroid/view/View;IIZLandroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v0}, Lj3;->onCleared()V
 
     .line 5
-    iget-object p1, p0, Lj3;->a:Landroid/content/Context;
+    iget-object v0, p0, Lj3;->b:Ljava/util/HashMap;
 
-    const-string p2, "window"
+    iget-object v1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 6
+    :cond_1
+    iget-object v0, p0, Lj3;->c:Ljava/util/HashMap;
+
+    iget-object v1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/lifecycle/ViewModelStore;
+
+    if-eqz v0, :cond_2
+
+    .line 7
+    invoke-virtual {v0}, Landroidx/lifecycle/ViewModelStore;->clear()V
+
+    .line 8
+    iget-object v0, p0, Lj3;->c:Ljava/util/HashMap;
+
+    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    return-void
+.end method
+
+.method public c(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+    .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Landroid/view/WindowManager;
+    check-cast p1, Landroidx/fragment/app/Fragment;
+
+    return-object p1
+.end method
+
+.method public d(Landroidx/fragment/app/Fragment;)Lj3;
+    .locals 2
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lj3;->b:Ljava/util/HashMap;
+
+    iget-object v1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lj3;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    new-instance v0, Lj3;
+
+    iget-boolean v1, p0, Lj3;->d:Z
+
+    invoke-direct {v0, v1}, Lj3;-><init>(Z)V
+
+    .line 3
+    iget-object v1, p0, Lj3;->b:Ljava/util/HashMap;
+
+    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_3
+
+    .line 1
+    const-class v2, Lj3;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_1
+
+    .line 2
+    :cond_1
+    check-cast p1, Lj3;
+
+    .line 3
+    iget-object v2, p0, Lj3;->a:Ljava/util/HashMap;
+
+    iget-object v3, p1, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lj3;->b:Ljava/util/HashMap;
+
+    iget-object v3, p1, Lj3;->b:Ljava/util/HashMap;
+
+    .line 4
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lj3;->c:Ljava/util/HashMap;
+
+    iget-object p1, p1, Lj3;->c:Ljava/util/HashMap;
+
+    .line 5
+    invoke-virtual {v2, p1}, Ljava/util/HashMap;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_3
+    :goto_1
+    return v1
+.end method
+
+.method public hashCode()I
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 2
+    iget-object v1, p0, Lj3;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 3
+    iget-object v1, p0, Lj3;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public l()Ljava/util/Collection;
+    .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Landroidx/fragment/app/Fragment;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    return-object v0
+.end method
+
+.method public m()Landroidx/fragment/app/FragmentManagerNonConfig;
+    .locals 5
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lj3;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lj3;->c:Ljava/util/HashMap;
+
+    .line 2
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-object v1
+
+    .line 3
+    :cond_0
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    .line 4
+    iget-object v2, p0, Lj3;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_1
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map$Entry;
+
+    .line 5
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lj3;
+
+    invoke-virtual {v4}, Lj3;->m()Landroidx/fragment/app/FragmentManagerNonConfig;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
 
     .line 6
-    iget-object p2, p0, Lj3;->b:Landroid/view/View;
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    iget-object p3, p0, Lj3;->d:Landroid/view/WindowManager$LayoutParams;
+    move-result-object v3
 
-    invoke-interface {p1, p2, p3}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v2, 0x1
+
+    .line 7
+    iput-boolean v2, p0, Lj3;->f:Z
+
+    .line 8
+    iget-object v2, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lj3;->c:Ljava/util/HashMap;
+
+    .line 9
+    invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    return-object v1
+
+    .line 10
+    :cond_3
+    new-instance v1, Landroidx/fragment/app/FragmentManagerNonConfig;
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    iget-object v3, p0, Lj3;->a:Ljava/util/HashMap;
+
+    .line 11
+    invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance v3, Ljava/util/HashMap;
+
+    iget-object v4, p0, Lj3;->c:Ljava/util/HashMap;
+
+    invoke-direct {v3, v4}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    invoke-direct {v1, v2, v0, v3}, Landroidx/fragment/app/FragmentManagerNonConfig;-><init>(Ljava/util/Collection;Ljava/util/Map;Ljava/util/Map;)V
+
+    return-object v1
+.end method
+
+.method public n(Landroidx/fragment/app/Fragment;)Landroidx/lifecycle/ViewModelStore;
+    .locals 2
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lj3;->c:Ljava/util/HashMap;
+
+    iget-object v1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/lifecycle/ViewModelStore;
+
+    if-nez v0, :cond_0
+
+    .line 2
+    new-instance v0, Landroidx/lifecycle/ViewModelStore;
+
+    invoke-direct {v0}, Landroidx/lifecycle/ViewModelStore;-><init>()V
+
+    .line 3
+    iget-object v1, p0, Lj3;->c:Ljava/util/HashMap;
+
+    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public o()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lj3;->e:Z
+
+    return v0
+.end method
+
+.method public onCleared()V
+    .locals 2
+
+    const/4 v0, 0x3
+
+    .line 1
+    invoke-static {v0}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "onCleared called for "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 3
+    iput-boolean v0, p0, Lj3;->e:Z
 
     return-void
 .end method
 
-.method public b()Z
-    .locals 1
+.method public p(Landroidx/fragment/app/Fragment;)V
+    .locals 3
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Lj3;->b:Landroid/view/View;
+    iget-boolean v0, p0, Lj3;->g:Z
 
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    const/4 v1, 0x2
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
+
+    move-result p1
+
+    return-void
+
+    .line 3
+    :cond_0
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    iget-object v2, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     :goto_0
+    if-eqz v0, :cond_2
+
+    .line 4
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 5
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Updating retained Fragments: Removed "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    :cond_2
+    return-void
+.end method
+
+.method public q(Landroidx/fragment/app/FragmentManagerNonConfig;)V
+    .locals 4
+    .param p1    # Landroidx/fragment/app/FragmentManagerNonConfig;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 2
+    iget-object v0, p0, Lj3;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 3
+    iget-object v0, p0, Lj3;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    if-eqz p1, :cond_3
+
+    .line 4
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManagerNonConfig;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 5
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/fragment/app/Fragment;
+
+    if-eqz v1, :cond_0
+
+    .line 6
+    iget-object v2, p0, Lj3;->a:Ljava/util/HashMap;
+
+    iget-object v3, v1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v2, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    .line 7
+    :cond_1
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManagerNonConfig;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    .line 8
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    .line 9
+    new-instance v2, Lj3;
+
+    iget-boolean v3, p0, Lj3;->d:Z
+
+    invoke-direct {v2, v3}, Lj3;-><init>(Z)V
+
+    .line 10
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/fragment/app/FragmentManagerNonConfig;
+
+    invoke-virtual {v2, v3}, Lj3;->q(Landroidx/fragment/app/FragmentManagerNonConfig;)V
+
+    .line 11
+    iget-object v3, p0, Lj3;->b:Ljava/util/HashMap;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    .line 12
+    :cond_2
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManagerNonConfig;->c()Ljava/util/Map;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    .line 13
+    iget-object v0, p0, Lj3;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+
+    :cond_3
+    const/4 p1, 0x0
+
+    .line 14
+    iput-boolean p1, p0, Lj3;->f:Z
+
+    return-void
+.end method
+
+.method public r(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lj3;->g:Z
+
+    return-void
+.end method
+
+.method public s(Landroidx/fragment/app/Fragment;)Z
+    .locals 1
+    .param p1    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lj3;->a:Ljava/util/HashMap;
+
+    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    const/4 v0, 0x1
+
+    if-nez p1, :cond_0
+
     return v0
+
+    .line 2
+    :cond_0
+    iget-boolean p1, p0, Lj3;->d:Z
+
+    if-eqz p1, :cond_1
+
+    .line 3
+    iget-boolean p1, p0, Lj3;->e:Z
+
+    return p1
+
+    .line 4
+    :cond_1
+    iget-boolean p1, p0, Lj3;->f:Z
+
+    xor-int/2addr p1, v0
+
+    return p1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 4
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "FragmentManagerViewModel{"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 2
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v1, "} Fragments ("
+
+    .line 3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 4
+    iget-object v1, p0, Lj3;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .line 5
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    const-string v3, ", "
+
+    if-eqz v2, :cond_1
+
+    .line 6
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 7
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 8
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_1
+    const-string v1, ") Child Non Config ("
+
+    .line 9
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 10
+    iget-object v1, p0, Lj3;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .line 11
+    :cond_2
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 12
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 13
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 14
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_3
+    const-string v1, ") ViewModelStores ("
+
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    iget-object v1, p0, Lj3;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .line 17
+    :cond_4
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    .line 18
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 19
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    .line 20
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_2
+
+    :cond_5
+    const/16 v1, 0x29
+
+    .line 21
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 22
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

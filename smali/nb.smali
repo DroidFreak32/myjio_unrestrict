@@ -1,20 +1,20 @@
 .class public Lnb;
 .super Ljava/lang/Object;
-.source "BaseObservable.java"
 
 # interfaces
-.implements Lwb;
+.implements Lcom/elitecore/wifi/listener/OnInternetCheckCompleteListner;
 
 
 # instance fields
-.field public transient mCallbacks:Lac;
+.field public final synthetic a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
     .locals 0
 
-    .line 1
+    iput-object p1, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,178 +22,159 @@
 
 
 # virtual methods
-.method public addOnPropertyChangedCallback(Lwb$a;)V
+.method public isInterNetAvailable(ILjava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 1
-    monitor-enter p0
+    invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
-    .line 2
-    :try_start_0
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
+    move-result-object p1
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1}, Lcom/elitecorelib/core/LibraryApplication;->getlibrarySharedPreferences()Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-    .line 3
-    new-instance v0, Lac;
+    move-result-object p1
 
-    invoke-direct {v0}, Lac;-><init>()V
+    const-string/jumbo p3, "success"
 
-    iput-object v0, p0, Lnb;->mCallbacks:Lac;
+    invoke-virtual {p2, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 4
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    iget-object p1, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->t(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+
+    goto/16 :goto_0
+
     :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
-    .line 5
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
+    move-result-object p2
 
-    invoke-virtual {v0, p1}, Lpb;->a(Ljava/lang/Object;)V
+    const-class p3, Lcom/elitecorelib/andsf/pojonew/ANDSFPolicies;
 
+    invoke-static {p3}, Lcom/elitecorelib/core/room/ANDSFRoomPojoManager;->getANDSFRoomManager(Ljava/lang/Class;)Lcom/elitecorelib/core/room/ANDSFRoomManager;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lcom/elitecorelib/core/room/ANDSFRoomManager;->getAllRecords()Ljava/util/List;
+
+    move-result-object p3
+
+    const-string v0, "first_evalution"
+
+    invoke-virtual {p1, v0}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getBooleanFirstFalse(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->s(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isScheduledPolicyEvalution(Landroid/content/Context;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    invoke-interface {p3}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    if-lez p1, :cond_1
+
+    new-instance p1, Landroid/content/Intent;
+
+    iget-object p2, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->s(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Landroid/content/Context;
+
+    move-result-object p2
+
+    const-class p3, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyEvaluateReceiver;
+
+    invoke-direct {p1, p2, p3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    iget-object p2, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->s(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    :cond_1
+    iget-object p1, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->p(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+
+    move-result-object p1
+
+    sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILED_INTERNET_NOT_AVAILABLE:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;->setReason(Ljava/lang/String;)V
+
+    iget-object p1, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->p(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+
+    move-result-object p1
+
+    sget-object p2, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->FAILURE_FETCHMESSAGE:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;->setFetchStatus(Ljava/lang/String;)V
+
+    new-instance p1, Lcom/elitecorelib/core/room/AnalyticsDBRep;
+
+    invoke-direct {p1}, Lcom/elitecorelib/core/room/AnalyticsDBRep;-><init>()V
+
+    iget-object p2, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p2}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->p(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)Lcom/elitecorelib/core/room/pojo/AnalyticsPolicyDetails;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
+
+    const-string p1, "Policy pull request failed - server is unreachable."
+
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;)V
+
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object p3, Lcom/elitecorelib/andsf/a/a;->A:Lcom/elitecorelib/andsf/a/a;
+
+    invoke-static {p3}, Lcom/elitecorelib/andsf/a/a;->a(Lcom/elitecorelib/andsf/a/a;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p3, "Policy pull request failed. Reason: Internet unavailable"
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p3, "ANDSFPolicyPullReceiver"
+
+    invoke-virtual {p1, p3, p2}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Lnb;->a:Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;
+
+    invoke-static {p1}, Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;->r(Lcom/elitecorelib/wifi/receiver/ANDSFPolicyPullReceiver;)V
+
+    :goto_0
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    .line 6
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public notifyChange()V
-    .locals 3
-
-    .line 1
-    monitor-enter p0
-
-    .line 2
-    :try_start_0
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
-
-    if-nez v0, :cond_0
-
-    .line 3
-    monitor-exit p0
-
-    return-void
-
-    .line 4
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, p0, v1, v2}, Lpb;->a(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    .line 6
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public notifyPropertyChanged(I)V
-    .locals 2
-
-    .line 1
-    monitor-enter p0
-
-    .line 2
-    :try_start_0
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
-
-    if-nez v0, :cond_0
-
-    .line 3
-    monitor-exit p0
-
-    return-void
-
-    .line 4
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p0, p1, v1}, Lpb;->a(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    .line 6
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public removeOnPropertyChangedCallback(Lwb$a;)V
-    .locals 1
-
-    .line 1
-    monitor-enter p0
-
-    .line 2
-    :try_start_0
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
-
-    if-nez v0, :cond_0
-
-    .line 3
-    monitor-exit p0
-
-    return-void
-
-    .line 4
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5
-    iget-object v0, p0, Lnb;->mCallbacks:Lac;
-
-    invoke-virtual {v0, p1}, Lpb;->b(Ljava/lang/Object;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    .line 6
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
 .end method

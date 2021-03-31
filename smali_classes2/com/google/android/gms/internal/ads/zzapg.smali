@@ -1,128 +1,84 @@
-.class public final Lcom/google/android/gms/internal/ads/zzapg;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/android/gms/internal/ads/zzapg;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzapi;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzapi<",
-        "TT;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final cause:Ljava/lang/Throwable;
-
-.field public final zzczr:Lcom/google/android/gms/internal/ads/zzapj;
+.implements Lcom/google/android/gms/internal/ads/zzaph;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.mediation.client.rtb.IInterstitialCallback"
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzapg;->cause:Ljava/lang/Throwable;
-
-    .line 3
-    new-instance p1, Lcom/google/android/gms/internal/ads/zzapj;
-
-    invoke-direct {p1}, Lcom/google/android/gms/internal/ads/zzapj;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzapg;->zzczr:Lcom/google/android/gms/internal/ads/zzapj;
-
-    .line 4
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzapg;->zzczr:Lcom/google/android/gms/internal/ads/zzapj;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzapj;->zzua()V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel(Z)Z
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    const/4 p4, 0x2
+
+    if-eq p1, p4, :cond_2
+
+    const/4 p4, 0x3
+
+    if-eq p1, p4, :cond_1
+
+    const/4 p4, 0x4
+
+    if-eq p1, p4, :cond_0
 
     const/4 p1, 0x0
 
     return p1
-.end method
-
-.method public final get()Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
 
     .line 1
-    new-instance v0, Ljava/util/concurrent/ExecutionException;
+    :cond_0
+    sget-object p1, Lcom/google/android/gms/internal/ads/zzve;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzapg;->cause:Ljava/lang/Throwable;
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object p1
 
-    throw v0
-.end method
-
-.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J",
-            "Ljava/util/concurrent/TimeUnit;",
-            ")TT;"
-        }
-    .end annotation
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzve;
 
     .line 2
-    new-instance p1, Ljava/util/concurrent/ExecutionException;
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzaph;->zzf(Lcom/google/android/gms/internal/ads/zzve;)V
 
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzapg;->cause:Ljava/lang/Throwable;
+    goto :goto_0
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+    .line 3
+    :cond_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    throw p1
-.end method
+    move-result-object p1
 
-.method public final isCancelled()Z
-    .locals 1
+    .line 4
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzaph;->zzdm(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    goto :goto_0
 
-    return v0
-.end method
+    .line 5
+    :cond_2
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzaph;->zzuw()V
 
-.method public final isDone()Z
-    .locals 1
+    .line 6
+    :goto_0
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    return v0
-.end method
-
-.method public final zza(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzapg;->zzczr:Lcom/google/android/gms/internal/ads/zzapj;
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/ads/zzapj;->zza(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    return-void
+    return p1
 .end method

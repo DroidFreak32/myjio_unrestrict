@@ -1,26 +1,53 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzaou;
+.class public final Lcom/google/android/gms/internal/ads/zzaou;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<V:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zzdnk:Lcom/google/android/gms/internal/ads/zzaop;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaop;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaou;->zzdnk:Lcom/google/android/gms/internal/ads/zzaop;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zzb(Ljava/lang/Throwable;)V
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract zzi(Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TV;)V"
-        }
-    .end annotation
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaou;->zzdnk:Lcom/google/android/gms/internal/ads/zzaop;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaop;->zza(Lcom/google/android/gms/internal/ads/zzaop;)Lcom/google/android/gms/internal/ads/zzano;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzano;->onAdOpened()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "#007 Could not call remote method."
+
+    .line 2
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaza;->zze(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
 .end method

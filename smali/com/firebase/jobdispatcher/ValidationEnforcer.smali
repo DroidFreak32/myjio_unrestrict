@@ -3,7 +3,7 @@
 .source "ValidationEnforcer.java"
 
 # interfaces
-.implements Lr50;
+.implements Lcom/firebase/jobdispatcher/JobValidator;
 
 
 # annotations
@@ -15,18 +15,18 @@
 
 
 # instance fields
-.field public final a:Lr50;
+.field public final a:Lcom/firebase/jobdispatcher/JobValidator;
 
 
 # direct methods
-.method public constructor <init>(Lr50;)V
+.method public constructor <init>(Lcom/firebase/jobdispatcher/JobValidator;)V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a:Lr50;
+    iput-object p1, p0, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a:Lcom/firebase/jobdispatcher/JobValidator;
 
     return-void
 .end method
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 2
+    .line 1
     :cond_0
     new-instance v0, Lcom/firebase/jobdispatcher/ValidationEnforcer$ValidationException;
 
@@ -59,12 +59,117 @@
 
 
 # virtual methods
-.method public a(Lo50;)Ljava/util/List;
+.method public final ensureValid(Lcom/firebase/jobdispatcher/JobParameters;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->validate(Lcom/firebase/jobdispatcher/JobParameters;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final ensureValid(Lcom/firebase/jobdispatcher/JobTrigger;)V
+    .locals 0
+
+    .line 2
+    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->validate(Lcom/firebase/jobdispatcher/JobTrigger;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final ensureValid(Lcom/firebase/jobdispatcher/RetryStrategy;)V
+    .locals 0
+
+    .line 3
+    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->validate(Lcom/firebase/jobdispatcher/RetryStrategy;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final isValid(Lcom/firebase/jobdispatcher/JobParameters;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->validate(Lcom/firebase/jobdispatcher/JobParameters;)Ljava/util/List;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public final isValid(Lcom/firebase/jobdispatcher/JobTrigger;)Z
+    .locals 0
+
+    .line 2
+    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->validate(Lcom/firebase/jobdispatcher/JobTrigger;)Ljava/util/List;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public final isValid(Lcom/firebase/jobdispatcher/RetryStrategy;)Z
+    .locals 0
+
+    .line 3
+    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->validate(Lcom/firebase/jobdispatcher/RetryStrategy;)Ljava/util/List;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public validate(Lcom/firebase/jobdispatcher/JobParameters;)Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lo50;",
+            "Lcom/firebase/jobdispatcher/JobParameters;",
             ")",
             "Ljava/util/List<",
             "Ljava/lang/String;",
@@ -73,24 +178,63 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a:Lr50;
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a:Lcom/firebase/jobdispatcher/JobValidator;
 
-    invoke-interface {v0, p1}, Lr50;->a(Lo50;)Ljava/util/List;
+    invoke-interface {v0, p1}, Lcom/firebase/jobdispatcher/JobValidator;->validate(Lcom/firebase/jobdispatcher/JobParameters;)Ljava/util/List;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final b(Lo50;)V
-    .locals 0
+.method public validate(Lcom/firebase/jobdispatcher/JobTrigger;)Ljava/util/List;
+    .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a(Lo50;)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/firebase/jobdispatcher/JobTrigger;",
+            ")",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 2
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a:Lcom/firebase/jobdispatcher/JobValidator;
+
+    invoke-interface {v0, p1}, Lcom/firebase/jobdispatcher/JobValidator;->validate(Lcom/firebase/jobdispatcher/JobTrigger;)Ljava/util/List;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a(Ljava/util/List;)V
+    return-object p1
+.end method
 
-    return-void
+.method public validate(Lcom/firebase/jobdispatcher/RetryStrategy;)Ljava/util/List;
+    .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/firebase/jobdispatcher/RetryStrategy;",
+            ")",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 3
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/ValidationEnforcer;->a:Lcom/firebase/jobdispatcher/JobValidator;
+
+    invoke-interface {v0, p1}, Lcom/firebase/jobdispatcher/JobValidator;->validate(Lcom/firebase/jobdispatcher/RetryStrategy;)Ljava/util/List;
+
+    move-result-object p1
+
+    return-object p1
 .end method

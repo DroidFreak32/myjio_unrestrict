@@ -8,11 +8,11 @@
 
 
 # instance fields
-.field public final synthetic zzaik:Lcom/google/android/gms/tagmanager/zzeb;
+.field private final synthetic zzaik:Lcom/google/android/gms/tagmanager/zzeb;
 
-.field public zzail:Z
+.field private zzail:Z
 
-.field public zzaim:J
+.field private zzaim:J
 
 
 # direct methods
@@ -37,7 +37,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase;)Z
+.method private static zza(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase;)Z
     .locals 10
 
     const/4 v0, 0x0

@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzcm:Lcom/google/android/gms/iid/zzt;
+.field private final zzcm:Lcom/google/android/gms/iid/zzt;
 
-.field public final zzcn:Lcom/google/android/gms/iid/zzz;
+.field private final zzcn:Lcom/google/android/gms/iid/zzz;
 
 
 # direct methods

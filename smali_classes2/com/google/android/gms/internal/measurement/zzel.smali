@@ -1,198 +1,213 @@
 .class public abstract Lcom/google/android/gms/internal/measurement/zzel;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/measurement/zzfk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/measurement/zzfk<",
+        "TK;TV;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field public zza:I
+.field private transient zza:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "TK;",
+            "Ljava/util/Collection<",
+            "TV;>;>;"
+        }
+    .end annotation
 
-.field public zzb:I
-
-.field public zzc:Lcom/google/android/gms/internal/measurement/zzeq;
-
-.field public zzd:I
-
-.field public zze:Z
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v0, 0x64
-
-    .line 2
-    iput v0, p0, Lcom/google/android/gms/internal/measurement/zzel;->zzb:I
-
-    const v0, 0x7fffffff
-
-    .line 3
-    iput v0, p0, Lcom/google/android/gms/internal/measurement/zzel;->zzd:I
-
-    const/4 v0, 0x0
-
-    .line 4
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/measurement/zzel;->zze:Z
-
     return-void
-.end method
-
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/measurement/zzeo;)V
-    .locals 0
-
-    .line 5
-    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzel;-><init>()V
-
-    return-void
-.end method
-
-.method public static zza(J)J
-    .locals 4
-
-    const/4 v0, 0x1
-
-    ushr-long v0, p0, v0
-
-    const-wide/16 v2, 0x1
-
-    and-long/2addr p0, v2
-
-    neg-long p0, p0
-
-    xor-long/2addr p0, v0
-
-    return-wide p0
-.end method
-
-.method public static zza([BIIZ)Lcom/google/android/gms/internal/measurement/zzel;
-    .locals 6
-
-    .line 1
-    new-instance p1, Lcom/google/android/gms/internal/measurement/zzen;
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p1
-
-    move-object v1, p0
-
-    move v3, p2
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/measurement/zzen;-><init>([BIIZLcom/google/android/gms/internal/measurement/zzeo;)V
-
-    .line 2
-    :try_start_0
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/measurement/zzen;->zzc(I)I
-    :try_end_0
-    .catch Lcom/google/android/gms/internal/measurement/zzft; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p1
-
-    :catch_0
-    move-exception p0
-
-    .line 3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p1
-.end method
-
-.method public static zze(I)I
-    .locals 1
-
-    ushr-int/lit8 v0, p0, 0x1
-
-    and-int/lit8 p0, p0, 0x1
-
-    neg-int p0, p0
-
-    xor-int/2addr p0, v0
-
-    return p0
 .end method
 
 
 # virtual methods
-.method public abstract zza()I
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    if-ne p1, p0, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    .line 1
+    :cond_0
+    instance-of v0, p1, Lcom/google/android/gms/internal/measurement/zzfk;
+
+    if-eqz v0, :cond_1
+
+    .line 2
+    check-cast p1, Lcom/google/android/gms/internal/measurement/zzfk;
+
+    .line 3
+    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zzfk;->zza()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lcom/google/android/gms/internal/measurement/zzfk;->zza()Ljava/util/Map;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
-.method public abstract zza(I)V
+.method public hashCode()I
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzel;->zza()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public abstract zzb()D
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzel;->zza()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public abstract zzb(I)Z
+.method public zza()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "TK;",
+            "Ljava/util/Collection<",
+            "TV;>;>;"
+        }
+    .end annotation
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzel;->zza:Ljava/util/Map;
+
+    if-nez v0, :cond_0
+
+    .line 4
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzel;->zzb()Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzel;->zza:Ljava/util/Map;
+
+    :cond_0
+    return-object v0
 .end method
 
-.method public abstract zzc()F
+.method public zza(Ljava/lang/Object;)Z
+    .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzel;->zza()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Collection;
+
+    .line 2
+    invoke-interface {v1, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
-.method public abstract zzc(I)I
-.end method
-
-.method public abstract zzd()J
-.end method
-
-.method public abstract zzd(I)V
-.end method
-
-.method public abstract zze()J
-.end method
-
-.method public abstract zzf()I
-.end method
-
-.method public abstract zzg()J
-.end method
-
-.method public abstract zzh()I
-.end method
-
-.method public abstract zzi()Z
-.end method
-
-.method public abstract zzj()Ljava/lang/String;
-.end method
-
-.method public abstract zzk()Ljava/lang/String;
-.end method
-
-.method public abstract zzl()Lcom/google/android/gms/internal/measurement/zzdz;
-.end method
-
-.method public abstract zzm()I
-.end method
-
-.method public abstract zzn()I
-.end method
-
-.method public abstract zzo()I
-.end method
-
-.method public abstract zzp()J
-.end method
-
-.method public abstract zzq()I
-.end method
-
-.method public abstract zzr()J
-.end method
-
-.method public abstract zzs()J
-.end method
-
-.method public abstract zzt()Z
-.end method
-
-.method public abstract zzu()I
+.method public abstract zzb()Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "TK;",
+            "Ljava/util/Collection<",
+            "TV;>;>;"
+        }
+    .end annotation
 .end method

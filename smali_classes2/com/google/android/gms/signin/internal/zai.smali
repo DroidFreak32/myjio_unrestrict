@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/signin/internal/zai;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -10,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/signin/internal/zah;",
+        "Lcom/google/android/gms/signin/internal/zag;",
         ">;"
     }
 .end annotation
@@ -38,7 +39,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move-object v2, v1
 
     .line 2
     :goto_0
@@ -73,33 +74,28 @@
 
     .line 6
     :cond_0
-    sget-object v2, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 7
-    invoke-static {p1, v3, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/android/gms/common/internal/ResolveAccountRequest;
+    goto :goto_0
+
+    .line 7
+    :cond_1
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createStringList(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+
+    move-result-object v1
 
     goto :goto_0
 
     .line 8
-    :cond_1
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    .line 9
     :cond_2
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
-    .line 10
-    new-instance p1, Lcom/google/android/gms/signin/internal/zah;
+    .line 9
+    new-instance p1, Lcom/google/android/gms/signin/internal/zag;
 
-    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/signin/internal/zah;-><init>(ILcom/google/android/gms/common/internal/ResolveAccountRequest;)V
+    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/signin/internal/zag;-><init>(Ljava/util/List;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -108,7 +104,7 @@
     .locals 0
 
     .line 1
-    new-array p1, p1, [Lcom/google/android/gms/signin/internal/zah;
+    new-array p1, p1, [Lcom/google/android/gms/signin/internal/zag;
 
     return-object p1
 .end method

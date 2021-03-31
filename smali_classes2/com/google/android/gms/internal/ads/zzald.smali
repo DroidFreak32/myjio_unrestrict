@@ -1,44 +1,36 @@
-.class public final Lcom/google/android/gms/internal/ads/zzald;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzald;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/gms/internal/ads/zzazu;
 
 
 # instance fields
-.field public final synthetic zzcum:Lcom/google/android/gms/internal/ads/zzalc;
+.field private final zzdiq:Lcom/google/android/gms/internal/ads/zzalb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzalc;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzalb;)V
     .locals 0
 
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzald;->zzcum:Lcom/google/android/gms/internal/ads/zzalc;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzald;->zzdiq:Lcom/google/android/gms/internal/ads/zzalb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final zzh(Ljava/lang/Object;)V
+    .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzald;->zzcum:Lcom/google/android/gms/internal/ads/zzalc;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzald;->zzdiq:Lcom/google/android/gms/internal/ads/zzalb;
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzako;
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzalc;->zza(Lcom/google/android/gms/internal/ads/zzalc;Ljava/lang/Thread;)Ljava/lang/Thread;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzald;->zzcum:Lcom/google/android/gms/internal/ads/zzalc;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzalc;->zzdn()V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzalb;->zza(Lcom/google/android/gms/internal/ads/zzako;)V
 
     return-void
 .end method

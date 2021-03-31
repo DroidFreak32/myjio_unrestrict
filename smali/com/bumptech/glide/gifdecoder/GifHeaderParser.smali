@@ -6,53 +6,53 @@
 # static fields
 .field public static final DEFAULT_FRAME_DELAY:I = 0xa
 
-.field public static final DESCRIPTOR_MASK_INTERLACE_FLAG:I = 0x40
+.field private static final DESCRIPTOR_MASK_INTERLACE_FLAG:I = 0x40
 
-.field public static final DESCRIPTOR_MASK_LCT_FLAG:I = 0x80
+.field private static final DESCRIPTOR_MASK_LCT_FLAG:I = 0x80
 
-.field public static final DESCRIPTOR_MASK_LCT_SIZE:I = 0x7
+.field private static final DESCRIPTOR_MASK_LCT_SIZE:I = 0x7
 
-.field public static final EXTENSION_INTRODUCER:I = 0x21
+.field private static final EXTENSION_INTRODUCER:I = 0x21
 
-.field public static final GCE_DISPOSAL_METHOD_SHIFT:I = 0x2
+.field private static final GCE_DISPOSAL_METHOD_SHIFT:I = 0x2
 
-.field public static final GCE_MASK_DISPOSAL_METHOD:I = 0x1c
+.field private static final GCE_MASK_DISPOSAL_METHOD:I = 0x1c
 
-.field public static final GCE_MASK_TRANSPARENT_COLOR_FLAG:I = 0x1
+.field private static final GCE_MASK_TRANSPARENT_COLOR_FLAG:I = 0x1
 
-.field public static final IMAGE_SEPARATOR:I = 0x2c
+.field private static final IMAGE_SEPARATOR:I = 0x2c
 
-.field public static final LABEL_APPLICATION_EXTENSION:I = 0xff
+.field private static final LABEL_APPLICATION_EXTENSION:I = 0xff
 
-.field public static final LABEL_COMMENT_EXTENSION:I = 0xfe
+.field private static final LABEL_COMMENT_EXTENSION:I = 0xfe
 
-.field public static final LABEL_GRAPHIC_CONTROL_EXTENSION:I = 0xf9
+.field private static final LABEL_GRAPHIC_CONTROL_EXTENSION:I = 0xf9
 
-.field public static final LABEL_PLAIN_TEXT_EXTENSION:I = 0x1
+.field private static final LABEL_PLAIN_TEXT_EXTENSION:I = 0x1
 
-.field public static final LSD_MASK_GCT_FLAG:I = 0x80
+.field private static final LSD_MASK_GCT_FLAG:I = 0x80
 
-.field public static final LSD_MASK_GCT_SIZE:I = 0x7
+.field private static final LSD_MASK_GCT_SIZE:I = 0x7
 
-.field public static final MASK_INT_LOWEST_BYTE:I = 0xff
+.field private static final MASK_INT_LOWEST_BYTE:I = 0xff
 
-.field public static final MAX_BLOCK_SIZE:I = 0x100
+.field private static final MAX_BLOCK_SIZE:I = 0x100
 
 .field public static final MIN_FRAME_DELAY:I = 0x2
 
-.field public static final TAG:Ljava/lang/String; = "GifHeaderParser"
+.field private static final TAG:Ljava/lang/String; = "GifHeaderParser"
 
-.field public static final TRAILER:I = 0x3b
+.field private static final TRAILER:I = 0x3b
 
 
 # instance fields
-.field public final block:[B
+.field private final block:[B
 
-.field public blockSize:I
+.field private blockSize:I
 
-.field public header:Lcom/bumptech/glide/gifdecoder/GifHeader;
+.field private header:Lcom/bumptech/glide/gifdecoder/GifHeader;
 
-.field public rawData:Ljava/nio/ByteBuffer;
+.field private rawData:Ljava/nio/ByteBuffer;
 
 
 # direct methods
@@ -229,27 +229,19 @@
     if-eqz v1, :cond_2
 
     .line 8
-    iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
-
-    iget-object v0, v0, Lcom/bumptech/glide/gifdecoder/GifHeader;->currentFrame:Lcom/bumptech/glide/gifdecoder/GifFrame;
-
     invoke-direct {p0, v4}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->readColorTable(I)[I
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, v0, Lcom/bumptech/glide/gifdecoder/GifFrame;->lct:[I
+    iput-object v0, v5, Lcom/bumptech/glide/gifdecoder/GifFrame;->lct:[I
 
     goto :goto_1
 
-    .line 9
     :cond_2
-    iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lcom/bumptech/glide/gifdecoder/GifHeader;->currentFrame:Lcom/bumptech/glide/gifdecoder/GifFrame;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lcom/bumptech/glide/gifdecoder/GifFrame;->lct:[I
+    .line 9
+    iput-object v0, v5, Lcom/bumptech/glide/gifdecoder/GifFrame;->lct:[I
 
     .line 10
     :goto_1
@@ -307,28 +299,22 @@
 
     iput v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->blockSize:I
 
-    .line 2
-    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->blockSize:I
-
     if-lez v0, :cond_1
 
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
-    .line 3
+    .line 2
     :goto_0
     :try_start_0
-    iget v2, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->blockSize:I
-
-    if-ge v0, v2, :cond_1
-
-    .line 4
     iget v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->blockSize:I
+
+    if-ge v0, v1, :cond_1
 
     sub-int/2addr v1, v0
 
-    .line 5
+    .line 3
     iget-object v2, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
 
     iget-object v3, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->block:[B
@@ -348,14 +334,14 @@
 
     const-string v3, "GifHeaderParser"
 
-    .line 6
+    .line 4
     invoke-static {v3, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 7
+    .line 5
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -382,7 +368,7 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 8
+    .line 6
     :cond_0
     iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
 
@@ -396,6 +382,8 @@
 
 .method private readColorTable(I)[I
     .locals 9
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     mul-int/lit8 v0, p1, 0x3
 
@@ -470,12 +458,12 @@
     :catch_0
     nop
 
-    const/4 p1, 0x3
+    const-string p1, "GifHeaderParser"
 
-    const-string v0, "GifHeaderParser"
+    const/4 v0, 0x3
 
     .line 7
-    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {p1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result p1
 
@@ -710,22 +698,14 @@
 
     iput v2, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->dispose:I
 
-    .line 4
-    iget v2, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->dispose:I
-
     const/4 v4, 0x1
 
     if-nez v2, :cond_0
 
-    .line 5
+    .line 4
     iput v4, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->dispose:I
 
-    .line 6
     :cond_0
-    iget-object v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
-
-    iget-object v1, v1, Lcom/bumptech/glide/gifdecoder/GifHeader;->currentFrame:Lcom/bumptech/glide/gifdecoder/GifFrame;
-
     and-int/2addr v0, v4
 
     if-eqz v0, :cond_1
@@ -735,10 +715,11 @@
     :cond_1
     const/4 v4, 0x0
 
+    .line 5
     :goto_0
     iput-boolean v4, v1, Lcom/bumptech/glide/gifdecoder/GifFrame;->transparency:Z
 
-    .line 7
+    .line 6
     invoke-direct {p0}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->readShort()I
 
     move-result v0
@@ -749,7 +730,7 @@
 
     const/16 v0, 0xa
 
-    .line 8
+    .line 7
     :cond_2
     iget-object v2, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
 
@@ -759,14 +740,14 @@
 
     iput v0, v2, Lcom/bumptech/glide/gifdecoder/GifFrame;->delay:I
 
-    .line 9
+    .line 8
     invoke-direct {p0}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->read()I
 
     move-result v0
 
     iput v0, v2, Lcom/bumptech/glide/gifdecoder/GifFrame;->transIndex:I
 
-    .line 10
+    .line 9
     invoke-direct {p0}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->read()I
 
     return-void
@@ -911,9 +892,6 @@
     :goto_0
     iput-boolean v2, v1, Lcom/bumptech/glide/gifdecoder/GifHeader;->gctFlag:Z
 
-    .line 5
-    iget-object v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->header:Lcom/bumptech/glide/gifdecoder/GifHeader;
-
     const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
     and-int/lit8 v0, v0, 0x7
@@ -922,6 +900,7 @@
 
     int-to-double v2, v0
 
+    .line 5
     invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v2
@@ -1152,6 +1131,8 @@
 
 .method public parseHeader()Lcom/bumptech/glide/gifdecoder/GifHeader;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
@@ -1215,6 +1196,10 @@
 
 .method public setData(Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
     .locals 1
+    .param p1    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->reset()V
@@ -1226,11 +1211,9 @@
 
     iput-object p1, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
 
-    .line 3
-    iget-object p1, p0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
-
     const/4 v0, 0x0
 
+    .line 3
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 4
@@ -1245,6 +1228,10 @@
 
 .method public setData([B)Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
     .locals 1
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_0
 

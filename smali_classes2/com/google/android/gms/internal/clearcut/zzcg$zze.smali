@@ -28,7 +28,7 @@
 # instance fields
 .field public final number:I
 
-.field public final zzjw:Lcom/google/android/gms/internal/clearcut/zzck;
+.field private final zzjw:Lcom/google/android/gms/internal/clearcut/zzck;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzck<",

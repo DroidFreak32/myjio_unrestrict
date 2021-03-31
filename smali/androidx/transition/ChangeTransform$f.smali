@@ -54,7 +54,7 @@
     iput v0, p0, Landroidx/transition/ChangeTransform$f;->b:F
 
     .line 4
-    invoke-static {p1}, Lba;->v(Landroid/view/View;)F
+    invoke-static {p1}, Landroidx/core/view/ViewCompat;->getTranslationZ(Landroid/view/View;)F
 
     move-result v0
 
@@ -122,7 +122,7 @@
 
     move-object v0, p1
 
-    invoke-static/range {v0 .. v8}, Landroidx/transition/ChangeTransform;->a(Landroid/view/View;FFFFFFFF)V
+    invoke-static/range {v0 .. v8}, Landroidx/transition/ChangeTransform;->f(Landroid/view/View;FFFFFFFF)V
 
     return-void
 .end method

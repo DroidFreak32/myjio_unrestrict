@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final zznf:Lcom/google/android/gms/internal/clearcut/zzeb;
+.field private static final zznf:Lcom/google/android/gms/internal/clearcut/zzeb;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzeb<",
@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final zzls:Ljava/util/List;
+.field private final zzls:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -66,7 +66,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/List;)V
+.method private constructor <init>(Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

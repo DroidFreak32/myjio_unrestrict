@@ -1,6 +1,9 @@
 .class public Lp0$b;
-.super Lia;
-.source "WindowDecorActionBar.java"
+.super Ljava/lang/Object;
+.source "DrawableContainer.java"
+
+# interfaces
+.implements Landroid/graphics/drawable/Drawable$Callback;
 
 
 # annotations
@@ -9,43 +12,102 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
+    accessFlags = 0x9
+    name = "b"
 .end annotation
 
 
 # instance fields
-.field public final synthetic a:Lp0;
+.field public a:Landroid/graphics/drawable/Drawable$Callback;
 
 
 # direct methods
-.method public constructor <init>(Lp0;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lp0$b;->a:Lp0;
-
-    invoke-direct {p0}, Lia;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/View;)V
-    .locals 1
+.method public a()Landroid/graphics/drawable/Drawable$Callback;
+    .locals 2
 
     .line 1
-    iget-object p1, p0, Lp0$b;->a:Lp0;
+    iget-object v0, p0, Lp0$b;->a:Landroid/graphics/drawable/Drawable$Callback;
 
-    const/4 v0, 0x0
-
-    iput-object v0, p1, Lp0;->v:Lf1;
+    const/4 v1, 0x0
 
     .line 2
-    iget-object p1, p1, Lp0;->d:Landroidx/appcompat/widget/ActionBarContainer;
+    iput-object v1, p0, Lp0$b;->a:Landroid/graphics/drawable/Drawable$Callback;
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
+    return-object v0
+.end method
 
+.method public b(Landroid/graphics/drawable/Drawable$Callback;)Lp0$b;
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lp0$b;->a:Landroid/graphics/drawable/Drawable$Callback;
+
+    return-object p0
+.end method
+
+.method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    return-void
+.end method
+
+.method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+    .locals 1
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lp0$b;->a:Landroid/graphics/drawable/Drawable$Callback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-interface {v0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable$Callback;->scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+    .locals 1
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lp0$b;->a:Landroid/graphics/drawable/Drawable$Callback;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-interface {v0, p1, p2}, Landroid/graphics/drawable/Drawable$Callback;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+
+    :cond_0
     return-void
 .end method

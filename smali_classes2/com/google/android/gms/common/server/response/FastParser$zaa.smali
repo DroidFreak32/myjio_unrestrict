@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/server/response/FastParser$zaa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -23,13 +24,23 @@
 
 
 # virtual methods
-.method public abstract zah(Lcom/google/android/gms/common/server/response/FastParser;Ljava/io/BufferedReader;)Ljava/lang/Object;
+.method public abstract zaa(Lcom/google/android/gms/common/server/response/FastParser;Ljava/io/BufferedReader;)Ljava/lang/Object;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/google/android/gms/common/server/response/FastParser;",
             "Ljava/io/BufferedReader;",
             ")TO;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/common/server/response/FastParser$ParseException;,
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/tasks/TaskCompletionSource;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/tasks/zzu;
+.field private final zza:Lcom/google/android/gms/tasks/zzu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/tasks/zzu<",
@@ -43,6 +44,10 @@
 
 .method public constructor <init>(Lcom/google/android/gms/tasks/CancellationToken;)V
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/CancellationToken;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,6 +82,9 @@
 # virtual methods
 .method public getTask()Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -93,17 +101,25 @@
 
 .method public setException(Ljava/lang/Exception;)V
     .locals 1
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Exception;)V
 
     return-void
 .end method
 
 .method public setResult(Ljava/lang/Object;)V
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TTResult;)V"
@@ -113,18 +129,22 @@
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->setResult(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->zza(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 .method public trySetException(Ljava/lang/Exception;)Z
     .locals 1
+    .param p1    # Ljava/lang/Exception;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->trySetException(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->zzb(Ljava/lang/Exception;)Z
 
     move-result p1
 
@@ -133,6 +153,10 @@
 
 .method public trySetResult(Ljava/lang/Object;)Z
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TTResult;)Z"
@@ -142,7 +166,7 @@
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->trySetResult(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/tasks/zzu;->zzb(Ljava/lang/Object;)Z
 
     move-result p1
 

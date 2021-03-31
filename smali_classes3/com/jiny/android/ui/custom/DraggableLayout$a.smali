@@ -1,4 +1,4 @@
-.class public synthetic Lcom/jiny/android/ui/custom/DraggableLayout$a;
+.class public interface abstract Lcom/jiny/android/ui/custom/DraggableLayout$a;
 .super Ljava/lang/Object;
 
 
@@ -8,6 +8,11 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1009
-    name = null
+    accessFlags = 0x609
+    name = "a"
 .end annotation
+
+
+# virtual methods
+.method public abstract b()V
+.end method

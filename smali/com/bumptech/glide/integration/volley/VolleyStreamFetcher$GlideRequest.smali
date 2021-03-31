@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public final callback:Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+.field private final callback:Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/data/DataFetcher$DataCallback<",
@@ -33,7 +33,7 @@
     .end annotation
 .end field
 
-.field public final headers:Ljava/util/Map;
+.field private final headers:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -44,7 +44,7 @@
     .end annotation
 .end field
 
-.field public final priority:Lcom/android/volley/Request$Priority;
+.field private final priority:Lcom/android/volley/Request$Priority;
 
 
 # direct methods
@@ -96,7 +96,7 @@
     const/4 v1, 0x0
 
     .line 2
-    invoke-direct {p0, v0, p1, v1}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lwv$a;)V
+    invoke-direct {p0, v0, p1, v1}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
 
     .line 3
     iput-object p2, p0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher$GlideRequest;->callback:Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
@@ -189,14 +189,14 @@
     return-object p1
 .end method
 
-.method public parseNetworkResponse(Luv;)Lwv;
+.method public parseNetworkResponse(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Luv;",
+            "Lcom/android/volley/NetworkResponse;",
             ")",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
             "[B>;"
         }
     .end annotation
@@ -213,7 +213,7 @@
 
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
-    iget-object v2, p1, Luv;->b:[B
+    iget-object v2, p1, Lcom/android/volley/NetworkResponse;->data:[B
 
     invoke-direct {v1, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
@@ -221,13 +221,13 @@
 
     .line 3
     :cond_0
-    iget-object v0, p1, Luv;->b:[B
+    iget-object v0, p1, Lcom/android/volley/NetworkResponse;->data:[B
 
-    invoke-static {p1}, Lcom/android/volley/toolbox/HttpHeaderParser;->parseCacheHeaders(Luv;)Lnv$a;
+    invoke-static {p1}, Lcom/android/volley/toolbox/HttpHeaderParser;->parseCacheHeaders(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Cache$Entry;
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Lwv;->a(Ljava/lang/Object;Lnv$a;)Lwv;
+    invoke-static {v0, p1}, Lcom/android/volley/Response;->success(Ljava/lang/Object;Lcom/android/volley/Cache$Entry;)Lcom/android/volley/Response;
 
     move-result-object p1
 

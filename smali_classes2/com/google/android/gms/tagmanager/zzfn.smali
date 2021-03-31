@@ -11,35 +11,35 @@
 
 
 # static fields
-.field public static final zzakn:Ljava/lang/Object;
+.field private static final zzakn:Ljava/lang/Object;
 
-.field public static zzaky:Lcom/google/android/gms/tagmanager/zzfn;
+.field private static zzaky:Lcom/google/android/gms/tagmanager/zzfn;
 
 
 # instance fields
-.field public connected:Z
+.field private connected:Z
 
-.field public zzaig:Lcom/google/android/gms/tagmanager/zzcc;
+.field private zzaig:Lcom/google/android/gms/tagmanager/zzcc;
 
-.field public zzako:Landroid/content/Context;
+.field private zzako:Landroid/content/Context;
 
-.field public zzakp:Lcom/google/android/gms/tagmanager/zzcb;
+.field private zzakp:Lcom/google/android/gms/tagmanager/zzcb;
 
-.field public volatile zzakq:Lcom/google/android/gms/tagmanager/zzby;
+.field private volatile zzakq:Lcom/google/android/gms/tagmanager/zzby;
 
-.field public zzakr:I
+.field private zzakr:I
 
-.field public zzaks:Z
+.field private zzaks:Z
 
-.field public zzakt:Z
+.field private zzakt:Z
 
-.field public zzaku:Z
+.field private zzaku:Z
 
-.field public zzakv:Lcom/google/android/gms/tagmanager/zzfq;
+.field private zzakv:Lcom/google/android/gms/tagmanager/zzfq;
 
-.field public zzakw:Lcom/google/android/gms/tagmanager/zzdn;
+.field private zzakw:Lcom/google/android/gms/tagmanager/zzdn;
 
-.field public zzakx:Z
+.field private zzakx:Z
 
 
 # direct methods
@@ -56,7 +56,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .line 1
@@ -516,17 +516,13 @@
     iput-object v0, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzakv:Lcom/google/android/gms/tagmanager/zzfq;
 
     .line 7
-    iget v0, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzakr:I
-
-    if-lez v0, :cond_2
-
-    .line 8
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzakv:Lcom/google/android/gms/tagmanager/zzfq;
-
     iget v1, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzakr:I
+
+    if-lez v1, :cond_2
 
     int-to-long v1, v1
 
+    .line 8
     invoke-interface {v0, v1, v2}, Lcom/google/android/gms/tagmanager/zzfq;->zzh(J)V
 
     :cond_2
@@ -541,7 +537,7 @@
     if-eqz v0, :cond_3
 
     .line 11
-    invoke-virtual {p0}, Lcom/google/android/gms/tagmanager/zzfn;->dispatch()V
+    invoke-virtual {p0}, Lcom/google/android/gms/tagmanager/zzfm;->dispatch()V
 
     const/4 v0, 0x0
 
@@ -566,8 +562,6 @@
     iput-object v0, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzakw:Lcom/google/android/gms/tagmanager/zzdn;
 
     .line 15
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzakw:Lcom/google/android/gms/tagmanager/zzdn;
-
     iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzfn;->zzako:Landroid/content/Context;
 
     .line 16

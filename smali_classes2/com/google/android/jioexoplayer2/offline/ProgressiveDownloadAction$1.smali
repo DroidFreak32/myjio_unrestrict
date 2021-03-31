@@ -28,6 +28,11 @@
 # virtual methods
 .method public bridge synthetic readFromStream(ILjava/io/DataInputStream;)Lcom/google/android/jioexoplayer2/offline/DownloadAction;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1, p2}, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction$1;->readFromStream(ILjava/io/DataInputStream;)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
@@ -39,6 +44,11 @@
 
 .method public readFromStream(ILjava/io/DataInputStream;)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     invoke-virtual {p2}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;

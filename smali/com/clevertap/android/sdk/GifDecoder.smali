@@ -12,23 +12,23 @@
 
 
 # static fields
-.field public static final BYTES_PER_INTEGER:I = 0x4
+.field private static final BYTES_PER_INTEGER:I = 0x4
 
-.field public static final DISPOSAL_BACKGROUND:I = 0x2
+.field private static final DISPOSAL_BACKGROUND:I = 0x2
 
-.field public static final DISPOSAL_NONE:I = 0x1
+.field private static final DISPOSAL_NONE:I = 0x1
 
-.field public static final DISPOSAL_PREVIOUS:I = 0x3
+.field private static final DISPOSAL_PREVIOUS:I = 0x3
 
-.field public static final DISPOSAL_UNSPECIFIED:I = 0x0
+.field private static final DISPOSAL_UNSPECIFIED:I = 0x0
 
-.field public static final INITIAL_FRAME_POINTER:I = -0x1
+.field private static final INITIAL_FRAME_POINTER:I = -0x1
 
 .field public static final LOOP_FOREVER:I = -0x1
 
-.field public static final MAX_STACK_SIZE:I = 0x1000
+.field private static final MAX_STACK_SIZE:I = 0x1000
 
-.field public static final NULL_CODE:I = -0x1
+.field private static final NULL_CODE:I = -0x1
 
 .field public static final STATUS_FORMAT_ERROR:I = 0x1
 
@@ -38,59 +38,62 @@
 
 .field public static final STATUS_PARTIAL_DECODE:I = 0x3
 
-.field public static final TAG:Ljava/lang/String; = "GifDecoder"
+.field private static final TAG:Ljava/lang/String; = "GifDecoder"
 
-.field public static final WORK_BUFFER_SIZE:I = 0x4000
+.field private static final WORK_BUFFER_SIZE:I = 0x4000
 
 
 # instance fields
-.field public act:[I
+.field private act:[I
 
-.field public bitmapProvider:Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;
+.field private bitmapProvider:Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;
 
-.field public block:[B
+.field private block:[B
 
-.field public downsampledHeight:I
+.field private downsampledHeight:I
 
-.field public downsampledWidth:I
+.field private downsampledWidth:I
 
-.field public framePointer:I
+.field private framePointer:I
 
-.field public header:Lcom/clevertap/android/sdk/GifHeader;
+.field private header:Lcom/clevertap/android/sdk/GifHeader;
 
-.field public isFirstFrameTransparent:Z
+.field private isFirstFrameTransparent:Z
 
-.field public loopIndex:I
+.field private loopIndex:I
 
-.field public mainPixels:[B
+.field private mainPixels:[B
 
-.field public mainScratch:[I
+.field private mainScratch:[I
 
-.field public parser:Lcom/clevertap/android/sdk/GifHeaderParser;
+.field private parser:Lcom/clevertap/android/sdk/GifHeaderParser;
 
-.field public final pct:[I
+.field private final pct:[I
 
-.field public pixelStack:[B
+.field private pixelStack:[B
 
-.field public prefix:[S
+.field private prefix:[S
 
-.field public previousImage:Landroid/graphics/Bitmap;
+.field private previousImage:Landroid/graphics/Bitmap;
 
-.field public rawData:Ljava/nio/ByteBuffer;
+.field private rawData:Ljava/nio/ByteBuffer;
 
-.field public sampleSize:I
+.field private sampleSize:I
 
-.field public savePrevious:Z
+.field private savePrevious:Z
 
-.field public status:I
+.field private status:I
 
-.field public suffix:[B
+.field private suffix:[B
 
-.field public workBuffer:[B
+.field private workBuffer:[B
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public workBufferPosition:I
+.field private workBufferPosition:I
 
-.field public workBufferSize:I
+.field private workBufferSize:I
 
 
 # direct methods
@@ -129,10 +132,10 @@
     const/4 v0, 0x0
 
     .line 6
-    iput v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferSize:I
+    iput v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
 
     .line 7
-    iput v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
+    iput v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferSize:I
 
     .line 8
     iput-object p1, p0, Lcom/clevertap/android/sdk/GifDecoder;->bitmapProvider:Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;
@@ -337,7 +340,7 @@
 .end method
 
 .method private decodeBitmapData(Lcom/clevertap/android/sdk/GifFrame;)V
-    .locals 27
+    .locals 26
 
     move-object/from16 v0, p0
 
@@ -480,11 +483,11 @@
     :cond_7
     const/4 v10, -0x1
 
-    move/from16 v21, v1
+    move/from16 v19, v1
 
-    move/from16 v19, v8
+    move/from16 v17, v8
 
-    move/from16 v20, v9
+    move/from16 v18, v9
 
     const/4 v11, 0x0
 
@@ -498,14 +501,14 @@
 
     const/16 v16, 0x0
 
-    const/16 v17, 0x0
+    const/16 v20, -0x1
 
-    const/16 v18, 0x0
+    const/16 v21, 0x0
 
-    const/16 v22, -0x1
+    const/16 v22, 0x0
 
     :goto_2
-    if-ge v11, v3, :cond_14
+    if-ge v11, v3, :cond_13
 
     const/4 v2, 0x3
 
@@ -521,157 +524,154 @@
     .line 17
     iput v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->status:I
 
-    goto/16 :goto_a
+    goto/16 :goto_8
 
     :cond_8
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
     .line 18
     :cond_9
     iget-object v4, v0, Lcom/clevertap/android/sdk/GifDecoder;->block:[B
 
-    aget-byte v4, v4, v14
+    aget-byte v4, v4, v13
 
     and-int/lit16 v4, v4, 0xff
 
-    shl-int/2addr v4, v15
+    shl-int/2addr v4, v14
 
-    add-int/2addr v13, v4
+    add-int/2addr v15, v4
 
-    add-int/lit8 v15, v15, 0x8
+    add-int/lit8 v14, v14, 0x8
 
-    add-int/2addr v14, v5
+    add-int/2addr v13, v5
 
     add-int/2addr v12, v10
 
-    move/from16 v23, v17
+    move/from16 v4, v17
 
-    move/from16 v4, v21
+    move/from16 v5, v19
 
-    move/from16 v5, v22
+    move/from16 v10, v20
 
-    move/from16 v26, v16
-
-    move/from16 v16, v11
-
-    move/from16 v11, v19
-
-    move/from16 v19, v18
-
-    move/from16 v18, v26
+    move/from16 v23, v21
 
     :goto_3
-    if-lt v15, v4, :cond_13
+    if-lt v14, v5, :cond_12
 
-    and-int v10, v13, v20
+    and-int v2, v15, v18
 
-    shr-int/2addr v13, v4
+    shr-int/2addr v15, v5
 
-    sub-int/2addr v15, v4
+    sub-int/2addr v14, v5
 
-    if-ne v10, v6, :cond_a
+    if-ne v2, v6, :cond_a
 
-    move v4, v1
+    move v5, v1
 
-    move v11, v8
+    move v4, v8
 
-    move/from16 v20, v9
+    move/from16 v18, v9
 
-    const/4 v5, -0x1
+    const/4 v2, 0x3
 
-    :goto_4
     const/4 v10, -0x1
 
     goto :goto_3
 
     :cond_a
-    if-le v10, v11, :cond_b
+    if-le v2, v4, :cond_b
+
+    move/from16 v21, v1
+
+    const/4 v1, 0x3
 
     .line 19
-    iput v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->status:I
-
-    goto :goto_5
-
-    :cond_b
-    if-ne v10, v7, :cond_c
-
-    :goto_5
-    move/from16 v21, v4
-
-    move/from16 v22, v5
-
-    move/from16 v17, v23
-
-    const/4 v2, 0x0
-
-    const/16 v4, 0x1000
-
-    const/4 v5, 0x1
-
-    const/4 v10, -0x1
-
-    goto/16 :goto_9
-
-    :cond_c
-    const/4 v2, -0x1
-
-    if-ne v5, v2, :cond_d
-
-    .line 20
-    iget-object v5, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
-
-    add-int/lit8 v21, v19, 0x1
-
-    iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->suffix:[B
-
-    aget-byte v2, v2, v10
-
-    aput-byte v2, v5, v19
-
-    move v5, v10
-
-    move/from16 v23, v5
-
-    move/from16 v19, v21
-
-    const/4 v2, 0x3
+    iput v1, v0, Lcom/clevertap/android/sdk/GifDecoder;->status:I
 
     goto :goto_4
 
+    :cond_b
+    move/from16 v21, v1
+
+    const/4 v1, 0x3
+
+    if-ne v2, v7, :cond_c
+
+    :goto_4
+    move/from16 v17, v4
+
+    move/from16 v19, v5
+
+    move/from16 v20, v10
+
+    move/from16 v1, v21
+
+    move/from16 v21, v23
+
+    goto/16 :goto_7
+
+    :cond_c
+    const/4 v1, -0x1
+
+    if-ne v10, v1, :cond_d
+
+    .line 20
+    iget-object v10, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
+
+    add-int/lit8 v19, v22, 0x1
+
+    iget-object v1, v0, Lcom/clevertap/android/sdk/GifDecoder;->suffix:[B
+
+    aget-byte v1, v1, v2
+
+    aput-byte v1, v10, v22
+
+    move v10, v2
+
+    move/from16 v23, v10
+
+    move/from16 v22, v19
+
+    move/from16 v1, v21
+
+    const/4 v2, 0x3
+
+    goto :goto_3
+
     :cond_d
-    if-lt v10, v11, :cond_e
+    if-lt v2, v4, :cond_e
 
     .line 21
-    iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
+    iget-object v1, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
 
-    add-int/lit8 v21, v19, 0x1
+    add-int/lit8 v19, v22, 0x1
 
-    move/from16 v24, v1
+    move/from16 v24, v2
 
-    move/from16 v1, v23
+    move/from16 v2, v23
 
-    int-to-byte v1, v1
+    int-to-byte v2, v2
 
-    aput-byte v1, v2, v19
-
-    move v1, v5
-
-    move/from16 v19, v21
-
-    goto :goto_6
-
-    :cond_e
-    move/from16 v24, v1
+    aput-byte v2, v1, v22
 
     move v1, v10
 
-    :goto_6
+    move/from16 v22, v19
+
+    goto :goto_5
+
+    :cond_e
+    move/from16 v24, v2
+
+    move/from16 v1, v24
+
+    :goto_5
     if-lt v1, v6, :cond_f
 
     .line 22
     iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
 
-    add-int/lit8 v21, v19, 0x1
+    add-int/lit8 v19, v22, 0x1
 
     move/from16 v23, v6
 
@@ -679,18 +679,18 @@
 
     aget-byte v6, v6, v1
 
-    aput-byte v6, v2, v19
+    aput-byte v6, v2, v22
 
     .line 23
     iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->prefix:[S
 
     aget-short v1, v2, v1
 
-    move/from16 v19, v21
+    move/from16 v22, v19
 
     move/from16 v6, v23
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_f
     move/from16 v23, v6
@@ -705,128 +705,110 @@
     .line 25
     iget-object v6, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
 
-    add-int/lit8 v21, v19, 0x1
+    add-int/lit8 v19, v22, 0x1
 
     move/from16 v25, v7
 
     int-to-byte v7, v1
 
-    aput-byte v7, v6, v19
+    aput-byte v7, v6, v22
 
     const/16 v6, 0x1000
 
-    if-ge v11, v6, :cond_10
+    if-ge v4, v6, :cond_10
 
     .line 26
     iget-object v6, v0, Lcom/clevertap/android/sdk/GifDecoder;->prefix:[S
 
-    int-to-short v5, v5
+    int-to-short v10, v10
 
-    aput-short v5, v6, v11
+    aput-short v10, v6, v4
 
     .line 27
-    aput-byte v7, v2, v11
-
-    add-int/lit8 v11, v11, 0x1
-
-    and-int v2, v11, v20
-
-    if-nez v2, :cond_10
-
-    const/16 v2, 0x1000
-
-    if-ge v11, v2, :cond_11
+    aput-byte v7, v2, v4
 
     add-int/lit8 v4, v4, 0x1
 
-    add-int v20, v20, v11
+    and-int v2, v4, v18
 
-    goto :goto_7
+    const/16 v6, 0x1000
+
+    if-nez v2, :cond_10
+
+    if-ge v4, v6, :cond_10
+
+    add-int/lit8 v5, v5, 0x1
+
+    add-int v18, v18, v4
 
     :cond_10
-    const/16 v2, 0x1000
+    move/from16 v22, v19
 
-    :cond_11
-    :goto_7
-    move/from16 v19, v21
-
-    :goto_8
-    if-lez v19, :cond_12
+    :goto_6
+    if-lez v22, :cond_11
 
     .line 28
-    iget-object v5, v0, Lcom/clevertap/android/sdk/GifDecoder;->mainPixels:[B
+    iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->mainPixels:[B
 
-    add-int/lit8 v6, v18, 0x1
+    add-int/lit8 v7, v16, 0x1
 
-    iget-object v7, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
+    iget-object v10, v0, Lcom/clevertap/android/sdk/GifDecoder;->pixelStack:[B
 
-    add-int/lit8 v19, v19, -0x1
+    add-int/lit8 v22, v22, -0x1
 
-    aget-byte v7, v7, v19
+    aget-byte v10, v10, v22
 
-    aput-byte v7, v5, v18
+    aput-byte v10, v2, v16
 
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v11, v11, 0x1
 
-    move/from16 v18, v6
+    move/from16 v16, v7
 
-    goto :goto_8
+    goto :goto_6
 
-    :cond_12
-    move v5, v10
-
+    :cond_11
     move/from16 v6, v23
+
+    move/from16 v10, v24
 
     move/from16 v7, v25
 
     const/4 v2, 0x3
 
-    const/4 v10, -0x1
-
     move/from16 v23, v1
 
-    move/from16 v1, v24
+    move/from16 v1, v21
 
     goto/16 :goto_3
 
-    :cond_13
-    move/from16 v24, v1
+    :cond_12
+    move/from16 v2, v23
 
-    move/from16 v1, v23
+    move/from16 v21, v2
 
-    move/from16 v17, v1
+    move/from16 v17, v4
 
-    move/from16 v21, v4
+    move/from16 v19, v5
 
-    move/from16 v22, v5
+    move/from16 v20, v10
 
-    move/from16 v1, v24
-
+    :goto_7
     const/4 v2, 0x0
 
     const/16 v4, 0x1000
 
     const/4 v5, 0x1
 
-    :goto_9
-    move/from16 v26, v19
-
-    move/from16 v19, v11
-
-    move/from16 v11, v16
-
-    move/from16 v16, v18
-
-    move/from16 v18, v26
+    const/4 v10, -0x1
 
     goto/16 :goto_2
 
-    :cond_14
-    :goto_a
+    :cond_13
+    :goto_8
     move/from16 v1, v16
 
-    :goto_b
-    if-ge v1, v3, :cond_15
+    :goto_9
+    if-ge v1, v3, :cond_14
 
     .line 29
     iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->mainPixels:[B
@@ -837,9 +819,9 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_9
 
-    :cond_15
+    :cond_14
     return-void
 .end method
 
@@ -1000,18 +982,16 @@
 
     sub-int/2addr v2, v3
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     if-lt v2, v0, :cond_1
 
     .line 5
     iget-object v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBuffer:[B
 
-    iget v4, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
-
     iget-object v5, p0, Lcom/clevertap/android/sdk/GifDecoder;->block:[B
 
-    invoke-static {v2, v4, v5, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v2, v3, v5, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 6
     iget v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
@@ -1024,46 +1004,46 @@
 
     .line 7
     :cond_1
-    iget-object v4, p0, Lcom/clevertap/android/sdk/GifDecoder;->rawData:Ljava/nio/ByteBuffer;
+    iget-object v3, p0, Lcom/clevertap/android/sdk/GifDecoder;->rawData:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v4}, Ljava/nio/ByteBuffer;->remaining()I
+    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->remaining()I
 
-    move-result v4
+    move-result v3
 
-    add-int/2addr v4, v2
+    add-int/2addr v3, v2
 
-    if-lt v4, v0, :cond_2
+    if-lt v3, v0, :cond_2
 
     .line 8
-    iget-object v4, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBuffer:[B
+    iget-object v3, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBuffer:[B
 
     iget v5, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
 
     iget-object v6, p0, Lcom/clevertap/android/sdk/GifDecoder;->block:[B
 
-    invoke-static {v4, v5, v6, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v3, v5, v6, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 9
-    iget v4, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferSize:I
+    iget v3, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferSize:I
 
-    iput v4, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
+    iput v3, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
 
     .line 10
     invoke-direct {p0}, Lcom/clevertap/android/sdk/GifDecoder;->readChunkIfNeeded()V
 
-    sub-int v4, v0, v2
+    sub-int v3, v0, v2
 
     .line 11
     iget-object v5, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBuffer:[B
 
     iget-object v6, p0, Lcom/clevertap/android/sdk/GifDecoder;->block:[B
 
-    invoke-static {v5, v3, v6, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v5, v4, v6, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 12
     iget v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
 
-    add-int/2addr v2, v4
+    add-int/2addr v2, v3
 
     iput v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferPosition:I
 
@@ -1179,18 +1159,16 @@
     iput v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferSize:I
 
     .line 6
-    iget-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->rawData:Ljava/nio/ByteBuffer;
+    iget-object v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->rawData:Ljava/nio/ByteBuffer;
 
-    iget-object v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBuffer:[B
+    iget-object v3, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBuffer:[B
 
-    iget v3, p0, Lcom/clevertap/android/sdk/GifDecoder;->workBufferSize:I
-
-    invoke-virtual {v1, v2, v0, v3}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v3, v0, v1}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
-.method public static setAlpha(Landroid/graphics/Bitmap;)V
+.method private static setAlpha(Landroid/graphics/Bitmap;)V
     .locals 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0xc
@@ -1381,11 +1359,9 @@
     const/4 v7, 0x0
 
     :goto_2
-    const/4 v3, 0x0
+    const/4 v8, 0x0
 
-    const/4 v8, 0x1
-
-    const/16 v9, 0x8
+    const/4 v9, 0x1
 
     :goto_3
     if-ge v11, v2, :cond_12
@@ -1397,74 +1373,74 @@
 
     const/4 v15, 0x4
 
-    if-lt v3, v2, :cond_b
+    if-lt v8, v2, :cond_b
 
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v9, v9, 0x1
 
-    if-eq v8, v13, :cond_a
+    if-eq v9, v13, :cond_a
 
-    if-eq v8, v12, :cond_9
+    if-eq v9, v12, :cond_9
 
-    if-eq v8, v15, :cond_8
+    if-eq v9, v15, :cond_8
 
     goto :goto_4
 
     :cond_8
-    const/4 v3, 0x1
+    const/4 v3, 0x2
 
-    const/4 v9, 0x2
+    const/4 v8, 0x1
 
     goto :goto_4
 
     :cond_9
-    const/4 v3, 0x2
+    const/4 v3, 0x4
 
-    const/4 v9, 0x4
+    const/4 v8, 0x2
 
     goto :goto_4
 
     :cond_a
-    const/4 v3, 0x4
+    const/4 v8, 0x4
 
     :cond_b
     :goto_4
-    add-int v15, v3, v9
+    add-int v15, v8, v3
 
     goto :goto_5
 
     :cond_c
-    move v15, v3
+    move v15, v8
 
-    move v3, v11
+    move v8, v11
 
     :goto_5
-    add-int/2addr v3, v4
+    add-int/2addr v8, v4
 
     .line 25
     iget v12, v0, Lcom/clevertap/android/sdk/GifDecoder;->downsampledHeight:I
 
-    if-ge v3, v12, :cond_11
+    if-ge v8, v12, :cond_11
 
     .line 26
     iget v12, v0, Lcom/clevertap/android/sdk/GifDecoder;->downsampledWidth:I
 
-    mul-int v3, v3, v12
+    mul-int v8, v8, v12
 
-    add-int v16, v3, v6
+    add-int v16, v8, v6
 
     add-int v13, v16, v5
 
-    add-int v14, v3, v12
+    add-int v14, v8, v12
 
     if-ge v14, v13, :cond_d
 
-    add-int v13, v3, v12
+    add-int v13, v8, v12
 
     .line 27
     :cond_d
-    iget v3, v0, Lcom/clevertap/android/sdk/GifDecoder;->sampleSize:I
+    iget v8, v0, Lcom/clevertap/android/sdk/GifDecoder;->sampleSize:I
 
-    mul-int v12, v11, v3
+    mul-int v12, v11, v8
 
     iget v14, v1, Lcom/clevertap/android/sdk/GifFrame;->iw:I
 
@@ -1472,25 +1448,25 @@
 
     sub-int v14, v13, v16
 
-    mul-int v14, v14, v3
+    mul-int v14, v14, v8
 
     add-int/2addr v14, v12
 
-    move/from16 v3, v16
+    move/from16 v8, v16
 
     :goto_6
-    if-ge v3, v13, :cond_11
+    if-ge v8, v13, :cond_11
 
     move/from16 p2, v2
 
     .line 28
     iget v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->sampleSize:I
 
-    move/from16 v16, v4
+    move/from16 v16, v3
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    if-ne v2, v4, :cond_e
+    if-ne v2, v3, :cond_e
 
     .line 29
     iget-object v2, v0, Lcom/clevertap/android/sdk/GifDecoder;->mainPixels:[B
@@ -1500,9 +1476,9 @@
     and-int/lit16 v2, v2, 0xff
 
     .line 30
-    iget-object v4, v0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
+    iget-object v3, v0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
 
-    aget v2, v4, v2
+    aget v2, v3, v2
 
     goto :goto_7
 
@@ -1518,7 +1494,7 @@
     if-eqz v2, :cond_f
 
     .line 32
-    aput v2, v10, v3
+    aput v2, v10, v8
 
     goto :goto_8
 
@@ -1542,26 +1518,26 @@
 
     add-int/2addr v12, v2
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     move/from16 v2, p2
 
-    move/from16 v4, v16
+    move/from16 v3, v16
 
     goto :goto_6
 
     :cond_11
     move/from16 p2, v2
 
-    move/from16 v16, v4
+    move/from16 v16, v3
 
     add-int/lit8 v11, v11, 0x1
 
     move/from16 v2, p2
 
-    move v3, v15
+    move v8, v15
 
-    move/from16 v4, v16
+    move/from16 v3, v16
 
     const/4 v12, 0x3
 
@@ -1649,7 +1625,7 @@
 
 # virtual methods
 .method public advance()Z
-    .locals 4
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->header:Lcom/clevertap/android/sdk/GifHeader;
@@ -1687,31 +1663,29 @@
     :cond_1
     iget-object v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->header:Lcom/clevertap/android/sdk/GifHeader;
 
-    iget v0, v0, Lcom/clevertap/android/sdk/GifHeader;->loopCount:I
+    iget v2, v0, Lcom/clevertap/android/sdk/GifHeader;->loopCount:I
 
-    const/4 v2, -0x1
+    const/4 v4, -0x1
 
-    if-eq v0, v2, :cond_2
+    if-eq v2, v4, :cond_2
 
-    iget v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->loopIndex:I
+    iget v4, p0, Lcom/clevertap/android/sdk/GifDecoder;->loopIndex:I
 
-    if-le v2, v0, :cond_2
+    if-le v4, v2, :cond_2
 
     return v1
 
     .line 5
     :cond_2
-    iget v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->framePointer:I
+    iget v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->framePointer:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v1, v3
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->header:Lcom/clevertap/android/sdk/GifHeader;
+    iget v0, v0, Lcom/clevertap/android/sdk/GifHeader;->frameCount:I
 
-    iget v1, v1, Lcom/clevertap/android/sdk/GifHeader;->frameCount:I
+    rem-int/2addr v1, v0
 
-    rem-int/2addr v0, v1
-
-    iput v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->framePointer:I
+    iput v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->framePointer:I
 
     return v3
 .end method
@@ -1970,7 +1944,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "unable to decode frame, frameCount="
+    const-string/jumbo v3, "unable to decode frame, frameCount="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2004,8 +1978,6 @@
     const/4 v2, 0x0
 
     if-eq v0, v1, :cond_7
-
-    iget v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->status:I
 
     const/4 v3, 0x2
 
@@ -2061,8 +2033,6 @@
 
     if-eqz v5, :cond_4
 
-    iget-object v5, v3, Lcom/clevertap/android/sdk/GifFrame;->lct:[I
-
     goto :goto_1
 
     :cond_4
@@ -2073,12 +2043,9 @@
     :goto_1
     iput-object v5, p0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
 
-    .line 10
-    iget-object v5, p0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
-
     if-nez v5, :cond_5
 
-    .line 11
+    .line 10
     sget-object v0, Lcom/clevertap/android/sdk/GifDecoder;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2099,47 +2066,41 @@
 
     invoke-static {v0, v3}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 12
+    .line 11
     iput v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->status:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 13
+    .line 12
     monitor-exit p0
 
     return-object v2
 
-    .line 14
+    .line 13
     :cond_5
     :try_start_1
     iget-boolean v1, v3, Lcom/clevertap/android/sdk/GifFrame;->transparency:Z
 
     if-eqz v1, :cond_6
 
+    .line 14
+    iget-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->pct:[I
+
+    array-length v2, v5
+
+    invoke-static {v5, v0, v1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
     .line 15
-    iget-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
-
-    iget-object v2, p0, Lcom/clevertap/android/sdk/GifDecoder;->pct:[I
-
-    iget-object v5, p0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
-
-    array-length v5, v5
-
-    invoke-static {v1, v0, v2, v0, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 16
     iget-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->pct:[I
 
     iput-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
 
-    .line 17
-    iget-object v1, p0, Lcom/clevertap/android/sdk/GifDecoder;->act:[I
-
+    .line 16
     iget v2, v3, Lcom/clevertap/android/sdk/GifFrame;->transIndex:I
 
     aput v0, v1, v2
 
-    .line 18
+    .line 17
     :cond_6
     invoke-direct {p0, v3, v4}, Lcom/clevertap/android/sdk/GifDecoder;->setPixels(Lcom/clevertap/android/sdk/GifFrame;Lcom/clevertap/android/sdk/GifFrame;)Landroid/graphics/Bitmap;
 
@@ -2151,7 +2112,7 @@
 
     return-object v0
 
-    .line 19
+    .line 18
     :cond_7
     :goto_2
     :try_start_2
@@ -2177,7 +2138,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 20
+    .line 19
     monitor-exit p0
 
     return-object v2
@@ -2211,7 +2172,7 @@
 .end method
 
 .method public read(Ljava/io/InputStream;I)I
-    .locals 4
+    .locals 5
 
     if-eqz p1, :cond_2
 
@@ -2235,22 +2196,20 @@
 
     new-array p2, v0, [B
 
-    .line 2
     :goto_1
-    array-length v0, p2
-
     const/4 v2, 0x0
 
+    .line 2
     invoke-virtual {p1, p2, v2, v0}, Ljava/io/InputStream;->read([BII)I
 
-    move-result v0
+    move-result v3
 
-    const/4 v3, -0x1
+    const/4 v4, -0x1
 
-    if-eq v0, v3, :cond_1
+    if-eq v3, v4, :cond_1
 
     .line 3
-    invoke-virtual {v1, p2, v2, v0}, Ljava/io/ByteArrayOutputStream;->write([BII)V
+    invoke-virtual {v1, p2, v2, v3}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_1
 
@@ -2340,8 +2299,6 @@
     if-eqz p1, :cond_0
 
     .line 12
-    iget-object v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->header:Lcom/clevertap/android/sdk/GifHeader;
-
     invoke-virtual {p0, v0, p1}, Lcom/clevertap/android/sdk/GifDecoder;->setData(Lcom/clevertap/android/sdk/GifHeader;[B)V
 
     .line 13
@@ -2450,8 +2407,6 @@
     iput-object p2, p0, Lcom/clevertap/android/sdk/GifDecoder;->rawData:Ljava/nio/ByteBuffer;
 
     .line 12
-    iget-object p2, p0, Lcom/clevertap/android/sdk/GifDecoder;->rawData:Ljava/nio/ByteBuffer;
-
     invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 13
@@ -2503,27 +2458,23 @@
     .line 19
     iget p2, p1, Lcom/clevertap/android/sdk/GifHeader;->width:I
 
-    div-int/2addr p2, p3
+    div-int v0, p2, p3
 
-    iput p2, p0, Lcom/clevertap/android/sdk/GifDecoder;->downsampledWidth:I
+    iput v0, p0, Lcom/clevertap/android/sdk/GifDecoder;->downsampledWidth:I
 
     .line 20
-    iget p2, p1, Lcom/clevertap/android/sdk/GifHeader;->height:I
-
-    div-int/2addr p2, p3
-
-    iput p2, p0, Lcom/clevertap/android/sdk/GifDecoder;->downsampledHeight:I
-
-    .line 21
-    iget-object p2, p0, Lcom/clevertap/android/sdk/GifDecoder;->bitmapProvider:Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;
-
-    iget p3, p1, Lcom/clevertap/android/sdk/GifHeader;->width:I
-
     iget p1, p1, Lcom/clevertap/android/sdk/GifHeader;->height:I
 
-    mul-int p3, p3, p1
+    div-int p3, p1, p3
 
-    invoke-interface {p2, p3}, Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;->obtainByteArray(I)[B
+    iput p3, p0, Lcom/clevertap/android/sdk/GifDecoder;->downsampledHeight:I
+
+    .line 21
+    iget-object p3, p0, Lcom/clevertap/android/sdk/GifDecoder;->bitmapProvider:Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;
+
+    mul-int p2, p2, p1
+
+    invoke-interface {p3, p2}, Lcom/clevertap/android/sdk/GifDecoder$BitmapProvider;->obtainByteArray(I)[B
 
     move-result-object p1
 

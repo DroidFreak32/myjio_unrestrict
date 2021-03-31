@@ -21,39 +21,39 @@
 
 
 # static fields
-.field public static final DEFAULT_BUFFER_SIZE:I = 0x80
+.field private static final DEFAULT_BUFFER_SIZE:I = 0x80
 
-.field public static final NAL_UNIT_TYPE_AUD:I = 0x9
+.field private static final NAL_UNIT_TYPE_AUD:I = 0x9
 
-.field public static final NAL_UNIT_TYPE_IDR:I = 0x5
+.field private static final NAL_UNIT_TYPE_IDR:I = 0x5
 
-.field public static final NAL_UNIT_TYPE_NON_IDR:I = 0x1
+.field private static final NAL_UNIT_TYPE_NON_IDR:I = 0x1
 
-.field public static final NAL_UNIT_TYPE_PARTITION_A:I = 0x2
+.field private static final NAL_UNIT_TYPE_PARTITION_A:I = 0x2
 
 
 # instance fields
-.field public final allowNonIdrKeyframes:Z
+.field private final allowNonIdrKeyframes:Z
 
-.field public final bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
+.field private final bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
 
-.field public buffer:[B
+.field private buffer:[B
 
-.field public bufferLength:I
+.field private bufferLength:I
 
-.field public final detectAccessUnits:Z
+.field private final detectAccessUnits:Z
 
-.field public isFilling:Z
+.field private isFilling:Z
 
-.field public nalUnitStartPosition:J
+.field private nalUnitStartPosition:J
 
-.field public nalUnitTimeUs:J
+.field private nalUnitTimeUs:J
 
-.field public nalUnitType:I
+.field private nalUnitType:I
 
-.field public final output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private final output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public final pps:Landroid/util/SparseArray;
+.field private final pps:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -63,19 +63,19 @@
     .end annotation
 .end field
 
-.field public previousSliceHeader:Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
+.field private previousSliceHeader:Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
-.field public readingSample:Z
+.field private readingSample:Z
 
-.field public sampleIsKeyframe:Z
+.field private sampleIsKeyframe:Z
 
-.field public samplePosition:J
+.field private samplePosition:J
 
-.field public sampleTimeUs:J
+.field private sampleTimeUs:J
 
-.field public sliceHeader:Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
+.field private sliceHeader:Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
-.field public final sps:Landroid/util/SparseArray;
+.field private final sps:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -140,15 +140,13 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->buffer:[B
 
     .line 10
-    new-instance p1, Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
-
-    iget-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->buffer:[B
+    new-instance p2, Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
 
     const/4 p3, 0x0
 
-    invoke-direct {p1, p2, p3, p3}, Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;-><init>([BII)V
+    invoke-direct {p2, p1, p3, p3}, Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;-><init>([BII)V
 
-    iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
+    iput-object p2, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
 
     .line 11
     invoke-virtual {p0}, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->reset()V
@@ -246,15 +244,13 @@
     iput v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bufferLength:I
 
     .line 6
-    iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
+    iget-object v2, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
 
-    iget-object v2, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->buffer:[B
-
-    iget v3, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bufferLength:I
+    iget-object v3, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->buffer:[B
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v4, v3}, Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;->reset([BII)V
+    invoke-virtual {v2, v3, v4, v1}, Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;->reset([BII)V
 
     .line 7
     iget-object v1, v0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->bitArray:Lcom/google/android/jioexoplayer2/util/ParsableNalUnitBitArray;
@@ -816,9 +812,6 @@
 
     iput-boolean p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->sampleIsKeyframe:Z
 
-    .line 13
-    iget-boolean p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->sampleIsKeyframe:Z
-
     return p1
 .end method
 
@@ -895,26 +888,22 @@
 
     if-eqz p1, :cond_0
 
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->nalUnitType:I
-
-    if-eq p1, p2, :cond_1
+    if-eq p3, p2, :cond_1
 
     :cond_0
     iget-boolean p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->detectAccessUnits:Z
 
     if-eqz p1, :cond_2
 
-    iget p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->nalUnitType:I
+    const/4 p1, 0x5
 
-    const/4 p3, 0x5
+    if-eq p3, p1, :cond_1
 
-    if-eq p1, p3, :cond_1
+    if-eq p3, p2, :cond_1
 
-    if-eq p1, p2, :cond_1
+    const/4 p1, 0x2
 
-    const/4 p3, 0x2
-
-    if-ne p1, p3, :cond_2
+    if-ne p3, p1, :cond_2
 
     .line 5
     :cond_1
@@ -929,8 +918,6 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->sliceHeader:Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
     .line 8
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader;->sliceHeader:Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
-
     invoke-virtual {p1}, Lcom/google/android/jioexoplayer2/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->clear()V
 
     const/4 p1, 0x0

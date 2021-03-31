@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/Hex;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -11,9 +12,9 @@
 
 
 # static fields
-.field public static final zzgy:[C
+.field private static final zza:[C
 
-.field public static final zzgz:[C
+.field private static final zzb:[C
 
 
 # direct methods
@@ -27,14 +28,14 @@
     .line 1
     fill-array-data v1, :array_0
 
-    sput-object v1, Lcom/google/android/gms/common/util/Hex;->zzgy:[C
+    sput-object v1, Lcom/google/android/gms/common/util/Hex;->zza:[C
 
     new-array v0, v0, [C
 
     .line 2
     fill-array-data v0, :array_1
 
-    sput-object v0, Lcom/google/android/gms/common/util/Hex;->zzgz:[C
+    sput-object v0, Lcom/google/android/gms/common/util/Hex;->zzb:[C
 
     return-void
 
@@ -92,6 +93,13 @@
 
 .method public static bytesToStringLowercase([B)Ljava/lang/String;
     .locals 7
+    .param p0    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -120,7 +128,7 @@
     add-int/lit8 v4, v2, 0x1
 
     .line 4
-    sget-object v5, Lcom/google/android/gms/common/util/Hex;->zzgz:[C
+    sget-object v5, Lcom/google/android/gms/common/util/Hex;->zzb:[C
 
     ushr-int/lit8 v6, v3, 0x4
 
@@ -152,6 +160,13 @@
 
 .method public static bytesToStringUppercase([B)Ljava/lang/String;
     .locals 1
+    .param p0    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -167,6 +182,17 @@
 
 .method public static bytesToStringUppercase([BZ)Ljava/lang/String;
     .locals 5
+    .param p0    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -200,7 +226,7 @@
 
     .line 5
     :cond_0
-    sget-object v3, Lcom/google/android/gms/common/util/Hex;->zzgy:[C
+    sget-object v3, Lcom/google/android/gms/common/util/Hex;->zza:[C
 
     aget-byte v4, p0, v2
 
@@ -208,13 +234,11 @@
 
     ushr-int/lit8 v4, v4, 0x4
 
-    aget-char v3, v3, v4
+    aget-char v4, v3, v4
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 6
-    sget-object v3, Lcom/google/android/gms/common/util/Hex;->zzgy:[C
-
     aget-byte v4, p0, v2
 
     and-int/lit8 v4, v4, 0xf
@@ -238,7 +262,20 @@
 
 .method public static stringToBytes(Ljava/lang/String;)[B
     .locals 6
+    .param p0    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
     .end annotation
 
     .line 1

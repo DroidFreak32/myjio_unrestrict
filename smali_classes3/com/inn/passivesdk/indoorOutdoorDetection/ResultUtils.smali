@@ -8,15 +8,15 @@
 
 .field public static final OUTDOOR:Ljava/lang/String; = "OUTDOOR"
 
-.field public static final TAG:Ljava/lang/String; = "ResultUtils"
+.field private static final TAG:Ljava/lang/String; = "ResultUtils"
 
-.field public static instance:Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;
+.field private static instance:Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;
 
 .field public static prevPosition:Ljava/lang/String;
 
 
 # instance fields
-.field public final ACCURACY_THRESHOLD:F
+.field private final ACCURACY_THRESHOLD:F
 
 .field public barometerSensorResult:Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;
 
@@ -30,33 +30,33 @@
 
 .field public endTime:D
 
-.field public indoorCount:I
+.field private indoorCount:I
 
 .field public lightSensorResult:Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;
 
-.field public mCurrentLocation:Landroid/location/Location;
+.field private mCurrentLocation:Landroid/location/Location;
 
 .field public magnetSensorResult:Lcom/inn/passivesdk/indoorOutdoorDetection/MagnetSensorResult;
 
-.field public officialSunrise:Ljava/lang/String;
+.field private officialSunrise:Ljava/lang/String;
 
-.field public officialSunset:Ljava/lang/String;
+.field private officialSunset:Ljava/lang/String;
 
 .field public orientationSensorResult:Lcom/inn/passivesdk/indoorOutdoorDetection/OrientationSensorResult;
 
-.field public outdoorCount:I
+.field private outdoorCount:I
 
 .field public recognitionResult:Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;
 
 .field public result:Ljava/lang/String;
 
-.field public resultAccuracy:I
+.field private resultAccuracy:I
 
-.field public resultSource:Ljava/lang/String;
+.field private resultSource:Ljava/lang/String;
 
-.field public satellitesUsed:I
+.field private satellitesUsed:I
 
-.field public signalStrength:I
+.field private signalStrength:I
 
 .field public startTime:D
 
@@ -988,17 +988,15 @@
 
     invoke-virtual {v1, p1, v0}, Lcom/inn/passivesdk/indoorOutdoorDetection/util/SolarEventCalculator;->computeSunriseTime(Lcom/inn/passivesdk/indoorOutdoorDetection/util/Zenith;Ljava/util/Calendar;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->officialSunrise:Ljava/lang/String;
+    iput-object p2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->officialSunrise:Ljava/lang/String;
 
     .line 4
-    sget-object p1, Lcom/inn/passivesdk/indoorOutdoorDetection/util/Zenith;->OFFICIAL:Lcom/inn/passivesdk/indoorOutdoorDetection/util/Zenith;
-
     invoke-virtual {v1, p1, v0}, Lcom/inn/passivesdk/indoorOutdoorDetection/util/SolarEventCalculator;->computeSunsetTime(Lcom/inn/passivesdk/indoorOutdoorDetection/util/Zenith;Ljava/util/Calendar;)Ljava/lang/String;
 
     move-result-object p1
@@ -1028,7 +1026,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo p2, "sunrise : "
+    const-string p2, "sunrise : "
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1189,9 +1187,6 @@
 
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->result:Ljava/lang/String;
 
-    .line 2
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->result:Ljava/lang/String;
-
     return-object p1
 .end method
 
@@ -1244,7 +1239,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1272,7 +1267,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -1282,7 +1277,7 @@
 .end method
 
 .method public getLastReboot()Ljava/lang/String;
-    .locals 8
+    .locals 9
 
     .line 1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1298,67 +1293,59 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/concurrent/TimeUnit;->toHours(J)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v4
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    aput-object v3, v2, v4
-
-    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    aput-object v4, v2, v5
 
     .line 3
     invoke-virtual {v3, v0, v1}, Ljava/util/concurrent/TimeUnit;->toMinutes(J)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    invoke-virtual {v3, v0, v1}, Ljava/util/concurrent/TimeUnit;->toHours(J)J
 
-    invoke-virtual {v6, v0, v1}, Ljava/util/concurrent/TimeUnit;->toHours(J)J
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Ljava/util/concurrent/TimeUnit;->toMinutes(J)J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/util/concurrent/TimeUnit;->toMinutes(J)J
+    sub-long/2addr v4, v6
 
-    move-result-wide v5
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sub-long/2addr v3, v5
+    move-result-object v4
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const/4 v5, 0x1
 
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    aput-object v3, v2, v4
-
-    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    aput-object v4, v2, v5
 
     .line 4
     invoke-virtual {v3, v0, v1}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v6, v0, v1}, Ljava/util/concurrent/TimeUnit;->toMinutes(J)J
+    invoke-virtual {v3, v0, v1}, Ljava/util/concurrent/TimeUnit;->toMinutes(J)J
 
     move-result-wide v0
 
-    invoke-virtual {v5, v0, v1}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+    invoke-virtual {v6, v0, v1}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
     move-result-wide v0
 
-    sub-long/2addr v3, v0
+    sub-long/2addr v4, v0
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
@@ -1405,13 +1392,13 @@
     .line 2
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->context:Landroid/content/Context;
 
-    invoke-static {v3}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {v3}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->context:Landroid/content/Context;
 
-    invoke-virtual {v3, v4}, Lmg0;->a(Landroid/content/Context;)Z
+    invoke-virtual {v3, v4}, Lcom/inn/passivesdk/util/SdkAppUtil;->isLocationEnabled(Landroid/content/Context;)Z
 
     move-result v3
 
@@ -1429,11 +1416,11 @@
     :cond_0
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->context:Landroid/content/Context;
 
-    invoke-static {v3}, Lvf0;->b(Landroid/content/Context;)Lvf0;
+    invoke-static {v3}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/location/SdkPassiveLocationService;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lvf0;->b()Landroid/location/Location;
+    invoke-virtual {v3}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->getLocation()Landroid/location/Location;
 
     move-result-object v3
 
@@ -1450,9 +1437,7 @@
     if-eqz v3, :cond_1
 
     .line 8
-    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->mCurrentLocation:Landroid/location/Location;
-
-    invoke-virtual {v1}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
+    invoke-virtual {v3}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
@@ -1478,8 +1463,6 @@
     if-eqz v3, :cond_2
 
     :try_start_1
-    iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->mCurrentLocation:Landroid/location/Location;
-
     invoke-virtual {v3}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v3
@@ -1508,7 +1491,7 @@
 
     const-string v3, " accuracy: OUTDOOR"
 
-    invoke-static {v1, v3}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "OUTDOOR"
 
@@ -1519,8 +1502,6 @@
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->mCurrentLocation:Landroid/location/Location;
 
     if-eqz v3, :cond_3
-
-    iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->mCurrentLocation:Landroid/location/Location;
 
     invoke-virtual {v3}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
@@ -1595,7 +1576,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1621,7 +1602,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-object v2
@@ -1764,7 +1745,7 @@
 .end method
 
 .method public getResultByAlgorithm5()Ljava/lang/String;
-    .locals 10
+    .locals 11
 
     const-string v0, "INDOOR"
 
@@ -1793,13 +1774,13 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     if-eqz v2, :cond_b
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    if-ne v2, v3, :cond_0
+    if-ne v2, v4, :cond_0
 
     goto/16 :goto_0
 
@@ -1812,11 +1793,9 @@
     .line 4
     invoke-virtual {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->getResultBysatellite()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 5
-    sget-object v4, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
-
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1825,7 +1804,7 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v6, ", "
 
@@ -1837,24 +1816,22 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v4, ","
+    const-string v5, ","
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
     .line 6
     :try_start_1
     invoke-virtual {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->getHighestSatelliteCase()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 7
-    sget-object v6, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
-
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -1863,24 +1840,24 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v6, v7}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v7}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v5, :cond_1
+    if-eqz v6, :cond_1
 
     .line 8
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -1895,26 +1872,26 @@
     :cond_1
     if-eqz v2, :cond_2
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
     .line 9
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0, v2, v3}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->performGpsOnCases(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v2, v4}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->performGpsOnCases(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1927,8 +1904,6 @@
     move-result-object v2
 
     .line 11
-    sget-object v5, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
-
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1943,74 +1918,70 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v6}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 12
     invoke-virtual {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->isCurrentLocationFound()Z
 
-    move-result v5
+    move-result v6
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_0
 
-    const-string v6, "algorithm: getSatelliteCases "
+    const-string v7, "algorithm: getSatelliteCases "
 
-    if-nez v5, :cond_3
+    if-nez v6, :cond_3
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
     .line 13
     :try_start_2
-    sget-object v5, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v8, "algorithm: isCurrentLocationFound "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v5, v3}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 14
     invoke-virtual {p0, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->getSatelliteCases(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
     .line 15
-    sget-object v2, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v5
-
-    invoke-static {v2, v5}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 16
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2026,69 +1997,67 @@
     :cond_3
     invoke-virtual {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->isFrom12PmTo8Am()Z
 
-    move-result v3
+    move-result v4
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Error; {:try_start_2 .. :try_end_2} :catch_0
 
-    const-string v5, "Charging"
+    const-string v6, "Charging"
 
-    const-string v7, "ActivityRecognition"
+    const-string v8, "ActivityRecognition"
 
-    const-string v8, "Light"
+    const-string v9, "Light"
 
-    const-string v9, "INDOOR,"
+    const-string v10, "INDOOR,"
 
-    if-eqz v3, :cond_7
+    if-eqz v4, :cond_7
 
     :try_start_3
-    const-string v3, "Night"
+    const-string v4, "Night"
 
     .line 18
-    iput-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 19
     invoke-direct {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->getChargingCase()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     .line 20
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     .line 21
-    sget-object v2, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v2, v3}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 22
-    iput-object v5, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v6, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 23
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2104,26 +2073,24 @@
     if-eqz v2, :cond_5
 
     .line 24
-    sget-object v3, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v6, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v3, v5}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 25
-    iput-object v8, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v9, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 26
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2132,7 +2099,7 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2153,7 +2120,7 @@
     if-eqz v2, :cond_6
 
     .line 28
-    iput-object v7, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v8, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 29
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2162,7 +2129,7 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2183,7 +2150,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2199,32 +2166,30 @@
     return-object v0
 
     :cond_7
-    const-string v3, "algorithm: getSatelliteCases in day"
+    const-string v4, "algorithm: getSatelliteCases in day"
 
     if-eqz v2, :cond_8
 
     .line 32
     :try_start_4
-    iput-object v8, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v9, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 33
-    sget-object v5, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
-
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iget-object v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v5, v3}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 34
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2233,7 +2198,7 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2261,33 +2226,31 @@
     if-eqz v2, :cond_9
 
     .line 37
-    iput-object v5, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v6, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 38
-    sget-object v2, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-static {v2, v3}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 39
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2308,7 +2271,7 @@
     if-eqz v2, :cond_a
 
     .line 41
-    iput-object v7, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
+    iput-object v8, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
     .line 42
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2317,7 +2280,7 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2338,7 +2301,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
 
@@ -2697,7 +2660,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -2725,7 +2688,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
     :goto_0
@@ -2764,7 +2727,7 @@
 
     const-string v6, "getSatelliteCases day: "
 
-    invoke-static {v0, v6}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v6}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     if-eqz p1, :cond_3
 
@@ -2774,12 +2737,10 @@
     .line 4
     iput v3, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultAccuracy:I
 
+    const-string p1, "getSatelliteCases day: getLightIntensity"
+
     .line 5
-    sget-object p1, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->TAG:Ljava/lang/String;
-
-    const-string v0, "getSatelliteCases day: getLightIntensity"
-
-    invoke-static {p1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 6
     invoke-virtual {p0}, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->getLightIntensity()F
@@ -2826,7 +2787,7 @@
 
     const-string v0, "getSatelliteCases evening: getLightIntensity"
 
-    invoke-static {p1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 9
     iput-object v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->resultSource:Ljava/lang/String;
@@ -3031,7 +2992,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 3
     iget v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->satellitesUsed:I
@@ -3210,7 +3171,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -3224,7 +3185,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -3280,7 +3241,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -3294,7 +3255,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -3433,7 +3394,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -3461,7 +3422,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 4
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
@@ -3490,7 +3451,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "unRegisterAllSensorAndServices : "
+    const-string v1, "unRegisterAllSensorAndServices : "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3516,7 +3477,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "unRegisterAllSensorAndServices() Error: "
+    const-string v2, "unRegisterAllSensorAndServices() Error: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3530,7 +3491,7 @@
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -3544,7 +3505,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "unRegisterAllSensorAndServices() Exception: "
+    const-string v2, "unRegisterAllSensorAndServices() Exception: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3558,7 +3519,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 5
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V

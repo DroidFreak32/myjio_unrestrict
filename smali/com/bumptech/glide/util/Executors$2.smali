@@ -31,6 +31,10 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 0
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V

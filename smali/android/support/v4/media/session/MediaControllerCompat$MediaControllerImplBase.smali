@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public mBinder:Landroid/support/v4/media/session/IMediaSession;
+.field private mBinder:Landroid/support/v4/media/session/IMediaSession;
 
-.field public mTransportControls:Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
+.field private mTransportControls:Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
 
 
 # direct methods

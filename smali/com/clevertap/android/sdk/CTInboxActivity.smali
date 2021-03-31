@@ -19,11 +19,11 @@
 
 
 # instance fields
-.field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.field private config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
 .field public inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
-.field public listenerWeakReference:Ljava/lang/ref/WeakReference;
+.field private listenerWeakReference:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -156,6 +156,7 @@
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
+    .line 3
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CleverTapInstanceConfig;->getAccountId()Ljava/lang/String;
 
     move-result-object v2
@@ -201,7 +202,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 6
 
-    const-string v0, "styleConfig"
+    const-string/jumbo v0, "styleConfig"
 
     .line 1
     invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
@@ -216,7 +217,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_9
 
     .line 3
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -286,7 +287,7 @@
     .line 9
     sget v2, Lcom/clevertap/android/sdk/R$layout;->inbox_activity:I
 
-    invoke-virtual {p0, v2}, Landroid/app/Activity;->setContentView(I)V
+    invoke-virtual {p0, v2}, Landroidx/activity/ComponentActivity;->setContentView(I)V
 
     .line 10
     sget v2, Lcom/clevertap/android/sdk/R$id;->toolbar:I
@@ -339,9 +340,13 @@
 
     sget v4, Lcom/clevertap/android/sdk/R$drawable;->ct_ic_arrow_back_white_24dp:I
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const/4 v5, 0x0
+
+    invoke-static {v3, v4, v5}, Landroidx/core/content/res/ResourcesCompat;->getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
+
+    if-eqz v3, :cond_2
 
     .line 15
     iget-object v4, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
@@ -359,6 +364,7 @@
     invoke-virtual {v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     .line 16
+    :cond_2
     invoke-virtual {v2, v3}, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
 
     .line 17
@@ -447,7 +453,7 @@
 
     const/4 v4, 0x0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
     .line 27
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
@@ -473,14 +479,14 @@
     .line 30
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     .line 31
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CleverTapAPI;->getInboxMessageCount()I
 
     move-result p1
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_3
 
     .line 32
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
@@ -498,18 +504,40 @@
     .line 33
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto/16 :goto_2
-
     .line 34
-    :cond_2
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
+    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
 
-    .line 35
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->getNoMessageViewText()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lrc;->v()Ljava/util/List;
+    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 35
+    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
+
+    invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->getNoMessageViewTextColor()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result p1
+
+    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    goto/16 :goto_2
+
+    .line 36
+    :cond_3
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 37
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->getFragments()Ljava/util/List;
 
     move-result-object p1
 
@@ -517,13 +545,13 @@
 
     move-result-object p1
 
-    :cond_3
+    :cond_4
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -531,12 +559,12 @@
 
     check-cast v0, Landroidx/fragment/app/Fragment;
 
-    .line 36
+    .line 38
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTag()Ljava/lang/String;
 
@@ -550,63 +578,65 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     const/4 v4, 0x1
 
     goto :goto_0
 
-    :cond_4
-    if-nez v4, :cond_7
+    :cond_5
+    if-nez v4, :cond_8
 
-    .line 37
+    .line 39
     new-instance p1, Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
     invoke-direct {p1}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;-><init>()V
 
-    .line 38
+    .line 40
     invoke-virtual {p1, v3}, Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 39
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    .line 41
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lrc;->b()Lyc;
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v0
 
     sget v1, Lcom/clevertap/android/sdk/R$id;->list_view_fragment:I
 
-    .line 40
+    .line 42
     invoke-direct {p0}, Lcom/clevertap/android/sdk/CTInboxActivity;->getFragmentTag()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, p1, v2}, Lyc;->a(ILandroidx/fragment/app/Fragment;Ljava/lang/String;)Lyc;
+    invoke-virtual {v0, v1, p1, v2}, Landroidx/fragment/app/FragmentTransaction;->add(ILandroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
 
-    .line 41
-    invoke-virtual {v0}, Lyc;->a()I
+    move-result-object p1
+
+    .line 43
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentTransaction;->commit()I
 
     goto/16 :goto_2
 
-    .line 42
-    :cond_5
+    .line 44
+    :cond_6
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 43
+    .line 45
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
 
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->getTabs()Ljava/util/ArrayList;
 
     move-result-object p1
 
-    .line 44
+    .line 46
     new-instance v0, Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v2
 
@@ -616,26 +646,26 @@
 
     add-int/2addr v5, v1
 
-    invoke-direct {v0, v2, v5}, Lcom/clevertap/android/sdk/CTInboxTabAdapter;-><init>(Lrc;I)V
+    invoke-direct {v0, v2, v5}, Lcom/clevertap/android/sdk/CTInboxTabAdapter;-><init>(Landroidx/fragment/app/FragmentManager;I)V
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
-
-    .line 45
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
-
-    invoke-virtual {v0, v4}, Landroid/widget/HorizontalScrollView;->setVisibility(I)V
-
-    .line 46
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
-
-    invoke-virtual {v0, v4}, Lcom/google/android/material/tabs/TabLayout;->setTabGravity(I)V
 
     .line 47
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/material/tabs/TabLayout;->setTabMode(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/HorizontalScrollView;->setVisibility(I)V
 
     .line 48
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
+
+    invoke-virtual {v0, v4}, Lcom/google/android/material/tabs/TabLayout;->setTabGravity(I)V
+
+    .line 49
+    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/tabs/TabLayout;->setTabMode(I)V
+
+    .line 50
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
@@ -650,7 +680,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/tabs/TabLayout;->setSelectedTabIndicatorColor(I)V
 
-    .line 49
+    .line 51
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
@@ -665,6 +695,7 @@
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
 
+    .line 52
     invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInboxStyleConfig;->getSelectedTabColor()Ljava/lang/String;
 
     move-result-object v2
@@ -673,9 +704,10 @@
 
     move-result v2
 
+    .line 53
     invoke-virtual {v0, v1, v2}, Lcom/google/android/material/tabs/TabLayout;->setTabTextColors(II)V
 
-    .line 50
+    .line 54
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->styleConfig:Lcom/clevertap/android/sdk/CTInboxStyleConfig;
@@ -690,7 +722,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/HorizontalScrollView;->setBackgroundColor(I)V
 
-    .line 51
+    .line 55
     invoke-virtual {v3}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -699,33 +731,33 @@
 
     const-string v1, "position"
 
-    .line 52
+    .line 56
     invoke-virtual {v0, v1, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 53
+    .line 57
     new-instance v2, Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
     invoke-direct {v2}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;-><init>()V
 
-    .line 54
+    .line 58
     invoke-virtual {v2, v0}, Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 55
+    .line 59
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
     const-string v5, "ALL"
 
     invoke-virtual {v0, v2, v5, v4}, Lcom/clevertap/android/sdk/CTInboxTabAdapter;->addFragment(Landroidx/fragment/app/Fragment;Ljava/lang/String;I)V
 
-    .line 56
+    .line 60
     :goto_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v4, v0, :cond_6
+    if-ge v4, v0, :cond_7
 
-    .line 57
+    .line 61
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -734,55 +766,55 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 58
+    .line 62
     invoke-virtual {v3}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/Bundle;
 
-    .line 59
+    .line 63
     invoke-virtual {v2, v1, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     const-string v5, "filter"
 
-    .line 60
+    .line 64
     invoke-virtual {v2, v5, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 61
+    .line 65
     new-instance v5, Lcom/clevertap/android/sdk/CTInboxListViewFragment;
 
     invoke-direct {v5}, Lcom/clevertap/android/sdk/CTInboxListViewFragment;-><init>()V
 
-    .line 62
+    .line 66
     invoke-virtual {v5, v2}, Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 63
+    .line 67
     iget-object v2, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
     invoke-virtual {v2, v5, v0, v4}, Lcom/clevertap/android/sdk/CTInboxTabAdapter;->addFragment(Landroidx/fragment/app/Fragment;Ljava/lang/String;I)V
 
-    .line 64
+    .line 68
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {v0, v4}, Landroidx/viewpager/widget/ViewPager;->setOffscreenPageLimit(I)V
 
     goto :goto_1
 
-    .line 65
-    :cond_6
+    .line 69
+    :cond_7
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
-    invoke-virtual {p1, v0}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Lsk;)V
+    invoke-virtual {p1, v0}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 66
+    .line 70
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->inboxTabAdapter:Lcom/clevertap/android/sdk/CTInboxTabAdapter;
 
-    invoke-virtual {p1}, Lsk;->notifyDataSetChanged()V
+    invoke-virtual {p1}, Landroidx/viewpager/widget/PagerAdapter;->notifyDataSetChanged()V
 
-    .line 67
+    .line 71
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
     new-instance v0, Lcom/google/android/material/tabs/TabLayout$TabLayoutOnPageChangeListener;
@@ -791,30 +823,30 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/material/tabs/TabLayout$TabLayoutOnPageChangeListener;-><init>(Lcom/google/android/material/tabs/TabLayout;)V
 
-    invoke-virtual {p1, v0}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$i;)V
+    invoke-virtual {p1, v0}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
 
-    .line 68
+    .line 72
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
     new-instance v0, Lcom/clevertap/android/sdk/CTInboxActivity$2;
 
     invoke-direct {v0, p0}, Lcom/clevertap/android/sdk/CTInboxActivity$2;-><init>(Lcom/clevertap/android/sdk/CTInboxActivity;)V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/material/tabs/TabLayout;->addOnTabSelectedListener(Lcom/google/android/material/tabs/TabLayout$BaseOnTabSelectedListener;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/material/tabs/TabLayout;->addOnTabSelectedListener(Lcom/google/android/material/tabs/TabLayout$OnTabSelectedListener;)V
 
-    .line 69
+    .line 73
     iget-object p1, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p1, v0}, Lcom/google/android/material/tabs/TabLayout;->setupWithViewPager(Landroidx/viewpager/widget/ViewPager;)V
 
-    :cond_7
+    :cond_8
     :goto_2
     return-void
 
-    .line 70
-    :cond_8
+    .line 74
+    :cond_9
     :try_start_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -829,7 +861,7 @@
 
     const-string v0, "Cannot find a valid notification inbox bundle to show!"
 
-    .line 71
+    .line 75
     invoke-static {v0, p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
@@ -848,11 +880,11 @@
     if-eqz v0, :cond_1
 
     .line 2
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lrc;->v()Ljava/util/List;
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->getFragments()Ljava/util/List;
 
     move-result-object v0
 
@@ -902,11 +934,11 @@
     invoke-static {v2}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
     .line 6
-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lrc;
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lrc;->v()Ljava/util/List;
+    invoke-virtual {v2}, Landroidx/fragment/app/FragmentManager;->getFragments()Ljava/util/List;
 
     move-result-object v2
 

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public s:Ljava/util/Locale;
+.field public a:Ljava/util/Locale;
 
 
 # direct methods
@@ -36,7 +36,7 @@
 
     iget-object p1, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    iput-object p1, p0, Landroidx/viewpager/widget/PagerTitleStrip$b;->s:Ljava/util/Locale;
+    iput-object p1, p0, Landroidx/viewpager/widget/PagerTitleStrip$b;->a:Ljava/util/Locale;
 
     return-void
 .end method
@@ -58,7 +58,7 @@
 
     move-result-object p1
 
-    iget-object p2, p0, Landroidx/viewpager/widget/PagerTitleStrip$b;->s:Ljava/util/Locale;
+    iget-object p2, p0, Landroidx/viewpager/widget/PagerTitleStrip$b;->a:Ljava/util/Locale;
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 

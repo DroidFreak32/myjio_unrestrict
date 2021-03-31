@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/Detector$Detections;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -23,7 +24,7 @@
 
 
 # instance fields
-.field public final zzaf:Landroid/util/SparseArray;
+.field private final zzal:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -32,9 +33,9 @@
     .end annotation
 .end field
 
-.field public final zzag:Lcom/google/android/gms/vision/Frame$Metadata;
+.field private final zzam:Lcom/google/android/gms/vision/Frame$Metadata;
 
-.field public final zzah:Z
+.field private final zzan:Z
 
 
 # direct methods
@@ -54,13 +55,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzaf:Landroid/util/SparseArray;
+    iput-object p1, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzal:Landroid/util/SparseArray;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzag:Lcom/google/android/gms/vision/Frame$Metadata;
+    iput-object p2, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzam:Lcom/google/android/gms/vision/Frame$Metadata;
 
     .line 4
-    iput-boolean p3, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzah:Z
+    iput-boolean p3, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzan:Z
 
     return-void
 .end method
@@ -71,7 +72,7 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzah:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzan:Z
 
     return v0
 .end method
@@ -87,7 +88,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzaf:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzal:Landroid/util/SparseArray;
 
     return-object v0
 .end method
@@ -96,7 +97,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzag:Lcom/google/android/gms/vision/Frame$Metadata;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Detector$Detections;->zzam:Lcom/google/android/gms/vision/Frame$Metadata;
 
     return-object v0
 .end method

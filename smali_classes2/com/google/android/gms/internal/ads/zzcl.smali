@@ -1,5 +1,20 @@
 .class public final Lcom/google/android/gms/internal/ads/zzcl;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-gass@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzekm;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzekm<",
+        "Lcom/google/android/gms/internal/ads/zzcm;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
@@ -7,16 +22,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

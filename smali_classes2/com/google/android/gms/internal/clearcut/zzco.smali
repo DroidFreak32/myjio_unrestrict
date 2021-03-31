@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public zzkw:Lcom/google/android/gms/internal/clearcut/zzdo;
+.field private zzkw:Lcom/google/android/gms/internal/clearcut/zzdo;
 
 
 # direct methods

@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public message:Ljava/lang/String;
+.field private message:Ljava/lang/String;
 
-.field public termsAndCondition:Ljava/lang/String;
+.field private termsAndCondition:Ljava/lang/String;
 
-.field public termsAndConditionMode:Ljava/lang/String;
+.field private termsAndConditionMode:Ljava/lang/String;
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoServiceResponseNotification;
 

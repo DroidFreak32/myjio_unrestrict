@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public final synthetic val$context:Landroid/content/Context;
+.field private final synthetic val$context:Landroid/content/Context;
 
 
 # direct methods
@@ -36,6 +36,11 @@
 # virtual methods
 .method public final synthetic call()Ljava/lang/Object;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/flags/impl/zzk;->val$context:Landroid/content/Context;

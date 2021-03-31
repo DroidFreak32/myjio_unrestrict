@@ -11,121 +11,148 @@
         0x3
     }
     d1 = {
-        "\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u000b\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0010\u0007\n\u0000\u0018\u00002\u00020\u0001B%\u0008\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\u0008\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0008\u0008\u0002\u0010\u0006\u001a\u00020\u0007\u00a2\u0006\u0002\u0010\u0008J\u0012\u00105\u001a\u0002062\u0008\u00107\u001a\u0004\u0018\u000108H\u0014J(\u00109\u001a\u0002062\u0006\u0010:\u001a\u00020\u00072\u0006\u0010;\u001a\u00020\u00072\u0006\u0010<\u001a\u00020\u00072\u0006\u0010=\u001a\u00020\u0007H\u0014J\u000e\u0010>\u001a\u0002062\u0006\u0010 \u001a\u00020?R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\u0007X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u000c\u0010\r\"\u0004\u0008\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u0011X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0012\u0010\u0013\"\u0004\u0008\u0014\u0010\u0015R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0017X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0007X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\nX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0007X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u001a\u0010 \u001a\u00020\u0007X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008!\u0010\r\"\u0004\u0008\"\u0010\u000fR\u001a\u0010#\u001a\u00020$X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008%\u0010&\"\u0004\u0008\'\u0010(R\u001a\u0010)\u001a\u00020*X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008+\u0010,\"\u0004\u0008-\u0010.R\u001a\u0010/\u001a\u000200X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u00081\u00102\"\u0004\u00083\u00104\u00a8\u0006@"
+        "\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0004\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0007\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0007\n\u0002\u0010\u000b\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0005\u0018\u00002\u00020\u0001B\'\u0008\u0007\u0012\u0006\u0010F\u001a\u00020E\u0012\n\u0008\u0002\u0010H\u001a\u0004\u0018\u00010G\u0012\u0008\u0008\u0002\u0010I\u001a\u00020\u0002\u00a2\u0006\u0004\u0008J\u0010KJ/\u0010\u0008\u001a\u00020\u00072\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u0002H\u0014\u00a2\u0006\u0004\u0008\u0008\u0010\tJ\u0015\u0010\u000c\u001a\u00020\u00072\u0006\u0010\u000b\u001a\u00020\n\u00a2\u0006\u0004\u0008\u000c\u0010\rJ\u0019\u0010\u0010\u001a\u00020\u00072\u0008\u0010\u000f\u001a\u0004\u0018\u00010\u000eH\u0014\u00a2\u0006\u0004\u0008\u0010\u0010\u0011R\u0016\u0010\u0013\u001a\u00020\u00128\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008\u0013\u0010\u0014R\"\u0010\u0015\u001a\u00020\u00028\u0006@\u0006X\u0086\u000e\u00a2\u0006\u0012\n\u0004\u0008\u0015\u0010\u0016\u001a\u0004\u0008\u0017\u0010\u0018\"\u0004\u0008\u0019\u0010\u001aR\"\u0010\u001c\u001a\u00020\u001b8\u0006@\u0006X\u0086\u000e\u00a2\u0006\u0012\n\u0004\u0008\u001c\u0010\u001d\u001a\u0004\u0008\u001e\u0010\u001f\"\u0004\u0008 \u0010!R\u0016\u0010\"\u001a\u00020\u00128\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008\"\u0010\u0014R\"\u0010$\u001a\u00020#8\u0006@\u0006X\u0086\u000e\u00a2\u0006\u0012\n\u0004\u0008$\u0010%\u001a\u0004\u0008&\u0010\'\"\u0004\u0008(\u0010)R\u0016\u0010+\u001a\u00020*8\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008+\u0010,R\"\u0010.\u001a\u00020-8\u0006@\u0006X\u0086\u000e\u00a2\u0006\u0012\n\u0004\u0008.\u0010/\u001a\u0004\u00080\u00101\"\u0004\u00082\u00103R\u0016\u00104\u001a\u00020\u00128\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u00084\u0010\u0014R\"\u0010\u000b\u001a\u00020\u00028\u0006@\u0006X\u0086\u000e\u00a2\u0006\u0012\n\u0004\u0008\u000b\u0010\u0016\u001a\u0004\u00085\u0010\u0018\"\u0004\u00086\u0010\u001aR\u0016\u00107\u001a\u00020\u00028\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u00087\u0010\u0016R\u0016\u00108\u001a\u00020\u00028\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u00088\u0010\u0016R\u0016\u0010:\u001a\u0002098\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008:\u0010;R\"\u0010=\u001a\u00020<8\u0006@\u0006X\u0086\u000e\u00a2\u0006\u0012\n\u0004\u0008=\u0010>\u001a\u0004\u0008?\u0010@\"\u0004\u0008A\u0010BR\u0016\u0010C\u001a\u00020\u00128\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008C\u0010\u0014R\u0016\u0010D\u001a\u0002098\u0002@\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008D\u0010;\u00a8\u0006L"
     }
     d2 = {
         "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;",
         "Landroid/widget/RelativeLayout;",
-        "context",
-        "Landroid/content/Context;",
-        "attrs",
-        "Landroid/util/AttributeSet;",
-        "defStyleAttr",
         "",
-        "(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-        "circlePaint",
-        "Landroid/graphics/Paint;",
+        "w",
+        "h",
+        "oldw",
+        "oldh",
+        "",
+        "onSizeChanged",
+        "(IIII)V",
+        "",
+        "radius",
+        "setCorner",
+        "(F)V",
+        "Landroid/graphics/Canvas;",
+        "canvas",
+        "onDraw",
+        "(Landroid/graphics/Canvas;)V",
+        "Landroid/graphics/Point;",
+        "mCurveStartPoint",
+        "Landroid/graphics/Point;",
         "fillColor",
+        "I",
         "getFillColor",
         "()I",
         "setFillColor",
         "(I)V",
+        "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;",
         "location",
         "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;",
         "getLocation",
         "()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;",
         "setLocation",
         "(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;)V",
-        "mControlPoint1",
-        "Landroid/graphics/Point;",
-        "mControlPoint2",
         "mCurveEndPoint",
-        "mCurveStartPoint",
-        "mHeight",
-        "mPaint",
-        "mPath",
-        "Landroid/graphics/Path;",
-        "mWidth",
-        "radius",
-        "getRadius",
-        "setRadius",
-        "shape",
-        "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;",
-        "getShape",
-        "()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;",
-        "setShape",
-        "(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;)V",
-        "showControlPoints",
         "",
+        "showControlPoints",
+        "Z",
         "getShowControlPoints",
         "()Z",
         "setShowControlPoints",
         "(Z)V",
+        "Landroid/graphics/Path;",
+        "mPath",
+        "Landroid/graphics/Path;",
+        "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;",
         "type",
         "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;",
         "getType",
         "()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;",
         "setType",
         "(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;)V",
-        "onDraw",
-        "",
-        "canvas",
-        "Landroid/graphics/Canvas;",
-        "onSizeChanged",
-        "w",
-        "h",
-        "oldw",
-        "oldh",
-        "setCorner",
-        "",
+        "mControlPoint1",
+        "getRadius",
+        "setRadius",
+        "mHeight",
+        "mWidth",
+        "Landroid/graphics/Paint;",
+        "mPaint",
+        "Landroid/graphics/Paint;",
+        "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;",
+        "shape",
+        "Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;",
+        "getShape",
+        "()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;",
+        "setShape",
+        "(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;)V",
+        "mControlPoint2",
+        "circlePaint",
+        "Landroid/content/Context;",
+        "context",
+        "Landroid/util/AttributeSet;",
+        "attrs",
+        "defStyleAttr",
+        "<init>",
+        "(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
         "hellojiosdk_release"
     }
     k = 0x1
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
 
 # instance fields
-.field public _$_findViewCache:Ljava/util/HashMap;
+.field private _$_findViewCache:Ljava/util/HashMap;
 
-.field public final circlePaint:Landroid/graphics/Paint;
+.field private final circlePaint:Landroid/graphics/Paint;
 
-.field public fillColor:I
+.field private fillColor:I
 
-.field public location:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;
+.field private location:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
 
-.field public final mControlPoint1:Landroid/graphics/Point;
+.field private final mControlPoint1:Landroid/graphics/Point;
 
-.field public final mControlPoint2:Landroid/graphics/Point;
+.field private final mControlPoint2:Landroid/graphics/Point;
 
-.field public final mCurveEndPoint:Landroid/graphics/Point;
+.field private final mCurveEndPoint:Landroid/graphics/Point;
 
-.field public final mCurveStartPoint:Landroid/graphics/Point;
+.field private final mCurveStartPoint:Landroid/graphics/Point;
 
-.field public mHeight:I
+.field private mHeight:I
 
-.field public final mPaint:Landroid/graphics/Paint;
+.field private final mPaint:Landroid/graphics/Paint;
 
-.field public final mPath:Landroid/graphics/Path;
+.field private final mPath:Landroid/graphics/Path;
 
-.field public mWidth:I
+.field private mWidth:I
 
-.field public radius:I
+.field private radius:I
 
-.field public shape:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;
+.field private shape:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
 
-.field public showControlPoints:Z
+.field private showControlPoints:Z
 
-.field public type:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;
+.field private type:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
+    .param p1    # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation build Lkotlin/jvm/JvmOverloads;
+    .end annotation
 
     const/4 v2, 0x0
 
@@ -146,6 +173,16 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
+    .param p1    # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+    .annotation build Lkotlin/jvm/JvmOverloads;
+    .end annotation
 
     const/4 v3, 0x0
 
@@ -166,10 +203,20 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+    .annotation build Lkotlin/jvm/JvmOverloads;
+    .end annotation
 
     const-string v0, "context"
 
-    invoke-static {p1, v0}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 2
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -223,7 +270,7 @@
     iput-object v0, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->mControlPoint2:Landroid/graphics/Point;
 
     .line 11
-    sget-object v0, Lhn0;->CurvedLayout:[I
+    sget-object v0, Lcom/jio/jioml/hellojio/R$styleable;->CurvedLayout:[I
 
     const/4 v1, 0x0
 
@@ -232,7 +279,7 @@
     move-result-object p1
 
     .line 12
-    sget p2, Lhn0;->CurvedLayout_fillColor:I
+    sget p2, Lcom/jio/jioml/hellojio/R$styleable;->CurvedLayout_fillColor:I
 
     const/4 p3, -0x1
 
@@ -243,7 +290,7 @@
     iput p2, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->fillColor:I
 
     .line 13
-    sget p2, Lhn0;->CurvedLayout_showControlPoints:I
+    sget p2, Lcom/jio/jioml/hellojio/R$styleable;->CurvedLayout_showControlPoints:I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -272,37 +319,31 @@
     iput-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->mPaint:Landroid/graphics/Paint;
 
     .line 18
-    new-instance p1, Landroid/graphics/Paint;
+    new-instance p2, Landroid/graphics/Paint;
 
-    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {p2}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->circlePaint:Landroid/graphics/Paint;
+    iput-object p2, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->circlePaint:Landroid/graphics/Paint;
 
     .line 19
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->mPaint:Landroid/graphics/Paint;
+    sget-object p3, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {p1, p3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 20
-    sget-object p2, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
+    iget p3, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->fillColor:I
 
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    invoke-virtual {p1, p3}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 21
-    iget p2, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->fillColor:I
+    sget-object p1, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p2, p1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 22
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->circlePaint:Landroid/graphics/Paint;
+    iget p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->fillColor:I
 
-    .line 23
-    sget-object p2, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 24
-    iget p2, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->fillColor:I
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p2, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
@@ -400,6 +441,8 @@
 
 .method public final getLocation()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;
     .locals 1
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->location:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;
@@ -418,6 +461,8 @@
 
 .method public final getShape()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;
     .locals 1
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->shape:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;
@@ -436,6 +481,8 @@
 
 .method public final getType()Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;
     .locals 1
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->type:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;
@@ -445,6 +492,10 @@
 
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 10
+    .param p1    # Landroid/graphics/Canvas;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onDraw(Landroid/graphics/Canvas;)V
@@ -464,7 +515,7 @@
 
     move-result-object v1
 
-    sget v2, Lan0;->hj_gradient_color_start:I
+    sget v2, Lcom/jio/jioml/hellojio/R$color;->hj_gradient_color_start:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -474,7 +525,7 @@
 
     move-result-object v1
 
-    sget v2, Lan0;->hj_gradient_color_end:I
+    sget v2, Lcom/jio/jioml/hellojio/R$color;->hj_gradient_color_end:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1372,10 +1423,14 @@
 
 .method public final setLocation(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;)V
     .locals 1
+    .param p1    # Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
 
     const-string v0, "<set-?>"
 
-    invoke-static {p1, v0}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1
     iput-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->location:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Location;
@@ -1394,10 +1449,14 @@
 
 .method public final setShape(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;)V
     .locals 1
+    .param p1    # Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
 
     const-string v0, "<set-?>"
 
-    invoke-static {p1, v0}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1
     iput-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->shape:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Shape;
@@ -1416,10 +1475,14 @@
 
 .method public final setType(Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;)V
     .locals 1
+    .param p1    # Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
 
     const-string v0, "<set-?>"
 
-    invoke-static {p1, v0}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1
     iput-object p1, p0, Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedLayout;->type:Lcom/jio/jioml/hellojio/custom/curvedbackground/CurvedBottomSheet$Type;

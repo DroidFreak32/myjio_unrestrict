@@ -1,110 +1,50 @@
-.class public final Lcom/google/android/gms/internal/ads/zzakp;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzakp;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public zzcsq:J
-
-.field public zzcsr:J
-
-.field public final synthetic zzcss:Lcom/google/android/gms/internal/ads/zzako;
+.field private final zzdih:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzako;)V
-    .locals 2
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcss:Lcom/google/android/gms/internal/ads/zzako;
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v0, -0x1
-
-    .line 2
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsq:J
-
-    .line 3
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsr:J
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzdih:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toBundle()Landroid/os/Bundle;
-    .locals 4
+.method public final run()V
+    .locals 3
 
     .line 1
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzdih:Ljava/lang/String;
 
     .line 2
-    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsq:J
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzku()Lcom/google/android/gms/internal/ads/zzayg;
 
-    const-string v3, "topen"
+    move-result-object v1
 
-    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzayg;->zzwt()Lcom/google/android/gms/internal/ads/zzabi;
 
-    .line 3
-    iget-wide v1, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsr:J
+    move-result-object v1
 
-    const-string v3, "tclose"
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    return-object v0
-.end method
-
-.method public final zzrd()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsr:J
-
-    return-wide v0
-.end method
-
-.method public final zzre()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcss:Lcom/google/android/gms/internal/ads/zzako;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzako;->zza(Lcom/google/android/gms/internal/ads/zzako;)Lcom/google/android/gms/common/util/Clock;
+    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsr:J
-
-    return-void
-.end method
-
-.method public final zzrf()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcss:Lcom/google/android/gms/internal/ads/zzako;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzako;->zza(Lcom/google/android/gms/internal/ads/zzako;)Lcom/google/android/gms/common/util/Clock;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ads/zzakp;->zzcsq:J
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/ads/zzabi;->zzcr(Ljava/lang/String;)V
 
     return-void
 .end method

@@ -21,7 +21,7 @@
 # instance fields
 .field public final durationMs:J
 
-.field public hashCode:I
+.field private hashCode:I
 
 .field public final id:J
 
@@ -144,6 +144,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 7
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 

@@ -1,6 +1,6 @@
 .class public synthetic Lcom/jio/media/androidsdk/thirdparty/RoundedImageView$a;
 .super Ljava/lang/Object;
-.source ""
+.source "SourceFile"
 
 
 # annotations
@@ -33,8 +33,6 @@
     sput-object v0, Lcom/jio/media/androidsdk/thirdparty/RoundedImageView$a;->a:[I
 
     :try_start_0
-    sget-object v0, Lcom/jio/media/androidsdk/thirdparty/RoundedImageView$a;->a:[I
-
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I

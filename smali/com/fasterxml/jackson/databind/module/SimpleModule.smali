@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -99,7 +99,9 @@
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_namingStrategy:Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
     .line 13
-    const-class v0, Lcom/fasterxml/jackson/databind/module/SimpleModule;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     const-class v1, Lcom/fasterxml/jackson/databind/module/SimpleModule;
 
@@ -126,7 +128,9 @@
     goto :goto_0
 
     :cond_0
-    const-class v0, Lcom/fasterxml/jackson/databind/module/SimpleModule;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -488,7 +492,7 @@
         }
     .end annotation
 
-    const-string v0, "type to register deserializer for"
+    const-string/jumbo v0, "type to register deserializer for"
 
     .line 1
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -532,7 +536,7 @@
         }
     .end annotation
 
-    const-string v0, "type to register key deserializer for"
+    const-string/jumbo v0, "type to register key deserializer for"
 
     .line 1
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -578,7 +582,7 @@
         }
     .end annotation
 
-    const-string v0, "type to register key serializer for"
+    const-string/jumbo v0, "type to register key serializer for"
 
     .line 1
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -661,7 +665,7 @@
         }
     .end annotation
 
-    const-string v0, "type to register serializer for"
+    const-string/jumbo v0, "type to register serializer for"
 
     .line 5
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -710,7 +714,7 @@
     .line 1
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "value instantiator"
+    const-string/jumbo v0, "value instantiator"
 
     .line 2
     invoke-virtual {p0, p2, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -753,7 +757,9 @@
     .locals 2
 
     .line 1
-    const-class v0, Lcom/fasterxml/jackson/databind/module/SimpleModule;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     const-class v1, Lcom/fasterxml/jackson/databind/module/SimpleModule;
 
@@ -815,7 +821,7 @@
 
     check-cast v0, Ljava/lang/Class;
 
-    const-string v1, "subtype to register"
+    const-string/jumbo v1, "subtype to register"
 
     .line 14
     invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -861,7 +867,7 @@
 
     aget-object v2, p1, v1
 
-    const-string v3, "subtype to register"
+    const-string/jumbo v3, "subtype to register"
 
     .line 9
     invoke-virtual {p0, v2, v3}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -913,7 +919,7 @@
 
     aget-object v2, p1, v1
 
-    const-string v3, "subtype to register"
+    const-string/jumbo v3, "subtype to register"
 
     .line 4
     invoke-virtual {p0, v2, v3}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -993,7 +999,7 @@
         }
     .end annotation
 
-    const-string v0, "target type"
+    const-string/jumbo v0, "target type"
 
     .line 1
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V

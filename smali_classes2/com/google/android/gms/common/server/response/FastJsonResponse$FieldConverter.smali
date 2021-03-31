@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/server/response/FastJsonResponse$FieldConverter;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -28,15 +29,10 @@
 
 
 # virtual methods
-.method public abstract convert(Ljava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TI;)TO;"
-        }
-    .end annotation
+.method public abstract zaa()I
 .end method
 
-.method public abstract convertBack(Ljava/lang/Object;)Ljava/lang/Object;
+.method public abstract zaa(Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TO;)TI;"
@@ -44,8 +40,16 @@
     .end annotation
 .end method
 
-.method public abstract zacj()I
+.method public abstract zab()I
 .end method
 
-.method public abstract zack()I
+.method public abstract zab(Ljava/lang/Object;)Ljava/lang/Object;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TI;)TO;"
+        }
+    .end annotation
 .end method

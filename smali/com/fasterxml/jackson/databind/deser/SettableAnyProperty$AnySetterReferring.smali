@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final _parent:Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;
+.field private final _parent:Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;
 
-.field public final _pojo:Ljava/lang/Object;
+.field private final _pojo:Ljava/lang/Object;
 
-.field public final _propName:Ljava/lang/String;
+.field private final _propName:Ljava/lang/String;
 
 
 # direct methods
@@ -57,6 +57,11 @@
 # virtual methods
 .method public handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId$Referring;->hasId(Ljava/lang/Object;)Z

@@ -1,1388 +1,550 @@
 .class public Lg3;
 .super Ljava/lang/Object;
-.source "ToolbarWidgetWrapper.java"
+.source "FragmentLayoutInflaterFactory.java"
 
 # interfaces
-.implements Lp2;
+.implements Landroid/view/LayoutInflater$Factory2;
 
 
 # instance fields
-.field public a:Landroidx/appcompat/widget/Toolbar;
-
-.field public b:I
-
-.field public c:Landroid/view/View;
-
-.field public d:Landroid/view/View;
-
-.field public e:Landroid/graphics/drawable/Drawable;
-
-.field public f:Landroid/graphics/drawable/Drawable;
-
-.field public g:Landroid/graphics/drawable/Drawable;
-
-.field public h:Z
-
-.field public i:Ljava/lang/CharSequence;
-
-.field public j:Ljava/lang/CharSequence;
-
-.field public k:Ljava/lang/CharSequence;
-
-.field public l:Landroid/view/Window$Callback;
-
-.field public m:Z
-
-.field public n:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-.field public o:I
-
-.field public p:I
-
-.field public q:Landroid/graphics/drawable/Drawable;
+.field public final a:Landroidx/fragment/app/FragmentManager;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/appcompat/widget/Toolbar;Z)V
-    .locals 2
+.method public constructor <init>(Landroidx/fragment/app/FragmentManager;)V
+    .locals 0
 
     .line 1
-    sget v0, Lx;->abc_action_bar_up_description:I
-
-    sget v1, Lt;->abc_ic_ab_back_material:I
-
-    invoke-direct {p0, p1, p2, v0, v1}, Lg3;-><init>(Landroidx/appcompat/widget/Toolbar;ZII)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroidx/appcompat/widget/Toolbar;ZII)V
-    .locals 3
-
-    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p4, 0x0
-
-    .line 3
-    iput p4, p0, Lg3;->o:I
-
-    .line 4
-    iput p4, p0, Lg3;->p:I
-
-    .line 5
-    iput-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    .line 6
-    invoke-virtual {p1}, Landroidx/appcompat/widget/Toolbar;->getTitle()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lg3;->i:Ljava/lang/CharSequence;
-
-    .line 7
-    invoke-virtual {p1}, Landroidx/appcompat/widget/Toolbar;->getSubtitle()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lg3;->j:Ljava/lang/CharSequence;
-
-    .line 8
-    iget-object v0, p0, Lg3;->i:Ljava/lang/CharSequence;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-boolean v0, p0, Lg3;->h:Z
-
-    .line 9
-    invoke-virtual {p1}, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lg3;->g:Landroid/graphics/drawable/Drawable;
-
-    .line 10
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    sget-object v1, Lb0;->ActionBar:[I
-
-    sget v2, Lo;->actionBarStyle:I
-
-    invoke-static {p1, v0, v1, v2, p4}, Lf3;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Lf3;
-
-    move-result-object p1
-
-    .line 11
-    sget v0, Lb0;->ActionBar_homeAsUpIndicator:I
-
-    invoke-virtual {p1, v0}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lg3;->q:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p2, :cond_c
-
-    .line 12
-    sget p2, Lb0;->ActionBar_title:I
-
-    invoke-virtual {p1, p2}, Lf3;->e(I)Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    .line 13
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 14
-    invoke-virtual {p0, p2}, Lg3;->setTitle(Ljava/lang/CharSequence;)V
-
-    .line 15
-    :cond_1
-    sget p2, Lb0;->ActionBar_subtitle:I
-
-    invoke-virtual {p1, p2}, Lf3;->e(I)Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    .line 16
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 17
-    invoke-virtual {p0, p2}, Lg3;->b(Ljava/lang/CharSequence;)V
-
-    .line 18
-    :cond_2
-    sget p2, Lb0;->ActionBar_logo:I
-
-    invoke-virtual {p1, p2}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_3
-
-    .line 19
-    invoke-virtual {p0, p2}, Lg3;->b(Landroid/graphics/drawable/Drawable;)V
-
-    .line 20
-    :cond_3
-    sget p2, Lb0;->ActionBar_icon:I
-
-    invoke-virtual {p1, p2}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_4
-
-    .line 21
-    invoke-virtual {p0, p2}, Lg3;->setIcon(Landroid/graphics/drawable/Drawable;)V
-
-    .line 22
-    :cond_4
-    iget-object p2, p0, Lg3;->g:Landroid/graphics/drawable/Drawable;
-
-    if-nez p2, :cond_5
-
-    iget-object p2, p0, Lg3;->q:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p2, :cond_5
-
-    .line 23
-    invoke-virtual {p0, p2}, Lg3;->a(Landroid/graphics/drawable/Drawable;)V
-
-    .line 24
-    :cond_5
-    sget p2, Lb0;->ActionBar_displayOptions:I
-
-    invoke-virtual {p1, p2, p4}, Lf3;->d(II)I
-
-    move-result p2
-
-    invoke-virtual {p0, p2}, Lg3;->a(I)V
-
-    .line 25
-    sget p2, Lb0;->ActionBar_customNavigationLayout:I
-
-    invoke-virtual {p1, p2, p4}, Lf3;->g(II)I
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    .line 26
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0, p2, v1, p4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p2}, Lg3;->a(Landroid/view/View;)V
-
-    .line 27
-    iget p2, p0, Lg3;->b:I
-
-    or-int/lit8 p2, p2, 0x10
-
-    invoke-virtual {p0, p2}, Lg3;->a(I)V
-
-    .line 28
-    :cond_6
-    sget p2, Lb0;->ActionBar_height:I
-
-    invoke-virtual {p1, p2, p4}, Lf3;->f(II)I
-
-    move-result p2
-
-    if-lez p2, :cond_7
-
-    .line 29
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    .line 30
-    iput p2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    .line 31
-    iget-object p2, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 32
-    :cond_7
-    sget p2, Lb0;->ActionBar_contentInsetStart:I
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p1, p2, v0}, Lf3;->b(II)I
-
-    move-result p2
-
-    .line 33
-    sget v1, Lb0;->ActionBar_contentInsetEnd:I
-
-    invoke-virtual {p1, v1, v0}, Lf3;->b(II)I
-
-    move-result v0
-
-    if-gez p2, :cond_8
-
-    if-ltz v0, :cond_9
-
-    .line 34
-    :cond_8
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-static {p2, p4}, Ljava/lang/Math;->max(II)I
-
-    move-result p2
-
-    .line 35
-    invoke-static {v0, p4}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    .line 36
-    invoke-virtual {v1, p2, v0}, Landroidx/appcompat/widget/Toolbar;->setContentInsetsRelative(II)V
-
-    .line 37
-    :cond_9
-    sget p2, Lb0;->ActionBar_titleTextStyle:I
-
-    invoke-virtual {p1, p2, p4}, Lf3;->g(II)I
-
-    move-result p2
-
-    if-eqz p2, :cond_a
-
-    .line 38
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, p2}, Landroidx/appcompat/widget/Toolbar;->setTitleTextAppearance(Landroid/content/Context;I)V
-
-    .line 39
-    :cond_a
-    sget p2, Lb0;->ActionBar_subtitleTextStyle:I
-
-    invoke-virtual {p1, p2, p4}, Lf3;->g(II)I
-
-    move-result p2
-
-    if-eqz p2, :cond_b
-
-    .line 40
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, p2}, Landroidx/appcompat/widget/Toolbar;->setSubtitleTextAppearance(Landroid/content/Context;I)V
-
-    .line 41
-    :cond_b
-    sget p2, Lb0;->ActionBar_popupTheme:I
-
-    invoke-virtual {p1, p2, p4}, Lf3;->g(II)I
-
-    move-result p2
-
-    if-eqz p2, :cond_d
-
-    .line 42
-    iget-object p4, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {p4, p2}, Landroidx/appcompat/widget/Toolbar;->setPopupTheme(I)V
-
-    goto :goto_1
-
-    .line 43
-    :cond_c
-    invoke-virtual {p0}, Lg3;->o()I
-
-    move-result p2
-
-    iput p2, p0, Lg3;->b:I
-
-    .line 44
-    :cond_d
-    :goto_1
-    invoke-virtual {p1}, Lf3;->a()V
-
-    .line 45
-    invoke-virtual {p0, p3}, Lg3;->c(I)V
-
-    .line 46
-    iget-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {p1}, Landroidx/appcompat/widget/Toolbar;->getNavigationContentDescription()Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lg3;->k:Ljava/lang/CharSequence;
-
-    .line 47
-    iget-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    new-instance p2, Lg3$a;
-
-    invoke-direct {p2, p0}, Lg3$a;-><init>(Lg3;)V
-
-    invoke-virtual {p1, p2}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 2
+    iput-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(IJ)Lga;
-    .locals 2
+.method public onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+    .locals 5
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-    .line 29
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    .line 2
+    const-class v0, Landroidx/fragment/app/FragmentContainerView;
 
-    invoke-static {v0}, Lba;->a(Landroid/view/View;)Lga;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez p1, :cond_0
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    .line 30
-    :goto_0
-    invoke-virtual {v0, v1}, Lga;->a(F)Lga;
-
-    .line 31
-    invoke-virtual {v0, p2, p3}, Lga;->a(J)Lga;
-
-    new-instance p2, Lg3$b;
-
-    invoke-direct {p2, p0, p1}, Lg3$b;-><init>(Lg3;I)V
-
-    .line 32
-    invoke-virtual {v0, p2}, Lga;->a(Lha;)Lga;
-
-    return-object v0
-.end method
-
-.method public a(I)V
-    .locals 3
-
-    .line 2
-    iget v0, p0, Lg3;->b:I
-
-    xor-int/2addr v0, p1
+    if-eqz v0, :cond_0
 
     .line 3
-    iput p1, p0, Lg3;->b:I
+    new-instance p1, Landroidx/fragment/app/FragmentContainerView;
 
-    if-eqz v0, :cond_6
+    iget-object p2, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
-    and-int/lit8 v1, v0, 0x4
+    invoke-direct {p1, p3, p4, p2}, Landroidx/fragment/app/FragmentContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Landroidx/fragment/app/FragmentManager;)V
 
-    if-eqz v1, :cond_1
+    return-object p1
 
-    and-int/lit8 v1, p1, 0x4
-
-    if-eqz v1, :cond_0
+    :cond_0
+    const-string v0, "fragment"
 
     .line 4
-    invoke-virtual {p0}, Lg3;->p()V
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 5
-    :cond_0
-    invoke-virtual {p0}, Lg3;->q()V
+    move-result p2
+
+    const/4 v0, 0x0
+
+    if-nez p2, :cond_1
+
+    return-object v0
 
     :cond_1
-    and-int/lit8 v1, v0, 0x3
+    const-string p2, "class"
 
-    if-eqz v1, :cond_2
+    .line 5
+    invoke-interface {p4, v0, p2}, Landroid/util/AttributeSet;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
 
     .line 6
-    invoke-virtual {p0}, Lg3;->r()V
+    sget-object v1, Landroidx/fragment/R$styleable;->Fragment:[I
 
-    :cond_2
-    and-int/lit8 v1, v0, 0x8
+    invoke-virtual {p3, p4, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    if-eqz v1, :cond_4
+    move-result-object v1
 
-    and-int/lit8 v1, p1, 0x8
-
-    if-eqz v1, :cond_3
+    if-nez p2, :cond_2
 
     .line 7
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    sget p2, Landroidx/fragment/R$styleable;->Fragment_android_name:I
 
-    iget-object v2, p0, Lg3;->i:Ljava/lang/CharSequence;
+    invoke-virtual {v1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
+    move-result-object p2
 
     .line 8
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    :cond_2
+    sget v2, Landroidx/fragment/R$styleable;->Fragment_android_id:I
 
-    iget-object v2, p0, Lg3;->j:Ljava/lang/CharSequence;
+    const/4 v3, -0x1
 
-    invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v2
+
+    .line 9
+    sget v4, Landroidx/fragment/R$styleable;->Fragment_android_tag:I
+
+    invoke-virtual {v1, v4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 10
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+
+    if-eqz p2, :cond_11
+
+    .line 11
+    invoke-virtual {p3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v1
+
+    invoke-static {v1, p2}, Landroidx/fragment/app/FragmentFactory;->isFragmentClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    goto/16 :goto_4
+
+    :cond_3
+    if-eqz p1, :cond_4
+
+    .line 12
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    move-result p1
 
     goto :goto_0
 
-    .line 9
-    :cond_3
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
-
-    .line 10
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
-
     :cond_4
+    const/4 p1, 0x0
+
     :goto_0
-    and-int/lit8 v0, v0, 0x10
+    if-ne p1, v3, :cond_6
 
-    if-eqz v0, :cond_6
+    if-ne v2, v3, :cond_6
 
-    .line 11
-    iget-object v0, p0, Lg3;->d:Landroid/view/View;
-
-    if-eqz v0, :cond_6
-
-    and-int/lit8 p1, p1, 0x10
-
-    if-eqz p1, :cond_5
-
-    .line 12
-    iget-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    if-eqz v4, :cond_5
 
     goto :goto_1
 
     .line 13
     :cond_5
-    iget-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {p4}, Landroid/util/AttributeSet;->getPositionDescription()Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p4, ": Must specify unique android:id, android:tag, or have a parent with an id for "
+
+    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 
     :cond_6
     :goto_1
-    return-void
-.end method
-
-.method public a(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 33
-    iput-object p1, p0, Lg3;->g:Landroid/graphics/drawable/Drawable;
-
-    .line 34
-    invoke-virtual {p0}, Lg3;->q()V
-
-    return-void
-.end method
-
-.method public a(Landroid/view/View;)V
-    .locals 2
-
-    .line 24
-    iget-object v0, p0, Lg3;->d:Landroid/view/View;
-
-    if-eqz v0, :cond_0
-
-    iget v1, p0, Lg3;->b:I
-
-    and-int/lit8 v1, v1, 0x10
-
-    if-eqz v1, :cond_0
-
-    .line 25
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    .line 26
-    :cond_0
-    iput-object p1, p0, Lg3;->d:Landroid/view/View;
-
-    if-eqz p1, :cond_1
-
-    .line 27
-    iget p1, p0, Lg3;->b:I
-
-    and-int/lit8 p1, p1, 0x10
-
-    if-eqz p1, :cond_1
-
-    .line 28
-    iget-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    iget-object v0, p0, Lg3;->d:Landroid/view/View;
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public a(Landroidx/appcompat/widget/ScrollingTabContainerView;)V
-    .locals 3
+    if-eq v2, v3, :cond_7
 
     .line 14
-    iget-object v0, p0, Lg3;->c:Landroid/view/View;
+    iget-object v0, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v0, v2}, Landroidx/fragment/app/FragmentManager;->findFragmentById(I)Landroidx/fragment/app/Fragment;
 
     move-result-object v0
 
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    :cond_7
+    if-nez v0, :cond_8
 
-    if-ne v0, v1, :cond_0
+    if-eqz v4, :cond_8
 
     .line 15
-    iget-object v0, p0, Lg3;->c:Landroid/view/View;
+    iget-object v0, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    invoke-virtual {v0, v4}, Landroidx/fragment/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+
+    move-result-object v0
+
+    :cond_8
+    if-nez v0, :cond_9
+
+    if-eq p1, v3, :cond_9
 
     .line 16
-    :cond_0
-    iput-object p1, p0, Lg3;->c:Landroid/view/View;
+    iget-object v0, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
-    if-eqz p1, :cond_1
+    invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManager;->findFragmentById(I)Landroidx/fragment/app/Fragment;
 
-    .line 17
-    iget v0, p0, Lg3;->o:I
+    move-result-object v0
 
+    :cond_9
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_1
+    .line 17
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->w0(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a
 
     .line 18
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lg3;->c:Landroid/view/View;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v2, 0x0
+    const-string v3, "onCreateView: id=0x"
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 19
-    iget-object v0, p0, Lg3;->c:Landroid/view/View;
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-result-object v3
 
-    move-result-object v0
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+    const-string v3, " fname="
 
-    const/4 v1, -0x2
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " existing="
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    :cond_a
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_c
 
     .line 20
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iget-object v0, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->getFragmentFactory()Landroidx/fragment/app/FragmentFactory;
+
+    move-result-object v0
 
     .line 21
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    invoke-virtual {p3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
-    const v1, 0x800053
+    move-result-object p3
 
     .line 22
-    iput v1, v0, Landroidx/appcompat/app/ActionBar$LayoutParams;->a:I
+    invoke-virtual {v0, p3, p2}, Landroidx/fragment/app/FragmentFactory;->instantiate(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
     .line 23
-    invoke-virtual {p1, v0}, Landroidx/appcompat/widget/ScrollingTabContainerView;->setAllowCollapse(Z)V
+    iput-boolean v1, v0, Landroidx/fragment/app/Fragment;->mFromLayout:Z
 
-    :cond_1
-    return-void
-.end method
+    if-eqz v2, :cond_b
 
-.method public a(Ljava/lang/CharSequence;)V
-    .locals 0
+    move p3, v2
+
+    goto :goto_2
+
+    :cond_b
+    move p3, p1
+
+    .line 24
+    :goto_2
+    iput p3, v0, Landroidx/fragment/app/Fragment;->mFragmentId:I
+
+    .line 25
+    iput p1, v0, Landroidx/fragment/app/Fragment;->mContainerId:I
+
+    .line 26
+    iput-object v4, v0, Landroidx/fragment/app/Fragment;->mTag:Ljava/lang/String;
+
+    .line 27
+    iput-boolean v1, v0, Landroidx/fragment/app/Fragment;->mInLayout:Z
+
+    .line 28
+    iget-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
+
+    iput-object p1, v0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    .line 29
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->n0()Landroidx/fragment/app/FragmentHostCallback;
+
+    move-result-object p1
+
+    iput-object p1, v0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    .line 30
+    iget-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->n0()Landroidx/fragment/app/FragmentHostCallback;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentHostCallback;->b()Landroid/content/Context;
+
+    move-result-object p1
+
+    iget-object p3, v0, Landroidx/fragment/app/Fragment;->mSavedFragmentState:Landroid/os/Bundle;
+
+    invoke-virtual {v0, p1, p4, p3}, Landroidx/fragment/app/Fragment;->onInflate(Landroid/content/Context;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
+
+    .line 31
+    iget-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {p1, v0}, Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)Lk3;
+
+    move-result-object p1
+
+    .line 32
+    iget-object p3, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {p3, v0}, Landroidx/fragment/app/FragmentManager;->g(Landroidx/fragment/app/Fragment;)V
+
+    goto :goto_3
+
+    .line 33
+    :cond_c
+    iget-boolean p3, v0, Landroidx/fragment/app/Fragment;->mInLayout:Z
+
+    if-nez p3, :cond_10
+
+    .line 34
+    iput-boolean v1, v0, Landroidx/fragment/app/Fragment;->mInLayout:Z
 
     .line 35
-    iput-object p1, p0, Lg3;->k:Ljava/lang/CharSequence;
+    iget-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
+
+    iput-object p1, v0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
     .line 36
-    invoke-virtual {p0}, Lg3;->p()V
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->n0()Landroidx/fragment/app/FragmentHostCallback;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public a(Lu1$a;Ln1$a;)V
-    .locals 1
+    iput-object p1, v0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
     .line 37
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    iget-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
-    invoke-virtual {v0, p1, p2}, Landroidx/appcompat/widget/Toolbar;->setMenuCallbacks(Lu1$a;Ln1$a;)V
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public a()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->canShowOverflowMenu()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b(I)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    .line 4
-    invoke-virtual {p0}, Lg3;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lq0;->c(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->n0()Landroidx/fragment/app/FragmentHostCallback;
 
     move-result-object p1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    invoke-virtual {p0, p1}, Lg3;->b(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public b(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 5
-    iput-object p1, p0, Lg3;->f:Landroid/graphics/drawable/Drawable;
-
-    .line 6
-    invoke-virtual {p0}, Lg3;->r()V
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lg3;->j:Ljava/lang/CharSequence;
-
-    .line 2
-    iget v0, p0, Lg3;->b:I
-
-    and-int/lit8 v0, v0, 0x8
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(Z)V
-    .locals 1
-
-    .line 8
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/Toolbar;->setCollapsible(Z)V
-
-    return-void
-.end method
-
-.method public b()Z
-    .locals 1
-
-    .line 7
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->hideOverflowMenu()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c(I)V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lg3;->p:I
-
-    if-ne p1, v0, :cond_0
-
-    return-void
-
-    .line 2
-    :cond_0
-    iput p1, p0, Lg3;->p:I
-
-    .line 3
-    iget-object p1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {p1}, Landroidx/appcompat/widget/Toolbar;->getNavigationContentDescription()Ljava/lang/CharSequence;
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentHostCallback;->b()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    iget-object p3, v0, Landroidx/fragment/app/Fragment;->mSavedFragmentState:Landroid/os/Bundle;
 
-    move-result p1
+    invoke-virtual {v0, p1, p4, p3}, Landroidx/fragment/app/Fragment;->onInflate(Landroid/content/Context;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
 
-    if-eqz p1, :cond_1
+    .line 38
+    iget-object p1, p0, Lg3;->a:Landroidx/fragment/app/FragmentManager;
 
-    .line 4
-    iget p1, p0, Lg3;->p:I
-
-    invoke-virtual {p0, p1}, Lg3;->d(I)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final c(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    .line 5
-    iput-object p1, p0, Lg3;->i:Ljava/lang/CharSequence;
-
-    .line 6
-    iget v0, p0, Lg3;->b:I
-
-    and-int/lit8 v0, v0, 0x8
-
-    if-eqz v0, :cond_0
-
-    .line 7
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public c()Z
-    .locals 1
-
-    .line 8
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->showOverflowMenu()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public collapseActionView()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->collapseActionView()V
-
-    return-void
-.end method
-
-.method public d(I)V
-    .locals 1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    invoke-virtual {p0}, Lg3;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)Lk3;
 
     move-result-object p1
 
-    :goto_0
-    invoke-virtual {p0, p1}, Lg3;->a(Ljava/lang/CharSequence;)V
+    .line 39
+    :goto_3
+    invoke-virtual {p1}, Lk3;->k()V
 
-    return-void
-.end method
+    .line 40
+    invoke-virtual {p1}, Lk3;->i()V
 
-.method public d()Z
-    .locals 1
+    .line 41
+    iget-object p1, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    if-eqz p1, :cond_f
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->isOverflowMenuShowing()Z
+    if-eqz v2, :cond_d
 
-    move-result v0
+    .line 42
+    invoke-virtual {p1, v2}, Landroid/view/View;->setId(I)V
 
-    return v0
-.end method
+    .line 43
+    :cond_d
+    iget-object p1, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-.method public e()Z
-    .locals 1
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    move-result-object p1
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->isOverflowMenuShowPending()Z
+    if-nez p1, :cond_e
 
-    move-result v0
+    .line 44
+    iget-object p1, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    return v0
-.end method
+    invoke-virtual {p1, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-.method public f()Z
-    .locals 1
+    .line 45
+    :cond_e
+    iget-object p1, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    return-object p1
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->hasExpandedActionView()Z
+    .line 46
+    :cond_f
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    move-result v0
+    new-instance p3, Ljava/lang/StringBuilder;
 
-    return v0
-.end method
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-.method public g()Landroid/view/Menu;
-    .locals 1
+    const-string p4, "Fragment "
 
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
+    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->getMenu()Landroid/view/Menu;
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string p2, " did not create a view."
 
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 47
+    :cond_10
+    new-instance p3, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {p4}, Landroid/util/AttributeSet;->getPositionDescription()Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p4, ": Duplicate id 0x"
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 48
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p4, ", tag "
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p4, ", or parent id 0x"
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 49
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " with another fragment for "
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p3, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p3
+
+    :cond_11
+    :goto_4
     return-object v0
 .end method
 
-.method public getContext()Landroid/content/Context;
+.method public onCreateView(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getHeight()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getHeight()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getTitle()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->getTitle()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getVisibility()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public h()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lg3;->o:I
-
-    return v0
-.end method
-
-.method public i()Landroid/view/ViewGroup;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    return-object v0
-.end method
-
-.method public j()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->dismissPopupMenus()V
-
-    return-void
-.end method
-
-.method public l()Landroid/view/View;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->d:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method public m()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lg3;->b:I
-
-    return v0
-.end method
-
-.method public n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final o()I
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    const/16 v0, 0xf
-
-    .line 2
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v1}, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lg3;->q:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v0, 0xb
-
-    :goto_0
-    return v0
-.end method
-
-.method public final p()V
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lg3;->b:I
-
-    and-int/lit8 v0, v0, 0x4
-
-    if-eqz v0, :cond_1
-
-    .line 2
-    iget-object v0, p0, Lg3;->k:Ljava/lang/CharSequence;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    iget v1, p0, Lg3;->p:I
-
-    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(I)V
-
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    iget-object v1, p0, Lg3;->k:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(Ljava/lang/CharSequence;)V
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method public final q()V
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lg3;->b:I
-
-    and-int/lit8 v0, v0, 0x4
-
-    if-eqz v0, :cond_1
-
-    .line 2
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    iget-object v1, p0, Lg3;->g:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p0, Lg3;->q:Landroid/graphics/drawable/Drawable;
-
-    :goto_0
-    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_1
-
-    .line 3
-    :cond_1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
-
-    :goto_1
-    return-void
-.end method
-
-.method public final r()V
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lg3;->b:I
-
-    and-int/lit8 v1, v0, 0x2
-
-    if-eqz v1, :cond_2
-
-    and-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_1
-
-    .line 2
-    iget-object v0, p0, Lg3;->f:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lg3;->e:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    .line 3
-    :cond_1
-    iget-object v0, p0, Lg3;->e:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    :cond_2
     const/4 v0, 0x0
 
-    .line 4
-    :goto_0
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/Toolbar;->setLogo(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
-
     .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-static {v0, p1}, Lba;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public setIcon(I)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    .line 1
-    invoke-virtual {p0}, Lg3;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lq0;->c(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v0, p1, p2, p3}, Lg3;->onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object p1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    invoke-virtual {p0, p1}, Lg3;->setIcon(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public setIcon(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lg3;->e:Landroid/graphics/drawable/Drawable;
-
-    .line 3
-    invoke-virtual {p0}, Lg3;->r()V
-
-    return-void
-.end method
-
-.method public setMenu(Landroid/view/Menu;Lu1$a;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lg3;->n:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    if-nez v0, :cond_0
-
-    .line 2
-    new-instance v0, Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    iget-object v1, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroidx/appcompat/widget/ActionMenuPresenter;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lg3;->n:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    .line 3
-    iget-object v0, p0, Lg3;->n:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    sget v1, Lu;->action_menu_presenter:I
-
-    invoke-virtual {v0, v1}, Li1;->a(I)V
-
-    .line 4
-    :cond_0
-    iget-object v0, p0, Lg3;->n:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    invoke-virtual {v0, p2}, Li1;->setCallback(Lu1$a;)V
-
-    .line 5
-    iget-object p2, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    check-cast p1, Ln1;
-
-    iget-object v0, p0, Lg3;->n:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    invoke-virtual {p2, p1, v0}, Landroidx/appcompat/widget/Toolbar;->setMenu(Ln1;Landroidx/appcompat/widget/ActionMenuPresenter;)V
-
-    return-void
-.end method
-
-.method public setMenuPrepared()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    .line 1
-    iput-boolean v0, p0, Lg3;->m:Z
-
-    return-void
-.end method
-
-.method public setTitle(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    .line 1
-    iput-boolean v0, p0, Lg3;->h:Z
-
-    .line 2
-    invoke-virtual {p0, p1}, Lg3;->c(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public setVisibility(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lg3;->a:Landroidx/appcompat/widget/Toolbar;
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public setWindowCallback(Landroid/view/Window$Callback;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lg3;->l:Landroid/view/Window$Callback;
-
-    return-void
-.end method
-
-.method public setWindowTitle(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lg3;->h:Z
-
-    if-nez v0, :cond_0
-
-    .line 2
-    invoke-virtual {p0, p1}, Lg3;->c(Ljava/lang/CharSequence;)V
-
-    :cond_0
-    return-void
+    return-object p1
 .end method

@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/IAccountAccessor$Stub;
-.super Lcom/google/android/gms/internal/common/zzb;
+.super Lcom/google/android/gms/internal/common/zza;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/IAccountAccessor;
@@ -29,13 +30,19 @@
     const-string v0, "com.google.android.gms.common.internal.IAccountAccessor"
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/common/zzb;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/common/zza;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/IAccountAccessor;
     .locals 2
+    .param p0    # Landroid/os/IBinder;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     if-nez p0, :cond_0
 
@@ -74,13 +81,37 @@
 # virtual methods
 .method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p3    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p4    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 p2, 0x2
 
     if-ne p1, p2, :cond_0
 
     .line 1
-    invoke-interface {p0}, Lcom/google/android/gms/common/internal/IAccountAccessor;->getAccount()Landroid/accounts/Account;
+    invoke-interface {p0}, Lcom/google/android/gms/common/internal/IAccountAccessor;->zza()Landroid/accounts/Account;
 
     move-result-object p1
 
@@ -88,7 +119,7 @@
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 3
-    invoke-static {p3, p1}, Lcom/google/android/gms/internal/common/zzc;->zzb(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    invoke-static {p3, p1}, Lcom/google/android/gms/internal/common/zzd;->zzb(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
     const/4 p1, 0x1
 

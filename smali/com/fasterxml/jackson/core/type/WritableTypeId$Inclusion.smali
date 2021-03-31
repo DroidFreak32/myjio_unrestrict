@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
 .field public static final enum METADATA_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
@@ -38,94 +38,84 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 11
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
-    const/4 v1, 0x0
+    const-string v1, "WRAPPER_ARRAY"
 
-    const-string v2, "WRAPPER_ARRAY"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->WRAPPER_ARRAY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
     const-string v3, "WRAPPER_OBJECT"
 
-    invoke-direct {v0, v3, v2}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->WRAPPER_OBJECT:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    invoke-direct {v1, v3, v4}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->WRAPPER_OBJECT:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    new-instance v3, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
-    const/4 v3, 0x2
+    const-string v5, "METADATA_PROPERTY"
 
-    const-string v4, "METADATA_PROPERTY"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->METADATA_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    sput-object v3, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->METADATA_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    new-instance v5, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
-    const/4 v4, 0x3
+    const-string v7, "PAYLOAD_PROPERTY"
 
-    const-string v5, "PAYLOAD_PROPERTY"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->PAYLOAD_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    sput-object v5, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->PAYLOAD_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
     .line 5
-    new-instance v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    new-instance v7, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
-    const/4 v5, 0x4
+    const-string v9, "PARENT_PROPERTY"
 
-    const-string v6, "PARENT_PROPERTY"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->PARENT_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    sput-object v7, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->PARENT_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
-    const/4 v0, 0x5
+    const/4 v9, 0x5
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    new-array v9, v9, [Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+
+    aput-object v0, v9, v2
+
+    aput-object v1, v9, v4
+
+    aput-object v3, v9, v6
+
+    aput-object v5, v9, v8
+
+    aput-object v7, v9, v10
 
     .line 6
-    sget-object v6, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->WRAPPER_ARRAY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
-
-    aput-object v6, v0, v1
-
-    sget-object v1, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->WRAPPER_OBJECT:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->METADATA_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->PAYLOAD_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->PARENT_PROPERTY:Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->$VALUES:[Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
+    sput-object v9, Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;->$VALUES:[Lcom/fasterxml/jackson/core/type/WritableTypeId$Inclusion;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

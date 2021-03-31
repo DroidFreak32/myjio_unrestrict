@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/dynamic/IObjectWrapper$Stub$zza;
-.super Lcom/google/android/gms/internal/common/zza;
+.super Lcom/google/android/gms/internal/common/zzb;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/dynamic/IObjectWrapper;
@@ -23,7 +24,7 @@
     const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/common/zza;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/common/zzb;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method

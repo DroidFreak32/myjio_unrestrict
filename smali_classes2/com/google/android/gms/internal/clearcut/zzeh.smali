@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzoh:Ljava/lang/Class;
+.field private static final zzoh:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -12,7 +12,7 @@
     .end annotation
 .end field
 
-.field public static final zzoi:Lcom/google/android/gms/internal/clearcut/zzex;
+.field private static final zzoi:Lcom/google/android/gms/internal/clearcut/zzex;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzex<",
@@ -21,7 +21,7 @@
     .end annotation
 .end field
 
-.field public static final zzoj:Lcom/google/android/gms/internal/clearcut/zzex;
+.field private static final zzoj:Lcom/google/android/gms/internal/clearcut/zzex;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzex<",
@@ -30,7 +30,7 @@
     .end annotation
 .end field
 
-.field public static final zzok:Lcom/google/android/gms/internal/clearcut/zzex;
+.field private static final zzok:Lcom/google/android/gms/internal/clearcut/zzex;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzex<",
@@ -152,7 +152,7 @@
     return v2
 .end method
 
-.method public static zza(IILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzex;)Ljava/lang/Object;
+.method private static zza(IILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzex;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -214,9 +214,7 @@
 
     const/4 v1, 0x0
 
-    move-object v2, p3
-
-    const/4 p3, 0x0
+    const/4 v2, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_3
@@ -237,23 +235,23 @@
 
     if-eqz v4, :cond_2
 
-    if-eq v1, p3, :cond_1
+    if-eq v1, v2, :cond_1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-interface {p1, p3, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v2, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    add-int/lit8 p3, p3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :cond_2
-    invoke-static {p0, v3, v2, p4}, Lcom/google/android/gms/internal/clearcut/zzeh;->zza(IILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzex;)Ljava/lang/Object;
+    invoke-static {p0, v3, p3, p4}, Lcom/google/android/gms/internal/clearcut/zzeh;->zza(IILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzex;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p3
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
@@ -261,9 +259,9 @@
     goto :goto_0
 
     :cond_3
-    if-eq p3, v0, :cond_6
+    if-eq v2, v0, :cond_6
 
-    invoke-interface {p1, p3, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
+    invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p0
 
@@ -276,33 +274,31 @@
 
     move-result-object p1
 
-    :goto_2
-    move-object v2, p3
-
     :cond_5
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p3
+    move-result v0
 
-    if-eqz p3, :cond_6
+    if-eqz v0, :cond_6
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object p3
-
-    check-cast p3, Ljava/lang/Integer;
-
-    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
-
-    move-result p3
-
-    invoke-interface {p2, p3}, Lcom/google/android/gms/internal/clearcut/zzck;->zzb(I)Lcom/google/android/gms/internal/clearcut/zzcj;
-
     move-result-object v0
 
-    if-nez v0, :cond_5
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-static {p0, p3, v2, p4}, Lcom/google/android/gms/internal/clearcut/zzeh;->zza(IILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzex;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-interface {p2, v0}, Lcom/google/android/gms/internal/clearcut/zzck;->zzb(I)Lcom/google/android/gms/internal/clearcut/zzcj;
+
+    move-result-object v1
+
+    if-nez v1, :cond_5
+
+    invoke-static {p0, v0, p3, p4}, Lcom/google/android/gms/internal/clearcut/zzeh;->zza(IILjava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzex;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -312,7 +308,7 @@
 
     :cond_6
     :goto_3
-    return-object v2
+    return-object p3
 .end method
 
 .method public static zza(ILjava/util/List;Lcom/google/android/gms/internal/clearcut/zzfr;)V
@@ -325,6 +321,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -355,6 +357,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -379,6 +387,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -582,6 +596,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -609,6 +629,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -633,6 +659,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -935,6 +967,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1184,7 +1222,7 @@
     return v2
 .end method
 
-.method public static zzd(Z)Lcom/google/android/gms/internal/clearcut/zzex;
+.method private static zzd(Z)Lcom/google/android/gms/internal/clearcut/zzex;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1252,6 +1290,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1341,7 +1385,7 @@
     return-object v0
 .end method
 
-.method public static zzdp()Ljava/lang/Class;
+.method private static zzdp()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1351,9 +1395,9 @@
         }
     .end annotation
 
+    :try_start_0
     const-string v0, "com.google.protobuf.GeneratedMessage"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -1368,7 +1412,7 @@
     return-object v0
 .end method
 
-.method public static zzdq()Ljava/lang/Class;
+.method private static zzdq()Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1378,9 +1422,9 @@
         }
     .end annotation
 
+    :try_start_0
     const-string v0, "com.google.protobuf.UnknownFieldSetSchema"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -1485,6 +1529,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1586,6 +1636,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1737,6 +1793,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1780,6 +1842,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1829,6 +1897,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1873,6 +1947,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1897,6 +1977,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1927,6 +2013,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1954,6 +2046,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1978,6 +2076,12 @@
             ">;",
             "Lcom/google/android/gms/internal/clearcut/zzfr;",
             "Z)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 

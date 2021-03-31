@@ -56,8 +56,13 @@
 
 
 # virtual methods
-.method public a(Lcom/caverock/androidsvg/SVG$l0;)V
+.method public g(Lcom/caverock/androidsvg/SVG$l0;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/caverock/androidsvg/SVGParseException;
+        }
+    .end annotation
 
     .line 1
     instance-of v0, p1, Lcom/caverock/androidsvg/SVG$c0;
@@ -98,7 +103,7 @@
     throw v0
 .end method
 
-.method public b()Ljava/util/List;
+.method public getChildren()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

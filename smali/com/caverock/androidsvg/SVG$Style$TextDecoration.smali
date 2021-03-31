@@ -33,94 +33,84 @@
 
 .field public static final enum Underline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
-.field public static final synthetic s:[Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+.field public static final synthetic a:[Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 11
 
     .line 1
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
-    const/4 v1, 0x0
+    const-string v1, "None"
 
-    const-string v2, "None"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->None:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     .line 2
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     const-string v3, "Underline"
 
-    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Underline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    invoke-direct {v1, v3, v4}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Underline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     .line 3
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    new-instance v3, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
-    const/4 v3, 0x2
+    const-string v5, "Overline"
 
-    const-string v4, "Overline"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Overline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    sput-object v3, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Overline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     .line 4
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    new-instance v5, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
-    const/4 v4, 0x3
+    const-string v7, "LineThrough"
 
-    const-string v5, "LineThrough"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->LineThrough:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    sput-object v5, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->LineThrough:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     .line 5
-    new-instance v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    new-instance v7, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
-    const/4 v5, 0x4
+    const-string v9, "Blink"
 
-    const-string v6, "Blink"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Blink:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    sput-object v7, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Blink:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
-    const/4 v0, 0x5
+    const/4 v9, 0x5
 
-    new-array v0, v0, [Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    new-array v9, v9, [Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+
+    aput-object v0, v9, v2
+
+    aput-object v1, v9, v4
+
+    aput-object v3, v9, v6
+
+    aput-object v5, v9, v8
+
+    aput-object v7, v9, v10
 
     .line 6
-    sget-object v6, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->None:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
-
-    aput-object v6, v0, v1
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Underline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Overline:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->LineThrough:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->Blink:Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->s:[Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    sput-object v9, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->a:[Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     return-void
 .end method
@@ -158,7 +148,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->s:[Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
+    sget-object v0, Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->a:[Lcom/caverock/androidsvg/SVG$Style$TextDecoration;
 
     invoke-virtual {v0}, [Lcom/caverock/androidsvg/SVG$Style$TextDecoration;->clone()Ljava/lang/Object;
 

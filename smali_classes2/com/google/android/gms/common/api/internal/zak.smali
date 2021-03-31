@@ -1,262 +1,49 @@
 .class public final Lcom/google/android/gms/common/api/internal/zak;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # instance fields
-.field public final zaay:Lm4;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lm4<",
-            "Lcom/google/android/gms/common/api/internal/zai<",
-            "*>;",
-            "Lcom/google/android/gms/common/ConnectionResult;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final zaa:I
 
-.field public final zadb:Lm4;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lm4<",
-            "Lcom/google/android/gms/common/api/internal/zai<",
-            "*>;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final zadc:Lcom/google/android/gms/tasks/TaskCompletionSource;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/tasks/TaskCompletionSource<",
-            "Ljava/util/Map<",
-            "Lcom/google/android/gms/common/api/internal/zai<",
-            "*>;",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-.end field
-
-.field public zadd:I
-
-.field public zade:Z
+.field private final zab:Lcom/google/android/gms/common/ConnectionResult;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Iterable;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lcom/google/android/gms/common/api/GoogleApi<",
-            "*>;>;)V"
-        }
-    .end annotation
+.method public constructor <init>(Lcom/google/android/gms/common/ConnectionResult;I)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lm4;
-
-    invoke-direct {v0}, Lm4;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zadb:Lm4;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-direct {v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zadc:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    const/4 v0, 0x0
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zab:Lcom/google/android/gms/common/ConnectionResult;
 
     .line 4
-    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zade:Z
-
-    .line 5
-    new-instance v0, Lm4;
-
-    invoke-direct {v0}, Lm4;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zaay:Lm4;
-
-    .line 6
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/common/api/GoogleApi;
-
-    .line 7
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/zak;->zaay:Lm4;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/GoogleApi;->zak()Lcom/google/android/gms/common/api/internal/zai;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zaay:Lm4;
-
-    invoke-virtual {p1}, Lm4;->keySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->size()I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zadd:I
+    iput p2, p0, Lcom/google/android/gms/common/api/internal/zak;->zaa:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getTask()Lcom/google/android/gms/tasks/Task;
+.method public final zaa()I
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/tasks/Task<",
-            "Ljava/util/Map<",
-            "Lcom/google/android/gms/common/api/internal/zai<",
-            "*>;",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zadc:Lcom/google/android/gms/tasks/TaskCompletionSource;
+    iget v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zaa:I
 
-    invoke-virtual {v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;->getTask()Lcom/google/android/gms/tasks/Task;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method
 
-.method public final zaa(Lcom/google/android/gms/common/api/internal/zai;Lcom/google/android/gms/common/ConnectionResult;Ljava/lang/String;)V
+.method public final zab()Lcom/google/android/gms/common/ConnectionResult;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/internal/zai<",
-            "*>;",
-            "Lcom/google/android/gms/common/ConnectionResult;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zaay:Lm4;
-
-    invoke-virtual {v0, p1, p2}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zadb:Lm4;
-
-    invoke-virtual {v0, p1, p3}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3
-    iget p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zadd:I
-
-    const/4 p3, 0x1
-
-    sub-int/2addr p1, p3
-
-    iput p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zadd:I
-
-    .line 4
-    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->isSuccess()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    .line 5
-    iput-boolean p3, p0, Lcom/google/android/gms/common/api/internal/zak;->zade:Z
-
-    .line 6
-    :cond_0
-    iget p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zadd:I
-
-    if-nez p1, :cond_2
-
-    .line 7
-    iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zade:Z
-
-    if-eqz p1, :cond_1
-
-    .line 8
-    new-instance p1, Lcom/google/android/gms/common/api/AvailabilityException;
-
-    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/zak;->zaay:Lm4;
-
-    invoke-direct {p1, p2}, Lcom/google/android/gms/common/api/AvailabilityException;-><init>(Lm4;)V
-
-    .line 9
-    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/zak;->zadc:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    invoke-virtual {p2, p1}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setException(Ljava/lang/Exception;)V
-
-    return-void
-
-    .line 10
-    :cond_1
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/zak;->zadc:Lcom/google/android/gms/tasks/TaskCompletionSource;
-
-    iget-object p2, p0, Lcom/google/android/gms/common/api/internal/zak;->zadb:Lm4;
-
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/TaskCompletionSource;->setResult(Ljava/lang/Object;)V
-
-    :cond_2
-    return-void
-.end method
-
-.method public final zap()Ljava/util/Set;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "Lcom/google/android/gms/common/api/internal/zai<",
-            "*>;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zaay:Lm4;
-
-    invoke-virtual {v0}, Lm4;->keySet()Ljava/util/Set;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zak;->zab:Lcom/google/android/gms/common/ConnectionResult;
 
     return-object v0
 .end method

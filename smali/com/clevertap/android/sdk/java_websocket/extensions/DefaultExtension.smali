@@ -47,6 +47,11 @@
 
 .method public decodeFrame(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -123,6 +128,11 @@
 
 .method public isFrameValid(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV1()Z
@@ -157,6 +167,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 3
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV1()Z
 
     move-result v2
@@ -177,6 +188,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 4
     invoke-interface {p1}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isRSV3()Z
 
     move-result p1

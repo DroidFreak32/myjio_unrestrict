@@ -31,6 +31,10 @@
 # direct methods
 .method public static a(Landroid/content/res/Resources;)V
     .locals 2
+    .param p0    # Landroid/content/res/Resources;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -74,105 +78,15 @@
     return-void
 .end method
 
-.method public static a(Ljava/lang/Object;)V
-    .locals 3
-
-    .line 5
-    sget-boolean v0, Ll0;->d:Z
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_0
-
-    const-string v0, "android.content.res.ThemedResourceCache"
-
-    .line 6
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    sput-object v0, Ll0;->c:Ljava/lang/Class;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 7
-    :catch_0
-    sput-boolean v1, Ll0;->d:Z
-
-    .line 8
-    :cond_0
-    sget-object v0, Ll0;->c:Ljava/lang/Class;
-
-    if-nez v0, :cond_1
-
-    return-void
-
-    .line 9
-    :cond_1
-    sget-boolean v2, Ll0;->f:Z
-
-    if-nez v2, :cond_2
-
-    :try_start_1
-    const-string v2, "mUnthemedEntries"
-
-    .line 10
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v0
-
-    sput-object v0, Ll0;->e:Ljava/lang/reflect/Field;
-
-    .line 11
-    sget-object v0, Ll0;->e:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 12
-    :catch_1
-    sput-boolean v1, Ll0;->f:Z
-
-    .line 13
-    :cond_2
-    sget-object v0, Ll0;->e:Ljava/lang/reflect/Field;
-
-    if-nez v0, :cond_3
-
-    return-void
-
-    :cond_3
-    const/4 v1, 0x0
-
-    .line 14
-    :try_start_2
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/util/LongSparseArray;
-    :try_end_2
-    .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_2
-
-    goto :goto_0
-
-    :catch_2
-    move-object p0, v1
-
-    :goto_0
-    if-eqz p0, :cond_4
-
-    .line 15
-    invoke-virtual {p0}, Landroid/util/LongSparseArray;->clear()V
-
-    :cond_4
-    return-void
-.end method
-
 .method public static b(Landroid/content/res/Resources;)V
     .locals 3
+    .param p0    # Landroid/content/res/Resources;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x15
+    .end annotation
 
     .line 1
     sget-boolean v0, Ll0;->b:Z
@@ -194,8 +108,6 @@
     sput-object v1, Ll0;->a:Ljava/lang/reflect/Field;
 
     .line 3
-    sget-object v1, Ll0;->a:Ljava/lang/reflect/Field;
-
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
@@ -222,16 +134,18 @@
     :try_end_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
 
+    move-object v1, p0
+
     goto :goto_0
 
     :catch_1
-    move-object p0, v1
+    nop
 
     :goto_0
-    if-eqz p0, :cond_1
+    if-eqz v1, :cond_1
 
     .line 7
-    invoke-interface {p0}, Ljava/util/Map;->clear()V
+    invoke-interface {v1}, Ljava/util/Map;->clear()V
 
     :cond_1
     return-void
@@ -239,6 +153,13 @@
 
 .method public static c(Landroid/content/res/Resources;)V
     .locals 3
+    .param p0    # Landroid/content/res/Resources;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x17
+    .end annotation
 
     .line 1
     sget-boolean v0, Ll0;->b:Z
@@ -260,8 +181,6 @@
     sput-object v1, Ll0;->a:Ljava/lang/reflect/Field;
 
     .line 3
-    sget-object v1, Ll0;->a:Ljava/lang/reflect/Field;
-
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
@@ -299,13 +218,20 @@
 
     .line 7
     :cond_2
-    invoke-static {v0}, Ll0;->a(Ljava/lang/Object;)V
+    invoke-static {v0}, Ll0;->e(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 .method public static d(Landroid/content/res/Resources;)V
     .locals 4
+    .param p0    # Landroid/content/res/Resources;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x18
+    .end annotation
 
     .line 1
     sget-boolean v0, Ll0;->h:Z
@@ -327,8 +253,6 @@
     sput-object v0, Ll0;->g:Ljava/lang/reflect/Field;
 
     .line 3
-    sget-object v0, Ll0;->g:Ljava/lang/reflect/Field;
-
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
@@ -387,8 +311,6 @@
     sput-object v0, Ll0;->a:Ljava/lang/reflect/Field;
 
     .line 9
-    sget-object v0, Ll0;->a:Ljava/lang/reflect/Field;
-
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_2
     .catch Ljava/lang/NoSuchFieldException; {:try_start_2 .. :try_end_2} :catch_2
@@ -421,8 +343,112 @@
     if-eqz v2, :cond_5
 
     .line 13
-    invoke-static {v2}, Ll0;->a(Ljava/lang/Object;)V
+    invoke-static {v2}, Ll0;->e(Ljava/lang/Object;)V
 
     :cond_5
+    return-void
+.end method
+
+.method public static e(Ljava/lang/Object;)V
+    .locals 3
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RequiresApi;
+        value = 0x10
+    .end annotation
+
+    .line 1
+    sget-boolean v0, Ll0;->d:Z
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_0
+
+    :try_start_0
+    const-string v0, "android.content.res.ThemedResourceCache"
+
+    .line 2
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    sput-object v0, Ll0;->c:Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 3
+    :catch_0
+    sput-boolean v1, Ll0;->d:Z
+
+    .line 4
+    :cond_0
+    sget-object v0, Ll0;->c:Ljava/lang/Class;
+
+    if-nez v0, :cond_1
+
+    return-void
+
+    .line 5
+    :cond_1
+    sget-boolean v2, Ll0;->f:Z
+
+    if-nez v2, :cond_2
+
+    :try_start_1
+    const-string v2, "mUnthemedEntries"
+
+    .line 6
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    sput-object v0, Ll0;->e:Ljava/lang/reflect/Field;
+
+    .line 7
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 8
+    :catch_1
+    sput-boolean v1, Ll0;->f:Z
+
+    .line 9
+    :cond_2
+    sget-object v0, Ll0;->e:Ljava/lang/reflect/Field;
+
+    if-nez v0, :cond_3
+
+    return-void
+
+    :cond_3
+    const/4 v1, 0x0
+
+    .line 10
+    :try_start_2
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/util/LongSparseArray;
+    :try_end_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_2
+
+    move-object v1, p0
+
+    goto :goto_0
+
+    :catch_2
+    nop
+
+    :goto_0
+    if-eqz v1, :cond_4
+
+    .line 11
+    invoke-virtual {v1}, Landroid/util/LongSparseArray;->clear()V
+
+    :cond_4
     return-void
 .end method

@@ -18,22 +18,32 @@
 # static fields
 .field public static final PROTOCOL_CHARSET:Ljava/lang/String; = "utf-8"
 
-.field public static final PROTOCOL_CONTENT_TYPE:Ljava/lang/String;
+.field private static final PROTOCOL_CONTENT_TYPE:Ljava/lang/String;
 
 
 # instance fields
-.field public mListener:Lwv$b;
+.field private mListener:Lcom/android/volley/Response$Listener;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "mLock"
+    .end annotation
+
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lwv$b<",
+            "Lcom/android/volley/Response$Listener<",
             "TT;>;"
         }
     .end annotation
 .end field
 
-.field public final mLock:Ljava/lang/Object;
+.field private final mLock:Ljava/lang/Object;
 
-.field public final mRequestBody:Ljava/lang/String;
+.field private final mRequestBody:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -46,7 +56,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "utf-8"
+    const-string/jumbo v2, "utf-8"
 
     aput-object v2, v0, v1
 
@@ -62,22 +72,30 @@
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Lwv$b;Lwv$a;)V
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
     .locals 0
+    .param p3    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p5    # Lcom/android/volley/Response$ErrorListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lwv$b<",
+            "Lcom/android/volley/Response$Listener<",
             "TT;>;",
-            "Lwv$a;",
+            "Lcom/android/volley/Response$ErrorListener;",
             ")V"
         }
     .end annotation
 
     .line 2
-    invoke-direct {p0, p1, p2, p5}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lwv$a;)V
+    invoke-direct {p0, p1, p2, p5}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
 
     .line 3
     new-instance p1, Ljava/lang/Object;
@@ -87,7 +105,7 @@
     iput-object p1, p0, Lcom/android/volley/toolbox/JsonRequest;->mLock:Ljava/lang/Object;
 
     .line 4
-    iput-object p4, p0, Lcom/android/volley/toolbox/JsonRequest;->mListener:Lwv$b;
+    iput-object p4, p0, Lcom/android/volley/toolbox/JsonRequest;->mListener:Lcom/android/volley/Response$Listener;
 
     .line 5
     iput-object p3, p0, Lcom/android/volley/toolbox/JsonRequest;->mRequestBody:Ljava/lang/String;
@@ -95,16 +113,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lwv$b;Lwv$a;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lwv$b<",
+            "Lcom/android/volley/Response$Listener<",
             "TT;>;",
-            "Lwv$a;",
+            "Lcom/android/volley/Response$ErrorListener;",
             ")V"
         }
     .end annotation
@@ -125,7 +143,7 @@
     move-object v5, p4
 
     .line 1
-    invoke-direct/range {v0 .. v5}, Lcom/android/volley/toolbox/JsonRequest;-><init>(ILjava/lang/String;Ljava/lang/String;Lwv$b;Lwv$a;)V
+    invoke-direct/range {v0 .. v5}, Lcom/android/volley/toolbox/JsonRequest;-><init>(ILjava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
     return-void
 .end method
@@ -147,7 +165,7 @@
 
     .line 3
     :try_start_0
-    iput-object v1, p0, Lcom/android/volley/toolbox/JsonRequest;->mListener:Lwv$b;
+    iput-object v1, p0, Lcom/android/volley/toolbox/JsonRequest;->mListener:Lcom/android/volley/Response$Listener;
 
     .line 4
     monitor-exit v0
@@ -179,7 +197,7 @@
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/android/volley/toolbox/JsonRequest;->mListener:Lwv$b;
+    iget-object v1, p0, Lcom/android/volley/toolbox/JsonRequest;->mListener:Lcom/android/volley/Response$Listener;
 
     .line 3
     monitor-exit v0
@@ -189,7 +207,7 @@
     if-eqz v1, :cond_0
 
     .line 4
-    invoke-interface {v1, p1}, Lwv$b;->onResponse(Ljava/lang/Object;)V
+    invoke-interface {v1, p1}, Lcom/android/volley/Response$Listener;->onResponse(Ljava/lang/Object;)V
 
     :cond_0
     return-void
@@ -209,7 +227,7 @@
 .method public getBody()[B
     .locals 5
 
-    const-string v0, "utf-8"
+    const-string/jumbo v0, "utf-8"
 
     const/4 v1, 0x0
 
@@ -222,8 +240,6 @@
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lcom/android/volley/toolbox/JsonRequest;->mRequestBody:Ljava/lang/String;
-
     invoke-virtual {v2, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v1
@@ -251,7 +267,7 @@
 
     const-string v0, "Unsupported Encoding while trying to get the bytes of %s using %s"
 
-    invoke-static {v0, v2}, Lzv;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/android/volley/VolleyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v1
 .end method
@@ -291,13 +307,13 @@
     return-object v0
 .end method
 
-.method public abstract parseNetworkResponse(Luv;)Lwv;
+.method public abstract parseNetworkResponse(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Luv;",
+            "Lcom/android/volley/NetworkResponse;",
             ")",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
             "TT;>;"
         }
     .end annotation

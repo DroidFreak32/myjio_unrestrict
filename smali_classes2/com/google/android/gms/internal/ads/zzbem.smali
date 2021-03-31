@@ -1,17 +1,36 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzbem;
+.class public final Lcom/google/android/gms/internal/ads/zzbem;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzben;
-.implements Ljava/lang/Cloneable;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic zzesm:Lcom/google/android/gms/internal/ads/zzbel;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbel;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbem;->zzesm:Lcom/google/android/gms/internal/ads/zzbel;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zzafj()Lcom/google/android/gms/internal/ads/zzbel;
-.end method
+.method public final run()V
+    .locals 1
 
-.method public abstract zzafk()Lcom/google/android/gms/internal/ads/zzbel;
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbem;->zzesm:Lcom/google/android/gms/internal/ads/zzbel;
 
-.method public abstract zzd(Lcom/google/android/gms/internal/ads/zzbel;)Lcom/google/android/gms/internal/ads/zzbem;
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbel;->zzb(Lcom/google/android/gms/internal/ads/zzbel;)V
+
+    return-void
 .end method

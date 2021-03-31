@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+.field public final synthetic a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$g;->s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$g;->a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
@@ -36,9 +36,9 @@
     .locals 0
 
     .line 1
-    iget-object p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$g;->s:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+    iget-object p2, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$g;->a:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    invoke-virtual {p2, p1}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->c(F)V
+    invoke-virtual {p2, p1}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->h(F)V
 
     return-void
 .end method

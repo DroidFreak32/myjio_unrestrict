@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/data/AbstractDataBuffer;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/data/DataBuffer;
@@ -20,11 +21,21 @@
 
 # instance fields
 .field public final mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/data/DataHolder;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/data/DataHolder;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -41,8 +52,6 @@
 # virtual methods
 .method public final close()V
     .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/AbstractDataBuffer;->release()V
@@ -80,10 +89,19 @@
 
 .method public getMetadata()Landroid/os/Bundle;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/common/data/AbstractDataBuffer;->mDataHolder:Lcom/google/android/gms/common/data/DataHolder;
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
     invoke-virtual {v0}, Lcom/google/android/gms/common/data/DataHolder;->getMetadata()Landroid/os/Bundle;
 
     move-result-object v0

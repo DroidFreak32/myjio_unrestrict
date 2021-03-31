@@ -1,77 +1,40 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbaf;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzbaf;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final zzdqx:Lcom/google/android/gms/internal/ads/zzbau;
+.field private final zzeds:I
 
-.field public final zzdqy:Lcom/google/android/gms/internal/ads/zzbau;
+.field private final zzeic:Lcom/google/android/gms/internal/ads/zzbac;
 
 
 # direct methods
-.method public constructor <init>([B[B)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbac;I)V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzbau;->zzm([B)Lcom/google/android/gms/internal/ads/zzbau;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzeic:Lcom/google/android/gms/internal/ads/zzbac;
 
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzdqx:Lcom/google/android/gms/internal/ads/zzbau;
-
-    .line 3
-    invoke-static {p2}, Lcom/google/android/gms/internal/ads/zzbau;->zzm([B)Lcom/google/android/gms/internal/ads/zzbau;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzdqy:Lcom/google/android/gms/internal/ads/zzbau;
+    iput p2, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzeds:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzacj()[B
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzdqx:Lcom/google/android/gms/internal/ads/zzbau;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzeic:Lcom/google/android/gms/internal/ads/zzbac;
 
-    if-nez v0, :cond_0
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzeds:I
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzbac;->zzdk(I)V
 
-    return-object v0
-
-    .line 2
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbau;->getBytes()[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final zzack()[B
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbaf;->zzdqy:Lcom/google/android/gms/internal/ads/zzbau;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    .line 2
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbau;->getBytes()[B
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

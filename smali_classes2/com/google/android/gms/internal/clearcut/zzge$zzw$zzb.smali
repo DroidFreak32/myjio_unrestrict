@@ -26,21 +26,21 @@
 
 
 # static fields
-.field public static final enum zzbhx:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final enum zzbhx:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final enum zzbhy:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final enum zzbhy:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final enum zzbhz:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final enum zzbhz:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final enum zzbia:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final enum zzbia:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final enum zzbib:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final enum zzbib:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final enum zzbic:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final enum zzbic:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final synthetic zzbid:[Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+.field private static final synthetic zzbid:[Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-.field public static final zzbq:Lcom/google/android/gms/internal/clearcut/zzck;
+.field private static final zzbq:Lcom/google/android/gms/internal/clearcut/zzck;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzck<",
@@ -52,102 +52,90 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const/4 v1, 0x0
+    const-string v1, "UNKNOWN"
 
-    const-string v2, "UNKNOWN"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhx:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
     const-string v3, "ANDROID_CARDBOARD_SDK"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhy:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhy:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const-string v4, "IOS_CARDBOARD_SDK"
+    const-string v5, "IOS_CARDBOARD_SDK"
 
-    invoke-direct {v0, v4, v3, v3}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhz:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    sput-object v3, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhz:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const-string v5, "ANDROID_UNITY_SDK"
+    const-string v7, "ANDROID_UNITY_SDK"
 
-    invoke-direct {v0, v5, v4, v4}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbia:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    invoke-direct {v5, v7, v8, v8}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    sput-object v5, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbia:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const/4 v5, 0x4
+    new-instance v7, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const-string v6, "IOS_UNITY_SDK"
+    const-string v9, "IOS_UNITY_SDK"
 
-    invoke-direct {v0, v6, v5, v5}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v10, 0x4
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbib:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    invoke-direct {v7, v9, v10, v10}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    sput-object v7, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbib:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const/4 v6, 0x5
+    new-instance v9, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    const-string v7, "WINDOWS"
+    const-string v11, "WINDOWS"
 
-    invoke-direct {v0, v7, v6, v6}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v12, 0x5
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbic:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    invoke-direct {v9, v11, v12, v12}, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;-><init>(Ljava/lang/String;II)V
 
-    const/4 v0, 0x6
+    sput-object v9, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbic:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    const/4 v11, 0x6
 
-    sget-object v7, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhx:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    new-array v11, v11, [Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
-    aput-object v7, v0, v1
+    aput-object v0, v11, v2
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhy:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    aput-object v1, v11, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v11, v6
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbhz:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    aput-object v5, v11, v8
 
-    aput-object v1, v0, v3
+    aput-object v7, v11, v10
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbia:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    aput-object v9, v11, v12
 
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbib:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbic:Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbid:[Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
+    sput-object v11, Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;->zzbid:[Lcom/google/android/gms/internal/clearcut/zzge$zzw$zzb;
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzgs;
 
@@ -158,7 +146,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

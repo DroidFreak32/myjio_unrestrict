@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final cacheKeys:Ljava/util/List;
+.field private final cacheKeys:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,23 +25,23 @@
     .end annotation
 .end field
 
-.field public diskCacheProvider:Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
+.field private diskCacheProvider:Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
 
-.field public diskCacheStrategy:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+.field private diskCacheStrategy:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
-.field public glideContext:Lcom/bumptech/glide/GlideContext;
+.field private glideContext:Lcom/bumptech/glide/GlideContext;
 
-.field public height:I
+.field private height:I
 
-.field public isCacheKeysSet:Z
+.field private isCacheKeysSet:Z
 
-.field public isLoadDataSet:Z
+.field private isLoadDataSet:Z
 
-.field public isScaleOnlyOrNoTransform:Z
+.field private isScaleOnlyOrNoTransform:Z
 
-.field public isTransformationRequired:Z
+.field private isTransformationRequired:Z
 
-.field public final loadData:Ljava/util/List;
+.field private final loadData:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -51,13 +51,13 @@
     .end annotation
 .end field
 
-.field public model:Ljava/lang/Object;
+.field private model:Ljava/lang/Object;
 
-.field public options:Lcom/bumptech/glide/load/Options;
+.field private options:Lcom/bumptech/glide/load/Options;
 
-.field public priority:Lcom/bumptech/glide/Priority;
+.field private priority:Lcom/bumptech/glide/Priority;
 
-.field public resourceClass:Ljava/lang/Class;
+.field private resourceClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -66,9 +66,9 @@
     .end annotation
 .end field
 
-.field public signature:Lcom/bumptech/glide/load/Key;
+.field private signature:Lcom/bumptech/glide/load/Key;
 
-.field public transcodeClass:Ljava/lang/Class;
+.field private transcodeClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -77,7 +77,7 @@
     .end annotation
 .end field
 
-.field public transformations:Ljava/util/Map;
+.field private transformations:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -89,7 +89,7 @@
     .end annotation
 .end field
 
-.field public width:I
+.field private width:I
 
 
 # direct methods
@@ -494,6 +494,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/Registry$NoModelLoaderAvailableException;
+        }
+    .end annotation
+
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/DecodeHelper;->glideContext:Lcom/bumptech/glide/GlideContext;
 
@@ -608,6 +614,12 @@
             ">(TX;)",
             "Lcom/bumptech/glide/load/Encoder<",
             "TX;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/bumptech/glide/Registry$NoSourceEncoderAvailableException;
         }
     .end annotation
 

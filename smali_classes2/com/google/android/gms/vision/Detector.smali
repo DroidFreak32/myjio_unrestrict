@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/vision/Detector;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -21,14 +22,18 @@
 
 
 # instance fields
-.field public final zzad:Ljava/lang/Object;
+.field private final zzah:Ljava/lang/Object;
 
-.field public zzae:Lcom/google/android/gms/vision/Detector$Processor;
+.field private zzai:Lcom/google/android/gms/vision/Detector$Processor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/Detector$Processor<",
             "TT;>;"
         }
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "processorLock"
     .end annotation
 .end field
 
@@ -45,7 +50,7 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzad:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzah:Ljava/lang/Object;
 
     return-void
 .end method
@@ -85,7 +90,7 @@
     invoke-direct {v0, v1}, Lcom/google/android/gms/vision/Frame$Metadata;-><init>(Lcom/google/android/gms/vision/Frame$Metadata;)V
 
     .line 2
-    invoke-virtual {v0}, Lcom/google/android/gms/vision/Frame$Metadata;->zzd()V
+    invoke-virtual {v0}, Lcom/google/android/gms/vision/Frame$Metadata;->zzf()V
 
     .line 3
     invoke-virtual {p0, p1}, Lcom/google/android/gms/vision/Detector;->detect(Lcom/google/android/gms/vision/Frame;)Landroid/util/SparseArray;
@@ -103,19 +108,17 @@
     invoke-direct {v2, p1, v0, v1}, Lcom/google/android/gms/vision/Detector$Detections;-><init>(Landroid/util/SparseArray;Lcom/google/android/gms/vision/Frame$Metadata;Z)V
 
     .line 6
-    iget-object p1, p0, Lcom/google/android/gms/vision/Detector;->zzad:Ljava/lang/Object;
+    iget-object p1, p0, Lcom/google/android/gms/vision/Detector;->zzah:Ljava/lang/Object;
 
     monitor-enter p1
 
     .line 7
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzai:Lcom/google/android/gms/vision/Detector$Processor;
 
     if-eqz v0, :cond_0
 
     .line 8
-    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
-
     invoke-interface {v0, v2}, Lcom/google/android/gms/vision/Detector$Processor;->receiveDetections(Lcom/google/android/gms/vision/Detector$Detections;)V
 
     .line 9
@@ -148,25 +151,23 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzad:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzah:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
+    iget-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzai:Lcom/google/android/gms/vision/Detector$Processor;
 
     if-eqz v1, :cond_0
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
-
     invoke-interface {v1}, Lcom/google/android/gms/vision/Detector$Processor;->release()V
 
     const/4 v1, 0x0
 
     .line 4
-    iput-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
+    iput-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzai:Lcom/google/android/gms/vision/Detector$Processor;
 
     .line 5
     :cond_0
@@ -203,24 +204,22 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzad:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/vision/Detector;->zzah:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
+    iget-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzai:Lcom/google/android/gms/vision/Detector$Processor;
 
     if-eqz v1, :cond_0
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
-
     invoke-interface {v1}, Lcom/google/android/gms/vision/Detector$Processor;->release()V
 
     .line 4
     :cond_0
-    iput-object p1, p0, Lcom/google/android/gms/vision/Detector;->zzae:Lcom/google/android/gms/vision/Detector$Processor;
+    iput-object p1, p0, Lcom/google/android/gms/vision/Detector;->zzai:Lcom/google/android/gms/vision/Detector$Processor;
 
     .line 5
     monitor-exit v0

@@ -1,31 +1,65 @@
 .class public Lcom/elitecorelib/core/room/pojo/AnalyticsDataUsageOver;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "AnalyticsDataUsageOver"
+.end annotation
+
+
 # instance fields
-.field public PLMN:Ljava/lang/String;
+.field private PLMN:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "PLMN"
+    .end annotation
+.end field
 
-.field public cat:Ljava/lang/String;
+.field private cat:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "cat"
+    .end annotation
+.end field
 
-.field public et:Ljava/lang/Long;
+.field private et:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "et"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
-.field public msg:Ljava/lang/String;
+.field private msg:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "msg"
+    .end annotation
+.end field
 
-.field public rstby:Ljava/lang/String;
+.field private rstby:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "rstby"
+    .end annotation
+.end field
 
-.field public rt:Ljava/lang/Long;
+.field private rt:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "rt"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method

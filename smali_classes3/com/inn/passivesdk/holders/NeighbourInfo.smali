@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public cellId:Ljava/lang/Integer;
+.field private cellId:Ljava/lang/Integer;
 
-.field public pci:Ljava/lang/Integer;
+.field private pci:Ljava/lang/Integer;
 
-.field public psc:Ljava/lang/Integer;
+.field private psc:Ljava/lang/Integer;
 
-.field public rscp:Ljava/lang/Integer;
+.field private rscp:Ljava/lang/Integer;
 
-.field public rsrp:Ljava/lang/Integer;
+.field private rsrp:Ljava/lang/Integer;
 
-.field public rxLevel:Ljava/lang/Integer;
+.field private rxLevel:Ljava/lang/Integer;
 
 
 # direct methods
@@ -29,7 +29,61 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/Integer;)V
+.method public getCellId()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NeighbourInfo;->cellId:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getPci()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NeighbourInfo;->pci:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getPsc()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NeighbourInfo;->psc:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRscp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NeighbourInfo;->rscp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRsrp()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NeighbourInfo;->rsrp:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getRxLevel()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/NeighbourInfo;->rxLevel:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public setCellId(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -38,7 +92,7 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/Integer;)V
+.method public setPci(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -47,7 +101,7 @@
     return-void
 .end method
 
-.method public c(Ljava/lang/Integer;)V
+.method public setPsc(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -56,7 +110,7 @@
     return-void
 .end method
 
-.method public d(Ljava/lang/Integer;)V
+.method public setRscp(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -65,7 +119,7 @@
     return-void
 .end method
 
-.method public e(Ljava/lang/Integer;)V
+.method public setRsrp(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1
@@ -74,7 +128,7 @@
     return-void
 .end method
 
-.method public f(Ljava/lang/Integer;)V
+.method public setRxLevel(Ljava/lang/Integer;)V
     .locals 0
 
     .line 1

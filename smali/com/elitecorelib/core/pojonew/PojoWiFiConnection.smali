@@ -1,8 +1,14 @@
 .class public Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Landroid/os/Parcelable;
+
+
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoWiFiConnection"
+.end annotation
 
 
 # static fields
@@ -19,56 +25,160 @@
 
 # instance fields
 .field public MCC:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "MCC"
+    .end annotation
+.end field
 
 .field public MNC:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "MNC"
+    .end annotation
+.end field
 
 .field public autoJoin:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "autoJoin"
+    .end annotation
+.end field
 
 .field public eapType:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "eapType"
+    .end annotation
+.end field
 
 .field public hidden:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "hidden"
+    .end annotation
+.end field
 
 .field public id:I
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public isLocal:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isLocal"
+    .end annotation
+.end field
 
 .field public isOutOfRange:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isOutOfRange"
+    .end annotation
+.end field
 
 .field public isPreferable:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isPreferable"
+    .end annotation
+.end field
 
 .field public isSMPIntegrate:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isSMPIntegrate"
+    .end annotation
+.end field
 
 .field public isWisprEnabled:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "isWisprEnabled"
+    .end annotation
+.end field
 
 .field public networkName:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "networkName"
+    .end annotation
+.end field
 
 .field public notificationMessage:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "notificationMessage"
+    .end annotation
+.end field
 
 .field public password:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "password"
+    .end annotation
+.end field
 
 .field public profileId:I
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "profileId"
+    .end annotation
+.end field
 
 .field public protocolType:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "protocolType"
+    .end annotation
+.end field
 
 .field public securityType:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "securityType"
+    .end annotation
+.end field
 
 .field public selectedNetwork:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "selectedNetwork"
+    .end annotation
+.end field
 
 .field public showPassword:Z
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "showPassword"
+    .end annotation
+.end field
 
 .field public sim_operator_name:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "sim_operator_name"
+    .end annotation
+.end field
 
 .field public ssidName:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ssidName"
+    .end annotation
+.end field
 
 .field public userIdentity:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "userIdentity"
+    .end annotation
+.end field
 
 .field public validForAllNetwork:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "validForAllNetwork"
+    .end annotation
+.end field
 
 .field public wisprAuthenticationMethod:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wisprAuthenticationMethod"
+    .end annotation
+.end field
 
 .field public wisprPassword:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wisprPassword"
+    .end annotation
+.end field
 
 .field public wisprUsarname:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "wisprUsarname"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -87,7 +197,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     const/4 v0, 0x0
 
@@ -99,7 +209,7 @@
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 3
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     const/4 v0, 0x0
 

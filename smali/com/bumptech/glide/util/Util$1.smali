@@ -34,8 +34,6 @@
     sput-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
 
     :try_start_0
-    sget-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
-
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I

@@ -1,6 +1,6 @@
-.class public final Lcom/jio/media/androidsdk/player/SaavnAudioService$c;
-.super Landroid/os/Handler;
-.source ""
+.class public Lcom/jio/media/androidsdk/player/SaavnAudioService$c;
+.super Landroid/os/AsyncTask;
+.source "SourceFile"
 
 
 # annotations
@@ -9,93 +9,143 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = null
+    accessFlags = 0x1
+    name = "c"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask<",
+        "Ljava/lang/String;",
+        "Ljava/lang/Void;",
+        "Landroid/graphics/Bitmap;",
+        ">;"
+    }
 .end annotation
 
 
+# instance fields
+.field public a:Landroid/content/Context;
+
+.field public b:Z
+
+.field public final synthetic c:Lcom/jio/media/androidsdk/player/SaavnAudioService;
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/jio/media/androidsdk/player/SaavnAudioService;Landroid/content/Context;Z)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    iput-object p1, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->c:Lcom/jio/media/androidsdk/player/SaavnAudioService;
+
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->b:Z
+
+    iput-object p2, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->a:Landroid/content/Context;
+
+    iput-boolean p3, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    check-cast p1, [Ljava/lang/String;
 
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget p1, p1, Landroid/os/Message;->arg1:I
-
-    const/4 v0, -0x3
-
-    if-eq p1, v0, :cond_5
-
-    const/4 v0, -0x2
-
-    if-eq p1, v0, :cond_4
-
-    const/4 v0, -0x1
-
-    const/4 v1, 0x1
-
-    if-eq p1, v0, :cond_2
-
-    if-eq p1, v1, :cond_1
-
-    goto :goto_0
+    const/4 v0, 0x0
 
     .line 1
-    :cond_1
-    sget-object p1, Lcom/jio/media/androidsdk/player/SaavnAudioService;->w:Ljava/lang/String;
+    aget-object p1, p1, v0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "url : "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "playerimage"
+
+    invoke-static {v1, v0}, Ljiosaavnsdk/vc;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    :try_start_0
+    iget-object v0, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->a:Landroid/content/Context;
+
+    invoke-static {v0, p1}, Ljiosaavnsdk/zc;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 2
-    :cond_2
-    sget-object p1, Lcom/jio/media/androidsdk/player/SaavnAudioService;->H:Landroid/media/AudioManager;
+    :catch_0
+    move-exception p1
 
-    .line 3
-    sget-object v0, Lcom/jio/media/androidsdk/player/SaavnAudioService;->J:Landroid/media/AudioManager$OnAudioFocusChangeListener;
+    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 4
-    invoke-virtual {p1, v0}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
-
-    move-result p1
-
-    if-eq p1, v1, :cond_3
-
-    .line 5
-    sget-object p1, Lcom/jio/media/androidsdk/player/SaavnAudioService;->w:Ljava/lang/String;
-
-    .line 6
-    :cond_3
-    sget-object p1, Lcom/jio/media/androidsdk/player/SaavnAudioService;->w:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 7
-    :cond_4
-    sget-object p1, Lcom/jio/media/androidsdk/player/SaavnAudioService;->w:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 8
-    :cond_5
-    sget-object p1, Lcom/jio/media/androidsdk/player/SaavnAudioService;->w:Ljava/lang/String;
+    const/4 p1, 0x0
 
     :goto_0
+    return-object p1
+.end method
+
+.method public onPostExecute(Ljava/lang/Object;)V
+    .locals 3
+
+    check-cast p1, Landroid/graphics/Bitmap;
+
+    .line 1
+    invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
+
+    sput-object p1, Ljiosaavnsdk/zc;->E:Landroid/graphics/Bitmap;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "imageLoadingTask playerstate: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Ljiosaavnsdk/b6;->b()Ljiosaavnsdk/b6;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljiosaavnsdk/b6;->d()Ljiosaavnsdk/l6$b;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "player"
+
+    invoke-static {v1, v0}, Ljiosaavnsdk/vc;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->c:Lcom/jio/media/androidsdk/player/SaavnAudioService;
+
+    iget-boolean v1, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$c;->b:Z
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Lcom/jio/media/androidsdk/player/SaavnAudioService;->a(ZLandroid/graphics/Bitmap;Z)V
+
     return-void
 .end method

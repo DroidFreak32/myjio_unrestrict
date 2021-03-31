@@ -1,14 +1,15 @@
 .class public Lcom/google/android/gms/vision/text/Line;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
 .implements Lcom/google/android/gms/vision/text/Text;
 
 
 # instance fields
-.field public zzet:Lcom/google/android/gms/internal/vision/zzae;
+.field private zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-.field public zzeu:Ljava/util/List;
+.field private zzeg:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -20,14 +21,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzae;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzah;)V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iput-object p1, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
     return-void
 .end method
@@ -38,11 +39,11 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzfd:Lcom/google/android/gms/internal/vision/zzy;
+    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzep:Lcom/google/android/gms/internal/vision/zzab;
 
-    iget v0, v0, Lcom/google/android/gms/internal/vision/zzy;->zzfb:F
+    iget v0, v0, Lcom/google/android/gms/internal/vision/zzab;->zzen:F
 
     return v0
 .end method
@@ -71,66 +72,70 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzfc:[Lcom/google/android/gms/internal/vision/zzan;
+    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzeo:[Lcom/google/android/gms/internal/vision/zzao;
 
-    array-length v1, v0
+    array-length v0, v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 2
     new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     return-object v0
 
     .line 3
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/vision/text/Line;->zzeu:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzeg:Ljava/util/List;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     .line 4
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    array-length v0, v0
+    iget-object v2, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    iget-object v2, v2, Lcom/google/android/gms/internal/vision/zzah;->zzeo:[Lcom/google/android/gms/internal/vision/zzao;
 
-    iput-object v1, p0, Lcom/google/android/gms/vision/text/Line;->zzeu:Ljava/util/List;
+    array-length v2, v2
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzeg:Ljava/util/List;
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzfc:[Lcom/google/android/gms/internal/vision/zzan;
+    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzeo:[Lcom/google/android/gms/internal/vision/zzao;
 
-    array-length v1, v0
+    array-length v2, v0
 
     :goto_0
-    if-ge v2, v1, :cond_1
+    if-ge v1, v2, :cond_1
 
-    aget-object v3, v0, v2
+    aget-object v3, v0, v1
 
     .line 6
-    iget-object v4, p0, Lcom/google/android/gms/vision/text/Line;->zzeu:Ljava/util/List;
+    iget-object v4, p0, Lcom/google/android/gms/vision/text/Line;->zzeg:Ljava/util/List;
 
     new-instance v5, Lcom/google/android/gms/vision/text/Element;
 
-    invoke-direct {v5, v3}, Lcom/google/android/gms/vision/text/Element;-><init>(Lcom/google/android/gms/internal/vision/zzan;)V
+    invoke-direct {v5, v3}, Lcom/google/android/gms/vision/text/Element;-><init>(Lcom/google/android/gms/internal/vision/zzao;)V
 
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     .line 7
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzeu:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzeg:Ljava/util/List;
 
     return-object v0
 .end method
@@ -139,11 +144,11 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzfd:Lcom/google/android/gms/internal/vision/zzy;
+    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzep:Lcom/google/android/gms/internal/vision/zzab;
 
-    invoke-static {v0}, Lcom/google/android/gms/vision/text/zzc;->zza(Lcom/google/android/gms/internal/vision/zzy;)[Landroid/graphics/Point;
+    invoke-static {v0}, Lcom/google/android/gms/vision/text/zzc;->zza(Lcom/google/android/gms/internal/vision/zzab;)[Landroid/graphics/Point;
 
     move-result-object v0
 
@@ -154,9 +159,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzex:Ljava/lang/String;
+    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzej:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -165,9 +170,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzfg:Ljava/lang/String;
+    iget-object v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzes:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -176,9 +181,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzet:Lcom/google/android/gms/internal/vision/zzae;
+    iget-object v0, p0, Lcom/google/android/gms/vision/text/Line;->zzef:Lcom/google/android/gms/internal/vision/zzah;
 
-    iget-boolean v0, v0, Lcom/google/android/gms/internal/vision/zzae;->zzfi:Z
+    iget-boolean v0, v0, Lcom/google/android/gms/internal/vision/zzah;->zzeu:Z
 
     return v0
 .end method

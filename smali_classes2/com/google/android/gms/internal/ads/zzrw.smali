@@ -1,10 +1,14 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzrw;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzku;Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+.method public abstract onActivityPaused(Landroid/app/Activity;)V
+.end method
+
+.method public abstract onActivityResumed(Landroid/app/Activity;)V
+.end method
+
+.method public abstract zza(Landroid/app/Activity;)Z
 .end method

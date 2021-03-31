@@ -4,23 +4,23 @@
 
 
 # static fields
-.field public static final DEFAULT_FRAME_DELAY:I = 0xa
+.field private static final DEFAULT_FRAME_DELAY:I = 0xa
 
-.field public static final MAX_BLOCK_SIZE:I = 0x100
+.field private static final MAX_BLOCK_SIZE:I = 0x100
 
-.field public static final MIN_FRAME_DELAY:I = 0x2
+.field private static final MIN_FRAME_DELAY:I = 0x2
 
-.field public static final TAG:Ljava/lang/String; = "GifHeaderParser"
+.field private static final TAG:Ljava/lang/String; = "GifHeaderParser"
 
 
 # instance fields
-.field public final block:[B
+.field private final block:[B
 
-.field public blockSize:I
+.field private blockSize:I
 
-.field public header:Lcom/clevertap/android/sdk/GifHeader;
+.field private header:Lcom/clevertap/android/sdk/GifHeader;
 
-.field public rawData:Ljava/nio/ByteBuffer;
+.field private rawData:Ljava/nio/ByteBuffer;
 
 
 # direct methods
@@ -197,27 +197,19 @@
     if-eqz v1, :cond_2
 
     .line 8
-    iget-object v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->header:Lcom/clevertap/android/sdk/GifHeader;
-
-    iget-object v0, v0, Lcom/clevertap/android/sdk/GifHeader;->currentFrame:Lcom/clevertap/android/sdk/GifFrame;
-
     invoke-direct {p0, v4}, Lcom/clevertap/android/sdk/GifHeaderParser;->readColorTable(I)[I
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, v0, Lcom/clevertap/android/sdk/GifFrame;->lct:[I
+    iput-object v0, v5, Lcom/clevertap/android/sdk/GifFrame;->lct:[I
 
     goto :goto_1
 
-    .line 9
     :cond_2
-    iget-object v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->header:Lcom/clevertap/android/sdk/GifHeader;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lcom/clevertap/android/sdk/GifHeader;->currentFrame:Lcom/clevertap/android/sdk/GifFrame;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lcom/clevertap/android/sdk/GifFrame;->lct:[I
+    .line 9
+    iput-object v0, v5, Lcom/clevertap/android/sdk/GifFrame;->lct:[I
 
     .line 10
     :goto_1
@@ -275,26 +267,20 @@
 
     iput v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->blockSize:I
 
-    .line 2
-    iget v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->blockSize:I
-
     const/4 v1, 0x0
 
     if-lez v0, :cond_0
 
-    .line 3
+    .line 2
     :goto_0
     :try_start_0
     iget v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->blockSize:I
 
     if-ge v1, v0, :cond_0
 
-    .line 4
-    iget v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->blockSize:I
-
     sub-int/2addr v0, v1
 
-    .line 5
+    .line 3
     iget-object v2, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->block:[B
@@ -307,7 +293,7 @@
 
     goto :goto_0
 
-    .line 6
+    .line 4
     :catch_0
     iget-object v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->header:Lcom/clevertap/android/sdk/GifHeader;
 
@@ -530,43 +516,41 @@
 
     const-string v2, ""
 
-    move-object v3, v2
-
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_1
     const/16 v4, 0xb
 
-    if-ge v2, v4, :cond_5
+    if-ge v3, v4, :cond_5
 
     .line 11
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->block:[B
+    iget-object v2, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->block:[B
 
-    aget-byte v3, v3, v2
+    aget-byte v2, v2, v3
 
-    int-to-char v3, v3
+    int-to-char v2, v2
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_5
-    const-string v2, "NETSCAPE2.0"
+    const-string v3, "NETSCAPE2.0"
 
     .line 12
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -638,22 +622,14 @@
 
     iput v2, v1, Lcom/clevertap/android/sdk/GifFrame;->dispose:I
 
-    .line 4
-    iget v2, v1, Lcom/clevertap/android/sdk/GifFrame;->dispose:I
-
     const/4 v4, 0x1
 
     if-nez v2, :cond_0
 
-    .line 5
+    .line 4
     iput v4, v1, Lcom/clevertap/android/sdk/GifFrame;->dispose:I
 
-    .line 6
     :cond_0
-    iget-object v1, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->header:Lcom/clevertap/android/sdk/GifHeader;
-
-    iget-object v1, v1, Lcom/clevertap/android/sdk/GifHeader;->currentFrame:Lcom/clevertap/android/sdk/GifFrame;
-
     and-int/2addr v0, v4
 
     if-eqz v0, :cond_1
@@ -663,10 +639,11 @@
     :cond_1
     const/4 v4, 0x0
 
+    .line 5
     :goto_0
     iput-boolean v4, v1, Lcom/clevertap/android/sdk/GifFrame;->transparency:Z
 
-    .line 7
+    .line 6
     invoke-direct {p0}, Lcom/clevertap/android/sdk/GifHeaderParser;->readShort()I
 
     move-result v0
@@ -677,7 +654,7 @@
 
     const/16 v0, 0xa
 
-    .line 8
+    .line 7
     :cond_2
     iget-object v2, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->header:Lcom/clevertap/android/sdk/GifHeader;
 
@@ -687,14 +664,14 @@
 
     iput v0, v2, Lcom/clevertap/android/sdk/GifFrame;->delay:I
 
-    .line 9
+    .line 8
     invoke-direct {p0}, Lcom/clevertap/android/sdk/GifHeaderParser;->read()I
 
     move-result v0
 
     iput v0, v2, Lcom/clevertap/android/sdk/GifFrame;->transIndex:I
 
-    .line 10
+    .line 9
     invoke-direct {p0}, Lcom/clevertap/android/sdk/GifHeaderParser;->read()I
 
     return-void
@@ -840,15 +817,13 @@
     :goto_0
     iput-boolean v2, v1, Lcom/clevertap/android/sdk/GifHeader;->gctFlag:Z
 
-    .line 5
-    iget-object v1, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->header:Lcom/clevertap/android/sdk/GifHeader;
-
     const/4 v2, 0x2
 
     and-int/lit8 v0, v0, 0x7
 
     shl-int v0, v2, v0
 
+    .line 5
     iput v0, v1, Lcom/clevertap/android/sdk/GifHeader;->gctSize:I
 
     .line 6
@@ -909,17 +884,14 @@
 
     iput v0, v2, Lcom/clevertap/android/sdk/GifHeader;->loopCount:I
 
-    .line 6
-    iget v0, v2, Lcom/clevertap/android/sdk/GifHeader;->loopCount:I
-
     if-nez v0, :cond_1
 
     const/4 v0, -0x1
 
-    .line 7
+    .line 6
     iput v0, v2, Lcom/clevertap/android/sdk/GifHeader;->loopCount:I
 
-    .line 8
+    .line 7
     :cond_1
     iget v0, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->blockSize:I
 
@@ -989,9 +961,7 @@
     .line 2
     iget-object v1, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
 
-    iget-object v2, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->position()I
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
 
@@ -1148,11 +1118,9 @@
 
     iput-object p1, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
 
-    .line 3
-    iget-object p1, p0, Lcom/clevertap/android/sdk/GifHeaderParser;->rawData:Ljava/nio/ByteBuffer;
-
     const/4 v0, 0x0
 
+    .line 3
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 4

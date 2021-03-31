@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public volatile isReleased:Z
+.field private volatile isReleased:Z
 
 
 # direct methods

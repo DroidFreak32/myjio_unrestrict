@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final SSH_MSG_USERAUTH_PASSWD_CHANGEREQ:I
+.field private final SSH_MSG_USERAUTH_PASSWD_CHANGEREQ:I
 
 
 # direct methods
@@ -26,8 +26,13 @@
 # virtual methods
 .method public start(Lcom/jcraft/jsch/Session;)Z
     .locals 14
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
-    const-string/jumbo v0, "ssh-connection"
+    const-string v0, "ssh-connection"
 
     .line 1
     invoke-super {p0, p1}, Lcom/jcraft/jsch/UserAuth;->start(Lcom/jcraft/jsch/Session;)Z
@@ -131,8 +136,6 @@
     .line 10
     :cond_5
     :try_start_2
-    iget-object v2, p0, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
-
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -256,8 +259,6 @@
     iput-object v2, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 25
-    iget-object v2, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v2}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v2
@@ -322,8 +323,6 @@
     if-eqz v3, :cond_9
 
     .line 32
-    iget-object v3, p0, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
-
     invoke-interface {v3, v2}, Lcom/jcraft/jsch/UserInfo;->showMessage(Ljava/lang/String;)V
 
     goto :goto_2
@@ -363,18 +362,14 @@
 
     if-eqz v3, :cond_f
 
-    iget-object v3, p0, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
+    instance-of v4, v3, Lcom/jcraft/jsch/UIKeyboardInteractive;
 
-    instance-of v3, v3, Lcom/jcraft/jsch/UIKeyboardInteractive;
-
-    if-nez v3, :cond_d
+    if-nez v4, :cond_d
 
     goto :goto_3
 
     .line 37
     :cond_d
-    iget-object v3, p0, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
-
     check-cast v3, Lcom/jcraft/jsch/UIKeyboardInteractive;
 
     const-string v4, "Password Change Required"
@@ -478,26 +473,21 @@
 
     throw p1
 
-    .line 52
     :cond_f
     :goto_3
-    iget-object p1, p0, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
+    if-eqz v3, :cond_10
 
-    if-eqz p1, :cond_10
+    const-string p1, "Password must be changed."
 
-    .line 53
-    iget-object p1, p0, Lcom/jcraft/jsch/UserAuth;->userinfo:Lcom/jcraft/jsch/UserInfo;
-
-    const-string v0, "Password must be changed."
-
-    invoke-interface {p1, v0}, Lcom/jcraft/jsch/UserInfo;->showMessage(Ljava/lang/String;)V
+    .line 52
+    invoke-interface {v3, p1}, Lcom/jcraft/jsch/UserInfo;->showMessage(Ljava/lang/String;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :cond_10
     if-eqz v1, :cond_11
 
-    .line 54
+    .line 53
     invoke-static {v1}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
     :cond_11
@@ -508,7 +498,7 @@
 
     if-ne v2, v3, :cond_14
 
-    .line 55
+    .line 54
     :try_start_4
     iget-object v2, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
@@ -522,14 +512,14 @@
 
     invoke-virtual {v2}, Lcom/jcraft/jsch/Buffer;->getByte()I
 
-    .line 56
+    .line 55
     iget-object v2, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     invoke-virtual {v2}, Lcom/jcraft/jsch/Buffer;->getString()[B
 
     move-result-object v2
 
-    .line 57
+    .line 56
     iget-object v3, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     invoke-virtual {v3}, Lcom/jcraft/jsch/Buffer;->getByte()I
@@ -538,7 +528,7 @@
 
     if-nez v3, :cond_13
 
-    .line 58
+    .line 57
     iget v2, p1, Lcom/jcraft/jsch/Session;->auth_failures:I
 
     add-int/2addr v2, v13
@@ -547,14 +537,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 59
+    .line 58
     invoke-static {v1}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
     const/4 v1, 0x0
 
     goto/16 :goto_0
 
-    .line 60
+    .line 59
     :cond_13
     new-instance p1, Lcom/jcraft/jsch/JSchPartialAuthException;
 
@@ -571,7 +561,7 @@
     :cond_14
     if-eqz v1, :cond_15
 
-    .line 61
+    .line 60
     invoke-static {v1}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
     :cond_15
@@ -584,7 +574,7 @@
 
     invoke-static {v1}, Lcom/jcraft/jsch/Util;->bzero([B)V
 
-    .line 62
+    .line 61
     :cond_16
     throw p1
 .end method

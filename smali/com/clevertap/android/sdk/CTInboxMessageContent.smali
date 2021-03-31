@@ -19,29 +19,29 @@
 
 
 # instance fields
-.field public actionUrl:Ljava/lang/String;
+.field private actionUrl:Ljava/lang/String;
 
-.field public contentType:Ljava/lang/String;
+.field private contentType:Ljava/lang/String;
 
-.field public hasLinks:Ljava/lang/Boolean;
+.field private hasLinks:Ljava/lang/Boolean;
 
-.field public hasUrl:Ljava/lang/Boolean;
+.field private hasUrl:Ljava/lang/Boolean;
 
-.field public icon:Ljava/lang/String;
+.field private icon:Ljava/lang/String;
 
-.field public links:Lorg/json/JSONArray;
+.field private links:Lorg/json/JSONArray;
 
-.field public media:Ljava/lang/String;
+.field private media:Ljava/lang/String;
 
-.field public message:Ljava/lang/String;
+.field private message:Ljava/lang/String;
 
-.field public messageColor:Ljava/lang/String;
+.field private messageColor:Ljava/lang/String;
 
-.field public posterUrl:Ljava/lang/String;
+.field private posterUrl:Ljava/lang/String;
 
-.field public title:Ljava/lang/String;
+.field private title:Ljava/lang/String;
 
-.field public titleColor:Ljava/lang/String;
+.field private titleColor:Ljava/lang/String;
 
 
 # direct methods
@@ -398,7 +398,7 @@
 .method public getLinkCopyText(Lorg/json/JSONObject;)Ljava/lang/String;
     .locals 4
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     const-string v1, "copyText"
 
@@ -602,7 +602,7 @@
 .method public getLinkText(Lorg/json/JSONObject;)Ljava/lang/String;
     .locals 3
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     const/4 v1, 0x0
 
@@ -663,11 +663,11 @@
 .method public getLinkUrl(Lorg/json/JSONObject;)Ljava/lang/String;
     .locals 5
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     const-string v1, "android"
 
-    const-string v2, "url"
+    const-string/jumbo v2, "url"
 
     const/4 v3, 0x0
 
@@ -706,6 +706,7 @@
 
     if-eqz v2, :cond_3
 
+    .line 3
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object p1
@@ -722,7 +723,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 3
+    .line 4
     :try_start_1
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
@@ -742,7 +743,7 @@
     :catch_0
     move-exception p1
 
-    .line 4
+    .line 5
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -778,7 +779,7 @@
 .method public getLinktype(Lorg/json/JSONObject;)Ljava/lang/String;
     .locals 3
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     const/4 v1, 0x0
 
@@ -891,471 +892,498 @@
 .end method
 
 .method public initWithJSON(Lorg/json/JSONObject;)Lcom/clevertap/android/sdk/CTInboxMessageContent;
-    .locals 14
+    .locals 18
 
-    const-string v0, "hasLinks"
+    move-object/from16 v1, p0
 
-    const-string v1, "poster"
+    move-object/from16 v0, p1
 
-    const-string v2, "content_type"
+    const-string v2, "links"
 
-    const-string v3, "hasUrl"
+    const-string v3, "android"
 
-    const-string v4, "action"
+    const-string v4, "hasLinks"
 
-    const-string v5, "media"
+    const-string v5, "poster"
 
-    const-string v6, "icon"
+    const-string v6, "content_type"
 
-    const-string v7, "message"
+    const-string v7, "hasUrl"
 
-    const-string v8, "title"
+    const-string v8, "action"
+
+    const-string v9, "media"
+
+    const-string v10, "icon"
+
+    const-string v11, "message"
+
+    const-string/jumbo v12, "title"
 
     .line 1
     :try_start_0
-    invoke-virtual {p1, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v13
 
-    const/4 v10, 0x0
+    if-eqz v13, :cond_0
 
-    if-eqz v9, :cond_0
+    .line 2
+    invoke-virtual {v0, v12}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    invoke-virtual {p1, v8}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v8
+    move-result-object v12
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :cond_0
-    move-object v8, v10
+    const/4 v12, 0x0
 
     :goto_0
-    const-string v9, "color"
+    const-string v13, "color"
 
-    const-string v11, "text"
+    const-string/jumbo v15, "text"
 
-    const-string v12, ""
+    const-string v16, ""
 
-    if-eqz v8, :cond_3
+    if-eqz v12, :cond_3
 
-    .line 2
+    .line 3
     :try_start_1
-    invoke-virtual {v8, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v12, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v13
+    move-result v17
 
-    if-eqz v13, :cond_1
+    if-eqz v17, :cond_1
 
-    invoke-virtual {v8, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v12, v15}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v17
+
+    move-object/from16 v14, v17
 
     goto :goto_1
 
     :cond_1
-    move-object v13, v12
+    move-object/from16 v14, v16
 
     :goto_1
-    iput-object v13, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->title:Ljava/lang/String;
+    iput-object v14, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->title:Ljava/lang/String;
 
-    .line 3
-    invoke-virtual {v8, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 4
+    invoke-virtual {v12, v13}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v13
+    move-result v14
 
-    if-eqz v13, :cond_2
+    if-eqz v14, :cond_2
 
-    invoke-virtual {v8, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v12, v13}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v12
 
     goto :goto_2
 
     :cond_2
-    move-object v8, v12
+    move-object/from16 v12, v16
 
     :goto_2
-    iput-object v8, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->titleColor:Ljava/lang/String;
+    iput-object v12, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->titleColor:Ljava/lang/String;
 
-    .line 4
+    .line 5
     :cond_3
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v12
 
-    if-eqz v8, :cond_4
+    if-eqz v12, :cond_4
 
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    .line 6
+    invoke-virtual {v0, v11}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object v7
+    move-result-object v11
 
     goto :goto_3
 
     :cond_4
-    move-object v7, v10
+    const/4 v11, 0x0
 
     :goto_3
-    if-eqz v7, :cond_7
+    if-eqz v11, :cond_7
 
-    .line 5
-    invoke-virtual {v7, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 7
+    invoke-virtual {v11, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v12
 
-    if-eqz v8, :cond_5
+    if-eqz v12, :cond_5
 
-    invoke-virtual {v7, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v11, v15}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v12
 
     goto :goto_4
 
     :cond_5
-    move-object v8, v12
+    move-object/from16 v12, v16
 
     :goto_4
-    iput-object v8, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->message:Ljava/lang/String;
+    iput-object v12, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->message:Ljava/lang/String;
 
-    .line 6
-    invoke-virtual {v7, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 8
+    invoke-virtual {v11, v13}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v12
 
-    if-eqz v8, :cond_6
+    if-eqz v12, :cond_6
 
-    invoke-virtual {v7, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v11, v13}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v11
 
     goto :goto_5
 
     :cond_6
-    move-object v7, v12
+    move-object/from16 v11, v16
 
     :goto_5
-    iput-object v7, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->messageColor:Ljava/lang/String;
+    iput-object v11, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->messageColor:Ljava/lang/String;
 
-    .line 7
+    .line 9
     :cond_7
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v11
 
-    if-eqz v7, :cond_8
+    if-eqz v11, :cond_8
 
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    .line 10
+    invoke-virtual {v0, v10}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object v6
+    move-result-object v10
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_6
 
     :cond_8
-    move-object v6, v10
+    const/4 v10, 0x0
 
     :goto_6
-    const-string v7, "url"
+    const-string/jumbo v11, "url"
 
-    if-eqz v6, :cond_a
+    if-eqz v10, :cond_a
 
-    .line 8
+    .line 11
     :try_start_2
-    invoke-virtual {v6, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v12
 
-    if-eqz v8, :cond_9
+    if-eqz v12, :cond_9
 
-    invoke-virtual {v6, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v10
 
     goto :goto_7
 
     :cond_9
-    move-object v6, v12
+    move-object/from16 v10, v16
 
     :goto_7
-    iput-object v6, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->icon:Ljava/lang/String;
+    iput-object v10, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->icon:Ljava/lang/String;
 
-    .line 9
+    .line 12
     :cond_a
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v10
 
-    if-eqz v6, :cond_b
+    if-eqz v10, :cond_b
 
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    .line 13
+    invoke-virtual {v0, v9}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object v5
+    move-result-object v9
 
     goto :goto_8
 
     :cond_b
-    move-object v5, v10
+    const/4 v9, 0x0
 
     :goto_8
-    if-eqz v5, :cond_f
+    if-eqz v9, :cond_f
 
-    .line 10
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 14
+    invoke-virtual {v9, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v10
 
-    if-eqz v6, :cond_c
+    if-eqz v10, :cond_c
 
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v9, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v10
 
     goto :goto_9
 
     :cond_c
-    move-object v6, v12
+    move-object/from16 v10, v16
 
     :goto_9
-    iput-object v6, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->media:Ljava/lang/String;
+    iput-object v10, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->media:Ljava/lang/String;
 
-    .line 11
-    invoke-virtual {v5, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 15
+    invoke-virtual {v9, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v10
 
-    if-eqz v6, :cond_d
+    if-eqz v10, :cond_d
 
-    invoke-virtual {v5, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 16
+    invoke-virtual {v9, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
     goto :goto_a
 
     :cond_d
-    move-object v2, v12
+    move-object/from16 v6, v16
 
     :goto_a
-    iput-object v2, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->contentType:Ljava/lang/String;
+    iput-object v6, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->contentType:Ljava/lang/String;
 
-    .line 12
-    invoke-virtual {v5, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 17
+    invoke-virtual {v9, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v6
 
-    if-eqz v2, :cond_e
+    if-eqz v6, :cond_e
 
-    invoke-virtual {v5, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 18
+    invoke-virtual {v9, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v5
 
     goto :goto_b
 
     :cond_e
-    move-object v1, v12
+    move-object/from16 v5, v16
 
     :goto_b
-    iput-object v1, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->posterUrl:Ljava/lang/String;
+    iput-object v5, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->posterUrl:Ljava/lang/String;
 
-    .line 13
+    .line 19
     :cond_f
-    invoke-virtual {p1, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v5
 
-    if-eqz v1, :cond_10
+    if-eqz v5, :cond_10
 
-    invoke-virtual {p1, v4}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    .line 20
+    invoke-virtual {v0, v8}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object p1
+    move-result-object v0
 
     goto :goto_c
 
     :cond_10
-    move-object p1, v10
+    const/4 v0, 0x0
 
     :goto_c
-    if-eqz p1, :cond_18
+    if-eqz v0, :cond_18
 
-    .line 14
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 21
+    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v5
 
-    const/4 v2, 0x0
+    const/4 v6, 0x1
 
-    if-eqz v1, :cond_11
+    const/4 v8, 0x0
 
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    if-eqz v5, :cond_11
 
-    move-result v1
+    .line 22
+    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
-    if-eqz v1, :cond_11
+    move-result v5
 
-    const/4 v1, 0x1
+    if-eqz v5, :cond_11
+
+    const/4 v5, 0x1
 
     goto :goto_d
 
     :cond_11
-    const/4 v1, 0x0
+    const/4 v5, 0x0
 
+    .line 23
     :goto_d
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v5
 
-    iput-object v1, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasUrl:Ljava/lang/Boolean;
+    iput-object v5, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasUrl:Ljava/lang/Boolean;
 
-    .line 15
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 24
+    invoke-virtual {v0, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v5
 
-    if-eqz v1, :cond_12
+    if-eqz v5, :cond_12
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 25
+    invoke-virtual {v0, v4}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v4
 
-    if-eqz v0, :cond_12
-
-    const/4 v2, 0x1
-
-    :cond_12
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasLinks:Ljava/lang/Boolean;
-
-    .line 16
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
+    if-eqz v4, :cond_12
 
     goto :goto_e
 
-    :cond_13
-    move-object v0, v10
+    :cond_12
+    const/4 v6, 0x0
 
+    .line 26
     :goto_e
-    if-eqz v0, :cond_16
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    .line 17
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasUrl:Ljava/lang/Boolean;
+    move-result-object v4
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    iput-object v4, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasLinks:Ljava/lang/Boolean;
 
-    move-result v1
+    .line 27
+    invoke-virtual {v0, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    if-eqz v1, :cond_16
+    move-result v4
 
-    const-string v1, "android"
+    if-eqz v4, :cond_13
 
-    .line 18
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 28
+    invoke-virtual {v0, v11}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result v1
-
-    if-eqz v1, :cond_14
-
-    const-string v1, "android"
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v1
+    move-result-object v4
 
     goto :goto_f
 
-    :cond_14
-    move-object v1, v10
+    :cond_13
+    const/4 v4, 0x0
 
     :goto_f
-    if-eqz v1, :cond_16
+    if-eqz v4, :cond_16
 
-    .line 19
-    invoke-virtual {v1, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 29
+    iget-object v5, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasUrl:Ljava/lang/Boolean;
 
-    move-result v2
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
 
-    if-eqz v2, :cond_15
+    move-result v5
 
-    invoke-virtual {v1, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v5, :cond_16
 
-    move-result-object v12
+    .line 30
+    invoke-virtual {v4, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    :cond_15
-    iput-object v12, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->actionUrl:Ljava/lang/String;
+    move-result v5
 
-    :cond_16
-    if-eqz v0, :cond_18
+    if-eqz v5, :cond_14
 
-    .line 20
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasLinks:Ljava/lang/Boolean;
+    .line 31
+    invoke-virtual {v4, v3}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    const-string v0, "links"
-
-    .line 21
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_17
-
-    const-string v0, "links"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v10
-
-    :cond_17
-    iput-object v10, p0, Lcom/clevertap/android/sdk/CTInboxMessageContent;->links:Lorg/json/JSONArray;
-    :try_end_2
-    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
+    move-result-object v3
 
     goto :goto_10
 
+    :cond_14
+    const/4 v3, 0x0
+
+    :goto_10
+    if-eqz v3, :cond_16
+
+    .line 32
+    invoke-virtual {v3, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_15
+
+    .line 33
+    invoke-virtual {v3, v15}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v16
+
+    :cond_15
+    move-object/from16 v3, v16
+
+    iput-object v3, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->actionUrl:Ljava/lang/String;
+
+    :cond_16
+    if-eqz v4, :cond_18
+
+    .line 34
+    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->hasLinks:Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_18
+
+    .line 35
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_17
+
+    .line 36
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v14
+
+    goto :goto_11
+
+    :cond_17
+    const/4 v14, 0x0
+
+    :goto_11
+    iput-object v14, v1, Lcom/clevertap/android/sdk/CTInboxMessageContent;->links:Lorg/json/JSONArray;
+    :try_end_2
+    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_12
+
     :catch_0
-    move-exception p1
+    move-exception v0
 
-    .line 22
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 37
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Unable to init CTInboxMessageContent with JSON - "
+    const-string v3, "Unable to init CTInboxMessageContent with JSON - "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
     :cond_18
-    :goto_10
-    return-object p0
+    :goto_12
+    return-object v1
 .end method
 
 .method public mediaIsAudio()Z
@@ -1451,6 +1479,7 @@
 
     const-string v1, "image/gif"
 
+    .line 3
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1483,7 +1512,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "video"
+    const-string/jumbo v1, "video"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

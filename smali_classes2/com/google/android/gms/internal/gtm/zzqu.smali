@@ -23,23 +23,21 @@
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzqu;->zzaws:[I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzqu;->zzaws:[I
-
     sget-object v2, Lcom/google/android/gms/internal/gtm/zzug;->zzbfp:Lcom/google/android/gms/internal/gtm/zzug;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
-    aput v0, v1, v2
+    aput v1, v0, v2
     :try_end_0
     .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
     :try_start_1
     sget-object v2, Lcom/google/android/gms/internal/gtm/zzqu;->zzaws:[I
@@ -50,7 +48,7 @@
 
     move-result v3
 
-    aput v1, v2, v3
+    aput v0, v2, v3
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -323,21 +321,19 @@
     sput-object v9, Lcom/google/android/gms/internal/gtm/zzqu;->zzaxr:[I
 
     :try_start_12
-    sget-object v9, Lcom/google/android/gms/internal/gtm/zzqu;->zzaxr:[I
-
     sget-object v10, Lcom/google/android/gms/internal/gtm/zzul;->zzbgk:Lcom/google/android/gms/internal/gtm/zzul;
 
     invoke-virtual {v10}, Ljava/lang/Enum;->ordinal()I
 
     move-result v10
 
-    aput v0, v9, v10
+    aput v1, v9, v10
     :try_end_12
     .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_12} :catch_12
 
     :catch_12
     :try_start_13
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzqu;->zzaxr:[I
+    sget-object v1, Lcom/google/android/gms/internal/gtm/zzqu;->zzaxr:[I
 
     sget-object v9, Lcom/google/android/gms/internal/gtm/zzul;->zzbgl:Lcom/google/android/gms/internal/gtm/zzul;
 
@@ -345,7 +341,7 @@
 
     move-result v9
 
-    aput v1, v0, v9
+    aput v0, v1, v9
     :try_end_13
     .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_13} :catch_13
 

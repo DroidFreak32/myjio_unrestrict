@@ -22,53 +22,37 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 3
 
     new-instance v0, Lcom/elitecorelib/core/d;
 
-    const/4 v1, 0x0
+    const-string v1, "All"
 
-    const-string v2, "All"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/elitecorelib/core/d;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/d;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/d;->a:Lcom/elitecorelib/core/d;
 
     new-instance v0, Lcom/elitecorelib/core/d;
 
+    const-string v1, "Policy"
+
     const/4 v2, 0x1
 
-    const-string v3, "Policy"
-
-    invoke-direct {v0, v3, v2}, Lcom/elitecorelib/core/d;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/d;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/d;->b:Lcom/elitecorelib/core/d;
 
     new-instance v0, Lcom/elitecorelib/core/d;
 
-    const/4 v3, 0x2
+    const-string v1, "JioHome"
 
-    const-string v4, "JioHome"
+    const/4 v2, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/elitecorelib/core/d;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/core/d;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/core/d;->c:Lcom/elitecorelib/core/d;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lcom/elitecorelib/core/d;
-
-    sget-object v4, Lcom/elitecorelib/core/d;->a:Lcom/elitecorelib/core/d;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/elitecorelib/core/d;->b:Lcom/elitecorelib/core/d;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/elitecorelib/core/d;->c:Lcom/elitecorelib/core/d;
-
-    aput-object v1, v0, v3
 
     return-void
 .end method

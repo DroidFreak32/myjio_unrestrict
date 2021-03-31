@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final zzy:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final zzy:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
@@ -32,6 +32,10 @@
 # virtual methods
 .method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 4
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v0, Ljava/lang/Thread;

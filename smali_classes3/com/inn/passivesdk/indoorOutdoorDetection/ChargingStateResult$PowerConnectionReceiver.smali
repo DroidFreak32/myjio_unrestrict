@@ -35,14 +35,14 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
 
-    const/4 p1, -0x1
+    const-string p1, "status"
 
-    const-string/jumbo v0, "status"
+    const/4 v0, -0x1
 
     .line 1
-    invoke-virtual {p2, v0, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p1
 
     .line 2
     iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
@@ -53,75 +53,64 @@
 
     const/4 v4, 0x1
 
-    if-eq v0, v2, :cond_1
+    if-eq p1, v2, :cond_1
 
     const/4 v5, 0x5
 
-    if-ne v0, v5, :cond_0
+    if-ne p1, v5, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     :goto_1
-    iput-boolean v0, v1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->isCharging:Z
+    iput-boolean p1, v1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->isCharging:Z
+
+    const-string p1, "plugged"
 
     .line 3
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
+    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    const-string v1, "plugged"
+    move-result p1
 
-    invoke-virtual {p2, v1, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v1
-
-    iput v1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->chargePlug:I
+    iput p1, v1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->chargePlug:I
 
     .line 4
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
+    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
 
-    iget v1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->chargePlug:I
+    iget v1, p1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->chargePlug:I
 
     if-ne v1, v2, :cond_2
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     :goto_2
-    iput-boolean v1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->usbCharge:Z
-
-    .line 5
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
-
-    iget v1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->chargePlug:I
+    iput-boolean v2, p1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->usbCharge:Z
 
     if-ne v1, v4, :cond_3
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
+    .line 5
     :goto_3
-    iput-boolean v1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->acCharge:Z
-
-    .line 6
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
-
-    iget v1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->chargePlug:I
+    iput-boolean v2, p1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->acCharge:Z
 
     const/4 v2, 0x4
 
@@ -129,19 +118,18 @@
 
     const/4 v3, 0x1
 
+    .line 6
     :cond_4
-    iput-boolean v3, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->wifiCharge:Z
+    iput-boolean v3, p1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->wifiCharge:Z
+
+    const-string v1, "voltage"
 
     .line 7
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult$PowerConnectionReceiver;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;
+    invoke-virtual {p2, v1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    const-string/jumbo v1, "voltage"
+    move-result p2
 
-    invoke-virtual {p2, v1, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result p1
-
-    iput p1, v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->current:I
+    iput p2, p1, Lcom/inn/passivesdk/indoorOutdoorDetection/ChargingStateResult;->current:I
 
     return-void
 .end method

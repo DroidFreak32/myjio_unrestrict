@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final t:[I
+.field public static final b:[I
 
 
 # instance fields
-.field public final s:Lm2;
+.field public final a:Ld1;
 
 
 # direct methods
@@ -26,13 +26,17 @@
     aput v2, v0, v1
 
     .line 1
-    sput-object v0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->t:[I
+    sput-object v0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->b:[I
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -44,6 +48,14 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const v0, 0x10103c8
 
@@ -55,53 +67,64 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 3
-    invoke-static {p1}, Lc3;->b(Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {p1}, Landroidx/appcompat/widget/TintContextWrapper;->wrap(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object p1
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/CheckedTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 4
-    new-instance p1, Lm2;
-
-    invoke-direct {p1, p0}, Lm2;-><init>(Landroid/widget/TextView;)V
-
-    iput-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->s:Lm2;
-
-    .line 5
-    iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->s:Lm2;
-
-    invoke-virtual {p1, p2, p3}, Lm2;->a(Landroid/util/AttributeSet;I)V
-
-    .line 6
-    iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->s:Lm2;
-
-    invoke-virtual {p1}, Lm2;->a()V
-
-    .line 7
     invoke-virtual {p0}, Landroid/widget/CheckedTextView;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    sget-object v0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->t:[I
+    invoke-static {p0, p1}, Landroidx/appcompat/widget/ThemeUtils;->checkAppCompatTheme(Landroid/view/View;Landroid/content/Context;)V
 
-    const/4 v1, 0x0
+    .line 5
+    new-instance p1, Ld1;
 
-    invoke-static {p1, p2, v0, p3, v1}, Lf3;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Lf3;
+    invoke-direct {p1, p0}, Ld1;-><init>(Landroid/widget/TextView;)V
+
+    iput-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->a:Ld1;
+
+    .line 6
+    invoke-virtual {p1, p2, p3}, Ld1;->m(Landroid/util/AttributeSet;I)V
+
+    .line 7
+    invoke-virtual {p1}, Ld1;->b()V
+
+    .line 8
+    invoke-virtual {p0}, Landroid/widget/CheckedTextView;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 8
-    invoke-virtual {p1, v1}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
+    sget-object v0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->b:[I
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, p2, v0, p3, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+
+    move-result-object p1
+
+    .line 9
+    invoke-virtual {p1, v1}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p0, p2}, Landroid/widget/CheckedTextView;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 9
-    invoke-virtual {p1}, Lf3;->a()V
+    .line 10
+    invoke-virtual {p1}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return-void
 .end method
@@ -115,12 +138,12 @@
     invoke-super {p0}, Landroid/widget/CheckedTextView;->drawableStateChanged()V
 
     .line 2
-    iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->s:Lm2;
+    iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->a:Ld1;
 
     if-eqz v0, :cond_0
 
     .line 3
-    invoke-virtual {v0}, Lm2;->a()V
+    invoke-virtual {v0}, Ld1;->b()V
 
     :cond_0
     return-void
@@ -134,20 +157,24 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1, p0}, Lh2;->a(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/view/View;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0, p1, p0}, Lz0;->a(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/view/View;)Landroid/view/inputmethod/InputConnection;
 
     return-object v0
 .end method
 
 .method public setCheckMarkDrawable(I)V
     .locals 1
+    .param p1    # I
+        .annotation build Landroidx/annotation/DrawableRes;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/CheckedTextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lq0;->c(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -160,7 +187,7 @@
     .locals 0
 
     .line 1
-    invoke-static {p0, p1}, Ldb;->a(Landroid/widget/TextView;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
+    invoke-static {p0, p1}, Landroidx/core/widget/TextViewCompat;->wrapCustomSelectionActionModeCallback(Landroid/widget/TextView;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
 
     move-result-object p1
 
@@ -177,12 +204,12 @@
     invoke-super {p0, p1, p2}, Landroid/widget/CheckedTextView;->setTextAppearance(Landroid/content/Context;I)V
 
     .line 2
-    iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->s:Lm2;
+    iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckedTextView;->a:Ld1;
 
     if-eqz v0, :cond_0
 
     .line 3
-    invoke-virtual {v0, p1, p2}, Lm2;->a(Landroid/content/Context;I)V
+    invoke-virtual {v0, p1, p2}, Ld1;->q(Landroid/content/Context;I)V
 
     :cond_0
     return-void

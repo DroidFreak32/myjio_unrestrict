@@ -31,16 +31,16 @@
 
 .field public static final enum zzbgs:Lcom/google/android/gms/internal/gtm/zzul;
 
-.field public static final synthetic zzbgt:[Lcom/google/android/gms/internal/gtm/zzul;
+.field private static final synthetic zzbgt:[Lcom/google/android/gms/internal/gtm/zzul;
 
 
 # instance fields
-.field public final zzbbx:Ljava/lang/Object;
+.field private final zzbbx:Ljava/lang/Object;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 12
+    .locals 16
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
@@ -58,168 +58,156 @@
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgk:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v2, Lcom/google/android/gms/internal/gtm/zzul;
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v3, 0x0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
-
-    const/4 v3, 0x1
+    move-result-object v3
 
     const-string v4, "LONG"
 
-    invoke-direct {v0, v4, v3, v2}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    const/4 v5, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgl:Lcom/google/android/gms/internal/gtm/zzul;
+    invoke-direct {v2, v4, v5, v3}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v2, Lcom/google/android/gms/internal/gtm/zzul;->zzbgl:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v3, Lcom/google/android/gms/internal/gtm/zzul;
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v2
+    move-result-object v4
 
-    const/4 v4, 0x2
+    const-string v6, "FLOAT"
 
-    const-string v5, "FLOAT"
+    const/4 v7, 0x2
 
-    invoke-direct {v0, v5, v4, v2}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v3, v6, v7, v4}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgm:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v3, Lcom/google/android/gms/internal/gtm/zzul;->zzbgm:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 4
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v4, Lcom/google/android/gms/internal/gtm/zzul;
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v8, 0x0
 
-    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v2
+    move-result-object v6
 
-    const/4 v5, 0x3
+    const-string v8, "DOUBLE"
 
-    const-string v6, "DOUBLE"
+    const/4 v9, 0x3
 
-    invoke-direct {v0, v6, v5, v2}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v4, v8, v9, v6}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgn:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v4, Lcom/google/android/gms/internal/gtm/zzul;->zzbgn:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 5
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v6, Lcom/google/android/gms/internal/gtm/zzul;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sget-object v8, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    move-result-object v2
+    const-string v10, "BOOLEAN"
 
-    const/4 v6, 0x4
+    const/4 v11, 0x4
 
-    const-string v7, "BOOLEAN"
+    invoke-direct {v6, v10, v11, v8}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    invoke-direct {v0, v7, v6, v2}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgo:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v6, Lcom/google/android/gms/internal/gtm/zzul;->zzbgo:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 6
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v8, Lcom/google/android/gms/internal/gtm/zzul;
 
-    const/4 v2, 0x5
+    const-string v10, "STRING"
 
-    const-string v7, "STRING"
+    const/4 v12, 0x5
 
-    const-string v8, ""
+    const-string v13, ""
 
-    invoke-direct {v0, v7, v2, v8}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v8, v10, v12, v13}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgp:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v8, Lcom/google/android/gms/internal/gtm/zzul;->zzbgp:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 7
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v10, Lcom/google/android/gms/internal/gtm/zzul;
 
-    sget-object v7, Lcom/google/android/gms/internal/gtm/zzps;->zzavx:Lcom/google/android/gms/internal/gtm/zzps;
+    sget-object v13, Lcom/google/android/gms/internal/gtm/zzps;->zzavx:Lcom/google/android/gms/internal/gtm/zzps;
 
-    const/4 v8, 0x6
+    const-string v14, "BYTE_STRING"
 
-    const-string v9, "BYTE_STRING"
+    const/4 v15, 0x6
 
-    invoke-direct {v0, v9, v8, v7}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v10, v14, v15, v13}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgq:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v10, Lcom/google/android/gms/internal/gtm/zzul;->zzbgq:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 8
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v13, Lcom/google/android/gms/internal/gtm/zzul;
 
-    const/4 v7, 0x0
+    const-string v14, "ENUM"
 
-    const/4 v9, 0x7
+    const/4 v15, 0x7
 
-    const-string v10, "ENUM"
+    const/4 v12, 0x0
 
-    invoke-direct {v0, v10, v9, v7}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v13, v14, v15, v12}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgr:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v13, Lcom/google/android/gms/internal/gtm/zzul;->zzbgr:Lcom/google/android/gms/internal/gtm/zzul;
 
     .line 9
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzul;
+    new-instance v14, Lcom/google/android/gms/internal/gtm/zzul;
 
-    const/16 v10, 0x8
+    const-string v15, "MESSAGE"
 
-    const-string v11, "MESSAGE"
+    const/16 v11, 0x8
 
-    invoke-direct {v0, v11, v10, v7}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v14, v15, v11, v12}, Lcom/google/android/gms/internal/gtm/zzul;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgs:Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v14, Lcom/google/android/gms/internal/gtm/zzul;->zzbgs:Lcom/google/android/gms/internal/gtm/zzul;
 
-    const/16 v0, 0x9
+    const/16 v12, 0x9
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/gtm/zzul;
+    new-array v12, v12, [Lcom/google/android/gms/internal/gtm/zzul;
+
+    aput-object v0, v12, v1
+
+    aput-object v2, v12, v5
+
+    aput-object v3, v12, v7
+
+    aput-object v4, v12, v9
+
+    const/4 v0, 0x4
+
+    aput-object v6, v12, v0
+
+    const/4 v0, 0x5
+
+    aput-object v8, v12, v0
+
+    const/4 v0, 0x6
+
+    aput-object v10, v12, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v12, v0
+
+    aput-object v14, v12, v11
 
     .line 10
-    sget-object v7, Lcom/google/android/gms/internal/gtm/zzul;->zzbgk:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v7, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgl:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgm:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgn:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgo:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgp:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgq:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v8
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgr:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v9
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzul;->zzbgs:Lcom/google/android/gms/internal/gtm/zzul;
-
-    aput-object v1, v0, v10
-
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzul;->zzbgt:[Lcom/google/android/gms/internal/gtm/zzul;
+    sput-object v12, Lcom/google/android/gms/internal/gtm/zzul;->zzbgt:[Lcom/google/android/gms/internal/gtm/zzul;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

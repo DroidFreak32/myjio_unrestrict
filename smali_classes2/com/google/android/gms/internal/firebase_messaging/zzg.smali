@@ -1,28 +1,48 @@
 .class public final Lcom/google/android/gms/internal/firebase_messaging/zzg;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-messaging@@20.2.0"
+.super Ljava/io/OutputStream;
+.source "com.google.firebase:firebase-messaging@@21.0.0"
 
 
 # direct methods
-.method public static zza(Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)TT;"
-        }
-    .end annotation
-
-    if-eqz p0, :cond_0
-
-    return-object p0
 
     .line 1
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/NullPointerException;-><init>()V
+    return-void
+.end method
 
-    throw p0
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "ByteStreams.nullOutputStream()"
+
+    return-object v0
+.end method
+
+.method public final write(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final write([B)V
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/internal/firebase_messaging/zze;->zza(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final write([BII)V
+    .locals 0
+
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/internal/firebase_messaging/zze;->zza(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
 .end method

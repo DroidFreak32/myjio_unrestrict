@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final b64:[B
+.field private static final b64:[B
 
-.field public static chars:[Ljava/lang/String;
+.field private static chars:[Ljava/lang/String;
 
 .field public static final empty:[B
 
@@ -224,7 +224,7 @@
 .method public static checkTilde(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    const-string/jumbo v0, "~"
+    const-string v0, "~"
 
     .line 1
     :try_start_0
@@ -234,7 +234,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string/jumbo v1, "user.home"
+    const-string v1, "user.home"
 
     .line 2
     invoke-static {v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -254,6 +254,11 @@
 
 .method public static createSocket(Ljava/lang/String;II)Ljava/net/Socket;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     if-nez p2, :cond_0
 
@@ -324,7 +329,7 @@
     :try_start_1
     invoke-virtual {v2, p0, p1}, Ljava/lang/Thread;->join(J)V
 
-    const-string/jumbo p0, "timeout: "
+    const-string p0, "timeout: "
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -362,7 +367,7 @@
 
     invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo p0, "socket is not established"
+    const-string p0, "socket is not established"
 
     invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -410,15 +415,13 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v2
-
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 2
     :goto_0
     array-length v4, p0
 
-    if-ge v2, v4, :cond_3
+    if-ge v3, v4, :cond_3
 
     const/4 v4, 0x0
 
@@ -429,7 +432,7 @@
     if-ge v4, v5, :cond_1
 
     .line 4
-    aget-object v5, p0, v2
+    aget-object v5, p0, v3
 
     aget-object v6, p1, v4
 
@@ -447,10 +450,10 @@
     goto :goto_1
 
     :cond_1
-    if-nez v3, :cond_2
+    if-nez v2, :cond_2
 
     .line 5
-    aget-object v3, p0, v2
+    aget-object v2, p0, v3
 
     goto :goto_2
 
@@ -460,29 +463,34 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v3, p0, v2
+    aget-object v2, p0, v3
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     :goto_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_3
-    return-object v3
+    return-object v2
 .end method
 
 .method public static fromBase64([BII)[B
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -641,6 +649,11 @@
 
 .method public static fromFile(Ljava/lang/String;)[B
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/jcraft/jsch/Util;->checkTilde(Ljava/lang/String;)Ljava/lang/String;
@@ -665,21 +678,19 @@
 
     long-to-int p0, v2
 
-    new-array p0, p0, [B
+    new-array v0, p0, [B
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
+
+    :goto_0
+    sub-int v3, p0, v2
 
     .line 5
-    :goto_0
-    array-length v2, p0
+    invoke-virtual {v1, v0, v2, v3}, Ljava/io/FileInputStream;->read([BII)I
 
-    sub-int/2addr v2, v0
+    move-result v3
 
-    invoke-virtual {v1, p0, v0, v2}, Ljava/io/FileInputStream;->read([BII)I
-
-    move-result v2
-
-    if-gtz v2, :cond_0
+    if-gtz v3, :cond_0
 
     .line 6
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
@@ -689,10 +700,10 @@
     .line 7
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
 
-    return-object p0
+    return-object v0
 
     :cond_0
-    add-int/2addr v0, v2
+    add-int/2addr v2, v3
 
     goto :goto_0
 
@@ -790,7 +801,7 @@
     return-object p0
 .end method
 
-.method public static glob([BI[BI)Z
+.method private static glob([BI[BI)Z
     .locals 8
 
     .line 2
@@ -1122,7 +1133,7 @@
     return p0
 .end method
 
-.method public static glob0([BI[BI)Z
+.method private static glob0([BI[BI)Z
     .locals 3
 
     .line 1
@@ -1290,7 +1301,7 @@
     return-object p0
 .end method
 
-.method public static skipUTF8Char(B)I
+.method private static skipUTF8Char(B)I
     .locals 3
 
     and-int/lit16 v0, p0, 0x80
@@ -1395,29 +1406,26 @@
 
     move-result p0
 
-    new-array p0, p0, [Ljava/lang/String;
+    new-array p1, p0, [Ljava/lang/String;
+
+    :goto_1
+    if-ge v2, p0, :cond_2
 
     .line 7
-    :goto_1
-    array-length p1, p0
-
-    if-ge v2, p1, :cond_2
-
-    .line 8
     invoke-virtual {v1, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    aput-object p1, p0, v2
+    aput-object v0, p1, v2
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :cond_2
-    return-object p0
+    return-object p1
 .end method
 
 .method public static str2byte(Ljava/lang/String;)[B
@@ -1823,23 +1831,21 @@
 
     const/4 v1, 0x0
 
-    move v2, v0
-
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-ge v0, v2, :cond_2
+    if-ge v2, v0, :cond_2
 
     .line 6
-    aget-byte v3, p0, v0
+    aget-byte v3, p0, v2
 
     const/16 v4, 0x5c
 
     if-ne v3, v4, :cond_1
 
-    add-int/lit8 v3, v0, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    if-ne v3, v2, :cond_0
+    if-ne v3, v0, :cond_0
 
     goto :goto_1
 
@@ -1849,39 +1855,39 @@
 
     sub-int/2addr v4, v3
 
-    invoke-static {p0, v3, p0, v0, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p0, v3, p0, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    move v0, v3
+    move v2, v3
 
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     .line 8
     :cond_2
     :goto_1
-    array-length v0, p0
+    array-length v2, p0
 
-    if-ne v2, v0, :cond_3
+    if-ne v0, v2, :cond_3
 
     return-object p0
 
     .line 9
     :cond_3
-    new-array v0, v2, [B
+    new-array v2, v0, [B
 
     .line 10
-    invoke-static {p0, v1, v0, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p0, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    return-object v0
+    return-object v2
 .end method
 
-.method public static val(B)B
+.method private static val(B)B
     .locals 4
 
     const/4 v0, 0x0

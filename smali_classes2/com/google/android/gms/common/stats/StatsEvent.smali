@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/stats/StatsEvent;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -15,6 +16,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # direct methods
 .method public constructor <init>()V
@@ -28,32 +32,28 @@
 
 
 # virtual methods
-.method public abstract getEventType()I
-.end method
-
-.method public abstract getTimeMillis()J
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 8
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->getTimeMillis()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zza()J
 
     move-result-wide v0
 
     .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->getEventType()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zzb()I
 
     move-result v2
 
     .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zzu()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zzc()J
 
     move-result-wide v3
 
     .line 4
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zzv()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->zzd()Ljava/lang/String;
 
     move-result-object v5
 
@@ -92,8 +92,22 @@
     return-object v0
 .end method
 
-.method public abstract zzu()J
+.method public abstract zza()J
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 .end method
 
-.method public abstract zzv()Ljava/lang/String;
+.method public abstract zzb()I
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end method
+
+.method public abstract zzc()J
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end method
+
+.method public abstract zzd()Ljava/lang/String;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 .end method

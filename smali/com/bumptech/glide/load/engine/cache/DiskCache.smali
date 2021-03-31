@@ -20,6 +20,8 @@
 .end method
 
 .method public abstract get(Lcom/bumptech/glide/load/Key;)Ljava/io/File;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract put(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;)V

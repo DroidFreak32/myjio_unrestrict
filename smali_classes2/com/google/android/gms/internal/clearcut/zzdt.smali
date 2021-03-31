@@ -21,8 +21,6 @@
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzdt;->zzgq:[I
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/clearcut/zzdt;->zzgq:[I
-
     sget-object v1, Lcom/google/android/gms/internal/clearcut/zzfl;->zzqj:Lcom/google/android/gms/internal/clearcut/zzfl;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

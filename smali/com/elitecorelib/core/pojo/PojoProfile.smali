@@ -18,13 +18,13 @@
 
 
 # instance fields
-.field public isActive:Z
+.field private isActive:Z
 
-.field public isDefault:Z
+.field private isDefault:Z
 
-.field public isLocal:Z
+.field private isLocal:Z
 
-.field public name:Ljava/lang/String;
+.field private name:Ljava/lang/String;
 
 
 # direct methods

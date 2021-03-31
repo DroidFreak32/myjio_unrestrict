@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -89,7 +89,9 @@
 
     move-result-object p1
 
-    const-class v1, Lcom/fasterxml/jackson/databind/type/ResolvedRecursiveType;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     if-ne p1, v1, :cond_2
 

@@ -31,6 +31,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzuv;
+        }
+    .end annotation
+
     .line 5
     array-length v0, p1
 
@@ -77,13 +83,19 @@
     throw p1
 .end method
 
-.method public static final zzb(Lcom/google/android/gms/internal/gtm/zzuw;[BII)Lcom/google/android/gms/internal/gtm/zzuw;
+.method private static final zzb(Lcom/google/android/gms/internal/gtm/zzuw;[BII)Lcom/google/android/gms/internal/gtm/zzuw;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Lcom/google/android/gms/internal/gtm/zzuw;",
             ">(TT;[BII)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzuv;
         }
     .end annotation
 
@@ -129,6 +141,11 @@
 # virtual methods
 .method public synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzuw;->zzry()Lcom/google/android/gms/internal/gtm/zzuw;
@@ -150,10 +167,20 @@
 .end method
 
 .method public abstract zza(Lcom/google/android/gms/internal/gtm/zzun;)Lcom/google/android/gms/internal/gtm/zzuw;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public zza(Lcom/google/android/gms/internal/gtm/zzuo;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -174,6 +201,11 @@
 
 .method public zzry()Lcom/google/android/gms/internal/gtm/zzuw;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

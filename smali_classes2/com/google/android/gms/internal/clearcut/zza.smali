@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zza:Landroid/os/IBinder;
+.field private final zza:Landroid/os/IBinder;
 
-.field public final zzb:Ljava/lang/String;
+.field private final zzb:Ljava/lang/String;
 
 
 # direct methods
@@ -50,6 +50,11 @@
 
 .method public final transactOneway(ILandroid/os/Parcel;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     :try_start_0
     iget-object p1, p0, Lcom/google/android/gms/internal/clearcut/zza;->zza:Landroid/os/IBinder;

@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public latitude:Ljava/math/BigDecimal;
+.field private latitude:Ljava/math/BigDecimal;
 
-.field public longitude:Ljava/math/BigDecimal;
+.field private longitude:Ljava/math/BigDecimal;
 
 
 # direct methods

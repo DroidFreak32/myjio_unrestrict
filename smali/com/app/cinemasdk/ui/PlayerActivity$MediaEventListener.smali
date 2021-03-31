@@ -21,6 +21,10 @@
 # direct methods
 .method public constructor <init>(Lcom/app/cinemasdk/ui/PlayerActivity;Lcom/google/android/jioexoplayer2/trackselection/MappingTrackSelector;)V
     .locals 0
+    .param p1    # Lcom/app/cinemasdk/ui/PlayerActivity;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/app/cinemasdk/ui/PlayerActivity$MediaEventListener;->this$0:Lcom/app/cinemasdk/ui/PlayerActivity;

@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field public zzu:Z
+.field private zzu:Z
 
-.field public zzv:Landroid/content/SharedPreferences;
+.field private zzv:Landroid/content/SharedPreferences;
 
 
 # direct methods

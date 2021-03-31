@@ -55,6 +55,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 1
     new-instance p1, Ljava/lang/NoSuchMethodError;
 
@@ -74,6 +80,12 @@
             "Lcom/google/android/gms/internal/gtm/zzqt<",
             "Ljava/lang/Object;",
             ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -99,6 +111,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .line 5
     new-instance p1, Ljava/lang/NoSuchMethodError;
 
@@ -115,6 +133,12 @@
             "Lcom/google/android/gms/internal/gtm/zzum;",
             "Ljava/util/Map$Entry<",
             "**>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -227,7 +251,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/gtm/zzqr;->zzr(Ljava/lang/Object;)Lcom/google/android/gms/internal/gtm/zzqt;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/gtm/zzqq;->zzr(Ljava/lang/Object;)Lcom/google/android/gms/internal/gtm/zzqt;
 
     move-result-object p1
 

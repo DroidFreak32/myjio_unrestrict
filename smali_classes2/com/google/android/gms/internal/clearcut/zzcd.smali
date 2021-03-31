@@ -21,83 +21,75 @@
 
 .field public static final enum zzjj:Lcom/google/android/gms/internal/clearcut/zzcd;
 
-.field public static final synthetic zzjl:[Lcom/google/android/gms/internal/clearcut/zzcd;
+.field private static final synthetic zzjl:[Lcom/google/android/gms/internal/clearcut/zzcd;
 
 
 # instance fields
-.field public final zzjk:Z
+.field private final zzjk:Z
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    const/4 v1, 0x0
+    const-string v1, "SCALAR"
 
-    const-string v2, "SCALAR"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjg:Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzcd;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/internal/clearcut/zzcd;
 
     const-string v3, "VECTOR"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjh:Lcom/google/android/gms/internal/clearcut/zzcd;
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzcd;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjh:Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    const-string v4, "PACKED_VECTOR"
+    const-string v5, "PACKED_VECTOR"
 
-    invoke-direct {v0, v4, v3, v2}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcd;->zzji:Lcom/google/android/gms/internal/clearcut/zzcd;
+    invoke-direct {v3, v5, v6, v4}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzcd;
+    sput-object v3, Lcom/google/android/gms/internal/clearcut/zzcd;->zzji:Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    const-string v5, "MAP"
+    const-string v7, "MAP"
 
-    invoke-direct {v0, v5, v4, v1}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjj:Lcom/google/android/gms/internal/clearcut/zzcd;
+    invoke-direct {v5, v7, v8, v2}, Lcom/google/android/gms/internal/clearcut/zzcd;-><init>(Ljava/lang/String;IZ)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjj:Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/clearcut/zzcd;
+    const/4 v7, 0x4
 
-    sget-object v5, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjg:Lcom/google/android/gms/internal/clearcut/zzcd;
+    new-array v7, v7, [Lcom/google/android/gms/internal/clearcut/zzcd;
 
-    aput-object v5, v0, v1
+    aput-object v0, v7, v2
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjh:Lcom/google/android/gms/internal/clearcut/zzcd;
+    aput-object v1, v7, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v7, v6
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzcd;->zzji:Lcom/google/android/gms/internal/clearcut/zzcd;
+    aput-object v5, v7, v8
 
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjj:Lcom/google/android/gms/internal/clearcut/zzcd;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjl:[Lcom/google/android/gms/internal/clearcut/zzcd;
+    sput-object v7, Lcom/google/android/gms/internal/clearcut/zzcd;->zzjl:[Lcom/google/android/gms/internal/clearcut/zzcd;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IZ)V
+.method private constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

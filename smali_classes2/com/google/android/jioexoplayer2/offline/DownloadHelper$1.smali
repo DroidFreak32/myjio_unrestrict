@@ -38,9 +38,7 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public synthetic a(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;)V
+.method private synthetic a(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;)V
     .locals 1
 
     .line 1
@@ -51,13 +49,31 @@
     return-void
 .end method
 
-.method public synthetic a(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;Ljava/io/IOException;)V
+.method private synthetic c(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;Ljava/io/IOException;)V
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;->this$0:Lcom/google/android/jioexoplayer2/offline/DownloadHelper;
 
     invoke-interface {p1, v0, p2}, Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;->onPrepareError(Lcom/google/android/jioexoplayer2/offline/DownloadHelper;Ljava/io/IOException;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public synthetic b(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;->a(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;)V
+
+    return-void
+.end method
+
+.method public synthetic d(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;Ljava/io/IOException;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;->c(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;Ljava/io/IOException;)V
 
     return-void
 .end method
@@ -76,9 +92,9 @@
 
     iget-object v1, p0, Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;->val$callback:Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;
 
-    new-instance v2, Lyc0;
+    new-instance v2, Lij;
 
-    invoke-direct {v2, p0, v1}, Lyc0;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;)V
+    invoke-direct {v2, p0, v1}, Lij;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;)V
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0
@@ -94,9 +110,9 @@
 
     iget-object v2, p0, Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;->val$callback:Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;
 
-    new-instance v3, Lxc0;
+    new-instance v3, Ljj;
 
-    invoke-direct {v3, p0, v2, v0}, Lxc0;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;Ljava/io/IOException;)V
+    invoke-direct {v3, p0, v2, v0}, Ljj;-><init>(Lcom/google/android/jioexoplayer2/offline/DownloadHelper$1;Lcom/google/android/jioexoplayer2/offline/DownloadHelper$Callback;Ljava/io/IOException;)V
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

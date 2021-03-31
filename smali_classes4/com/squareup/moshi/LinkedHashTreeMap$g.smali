@@ -31,9 +31,17 @@
 
 
 # instance fields
-.field public A:I
+.field public A:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TV;"
+        }
+    .end annotation
+.end field
 
-.field public s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+.field public B:I
+
+.field public a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
@@ -42,7 +50,7 @@
     .end annotation
 .end field
 
-.field public t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+.field public b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
@@ -51,7 +59,7 @@
     .end annotation
 .end field
 
-.field public u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+.field public c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
@@ -60,7 +68,7 @@
     .end annotation
 .end field
 
-.field public v:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+.field public d:Lcom/squareup/moshi/LinkedHashTreeMap$g;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
@@ -69,7 +77,7 @@
     .end annotation
 .end field
 
-.field public w:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+.field public e:Lcom/squareup/moshi/LinkedHashTreeMap$g;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/squareup/moshi/LinkedHashTreeMap$g<",
@@ -78,7 +86,7 @@
     .end annotation
 .end field
 
-.field public final x:Ljava/lang/Object;
+.field public final y:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TK;"
@@ -86,15 +94,7 @@
     .end annotation
 .end field
 
-.field public final y:I
-
-.field public z:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TV;"
-        }
-    .end annotation
-.end field
+.field public final z:I
 
 
 # direct methods
@@ -107,17 +107,17 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     const/4 v0, -0x1
 
     .line 3
-    iput v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:I
+    iput v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:I
 
     .line 4
-    iput-object p0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->w:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->e:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
-    iput-object p0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->v:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->d:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     return-void
 .end method
@@ -140,30 +140,30 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->s:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->a:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     .line 7
-    iput-object p2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     .line 8
-    iput p3, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:I
+    iput p3, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:I
 
     const/4 p1, 0x1
 
     .line 9
-    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:I
+    iput p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->B:I
 
     .line 10
-    iput-object p4, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->v:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p4, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->d:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     .line 11
-    iput-object p5, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->w:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p5, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->e:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     .line 12
-    iput-object p0, p5, Lcom/squareup/moshi/LinkedHashTreeMap$g;->v:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p0, p5, Lcom/squareup/moshi/LinkedHashTreeMap$g;->d:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     .line 13
-    iput-object p0, p4, Lcom/squareup/moshi/LinkedHashTreeMap$g;->w:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iput-object p0, p4, Lcom/squareup/moshi/LinkedHashTreeMap$g;->e:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     return-void
 .end method
@@ -181,7 +181,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     move-object v1, p0
 
@@ -189,7 +189,7 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->t:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->b:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     move-object v2, v1
 
@@ -214,7 +214,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     move-object v1, p0
 
@@ -222,7 +222,7 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->u:Lcom/squareup/moshi/LinkedHashTreeMap$g;
+    iget-object v1, v0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->c:Lcom/squareup/moshi/LinkedHashTreeMap$g;
 
     move-object v2, v1
 
@@ -250,7 +250,7 @@
     check-cast p1, Ljava/util/Map$Entry;
 
     .line 3
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     if-nez v0, :cond_0
 
@@ -274,7 +274,7 @@
     if-eqz v0, :cond_2
 
     :goto_0
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:Ljava/lang/Object;
 
     if-nez v0, :cond_1
 
@@ -314,7 +314,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -328,7 +328,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -337,7 +337,7 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
@@ -354,7 +354,7 @@
 
     .line 2
     :goto_0
-    iget-object v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:Ljava/lang/Object;
+    iget-object v2, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:Ljava/lang/Object;
 
     if-nez v2, :cond_1
 
@@ -380,10 +380,10 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:Ljava/lang/Object;
 
     .line 2
-    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -396,7 +396,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->x:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->y:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -404,7 +404,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->z:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/squareup/moshi/LinkedHashTreeMap$g;->A:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

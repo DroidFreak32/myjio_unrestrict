@@ -1,10 +1,13 @@
 .class public Lcom/jiny/android/ui/custom/e$b;
-.super Landroid/graphics/drawable/Animatable2$AnimationCallback;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jiny/android/ui/custom/e;->g()V
+    value = Lcom/jiny/android/ui/custom/e;->a(Landroid/graphics/Rect;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,42 +26,92 @@
 
     iput-object p1, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Animatable2$AnimationCallback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+.method public run()V
+    .locals 2
 
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Animatable2$AnimationCallback;->onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
+    invoke-static {v0}, Lcom/jiny/android/ui/custom/e;->h(Lcom/jiny/android/ui/custom/e;)Landroid/view/View;
 
-    invoke-static {p1}, Lcom/jiny/android/ui/custom/e;->f(Lcom/jiny/android/ui/custom/e;)Landroid/graphics/drawable/Animatable;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
-    if-eqz p1, :cond_0
+    move-result v0
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
+    if-nez v0, :cond_2
 
-    invoke-static {p1}, Lcom/jiny/android/ui/custom/e;->f(Lcom/jiny/android/ui/custom/e;)Landroid/graphics/drawable/Animatable;
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-interface {p1}, Landroid/graphics/drawable/Animatable;->start()V
+    const-string v1, "force_discovery_hand_ripple"
+
+    invoke-virtual {v0, v1}, Lcom/jiny/android/data/a;->v(Ljava/lang/String;)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/jiny/android/e/a;->i()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
 
-.method public onAnimationStart(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+    invoke-static {v0}, Lcom/jiny/android/ui/custom/e;->m(Lcom/jiny/android/ui/custom/e;)Landroid/widget/ImageView;
 
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Animatable2$AnimationCallback;->onAnimationStart(Landroid/graphics/drawable/Drawable;)V
+    move-result-object v0
 
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
+
+    invoke-static {v0}, Lcom/jiny/android/ui/custom/e;->n(Lcom/jiny/android/ui/custom/e;)V
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
+
+    invoke-static {v0}, Lcom/jiny/android/ui/custom/e;->i(Lcom/jiny/android/ui/custom/e;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
+
+    invoke-static {v0}, Lcom/jiny/android/ui/custom/e;->l(Lcom/jiny/android/ui/custom/e;)Lcom/jiny/android/ui/custom/CustomAnimationView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/e$b;->a:Lcom/jiny/android/ui/custom/e;
+
+    invoke-static {v0}, Lcom/jiny/android/ui/custom/e;->l(Lcom/jiny/android/ui/custom/e;)Lcom/jiny/android/ui/custom/CustomAnimationView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/ui/custom/CustomAnimationView;->b()V
+
+    :cond_2
+    :goto_1
     return-void
 .end method

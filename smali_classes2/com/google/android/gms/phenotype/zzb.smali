@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzm:Lcom/google/android/gms/phenotype/zza;
+.field private final synthetic zzm:Lcom/google/android/gms/phenotype/zza;
 
 
 # direct methods

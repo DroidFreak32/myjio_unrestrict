@@ -27,6 +27,11 @@
 # virtual methods
 .method public final read(Lcom/google/ads/interactivemedia/v3/internal/abu;)Lcom/google/ads/interactivemedia/v3/impl/data/af;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/google/ads/interactivemedia/v3/internal/abu;->f()Lcom/google/ads/interactivemedia/v3/internal/abw;
@@ -59,6 +64,11 @@
 
 .method public final bridge synthetic read(Lcom/google/ads/interactivemedia/v3/internal/abu;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 4
     invoke-virtual {p0, p1}, Lcom/google/ads/interactivemedia/v3/impl/data/ag;->read(Lcom/google/ads/interactivemedia/v3/internal/abu;)Lcom/google/ads/interactivemedia/v3/impl/data/af;
@@ -70,6 +80,11 @@
 
 .method public final write(Lcom/google/ads/interactivemedia/v3/internal/abx;Lcom/google/ads/interactivemedia/v3/impl/data/af;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-nez p2, :cond_0
 
@@ -91,6 +106,11 @@
 
 .method public final bridge synthetic write(Lcom/google/ads/interactivemedia/v3/internal/abx;Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     check-cast p2, Lcom/google/ads/interactivemedia/v3/impl/data/af;

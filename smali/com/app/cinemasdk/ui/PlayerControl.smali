@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final playerControl:Lcom/app/cinemasdk/ui/PlayerControl;
+.field private static final playerControl:Lcom/app/cinemasdk/ui/PlayerControl;
 
 
 # instance fields
-.field public controlView:I
+.field private controlView:I
 
 
 # direct methods
@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1

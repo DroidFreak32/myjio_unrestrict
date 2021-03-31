@@ -31,13 +31,13 @@
 # static fields
 .field public static final EMPTY:Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final _contentNulls:Lcom/fasterxml/jackson/annotation/Nulls;
+.field private final _contentNulls:Lcom/fasterxml/jackson/annotation/Nulls;
 
-.field public final _nulls:Lcom/fasterxml/jackson/annotation/Nulls;
+.field private final _nulls:Lcom/fasterxml/jackson/annotation/Nulls;
 
 
 # direct methods
@@ -71,7 +71,7 @@
     return-void
 .end method
 
-.method public static _empty(Lcom/fasterxml/jackson/annotation/Nulls;Lcom/fasterxml/jackson/annotation/Nulls;)Z
+.method private static _empty(Lcom/fasterxml/jackson/annotation/Nulls;Lcom/fasterxml/jackson/annotation/Nulls;)Z
     .locals 1
 
     .line 1
@@ -242,7 +242,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-ne v2, v3, :cond_3
 
@@ -470,16 +472,13 @@
     .line 5
     iget-object v0, p0, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->_nulls:Lcom/fasterxml/jackson/annotation/Nulls;
 
-    .line 6
     :cond_1
-    sget-object v1, Lcom/fasterxml/jackson/annotation/Nulls;->DEFAULT:Lcom/fasterxml/jackson/annotation/Nulls;
-
     if-ne p1, v1, :cond_2
 
-    .line 7
+    .line 6
     iget-object p1, p0, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->_contentNulls:Lcom/fasterxml/jackson/annotation/Nulls;
 
-    .line 8
+    .line 7
     :cond_2
     iget-object v1, p0, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->_nulls:Lcom/fasterxml/jackson/annotation/Nulls;
 
@@ -491,7 +490,7 @@
 
     return-object p0
 
-    .line 9
+    .line 8
     :cond_3
     invoke-static {v0, p1}, Lcom/fasterxml/jackson/annotation/JsonSetter$Value;->construct(Lcom/fasterxml/jackson/annotation/Nulls;Lcom/fasterxml/jackson/annotation/Nulls;)Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
 

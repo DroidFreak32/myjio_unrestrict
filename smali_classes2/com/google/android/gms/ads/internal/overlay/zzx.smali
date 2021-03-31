@@ -1,18 +1,14 @@
 .class public final Lcom/google/android/gms/ads/internal/overlay/zzx;
-.super Lcom/google/android/gms/ads/internal/overlay/zzd;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lcom/google/android/gms/ads/internal/overlay/zzd;-><init>(Landroid/app/Activity;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

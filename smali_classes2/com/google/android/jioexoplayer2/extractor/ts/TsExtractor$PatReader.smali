@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final patScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final patScratch:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/extractor/ts/TsExtractor;
 

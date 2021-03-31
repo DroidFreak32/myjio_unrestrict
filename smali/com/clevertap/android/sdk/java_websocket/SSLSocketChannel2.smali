@@ -66,6 +66,11 @@
 
 .method public constructor <init>(Ljava/nio/channels/SocketChannel;Ljavax/net/ssl/SSLEngine;Ljava/util/concurrent/ExecutorService;Ljava/nio/channels/SelectionKey;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,6 +100,7 @@
 
     sget-object p3, Ljavax/net/ssl/SSLEngineResult$Status;->BUFFER_UNDERFLOW:Ljavax/net/ssl/SSLEngineResult$Status;
 
+    .line 7
     invoke-virtual {p2}, Ljavax/net/ssl/SSLEngine;->getHandshakeStatus()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;
 
     move-result-object v1
@@ -105,7 +111,7 @@
 
     iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->readEngineResult:Ljavax/net/ssl/SSLEngineResult;
 
-    .line 7
+    .line 8
     new-instance p1, Ljava/util/ArrayList;
 
     const/4 p3, 0x3
@@ -116,7 +122,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 8
+    .line 9
     invoke-virtual {p4}, Ljava/nio/channels/SelectionKey;->interestOps()I
 
     move-result p1
@@ -125,10 +131,10 @@
 
     invoke-virtual {p4, p1}, Ljava/nio/channels/SelectionKey;->interestOps(I)Ljava/nio/channels/SelectionKey;
 
-    .line 9
+    .line 10
     iput-object p4, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->selectionKey:Ljava/nio/channels/SelectionKey;
 
-    .line 10
+    .line 11
     :cond_0
     invoke-virtual {p2}, Ljavax/net/ssl/SSLEngine;->getSession()Ljavax/net/ssl/SSLSession;
 
@@ -136,7 +142,7 @@
 
     invoke-virtual {p0, p1}, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->createBuffers(Ljavax/net/ssl/SSLSession;)V
 
-    .line 11
+    .line 12
     iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->socketChannel:Ljava/nio/channels/SocketChannel;
 
     sget-object p2, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->emptybuffer:Ljava/nio/ByteBuffer;
@@ -147,12 +153,12 @@
 
     invoke-virtual {p1, p2}, Ljava/nio/channels/SocketChannel;->write(Ljava/nio/ByteBuffer;)I
 
-    .line 12
+    .line 13
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->processHandshake()V
 
     return-void
 
-    .line 13
+    .line 14
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -246,6 +252,11 @@
 
 .method private declared-synchronized processHandshake()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -519,6 +530,11 @@
 
 .method private readRemaining(Ljava/nio/ByteBuffer;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/net/ssl/SSLException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->inData:Ljava/nio/ByteBuffer;
@@ -647,6 +663,11 @@
 
 .method private declared-synchronized unwrap()Ljava/nio/ByteBuffer;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/net/ssl/SSLException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -664,6 +685,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->sslEngine:Ljavax/net/ssl/SSLEngine;
 
+    .line 2
     invoke-virtual {v0}, Ljavax/net/ssl/SSLEngine;->getHandshakeStatus()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;
 
     move-result-object v0
@@ -674,14 +696,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2
+    .line 3
     :try_start_1
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3
+    .line 4
     :catch_0
     :cond_0
     :try_start_2
@@ -691,7 +713,7 @@
 
     move-result v0
 
-    .line 4
+    .line 5
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->sslEngine:Ljavax/net/ssl/SSLEngine;
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->inCrypt:Ljava/nio/ByteBuffer;
@@ -704,9 +726,7 @@
 
     iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->readEngineResult:Ljavax/net/ssl/SSLEngineResult;
 
-    .line 5
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->readEngineResult:Ljavax/net/ssl/SSLEngineResult;
-
+    .line 6
     invoke-virtual {v1}, Ljavax/net/ssl/SSLEngineResult;->getStatus()Ljavax/net/ssl/SSLEngineResult$Status;
 
     move-result-object v1
@@ -725,6 +745,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->sslEngine:Ljavax/net/ssl/SSLEngine;
 
+    .line 7
     invoke-virtual {v0}, Ljavax/net/ssl/SSLEngine;->getHandshakeStatus()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;
 
     move-result-object v0
@@ -733,13 +754,13 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 6
+    .line 8
     :cond_1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->inData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    .line 7
+    .line 9
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->inData:Ljava/nio/ByteBuffer;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -758,6 +779,11 @@
 
 .method private declared-synchronized wrap(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/net/ssl/SSLException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -804,6 +830,11 @@
 # virtual methods
 .method public close()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->sslEngine:Ljavax/net/ssl/SSLEngine;
@@ -850,6 +881,11 @@
 
 .method public configureBlocking(Z)Ljava/nio/channels/SelectableChannel;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->socketChannel:Ljava/nio/channels/SocketChannel;
@@ -863,6 +899,11 @@
 
 .method public connect(Ljava/net/SocketAddress;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->socketChannel:Ljava/nio/channels/SocketChannel;
@@ -1052,6 +1093,11 @@
 
 .method public finishConnect()Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->socketChannel:Ljava/nio/channels/SocketChannel;
@@ -1124,6 +1170,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->readEngineResult:Ljavax/net/ssl/SSLEngineResult;
 
+    .line 2
     invoke-virtual {v0}, Ljavax/net/ssl/SSLEngineResult;->getStatus()Ljavax/net/ssl/SSLEngineResult$Status;
 
     move-result-object v0
@@ -1134,6 +1181,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->readEngineResult:Ljavax/net/ssl/SSLEngineResult;
 
+    .line 3
     invoke-virtual {v0}, Ljavax/net/ssl/SSLEngineResult;->getStatus()Ljavax/net/ssl/SSLEngineResult$Status;
 
     move-result-object v0
@@ -1169,6 +1217,7 @@
 
     if-nez v0, :cond_1
 
+    .line 2
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->isHandShakeComplete()Z
 
     move-result v0
@@ -1205,6 +1254,11 @@
 
 .method public read(Ljava/nio/ByteBuffer;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0
@@ -1364,6 +1418,11 @@
 
 .method public readMore(Ljava/nio/ByteBuffer;)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/net/ssl/SSLException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->readRemaining(Ljava/nio/ByteBuffer;)I
@@ -1388,6 +1447,11 @@
 
 .method public write(Ljava/nio/ByteBuffer;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->isHandShakeComplete()Z
@@ -1441,6 +1505,11 @@
 
 .method public writeMore()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/SSLSocketChannel2;->outCrypt:Ljava/nio/ByteBuffer;

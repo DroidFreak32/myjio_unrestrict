@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/providers/PooledExecutorsProvider;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -12,13 +13,16 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # static fields
-.field public static zzey:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
+.field private static zza:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -29,7 +33,13 @@
 
 .method public static declared-synchronized getInstance()Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const-class v0, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;
@@ -38,7 +48,7 @@
 
     .line 1
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->zzey:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
+    sget-object v1, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->zza:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
 
     if-nez v1, :cond_0
 
@@ -48,11 +58,11 @@
     invoke-direct {v1}, Lcom/google/android/gms/common/providers/zza;-><init>()V
 
     .line 3
-    sput-object v1, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->zzey:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
+    sput-object v1, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->zza:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
 
     .line 4
     :cond_0
-    sget-object v1, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->zzey:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
+    sget-object v1, Lcom/google/android/gms/common/providers/PooledExecutorsProvider;->zza:Lcom/google/android/gms/common/providers/PooledExecutorsProvider$PooledExecutorFactory;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

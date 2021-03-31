@@ -3,23 +3,23 @@
 
 
 # instance fields
-.field public final buffer:[B
+.field private final buffer:[B
 
-.field public limit:I
+.field private limit:I
 
-.field public pos:I
+.field private pos:I
 
-.field public final zzfu:Z
+.field private final zzfu:Z
 
-.field public zzfv:I
+.field private zzfv:I
 
-.field public zzfw:I
+.field private zzfw:I
 
-.field public zzfx:I
+.field private zzfx:I
 
 
 # direct methods
-.method public constructor <init>([BIIZ)V
+.method private constructor <init>([BIIZ)V
     .locals 1
 
     const/4 v0, 0x0
@@ -38,9 +38,7 @@
 
     iput p2, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->pos:I
 
-    iget p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->pos:I
-
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfw:I
+    iput p2, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfw:I
 
     iput-boolean p4, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfu:Z
 
@@ -71,10 +69,15 @@
 
 .method public final zzl(I)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/clearcut/zzco;
+        }
+    .end annotation
 
     if-ltz p1, :cond_2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbm;->zzaf()I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzbk;->zzaf()I
 
     move-result v0
 
@@ -86,33 +89,27 @@
 
     iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfx:I
 
-    iget p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
+    iget v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
 
-    iget v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfv:I
+    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfv:I
 
-    add-int/2addr p1, v1
+    add-int/2addr v1, v2
 
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
 
-    iget p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
+    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfw:I
 
-    iget v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfw:I
+    sub-int v2, v1, v2
 
-    sub-int v1, p1, v1
+    if-le v2, p1, :cond_0
 
-    iget v2, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfx:I
+    sub-int/2addr v2, p1
 
-    if-le v1, v2, :cond_0
+    iput v2, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfv:I
 
     sub-int/2addr v1, v2
 
-    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfv:I
-
-    iget v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->zzfv:I
-
-    sub-int/2addr p1, v1
-
-    iput p1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
+    iput v1, p0, Lcom/google/android/gms/internal/clearcut/zzbm;->limit:I
 
     goto :goto_0
 

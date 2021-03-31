@@ -6,47 +6,47 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public dealDescription:Ljava/lang/String;
+.field private dealDescription:Ljava/lang/String;
 
-.field public dealHeadline:Ljava/lang/String;
+.field private dealHeadline:Ljava/lang/String;
 
-.field public dealId:Ljava/lang/Long;
+.field private dealId:Ljava/lang/Long;
 
-.field public dealImagepath:Ljava/lang/String;
+.field private dealImagepath:Ljava/lang/String;
 
-.field public dealName:Ljava/lang/String;
+.field private dealName:Ljava/lang/String;
 
-.field public dealStartdate:Ljava/lang/String;
+.field private dealStartdate:Ljava/lang/String;
 
-.field public dealStatus:Ljava/lang/String;
+.field private dealStatus:Ljava/lang/String;
 
-.field public dealStopdate:Ljava/lang/String;
+.field private dealStopdate:Ljava/lang/String;
 
-.field public dealThumbail_imagepath:Ljava/lang/String;
+.field private dealThumbail_imagepath:Ljava/lang/String;
 
-.field public dealcost_for_merchant:Ljava/lang/Long;
+.field private dealcost_for_merchant:Ljava/lang/Long;
 
-.field public isVoucher:Ljava/lang/String;
+.field private isVoucher:Ljava/lang/String;
 
-.field public merchantPrice:Ljava/lang/Long;
+.field private merchantPrice:Ljava/lang/Long;
 
-.field public offer:Ljava/lang/String;
+.field private offer:Ljava/lang/String;
 
-.field public offerDescription:Ljava/lang/String;
+.field private offerDescription:Ljava/lang/String;
 
-.field public operatorcost_per_voucher:Ljava/lang/Long;
+.field private operatorcost_per_voucher:Ljava/lang/Long;
 
-.field public price:Ljava/lang/Long;
+.field private price:Ljava/lang/Long;
 
-.field public redirectURL:Ljava/lang/String;
+.field private redirectURL:Ljava/lang/String;
 
-.field public reedmptionDetails:Ljava/lang/String;
+.field private reedmptionDetails:Ljava/lang/String;
 
-.field public voucherLimits:Ljava/lang/Long;
+.field private voucherLimits:Ljava/lang/Long;
 
 
 # direct methods

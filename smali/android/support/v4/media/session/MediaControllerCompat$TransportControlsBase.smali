@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public mBinder:Landroid/support/v4/media/session/IMediaSession;
+.field private mBinder:Landroid/support/v4/media/session/IMediaSession;
 
 
 # direct methods

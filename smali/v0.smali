@@ -1,31 +1,139 @@
-.class public final Lv0;
-.super Ljava/lang/Object;
-.source "R.java"
+.class public Lv0;
+.super Landroidx/appcompat/view/menu/MenuWrapperICS;
+.source "SubMenuWrapperICS.java"
+
+# interfaces
+.implements Landroid/view/SubMenu;
 
 
-# static fields
-.field public static final abc_vector_test:I = 0x7f080089
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
 
-.field public static final notification_action_background:I = 0x7f080846
 
-.field public static final notification_bg:I = 0x7f080848
+# instance fields
+.field public final e:Landroidx/core/internal/view/SupportSubMenu;
 
-.field public static final notification_bg_low:I = 0x7f080849
 
-.field public static final notification_bg_low_normal:I = 0x7f08084a
+# direct methods
+.method public constructor <init>(Landroid/content/Context;Landroidx/core/internal/view/SupportSubMenu;)V
+    .locals 0
 
-.field public static final notification_bg_low_pressed:I = 0x7f08084b
+    .line 1
+    invoke-direct {p0, p1, p2}, Landroidx/appcompat/view/menu/MenuWrapperICS;-><init>(Landroid/content/Context;Landroidx/core/internal/view/SupportMenu;)V
 
-.field public static final notification_bg_normal:I = 0x7f08084c
+    .line 2
+    iput-object p2, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
 
-.field public static final notification_bg_normal_pressed:I = 0x7f08084d
+    return-void
+.end method
 
-.field public static final notification_icon_background:I = 0x7f08084f
 
-.field public static final notification_template_icon_bg:I = 0x7f080851
+# virtual methods
+.method public clearHeader()V
+    .locals 1
 
-.field public static final notification_template_icon_low_bg:I = 0x7f080852
+    .line 1
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
 
-.field public static final notification_tile_bg:I = 0x7f080853
+    invoke-interface {v0}, Landroid/view/SubMenu;->clearHeader()V
 
-.field public static final notify_panel_notification_icon_bg:I = 0x7f080855
+    return-void
+.end method
+
+.method public getItem()Landroid/view/MenuItem;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0}, Landroid/view/SubMenu;->getItem()Landroid/view/MenuItem;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lr0;->a(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setHeaderIcon(I)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setHeaderIcon(I)Landroid/view/SubMenu;
+
+    return-object p0
+.end method
+
+.method public setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 2
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
+
+    return-object p0
+.end method
+
+.method public setHeaderTitle(I)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setHeaderTitle(I)Landroid/view/SubMenu;
+
+    return-object p0
+.end method
+
+.method public setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 2
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
+
+    return-object p0
+.end method
+
+.method public setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
+
+    return-object p0
+.end method
+
+.method public setIcon(I)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setIcon(I)Landroid/view/SubMenu;
+
+    return-object p0
+.end method
+
+.method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
+    .locals 1
+
+    .line 2
+    iget-object v0, p0, Lv0;->e:Landroidx/core/internal/view/SupportSubMenu;
+
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
+
+    return-object p0
+.end method

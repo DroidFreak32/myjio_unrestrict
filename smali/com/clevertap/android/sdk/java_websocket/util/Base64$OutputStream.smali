@@ -15,25 +15,25 @@
 
 
 # instance fields
-.field public b4:[B
+.field private b4:[B
 
-.field public breakLines:Z
+.field private breakLines:Z
 
-.field public buffer:[B
+.field private buffer:[B
 
-.field public bufferLength:I
+.field private bufferLength:I
 
-.field public decodabet:[B
+.field private decodabet:[B
 
-.field public encode:Z
+.field private encode:Z
 
-.field public lineLength:I
+.field private lineLength:I
 
-.field public options:I
+.field private options:I
 
-.field public position:I
+.field private position:I
 
-.field public suspendEncoding:Z
+.field private suspendEncoding:Z
 
 
 # direct methods
@@ -86,29 +86,25 @@
     :goto_1
     iput-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->encode:Z
 
-    .line 5
-    iget-boolean p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->encode:Z
+    const/4 p1, 0x4
 
-    const/4 v0, 0x4
+    if-eqz v0, :cond_2
 
-    if-eqz p1, :cond_2
-
-    const/4 p1, 0x3
+    const/4 v0, 0x3
 
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x4
+    const/4 v0, 0x4
 
+    .line 5
     :goto_2
-    iput p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
+    iput v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
 
     .line 6
-    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
+    new-array v0, v0, [B
 
-    new-array p1, p1, [B
-
-    iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->buffer:[B
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->buffer:[B
 
     .line 7
     iput v1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->position:I
@@ -119,7 +115,7 @@
     .line 9
     iput-boolean v1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->suspendEncoding:Z
 
-    new-array p1, v0, [B
+    new-array p1, p1, [B
 
     .line 10
     iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->b4:[B
@@ -141,6 +137,11 @@
 # virtual methods
 .method public close()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->flushBase64()V
@@ -161,6 +162,11 @@
 
 .method public flushBase64()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->position:I
@@ -211,6 +217,11 @@
 
 .method public write(I)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->suspendEncoding:Z
@@ -246,24 +257,22 @@
     aput-byte p1, v0, v2
 
     .line 5
-    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->position:I
+    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
 
-    iget v2, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
-
-    if-lt p1, v2, :cond_4
+    if-lt v3, p1, :cond_4
 
     .line 6
-    iget-object p1, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    iget-object v2, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
 
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->b4:[B
 
     iget v4, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->options:I
 
-    invoke-static {v3, v0, v2, v4}, Lcom/clevertap/android/sdk/java_websocket/util/Base64;->access$100([B[BII)[B
+    invoke-static {v3, v0, p1, v4}, Lcom/clevertap/android/sdk/java_websocket/util/Base64;->access$100([B[BII)[B
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v2, p1}, Ljava/io/OutputStream;->write([B)V
 
     .line 7
     iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->lineLength:I
@@ -273,11 +282,9 @@
     iput p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->lineLength:I
 
     .line 8
-    iget-boolean p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->breakLines:Z
+    iget-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->breakLines:Z
 
-    if-eqz p1, :cond_1
-
-    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->lineLength:I
+    if-eqz v0, :cond_1
 
     const/16 v0, 0x4c
 
@@ -325,11 +332,9 @@
     aput-byte p1, v0, v2
 
     .line 14
-    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->position:I
+    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
 
-    iget v2, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->bufferLength:I
-
-    if-lt p1, v2, :cond_4
+    if-lt v3, p1, :cond_4
 
     .line 15
     iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->b4:[B
@@ -375,6 +380,11 @@
 
 .method public write([BII)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 20
     iget-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/util/Base64$OutputStream;->suspendEncoding:Z

@@ -4,6 +4,10 @@
 
 
 # annotations
+.annotation build Landroidx/annotation/RequiresApi;
+    value = 0x12
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/support/v4/media/session/MediaSessionCompat;
 .end annotation
@@ -15,7 +19,7 @@
 
 
 # static fields
-.field public static sIsMbrPendingIntentSupported:Z = true
+.field private static sIsMbrPendingIntentSupported:Z = true
 
 
 # direct methods

@@ -1,74 +1,62 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbau;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final data:[B
+.field private final synthetic zzeja:Lcom/google/android/gms/internal/ads/zzbar;
+
+.field private final synthetic zzejd:Z
 
 
 # direct methods
-.method public constructor <init>([BII)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbar;Z)V
+    .locals 0
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbau;->zzeja:Lcom/google/android/gms/internal/ads/zzbar;
+
+    iput-boolean p2, p0, Lcom/google/android/gms/internal/ads/zzbau;->zzejd:Z
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-array p2, p3, [B
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzbau;->data:[B
-
-    .line 3
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzbau;->data:[B
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, p2, v0, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-void
 .end method
 
-.method public static zzm([B)Lcom/google/android/gms/internal/ads/zzbau;
-    .locals 3
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    .line 1
-    :cond_0
-    array-length v0, p0
-
-    .line 2
-    new-instance v1, Lcom/google/android/gms/internal/ads/zzbau;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v2, v0}, Lcom/google/android/gms/internal/ads/zzbau;-><init>([BII)V
-
-    return-object v1
-.end method
-
 
 # virtual methods
-.method public final getBytes()[B
+.method public final run()V
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbau;->data:[B
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbau;->zzeja:Lcom/google/android/gms/internal/ads/zzbar;
 
-    array-length v1, v0
+    const/4 v1, 0x2
 
-    new-array v1, v1, [B
+    new-array v1, v1, [Ljava/lang/String;
 
-    .line 2
-    array-length v2, v0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const-string v3, "isVisible"
 
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    aput-object v3, v1, v2
 
-    return-object v1
+    iget-boolean v2, p0, Lcom/google/android/gms/internal/ads/zzbau;->zzejd:Z
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    const-string v2, "windowVisibilityChanged"
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/internal/ads/zzbar;->zza(Lcom/google/android/gms/internal/ads/zzbar;Ljava/lang/String;[Ljava/lang/String;)V
+
+    return-void
 .end method

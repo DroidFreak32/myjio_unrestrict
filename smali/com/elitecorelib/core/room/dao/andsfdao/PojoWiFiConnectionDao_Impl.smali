@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public final __db:Landroidx/room/RoomDatabase;
+.field private final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfPojoWiFiConnection:Lzg;
+.field private final __deletionAdapterOfPojoWiFiConnection:Landroidx/room/EntityDeletionOrUpdateAdapter;
 
-.field public final __insertionAdapterOfPojoWiFiConnection:Lah;
+.field private final __insertionAdapterOfPojoWiFiConnection:Landroidx/room/EntityInsertionAdapter;
 
 
 # direct methods
@@ -22,13 +22,13 @@
 
     invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl$1;-><init>(Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__insertionAdapterOfPojoWiFiConnection:Lah;
+    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__insertionAdapterOfPojoWiFiConnection:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl$2;
 
     invoke-direct {v0, p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl$2;-><init>(Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__deletionAdapterOfPojoWiFiConnection:Lzg;
+    iput-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__deletionAdapterOfPojoWiFiConnection:Landroidx/room/EntityDeletionOrUpdateAdapter;
 
     return-void
 .end method
@@ -50,7 +50,7 @@
 
     move-result v2
 
-    const-string v3, "ssidName"
+    const-string/jumbo v3, "ssidName"
 
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -92,7 +92,7 @@
 
     move-result v9
 
-    const-string v10, "userIdentity"
+    const-string/jumbo v10, "userIdentity"
 
     invoke-interface {v0, v10}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -146,7 +146,7 @@
 
     move/from16 v18, v15
 
-    const-string v15, "validForAllNetwork"
+    const-string/jumbo v15, "validForAllNetwork"
 
     invoke-interface {v0, v15}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -154,7 +154,7 @@
 
     move/from16 v19, v15
 
-    const-string v15, "sim_operator_name"
+    const-string/jumbo v15, "sim_operator_name"
 
     invoke-interface {v0, v15}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -162,7 +162,7 @@
 
     move/from16 v20, v15
 
-    const-string v15, "showPassword"
+    const-string/jumbo v15, "showPassword"
 
     invoke-interface {v0, v15}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -186,7 +186,7 @@
 
     move/from16 v23, v15
 
-    const-string v15, "wisprAuthenticationMethod"
+    const-string/jumbo v15, "wisprAuthenticationMethod"
 
     invoke-interface {v0, v15}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -194,7 +194,7 @@
 
     move/from16 v24, v15
 
-    const-string v15, "wisprUsarname"
+    const-string/jumbo v15, "wisprUsarname"
 
     invoke-interface {v0, v15}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -202,7 +202,7 @@
 
     move/from16 v25, v15
 
-    const-string v15, "wisprPassword"
+    const-string/jumbo v15, "wisprPassword"
 
     invoke-interface {v0, v15}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -543,12 +543,12 @@
 
 
 # virtual methods
-.method public deleteRecord(Lei;)I
+.method public deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -580,6 +580,16 @@
     throw v0
 .end method
 
+.method public bridge synthetic deleteRecord(Landroidx/room/Room;)V
+    .locals 0
+
+    check-cast p1, Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->deleteRecord(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
+
+    return-void
+.end method
+
 .method public deleteRecord(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
     .locals 1
 
@@ -588,9 +598,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__deletionAdapterOfPojoWiFiConnection:Lzg;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__deletionAdapterOfPojoWiFiConnection:Landroidx/room/EntityDeletionOrUpdateAdapter;
 
-    invoke-virtual {v0, p1}, Lzg;->handle(Ljava/lang/Object;)I
+    invoke-virtual {v0, p1}, Landroidx/room/EntityDeletionOrUpdateAdapter;->handle(Ljava/lang/Object;)I
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -614,22 +624,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic deleteRecord(Lgh;)V
-    .locals 0
-
-    check-cast p1, Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->deleteRecord(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
-
-    return-void
-.end method
-
-.method public deletebyField(Lei;)I
+.method public deletebyField(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -661,12 +661,22 @@
     throw v0
 .end method
 
-.method public getRecord(Lei;)Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
+.method public bridge synthetic getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroidx/room/Room;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
     .locals 1
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -701,22 +711,12 @@
     throw v0
 .end method
 
-.method public bridge synthetic getRecord(Lei;)Lgh;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->getRecord(Lei;)Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public getRecordList(Lei;)Ljava/util/List;
+.method public getRecordList(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lei;",
+            "Landroidx/sqlite/db/SupportSQLiteQuery;",
             ")",
             "Ljava/util/List<",
             "Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;",
@@ -726,7 +726,7 @@
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -825,9 +825,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__insertionAdapterOfPojoWiFiConnection:Lah;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__insertionAdapterOfPojoWiFiConnection:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, p1}, Lah;->insert(Ljava/lang/Iterable;)V
+    invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Iterable;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -849,6 +849,16 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw p1
+.end method
+
+.method public bridge synthetic insertRecord(Landroidx/room/Room;)V
+    .locals 0
+
+    check-cast p1, Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
+
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->insertRecord(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
+
+    return-void
 .end method
 
 .method public insertRecord(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
@@ -859,7 +869,7 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-super {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Lgh;)V
+    invoke-super {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/ANDSFDao;->insertRecord(Landroidx/room/Room;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -883,12 +893,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic insertRecord(Lgh;)V
+.method public bridge synthetic insertRecordAll(Landroidx/room/Room;)V
     .locals 0
 
     check-cast p1, Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->insertRecord(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->insertRecordAll(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
 
     return-void
 .end method
@@ -901,9 +911,9 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__insertionAdapterOfPojoWiFiConnection:Lah;
+    iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__insertionAdapterOfPojoWiFiConnection:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, p1}, Lah;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -927,22 +937,12 @@
     throw p1
 .end method
 
-.method public bridge synthetic insertRecordAll(Lgh;)V
-    .locals 0
-
-    check-cast p1, Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;
-
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->insertRecordAll(Lcom/elitecorelib/core/pojonew/PojoWiFiConnection;)V
-
-    return-void
-.end method
-
-.method public updateRecord(Lei;)I
+.method public updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
     .locals 2
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiConnectionDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Lei;)Landroid/database/Cursor;
+    invoke-virtual {v0, p1}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 

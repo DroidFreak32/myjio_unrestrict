@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public final _mixInResolver:Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+.field private final _mixInResolver:Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
 
 # direct methods

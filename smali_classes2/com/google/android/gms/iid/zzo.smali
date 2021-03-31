@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final zzcb:Ljava/security/KeyPair;
+.field private final zzcb:Ljava/security/KeyPair;
 
-.field public final zzcc:J
+.field private final zzcc:J
 
 
 # direct methods

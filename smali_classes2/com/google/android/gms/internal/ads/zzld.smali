@@ -1,87 +1,58 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzld;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.class public final Lcom/google/android/gms/internal/ads/zzld;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzlc;
+
+# instance fields
+.field private final id:I
+
+.field private final zzahf:I
+
+.field private final zzde:J
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.client.IAppEventListener"
+.method public constructor <init>(IJI)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzld;->id:I
+
+    .line 3
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zzld;->zzde:J
+
+    .line 4
+    iput p4, p0, Lcom/google/android/gms/internal/ads/zzld;->zzahf:I
 
     return-void
 .end method
 
-.method public static zzd(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzlc;
+.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zzld;)J
     .locals 2
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.client.IAppEventListener"
-
     .line 1
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzld;->zzde:J
 
-    move-result-object v0
-
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzlc;
-
-    if-eqz v1, :cond_1
-
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzlc;
-
-    return-object v0
-
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzle;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzle;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
+    return-wide v0
 .end method
 
-
-# virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.method public static synthetic zzb(Lcom/google/android/gms/internal/ads/zzld;)I
     .locals 0
 
-    const/4 p4, 0x1
+    .line 1
+    iget p0, p0, Lcom/google/android/gms/internal/ads/zzld;->id:I
 
-    if-ne p1, p4, :cond_0
+    return p0
+.end method
+
+.method public static synthetic zzc(Lcom/google/android/gms/internal/ads/zzld;)I
+    .locals 0
 
     .line 1
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    iget p0, p0, Lcom/google/android/gms/internal/ads/zzld;->zzahf:I
 
-    move-result-object p1
-
-    .line 2
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 3
-    invoke-interface {p0, p1, p2}, Lcom/google/android/gms/internal/ads/zzlc;->onAppEvent(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return p4
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return p0
 .end method

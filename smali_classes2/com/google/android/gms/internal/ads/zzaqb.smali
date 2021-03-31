@@ -1,90 +1,101 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaqb;
-.super Lcom/google/android/gms/internal/ads/zzaqd;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.implements Lcom/google/android/gms/ads/mediation/rtb/SignalCallbacks;
 
 
 # instance fields
-.field public final zzdak:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference<",
-            "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic zzdny:Lcom/google/android/gms/internal/ads/zzapt;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzapx;Lcom/google/android/gms/internal/ads/zzapt;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzaqd;-><init>(Landroid/view/View;)V
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaqb;->zzdny:Lcom/google/android/gms/internal/ads/zzapt;
 
-    .line 2
-    new-instance p1, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqb;->zzdak:Ljava/lang/ref/WeakReference;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGlobalLayout()V
+.method public final onFailure(Lcom/google/android/gms/ads/AdError;)V
     .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqb;->zzdak:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-interface {v0}, Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;->onGlobalLayout()V
-
-    return-void
 
     .line 3
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaqd;->detach()V
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqb;->zzdny:Lcom/google/android/gms/internal/ads/zzapt;
+
+    invoke-virtual {p1}, Lcom/google/android/gms/ads/AdError;->zzdq()Lcom/google/android/gms/internal/ads/zzve;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzapt;->zzg(Lcom/google/android/gms/internal/ads/zzve;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, ""
+
+    .line 4
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final zza(Landroid/view/ViewTreeObserver;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    return-void
-.end method
-
-.method public final zzb(Landroid/view/ViewTreeObserver;)V
+.method public final onFailure(Ljava/lang/String;)V
     .locals 1
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzem()Lcom/google/android/gms/internal/ads/zzalw;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqb;->zzdny:Lcom/google/android/gms/internal/ads/zzapt;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzapt;->onFailure(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v0, p1, p0}, Lcom/google/android/gms/internal/ads/zzalw;->zza(Landroid/view/ViewTreeObserver;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, ""
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final onSuccess(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqb;->zzdny:Lcom/google/android/gms/internal/ads/zzapt;
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/internal/ads/zzapt;->zzdo(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string v0, ""
+
+    .line 2
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

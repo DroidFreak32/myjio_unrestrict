@@ -1,8 +1,9 @@
 .class public final Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/ads/mediation/customevent/CustomEventBannerListener;
+.implements Lcom/google/android/gms/ads/mediation/customevent/CustomEventInterstitialListener;
 
 
 # annotations
@@ -14,29 +15,33 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x1
     name = "zza"
 .end annotation
 
 
 # instance fields
-.field public final zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+.field private final zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-.field public final zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+.field private final zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
+
+.field private final synthetic zzeuv:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;Lcom/google/android/gms/ads/mediation/MediationBannerListener;)V
+.method public constructor <init>(Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuv:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iput-object p2, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+    iput-object p3, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
     return-void
 .end method
@@ -49,14 +54,14 @@
     const-string v0, "Custom event adapter called onAdClicked."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationBannerListener;->onAdClicked(Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdClicked(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
 
     return-void
 .end method
@@ -67,14 +72,14 @@
     const-string v0, "Custom event adapter called onAdClosed."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationBannerListener;->onAdClosed(Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdClosed(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
 
     return-void
 .end method
@@ -82,17 +87,35 @@
 .method public final onAdFailedToLoad(I)V
     .locals 2
 
-    const-string v0, "Custom event adapter called onAdFailedToLoad."
+    const-string v0, "Custom event adapter called onFailedToReceiveAd."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationBannerListener;->onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;I)V
+    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;I)V
+
+    return-void
+.end method
+
+.method public final onAdFailedToLoad(Lcom/google/android/gms/ads/AdError;)V
+    .locals 2
+
+    const-string v0, "Custom event adapter called onFailedToReceiveAd."
+
+    .line 3
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
+
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+
+    invoke-interface {v0, v1, p1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;Lcom/google/android/gms/ads/AdError;)V
 
     return-void
 .end method
@@ -103,37 +126,32 @@
     const-string v0, "Custom event adapter called onAdLeftApplication."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationBannerListener;->onAdLeftApplication(Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdLeftApplication(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
 
     return-void
 .end method
 
-.method public final onAdLoaded(Landroid/view/View;)V
-    .locals 1
+.method public final onAdLoaded()V
+    .locals 2
 
-    const-string v0, "Custom event adapter called onAdLoaded."
+    const-string v0, "Custom event adapter called onReceivedAd."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;->zza(Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;Landroid/view/View;)V
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuv:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-    .line 3
-    iget-object p1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
-
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
-
-    invoke-interface {p1, v0}, Lcom/google/android/gms/ads/mediation/MediationBannerListener;->onAdLoaded(Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdLoaded(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
 
     return-void
 .end method
@@ -144,14 +162,14 @@
     const-string v0, "Custom event adapter called onAdOpened."
 
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaza;->zzeb(Ljava/lang/String;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzhm:Lcom/google/android/gms/ads/mediation/MediationBannerListener;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeuu:Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzdkd:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
+    iget-object v1, p0, Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter$zza;->zzeut:Lcom/google/android/gms/ads/mediation/customevent/CustomEventAdapter;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationBannerListener;->onAdOpened(Lcom/google/android/gms/ads/mediation/MediationBannerAdapter;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdOpened(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
 
     return-void
 .end method

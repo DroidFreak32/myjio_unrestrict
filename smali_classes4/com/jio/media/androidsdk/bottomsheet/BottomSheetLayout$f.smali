@@ -1,11 +1,14 @@
 .class public Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;
-.super Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$a;
-.source ""
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->c()V
+    value = Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->a(Landroid/view/View;Ljiosaavnsdk/h2;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,37 +18,65 @@
 
 
 # instance fields
-.field public final synthetic t:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
+.field public final synthetic a:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;->t:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
+    iput-object p1, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;->a:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
 
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$a;-><init>(Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$e;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 0
 
-    iget-boolean p1, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$a;->s:Z
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
-    if-nez p1, :cond_0
+    move-result p1
 
-    iget-object p1, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;->t:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
+    iget-object p2, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;->a:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
 
-    const/4 v0, 0x0
+    .line 1
+    iget-object p3, p2, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->c:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;
 
-    invoke-static {p1, v0}, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->a(Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;Landroid/animation/Animator;)Landroid/animation/Animator;
+    .line 2
+    sget-object p4, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;->a:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;
+
+    if-eq p3, p4, :cond_1
+
+    .line 3
+    iget p4, p2, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->v:I
+
+    if-ge p1, p4, :cond_1
+
+    .line 4
+    sget-object p4, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;->d:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;
+
+    if-ne p3, p4, :cond_0
+
+    sget-object p3, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;->c:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;
+
+    invoke-static {p2, p3}, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->a(Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$k;)V
 
     :cond_0
+    iget-object p2, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;->a:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
+
+    int-to-float p3, p1
+
+    invoke-static {p2, p3}, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->a(Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;F)V
+
+    :cond_1
+    iget-object p2, p0, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout$f;->a:Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;
+
+    .line 5
+    iput p1, p2, Lcom/jio/media/androidsdk/bottomsheet/BottomSheetLayout;->v:I
+
     return-void
 .end method

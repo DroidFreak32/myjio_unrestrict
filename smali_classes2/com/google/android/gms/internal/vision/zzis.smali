@@ -1,179 +1,346 @@
-.class public final Lcom/google/android/gms/internal/vision/zzis;
+.class public Lcom/google/android/gms/internal/vision/zzis;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/ListIterator;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/ListIterator<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field private static final zzth:Lcom/google/android/gms/internal/vision/zzho;
 
 
 # instance fields
-.field public zzaav:Ljava/util/ListIterator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ListIterator<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private zzzn:Lcom/google/android/gms/internal/vision/zzgs;
 
-.field public final synthetic zzaaw:I
+.field private volatile zzzo:Lcom/google/android/gms/internal/vision/zzjn;
 
-.field public final synthetic zzaax:Lcom/google/android/gms/internal/vision/zzir;
+.field private volatile zzzp:Lcom/google/android/gms/internal/vision/zzgs;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzir;I)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaax:Lcom/google/android/gms/internal/vision/zzir;
+    invoke-static {}, Lcom/google/android/gms/internal/vision/zzho;->zzgf()Lcom/google/android/gms/internal/vision/zzho;
 
-    iput p2, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaaw:I
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaax:Lcom/google/android/gms/internal/vision/zzir;
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzir;->zza(Lcom/google/android/gms/internal/vision/zzir;)Lcom/google/android/gms/internal/vision/zzgo;
-
-    move-result-object p1
-
-    iget p2, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaaw:I
-
-    invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzis;->zzth:Lcom/google/android/gms/internal/vision/zzho;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic add(Ljava/lang/Object;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    return-void
+.end method
+
+.method private final zzh(Lcom/google/android/gms/internal/vision/zzjn;)Lcom/google/android/gms/internal/vision/zzjn;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    if-nez v0, :cond_1
+
+    .line 2
+    monitor-enter p0
+
+    .line 3
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    if-eqz v0, :cond_0
+
+    .line 4
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    .line 5
+    :cond_0
+    :try_start_1
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    .line 6
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgs;->zztt:Lcom/google/android/gms/internal/vision/zzgs;
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+    :try_end_1
+    .catch Lcom/google/android/gms/internal/vision/zzin; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 7
+    :catch_0
+    :try_start_2
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    .line 8
+    sget-object p1, Lcom/google/android/gms/internal/vision/zzgs;->zztt:Lcom/google/android/gms/internal/vision/zzgs;
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    .line 9
+    :goto_0
+    monitor-exit p0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
+
+    .line 10
+    :cond_1
+    :goto_1
+    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    return-object p1
 .end method
 
-.method public final hasNext()Z
-    .locals 1
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
+    :cond_0
+    instance-of v0, p1, Lcom/google/android/gms/internal/vision/zzis;
 
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
+    if-nez v0, :cond_1
 
-    move-result v0
+    const/4 p1, 0x0
 
-    return v0
-.end method
+    return p1
 
-.method public final hasPrevious()Z
-    .locals 1
+    .line 2
+    :cond_1
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzis;
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
 
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
+    .line 4
+    iget-object v1, p1, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
 
-    move-result v0
+    if-nez v0, :cond_2
 
-    return v0
-.end method
+    if-nez v1, :cond_2
 
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+    .line 5
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzis;->zzee()Lcom/google/android/gms/internal/vision/zzgs;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzis;->zzee()Lcom/google/android/gms/internal/vision/zzgs;
 
-    return-object v0
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzgs;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_2
+    if-eqz v0, :cond_3
+
+    if-eqz v1, :cond_3
+
+    .line 6
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_3
+    if-eqz v0, :cond_4
+
+    .line 7
+    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzjp;->zzgx()Lcom/google/android/gms/internal/vision/zzjn;
+
+    move-result-object v1
+
+    invoke-direct {p1, v1}, Lcom/google/android/gms/internal/vision/zzis;->zzh(Lcom/google/android/gms/internal/vision/zzjn;)Lcom/google/android/gms/internal/vision/zzjn;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 8
+    :cond_4
+    invoke-interface {v1}, Lcom/google/android/gms/internal/vision/zzjp;->zzgx()Lcom/google/android/gms/internal/vision/zzjn;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzis;->zzh(Lcom/google/android/gms/internal/vision/zzjn;)Lcom/google/android/gms/internal/vision/zzjn;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public final nextIndex()I
+.method public hashCode()I
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
-
-    move-result v0
+    const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public final synthetic previous()Ljava/lang/Object;
+.method public final zzee()Lcom/google/android/gms/internal/vision/zzgs;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
 
-    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+    if-eqz v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    monitor-enter p0
+
+    .line 4
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    if-eqz v0, :cond_1
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    monitor-exit p0
+
+    return-object v0
+
+    .line 6
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    if-nez v0, :cond_2
+
+    .line 7
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzgs;->zztt:Lcom/google/android/gms/internal/vision/zzgs;
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    goto :goto_0
+
+    .line 8
+    :cond_2
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzjn;->zzee()Lcom/google/android/gms/internal/vision/zzgs;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    .line 9
+    :goto_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    monitor-exit p0
 
     return-object v0
-.end method
 
-.method public final previousIndex()I
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzaav:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    .line 10
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
-.method public final synthetic set(Ljava/lang/Object;)V
-    .locals 0
+.method public final zzgz()I
+    .locals 1
 
     .line 1
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    if-eqz v0, :cond_0
 
-    throw p1
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzgs;->size()I
+
+    move-result v0
+
+    return v0
+
+    .line 3
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    if-eqz v0, :cond_1
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzjn;->zzgz()I
+
+    move-result v0
+
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final zzi(Lcom/google/android/gms/internal/vision/zzjn;)Lcom/google/android/gms/internal/vision/zzjn;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    const/4 v1, 0x0
+
+    .line 2
+    iput-object v1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzn:Lcom/google/android/gms/internal/vision/zzgs;
+
+    .line 3
+    iput-object v1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzp:Lcom/google/android/gms/internal/vision/zzgs;
+
+    .line 4
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzis;->zzzo:Lcom/google/android/gms/internal/vision/zzjn;
+
+    return-object v0
 .end method

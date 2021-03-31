@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static s:Lcom/caverock/androidsvg/SVG$g;
+.field public static a:Lcom/caverock/androidsvg/SVG$g;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     invoke-direct {v0}, Lcom/caverock/androidsvg/SVG$g;-><init>()V
 
-    sput-object v0, Lcom/caverock/androidsvg/SVG$g;->s:Lcom/caverock/androidsvg/SVG$g;
+    sput-object v0, Lcom/caverock/androidsvg/SVG$g;->a:Lcom/caverock/androidsvg/SVG$g;
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/caverock/androidsvg/SVG$g;->s:Lcom/caverock/androidsvg/SVG$g;
+    sget-object v0, Lcom/caverock/androidsvg/SVG$g;->a:Lcom/caverock/androidsvg/SVG$g;
 
     return-object v0
 .end method

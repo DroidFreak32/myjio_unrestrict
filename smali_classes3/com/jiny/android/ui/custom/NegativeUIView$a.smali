@@ -17,20 +17,20 @@
 
 
 # instance fields
-.field public s:I
+.field public a:I
 
-.field public final synthetic t:Lcom/jiny/android/ui/custom/NegativeUIView;
+.field public final synthetic b:Lcom/jiny/android/ui/custom/NegativeUIView;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jiny/android/ui/custom/NegativeUIView;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->t:Lcom/jiny/android/ui/custom/NegativeUIView;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->b:Lcom/jiny/android/ui/custom/NegativeUIView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->s:I
+    iput p2, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->a:I
 
     return-void
 .end method
@@ -40,13 +40,13 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->t:Lcom/jiny/android/ui/custom/NegativeUIView;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->b:Lcom/jiny/android/ui/custom/NegativeUIView;
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lcom/jiny/android/ui/custom/NegativeUIView;->C:Z
+    iput-boolean v1, v0, Lcom/jiny/android/ui/custom/NegativeUIView;->D:Z
 
-    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->s:I
+    iget v2, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->a:I
 
     if-eqz v2, :cond_3
 
@@ -73,9 +73,9 @@
 
     move-result p1
 
-    invoke-static {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->d(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
+    invoke-static {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->g(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->t:Lcom/jiny/android/ui/custom/NegativeUIView;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/NegativeUIView$a;->b:Lcom/jiny/android/ui/custom/NegativeUIView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -92,7 +92,7 @@
 
     move-result p1
 
-    invoke-static {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->c(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
+    invoke-static {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->f(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
 
     goto :goto_0
 
@@ -107,7 +107,7 @@
 
     move-result p1
 
-    invoke-static {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->b(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
+    invoke-static {v0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->e(Lcom/jiny/android/ui/custom/NegativeUIView;F)F
 
     goto :goto_0
 

@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public final zzabp:Ljava/lang/String;
+.field private final zzabp:Ljava/lang/String;
 
-.field public final zzalb:Lcom/google/android/gms/tagmanager/zzfx;
+.field private final zzalb:Lcom/google/android/gms/tagmanager/zzfx;
 
-.field public final zzalc:Lcom/google/android/gms/tagmanager/zzfw;
+.field private final zzalc:Lcom/google/android/gms/tagmanager/zzfw;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zzfx;Landroid/content/Context;Lcom/google/android/gms/tagmanager/zzfw;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zzfx;Landroid/content/Context;Lcom/google/android/gms/tagmanager/zzfw;)V
     .locals 4
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -193,7 +193,7 @@
     return-void
 .end method
 
-.method public static zzd(Lcom/google/android/gms/tagmanager/zzbw;)Ljava/net/URL;
+.method private static zzd(Lcom/google/android/gms/tagmanager/zzbw;)Ljava/net/URL;
     .locals 1
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -252,15 +252,13 @@
 
     const/4 v2, 0x1
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     :goto_0
-    if-ge v2, v0, :cond_6
+    if-ge v3, v0, :cond_6
 
     .line 2
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -298,7 +296,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     .line 7
     :try_start_1
@@ -306,7 +304,7 @@
 
     invoke-static {v7}, Lcom/google/android/gms/tagmanager/zzdn;->zzn(Landroid/content/Context;)V
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :cond_1
     const-string v7, "User-Agent"
@@ -446,7 +444,7 @@
     invoke-interface {v5, v4}, Lcom/google/android/gms/tagmanager/zzfw;->zzc(Lcom/google/android/gms/tagmanager/zzbw;)V
 
     :goto_3
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 

@@ -1,123 +1,108 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzazd;
+.class public final Lcom/google/android/gms/internal/ads/zzazd;
 .super Ljava/lang/Object;
-
-
-# static fields
-.field public static final synthetic zzakw:[I
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method public static zza(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzazc;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/content/Context;",
+            "Ljava/lang/String;",
+            "Lcom/google/android/gms/internal/ads/zzazc<",
+            "Landroid/os/IBinder;",
+            "TT;>;)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/ads/zzazf;
+        }
+    .end annotation
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzbdd$zze;->values$50KLMJ33DTMIUPRFDTJMOP9FE1P6UT3FC9QMCBQ7CLN6ASJ1EHIM8JB5EDPM2PR59HKN8P949LIN8Q3FCHA6UIBEEPNMMP9R0()[I
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
-
-    const/4 v0, 0x1
-
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
+    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzazd;->zzbw(Landroid/content/Context;)Lcom/google/android/gms/dynamite/DynamiteModule;
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyc:I
+    move-result-object p0
 
-    sub-int/2addr v2, v0
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/dynamite/DynamiteModule;->instantiate(Ljava/lang/String;)Landroid/os/IBinder;
 
-    aput v0, v1, v2
+    move-result-object p0
+
+    invoke-interface {p2, p0}, Lcom/google/android/gms/internal/ads/zzazc;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
 
     :catch_0
-    :try_start_1
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
+    move-exception p0
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyd:I
+    .line 2
+    new-instance p1, Lcom/google/android/gms/internal/ads/zzazf;
 
-    sub-int/2addr v2, v0
+    invoke-direct {p1, p0}, Lcom/google/android/gms/internal/ads/zzazf;-><init>(Ljava/lang/Throwable;)V
 
-    const/4 v3, 0x2
+    throw p1
+.end method
 
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+.method public static zzbv(Landroid/content/Context;)Landroid/content/Context;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/ads/zzazf;
+        }
+    .end annotation
 
-    :catch_1
-    :try_start_2
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzazd;->zzbw(Landroid/content/Context;)Lcom/google/android/gms/dynamite/DynamiteModule;
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyb:I
+    move-result-object p0
 
-    sub-int/2addr v2, v0
+    invoke-virtual {p0}, Lcom/google/android/gms/dynamite/DynamiteModule;->getModuleContext()Landroid/content/Context;
 
-    const/4 v3, 0x3
+    move-result-object p0
 
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    return-object p0
+.end method
 
-    :catch_2
-    :try_start_3
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
+.method private static zzbw(Landroid/content/Context;)Lcom/google/android/gms/dynamite/DynamiteModule;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/ads/zzazf;
+        }
+    .end annotation
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdye:I
+    .line 1
+    :try_start_0
+    sget-object v0, Lcom/google/android/gms/dynamite/DynamiteModule;->PREFER_REMOTE:Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy;
 
-    sub-int/2addr v2, v0
+    const-string v1, "com.google.android.gms.ads.dynamite"
 
-    const/4 v3, 0x4
+    invoke-static {p0, v0, v1}, Lcom/google/android/gms/dynamite/DynamiteModule;->load(Landroid/content/Context;Lcom/google/android/gms/dynamite/DynamiteModule$VersionPolicy;Ljava/lang/String;)Lcom/google/android/gms/dynamite/DynamiteModule;
 
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_3
-    :try_start_4
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
+    return-object p0
 
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdyf:I
+    :catch_0
+    move-exception p0
 
-    sub-int/2addr v2, v0
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzazf;
 
-    const/4 v3, 0x5
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzazf;-><init>(Ljava/lang/Throwable;)V
 
-    aput v3, v1, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdxz:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v3, 0x6
-
-    aput v3, v1, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzazd;->zzakw:[I
-
-    sget v2, Lcom/google/android/gms/internal/ads/zzbdd$zze;->zzdya:I
-
-    sub-int/2addr v2, v0
-
-    const/4 v0, 0x7
-
-    aput v0, v1, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    return-void
+    throw v0
 .end method

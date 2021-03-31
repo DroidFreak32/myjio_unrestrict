@@ -11,43 +11,43 @@
 
 
 # static fields
-.field public static volatile zzwf:Lcom/google/android/gms/internal/gtm/zzap;
+.field private static volatile zzwf:Lcom/google/android/gms/internal/gtm/zzap;
 
 
 # instance fields
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public final zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private final zzsd:Lcom/google/android/gms/common/util/Clock;
 
-.field public final zzwg:Landroid/content/Context;
+.field private final zzwg:Landroid/content/Context;
 
-.field public final zzwh:Lcom/google/android/gms/internal/gtm/zzbq;
+.field private final zzwh:Lcom/google/android/gms/internal/gtm/zzbq;
 
-.field public final zzwi:Lcom/google/android/gms/internal/gtm/zzci;
+.field private final zzwi:Lcom/google/android/gms/internal/gtm/zzci;
 
-.field public final zzwj:Lcom/google/android/gms/analytics/zzk;
+.field private final zzwj:Lcom/google/android/gms/analytics/zzk;
 
-.field public final zzwk:Lcom/google/android/gms/internal/gtm/zzae;
+.field private final zzwk:Lcom/google/android/gms/internal/gtm/zzae;
 
-.field public final zzwl:Lcom/google/android/gms/internal/gtm/zzbv;
+.field private final zzwl:Lcom/google/android/gms/internal/gtm/zzbv;
 
-.field public final zzwm:Lcom/google/android/gms/internal/gtm/zzda;
+.field private final zzwm:Lcom/google/android/gms/internal/gtm/zzda;
 
-.field public final zzwn:Lcom/google/android/gms/internal/gtm/zzcm;
+.field private final zzwn:Lcom/google/android/gms/internal/gtm/zzcm;
 
-.field public final zzwo:Lcom/google/android/gms/analytics/GoogleAnalytics;
+.field private final zzwo:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
-.field public final zzwp:Lcom/google/android/gms/internal/gtm/zzbh;
+.field private final zzwp:Lcom/google/android/gms/internal/gtm/zzbh;
 
-.field public final zzwq:Lcom/google/android/gms/internal/gtm/zzad;
+.field private final zzwq:Lcom/google/android/gms/internal/gtm/zzad;
 
-.field public final zzwr:Lcom/google/android/gms/internal/gtm/zzba;
+.field private final zzwr:Lcom/google/android/gms/internal/gtm/zzba;
 
-.field public final zzws:Lcom/google/android/gms/internal/gtm/zzbu;
+.field private final zzws:Lcom/google/android/gms/internal/gtm/zzbu;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/gtm/zzar;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/gtm/zzar;)V
     .locals 6
 
     .line 1
@@ -263,7 +263,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/gtm/zzan;)V
+.method private static zza(Lcom/google/android/gms/internal/gtm/zzan;)V
     .locals 1
 
     const-string v0, "Analytics service not created/initialized"

@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public volatile _configFileDao:Ltp0;
+.field private volatile _configFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
 
-.field public volatile _diagnosticDao:Lvp0;
+.field private volatile _diagnosticDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
 
-.field public volatile _featureDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FeatureDao;
+.field private volatile _featureDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FeatureDao;
 
-.field public volatile _fileVersionDao:Lyp0;
+.field private volatile _fileVersionDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
 
-.field public volatile _intentFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/IntentFileDao;
+.field private volatile _intentFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/IntentFileDao;
 
-.field public volatile _troubleShootDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/TroubleShootDao;
+.field private volatile _troubleShootDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/TroubleShootDao;
 
 
 # direct methods
@@ -90,20 +90,20 @@
     return-object p0
 .end method
 
-.method public static synthetic access$602(Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;Lbi;)Lbi;
+.method public static synthetic access$602(Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/sqlite/db/SupportSQLiteDatabase;
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/room/RoomDatabase;->mDatabase:Lbi;
+    iput-object p1, p0, Landroidx/room/RoomDatabase;->mDatabase:Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     return-object p1
 .end method
 
-.method public static synthetic access$700(Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;Lbi;)V
+.method public static synthetic access$700(Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/room/RoomDatabase;->internalInitInvalidationTracker(Lbi;)V
+    invoke-virtual {p0, p1}, Landroidx/room/RoomDatabase;->internalInitInvalidationTracker(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     return-void
 .end method
@@ -139,11 +139,11 @@
     invoke-super {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
 
     .line 2
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->getOpenHelper()Lci;
+    invoke-super {p0}, Landroidx/room/RoomDatabase;->getOpenHelper()Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v2
 
@@ -154,37 +154,37 @@
     const-string v3, "DELETE FROM `CONFIG_ENTITY`"
 
     .line 4
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v3, "DELETE FROM `Intent`"
 
     .line 5
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v3, "DELETE FROM `file_versions`"
 
     .line 6
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v3, "DELETE FROM `Feature`"
 
     .line 7
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v3, "DELETE FROM `Troubleshoot`"
 
     .line 8
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v3, "DELETE FROM `Diagnostic`"
 
     .line 9
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v3, "DELETE FROM `Step`"
 
     .line 10
-    invoke-interface {v2, v3}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     .line 11
     invoke-super {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
@@ -195,21 +195,21 @@
     invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     .line 13
-    invoke-interface {v2, v1}, Lbi;->g(Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v1
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     .line 14
-    invoke-interface {v2}, Lbi;->E()Z
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
     .line 15
-    invoke-interface {v2, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -221,37 +221,37 @@
     invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     .line 17
-    invoke-interface {v2, v1}, Lbi;->g(Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v1
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     .line 18
-    invoke-interface {v2}, Lbi;->E()Z
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
     .line 19
-    invoke-interface {v2, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {v2, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     .line 20
     :cond_1
     throw v3
 .end method
 
-.method public configFileDao()Ltp0;
+.method public configFileDao()Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Ltp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
 
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Ltp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
 
     return-object v0
 
@@ -261,20 +261,20 @@
 
     .line 4
     :try_start_0
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Ltp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
 
     if-nez v0, :cond_1
 
     .line 5
-    new-instance v0, Lup0;
+    new-instance v0, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao_Impl;
 
-    invoke-direct {v0, p0}, Lup0;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {v0, p0}, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Ltp0;
+    iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
 
     .line 6
     :cond_1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Ltp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_configFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/ConfigFileDao;
 
     monitor-exit p0
 
@@ -291,7 +291,7 @@
     throw v0
 .end method
 
-.method public createInvalidationTracker()Leh;
+.method public createInvalidationTracker()Landroidx/room/InvalidationTracker;
     .locals 10
 
     .line 1
@@ -307,7 +307,7 @@
     invoke-direct {v2, v1}, Ljava/util/HashMap;-><init>(I)V
 
     .line 3
-    new-instance v1, Leh;
+    new-instance v1, Landroidx/room/InvalidationTracker;
 
     const-string v3, "CONFIG_ENTITY"
 
@@ -327,16 +327,16 @@
 
     move-result-object v3
 
-    invoke-direct {v1, p0, v0, v2, v3}, Leh;-><init>(Landroidx/room/RoomDatabase;Ljava/util/Map;Ljava/util/Map;[Ljava/lang/String;)V
+    invoke-direct {v1, p0, v0, v2, v3}, Landroidx/room/InvalidationTracker;-><init>(Landroidx/room/RoomDatabase;Ljava/util/Map;Ljava/util/Map;[Ljava/lang/String;)V
 
     return-object v1
 .end method
 
-.method public createOpenHelper(Lyg;)Lci;
+.method public createOpenHelper(Landroidx/room/DatabaseConfiguration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
     .locals 4
 
     .line 1
-    new-instance v0, Lih;
+    new-instance v0, Landroidx/room/RoomOpenHelper;
 
     new-instance v1, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl$a;
 
@@ -348,48 +348,52 @@
 
     const-string v3, "f536dd34ecddf1e7fce0111022a55656"
 
-    invoke-direct {v0, p1, v1, v2, v3}, Lih;-><init>(Lyg;Lih$a;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, v1, v2, v3}, Landroidx/room/RoomOpenHelper;-><init>(Landroidx/room/DatabaseConfiguration;Landroidx/room/RoomOpenHelper$Delegate;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2
-    iget-object v1, p1, Lyg;->b:Landroid/content/Context;
+    iget-object v1, p1, Landroidx/room/DatabaseConfiguration;->context:Landroid/content/Context;
 
-    invoke-static {v1}, Lci$b;->a(Landroid/content/Context;)Lci$b$a;
+    invoke-static {v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->builder(Landroid/content/Context;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
     move-result-object v1
 
-    iget-object v2, p1, Lyg;->c:Ljava/lang/String;
+    iget-object v2, p1, Landroidx/room/DatabaseConfiguration;->name:Ljava/lang/String;
 
     .line 3
-    invoke-virtual {v1, v2}, Lci$b$a;->a(Ljava/lang/String;)Lci$b$a;
+    invoke-virtual {v1, v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->name(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
+
+    move-result-object v1
 
     .line 4
-    invoke-virtual {v1, v0}, Lci$b$a;->a(Lci$a;)Lci$b$a;
+    invoke-virtual {v1, v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->callback(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
+
+    move-result-object v0
 
     .line 5
-    invoke-virtual {v1}, Lci$b$a;->a()Lci$b;
+    invoke-virtual {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->build()Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
 
     move-result-object v0
 
     .line 6
-    iget-object p1, p1, Lyg;->a:Lci$c;
+    iget-object p1, p1, Landroidx/room/DatabaseConfiguration;->sqliteOpenHelperFactory:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;
 
-    invoke-interface {p1, v0}, Lci$c;->a(Lci$b;)Lci;
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;->create(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public diagnosticDao()Lvp0;
+.method public diagnosticDao()Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lvp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
 
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lvp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
 
     return-object v0
 
@@ -399,20 +403,20 @@
 
     .line 4
     :try_start_0
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lvp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
 
     if-nez v0, :cond_1
 
     .line 5
-    new-instance v0, Lwp0;
+    new-instance v0, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao_Impl;
 
-    invoke-direct {v0, p0}, Lwp0;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {v0, p0}, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lvp0;
+    iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
 
     .line 6
     :cond_1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lvp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_diagnosticDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/DiagnosticDao;
 
     monitor-exit p0
 
@@ -453,9 +457,9 @@
     if-nez v0, :cond_1
 
     .line 5
-    new-instance v0, Lxp0;
+    new-instance v0, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FeatureDao_Impl;
 
-    invoke-direct {v0, p0}, Lxp0;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {v0, p0}, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FeatureDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_featureDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FeatureDao;
 
@@ -478,16 +482,16 @@
     throw v0
 .end method
 
-.method public fileVersionDao()Lyp0;
+.method public fileVersionDao()Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lyp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
 
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lyp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
 
     return-object v0
 
@@ -497,20 +501,20 @@
 
     .line 4
     :try_start_0
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lyp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
 
     if-nez v0, :cond_1
 
     .line 5
-    new-instance v0, Lzp0;
+    new-instance v0, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao_Impl;
 
-    invoke-direct {v0, p0}, Lzp0;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {v0, p0}, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lyp0;
+    iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
 
     .line 6
     :cond_1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lyp0;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_fileVersionDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/FileVersionDao;
 
     monitor-exit p0
 
@@ -551,9 +555,9 @@
     if-nez v0, :cond_1
 
     .line 5
-    new-instance v0, Laq0;
+    new-instance v0, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/IntentFileDao_Impl;
 
-    invoke-direct {v0, p0}, Laq0;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {v0, p0}, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/IntentFileDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_intentFileDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/IntentFileDao;
 
@@ -600,9 +604,9 @@
     if-nez v0, :cond_1
 
     .line 5
-    new-instance v0, Lbq0;
+    new-instance v0, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/TroubleShootDao_Impl;
 
-    invoke-direct {v0, p0}, Lbq0;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {v0, p0}, Lcom/jio/jioml/hellojio/data/local/roomdb/dao/TroubleShootDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/jio/jioml/hellojio/data/local/roomdb/HelloJioDatabase_Impl;->_troubleShootDao:Lcom/jio/jioml/hellojio/data/local/roomdb/dao/TroubleShootDao;
 

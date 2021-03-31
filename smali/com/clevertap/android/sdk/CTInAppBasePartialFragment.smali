@@ -19,6 +19,16 @@
     .locals 2
 
     .line 1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/clevertap/android/sdk/Utils;->isActivityDead(Landroid/app/Activity;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->isCleanedUp:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -28,24 +38,24 @@
     if-nez v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->parent:Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v0
 
+    if-eqz v0, :cond_0
+
     .line 3
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v1
 
     .line 4
     :try_start_0
-    invoke-virtual {v1, p0}, Landroid/app/FragmentTransaction;->remove(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
+    invoke-virtual {v1, p0}, Landroidx/fragment/app/FragmentTransaction;->remove(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/app/FragmentTransaction;->commit()I
+    invoke-virtual {v1}, Landroidx/fragment/app/FragmentTransaction;->commit()I
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -53,15 +63,15 @@
 
     .line 5
     :catch_0
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Landroid/app/FragmentTransaction;->remove(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
+    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentTransaction;->remove(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commitAllowingStateLoss()I
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I
 
     .line 6
     :cond_0
@@ -84,17 +94,9 @@
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->context:Landroid/content/Context;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
-
-    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->instanceWithConfig(Landroid/content/Context;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)Lcom/clevertap/android/sdk/CleverTapAPI;
+    invoke-static {v1, v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->instanceWithConfig(Landroid/content/Context;Lcom/clevertap/android/sdk/CleverTapInstanceConfig;)Lcom/clevertap/android/sdk/CleverTapAPI;
 
     move-result-object v0
 
@@ -104,11 +106,25 @@
     return-void
 .end method
 
+.method public onDestroy()V
+    .locals 1
+
+    .line 1
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroy()V
+
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-virtual {p0, v0}, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->didDismiss(Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
 .method public onPause()V
     .locals 0
 
     .line 1
-    invoke-super {p0}, Landroid/app/Fragment;->onPause()V
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
 
     return-void
 .end method
@@ -117,7 +133,7 @@
     .locals 1
 
     .line 1
-    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onStart()V
 
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->isCleanedUp:Ljava/util/concurrent/atomic/AtomicBoolean;

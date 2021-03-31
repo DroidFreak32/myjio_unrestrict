@@ -100,6 +100,7 @@
     "app_tcm_id": "tcm:19-3073-1024",
     "self_help_tcm_id": "tcm:19-23806-1024",
     "parentLink": "FAQ/",
-    "HATHWAY001_7": "JioHathwayFAQ/"
+    "HATHWAY001_7": "JioHathwayFAQ/",
+     "LIVETV001_7": "JioHathwayDVBOIP/"
   }
 }

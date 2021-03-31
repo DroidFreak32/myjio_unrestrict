@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/versionedparcelable/ParcelImpl;
+.method public a(Landroid/os/Parcel;)Landroidx/versionedparcelable/ParcelImpl;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/versionedparcelable/ParcelImpl;
 
     invoke-direct {v0, p1}, Landroidx/versionedparcelable/ParcelImpl;-><init>(Landroid/os/Parcel;)V
@@ -49,22 +49,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/versionedparcelable/ParcelImpl;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/ParcelImpl$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/versionedparcelable/ParcelImpl;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/versionedparcelable/ParcelImpl;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/versionedparcelable/ParcelImpl;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/versionedparcelable/ParcelImpl;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/ParcelImpl$a;->a(Landroid/os/Parcel;)Landroidx/versionedparcelable/ParcelImpl;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -73,7 +73,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/ParcelImpl$a;->newArray(I)[Landroidx/versionedparcelable/ParcelImpl;
+    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/ParcelImpl$a;->b(I)[Landroidx/versionedparcelable/ParcelImpl;
 
     move-result-object p1
 

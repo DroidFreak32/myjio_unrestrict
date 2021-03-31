@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zza:Landroid/os/IBinder;
+.field private final zza:Landroid/os/IBinder;
 
-.field public final zzb:Ljava/lang/String;
+.field private final zzb:Ljava/lang/String;
 
 
 # direct methods

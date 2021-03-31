@@ -34,15 +34,15 @@
     .end annotation
 .end field
 
-.field public static zzae:Lcom/google/android/gms/gcm/GoogleCloudMessaging;
+.field private static zzae:Lcom/google/android/gms/gcm/GoogleCloudMessaging;
 
-.field public static final zzah:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private static final zzah:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # instance fields
-.field public zzaf:Landroid/app/PendingIntent;
+.field private zzaf:Landroid/app/PendingIntent;
 
-.field public final zzag:Ljava/util/Map;
+.field private final zzag:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -53,7 +53,7 @@
     .end annotation
 .end field
 
-.field public final zzai:Ljava/util/concurrent/BlockingQueue;
+.field private final zzai:Ljava/util/concurrent/BlockingQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/BlockingQueue<",
@@ -63,9 +63,9 @@
     .end annotation
 .end field
 
-.field public final zzaj:Landroid/os/Messenger;
+.field private final zzaj:Landroid/os/Messenger;
 
-.field public zzl:Landroid/content/Context;
+.field private zzl:Landroid/content/Context;
 
 
 # direct methods
@@ -91,9 +91,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
     invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -179,6 +179,12 @@
 
 .method private final zzd(Landroid/os/Bundle;Z)Landroid/content/Intent;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -342,6 +348,12 @@
     .end annotation
 
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -773,8 +785,6 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/gcm/GoogleCloudMessaging;->zzaf:Landroid/app/PendingIntent;
-
     invoke-virtual {v0}, Landroid/app/PendingIntent;->cancel()V
 
     const/4 v0, 0x0
@@ -862,6 +872,16 @@
 
 .method public varargs declared-synchronized register([Ljava/lang/String;)Ljava/lang/String;
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "com.google.android.c2dm.permission.RECEIVE"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -895,6 +915,16 @@
 
 .method public send(Ljava/lang/String;Ljava/lang/String;JLandroid/os/Bundle;)V
     .locals 7
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "com.google.android.c2dm.permission.RECEIVE"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -979,11 +1009,11 @@
 
     move-result-object p4
 
-    const-string v4, "GCM"
+    const-string v4, ""
 
-    const-string v5, ""
+    const-string v5, "GCM"
 
-    invoke-virtual {p4, v5, p3, v4}, Lcom/google/android/gms/iid/zzak;->zzf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p4, v4, p3, v5}, Lcom/google/android/gms/iid/zzak;->zzf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p3
 
@@ -1035,11 +1065,11 @@
     move-result-object v1
 
     .line 19
-    instance-of v5, v1, Ljava/lang/String;
+    instance-of v4, v1, Ljava/lang/String;
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
-    const-string v5, "gcm."
+    const-string v4, "gcm."
 
     .line 20
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1052,7 +1082,7 @@
 
     if-eqz v6, :cond_3
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1061,7 +1091,7 @@
     :cond_3
     new-instance v0, Ljava/lang/String;
 
-    invoke-direct {v0, v5}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     :goto_2
     check-cast v1, Ljava/lang/String;
@@ -1086,7 +1116,7 @@
 
     const-string p2, "upstream"
 
-    invoke-virtual {p1, v4, p2, p3}, Lcom/google/android/gms/iid/InstanceID;->zze(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
+    invoke-virtual {p1, v5, p2, p3}, Lcom/google/android/gms/iid/InstanceID;->zze(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
 
     return-void
 
@@ -1123,6 +1153,16 @@
 
 .method public send(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 6
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "com.google.android.c2dm.permission.RECEIVE"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1144,6 +1184,16 @@
 
 .method public declared-synchronized unregister()V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "com.google.android.c2dm.permission.RECEIVE"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

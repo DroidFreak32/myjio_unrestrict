@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final _beanType:Lcom/fasterxml/jackson/databind/JavaType;
+.field private final _beanType:Lcom/fasterxml/jackson/databind/JavaType;
 
-.field public final _nameToPropertyIndex:Ljava/util/Map;
+.field private final _nameToPropertyIndex:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field public final _properties:Ljava/util/List;
+.field private final _properties:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

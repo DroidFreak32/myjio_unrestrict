@@ -1,22 +1,27 @@
-.class public Lcom/google/android/gms/internal/ads/zzac;
-.super Lcom/google/android/gms/internal/ads/zzae;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzac;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzae;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaa;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/internal/ads/zzaa<",
+            "*>;)V"
+        }
+    .end annotation
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzp;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzae;-><init>(Lcom/google/android/gms/internal/ads/zzp;)V
-
-    return-void
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaa;Lcom/google/android/gms/internal/ads/zzaj;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/internal/ads/zzaa<",
+            "*>;",
+            "Lcom/google/android/gms/internal/ads/zzaj<",
+            "*>;)V"
+        }
+    .end annotation
 .end method

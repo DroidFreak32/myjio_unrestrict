@@ -1,35 +1,78 @@
 .class public final Lcom/google/android/gms/internal/ads/zzasc;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/internal/ads/zzgu;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
-
-
-# instance fields
-.field public final synthetic zzdfl:Landroid/webkit/JsPromptResult;
+.implements Lcom/google/android/gms/internal/ads/zzasa;
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/JsPromptResult;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.ads.internal.query.IUpdateUrlsCallback"
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasc;->zzdfl:Landroid/webkit/JsPromptResult;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
-    .locals 0
+.method public final onError(Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzasc;->zzdfl:Landroid/webkit/JsPromptResult;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
 
-    invoke-virtual {p1}, Landroid/webkit/JsPromptResult;->cancel()V
+    move-result-object v0
+
+    .line 2
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 p1, 0x2
+
+    .line 3
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public final onSuccess(Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Landroid/net/Uri;",
+            ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgu;->zzdo()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 2
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    const/4 p1, 0x1
+
+    .line 3
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzgu;->zzb(ILandroid/os/Parcel;)V
 
     return-void
 .end method

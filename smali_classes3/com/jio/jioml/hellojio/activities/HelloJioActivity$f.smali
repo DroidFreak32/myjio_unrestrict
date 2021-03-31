@@ -3,12 +3,12 @@
 .source "HelloJioActivity.kt"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroidx/lifecycle/Observer;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onClick(Landroid/view/View;)V
+    value = Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,26 +16,28 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Landroidx/lifecycle/Observer<",
+        "Landroid/content/Intent;",
+        ">;"
+    }
+.end annotation
 
-# static fields
-.field public static final s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;
+
+# instance fields
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;
-
-    invoke-direct {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;-><init>()V
-
-    sput-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)V
     .locals 0
+
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,11 +46,28 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public final a(Landroid/content/Intent;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+
+    const-string v1, "it"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0, p1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->access$processCommonReceiver(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic onChanged(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    check-cast p1, Landroid/content/Intent;
+
+    invoke-virtual {p0, p1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$f;->a(Landroid/content/Intent;)V
 
     return-void
 .end method

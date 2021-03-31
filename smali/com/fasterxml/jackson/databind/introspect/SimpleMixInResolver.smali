@@ -8,7 +8,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -143,6 +143,8 @@
 
     :cond_1
     new-instance v1, Ljava/util/HashMap;
+
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;->_localMixIns:Ljava/util/Map;
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 

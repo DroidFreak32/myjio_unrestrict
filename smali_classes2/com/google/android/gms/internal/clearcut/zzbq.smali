@@ -21,13 +21,13 @@
 
 
 # static fields
-.field public static final zzgj:Lcom/google/android/gms/internal/clearcut/zzbq;
+.field private static final zzgj:Lcom/google/android/gms/internal/clearcut/zzbq;
 
 
 # instance fields
-.field public size:I
+.field private size:I
 
-.field public zzgk:[D
+.field private zzgk:[D
 
 
 # direct methods
@@ -59,7 +59,7 @@
     return-void
 .end method
 
-.method public constructor <init>([DI)V
+.method private constructor <init>([DI)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzav;-><init>()V

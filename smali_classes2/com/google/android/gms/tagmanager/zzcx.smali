@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzags:Ljava/lang/String;
+.field private static final zzags:Ljava/lang/String;
 
-.field public static final zzahl:Ljava/lang/String;
+.field private static final zzahl:Ljava/lang/String;
 
-.field public static final zzahm:Ljava/lang/String;
+.field private static final zzahm:Ljava/lang/String;
 
-.field public static final zzahn:Ljava/lang/String;
+.field private static final zzahn:Ljava/lang/String;
 
 
 # direct methods
@@ -87,7 +87,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/String;ILjava/util/Set;)Ljava/lang/String;
+.method private static zza(Ljava/lang/String;ILjava/util/Set;)Ljava/lang/String;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -205,7 +205,7 @@
     return-object p0
 .end method
 
-.method public static zza(Ljava/lang/StringBuilder;Ljava/lang/String;ILjava/util/Set;)V
+.method private static zza(Ljava/lang/StringBuilder;Ljava/lang/String;ILjava/util/Set;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -229,7 +229,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/util/Set;Ljava/lang/String;)V
+.method private static zza(Ljava/util/Set;Ljava/lang/String;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -537,16 +537,14 @@
 
     const/4 v5, 0x1
 
-    const/4 v5, 0x0
-
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
     :goto_5
-    if-ge v5, v2, :cond_b
+    if-ge v6, v2, :cond_b
 
-    aget-object v8, v0, v5
+    aget-object v8, v0, v6
 
-    if-nez v6, :cond_a
+    if-nez v5, :cond_a
 
     .line 31
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -555,13 +553,13 @@
     :cond_a
     invoke-static {v8}, Lcom/google/android/gms/tagmanager/zzgj;->zzc(Lcom/google/android/gms/internal/gtm/zzl;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-static {p1, v6, v3, v4}, Lcom/google/android/gms/tagmanager/zzcx;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;ILjava/util/Set;)V
+    invoke-static {p1, v5, v3, v4}, Lcom/google/android/gms/tagmanager/zzcx;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;ILjava/util/Set;)V
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v6, v6, 0x1
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     goto :goto_5
 

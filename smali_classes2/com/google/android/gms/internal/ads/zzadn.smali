@@ -1,51 +1,34 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzadn;
+.class public final Lcom/google/android/gms/internal/ads/zzadn;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# instance fields
-.field public final zzcen:Lcom/google/android/gms/internal/ads/zzadm;
-
-.field public final zzceo:Z
-
-.field public final zzcep:Lorg/json/JSONObject;
-
-.field public final zzceq:Lcom/google/android/gms/internal/ads/zzaps;
+# static fields
+.field public static zzddx:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzadm;ZLorg/json/JSONObject;Lcom/google/android/gms/internal/ads/zzaps;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "gads:video:metric_reporting_enabled"
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzcen:Lcom/google/android/gms/internal/ads/zzadm;
+    const/4 v1, 0x0
 
-    iput-boolean p2, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzceo:Z
+    .line 1
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzcep:Lorg/json/JSONObject;
+    move-result-object v0
 
-    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzceq:Lcom/google/android/gms/internal/ads/zzaps;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 4
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzcen:Lcom/google/android/gms/internal/ads/zzadm;
-
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzceo:Z
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzcep:Lorg/json/JSONObject;
-
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzadn;->zzceq:Lcom/google/android/gms/internal/ads/zzaps;
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/gms/internal/ads/zzadm;->zza(ZLorg/json/JSONObject;Lcom/google/android/gms/internal/ads/zzaps;)V
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadn;->zzddx:Lcom/google/android/gms/internal/ads/zzacn;
 
     return-void
 .end method

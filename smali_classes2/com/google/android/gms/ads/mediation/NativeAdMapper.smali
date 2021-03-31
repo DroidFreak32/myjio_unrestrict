@@ -1,11 +1,9 @@
 .class public Lcom/google/android/gms/ads/mediation/NativeAdMapper;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
@@ -19,11 +17,11 @@
 
 .field public mOverrideImpressionRecording:Z
 
-.field public zzawr:Lcom/google/android/gms/ads/VideoController;
+.field private zzcjv:Lcom/google/android/gms/ads/VideoController;
 
-.field public zzdji:Landroid/view/View;
+.field private zzetv:Landroid/view/View;
 
-.field public zzdjj:Z
+.field private zzetw:Z
 
 
 # direct methods
@@ -85,7 +83,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzawr:Lcom/google/android/gms/ads/VideoController;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzcjv:Lcom/google/android/gms/ads/VideoController;
 
     return-object v0
 .end method
@@ -100,7 +98,7 @@
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzdjj:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzetw:Z
 
     return v0
 .end method
@@ -133,7 +131,7 @@
     .locals 0
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzdjj:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzetw:Z
 
     return-void
 .end method
@@ -142,7 +140,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzdji:Landroid/view/View;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzetv:Landroid/view/View;
 
     return-void
 .end method
@@ -203,16 +201,16 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzawr:Lcom/google/android/gms/ads/VideoController;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzcjv:Lcom/google/android/gms/ads/VideoController;
 
     return-void
 .end method
 
-.method public final zzxr()Landroid/view/View;
+.method public final zzaee()Landroid/view/View;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzdji:Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAdMapper;->zzetv:Landroid/view/View;
 
     return-object v0
 .end method

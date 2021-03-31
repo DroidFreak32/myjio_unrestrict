@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzatu:Ljava/util/List;
+.field private final zzatu:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public final zzatv:Ljava/util/List;
+.field private final zzatv:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -23,7 +23,7 @@
     .end annotation
 .end field
 
-.field public final zzatw:Ljava/util/List;
+.field private final zzatw:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -33,7 +33,7 @@
     .end annotation
 .end field
 
-.field public final zzatx:Ljava/util/List;
+.field private final zzatx:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -43,7 +43,7 @@
     .end annotation
 .end field
 
-.field public final zzava:Ljava/util/List;
+.field private final zzava:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -53,7 +53,7 @@
     .end annotation
 .end field
 
-.field public final zzavb:Ljava/util/List;
+.field private final zzavb:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -63,7 +63,7 @@
     .end annotation
 .end field
 
-.field public final zzavc:Ljava/util/List;
+.field private final zzavc:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -73,7 +73,7 @@
     .end annotation
 .end field
 
-.field public final zzavd:Ljava/util/List;
+.field private final zzavd:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -83,7 +83,7 @@
     .end annotation
 .end field
 
-.field public final zzave:Ljava/util/List;
+.field private final zzave:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -93,7 +93,7 @@
     .end annotation
 .end field
 
-.field public final zzavf:Ljava/util/List;
+.field private final zzavf:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -105,7 +105,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1

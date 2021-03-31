@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/CleverTapAPI;->notificationReady(Lcom/clevertap/android/sdk/CTInAppNotification;)V
+    value = Lcom/clevertap/android/sdk/CleverTapAPI;->_notifyInboxMessagesDidUpdate()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,13 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public final synthetic val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
-
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;Lcom/clevertap/android/sdk/CTInAppNotification;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/CleverTapAPI;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$29;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
-
-    iput-object p2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$29;->val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,14 +36,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/CleverTapAPI$29;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$29;->val$inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$3000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/CTInboxListener;
 
-    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->notificationReady(Lcom/clevertap/android/sdk/CTInAppNotification;)V
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/clevertap/android/sdk/CTInboxListener;->inboxMessagesDidUpdate()V
 
     return-void
 .end method

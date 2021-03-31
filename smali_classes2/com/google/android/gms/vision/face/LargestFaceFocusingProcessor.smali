@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/face/LargestFaceFocusingProcessor;
 .super Lcom/google/android/gms/vision/FocusingProcessor;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations

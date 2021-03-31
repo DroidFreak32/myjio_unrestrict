@@ -1,8 +1,13 @@
 .class public Lcom/google/android/gms/common/api/internal/zaa$zaa;
 .super Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
+.annotation build Landroidx/annotation/VisibleForTesting;
+    otherwise = 0x2
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/google/android/gms/common/api/internal/zaa;
 .end annotation
@@ -14,7 +19,7 @@
 
 
 # instance fields
-.field public zacm:Ljava/util/List;
+.field private zaa:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -26,7 +31,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
+.method private constructor <init>(Lcom/google/android/gms/common/api/internal/LifecycleFragment;)V
     .locals 1
 
     .line 1
@@ -37,7 +42,7 @@
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zacm:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa:Ljava/util/List;
 
     .line 3
     iget-object p1, p0, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->mLifecycleFragment:Lcom/google/android/gms/common/api/internal/LifecycleFragment;
@@ -49,7 +54,53 @@
     return-void
 .end method
 
-.method public static zaa(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
+.method public static synthetic zaa(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
+    .locals 0
+
+    .line 3
+    invoke-static {p0}, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zab(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic zaa(Lcom/google/android/gms/common/api/internal/zaa$zaa;Ljava/lang/Runnable;)V
+    .locals 0
+
+    .line 4
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method private final declared-synchronized zaa(Ljava/lang/Runnable;)V
+    .locals 1
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 2
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method private static zab(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
     .locals 3
 
     .line 1
@@ -96,70 +147,26 @@
     throw v0
 .end method
 
-.method public static synthetic zaa(Lcom/google/android/gms/common/api/internal/zaa$zaa;Ljava/lang/Runnable;)V
-    .locals 0
-
-    .line 9
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method private final declared-synchronized zaa(Ljava/lang/Runnable;)V
-    .locals 1
-
-    monitor-enter p0
-
-    .line 7
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zacm:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 8
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public static synthetic zab(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
-    .locals 0
-
-    .line 1
-    invoke-static {p0}, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa(Landroid/app/Activity;)Lcom/google/android/gms/common/api/internal/zaa$zaa;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 
 # virtual methods
 .method public onStop()V
     .locals 2
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
     monitor-enter p0
 
     .line 2
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zacm:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa:Ljava/util/List;
 
     .line 3
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zacm:Ljava/util/List;
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/zaa$zaa;->zaa:Ljava/util/List;
 
     .line 4
     monitor-exit p0

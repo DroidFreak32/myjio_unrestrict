@@ -1,13 +1,13 @@
 .class public Lcom/google/android/gms/internal/measurement/zzc;
 .super Landroid/os/Binder;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 # interfaces
 .implements Landroid/os/IInterface;
 
 
 # static fields
-.field public static zza:Lcom/google/android/gms/internal/measurement/zze;
+.field private static zza:Lcom/google/android/gms/internal/measurement/zze;
 
 
 # direct methods
@@ -39,6 +39,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const v0, 0xffffff
 
@@ -79,6 +84,11 @@
 
 .method public zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 p1, 0x0
 

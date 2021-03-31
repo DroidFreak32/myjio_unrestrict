@@ -31,7 +31,7 @@
 # static fields
 .field public static final EMPTY:Lcom/fasterxml/jackson/annotation/JacksonInject$Value;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -71,7 +71,7 @@
     return-void
 .end method
 
-.method public static _empty(Ljava/lang/Object;Ljava/lang/Boolean;)Z
+.method private static _empty(Ljava/lang/Object;Ljava/lang/Boolean;)Z
     .locals 0
 
     if-nez p0, :cond_0
@@ -202,7 +202,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/annotation/JacksonInject$Value;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-ne v2, v3, :cond_4
 

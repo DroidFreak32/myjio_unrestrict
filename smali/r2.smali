@@ -1,128 +1,454 @@
-.class public Lr2;
-.super Landroid/widget/ListView;
-.source "DropDownListView.java"
+.class public final Lr2;
+.super Ljava/lang/Object;
+.source "LocaleListCompatWrapper.java"
+
+# interfaces
+.implements Ls2;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lr2$b;,
-        Lr2$a;
-    }
-.end annotation
+# static fields
+.field public static final c:[Ljava/util/Locale;
+
+.field public static final d:Ljava/util/Locale;
+
+.field public static final e:Ljava/util/Locale;
+
+.field public static final f:Ljava/util/Locale;
 
 
 # instance fields
-.field public A:Z
+.field public final a:[Ljava/util/Locale;
 
-.field public B:Z
-
-.field public C:Z
-
-.field public D:Lga;
-
-.field public E:Lza;
-
-.field public F:Lr2$b;
-
-.field public final s:Landroid/graphics/Rect;
-
-.field public t:I
-
-.field public u:I
-
-.field public v:I
-
-.field public w:I
-
-.field public x:I
-
-.field public y:Ljava/lang/reflect/Field;
-
-.field public z:Lr2$a;
+.field public final b:Ljava/lang/String;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Z)V
-    .locals 2
+.method public static constructor <clinit>()V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/util/Locale;
 
     .line 1
-    sget v0, Lo;->dropDownListViewStyle:I
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, v1, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    sput-object v0, Lr2;->c:[Ljava/util/Locale;
 
     .line 2
-    new-instance p1, Landroid/graphics/Rect;
+    new-instance v0, Ljava/util/Locale;
 
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+    const-string v1, "en"
 
-    iput-object p1, p0, Lr2;->s:Landroid/graphics/Rect;
+    const-string v2, "XA"
 
-    const/4 p1, 0x0
+    invoke-direct {v0, v1, v2}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lr2;->d:Ljava/util/Locale;
 
     .line 3
-    iput p1, p0, Lr2;->t:I
+    new-instance v0, Ljava/util/Locale;
+
+    const-string v1, "ar"
+
+    const-string v2, "XB"
+
+    invoke-direct {v0, v1, v2}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lr2;->e:Ljava/util/Locale;
+
+    const-string v0, "en-Latn"
 
     .line 4
-    iput p1, p0, Lr2;->u:I
+    invoke-static {v0}, Landroidx/core/os/LocaleListCompat;->a(Ljava/lang/String;)Ljava/util/Locale;
 
-    .line 5
-    iput p1, p0, Lr2;->v:I
+    move-result-object v0
 
-    .line 6
-    iput p1, p0, Lr2;->w:I
+    sput-object v0, Lr2;->f:Ljava/util/Locale;
 
-    .line 7
-    iput-boolean p2, p0, Lr2;->B:Z
-
-    .line 8
-    invoke-virtual {p0, p1}, Landroid/widget/ListView;->setCacheColorHint(I)V
-
-    .line 9
-    :try_start_0
-    const-class p1, Landroid/widget/AbsListView;
-
-    const-string p2, "mIsChildViewEnabled"
-
-    invoke-virtual {p1, p2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lr2;->y:Ljava/lang/reflect/Field;
-
-    .line 10
-    iget-object p1, p0, Lr2;->y:Ljava/lang/reflect/Field;
-
-    const/4 p2, 0x1
-
-    invoke-virtual {p1, p2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 11
-    invoke-virtual {p1}, Ljava/lang/NoSuchFieldException;->printStackTrace()V
-
-    :goto_0
     return-void
 .end method
 
-.method private setSelectorEnabled(Z)V
+.method public varargs constructor <init>([Ljava/util/Locale;)V
+    .locals 7
+    .param p1    # [Ljava/util/Locale;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    array-length v0, p1
+
+    if-nez v0, :cond_0
+
+    .line 3
+    sget-object p1, Lr2;->c:[Ljava/util/Locale;
+
+    iput-object p1, p0, Lr2;->a:[Ljava/util/Locale;
+
+    const-string p1, ""
+
+    .line 4
+    iput-object p1, p0, Lr2;->b:Ljava/lang/String;
+
+    goto :goto_1
+
+    .line 5
+    :cond_0
+    array-length v0, p1
+
+    new-array v0, v0, [Ljava/util/Locale;
+
+    .line 6
+    new-instance v1, Ljava/util/HashSet;
+
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+
+    .line 7
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v3, 0x0
+
+    .line 8
+    :goto_0
+    array-length v4, p1
+
+    if-ge v3, v4, :cond_4
+
+    .line 9
+    aget-object v4, p1, v3
+
+    const-string v5, "list["
+
+    if-eqz v4, :cond_3
+
+    .line 10
+    invoke-virtual {v1, v4}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    .line 11
+    invoke-virtual {v4}, Ljava/util/Locale;->clone()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/Locale;
+
+    .line 12
+    aput-object v4, v0, v3
+
+    .line 13
+    invoke-static {v2, v4}, Lr2;->k(Ljava/lang/StringBuilder;Ljava/util/Locale;)V
+
+    .line 14
+    array-length v5, p1
+
+    add-int/lit8 v5, v5, -0x1
+
+    if-ge v3, v5, :cond_1
+
+    const/16 v5, 0x2c
+
+    .line 15
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 16
+    :cond_1
+    invoke-virtual {v1, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .line 17
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "] is a repetition"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 18
+    :cond_3
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "] is null"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 19
+    :cond_4
+    iput-object v0, p0, Lr2;->a:[Ljava/util/Locale;
+
+    .line 20
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lr2;->b:Ljava/lang/String;
+
+    :goto_1
+    return-void
+.end method
+
+.method public static h(Ljava/util/Locale;)Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const-string v1, ""
+
+    const/16 v2, 0x15
+
+    if-lt v0, v2, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Ljava/util/Locale;->getScript()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    return-object v1
+.end method
+
+.method public static i(Ljava/util/Locale;)Z
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lr2;->z:Lr2$a;
+    sget-object v0, Lr2;->d:Ljava/util/Locale;
+
+    invoke-virtual {v0, p0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lr2;->e:Ljava/util/Locale;
+
+    invoke-virtual {v0, p0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    :goto_1
+    return p0
+.end method
+
+.method public static j(Ljava/util/Locale;Ljava/util/Locale;)I
+    .locals 4
+    .annotation build Landroidx/annotation/IntRange;
+        from = 0x0L
+        to = 0x1L
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0, p1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
+    return v1
+
     .line 2
-    invoke-virtual {v0, p1}, Lr2$a;->a(Z)V
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_1
+
+    return v2
+
+    .line 3
+    :cond_1
+    invoke-static {p0}, Lr2;->i(Ljava/util/Locale;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    invoke-static {p1}, Lr2;->i(Ljava/util/Locale;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    goto :goto_1
+
+    .line 4
+    :cond_2
+    invoke-static {p0}, Lr2;->h(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    .line 6
+    invoke-virtual {p0}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 7
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v1, 0x0
+
+    :cond_4
+    :goto_0
+    return v1
+
+    .line 8
+    :cond_5
+    invoke-static {p1}, Lr2;->h(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 9
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_6
+    :goto_1
+    return v2
+.end method
+
+.method public static k(Ljava/lang/StringBuilder;Ljava/util/Locale;)V
+    .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
+    .line 1
+    invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 2
+    invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/16 v0, 0x2d
+
+    .line 4
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 5
+    invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_0
     return-void
@@ -130,1234 +456,474 @@
 
 
 # virtual methods
-.method public a(IIIII)I
-    .locals 10
-
-    .line 1
-    invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingTop()I
-
-    move-result p2
-
-    .line 2
-    invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingBottom()I
-
-    move-result p3
-
-    .line 3
-    invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingLeft()I
-
-    .line 4
-    invoke-virtual {p0}, Landroid/widget/ListView;->getListPaddingRight()I
-
-    .line 5
-    invoke-virtual {p0}, Landroid/widget/ListView;->getDividerHeight()I
-
-    move-result v0
-
-    .line 6
-    invoke-virtual {p0}, Landroid/widget/ListView;->getDivider()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 7
-    invoke-virtual {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    add-int/2addr p2, p3
-
-    return p2
-
-    :cond_0
-    add-int/2addr p2, p3
-
-    const/4 p3, 0x0
-
-    if-lez v0, :cond_1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    .line 8
-    :goto_0
-    invoke-interface {v2}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v1
-
-    const/4 v3, 0x0
-
-    move v4, p2
-
-    move-object v6, v3
-
-    const/4 p2, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
-
-    :goto_1
-    if-ge p2, v1, :cond_9
-
-    .line 9
-    invoke-interface {v2, p2}, Landroid/widget/ListAdapter;->getItemViewType(I)I
-
-    move-result v8
-
-    if-eq v8, v5, :cond_2
-
-    move-object v6, v3
-
-    move v5, v8
-
-    .line 10
-    :cond_2
-    invoke-interface {v2, p2, v6, p0}, Landroid/widget/ListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v6
-
-    .line 11
-    invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v8
-
-    if-nez v8, :cond_3
-
-    .line 12
-    invoke-virtual {p0}, Landroid/widget/ListView;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v8
-
-    .line 13
-    invoke-virtual {v6, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 14
-    :cond_3
-    iget v8, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    if-lez v8, :cond_4
-
-    const/high16 v9, 0x40000000    # 2.0f
-
-    .line 15
-    invoke-static {v8, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v8
-
-    goto :goto_2
-
-    .line 16
-    :cond_4
-    invoke-static {p3, p3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v8
-
-    .line 17
-    :goto_2
-    invoke-virtual {v6, p1, v8}, Landroid/view/View;->measure(II)V
-
-    .line 18
-    invoke-virtual {v6}, Landroid/view/View;->forceLayout()V
-
-    if-lez p2, :cond_5
-
-    add-int/2addr v4, v0
-
-    .line 19
-    :cond_5
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v8
-
-    add-int/2addr v4, v8
-
-    if-lt v4, p4, :cond_7
-
-    if-ltz p5, :cond_6
-
-    if-le p2, p5, :cond_6
-
-    if-lez v7, :cond_6
-
-    if-eq v4, p4, :cond_6
-
-    move p4, v7
-
-    :cond_6
-    return p4
-
-    :cond_7
-    if-ltz p5, :cond_8
-
-    if-lt p2, p5, :cond_8
-
-    move v7, v4
-
-    :cond_8
-    add-int/lit8 p2, p2, 0x1
-
-    goto :goto_1
-
-    :cond_9
-    return v4
-.end method
-
-.method public final a()V
+.method public a(Ljava/util/Locale;)I
     .locals 3
 
     const/4 v0, 0x0
 
-    .line 55
-    iput-boolean v0, p0, Lr2;->C:Z
+    .line 1
+    :goto_0
+    iget-object v1, p0, Lr2;->a:[Ljava/util/Locale;
 
-    .line 56
-    invoke-virtual {p0, v0}, Landroid/widget/ListView;->setPressed(Z)V
+    array-length v2, v1
 
-    .line 57
-    invoke-virtual {p0}, Lr2;->drawableStateChanged()V
+    if-ge v0, v2, :cond_1
 
-    .line 58
-    iget v1, p0, Lr2;->x:I
+    .line 2
+    aget-object v1, v1, v0
 
-    invoke-virtual {p0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    invoke-virtual {p0, v1}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 59
-    invoke-virtual {v1, v0}, Landroid/view/View;->setPressed(Z)V
-
-    .line 60
-    :cond_0
-    iget-object v0, p0, Lr2;->D:Lga;
-
-    if-eqz v0, :cond_1
-
-    .line 61
-    invoke-virtual {v0}, Lga;->a()V
-
-    const/4 v0, 0x0
-
-    .line 62
-    iput-object v0, p0, Lr2;->D:Lga;
-
-    :cond_1
-    return-void
-.end method
-
-.method public final a(ILandroid/view/View;)V
-    .locals 5
-
-    .line 44
-    iget-object v0, p0, Lr2;->s:Landroid/graphics/Rect;
-
-    .line 45
-    invoke-virtual {p2}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v1, p1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    invoke-virtual {p2}, Landroid/view/View;->getTop()I
+    if-eqz v1, :cond_0
 
-    move-result v2
+    return v0
 
-    invoke-virtual {p2}, Landroid/view/View;->getRight()I
-
-    move-result v3
-
-    invoke-virtual {p2}, Landroid/view/View;->getBottom()I
-
-    move-result v4
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 46
-    iget v1, v0, Landroid/graphics/Rect;->left:I
-
-    iget v2, p0, Lr2;->t:I
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Landroid/graphics/Rect;->left:I
-
-    .line 47
-    iget v1, v0, Landroid/graphics/Rect;->top:I
-
-    iget v2, p0, Lr2;->u:I
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Landroid/graphics/Rect;->top:I
-
-    .line 48
-    iget v1, v0, Landroid/graphics/Rect;->right:I
-
-    iget v2, p0, Lr2;->v:I
-
-    add-int/2addr v1, v2
-
-    iput v1, v0, Landroid/graphics/Rect;->right:I
-
-    .line 49
-    iget v1, v0, Landroid/graphics/Rect;->bottom:I
-
-    iget v2, p0, Lr2;->w:I
-
-    add-int/2addr v1, v2
-
-    iput v1, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 50
-    :try_start_0
-    iget-object v0, p0, Lr2;->y:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->getBoolean(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 51
-    invoke-virtual {p2}, Landroid/view/View;->isEnabled()Z
-
-    move-result p2
-
-    if-eq p2, v0, :cond_1
-
-    .line 52
-    iget-object p2, p0, Lr2;->y:Ljava/lang/reflect/Field;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
+    const/4 p1, -0x1
+
+    return p1
+.end method
+
+.method public b()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lr2;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c()Ljava/lang/Object;
+    .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     const/4 v0, 0x0
 
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public d([Ljava/lang/String;)Ljava/util/Locale;
+    .locals 1
+    .param p1    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
-    invoke-virtual {p2, p0, v0}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 1
+    invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lr2;->e(Ljava/util/Collection;Z)Ljava/util/Locale;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final e(Ljava/util/Collection;Z)Ljava/util/Locale;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "Ljava/lang/String;",
+            ">;Z)",
+            "Ljava/util/Locale;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-virtual {p0, p1, p2}, Lr2;->f(Ljava/util/Collection;Z)I
+
+    move-result p1
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_1
+    if-ne p1, p2, :cond_0
 
-    .line 53
-    invoke-virtual {p0}, Landroid/widget/ListView;->refreshDrawableState()V
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    .line 54
-    invoke-virtual {p1}, Ljava/lang/IllegalAccessException;->printStackTrace()V
-
-    :cond_1
-    :goto_1
-    return-void
-.end method
-
-.method public final a(ILandroid/view/View;FF)V
-    .locals 1
-
-    .line 41
-    invoke-virtual {p0, p1, p2}, Lr2;->b(ILandroid/view/View;)V
-
-    .line 42
-    invoke-virtual {p0}, Landroid/widget/ListView;->getSelector()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_0
-
-    const/4 v0, -0x1
-
-    if-eq p1, v0, :cond_0
-
-    .line 43
-    invoke-static {p2, p3, p4}, Lp7;->a(Landroid/graphics/drawable/Drawable;FF)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Landroid/graphics/Canvas;)V
-    .locals 2
-
-    .line 37
-    iget-object v0, p0, Lr2;->s:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 38
-    invoke-virtual {p0}, Landroid/widget/ListView;->getSelector()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 39
-    iget-object v1, p0, Lr2;->s:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 40
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Landroid/view/View;I)V
-    .locals 2
-
-    .line 35
-    invoke-virtual {p0, p2}, Landroid/widget/ListView;->getItemIdAtPosition(I)J
-
-    move-result-wide v0
-
-    .line 36
-    invoke-virtual {p0, p1, p2, v0, v1}, Landroid/widget/ListView;->performItemClick(Landroid/view/View;IJ)Z
-
-    return-void
-.end method
-
-.method public final a(Landroid/view/View;IFF)V
-    .locals 6
-
-    const/4 v0, 0x1
-
-    .line 63
-    iput-boolean v0, p0, Lr2;->C:Z
-
-    .line 64
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v1, v2, :cond_0
-
-    .line 65
-    invoke-virtual {p0, p3, p4}, Landroid/widget/ListView;->drawableHotspotChanged(FF)V
-
-    .line 66
-    :cond_0
-    invoke-virtual {p0}, Landroid/widget/ListView;->isPressed()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 67
-    invoke-virtual {p0, v0}, Landroid/widget/ListView;->setPressed(Z)V
-
-    .line 68
-    :cond_1
-    invoke-virtual {p0}, Landroid/widget/ListView;->layoutChildren()V
-
-    .line 69
-    iget v1, p0, Lr2;->x:I
-
-    const/4 v3, -0x1
-
-    const/4 v4, 0x0
-
-    if-eq v1, v3, :cond_2
-
-    .line 70
-    invoke-virtual {p0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
-
-    move-result v3
-
-    sub-int/2addr v1, v3
-
-    invoke-virtual {p0, v1}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    if-eq v1, p1, :cond_2
-
-    .line 71
-    invoke-virtual {v1}, Landroid/view/View;->isPressed()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 72
-    invoke-virtual {v1, v4}, Landroid/view/View;->setPressed(Z)V
-
-    .line 73
-    :cond_2
-    iput p2, p0, Lr2;->x:I
-
-    .line 74
-    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    sub-float v1, p3, v1
-
-    .line 75
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    sub-float v3, p4, v3
-
-    .line 76
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v5, v2, :cond_3
-
-    .line 77
-    invoke-virtual {p1, v1, v3}, Landroid/view/View;->drawableHotspotChanged(FF)V
-
-    .line 78
-    :cond_3
-    invoke-virtual {p1}, Landroid/view/View;->isPressed()Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    .line 79
-    invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
-
-    .line 80
-    :cond_4
-    invoke-virtual {p0, p2, p1, p3, p4}, Lr2;->a(ILandroid/view/View;FF)V
-
-    .line 81
-    invoke-direct {p0, v4}, Lr2;->setSelectorEnabled(Z)V
-
-    .line 82
-    invoke-virtual {p0}, Landroid/widget/ListView;->refreshDrawableState()V
-
-    return-void
-.end method
-
-.method public a(Landroid/view/MotionEvent;I)Z
-    .locals 7
-
-    .line 20
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-eq v0, v2, :cond_3
-
-    const/4 v3, 0x2
-
-    if-eq v0, v3, :cond_2
-
-    const/4 p2, 0x3
-
-    if-eq v0, p2, :cond_1
-
-    :cond_0
-    :goto_0
-    const/4 p2, 0x0
-
-    const/4 v3, 0x1
-
-    goto :goto_3
-
-    :cond_1
-    :goto_1
-    const/4 p2, 0x0
-
-    const/4 v3, 0x0
-
-    goto :goto_3
-
-    :cond_2
-    const/4 v3, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    const/4 v3, 0x0
-
-    .line 21
-    :goto_2
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->findPointerIndex(I)I
-
-    move-result p2
-
-    if-gez p2, :cond_4
-
-    goto :goto_1
-
-    .line 22
-    :cond_4
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getX(I)F
-
-    move-result v4
-
-    float-to-int v4, v4
-
-    .line 23
-    invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getY(I)F
-
-    move-result p2
-
-    float-to-int p2, p2
-
-    .line 24
-    invoke-virtual {p0, v4, p2}, Landroid/widget/ListView;->pointToPosition(II)I
-
-    move-result v5
-
-    const/4 v6, -0x1
-
-    if-ne v5, v6, :cond_5
-
-    const/4 p2, 0x1
-
-    goto :goto_3
-
-    .line 25
-    :cond_5
-    invoke-virtual {p0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
-
-    move-result v3
-
-    sub-int v3, v5, v3
-
-    invoke-virtual {p0, v3}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    int-to-float v4, v4
-
-    int-to-float p2, p2
-
-    .line 26
-    invoke-virtual {p0, v3, v5, v4, p2}, Lr2;->a(Landroid/view/View;IFF)V
-
-    if-ne v0, v2, :cond_0
-
-    .line 27
-    invoke-virtual {p0, v3, v5}, Lr2;->a(Landroid/view/View;I)V
+    const/4 p1, 0x0
 
     goto :goto_0
 
-    :goto_3
-    if-eqz v3, :cond_6
+    .line 2
+    :cond_0
+    iget-object p2, p0, Lr2;->a:[Ljava/util/Locale;
 
-    if-eqz p2, :cond_7
+    aget-object p1, p2, p1
 
-    .line 28
-    :cond_6
-    invoke-virtual {p0}, Lr2;->a()V
-
-    :cond_7
-    if-eqz v3, :cond_9
-
-    .line 29
-    iget-object p2, p0, Lr2;->E:Lza;
-
-    if-nez p2, :cond_8
-
-    .line 30
-    new-instance p2, Lza;
-
-    invoke-direct {p2, p0}, Lza;-><init>(Landroid/widget/ListView;)V
-
-    iput-object p2, p0, Lr2;->E:Lza;
-
-    .line 31
-    :cond_8
-    iget-object p2, p0, Lr2;->E:Lza;
-
-    invoke-virtual {p2, v2}, Lua;->a(Z)Lua;
-
-    .line 32
-    iget-object p2, p0, Lr2;->E:Lza;
-
-    invoke-virtual {p2, p0, p1}, Lua;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-
-    goto :goto_4
-
-    .line 33
-    :cond_9
-    iget-object p1, p0, Lr2;->E:Lza;
-
-    if-eqz p1, :cond_a
-
-    .line 34
-    invoke-virtual {p1, v1}, Lua;->a(Z)Lua;
-
-    :cond_a
-    :goto_4
-    return v3
+    :goto_0
+    return-object p1
 .end method
 
-.method public final b(ILandroid/view/View;)V
-    .locals 4
+.method public equals(Ljava/lang/Object;)Z
+    .locals 5
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
 
     .line 1
-    invoke-virtual {p0}, Landroid/widget/ListView;->getSelector()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
+    :cond_0
+    instance-of v1, p1, Lr2;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_1
 
-    const/4 v3, -0x1
-
-    if-eq p1, v3, :cond_0
-
-    const/4 v3, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v3, 0x0
-
-    :goto_0
-    if-eqz v3, :cond_1
+    return v2
 
     .line 2
-    invoke-virtual {v0, v2, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+    :cond_1
+    check-cast p1, Lr2;
+
+    iget-object p1, p1, Lr2;->a:[Ljava/util/Locale;
 
     .line 3
-    :cond_1
-    invoke-virtual {p0, p1, p2}, Lr2;->a(ILandroid/view/View;)V
+    iget-object v1, p0, Lr2;->a:[Ljava/util/Locale;
 
-    if-eqz v3, :cond_3
+    array-length v1, v1
 
-    .line 4
-    iget-object p1, p0, Lr2;->s:Landroid/graphics/Rect;
+    array-length v3, p1
 
-    .line 5
-    invoke-virtual {p1}, Landroid/graphics/Rect;->exactCenterX()F
+    if-eq v1, v3, :cond_2
 
-    move-result p2
-
-    .line 6
-    invoke-virtual {p1}, Landroid/graphics/Rect;->exactCenterY()F
-
-    move-result p1
-
-    .line 7
-    invoke-virtual {p0}, Landroid/widget/ListView;->getVisibility()I
-
-    move-result v3
-
-    if-nez v3, :cond_2
-
-    goto :goto_1
+    return v2
 
     :cond_2
     const/4 v1, 0x0
 
-    :goto_1
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+    .line 4
+    :goto_0
+    iget-object v3, p0, Lr2;->a:[Ljava/util/Locale;
 
-    .line 8
-    invoke-static {v0, p2, p1}, Lp7;->a(Landroid/graphics/drawable/Drawable;FF)V
+    array-length v4, v3
+
+    if-ge v1, v4, :cond_4
+
+    .line 5
+    aget-object v3, v3, v1
+
+    aget-object v4, p1, v1
+
+    invoke-virtual {v3, v4}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_3
+
+    return v2
 
     :cond_3
-    return-void
-.end method
+    add-int/lit8 v1, v1, 0x1
 
-.method public final b()Z
-    .locals 1
+    goto :goto_0
 
-    .line 9
-    iget-boolean v0, p0, Lr2;->C:Z
-
+    :cond_4
     return v0
 .end method
 
-.method public final c()V
-    .locals 2
+.method public final f(Ljava/util/Collection;Z)I
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "Ljava/lang/String;",
+            ">;Z)I"
+        }
+    .end annotation
 
     .line 1
-    invoke-virtual {p0}, Landroid/widget/ListView;->getSelector()Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lr2;->a:[Ljava/util/Locale;
 
-    move-result-object v0
+    array-length v1, v0
 
-    if-eqz v0, :cond_0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-ne v1, v3, :cond_0
+
+    return v2
 
     .line 2
-    invoke-virtual {p0}, Lr2;->b()Z
+    :cond_0
+    array-length v0, v0
 
-    move-result v1
+    if-nez v0, :cond_1
 
-    if-eqz v1, :cond_0
+    const/4 p1, -0x1
 
-    invoke-virtual {p0}, Landroid/widget/ListView;->isPressed()Z
+    return p1
 
-    move-result v1
+    :cond_1
+    const v0, 0x7fffffff
 
-    if-eqz v1, :cond_0
+    if-eqz p2, :cond_3
 
     .line 3
-    invoke-virtual {p0}, Landroid/widget/ListView;->getDrawableState()[I
+    sget-object p2, Lr2;->f:Ljava/util/Locale;
+
+    invoke-virtual {p0, p2}, Lr2;->g(Ljava/util/Locale;)I
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    return v2
+
+    :cond_2
+    if-ge p2, v0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    const p2, 0x7fffffff
+
+    .line 4
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_4
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+    check-cast v1, Ljava/lang/String;
 
-    :cond_0
-    return-void
-.end method
+    .line 5
+    invoke-static {v1}, Landroidx/core/os/LocaleListCompat;->a(Ljava/lang/String;)Ljava/util/Locale;
 
-.method public dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 0
+    move-result-object v1
 
-    .line 1
-    invoke-virtual {p0, p1}, Lr2;->a(Landroid/graphics/Canvas;)V
+    .line 6
+    invoke-virtual {p0, v1}, Lr2;->g(Ljava/util/Locale;)I
 
-    .line 2
-    invoke-super {p0, p1}, Landroid/widget/ListView;->dispatchDraw(Landroid/graphics/Canvas;)V
+    move-result v1
 
-    return-void
-.end method
+    if-nez v1, :cond_5
 
-.method public drawableStateChanged()V
-    .locals 1
+    return v2
 
-    .line 1
-    iget-object v0, p0, Lr2;->F:Lr2$b;
+    :cond_5
+    if-ge v1, p2, :cond_4
 
-    if-eqz v0, :cond_0
-
-    return-void
-
-    .line 2
-    :cond_0
-    invoke-super {p0}, Landroid/widget/ListView;->drawableStateChanged()V
-
-    const/4 v0, 0x1
-
-    .line 3
-    invoke-direct {p0, v0}, Lr2;->setSelectorEnabled(Z)V
-
-    .line 4
-    invoke-virtual {p0}, Lr2;->c()V
-
-    return-void
-.end method
-
-.method public hasFocus()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lr2;->B:Z
-
-    if-nez v0, :cond_1
-
-    invoke-super {p0}, Landroid/widget/ListView;->hasFocus()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
+    move p2, v1
 
     goto :goto_1
 
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
+    :cond_6
+    if-ne p2, v0, :cond_7
 
-    :goto_1
-    return v0
+    return v2
+
+    :cond_7
+    return p2
 .end method
 
-.method public hasWindowFocus()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lr2;->B:Z
-
-    if-nez v0, :cond_1
-
-    invoke-super {p0}, Landroid/widget/ListView;->hasWindowFocus()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
-.end method
-
-.method public isFocused()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lr2;->B:Z
-
-    if-nez v0, :cond_1
-
-    invoke-super {p0}, Landroid/widget/ListView;->isFocused()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
-.end method
-
-.method public isInTouchMode()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lr2;->B:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lr2;->A:Z
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    invoke-super {p0}, Landroid/widget/ListView;->isInTouchMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public onDetachedFromWindow()V
-    .locals 1
+.method public final g(Ljava/util/Locale;)I
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 1
-    iput-object v0, p0, Lr2;->F:Lr2$b;
+    :goto_0
+    iget-object v1, p0, Lr2;->a:[Ljava/util/Locale;
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_1
 
     .line 2
-    invoke-super {p0}, Landroid/widget/ListView;->onDetachedFromWindow()V
+    aget-object v1, v1, v0
 
-    return-void
+    invoke-static {p1, v1}, Lr2;->j(Ljava/util/Locale;Ljava/util/Locale;)I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    return v0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const p1, 0x7fffffff
+
+    return p1
 .end method
 
-.method public onHoverEvent(Landroid/view/MotionEvent;)Z
+.method public get(I)Ljava/util/Locale;
+    .locals 2
+
+    if-ltz p1, :cond_0
+
+    .line 1
+    iget-object v0, p0, Lr2;->a:[Ljava/util/Locale;
+
+    array-length v1, v0
+
+    if-ge p1, v1, :cond_0
+
+    aget-object p1, v0, p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return-object p1
+.end method
+
+.method public hashCode()I
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 1
+    :goto_0
+    iget-object v2, p0, Lr2;->a:[Ljava/util/Locale;
+
+    array-length v3, v2
+
+    if-ge v1, v3, :cond_0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 2
+    aget-object v2, v2, v1
+
+    invoke-virtual {v2}, Ljava/util/Locale;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return v0
+.end method
+
+.method public isEmpty()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lr2;->a:[Ljava/util/Locale;
+
+    array-length v0, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public size()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lr2;->a:[Ljava/util/Locale;
+
+    array-length v0, v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
     .locals 4
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/16 v1, 0x1a
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-ge v0, v1, :cond_0
+    const-string v1, "["
 
     .line 2
-    invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p1
-
-    return p1
+    const/4 v1, 0x0
 
     .line 3
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    :goto_0
+    iget-object v2, p0, Lr2;->a:[Ljava/util/Locale;
 
-    move-result v0
+    array-length v3, v2
 
-    const/16 v1, 0xa
-
-    if-ne v0, v1, :cond_1
+    if-ge v1, v3, :cond_1
 
     .line 4
-    iget-object v1, p0, Lr2;->F:Lr2$b;
+    aget-object v2, v2, v1
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 5
-    new-instance v1, Lr2$b;
+    iget-object v2, p0, Lr2;->a:[Ljava/util/Locale;
 
-    invoke-direct {v1, p0}, Lr2$b;-><init>(Lr2;)V
+    array-length v2, v2
 
-    iput-object v1, p0, Lr2;->F:Lr2$b;
+    add-int/lit8 v2, v2, -0x1
+
+    if-ge v1, v2, :cond_0
+
+    const/16 v2, 0x2c
 
     .line 6
-    iget-object v1, p0, Lr2;->F:Lr2$b;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Lr2$b;->b()V
-
-    .line 7
-    :cond_1
-    invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    const/4 v3, -0x1
-
-    if-eq v0, v2, :cond_3
-
-    const/4 v2, 0x7
-
-    if-ne v0, v2, :cond_2
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    :cond_1
+    const-string v1, "]"
+
+    .line 7
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 8
-    :cond_2
-    invoke-virtual {p0, v3}, Landroid/widget/ListView;->setSelection(I)V
-
-    goto :goto_1
-
-    .line 9
-    :cond_3
-    :goto_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result p1
-
-    float-to-int p1, p1
-
-    invoke-virtual {p0, v0, p1}, Landroid/widget/ListView;->pointToPosition(II)I
-
-    move-result p1
-
-    if-eq p1, v3, :cond_5
-
-    .line 10
-    invoke-virtual {p0}, Landroid/widget/ListView;->getSelectedItemPosition()I
-
-    move-result v0
-
-    if-eq p1, v0, :cond_5
-
-    .line 11
-    invoke-virtual {p0}, Landroid/widget/ListView;->getFirstVisiblePosition()I
-
-    move-result v0
-
-    sub-int v0, p1, v0
-
-    invoke-virtual {p0, v0}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 12
-    invoke-virtual {v0}, Landroid/view/View;->isEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 13
-    invoke-virtual {v0}, Landroid/view/View;->getTop()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/widget/ListView;->getTop()I
-
-    move-result v2
-
-    sub-int/2addr v0, v2
-
-    invoke-virtual {p0, p1, v0}, Landroid/widget/ListView;->setSelectionFromTop(II)V
-
-    .line 14
-    :cond_4
-    invoke-virtual {p0}, Lr2;->c()V
-
-    :cond_5
-    :goto_1
-    return v1
-.end method
-
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
-
-    .line 1
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    invoke-virtual {p0, v0, v1}, Landroid/widget/ListView;->pointToPosition(II)I
-
-    move-result v0
-
-    iput v0, p0, Lr2;->x:I
-
-    .line 3
-    :goto_0
-    iget-object v0, p0, Lr2;->F:Lr2$b;
-
-    if-eqz v0, :cond_1
-
-    .line 4
-    invoke-virtual {v0}, Lr2$b;->a()V
-
-    .line 5
-    :cond_1
-    invoke-super {p0, p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public setListSelectionHidden(Z)V
-    .locals 0
-
-    .line 1
-    iput-boolean p1, p0, Lr2;->A:Z
-
-    return-void
-.end method
-
-.method public setSelector(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    .line 1
-    new-instance v0, Lr2$a;
-
-    invoke-direct {v0, p1}, Lr2$a;-><init>(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-object v0, p0, Lr2;->z:Lr2$a;
-
-    .line 2
-    iget-object v0, p0, Lr2;->z:Lr2$a;
-
-    invoke-super {p0, v0}, Landroid/widget/ListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
-
-    .line 3
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    if-eqz p1, :cond_1
-
-    .line 4
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
-
-    .line 5
-    :cond_1
-    iget p1, v0, Landroid/graphics/Rect;->left:I
-
-    iput p1, p0, Lr2;->t:I
-
-    .line 6
-    iget p1, v0, Landroid/graphics/Rect;->top:I
-
-    iput p1, p0, Lr2;->u:I
-
-    .line 7
-    iget p1, v0, Landroid/graphics/Rect;->right:I
-
-    iput p1, p0, Lr2;->v:I
-
-    .line 8
-    iget p1, v0, Landroid/graphics/Rect;->bottom:I
-
-    iput p1, p0, Lr2;->w:I
-
-    return-void
+    return-object v0
 .end method

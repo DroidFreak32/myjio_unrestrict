@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public zzui:Ljava/util/Map;
+.field private zzui:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",

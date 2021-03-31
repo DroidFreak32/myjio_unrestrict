@@ -34,94 +34,72 @@
 
 .field public static final enum zzkj:I = 0x7
 
-.field public static final synthetic zzkk:[I
+.field private static final synthetic zzkk:[I
 
 .field public static final enum zzkl:I = 0x1
 
 .field public static final enum zzkm:I = 0x2
 
-.field public static final synthetic zzkn:[I
+.field private static final synthetic zzkn:[I
 
 .field public static final enum zzko:I = 0x1
 
 .field public static final enum zzkp:I = 0x2
 
-.field public static final synthetic zzkq:[I
+.field private static final synthetic zzkq:[I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     const/4 v0, 0x7
 
-    new-array v0, v0, [I
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkd:I
+    new-array v1, v0, [I
 
     const/4 v2, 0x0
 
-    aput v1, v0, v2
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzke:I
-
     const/4 v3, 0x1
 
-    aput v1, v0, v3
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkf:I
+    aput v3, v1, v2
 
     const/4 v4, 0x2
 
-    aput v1, v0, v4
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkg:I
+    aput v4, v1, v3
 
     const/4 v5, 0x3
 
-    aput v1, v0, v5
+    aput v5, v1, v4
 
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkh:I
+    const/4 v6, 0x4
 
-    const/4 v5, 0x4
-
-    aput v1, v0, v5
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzki:I
+    aput v6, v1, v5
 
     const/4 v5, 0x5
 
-    aput v1, v0, v5
+    aput v5, v1, v6
 
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkj:I
+    const/4 v6, 0x6
 
-    const/4 v5, 0x6
+    aput v6, v1, v5
 
-    aput v1, v0, v5
+    aput v0, v1, v6
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkk:[I
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkk:[I
 
     new-array v0, v4, [I
 
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkl:I
+    aput v3, v0, v2
 
-    aput v1, v0, v2
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkm:I
-
-    aput v1, v0, v3
+    aput v4, v0, v3
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkn:[I
 
     new-array v0, v4, [I
 
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzko:I
+    aput v3, v0, v2
 
-    aput v1, v0, v2
-
-    sget v1, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkp:I
-
-    aput v1, v0, v3
+    aput v4, v0, v3
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzcg$zzg;->zzkq:[I
 

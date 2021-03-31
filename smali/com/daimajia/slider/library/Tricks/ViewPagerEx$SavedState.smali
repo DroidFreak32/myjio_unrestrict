@@ -43,7 +43,7 @@
 
     invoke-direct {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$SavedState$1;-><init>()V
 
-    invoke-static {v0}, Lh8;->a(Li8;)Landroid/os/Parcelable$Creator;
+    invoke-static {v0}, Landroidx/core/os/ParcelableCompat;->newCreator(Landroidx/core/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
 
     move-result-object v0
 
@@ -61,7 +61,9 @@
     if-nez p2, :cond_0
 
     .line 3
-    const-class p2, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$SavedState;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p2
 
     invoke-virtual {p2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
@@ -129,7 +131,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

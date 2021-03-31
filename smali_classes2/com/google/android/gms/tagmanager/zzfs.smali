@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic zzala:Lcom/google/android/gms/tagmanager/zzfr;
+.field private final synthetic zzala:Lcom/google/android/gms/tagmanager/zzfr;
 
 
 # direct methods
@@ -50,7 +50,7 @@
 
     iget-object p1, p1, Lcom/google/android/gms/tagmanager/zzfr;->zzakz:Lcom/google/android/gms/tagmanager/zzfn;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/tagmanager/zzfn;->dispatch()V
+    invoke-virtual {p1}, Lcom/google/android/gms/tagmanager/zzfm;->dispatch()V
 
     .line 3
     iget-object p1, p0, Lcom/google/android/gms/tagmanager/zzfs;->zzala:Lcom/google/android/gms/tagmanager/zzfr;

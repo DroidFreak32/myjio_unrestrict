@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/Batch$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public zabe:Ljava/util/List;
+.field private zaa:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -24,7 +25,7 @@
     .end annotation
 .end field
 
-.field public zabf:Lcom/google/android/gms/common/api/GoogleApiClient;
+.field private zab:Lcom/google/android/gms/common/api/GoogleApiClient;
 
 
 # direct methods
@@ -39,10 +40,10 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zabe:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zaa:Ljava/util/List;
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zabf:Lcom/google/android/gms/common/api/GoogleApiClient;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zab:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     return-void
 .end method
@@ -66,7 +67,7 @@
     .line 1
     new-instance v0, Lcom/google/android/gms/common/api/BatchResultToken;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zabe:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zaa:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -75,7 +76,7 @@
     invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/BatchResultToken;-><init>(I)V
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zabe:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zaa:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -88,13 +89,13 @@
     .line 1
     new-instance v0, Lcom/google/android/gms/common/api/Batch;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zabe:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zaa:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zabf:Lcom/google/android/gms/common/api/GoogleApiClient;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zab:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/Batch;-><init>(Ljava/util/List;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/zaa;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/Batch;-><init>(Ljava/util/List;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/zab;)V
 
     return-object v0
 .end method

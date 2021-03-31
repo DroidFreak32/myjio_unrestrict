@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/Batch;
 .super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -19,15 +20,13 @@
 
 
 # instance fields
-.field public final mLock:Ljava/lang/Object;
+.field private zab:I
 
-.field public zaaz:I
+.field private zac:Z
 
-.field public zaba:Z
+.field private zad:Z
 
-.field public zabb:Z
-
-.field public final zabc:[Lcom/google/android/gms/common/api/PendingResult;
+.field private final zae:[Lcom/google/android/gms/common/api/PendingResult;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -37,9 +36,11 @@
     .end annotation
 .end field
 
+.field private final zaf:Ljava/lang/Object;
+
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lcom/google/android/gms/common/api/GoogleApiClient;)V
+.method private constructor <init>(Ljava/util/List;Lcom/google/android/gms/common/api/GoogleApiClient;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -60,37 +61,33 @@
 
     invoke-direct {p2}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/Batch;->mLock:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/Batch;->zaf:Ljava/lang/Object;
 
     .line 3
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    iput p2, p0, Lcom/google/android/gms/common/api/Batch;->zaaz:I
+    iput p2, p0, Lcom/google/android/gms/common/api/Batch;->zab:I
 
     .line 4
-    iget p2, p0, Lcom/google/android/gms/common/api/Batch;->zaaz:I
-
     new-array p2, p2, [Lcom/google/android/gms/common/api/PendingResult;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/Batch;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/Batch;->zae:[Lcom/google/android/gms/common/api/PendingResult;
 
     .line 5
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    move-result p2
+    move-result v0
 
-    if-eqz p2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 6
     new-instance p1, Lcom/google/android/gms/common/api/BatchResult;
 
-    sget-object p2, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Batch;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
-
-    invoke-direct {p1, p2, v0}, Lcom/google/android/gms/common/api/BatchResult;-><init>(Lcom/google/android/gms/common/api/Status;[Lcom/google/android/gms/common/api/PendingResult;)V
+    invoke-direct {p1, v0, p2}, Lcom/google/android/gms/common/api/BatchResult;-><init>(Lcom/google/android/gms/common/api/Status;[Lcom/google/android/gms/common/api/PendingResult;)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
 
@@ -115,14 +112,14 @@
     check-cast v0, Lcom/google/android/gms/common/api/PendingResult;
 
     .line 9
-    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch;->zae:[Lcom/google/android/gms/common/api/PendingResult;
 
     aput-object v0, v1, p2
 
     .line 10
-    new-instance v1, Lcom/google/android/gms/common/api/zaa;
+    new-instance v1, Lcom/google/android/gms/common/api/zab;
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/zaa;-><init>(Lcom/google/android/gms/common/api/Batch;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/zab;-><init>(Lcom/google/android/gms/common/api/Batch;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/PendingResult;->addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
 
@@ -134,7 +131,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/util/List;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/zaa;)V
+.method public synthetic constructor <init>(Ljava/util/List;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/common/api/zab;)V
     .locals 0
 
     .line 11
@@ -147,7 +144,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/api/Batch;->mLock:Ljava/lang/Object;
+    iget-object p0, p0, Lcom/google/android/gms/common/api/Batch;->zaf:Ljava/lang/Object;
 
     return-object p0
 .end method
@@ -158,7 +155,7 @@
     const/4 p1, 0x1
 
     .line 2
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/Batch;->zabb:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/api/Batch;->zad:Z
 
     return p1
 .end method
@@ -167,11 +164,11 @@
     .locals 2
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/common/api/Batch;->zaaz:I
+    iget v0, p0, Lcom/google/android/gms/common/api/Batch;->zab:I
 
     add-int/lit8 v1, v0, -0x1
 
-    iput v1, p0, Lcom/google/android/gms/common/api/Batch;->zaaz:I
+    iput v1, p0, Lcom/google/android/gms/common/api/Batch;->zab:I
 
     return v0
 .end method
@@ -182,7 +179,7 @@
     const/4 p1, 0x1
 
     .line 1
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/Batch;->zaba:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/api/Batch;->zac:Z
 
     return p1
 .end method
@@ -191,7 +188,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lcom/google/android/gms/common/api/Batch;->zaaz:I
+    iget p0, p0, Lcom/google/android/gms/common/api/Batch;->zab:I
 
     return p0
 .end method
@@ -200,7 +197,7 @@
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lcom/google/android/gms/common/api/Batch;->zabb:Z
+    iget-boolean p0, p0, Lcom/google/android/gms/common/api/Batch;->zad:Z
 
     return p0
 .end method
@@ -218,7 +215,7 @@
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lcom/google/android/gms/common/api/Batch;->zaba:Z
+    iget-boolean p0, p0, Lcom/google/android/gms/common/api/Batch;->zac:Z
 
     return p0
 .end method
@@ -227,7 +224,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/common/api/Batch;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iget-object p0, p0, Lcom/google/android/gms/common/api/Batch;->zae:[Lcom/google/android/gms/common/api/PendingResult;
 
     return-object p0
 .end method
@@ -241,7 +238,7 @@
     invoke-super {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->cancel()V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Batch;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Batch;->zae:[Lcom/google/android/gms/common/api/PendingResult;
 
     array-length v1, v0
 
@@ -269,7 +266,7 @@
     .line 1
     new-instance v0, Lcom/google/android/gms/common/api/BatchResult;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch;->zabc:[Lcom/google/android/gms/common/api/PendingResult;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Batch;->zae:[Lcom/google/android/gms/common/api/PendingResult;
 
     invoke-direct {v0, p1, v1}, Lcom/google/android/gms/common/api/BatchResult;-><init>(Lcom/google/android/gms/common/api/Status;[Lcom/google/android/gms/common/api/PendingResult;)V
 

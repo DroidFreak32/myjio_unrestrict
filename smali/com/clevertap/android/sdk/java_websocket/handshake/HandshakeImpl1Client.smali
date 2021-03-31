@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public resourceDescriptor:Ljava/lang/String;
+.field private resourceDescriptor:Ljava/lang/String;
 
 
 # direct methods

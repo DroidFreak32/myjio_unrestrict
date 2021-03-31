@@ -14,25 +14,25 @@
 
 
 # instance fields
-.field public final zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
+.field private final zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
 
-.field public zzab:Z
+.field private zzab:Z
 
-.field public final synthetic zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
+.field private final synthetic zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
 
-.field public zzj:Ljava/lang/String;
+.field private zzj:Ljava/lang/String;
 
-.field public zzk:I
+.field private zzk:I
 
-.field public zzl:Ljava/lang/String;
+.field private zzl:Ljava/lang/String;
 
-.field public zzm:Ljava/lang/String;
+.field private zzm:Ljava/lang/String;
 
-.field public zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
+.field private zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
 
-.field public final zzt:Lcom/google/android/gms/clearcut/ClearcutLogger$zzb;
+.field private final zzt:Lcom/google/android/gms/clearcut/ClearcutLogger$zzb;
 
-.field public zzu:Ljava/util/ArrayList;
+.field private zzu:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -42,7 +42,7 @@
     .end annotation
 .end field
 
-.field public zzv:Ljava/util/ArrayList;
+.field private zzv:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -52,7 +52,7 @@
     .end annotation
 .end field
 
-.field public zzw:Ljava/util/ArrayList;
+.field private zzw:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -62,7 +62,7 @@
     .end annotation
 .end field
 
-.field public zzx:Ljava/util/ArrayList;
+.field private zzx:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -72,7 +72,7 @@
     .end annotation
 .end field
 
-.field public zzy:Ljava/util/ArrayList;
+.field private zzy:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -81,11 +81,11 @@
     .end annotation
 .end field
 
-.field public zzz:Z
+.field private zzz:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/clearcut/ClearcutLogger;[B)V
+.method private constructor <init>(Lcom/google/android/gms/clearcut/ClearcutLogger;[B)V
     .locals 1
 
     const/4 v0, 0x0
@@ -95,72 +95,24 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/clearcut/ClearcutLogger;[BLcom/google/android/gms/clearcut/ClearcutLogger$zzb;)V
+.method private constructor <init>(Lcom/google/android/gms/clearcut/ClearcutLogger;[BLcom/google/android/gms/clearcut/ClearcutLogger$zzb;)V
     .locals 3
 
     iput-object p1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
-
-    invoke-static {p3}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zza(Lcom/google/android/gms/clearcut/ClearcutLogger;)I
+    invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zza(Lcom/google/android/gms/clearcut/ClearcutLogger;)I
 
     move-result p3
 
     iput p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzk:I
 
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
-
-    invoke-static {p3}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzb(Lcom/google/android/gms/clearcut/ClearcutLogger;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzb(Lcom/google/android/gms/clearcut/ClearcutLogger;)Ljava/lang/String;
 
     move-result-object p3
 
     iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzj:Ljava/lang/String;
-
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
-
-    invoke-static {p3}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzc(Lcom/google/android/gms/clearcut/ClearcutLogger;)Ljava/lang/String;
-
-    move-result-object p3
-
-    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzl:Ljava/lang/String;
-
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzac:Lcom/google/android/gms/clearcut/ClearcutLogger;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzm:Ljava/lang/String;
-
-    invoke-static {p3}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzd(Lcom/google/android/gms/clearcut/ClearcutLogger;)Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
-
-    move-result-object p3
-
-    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
-
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzu:Ljava/util/ArrayList;
-
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzv:Ljava/util/ArrayList;
-
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzw:Ljava/util/ArrayList;
-
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzx:Ljava/util/ArrayList;
-
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzy:Ljava/util/ArrayList;
-
-    const/4 p3, 0x1
-
-    iput-boolean p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzz:Z
-
-    new-instance p3, Lcom/google/android/gms/internal/clearcut/zzha;
-
-    invoke-direct {p3}, Lcom/google/android/gms/internal/clearcut/zzha;-><init>()V
-
-    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
-
-    const/4 p3, 0x0
-
-    iput-boolean p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzab:Z
 
     invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzc(Lcom/google/android/gms/clearcut/ClearcutLogger;)Ljava/lang/String;
 
@@ -168,9 +120,47 @@
 
     iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzl:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzm:Ljava/lang/String;
+    const/4 p3, 0x0
 
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzm:Ljava/lang/String;
+
+    invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzd(Lcom/google/android/gms/clearcut/ClearcutLogger;)Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzo:Lcom/google/android/gms/internal/clearcut/zzge$zzv$zzb;
+
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzu:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzv:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzw:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzx:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzy:Ljava/util/ArrayList;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzz:Z
+
+    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzha;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/clearcut/zzha;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzab:Z
+
+    invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzc(Lcom/google/android/gms/clearcut/ClearcutLogger;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzl:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzm:Ljava/lang/String;
 
     invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zze(Lcom/google/android/gms/clearcut/ClearcutLogger;)Landroid/content/Context;
 
@@ -180,9 +170,7 @@
 
     move-result v1
 
-    iput-boolean v1, p3, Lcom/google/android/gms/internal/clearcut/zzha;->zzbkc:Z
-
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
+    iput-boolean v1, v0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbkc:Z
 
     invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzf(Lcom/google/android/gms/clearcut/ClearcutLogger;)Lcom/google/android/gms/common/util/Clock;
 
@@ -192,9 +180,7 @@
 
     move-result-wide v1
 
-    iput-wide v1, p3, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjf:J
-
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
+    iput-wide v1, v0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjf:J
 
     invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzf(Lcom/google/android/gms/clearcut/ClearcutLogger;)Lcom/google/android/gms/common/util/Clock;
 
@@ -204,15 +190,11 @@
 
     move-result-wide v1
 
-    iput-wide v1, p3, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjg:J
-
-    iget-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
+    iput-wide v1, v0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjg:J
 
     invoke-static {p1}, Lcom/google/android/gms/clearcut/ClearcutLogger;->zzg(Lcom/google/android/gms/clearcut/ClearcutLogger;)Lcom/google/android/gms/clearcut/ClearcutLogger$zzc;
 
-    iget-object p1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
-
-    iget-wide v1, p1, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjf:J
+    iget-wide v1, v0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjf:J
 
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
@@ -226,16 +208,14 @@
 
     int-to-long v1, p1
 
-    iput-wide v1, p3, Lcom/google/android/gms/internal/clearcut/zzha;->zzbju:J
+    iput-wide v1, v0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbju:J
 
     if-eqz p2, :cond_0
 
-    iget-object p1, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzaa:Lcom/google/android/gms/internal/clearcut/zzha;
-
-    iput-object p2, p1, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
+    iput-object p2, v0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
 
     :cond_0
-    iput-object v0, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzt:Lcom/google/android/gms/clearcut/ClearcutLogger$zzb;
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/ClearcutLogger$LogEventBuilder;->zzt:Lcom/google/android/gms/clearcut/ClearcutLogger$zzb;
 
     return-void
 .end method

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/barcode/zzb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -29,7 +30,7 @@
 
 # virtual methods
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 19
+    .locals 21
 
     move-object/from16 v0, p1
 
@@ -66,9 +67,13 @@
 
     move-object/from16 v18, v17
 
+    move-object/from16 v19, v18
+
     const/4 v5, 0x0
 
     const/4 v8, 0x0
+
+    const/16 v20, 0x0
 
     .line 2
     :goto_0
@@ -97,9 +102,25 @@
 
     .line 6
     :pswitch_0
-    sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readBoolean(Landroid/os/Parcel;I)Z
+
+    move-result v20
+
+    goto :goto_0
 
     .line 7
+    :pswitch_1
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createByteArray(Landroid/os/Parcel;I)[B
+
+    move-result-object v19
+
+    goto :goto_0
+
+    .line 8
+    :pswitch_2
+    sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -110,11 +131,11 @@
 
     goto :goto_0
 
-    .line 8
-    :pswitch_1
+    .line 10
+    :pswitch_3
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 9
+    .line 11
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -125,11 +146,11 @@
 
     goto :goto_0
 
-    .line 10
-    :pswitch_2
+    .line 12
+    :pswitch_4
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 11
+    .line 13
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -140,11 +161,11 @@
 
     goto :goto_0
 
-    .line 12
-    :pswitch_3
+    .line 14
+    :pswitch_5
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 13
+    .line 15
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -155,11 +176,11 @@
 
     goto :goto_0
 
-    .line 14
-    :pswitch_4
+    .line 16
+    :pswitch_6
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 15
+    .line 17
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -170,11 +191,11 @@
 
     goto :goto_0
 
-    .line 16
-    :pswitch_5
+    .line 18
+    :pswitch_7
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$WiFi;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 17
+    .line 19
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -185,11 +206,11 @@
 
     goto :goto_0
 
-    .line 18
-    :pswitch_6
+    .line 20
+    :pswitch_8
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$Sms;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 19
+    .line 21
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -200,11 +221,11 @@
 
     goto :goto_0
 
-    .line 20
-    :pswitch_7
+    .line 22
+    :pswitch_9
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$Phone;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 21
+    .line 23
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -215,11 +236,11 @@
 
     goto :goto_0
 
-    .line 22
-    :pswitch_8
+    .line 24
+    :pswitch_a
     sget-object v3, Lcom/google/android/gms/vision/barcode/Barcode$Email;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 23
+    .line 25
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
@@ -230,11 +251,11 @@
 
     goto :goto_0
 
-    .line 24
-    :pswitch_9
+    .line 26
+    :pswitch_b
     sget-object v3, Landroid/graphics/Point;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 25
+    .line 27
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
 
     move-result-object v2
@@ -243,57 +264,57 @@
 
     check-cast v9, [Landroid/graphics/Point;
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 26
-    :pswitch_a
+    .line 28
+    :pswitch_c
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v8
 
     goto/16 :goto_0
 
-    .line 27
-    :pswitch_b
+    .line 29
+    :pswitch_d
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v7
 
     goto/16 :goto_0
 
-    .line 28
-    :pswitch_c
+    .line 30
+    :pswitch_e
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v6
 
     goto/16 :goto_0
 
-    .line 29
-    :pswitch_d
+    .line 31
+    :pswitch_f
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v5
 
     goto/16 :goto_0
 
-    .line 30
+    .line 32
     :cond_0
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
-    .line 31
+    .line 33
     new-instance v0, Lcom/google/android/gms/vision/barcode/Barcode;
 
     move-object v4, v0
 
-    invoke-direct/range {v4 .. v18}, Lcom/google/android/gms/vision/barcode/Barcode;-><init>(ILjava/lang/String;Ljava/lang/String;I[Landroid/graphics/Point;Lcom/google/android/gms/vision/barcode/Barcode$Email;Lcom/google/android/gms/vision/barcode/Barcode$Phone;Lcom/google/android/gms/vision/barcode/Barcode$Sms;Lcom/google/android/gms/vision/barcode/Barcode$WiFi;Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;)V
+    invoke-direct/range {v4 .. v20}, Lcom/google/android/gms/vision/barcode/Barcode;-><init>(ILjava/lang/String;Ljava/lang/String;I[Landroid/graphics/Point;Lcom/google/android/gms/vision/barcode/Barcode$Email;Lcom/google/android/gms/vision/barcode/Barcode$Phone;Lcom/google/android/gms/vision/barcode/Barcode$Sms;Lcom/google/android/gms/vision/barcode/Barcode$WiFi;Lcom/google/android/gms/vision/barcode/Barcode$UrlBookmark;Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;Lcom/google/android/gms/vision/barcode/Barcode$CalendarEvent;Lcom/google/android/gms/vision/barcode/Barcode$ContactInfo;Lcom/google/android/gms/vision/barcode/Barcode$DriverLicense;[BZ)V
 
     return-object v0
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x2
+        :pswitch_f
+        :pswitch_e
         :pswitch_d
         :pswitch_c
         :pswitch_b

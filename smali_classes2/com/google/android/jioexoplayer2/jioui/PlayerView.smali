@@ -22,41 +22,62 @@
 
 .field public static final SHOW_BUFFERING_WHEN_PLAYING:I = 0x1
 
-.field public static final SURFACE_TYPE_MONO360_VIEW:I = 0x3
+.field private static final SURFACE_TYPE_MONO360_VIEW:I = 0x3
 
-.field public static final SURFACE_TYPE_NONE:I = 0x0
+.field private static final SURFACE_TYPE_NONE:I = 0x0
 
-.field public static final SURFACE_TYPE_SURFACE_VIEW:I = 0x1
+.field private static final SURFACE_TYPE_SURFACE_VIEW:I = 0x1
 
-.field public static final SURFACE_TYPE_TEXTURE_VIEW:I = 0x2
+.field private static final SURFACE_TYPE_TEXTURE_VIEW:I = 0x2
 
 
 # instance fields
-.field public final adOverlayFrameLayout:Landroid/widget/FrameLayout;
+.field private final adOverlayFrameLayout:Landroid/widget/FrameLayout;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final artworkView:Landroid/widget/ImageView;
+.field private final artworkView:Landroid/widget/ImageView;
 
-.field public final bufferingView:Landroid/view/View;
+.field private final bufferingView:Landroid/view/View;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;
+.field private final componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;
 
-.field public final contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+.field private final contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
+.field private final controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public controllerAutoShow:Z
+.field private controllerAutoShow:Z
 
-.field public controllerHideDuringAds:Z
+.field private controllerHideDuringAds:Z
 
-.field public controllerHideOnTouch:Z
+.field private controllerHideOnTouch:Z
 
-.field public controllerShowTimeoutMs:I
+.field private controllerShowTimeoutMs:I
 
-.field public customErrorMessage:Ljava/lang/CharSequence;
+.field private customErrorMessage:Ljava/lang/CharSequence;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public defaultArtwork:Landroid/graphics/drawable/Drawable;
+.field private defaultArtwork:Landroid/graphics/drawable/Drawable;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public errorMessageProvider:Lcom/google/android/jioexoplayer2/util/ErrorMessageProvider;
+.field private errorMessageProvider:Lcom/google/android/jioexoplayer2/util/ErrorMessageProvider;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/jioexoplayer2/util/ErrorMessageProvider<",
@@ -67,27 +88,36 @@
     .end annotation
 .end field
 
-.field public final errorMessageView:Landroid/widget/TextView;
+.field private final errorMessageView:Landroid/widget/TextView;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public keepContentOnPlayerReset:Z
+.field private keepContentOnPlayerReset:Z
 
-.field public final overlayFrameLayout:Landroid/widget/FrameLayout;
+.field private final overlayFrameLayout:Landroid/widget/FrameLayout;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public player:Lcom/google/android/jioexoplayer2/Player;
+.field private player:Lcom/google/android/jioexoplayer2/Player;
 
-.field public showBuffering:I
+.field private showBuffering:I
 
-.field public final shutterView:Landroid/view/View;
+.field private final shutterView:Landroid/view/View;
 
-.field public final subtitleView:Lcom/google/android/jioexoplayer2/jioui/SubtitleView;
+.field private final subtitleView:Lcom/google/android/jioexoplayer2/jioui/SubtitleView;
 
-.field public final surfaceView:Landroid/view/View;
+.field private final surfaceView:Landroid/view/View;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public textureViewRotation:I
+.field private textureViewRotation:I
 
-.field public useArtwork:Z
+.field private useArtwork:Z
 
-.field public useController:Z
+.field private useController:Z
 
 
 # direct methods
@@ -114,7 +144,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 19
+    .locals 22
 
     move-object/from16 v1, p0
 
@@ -231,14 +261,12 @@
 
     invoke-virtual {v8, v9}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v9
+    move-result v10
 
     .line 24
-    sget v10, Lcom/app/cinemasdk/R$styleable;->PlayerView_shutter_background_color:I
+    invoke-virtual {v8, v9, v7}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    invoke-virtual {v8, v10, v7}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    move-result v10
+    move-result v9
 
     .line 25
     sget v11, Lcom/app/cinemasdk/R$styleable;->PlayerView_player_layout_id:I
@@ -309,7 +337,7 @@
     .line 37
     sget v6, Lcom/app/cinemasdk/R$styleable;->PlayerView_show_buffering:I
 
-    move/from16 v17, v3
+    move/from16 v16, v3
 
     const/4 v3, 0x0
 
@@ -320,7 +348,7 @@
     .line 38
     sget v3, Lcom/app/cinemasdk/R$styleable;->PlayerView_keep_content_on_player_reset:I
 
-    move/from16 v18, v4
+    move/from16 v17, v4
 
     iget-boolean v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->keepContentOnPlayerReset:Z
 
@@ -346,17 +374,31 @@
     .line 42
     invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
 
-    move v8, v7
+    move v4, v15
 
-    move/from16 v16, v13
+    move v15, v14
 
-    move v13, v3
+    move v14, v13
 
-    move v7, v5
+    move v13, v12
 
-    move/from16 v3, v17
+    move v12, v11
 
-    move/from16 v5, v18
+    move v11, v10
+
+    move v10, v9
+
+    move v9, v7
+
+    move/from16 v7, v17
+
+    move/from16 v21, v5
+
+    move v5, v3
+
+    move/from16 v3, v16
+
+    move/from16 v16, v21
 
     goto :goto_1
 
@@ -371,247 +413,232 @@
     :cond_2
     const/4 v4, 0x1
 
+    const/4 v4, 0x0
+
     const/4 v5, 0x1
 
     const/4 v6, 0x0
 
-    const/16 v7, 0x1388
+    const/4 v7, 0x1
 
-    const/4 v8, 0x1
-
-    const/4 v9, 0x0
+    const/4 v9, 0x1
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x1
+    const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    const/4 v12, 0x1
 
-    const/4 v13, 0x1
+    const/4 v13, 0x0
 
     const/4 v14, 0x1
 
-    const/4 v15, 0x0
+    const/4 v15, 0x1
 
-    const/16 v16, 0x1
+    const/16 v16, 0x1388
 
     .line 44
     :goto_1
     invoke-static/range {p1 .. p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v4
+    move-result-object v8
 
-    invoke-virtual {v4, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v8, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 45
     new-instance v3, Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;
 
-    const/4 v4, 0x0
+    const/4 v8, 0x0
 
-    invoke-direct {v3, v1, v4}, Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerView;Lcom/google/android/jioexoplayer2/jioui/PlayerView$1;)V
+    invoke-direct {v3, v1, v8}, Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;-><init>(Lcom/google/android/jioexoplayer2/jioui/PlayerView;Lcom/google/android/jioexoplayer2/jioui/PlayerView$1;)V
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;
 
-    const/high16 v3, 0x40000
+    const/high16 v8, 0x40000
 
     .line 46
-    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setDescendantFocusability(I)V
+    invoke-virtual {v1, v8}, Landroid/widget/FrameLayout;->setDescendantFocusability(I)V
 
     .line 47
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, ""
+    move/from16 v17, v14
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v14, ""
 
-    sget v4, Lcom/app/cinemasdk/R$id;->exo_content_frame_jio:I
+    invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v14, Lcom/app/cinemasdk/R$id;->exo_content_frame_jio:I
+
+    move/from16 v18, v5
+
+    invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v8, "reference_r"
+
+    invoke-static {v8, v5}, Lcom/google/android/jioexoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 48
+    invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+
+    iput-object v5, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+
+    move/from16 v19, v9
+
+    .line 49
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move/from16 v20, v7
+
+    const-string v7, " "
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v8, v7}, Lcom/google/android/jioexoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-eqz v5, :cond_3
+
+    .line 50
+    invoke-static {v5, v4}, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->setResizeModeRaw(Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;I)V
+
+    .line 51
+    :cond_3
+    sget v4, Lcom/app/cinemasdk/R$id;->exo_shutter_jio:I
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iput-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->shutterView:Landroid/view/View;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v4, :cond_4
 
-    move-result-object v3
-
-    const-string v4, "reference_r"
-
-    invoke-static {v4, v3}, Lcom/google/android/jioexoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 48
-    sget v3, Lcom/app/cinemasdk/R$id;->exo_content_frame_jio:I
-
-    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
-
-    iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
-
-    .line 49
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    move/from16 v18, v7
-
-    iget-object v7, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
-
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v7, " "
-
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v7, Lcom/app/cinemasdk/R$id;->exo_content_frame_jio:I
-
-    invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v4, v3}, Lcom/google/android/jioexoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 50
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
-
-    if-eqz v3, :cond_3
-
-    .line 51
-    invoke-static {v3, v15}, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->setResizeModeRaw(Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;I)V
+    if-eqz v11, :cond_4
 
     .line 52
-    :cond_3
-    sget v3, Lcom/app/cinemasdk/R$id;->exo_shutter_jio:I
+    invoke-virtual {v4, v10}, Landroid/view/View;->setBackgroundColor(I)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+    :cond_4
+    if-eqz v5, :cond_8
 
-    move-result-object v3
-
-    iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->shutterView:Landroid/view/View;
+    if-eqz v15, :cond_8
 
     .line 53
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->shutterView:Landroid/view/View;
+    new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
-    if-eqz v3, :cond_4
+    const/4 v7, -0x1
 
-    if-eqz v9, :cond_4
+    invoke-direct {v4, v7, v7}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    const/4 v7, 0x2
+
+    if-eq v15, v7, :cond_7
+
+    const/4 v7, 0x3
+
+    if-eq v15, v7, :cond_5
 
     .line 54
-    invoke-virtual {v3, v10}, Landroid/view/View;->setBackgroundColor(I)V
+    new-instance v3, Landroid/view/SurfaceView;
 
-    .line 55
-    :cond_4
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+    invoke-direct {v3, v0}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;)V
 
-    if-eqz v3, :cond_8
-
-    if-eqz v14, :cond_8
-
-    .line 56
-    new-instance v3, Landroid/view/ViewGroup$LayoutParams;
-
-    const/4 v4, -0x1
-
-    invoke-direct {v3, v4, v4}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    const/4 v4, 0x2
-
-    if-eq v14, v4, :cond_7
-
-    const/4 v4, 0x3
-
-    if-eq v14, v4, :cond_5
-
-    .line 57
-    new-instance v4, Landroid/view/SurfaceView;
-
-    invoke-direct {v4, v0}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
+    iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
 
     goto :goto_3
 
-    .line 58
+    .line 55
     :cond_5
-    sget v4, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
+    sget v7, Lcom/google/android/jioexoplayer2/util/Util;->SDK_INT:I
 
-    const/16 v7, 0xf
+    const/16 v8, 0xf
 
-    if-lt v4, v7, :cond_6
+    if-lt v7, v8, :cond_6
 
-    const/4 v4, 0x1
+    const/4 v7, 0x1
 
     goto :goto_2
 
     :cond_6
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
     :goto_2
-    invoke-static {v4}, Lcom/google/android/jioexoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v7}, Lcom/google/android/jioexoplayer2/util/Assertions;->checkState(Z)V
+
+    .line 56
+    new-instance v7, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;
+
+    invoke-direct {v7, v0}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;-><init>(Landroid/content/Context;)V
+
+    .line 57
+    invoke-virtual {v7, v3}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->setSurfaceListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;)V
+
+    .line 58
+    invoke-virtual {v7, v3}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->setSingleTapListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;)V
 
     .line 59
-    new-instance v4, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;
-
-    invoke-direct {v4, v0}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;-><init>(Landroid/content/Context;)V
-
-    .line 60
-    iget-object v7, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;
-
-    invoke-virtual {v4, v7}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->setSurfaceListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$SurfaceListener;)V
-
-    .line 61
-    iget-object v7, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->componentListener:Lcom/google/android/jioexoplayer2/jioui/PlayerView$ComponentListener;
-
-    invoke-virtual {v4, v7}, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;->setSingleTapListener(Lcom/google/android/jioexoplayer2/jioui/spherical/SingleTapListener;)V
-
-    .line 62
-    iput-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
+    iput-object v7, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
 
     goto :goto_3
 
-    .line 63
+    .line 60
     :cond_7
-    new-instance v4, Landroid/view/TextureView;
+    new-instance v3, Landroid/view/TextureView;
 
-    invoke-direct {v4, v0}, Landroid/view/TextureView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v0}, Landroid/view/TextureView;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
+    iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
 
-    .line 64
+    .line 61
     :goto_3
-    iget-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
+    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
 
-    invoke-virtual {v4, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 65
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->contentFrame:Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+    .line 62
+    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
 
-    iget-object v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
+    const/4 v4, 0x0
 
-    const/4 v7, 0x0
-
-    invoke-virtual {v3, v4, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
+    invoke-virtual {v5, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
 
     goto :goto_4
 
     :cond_8
     const/4 v3, 0x0
 
-    .line 66
+    .line 63
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->surfaceView:Landroid/view/View;
 
-    .line 67
+    .line 64
     :goto_4
     sget v3, Lcom/app/cinemasdk/R$id;->exo_ad_overlay_jio:I
 
@@ -623,7 +650,7 @@
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->adOverlayFrameLayout:Landroid/widget/FrameLayout;
 
-    .line 68
+    .line 65
     sget v3, Lcom/app/cinemasdk/R$id;->exo_overlay_jio:I
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -634,7 +661,7 @@
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->overlayFrameLayout:Landroid/widget/FrameLayout;
 
-    .line 69
+    .line 66
     sget v3, Lcom/app/cinemasdk/R$id;->exo_artwork_jio:I
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -645,10 +672,7 @@
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->artworkView:Landroid/widget/ImageView;
 
-    if-eqz v11, :cond_9
-
-    .line 70
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->artworkView:Landroid/widget/ImageView;
+    if-eqz v12, :cond_9
 
     if-eqz v3, :cond_9
 
@@ -659,23 +683,24 @@
     :cond_9
     const/4 v3, 0x0
 
+    .line 67
     :goto_5
     iput-boolean v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->useArtwork:Z
 
-    if-eqz v12, :cond_a
+    if-eqz v13, :cond_a
 
-    .line 71
+    .line 68
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    invoke-static {v3, v12}, Lx6;->c(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v13}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->defaultArtwork:Landroid/graphics/drawable/Drawable;
 
-    .line 72
+    .line 69
     :cond_a
     sget v3, Lcom/app/cinemasdk/R$id;->exo_subtitles_jio:I
 
@@ -687,20 +712,15 @@
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->subtitleView:Lcom/google/android/jioexoplayer2/jioui/SubtitleView;
 
-    .line 73
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->subtitleView:Lcom/google/android/jioexoplayer2/jioui/SubtitleView;
-
     if-eqz v3, :cond_b
 
-    .line 74
+    .line 70
     invoke-virtual {v3}, Lcom/google/android/jioexoplayer2/jioui/SubtitleView;->setUserDefaultStyle()V
 
-    .line 75
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->subtitleView:Lcom/google/android/jioexoplayer2/jioui/SubtitleView;
-
+    .line 71
     invoke-virtual {v3}, Lcom/google/android/jioexoplayer2/jioui/SubtitleView;->setUserDefaultTextSize()V
 
-    .line 76
+    .line 72
     :cond_b
     sget v3, Lcom/app/cinemasdk/R$id;->exo_buffering_jio:I
 
@@ -710,21 +730,18 @@
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->bufferingView:Landroid/view/View;
 
-    .line 77
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->bufferingView:Landroid/view/View;
-
     const/16 v4, 0x8
 
     if-eqz v3, :cond_c
 
-    .line 78
+    .line 73
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 79
+    .line 74
     :cond_c
     iput v6, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->showBuffering:I
 
-    .line 80
+    .line 75
     sget v3, Lcom/app/cinemasdk/R$id;->exo_error_message_jio:I
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -735,15 +752,12 @@
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->errorMessageView:Landroid/widget/TextView;
 
-    .line 81
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->errorMessageView:Landroid/widget/TextView;
-
     if-eqz v3, :cond_d
 
-    .line 82
+    .line 76
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 83
+    .line 77
     :cond_d
     sget v3, Lcom/app/cinemasdk/R$id;->exo_controller_jio:I
 
@@ -753,7 +767,7 @@
 
     check-cast v3, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
 
-    .line 84
+    .line 78
     sget v4, Lcom/app/cinemasdk/R$id;->exo_controller_placeholder_jio:I
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -762,104 +776,109 @@
 
     if-eqz v3, :cond_e
 
-    .line 85
+    .line 79
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     goto :goto_6
 
     :cond_e
     if-eqz v4, :cond_f
 
-    .line 86
+    .line 80
     new-instance v3, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
-
-    invoke-direct {v3, v0, v7, v6, v2}, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILandroid/util/AttributeSet;)V
+    invoke-direct {v3, v0, v6, v5, v2}, Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILandroid/util/AttributeSet;)V
 
     iput-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
 
-    .line 87
-    iget-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
-
+    .line 81
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 88
+    .line 82
     invoke-virtual {v4}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 89
+    .line 83
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
 
     move-result v2
 
-    .line 90
+    .line 84
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 91
-    iget-object v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
-
+    .line 85
     invoke-virtual {v0, v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     goto :goto_6
 
     :cond_f
-    const/4 v0, 0x0
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    .line 92
-    iput-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
+    .line 86
+    iput-object v6, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
 
-    .line 93
+    .line 87
     :goto_6
     iget-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
 
     if-eqz v0, :cond_10
 
-    move/from16 v0, v18
+    move/from16 v3, v16
 
     goto :goto_7
 
     :cond_10
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
     :goto_7
-    iput v0, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerShowTimeoutMs:I
+    iput v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerShowTimeoutMs:I
 
-    .line 94
-    iput-boolean v5, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerHideOnTouch:Z
+    move/from16 v4, v20
 
-    .line 95
-    iput-boolean v8, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerAutoShow:Z
+    .line 88
+    iput-boolean v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerHideOnTouch:Z
 
-    .line 96
-    iput-boolean v13, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerHideDuringAds:Z
+    move/from16 v4, v19
 
-    if-eqz v16, :cond_11
+    .line 89
+    iput-boolean v4, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerAutoShow:Z
 
-    .line 97
-    iget-object v0, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
+    move/from16 v3, v18
+
+    .line 90
+    iput-boolean v3, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controllerHideDuringAds:Z
+
+    if-eqz v17, :cond_11
 
     if-eqz v0, :cond_11
 
     const/4 v6, 0x1
 
+    goto :goto_8
+
     :cond_11
+    const/4 v6, 0x0
+
+    .line 91
+    :goto_8
     iput-boolean v6, v1, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->useController:Z
 
-    .line 98
+    .line 92
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->hideController()V
 
     return-void
@@ -1004,7 +1023,7 @@
     return-void
 .end method
 
-.method public static applyTextureViewRotation(Landroid/view/TextureView;I)V
+.method private static applyTextureViewRotation(Landroid/view/TextureView;I)V
     .locals 6
 
     .line 1
@@ -1115,7 +1134,7 @@
     return-void
 .end method
 
-.method public static configureEditModeLogo(Landroid/content/res/Resources;Landroid/widget/ImageView;)V
+.method private static configureEditModeLogo(Landroid/content/res/Resources;Landroid/widget/ImageView;)V
     .locals 1
 
     .line 1
@@ -1139,7 +1158,7 @@
     return-void
 .end method
 
-.method public static configureEditModeLogoV23(Landroid/content/res/Resources;Landroid/widget/ImageView;)V
+.method private static configureEditModeLogoV23(Landroid/content/res/Resources;Landroid/widget/ImageView;)V
     .locals 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0x17
@@ -1413,6 +1432,10 @@
 
 .method private setDrawableArtwork(Landroid/graphics/drawable/Drawable;)Z
     .locals 4
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -1463,7 +1486,7 @@
     return v0
 .end method
 
-.method public static setResizeModeRaw(Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;I)V
+.method private static setResizeModeRaw(Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;I)V
     .locals 0
 
     .line 1
@@ -1556,6 +1579,14 @@
 
 .method public static switchTargetView(Lcom/google/android/jioexoplayer2/Player;Lcom/google/android/jioexoplayer2/jioui/PlayerView;Lcom/google/android/jioexoplayer2/jioui/PlayerView;)V
     .locals 0
+    .param p1    # Lcom/google/android/jioexoplayer2/jioui/PlayerView;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/jioexoplayer2/jioui/PlayerView;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-ne p1, p2, :cond_0
 
@@ -2162,6 +2193,8 @@
 
 .method public getDefaultArtwork()Landroid/graphics/drawable/Drawable;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->defaultArtwork:Landroid/graphics/drawable/Drawable;
@@ -2171,6 +2204,8 @@
 
 .method public getOverlayFrameLayout()Landroid/widget/FrameLayout;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->overlayFrameLayout:Landroid/widget/FrameLayout;
@@ -2293,6 +2328,14 @@
 
 .method public onContentAspectRatioChanged(FLcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;Landroid/view/View;)V
     .locals 0
+    .param p2    # Lcom/google/android/jioexoplayer2/jioui/AspectRatioFrameLayout;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p3    # Landroid/view/View;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-eqz p2, :cond_1
 
@@ -2442,6 +2485,10 @@
 
 .method public setControlDispatcher(Lcom/google/android/jioexoplayer2/ControlDispatcher;)V
     .locals 1
+    .param p1    # Lcom/google/android/jioexoplayer2/ControlDispatcher;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
@@ -2573,6 +2620,10 @@
 
 .method public setCustomErrorMessage(Ljava/lang/CharSequence;)V
     .locals 1
+    .param p1    # Ljava/lang/CharSequence;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->errorMessageView:Landroid/widget/TextView;
@@ -2600,6 +2651,10 @@
 
 .method public setDefaultArtwork(Landroid/graphics/Bitmap;)V
     .locals 2
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -2631,6 +2686,10 @@
 
 .method public setDefaultArtwork(Landroid/graphics/drawable/Drawable;)V
     .locals 1
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 4
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->defaultArtwork:Landroid/graphics/drawable/Drawable;
@@ -2651,6 +2710,10 @@
 
 .method public setErrorMessageProvider(Lcom/google/android/jioexoplayer2/util/ErrorMessageProvider;)V
     .locals 1
+    .param p1    # Lcom/google/android/jioexoplayer2/util/ErrorMessageProvider;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2678,6 +2741,14 @@
 
 .method public setExtraAdGroupMarkers([J[Z)V
     .locals 1
+    .param p1    # [J
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # [Z
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
@@ -2750,6 +2821,10 @@
 
 .method public setPlaybackPreparer(Lcom/google/android/jioexoplayer2/PlaybackPreparer;)V
     .locals 1
+    .param p1    # Lcom/google/android/jioexoplayer2/PlaybackPreparer;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/PlayerView;->controller:Lcom/google/android/jioexoplayer2/jioui/PlayerControlView;
@@ -2776,6 +2851,10 @@
 
 .method public setPlayer(Lcom/google/android/jioexoplayer2/Player;)V
     .locals 6
+    .param p1    # Lcom/google/android/jioexoplayer2/Player;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;

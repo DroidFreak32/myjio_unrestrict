@@ -1,5 +1,5 @@
 .class public Landroidx/databinding/ObservableField;
-.super Lob;
+.super Lx2;
 .source "ObservableField.java"
 
 # interfaces
@@ -12,7 +12,7 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Lob;",
+        "Lx2;",
         "Ljava/io/Serializable;"
     }
 .end annotation
@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field public mValue:Ljava/lang/Object;
+.field private mValue:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -37,7 +37,7 @@
     .locals 0
 
     .line 3
-    invoke-direct {p0}, Lob;-><init>()V
+    invoke-direct {p0}, Lx2;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .end annotation
 
     .line 1
-    invoke-direct {p0}, Lob;-><init>()V
+    invoke-direct {p0}, Lx2;-><init>()V
 
     .line 2
     iput-object p1, p0, Landroidx/databinding/ObservableField;->mValue:Ljava/lang/Object;
@@ -59,11 +59,11 @@
     return-void
 .end method
 
-.method public varargs constructor <init>([Lwb;)V
+.method public varargs constructor <init>([Landroidx/databinding/Observable;)V
     .locals 0
 
     .line 4
-    invoke-direct {p0, p1}, Lob;-><init>([Lwb;)V
+    invoke-direct {p0, p1}, Lx2;-><init>([Landroidx/databinding/Observable;)V
 
     return-void
 .end method
@@ -72,6 +72,9 @@
 # virtual methods
 .method public get()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -101,7 +104,7 @@
     iput-object p1, p0, Landroidx/databinding/ObservableField;->mValue:Ljava/lang/Object;
 
     .line 3
-    invoke-virtual {p0}, Lnb;->notifyChange()V
+    invoke-virtual {p0}, Landroidx/databinding/BaseObservable;->notifyChange()V
 
     :cond_0
     return-void

@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static final MAX_CHUNK:I = 0x40000
+.field private static final MAX_CHUNK:I = 0x40000
 
-.field public static final SMALL_CHUNK:I = 0x4000
+.field private static final SMALL_CHUNK:I = 0x4000
 
 
 # instance fields
-.field public _freeBuffer:[Ljava/lang/Object;
+.field private _freeBuffer:[Ljava/lang/Object;
 
-.field public _head:Lcom/fasterxml/jackson/databind/util/LinkedNode;
+.field private _head:Lcom/fasterxml/jackson/databind/util/LinkedNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/util/LinkedNode<",
@@ -23,9 +23,9 @@
     .end annotation
 .end field
 
-.field public _size:I
+.field private _size:I
 
-.field public _tail:Lcom/fasterxml/jackson/databind/util/LinkedNode;
+.field private _tail:Lcom/fasterxml/jackson/databind/util/LinkedNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/fasterxml/jackson/databind/util/LinkedNode<",

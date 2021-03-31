@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onAdapterChanged(Lsk;Lsk;)V
+.method public abstract onAdapterChanged(Landroidx/viewpager/widget/PagerAdapter;Landroidx/viewpager/widget/PagerAdapter;)V
 .end method

@@ -1,74 +1,44 @@
-.class public final Lcom/google/android/gms/internal/ads/zzahi;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzahi;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzahv;
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-
-# instance fields
-.field public zzcnv:Ljava/util/WeakHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/WeakHashMap<",
-            "Landroid/content/Context;",
-            "Lcom/google/android/gms/internal/ads/zzahk;",
-            ">;"
-        }
-    .end annotation
-.end field
+# static fields
+.field public static final zzdgn:Lcom/google/android/gms/internal/ads/zzahv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzahi;
 
-    .line 2
-    new-instance v0, Ljava/util/WeakHashMap;
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzahi;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzahi;->zzcnv:Ljava/util/WeakHashMap;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzahi;->zzdgn:Lcom/google/android/gms/internal/ads/zzahv;
 
     return-void
 .end method
 
-.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zzahi;)Ljava/util/WeakHashMap;
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zzahi;->zzcnv:Ljava/util/WeakHashMap;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final zzs(Landroid/content/Context;)Ljava/util/concurrent/Future;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            ")",
-            "Ljava/util/concurrent/Future<",
-            "Lcom/google/android/gms/internal/ads/zzahg;",
-            ">;"
-        }
-    .end annotation
+.method public final zza(Ljava/lang/Object;Ljava/util/Map;)V
+    .locals 0
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzahj;
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzbff;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/ads/zzahj;-><init>(Lcom/google/android/gms/internal/ads/zzahi;Landroid/content/Context;)V
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/ads/zzahc;->zza(Lcom/google/android/gms/internal/ads/zzbff;Ljava/util/Map;)V
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzalm;->zza(Ljava/util/concurrent/Callable;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

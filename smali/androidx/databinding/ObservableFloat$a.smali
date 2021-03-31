@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/databinding/ObservableFloat;
+.method public a(Landroid/os/Parcel;)Landroidx/databinding/ObservableFloat;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/databinding/ObservableFloat;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
@@ -53,22 +53,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/databinding/ObservableFloat;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/databinding/ObservableFloat$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/databinding/ObservableFloat;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/databinding/ObservableFloat;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/databinding/ObservableFloat;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/databinding/ObservableFloat;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/databinding/ObservableFloat$a;->a(Landroid/os/Parcel;)Landroidx/databinding/ObservableFloat;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -77,7 +77,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/databinding/ObservableFloat$a;->newArray(I)[Landroidx/databinding/ObservableFloat;
+    invoke-virtual {p0, p1}, Landroidx/databinding/ObservableFloat$a;->b(I)[Landroidx/databinding/ObservableFloat;
 
     move-result-object p1
 

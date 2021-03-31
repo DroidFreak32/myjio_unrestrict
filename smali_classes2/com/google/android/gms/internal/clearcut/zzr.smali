@@ -27,26 +27,26 @@
 
 
 # instance fields
-.field public final packageName:Ljava/lang/String;
+.field private final packageName:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x2
     .end annotation
 .end field
 
-.field public final zzay:Z
+.field private final zzay:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "true"
         id = 0x7
     .end annotation
 .end field
 
-.field public final zzaz:I
+.field private final zzaz:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0xa
     .end annotation
 .end field
 
-.field public final zzi:I
+.field private final zzi:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x3
     .end annotation
@@ -64,19 +64,19 @@
     .end annotation
 .end field
 
-.field public final zzl:Ljava/lang/String;
+.field private final zzl:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x5
     .end annotation
 .end field
 
-.field public final zzm:Ljava/lang/String;
+.field private final zzm:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x6
     .end annotation
 .end field
 
-.field public final zzn:Z
+.field private final zzn:Z
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         id = 0x9
     .end annotation
@@ -512,47 +512,47 @@
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->packageName:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzi:I
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzk:I
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzl:Ljava/lang/String;
 
-    const/4 v2, 0x5
+    const/4 v1, 0x5
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzm:Ljava/lang/String;
 
-    const/4 v2, 0x6
+    const/4 v1, 0x6
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     iget-boolean v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzay:Z
 
-    const/4 v2, 0x7
+    const/4 v1, 0x7
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzj:Ljava/lang/String;
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    invoke-static {p1, v2, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     iget-boolean v0, p0, Lcom/google/android/gms/internal/clearcut/zzr;->zzn:Z
 

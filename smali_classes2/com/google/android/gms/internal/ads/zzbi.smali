@@ -1,452 +1,181 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbi;
-.super Lcom/google/android/gms/internal/ads/zzbgt;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzbgt<",
-        "Lcom/google/android/gms/internal/ads/zzbi;",
-        ">;"
-    }
-.end annotation
+.super Ljava/io/ByteArrayOutputStream;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public zzfg:Ljava/lang/Integer;
-
-.field public zzfh:Ljava/lang/Integer;
-
-.field public zzgu:[B
-
-.field public zzgz:[[B
+.field private final zzce:Lcom/google/android/gms/internal/ads/zzat;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzat;I)V
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzbgt;-><init>()V
+    invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     .line 2
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzbhc;->zzefc:[[B
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzce:Lcom/google/android/gms/internal/ads/zzat;
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
-
-    const/4 v0, 0x0
+    const/16 v0, 0x100
 
     .line 3
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgu:[B
+    invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
 
-    const/4 v0, -0x1
+    move-result p2
 
-    .line 4
-    iput v0, p0, Lcom/google/android/gms/internal/ads/zzbgz;->zzees:I
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/ads/zzat;->zzf(I)[B
+
+    move-result-object p1
+
+    iput-object p1, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
     return-void
 .end method
 
-.method private final zzd(Lcom/google/android/gms/internal/ads/zzbgq;)Lcom/google/android/gms/internal/ads/zzbi;
-    .locals 4
+.method private final zzg(I)V
+    .locals 3
 
     .line 1
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzade()I
+    iget v0, p0, Ljava/io/ByteArrayOutputStream;->count:I
 
-    move-result v0
+    add-int v1, v0, p1
 
-    if-eqz v0, :cond_8
+    iget-object v2, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
-    const/16 v1, 0xa
+    array-length v2, v2
 
-    if-eq v0, v1, :cond_4
+    if-gt v1, v2, :cond_0
 
-    const/16 v1, 0x12
-
-    if-eq v0, v1, :cond_3
-
-    const/16 v1, 0x18
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x20
-
-    if-eq v0, v1, :cond_1
+    return-void
 
     .line 2
-    invoke-super {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgq;I)Z
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzce:Lcom/google/android/gms/internal/ads/zzat;
 
-    move-result v0
+    add-int/2addr v0, p1
 
-    if-nez v0, :cond_0
+    shl-int/lit8 p1, v0, 0x1
 
-    return-object p0
+    invoke-virtual {v1, p1}, Lcom/google/android/gms/internal/ads/zzat;->zzf(I)[B
+
+    move-result-object p1
 
     .line 3
-    :cond_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->getPosition()I
+    iget-object v0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
-    move-result v1
-
-    .line 4
-    :try_start_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadw()I
-
-    move-result v2
-
-    .line 5
-    invoke-static {v2}, Lcom/google/android/gms/internal/ads/zzba;->zzf(I)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzfg:Ljava/lang/Integer;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 6
-    :catch_0
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzdk(I)V
-
-    .line 7
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgq;I)Z
-
-    goto :goto_0
-
-    .line 8
-    :cond_2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->getPosition()I
-
-    move-result v1
-
-    .line 9
-    :try_start_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzadw()I
-
-    move-result v2
-
-    .line 10
-    invoke-static {v2}, Lcom/google/android/gms/internal/ads/zzba;->zze(I)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzfh:Ljava/lang/Integer;
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_0
-
-    .line 11
-    :catch_1
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzdk(I)V
-
-    .line 12
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgq;I)Z
-
-    goto :goto_0
-
-    .line 13
-    :cond_3
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->readBytes()[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgu:[B
-
-    goto :goto_0
-
-    .line 14
-    :cond_4
-    invoke-static {p1, v1}, Lcom/google/android/gms/internal/ads/zzbhc;->zzb(Lcom/google/android/gms/internal/ads/zzbgq;I)I
-
-    move-result v0
-
-    .line 15
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
+    iget v1, p0, Ljava/io/ByteArrayOutputStream;->count:I
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_5
+    invoke-static {v0, v2, p1, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v1, 0x0
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzce:Lcom/google/android/gms/internal/ads/zzat;
 
-    goto :goto_1
+    iget-object v1, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
-    :cond_5
-    array-length v1, v1
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzat;->zza([B)V
 
-    :goto_1
-    add-int/2addr v0, v1
+    .line 5
+    iput-object p1, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
-    .line 16
-    new-array v0, v0, [[B
-
-    if-eqz v1, :cond_6
-
-    .line 17
-    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
-
-    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 18
-    :cond_6
-    :goto_2
-    array-length v2, v0
-
-    add-int/lit8 v2, v2, -0x1
-
-    if-ge v1, v2, :cond_7
-
-    .line 19
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->readBytes()[B
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    .line 20
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->zzade()I
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    .line 21
-    :cond_7
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzbgq;->readBytes()[B
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    .line 22
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
-
-    goto/16 :goto_0
-
-    :cond_8
-    return-object p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzbgq;)Lcom/google/android/gms/internal/ads/zzbgz;
-    .locals 0
-
-    .line 12
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzbi;->zzd(Lcom/google/android/gms/internal/ads/zzbgq;)Lcom/google/android/gms/internal/ads/zzbi;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
-    .locals 3
+.method public final close()V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzce:Lcom/google/android/gms/internal/ads/zzat;
 
-    if-eqz v0, :cond_1
+    iget-object v1, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
-    array-length v0, v0
-
-    if-lez v0, :cond_1
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzat;->zza([B)V
 
     const/4 v0, 0x0
 
     .line 2
-    :goto_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
-
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_1
+    iput-object v0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
     .line 3
-    aget-object v1, v1, v0
-
-    if-eqz v1, :cond_0
-
-    const/4 v2, 0x1
-
-    .line 4
-    invoke-virtual {p1, v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zza(I[B)V
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgu:[B
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x2
-
-    .line 6
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzbgr;->zza(I[B)V
-
-    .line 7
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzfh:Ljava/lang/Integer;
-
-    if-eqz v0, :cond_3
-
-    const/4 v1, 0x3
-
-    .line 8
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzbgr;->zzm(II)V
-
-    .line 9
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzfg:Ljava/lang/Integer;
-
-    if-eqz v0, :cond_4
-
-    const/4 v1, 0x4
-
-    .line 10
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/ads/zzbgr;->zzm(II)V
-
-    .line 11
-    :cond_4
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgt;->zza(Lcom/google/android/gms/internal/ads/zzbgr;)V
+    invoke-super {p0}, Ljava/io/ByteArrayOutputStream;->close()V
 
     return-void
 .end method
 
-.method public final zzs()I
-    .locals 6
+.method public final finalize()V
+    .locals 2
 
     .line 1
-    invoke-super {p0}, Lcom/google/android/gms/internal/ads/zzbgt;->zzs()I
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzce:Lcom/google/android/gms/internal/ads/zzat;
 
-    move-result v0
+    iget-object v1, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzat;->zza([B)V
 
-    if-eqz v1, :cond_2
+    return-void
+.end method
 
-    array-length v1, v1
+.method public final declared-synchronized write(I)V
+    .locals 1
 
-    if-lez v1, :cond_2
+    monitor-enter p0
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    .line 3
-    :goto_0
-    iget-object v4, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgz:[[B
-
-    array-length v5, v4
-
-    if-ge v1, v5, :cond_1
+    const/4 v0, 0x1
 
     .line 4
-    aget-object v4, v4, v1
-
-    if-eqz v4, :cond_0
-
-    add-int/lit8 v3, v3, 0x1
+    :try_start_0
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzbi;->zzg(I)V
 
     .line 5
-    invoke-static {v4}, Lcom/google/android/gms/internal/ads/zzbgr;->zzv([B)I
-
-    move-result v4
-
-    add-int/2addr v2, v4
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v3, v3, 0x1
-
-    add-int/2addr v0, v3
+    invoke-super {p0, p1}, Ljava/io/ByteArrayOutputStream;->write(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
-    :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzgu:[B
+    monitor-exit p0
 
-    if-eqz v1, :cond_3
+    return-void
 
-    const/4 v2, 0x2
+    :catchall_0
+    move-exception p1
 
-    .line 7
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zzb(I[B)I
+    monitor-exit p0
 
-    move-result v1
+    throw p1
+.end method
 
-    add-int/2addr v0, v1
+.method public final declared-synchronized write([BII)V
+    .locals 0
 
-    .line 8
-    :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzfh:Ljava/lang/Integer;
+    monitor-enter p0
 
-    if-eqz v1, :cond_4
+    .line 1
+    :try_start_0
+    invoke-direct {p0, p3}, Lcom/google/android/gms/internal/ads/zzbi;->zzg(I)V
 
-    const/4 v2, 0x3
+    .line 2
+    invoke-super {p0, p1, p2, p3}, Ljava/io/ByteArrayOutputStream;->write([BII)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    .line 3
+    monitor-exit p0
 
-    move-result v1
+    return-void
 
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zzq(II)I
+    :catchall_0
+    move-exception p1
 
-    move-result v1
+    monitor-exit p0
 
-    add-int/2addr v0, v1
-
-    .line 10
-    :cond_4
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbi;->zzfg:Ljava/lang/Integer;
-
-    if-eqz v1, :cond_5
-
-    const/4 v2, 0x4
-
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/ads/zzbgr;->zzq(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_5
-    return v0
+    throw p1
 .end method

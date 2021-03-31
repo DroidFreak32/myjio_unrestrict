@@ -28,10 +28,10 @@
 
 
 # instance fields
-.field public final exceptionListPool:Lz8;
+.field private final exceptionListPool:Landroidx/core/util/Pools$Pool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;"
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public final modelLoaders:Ljava/util/List;
+.field private final modelLoaders:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -51,15 +51,23 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lz8;)V
+.method public constructor <init>(Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
     .locals 0
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroidx/core/util/Pools$Pool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
             "Lcom/bumptech/glide/load/model/ModelLoader<",
             "TModel;TData;>;>;",
-            "Lz8<",
+            "Landroidx/core/util/Pools$Pool<",
             "Ljava/util/List<",
             "Ljava/lang/Throwable;",
             ">;>;)V"
@@ -73,7 +81,7 @@
     iput-object p1, p0, Lcom/bumptech/glide/load/model/MultiModelLoader;->modelLoaders:Ljava/util/List;
 
     .line 3
-    iput-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader;->exceptionListPool:Lz8;
+    iput-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader;->exceptionListPool:Landroidx/core/util/Pools$Pool;
 
     return-void
 .end method
@@ -82,6 +90,14 @@
 # virtual methods
 .method public buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 7
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;II",
@@ -164,9 +180,9 @@
 
     new-instance p1, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;
 
-    iget-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader;->exceptionListPool:Lz8;
+    iget-object p2, p0, Lcom/bumptech/glide/load/model/MultiModelLoader;->exceptionListPool:Landroidx/core/util/Pools$Pool;
 
-    invoke-direct {p1, v1, p2}, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;-><init>(Ljava/util/List;Lz8;)V
+    invoke-direct {p1, v1, p2}, Lcom/bumptech/glide/load/model/MultiModelLoader$MultiFetcher;-><init>(Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
 
     invoke-direct {v2, v4, p1}, Lcom/bumptech/glide/load/model/ModelLoader$LoadData;-><init>(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/data/DataFetcher;)V
 
@@ -176,6 +192,10 @@
 
 .method public handles(Ljava/lang/Object;)Z
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;)Z"

@@ -1,51 +1,91 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzapf;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/android/gms/internal/ads/zzapf;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final zzczp:Lcom/google/android/gms/internal/ads/zzapi;
-
-.field public final zzczq:Ljava/util/concurrent/Future;
+.implements Lcom/google/android/gms/internal/ads/zzapc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzapi;Ljava/util/concurrent/Future;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.gms.ads.internal.mediation.client.rtb.IBannerCallback"
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzapf;->zzczp:Lcom/google/android/gms/internal/ads/zzapi;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzapf;->zzczq:Ljava/util/concurrent/Future;
+    .line 1
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    const/4 p4, 0x1
+
+    if-eq p1, p4, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzapf;->zzczp:Lcom/google/android/gms/internal/ads/zzapi;
+    :cond_0
+    sget-object p1, Lcom/google/android/gms/internal/ads/zzve;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzapf;->zzczq:Ljava/util/concurrent/Future;
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzgv;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzve;
 
     .line 2
-    invoke-interface {v0}, Ljava/util/concurrent/Future;->isCancelled()Z
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzapc;->zzf(Lcom/google/android/gms/internal/ads/zzve;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
+    goto :goto_0
 
     .line 3
-    invoke-interface {v1, v0}, Ljava/util/concurrent/Future;->cancel(Z)Z
+    :cond_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    :cond_0
-    return-void
+    move-result-object p1
+
+    .line 4
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzapc;->zzdm(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 5
+    :cond_2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+
+    move-result-object p1
+
+    .line 6
+    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/ads/zzapc;->zzx(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+
+    .line 7
+    :goto_0
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    return p4
 .end method

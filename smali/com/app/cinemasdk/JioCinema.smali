@@ -8,13 +8,13 @@
 
 
 # instance fields
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
+.field private invokedContentData:Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
-.field public mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
+.field private mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
-.field public playerControl:Lcom/app/cinemasdk/ui/PlayerControl;
+.field private playerControl:Lcom/app/cinemasdk/ui/PlayerControl;
 
 
 # direct methods
@@ -39,8 +39,6 @@
     iput-object v0, p0, Lcom/app/cinemasdk/JioCinema;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
 
     .line 4
-    iget-object v0, p0, Lcom/app/cinemasdk/JioCinema;->mainDataManager:Lcom/app/cinemasdk/datamanager/MainDataManager;
-
     invoke-virtual {v0}, Lcom/app/cinemasdk/datamanager/MainDataManager;->getInvokedContentData()Lcom/app/cinemasdk/datamanager/InvokedContentData;
 
     move-result-object v0
@@ -85,13 +83,13 @@
 
     move-result-object v2
 
-    const-string v3, "unique"
+    const-string/jumbo v3, "unique"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v2, "bitrateProfile"
 
-    const-string v3, "xxhdpi"
+    const-string/jumbo v3, "xxhdpi"
 
     .line 4
     invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -110,7 +108,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, v1}, Lcom/app/cinemasdk/network/DataManager;->getPlayBackData(Ljava/lang/String;Ljava/util/HashMap;)Ljr4;
+    invoke-virtual {v0, v2, v1}, Lcom/app/cinemasdk/network/DataManager;->getPlayBackData(Ljava/lang/String;Ljava/util/HashMap;)Lretrofit2/Call;
 
     move-result-object v0
 
@@ -119,7 +117,7 @@
 
     invoke-direct {v1, p0}, Lcom/app/cinemasdk/JioCinema$1;-><init>(Lcom/app/cinemasdk/JioCinema;)V
 
-    invoke-interface {v0, v1}, Ljr4;->a(Llr4;)V
+    invoke-interface {v0, v1}, Lretrofit2/Call;->enqueue(Lretrofit2/Callback;)V
 
     return-void
 .end method
@@ -479,7 +477,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "setCustomControl "
+    const-string/jumbo v1, "setCustomControl "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -501,13 +499,18 @@
 
 .method public setUserDetails(Ljava/lang/String;)Lcom/app/cinemasdk/JioCinema;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "user_details : "
+    const-string/jumbo v1, "user_details : "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

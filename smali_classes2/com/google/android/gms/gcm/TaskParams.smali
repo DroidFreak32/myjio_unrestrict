@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field public final extras:Landroid/os/Bundle;
+.field private final extras:Landroid/os/Bundle;
 
-.field public final tag:Ljava/lang/String;
+.field private final tag:Ljava/lang/String;
 
-.field public final zzaa:Ljava/util/List;
+.field private final zzaa:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -17,7 +17,7 @@
     .end annotation
 .end field
 
-.field public final zzaz:J
+.field private final zzaz:J
 
 
 # direct methods

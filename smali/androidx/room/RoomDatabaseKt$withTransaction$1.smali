@@ -5,22 +5,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/room/RoomDatabaseKt;->a(Landroidx/room/RoomDatabase;Ldr3;Lxp3;)Ljava/lang/Object;
+    value = Landroidx/room/RoomDatabaseKt;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x19
     name = null
-.end annotation
-
-.annotation runtime Leq3;
-    c = "androidx.room.RoomDatabaseKt"
-    f = "RoomDatabase.kt"
-    l = {
-        0x32,
-        0x33
-    }
-    m = "withTransaction"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -30,23 +20,55 @@
         0x3
     }
     d1 = {
-        "\u0000\u0018\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u00010\u0001\"\u0004\u0008\u0000\u0010\u0002*\u00020\u00032\u001c\u0010\u0004\u001a\u0018\u0008\u0001\u0012\n\u0012\u0008\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u00052\u000c\u0010\u0007\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0006H\u0086@"
+        "\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0004\u0010\u0007\u001a\u0004\u0018\u00010\u0004\"\u0004\u0008\u0000\u0010\u0000*\u00020\u00012\u001c\u0010\u0005\u001a\u0018\u0008\u0001\u0012\n\u0012\u0008\u0012\u0004\u0012\u00028\u00000\u0003\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u00022\u000c\u0010\u0006\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0003H\u0086@\u00a2\u0006\u0004\u0008\u0007\u0010\u0008"
     }
     d2 = {
-        "withTransaction",
-        "",
         "R",
         "Landroidx/room/RoomDatabase;",
-        "block",
         "Lkotlin/Function1;",
         "Lkotlin/coroutines/Continuation;",
-        "continuation"
+        "",
+        "block",
+        "continuation",
+        "withTransaction",
+        "(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"
     }
     k = 0x3
     mv = {
         0x1,
         0x1,
         0xf
+    }
+.end annotation
+
+.annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
+    c = "androidx.room.RoomDatabaseKt"
+    f = "RoomDatabase.kt"
+    i = {
+        0x0,
+        0x0,
+        0x1,
+        0x1,
+        0x1
+    }
+    l = {
+        0x32,
+        0x33
+    }
+    m = "withTransaction"
+    n = {
+        "$this$withTransaction",
+        "block",
+        "$this$withTransaction",
+        "block",
+        "transactionContext"
+    }
+    s = {
+        "L$0",
+        "L$1",
+        "L$0",
+        "L$1",
+        "L$2"
     }
 .end annotation
 
@@ -64,10 +86,10 @@
 
 
 # direct methods
-.method public constructor <init>(Lxp3;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;-><init>(Lxp3;)V
+    invoke-direct {p0, p1}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -76,6 +98,12 @@
 # virtual methods
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
 
     iput-object p1, p0, Landroidx/room/RoomDatabaseKt$withTransaction$1;->result:Ljava/lang/Object;
 
@@ -89,7 +117,7 @@
 
     const/4 p1, 0x0
 
-    invoke-static {p1, p1, p0}, Landroidx/room/RoomDatabaseKt;->a(Landroidx/room/RoomDatabase;Ldr3;Lxp3;)Ljava/lang/Object;
+    invoke-static {p1, p1, p0}, Landroidx/room/RoomDatabaseKt;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

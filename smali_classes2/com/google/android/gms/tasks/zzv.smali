@@ -1,58 +1,44 @@
 .class public final Lcom/google/android/gms/tasks/zzv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-tasks@@17.2.0"
 
 
-# instance fields
-.field public final synthetic val$callable:Ljava/util/concurrent/Callable;
+# static fields
+.field private static final zza:Lcom/google/android/gms/tasks/zzw;
 
-.field public final synthetic zzad:Lcom/google/android/gms/tasks/zzu;
+.field private static zzb:Lcom/google/android/gms/tasks/zzw;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/tasks/zzu;Ljava/util/concurrent/Callable;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/tasks/zzv;->zzad:Lcom/google/android/gms/tasks/zzu;
+    sget-object v0, Lcom/google/android/gms/tasks/zzx;->zza:Lcom/google/android/gms/tasks/zzw;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzv;->val$callable:Ljava/util/concurrent/Callable;
+    .line 2
+    sput-object v0, Lcom/google/android/gms/tasks/zzv;->zza:Lcom/google/android/gms/tasks/zzw;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lcom/google/android/gms/tasks/zzv;->zzb:Lcom/google/android/gms/tasks/zzw;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final run()V
-    .locals 2
+.method public static zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+    .locals 1
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzv;->zzad:Lcom/google/android/gms/tasks/zzu;
+    sget-object v0, Lcom/google/android/gms/tasks/zzv;->zzb:Lcom/google/android/gms/tasks/zzw;
 
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzv;->val$callable:Ljava/util/concurrent/Callable;
+    invoke-interface {v0, p0}, Lcom/google/android/gms/tasks/zzw;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
 
-    invoke-interface {v1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v1
+    return-object p0
+.end method
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tasks/zzu;->setResult(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+.method public static final synthetic zzb(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+    .locals 0
 
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/tasks/zzv;->zzad:Lcom/google/android/gms/tasks/zzu;
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/tasks/zzu;->setException(Ljava/lang/Exception;)V
-
-    return-void
+    return-object p0
 .end method

@@ -17,13 +17,13 @@
 
 
 # static fields
-.field public static volatile zzbkd:[Lcom/google/android/gms/internal/clearcut/zzhb;
+.field private static volatile zzbkd:[Lcom/google/android/gms/internal/clearcut/zzhb;
 
 
 # instance fields
-.field public value:Ljava/lang/String;
+.field private value:Ljava/lang/String;
 
-.field public zzbke:Ljava/lang/String;
+.field private zzbke:Ljava/lang/String;
 
 
 # direct methods
@@ -120,6 +120,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzhb;->zzgf()Lcom/google/android/gms/internal/clearcut/zzhb;
 
@@ -321,6 +326,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/clearcut/zzfs;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzhb;->zzbke:Ljava/lang/String;
 
@@ -419,8 +429,13 @@
 
 .method public final synthetic zzeo()Lcom/google/android/gms/internal/clearcut/zzfu;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzhb;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -431,8 +446,13 @@
 
 .method public final synthetic zzep()Lcom/google/android/gms/internal/clearcut/zzfz;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzhb;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

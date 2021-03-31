@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/CommonStatusCodes;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -9,40 +10,105 @@
 
 # static fields
 .field public static final API_NOT_CONNECTED:I = 0x11
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final CANCELED:I = 0x10
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
+
+.field public static final CONNECTION_SUSPENDED_DURING_CALL:I = 0x14
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final DEVELOPER_ERROR:I = 0xa
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final ERROR:I = 0xd
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final INTERNAL_ERROR:I = 0x8
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final INTERRUPTED:I = 0xe
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final INVALID_ACCOUNT:I = 0x5
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final NETWORK_ERROR:I = 0x7
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
+
+.field public static final RECONNECTION_TIMED_OUT:I = 0x16
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
+
+.field public static final RECONNECTION_TIMED_OUT_DURING_UPDATE:I = 0x15
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
+
+.field public static final REMOTE_EXCEPTION:I = 0x13
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final RESOLUTION_REQUIRED:I = 0x6
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final SERVICE_DISABLED:I = 0x3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
 .field public static final SERVICE_VERSION_UPDATE_REQUIRED:I = 0x2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
 .field public static final SIGN_IN_REQUIRED:I = 0x4
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final SUCCESS:I = 0x0
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final SUCCESS_CACHE:I = -0x1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final TIMEOUT:I = 0xf
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -59,6 +125,12 @@
 
 .method public static getStatusCodeString(I)Ljava/lang/String;
     .locals 2
+    .param p0    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     packed-switch p0, :pswitch_data_0
 
@@ -83,81 +155,101 @@
     return-object p0
 
     :pswitch_1
-    const-string p0, "DEAD_CLIENT"
+    const-string p0, "RECONNECTION_TIMED_OUT"
 
     return-object p0
 
     :pswitch_2
-    const-string p0, "API_NOT_CONNECTED"
+    const-string p0, "RECONNECTION_TIMED_OUT_DURING_UPDATE"
 
     return-object p0
 
     :pswitch_3
-    const-string p0, "CANCELED"
+    const-string p0, "CONNECTION_SUSPENDED_DURING_CALL"
 
     return-object p0
 
     :pswitch_4
-    const-string p0, "TIMEOUT"
+    const-string p0, "REMOTE_EXCEPTION"
 
     return-object p0
 
     :pswitch_5
-    const-string p0, "INTERRUPTED"
+    const-string p0, "DEAD_CLIENT"
 
     return-object p0
 
     :pswitch_6
-    const-string p0, "ERROR"
+    const-string p0, "API_NOT_CONNECTED"
 
     return-object p0
 
     :pswitch_7
-    const-string p0, "DEVELOPER_ERROR"
+    const-string p0, "CANCELED"
 
     return-object p0
 
     :pswitch_8
-    const-string p0, "INTERNAL_ERROR"
+    const-string p0, "TIMEOUT"
 
     return-object p0
 
     :pswitch_9
-    const-string p0, "NETWORK_ERROR"
+    const-string p0, "INTERRUPTED"
 
     return-object p0
 
     :pswitch_a
-    const-string p0, "RESOLUTION_REQUIRED"
+    const-string p0, "ERROR"
 
     return-object p0
 
     :pswitch_b
-    const-string p0, "INVALID_ACCOUNT"
+    const-string p0, "DEVELOPER_ERROR"
 
     return-object p0
 
     :pswitch_c
-    const-string p0, "SIGN_IN_REQUIRED"
+    const-string p0, "INTERNAL_ERROR"
 
     return-object p0
 
     :pswitch_d
-    const-string p0, "SERVICE_DISABLED"
+    const-string p0, "NETWORK_ERROR"
 
     return-object p0
 
     :pswitch_e
-    const-string p0, "SERVICE_VERSION_UPDATE_REQUIRED"
+    const-string p0, "RESOLUTION_REQUIRED"
 
     return-object p0
 
     :pswitch_f
-    const-string p0, "SUCCESS"
+    const-string p0, "INVALID_ACCOUNT"
 
     return-object p0
 
     :pswitch_10
+    const-string p0, "SIGN_IN_REQUIRED"
+
+    return-object p0
+
+    :pswitch_11
+    const-string p0, "SERVICE_DISABLED"
+
+    return-object p0
+
+    :pswitch_12
+    const-string p0, "SERVICE_VERSION_UPDATE_REQUIRED"
+
+    return-object p0
+
+    :pswitch_13
+    const-string p0, "SUCCESS"
+
+    return-object p0
+
+    :pswitch_14
     const-string p0, "SUCCESS_CACHE"
 
     return-object p0
@@ -166,20 +258,24 @@
 
     :pswitch_data_0
     .packed-switch -0x1
+        :pswitch_14
+        :pswitch_13
+        :pswitch_0
+        :pswitch_12
+        :pswitch_11
         :pswitch_10
         :pswitch_f
-        :pswitch_0
         :pswitch_e
         :pswitch_d
         :pswitch_c
+        :pswitch_0
         :pswitch_b
+        :pswitch_0
+        :pswitch_0
         :pswitch_a
         :pswitch_9
         :pswitch_8
-        :pswitch_0
         :pswitch_7
-        :pswitch_0
-        :pswitch_0
         :pswitch_6
         :pswitch_5
         :pswitch_4

@@ -1,129 +1,61 @@
 .class public final Lcom/google/android/gms/internal/ads/zzds;
-.super Lcom/google/android/gms/internal/ads/zzek;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzdtn;
 
 
-# static fields
-.field public static volatile zzel:Ljava/lang/Long;
-
-.field public static final zztu:Ljava/lang/Object;
+# instance fields
+.field private final synthetic zzwa:Lcom/google/android/gms/internal/ads/zzdsi;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzdsi;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzds;->zzwa:Lcom/google/android/gms/internal/ads/zzdsi;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzds;->zztu:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzdb;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzbb;II)V
-    .locals 7
-
-    const/16 v6, 0x2c
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move v5, p5
-
-    .line 1
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/internal/ads/zzek;-><init>(Lcom/google/android/gms/internal/ads/zzdb;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzbb;II)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzar()V
-    .locals 4
+.method public final zza(IJ)V
+    .locals 3
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzds;->zzel:Ljava/lang/Long;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzds;->zzwa:Lcom/google/android/gms/internal/ads/zzdsi;
 
-    if-nez v0, :cond_1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 2
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzds;->zztu:Ljava/lang/Object;
+    move-result-wide v1
 
-    monitor-enter v0
+    sub-long/2addr v1, p2
 
-    .line 3
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzds;->zzel:Ljava/lang/Long;
-
-    if-nez v1, :cond_0
-
-    .line 4
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzek;->zzue:Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Long;
-
-    sput-object v1, Lcom/google/android/gms/internal/ads/zzds;->zzel:Ljava/lang/Long;
-
-    .line 5
-    :cond_0
-    monitor-exit v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-
-    .line 6
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzek;->zztv:Lcom/google/android/gms/internal/ads/zzbb;
-
-    monitor-enter v0
-
-    .line 7
-    :try_start_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzek;->zztv:Lcom/google/android/gms/internal/ads/zzbb;
-
-    sget-object v2, Lcom/google/android/gms/internal/ads/zzds;->zzel:Ljava/lang/Long;
-
-    iput-object v2, v1, Lcom/google/android/gms/internal/ads/zzbb;->zzel:Ljava/lang/Long;
-
-    .line 8
-    monitor-exit v0
+    invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzdsi;->zzh(IJ)Lcom/google/android/gms/tasks/Task;
 
     return-void
+.end method
 
-    :catchall_1
-    move-exception v1
+.method public final zza(IJLjava/lang/String;)V
+    .locals 3
 
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzds;->zzwa:Lcom/google/android/gms/internal/ads/zzdsi;
 
-    throw v1
+    .line 3
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    sub-long/2addr v1, p2
+
+    .line 4
+    invoke-virtual {v0, p1, v1, v2, p4}, Lcom/google/android/gms/internal/ads/zzdsi;->zzb(IJLjava/lang/String;)Lcom/google/android/gms/tasks/Task;
+
+    return-void
 .end method

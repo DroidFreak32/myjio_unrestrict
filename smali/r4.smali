@@ -1,549 +1,207 @@
-.class public abstract Lr4;
-.super Ljava/lang/Object;
-.source "MapCollections.java"
+.class public Lr4;
+.super Landroidx/lifecycle/LiveData;
+.source "RoomTrackingLiveData.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lr4$e;,
-        Lr4$c;,
-        Lr4$b;,
-        Lr4$d;,
-        Lr4$a;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        "V:",
+        "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;"
+        "Landroidx/lifecycle/LiveData<",
+        "TT;>;"
     }
 .end annotation
 
 
 # instance fields
-.field public a:Lr4$b;
+.field public final l:Landroidx/room/RoomDatabase;
+
+.field public final m:Z
+
+.field public final n:Ljava/util/concurrent/Callable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lr4<",
-            "TK;TV;>.b;"
+            "Ljava/util/concurrent/Callable<",
+            "TT;>;"
         }
     .end annotation
 .end field
 
-.field public b:Lr4$c;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lr4<",
-            "TK;TV;>.c;"
-        }
-    .end annotation
-.end field
+.field public final o:Lp4;
 
-.field public c:Lr4$e;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lr4<",
-            "TK;TV;>.e;"
-        }
-    .end annotation
-.end field
+.field public final p:Landroidx/room/InvalidationTracker$Observer;
+
+.field public final q:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final r:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final s:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final t:Ljava/lang/Runnable;
+
+.field public final u:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Ljava/util/Map;Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "TK;TV;>;",
-            "Ljava/util/Collection<",
-            "*>;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    .line 2
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 3
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {p0, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public static a(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Set<",
-            "TT;>;",
-            "Ljava/lang/Object;",
-            ")Z"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    .line 10
-    :cond_0
-    instance-of v1, p1, Ljava/util/Set;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    .line 11
-    check-cast p1, Ljava/util/Set;
-
-    .line 12
-    :try_start_0
-    invoke-interface {p0}, Ljava/util/Set;->size()I
-
-    move-result v1
-
-    invoke-interface {p1}, Ljava/util/Set;->size()I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    invoke-interface {p0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
-
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :catch_0
-    :cond_2
-    return v2
-.end method
-
-.method public static b(Ljava/util/Map;Ljava/util/Collection;)Z
+.method public constructor <init>(Landroidx/room/RoomDatabase;Lp4;ZLjava/util/concurrent/Callable;[Ljava/lang/String;)V
     .locals 2
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "RestrictedApi"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "TK;TV;>;",
-            "Ljava/util/Collection<",
-            "*>;)Z"
+            "(",
+            "Landroidx/room/RoomDatabase;",
+            "Lp4;",
+            "Z",
+            "Ljava/util/concurrent/Callable<",
+            "TT;>;[",
+            "Ljava/lang/String;",
+            ")V"
         }
     .end annotation
 
     .line 1
-    invoke-interface {p0}, Ljava/util/Map;->size()I
-
-    move-result v0
+    invoke-direct {p0}, Landroidx/lifecycle/LiveData;-><init>()V
 
     .line 2
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object p1
+    const/4 v1, 0x1
 
-    .line 3
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 4
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 5
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Map;->size()I
-
-    move-result p0
-
-    if-eq v0, p0, :cond_1
-
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_1
-    return p0
-.end method
-
-.method public static c(Ljava/util/Map;Ljava/util/Collection;)Z
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "TK;TV;>;",
-            "Ljava/util/Collection<",
-            "*>;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-interface {p0}, Ljava/util/Map;->size()I
-
-    move-result v0
-
-    .line 2
-    invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    iput-object v0, p0, Lr4;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 3
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 4
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {p1, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 5
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    .line 6
-    :cond_1
-    invoke-interface {p0}, Ljava/util/Map;->size()I
-
-    move-result p0
-
-    if-eq v0, p0, :cond_2
-
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const/4 p0, 0x0
-
-    :goto_1
-    return p0
-.end method
-
-
-# virtual methods
-.method public abstract a(Ljava/lang/Object;)I
-.end method
-
-.method public abstract a(II)Ljava/lang/Object;
-.end method
-
-.method public abstract a(ILjava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(ITV;)TV;"
-        }
-    .end annotation
-.end method
-
-.method public abstract a()V
-.end method
-
-.method public abstract a(I)V
-.end method
-
-.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;)V"
-        }
-    .end annotation
-.end method
-
-.method public a([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">([TT;I)[TT;"
-        }
-    .end annotation
-
-    .line 4
-    invoke-virtual {p0}, Lr4;->c()I
-
-    move-result v0
-
-    .line 5
-    array-length v1, p1
-
-    if-ge v1, v0, :cond_0
-
-    .line 6
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Ljava/lang/Object;
-
-    :cond_0
     const/4 v1, 0x0
 
-    :goto_0
-    if-ge v1, v0, :cond_1
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    .line 7
-    invoke-virtual {p0, v1, p2}, Lr4;->a(II)Ljava/lang/Object;
+    iput-object v0, p0, Lr4;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v2
+    .line 4
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    aput-object v2, p1, v1
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    add-int/lit8 v1, v1, 0x1
+    iput-object v0, p0, Lr4;->s:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    goto :goto_0
+    .line 5
+    new-instance v0, Lr4$a;
 
-    .line 8
-    :cond_1
-    array-length p2, p1
+    invoke-direct {v0, p0}, Lr4$a;-><init>(Lr4;)V
 
-    if-le p2, v0, :cond_2
-
-    const/4 p2, 0x0
-
-    .line 9
-    aput-object p2, p1, v0
-
-    :cond_2
-    return-object p1
-.end method
-
-.method public abstract b(Ljava/lang/Object;)I
-.end method
-
-.method public abstract b()Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
-.end method
-
-.method public b(I)[Ljava/lang/Object;
-    .locals 4
+    iput-object v0, p0, Lr4;->t:Ljava/lang/Runnable;
 
     .line 6
-    invoke-virtual {p0}, Lr4;->c()I
-
-    move-result v0
-
-    .line 7
-    new-array v1, v0, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    .line 8
-    invoke-virtual {p0, v2, p1}, Lr4;->a(II)Ljava/lang/Object;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public abstract c()I
-.end method
-
-.method public d()Ljava/util/Set;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lr4;->a:Lr4$b;
-
-    if-nez v0, :cond_0
-
-    .line 2
     new-instance v0, Lr4$b;
 
     invoke-direct {v0, p0}, Lr4$b;-><init>(Lr4;)V
 
-    iput-object v0, p0, Lr4;->a:Lr4$b;
+    iput-object v0, p0, Lr4;->u:Ljava/lang/Runnable;
+
+    .line 7
+    iput-object p1, p0, Lr4;->l:Landroidx/room/RoomDatabase;
+
+    .line 8
+    iput-boolean p3, p0, Lr4;->m:Z
+
+    .line 9
+    iput-object p4, p0, Lr4;->n:Ljava/util/concurrent/Callable;
+
+    .line 10
+    iput-object p2, p0, Lr4;->o:Lp4;
+
+    .line 11
+    new-instance p1, Lr4$c;
+
+    invoke-direct {p1, p0, p5}, Lr4$c;-><init>(Lr4;[Ljava/lang/String;)V
+
+    iput-object p1, p0, Lr4;->p:Landroidx/room/InvalidationTracker$Observer;
+
+    return-void
+.end method
+
+.method public static synthetic f(Lr4;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/lifecycle/LiveData;->postValue(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public g()Ljava/util/concurrent/Executor;
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lr4;->m:Z
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lr4;->l:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->getTransactionExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v0
+
+    return-object v0
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lr4;->a:Lr4$b;
+    iget-object v0, p0, Lr4;->l:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->getQueryExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public e()Ljava/util/Set;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "TK;>;"
-        }
-    .end annotation
+.method public onActive()V
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lr4;->b:Lr4$c;
-
-    if-nez v0, :cond_0
+    invoke-super {p0}, Landroidx/lifecycle/LiveData;->onActive()V
 
     .line 2
-    new-instance v0, Lr4$c;
+    iget-object v0, p0, Lr4;->o:Lp4;
 
-    invoke-direct {v0, p0}, Lr4$c;-><init>(Lr4;)V
-
-    iput-object v0, p0, Lr4;->b:Lr4$c;
+    invoke-virtual {v0, p0}, Lp4;->b(Landroidx/lifecycle/LiveData;)V
 
     .line 3
-    :cond_0
-    iget-object v0, p0, Lr4;->b:Lr4$c;
+    invoke-virtual {p0}, Lr4;->g()Ljava/util/concurrent/Executor;
 
-    return-object v0
+    move-result-object v0
+
+    iget-object v1, p0, Lr4;->t:Ljava/lang/Runnable;
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method
 
-.method public f()Ljava/util/Collection;
+.method public onInactive()V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection<",
-            "TV;>;"
-        }
-    .end annotation
 
     .line 1
-    iget-object v0, p0, Lr4;->c:Lr4$e;
-
-    if-nez v0, :cond_0
+    invoke-super {p0}, Landroidx/lifecycle/LiveData;->onInactive()V
 
     .line 2
-    new-instance v0, Lr4$e;
+    iget-object v0, p0, Lr4;->o:Lp4;
 
-    invoke-direct {v0, p0}, Lr4$e;-><init>(Lr4;)V
+    invoke-virtual {v0, p0}, Lp4;->c(Landroidx/lifecycle/LiveData;)V
 
-    iput-object v0, p0, Lr4;->c:Lr4$e;
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lr4;->c:Lr4$e;
-
-    return-object v0
+    return-void
 .end method

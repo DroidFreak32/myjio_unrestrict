@@ -15,41 +15,41 @@
 
 
 # instance fields
-.field public bluetoothVersion:Ljava/lang/String;
+.field private bluetoothVersion:Ljava/lang/String;
 
-.field public build:I
+.field private build:I
 
-.field public carrier:Ljava/lang/String;
+.field private carrier:Ljava/lang/String;
 
-.field public countryCode:Ljava/lang/String;
+.field private countryCode:Ljava/lang/String;
 
-.field public dpi:I
+.field private dpi:I
 
-.field public height:D
+.field private height:D
 
-.field public heightPixels:I
+.field private heightPixels:I
 
-.field public manufacturer:Ljava/lang/String;
+.field private manufacturer:Ljava/lang/String;
 
-.field public model:Ljava/lang/String;
+.field private model:Ljava/lang/String;
 
-.field public networkType:Ljava/lang/String;
+.field private networkType:Ljava/lang/String;
 
-.field public notificationsEnabled:Z
+.field private notificationsEnabled:Z
 
-.field public osName:Ljava/lang/String;
+.field private osName:Ljava/lang/String;
 
-.field public osVersion:Ljava/lang/String;
+.field private osVersion:Ljava/lang/String;
 
-.field public sdkVersion:I
+.field private sdkVersion:I
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-.field public versionName:Ljava/lang/String;
+.field private versionName:Ljava/lang/String;
 
-.field public width:D
+.field private width:D
 
-.field public widthPixels:I
+.field private widthPixels:I
 
 
 # direct methods
@@ -196,25 +196,25 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->carrier:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->networkType:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public static synthetic access$1200(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
+.method public static synthetic access$1200(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Z
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->networkType:Ljava/lang/String;
+    iget-boolean p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->notificationsEnabled:Z
 
-    return-object p0
+    return p0
 .end method
 
 .method public static synthetic access$1300(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->bluetoothVersion:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->osName:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -223,7 +223,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->countryCode:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->osVersion:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -237,13 +237,13 @@
     return p0
 .end method
 
-.method public static synthetic access$1600(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)D
-    .locals 2
+.method public static synthetic access$1600(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
+    .locals 0
 
     .line 1
-    iget-wide v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->height:D
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->versionName:Ljava/lang/String;
 
-    return-wide v0
+    return-object p0
 .end method
 
 .method public static synthetic access$1700(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)D
@@ -259,48 +259,21 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->dpi:I
-
-    return p0
-.end method
-
-.method public static synthetic access$1900(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->heightPixels:I
-
-    return p0
-.end method
-
-.method public static synthetic access$2000(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)I
-    .locals 0
-
-    .line 1
     iget p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->widthPixels:I
 
     return p0
 .end method
 
-.method public static synthetic access$2100(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Z
+.method public static synthetic access$200(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->notificationsEnabled:Z
-
-    return p0
-.end method
-
-.method public static synthetic access$500(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->versionName:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->bluetoothVersion:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public static synthetic access$600(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)I
+.method public static synthetic access$300(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)I
     .locals 0
 
     .line 1
@@ -309,22 +282,49 @@
     return p0
 .end method
 
-.method public static synthetic access$700(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
+.method public static synthetic access$400(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->osName:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->carrier:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public static synthetic access$800(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
+.method public static synthetic access$500(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->osVersion:Ljava/lang/String;
+    iget-object p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->countryCode:Ljava/lang/String;
 
     return-object p0
+.end method
+
+.method public static synthetic access$600(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->dpi:I
+
+    return p0
+.end method
+
+.method public static synthetic access$700(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)D
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->height:D
+
+    return-wide v0
+.end method
+
+.method public static synthetic access$800(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->heightPixels:I
+
+    return p0
 .end method
 
 .method public static synthetic access$900(Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;)Ljava/lang/String;
@@ -349,7 +349,7 @@
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
     .line 2
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -373,7 +373,7 @@
     :cond_0
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -409,7 +409,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -419,7 +419,7 @@
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v2}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -454,7 +454,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -494,7 +494,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -526,11 +526,11 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "window"
+    const-string/jumbo v1, "window"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -569,11 +569,11 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "window"
+    const-string/jumbo v1, "window"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -625,11 +625,11 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "window"
+    const-string/jumbo v1, "window"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -692,75 +692,25 @@
 .end method
 
 .method private getNetworkType()Ljava/lang/String;
-    .locals 2
+    .locals 1
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "MissingPermission"
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    .line 2
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "phone"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/Utils;->getDeviceNetworkType(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Landroid/telephony/TelephonyManager;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return-object v1
-
-    .line 3
-    :cond_0
-    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNetworkType()I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    return-object v1
-
-    :pswitch_0
-    const-string v0, "4G"
-
     return-object v0
-
-    :pswitch_1
-    const-string v0, "3G"
-
-    return-object v0
-
-    :pswitch_2
-    const-string v0, "2G"
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method private getNotificationEnabledForUser()Z
@@ -769,15 +719,15 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lt6;->a(Landroid/content/Context;)Lt6;
+    invoke-static {v0}, Landroidx/core/app/NotificationManagerCompat;->from(Landroid/content/Context;)Landroidx/core/app/NotificationManagerCompat;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lt6;->a()Z
+    invoke-virtual {v0}, Landroidx/core/app/NotificationManagerCompat;->areNotificationsEnabled()Z
 
     move-result v0
 
@@ -804,7 +754,7 @@
 .method private getSdkVersion()I
     .locals 1
 
-    const/16 v0, 0x77ee
+    const v0, 0x9c40
 
     return v0
 .end method
@@ -816,7 +766,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -826,7 +776,7 @@
 
     iget-object v1, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -864,11 +814,11 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "window"
+    const-string/jumbo v1, "window"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -920,11 +870,11 @@
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/DeviceInfo$DeviceCachedInfo;->this$0:Lcom/clevertap/android/sdk/DeviceInfo;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$300(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/DeviceInfo;->access$000(Lcom/clevertap/android/sdk/DeviceInfo;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "window"
+    const-string/jumbo v1, "window"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

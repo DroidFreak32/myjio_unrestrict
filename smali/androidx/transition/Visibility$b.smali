@@ -3,8 +3,8 @@
 .source "Visibility.java"
 
 # interfaces
-.implements Landroidx/transition/Transition$g;
-.implements Lni$a;
+.implements Landroidx/transition/Transition$TransitionListener;
+.implements La5$a;
 
 
 # annotations
@@ -19,17 +19,17 @@
 
 
 # instance fields
-.field public final s:Landroid/view/View;
+.field public final a:Landroid/view/View;
 
-.field public final t:I
+.field public final b:I
 
-.field public final u:Landroid/view/ViewGroup;
+.field public final c:Landroid/view/ViewGroup;
 
-.field public final v:Z
+.field public final d:Z
 
-.field public w:Z
+.field public e:Z
 
-.field public x:Z
+.field public y:Z
 
 
 # direct methods
@@ -42,13 +42,13 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-boolean v0, p0, Landroidx/transition/Visibility$b;->x:Z
+    iput-boolean v0, p0, Landroidx/transition/Visibility$b;->y:Z
 
     .line 3
-    iput-object p1, p0, Landroidx/transition/Visibility$b;->s:Landroid/view/View;
+    iput-object p1, p0, Landroidx/transition/Visibility$b;->a:Landroid/view/View;
 
     .line 4
-    iput p2, p0, Landroidx/transition/Visibility$b;->t:I
+    iput p2, p0, Landroidx/transition/Visibility$b;->b:I
 
     .line 5
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -57,15 +57,15 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    iput-object p1, p0, Landroidx/transition/Visibility$b;->u:Landroid/view/ViewGroup;
+    iput-object p1, p0, Landroidx/transition/Visibility$b;->c:Landroid/view/ViewGroup;
 
     .line 6
-    iput-boolean p3, p0, Landroidx/transition/Visibility$b;->v:Z
+    iput-boolean p3, p0, Landroidx/transition/Visibility$b;->d:Z
 
     const/4 p1, 0x1
 
     .line 7
-    invoke-virtual {p0, p1}, Landroidx/transition/Visibility$b;->a(Z)V
+    invoke-virtual {p0, p1}, Landroidx/transition/Visibility$b;->b(Z)V
 
     return-void
 .end method
@@ -75,104 +75,58 @@
 .method public final a()V
     .locals 2
 
-    .line 2
-    iget-boolean v0, p0, Landroidx/transition/Visibility$b;->x:Z
+    .line 1
+    iget-boolean v0, p0, Landroidx/transition/Visibility$b;->y:Z
 
     if-nez v0, :cond_0
 
+    .line 2
+    iget-object v0, p0, Landroidx/transition/Visibility$b;->a:Landroid/view/View;
+
+    iget v1, p0, Landroidx/transition/Visibility$b;->b:I
+
+    invoke-static {v0, v1}, La6;->i(Landroid/view/View;I)V
+
     .line 3
-    iget-object v0, p0, Landroidx/transition/Visibility$b;->s:Landroid/view/View;
-
-    iget v1, p0, Landroidx/transition/Visibility$b;->t:I
-
-    invoke-static {v0, v1}, Lxj;->a(Landroid/view/View;I)V
-
-    .line 4
-    iget-object v0, p0, Landroidx/transition/Visibility$b;->u:Landroid/view/ViewGroup;
+    iget-object v0, p0, Landroidx/transition/Visibility$b;->c:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 5
+    .line 4
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 6
-    invoke-virtual {p0, v0}, Landroidx/transition/Visibility$b;->a(Z)V
+    .line 5
+    invoke-virtual {p0, v0}, Landroidx/transition/Visibility$b;->b(Z)V
 
     return-void
 .end method
 
-.method public a(Landroidx/transition/Transition;)V
-    .locals 0
-
-    const/4 p1, 0x1
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroidx/transition/Visibility$b;->a(Z)V
-
-    return-void
-.end method
-
-.method public final a(Z)V
+.method public final b(Z)V
     .locals 1
 
-    .line 7
-    iget-boolean v0, p0, Landroidx/transition/Visibility$b;->v:Z
+    .line 1
+    iget-boolean v0, p0, Landroidx/transition/Visibility$b;->d:Z
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Landroidx/transition/Visibility$b;->w:Z
+    iget-boolean v0, p0, Landroidx/transition/Visibility$b;->e:Z
 
     if-eq v0, p1, :cond_0
 
-    iget-object v0, p0, Landroidx/transition/Visibility$b;->u:Landroid/view/ViewGroup;
+    iget-object v0, p0, Landroidx/transition/Visibility$b;->c:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    .line 8
-    iput-boolean p1, p0, Landroidx/transition/Visibility$b;->w:Z
+    .line 2
+    iput-boolean p1, p0, Landroidx/transition/Visibility$b;->e:Z
 
-    .line 9
-    invoke-static {v0, p1}, Lrj;->a(Landroid/view/ViewGroup;Z)V
+    .line 3
+    invoke-static {v0, p1}, Lv5;->d(Landroid/view/ViewGroup;Z)V
 
     :cond_0
-    return-void
-.end method
-
-.method public b(Landroidx/transition/Transition;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public c(Landroidx/transition/Transition;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroidx/transition/Visibility$b;->a(Z)V
-
-    return-void
-.end method
-
-.method public d(Landroidx/transition/Transition;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroidx/transition/Visibility$b;->a()V
-
-    .line 2
-    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$g;)Landroidx/transition/Transition;
-
-    return-void
-.end method
-
-.method public e(Landroidx/transition/Transition;)V
-    .locals 0
-
     return-void
 .end method
 
@@ -182,7 +136,7 @@
     const/4 p1, 0x1
 
     .line 1
-    iput-boolean p1, p0, Landroidx/transition/Visibility$b;->x:Z
+    iput-boolean p1, p0, Landroidx/transition/Visibility$b;->y:Z
 
     return-void
 .end method
@@ -200,16 +154,16 @@
     .locals 1
 
     .line 1
-    iget-boolean p1, p0, Landroidx/transition/Visibility$b;->x:Z
+    iget-boolean p1, p0, Landroidx/transition/Visibility$b;->y:Z
 
     if-nez p1, :cond_0
 
     .line 2
-    iget-object p1, p0, Landroidx/transition/Visibility$b;->s:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/Visibility$b;->a:Landroid/view/View;
 
-    iget v0, p0, Landroidx/transition/Visibility$b;->t:I
+    iget v0, p0, Landroidx/transition/Visibility$b;->b:I
 
-    invoke-static {p1, v0}, Lxj;->a(Landroid/view/View;I)V
+    invoke-static {p1, v0}, La6;->i(Landroid/view/View;I)V
 
     :cond_0
     return-void
@@ -225,16 +179,16 @@
     .locals 1
 
     .line 1
-    iget-boolean p1, p0, Landroidx/transition/Visibility$b;->x:Z
+    iget-boolean p1, p0, Landroidx/transition/Visibility$b;->y:Z
 
     if-nez p1, :cond_0
 
     .line 2
-    iget-object p1, p0, Landroidx/transition/Visibility$b;->s:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/Visibility$b;->a:Landroid/view/View;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lxj;->a(Landroid/view/View;I)V
+    invoke-static {p1, v0}, La6;->i(Landroid/view/View;I)V
 
     :cond_0
     return-void
@@ -242,6 +196,72 @@
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
+
+    return-void
+.end method
+
+.method public onTransitionCancel(Landroidx/transition/Transition;)V
+    .locals 0
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    return-void
+.end method
+
+.method public onTransitionEnd(Landroidx/transition/Transition;)V
+    .locals 0
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0}, Landroidx/transition/Visibility$b;->a()V
+
+    .line 2
+    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
+
+    return-void
+.end method
+
+.method public onTransitionPause(Landroidx/transition/Transition;)V
+    .locals 0
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    const/4 p1, 0x0
+
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/transition/Visibility$b;->b(Z)V
+
+    return-void
+.end method
+
+.method public onTransitionResume(Landroidx/transition/Transition;)V
+    .locals 0
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    const/4 p1, 0x1
+
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/transition/Visibility$b;->b(Z)V
+
+    return-void
+.end method
+
+.method public onTransitionStart(Landroidx/transition/Transition;)V
+    .locals 0
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method

@@ -7,23 +7,23 @@
 
 
 # static fields
-.field public static final TYPE_PRIVATE_COMMAND:I = 0xff
+.field private static final TYPE_PRIVATE_COMMAND:I = 0xff
 
-.field public static final TYPE_SPLICE_INSERT:I = 0x5
+.field private static final TYPE_SPLICE_INSERT:I = 0x5
 
-.field public static final TYPE_SPLICE_NULL:I = 0x0
+.field private static final TYPE_SPLICE_NULL:I = 0x0
 
-.field public static final TYPE_SPLICE_SCHEDULE:I = 0x4
+.field private static final TYPE_SPLICE_SCHEDULE:I = 0x4
 
-.field public static final TYPE_TIME_SIGNAL:I = 0x6
+.field private static final TYPE_TIME_SIGNAL:I = 0x6
 
 
 # instance fields
-.field public final sectionData:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final sectionData:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final sectionHeader:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
+.field private final sectionHeader:Lcom/google/android/jioexoplayer2/util/ParsableBitArray;
 
-.field public timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -82,8 +82,6 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceInfoDecoder;->timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/scte35/SpliceInfoDecoder;->timestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
-
     iget-wide v1, p1, Lcom/google/android/jioexoplayer2/decoder/DecoderInputBuffer;->timeUs:J
 
     iget-wide v3, p1, Lcom/google/android/jioexoplayer2/metadata/MetadataInputBuffer;->subsampleOffsetUs:J

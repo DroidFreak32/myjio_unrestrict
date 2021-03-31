@@ -1,22 +1,8 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzom;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # virtual methods
-.method public abstract getContent()Ljava/lang/String;
-.end method
-
-.method public abstract recordClick()V
-.end method
-
-.method public abstract recordImpression()V
-.end method
-
-.method public abstract zzh(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzkn()Ljava/lang/String;
+.method public abstract zzip()Lcom/google/android/gms/internal/ads/zzon;
 .end method

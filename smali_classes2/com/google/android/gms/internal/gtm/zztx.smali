@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static final logger:Ljava/util/logging/Logger;
+.field private static final logger:Ljava/util/logging/Logger;
 
-.field public static final zzavt:Ljava/lang/Class;
+.field private static final zzavt:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -25,54 +25,54 @@
     .end annotation
 .end field
 
-.field public static final zzawt:Z
+.field private static final zzawt:Z
 
-.field public static final zzbcx:Lsun/misc/Unsafe;
+.field private static final zzbcx:Lsun/misc/Unsafe;
 
-.field public static final zzbet:Z
+.field private static final zzbet:Z
 
-.field public static final zzbeu:Z
+.field private static final zzbeu:Z
 
-.field public static final zzbev:Lcom/google/android/gms/internal/gtm/zztx$zzd;
+.field private static final zzbev:Lcom/google/android/gms/internal/gtm/zztx$zzd;
 
-.field public static final zzbew:Z
+.field private static final zzbew:Z
 
 .field public static final zzbex:J
 
-.field public static final zzbey:J
+.field private static final zzbey:J
 
-.field public static final zzbez:J
+.field private static final zzbez:J
 
-.field public static final zzbfa:J
+.field private static final zzbfa:J
 
-.field public static final zzbfb:J
+.field private static final zzbfb:J
 
-.field public static final zzbfc:J
+.field private static final zzbfc:J
 
-.field public static final zzbfd:J
+.field private static final zzbfd:J
 
-.field public static final zzbfe:J
+.field private static final zzbfe:J
 
-.field public static final zzbff:J
+.field private static final zzbff:J
 
-.field public static final zzbfg:J
+.field private static final zzbfg:J
 
-.field public static final zzbfh:J
+.field private static final zzbfh:J
 
-.field public static final zzbfi:J
+.field private static final zzbfi:J
 
-.field public static final zzbfj:J
+.field private static final zzbfj:J
 
-.field public static final zzbfk:J
+.field private static final zzbfk:J
 
-.field public static final zzbfl:I
+.field private static final zzbfl:I
 
 .field public static final zzbfm:Z
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 12
 
     .line 1
     const-class v0, [Ljava/lang/Object;
@@ -109,102 +109,87 @@
     .line 3
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zzpp;->zznb()Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v7
 
-    sput-object v6, Lcom/google/android/gms/internal/gtm/zztx;->zzavt:Ljava/lang/Class;
+    sput-object v7, Lcom/google/android/gms/internal/gtm/zztx;->zzavt:Ljava/lang/Class;
 
     .line 4
-    sget-object v6, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v7, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v6}, Lcom/google/android/gms/internal/gtm/zztx;->zzn(Ljava/lang/Class;)Z
+    invoke-static {v7}, Lcom/google/android/gms/internal/gtm/zztx;->zzn(Ljava/lang/Class;)Z
 
-    move-result v6
+    move-result v7
 
-    sput-boolean v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbet:Z
+    sput-boolean v7, Lcom/google/android/gms/internal/gtm/zztx;->zzbet:Z
 
     .line 5
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v6}, Lcom/google/android/gms/internal/gtm/zztx;->zzn(Ljava/lang/Class;)Z
+    invoke-static {v8}, Lcom/google/android/gms/internal/gtm/zztx;->zzn(Ljava/lang/Class;)Z
 
-    move-result v6
+    move-result v8
 
-    sput-boolean v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbeu:Z
+    sput-boolean v8, Lcom/google/android/gms/internal/gtm/zztx;->zzbeu:Z
 
-    .line 6
-    sget-object v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbcx:Lsun/misc/Unsafe;
-
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
     if-nez v6, :cond_0
 
     goto :goto_0
 
-    .line 7
+    .line 6
     :cond_0
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zzpp;->zzna()Z
 
-    move-result v6
+    move-result v10
 
-    if-eqz v6, :cond_2
+    if-eqz v10, :cond_2
+
+    if-eqz v7, :cond_1
+
+    .line 7
+    new-instance v9, Lcom/google/android/gms/internal/gtm/zztx$zzb;
+
+    invoke-direct {v9, v6}, Lcom/google/android/gms/internal/gtm/zztx$zzb;-><init>(Lsun/misc/Unsafe;)V
+
+    goto :goto_0
+
+    :cond_1
+    if-eqz v8, :cond_3
 
     .line 8
-    sget-boolean v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbet:Z
+    new-instance v9, Lcom/google/android/gms/internal/gtm/zztx$zza;
 
-    if-eqz v6, :cond_1
+    invoke-direct {v9, v6}, Lcom/google/android/gms/internal/gtm/zztx$zza;-><init>(Lsun/misc/Unsafe;)V
+
+    goto :goto_0
 
     .line 9
-    new-instance v7, Lcom/google/android/gms/internal/gtm/zztx$zzb;
+    :cond_2
+    new-instance v9, Lcom/google/android/gms/internal/gtm/zztx$zzc;
 
-    sget-object v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbcx:Lsun/misc/Unsafe;
-
-    invoke-direct {v7, v6}, Lcom/google/android/gms/internal/gtm/zztx$zzb;-><init>(Lsun/misc/Unsafe;)V
-
-    goto :goto_0
+    invoke-direct {v9, v6}, Lcom/google/android/gms/internal/gtm/zztx$zzc;-><init>(Lsun/misc/Unsafe;)V
 
     .line 10
-    :cond_1
-    sget-boolean v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbeu:Z
-
-    if-eqz v6, :cond_3
-
-    .line 11
-    new-instance v7, Lcom/google/android/gms/internal/gtm/zztx$zza;
-
-    sget-object v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbcx:Lsun/misc/Unsafe;
-
-    invoke-direct {v7, v6}, Lcom/google/android/gms/internal/gtm/zztx$zza;-><init>(Lsun/misc/Unsafe;)V
-
-    goto :goto_0
-
-    .line 12
-    :cond_2
-    new-instance v7, Lcom/google/android/gms/internal/gtm/zztx$zzc;
-
-    sget-object v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbcx:Lsun/misc/Unsafe;
-
-    invoke-direct {v7, v6}, Lcom/google/android/gms/internal/gtm/zztx$zzc;-><init>(Lsun/misc/Unsafe;)V
-
-    .line 13
     :cond_3
     :goto_0
-    sput-object v7, Lcom/google/android/gms/internal/gtm/zztx;->zzbev:Lcom/google/android/gms/internal/gtm/zztx$zzd;
+    sput-object v9, Lcom/google/android/gms/internal/gtm/zztx;->zzbev:Lcom/google/android/gms/internal/gtm/zztx$zzd;
 
-    .line 14
+    .line 11
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zztx;->zzrq()Z
 
     move-result v6
 
     sput-boolean v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbew:Z
 
-    .line 15
+    .line 12
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zztx;->zzrp()Z
 
     move-result v6
 
     sput-boolean v6, Lcom/google/android/gms/internal/gtm/zztx;->zzawt:Z
 
-    .line 16
+    .line 13
     const-class v6, [B
 
     invoke-static {v6}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
@@ -215,34 +200,34 @@
 
     sput-wide v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbex:J
 
-    .line 17
+    .line 14
     invoke-static {v5}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
 
-    move-result v6
+    move-result v8
 
-    int-to-long v6, v6
+    int-to-long v10, v8
 
-    sput-wide v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbey:J
+    sput-wide v10, Lcom/google/android/gms/internal/gtm/zztx;->zzbey:J
 
-    .line 18
+    .line 15
     invoke-static {v5}, Lcom/google/android/gms/internal/gtm/zztx;->zzm(Ljava/lang/Class;)I
 
     move-result v5
 
-    int-to-long v5, v5
+    int-to-long v10, v5
 
-    sput-wide v5, Lcom/google/android/gms/internal/gtm/zztx;->zzbez:J
+    sput-wide v10, Lcom/google/android/gms/internal/gtm/zztx;->zzbez:J
 
-    .line 19
+    .line 16
     invoke-static {v4}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
 
     move-result v5
 
-    int-to-long v5, v5
+    int-to-long v10, v5
 
-    sput-wide v5, Lcom/google/android/gms/internal/gtm/zztx;->zzbfa:J
+    sput-wide v10, Lcom/google/android/gms/internal/gtm/zztx;->zzbfa:J
 
-    .line 20
+    .line 17
     invoke-static {v4}, Lcom/google/android/gms/internal/gtm/zztx;->zzm(Ljava/lang/Class;)I
 
     move-result v4
@@ -251,7 +236,7 @@
 
     sput-wide v4, Lcom/google/android/gms/internal/gtm/zztx;->zzbfb:J
 
-    .line 21
+    .line 18
     invoke-static {v3}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
 
     move-result v4
@@ -260,7 +245,7 @@
 
     sput-wide v4, Lcom/google/android/gms/internal/gtm/zztx;->zzbfc:J
 
-    .line 22
+    .line 19
     invoke-static {v3}, Lcom/google/android/gms/internal/gtm/zztx;->zzm(Ljava/lang/Class;)I
 
     move-result v3
@@ -269,7 +254,7 @@
 
     sput-wide v3, Lcom/google/android/gms/internal/gtm/zztx;->zzbfd:J
 
-    .line 23
+    .line 20
     invoke-static {v2}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
 
     move-result v3
@@ -278,7 +263,7 @@
 
     sput-wide v3, Lcom/google/android/gms/internal/gtm/zztx;->zzbfe:J
 
-    .line 24
+    .line 21
     invoke-static {v2}, Lcom/google/android/gms/internal/gtm/zztx;->zzm(Ljava/lang/Class;)I
 
     move-result v2
@@ -287,7 +272,7 @@
 
     sput-wide v2, Lcom/google/android/gms/internal/gtm/zztx;->zzbff:J
 
-    .line 25
+    .line 22
     invoke-static {v1}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
 
     move-result v2
@@ -296,7 +281,7 @@
 
     sput-wide v2, Lcom/google/android/gms/internal/gtm/zztx;->zzbfg:J
 
-    .line 26
+    .line 23
     invoke-static {v1}, Lcom/google/android/gms/internal/gtm/zztx;->zzm(Ljava/lang/Class;)I
 
     move-result v1
@@ -305,7 +290,7 @@
 
     sput-wide v1, Lcom/google/android/gms/internal/gtm/zztx;->zzbfh:J
 
-    .line 27
+    .line 24
     invoke-static {v0}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Class;)I
 
     move-result v1
@@ -314,7 +299,7 @@
 
     sput-wide v1, Lcom/google/android/gms/internal/gtm/zztx;->zzbfi:J
 
-    .line 28
+    .line 25
     invoke-static {v0}, Lcom/google/android/gms/internal/gtm/zztx;->zzm(Ljava/lang/Class;)I
 
     move-result v0
@@ -323,23 +308,20 @@
 
     sput-wide v0, Lcom/google/android/gms/internal/gtm/zztx;->zzbfj:J
 
-    .line 29
+    .line 26
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zztx;->zzrr()Ljava/lang/reflect/Field;
 
     move-result-object v0
 
     if-eqz v0, :cond_5
 
-    .line 30
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zztx;->zzbev:Lcom/google/android/gms/internal/gtm/zztx$zzd;
-
-    if-nez v1, :cond_4
+    if-nez v9, :cond_4
 
     goto :goto_1
 
-    .line 31
+    .line 27
     :cond_4
-    iget-object v1, v1, Lcom/google/android/gms/internal/gtm/zztx$zzd;->zzbfn:Lsun/misc/Unsafe;
+    iget-object v1, v9, Lcom/google/android/gms/internal/gtm/zztx$zzd;->zzbfn:Lsun/misc/Unsafe;
 
     invoke-virtual {v1, v0}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
@@ -351,22 +333,20 @@
     :goto_1
     const-wide/16 v0, -0x1
 
-    .line 32
+    .line 28
     :goto_2
     sput-wide v0, Lcom/google/android/gms/internal/gtm/zztx;->zzbfk:J
 
-    .line 33
-    sget-wide v0, Lcom/google/android/gms/internal/gtm/zztx;->zzbex:J
+    const-wide/16 v0, 0x7
 
-    const-wide/16 v2, 0x7
-
-    and-long/2addr v0, v2
+    and-long/2addr v0, v6
 
     long-to-int v1, v0
 
+    .line 29
     sput v1, Lcom/google/android/gms/internal/gtm/zztx;->zzbfl:I
 
-    .line 34
+    .line 30
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
     move-result-object v0
@@ -388,7 +368,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -492,30 +472,28 @@
 
     int-to-long v4, p1
 
-    add-long/2addr v2, v4
+    add-long/2addr v4, v2
 
-    int-to-long v4, v0
+    int-to-long v6, v0
 
-    add-long/2addr v2, v4
+    add-long/2addr v4, v6
 
-    invoke-static {p0, v2, v3}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Object;J)J
-
-    move-result-wide v2
-
-    .line 16
-    sget-wide v6, Lcom/google/android/gms/internal/gtm/zztx;->zzbex:J
-
-    int-to-long v8, p3
-
-    add-long/2addr v6, v8
-
-    add-long/2addr v6, v4
-
-    invoke-static {p2, v6, v7}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Object;J)J
+    invoke-static {p0, v4, v5}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Object;J)J
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    int-to-long v8, p3
+
+    add-long/2addr v2, v8
+
+    add-long/2addr v2, v6
+
+    .line 16
+    invoke-static {p2, v2, v3}, Lcom/google/android/gms/internal/gtm/zztx;->zzl(Ljava/lang/Object;J)J
+
+    move-result-wide v2
+
+    cmp-long v6, v4, v2
 
     if-eqz v6, :cond_3
 
@@ -524,7 +502,7 @@
 
     if-eqz p0, :cond_2
 
-    xor-long p0, v2, v4
+    xor-long p0, v4, v2
 
     .line 18
     invoke-static {p0, p1}, Ljava/lang/Long;->numberOfLeadingZeros(J)I
@@ -534,7 +512,7 @@
     goto :goto_2
 
     :cond_2
-    xor-long p0, v2, v4
+    xor-long p0, v4, v2
 
     .line 19
     invoke-static {p0, p1}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
@@ -600,7 +578,7 @@
     return-void
 .end method
 
-.method public static zza(Ljava/lang/Object;JB)V
+.method private static zza(Ljava/lang/Object;JB)V
     .locals 4
 
     const-wide/16 v0, -0x4
@@ -759,7 +737,7 @@
     return-wide v0
 .end method
 
-.method public static zzb(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+.method private static zzb(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -789,7 +767,7 @@
     return-object p0
 .end method
 
-.method public static zzb(Ljava/lang/Object;JB)V
+.method private static zzb(Ljava/lang/Object;JB)V
     .locals 4
 
     const-wide/16 v0, -0x4
@@ -838,7 +816,7 @@
     return-void
 .end method
 
-.method public static zzb(Ljava/lang/Object;JZ)V
+.method private static zzb(Ljava/lang/Object;JZ)V
     .locals 0
 
     int-to-byte p3, p3
@@ -858,7 +836,7 @@
     return-void
 .end method
 
-.method public static zzc(Ljava/lang/Object;JZ)V
+.method private static zzc(Ljava/lang/Object;JZ)V
     .locals 0
 
     int-to-byte p3, p3
@@ -944,7 +922,7 @@
     throw v0
 .end method
 
-.method public static zzl(Ljava/lang/Class;)I
+.method private static zzl(Ljava/lang/Class;)I
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -989,7 +967,7 @@
     return-wide p0
 .end method
 
-.method public static zzm(Ljava/lang/Class;)I
+.method private static zzm(Ljava/lang/Class;)I
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1047,7 +1025,7 @@
     return p0
 .end method
 
-.method public static zzn(Ljava/lang/Class;)Z
+.method private static zzn(Ljava/lang/Class;)Z
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1096,50 +1074,44 @@
 
     const/4 v5, 0x3
 
-    new-array v6, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object p0, v6, v2
+    aput-object p0, v8, v2
 
     .line 5
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v6, v7
+    aput-object v9, v8, v7
 
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    aput-object v6, v8, v4
 
-    aput-object v8, v6, v4
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "pokeInt"
 
-    new-array v6, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object p0, v6, v2
+    aput-object p0, v8, v2
 
     .line 6
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v6, v7
+    aput-object v9, v8, v7
 
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    aput-object v6, v8, v4
 
-    aput-object v8, v6, v4
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "peekInt"
 
-    new-array v6, v4, [Ljava/lang/Class;
+    new-array v8, v4, [Ljava/lang/Class;
 
-    aput-object p0, v6, v2
+    aput-object p0, v8, v2
+
+    aput-object v6, v8, v7
 
     .line 7
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v6, v7
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "pokeByte"
 
@@ -1173,15 +1145,11 @@
 
     aput-object v0, v8, v7
 
-    .line 10
-    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
     aput-object v9, v8, v4
-
-    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v8, v5
 
+    .line 10
     invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "peekByteArray"
@@ -1192,15 +1160,11 @@
 
     aput-object v0, v6, v7
 
+    aput-object v9, v6, v4
+
+    aput-object v9, v6, v5
+
     .line 11
-    sget-object p0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object p0, v6, v4
-
-    sget-object p0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object p0, v6, v5
-
     invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1240,7 +1204,7 @@
     return-object p0
 .end method
 
-.method public static zzq(Ljava/lang/Object;J)B
+.method private static zzq(Ljava/lang/Object;J)B
     .locals 2
 
     const-wide/16 v0, -0x4
@@ -1271,7 +1235,7 @@
     return p0
 .end method
 
-.method public static zzr(Ljava/lang/Object;J)B
+.method private static zzr(Ljava/lang/Object;J)B
     .locals 2
 
     const-wide/16 v0, -0x4
@@ -1345,8 +1309,8 @@
     return-object v0
 .end method
 
-.method public static zzrp()Z
-    .locals 9
+.method private static zzrp()Z
+    .locals 10
 
     .line 1
     const-class v0, Ljava/lang/Object;
@@ -1420,78 +1384,66 @@
 
     const/4 v6, 0x3
 
-    new-array v7, v6, [Ljava/lang/Class;
+    new-array v8, v6, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 7
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v7, v4
+    aput-object v9, v8, v5
 
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v5
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "getLong"
 
-    new-array v7, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 8
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "putLong"
 
-    new-array v7, v6, [Ljava/lang/Class;
+    new-array v8, v6, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
+
+    aput-object v7, v8, v5
 
     .line 9
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v5
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "getObject"
 
-    new-array v7, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 10
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "putObject"
 
-    new-array v7, v6, [Ljava/lang/Class;
+    new-array v8, v6, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
+
+    aput-object v0, v8, v5
 
     .line 11
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    aput-object v0, v7, v5
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 12
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zzpp;->zzna()Z
@@ -1505,106 +1457,92 @@
     :cond_1
     const-string v3, "getByte"
 
-    new-array v7, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 13
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "putByte"
 
-    new-array v7, v6, [Ljava/lang/Class;
+    new-array v8, v6, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 14
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v7, v4
+    aput-object v9, v8, v5
 
-    sget-object v8, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v5
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "getBoolean"
 
-    new-array v7, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 15
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "putBoolean"
 
-    new-array v7, v6, [Ljava/lang/Class;
+    new-array v8, v6, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 16
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v7, v4
+    aput-object v9, v8, v5
 
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v5
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "getFloat"
 
-    new-array v7, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 17
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "putFloat"
 
-    new-array v7, v6, [Ljava/lang/Class;
+    new-array v8, v6, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 18
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v7, v4
+    aput-object v9, v8, v5
 
-    sget-object v8, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v5
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "getDouble"
 
-    new-array v7, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object v0, v7, v2
+    aput-object v0, v8, v2
+
+    aput-object v7, v8, v4
 
     .line 19
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v7, v4
-
-    invoke-virtual {v1, v3, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "putDouble"
 
@@ -1612,11 +1550,9 @@
 
     aput-object v0, v6, v2
 
+    aput-object v7, v6, v4
+
     .line 20
-    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v0, v6, v4
-
     sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
     aput-object v0, v6, v5
@@ -1672,8 +1608,8 @@
     return v2
 .end method
 
-.method public static zzrq()Z
-    .locals 10
+.method private static zzrq()Z
+    .locals 11
 
     const-string v0, "copyMemory"
 
@@ -1745,97 +1681,77 @@
     :cond_2
     const-string v7, "getByte"
 
-    new-array v8, v6, [Ljava/lang/Class;
+    new-array v9, v6, [Ljava/lang/Class;
+
+    aput-object v8, v9, v4
 
     .line 7
-    sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v4
-
-    invoke-virtual {v3, v7, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v7, "putByte"
 
-    new-array v8, v5, [Ljava/lang/Class;
+    new-array v9, v5, [Ljava/lang/Class;
+
+    aput-object v8, v9, v4
 
     .line 8
-    sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v10, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    aput-object v9, v8, v4
+    aput-object v10, v9, v6
 
-    sget-object v9, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v6
-
-    invoke-virtual {v3, v7, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v7, "getInt"
 
-    new-array v8, v6, [Ljava/lang/Class;
+    new-array v9, v6, [Ljava/lang/Class;
+
+    aput-object v8, v9, v4
 
     .line 9
-    sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v4
-
-    invoke-virtual {v3, v7, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v7, "putInt"
 
-    new-array v8, v5, [Ljava/lang/Class;
+    new-array v9, v5, [Ljava/lang/Class;
+
+    aput-object v8, v9, v4
 
     .line 10
-    sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v10, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    aput-object v9, v8, v4
+    aput-object v10, v9, v6
 
-    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v9, v8, v6
-
-    invoke-virtual {v3, v7, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v3, v7, v9}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     new-array v7, v6, [Ljava/lang/Class;
 
-    .line 11
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v8, v7, v4
 
+    .line 11
     invoke-virtual {v3, v1, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v1, "putLong"
 
     new-array v7, v5, [Ljava/lang/Class;
 
-    .line 12
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v8, v7, v4
-
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v8, v7, v6
 
+    .line 12
     invoke-virtual {v3, v1, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const/4 v1, 0x3
 
     new-array v7, v1, [Ljava/lang/Class;
 
-    .line 13
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v8, v7, v4
-
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v8, v7, v6
 
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v8, v7, v5
 
+    .line 13
     invoke-virtual {v3, v0, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const/4 v7, 0x5
@@ -1844,23 +1760,17 @@
 
     aput-object v2, v7, v4
 
-    .line 14
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v8, v7, v6
 
     aput-object v2, v7, v5
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v7, v1
+    aput-object v8, v7, v1
 
     const/4 v1, 0x4
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    aput-object v8, v7, v1
 
-    aput-object v2, v7, v1
-
+    .line 14
     invoke-virtual {v3, v0, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1912,7 +1822,7 @@
     return v4
 .end method
 
-.method public static zzrr()Ljava/lang/reflect/Field;
+.method private static zzrr()Ljava/lang/reflect/Field;
     .locals 3
 
     .line 1
@@ -1964,7 +1874,7 @@
     return-object v0
 .end method
 
-.method public static zzs(Ljava/lang/Object;J)Z
+.method private static zzs(Ljava/lang/Object;J)Z
     .locals 0
 
     .line 1
@@ -1984,7 +1894,7 @@
     return p0
 .end method
 
-.method public static zzt(Ljava/lang/Object;J)Z
+.method private static zzt(Ljava/lang/Object;J)Z
     .locals 0
 
     .line 1

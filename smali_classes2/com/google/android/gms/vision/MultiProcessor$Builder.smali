@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/MultiProcessor$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -23,7 +24,7 @@
 
 
 # instance fields
-.field public zzbb:Lcom/google/android/gms/vision/MultiProcessor;
+.field private zzbh:Lcom/google/android/gms/vision/MultiProcessor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/MultiProcessor<",
@@ -54,13 +55,11 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/vision/MultiProcessor;-><init>(Lcom/google/android/gms/vision/zze;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbb:Lcom/google/android/gms/vision/MultiProcessor;
+    iput-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbh:Lcom/google/android/gms/vision/MultiProcessor;
 
     if-eqz p1, :cond_0
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbb:Lcom/google/android/gms/vision/MultiProcessor;
-
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/MultiProcessor;->zza(Lcom/google/android/gms/vision/MultiProcessor;Lcom/google/android/gms/vision/MultiProcessor$Factory;)Lcom/google/android/gms/vision/MultiProcessor$Factory;
 
     return-void
@@ -89,7 +88,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbb:Lcom/google/android/gms/vision/MultiProcessor;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbh:Lcom/google/android/gms/vision/MultiProcessor;
 
     return-object v0
 .end method
@@ -107,7 +106,7 @@
     if-ltz p1, :cond_0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbb:Lcom/google/android/gms/vision/MultiProcessor;
+    iget-object v0, p0, Lcom/google/android/gms/vision/MultiProcessor$Builder;->zzbh:Lcom/google/android/gms/vision/MultiProcessor;
 
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/MultiProcessor;->zza(Lcom/google/android/gms/vision/MultiProcessor;I)I
 

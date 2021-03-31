@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final adTagParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
+.field private final adTagParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/age<",
@@ -15,17 +15,17 @@
     .end annotation
 .end field
 
-.field public final adTagUrl:Ljava/lang/String;
+.field private final adTagUrl:Ljava/lang/String;
 
-.field public final adsResponse:Ljava/lang/String;
+.field private final adsResponse:Ljava/lang/String;
 
-.field public final apiKey:Ljava/lang/String;
+.field private final apiKey:Ljava/lang/String;
 
-.field public final assetKey:Ljava/lang/String;
+.field private final assetKey:Ljava/lang/String;
 
-.field public final authToken:Ljava/lang/String;
+.field private final authToken:Ljava/lang/String;
 
-.field public final companionSlots:Lcom/google/ads/interactivemedia/v3/internal/age;
+.field private final companionSlots:Lcom/google/ads/interactivemedia/v3/internal/age;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/age<",
@@ -36,9 +36,9 @@
     .end annotation
 .end field
 
-.field public final contentDuration:Ljava/lang/Float;
+.field private final contentDuration:Ljava/lang/Float;
 
-.field public final contentKeywords:Lcom/google/ads/interactivemedia/v3/internal/agb;
+.field private final contentKeywords:Lcom/google/ads/interactivemedia/v3/internal/agb;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/agb<",
@@ -48,13 +48,13 @@
     .end annotation
 .end field
 
-.field public final contentSourceId:Ljava/lang/String;
+.field private final contentSourceId:Ljava/lang/String;
 
-.field public final contentTitle:Ljava/lang/String;
+.field private final contentTitle:Ljava/lang/String;
 
-.field public final env:Ljava/lang/String;
+.field private final env:Ljava/lang/String;
 
-.field public final extraParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
+.field private final extraParameters:Lcom/google/ads/interactivemedia/v3/internal/age;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/age<",
@@ -65,41 +65,41 @@
     .end annotation
 .end field
 
-.field public final format:Ljava/lang/String;
+.field private final format:Ljava/lang/String;
 
-.field public final identifierInfo:Lcom/google/ads/interactivemedia/v3/internal/aet;
+.field private final identifierInfo:Lcom/google/ads/interactivemedia/v3/internal/aet;
 
-.field public final isTv:Ljava/lang/Boolean;
+.field private final isTv:Ljava/lang/Boolean;
 
-.field public final linearAdSlotHeight:Ljava/lang/Integer;
+.field private final linearAdSlotHeight:Ljava/lang/Integer;
 
-.field public final linearAdSlotWidth:Ljava/lang/Integer;
+.field private final linearAdSlotWidth:Ljava/lang/Integer;
 
-.field public final liveStreamPrefetchSeconds:Ljava/lang/Float;
+.field private final liveStreamPrefetchSeconds:Ljava/lang/Float;
 
-.field public final marketAppInfo:Lcom/google/ads/interactivemedia/v3/internal/acj;
+.field private final marketAppInfo:Lcom/google/ads/interactivemedia/v3/internal/acj;
 
-.field public final msParameter:Ljava/lang/String;
+.field private final msParameter:Ljava/lang/String;
 
-.field public final network:Ljava/lang/String;
+.field private final network:Ljava/lang/String;
 
-.field public final settings:Lcom/google/ads/interactivemedia/v3/api/ImaSdkSettings;
+.field private final settings:Lcom/google/ads/interactivemedia/v3/api/ImaSdkSettings;
 
-.field public final streamActivityMonitorId:Ljava/lang/String;
+.field private final streamActivityMonitorId:Ljava/lang/String;
 
-.field public final useQAStreamBaseUrl:Ljava/lang/Boolean;
+.field private final useQAStreamBaseUrl:Ljava/lang/Boolean;
 
-.field public final vastLoadTimeout:Ljava/lang/Float;
+.field private final vastLoadTimeout:Ljava/lang/Float;
 
-.field public final videoId:Ljava/lang/String;
+.field private final videoId:Ljava/lang/String;
 
-.field public final videoPlayActivation:Lcom/google/ads/interactivemedia/v3/internal/acp;
+.field private final videoPlayActivation:Lcom/google/ads/interactivemedia/v3/internal/acp;
 
-.field public final videoPlayMuted:Lcom/google/ads/interactivemedia/v3/internal/acq;
+.field private final videoPlayMuted:Lcom/google/ads/interactivemedia/v3/internal/acq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/internal/age;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Float;Lcom/google/ads/interactivemedia/v3/internal/agb;Ljava/lang/String;Ljava/lang/Float;Ljava/lang/Float;Lcom/google/ads/interactivemedia/v3/internal/age;Lcom/google/ads/interactivemedia/v3/internal/age;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/internal/aet;Ljava/lang/Boolean;Lcom/google/ads/interactivemedia/v3/internal/acp;Lcom/google/ads/interactivemedia/v3/internal/acq;Lcom/google/ads/interactivemedia/v3/api/ImaSdkSettings;Lcom/google/ads/interactivemedia/v3/internal/acj;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/internal/age;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Float;Lcom/google/ads/interactivemedia/v3/internal/agb;Ljava/lang/String;Ljava/lang/Float;Ljava/lang/Float;Lcom/google/ads/interactivemedia/v3/internal/age;Lcom/google/ads/interactivemedia/v3/internal/age;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Lcom/google/ads/interactivemedia/v3/internal/aet;Ljava/lang/Boolean;Lcom/google/ads/interactivemedia/v3/internal/acp;Lcom/google/ads/interactivemedia/v3/internal/acq;Lcom/google/ads/interactivemedia/v3/api/ImaSdkSettings;Lcom/google/ads/interactivemedia/v3/internal/acj;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2527,7 +2527,7 @@
 
     invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

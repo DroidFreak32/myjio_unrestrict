@@ -14,21 +14,21 @@
 # static fields
 .field public static final synthetic $assertionsDisabled:Z = false
 
-.field public static final CONNECTION:Ljava/lang/String; = "Connection"
+.field private static final CONNECTION:Ljava/lang/String; = "Connection"
 
-.field public static final SEC_WEB_SOCKET_ACCEPT:Ljava/lang/String; = "Sec-WebSocket-Accept"
+.field private static final SEC_WEB_SOCKET_ACCEPT:Ljava/lang/String; = "Sec-WebSocket-Accept"
 
-.field public static final SEC_WEB_SOCKET_EXTENSIONS:Ljava/lang/String; = "Sec-WebSocket-Extensions"
+.field private static final SEC_WEB_SOCKET_EXTENSIONS:Ljava/lang/String; = "Sec-WebSocket-Extensions"
 
-.field public static final SEC_WEB_SOCKET_KEY:Ljava/lang/String; = "Sec-WebSocket-Key"
+.field private static final SEC_WEB_SOCKET_KEY:Ljava/lang/String; = "Sec-WebSocket-Key"
 
-.field public static final SEC_WEB_SOCKET_PROTOCOL:Ljava/lang/String; = "Sec-WebSocket-Protocol"
+.field private static final SEC_WEB_SOCKET_PROTOCOL:Ljava/lang/String; = "Sec-WebSocket-Protocol"
 
-.field public static final UPGRADE:Ljava/lang/String; = "Upgrade"
+.field private static final UPGRADE:Ljava/lang/String; = "Upgrade"
 
 
 # instance fields
-.field public final byteBufferList:Ljava/util/List;
+.field private final byteBufferList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -38,13 +38,13 @@
     .end annotation
 .end field
 
-.field public currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
+.field private currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
-.field public extension:Lcom/clevertap/android/sdk/java_websocket/extensions/IExtension;
+.field private extension:Lcom/clevertap/android/sdk/java_websocket/extensions/IExtension;
 
-.field public incompleteframe:Ljava/nio/ByteBuffer;
+.field private incompleteframe:Ljava/nio/ByteBuffer;
 
-.field public knownExtensions:Ljava/util/List;
+.field private knownExtensions:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -54,7 +54,7 @@
     .end annotation
 .end field
 
-.field public knownProtocols:Ljava/util/List;
+.field private knownProtocols:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -64,11 +64,11 @@
     .end annotation
 .end field
 
-.field public maxFrameSize:I
+.field private maxFrameSize:I
 
-.field public protocol:Lcom/clevertap/android/sdk/java_websocket/protocols/IProtocol;
+.field private protocol:Lcom/clevertap/android/sdk/java_websocket/protocols/IProtocol;
 
-.field public final reuseableRandom:Ljava/util/Random;
+.field private final reuseableRandom:Ljava/security/SecureRandom;
 
 
 # direct methods
@@ -205,11 +205,11 @@
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->extension:Lcom/clevertap/android/sdk/java_websocket/extensions/IExtension;
 
     .line 8
-    new-instance v0, Ljava/util/Random;
+    new-instance v0, Ljava/security/SecureRandom;
 
-    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+    invoke-direct {v0}, Ljava/security/SecureRandom;-><init>()V
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->reuseableRandom:Ljava/util/Random;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->reuseableRandom:Ljava/security/SecureRandom;
 
     if-eqz p1, :cond_3
 
@@ -356,6 +356,11 @@
 
 .method private checkBufferLimit()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->getByteBufferListSize()J
@@ -640,9 +645,9 @@
     move-result-object p1
 
     .line 15
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->reuseableRandom:Ljava/util/Random;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->reuseableRandom:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1}, Ljava/util/Random;->nextInt()I
+    invoke-virtual {v1}, Ljava/security/SecureRandom;->nextInt()I
 
     move-result v1
 
@@ -932,6 +937,11 @@
 
 .method private getPayloadFromByteBufferList()Ljava/nio/ByteBuffer;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->byteBufferList:Ljava/util/List;
@@ -1218,7 +1228,12 @@
 .end method
 
 .method private processFrameContinuousAndNonFin(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;)V
-    .locals 1
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CONTINUOUS:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
@@ -1234,9 +1249,9 @@
     :cond_0
     invoke-interface {p2}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->isFin()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     .line 4
     invoke-direct {p0, p1, p2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->processFrameIsFin(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
@@ -1277,13 +1292,11 @@
 
     throw p1
 
-    .line 8
     :cond_3
     :goto_1
-    sget-object p1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->CONTINUOUS:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    if-ne p3, v0, :cond_4
 
-    if-ne p3, p1, :cond_4
-
+    .line 8
     iget-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
     if-eqz p1, :cond_4
@@ -1313,6 +1326,11 @@
 
 .method private processFrameIsFin(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
@@ -1366,6 +1384,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
+    .line 8
     invoke-interface {v0}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->getPayloadData()Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -1374,6 +1393,7 @@
 
     move-result-object v0
 
+    .line 9
     invoke-interface {p2, p1, v0}, Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;->onWebsocketMessage(Lcom/clevertap/android/sdk/java_websocket/WebSocket;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1383,12 +1403,12 @@
     :catch_0
     move-exception p2
 
-    .line 8
+    .line 10
     invoke-direct {p0, p1, p2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->logRuntimeException(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Ljava/lang/RuntimeException;)V
 
     goto :goto_0
 
-    .line 9
+    .line 11
     :cond_0
     iget-object p2, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
@@ -1400,7 +1420,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 10
+    .line 12
     iget-object p2, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
     check-cast p2, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;
@@ -1411,14 +1431,14 @@
 
     invoke-virtual {p2, v0}, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->setPayload(Ljava/nio/ByteBuffer;)V
 
-    .line 11
+    .line 13
     iget-object p2, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
     check-cast p2, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;
 
     invoke-virtual {p2}, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->isValid()V
 
-    .line 12
+    .line 14
     :try_start_1
     invoke-virtual {p1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->getWebSocketListener()Lcom/clevertap/android/sdk/java_websocket/WebSocketListener;
 
@@ -1426,6 +1446,7 @@
 
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
+    .line 15
     invoke-interface {v0}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->getPayloadData()Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -1439,22 +1460,22 @@
     :catch_1
     move-exception p2
 
-    .line 13
+    .line 16
     invoke-direct {p0, p1, p2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->logRuntimeException(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Ljava/lang/RuntimeException;)V
 
     :cond_1
     :goto_0
     const/4 p1, 0x0
 
-    .line 14
+    .line 17
     iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
-    .line 15
+    .line 18
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->clearBufferList()V
 
     return-void
 
-    .line 16
+    .line 19
     :cond_2
     new-instance p1, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
 
@@ -1469,6 +1490,11 @@
 
 .method private processFrameIsNotFin(Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->currentContinuousFrame:Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
@@ -1505,6 +1531,11 @@
 
 .method private processFrameText(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0
@@ -1512,6 +1543,7 @@
 
     move-result-object v0
 
+    .line 2
     invoke-interface {p2}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->getPayloadData()Ljava/nio/ByteBuffer;
 
     move-result-object p2
@@ -1529,7 +1561,7 @@
     :catch_0
     move-exception p2
 
-    .line 2
+    .line 3
     invoke-direct {p0, p1, p2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->logRuntimeException(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Ljava/lang/RuntimeException;)V
 
     :goto_0
@@ -1574,6 +1606,11 @@
 
 .method private toOpcode(B)Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidFrameException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_2
 
@@ -1658,6 +1695,12 @@
 
 .method private translateSingleFrame(Ljava/nio/ByteBuffer;)Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
     .locals 14
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException;,
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_a
 
@@ -1935,7 +1978,12 @@
 .end method
 
 .method private translateSingleFrameCheckLengthLimit(J)V
-    .locals 4
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;
+        }
+    .end annotation
 
     const-wide/32 v0, 0x7fffffff
 
@@ -1946,11 +1994,11 @@
     .line 1
     iget v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->maxFrameSize:I
 
-    int-to-long v1, v0
+    int-to-long v0, v0
 
-    cmp-long v3, p1, v1
+    cmp-long v2, p1, v0
 
-    if-gtz v3, :cond_1
+    if-gtz v2, :cond_1
 
     const-wide/16 v0, 0x0
 
@@ -1974,9 +2022,11 @@
     :cond_1
     new-instance p1, Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;
 
-    const-string p2, "Payload limit reached."
+    iget p2, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->maxFrameSize:I
 
-    invoke-direct {p1, p2, v0}, Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;-><init>(Ljava/lang/String;I)V
+    const-string v0, "Payload limit reached."
+
+    invoke-direct {p1, v0, p2}, Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;-><init>(Ljava/lang/String;I)V
 
     throw p1
 
@@ -1993,6 +2043,11 @@
 
 .method private translateSingleFrameCheckPacketSize(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException;
+        }
+    .end annotation
 
     if-lt p1, p2, :cond_0
 
@@ -2009,6 +2064,13 @@
 
 .method private translateSingleFramePayloadLength(Ljava/nio/ByteBuffer;Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;III)Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455$TranslatedPayloadMetaData;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidFrameException;,
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException;,
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/LimitExceededException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->PING:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
@@ -2129,6 +2191,11 @@
 # virtual methods
 .method public acceptHandshakeAsClient(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshake;)Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p2}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->basicAccept(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)Z
@@ -2271,6 +2338,11 @@
 
 .method public acceptHandshakeAsServer(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;)Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->readVersion(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)I
@@ -2338,11 +2410,12 @@
 
     move-result-object p1
 
+    .line 10
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->containsRequestedProtocol(Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     move-result-object p1
 
-    .line 10
+    .line 11
     sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
     if-ne p1, v1, :cond_3
@@ -2351,7 +2424,7 @@
 
     return-object v1
 
-    .line 11
+    .line 12
     :cond_3
     sget-object p1, Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;->NOT_MATCHED:Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
 
@@ -2582,7 +2655,9 @@
     if-eqz p1, :cond_7
 
     .line 1
-    const-class v2, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -2790,7 +2865,7 @@
 
     const-string v0, "Upgrade"
 
-    const-string v1, "websocket"
+    const-string/jumbo v1, "websocket"
 
     .line 1
     invoke-interface {p1, v0, v1}, Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;->put(Ljava/lang/String;Ljava/lang/String;)V
@@ -2805,9 +2880,9 @@
     new-array v0, v0, [B
 
     .line 3
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->reuseableRandom:Ljava/util/Random;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->reuseableRandom:Ljava/security/SecureRandom;
 
-    invoke-virtual {v1, v0}, Ljava/util/Random;->nextBytes([B)V
+    invoke-virtual {v1, v0}, Ljava/security/SecureRandom;->nextBytes([B)V
 
     .line 4
     invoke-static {v0}, Lcom/clevertap/android/sdk/java_websocket/util/Base64;->encodeBytes([B)Ljava/lang/String;
@@ -2860,6 +2935,7 @@
 
     if-eqz v4, :cond_0
 
+    .line 9
     invoke-interface {v2}, Lcom/clevertap/android/sdk/java_websocket/extensions/IExtension;->getProvidedExtensionAsClient()Ljava/lang/String;
 
     move-result-object v4
@@ -2870,17 +2946,17 @@
 
     if-eqz v4, :cond_0
 
-    .line 9
+    .line 10
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-lez v4, :cond_1
 
-    .line 10
+    .line 11
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11
+    .line 12
     :cond_1
     invoke-interface {v2}, Lcom/clevertap/android/sdk/java_websocket/extensions/IExtension;->getProvidedExtensionAsClient()Ljava/lang/String;
 
@@ -2890,7 +2966,7 @@
 
     goto :goto_0
 
-    .line 12
+    .line 13
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
@@ -2898,7 +2974,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 13
+    .line 14
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -2907,13 +2983,13 @@
 
     invoke-interface {p1, v1, v0}, Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 14
+    .line 15
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 15
+    .line 16
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->knownProtocols:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2934,7 +3010,7 @@
 
     check-cast v2, Lcom/clevertap/android/sdk/java_websocket/protocols/IProtocol;
 
-    .line 16
+    .line 17
     invoke-interface {v2}, Lcom/clevertap/android/sdk/java_websocket/protocols/IProtocol;->getProvidedProtocol()Ljava/lang/String;
 
     move-result-object v4
@@ -2945,17 +3021,17 @@
 
     if-eqz v4, :cond_4
 
-    .line 17
+    .line 18
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-lez v4, :cond_5
 
-    .line 18
+    .line 19
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 19
+    .line 20
     :cond_5
     invoke-interface {v2}, Lcom/clevertap/android/sdk/java_websocket/protocols/IProtocol;->getProvidedProtocol()Ljava/lang/String;
 
@@ -2965,7 +3041,7 @@
 
     goto :goto_1
 
-    .line 20
+    .line 21
     :cond_6
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
@@ -2973,7 +3049,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 21
+    .line 22
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -2988,10 +3064,15 @@
 
 .method public postProcessHandshakeResponseAsServer(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshakeBuilder;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     const-string v0, "Upgrade"
 
-    const-string v1, "websocket"
+    const-string/jumbo v1, "websocket"
 
     .line 1
     invoke-interface {p2, v0, v1}, Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;->put(Ljava/lang/String;Ljava/lang/String;)V
@@ -3123,6 +3204,11 @@
 
 .method public processFrame(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p2}, Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;->getOpcode()Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
@@ -3383,6 +3469,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
+
     .line 1
     :goto_0
     new-instance v0, Ljava/util/LinkedList;
@@ -3406,13 +3498,14 @@
     .line 5
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
+    .line 6
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
 
     if-le v2, v1, :cond_0
 
-    .line 6
+    .line 7
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
@@ -3425,7 +3518,7 @@
 
     invoke-virtual {v0, v2, v3, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
-    .line 7
+    .line 8
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
@@ -3434,14 +3527,14 @@
 
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 8
+    .line 9
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
     return-object p1
 
-    .line 9
+    .line 10
     :cond_0
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
@@ -3455,7 +3548,7 @@
 
     invoke-virtual {v1, v3, v4, v2}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
-    .line 10
+    .line 11
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
@@ -3464,7 +3557,7 @@
 
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 11
+    .line 12
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
@@ -3483,12 +3576,12 @@
 
     move-result-object v1
 
-    .line 12
+    .line 13
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const/4 v1, 0x0
 
-    .line 13
+    .line 14
     iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
     :try_end_0
     .catch Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3498,7 +3591,7 @@
     :catch_0
     move-exception v0
 
-    .line 14
+    .line 15
     invoke-virtual {v0}, Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException;->getPreferredSize()I
 
     move-result v0
@@ -3511,22 +3604,22 @@
 
     move-result-object v0
 
-    .line 15
+    .line 16
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 16
+    .line 17
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 17
+    .line 18
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
     goto :goto_0
 
-    .line 18
+    .line 19
     :cond_1
     :goto_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
@@ -3535,16 +3628,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 19
+    .line 20
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->mark()Ljava/nio/Buffer;
 
-    .line 20
+    .line 21
     :try_start_1
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->translateSingleFrame(Ljava/nio/ByteBuffer;)Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;
 
     move-result-object v1
 
-    .line 21
+    .line 22
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catch Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException; {:try_start_1 .. :try_end_1} :catch_1
@@ -3554,15 +3647,15 @@
     :catch_1
     move-exception v1
 
-    .line 22
+    .line 23
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->reset()Ljava/nio/Buffer;
 
-    .line 23
+    .line 24
     invoke-virtual {v1}, Lcom/clevertap/android/sdk/java_websocket/exceptions/IncompleteException;->getPreferredSize()I
 
     move-result v1
 
-    .line 24
+    .line 25
     invoke-virtual {p0, v1}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->checkAlloc(I)I
 
     move-result v1
@@ -3573,9 +3666,7 @@
 
     iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
 
-    .line 25
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;->incompleteframe:Ljava/nio/ByteBuffer;
-
+    .line 26
     invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     :cond_2

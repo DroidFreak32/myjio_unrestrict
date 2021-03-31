@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;
 .super Lcom/google/android/gms/common/api/OptionalPendingResult;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -18,7 +19,7 @@
 
 
 # instance fields
-.field public final zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.field private final zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/BasePendingResult<",
@@ -45,7 +46,7 @@
     .line 2
     check-cast p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
     return-void
 .end method
@@ -56,9 +57,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/PendingResult;->addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
 
     return-void
 .end method
@@ -72,9 +73,9 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->await()Lcom/google/android/gms/common/api/Result;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/PendingResult;->await()Lcom/google/android/gms/common/api/Result;
 
     move-result-object v0
 
@@ -92,9 +93,9 @@
     .end annotation
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/common/api/PendingResult;->await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
 
     move-result-object p1
 
@@ -105,9 +106,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->cancel()V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/PendingResult;->cancel()V
 
     return-void
 .end method
@@ -121,7 +122,7 @@
     .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->isDone()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/OptionalPendingResult;->isDone()Z
 
     move-result v0
 
@@ -132,7 +133,7 @@
     .line 2
     sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/gms/common/api/PendingResult;->await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
 
     move-result-object v0
 
@@ -153,9 +154,9 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->isCanceled()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/PendingResult;->isCanceled()Z
 
     move-result v0
 
@@ -166,7 +167,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->isReady()Z
 
@@ -186,9 +187,9 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/PendingResult;->setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;)V
 
     return-void
 .end method
@@ -206,15 +207,22 @@
     .end annotation
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;JLjava/util/concurrent/TimeUnit;)V
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/android/gms/common/api/PendingResult;->setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;JLjava/util/concurrent/TimeUnit;)V
 
     return-void
 .end method
 
 .method public final then(Lcom/google/android/gms/common/api/ResultTransform;)Lcom/google/android/gms/common/api/TransformedResult;
     .locals 1
+    .param p1    # Lcom/google/android/gms/common/api/ResultTransform;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<S::",
@@ -228,24 +236,11 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zaa:Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->then(Lcom/google/android/gms/common/api/ResultTransform;)Lcom/google/android/gms/common/api/TransformedResult;
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/PendingResult;->then(Lcom/google/android/gms/common/api/ResultTransform;)Lcom/google/android/gms/common/api/TransformedResult;
 
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public final zam()Ljava/lang/Integer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/OptionalPendingResultImpl;->zajq:Lcom/google/android/gms/common/api/internal/BasePendingResult;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zam()Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
 .end method

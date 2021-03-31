@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final obstructions:Lcom/google/ads/interactivemedia/v3/internal/agb;
+.field private final obstructions:Lcom/google/ads/interactivemedia/v3/internal/agb;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/ads/interactivemedia/v3/internal/agb<",
@@ -16,7 +16,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/ads/interactivemedia/v3/internal/agb;)V
+.method private constructor <init>(Lcom/google/ads/interactivemedia/v3/internal/agb;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -148,7 +148,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -7,19 +7,19 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public Imsi:Ljava/lang/String;
+.field private Imsi:Ljava/lang/String;
 
-.field public carrierName:Ljava/lang/String;
+.field private carrierName:Ljava/lang/String;
 
-.field public networkType:Ljava/lang/String;
+.field private networkType:Ljava/lang/String;
 
-.field public roamingStatus:Ljava/lang/String;
+.field private roamingStatus:Ljava/lang/String;
 
-.field public slotno:I
+.field private slotno:I
 
 
 # direct methods
@@ -150,7 +150,7 @@
     goto :goto_0
 
     :cond_0
-    const-string/jumbo v0, "true"
+    const-string v0, "true"
 
     .line 3
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z

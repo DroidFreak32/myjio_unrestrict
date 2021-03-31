@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public a:I
+.field private a:I
 
 
 # virtual methods

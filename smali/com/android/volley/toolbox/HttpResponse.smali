@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field public final mContent:Ljava/io/InputStream;
+.field private final mContent:Ljava/io/InputStream;
 
-.field public final mContentLength:I
+.field private final mContentLength:I
 
-.field public final mHeaders:Ljava/util/List;
+.field private final mHeaders:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final mStatusCode:I
+.field private final mStatusCode:I
 
 
 # direct methods
@@ -28,7 +28,7 @@
         value = {
             "(I",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;)V"
         }
     .end annotation
@@ -49,7 +49,7 @@
         value = {
             "(I",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;I",
             "Ljava/io/InputStream;",
             ")V"
@@ -100,7 +100,7 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;"
         }
     .end annotation

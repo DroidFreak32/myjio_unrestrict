@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzoy:Ljava/util/List;
+.field private final zzoy:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

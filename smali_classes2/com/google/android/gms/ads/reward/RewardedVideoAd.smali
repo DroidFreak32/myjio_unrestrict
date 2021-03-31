@@ -1,5 +1,11 @@
 .class public interface abstract Lcom/google/android/gms/ads/reward/RewardedVideoAd;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # virtual methods
@@ -12,14 +18,19 @@
 .end method
 
 .method public abstract getAdMetadata()Landroid/os/Bundle;
-    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
-    .end annotation
 .end method
 
 .method public abstract getCustomData()Ljava/lang/String;
 .end method
 
 .method public abstract getMediationAdapterClassName()Ljava/lang/String;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
+.method public abstract getResponseInfo()Lcom/google/android/gms/ads/ResponseInfo;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getRewardedVideoAdListener()Lcom/google/android/gms/ads/reward/RewardedVideoAdListener;
@@ -54,8 +65,6 @@
 .end method
 
 .method public abstract setAdMetadataListener(Lcom/google/android/gms/ads/reward/AdMetadataListener;)V
-    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
-    .end annotation
 .end method
 
 .method public abstract setCustomData(Ljava/lang/String;)V

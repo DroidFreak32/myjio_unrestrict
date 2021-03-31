@@ -1,76 +1,22 @@
-.class public abstract Ljb;
-.super Lhb;
-.source "ResourceCursorAdapter.java"
+.class public Ljb;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public A:I
+.field public final a:Ljava/lang/String;
 
-.field public B:I
-
-.field public C:Landroid/view/LayoutInflater;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;ILandroid/database/Cursor;Z)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
-    .line 1
-    invoke-direct {p0, p1, p3, p4}, Lhb;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput p2, p0, Ljb;->B:I
+    iput-object p1, p0, Ljb;->a:Ljava/lang/String;
 
-    iput p2, p0, Ljb;->A:I
-
-    const-string p2, "layout_inflater"
-
-    .line 3
-    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/view/LayoutInflater;
-
-    iput-object p1, p0, Ljb;->C:Landroid/view/LayoutInflater;
+    iput-object p2, p0, Ljb;->b:Ljava/lang/String;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public a(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 1
-
-    .line 1
-    iget-object p1, p0, Ljb;->C:Landroid/view/LayoutInflater;
-
-    iget p2, p0, Ljb;->B:I
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public b(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 1
-
-    .line 1
-    iget-object p1, p0, Ljb;->C:Landroid/view/LayoutInflater;
-
-    iget p2, p0, Ljb;->A:I
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
-    return-object p1
 .end method

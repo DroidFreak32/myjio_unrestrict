@@ -1,20 +1,25 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbfr;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbfs;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field public final synthetic zzebt:Lcom/google/android/gms/internal/ads/zzbbu;
+.field private final synthetic zzepx:Lcom/google/android/gms/internal/ads/zzawq;
+
+.field private final synthetic zzete:Lcom/google/android/gms/internal/ads/zzbfm;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbbu;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbfm;Lcom/google/android/gms/internal/ads/zzawq;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzebt:Lcom/google/android/gms/internal/ads/zzbbu;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzete:Lcom/google/android/gms/internal/ads/zzbfm;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzepx:Lcom/google/android/gms/internal/ads/zzawq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,28 +28,23 @@
 
 
 # virtual methods
-.method public final size()I
-    .locals 1
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzebt:Lcom/google/android/gms/internal/ads/zzbbu;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzete:Lcom/google/android/gms/internal/ads/zzbfm;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzbbu;->size()I
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzepx:Lcom/google/android/gms/internal/ads/zzawq;
 
-    move-result v0
+    const/16 v2, 0xa
 
-    return v0
+    invoke-static {v0, p1, v1, v2}, Lcom/google/android/gms/internal/ads/zzbfm;->zza(Lcom/google/android/gms/internal/ads/zzbfm;Landroid/view/View;Lcom/google/android/gms/internal/ads/zzawq;I)V
+
+    return-void
 .end method
 
-.method public final zzbu(I)B
-    .locals 1
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbfr;->zzebt:Lcom/google/android/gms/internal/ads/zzbbu;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzbbu;->zzbu(I)B
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

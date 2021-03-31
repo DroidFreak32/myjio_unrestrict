@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/MultiProcessor$zza;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public zzak:Lcom/google/android/gms/vision/Tracker;
+.field private zzas:Lcom/google/android/gms/vision/Tracker;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/Tracker<",
@@ -23,11 +24,11 @@
     .end annotation
 .end field
 
-.field public zzao:I
+.field private zzaw:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/vision/MultiProcessor;)V
+.method private constructor <init>(Lcom/google/android/gms/vision/MultiProcessor;)V
     .locals 0
 
     .line 1
@@ -36,7 +37,7 @@
     const/4 p1, 0x0
 
     .line 2
-    iput p1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzao:I
+    iput p1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzaw:I
 
     return-void
 .end method
@@ -56,7 +57,7 @@
     const/4 p1, 0x0
 
     .line 3
-    iput p1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzao:I
+    iput p1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzaw:I
 
     return p1
 .end method
@@ -65,7 +66,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object p0, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     return-object p0
 .end method
@@ -74,7 +75,7 @@
     .locals 0
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iput-object p1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     return-object p1
 .end method
@@ -83,11 +84,11 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzao:I
+    iget v0, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzaw:I
 
     add-int/lit8 v1, v0, 0x1
 
-    iput v1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzao:I
+    iput v1, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzaw:I
 
     return v0
 .end method
@@ -96,7 +97,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzao:I
+    iget p0, p0, Lcom/google/android/gms/vision/MultiProcessor$zza;->zzaw:I
 
     return p0
 .end method

@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final sizeDeterminerRef:Ljava/lang/ref/WeakReference;
+.field private final sizeDeterminerRef:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -32,6 +32,10 @@
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

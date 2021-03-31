@@ -1,33 +1,16 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzaev;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaev;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzhw;
-
-
-# instance fields
-.field public final zzcgb:Lcom/google/android/gms/internal/ads/zzaeu;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaeu;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaev;->zzcgb:Lcom/google/android/gms/internal/ads/zzaeu;
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zza(Lcom/google/android/gms/internal/ads/zziy;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaev;->zzcgb:Lcom/google/android/gms/internal/ads/zzaeu;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zzaeu;->zzc(Lcom/google/android/gms/internal/ads/zziy;)V
-
-    return-void
+.method public abstract zzb(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/dynamic/IObjectWrapper;)Landroid/os/IBinder;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

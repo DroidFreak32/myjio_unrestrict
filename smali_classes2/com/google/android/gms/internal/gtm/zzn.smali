@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static zzqz:Lcom/google/android/gms/internal/gtm/zzp;
+.field private static zzqz:Lcom/google/android/gms/internal/gtm/zzp;
 
 
 # direct methods
@@ -38,6 +38,11 @@
 
 .method public dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -46,6 +51,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const v0, 0xffffff
 

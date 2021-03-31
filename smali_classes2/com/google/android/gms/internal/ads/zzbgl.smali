@@ -1,25 +1,145 @@
-.class public final enum Lcom/google/android/gms/internal/ads/zzbgl;
-.super Lcom/google/android/gms/internal/ads/zzbgj;
+.class public Lcom/google/android/gms/internal/ads/zzbgl;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/gms/internal/ads/zzbgl$zza;
+    }
+.end annotation
+
+
+# instance fields
+.field private final zzaaa:Landroid/content/Context;
+
+.field private final zzbos:Lcom/google/android/gms/internal/ads/zzazh;
+
+.field private final zzeva:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/google/android/gms/internal/ads/zzbgo;I)V
-    .locals 6
-
-    const/16 v2, 0x9
-
-    const/4 v4, 0x3
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
+.method private constructor <init>(Lcom/google/android/gms/internal/ads/zzbgl$zza;)V
+    .locals 1
 
     .line 1
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/ads/zzbgj;-><init>(Ljava/lang/String;ILcom/google/android/gms/internal/ads/zzbgo;ILcom/google/android/gms/internal/ads/zzbgi;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzbgl$zza;->zza(Lcom/google/android/gms/internal/ads/zzbgl$zza;)Lcom/google/android/gms/internal/ads/zzazh;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzbos:Lcom/google/android/gms/internal/ads/zzazh;
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzbgl$zza;->zzb(Lcom/google/android/gms/internal/ads/zzbgl$zza;)Landroid/content/Context;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzaaa:Landroid/content/Context;
+
+    .line 4
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzbgl$zza;->zzc(Lcom/google/android/gms/internal/ads/zzbgl$zza;)Ljava/lang/ref/WeakReference;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzeva:Ljava/lang/ref/WeakReference;
 
     return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/ads/zzbgl$zza;Lcom/google/android/gms/internal/ads/zzbgn;)V
+    .locals 0
+
+    .line 5
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzbgl;-><init>(Lcom/google/android/gms/internal/ads/zzbgl$zza;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final zzaef()Landroid/content/Context;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzaaa:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method public final zzaeg()Ljava/lang/ref/WeakReference;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/ref/WeakReference<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzeva:Ljava/lang/ref/WeakReference;
+
+    return-object v0
+.end method
+
+.method public final zzaeh()Lcom/google/android/gms/internal/ads/zzazh;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzbos:Lcom/google/android/gms/internal/ads/zzazh;
+
+    return-object v0
+.end method
+
+.method public final zzaei()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzkq()Lcom/google/android/gms/ads/internal/util/zzm;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzaaa:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzbos:Lcom/google/android/gms/internal/ads/zzazh;
+
+    iget-object v2, v2, Lcom/google/android/gms/internal/ads/zzazh;->zzbrf:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/ads/internal/util/zzm;->zzq(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final zzaej()Lcom/google/android/gms/internal/ads/zzef;
+    .locals 4
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzef;
+
+    new-instance v1, Lcom/google/android/gms/ads/internal/zzf;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzaaa:Landroid/content/Context;
+
+    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzbgl;->zzbos:Lcom/google/android/gms/internal/ads/zzazh;
+
+    invoke-direct {v1, v2, v3}, Lcom/google/android/gms/ads/internal/zzf;-><init>(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzazh;)V
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/ads/zzef;-><init>(Lcom/google/android/gms/internal/ads/zzdv;)V
+
+    return-object v0
 .end method

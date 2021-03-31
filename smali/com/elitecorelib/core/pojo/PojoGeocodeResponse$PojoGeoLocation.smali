@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public lat:D
+.field private lat:D
 
-.field public lng:D
+.field private lng:D
 
 .field public final synthetic this$0:Lcom/elitecorelib/core/pojo/PojoGeocodeResponse;
 

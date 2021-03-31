@@ -7,23 +7,23 @@
 
 
 # static fields
-.field public static DEFAULTPORT:I = 0x438
+.field private static DEFAULTPORT:I = 0x438
 
 
 # instance fields
-.field public in:Ljava/io/InputStream;
+.field private in:Ljava/io/InputStream;
 
-.field public out:Ljava/io/OutputStream;
+.field private out:Ljava/io/OutputStream;
 
-.field public passwd:Ljava/lang/String;
+.field private passwd:Ljava/lang/String;
 
-.field public proxy_host:Ljava/lang/String;
+.field private proxy_host:Ljava/lang/String;
 
-.field public proxy_port:I
+.field private proxy_port:I
 
-.field public socket:Ljava/net/Socket;
+.field private socket:Ljava/net/Socket;
 
-.field public user:Ljava/lang/String;
+.field private user:Ljava/lang/String;
 
 
 # direct methods
@@ -116,6 +116,12 @@
 
 .method private fill(Ljava/io/InputStream;[BI)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -169,8 +175,6 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/jcraft/jsch/ProxySOCKS5;->in:Ljava/io/InputStream;
-
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
     .line 2
@@ -179,8 +183,6 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/jcraft/jsch/ProxySOCKS5;->out:Ljava/io/OutputStream;
-
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
     .line 3
@@ -188,8 +190,6 @@
     iget-object v0, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
 
     if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
 
     invoke-virtual {v0}, Ljava/net/Socket;->close()V
     :try_end_0
@@ -213,6 +213,11 @@
 
 .method public connect(Lcom/jcraft/jsch/SocketFactory;Ljava/lang/String;II)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     if-nez p1, :cond_0
 
@@ -229,8 +234,6 @@
     iput-object p1, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
 
     .line 2
-    iget-object p1, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
-
     invoke-virtual {p1}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;
 
     move-result-object p1
@@ -261,8 +264,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
 
     .line 5
-    iget-object v0, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
-
     invoke-interface {p1, v0}, Lcom/jcraft/jsch/SocketFactory;->getInputStream(Ljava/net/Socket;)Ljava/io/InputStream;
 
     move-result-object v0
@@ -343,9 +344,9 @@
 
     if-eqz v4, :cond_4
 
-    iget-object v4, p0, Lcom/jcraft/jsch/ProxySOCKS5;->passwd:Ljava/lang/String;
+    iget-object v6, p0, Lcom/jcraft/jsch/ProxySOCKS5;->passwd:Ljava/lang/String;
 
-    if-nez v4, :cond_3
+    if-nez v6, :cond_3
 
     goto :goto_1
 
@@ -353,8 +354,6 @@
     aput-byte p4, p1, v1
 
     .line 13
-    iget-object v4, p0, Lcom/jcraft/jsch/ProxySOCKS5;->user:Ljava/lang/String;
-
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -636,8 +635,6 @@
     iget-object p2, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
 
     if-eqz p2, :cond_b
-
-    iget-object p2, p0, Lcom/jcraft/jsch/ProxySOCKS5;->socket:Ljava/net/Socket;
 
     invoke-virtual {p2}, Ljava/net/Socket;->close()V
     :try_end_5

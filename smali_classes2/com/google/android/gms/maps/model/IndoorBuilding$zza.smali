@@ -34,7 +34,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -45,6 +45,8 @@
 
 .method public static zza(Landroid/os/IBinder;)Lcom/google/android/gms/internal/maps/zzq;
     .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     invoke-static {p0}, Lcom/google/android/gms/internal/maps/zzr;->zzf(Landroid/os/IBinder;)Lcom/google/android/gms/internal/maps/zzq;
@@ -56,6 +58,12 @@
 
 .method public static zza(Lcom/google/android/gms/internal/maps/zzq;)Lcom/google/android/gms/maps/model/IndoorLevel;
     .locals 1
+    .param p0    # Lcom/google/android/gms/internal/maps/zzq;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/google/android/gms/maps/model/IndoorLevel;

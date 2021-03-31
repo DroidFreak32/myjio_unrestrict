@@ -7,21 +7,21 @@
 
 
 # instance fields
-.field public final averageBytesPerSecond:I
+.field private final averageBytesPerSecond:I
 
-.field public final bitsPerSample:I
+.field private final bitsPerSample:I
 
-.field public final blockAlignment:I
+.field private final blockAlignment:I
 
-.field public dataSize:J
+.field private dataSize:J
 
-.field public dataStartPosition:J
+.field private dataStartPosition:J
 
-.field public final encoding:I
+.field private final encoding:I
 
-.field public final numChannels:I
+.field private final numChannels:I
 
-.field public final sampleRateHz:I
+.field private final sampleRateHz:I
 
 
 # direct methods

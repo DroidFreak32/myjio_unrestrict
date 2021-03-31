@@ -1,25 +1,33 @@
 .class public final Lcom/google/android/gms/measurement/internal/zziv;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zza:Lcom/google/android/gms/measurement/internal/zzii;
+.field private final synthetic zza:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzin;
+.field private final synthetic zzb:Lcom/google/android/gms/measurement/internal/zzn;
+
+.field private final synthetic zzc:Z
+
+.field private final synthetic zzd:Lcom/google/android/gms/measurement/internal/zzir;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzin;Lcom/google/android/gms/measurement/internal/zzii;)V
+.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzir;Ljava/util/concurrent/atomic/AtomicReference;Lcom/google/android/gms/measurement/internal/zzn;Z)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzd:Lcom/google/android/gms/measurement/internal/zzir;
 
-    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Lcom/google/android/gms/measurement/internal/zzii;
+    iput-object p2, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iput-object p3, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzn;
+
+    iput-boolean p4, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzc:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,117 +37,144 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 5
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzin;->zzd(Lcom/google/android/gms/measurement/internal/zzin;)Lcom/google/android/gms/measurement/internal/zzel;
+    monitor-enter v0
+
+    .line 2
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzd:Lcom/google/android/gms/measurement/internal/zzir;
+
+    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzir;->zzd(Lcom/google/android/gms/measurement/internal/zzir;)Lcom/google/android/gms/measurement/internal/zzei;
 
     move-result-object v1
 
     if-nez v1, :cond_0
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzd:Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzin;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
+    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzgr;->zzq()Lcom/google/android/gms/measurement/internal/zzeq;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
+    .line 4
+    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzeq;->zze()Lcom/google/android/gms/measurement/internal/zzes;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "Failed to send current screen to service"
+    const-string v2, "Failed to get all user properties; not connected to service"
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;)V
+    .line 5
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/measurement/internal/zzes;->zza(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 6
+    :try_start_1
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     return-void
 
-    .line 3
+    .line 7
     :cond_0
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Lcom/google/android/gms/measurement/internal/zzii;
+    :try_start_2
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
 
-    if-nez v0, :cond_1
+    iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzn;
 
-    const-wide/16 v2, 0x0
+    iget-boolean v4, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzc:Z
 
-    const/4 v4, 0x0
+    invoke-interface {v1, v3, v4}, Lcom/google/android/gms/measurement/internal/zzei;->zza(Lcom/google/android/gms/measurement/internal/zzn;Z)Ljava/util/List;
 
-    const/4 v5, 0x0
+    move-result-object v1
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzin;->zzn()Landroid/content/Context;
+    .line 8
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzd:Lcom/google/android/gms/measurement/internal/zzir;
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/google/android/gms/measurement/internal/zzir;->zze(Lcom/google/android/gms/measurement/internal/zzir;)V
+    :try_end_2
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    .line 9
+    :try_start_3
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
 
-    move-result-object v6
-
-    invoke-interface/range {v1 .. v6}, Lcom/google/android/gms/measurement/internal/zzel;->zza(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_0
 
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Lcom/google/android/gms/measurement/internal/zzii;
+    :catchall_0
+    move-exception v1
 
-    iget-wide v2, v0, Lcom/google/android/gms/measurement/internal/zzii;->zzc:J
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Lcom/google/android/gms/measurement/internal/zzii;
-
-    iget-object v4, v0, Lcom/google/android/gms/measurement/internal/zzii;->zza:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Lcom/google/android/gms/measurement/internal/zzii;
-
-    iget-object v5, v0, Lcom/google/android/gms/measurement/internal/zzii;->zzb:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
-
-    .line 6
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzin;->zzn()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 7
-    invoke-interface/range {v1 .. v6}, Lcom/google/android/gms/measurement/internal/zzel;->zza(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 8
-    :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
-
-    invoke-static {v0}, Lcom/google/android/gms/measurement/internal/zzin;->zze(Lcom/google/android/gms/measurement/internal/zzin;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
+    goto :goto_1
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 9
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzb:Lcom/google/android/gms/measurement/internal/zzin;
+    .line 10
+    :try_start_4
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zziv;->zzd:Lcom/google/android/gms/measurement/internal/zzir;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzin;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
+    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzgr;->zzq()Lcom/google/android/gms/measurement/internal/zzeq;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzet;->zzf()Lcom/google/android/gms/measurement/internal/zzev;
+    .line 11
+    invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/zzeq;->zze()Lcom/google/android/gms/measurement/internal/zzes;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "Failed to send current screen to the service"
+    const-string v3, "Failed to get all user properties; remote exception"
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    .line 12
+    invoke-virtual {v2, v3, v1}, Lcom/google/android/gms/measurement/internal/zzes;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    .line 13
+    :try_start_5
+    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
+
+    .line 14
+    :goto_0
+    monitor-exit v0
 
     return-void
+
+    .line 15
+    :goto_1
+    iget-object v2, p0, Lcom/google/android/gms/measurement/internal/zziv;->zza:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->notify()V
+
+    .line 16
+    throw v1
+
+    :catchall_1
+    move-exception v1
+
+    .line 17
+    monitor-exit v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    throw v1
 .end method

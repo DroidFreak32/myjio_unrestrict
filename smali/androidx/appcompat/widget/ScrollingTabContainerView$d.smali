@@ -15,67 +15,63 @@
 
 
 # instance fields
-.field public final s:[I
+.field public final a:[I
 
-.field public t:Landroidx/appcompat/app/ActionBar$b;
+.field public b:Landroidx/appcompat/app/ActionBar$Tab;
 
-.field public u:Landroid/widget/TextView;
+.field public c:Landroid/widget/TextView;
 
-.field public v:Landroid/widget/ImageView;
+.field public d:Landroid/widget/ImageView;
 
-.field public w:Landroid/view/View;
+.field public e:Landroid/view/View;
 
-.field public final synthetic x:Landroidx/appcompat/widget/ScrollingTabContainerView;
+.field public final synthetic y:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/appcompat/widget/ScrollingTabContainerView;Landroid/content/Context;Landroidx/appcompat/app/ActionBar$b;Z)V
-    .locals 3
+.method public constructor <init>(Landroidx/appcompat/widget/ScrollingTabContainerView;Landroid/content/Context;Landroidx/appcompat/app/ActionBar$Tab;Z)V
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->x:Landroidx/appcompat/widget/ScrollingTabContainerView;
+    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->y:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
     .line 2
-    sget p1, Lo;->actionBarTabStyle:I
+    sget p1, Landroidx/appcompat/R$attr;->actionBarTabStyle:I
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/4 p1, 0x1
+    const/4 v1, 0x1
 
-    new-array p1, p1, [I
-
-    const/4 v1, 0x0
+    new-array v1, v1, [I
 
     const v2, 0x10100d4
 
-    aput v2, p1, v1
+    const/4 v3, 0x0
+
+    aput v2, v1, v3
 
     .line 3
-    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->s:[I
+    iput-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->a:[I
 
     .line 4
-    iput-object p3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->t:Landroidx/appcompat/app/ActionBar$b;
+    iput-object p3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b:Landroidx/appcompat/app/ActionBar$Tab;
 
     .line 5
-    iget-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->s:[I
-
-    sget p3, Lo;->actionBarTabStyle:I
-
-    invoke-static {p2, v0, p1, p3, v1}, Lf3;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Lf3;
+    invoke-static {p2, v0, v1, p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object p1
 
     .line 6
-    invoke-virtual {p1, v1}, Lf3;->g(I)Z
+    invoke-virtual {p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
     .line 7
-    invoke-virtual {p1, v1}, Lf3;->b(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, v3}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -83,7 +79,7 @@
 
     .line 8
     :cond_0
-    invoke-virtual {p1}, Lf3;->a()V
+    invoke-virtual {p1}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     if-eqz p4, :cond_1
 
@@ -94,42 +90,42 @@
 
     .line 10
     :cond_1
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b()V
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroidx/appcompat/app/ActionBar$b;
-    .locals 1
-
-    .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->t:Landroidx/appcompat/app/ActionBar$b;
-
-    return-object v0
-.end method
-
-.method public a(Landroidx/appcompat/app/ActionBar$b;)V
+.method public a(Landroidx/appcompat/app/ActionBar$Tab;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->t:Landroidx/appcompat/app/ActionBar$b;
+    iput-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b:Landroidx/appcompat/app/ActionBar$Tab;
 
     .line 2
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b()V
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c()V
 
     return-void
 .end method
 
-.method public b()V
+.method public b()Landroidx/appcompat/app/ActionBar$Tab;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b:Landroidx/appcompat/app/ActionBar$Tab;
+
+    return-object v0
+.end method
+
+.method public c()V
     .locals 10
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->t:Landroidx/appcompat/app/ActionBar$b;
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->b:Landroidx/appcompat/app/ActionBar$Tab;
 
     .line 2
-    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$b;->b()Landroid/view/View;
+    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$Tab;->getCustomView()Landroid/view/View;
 
     move-result-object v1
 
@@ -159,10 +155,10 @@
 
     .line 6
     :cond_1
-    iput-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->w:Landroid/view/View;
+    iput-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->e:Landroid/view/View;
 
     .line 7
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     if-eqz v0, :cond_2
 
@@ -170,7 +166,7 @@
 
     .line 8
     :cond_2
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_d
 
@@ -178,7 +174,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 10
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
@@ -186,7 +182,7 @@
 
     .line 11
     :cond_3
-    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->w:Landroid/view/View;
+    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->e:Landroid/view/View;
 
     if-eqz v1, :cond_4
 
@@ -194,16 +190,16 @@
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
 
     .line 13
-    iput-object v3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->w:Landroid/view/View;
+    iput-object v3, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->e:Landroid/view/View;
 
     .line 14
     :cond_4
-    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$b;->c()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$Tab;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 15
-    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$b;->d()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$Tab;->getText()Ljava/lang/CharSequence;
 
     move-result-object v4
 
@@ -216,7 +212,7 @@
     if-eqz v1, :cond_6
 
     .line 16
-    iget-object v8, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v8, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     if-nez v8, :cond_5
 
@@ -244,16 +240,16 @@
     invoke-virtual {p0, v8, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
 
     .line 22
-    iput-object v8, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iput-object v8, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     .line 23
     :cond_5
-    iget-object v8, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v8, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     invoke-virtual {v8, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 24
-    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
@@ -261,7 +257,7 @@
 
     .line 25
     :cond_6
-    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_7
 
@@ -269,7 +265,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 27
-    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
@@ -285,7 +281,7 @@
     if-eqz v1, :cond_9
 
     .line 29
-    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     if-nez v2, :cond_8
 
@@ -296,7 +292,7 @@
 
     move-result-object v8
 
-    sget v9, Lo;->actionBarTabTextStyle:I
+    sget v9, Landroidx/appcompat/R$attr;->actionBarTabTextStyle:I
 
     invoke-direct {v2, v8, v3, v9}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -320,16 +316,16 @@
     invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 36
-    iput-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iput-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     .line 37
     :cond_8
-    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 38
-    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
@@ -337,7 +333,7 @@
 
     .line 39
     :cond_9
-    iget-object v4, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iget-object v4, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     if-eqz v4, :cond_a
 
@@ -345,19 +341,19 @@
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 41
-    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->u:Landroid/widget/TextView;
+    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->c:Landroid/widget/TextView;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 42
     :cond_a
     :goto_1
-    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->v:Landroid/widget/ImageView;
+    iget-object v2, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->d:Landroid/widget/ImageView;
 
     if-eqz v2, :cond_b
 
     .line 43
-    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$b;->a()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$Tab;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v4
 
@@ -370,12 +366,12 @@
 
     .line 44
     :cond_c
-    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$b;->a()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar$Tab;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v3
 
     :goto_2
-    invoke-static {p0, v3}, Lh3;->a(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, v3}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     :cond_d
     :goto_3
@@ -417,9 +413,9 @@
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     .line 2
-    iget-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->x:Landroidx/appcompat/widget/ScrollingTabContainerView;
+    iget-object p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->y:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
-    iget p1, p1, Landroidx/appcompat/widget/ScrollingTabContainerView;->x:I
+    iget p1, p1, Landroidx/appcompat/widget/ScrollingTabContainerView;->y:I
 
     if-lez p1, :cond_0
 
@@ -427,9 +423,9 @@
 
     move-result p1
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->x:Landroidx/appcompat/widget/ScrollingTabContainerView;
+    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView$d;->y:Landroidx/appcompat/widget/ScrollingTabContainerView;
 
-    iget v0, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->x:I
+    iget v0, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->y:I
 
     if-le p1, v0, :cond_0
 

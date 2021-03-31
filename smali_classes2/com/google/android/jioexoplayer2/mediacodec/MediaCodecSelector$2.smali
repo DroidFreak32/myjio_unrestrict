@@ -42,6 +42,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
+
     .line 1
     invoke-static {p1, p2}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfos(Ljava/lang/String;Z)Ljava/util/List;
 
@@ -52,6 +58,14 @@
 
 .method public getPassthroughDecoderInfo()Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecUtil;->getPassthroughDecoderInfo()Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecInfo;

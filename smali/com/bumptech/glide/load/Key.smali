@@ -34,4 +34,8 @@
 .end method
 
 .method public abstract updateDiskCacheKey(Ljava/security/MessageDigest;)V
+    .param p1    # Ljava/security/MessageDigest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method

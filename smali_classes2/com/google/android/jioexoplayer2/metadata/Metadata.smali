@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final entries:[Lcom/google/android/jioexoplayer2/metadata/Metadata$Entry;
+.field private final entries:[Lcom/google/android/jioexoplayer2/metadata/Metadata$Entry;
 
 
 # direct methods
@@ -119,8 +119,6 @@
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/Metadata;->entries:[Lcom/google/android/jioexoplayer2/metadata/Metadata$Entry;
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/jioexoplayer2/metadata/Metadata;->entries:[Lcom/google/android/jioexoplayer2/metadata/Metadata$Entry;
-
     invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     goto :goto_0
@@ -168,6 +166,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-ne p0, p1, :cond_0
 

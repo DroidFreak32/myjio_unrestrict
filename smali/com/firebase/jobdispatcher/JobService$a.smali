@@ -1,5 +1,5 @@
 .class public Lcom/firebase/jobdispatcher/JobService$a;
-.super Lj50$a;
+.super Lcom/firebase/jobdispatcher/IRemoteJobService$Stub;
 .source "JobService.java"
 
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/firebase/jobdispatcher/JobService;
+.field public final synthetic a:Lcom/firebase/jobdispatcher/JobService;
 
 
 # direct methods
@@ -23,24 +23,24 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/firebase/jobdispatcher/JobService$a;->s:Lcom/firebase/jobdispatcher/JobService;
+    iput-object p1, p0, Lcom/firebase/jobdispatcher/JobService$a;->a:Lcom/firebase/jobdispatcher/JobService;
 
-    invoke-direct {p0}, Lj50$a;-><init>()V
+    invoke-direct {p0}, Lcom/firebase/jobdispatcher/IRemoteJobService$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/os/Bundle;Li50;)V
+.method public start(Landroid/os/Bundle;Lcom/firebase/jobdispatcher/IJobCallback;)V
     .locals 1
 
     .line 1
-    invoke-static {}, Lcom/firebase/jobdispatcher/GooglePlayReceiver;->e()Lm50;
+    invoke-static {}, Lcom/firebase/jobdispatcher/GooglePlayReceiver;->c()Ldc;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lm50;->a(Landroid/os/Bundle;)Ln50$b;
+    invoke-virtual {v0, p1}, Ldc;->c(Landroid/os/Bundle;)Lec$b;
 
     move-result-object p1
 
@@ -48,7 +48,7 @@
 
     const-string p1, "FJD.JobService"
 
-    const-string p2, "start: unknown invocation provided"
+    const-string/jumbo p2, "start: unknown invocation provided"
 
     .line 2
     invoke-static {p1, p2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
@@ -57,26 +57,26 @@
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lcom/firebase/jobdispatcher/JobService$a;->s:Lcom/firebase/jobdispatcher/JobService;
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/JobService$a;->a:Lcom/firebase/jobdispatcher/JobService;
 
-    invoke-virtual {p1}, Ln50$b;->a()Ln50;
+    invoke-virtual {p1}, Lec$b;->l()Lec;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1, p2}, Lcom/firebase/jobdispatcher/JobService;->start(Lo50;Li50;)V
+    invoke-virtual {v0, p1, p2}, Lcom/firebase/jobdispatcher/JobService;->start(Lcom/firebase/jobdispatcher/JobParameters;Lcom/firebase/jobdispatcher/IJobCallback;)V
 
     return-void
 .end method
 
-.method public a(Landroid/os/Bundle;Z)V
+.method public stop(Landroid/os/Bundle;Z)V
     .locals 1
 
-    .line 4
-    invoke-static {}, Lcom/firebase/jobdispatcher/GooglePlayReceiver;->e()Lm50;
+    .line 1
+    invoke-static {}, Lcom/firebase/jobdispatcher/GooglePlayReceiver;->c()Ldc;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lm50;->a(Landroid/os/Bundle;)Ln50$b;
+    invoke-virtual {v0, p1}, Ldc;->c(Landroid/os/Bundle;)Lec$b;
 
     move-result-object p1
 
@@ -84,22 +84,22 @@
 
     const-string p1, "FJD.JobService"
 
-    const-string p2, "stop: unknown invocation provided"
+    const-string/jumbo p2, "stop: unknown invocation provided"
 
-    .line 5
+    .line 2
     invoke-static {p1, p2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
-    .line 6
+    .line 3
     :cond_0
-    iget-object v0, p0, Lcom/firebase/jobdispatcher/JobService$a;->s:Lcom/firebase/jobdispatcher/JobService;
+    iget-object v0, p0, Lcom/firebase/jobdispatcher/JobService$a;->a:Lcom/firebase/jobdispatcher/JobService;
 
-    invoke-virtual {p1}, Ln50$b;->a()Ln50;
+    invoke-virtual {p1}, Lec$b;->l()Lec;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1, p2}, Lcom/firebase/jobdispatcher/JobService;->stop(Lo50;Z)V
+    invoke-virtual {v0, p1, p2}, Lcom/firebase/jobdispatcher/JobService;->stop(Lcom/firebase/jobdispatcher/JobParameters;Z)V
 
     return-void
 .end method

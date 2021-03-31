@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;
 .super Lcom/google/android/gms/ads/mediation/NativeAdMapper;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
@@ -8,9 +9,11 @@
 
 
 # instance fields
-.field public zzbla:Ljava/lang/String;
+.field private zzdul:Ljava/lang/String;
 
-.field public zzblb:Ljava/util/List;
+.field private zzetx:Ljava/lang/String;
+
+.field private zzety:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -20,17 +23,15 @@
     .end annotation
 .end field
 
-.field public zzblc:Ljava/lang/String;
+.field private zzeua:Ljava/lang/String;
 
-.field public zzble:Ljava/lang/String;
+.field private zzeuc:Lcom/google/android/gms/ads/formats/NativeAd$Image;
 
-.field public zzblf:D
+.field private zzeud:D
 
-.field public zzblg:Ljava/lang/String;
+.field private zzeue:Ljava/lang/String;
 
-.field public zzblh:Ljava/lang/String;
-
-.field public zzdjk:Lcom/google/android/gms/ads/formats/NativeAd$Image;
+.field private zzeuf:Ljava/lang/String;
 
 
 # direct methods
@@ -49,7 +50,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblc:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzdul:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -58,7 +59,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzble:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeua:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -67,7 +68,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzbla:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzetx:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -76,7 +77,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzdjk:Lcom/google/android/gms/ads/formats/NativeAd$Image;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeuc:Lcom/google/android/gms/ads/formats/NativeAd$Image;
 
     return-object v0
 .end method
@@ -93,7 +94,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblb:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzety:Ljava/util/List;
 
     return-object v0
 .end method
@@ -102,7 +103,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblh:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeuf:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -111,7 +112,7 @@
     .locals 2
 
     .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblf:D
+    iget-wide v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeud:D
 
     return-wide v0
 .end method
@@ -120,7 +121,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblg:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeue:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -129,7 +130,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblc:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzdul:Ljava/lang/String;
 
     return-void
 .end method
@@ -138,7 +139,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzble:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeua:Ljava/lang/String;
 
     return-void
 .end method
@@ -147,7 +148,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzbla:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzetx:Ljava/lang/String;
 
     return-void
 .end method
@@ -156,7 +157,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzdjk:Lcom/google/android/gms/ads/formats/NativeAd$Image;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeuc:Lcom/google/android/gms/ads/formats/NativeAd$Image;
 
     return-void
 .end method
@@ -173,7 +174,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblb:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzety:Ljava/util/List;
 
     return-void
 .end method
@@ -182,7 +183,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblh:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeuf:Ljava/lang/String;
 
     return-void
 .end method
@@ -191,7 +192,7 @@
     .locals 0
 
     .line 1
-    iput-wide p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblf:D
+    iput-wide p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeud:D
 
     return-void
 .end method
@@ -200,7 +201,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzblg:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/mediation/NativeAppInstallAdMapper;->zzeue:Ljava/lang/String;
 
     return-void
 .end method

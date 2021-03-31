@@ -1,6 +1,5 @@
 .class public final Lcom/clevertap/android/sdk/R$anim;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -39,12 +38,49 @@
 
 .field public static final abc_tooltip_exit:I = 0x7f01000b
 
+.field public static final btn_checkbox_to_checked_box_inner_merged_animation:I = 0x7f010019
+
+.field public static final btn_checkbox_to_checked_box_outer_merged_animation:I = 0x7f01001a
+
+.field public static final btn_checkbox_to_checked_icon_null_animation:I = 0x7f01001b
+
+.field public static final btn_checkbox_to_unchecked_box_inner_merged_animation:I = 0x7f01001c
+
+.field public static final btn_checkbox_to_unchecked_check_path_merged_animation:I = 0x7f01001d
+
+.field public static final btn_checkbox_to_unchecked_icon_null_animation:I = 0x7f01001e
+
+.field public static final btn_radio_to_off_mtrl_dot_group_animation:I = 0x7f01001f
+
+.field public static final btn_radio_to_off_mtrl_ring_outer_animation:I = 0x7f010020
+
+.field public static final btn_radio_to_off_mtrl_ring_outer_path_animation:I = 0x7f010021
+
+.field public static final btn_radio_to_on_mtrl_dot_group_animation:I = 0x7f010022
+
+.field public static final btn_radio_to_on_mtrl_ring_outer_animation:I = 0x7f010023
+
+.field public static final btn_radio_to_on_mtrl_ring_outer_path_animation:I = 0x7f010024
+
+.field public static final design_bottom_sheet_slide_in:I = 0x7f010027
+
+.field public static final design_bottom_sheet_slide_out:I = 0x7f010028
+
+.field public static final design_snackbar_in:I = 0x7f010029
+
+.field public static final design_snackbar_out:I = 0x7f01002a
+
+.field public static final mtrl_bottom_sheet_slide_in:I = 0x7f01005b
+
+.field public static final mtrl_bottom_sheet_slide_out:I = 0x7f01005c
+
+.field public static final mtrl_card_lowers_interpolator:I = 0x7f01005d
+
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

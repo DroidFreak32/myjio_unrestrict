@@ -23,22 +23,22 @@
 
     .line 1
     :try_start_0
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lhf0;->V()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PreferenceHelper;->isInternationalRoaming()Z
 
     move-result p2
 
     if-nez p2, :cond_0
 
     .line 2
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmg0;->d()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->checkGlobalServiceStatus()V
 
     goto :goto_0
 
@@ -60,11 +60,11 @@
     if-lt p2, v0, :cond_1
 
     .line 5
-    invoke-static {p1}, Lff0;->a(Landroid/content/Context;)Lff0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lff0;->k()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/PassiveManager;->stopJobScheduler()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0

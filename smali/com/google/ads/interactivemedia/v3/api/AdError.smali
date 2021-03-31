@@ -13,9 +13,9 @@
 
 
 # instance fields
-.field public final a:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorCode;
+.field private final a:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorCode;
 
-.field public final b:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
+.field private final b:Lcom/google/ads/interactivemedia/v3/api/AdError$AdErrorType;
 
 
 # direct methods

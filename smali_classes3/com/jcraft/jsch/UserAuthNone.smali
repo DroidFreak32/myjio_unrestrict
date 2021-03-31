@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final SSH_MSG_SERVICE_ACCEPT:I = 0x6
+.field private static final SSH_MSG_SERVICE_ACCEPT:I = 0x6
 
 
 # instance fields
-.field public methods:Ljava/lang/String;
+.field private methods:Ljava/lang/String;
 
 
 # direct methods
@@ -39,6 +39,11 @@
 
 .method public start(Lcom/jcraft/jsch/Session;)Z
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1}, Lcom/jcraft/jsch/UserAuth;->start(Lcom/jcraft/jsch/Session;)Z
@@ -58,7 +63,7 @@
     .line 4
     iget-object v0, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    const-string/jumbo v1, "ssh-userauth"
+    const-string v1, "ssh-userauth"
 
     invoke-static {v1}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
@@ -104,8 +109,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 9
-    iget-object v0, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v0
@@ -177,7 +180,7 @@
     .line 16
     iget-object v0, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    const-string/jumbo v2, "ssh-connection"
+    const-string v2, "ssh-connection"
 
     invoke-static {v2}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
@@ -213,8 +216,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 20
-    iget-object v0, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v0

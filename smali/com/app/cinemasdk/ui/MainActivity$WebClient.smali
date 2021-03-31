@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/app/cinemasdk/ui/MainActivity;)V
+.method private constructor <init>(Lcom/app/cinemasdk/ui/MainActivity;)V
     .locals 0
 
     .line 1
@@ -54,6 +54,9 @@
 
 .method public onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x17
+    .end annotation
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V

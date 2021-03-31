@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static final zzavr:Lcom/google/android/gms/internal/gtm/zzqp;
+.field private static final zzavr:Lcom/google/android/gms/internal/gtm/zzqp;
 
 
 # instance fields
-.field public zzbcb:Lcom/google/android/gms/internal/gtm/zzps;
+.field private zzbcb:Lcom/google/android/gms/internal/gtm/zzps;
 
-.field public volatile zzbcc:Lcom/google/android/gms/internal/gtm/zzsk;
+.field private volatile zzbcc:Lcom/google/android/gms/internal/gtm/zzsk;
 
-.field public volatile zzbcd:Lcom/google/android/gms/internal/gtm/zzps;
+.field private volatile zzbcd:Lcom/google/android/gms/internal/gtm/zzps;
 
 
 # direct methods

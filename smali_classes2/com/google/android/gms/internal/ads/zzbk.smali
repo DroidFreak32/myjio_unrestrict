@@ -1,89 +1,42 @@
 .class public final Lcom/google/android/gms/internal/ads/zzbk;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public static zza([BZ)Ljava/lang/String;
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    const/16 p1, 0xb
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x2
+.method public static zza(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzae;
+    .locals 3
 
     .line 1
-    :goto_0
-    invoke-static {p0, p1}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzau;
 
-    move-result-object p0
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzbd;
 
-    return-object p0
-.end method
+    invoke-direct {v1}, Lcom/google/android/gms/internal/ads/zzbd;-><init>()V
 
-.method public static zza(Ljava/lang/String;Z)[B
-    .locals 2
-
-    if-eqz p1, :cond_0
-
-    const/16 p1, 0xb
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x2
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/ads/zzau;-><init>(Lcom/google/android/gms/internal/ads/zzar;)V
 
     .line 2
-    :goto_0
-    invoke-static {p0, p1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object p0
 
     .line 3
-    array-length v0, p1
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzbj;
 
-    if-nez v0, :cond_2
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-lez v0, :cond_2
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/ads/zzbj;-><init>(Landroid/content/Context;)V
 
     .line 4
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Lcom/google/android/gms/internal/ads/zzae;
 
-    const-string v0, "Unable to decode "
+    new-instance v2, Lcom/google/android/gms/internal/ads/zzav;
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v2, v1}, Lcom/google/android/gms/internal/ads/zzav;-><init>(Lcom/google/android/gms/internal/ads/zzaz;)V
 
-    move-result-object p0
+    invoke-direct {p0, v2, v0}, Lcom/google/android/gms/internal/ads/zzae;-><init>(Lcom/google/android/gms/internal/ads/zzk;Lcom/google/android/gms/internal/ads/zzx;)V
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    .line 5
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzae;->start()V
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/String;
-
-    invoke-direct {p0, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    :goto_1
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    return-object p1
+    return-object p0
 .end method

@@ -4,19 +4,19 @@
 
 
 # instance fields
-.field public connectionLostTimeout:I
+.field private connectionLostTimeout:I
 
-.field public connectionLostTimer:Ljava/util/Timer;
+.field private connectionLostTimer:Ljava/util/Timer;
 
-.field public connectionLostTimerTask:Ljava/util/TimerTask;
+.field private connectionLostTimerTask:Ljava/util/TimerTask;
 
-.field public reuseAddr:Z
+.field private reuseAddr:Z
 
-.field public final syncConnectionLost:Ljava/lang/Object;
+.field private final syncConnectionLost:Ljava/lang/Object;
 
-.field public tcpNoDelay:Z
+.field private tcpNoDelay:Z
 
-.field public websocketRunning:Z
+.field private websocketRunning:Z
 
 
 # direct methods
@@ -31,17 +31,17 @@
     .line 2
     iput v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimeout:I
 
-    const/4 v0, 0x0
-
     .line 3
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->websocketRunning:Z
-
-    .line 4
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->syncConnectionLost:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    .line 4
+    iput-boolean v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->websocketRunning:Z
 
     return-void
 .end method
@@ -145,7 +145,7 @@
 .end method
 
 .method private restartConnectionLostTimer()V
-    .locals 9
+    .locals 8
 
     .line 1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->cancelConnectionLostTimer()V
@@ -160,30 +160,28 @@
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimer:Ljava/util/Timer;
 
     .line 3
-    new-instance v0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket$1;
+    new-instance v3, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket$1;
 
-    invoke-direct {v0, p0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket$1;-><init>(Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;)V
+    invoke-direct {v3, p0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket$1;-><init>(Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;)V
 
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimerTask:Ljava/util/TimerTask;
+    iput-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimerTask:Ljava/util/TimerTask;
 
     .line 4
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimer:Ljava/util/Timer;
-
-    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimerTask:Ljava/util/TimerTask;
+    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimer:Ljava/util/Timer;
 
     iget v0, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimeout:I
 
-    int-to-long v3, v0
+    int-to-long v4, v0
 
-    const-wide/16 v5, 0x3e8
+    const-wide/16 v6, 0x3e8
 
-    mul-long v3, v3, v5
+    mul-long v4, v4, v6
 
-    int-to-long v7, v0
+    int-to-long v0, v0
 
-    mul-long v5, v5, v7
+    mul-long v6, v6, v0
 
-    invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
+    invoke-virtual/range {v2 .. v7}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
 
     return-void
 .end method
@@ -258,20 +256,17 @@
     :try_start_0
     iput p1, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimeout:I
 
-    .line 3
-    iget p1, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->connectionLostTimeout:I
-
     if-gtz p1, :cond_0
 
-    .line 4
+    .line 3
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->cancelConnectionLostTimer()V
 
-    .line 5
+    .line 4
     monitor-exit v0
 
     return-void
 
-    .line 6
+    .line 5
     :cond_0
     iget-boolean p1, p0, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->websocketRunning:Z
     :try_end_0
@@ -279,7 +274,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 7
+    .line 6
     :try_start_1
     new-instance p1, Ljava/util/ArrayList;
 
@@ -289,7 +284,7 @@
 
     invoke-direct {p1, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 8
+    .line 7
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -308,15 +303,15 @@
 
     check-cast v1, Lcom/clevertap/android/sdk/java_websocket/WebSocket;
 
-    .line 9
+    .line 8
     instance-of v2, v1, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
 
     if-eqz v2, :cond_1
 
-    .line 10
+    .line 9
     check-cast v1, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
 
-    .line 11
+    .line 10
     invoke-virtual {v1}, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;->updateLastPong()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -324,13 +319,13 @@
 
     goto :goto_0
 
-    .line 12
+    .line 11
     :catch_0
     :cond_2
     :try_start_2
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->restartConnectionLostTimer()V
 
-    .line 13
+    .line 12
     :cond_3
     monitor-exit v0
 

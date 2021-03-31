@@ -1,35 +1,48 @@
 .class public final Lcom/google/android/gms/internal/ads/zzoa;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzbjf:Lcom/google/android/gms/internal/ads/zznz;
+.field private final length:I
+
+.field private final zzbhk:[I
+
+.field private final zzbhl:[Lcom/google/android/gms/internal/ads/zznq;
+
+.field private final zzbhm:[I
+
+.field private final zzbhn:[[[I
+
+.field private final zzbho:Lcom/google/android/gms/internal/ads/zznq;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zznz;)V
+.method public constructor <init>([I[Lcom/google/android/gms/internal/ads/zznq;[I[[[ILcom/google/android/gms/internal/ads/zznq;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbjf:Lcom/google/android/gms/internal/ads/zznz;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbhk:[I
 
+    .line 3
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbhl:[Lcom/google/android/gms/internal/ads/zznq;
 
-# virtual methods
-.method public final run()V
-    .locals 1
+    .line 4
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbhn:[[[I
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbjf:Lcom/google/android/gms/internal/ads/zznz;
+    .line 5
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbhm:[I
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zznz;->zza(Lcom/google/android/gms/internal/ads/zznz;)V
+    .line 6
+    iput-object p5, p0, Lcom/google/android/gms/internal/ads/zzoa;->zzbho:Lcom/google/android/gms/internal/ads/zznq;
+
+    .line 7
+    array-length p1, p2
+
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzoa;->length:I
 
     return-void
 .end method

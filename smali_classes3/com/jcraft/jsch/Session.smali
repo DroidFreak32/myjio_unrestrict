@@ -16,7 +16,7 @@
 
 
 # static fields
-.field public static final PACKET_MAX_SIZE:I = 0x40000
+.field private static final PACKET_MAX_SIZE:I = 0x40000
 
 .field public static final SSH_MSG_CHANNEL_CLOSE:I = 0x61
 
@@ -76,35 +76,35 @@
 
 .field public static final buffer_margin:I = 0x54
 
-.field public static final keepalivemsg:[B
+.field private static final keepalivemsg:[B
 
-.field public static final nomoresessions:[B
+.field private static final nomoresessions:[B
 
 .field public static random:Lcom/jcraft/jsch/Random;
 
 
 # instance fields
-.field public Ec2s:[B
+.field private Ec2s:[B
 
-.field public Es2c:[B
+.field private Es2c:[B
 
-.field public IVc2s:[B
+.field private IVc2s:[B
 
-.field public IVs2c:[B
+.field private IVs2c:[B
 
-.field public I_C:[B
+.field private I_C:[B
 
-.field public I_S:[B
+.field private I_S:[B
 
-.field public K_S:[B
+.field private K_S:[B
 
-.field public MACc2s:[B
+.field private MACc2s:[B
 
-.field public MACs2c:[B
+.field private MACs2c:[B
 
-.field public V_C:[B
+.field private V_C:[B
 
-.field public V_S:[B
+.field private V_S:[B
 
 .field public agent_forwarding:Z
 
@@ -112,53 +112,53 @@
 
 .field public buf:Lcom/jcraft/jsch/Buffer;
 
-.field public c2scipher:Lcom/jcraft/jsch/Cipher;
+.field private c2scipher:Lcom/jcraft/jsch/Cipher;
 
-.field public c2scipher_size:I
+.field private c2scipher_size:I
 
-.field public c2smac:Lcom/jcraft/jsch/MAC;
+.field private c2smac:Lcom/jcraft/jsch/MAC;
 
 .field public compress_len:[I
 
-.field public config:Ljava/util/Hashtable;
+.field private config:Ljava/util/Hashtable;
 
-.field public connectThread:Ljava/lang/Thread;
+.field private connectThread:Ljava/lang/Thread;
 
 .field public daemon_thread:Z
 
-.field public deflater:Lcom/jcraft/jsch/Compression;
+.field private deflater:Lcom/jcraft/jsch/Compression;
 
-.field public grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
+.field private grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
 
 .field public guess:[Ljava/lang/String;
 
 .field public host:Ljava/lang/String;
 
-.field public hostKeyAlias:Ljava/lang/String;
+.field private hostKeyAlias:Ljava/lang/String;
 
-.field public hostkey:Lcom/jcraft/jsch/HostKey;
+.field private hostkey:Lcom/jcraft/jsch/HostKey;
 
-.field public hostkeyRepository:Lcom/jcraft/jsch/HostKeyRepository;
+.field private hostkeyRepository:Lcom/jcraft/jsch/HostKeyRepository;
 
-.field public identityRepository:Lcom/jcraft/jsch/IdentityRepository;
+.field private identityRepository:Lcom/jcraft/jsch/IdentityRepository;
 
 .field public in:Ljava/io/InputStream;
 
-.field public in_kex:Z
+.field private in_kex:Z
 
-.field public inflater:Lcom/jcraft/jsch/Compression;
+.field private inflater:Lcom/jcraft/jsch/Compression;
 
-.field public io:Lcom/jcraft/jsch/IO;
+.field private io:Lcom/jcraft/jsch/IO;
 
-.field public isAuthed:Z
+.field private isAuthed:Z
 
-.field public volatile isConnected:Z
+.field private volatile isConnected:Z
 
 .field public jsch:Lcom/jcraft/jsch/JSch;
 
-.field public kex_start_time:J
+.field private kex_start_time:J
 
-.field public lock:Ljava/lang/Object;
+.field private lock:Ljava/lang/Object;
 
 .field public max_auth_tries:I
 
@@ -172,39 +172,39 @@
 
 .field public port:I
 
-.field public proxy:Lcom/jcraft/jsch/Proxy;
+.field private proxy:Lcom/jcraft/jsch/Proxy;
 
-.field public s2ccipher:Lcom/jcraft/jsch/Cipher;
+.field private s2ccipher:Lcom/jcraft/jsch/Cipher;
 
-.field public s2ccipher_size:I
+.field private s2ccipher_size:I
 
-.field public s2cmac:Lcom/jcraft/jsch/MAC;
+.field private s2cmac:Lcom/jcraft/jsch/MAC;
 
-.field public s2cmac_result1:[B
+.field private s2cmac_result1:[B
 
-.field public s2cmac_result2:[B
+.field private s2cmac_result2:[B
 
-.field public seqi:I
+.field private seqi:I
 
-.field public seqo:I
+.field private seqo:I
 
-.field public serverAliveCountMax:I
+.field private serverAliveCountMax:I
 
-.field public serverAliveInterval:I
+.field private serverAliveInterval:I
 
-.field public session_id:[B
+.field private session_id:[B
 
-.field public socket:Ljava/net/Socket;
+.field private socket:Ljava/net/Socket;
 
 .field public socket_factory:Lcom/jcraft/jsch/SocketFactory;
 
 .field public thread:Ljava/lang/Runnable;
 
-.field public timeout:I
+.field private timeout:I
 
 .field public uncompress_len:[I
 
-.field public userinfo:Lcom/jcraft/jsch/UserInfo;
+.field private userinfo:Lcom/jcraft/jsch/UserInfo;
 
 .field public username:Ljava/lang/String;
 
@@ -238,6 +238,11 @@
 
 .method public constructor <init>(Lcom/jcraft/jsch/JSch;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -431,7 +436,7 @@
 
     move-result-object p1
 
-    const-string/jumbo p2, "user.name"
+    const-string p2, "user.name"
 
     invoke-virtual {p1, p2}, Ljava/util/Properties;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -461,7 +466,7 @@
     :cond_1
     new-instance p1, Lcom/jcraft/jsch/JSchException;
 
-    const-string/jumbo p2, "username is not given."
+    const-string p2, "username is not given."
 
     invoke-direct {p1, p2}, Lcom/jcraft/jsch/JSchException;-><init>(Ljava/lang/String;)V
 
@@ -470,6 +475,11 @@
 
 .method private _setPortForwardingR(Ljava/lang/String;I)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
@@ -521,7 +531,7 @@
     .line 8
     invoke-virtual {v1, v4}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
 
-    const-string/jumbo v4, "tcpip-forward"
+    const-string v4, "tcpip-forward"
 
     .line 9
     invoke-static {v4}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
@@ -668,6 +678,11 @@
 
 .method private _write(Lcom/jcraft/jsch/Packet;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->lock:Ljava/lang/Object;
@@ -684,8 +699,6 @@
     if-eqz v1, :cond_0
 
     .line 4
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
-
     invoke-virtual {v1, p1}, Lcom/jcraft/jsch/IO;->put(Lcom/jcraft/jsch/Packet;)V
 
     .line 5
@@ -713,6 +726,11 @@
 
 .method private applyConfig()V
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->jsch:Lcom/jcraft/jsch/JSch;
@@ -1085,6 +1103,11 @@
 
 .method private applyConfigChannel(Lcom/jcraft/jsch/ChannelSession;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->jsch:Lcom/jcraft/jsch/JSch;
@@ -1112,7 +1135,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "yes"
+    const-string v2, "yes"
 
     if-eqz v1, :cond_1
 
@@ -1192,7 +1215,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_6
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -1332,67 +1355,61 @@
 
     move-result p1
 
-    new-array p1, p1, [Ljava/lang/String;
+    new-array v0, p1, [Ljava/lang/String;
 
     .line 15
     invoke-virtual {v4}, Ljava/util/Vector;->toArray()[Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
     invoke-virtual {v4}, Ljava/util/Vector;->size()I
 
-    move-result v1
+    move-result v3
 
-    invoke-static {v0, v5, p1, v5, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v5, v0, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 16
     invoke-static {}, Lcom/jcraft/jsch/JSch;->getLogger()Lcom/jcraft/jsch/Logger;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v0, v2}, Lcom/jcraft/jsch/Logger;->isEnabled(I)Z
+    invoke-interface {v1, v2}, Lcom/jcraft/jsch/Logger;->isEnabled(I)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_6
+    if-eqz v1, :cond_6
+
+    :goto_2
+    if-ge v5, p1, :cond_6
 
     .line 17
-    :goto_2
-    array-length v0, p1
-
-    if-ge v5, v0, :cond_6
-
-    .line 18
     invoke-static {}, Lcom/jcraft/jsch/JSch;->getLogger()Lcom/jcraft/jsch/Logger;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object v3, p1, v5
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, " is not available."
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v2, v1}, Lcom/jcraft/jsch/Logger;->log(ILjava/lang/String;)V
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    aget-object v4, v0, v5
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, " is not available."
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Lcom/jcraft/jsch/Logger;->log(ILjava/lang/String;)V
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
     :cond_6
-    return-object p1
-
-    :cond_7
     :goto_3
     return-object v0
 .end method
@@ -1416,6 +1433,11 @@
 
 .method private checkHost(Ljava/lang/String;ILcom/jcraft/jsch/KeyExchange;)V
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "StrictHostKeyChecking"
 
@@ -1490,7 +1512,7 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "yes"
+    const-string v4, "yes"
 
     .line 10
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1554,7 +1576,7 @@
 
     if-nez v4, :cond_3
 
-    const-string/jumbo v4, "yes"
+    const-string v4, "yes"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1695,12 +1717,12 @@
 
     if-eqz v4, :cond_7
 
-    const-string/jumbo v4, "ssh-dss"
+    const-string v4, "ssh-dss"
 
     goto :goto_2
 
     :cond_7
-    const-string/jumbo v4, "ssh-rsa"
+    const-string v4, "ssh-rsa"
 
     :goto_2
     const/4 v8, 0x0
@@ -1769,7 +1791,7 @@
 
     if-nez v8, :cond_a
 
-    const-string/jumbo v8, "yes"
+    const-string v8, "yes"
 
     invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1782,7 +1804,7 @@
 
     if-nez v4, :cond_f
 
-    const-string/jumbo v4, "yes"
+    const-string v4, "yes"
 
     .line 31
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1980,12 +2002,12 @@
 
     if-eqz p3, :cond_11
 
-    const-string/jumbo p3, "ssh-dss"
+    const-string p3, "ssh-dss"
 
     goto :goto_5
 
     :cond_11
-    const-string/jumbo p3, "ssh-rsa"
+    const-string p3, "ssh-rsa"
 
     :goto_5
     invoke-interface {p2, p1, p3}, Lcom/jcraft/jsch/HostKeyRepository;->getHostKey(Ljava/lang/String;Ljava/lang/String;)[Lcom/jcraft/jsch/HostKey;
@@ -2332,7 +2354,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -2440,73 +2462,72 @@
 
     move-result p1
 
-    new-array p1, p1, [Ljava/lang/String;
+    new-array v0, p1, [Ljava/lang/String;
 
     .line 11
     invoke-virtual {v1}, Ljava/util/Vector;->toArray()[Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v4
 
     invoke-virtual {v1}, Ljava/util/Vector;->size()I
 
     move-result v1
 
-    invoke-static {v0, v3, p1, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v4, v3, v0, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 12
     invoke-static {}, Lcom/jcraft/jsch/JSch;->getLogger()Lcom/jcraft/jsch/Logger;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v0, v2}, Lcom/jcraft/jsch/Logger;->isEnabled(I)Z
+    invoke-interface {v1, v2}, Lcom/jcraft/jsch/Logger;->isEnabled(I)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5
+    if-eqz v1, :cond_5
+
+    :goto_1
+    if-ge v3, p1, :cond_5
 
     .line 13
-    :goto_1
-    array-length v0, p1
-
-    if-ge v3, v0, :cond_5
-
-    .line 14
     invoke-static {}, Lcom/jcraft/jsch/JSch;->getLogger()Lcom/jcraft/jsch/Logger;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    aget-object v4, p1, v3
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, " is not available."
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v2, v1}, Lcom/jcraft/jsch/Logger;->log(ILjava/lang/String;)V
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    aget-object v5, v0, v3
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, " is not available."
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v1, v2, v4}, Lcom/jcraft/jsch/Logger;->log(ILjava/lang/String;)V
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_5
-    return-object p1
-
-    :cond_6
     :goto_2
     return-object v0
 .end method
 
 .method private expandKey(Lcom/jcraft/jsch/Buffer;[B[B[BLcom/jcraft/jsch/HASH;I)[B
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p5}, Lcom/jcraft/jsch/HASH;->getBlockSize()I
@@ -2574,6 +2595,11 @@
 
 .method private initDeflater(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "none"
 
@@ -2599,7 +2625,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string/jumbo v1, "zlib"
+    const-string v1, "zlib"
 
     .line 4
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2612,7 +2638,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string/jumbo v1, "zlib@openssh.com"
+    const-string v1, "zlib@openssh.com"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2705,6 +2731,11 @@
 
 .method private initInflater(Ljava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "none"
 
@@ -2730,7 +2761,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string/jumbo v1, "zlib"
+    const-string v1, "zlib"
 
     .line 4
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2743,7 +2774,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string/jumbo v1, "zlib@openssh.com"
+    const-string v1, "zlib@openssh.com"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2767,11 +2798,9 @@
 
     iput-object p1, p0, Lcom/jcraft/jsch/Session;->inflater:Lcom/jcraft/jsch/Compression;
 
-    .line 7
-    iget-object p1, p0, Lcom/jcraft/jsch/Session;->inflater:Lcom/jcraft/jsch/Compression;
-
     const/4 v0, 0x0
 
+    .line 7
     invoke-interface {p1, v0, v0}, Lcom/jcraft/jsch/Compression;->init(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2799,6 +2828,11 @@
 
 .method private parseForwarding(Ljava/lang/String;)Lcom/jcraft/jsch/Session$Forwarding;
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "parseForwarding: "
 
@@ -3044,13 +3078,16 @@
 
     if-eqz v2, :cond_7
 
-    move-object p1, v7
+    goto :goto_3
+
+    :cond_7
+    move-object v7, p1
 
     .line 25
-    :cond_7
-    iput-object p1, v1, Lcom/jcraft/jsch/Session$Forwarding;->bind_address:Ljava/lang/String;
+    :goto_3
+    iput-object v7, v1, Lcom/jcraft/jsch/Session$Forwarding;->bind_address:Ljava/lang/String;
 
-    goto :goto_3
+    goto :goto_4
 
     .line 26
     :cond_8
@@ -3063,7 +3100,7 @@
     .line 27
     iput-object v7, v1, Lcom/jcraft/jsch/Session$Forwarding;->bind_address:Ljava/lang/String;
 
-    :goto_3
+    :goto_4
     return-object v1
 
     .line 28
@@ -3137,6 +3174,11 @@
 
 .method private receive_kexinit(Lcom/jcraft/jsch/Buffer;)Lcom/jcraft/jsch/KeyExchange;
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/jcraft/jsch/Buffer;->getInt()I
@@ -3212,12 +3254,9 @@
 
     iput-object p1, p0, Lcom/jcraft/jsch/Session;->guess:[Ljava/lang/String;
 
-    .line 10
-    iget-object p1, p0, Lcom/jcraft/jsch/Session;->guess:[Ljava/lang/String;
-
     if-eqz p1, :cond_4
 
-    .line 11
+    .line 10
     iget-boolean v0, p0, Lcom/jcraft/jsch/Session;->isAuthed:Z
 
     if-nez v0, :cond_3
@@ -3248,7 +3287,7 @@
 
     goto :goto_1
 
-    .line 12
+    .line 11
     :cond_2
     new-instance p1, Lcom/jcraft/jsch/JSchException;
 
@@ -3258,7 +3297,7 @@
 
     throw p1
 
-    .line 13
+    .line 12
     :cond_3
     :goto_1
     :try_start_0
@@ -3274,7 +3313,7 @@
 
     move-result-object p1
 
-    .line 14
+    .line 13
     invoke-virtual {p1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object p1
@@ -3283,7 +3322,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 15
+    .line 14
     iget-object v2, p0, Lcom/jcraft/jsch/Session;->V_S:[B
 
     iget-object v3, p0, Lcom/jcraft/jsch/Session;->V_C:[B
@@ -3303,7 +3342,7 @@
     :catch_0
     move-exception p1
 
-    .line 16
+    .line 15
     new-instance v0, Lcom/jcraft/jsch/JSchException;
 
     invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
@@ -3314,7 +3353,7 @@
 
     throw v0
 
-    .line 17
+    .line 16
     :cond_4
     new-instance p1, Lcom/jcraft/jsch/JSchException;
 
@@ -3327,6 +3366,11 @@
 
 .method private receive_newkeys(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/KeyExchange;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p2}, Lcom/jcraft/jsch/Session;->updateKeys(Lcom/jcraft/jsch/KeyExchange;)V
@@ -3341,6 +3385,11 @@
 
 .method private requestPortForwarding()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "ClearAllForwardings"
 
@@ -3349,7 +3398,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "yes"
+    const-string v1, "yes"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3438,6 +3487,11 @@
 
 .method private send_kexinit()V
     .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/Session;->in_kex:Z
@@ -3742,8 +3796,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/Session;->I_C:[B
 
     .line 37
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->I_C:[B
-
     invoke-virtual {v4, v0}, Lcom/jcraft/jsch/Buffer;->getByte([B)V
 
     .line 38
@@ -3786,6 +3838,11 @@
 
 .method private send_newkeys()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->packet:Lcom/jcraft/jsch/Packet;
@@ -3832,6 +3889,12 @@
 
 .method private start_discard(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/Cipher;Lcom/jcraft/jsch/MAC;II)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p2}, Lcom/jcraft/jsch/Cipher;->isCBC()Z
@@ -3874,30 +3937,28 @@
 
     if-le p5, v1, :cond_1
 
-    array-length p4, p4
+    array-length v1, p4
 
     goto :goto_2
 
     :cond_1
-    move p4, p5
+    move v1, p5
 
     .line 5
     :goto_2
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
+    iget-object v2, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
 
-    iget-object v2, p1, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    invoke-virtual {v1, v2, p2, p4}, Lcom/jcraft/jsch/IO;->getByte([BII)V
+    invoke-virtual {v2, p4, p2, v1}, Lcom/jcraft/jsch/IO;->getByte([BII)V
 
     if-eqz p3, :cond_2
 
     .line 6
-    iget-object v1, p1, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object p4, p1, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    invoke-interface {p3, v1, p2, p4}, Lcom/jcraft/jsch/MAC;->update([BII)V
+    invoke-interface {p3, p4, p2, v1}, Lcom/jcraft/jsch/MAC;->update([BII)V
 
     :cond_2
-    sub-int/2addr p5, p4
+    sub-int/2addr p5, v1
 
     goto :goto_1
 
@@ -3928,6 +3989,11 @@
 
 .method private updateKeys(Lcom/jcraft/jsch/KeyExchange;)V
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p1}, Lcom/jcraft/jsch/KeyExchange;->getK()[B
@@ -3959,8 +4025,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/Session;->session_id:[B
 
     .line 6
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->session_id:[B
-
     array-length v1, v8
 
     invoke-static {v8, v9, v0, v9, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -4183,9 +4247,9 @@
 
     iget-object v1, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
 
-    array-length v1, v1
+    array-length v2, v1
 
-    if-le v0, v1, :cond_1
+    if-le v0, v2, :cond_1
 
     .line 34
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
@@ -4212,13 +4276,11 @@
     .line 38
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v0, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v1, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    iget v0, v0, Lcom/jcraft/jsch/Buffer;->index:I
 
-    iget v1, v1, Lcom/jcraft/jsch/Buffer;->index:I
-
-    invoke-interface {p1, v0, v9, v1}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    invoke-interface {p1, v1, v9, v0}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
     .line 39
     invoke-interface {p1}, Lcom/jcraft/jsch/HASH;->digest()[B
@@ -4228,42 +4290,36 @@
     .line 40
     iget-object v1, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
 
-    array-length v1, v1
-
-    array-length v2, v0
-
-    add-int/2addr v1, v2
-
-    new-array v1, v1, [B
-
-    .line 41
-    iget-object v2, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
-
-    iget-object v4, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
-
-    array-length v4, v4
-
-    invoke-static {v2, v9, v1, v9, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 42
-    iget-object v2, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
-
-    array-length v2, v2
+    array-length v2, v1
 
     array-length v4, v0
 
-    invoke-static {v0, v9, v1, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    add-int/2addr v2, v4
+
+    new-array v2, v2, [B
+
+    .line 41
+    array-length v4, v1
+
+    invoke-static {v1, v9, v2, v9, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 42
+    iget-object v1, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
+
+    array-length v1, v1
+
+    array-length v4, v0
+
+    invoke-static {v0, v9, v2, v1, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 43
-    iput-object v1, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
+    iput-object v2, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
 
     goto :goto_0
 
     .line 44
     :cond_1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->s2ccipher:Lcom/jcraft/jsch/Cipher;
-
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->Es2c:[B
 
     iget-object v2, p0, Lcom/jcraft/jsch/Session;->IVs2c:[B
 
@@ -4308,8 +4364,6 @@
 
     iget-object v4, p0, Lcom/jcraft/jsch/Session;->MACs2c:[B
 
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->s2cmac:Lcom/jcraft/jsch/MAC;
-
     invoke-interface {v0}, Lcom/jcraft/jsch/MAC;->getBlockSize()I
 
     move-result v6
@@ -4329,11 +4383,9 @@
     iput-object v0, p0, Lcom/jcraft/jsch/Session;->MACs2c:[B
 
     .line 50
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->s2cmac:Lcom/jcraft/jsch/MAC;
+    iget-object v1, p0, Lcom/jcraft/jsch/Session;->s2cmac:Lcom/jcraft/jsch/MAC;
 
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->MACs2c:[B
-
-    invoke-interface {v0, v1}, Lcom/jcraft/jsch/MAC;->init([B)V
+    invoke-interface {v1, v0}, Lcom/jcraft/jsch/MAC;->init([B)V
 
     .line 51
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->s2cmac:Lcom/jcraft/jsch/MAC;
@@ -4392,9 +4444,9 @@
 
     iget-object v1, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
 
-    array-length v1, v1
+    array-length v2, v1
 
-    if-le v0, v1, :cond_2
+    if-le v0, v2, :cond_2
 
     .line 57
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
@@ -4421,13 +4473,11 @@
     .line 61
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v0, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v1, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    iget v0, v0, Lcom/jcraft/jsch/Buffer;->index:I
 
-    iget v1, v1, Lcom/jcraft/jsch/Buffer;->index:I
-
-    invoke-interface {p1, v0, v9, v1}, Lcom/jcraft/jsch/HASH;->update([BII)V
+    invoke-interface {p1, v1, v9, v0}, Lcom/jcraft/jsch/HASH;->update([BII)V
 
     .line 62
     invoke-interface {p1}, Lcom/jcraft/jsch/HASH;->digest()[B
@@ -4437,42 +4487,36 @@
     .line 63
     iget-object v1, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
 
-    array-length v1, v1
-
-    array-length v2, v0
-
-    add-int/2addr v1, v2
-
-    new-array v1, v1, [B
-
-    .line 64
-    iget-object v2, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
-
-    iget-object v3, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
-
-    array-length v3, v3
-
-    invoke-static {v2, v9, v1, v9, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 65
-    iget-object v2, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
-
-    array-length v2, v2
+    array-length v2, v1
 
     array-length v3, v0
 
-    invoke-static {v0, v9, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    add-int/2addr v2, v3
+
+    new-array v2, v2, [B
+
+    .line 64
+    array-length v3, v1
+
+    invoke-static {v1, v9, v2, v9, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 65
+    iget-object v1, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
+
+    array-length v1, v1
+
+    array-length v3, v0
+
+    invoke-static {v0, v9, v2, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 66
-    iput-object v1, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
+    iput-object v2, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
 
     goto :goto_1
 
     .line 67
     :cond_2
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->c2scipher:Lcom/jcraft/jsch/Cipher;
-
-    iget-object v1, p0, Lcom/jcraft/jsch/Session;->Ec2s:[B
 
     iget-object v2, p0, Lcom/jcraft/jsch/Session;->IVc2s:[B
 
@@ -4517,8 +4561,6 @@
 
     iget-object v4, p0, Lcom/jcraft/jsch/Session;->MACc2s:[B
 
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->c2smac:Lcom/jcraft/jsch/MAC;
-
     invoke-interface {v0}, Lcom/jcraft/jsch/MAC;->getBlockSize()I
 
     move-result v6
@@ -4538,11 +4580,9 @@
     iput-object p1, p0, Lcom/jcraft/jsch/Session;->MACc2s:[B
 
     .line 73
-    iget-object p1, p0, Lcom/jcraft/jsch/Session;->c2smac:Lcom/jcraft/jsch/MAC;
+    iget-object v0, p0, Lcom/jcraft/jsch/Session;->c2smac:Lcom/jcraft/jsch/MAC;
 
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->MACc2s:[B
-
-    invoke-interface {p1, v0}, Lcom/jcraft/jsch/MAC;->init([B)V
+    invoke-interface {v0, p1}, Lcom/jcraft/jsch/MAC;->init([B)V
 
     .line 74
     iget-object p1, p0, Lcom/jcraft/jsch/Session;->guess:[Ljava/lang/String;
@@ -4605,6 +4645,11 @@
 
 .method public connect()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/jcraft/jsch/Session;->timeout:I
@@ -4616,6 +4661,11 @@
 
 .method public connect(I)V
     .locals 16
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
@@ -4764,8 +4814,6 @@
     iput-object v9, v1, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
 
     .line 14
-    iget-object v9, v1, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
-
     invoke-virtual {v9}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v9
@@ -4781,8 +4829,6 @@
 
     .line 16
     :cond_2
-    iget-object v9, v1, Lcom/jcraft/jsch/Session;->socket_factory:Lcom/jcraft/jsch/SocketFactory;
-
     iget-object v10, v1, Lcom/jcraft/jsch/Session;->host:Ljava/lang/String;
 
     iget v11, v1, Lcom/jcraft/jsch/Session;->port:I
@@ -4794,11 +4840,9 @@
     iput-object v9, v1, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
 
     .line 17
-    iget-object v9, v1, Lcom/jcraft/jsch/Session;->socket_factory:Lcom/jcraft/jsch/SocketFactory;
+    iget-object v10, v1, Lcom/jcraft/jsch/Session;->socket_factory:Lcom/jcraft/jsch/SocketFactory;
 
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
-
-    invoke-interface {v9, v10}, Lcom/jcraft/jsch/SocketFactory;->getInputStream(Ljava/net/Socket;)Ljava/io/InputStream;
+    invoke-interface {v10, v9}, Lcom/jcraft/jsch/SocketFactory;->getInputStream(Ljava/net/Socket;)Ljava/io/InputStream;
 
     move-result-object v9
 
@@ -4831,8 +4875,6 @@
 
     .line 22
     :cond_3
-    iget-object v9, v1, Lcom/jcraft/jsch/Session;->proxy:Lcom/jcraft/jsch/Proxy;
-
     monitor-enter v9
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_b
@@ -4896,8 +4938,6 @@
     if-eqz v9, :cond_4
 
     .line 29
-    iget-object v9, v1, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
-
     invoke-virtual {v9, v2}, Ljava/net/Socket;->setSoTimeout(I)V
 
     .line 30
@@ -4933,36 +4973,28 @@
     .line 34
     iget-object v9, v1, Lcom/jcraft/jsch/Session;->V_C:[B
 
-    array-length v9, v9
-
-    add-int/2addr v9, v4
-
-    new-array v9, v9, [B
-
-    .line 35
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->V_C:[B
-
-    iget-object v11, v1, Lcom/jcraft/jsch/Session;->V_C:[B
-
-    array-length v11, v11
-
-    invoke-static {v10, v8, v9, v8, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 36
     array-length v10, v9
 
-    sub-int/2addr v10, v4
+    add-int/2addr v10, v4
 
-    const/16 v11, 0xa
+    new-array v11, v10, [B
 
-    aput-byte v11, v9, v10
-
-    .line 37
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
-
+    .line 35
     array-length v12, v9
 
-    invoke-virtual {v10, v9, v8, v12}, Lcom/jcraft/jsch/IO;->put([BII)V
+    invoke-static {v9, v8, v11, v8, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    add-int/lit8 v9, v10, -0x1
+
+    const/16 v12, 0xa
+
+    .line 36
+    aput-byte v12, v11, v9
+
+    .line 37
+    iget-object v9, v1, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
+
+    invoke-virtual {v9, v11, v8, v10}, Lcom/jcraft/jsch/IO;->put([BII)V
 
     :cond_6
     :goto_3
@@ -4972,13 +5004,13 @@
 
     .line 38
     :cond_7
-    iget-object v12, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v11, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v12, v12, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v11, v11, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    array-length v12, v12
+    array-length v11, v11
 
-    if-ge v9, v12, :cond_9
+    if-ge v9, v11, :cond_9
 
     .line 39
     iget-object v10, v1, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
@@ -4993,17 +5025,17 @@
 
     .line 40
     :cond_8
-    iget-object v12, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    iget-object v11, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v12, v12, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v11, v11, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
     int-to-byte v13, v10
 
-    aput-byte v13, v12, v9
+    aput-byte v13, v11, v9
 
     add-int/lit8 v9, v9, 0x1
 
-    if-ne v10, v11, :cond_7
+    if-ne v10, v12, :cond_7
 
     :cond_9
     :goto_4
@@ -5014,26 +5046,22 @@
 
     iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    add-int/lit8 v12, v9, -0x1
+    add-int/lit8 v11, v9, -0x1
 
-    aget-byte v10, v10, v12
+    aget-byte v11, v10, v11
 
-    if-ne v10, v11, :cond_a
+    if-ne v11, v12, :cond_a
 
     add-int/lit8 v9, v9, -0x1
 
     if-lez v9, :cond_a
 
+    add-int/lit8 v11, v9, -0x1
+
     .line 42
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    aget-byte v11, v10, v11
 
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    add-int/lit8 v12, v9, -0x1
-
-    aget-byte v10, v10, v12
-
-    if-ne v10, v3, :cond_a
+    if-ne v11, v3, :cond_a
 
     add-int/lit8 v9, v9, -0x1
 
@@ -5041,103 +5069,65 @@
     if-le v9, v5, :cond_6
 
     .line 43
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    array-length v11, v10
 
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    if-eq v9, v11, :cond_b
 
-    array-length v10, v10
+    aget-byte v11, v10, v8
 
-    if-eq v9, v10, :cond_b
+    const/16 v13, 0x53
 
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    if-ne v11, v13, :cond_6
 
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    aget-byte v11, v10, v4
 
-    aget-byte v10, v10, v8
+    if-ne v11, v13, :cond_6
 
-    const/16 v12, 0x53
+    aget-byte v11, v10, v7
 
-    if-ne v10, v12, :cond_6
+    const/16 v13, 0x48
 
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    if-ne v11, v13, :cond_6
 
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    aget-byte v11, v10, v5
 
-    aget-byte v10, v10, v4
+    const/16 v13, 0x2d
 
-    if-ne v10, v12, :cond_6
-
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    aget-byte v10, v10, v7
-
-    const/16 v12, 0x48
-
-    if-ne v10, v12, :cond_6
-
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    aget-byte v10, v10, v5
-
-    const/16 v12, 0x2d
-
-    if-eq v10, v12, :cond_b
+    if-eq v11, v13, :cond_b
 
     goto :goto_3
 
     .line 44
     :cond_b
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
+    array-length v11, v10
 
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    if-eq v9, v11, :cond_2b
 
-    array-length v10, v10
+    const/4 v11, 0x7
 
-    if-eq v9, v10, :cond_2b
-
-    const/4 v10, 0x7
-
-    if-lt v9, v10, :cond_2b
-
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    if-lt v9, v11, :cond_2b
 
     const/4 v11, 0x4
 
-    aget-byte v10, v10, v11
+    aget-byte v11, v10, v11
 
-    const/16 v11, 0x31
+    const/16 v12, 0x31
 
-    if-ne v10, v11, :cond_c
-
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    if-ne v11, v12, :cond_c
 
     const/4 v11, 0x6
 
-    aget-byte v10, v10, v11
+    aget-byte v11, v10, v11
 
-    const/16 v11, 0x39
+    const/16 v12, 0x39
 
-    if-ne v10, v11, :cond_2b
+    if-ne v11, v12, :cond_2b
 
     .line 45
     :cond_c
-    new-array v10, v9, [B
+    new-array v11, v9, [B
 
-    iput-object v10, v1, Lcom/jcraft/jsch/Session;->V_S:[B
-
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
-    iget-object v10, v10, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    iget-object v11, v1, Lcom/jcraft/jsch/Session;->V_S:[B
+    iput-object v11, v1, Lcom/jcraft/jsch/Session;->V_S:[B
 
     invoke-static {v10, v8, v11, v8, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -5220,8 +5210,6 @@
     iput-object v9, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 51
-    iget-object v9, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v9}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v9
@@ -5333,8 +5321,6 @@
     iput-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 63
-    iget-object v10, v1, Lcom/jcraft/jsch/Session;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v10}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v10
@@ -5395,7 +5381,7 @@
 
     :cond_11
     :try_start_7
-    const-string/jumbo v9, "userauth.none"
+    const-string v9, "userauth.none"
 
     .line 69
     invoke-virtual {v1, v9}, Lcom/jcraft/jsch/Session;->getConfig(Ljava/lang/String;)Ljava/lang/String;
@@ -5436,7 +5422,7 @@
 
     move-result-object v12
 
-    if-nez v10, :cond_13
+    if-nez v10, :cond_12
 
     .line 74
     check-cast v9, Lcom/jcraft/jsch/UserAuthNone;
@@ -5445,37 +5431,31 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_12
+    if-eqz v9, :cond_13
 
     .line 75
     invoke-virtual {v9}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
     goto :goto_5
 
     :cond_12
-    move-object v9, v11
-
-    goto :goto_5
+    move-object v11, v6
 
     :cond_13
-    move-object v9, v6
-
     :goto_5
-    const-string v11, ","
+    const-string v9, ","
 
     .line 76
-    invoke-static {v9, v11}, Lcom/jcraft/jsch/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v11, v9}, Lcom/jcraft/jsch/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    move-object v14, v9
-
-    const/4 v9, 0x0
+    const/4 v13, 0x0
 
     :goto_6
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
     :goto_7
     if-nez v10, :cond_1f
@@ -5485,25 +5465,25 @@
     .line 77
     array-length v15, v12
 
-    if-ge v9, v15, :cond_1f
+    if-ge v13, v15, :cond_1f
 
-    add-int/lit8 v15, v9, 0x1
+    add-int/lit8 v15, v13, 0x1
 
     .line 78
-    aget-object v9, v12, v9
+    aget-object v13, v12, v13
 
     const/4 v5, 0x0
 
     .line 79
     :goto_8
-    array-length v3, v11
+    array-length v3, v9
 
     if-ge v5, v3, :cond_15
 
     .line 80
-    aget-object v3, v11, v5
+    aget-object v3, v9, v5
 
-    invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -5524,7 +5504,7 @@
     :goto_9
     if-nez v3, :cond_16
 
-    move v9, v15
+    move v13, v15
 
     const/16 v3, 0xd
 
@@ -5615,7 +5595,7 @@
 
     invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5633,11 +5613,11 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "userauth."
+    const-string v5, "userauth."
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5654,11 +5634,11 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "userauth."
+    const-string v5, "userauth."
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5710,7 +5690,7 @@
 
     invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, " method"
 
@@ -5763,7 +5743,7 @@
 
     invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, ")."
 
@@ -5783,7 +5763,7 @@
     .catchall {:try_start_b .. :try_end_b} :catchall_2
 
     :cond_1b
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
     goto :goto_d
 
@@ -5830,7 +5810,7 @@
     invoke-interface {v5, v7, v3}, Lcom/jcraft/jsch/Logger;->log(ILjava/lang/String;)V
 
     :cond_1c
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
     goto :goto_e
 
@@ -5865,24 +5845,24 @@
     .line 101
     invoke-static {v3, v5}, Lcom/jcraft/jsch/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
     .line 102
-    invoke-virtual {v14, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_1d
 
-    const/4 v9, 0x0
+    const/4 v13, 0x0
 
     goto :goto_c
 
     :cond_1d
-    move v9, v15
+    move v13, v15
 
     :goto_c
-    move-object v14, v3
+    move-object v11, v3
 
     const/16 v3, 0xd
 
@@ -5893,11 +5873,11 @@
     goto/16 :goto_6
 
     :catch_6
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
     :cond_1e
     :goto_d
-    move v9, v15
+    move v13, v15
 
     const/16 v3, 0xd
 
@@ -5953,7 +5933,7 @@
     invoke-interface {v2, v4, v3}, Lcom/jcraft/jsch/Logger;->log(ILjava/lang/String;)V
 
     :cond_20
-    if-eqz v13, :cond_21
+    if-eqz v14, :cond_21
 
     .line 106
     new-instance v2, Lcom/jcraft/jsch/JSchException;
@@ -5988,11 +5968,9 @@
 
     .line 109
     :cond_23
-    iget-object v2, v1, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
+    iget v2, v1, Lcom/jcraft/jsch/Session;->timeout:I
 
-    iget v3, v1, Lcom/jcraft/jsch/Session;->timeout:I
-
-    invoke-virtual {v2, v3}, Ljava/net/Socket;->setSoTimeout(I)V
+    invoke-virtual {v3, v2}, Ljava/net/Socket;->setSoTimeout(I)V
 
     .line 110
     :cond_24
@@ -6020,8 +5998,6 @@
     iput-object v3, v1, Lcom/jcraft/jsch/Session;->connectThread:Ljava/lang/Thread;
 
     .line 114
-    iget-object v3, v1, Lcom/jcraft/jsch/Session;->connectThread:Ljava/lang/Thread;
-
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -6050,11 +6026,9 @@
     if-eqz v3, :cond_25
 
     .line 116
-    iget-object v3, v1, Lcom/jcraft/jsch/Session;->connectThread:Ljava/lang/Thread;
+    iget-object v5, v1, Lcom/jcraft/jsch/Session;->connectThread:Ljava/lang/Thread;
 
-    iget-boolean v5, v1, Lcom/jcraft/jsch/Session;->daemon_thread:Z
-
-    invoke-virtual {v3, v5}, Ljava/lang/Thread;->setDaemon(Z)V
+    invoke-virtual {v5, v3}, Ljava/lang/Thread;->setDaemon(Z)V
 
     .line 117
     :cond_25
@@ -6217,7 +6191,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "verify: "
+    const-string v5, "verify: "
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6515,6 +6489,11 @@
 
 .method public delPortForwardingL(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "127.0.0.1"
 
@@ -6526,6 +6505,11 @@
 
 .method public delPortForwardingL(Ljava/lang/String;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 2
     invoke-static {p0, p1, p2}, Lcom/jcraft/jsch/PortWatcher;->delPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)V
@@ -6535,6 +6519,11 @@
 
 .method public delPortForwardingR(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -6546,6 +6535,11 @@
 
 .method public delPortForwardingR(Ljava/lang/String;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 2
     invoke-static {p0, p1, p2}, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->delPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;I)V
@@ -6666,15 +6660,9 @@
     if-eqz v0, :cond_5
 
     .line 17
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
-
     iget-object v0, v0, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
 
     if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v0, v0, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
@@ -6686,10 +6674,6 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v0, v0, Lcom/jcraft/jsch/IO;->out:Ljava/io/OutputStream;
-
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
     .line 19
@@ -6699,10 +6683,6 @@
     iget-object v0, v0, Lcom/jcraft/jsch/IO;->out_ext:Ljava/io/OutputStream;
 
     if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v0, v0, Lcom/jcraft/jsch/IO;->out_ext:Ljava/io/OutputStream;
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
@@ -6718,16 +6698,12 @@
     if-eqz v0, :cond_7
 
     .line 22
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
-
     invoke-virtual {v0}, Ljava/net/Socket;->close()V
 
     goto :goto_0
 
     .line 23
     :cond_6
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->proxy:Lcom/jcraft/jsch/Proxy;
-
     monitor-enter v0
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -6795,6 +6771,11 @@
 
 .method public encode(Lcom/jcraft/jsch/Packet;)V
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->deflater:Lcom/jcraft/jsch/Compression;
@@ -6863,15 +6844,13 @@
 
     iget-object v4, p1, Lcom/jcraft/jsch/Packet;->buffer:Lcom/jcraft/jsch/Buffer;
 
-    iget-object v4, v4, Lcom/jcraft/jsch/Buffer;->buffer:[B
+    iget-object v5, v4, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v5, p1, Lcom/jcraft/jsch/Packet;->buffer:Lcom/jcraft/jsch/Buffer;
+    iget v4, v4, Lcom/jcraft/jsch/Buffer;->index:I
 
-    iget v5, v5, Lcom/jcraft/jsch/Buffer;->index:I
+    sub-int/2addr v4, v0
 
-    sub-int/2addr v5, v0
-
-    invoke-interface {v3, v4, v5, v0}, Lcom/jcraft/jsch/Random;->fill([BII)V
+    invoke-interface {v3, v5, v4, v0}, Lcom/jcraft/jsch/Random;->fill([BII)V
 
     .line 10
     monitor-exit v2
@@ -7097,6 +7076,11 @@
 
 .method public getPortForwardingL()[Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/jcraft/jsch/PortWatcher;->getPortForwarding(Lcom/jcraft/jsch/Session;)[Ljava/lang/String;
@@ -7108,6 +7092,11 @@
 
 .method public getPortForwardingR()[Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/jcraft/jsch/ChannelForwardedTCPIP;->getPortForwarding(Lcom/jcraft/jsch/Session;)[Ljava/lang/String;
@@ -7159,6 +7148,11 @@
 
 .method public getStreamForwarder(Ljava/lang/String;I)Lcom/jcraft/jsch/Channel;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/ChannelDirectTCPIP;
@@ -7218,6 +7212,11 @@
 
 .method public noMoreSessionChannels()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/Buffer;
@@ -7255,6 +7254,11 @@
 
 .method public openChannel(Ljava/lang/String;)Lcom/jcraft/jsch/Channel;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/Session;->isConnected:Z
@@ -7308,6 +7312,11 @@
 
 .method public read(Lcom/jcraft/jsch/Buffer;)Lcom/jcraft/jsch/Buffer;
     .locals 21
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     move-object/from16 v6, p0
 
@@ -7937,6 +7946,11 @@
 
 .method public rekey()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/jcraft/jsch/Session;->send_kexinit()V
@@ -7971,12 +7985,12 @@
     const/4 v6, 0x0
 
     :goto_0
-    move-object v7, v5
+    move-object v8, v5
 
     :catch_0
     :cond_0
     :goto_1
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     .line 4
     :goto_2
@@ -8004,32 +8018,32 @@
     :try_start_2
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
-    move-result v8
+    move-result v7
 
-    and-int/lit16 v8, v8, 0xff
+    and-int/lit16 v7, v7, 0xff
 
-    if-eqz v7, :cond_2
+    if-eqz v8, :cond_2
 
     .line 7
-    invoke-virtual {v7}, Lcom/jcraft/jsch/KeyExchange;->getState()I
+    invoke-virtual {v8}, Lcom/jcraft/jsch/KeyExchange;->getState()I
 
     move-result v9
 
-    if-ne v9, v8, :cond_2
+    if-ne v9, v7, :cond_2
 
     .line 8
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    iput-wide v8, p0, Lcom/jcraft/jsch/Session;->kex_start_time:J
+    iput-wide v9, p0, Lcom/jcraft/jsch/Session;->kex_start_time:J
 
     .line 9
-    invoke-virtual {v7, v0}, Lcom/jcraft/jsch/KeyExchange;->next(Lcom/jcraft/jsch/Buffer;)Z
+    invoke-virtual {v8, v0}, Lcom/jcraft/jsch/KeyExchange;->next(Lcom/jcraft/jsch/Buffer;)Z
 
-    move-result v8
+    move-result v7
 
-    if-eqz v8, :cond_1
+    if-eqz v7, :cond_1
 
     goto :goto_1
 
@@ -8041,11 +8055,11 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "verify: "
+    const-string v3, "verify: "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -8058,17 +8072,17 @@
     :cond_2
     const/16 v9, 0x14
 
-    if-eq v8, v9, :cond_16
+    if-eq v7, v9, :cond_16
 
     const/16 v9, 0x15
 
-    if-eq v8, v9, :cond_15
+    if-eq v7, v9, :cond_15
 
-    packed-switch v8, :pswitch_data_0
+    packed-switch v7, :pswitch_data_0
 
     const/16 v9, 0x5d
 
-    packed-switch v8, :pswitch_data_1
+    packed-switch v7, :pswitch_data_1
 
     .line 11
     new-instance v0, Ljava/io/IOException;
@@ -8081,7 +8095,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -8101,20 +8115,20 @@
     .line 14
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 15
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-nez v8, :cond_3
+    if-nez v7, :cond_3
 
     goto :goto_1
 
     .line 16
     :cond_3
-    iput v6, v8, Lcom/jcraft/jsch/Channel;->reply:I
+    iput v6, v7, Lcom/jcraft/jsch/Channel;->reply:I
 
     goto :goto_1
 
@@ -8128,20 +8142,20 @@
     .line 19
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 20
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-nez v8, :cond_4
+    if-nez v7, :cond_4
 
     goto/16 :goto_1
 
     .line 21
     :cond_4
-    iput v2, v8, Lcom/jcraft/jsch/Channel;->reply:I
+    iput v2, v7, Lcom/jcraft/jsch/Channel;->reply:I
 
     goto/16 :goto_1
 
@@ -8155,7 +8169,7 @@
     .line 24
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 25
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getString()[B
@@ -8178,11 +8192,11 @@
 
     .line 27
     :goto_3
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     const/16 v11, 0x64
 
@@ -8205,7 +8219,7 @@
     move-result v9
 
     .line 30
-    invoke-virtual {v8, v9}, Lcom/jcraft/jsch/Channel;->setExitStatus(I)V
+    invoke-virtual {v7, v9}, Lcom/jcraft/jsch/Channel;->setExitStatus(I)V
 
     const/16 v11, 0x63
 
@@ -8219,11 +8233,11 @@
     invoke-virtual {v0, v11}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
 
     .line 33
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Channel;->getRecipient()I
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Channel;->getRecipient()I
 
-    move-result v8
+    move-result v7
 
-    invoke-virtual {v0, v8}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
+    invoke-virtual {v0, v7}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 34
     invoke-virtual {p0, v1}, Lcom/jcraft/jsch/Session;->write(Lcom/jcraft/jsch/Packet;)V
@@ -8240,17 +8254,17 @@
     .line 37
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 38
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     .line 39
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Channel;->disconnect()V
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Channel;->disconnect()V
 
     goto/16 :goto_1
 
@@ -8264,17 +8278,17 @@
     .line 42
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 43
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     .line 44
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Channel;->eof_remote()V
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Channel;->eof_remote()V
 
     goto/16 :goto_1
 
@@ -8288,12 +8302,12 @@
     .line 47
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 48
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 49
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
@@ -8303,7 +8317,7 @@
 
     move-result-object v10
 
-    if-nez v8, :cond_7
+    if-nez v7, :cond_7
 
     goto/16 :goto_1
 
@@ -8321,22 +8335,22 @@
 
     aget v12, v4, v6
 
-    invoke-virtual {v8, v10, v11, v12}, Lcom/jcraft/jsch/Channel;->write_ext([BII)V
+    invoke-virtual {v7, v10, v11, v12}, Lcom/jcraft/jsch/Channel;->write_ext([BII)V
 
     .line 53
     aget v10, v4, v6
 
     .line 54
-    iget v11, v8, Lcom/jcraft/jsch/Channel;->lwsize:I
+    iget v11, v7, Lcom/jcraft/jsch/Channel;->lwsize:I
 
     sub-int/2addr v11, v10
 
-    invoke-virtual {v8, v11}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
+    invoke-virtual {v7, v11}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
 
     .line 55
-    iget v10, v8, Lcom/jcraft/jsch/Channel;->lwsize:I
+    iget v10, v7, Lcom/jcraft/jsch/Channel;->lwsize:I
 
-    iget v11, v8, Lcom/jcraft/jsch/Channel;->lwsize_max:I
+    iget v11, v7, Lcom/jcraft/jsch/Channel;->lwsize_max:I
 
     div-int/lit8 v11, v11, 0x2
 
@@ -8349,29 +8363,29 @@
     invoke-virtual {v0, v9}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
 
     .line 58
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Channel;->getRecipient()I
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Channel;->getRecipient()I
 
     move-result v9
 
     invoke-virtual {v0, v9}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 59
-    iget v9, v8, Lcom/jcraft/jsch/Channel;->lwsize_max:I
+    iget v9, v7, Lcom/jcraft/jsch/Channel;->lwsize_max:I
 
-    iget v10, v8, Lcom/jcraft/jsch/Channel;->lwsize:I
+    iget v10, v7, Lcom/jcraft/jsch/Channel;->lwsize:I
 
     sub-int/2addr v9, v10
 
     invoke-virtual {v0, v9}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 60
-    monitor-enter v8
+    monitor-enter v7
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 61
     :try_start_3
-    iget-boolean v9, v8, Lcom/jcraft/jsch/Channel;->close:Z
+    iget-boolean v9, v7, Lcom/jcraft/jsch/Channel;->close:Z
 
     if-nez v9, :cond_9
 
@@ -8380,15 +8394,15 @@
 
     .line 63
     :cond_9
-    monitor-exit v8
+    monitor-exit v7
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 64
     :try_start_4
-    iget v9, v8, Lcom/jcraft/jsch/Channel;->lwsize_max:I
+    iget v9, v7, Lcom/jcraft/jsch/Channel;->lwsize_max:I
 
-    invoke-virtual {v8, v9}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
+    invoke-virtual {v7, v9}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
 
@@ -8399,7 +8413,7 @@
 
     .line 65
     :try_start_5
-    monitor-exit v8
+    monitor-exit v7
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
@@ -8419,19 +8433,19 @@
     .line 69
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 70
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 71
     invoke-virtual {v0, v3, v4}, Lcom/jcraft/jsch/Buffer;->getString([I[I)[B
 
     move-result-object v10
 
-    if-nez v8, :cond_a
+    if-nez v7, :cond_a
 
     goto/16 :goto_1
 
@@ -8452,7 +8466,7 @@
 
     aget v12, v4, v6
 
-    invoke-virtual {v8, v10, v11, v12}, Lcom/jcraft/jsch/Channel;->write([BII)V
+    invoke-virtual {v7, v10, v11, v12}, Lcom/jcraft/jsch/Channel;->write([BII)V
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_1
 
@@ -8461,16 +8475,16 @@
     aget v10, v4, v6
 
     .line 75
-    iget v11, v8, Lcom/jcraft/jsch/Channel;->lwsize:I
+    iget v11, v7, Lcom/jcraft/jsch/Channel;->lwsize:I
 
     sub-int/2addr v11, v10
 
-    invoke-virtual {v8, v11}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
+    invoke-virtual {v7, v11}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
 
     .line 76
-    iget v10, v8, Lcom/jcraft/jsch/Channel;->lwsize:I
+    iget v10, v7, Lcom/jcraft/jsch/Channel;->lwsize:I
 
-    iget v11, v8, Lcom/jcraft/jsch/Channel;->lwsize_max:I
+    iget v11, v7, Lcom/jcraft/jsch/Channel;->lwsize_max:I
 
     div-int/lit8 v11, v11, 0x2
 
@@ -8483,29 +8497,29 @@
     invoke-virtual {v0, v9}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
 
     .line 79
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Channel;->getRecipient()I
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Channel;->getRecipient()I
 
     move-result v9
 
     invoke-virtual {v0, v9}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 80
-    iget v9, v8, Lcom/jcraft/jsch/Channel;->lwsize_max:I
+    iget v9, v7, Lcom/jcraft/jsch/Channel;->lwsize_max:I
 
-    iget v10, v8, Lcom/jcraft/jsch/Channel;->lwsize:I
+    iget v10, v7, Lcom/jcraft/jsch/Channel;->lwsize:I
 
     sub-int/2addr v9, v10
 
     invoke-virtual {v0, v9}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 81
-    monitor-enter v8
+    monitor-enter v7
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_3
 
     .line 82
     :try_start_9
-    iget-boolean v9, v8, Lcom/jcraft/jsch/Channel;->close:Z
+    iget-boolean v9, v7, Lcom/jcraft/jsch/Channel;->close:Z
 
     if-nez v9, :cond_c
 
@@ -8514,15 +8528,15 @@
 
     .line 84
     :cond_c
-    monitor-exit v8
+    monitor-exit v7
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
     .line 85
     :try_start_a
-    iget v9, v8, Lcom/jcraft/jsch/Channel;->lwsize_max:I
+    iget v9, v7, Lcom/jcraft/jsch/Channel;->lwsize_max:I
 
-    invoke-virtual {v8, v9}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
+    invoke-virtual {v7, v9}, Lcom/jcraft/jsch/Channel;->setLocalWindowSize(I)V
     :try_end_a
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_3
 
@@ -8533,7 +8547,7 @@
 
     .line 86
     :try_start_b
-    monitor-exit v8
+    monitor-exit v7
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_1
 
@@ -8545,7 +8559,7 @@
     .line 87
     :catch_1
     :try_start_d
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Channel;->disconnect()V
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Channel;->disconnect()V
     :try_end_d
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_0
 
@@ -8562,14 +8576,14 @@
     .line 90
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 91
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-nez v8, :cond_d
+    if-nez v7, :cond_d
 
     goto/16 :goto_1
 
@@ -8579,7 +8593,7 @@
 
     move-result-wide v9
 
-    invoke-virtual {v8, v9, v10}, Lcom/jcraft/jsch/Channel;->addRemoteWindowSize(J)V
+    invoke-virtual {v7, v9, v10}, Lcom/jcraft/jsch/Channel;->addRemoteWindowSize(J)V
 
     goto/16 :goto_1
 
@@ -8593,14 +8607,14 @@
     .line 95
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 96
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     .line 97
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
@@ -8608,16 +8622,16 @@
     move-result v9
 
     .line 98
-    invoke-virtual {v8, v9}, Lcom/jcraft/jsch/Channel;->setExitStatus(I)V
+    invoke-virtual {v7, v9}, Lcom/jcraft/jsch/Channel;->setExitStatus(I)V
 
     .line 99
-    iput-boolean v2, v8, Lcom/jcraft/jsch/Channel;->close:Z
+    iput-boolean v2, v7, Lcom/jcraft/jsch/Channel;->close:Z
 
     .line 100
-    iput-boolean v2, v8, Lcom/jcraft/jsch/Channel;->eof_remote:Z
+    iput-boolean v2, v7, Lcom/jcraft/jsch/Channel;->eof_remote:Z
 
     .line 101
-    invoke-virtual {v8, v6}, Lcom/jcraft/jsch/Channel;->setRecipient(I)V
+    invoke-virtual {v7, v6}, Lcom/jcraft/jsch/Channel;->setRecipient(I)V
 
     goto/16 :goto_1
 
@@ -8631,12 +8645,12 @@
     .line 104
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
     .line 105
-    invoke-static {v8, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7, p0}, Lcom/jcraft/jsch/Channel;->getChannel(ILcom/jcraft/jsch/Session;)Lcom/jcraft/jsch/Channel;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 106
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
@@ -8653,19 +8667,19 @@
 
     move-result v12
 
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     .line 109
-    invoke-virtual {v8, v10, v11}, Lcom/jcraft/jsch/Channel;->setRemoteWindowSize(J)V
+    invoke-virtual {v7, v10, v11}, Lcom/jcraft/jsch/Channel;->setRemoteWindowSize(J)V
 
     .line 110
-    invoke-virtual {v8, v12}, Lcom/jcraft/jsch/Channel;->setRemotePacketSize(I)V
+    invoke-virtual {v7, v12}, Lcom/jcraft/jsch/Channel;->setRemotePacketSize(I)V
 
     .line 111
-    iput-boolean v2, v8, Lcom/jcraft/jsch/Channel;->open_confirmation:Z
+    iput-boolean v2, v7, Lcom/jcraft/jsch/Channel;->open_confirmation:Z
 
     .line 112
-    invoke-virtual {v8, v9}, Lcom/jcraft/jsch/Channel;->setRecipient(I)V
+    invoke-virtual {v7, v9}, Lcom/jcraft/jsch/Channel;->setRecipient(I)V
 
     goto/16 :goto_1
 
@@ -8679,25 +8693,25 @@
     .line 115
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getString()[B
 
-    move-result-object v8
+    move-result-object v7
 
     .line 116
-    invoke-static {v8}, Lcom/jcraft/jsch/Util;->byte2str([B)Ljava/lang/String;
+    invoke-static {v7}, Lcom/jcraft/jsch/Util;->byte2str([B)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     const-string v9, "forwarded-tcpip"
 
     .line 117
-    invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
     if-nez v9, :cond_10
 
-    const-string/jumbo v9, "x11"
+    const-string v9, "x11"
 
-    invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
@@ -8710,7 +8724,7 @@
     :cond_e
     const-string v9, "auth-agent@openssh.com"
 
-    invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
@@ -8724,30 +8738,28 @@
     :cond_f
     invoke-virtual {v1}, Lcom/jcraft/jsch/Packet;->reset()V
 
-    const/16 v8, 0x5c
+    const/16 v7, 0x5c
 
     .line 119
-    invoke-virtual {v0, v8}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
+    invoke-virtual {v0, v7}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
 
     .line 120
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
-    move-result v8
+    move-result v7
 
-    invoke-virtual {v0, v8}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
+    invoke-virtual {v0, v7}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 121
     invoke-virtual {v0, v2}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
     .line 122
-    sget-object v8, Lcom/jcraft/jsch/Util;->empty:[B
+    sget-object v7, Lcom/jcraft/jsch/Util;->empty:[B
 
-    invoke-virtual {v0, v8}, Lcom/jcraft/jsch/Buffer;->putString([B)V
+    invoke-virtual {v0, v7}, Lcom/jcraft/jsch/Buffer;->putString([B)V
 
     .line 123
-    sget-object v8, Lcom/jcraft/jsch/Util;->empty:[B
-
-    invoke-virtual {v0, v8}, Lcom/jcraft/jsch/Buffer;->putString([B)V
+    invoke-virtual {v0, v7}, Lcom/jcraft/jsch/Buffer;->putString([B)V
 
     .line 124
     invoke-virtual {p0, v1}, Lcom/jcraft/jsch/Session;->write(Lcom/jcraft/jsch/Packet;)V
@@ -8756,7 +8768,7 @@
 
     .line 125
     :cond_10
-    invoke-static {v8}, Lcom/jcraft/jsch/Channel;->getChannel(Ljava/lang/String;)Lcom/jcraft/jsch/Channel;
+    invoke-static {v7}, Lcom/jcraft/jsch/Channel;->getChannel(Ljava/lang/String;)Lcom/jcraft/jsch/Channel;
 
     move-result-object v9
 
@@ -8783,31 +8795,29 @@
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, " "
+    const-string v7, " "
 
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v8, p0, Lcom/jcraft/jsch/Session;->host:Ljava/lang/String;
+    iget-object v7, p0, Lcom/jcraft/jsch/Session;->host:Ljava/lang/String;
 
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v10, v8}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+    invoke-virtual {v10, v7}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
     .line 131
-    iget-boolean v8, p0, Lcom/jcraft/jsch/Session;->daemon_thread:Z
+    iget-boolean v7, p0, Lcom/jcraft/jsch/Session;->daemon_thread:Z
 
-    if-eqz v8, :cond_11
+    if-eqz v7, :cond_11
 
     .line 132
-    iget-boolean v8, p0, Lcom/jcraft/jsch/Session;->daemon_thread:Z
-
-    invoke-virtual {v10, v8}, Ljava/lang/Thread;->setDaemon(Z)V
+    invoke-virtual {v10, v7}, Ljava/lang/Thread;->setDaemon(Z)V
 
     .line 133
     :cond_11
@@ -8830,7 +8840,7 @@
 
     const/16 v11, 0x51
 
-    if-ne v8, v11, :cond_12
+    if-ne v7, v11, :cond_12
 
     const/4 v12, 0x1
 
@@ -8842,16 +8852,16 @@
     :goto_4
     invoke-virtual {v10, v12}, Lcom/jcraft/jsch/Session$GlobalRequestReply;->setReply(I)V
 
-    if-ne v8, v11, :cond_13
+    if-ne v7, v11, :cond_13
 
     .line 136
-    iget-object v8, p0, Lcom/jcraft/jsch/Session;->grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
+    iget-object v7, p0, Lcom/jcraft/jsch/Session;->grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
 
-    invoke-virtual {v8}, Lcom/jcraft/jsch/Session$GlobalRequestReply;->getPort()I
+    invoke-virtual {v7}, Lcom/jcraft/jsch/Session$GlobalRequestReply;->getPort()I
 
-    move-result v8
+    move-result v7
 
-    if-nez v8, :cond_13
+    if-nez v7, :cond_13
 
     .line 137
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
@@ -8860,13 +8870,13 @@
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getShort()I
 
     .line 139
-    iget-object v8, p0, Lcom/jcraft/jsch/Session;->grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
+    iget-object v7, p0, Lcom/jcraft/jsch/Session;->grr:Lcom/jcraft/jsch/Session$GlobalRequestReply;
 
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getInt()I
 
     move-result v10
 
-    invoke-virtual {v8, v10}, Lcom/jcraft/jsch/Session$GlobalRequestReply;->setPort(I)V
+    invoke-virtual {v7, v10}, Lcom/jcraft/jsch/Session$GlobalRequestReply;->setPort(I)V
 
     .line 140
     :cond_13
@@ -8887,27 +8897,27 @@
     .line 144
     invoke-virtual {v0}, Lcom/jcraft/jsch/Buffer;->getByte()I
 
-    move-result v8
+    move-result v7
 
-    if-eqz v8, :cond_14
+    if-eqz v7, :cond_14
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
     goto :goto_5
 
     :cond_14
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     :goto_5
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     .line 145
     invoke-virtual {v1}, Lcom/jcraft/jsch/Packet;->reset()V
 
-    const/16 v8, 0x52
+    const/16 v7, 0x52
 
     .line 146
-    invoke-virtual {v0, v8}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
+    invoke-virtual {v0, v7}, Lcom/jcraft/jsch/Buffer;->putByte(B)V
 
     .line 147
     invoke-virtual {p0, v1}, Lcom/jcraft/jsch/Session;->write(Lcom/jcraft/jsch/Packet;)V
@@ -8919,7 +8929,7 @@
     invoke-direct {p0}, Lcom/jcraft/jsch/Session;->send_newkeys()V
 
     .line 149
-    invoke-direct {p0, v0, v7}, Lcom/jcraft/jsch/Session;->receive_newkeys(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/KeyExchange;)V
+    invoke-direct {p0, v0, v8}, Lcom/jcraft/jsch/Session;->receive_newkeys(Lcom/jcraft/jsch/Buffer;Lcom/jcraft/jsch/KeyExchange;)V
 
     goto/16 :goto_0
 
@@ -8928,6 +8938,8 @@
     invoke-direct {p0, v0}, Lcom/jcraft/jsch/Session;->receive_kexinit(Lcom/jcraft/jsch/Buffer;)Lcom/jcraft/jsch/KeyExchange;
 
     move-result-object v7
+
+    move-object v8, v7
 
     goto/16 :goto_1
 
@@ -8941,13 +8953,13 @@
 
     iget v10, p0, Lcom/jcraft/jsch/Session;->serverAliveCountMax:I
 
-    if-ge v8, v10, :cond_17
+    if-ge v7, v10, :cond_17
 
     .line 152
     invoke-virtual {p0}, Lcom/jcraft/jsch/Session;->sendKeepAliveMsg()V
 
     :goto_6
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto/16 :goto_2
 
@@ -8959,7 +8971,7 @@
 
     iget v10, p0, Lcom/jcraft/jsch/Session;->serverAliveCountMax:I
 
-    if-ge v8, v10, :cond_18
+    if-ge v7, v10, :cond_18
 
     goto :goto_6
 
@@ -9025,6 +9037,8 @@
 
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x50
         :pswitch_c
@@ -9050,6 +9064,11 @@
 
 .method public sendIgnore()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/Buffer;
@@ -9077,6 +9096,11 @@
 
 .method public sendKeepAliveMsg()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/jcraft/jsch/Buffer;
@@ -9338,8 +9362,6 @@
     iput-object v0, p0, Lcom/jcraft/jsch/Session;->password:[B
 
     .line 3
-    iget-object v0, p0, Lcom/jcraft/jsch/Session;->password:[B
-
     array-length v1, p1
 
     const/4 v2, 0x0
@@ -9361,6 +9383,11 @@
 
 .method public setPortForwardingL(ILjava/lang/String;I)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const-string v0, "127.0.0.1"
 
@@ -9374,6 +9401,11 @@
 
 .method public setPortForwardingL(Ljava/lang/String;)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 12
     invoke-direct {p0, p1}, Lcom/jcraft/jsch/Session;->parseForwarding(Ljava/lang/String;)Lcom/jcraft/jsch/Session$Forwarding;
@@ -9398,6 +9430,11 @@
 
 .method public setPortForwardingL(Ljava/lang/String;ILjava/lang/String;I)I
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v5, 0x0
 
@@ -9421,6 +9458,11 @@
 
 .method public setPortForwardingL(Ljava/lang/String;ILjava/lang/String;ILcom/jcraft/jsch/ServerSocketFactory;)I
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v6, 0x0
 
@@ -9446,6 +9488,11 @@
 
 .method public setPortForwardingL(Ljava/lang/String;ILjava/lang/String;ILcom/jcraft/jsch/ServerSocketFactory;I)I
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 4
     invoke-static/range {p0 .. p5}, Lcom/jcraft/jsch/PortWatcher;->addPort(Lcom/jcraft/jsch/Session;Ljava/lang/String;ILjava/lang/String;ILcom/jcraft/jsch/ServerSocketFactory;)Lcom/jcraft/jsch/PortWatcher;
@@ -9497,6 +9544,11 @@
 
 .method public setPortForwardingR(Ljava/lang/String;)I
     .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 10
     invoke-direct {p0, p1}, Lcom/jcraft/jsch/Session;->parseForwarding(Ljava/lang/String;)Lcom/jcraft/jsch/Session$Forwarding;
@@ -9534,6 +9586,11 @@
 
 .method public setPortForwardingR(ILjava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -9545,6 +9602,11 @@
 
 .method public setPortForwardingR(ILjava/lang/String;I)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v1, 0x0
 
@@ -9566,6 +9628,11 @@
 
 .method public setPortForwardingR(ILjava/lang/String;ILcom/jcraft/jsch/SocketFactory;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v1, 0x0
 
@@ -9587,6 +9654,11 @@
 
 .method public setPortForwardingR(ILjava/lang/String;[Ljava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -9598,6 +9670,11 @@
 
 .method public setPortForwardingR(Ljava/lang/String;ILjava/lang/String;I)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     const/4 v5, 0x0
 
@@ -9619,6 +9696,11 @@
 
 .method public setPortForwardingR(Ljava/lang/String;ILjava/lang/String;ILcom/jcraft/jsch/SocketFactory;)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 4
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/Session;->_setPortForwardingR(Ljava/lang/String;I)I
@@ -9645,6 +9727,11 @@
 
 .method public setPortForwardingR(Ljava/lang/String;ILjava/lang/String;[Ljava/lang/Object;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 8
     invoke-direct {p0, p1, p2}, Lcom/jcraft/jsch/Session;->_setPortForwardingR(Ljava/lang/String;I)I
@@ -9687,6 +9774,11 @@
 
 .method public setServerAliveInterval(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/jcraft/jsch/Session;->setTimeout(I)V
@@ -9708,6 +9800,11 @@
 
 .method public setTimeout(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/JSchException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/Session;->socket:Ljava/net/Socket;
@@ -9805,6 +9902,11 @@
 
 .method public write(Lcom/jcraft/jsch/Packet;)V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 37
     invoke-virtual {p0}, Lcom/jcraft/jsch/Session;->getTimeout()I
@@ -9844,7 +9946,7 @@
     :cond_0
     new-instance p1, Lcom/jcraft/jsch/JSchException;
 
-    const-string/jumbo v0, "timeout in wating for rekeying process."
+    const-string v0, "timeout in wating for rekeying process."
 
     invoke-direct {p1, v0}, Lcom/jcraft/jsch/JSchException;-><init>(Ljava/lang/String;)V
 
@@ -9921,6 +10023,11 @@
 
 .method public write(Lcom/jcraft/jsch/Packet;Lcom/jcraft/jsch/Channel;I)V
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/Session;->getTimeout()I
@@ -9960,7 +10067,7 @@
     :cond_0
     new-instance p1, Lcom/jcraft/jsch/JSchException;
 
-    const-string/jumbo p2, "timeout in wating for rekeying process."
+    const-string p2, "timeout in wating for rekeying process."
 
     invoke-direct {p1, p2}, Lcom/jcraft/jsch/JSchException;-><init>(Ljava/lang/String;)V
 
@@ -10130,9 +10237,7 @@
 
     if-eqz v9, :cond_7
 
-    iget-object v6, p0, Lcom/jcraft/jsch/Session;->c2smac:Lcom/jcraft/jsch/MAC;
-
-    invoke-interface {v6}, Lcom/jcraft/jsch/MAC;->getBlockSize()I
+    invoke-interface {v9}, Lcom/jcraft/jsch/MAC;->getBlockSize()I
 
     move-result v6
 

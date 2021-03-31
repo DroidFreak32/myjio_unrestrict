@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final synthetic s:Landroid/content/Context;
+.field public final synthetic a:Landroid/content/Context;
 
-.field public final synthetic t:Ljava/lang/String;
+.field public final synthetic b:Ljava/lang/String;
 
 
 # direct methods
@@ -28,9 +28,9 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->s:Landroid/content/Context;
+    iput-object p2, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->a:Landroid/content/Context;
 
-    iput-object p3, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->t:Ljava/lang/String;
+    iput-object p3, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->b:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,17 +43,13 @@
     .locals 6
 
     .line 1
-    invoke-static {}, Lug0;->a()Lug0;
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->s:Landroid/content/Context;
+    iget-object v1, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->a:Landroid/content/Context;
 
-    const/4 v2, 0x0
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
+    sget-object v3, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -63,11 +59,11 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->t:Ljava/lang/String;
+    iget-object v5, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver$b;->b:Ljava/lang/String;
 
     const-string v2, "Charger Disconnected"
 
-    invoke-virtual/range {v0 .. v5}, Lug0;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Long;Ljava/lang/String;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/inn/passivesdk/util/ServiceUtil;->captureAndPersistData(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Long;Ljava/lang/String;)V
 
     return-void
 .end method

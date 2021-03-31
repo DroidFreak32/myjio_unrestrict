@@ -4,25 +4,25 @@
 
 
 # static fields
-.field public static final TIMESTAMP_SEARCH_BYTES:I = 0x4e20
+.field private static final TIMESTAMP_SEARCH_BYTES:I = 0x4e20
 
 
 # instance fields
-.field public durationUs:J
+.field private durationUs:J
 
-.field public firstScrValue:J
+.field private firstScrValue:J
 
-.field public isDurationRead:Z
+.field private isDurationRead:Z
 
-.field public isFirstScrValueRead:Z
+.field private isFirstScrValueRead:Z
 
-.field public isLastScrValueRead:Z
+.field private isLastScrValueRead:Z
 
-.field public lastScrValue:J
+.field private lastScrValue:J
 
-.field public final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final packetBuffer:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public final scrTimestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
+.field private final scrTimestampAdjuster:Lcom/google/android/jioexoplayer2/util/TimestampAdjuster;
 
 
 # direct methods
@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method public static checkMarkerBits([B)Z
+.method private static checkMarkerBits([B)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -200,6 +200,12 @@
 
 .method private readFirstScrValue(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getLength()J
@@ -323,6 +329,12 @@
 
 .method private readLastScrValue(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1}, Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;->getLength()J
@@ -471,12 +483,10 @@
     :cond_0
     new-array v1, v4, [B
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 3
-    array-length v5, v1
-
-    invoke-virtual {p0, v1, v4, v5}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readBytes([BII)V
+    invoke-virtual {p0, v1, v5, v4}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
     .line 4
     invoke-virtual {p0, v0}, Lcom/google/android/jioexoplayer2/util/ParsableByteArray;->setPosition(I)V
@@ -499,7 +509,7 @@
     return-wide v0
 .end method
 
-.method public static readScrValueFromPackHeader([B)J
+.method private static readScrValueFromPackHeader([B)J
     .locals 13
 
     const/4 v0, 0x0
@@ -639,6 +649,12 @@
 
 .method public readDuration(Lcom/google/android/jioexoplayer2/extractor/ExtractorInput;Lcom/google/android/jioexoplayer2/extractor/PositionHolder;)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/google/android/jioexoplayer2/extractor/ts/PsDurationReader;->isLastScrValueRead:Z

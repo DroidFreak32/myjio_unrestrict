@@ -5,7 +5,7 @@
 # interfaces
 .implements Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$FrameCallback;
 .implements Landroid/graphics/drawable/Animatable;
-.implements Lhk;
+.implements Landroidx/vectordrawable/graphics/drawable/Animatable2Compat;
 
 
 # annotations
@@ -17,7 +17,7 @@
 
 
 # static fields
-.field public static final GRAVITY:I = 0x77
+.field private static final GRAVITY:I = 0x77
 
 .field public static final LOOP_FOREVER:I = -0x1
 
@@ -25,35 +25,35 @@
 
 
 # instance fields
-.field public animationCallbacks:Ljava/util/List;
+.field private animationCallbacks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lhk$a;",
+            "Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public applyGravity:Z
+.field private applyGravity:Z
 
-.field public destRect:Landroid/graphics/Rect;
+.field private destRect:Landroid/graphics/Rect;
 
-.field public isRecycled:Z
+.field private isRecycled:Z
 
-.field public isRunning:Z
+.field private isRunning:Z
 
-.field public isStarted:Z
+.field private isStarted:Z
 
-.field public isVisible:Z
+.field private isVisible:Z
 
-.field public loopCount:I
+.field private loopCount:I
 
-.field public maxLoopCount:I
+.field private maxLoopCount:I
 
-.field public paint:Landroid/graphics/Paint;
+.field private paint:Landroid/graphics/Paint;
 
-.field public final state:Lcom/bumptech/glide/load/resource/gif/GifDrawable$GifState;
+.field private final state:Lcom/bumptech/glide/load/resource/gif/GifDrawable$GifState;
 
 
 # direct methods
@@ -173,6 +173,8 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/load/resource/gif/GifFrameLoader;Landroid/graphics/Paint;)V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 9
     new-instance v0, Lcom/bumptech/glide/load/resource/gif/GifDrawable$GifState;
@@ -285,9 +287,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lhk$a;
+    check-cast v2, Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;
 
-    invoke-virtual {v2, p0}, Lhk$a;->a(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, p0}, Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;->onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -399,6 +401,10 @@
 
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
+    .param p1    # Landroid/graphics/Canvas;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-boolean v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->isRecycled:Z
@@ -724,8 +730,12 @@
     return-void
 .end method
 
-.method public registerAnimationCallback(Lhk$a;)V
+.method public registerAnimationCallback(Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;)V
     .locals 1
+    .param p1    # Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-nez p1, :cond_0
 
@@ -849,19 +859,22 @@
 
     if-nez p1, :cond_2
 
-    const/4 p1, -0x1
+    goto :goto_1
+
+    :cond_2
+    move v0, p1
 
     .line 3
-    :cond_2
-    iput p1, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->maxLoopCount:I
+    :goto_1
+    iput v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->maxLoopCount:I
 
-    goto :goto_1
+    goto :goto_2
 
     .line 4
     :cond_3
     iput p1, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->maxLoopCount:I
 
-    :goto_1
+    :goto_2
     return-void
 .end method
 
@@ -968,8 +981,12 @@
     return-void
 .end method
 
-.method public unregisterAnimationCallback(Lhk$a;)Z
+.method public unregisterAnimationCallback(Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;)Z
     .locals 1
+    .param p1    # Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->animationCallbacks:Ljava/util/List;

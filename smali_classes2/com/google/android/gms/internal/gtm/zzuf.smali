@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final synthetic zzaws:[I
+.field private static final synthetic zzaws:[I
 
 
 # direct methods
@@ -22,8 +22,6 @@
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzuf;->zzaws:[I
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzuf;->zzaws:[I
-
     sget-object v1, Lcom/google/android/gms/internal/gtm/zzug;->zzbfp:Lcom/google/android/gms/internal/gtm/zzug;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

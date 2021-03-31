@@ -1,23 +1,29 @@
-.class public final Lcom/google/android/gms/internal/ads/zzgv;
+.class public Lcom/google/android/gms/internal/ads/zzgv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
+.source "com.google.android.gms:play-services-ads-base@@19.5.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "Lcom/google/android/gms/internal/ads/zzhb;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field private static final zzaci:Ljava/lang/ClassLoader;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzgu;)V
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    const-class v0, Lcom/google/android/gms/internal/ads/zzgv;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzgv;->zzaci:Ljava/lang/ClassLoader;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -26,36 +32,150 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+.method public static writeBoolean(Landroid/os/Parcel;Z)V
+    .locals 0
 
     .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzhb;
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzhb;
+    return-void
+.end method
+
+.method public static zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "Landroid/os/Parcelable$Creator<",
+            "TT;>;)TT;"
+        }
+    .end annotation
 
     .line 2
-    iget v0, p1, Lcom/google/android/gms/internal/ads/zzhb;->zzajx:I
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
-    iget v1, p2, Lcom/google/android/gms/internal/ads/zzhb;->zzajx:I
+    move-result v0
 
-    sub-int/2addr v0, v1
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
+    const/4 p0, 0x0
 
-    return v0
+    return-object p0
 
     .line 3
     :cond_0
-    iget-wide v0, p1, Lcom/google/android/gms/internal/ads/zzhb;->value:J
+    invoke-interface {p1, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    iget-wide p1, p2, Lcom/google/android/gms/internal/ads/zzhb;->value:J
+    move-result-object p0
 
-    sub-long/2addr v0, p1
+    check-cast p0, Landroid/os/Parcelable;
 
-    long-to-int p1, v0
+    return-object p0
+.end method
 
-    return p1
+.method public static zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    .line 7
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    return-void
+
+    .line 8
+    :cond_0
+    invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    return-void
+.end method
+
+.method public static zza(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    .line 4
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+
+    :cond_0
+    const/4 v1, 0x1
+
+    .line 5
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 6
+    invoke-interface {p1, p0, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    return-void
+.end method
+
+.method public static zza(Landroid/os/Parcel;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public static zzb(Landroid/os/Parcel;)Ljava/util/ArrayList;
+    .locals 1
+
+    .line 4
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzgv;->zzaci:Ljava/lang/ClassLoader;
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->readArrayList(Ljava/lang/ClassLoader;)Ljava/util/ArrayList;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static zzb(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    .line 1
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 2
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 3
+    invoke-interface {p1, p0, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

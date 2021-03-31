@@ -1,61 +1,48 @@
-.class public final Lcom/google/android/gms/internal/ads/zzaej;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzaej;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaou;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzaou<",
-        "Lcom/google/android/gms/internal/ads/zzasg;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic val$message:Ljava/lang/String;
-
-.field public final synthetic zzcfk:Lorg/json/JSONObject;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaea;Ljava/lang/String;Lorg/json/JSONObject;)V
-    .locals 0
-
-    .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaej;->val$message:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaej;->zzcfk:Lorg/json/JSONObject;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final zzb(Ljava/lang/Throwable;)V
-    .locals 0
-
-    return-void
+.method public abstract getHeight()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
-.method public final synthetic zzi(Ljava/lang/Object;)V
-    .locals 2
+.method public abstract getScale()D
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 1
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzasg;
+.method public abstract getUri()Landroid/net/Uri;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaej;->val$message:Ljava/lang/String;
+.method public abstract getWidth()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaej;->zzcfk:Lorg/json/JSONObject;
-
-    invoke-interface {p1, v0, v1}, Lcom/google/android/gms/internal/ads/zzvd;->zza(Ljava/lang/String;Lorg/json/JSONObject;)V
-
-    return-void
+.method public abstract zzsr()Lcom/google/android/gms/dynamic/IObjectWrapper;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

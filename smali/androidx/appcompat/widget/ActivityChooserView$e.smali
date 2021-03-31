@@ -41,7 +41,7 @@
     .line 2
     iget-object v0, p0, Landroidx/appcompat/widget/ActivityChooserView$e;->a:Landroidx/appcompat/widget/ActivityChooserView;
 
-    invoke-virtual {v0}, Landroidx/appcompat/widget/ActivityChooserView;->d()V
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ActivityChooserView;->b()V
 
     return-void
 .end method

@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzdw:Lcom/google/android/gms/internal/gcm/zzs;
+.field private final zzdw:Lcom/google/android/gms/internal/gcm/zzs;
 
 
 # direct methods
@@ -28,11 +28,14 @@
 .method public final zzd(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
     .locals 2
 
-    if-eq p2, p1, :cond_1
+    if-eq p2, p1, :cond_0
 
-    if-eqz p2, :cond_0
+    const-string v0, "The suppressed exception cannot be null."
 
     .line 1
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/internal/gcm/zzu;->zzdw:Lcom/google/android/gms/internal/gcm/zzs;
 
     const/4 v1, 0x1
@@ -45,18 +48,8 @@
 
     return-void
 
-    .line 2
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "The suppressed exception cannot be null."
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
     .line 3
-    :cond_1
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Self suppression is not allowed."

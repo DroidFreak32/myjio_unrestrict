@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/ResourceUtils;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # static fields
-.field public static final zzet:Landroid/net/Uri;
+.field private static final zza:Landroid/net/Uri;
 
 
 # direct methods
@@ -46,12 +47,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/internal/ResourceUtils;->zzet:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/gms/common/internal/ResourceUtils;->zza:Landroid/net/Uri;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

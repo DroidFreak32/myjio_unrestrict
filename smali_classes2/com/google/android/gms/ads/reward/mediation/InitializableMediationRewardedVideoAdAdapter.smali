@@ -1,8 +1,14 @@
 .class public interface abstract Lcom/google/android/gms/ads/reward/mediation/InitializableMediationRewardedVideoAdAdapter;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
 .implements Lcom/google/android/gms/ads/reward/mediation/MediationRewardedVideoAdAdapter;
+
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # virtual methods

@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final zzbeo:Lcom/google/android/gms/internal/gtm/zzrt;
+.field private final zzbeo:Lcom/google/android/gms/internal/gtm/zzrt;
 
 
 # direct methods

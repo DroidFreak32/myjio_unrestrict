@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public commonName:Ljava/lang/String;
+.field private commonName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public preferredLocale:Ljava/lang/String;
+.field private preferredLocale:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public ssoLevel:Ljava/lang/String;
+.field private ssoLevel:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public subscriberId:Ljava/lang/String;
+.field private subscriberId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public uId:Ljava/lang/String;
+.field private uId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

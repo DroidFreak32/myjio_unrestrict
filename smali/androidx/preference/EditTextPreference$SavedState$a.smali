@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/preference/EditTextPreference$SavedState;
+.method public a(Landroid/os/Parcel;)Landroidx/preference/EditTextPreference$SavedState;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/preference/EditTextPreference$SavedState;
 
     invoke-direct {v0, p1}, Landroidx/preference/EditTextPreference$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -49,22 +49,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/preference/EditTextPreference$SavedState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/preference/EditTextPreference$SavedState$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/preference/EditTextPreference$SavedState;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/preference/EditTextPreference$SavedState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/preference/EditTextPreference$SavedState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/preference/EditTextPreference$SavedState;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/preference/EditTextPreference$SavedState$a;->a(Landroid/os/Parcel;)Landroidx/preference/EditTextPreference$SavedState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -73,7 +73,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/preference/EditTextPreference$SavedState$a;->newArray(I)[Landroidx/preference/EditTextPreference$SavedState;
+    invoke-virtual {p0, p1}, Landroidx/preference/EditTextPreference$SavedState$a;->b(I)[Landroidx/preference/EditTextPreference$SavedState;
 
     move-result-object p1
 

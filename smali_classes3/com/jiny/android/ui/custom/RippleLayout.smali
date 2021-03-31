@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public s:I
+.field public a:I
 
-.field public t:Ljava/lang/String;
+.field public b:Ljava/lang/String;
 
-.field public u:F
+.field public c:F
 
-.field public v:Ljava/util/ArrayList;
+.field public d:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -28,15 +28,15 @@
 
     const/4 p1, 0x1
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
     const-string p1, "0"
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
     return-void
 .end method
@@ -60,23 +60,23 @@
 
     const/4 p1, 0x1
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
     const-string p1, "0"
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
-    iput p2, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iput p2, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
-    iput-object p3, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iput-object p3, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
-    iput p4, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iput p4, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
-    iput-object p5, p0, Lcom/jiny/android/ui/custom/RippleLayout;->v:Ljava/util/ArrayList;
+    iput-object p5, p0, Lcom/jiny/android/ui/custom/RippleLayout;->d:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -88,15 +88,15 @@
 
     const/4 p1, 0x1
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
     const-string p1, "0"
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
     return-void
 .end method
@@ -108,15 +108,15 @@
 
     const/4 p1, 0x1
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
     const-string p1, "0"
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
     return-void
 .end method
@@ -179,11 +179,11 @@
     const/4 v2, 0x0
 
     :goto_0
-    iget v3, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iget v3, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
     if-ge v2, v3, :cond_0
 
-    iget-object v3, p0, Lcom/jiny/android/ui/custom/RippleLayout;->v:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/jiny/android/ui/custom/RippleLayout;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -195,9 +195,9 @@
 
     move-result v3
 
-    iget-object v4, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iget-object v4, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
-    iget v5, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iget v5, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
     invoke-virtual {p0, v3, v4, v5}, Lcom/jiny/android/ui/custom/RippleLayout;->a(ILjava/lang/String;F)Landroid/graphics/Paint;
 
@@ -205,11 +205,11 @@
 
     new-instance v4, Lcom/jiny/android/ui/custom/RippleView;
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lil0;->a()Landroid/content/Context;
+    invoke-virtual {v5}, Lcom/jiny/android/h;->c()Landroid/content/Context;
 
     move-result-object v5
 
@@ -322,7 +322,7 @@
         }
     .end annotation
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->v:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->d:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -330,7 +330,7 @@
 .method public setRippleCount(I)V
     .locals 0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->s:I
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->a:I
 
     return-void
 .end method
@@ -338,7 +338,7 @@
 .method public setRippleType(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->t:Ljava/lang/String;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -346,7 +346,7 @@
 .method public setStrokeWidth(F)V
     .locals 0
 
-    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->u:F
+    iput p1, p0, Lcom/jiny/android/ui/custom/RippleLayout;->c:F
 
     return-void
 .end method

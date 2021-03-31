@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/CTInAppBasePartialFragment;-><init>()V
@@ -31,13 +31,15 @@
     .line 2
     new-instance v0, Landroid/view/GestureDetector;
 
-    new-instance v1, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment$GestureListener;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->context:Landroid/content/Context;
 
-    const/4 v2, 0x0
+    new-instance v2, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment$GestureListener;
 
-    invoke-direct {v1, p0, v2}, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment$GestureListener;-><init>(Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment$1;)V
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v1}, Landroid/view/GestureDetector;-><init>(Landroid/view/GestureDetector$OnGestureListener;)V
+    invoke-direct {v2, p0, v3}, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment$GestureListener;-><init>(Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment$1;)V
+
+    invoke-direct {v0, v1, v2}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
 
     iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;->gd:Landroid/view/GestureDetector;
 
@@ -57,13 +59,13 @@
     .line 2
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    const/4 v1, -0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, -0x1
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    invoke-direct {v0, v2, v1, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    invoke-direct {v0, v1, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
     .line 3
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -73,7 +75,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, v2, v1, v0}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    invoke-direct {p1, v1, v2, v0}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
     .line 5
     invoke-virtual {p2, p1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -124,13 +126,13 @@
     return p1
 .end method
 
-.method public setupInAppButton(Landroid/widget/Button;Lcom/clevertap/android/sdk/CTInAppNotificationButton;Lcom/clevertap/android/sdk/CTInAppNotification;I)V
+.method public setupInAppButton(Landroid/widget/Button;Lcom/clevertap/android/sdk/CTInAppNotificationButton;I)V
     .locals 0
 
     if-eqz p2, :cond_0
 
     .line 1
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p3
 

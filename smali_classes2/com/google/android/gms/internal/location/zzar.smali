@@ -1,44 +1,56 @@
-.class public abstract Lcom/google/android/gms/internal/location/zzar;
-.super Lcom/google/android/gms/internal/location/zzb;
+.class public final Lcom/google/android/gms/internal/location/zzar;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/location/zzaq;
+.implements Lcom/google/android/gms/common/api/internal/ListenerHolder$Notifier;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/common/api/internal/ListenerHolder$Notifier<",
+        "Lcom/google/android/gms/location/LocationCallback;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final synthetic zza:Lcom/google/android/gms/location/LocationResult;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/location/zzas;Lcom/google/android/gms/location/LocationResult;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.location.internal.ISettingsCallbacks"
+    .line 1
+    iput-object p2, p0, Lcom/google/android/gms/internal/location/zzar;->zza:Lcom/google/android/gms/location/LocationResult;
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/location/zzb;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.method public final synthetic notifyListener(Ljava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/location/LocationCallback;
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzar;->zza:Lcom/google/android/gms/location/LocationResult;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/location/LocationCallback;->onLocationResult(Lcom/google/android/gms/location/LocationResult;)V
+
+    return-void
+.end method
+
+.method public final onNotifyListenerFailed()V
     .locals 0
 
-    const/4 p3, 0x1
-
-    if-ne p1, p3, :cond_0
-
-    sget-object p1, Lcom/google/android/gms/location/LocationSettingsResult;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/location/zzc;->zza(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/location/LocationSettingsResult;
-
-    invoke-interface {p0, p1}, Lcom/google/android/gms/internal/location/zzaq;->zza(Lcom/google/android/gms/location/LocationSettingsResult;)V
-
-    return p3
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;
 .super Lcom/google/android/gms/common/data/DataBufferIterator;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -18,7 +19,7 @@
 
 
 # instance fields
-.field public zamg:Ljava/lang/Object;
+.field private zac:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -62,19 +63,16 @@
     if-eqz v0, :cond_2
 
     .line 2
-    iget v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iget v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
-
-    .line 3
-    iget v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iput v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     if-nez v0, :cond_1
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zalk:Lcom/google/android/gms/common/data/DataBuffer;
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zaa:Lcom/google/android/gms/common/data/DataBuffer;
 
     const/4 v1, 0x0
 
@@ -82,31 +80,35 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zamg:Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5
-    iget-object v0, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zamg:Ljava/lang/Object;
+    move-result-object v0
 
-    instance-of v1, v0, Lcom/google/android/gms/common/data/DataBufferRef;
+    iput-object v0, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zac:Ljava/lang/Object;
 
-    if-eqz v1, :cond_0
+    .line 4
+    instance-of v0, v0, Lcom/google/android/gms/common/data/DataBufferRef;
+
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 6
+    .line 5
     :cond_0
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zac:Ljava/lang/Object;
 
-    move-result-object v0
+    .line 6
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -124,31 +126,38 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, " is not movable"
+    const-string v1, " is not movable"
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 7
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zac:Ljava/lang/Object;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    check-cast v0, Lcom/google/android/gms/common/data/DataBufferRef;
 
     .line 8
-    :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zamg:Ljava/lang/Object;
+    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
-    check-cast v1, Lcom/google/android/gms/common/data/DataBufferRef;
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/common/data/DataBufferRef;->zag(I)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/data/DataBufferRef;->zaa(I)V
 
     .line 9
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zamg:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/SingleRefDataBufferIterator;->zac:Ljava/lang/Object;
 
     return-object v0
 
@@ -156,7 +165,7 @@
     :cond_2
     new-instance v0, Ljava/util/NoSuchElementException;
 
-    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zall:I
+    iget v1, p0, Lcom/google/android/gms/common/data/DataBufferIterator;->zab:I
 
     const/16 v2, 0x2e
 

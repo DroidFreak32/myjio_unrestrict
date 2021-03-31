@@ -251,7 +251,7 @@
 .end method
 
 .method public getMostProbableActivity(Ljava/util/List;)Ljava/lang/String;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -388,9 +388,9 @@
 
     const/4 v2, 0x0
 
-    move-object v3, v1
+    move-object v4, v1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -441,12 +441,6 @@
 
     move-result-object v4
 
-    move-object v7, v4
-
-    move v4, v3
-
-    move-object v3, v7
-
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
@@ -467,17 +461,15 @@
 
     sget-object v0, Lcom/elitecorelib/core/services/StationaryActivityService;->ACTIVITY_RESULT:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p1, v0, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     sget-object v0, Lcom/elitecorelib/core/services/StationaryActivityService;->ACTIVITY_TYPE:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     invoke-virtual {p0, p1}, Landroid/app/Service;->sendBroadcast(Landroid/content/Intent;)V
 
-    return-object v3
-
-    nop
+    return-object v4
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -507,6 +499,10 @@
 
 .method public onConnected(Landroid/os/Bundle;)V
     .locals 4
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     new-instance p1, Landroid/content/Intent;
 
@@ -537,6 +533,10 @@
 
 .method public onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/ConnectionResult;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
@@ -584,8 +584,6 @@
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/StationaryActivityService;->apiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-    iget-object v0, p0, Lcom/elitecorelib/core/services/StationaryActivityService;->apiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
-
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->isConnected()Z
 
     move-result v0
@@ -602,8 +600,6 @@
     invoke-direct {v0}, Lcom/elitecorelib/wifi/receiver/StationaryActivityReceiver;-><init>()V
 
     iput-object v0, p0, Lcom/elitecorelib/core/services/StationaryActivityService;->staionaryReciever:Lcom/elitecorelib/wifi/receiver/StationaryActivityReceiver;
-
-    iget-object v0, p0, Lcom/elitecorelib/core/services/StationaryActivityService;->staionaryReciever:Lcom/elitecorelib/wifi/receiver/StationaryActivityReceiver;
 
     iget-object v1, p0, Lcom/elitecorelib/core/services/StationaryActivityService;->intentFilter:Landroid/content/IntentFilter;
 

@@ -1,74 +1,110 @@
 .class public final Lcom/google/android/gms/internal/ads/zzqv;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzqt;
+
+# instance fields
+.field private final timestamp:J
+
+.field public final zzaai:I
+
+.field public final zzbqz:Z
+
+.field private final zzbrk:Z
+
+.field public final zzbrl:Z
+
+.field public final zzbrm:Landroid/graphics/Rect;
+
+.field public final zzbrn:Landroid/graphics/Rect;
+
+.field public final zzbro:Landroid/graphics/Rect;
+
+.field public final zzbrp:Z
+
+.field public final zzbrq:Landroid/graphics/Rect;
+
+.field public final zzbrr:Z
+
+.field public final zzbrs:Landroid/graphics/Rect;
+
+.field private final zzbrt:F
+
+.field public final zzbru:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.INativeAdViewHolderDelegate"
+.method public constructor <init>(JZZILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/graphics/Rect;ZLandroid/graphics/Rect;FZLjava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(JZZI",
+            "Landroid/graphics/Rect;",
+            "Landroid/graphics/Rect;",
+            "Landroid/graphics/Rect;",
+            "Z",
+            "Landroid/graphics/Rect;",
+            "Z",
+            "Landroid/graphics/Rect;",
+            "FZ",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;)V"
+        }
+    .end annotation
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final unregisterNativeAd()V
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
-
-    return-void
-.end method
-
-.method public final zza(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x1
+    iput-wide p1, p0, Lcom/google/android/gms/internal/ads/zzqv;->timestamp:J
 
     .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    iput-boolean p3, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrk:Z
 
-    return-void
-.end method
+    .line 4
+    iput-boolean p4, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrl:Z
 
-.method public final zzc(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-    .locals 1
+    .line 5
+    iput p5, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzaai:I
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    .line 6
+    iput-object p6, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrm:Landroid/graphics/Rect;
 
-    move-result-object v0
+    .line 7
+    iput-object p7, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrn:Landroid/graphics/Rect;
 
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    .line 8
+    iput-object p8, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbro:Landroid/graphics/Rect;
 
-    const/4 p1, 0x3
+    .line 9
+    iput-boolean p9, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrp:Z
 
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
+    .line 10
+    iput-object p10, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrq:Landroid/graphics/Rect;
+
+    .line 11
+    iput-boolean p11, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrr:Z
+
+    .line 12
+    iput-object p12, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrs:Landroid/graphics/Rect;
+
+    .line 13
+    iput p13, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbrt:F
+
+    .line 14
+    iput-boolean p14, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbqz:Z
+
+    .line 15
+    iput-object p15, p0, Lcom/google/android/gms/internal/ads/zzqv;->zzbru:Ljava/util/List;
 
     return-void
 .end method

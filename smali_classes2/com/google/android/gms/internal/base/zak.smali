@@ -1,11 +1,12 @@
 .class public final Lcom/google/android/gms/internal/base/zak;
-.super Lq4;
+.super Landroidx/collection/LruCache;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lq4<",
+        "Landroidx/collection/LruCache<",
         "Ljava/lang/Object;",
         "Landroid/graphics/drawable/Drawable;",
         ">;"
@@ -20,7 +21,7 @@
     const/16 v0, 0xa
 
     .line 1
-    invoke-direct {p0, v0}, Lq4;-><init>(I)V
+    invoke-direct {p0, v0}, Landroidx/collection/LruCache;-><init>(I)V
 
     return-void
 .end method

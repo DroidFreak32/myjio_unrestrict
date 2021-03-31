@@ -12,7 +12,7 @@
 
 
 # static fields
-.field public static final DEFAULT_FACTORY:Lcom/bumptech/glide/load/data/DataRewinder$Factory;
+.field private static final DEFAULT_FACTORY:Lcom/bumptech/glide/load/data/DataRewinder$Factory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/data/DataRewinder$Factory<",
@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field public final rewinders:Ljava/util/Map;
+.field private final rewinders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -70,6 +70,13 @@
 # virtual methods
 .method public declared-synchronized build(Ljava/lang/Object;)Lcom/bumptech/glide/load/data/DataRewinder;
     .locals 5
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -170,6 +177,10 @@
 
 .method public declared-synchronized register(Lcom/bumptech/glide/load/data/DataRewinder$Factory;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/load/data/DataRewinder$Factory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

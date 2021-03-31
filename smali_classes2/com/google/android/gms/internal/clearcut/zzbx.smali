@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzgr:Lcom/google/android/gms/internal/clearcut/zzbu;
+.field private static final zzgr:Lcom/google/android/gms/internal/clearcut/zzbu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzbu<",
@@ -12,7 +12,7 @@
     .end annotation
 .end field
 
-.field public static final zzgs:Lcom/google/android/gms/internal/clearcut/zzbu;
+.field private static final zzgs:Lcom/google/android/gms/internal/clearcut/zzbu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzbu<",
@@ -41,7 +41,7 @@
     return-void
 .end method
 
-.method public static zzao()Lcom/google/android/gms/internal/clearcut/zzbu;
+.method private static zzao()Lcom/google/android/gms/internal/clearcut/zzbu;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -51,9 +51,9 @@
         }
     .end annotation
 
+    :try_start_0
     const-string v0, "com.google.protobuf.ExtensionSchemaFull"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

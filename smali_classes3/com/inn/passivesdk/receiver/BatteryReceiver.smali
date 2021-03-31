@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public a:Z
+.field public isKeyFirst:Z
 
 
 # direct methods
@@ -20,7 +20,7 @@
     const/4 v0, 0x1
 
     .line 3
-    iput-boolean v0, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver;->a:Z
+    iput-boolean v0, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver;->isKeyFirst:Z
 
     return-void
 .end method
@@ -31,11 +31,11 @@
     .locals 0
 
     .line 1
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmg0;->L()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->registerDevice()V
 
     return-void
 .end method
@@ -45,11 +45,11 @@
 
     .line 1
     :try_start_0
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lhf0;->Y()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/PreferenceHelper;->isReceiverRegister()Z
 
     move-result v0
 
@@ -58,11 +58,11 @@
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object p1
 
-    invoke-virtual {p1, v1}, Lhf0;->h(Z)V
+    invoke-virtual {p1, v1}, Lcom/inn/passivesdk/PreferenceHelper;->setReceiverRegister(Z)V
 
     return-void
 
@@ -71,20 +71,20 @@
     invoke-virtual {p0, p1}, Lcom/inn/passivesdk/receiver/BatteryReceiver;->a(Landroid/content/Context;)V
 
     .line 4
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lhf0;->k()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/inn/passivesdk/PreferenceHelper;->getLastConnectDisconnectCapturedRequstor()Ljava/lang/String;
 
     move-result-object v0
 
     .line 5
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lmg0;->E()Z
+    invoke-virtual {v2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isConnectDisconnectIntervalCompleted()Z
 
     move-result v2
     :try_end_0
@@ -165,11 +165,11 @@
 
     .line 12
     :cond_4
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->n()Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->getKeyForChargerStatus()Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -177,7 +177,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver;->a:Z
+    iput-boolean v0, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver;->isKeyFirst:Z
 
     .line 13
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -202,62 +202,62 @@
 
     .line 14
     :cond_5
-    iget-boolean v0, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver;->a:Z
+    iget-boolean v0, p0, Lcom/inn/passivesdk/receiver/BatteryReceiver;->isKeyFirst:Z
 
     if-eqz v0, :cond_9
 
     .line 15
-    invoke-static {}, Ljf0;->a()Ljf0;
+    invoke-static {}, Lcom/inn/passivesdk/battery/BatteryUtil;->getInstance()Lcom/inn/passivesdk/battery/BatteryUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljf0;->e(Landroid/content/Intent;)Ljava/lang/String;
+    invoke-virtual {v0, p2}, Lcom/inn/passivesdk/battery/BatteryUtil;->getPlugged(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 16
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0, v1}, Lmg0;->a(Ljava/lang/String;Z)V
+    invoke-virtual {v2, v0, v1}, Lcom/inn/passivesdk/util/SdkAppUtil;->setChargerConnectedStatus(Ljava/lang/String;Z)V
 
     .line 17
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lhf0;->A()Z
+    invoke-virtual {v1}, Lcom/inn/passivesdk/PreferenceHelper;->getPassiveProfile()Z
 
     move-result v1
 
     if-nez v1, :cond_6
 
     .line 18
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
     const/4 v1, 0x1
 
-    invoke-virtual {p2, v0, v1}, Lmg0;->a(Ljava/lang/String;Z)V
+    invoke-virtual {p2, v0, v1}, Lcom/inn/passivesdk/util/SdkAppUtil;->setChargerConnectedStatus(Ljava/lang/String;Z)V
 
     .line 19
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmg0;->M()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->setDefautPassivePreferences()V
 
     return-void
 
     .line 20
     :cond_6
-    invoke-static {p1}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Log0;->v()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->globalNetworkProvider()Ljava/lang/String;
 
     move-result-object v0
 
@@ -275,11 +275,11 @@
     if-eqz v1, :cond_7
 
     .line 22
-    invoke-static {p1}, Lvf0;->b(Landroid/content/Context;)Lvf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/location/SdkPassiveLocationService;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lvf0;->c()V
+    invoke-virtual {p2}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->requestLocationUpdates()V
 
     .line 23
     new-instance p2, Landroid/os/Handler;
@@ -307,11 +307,11 @@
     if-eqz p2, :cond_8
 
     .line 25
-    invoke-static {p1}, Lvf0;->b(Landroid/content/Context;)Lvf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/location/SdkPassiveLocationService;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lvf0;->c()V
+    invoke-virtual {p2}, Lcom/inn/passivesdk/location/SdkPassiveLocationService;->requestLocationUpdates()V
 
     .line 26
     new-instance p2, Landroid/os/Handler;
@@ -328,11 +328,11 @@
 
     .line 27
     :cond_8
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmg0;->M()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->setDefautPassivePreferences()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_0

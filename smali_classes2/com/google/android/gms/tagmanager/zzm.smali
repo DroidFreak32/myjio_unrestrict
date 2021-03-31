@@ -11,17 +11,17 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final URL:Ljava/lang/String;
+.field private static final URL:Ljava/lang/String;
 
-.field public static final zzadw:Ljava/lang/String;
+.field private static final zzadw:Ljava/lang/String;
 
-.field public static final zzadx:Ljava/lang/String;
+.field private static final zzadx:Ljava/lang/String;
 
-.field public static final zzady:Ljava/lang/String;
+.field private static final zzady:Ljava/lang/String;
 
-.field public static final zzadz:Ljava/util/Set;
+.field private static final zzadz:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -33,9 +33,9 @@
 
 
 # instance fields
-.field public final zzaea:Lcom/google/android/gms/tagmanager/zzm$zza;
+.field private final zzaea:Lcom/google/android/gms/tagmanager/zzm$zza;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -52,35 +52,33 @@
     sput-object v0, Lcom/google/android/gms/tagmanager/zzm;->ID:Ljava/lang/String;
 
     .line 2
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzb;->zzmz:Lcom/google/android/gms/internal/gtm/zzb;
+    sget-object v1, Lcom/google/android/gms/internal/gtm/zzb;->zzmz:Lcom/google/android/gms/internal/gtm/zzb;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzb;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzb;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/android/gms/tagmanager/zzm;->URL:Ljava/lang/String;
+    sput-object v1, Lcom/google/android/gms/tagmanager/zzm;->URL:Ljava/lang/String;
 
     .line 3
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzb;->zzds:Lcom/google/android/gms/internal/gtm/zzb;
+    sget-object v1, Lcom/google/android/gms/internal/gtm/zzb;->zzds:Lcom/google/android/gms/internal/gtm/zzb;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzb;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzb;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/android/gms/tagmanager/zzm;->zzadw:Ljava/lang/String;
+    sput-object v1, Lcom/google/android/gms/tagmanager/zzm;->zzadw:Ljava/lang/String;
 
     .line 4
-    sget-object v0, Lcom/google/android/gms/internal/gtm/zzb;->zzmy:Lcom/google/android/gms/internal/gtm/zzb;
+    sget-object v1, Lcom/google/android/gms/internal/gtm/zzb;->zzmy:Lcom/google/android/gms/internal/gtm/zzb;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/gtm/zzb;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/gtm/zzb;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/android/gms/tagmanager/zzm;->zzadx:Ljava/lang/String;
+    sput-object v1, Lcom/google/android/gms/tagmanager/zzm;->zzadx:Ljava/lang/String;
 
     .line 5
-    sget-object v0, Lcom/google/android/gms/tagmanager/zzm;->ID:Ljava/lang/String;
-
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -134,7 +132,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/zzm$zza;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/gms/tagmanager/zzm$zza;)V
     .locals 4
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -164,7 +162,7 @@
 .end method
 
 .method private final declared-synchronized zzak(Ljava/lang/String;)Z
-    .locals 4
+    .locals 5
 
     monitor-enter p0
 
@@ -174,42 +172,40 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 2
     monitor-exit p0
 
-    return v1
+    return v2
 
     .line 3
     :cond_0
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzm;->zzrm:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/tagmanager/zzm;->zzrm:Landroid/content/Context;
 
-    sget-object v2, Lcom/google/android/gms/tagmanager/zzm;->zzady:Ljava/lang/String;
+    sget-object v3, Lcom/google/android/gms/tagmanager/zzm;->zzady:Ljava/lang/String;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v1, v3, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 4
-    invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     .line 5
-    sget-object v0, Lcom/google/android/gms/tagmanager/zzm;->zzadz:Ljava/util/Set;
-
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -217,13 +213,13 @@
     .line 6
     monitor-exit p0
 
-    return v1
+    return v2
 
     .line 7
     :cond_1
     monitor-exit p0
 
-    return v3
+    return v4
 
     :catchall_0
     move-exception p1
@@ -252,11 +248,9 @@
 
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/google/android/gms/tagmanager/zzm;->zzadx:Ljava/lang/String;
+    if-eqz v1, :cond_0
 
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

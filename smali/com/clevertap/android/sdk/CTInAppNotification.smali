@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;,
-        Lcom/clevertap/android/sdk/CTInAppNotification$CTInAppNotificationListener;
+        Lcom/clevertap/android/sdk/CTInAppNotification$CTInAppNotificationListener;,
+        Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;
     }
 .end annotation
 
@@ -28,15 +28,15 @@
 
 
 # instance fields
-.field public _landscapeImageCacheKey:Ljava/lang/String;
+.field private _landscapeImageCacheKey:Ljava/lang/String;
 
-.field public actionExtras:Lorg/json/JSONObject;
+.field private actionExtras:Lorg/json/JSONObject;
 
-.field public backgroundColor:Ljava/lang/String;
+.field private backgroundColor:Ljava/lang/String;
 
-.field public buttonCount:I
+.field private buttonCount:I
 
-.field public buttons:Ljava/util/ArrayList;
+.field private buttons:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -46,47 +46,47 @@
     .end annotation
 .end field
 
-.field public campaignId:Ljava/lang/String;
+.field private campaignId:Ljava/lang/String;
 
-.field public customExtras:Lorg/json/JSONObject;
+.field private customExtras:Lorg/json/JSONObject;
 
-.field public customInAppUrl:Ljava/lang/String;
+.field private customInAppUrl:Ljava/lang/String;
 
-.field public darkenScreen:Z
+.field private darkenScreen:Z
 
-.field public error:Ljava/lang/String;
+.field private error:Ljava/lang/String;
 
-.field public excludeFromCaps:Z
+.field private excludeFromCaps:Z
 
-.field public height:I
+.field private height:I
 
-.field public heightPercentage:I
+.field private heightPercentage:I
 
-.field public hideCloseButton:Z
+.field private hideCloseButton:Z
 
-.field public html:Ljava/lang/String;
+.field private html:Ljava/lang/String;
 
-.field public id:Ljava/lang/String;
+.field private id:Ljava/lang/String;
 
-.field public inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+.field private inAppType:Lcom/clevertap/android/sdk/CTInAppType;
 
-.field public isLandscape:Z
+.field private isLandscape:Z
 
-.field public isPortrait:Z
+.field private isPortrait:Z
 
-.field public isTablet:Z
+.field private isTablet:Z
 
-.field public jsEnabled:Z
+.field private jsEnabled:Z
 
-.field public jsonDescription:Lorg/json/JSONObject;
+.field private jsonDescription:Lorg/json/JSONObject;
 
-.field public landscapeImageUrl:Ljava/lang/String;
+.field private landscapeImageUrl:Ljava/lang/String;
 
 .field public listener:Lcom/clevertap/android/sdk/CTInAppNotification$CTInAppNotificationListener;
 
-.field public maxPerSession:I
+.field private maxPerSession:I
 
-.field public mediaList:Ljava/util/ArrayList;
+.field private mediaList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -96,29 +96,31 @@
     .end annotation
 .end field
 
-.field public message:Ljava/lang/String;
+.field private message:Ljava/lang/String;
 
-.field public messageColor:Ljava/lang/String;
+.field private messageColor:Ljava/lang/String;
 
-.field public position:C
+.field private position:C
 
-.field public showClose:Z
+.field private showClose:Z
 
-.field public title:Ljava/lang/String;
+.field private timeToLive:J
 
-.field public titleColor:Ljava/lang/String;
+.field private title:Ljava/lang/String;
 
-.field public totalDailyCount:I
+.field private titleColor:Ljava/lang/String;
 
-.field public totalLifetimeCount:I
+.field private totalDailyCount:I
 
-.field public type:Ljava/lang/String;
+.field private totalLifetimeCount:I
 
-.field public videoSupported:Z
+.field private type:Ljava/lang/String;
 
-.field public width:I
+.field private videoSupported:Z
 
-.field public widthPercentage:I
+.field private width:I
+
+.field private widthPercentage:I
 
 
 # direct methods
@@ -158,7 +160,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method private constructor <init>(Landroid/os/Parcel;)V
     .locals 5
 
     .line 5
@@ -592,9 +594,16 @@
     .line 43
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->_landscapeImageCacheKey:Ljava/lang/String;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->_landscapeImageCacheKey:Ljava/lang/String;
+
+    .line 44
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->timeToLive:J
     :try_end_3
     .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_0
 
@@ -612,779 +621,760 @@
 .end method
 
 .method private configureWithJson(Lorg/json/JSONObject;)V
-    .locals 10
+    .locals 18
 
-    const-string v0, "hasPortrait"
+    move-object/from16 v1, p0
 
-    const-string v1, "bg"
+    move-object/from16 v0, p1
 
-    const-string v2, "tablet"
+    const-string v2, "media"
 
-    const-string v3, "tdc"
+    const-string v3, "close"
 
-    const-string v4, "tlc"
+    const-string v4, "message"
 
-    const-string v5, "efc"
+    const-string/jumbo v5, "title"
 
-    const-string v6, "wzrk_id"
+    const-string/jumbo v6, "wzrk_ttl"
 
-    const-string v7, "ti"
+    const-string v7, "hasLandscape"
+
+    const-string v8, "hasPortrait"
+
+    const-string v9, "bg"
+
+    const-string/jumbo v10, "tablet"
+
+    const-string/jumbo v11, "tdc"
+
+    const-string/jumbo v12, "tlc"
+
+    const-string v13, "efc"
+
+    const-string/jumbo v14, "wzrk_id"
+
+    const-string/jumbo v15, "ti"
 
     .line 1
     :try_start_0
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v15}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v16
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v9, ""
+    const-string v17, ""
 
-    if-eqz v8, :cond_0
+    if-eqz v16, :cond_0
 
+    .line 2
     :try_start_1
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v15}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v15
 
     goto :goto_0
 
     :cond_0
-    move-object v7, v9
+    move-object/from16 v15, v17
 
     :goto_0
-    iput-object v7, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->id:Ljava/lang/String;
+    iput-object v15, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->id:Ljava/lang/String;
 
-    .line 2
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 3
+    invoke-virtual {v0, v14}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v15
 
-    if-eqz v7, :cond_1
+    if-eqz v15, :cond_1
 
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 4
+    invoke-virtual {v0, v14}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v14
 
     goto :goto_1
 
     :cond_1
-    move-object v6, v9
+    move-object/from16 v14, v17
 
     :goto_1
-    iput-object v6, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->campaignId:Ljava/lang/String;
+    iput-object v14, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->campaignId:Ljava/lang/String;
 
-    const-string v6, "type"
+    const-string/jumbo v14, "type"
 
-    .line 3
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 5
+    invoke-virtual {v0, v14}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v14
 
-    iput-object v6, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
+    iput-object v14, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
 
-    .line 4
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 6
+    invoke-virtual {v0, v13}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v14
 
-    const/4 v7, 0x0
+    const/4 v15, 0x1
 
-    const/4 v8, 0x1
+    if-eqz v14, :cond_2
 
-    if-eqz v6, :cond_2
+    invoke-virtual {v0, v13}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    move-result v13
 
-    move-result v5
+    if-ne v13, v15, :cond_2
 
-    if-ne v5, v8, :cond_2
-
-    const/4 v5, 0x1
+    const/4 v13, 0x1
 
     goto :goto_2
 
     :cond_2
-    const/4 v5, 0x0
+    const/4 v13, 0x0
 
     :goto_2
-    iput-boolean v5, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->excludeFromCaps:Z
+    iput-boolean v13, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->excludeFromCaps:Z
 
-    .line 5
-    invoke-virtual {p1, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 7
+    invoke-virtual {v0, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v13
 
-    const/4 v6, -0x1
+    const/4 v14, -0x1
 
-    if-eqz v5, :cond_3
+    if-eqz v13, :cond_3
 
-    invoke-virtual {p1, v4}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v0, v12}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v12
 
     goto :goto_3
 
     :cond_3
-    const/4 v4, -0x1
+    const/4 v12, -0x1
 
     :goto_3
-    iput v4, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->totalLifetimeCount:I
-
-    .line 6
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    :cond_4
-    iput v6, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->totalDailyCount:I
-
-    .line 7
-    iget-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
-
-    invoke-static {v3}, Lcom/clevertap/android/sdk/CTInAppType;->fromString(Ljava/lang/String;)Lcom/clevertap/android/sdk/CTInAppType;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+    iput v12, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->totalLifetimeCount:I
 
     .line 8
-    invoke-virtual {p1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v12
 
-    if-eqz v3, :cond_5
+    if-eqz v12, :cond_4
 
-    invoke-virtual {p1, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v0, v11}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v14
 
-    if-eqz v2, :cond_5
+    :cond_4
+    iput v14, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->totalDailyCount:I
 
-    const/4 v2, 0x1
+    .line 9
+    iget-object v11, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
+
+    invoke-static {v11}, Lcom/clevertap/android/sdk/CTInAppType;->fromString(Ljava/lang/String;)Lcom/clevertap/android/sdk/CTInAppType;
+
+    move-result-object v11
+
+    iput-object v11, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+
+    .line 10
+    invoke-virtual {v0, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_5
+
+    invoke-virtual {v0, v10}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_5
+
+    const/4 v10, 0x1
 
     goto :goto_4
 
     :cond_5
-    const/4 v2, 0x0
+    const/4 v10, 0x0
 
     :goto_4
-    iput-boolean v2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->isTablet:Z
+    iput-boolean v10, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->isTablet:Z
 
-    .line 9
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 11
+    invoke-virtual {v0, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v10
 
-    if-eqz v2, :cond_6
+    if-eqz v10, :cond_6
 
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v9
 
     goto :goto_5
 
     :cond_6
-    const-string v1, "#FFFFFF"
+    const-string v9, "#FFFFFF"
 
     :goto_5
-    iput-object v1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->backgroundColor:Ljava/lang/String;
+    iput-object v9, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->backgroundColor:Ljava/lang/String;
 
-    .line 10
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 12
+    invoke-virtual {v0, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v9
 
-    if-eqz v1, :cond_8
+    if-eqz v9, :cond_8
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 13
+    invoke-virtual {v0, v8}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v8
 
-    if-eqz v0, :cond_7
+    if-eqz v8, :cond_7
 
     goto :goto_6
 
     :cond_7
-    const/4 v0, 0x0
+    const/4 v8, 0x0
 
     goto :goto_7
 
     :cond_8
     :goto_6
-    const/4 v0, 0x1
+    const/4 v8, 0x1
 
     :goto_7
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->isPortrait:Z
+    iput-boolean v8, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->isPortrait:Z
 
-    const-string v0, "hasLandscape"
+    .line 14
+    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 11
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result v8
 
-    move-result v0
+    if-eqz v8, :cond_9
 
-    if-eqz v0, :cond_9
+    .line 15
+    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
-    const-string v0, "hasLandscape"
+    move-result v7
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    if-eqz v7, :cond_9
 
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    const/4 v0, 0x1
+    const/4 v7, 0x1
 
     goto :goto_8
 
     :cond_9
-    const/4 v0, 0x0
+    const/4 v7, 0x0
 
     :goto_8
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->isLandscape:Z
+    iput-boolean v7, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->isLandscape:Z
 
-    const-string v0, "title"
+    .line 16
+    invoke-virtual {v0, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 12
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result v7
 
-    move-result v0
+    if-eqz v7, :cond_a
 
-    const/4 v1, 0x0
+    .line 17
+    invoke-virtual {v0, v6}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
 
-    if-eqz v0, :cond_a
-
-    const-string v0, "title"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-    :try_end_1
-    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
+    move-result-wide v6
 
     goto :goto_9
 
+    .line 18
     :cond_a
-    move-object v0, v1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    const-wide/32 v8, 0xa4cb800
+
+    add-long/2addr v6, v8
 
     :goto_9
-    const-string v2, "color"
+    iput-wide v6, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->timeToLive:J
 
-    const-string v3, "text"
+    .line 19
+    invoke-virtual {v0, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    if-eqz v0, :cond_d
+    move-result v6
 
-    .line 13
-    :try_start_2
-    invoke-virtual {v0, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    const/4 v7, 0x0
 
-    move-result v4
+    if-eqz v6, :cond_b
 
-    if-eqz v4, :cond_b
+    .line 20
+    invoke-virtual {v0, v5}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
+    move-result-object v5
+    :try_end_1
+    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_a
 
     :cond_b
-    move-object v4, v9
+    move-object v5, v7
 
     :goto_a
-    iput-object v4, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->title:Ljava/lang/String;
+    const-string v6, "#000000"
 
-    .line 14
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    const-string v8, "color"
 
-    move-result v4
+    const-string/jumbo v9, "text"
 
-    if-eqz v4, :cond_c
+    if-eqz v5, :cond_e
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 21
+    :try_start_2
+    invoke-virtual {v5, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result-object v0
+    move-result v10
+
+    if-eqz v10, :cond_c
+
+    invoke-virtual {v5, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v10
 
     goto :goto_b
 
     :cond_c
-    const-string v0, "#000000"
+    move-object/from16 v10, v17
 
     :goto_b
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->titleColor:Ljava/lang/String;
+    iput-object v10, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->title:Ljava/lang/String;
 
-    :cond_d
-    const-string v0, "message"
+    .line 22
+    invoke-virtual {v5, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 15
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result v10
 
-    move-result v0
+    if-eqz v10, :cond_d
 
-    if-eqz v0, :cond_e
+    invoke-virtual {v5, v8}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, "message"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
+    move-result-object v5
 
     goto :goto_c
 
-    :cond_e
-    move-object v0, v1
+    :cond_d
+    move-object v5, v6
 
     :goto_c
-    if-eqz v0, :cond_11
+    iput-object v5, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->titleColor:Ljava/lang/String;
 
-    .line 16
+    .line 23
+    :cond_e
+    invoke-virtual {v0, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_f
+
+    .line 24
+    invoke-virtual {v0, v4}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v4
+
+    goto :goto_d
+
+    :cond_f
+    move-object v4, v7
+
+    :goto_d
+    if-eqz v4, :cond_12
+
+    .line 25
+    invoke-virtual {v4, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_10
+
+    invoke-virtual {v4, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v17
+
+    :cond_10
+    move-object/from16 v5, v17
+
+    iput-object v5, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->message:Ljava/lang/String;
+
+    .line 26
+    invoke-virtual {v4, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_11
+
+    invoke-virtual {v4, v8}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    :cond_11
+    iput-object v6, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->messageColor:Ljava/lang/String;
+
+    .line 27
+    :cond_12
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_13
 
-    invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 28
+    invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
-    move-result-object v9
+    move-result v3
 
-    :cond_f
-    iput-object v9, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->message:Ljava/lang/String;
+    if-eqz v3, :cond_13
 
-    .line 17
+    const/4 v3, 0x1
+
+    goto :goto_e
+
+    :cond_13
+    const/4 v3, 0x0
+
+    :goto_e
+    iput-boolean v3, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->hideCloseButton:Z
+
+    .line 29
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_14
 
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object v0
-
-    goto :goto_d
-
-    :cond_10
-    const-string v0, "#000000"
-
-    :goto_d
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->messageColor:Ljava/lang/String;
-
-    :cond_11
-    const-string v0, "close"
-
-    .line 18
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    const-string v0, "close"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    const/4 v0, 0x1
-
-    goto :goto_e
-
-    :cond_12
-    const/4 v0, 0x0
-
-    :goto_e
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->hideCloseButton:Z
-
-    const-string v0, "media"
-
-    .line 19
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    const-string v0, "media"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
+    move-result-object v2
 
     goto :goto_f
 
-    :cond_13
-    move-object v0, v1
+    :cond_14
+    move-object v2, v7
 
     :goto_f
-    if-eqz v0, :cond_14
+    if-eqz v2, :cond_15
 
-    .line 20
-    new-instance v2, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+    .line 30
+    new-instance v3, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
 
-    invoke-direct {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;-><init>()V
+    invoke-direct {v3}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;-><init>()V
 
-    invoke-virtual {v2, v0, v8}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->initWithJSON(Lorg/json/JSONObject;I)Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+    .line 31
+    invoke-virtual {v3, v2, v15}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->initWithJSON(Lorg/json/JSONObject;I)Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_14
+    if-eqz v2, :cond_15
 
-    .line 21
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
+    .line 32
+    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_14
-    const-string v0, "mediaLandscape"
+    :cond_15
+    const-string v2, "mediaLandscape"
 
-    .line 22
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 33
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_15
+    if-eqz v2, :cond_16
 
-    const-string v0, "mediaLandscape"
+    const-string v2, "mediaLandscape"
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    .line 34
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object v0
+    move-result-object v2
 
     goto :goto_10
 
-    :cond_15
-    move-object v0, v1
+    :cond_16
+    move-object v2, v7
 
     :goto_10
-    if-eqz v0, :cond_16
+    if-eqz v2, :cond_17
 
-    .line 23
-    new-instance v2, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+    .line 35
+    new-instance v3, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
 
-    invoke-direct {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;-><init>()V
+    invoke-direct {v3}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;-><init>()V
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    invoke-virtual {v2, v0, v3}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->initWithJSON(Lorg/json/JSONObject;I)Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+    .line 36
+    invoke-virtual {v3, v2, v4}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->initWithJSON(Lorg/json/JSONObject;I)Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_17
+
+    .line 37
+    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_17
+    const-string v2, "buttons"
+
+    .line 38
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_18
+
+    const-string v2, "buttons"
+
+    .line 39
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v0
-
-    if-eqz v0, :cond_16
-
-    .line 24
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_16
-    const-string v0, "buttons"
-
-    .line 25
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_17
-
-    const-string v0, "buttons"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object p1
 
     goto :goto_11
 
-    :cond_17
-    move-object p1, v1
+    :cond_18
+    move-object v0, v7
 
     :goto_11
-    if-eqz p1, :cond_19
+    if-eqz v0, :cond_1a
 
-    .line 26
+    const/4 v2, 0x0
+
+    .line 40
     :goto_12
-    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
-    move-result v0
+    move-result v3
 
-    if-ge v7, v0, :cond_19
+    if-ge v2, v3, :cond_1a
 
-    .line 27
-    new-instance v0, Lcom/clevertap/android/sdk/CTInAppNotificationButton;
+    .line 41
+    new-instance v3, Lcom/clevertap/android/sdk/CTInAppNotificationButton;
 
-    invoke-direct {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;-><init>()V
+    invoke-direct {v3}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;-><init>()V
 
-    invoke-virtual {p1, v7}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    .line 42
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v0, v2}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->initWithJSON(Lorg/json/JSONObject;)Lcom/clevertap/android/sdk/CTInAppNotificationButton;
+    invoke-virtual {v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->initWithJSON(Lorg/json/JSONObject;)Lcom/clevertap/android/sdk/CTInAppNotificationButton;
 
-    move-result-object v0
+    move-result-object v3
 
-    if-eqz v0, :cond_18
+    if-eqz v3, :cond_19
 
-    .line 28
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->getError()Ljava/lang/String;
+    .line 43
+    invoke-virtual {v3}, Lcom/clevertap/android/sdk/CTInAppNotificationButton;->getError()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    if-nez v2, :cond_18
+    if-nez v4, :cond_19
 
-    .line 29
-    iget-object v2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->buttons:Ljava/util/ArrayList;
+    .line 44
+    iget-object v4, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->buttons:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 30
-    iget v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->buttonCount:I
+    .line 45
+    iget v3, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->buttonCount:I
 
-    add-int/2addr v0, v8
+    add-int/2addr v3, v15
 
-    iput v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->buttonCount:I
+    iput v3, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->buttonCount:I
 
-    :cond_18
-    add-int/lit8 v7, v7, 0x1
+    :cond_19
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_12
 
-    .line 31
-    :cond_19
-    sget-object p1, Lcom/clevertap/android/sdk/CTInAppNotification$2;->$SwitchMap$com$clevertap$android$sdk$CTInAppType:[I
-
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
-
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v0
-
-    aget p1, p1, v0
-
-    packed-switch p1, :pswitch_data_0
-
-    goto/16 :goto_16
-
-    .line 32
-    :pswitch_0
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1c
-
-    .line 33
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
+    .line 46
     :cond_1a
-    :goto_13
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    sget-object v0, Lcom/clevertap/android/sdk/CTInAppNotification$2;->$SwitchMap$com$clevertap$android$sdk$CTInAppType:[I
+
+    iget-object v2, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v2
+
+    aget v0, v0, v2
+
+    packed-switch v0, :pswitch_data_0
+
+    goto/16 :goto_15
+
+    .line 47
+    :pswitch_0
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-nez v0, :cond_1d
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 48
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
-
-    .line 34
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isGIF()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1b
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isAudio()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1b
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isVideo()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1b
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isImage()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1a
-
     :cond_1b
-    const-string v0, "Wrong media type for template"
+    :goto_13
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 35
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
+    move-result v2
+
+    if-eqz v2, :cond_20
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+
+    .line 49
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isGIF()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1c
+
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isAudio()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1c
+
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isVideo()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1c
+
+    .line 50
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isImage()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1b
+
+    :cond_1c
+    const-string v2, "Wrong media type for template"
+
+    .line 51
+    iput-object v2, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
 
     goto :goto_13
 
-    :cond_1c
-    const-string p1, "No media type for template"
-
-    .line 36
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
-
-    goto/16 :goto_16
-
-    .line 37
-    :pswitch_1
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
     :cond_1d
-    :goto_14
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    const-string v0, "No media type for template"
 
-    move-result v0
-
-    if-eqz v0, :cond_21
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
-
-    .line 38
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isGIF()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1e
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isAudio()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1e
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isVideo()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1d
-
-    .line 39
-    :cond_1e
-    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->setMediaUrl(Ljava/lang/String;)V
-
-    const-string v0, "Unable to download to media. Wrong media type for template"
-
-    .line 40
-    invoke-static {v0}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
-
-    goto :goto_14
-
-    .line 41
-    :pswitch_2
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_1f
-    :goto_15
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_21
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
-
-    .line 42
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isGIF()Z
-
-    move-result v2
-
-    if-nez v2, :cond_20
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isAudio()Z
-
-    move-result v2
-
-    if-nez v2, :cond_20
-
-    invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isVideo()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1f
-
-    .line 43
-    :cond_20
-    invoke-virtual {v0, v1}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->setMediaUrl(Ljava/lang/String;)V
-
-    const-string v0, "Unable to download to media. Wrong media type for template"
-
-    .line 44
-    invoke-static {v0}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
-    :try_end_2
-    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
+    .line 52
+    iput-object v0, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
 
     goto :goto_15
 
+    .line 53
+    :pswitch_1
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->mediaList:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_1e
+    :goto_14
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_20
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;
+
+    .line 54
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isGIF()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1f
+
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isAudio()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1f
+
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isVideo()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1e
+
+    .line 55
+    :cond_1f
+    invoke-virtual {v2, v7}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->setMediaUrl(Ljava/lang/String;)V
+
+    const-string v2, "Unable to download to media. Wrong media type for template"
+
+    .line 56
+    invoke-static {v2}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
+    :try_end_2
+    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_14
+
     :catch_0
-    move-exception p1
+    move-exception v0
 
-    .line 45
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 57
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Invalid JSON"
+    const-string v3, "Invalid JSON"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
+    iput-object v0, v1, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
 
-    :cond_21
-    :goto_16
+    :cond_20
+    :goto_15
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2
-        :pswitch_2
+        :pswitch_1
+        :pswitch_1
         :pswitch_1
         :pswitch_1
         :pswitch_0
@@ -1393,7 +1383,7 @@
     .end packed-switch
 .end method
 
-.method public static getBundleFromJsonObject(Lorg/json/JSONObject;)Landroid/os/Bundle;
+.method private static getBundleFromJsonObject(Lorg/json/JSONObject;)Landroid/os/Bundle;
     .locals 5
 
     .line 1
@@ -1618,536 +1608,559 @@
 .end method
 
 .method private legacyConfigureWithJson(Lorg/json/JSONObject;)V
-    .locals 10
+    .locals 17
 
-    const-string v0, "d"
+    move-object/from16 v0, p0
 
-    const-string v1, "isJsEnabled"
+    move-object/from16 v1, p1
 
-    const-string v2, "tdc"
+    const-string/jumbo v2, "xp"
 
-    const-string v3, "tlc"
+    const-string/jumbo v3, "xdp"
 
-    const-string v4, "efc"
+    const-string v4, "kv"
 
-    const-string v5, "wzrk_id"
+    const-string/jumbo v5, "url"
 
-    const-string v6, "ti"
+    const-string v6, "d"
+
+    const-string/jumbo v7, "wzrk_ttl"
+
+    const-string v8, "isJsEnabled"
+
+    const-string/jumbo v9, "tdc"
+
+    const-string/jumbo v10, "tlc"
+
+    const-string v11, "efc"
+
+    const-string/jumbo v12, "wzrk_id"
+
+    const-string/jumbo v13, "ti"
 
     .line 1
-    invoke-static {p1}, Lcom/clevertap/android/sdk/CTInAppNotification;->getBundleFromJsonObject(Lorg/json/JSONObject;)Landroid/os/Bundle;
+    invoke-static/range {p1 .. p1}, Lcom/clevertap/android/sdk/CTInAppNotification;->getBundleFromJsonObject(Lorg/json/JSONObject;)Landroid/os/Bundle;
 
-    move-result-object v7
+    move-result-object v14
 
     .line 2
-    invoke-direct {p0, v7}, Lcom/clevertap/android/sdk/CTInAppNotification;->validateNotifBundle(Landroid/os/Bundle;)Z
+    invoke-direct {v0, v14}, Lcom/clevertap/android/sdk/CTInAppNotification;->validateNotifBundle(Landroid/os/Bundle;)Z
 
-    move-result v7
+    move-result v14
 
-    const-string v8, "Invalid JSON"
+    const-string v15, "Invalid JSON"
 
-    if-nez v7, :cond_0
+    if-nez v14, :cond_0
 
     .line 3
-    iput-object v8, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
+    iput-object v15, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
 
     return-void
 
     .line 4
     :cond_0
     :try_start_0
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v1, v13}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v14
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v9, ""
+    const-string v16, ""
 
-    if-eqz v7, :cond_1
+    if-eqz v14, :cond_1
 
+    .line 5
     :try_start_1
-    invoke-virtual {p1, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v13}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v13
 
     goto :goto_0
 
     :cond_1
-    move-object v6, v9
+    move-object/from16 v13, v16
 
     :goto_0
-    iput-object v6, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->id:Ljava/lang/String;
+    iput-object v13, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->id:Ljava/lang/String;
 
-    .line 5
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 6
+    invoke-virtual {v1, v12}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v13
 
-    if-eqz v6, :cond_2
+    if-eqz v13, :cond_2
 
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 7
+    invoke-virtual {v1, v12}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v12
 
     goto :goto_1
 
     :cond_2
-    move-object v5, v9
+    move-object/from16 v12, v16
 
     :goto_1
-    iput-object v5, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->campaignId:Ljava/lang/String;
+    iput-object v12, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->campaignId:Ljava/lang/String;
 
-    .line 6
-    invoke-virtual {p1, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 8
+    invoke-virtual {v1, v11}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v12
 
-    const/4 v6, 0x1
+    const/4 v13, 0x1
 
-    const/4 v7, 0x0
+    const/4 v14, 0x0
 
-    if-eqz v5, :cond_3
+    if-eqz v12, :cond_3
 
-    invoke-virtual {p1, v4}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v1, v11}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v11
 
-    if-ne v4, v6, :cond_3
+    if-ne v11, v13, :cond_3
 
-    const/4 v4, 0x1
+    const/4 v11, 0x1
 
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    const/4 v11, 0x0
 
     :goto_2
-    iput-boolean v4, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->excludeFromCaps:Z
+    iput-boolean v11, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->excludeFromCaps:Z
 
-    .line 7
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 9
+    invoke-virtual {v1, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v11
 
-    const/4 v5, -0x1
+    const/4 v12, -0x1
 
-    if-eqz v4, :cond_4
+    if-eqz v11, :cond_4
 
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v1, v10}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v10
 
     goto :goto_3
 
     :cond_4
-    const/4 v3, -0x1
+    const/4 v10, -0x1
 
     :goto_3
-    iput v3, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->totalLifetimeCount:I
+    iput v10, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->totalLifetimeCount:I
 
-    .line 8
-    invoke-virtual {p1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 10
+    invoke-virtual {v1, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v10
 
-    if-eqz v3, :cond_5
+    if-eqz v10, :cond_5
 
-    invoke-virtual {p1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v1, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v9
 
     goto :goto_4
 
     :cond_5
-    const/4 v2, -0x1
+    const/4 v9, -0x1
 
     :goto_4
-    iput v2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->totalDailyCount:I
+    iput v9, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->totalDailyCount:I
 
-    .line 9
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 11
+    invoke-virtual {v1, v8}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v9
 
-    if-eqz v2, :cond_6
+    if-eqz v9, :cond_6
 
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    .line 12
+    invoke-virtual {v1, v8}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v8
 
-    if-eqz v1, :cond_6
+    if-eqz v8, :cond_6
 
     goto :goto_5
 
     :cond_6
-    const/4 v6, 0x0
+    const/4 v13, 0x0
 
     :goto_5
-    iput-boolean v6, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->jsEnabled:Z
+    iput-boolean v13, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->jsEnabled:Z
 
-    .line 10
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 13
+    invoke-virtual {v1, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v8
 
-    const/4 v2, 0x0
+    if-eqz v8, :cond_7
 
-    if-eqz v1, :cond_7
+    .line 14
+    invoke-virtual {v1, v7}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
+    move-result-wide v7
 
     goto :goto_6
 
+    .line 15
     :cond_7
-    move-object v0, v2
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v7
+
+    const-wide/32 v9, 0xa4cb800
+
+    add-long/2addr v7, v9
+
+    const-wide/16 v9, 0x3e8
+
+    div-long/2addr v7, v9
 
     :goto_6
-    if-eqz v0, :cond_15
-
-    const-string v1, "html"
-
-    .line 11
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->html:Ljava/lang/String;
-
-    const-string v1, "url"
-
-    .line 12
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    const-string v1, "url"
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    :cond_8
-    iput-object v9, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->customInAppUrl:Ljava/lang/String;
-
-    const-string v1, "kv"
-
-    .line 13
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_9
-
-    const-string v1, "kv"
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v2
-
-    :cond_9
-    iput-object v2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->customExtras:Lorg/json/JSONObject;
-
-    .line 14
-    iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->customExtras:Lorg/json/JSONObject;
-
-    if-nez v0, :cond_a
-
-    .line 15
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->customExtras:Lorg/json/JSONObject;
-
-    :cond_a
-    const-string v0, "w"
+    iput-wide v7, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->timeToLive:J
 
     .line 16
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-virtual {v1, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result-object p1
+    move-result v7
 
-    if-eqz p1, :cond_10
+    const/4 v8, 0x0
 
-    const-string v0, "dk"
+    if-eqz v7, :cond_8
 
     .line 17
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v1, v6}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->darkenScreen:Z
-
-    const-string v0, "sc"
-
-    .line 18
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->showClose:Z
-
-    const-string v0, "pos"
-
-    .line 19
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v7}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    iput-char v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
-
-    const-string v0, "xdp"
-
-    .line 20
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    const-string v0, "xdp"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v0
+    move-result-object v6
 
     goto :goto_7
 
-    :cond_b
-    const/4 v0, 0x0
+    :cond_8
+    move-object v6, v8
 
     :goto_7
-    iput v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->width:I
+    if-eqz v6, :cond_16
 
-    const-string v0, "xp"
+    const-string v7, "html"
+
+    .line 18
+    invoke-virtual {v6, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    iput-object v7, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->html:Ljava/lang/String;
+
+    .line 19
+    invoke-virtual {v6, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_9
+
+    invoke-virtual {v6, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v16
+
+    :cond_9
+    move-object/from16 v5, v16
+
+    iput-object v5, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->customInAppUrl:Ljava/lang/String;
+
+    .line 20
+    invoke-virtual {v6, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_a
+
+    invoke-virtual {v6, v4}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v8
+
+    :cond_a
+    iput-object v8, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->customExtras:Lorg/json/JSONObject;
+
+    if-nez v8, :cond_b
 
     .line 21
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    new-instance v4, Lorg/json/JSONObject;
 
-    move-result v0
+    invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
 
-    if-eqz v0, :cond_c
+    iput-object v4, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->customExtras:Lorg/json/JSONObject;
 
-    const-string v0, "xp"
+    :cond_b
+    const-string/jumbo v4, "w"
 
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    .line 22
+    invoke-virtual {v1, v4}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result v0
+    move-result-object v1
+
+    if-eqz v1, :cond_11
+
+    const-string v4, "dk"
+
+    .line 23
+    invoke-virtual {v1, v4}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v4
+
+    iput-boolean v4, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->darkenScreen:Z
+
+    const-string v4, "sc"
+
+    .line 24
+    invoke-virtual {v1, v4}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v4
+
+    iput-boolean v4, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->showClose:Z
+
+    const-string v4, "pos"
+
+    .line 25
+    invoke-virtual {v1, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v14}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    iput-char v4, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
+
+    .line 26
+    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_c
+
+    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v3
 
     goto :goto_8
 
     :cond_c
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
     :goto_8
-    iput v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+    iput v3, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->width:I
 
-    const-string v0, "ydp"
+    .line 27
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 22
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    move-result v3
 
-    move-result v0
+    if-eqz v3, :cond_d
 
-    if-eqz v0, :cond_d
+    .line 28
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    const-string v0, "ydp"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v0
+    move-result v2
 
     goto :goto_9
 
     :cond_d
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_9
-    iput v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->height:I
+    iput v2, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
 
-    const-string v0, "yp"
-
-    .line 23
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    const-string v0, "yp"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v7
-
-    :cond_e
-    iput v7, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
-
-    const-string v0, "mdc"
-
-    .line 24
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    const-string v0, "mdc"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    :cond_f
-    iput v5, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->maxPerSession:I
-
-    .line 25
-    :cond_10
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->html:Ljava/lang/String;
-
-    if-eqz p1, :cond_15
-
-    .line 26
-    iget-char p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
-
-    const/16 v0, 0x74
-
-    const/16 v1, 0x64
-
-    if-ne p1, v0, :cond_11
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
-
-    if-ne p1, v1, :cond_11
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
-
-    const/16 v0, 0x1e
-
-    if-gt p1, v0, :cond_11
-
-    .line 27
-    sget-object p1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeHeaderHTML:Lcom/clevertap/android/sdk/CTInAppType;
-
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
-
-    goto :goto_a
-
-    .line 28
-    :cond_11
-    iget-char p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
-
-    const/16 v0, 0x62
-
-    if-ne p1, v0, :cond_12
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
-
-    if-ne p1, v1, :cond_12
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
-
-    const/16 v0, 0x1e
-
-    if-gt p1, v0, :cond_12
+    const-string/jumbo v2, "ydp"
 
     .line 29
-    sget-object p1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeFooterHTML:Lcom/clevertap/android/sdk/CTInAppType;
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+    move-result v2
+
+    if-eqz v2, :cond_e
+
+    const-string/jumbo v2, "ydp"
+
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v2
 
     goto :goto_a
+
+    :cond_e
+    const/4 v2, 0x0
+
+    :goto_a
+    iput v2, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->height:I
+
+    const-string/jumbo v2, "yp"
 
     .line 30
-    :cond_12
-    iget-char p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    const/16 v0, 0x63
+    move-result v2
 
-    if-ne p1, v0, :cond_13
+    if-eqz v2, :cond_f
 
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
-
-    const/16 v2, 0x5a
-
-    if-ne p1, v2, :cond_13
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
-
-    const/16 v2, 0x55
-
-    if-ne p1, v2, :cond_13
+    const-string/jumbo v2, "yp"
 
     .line 31
-    sget-object p1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeInterstitialHTML:Lcom/clevertap/android/sdk/CTInAppType;
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+    move-result v14
 
-    goto :goto_a
+    :cond_f
+    iput v14, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
+
+    const-string v2, "mdc"
 
     .line 32
-    :cond_13
-    iget-char p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    if-ne p1, v0, :cond_14
+    move-result v2
 
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+    if-eqz v2, :cond_10
 
-    if-ne p1, v1, :cond_14
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
-
-    if-ne p1, v1, :cond_14
+    const-string v2, "mdc"
 
     .line 33
-    sget-object p1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeCoverHTML:Lcom/clevertap/android/sdk/CTInAppType;
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+    move-result v12
 
-    goto :goto_a
+    :cond_10
+    iput v12, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->maxPerSession:I
 
     .line 34
-    :cond_14
-    iget-char p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
+    :cond_11
+    iget-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->html:Ljava/lang/String;
 
-    if-ne p1, v0, :cond_15
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
-
-    const/16 v0, 0x5a
-
-    if-ne p1, v0, :cond_15
-
-    iget p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
-
-    const/16 v0, 0x32
-
-    if-ne p1, v0, :cond_15
+    if-eqz v1, :cond_16
 
     .line 35
-    sget-object p1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeHalfInterstitialHTML:Lcom/clevertap/android/sdk/CTInAppType;
+    iget-char v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->position:C
 
-    iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+    const/16 v2, 0x74
+
+    const/16 v3, 0x1e
+
+    const/16 v4, 0x64
+
+    if-ne v1, v2, :cond_12
+
+    iget v2, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+
+    if-ne v2, v4, :cond_12
+
+    iget v2, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
+
+    if-gt v2, v3, :cond_12
+
+    .line 36
+    sget-object v1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeHeaderHTML:Lcom/clevertap/android/sdk/CTInAppType;
+
+    iput-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+
+    goto :goto_b
+
+    :cond_12
+    const/16 v2, 0x62
+
+    if-ne v1, v2, :cond_13
+
+    .line 37
+    iget v2, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+
+    if-ne v2, v4, :cond_13
+
+    iget v2, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
+
+    if-gt v2, v3, :cond_13
+
+    .line 38
+    sget-object v1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeFooterHTML:Lcom/clevertap/android/sdk/CTInAppType;
+
+    iput-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+
+    goto :goto_b
+
+    :cond_13
+    const/16 v2, 0x5a
+
+    const/16 v3, 0x63
+
+    if-ne v1, v3, :cond_14
+
+    .line 39
+    iget v5, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+
+    if-ne v5, v2, :cond_14
+
+    iget v5, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
+
+    const/16 v6, 0x55
+
+    if-ne v5, v6, :cond_14
+
+    .line 40
+    sget-object v1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeInterstitialHTML:Lcom/clevertap/android/sdk/CTInAppType;
+
+    iput-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+
+    goto :goto_b
+
+    :cond_14
+    if-ne v1, v3, :cond_15
+
+    .line 41
+    iget v5, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+
+    if-ne v5, v4, :cond_15
+
+    iget v5, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
+
+    if-ne v5, v4, :cond_15
+
+    .line 42
+    sget-object v1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeCoverHTML:Lcom/clevertap/android/sdk/CTInAppType;
+
+    iput-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
+
+    goto :goto_b
+
+    :cond_15
+    if-ne v1, v3, :cond_16
+
+    .line 43
+    iget v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->widthPercentage:I
+
+    if-ne v1, v2, :cond_16
+
+    iget v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->heightPercentage:I
+
+    const/16 v2, 0x32
+
+    if-ne v1, v2, :cond_16
+
+    .line 44
+    sget-object v1, Lcom/clevertap/android/sdk/CTInAppType;->CTInAppTypeHalfInterstitialHTML:Lcom/clevertap/android/sdk/CTInAppType;
+
+    iput-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->inAppType:Lcom/clevertap/android/sdk/CTInAppType;
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_a
+    goto :goto_b
 
-    .line 36
+    .line 45
     :catch_0
-    iput-object v8, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
+    iput-object v15, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
 
-    :cond_15
-    :goto_a
+    :cond_16
+    :goto_b
     return-void
 .end method
 
@@ -2263,141 +2276,131 @@
 .end method
 
 .method private validateNotifBundle(Landroid/os/Bundle;)Z
-    .locals 5
+    .locals 7
 
     const-string v0, "pos"
 
-    const/4 v1, 0x0
+    .line 1
+    const-class v1, Ljava/lang/String;
+
+    const-class v2, Ljava/lang/Boolean;
+
+    const-class v3, Ljava/lang/Integer;
+
+    const/4 v4, 0x0
 
     :try_start_0
-    const-string v2, "w"
+    const-string/jumbo v5, "w"
 
-    .line 1
-    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p1, v5}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v2
+    move-result-object v5
 
-    const-string v3, "d"
+    const-string v6, "d"
 
     .line 2
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p1, v6}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object p1
 
-    if-eqz v2, :cond_7
+    if-eqz v5, :cond_7
 
     if-nez p1, :cond_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_0
-    const-string v3, "xdp"
+    const-string/jumbo v6, "xdp"
 
     .line 3
-    const-class v4, Ljava/lang/Integer;
+    invoke-direct {p0, v5, v6, v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v2, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    move-result v6
 
-    move-result v3
+    if-nez v6, :cond_1
 
-    if-nez v3, :cond_1
-
-    const-string v3, "xp"
+    const-string/jumbo v6, "xp"
 
     .line 4
-    const-class v4, Ljava/lang/Integer;
+    invoke-direct {p0, v5, v6, v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v2, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    move-result v6
 
-    move-result v3
+    if-nez v6, :cond_1
 
-    if-nez v3, :cond_1
-
-    return v1
+    return v4
 
     :cond_1
-    const-string v3, "ydp"
+    const-string/jumbo v6, "ydp"
 
     .line 5
-    const-class v4, Ljava/lang/Integer;
+    invoke-direct {p0, v5, v6, v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v2, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    move-result v6
 
-    move-result v3
+    if-nez v6, :cond_2
 
-    if-nez v3, :cond_2
-
-    const-string v3, "yp"
+    const-string/jumbo v6, "yp"
 
     .line 6
-    const-class v4, Ljava/lang/Integer;
-
-    invoke-direct {p0, v2, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    invoke-direct {p0, v5, v6, v3}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    return v1
+    return v4
 
     :cond_2
     const-string v3, "dk"
 
     .line 7
-    const-class v4, Ljava/lang/Boolean;
-
-    invoke-direct {p0, v2, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    invoke-direct {p0, v5, v3, v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
-    return v1
+    return v4
 
     :cond_3
     const-string v3, "sc"
 
     .line 8
-    const-class v4, Ljava/lang/Boolean;
+    invoke-direct {p0, v5, v3, v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
-    invoke-direct {p0, v2, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    move-result v2
 
-    move-result v3
+    if-nez v2, :cond_4
 
-    if-nez v3, :cond_4
-
-    return v1
+    return v4
 
     :cond_4
-    const-string v3, "html"
+    const-string v2, "html"
 
     .line 9
-    const-class v4, Ljava/lang/String;
-
-    invoke-direct {p0, p1, v3, v4}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    invoke-direct {p0, p1, v2, v1}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
     move-result p1
 
     if-nez p1, :cond_5
 
-    return v1
+    return v4
 
     .line 10
     :cond_5
-    const-class p1, Ljava/lang/String;
-
-    invoke-direct {p0, v2, v0, p1}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
+    invoke-direct {p0, v5, v0, v1}, Lcom/clevertap/android/sdk/CTInAppNotification;->isKeyValid(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Z
 
     move-result p1
 
     if-eqz p1, :cond_7
 
     .line 11
-    invoke-virtual {v2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result p1
     :try_end_0
@@ -2423,7 +2426,7 @@
 
     if-eq p1, v0, :cond_6
 
-    return v1
+    return v4
 
     :cond_6
     const/4 p1, 0x1
@@ -2432,7 +2435,7 @@
 
     :cond_7
     :goto_0
-    return v1
+    return v4
 
     :catchall_0
     move-exception p1
@@ -2442,7 +2445,7 @@
     .line 12
     invoke-static {v0, p1}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return v1
+    return v4
 .end method
 
 
@@ -2720,6 +2723,15 @@
     return v0
 .end method
 
+.method public getTimeToLive()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->timeToLive:J
+
+    return-wide v0
+.end method
+
 .method public getTitle()Ljava/lang/String;
     .locals 1
 
@@ -2786,7 +2798,7 @@
 .method public initWithJSON(Lorg/json/JSONObject;Z)Lcom/clevertap/android/sdk/CTInAppNotification;
     .locals 1
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     .line 1
     iput-boolean p2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->videoSupported:Z
@@ -2814,15 +2826,11 @@
     :goto_0
     iput-object p2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
 
-    .line 4
-    iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
-
     if-eqz p2, :cond_2
-
-    iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->type:Ljava/lang/String;
 
     const-string v0, "custom-html"
 
+    .line 4
     invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -2962,7 +2970,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3079,7 +3087,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     .line 13
     invoke-static {}, Lcom/clevertap/android/sdk/ImageCache;->init()V
@@ -3136,7 +3144,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_4
 
     .line 19
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3177,13 +3185,26 @@
 
     goto/16 :goto_0
 
-    .line 22
     :cond_4
+    const-string v1, "Image Bitmap is null"
+
+    .line 22
+    invoke-static {v1}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
+
+    const-string v1, "Error processing image as bitmap was NULL"
+
+    .line 23
+    iput-object v1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
+
+    goto/16 :goto_0
+
+    .line 24
+    :cond_5
     invoke-virtual {v1}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isVideo()Z
 
     move-result v2
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_6
 
     invoke-virtual {v1}, Lcom/clevertap/android/sdk/CTInAppNotificationMedia;->isAudio()Z
 
@@ -3191,21 +3212,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 23
-    :cond_5
+    .line 25
+    :cond_6
     iget-boolean v1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->videoSupported:Z
 
     if-nez v1, :cond_0
 
     const-string v1, "InApp Video/Audio is not supported"
 
-    .line 24
+    .line 26
     iput-object v1, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->error:Ljava/lang/String;
 
     goto/16 :goto_0
 
-    .line 25
-    :cond_6
+    .line 27
+    :cond_7
     iget-object v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->listener:Lcom/clevertap/android/sdk/CTInAppNotification$CTInAppNotificationListener;
 
     invoke-interface {v0, p0}, Lcom/clevertap/android/sdk/CTInAppNotification$CTInAppNotificationListener;->notificationReady(Lcom/clevertap/android/sdk/CTInAppNotification;)V
@@ -3476,6 +3497,11 @@
     iget-object p2, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->_landscapeImageCacheKey:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 46
+    iget-wide v0, p0, Lcom/clevertap/android/sdk/CTInAppNotification;->timeToLive:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     return-void
 .end method

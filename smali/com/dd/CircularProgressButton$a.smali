@@ -3,7 +3,7 @@
 .source "CircularProgressButton.java"
 
 # interfaces
-.implements Lzz;
+.implements Lu8;
 
 
 # annotations
@@ -50,18 +50,18 @@
 
     sget-object v1, Lcom/dd/CircularProgressButton$State;->PROGRESS:Lcom/dd/CircularProgressButton$State;
 
-    invoke-static {v0, v1}, Lcom/dd/CircularProgressButton;->a(Lcom/dd/CircularProgressButton;Lcom/dd/CircularProgressButton$State;)Lcom/dd/CircularProgressButton$State;
+    invoke-static {v0, v1}, Lcom/dd/CircularProgressButton;->b(Lcom/dd/CircularProgressButton;Lcom/dd/CircularProgressButton$State;)Lcom/dd/CircularProgressButton$State;
 
     .line 3
     iget-object v0, p0, Lcom/dd/CircularProgressButton$a;->a:Lcom/dd/CircularProgressButton;
 
-    invoke-static {v0}, Lcom/dd/CircularProgressButton;->a(Lcom/dd/CircularProgressButton;)La00;
+    invoke-static {v0}, Lcom/dd/CircularProgressButton;->c(Lcom/dd/CircularProgressButton;)Lv8;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/dd/CircularProgressButton$a;->a:Lcom/dd/CircularProgressButton;
 
-    invoke-virtual {v0, v1}, La00;->a(Lcom/dd/CircularProgressButton;)V
+    invoke-virtual {v0, v1}, Lv8;->a(Lcom/dd/CircularProgressButton;)V
 
     return-void
 .end method

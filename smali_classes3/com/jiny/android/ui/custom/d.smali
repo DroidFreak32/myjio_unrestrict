@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public s:Lel0$b;
+.field public a:Lcom/jiny/android/e/e$a;
 
-.field public t:Landroid/graphics/Rect;
+.field public b:Landroid/graphics/Rect;
 
 
 # direct methods
@@ -18,7 +18,7 @@
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/d;->t:Landroid/graphics/Rect;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/d;->b:Landroid/graphics/Rect;
 
     return-void
 .end method
@@ -33,7 +33,7 @@
     return-void
 
     :cond_0
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/d;->t:Landroid/graphics/Rect;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/d;->b:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -70,10 +70,10 @@
     return-void
 .end method
 
-.method public final a(FF)Z
+.method public final b(FF)Z
     .locals 2
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/d;->t:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/d;->b:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
@@ -135,21 +135,21 @@
 
     if-nez v2, :cond_0
 
-    invoke-virtual {p0, v0, v1}, Lcom/jiny/android/ui/custom/d;->a(FF)Z
+    invoke-virtual {p0, v0, v1}, Lcom/jiny/android/ui/custom/d;->b(FF)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/d;->s:Lel0$b;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/d;->a:Lcom/jiny/android/e/e$a;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Lel0$b;->k()V
+    invoke-interface {v0}, Lcom/jiny/android/e/e$a;->k()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/jiny/android/ui/custom/d;->s:Lel0$b;
+    iput-object v0, p0, Lcom/jiny/android/ui/custom/d;->a:Lcom/jiny/android/e/e$a;
 
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -159,10 +159,10 @@
     return p1
 .end method
 
-.method public setPointerViewClickListener(Lel0$b;)V
+.method public setPointerViewClickListener(Lcom/jiny/android/e/e$a;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/d;->s:Lel0$b;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/d;->a:Lcom/jiny/android/e/e$a;
 
     return-void
 .end method

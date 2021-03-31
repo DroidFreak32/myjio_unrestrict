@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/vision/FocusingProcessor;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 # interfaces
 .implements Lcom/google/android/gms/vision/Detector$Processor;
@@ -19,7 +20,7 @@
 
 
 # instance fields
-.field public zzak:Lcom/google/android/gms/vision/Tracker;
+.field private zzas:Lcom/google/android/gms/vision/Tracker;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/Tracker<",
@@ -28,15 +29,15 @@
     .end annotation
 .end field
 
-.field public zzal:I
+.field private zzat:I
 
-.field public zzam:Z
+.field private zzau:Z
 
-.field public zzan:I
+.field private zzav:I
 
-.field public zzao:I
+.field private zzaw:I
 
-.field public zzr:Lcom/google/android/gms/vision/Detector;
+.field private zzx:Lcom/google/android/gms/vision/Detector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/Detector<",
@@ -65,21 +66,21 @@
     const/4 v0, 0x3
 
     .line 2
-    iput v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzal:I
+    iput v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzat:I
 
     const/4 v0, 0x0
 
     .line 3
-    iput-boolean v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzam:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzau:Z
 
     .line 4
-    iput v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzao:I
+    iput v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzaw:I
 
     .line 5
-    iput-object p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzr:Lcom/google/android/gms/vision/Detector;
+    iput-object p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzx:Lcom/google/android/gms/vision/Detector;
 
     .line 6
-    iput-object p2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iput-object p2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     return-void
 .end method
@@ -113,49 +114,49 @@
     if-nez v1, :cond_1
 
     .line 3
-    iget v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzao:I
+    iget v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzaw:I
 
-    iget v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzal:I
+    iget v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzat:I
 
     if-ne v0, v1, :cond_0
 
     .line 4
-    iget-object p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     invoke-virtual {p1}, Lcom/google/android/gms/vision/Tracker;->onDone()V
 
     .line 5
-    iput-boolean v3, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzam:Z
+    iput-boolean v3, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzau:Z
 
     goto :goto_0
 
     .line 6
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/vision/Tracker;->onMissing(Lcom/google/android/gms/vision/Detector$Detections;)V
 
     .line 7
     :goto_0
-    iget p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzao:I
+    iget p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzaw:I
 
     add-int/2addr p1, v2
 
-    iput p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzao:I
+    iput p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzaw:I
 
     return-void
 
     .line 8
     :cond_1
-    iput v3, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzao:I
+    iput v3, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzaw:I
 
     .line 9
-    iget-boolean v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzam:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzau:Z
 
     if-eqz v1, :cond_3
 
     .line 10
-    iget v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzan:I
+    iget v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzav:I
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -164,7 +165,7 @@
     if-eqz v1, :cond_2
 
     .line 11
-    iget-object v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/vision/Tracker;->onUpdate(Lcom/google/android/gms/vision/Detector$Detections;Ljava/lang/Object;)V
 
@@ -172,12 +173,12 @@
 
     .line 12
     :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     invoke-virtual {v1}, Lcom/google/android/gms/vision/Tracker;->onDone()V
 
     .line 13
-    iput-boolean v3, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzam:Z
+    iput-boolean v3, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzau:Z
 
     .line 14
     :cond_3
@@ -211,27 +212,25 @@
 
     .line 17
     :cond_4
-    iput-boolean v2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzam:Z
+    iput-boolean v2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzau:Z
 
     .line 18
-    iput v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzan:I
+    iput v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzav:I
 
     .line 19
-    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzr:Lcom/google/android/gms/vision/Detector;
+    iget-object v2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzx:Lcom/google/android/gms/vision/Detector;
 
-    iget v2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzan:I
-
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/vision/Detector;->setFocus(I)Z
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/vision/Detector;->setFocus(I)Z
 
     .line 20
-    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
-    iget v2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzan:I
+    iget v2, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzav:I
 
     invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/vision/Tracker;->onNewItem(ILjava/lang/Object;)V
 
     .line 21
-    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object v1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     invoke-virtual {v1, p1, v0}, Lcom/google/android/gms/vision/Tracker;->onUpdate(Lcom/google/android/gms/vision/Detector$Detections;Ljava/lang/Object;)V
 
@@ -242,7 +241,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzak:Lcom/google/android/gms/vision/Tracker;
+    iget-object v0, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzas:Lcom/google/android/gms/vision/Tracker;
 
     invoke-virtual {v0}, Lcom/google/android/gms/vision/Tracker;->onDone()V
 
@@ -265,7 +264,7 @@
     if-ltz p1, :cond_0
 
     .line 1
-    iput p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzal:I
+    iput p1, p0, Lcom/google/android/gms/vision/FocusingProcessor;->zzat:I
 
     return-void
 

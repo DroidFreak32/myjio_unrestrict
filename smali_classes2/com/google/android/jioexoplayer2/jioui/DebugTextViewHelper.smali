@@ -8,15 +8,15 @@
 
 
 # static fields
-.field public static final REFRESH_INTERVAL_MS:I = 0x3e8
+.field private static final REFRESH_INTERVAL_MS:I = 0x3e8
 
 
 # instance fields
-.field public final player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
+.field private final player:Lcom/google/android/jioexoplayer2/SimpleExoPlayer;
 
-.field public started:Z
+.field private started:Z
 
-.field public final textView:Landroid/widget/TextView;
+.field private final textView:Landroid/widget/TextView;
 
 
 # direct methods
@@ -56,7 +56,7 @@
     return-void
 .end method
 
-.method public static getDecoderCountersBufferCountString(Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;)Ljava/lang/String;
+.method private static getDecoderCountersBufferCountString(Lcom/google/android/jioexoplayer2/decoder/DecoderCounters;)Ljava/lang/String;
     .locals 2
 
     if-nez p0, :cond_0
@@ -129,7 +129,7 @@
     return-object p0
 .end method
 
-.method public static getPixelAspectRatioString(F)Ljava/lang/String;
+.method private static getPixelAspectRatioString(F)Ljava/lang/String;
     .locals 4
 
     const/high16 v0, -0x40800000    # -1.0f
@@ -501,7 +501,7 @@
 .method public synthetic onLoadingChanged(Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onLoadingChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
+    invoke-static {p0, p1}, Lph;->$default$onLoadingChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
 
     return-void
 .end method
@@ -509,7 +509,7 @@
 .method public synthetic onPlaybackParametersChanged(Lcom/google/android/jioexoplayer2/PlaybackParameters;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onPlaybackParametersChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/PlaybackParameters;)V
+    invoke-static {p0, p1}, Lph;->$default$onPlaybackParametersChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/PlaybackParameters;)V
 
     return-void
 .end method
@@ -517,7 +517,7 @@
 .method public synthetic onPlayerError(Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onPlayerError(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
+    invoke-static {p0, p1}, Lph;->$default$onPlayerError(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/ExoPlaybackException;)V
 
     return-void
 .end method
@@ -543,7 +543,7 @@
 .method public synthetic onRepeatModeChanged(I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onRepeatModeChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;I)V
+    invoke-static {p0, p1}, Lph;->$default$onRepeatModeChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;I)V
 
     return-void
 .end method
@@ -551,7 +551,7 @@
 .method public synthetic onSeekProcessed()V
     .locals 0
 
-    invoke-static {p0}, Lfb0;->$default$onSeekProcessed(Lcom/google/android/jioexoplayer2/Player$EventListener;)V
+    invoke-static {p0}, Lph;->$default$onSeekProcessed(Lcom/google/android/jioexoplayer2/Player$EventListener;)V
 
     return-void
 .end method
@@ -559,7 +559,7 @@
 .method public synthetic onShuffleModeEnabledChanged(Z)V
     .locals 0
 
-    invoke-static {p0, p1}, Lfb0;->$default$onShuffleModeEnabledChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
+    invoke-static {p0, p1}, Lph;->$default$onShuffleModeEnabledChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Z)V
 
     return-void
 .end method
@@ -567,7 +567,7 @@
 .method public synthetic onTimelineChanged(Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lfb0;->$default$onTimelineChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
+    invoke-static {p0, p1, p2, p3}, Lph;->$default$onTimelineChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/Timeline;Ljava/lang/Object;I)V
 
     return-void
 .end method
@@ -575,7 +575,7 @@
 .method public synthetic onTracksChanged(Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lfb0;->$default$onTracksChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
+    invoke-static {p0, p1, p2}, Lph;->$default$onTracksChanged(Lcom/google/android/jioexoplayer2/Player$EventListener;Lcom/google/android/jioexoplayer2/source/TrackGroupArray;Lcom/google/android/jioexoplayer2/trackselection/TrackSelectionArray;)V
 
     return-void
 .end method

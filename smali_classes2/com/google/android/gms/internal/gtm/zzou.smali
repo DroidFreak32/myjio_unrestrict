@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field public zzakg:Lcom/google/android/gms/internal/gtm/zzl;
+.field private zzakg:Lcom/google/android/gms/internal/gtm/zzl;
 
-.field public final zzats:Ljava/util/Map;
+.field private final zzats:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1

@@ -3,41 +3,41 @@
 
 
 # instance fields
-.field public ANDSFURL:Ljava/lang/String;
+.field private ANDSFURL:Ljava/lang/String;
 
-.field public ANDSF_userIdentity:Ljava/lang/String;
+.field private ANDSF_userIdentity:Ljava/lang/String;
 
-.field public activity:Landroid/app/Activity;
+.field private activity:Landroid/app/Activity;
 
-.field public applicationName:Ljava/lang/String;
+.field private applicationName:Ljava/lang/String;
 
-.field public certi_Password:Ljava/lang/String;
+.field private certi_Password:Ljava/lang/String;
 
-.field public clientStatusChangeBy:I
+.field private clientStatusChangeBy:I
 
-.field public client_certi_Location:Ljava/lang/String;
+.field private client_certi_Location:Ljava/lang/String;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public isClientFirstEnable:Ljava/lang/String;
+.field private isClientFirstEnable:Ljava/lang/String;
 
-.field public isPolicyCall:Z
+.field private isPolicyCall:Z
 
-.field public logo:I
+.field private logo:I
 
-.field public monetizationURL:Ljava/lang/String;
+.field private monetizationURL:Ljava/lang/String;
 
-.field public notificationKEY:Ljava/lang/String;
+.field private notificationKEY:Ljava/lang/String;
 
-.field public notificationLogo:I
+.field private notificationLogo:I
 
-.field public notificationLogoColor:I
+.field private notificationLogoColor:I
 
-.field public parentAppVersion:Ljava/lang/String;
+.field private parentAppVersion:Ljava/lang/String;
 
-.field public server_certi_Location:Ljava/lang/String;
+.field private server_certi_Location:Ljava/lang/String;
 
-.field public sharedKey:Ljava/lang/String;
+.field private sharedKey:Ljava/lang/String;
 
 
 # direct methods

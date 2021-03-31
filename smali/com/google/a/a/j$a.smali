@@ -23,37 +23,37 @@
 
 
 # instance fields
-.field public a:Z
+.field private a:Z
 
-.field public b:I
+.field private b:I
 
-.field public c:Z
+.field private c:Z
 
-.field public d:J
+.field private d:J
 
-.field public e:Z
+.field private e:Z
 
-.field public f:Ljava/lang/String;
+.field private f:Ljava/lang/String;
 
-.field public g:Z
+.field private g:Z
 
-.field public h:Z
+.field private h:Z
 
-.field public i:Z
+.field private i:Z
 
-.field public j:I
+.field private j:I
 
-.field public k:Z
+.field private k:Z
 
-.field public l:Ljava/lang/String;
+.field private l:Ljava/lang/String;
 
-.field public m:Z
+.field private m:Z
 
-.field public n:Lcom/google/a/a/j$a$a;
+.field private n:Lcom/google/a/a/j$a$a;
 
-.field public o:Z
+.field private o:Z
 
-.field public p:Ljava/lang/String;
+.field private p:Ljava/lang/String;
 
 
 # direct methods
@@ -128,7 +128,7 @@
 .method public a(Lcom/google/a/a/j$a$a;)Lcom/google/a/a/j$a;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -137,19 +137,12 @@
     iput-object p1, p0, Lcom/google/a/a/j$a;->n:Lcom/google/a/a/j$a$a;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public a(Ljava/lang/String;)Lcom/google/a/a/j$a;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -158,13 +151,6 @@
     iput-object p1, p0, Lcom/google/a/a/j$a;->f:Ljava/lang/String;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public a(Z)Lcom/google/a/a/j$a;
@@ -297,7 +283,7 @@
 .method public b(Ljava/lang/String;)Lcom/google/a/a/j$a;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -306,19 +292,12 @@
     iput-object p1, p0, Lcom/google/a/a/j$a;->l:Ljava/lang/String;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public c(Ljava/lang/String;)Lcom/google/a/a/j$a;
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -327,13 +306,6 @@
     iput-object p1, p0, Lcom/google/a/a/j$a;->p:Ljava/lang/String;
 
     return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw p1
 .end method
 
 .method public c()Z

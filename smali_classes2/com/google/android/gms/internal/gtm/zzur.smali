@@ -18,9 +18,9 @@
 # instance fields
 .field public final tag:I
 
-.field public final type:I
+.field private final type:I
 
-.field public final zzban:Lcom/google/android/gms/internal/gtm/zzrc;
+.field private final zzban:Lcom/google/android/gms/internal/gtm/zzrc;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzrc<",
@@ -42,7 +42,7 @@
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/Class;IZ)V
+.method private constructor <init>(ILjava/lang/Class;IZ)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,7 +70,7 @@
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/Class;Lcom/google/android/gms/internal/gtm/zzrc;IZ)V
+.method private constructor <init>(ILjava/lang/Class;Lcom/google/android/gms/internal/gtm/zzrc;IZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -683,17 +683,19 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const/16 v0, 0x18
+    iget v0, p0, Lcom/google/android/gms/internal/gtm/zzur;->type:I
+
+    const/16 v1, 0x18
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v0, "Unknown type "
+    const-string v1, "Unknown type "
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

@@ -1,47 +1,40 @@
-.class public Lwh;
+.class public final synthetic Lwh;
 .super Ljava/lang/Object;
-.source "StringUtil.java"
+.source "lambda"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;
+
+.field public final synthetic b:Lcom/google/android/jioexoplayer2/Format;
 
 
 # direct methods
-.method public static a()Ljava/lang/StringBuilder;
-    .locals 1
+.method public synthetic constructor <init>(Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;Lcom/google/android/jioexoplayer2/Format;)V
+    .locals 0
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iput-object p1, p0, Lwh;->a:Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;
 
-    return-object v0
+    iput-object p2, p0, Lwh;->b:Lcom/google/android/jioexoplayer2/Format;
+
+    return-void
 .end method
 
-.method public static a(Ljava/lang/StringBuilder;I)V
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lwh;->a:Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;
 
-    :goto_0
-    if-ge v0, p1, :cond_1
+    iget-object v1, p0, Lwh;->b:Lcom/google/android/jioexoplayer2/Format;
 
-    const-string v1, "?"
+    invoke-virtual {v0, v1}, Lcom/google/android/jioexoplayer2/audio/AudioRendererEventListener$EventDispatcher;->l(Lcom/google/android/jioexoplayer2/Format;)V
 
-    .line 2
-    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v1, p1, -0x1
-
-    if-ge v0, v1, :cond_0
-
-    const-string v1, ","
-
-    .line 3
-    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method

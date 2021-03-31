@@ -5,11 +5,11 @@
 # instance fields
 .field public final intent:Landroid/content/Intent;
 
-.field public final zzbi:Landroid/content/BroadcastReceiver$PendingResult;
+.field private final zzbi:Landroid/content/BroadcastReceiver$PendingResult;
 
-.field public zzbj:Z
+.field private zzbj:Z
 
-.field public final zzbk:Ljava/util/concurrent/ScheduledFuture;
+.field private final zzbk:Ljava/util/concurrent/ScheduledFuture;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ScheduledFuture<",

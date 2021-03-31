@@ -1,89 +1,172 @@
 .class public final Lcom/google/android/gms/internal/location/zzae;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/internal/location/zzad;",
-        ">;"
-    }
-.end annotation
+.implements Lcom/google/android/gms/location/GeofencingApi;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private final zza(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/zzbe;)Lcom/google/android/gms/common/api/PendingResult;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "Lcom/google/android/gms/location/zzbe;",
+            ")",
+            "Lcom/google/android/gms/common/api/PendingResult<",
+            "Lcom/google/android/gms/common/api/Status;",
+            ">;"
+        }
+    .end annotation
 
-# virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 5
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/location/zzag;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/gms/internal/location/zzag;-><init>(Lcom/google/android/gms/internal/location/zzae;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/zzbe;)V
 
-    move-result v0
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->execute(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
 
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v2
-
-    if-ge v2, v0, :cond_1
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
-
-    move-result v3
-
-    const/4 v4, 0x1
-
-    if-eq v3, v4, :cond_0
-
-    invoke-static {p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/api/Status;
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    new-instance p1, Lcom/google/android/gms/internal/location/zzad;
-
-    invoke-direct {p1, v1}, Lcom/google/android/gms/internal/location/zzad;-><init>(Lcom/google/android/gms/common/api/Status;)V
+    move-result-object p1
 
     return-object p1
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
 
-    new-array p1, p1, [Lcom/google/android/gms/internal/location/zzad;
+# virtual methods
+.method public final addGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "Lcom/google/android/gms/location/GeofencingRequest;",
+            "Landroid/app/PendingIntent;",
+            ")",
+            "Lcom/google/android/gms/common/api/PendingResult<",
+            "Lcom/google/android/gms/common/api/Status;",
+            ">;"
+        }
+    .end annotation
+
+    .line 5
+    new-instance v0, Lcom/google/android/gms/internal/location/zzad;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/android/gms/internal/location/zzad;-><init>(Lcom/google/android/gms/internal/location/zzae;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;)V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->execute(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final addGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Ljava/util/List;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/location/Geofence;",
+            ">;",
+            "Landroid/app/PendingIntent;",
+            ")",
+            "Lcom/google/android/gms/common/api/PendingResult<",
+            "Lcom/google/android/gms/common/api/Status;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/location/GeofencingRequest$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/gms/location/GeofencingRequest$Builder;-><init>()V
+
+    .line 2
+    invoke-virtual {v0, p2}, Lcom/google/android/gms/location/GeofencingRequest$Builder;->addGeofences(Ljava/util/List;)Lcom/google/android/gms/location/GeofencingRequest$Builder;
+
+    const/4 p2, 0x5
+
+    .line 3
+    invoke-virtual {v0, p2}, Lcom/google/android/gms/location/GeofencingRequest$Builder;->setInitialTrigger(I)Lcom/google/android/gms/location/GeofencingRequest$Builder;
+
+    .line 4
+    invoke-virtual {v0}, Lcom/google/android/gms/location/GeofencingRequest$Builder;->build()Lcom/google/android/gms/location/GeofencingRequest;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/location/zzae;->addGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final removeGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Landroid/app/PendingIntent;)Lcom/google/android/gms/common/api/PendingResult;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "Landroid/app/PendingIntent;",
+            ")",
+            "Lcom/google/android/gms/common/api/PendingResult<",
+            "Lcom/google/android/gms/common/api/Status;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p2}, Lcom/google/android/gms/location/zzbe;->zza(Landroid/app/PendingIntent;)Lcom/google/android/gms/location/zzbe;
+
+    move-result-object p2
+
+    .line 2
+    invoke-direct {p0, p1, p2}, Lcom/google/android/gms/internal/location/zzae;->zza(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/zzbe;)Lcom/google/android/gms/common/api/PendingResult;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final removeGeofences(Lcom/google/android/gms/common/api/GoogleApiClient;Ljava/util/List;)Lcom/google/android/gms/common/api/PendingResult;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/GoogleApiClient;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lcom/google/android/gms/common/api/PendingResult<",
+            "Lcom/google/android/gms/common/api/Status;",
+            ">;"
+        }
+    .end annotation
+
+    .line 3
+    invoke-static {p2}, Lcom/google/android/gms/location/zzbe;->zza(Ljava/util/List;)Lcom/google/android/gms/location/zzbe;
+
+    move-result-object p2
+
+    .line 4
+    invoke-direct {p0, p1, p2}, Lcom/google/android/gms/internal/location/zzae;->zza(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/zzbe;)Lcom/google/android/gms/common/api/PendingResult;
+
+    move-result-object p1
 
     return-object p1
 .end method

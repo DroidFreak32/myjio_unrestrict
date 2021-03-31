@@ -1,11 +1,11 @@
 {
-  "version": "2.0.30",
+  "version": "2.0.50",
   "name": "MyJio",
   "troubleshoot": [
     {
       "intent_id": "unable_to_make_calls",
       "isVisibleForVersion": 1,
-      "version": "6.0.22",
+      "version": "6.0.24",
       "showType": "NORMAL",
       "response_message": "Let's check your phone",
       "entry_step": "N1",
@@ -38,7 +38,7 @@
             {
               "return_value": "Z0003",
               "return_type": "string",
-              "to_node": "N5"
+              "to_node": "N6"
             },
             {
               "return_value": "Z0001",
@@ -68,7 +68,7 @@
             {
               "return_value": "Z0002",
               "return_type": "string",
-              "to_node": "N5"
+              "to_node": "N6"
             },
             {
               "return_value": "Z0005",
@@ -85,7 +85,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -97,27 +97,12 @@
         {
           "id": "N4",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
               "return_type": "boolean",
               "to_node": "N13"
-            }
-          ]
-        },
-        {
-          "id": "N5",
-          "showType": "ASK",
-          "response_message": "Are you facing issue calling Jio or Non-Jio number?",
-          "edges": [
-            {
-              "title": "Jio",
-              "to_node": "N6"
-            },
-            {
-              "title": "Non-Jio",
-              "to_node": "N14"
             }
           ]
         },
@@ -133,7 +118,7 @@
               "task_status": 1,
               "message": "Jio Sim is inserted.",
               "description": "Jio sim is correctly inserted in <b>VoLTE</b> enabled sim slot on your device.",
-              "to_node": "N7"
+              "to_node": "N34"
             },
             {
               "return_value": "false",
@@ -241,7 +226,7 @@
         {
           "id": "N11",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br> Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br> Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -253,10 +238,8 @@
         {
           "id": "N12",
           "showType": "DISPATCH_EVENT",
-          "response_message": "Taking you to MyJio recharge page.",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -268,37 +251,6 @@
         {
           "id": "N13",
           "showType": "SEND_LOGS"
-        },
-        {
-          "id": "N14",
-          "showType": "JIO_SIM_INSERTION",
-          "title": "Jio sim inserted",
-          "edges": [
-            {
-              "return_value": "true",
-              "return_type": "boolean",
-              "task_status": 1,
-              "message": "Jio Sim is inserted.",
-              "description": "Jio sim is correctly inserted in <b>VoLTE</b> enabled sim slot on your device.",
-              "to_node": "N34"
-            },
-            {
-              "return_value": "false",
-              "return_type": "boolean",
-              "task_status": 2,
-              "message": "Jio sim is not inserted.",
-              "description": "Jio sim is not inserted in your device. Insert a Jio sim in the device to enjoy the Jio services.",
-              "to_node": "N8"
-            },
-            {
-              "return_value": "need_permission",
-              "return_type": "string",
-              "task_status": 2,
-              "message": "Need permission to check Sim.",
-              "description": "Need permission to check Jio sim inserted in device.",
-              "to_node": "N45"
-            }
-          ]
         },
         {
           "id": "N15",
@@ -396,7 +348,7 @@
         {
           "id": "N20",
           "showType": "MESSAGE",
-          "response_message": "I can not detect signal strength on WiFi. Turn on mobile data and check again.",
+          "response_message": "I can not detect signal strength on WiFi. Turn off wifi and turn on mobile data and check again.",
           "edges": [
             {
               "return_value": "true",
@@ -408,7 +360,7 @@
         {
           "id": "N21",
           "showType": "ACTIONS",
-          "response_message": "You are in a low signal area. </br> </br> For further assistance, you can chat with our adviser.",
+          "response_message": "You are in a low signal area. <br> <br> For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -435,7 +387,7 @@
               "task_status": 2,
               "message": "Calls have not been made before.",
               "description": "Your device has not been used to make calls before.",
-              "to_node": "N27"
+              "to_node": "N28"
             },
             {
               "return_value": "no_call_usage",
@@ -443,7 +395,7 @@
               "task_status": 2,
               "message": "Call details not available.",
               "description": "Your device's call usage details are not available.",
-              "to_node": "N27"
+              "to_node": "N28"
             }
           ]
         },
@@ -461,7 +413,7 @@
         {
           "id": "N24",
           "showType": "ACTIONS",
-          "response_message": "I am unable to detect signal strength. </br> </br> For further assistance, you can chat with our adviser.",
+          "response_message": "I am unable to detect signal strength. <br> <br> For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -500,35 +452,22 @@
         },
         {
           "id": "N27",
-          "showType": "ASK",
-          "response_message": "Have you previously called from your phone?",
+          "showType": "PLAY_YOUTUBE_VIDEO",
+          "videoId": "-oZsHYpW53M",
+          "response_message": "How to upgrade your Android mobile to latest software version?",
           "edges": [
             {
-              "title": "Yes",
-              "to_node": "N26"
-            },
-            {
-              "title": "No",
-              "to_node": "N28"
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N13"
             }
           ]
         },
         {
           "id": "N28",
-          "showType": "ACTIONS",
-          "response_message": "Dial 198 to complete tele-verification. Do you want me to dial now?",
-          "edges": [
-            {
-              "title": "Call 198",
-              "to_node": "N29"
-            }
-          ]
-        },
-        {
-          "id": "N29",
-          "showType": "DISPATCH_EVENT",
-          "typeId": 55,
-          "phone_number": "198",
+          "showType": "PLAY_VIDEO",
+          "url": "https://jep-asset.akamaized.net/MyJio_Client/android_files/video/Device+software+upgrade+Video.mp4",
+          "response_message": "How to upgrade your Android mobile to latest software version?",
           "edges": [
             {
               "return_value": "true",
@@ -552,7 +491,7 @@
         {
           "id": "N31",
           "showType": "ACTIONS",
-          "response_message": "I cannot find anything wrong in your device. </br> </br> For further assistance, you can chat with our adviser.",
+          "response_message": "I cannot find anything wrong in your device. <br> <br> For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -606,7 +545,7 @@
               "task_status": 1,
               "message": "{MOBILE_NO} - Prepaid",
               "description": "You have <b>Prepaid</b> account and your mobile number is <b>{MOBILE_NO}</b>.",
-              "to_node": "N35"
+              "to_node": "N7"
             },
             {
               "return_value": "postpaid",
@@ -622,46 +561,15 @@
               "task_status": 2,
               "message": "Account information not available",
               "description": "Account information not available.",
-              "to_node": "N36"
-            }
-          ]
-        },
-        {
-          "id": "N35",
-          "showType": "GET_DATA_PLAN_ATTACHED",
-          "title": "Plan attached",
-          "edges": [
+              "to_node": "N7"
+            },
             {
-              "return_value": "jio_all_in_one_plan",
+              "return_value": "hathway",
               "return_type": "string",
               "task_status": 1,
-              "message": "{PLAN_NAME}",
-              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
-              "to_node": "N9"
-            },
-            {
-              "return_value": "false",
-              "return_type": "boolean",
-              "task_status": 2,
-              "message": "No plans attached",
-              "description": "You do not have a plan attached to your account. Without a plan you will not be able to use the Jio services.",
-              "to_node": "N10"
-            },
-            {
-              "return_value": "jiophone_plan",
-              "return_type": "string",
-              "task_status": 2,
-              "message": "{PLAN_NAME}",
-              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
-              "to_node": "N11"
-            },
-            {
-              "return_value": "true",
-              "return_type": "boolean",
-              "task_status": 1,
-              "message": "{PLAN_NAME}",
-              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
-              "to_node": "N38"
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
+              "to_node": "N7"
             }
           ]
         },
@@ -732,53 +640,6 @@
           ]
         },
         {
-          "id": "N38",
-          "showType": "MONETARY_BALANCE",
-          "title": "Monetary Balance",
-          "edges": [
-            {
-              "return_value": "true",
-              "return_type": "boolean",
-              "task_status": 1,
-              "message": "Monetary Balance Is Rs.{MONETARY_BALANCE}",
-              "description": "Your monetary balance is Rs.{MONETARY_BALANCE}. You have sufficient balance to make calls.",
-              "to_node": "N9"
-            },
-            {
-              "return_value": "false",
-              "return_type": "boolean",
-              "task_status": 2,
-              "message": "Monetary Balance Is Rs.{MONETARY_BALANCE}",
-              "description": "Your monetary balance is Rs.{MONETARY_BALANCE}. You do not have sufficient balance to make calls.",
-              "to_node": "N39"
-            }
-          ]
-        },
-        {
-          "id": "N39",
-          "showType": "ACTIONS",
-          "response_message": "For recharges post 10th October calls to NON-Jio mobile numbers are charged at 6 paise/minute. Please recharge with a suitable IUC TOP-UP voucher starting at Rs.10/-",
-          "edges": [
-            {
-              "title": "Recharge",
-              "to_node": "N40"
-            }
-          ]
-        },
-        {
-          "id": "N40",
-          "showType": "DISPATCH_EVENT",
-          "typeId": 4,
-          "intent_name": "jio_top_ups",
-          "edges": [
-            {
-              "return_value": "true",
-              "return_type": "boolean",
-              "to_node": "N13"
-            }
-          ]
-        },
-        {
           "id": "N41",
           "showType": "GET_DATA_PLAN_ATTACHED",
           "title": "Plan attached",
@@ -835,7 +696,7 @@
         {
           "id": "N43",
           "showType": "ACTIONS",
-          "response_message": "Ensure the following: <ol><li>You must have a dial tone on your landline. If not, try reconnecting the telephone cable from JioFiber HomeGateway.</li><li>Your telephone mode needs to be set to tone instead of pulse.</li></ol></br></br> In case the issue still persists, you can connect to a Jio advisor for resolution. ",
+          "response_message": "Please prefix “0” when you are dialling any mobile number from a fixed line number (JioFiber Voice) from 15th January 2021 onwards.<br><br>Ensure the following: <ol><li>You must have a dial tone on your landline. If not, try reconnecting the telephone cable from JioFiber HomeGateway.</li><li>Your telephone mode needs to be set to tone instead of pulse.</li></ol><br><br> In case the issue still persists, you can connect to a Jio advisor for resolution. ",
           "edges": [
             {
               "title": "Live chat",
@@ -846,7 +707,7 @@
         {
           "id": "N44",
           "showType": "ACTIONS",
-          "response_message": "Ensure the following: <ol><li>You must be connected to the JioFiber WiFi. </li> <li>Status of the JioFiberVoice number in the Settings page needs to be online.</li> <li>If still not working, try reinstalling JioCall app.</li></ol></br></br> In case the issue still persists, you can connect to a Jio advisor for resolution. ",
+          "response_message": "Please prefix “0” when you are dialling any mobile number from a fixed line number (JioFiber Voice) from 15th January 2021 onwards.<br><br>Ensure the following: <ol><li>You must be connected to the JioFiber WiFi. </li> <li>Status of the JioFiberVoice number in the Settings page needs to be online.</li> <li>If still not working, try reinstalling JioCall app.</li></ol><br><br> In case the issue still persists, you can connect to a Jio advisor for resolution.",
           "edges": [
             {
               "title": "Live chat",
@@ -906,22 +767,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N25"
+              "to_node": "N54"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N50"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N51"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N52"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N53"
             }
           ]
         },
@@ -930,7 +796,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -944,7 +810,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -959,6 +825,85 @@
           "typeId": 52,
           "package_name": "com.jiochat.jiochatapp",
           "dlink": "https://jiochat.com/channel/600000000513/1/CONNECT_AGENT",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N13"
+            }
+          ]
+        },
+        {
+          "id": "N53",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N13"
+            }
+          ]
+        },
+        {
+          "id": "N54",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N55"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N55"
+            }
+          ]
+        },
+        {
+          "id": "N55",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
           "edges": [
             {
               "return_value": "true",
@@ -1052,7 +997,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio  account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio  account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -1064,7 +1009,7 @@
         {
           "id": "N4",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -1256,7 +1201,7 @@
         {
           "id": "N13",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br> Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br> Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -1304,15 +1249,22 @@
               "message": "{MOBILE_NO} - Postpaid",
               "description": "You have <b>Postpaid</b> account and your mobile number is <b>{MOBILE_NO}</b>.",
               "to_node": "N18"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
+              "to_node": "N17"
             }
           ]
         },
         {
           "id": "N16",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -1332,6 +1284,14 @@
               "task_status": 1,
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
+              "to_node": "N21"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
               "to_node": "N21"
             },
             {
@@ -1462,9 +1422,8 @@
         {
           "id": "N23",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -1530,7 +1489,7 @@
         {
           "id": "N28",
           "showType": "MESSAGE",
-          "response_message": "I can not detect signal strength on WiFi. Turn on mobile data and check again.",
+          "response_message": "I can not detect signal strength on WiFi. Turn off wifi and turn on mobile data and check again.",
           "edges": [
             {
               "return_value": "true",
@@ -1829,6 +1788,14 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N43"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N43"
             }
           ]
         },
@@ -2006,22 +1973,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N20"
+              "to_node": "N59"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N53"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N54"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N55"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N58"
             }
           ]
         },
@@ -2030,7 +2002,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -2044,7 +2016,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -2088,6 +2060,85 @@
               "requestCode": 500
             }
           ]
+        },
+        {
+          "id": "N58",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N48"
+            }
+          ]
+        },
+        {
+          "id": "N59",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N20"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N60"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N60"
+            }
+          ]
+        },
+        {
+          "id": "N60",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N48"
+            }
+          ]
         }
       ]
     },
@@ -2123,7 +2174,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -2135,7 +2186,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio  account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio  account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -2785,9 +2836,8 @@
         {
           "id": "N37",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -2822,7 +2872,7 @@
         {
           "id": "N40",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br> Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br> Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -2870,6 +2920,14 @@
               "message": "{MOBILE_NO} - Postpaid",
               "description": "You have <b>Postpaid</b> account and your mobile number is <b>{MOBILE_NO}</b>.",
               "to_node": "N44"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
+              "to_node": "N43"
             }
           ]
         },
@@ -2893,6 +2951,14 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N38"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N39"
             }
           ]
         },
@@ -3034,6 +3100,14 @@
               "task_status": 1,
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
+              "to_node": "N49"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
               "to_node": "N49"
             }
           ]
@@ -3201,22 +3275,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N47"
+              "to_node": "N67"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N63"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N64"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N65"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N66"
             }
           ]
         },
@@ -3225,7 +3304,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -3239,7 +3318,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -3254,6 +3333,85 @@
           "typeId": 52,
           "package_name": "com.jiochat.jiochatapp",
           "dlink": "https://jiochat.com/channel/600000000513/1/CONNECT_AGENT",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N58"
+            }
+          ]
+        },
+        {
+          "id": "N66",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N58"
+            }
+          ]
+        },
+        {
+          "id": "N67",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N47"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N68"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N68"
+            }
+          ]
+        },
+        {
+          "id": "N68",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
           "edges": [
             {
               "return_value": "true",
@@ -3347,7 +3505,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -3359,7 +3517,7 @@
         {
           "id": "N4",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -3518,7 +3676,7 @@
         {
           "id": "N13",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br>Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br>Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -3554,7 +3712,7 @@
         {
           "id": "N16",
           "showType": "ACTIONS",
-          "response_message": "I cannot find anything wrong in your device. </br> </br>For further assistance, you can chat with our adviser.",
+          "response_message": "I cannot find anything wrong in your device. <br> <br>For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -3618,9 +3776,8 @@
         {
           "id": "N19",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -3647,7 +3804,7 @@
         {
           "id": "N21",
           "showType": "ACTIONS",
-          "response_message": "Ensure the following : </br><ol><li>You must have a dial tone on your landline. If not try reconnecting the telephone cable from JioFiber HomeGateway. Your telephone mode needs to be set to tone instead of pulse. </li> <li>Also, ask the caller to prefix '0' before landline number.</li></ol> </br></br>In case the issue still persists, you can connect to a Jio advisor for resolution. ",
+          "response_message": "Ensure the following : <br><ol><li>You must have a dial tone on your landline. If not try reconnecting the telephone cable from JioFiber HomeGateway. Your telephone mode needs to be set to tone instead of pulse. </li> <li>Also, ask the caller to prefix '0' before landline number.</li></ol> <br><br>In case the issue still persists, you can connect to a Jio advisor for resolution. ",
           "edges": [
             {
               "title": "Live chat",
@@ -3658,7 +3815,7 @@
         {
           "id": "N22",
           "showType": "ACTIONS",
-          "response_message": "Ensure the following : </br><ol><li> You must be connected to the JioFiber WiFi.</li> <li>Status of the JioFiberVoice number in the settings page needs to be online.</li> <li>If still not working, try reinstalling JioCall app. </li></ol></br></br>In case the issue still persists, you can connect to a Jio advisor for resolution. ",
+          "response_message": "Ensure the following : <br><ol><li> You must be connected to the JioFiber WiFi.</li> <li>Status of the JioFiberVoice number in the settings page needs to be online.</li> <li>If still not working, try reinstalling JioCall app. </li></ol><br><br>In case the issue still persists, you can connect to a Jio advisor for resolution. ",
           "edges": [
             {
               "title": "Live chat",
@@ -3677,22 +3834,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N17"
+              "to_node": "N29"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N25"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N26"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N27"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N28"
             }
           ]
         },
@@ -3701,7 +3863,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -3715,7 +3877,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -3730,6 +3892,85 @@
           "typeId": 52,
           "package_name": "com.jiochat.jiochatapp",
           "dlink": "https://jiochat.com/channel/600000000513/1/CONNECT_AGENT",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N23"
+            }
+          ]
+        },
+        {
+          "id": "N28",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N23"
+            }
+          ]
+        },
+        {
+          "id": "N29",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N17"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N30"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N30"
+            }
+          ]
+        },
+        {
+          "id": "N30",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
           "edges": [
             {
               "return_value": "true",
@@ -3772,7 +4013,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -3784,7 +4025,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are  logged-in using Non-Jio  account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are  logged-in using Non-Jio  account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -3957,13 +4198,21 @@
               "message": "Account information not available",
               "description": "Account information not available.",
               "to_node": "N15"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
+              "to_node": "N15"
             }
           ]
         },
         {
           "id": "N13",
           "showType": "ACTIONS",
-          "response_message": "We need to look into your issue. </br> </br>For further assistance, you can chat with our adviser.",
+          "response_message": "We need to look into your issue. <br> <br>For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -4082,7 +4331,7 @@
         {
           "id": "N17",
           "showType": "ACTIONS",
-          "response_message": "Your account is suspended. </br> </br> For further assistance you can chat with our adviser.",
+          "response_message": "Your account is suspended. <br> <br> For further assistance you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -4104,7 +4353,7 @@
         {
           "id": "N19",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br> Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br> Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -4133,6 +4382,14 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N22"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N21"
             }
           ]
         },
@@ -4193,9 +4450,8 @@
         {
           "id": "N23",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -4230,7 +4486,7 @@
         {
           "id": "N25",
           "showType": "ACTIONS",
-          "response_message": "At this location the data speed is low. </br> </br>For further assistance, you can chat with our adviser.",
+          "response_message": "At this location the data speed is low. <br> <br>For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -4241,7 +4497,7 @@
         {
           "id": "N26",
           "showType": "ACTIONS",
-          "response_message": "I am unable to complete speed test. </br></br> For further assistance, you can chat with advisor.",
+          "response_message": "I am unable to complete speed test. <br><br> For further assistance, you can chat with advisor.",
           "edges": [
             {
               "title": "Live chat",
@@ -4264,7 +4520,7 @@
         {
           "id": "N28",
           "showType": "ACTIONS",
-          "response_message": "I cannot find anything wrong with your setup to download apps.</br></br>For further assistance, you can chat with our adviser.",
+          "response_message": "I cannot find anything wrong with your setup to download apps.<br><br>For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -4283,22 +4539,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N14"
+              "to_node": "N37"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N31"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N32"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N33"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N36"
             }
           ]
         },
@@ -4307,7 +4568,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -4321,7 +4582,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -4365,6 +4626,85 @@
               "requestCode": 500
             }
           ]
+        },
+        {
+          "id": "N36",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N29"
+            }
+          ]
+        },
+        {
+          "id": "N37",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N14"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N38"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N38"
+            }
+          ]
+        },
+        {
+          "id": "N38",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N29"
+            }
+          ]
         }
       ]
     },
@@ -4400,7 +4740,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -4437,7 +4777,7 @@
         {
           "id": "N4",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio  account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio  account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -4585,7 +4925,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -4597,7 +4937,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -4926,7 +5266,7 @@
         {
           "id": "N20",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active.</br> </br>Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active.<br> <br>Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -4974,15 +5314,22 @@
               "message": "Account information not available",
               "description": "Account information not available.",
               "to_node": "N25"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
+              "to_node": "N25"
             }
           ]
         },
         {
           "id": "N23",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -5066,13 +5413,21 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N29"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N29"
             }
           ]
         },
         {
           "id": "N26",
           "showType": "ACTIONS",
-          "response_message": "Your account is suspended. </br> </br> For further assistance you can chat with our adviser.",
+          "response_message": "Your account is suspended. <br> <br> For further assistance you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -5132,7 +5487,7 @@
         {
           "id": "N30",
           "showType": "ACTIONS",
-          "response_message": "We need to look into your issue. </br></br>For further assistance, you can chat with our adviser.",
+          "response_message": "We need to look into your issue. <br><br>For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -5239,7 +5594,7 @@
         {
           "id": "N35",
           "showType": "MESSAGE",
-          "response_message": "I can not detect signal strength on WiFi. Turn on mobile data and check again.",
+          "response_message": "I can not detect signal strength on WiFi. Turn off wifi and turn on mobile data and check again.",
           "edges": [
             {
               "return_value": "true",
@@ -5251,7 +5606,7 @@
         {
           "id": "N36",
           "showType": "ACTIONS",
-          "response_message": "You are in a low signal area. </br></br>For further assistance, you can chat with our adviser.",
+          "response_message": "You are in a low signal area. <br><br>For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -5327,7 +5682,7 @@
         {
           "id": "N40",
           "showType": "ACTIONS",
-          "response_message": "I cannot find anything wrong with your data speed that could cause media apps to buffer. </br> </br> For further assistance, you can chat with our adviser.",
+          "response_message": "I cannot find anything wrong with your data speed that could cause media apps to buffer. <br> <br> For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -5338,7 +5693,7 @@
         {
           "id": "N41",
           "showType": "ACTIONS",
-          "response_message": "I found that you are in a low speed area. </br></br> For further assistance, you can chat with our adviser.",
+          "response_message": "I found that you are in a low speed area. <br><br> For further assistance, you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -5349,7 +5704,7 @@
         {
           "id": "N42",
           "showType": "ACTIONS",
-          "response_message": "We encounter some problem in speed test. </br></br> For further assistance you can chat with our adviser.",
+          "response_message": "We encounter some problem in speed test. <br><br> For further assistance you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -5398,22 +5753,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N27"
+              "to_node": "N53"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N47"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N48"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N49"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N52"
             }
           ]
         },
@@ -5422,7 +5782,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -5436,7 +5796,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -5478,6 +5838,85 @@
             {
               "name": "android.permission.READ_PHONE_STATE",
               "requestCode": 500
+            }
+          ]
+        },
+        {
+          "id": "N52",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N43"
+            }
+          ]
+        },
+        {
+          "id": "N53",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N27"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N54"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N54"
+            }
+          ]
+        },
+        {
+          "id": "N54",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N43"
             }
           ]
         }
@@ -5729,7 +6168,7 @@
       "version": "6.0.22",
       "showType": "NORMAL",
       "response_message": "Let's check your phone",
-      "entry_step": "N1",
+      "entry_step": "N20",
       "nodes": [
         {
           "id": "N1",
@@ -5742,7 +6181,7 @@
               "task_status": 1,
               "message": "{MOBILE_NO} - Prepaid",
               "description": "You have <b>Prepaid</b> account and your mobile number is <b>{MOBILE_NO}</b>.",
-              "to_node": "N2"
+              "to_node": "N27"
             },
             {
               "return_value": "postpaid",
@@ -5758,7 +6197,15 @@
               "task_status": 2,
               "message": "Account information not available",
               "description": "Account information not available.",
-              "to_node": "N2"
+              "to_node": "N27"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
+              "to_node": "N27"
             }
           ]
         },
@@ -5782,6 +6229,14 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N5"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N23"
             }
           ]
         },
@@ -5796,7 +6251,7 @@
               "task_status": 1,
               "message": "Account is active.",
               "description": "Your account is active.",
-              "to_node": "N10"
+              "to_node": "N24"
             },
             {
               "return_value": "SUS00015",
@@ -5836,7 +6291,7 @@
               "task_status": 2,
               "message": "Information not available.",
               "description": "Information not available.",
-              "to_node": "N10"
+              "to_node": "N24"
             }
           ]
         },
@@ -5870,9 +6325,15 @@
         {
           "id": "N6",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web"
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
         },
         {
           "id": "N7",
@@ -5889,7 +6350,7 @@
         {
           "id": "N8",
           "showType": "ACTIONS",
-          "response_message": "Your account is suspended. </br></br> For further assistance you can chat with our adviser.",
+          "response_message": "Your account is suspended. <br><br> For further assistance you can chat with our adviser.",
           "edges": [
             {
               "title": "Live Chat",
@@ -5931,6 +6392,14 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N11"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N23"
             }
           ]
         },
@@ -5957,22 +6426,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N9"
+              "to_node": "N18"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N14"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N15"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N16"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N17"
             }
           ]
         },
@@ -5981,7 +6455,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -5995,7 +6469,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -6015,6 +6489,244 @@
               "return_value": "true",
               "return_type": "boolean",
               "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N17",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N18",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N9"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N19"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N19"
+            }
+          ]
+        },
+        {
+          "id": "N19",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N20",
+          "showType": "LOGIN",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N1"
+            },
+            {
+              "return_value": "nonjio",
+              "return_type": "string",
+              "to_node": "N21"
+            },
+            {
+              "return_value": "false",
+              "return_type": "boolean",
+              "to_node": "N22"
+            }
+          ]
+        },
+        {
+          "id": "N21",
+          "showType": "MESSAGE",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br> Please switch to Jio mobility account and try again later.",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N22",
+          "showType": "MESSAGE",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N23",
+          "showType": "MESSAGE",
+          "response_message": "You have unlimited data.",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N24",
+          "showType": "GET_DATA_PLAN_ATTACHED",
+          "title": "Plan attached",
+          "edges": [
+            {
+              "return_value": "false",
+              "return_type": "boolean",
+              "task_status": 2,
+              "message": "No plans attached",
+              "description": "You do not have a plan attached to your account. Without a plan you will not be able to use the Jio services.",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "jiophone_plan",
+              "return_type": "string",
+              "task_status": 2,
+              "message": "{PLAN_NAME}",
+              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
+              "to_node": "N10"
+            },
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "task_status": 1,
+              "message": "{PLAN_NAME}",
+              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
+              "to_node": "N10"
+            },
+            {
+              "return_value": "jio_all_in_one_plan",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{PLAN_NAME}",
+              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
+              "to_node": "N10"
+            }
+          ]
+        },
+        {
+          "id": "N25",
+          "showType": "ACTIONS",
+          "response_message": "You do not have a plan attached to your account. Without a plan you will not be able to use the Jio services. Tap below to recharge.",
+          "edges": [
+            {
+              "title": "Recharge",
+              "to_node": "N26"
+            }
+          ]
+        },
+        {
+          "id": "N26",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N12"
+            }
+          ]
+        },
+        {
+          "id": "N27",
+          "showType": "GET_DATA_PLAN_ATTACHED",
+          "title": "Plan attached",
+          "edges": [
+            {
+              "return_value": "false",
+              "return_type": "boolean",
+              "task_status": 2,
+              "message": "No plans attached",
+              "description": "You do not have a plan attached to your account. Without a plan you will not be able to use the Jio services.",
+              "to_node": "N25"
+            },
+            {
+              "return_value": "jiophone_plan",
+              "return_type": "string",
+              "task_status": 2,
+              "message": "{PLAN_NAME}",
+              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
+              "to_node": "N2"
+            },
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "task_status": 1,
+              "message": "{PLAN_NAME}",
+              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
+              "to_node": "N2"
+            },
+            {
+              "return_value": "jio_all_in_one_plan",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{PLAN_NAME}",
+              "description": "Your current plan is <b>{PLAN_NAME}</b>.",
+              "to_node": "N2"
             }
           ]
         }
@@ -6227,7 +6939,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -6239,7 +6951,7 @@
         {
           "id": "N4",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -6320,6 +7032,14 @@
               "message": "{REMAINING_FUP_DATA} remaining out of {TOTAL_FUP_AMOUNT}",
               "description": "You have <b>{REMAINING_FUP_DATA}</b> remaining out of <b>{TOTAL_FUP_AMOUNT}</b>. Thereafter, your data speed will be reduced as per your plan.",
               "to_node": "N12"
+            },
+            {
+              "return_value": "unlimited",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "Unlimited data",
+              "description": "You have unlimited data.",
+              "to_node": "N11"
             }
           ]
         },
@@ -6337,9 +7057,8 @@
         {
           "id": "N9",
           "showType": "DISPATCH_EVENT",
-          "typeId": 52,
-          "package_name": "com.jio.myjio",
-          "dlink": "jio://com.jio.myjio/recharge_web",
+          "typeId": 4,
+          "intent_name": "recharge_my_number",
           "edges": [
             {
               "return_value": "true",
@@ -6351,7 +7070,7 @@
         {
           "id": "N10",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br>Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br>Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -6546,7 +7265,7 @@
         {
           "id": "N21",
           "showType": "ACTIONS",
-          "response_message": "We encounter some problem in speed test. </br></br>For further assistance you can chat with our adviser.",
+          "response_message": "We encounter some problem in speed test. <br><br>For further assistance you can chat with our adviser.",
           "edges": [
             {
               "title": "Live chat",
@@ -6629,22 +7348,27 @@
             {
               "return_value": "others",
               "return_type": "string",
-              "to_node": "N26"
+              "to_node": "N35"
             },
             {
-              "return_value": "WhatsAppFTTX",
+              "return_value": "whatsapp_fttx",
               "return_type": "string",
               "to_node": "N29"
             },
             {
-              "return_value": "WhatsAppTelecom",
+              "return_value": "whatsapp_telecom",
               "return_type": "string",
               "to_node": "N30"
             },
             {
-              "return_value": "JioChat",
+              "return_value": "jiochat",
               "return_type": "string",
               "to_node": "N31"
+            },
+            {
+              "return_value": "whatsapp_ir",
+              "return_type": "string",
+              "to_node": "N34"
             }
           ]
         },
@@ -6653,7 +7377,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000570005?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000570005?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -6667,7 +7391,7 @@
           "showType": "DISPATCH_EVENT",
           "typeId": 52,
           "package_name": "com.whatsapp",
-          "dlink": "http://wa.me/+917000770007?text=talk%20to%20an%20agent",
+          "dlink": "http://wa.me/+917000770007?text=T2A",
           "edges": [
             {
               "return_value": "true",
@@ -6711,6 +7435,85 @@
               "requestCode": 500
             }
           ]
+        },
+        {
+          "id": "N34",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 52,
+          "package_name": "com.whatsapp",
+          "dlink": "http://wa.me/+917018899999?text=T2A",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N27"
+            }
+          ]
+        },
+        {
+          "id": "N35",
+          "showType": "MYJIO_SERVICE_TYPE",
+          "edges": [
+            {
+              "return_value": "Z0003",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "Z0001",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "NO_STATUS_AVAILABLE",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "Z0004",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "Z0006",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "Z0029",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "Z0002",
+              "return_type": "string",
+              "to_node": "N26"
+            },
+            {
+              "return_value": "Z0005",
+              "return_type": "string",
+              "to_node": "N36"
+            },
+            {
+              "return_value": "HATHWAY001",
+              "return_type": "string",
+              "to_node": "N36"
+            }
+          ]
+        },
+        {
+          "id": "N36",
+          "showType": "DISPATCH_EVENT",
+          "typeId": 135,
+          "package_name": "com.jio.myjio",
+          "dlink": "jio://com.jio.myjio/live_chat?source=hellojio&FC=fiber&q=",
+          "edges": [
+            {
+              "return_value": "true",
+              "return_type": "boolean",
+              "to_node": "N27"
+            }
+          ]
         }
       ]
     },
@@ -6746,7 +7549,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -6758,7 +7561,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -6795,6 +7598,14 @@
               "task_status": 2,
               "message": "Account information not available",
               "description": "Account information not available.",
+              "to_node": "N5"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
               "to_node": "N5"
             }
           ]
@@ -6979,7 +7790,7 @@
         {
           "id": "N9",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br> Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br> Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -7107,7 +7918,7 @@
             {
               "return_value": "data_avg_plan_expire",
               "return_type": "string",
-              "task_status": 1,
+              "task_status": 2,
               "message": "You ran out of data",
               "description": "You have remaining <b>{REMAINING_FUP_DATA}</b> out of <b>{TOTAL_FUP_DATA}</b>. Your plan is going to expire in <b>{PLAN_DAYS}</b> days",
               "to_node": "N7"
@@ -7671,7 +8482,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account. </br> Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are not logged-in using mobility account. <br> Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -7683,7 +8494,7 @@
         {
           "id": "N3",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account. </br>Please switch to Jio mobility account and try again later.",
+          "response_message": "We found that you are logged-in using Non-Jio account. <br>Please switch to Jio mobility account and try again later.",
           "edges": [
             {
               "return_value": "true",
@@ -7720,6 +8531,14 @@
               "task_status": 2,
               "message": "Account information not available",
               "description": "Account information not available.",
+              "to_node": "N5"
+            },
+            {
+              "return_value": "hathway",
+              "return_type": "string",
+              "task_status": 1,
+              "message": "{MOBILE_NO} - Hathway account",
+              "description": "You have <b>Hathway</b> account and your account number is <b>{MOBILE_NO}</b>.",
               "to_node": "N5"
             }
           ]
@@ -7892,7 +8711,7 @@
         {
           "id": "N9",
           "showType": "MESSAGE",
-          "response_message": "You currently have a JioPhone plan active. </br> </br> Please use this SIM in a JioPhone.",
+          "response_message": "You currently have a JioPhone plan active. <br> <br> Please use this SIM in a JioPhone.",
           "edges": [
             {
               "return_value": "true",
@@ -8020,7 +8839,7 @@
             {
               "return_value": "data_avg_plan_expire",
               "return_type": "string",
-              "task_status": 1,
+              "task_status": 2,
               "message": "You ran out of data",
               "description": "You have remaining <b>{REMAINING_FUP_DATA}</b> out of <b>{TOTAL_FUP_DATA}</b>. Your plan is going to expire in <b>{PLAN_DAYS}</b> days",
               "to_node": "N13"
@@ -8570,7 +9389,7 @@
         {
           "id": "N2",
           "showType": "MESSAGE",
-          "response_message": "We found that you are not logged-in using mobility account.</br>Please switch to mobility account and try again later."
+          "response_message": "We found that you are not logged-in using mobility account.<br>Please switch to mobility account and try again later."
         },
         {
           "id": "N3",
@@ -8598,7 +9417,7 @@
         {
           "id": "N4",
           "showType": "MESSAGE",
-          "response_message": "We found that you are logged-in using Non-Jio account.</br>Please switch to Jio mobility account and try again later."
+          "response_message": "We found that you are logged-in using Non-Jio account.<br>Please switch to Jio mobility account and try again later."
         },
         {
           "id": "N5",

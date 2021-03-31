@@ -9,10 +9,16 @@
 
 .field public static c:Z = false
 
-.field public static d:Lq40;
+.field public static d:Lub;
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -31,14 +37,6 @@
     sput v1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->a:I
 
     return v0
-.end method
-
-.method public static synthetic a(I)I
-    .locals 0
-
-    sput p0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->a:I
-
-    return p0
 .end method
 
 .method public static a(Ljava/util/ArrayList;)Ljava/util/ArrayList;
@@ -75,11 +73,11 @@
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    const-string v5, "ssid_list"
+    const-string/jumbo v5, "ssid_list"
 
     const-string v6, "SAMOG_EAP_AKA_TEST,JioPrivateNet,JioHomeNet"
 
-    invoke-static {v5, v6}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v6}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -115,7 +113,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v5, "wifi_configure_list"
+    const-string/jumbo v5, "wifi_configure_list"
 
     invoke-virtual {v6, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getMap(Ljava/lang/String;)Ljava/util/Map;
 
@@ -200,7 +198,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {}, Lc20;->B()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->aa()Z
 
     move-result v11
 
@@ -282,7 +280,7 @@
 
     iget-object v11, v10, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    invoke-static {v6, v11}, Lc20;->a(Ljava/util/LinkedHashMap;Ljava/lang/String;)Z
+    invoke-static {v6, v11}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/util/LinkedHashMap;Ljava/lang/String;)Z
 
     move-result v11
 
@@ -310,19 +308,19 @@
     goto/16 :goto_1
 
     :cond_4
-    invoke-static {}, Lc20;->B()Z
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->aa()Z
 
     move-result p0
 
     if-eqz p0, :cond_5
 
-    new-instance p0, Lp40;
+    new-instance p0, Ltb;
 
-    invoke-direct {p0}, Lp40;-><init>()V
+    invoke-direct {p0}, Ltb;-><init>()V
 
     invoke-static {v2, p0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    invoke-static {v2}, Lc20;->a(Ljava/util/ArrayList;)V
+    invoke-static {v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/util/ArrayList;)V
 
     :cond_5
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -344,33 +342,41 @@
     return-object v0
 .end method
 
-.method public static synthetic a(Lq40;)Lq40;
+.method public static synthetic b(I)I
     .locals 0
 
-    sput-object p0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
+    sput p0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->a:I
+
+    return p0
+.end method
+
+.method public static synthetic c(Lub;)Lub;
+    .locals 0
+
+    sput-object p0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lub;
 
     return-object p0
 .end method
 
-.method public static synthetic a(Ljava/util/List;)V
+.method public static synthetic d(Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->b(Ljava/util/List;)V
+    invoke-static {p0}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->h(Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic a(Landroid/content/Context;)Z
+.method public static synthetic e(Landroid/content/Context;)Z
     .locals 0
 
-    invoke-static {p0}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->b(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->i(Landroid/content/Context;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic a(Z)Z
+.method public static synthetic f(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->b:Z
@@ -378,7 +384,7 @@
     return p0
 .end method
 
-.method public static synthetic b()I
+.method public static synthetic g()I
     .locals 1
 
     sget v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->a:I
@@ -386,7 +392,7 @@
     return v0
 .end method
 
-.method public static b(Ljava/util/List;)V
+.method public static h(Ljava/util/List;)V
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -402,7 +408,7 @@
     const-string v1, "WifiScanReceiver"
 
     :try_start_0
-    invoke-static {}, Lc20;->p()Lcom/elitecorelib/core/d;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->P()Lcom/elitecorelib/core/d;
 
     move-result-object v2
 
@@ -416,7 +422,7 @@
 
     sget-object v2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const-string v3, "try to Remove invalid jio networks from scan results"
+    const-string/jumbo v3, "try to Remove invalid jio networks from scan results"
 
     invoke-virtual {v2, v1, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -424,7 +430,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {}, Lc20;->w()Ljava/util/Map;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->W()Ljava/util/Map;
 
     move-result-object v3
 
@@ -436,7 +442,7 @@
 
     move-result-object v4
 
-    const-string v5, "wifi_configure_list"
+    const-string/jumbo v5, "wifi_configure_list"
 
     invoke-virtual {v4, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getMap(Ljava/lang/String;)Ljava/util/Map;
 
@@ -688,7 +694,7 @@
     return-void
 .end method
 
-.method public static b(Landroid/content/Context;)Z
+.method public static i(Landroid/content/Context;)Z
     .locals 6
 
     const-string v0, "isLteThrouputCalculat"
@@ -732,7 +738,7 @@
 
     if-nez v4, :cond_0
 
-    invoke-static {p0}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->c(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->k(Landroid/content/Context;)Z
 
     move-result p0
     :try_end_0
@@ -759,12 +765,12 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_3
+    goto :goto_2
 
     :catch_0
     move-exception v0
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_0
     :try_start_2
@@ -777,7 +783,7 @@
     :goto_0
     invoke-virtual {p0, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_3
 
     :cond_1
     sget-object p0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
@@ -788,17 +794,12 @@
 
     goto :goto_0
 
-    :goto_1
-    const/4 p0, 0x0
-
-    goto :goto_3
-
     :catch_1
     move-exception v0
 
     const/4 p0, 0x0
 
-    :goto_2
+    :goto_1
     :try_start_3
     sget-object v3, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -824,8 +825,11 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
+    :goto_2
+    move v2, p0
+
     :goto_3
-    return p0
+    return v2
 
     :catch_2
     move-exception p0
@@ -835,7 +839,7 @@
     return v2
 .end method
 
-.method public static synthetic c()Z
+.method public static synthetic j()Z
     .locals 1
 
     sget-boolean v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->b:Z
@@ -843,7 +847,7 @@
     return v0
 .end method
 
-.method public static c(Landroid/content/Context;)Z
+.method public static k(Landroid/content/Context;)Z
     .locals 14
 
     const-string v0, "LTE_POLICY_HOLD_TX"
@@ -871,7 +875,7 @@
 
     const-string v8, "false"
 
-    invoke-static {v7, v8}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v8}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -887,11 +891,11 @@
 
     invoke-virtual {v7, v4, v8}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->h0()Ljava/util/HashMap;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->t()Ljava/util/HashMap;
 
     move-result-object v7
 
-    invoke-static {v3, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -913,7 +917,7 @@
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -964,7 +968,7 @@
     invoke-virtual {v2}, Ljava/lang/InterruptedException;->getMessage()Ljava/lang/String;
 
     :goto_0
-    invoke-static {}, Lc20;->h0()Ljava/util/HashMap;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->t()Ljava/util/HashMap;
 
     move-result-object v2
 
@@ -1004,7 +1008,7 @@
 
     const/4 v13, 0x0
 
-    invoke-static/range {v8 .. v13}, Lc20;->a(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;JZ)Z
+    invoke-static/range {v8 .. v13}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;JZ)Z
 
     move-result v0
 
@@ -1115,7 +1119,7 @@
     return v5
 .end method
 
-.method public static synthetic d()Z
+.method public static synthetic l()Z
     .locals 1
 
     sget-boolean v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->c:Z
@@ -1125,21 +1129,21 @@
 
 
 # virtual methods
-.method public a(Landroid/content/Context;Landroid/content/Intent;)Lq40;
+.method public a(Landroid/content/Context;Landroid/content/Intent;)Lub;
     .locals 1
 
-    sget-object v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
+    sget-object v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lub;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lq40;
+    new-instance v0, Lub;
 
-    invoke-direct {v0, p1, p2}, Lq40;-><init>(Landroid/content/Context;Landroid/content/Intent;)V
+    invoke-direct {v0, p1, p2}, Lub;-><init>(Landroid/content/Context;Landroid/content/Intent;)V
 
-    sput-object v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
+    sput-object v0, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lub;
 
     :cond_0
-    sget-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
+    sget-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lub;
 
     return-object p1
 .end method
@@ -1194,9 +1198,9 @@
 
     const-string v1, "isRealTimeForAll"
 
-    const-string v2, "true"
+    const-string/jumbo v2, "true"
 
-    invoke-static {v1, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1219,16 +1223,16 @@
 
     invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p1}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isScheduledREALTIME(Landroid/content/Context;)Z
+    invoke-virtual {v0, p1}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isScheduledREALTIME(Landroid/content/Context;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :goto_0
-    invoke-static {p1, v3}, Lc20;->c(Landroid/content/Context;Z)V
+    invoke-static {p1, v3}, Lcom/elitecorelib/andsf/utility/a;->c(Landroid/content/Context;Z)V
 
     goto :goto_1
 
@@ -1257,13 +1261,11 @@
 
     :cond_1
     :goto_1
-    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->a(Landroid/content/Context;Landroid/content/Intent;)Lq40;
+    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->a(Landroid/content/Context;Landroid/content/Intent;)Lub;
 
     move-result-object p1
 
-    sput-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
-
-    sget-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
+    sput-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lub;
 
     invoke-virtual {p1}, Landroid/os/AsyncTask;->getStatus()Landroid/os/AsyncTask$Status;
 
@@ -1273,7 +1275,7 @@
 
     if-eq p1, p2, :cond_2
 
-    sget-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lq40;
+    sget-object p1, Lcom/elitecorelib/wifi/receiver/WifiScanReceiver;->d:Lub;
 
     new-array p2, v3, [Ljava/lang/String;
 
@@ -1281,20 +1283,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_2
-
     :catch_0
-    move-exception p1
-
-    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p2, v0, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
     :cond_2
-    :goto_2
     return-void
 .end method

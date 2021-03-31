@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/vision/text/Text;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # virtual methods
@@ -19,6 +20,9 @@
 .end method
 
 .method public abstract getCornerPoints()[Landroid/graphics/Point;
+.end method
+
+.method public abstract getLanguage()Ljava/lang/String;
 .end method
 
 .method public abstract getValue()Ljava/lang/String;

@@ -31,7 +31,7 @@
 
 
 # instance fields
-.field public s:[Ljava/lang/Object;
+.field public a:[Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[TParams;"

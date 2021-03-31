@@ -1,61 +1,263 @@
-.class public final Lu6;
+.class public Lu6;
 .super Ljava/lang/Object;
-.source "RemoteInput.java"
+.source "ConstraintsCommandHandler.java"
+
+
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+
+# static fields
+.field public static final e:Ljava/lang/String;
+
+
+# instance fields
+.field public final a:Landroid/content/Context;
+
+.field public final b:I
+
+.field public final c:Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;
+
+.field public final d:Landroidx/work/impl/constraints/WorkConstraintsTracker;
 
 
 # direct methods
-.method public static a(Lu6;)Landroid/app/RemoteInput;
+.method public static constructor <clinit>()V
     .locals 1
 
-    .line 4
-    new-instance v0, Landroid/app/RemoteInput$Builder;
+    const-string v0, "ConstraintsCmdHandler"
 
-    invoke-virtual {p0}, Lu6;->a()Ljava/lang/String;
+    .line 1
+    invoke-static {v0}, Landroidx/work/Logger;->tagWithPrefix(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 p0, 0x0
+    move-result-object v0
 
-    throw p0
+    sput-object v0, Lu6;->e:Ljava/lang/String;
+
+    return-void
 .end method
 
-.method public static a([Lu6;)[Landroid/app/RemoteInput;
-    .locals 4
+.method public constructor <init>(Landroid/content/Context;ILandroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;)V
+    .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lu6;->a:Landroid/content/Context;
+
+    .line 3
+    iput p2, p0, Lu6;->b:I
+
+    .line 4
+    iput-object p3, p0, Lu6;->c:Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;
+
+    .line 5
+    invoke-virtual {p3}, Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;->d()Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+
+    move-result-object p2
+
+    .line 6
+    new-instance p3, Landroidx/work/impl/constraints/WorkConstraintsTracker;
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_0
+    invoke-direct {p3, p1, p2, v0}, Landroidx/work/impl/constraints/WorkConstraintsTracker;-><init>(Landroid/content/Context;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/impl/constraints/WorkConstraintsCallback;)V
 
-    return-object v0
+    iput-object p3, p0, Lu6;->d:Landroidx/work/impl/constraints/WorkConstraintsTracker;
 
-    .line 1
-    :cond_0
-    array-length v1, p0
-
-    new-array v1, v1, [Landroid/app/RemoteInput;
-
-    const/4 v2, 0x0
-
-    .line 2
-    array-length v3, p0
-
-    if-gtz v3, :cond_1
-
-    return-object v1
-
-    .line 3
-    :cond_1
-    aget-object p0, p0, v2
-
-    invoke-static {p0}, Lu6;->a(Lu6;)Landroid/app/RemoteInput;
-
-    throw v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
-    .locals 0
+.method public a()V
+    .locals 9
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
 
-    const p0, 0x0
+    .line 1
+    iget-object v0, p0, Lu6;->c:Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;
 
-    throw p0
+    invoke-virtual {v0}, Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;->e()Landroidx/work/impl/WorkManagerImpl;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/work/impl/WorkManagerImpl;->getWorkDatabase()Landroidx/work/impl/WorkDatabase;
+
+    move-result-object v0
+
+    .line 2
+    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->workSpecDao()Landroidx/work/impl/model/WorkSpecDao;
+
+    move-result-object v0
+
+    .line 3
+    invoke-interface {v0}, Landroidx/work/impl/model/WorkSpecDao;->getScheduledWork()Ljava/util/List;
+
+    move-result-object v0
+
+    .line 4
+    iget-object v1, p0, Lu6;->a:Landroid/content/Context;
+
+    invoke-static {v1, v0}, Landroidx/work/impl/background/systemalarm/ConstraintProxy;->a(Landroid/content/Context;Ljava/util/List;)V
+
+    .line 5
+    iget-object v1, p0, Lu6;->d:Landroidx/work/impl/constraints/WorkConstraintsTracker;
+
+    invoke-virtual {v1, v0}, Landroidx/work/impl/constraints/WorkConstraintsTracker;->replace(Ljava/lang/Iterable;)V
+
+    .line 6
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 7
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    .line 8
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroidx/work/impl/model/WorkSpec;
+
+    .line 9
+    iget-object v5, v4, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
+
+    .line 10
+    invoke-virtual {v4}, Landroidx/work/impl/model/WorkSpec;->calculateNextRunTime()J
+
+    move-result-wide v6
+
+    cmp-long v8, v2, v6
+
+    if-ltz v8, :cond_0
+
+    .line 11
+    invoke-virtual {v4}, Landroidx/work/impl/model/WorkSpec;->hasConstraints()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    iget-object v6, p0, Lu6;->d:Landroidx/work/impl/constraints/WorkConstraintsTracker;
+
+    .line 12
+    invoke-virtual {v6, v5}, Landroidx/work/impl/constraints/WorkConstraintsTracker;->areAllConstraintsMet(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    .line 13
+    :cond_1
+    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 14
+    :cond_2
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/work/impl/model/WorkSpec;
+
+    .line 15
+    iget-object v1, v1, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
+
+    .line 16
+    iget-object v2, p0, Lu6;->a:Landroid/content/Context;
+
+    invoke-static {v2, v1}, Landroidx/work/impl/background/systemalarm/CommandHandler;->b(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    .line 17
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v3
+
+    sget-object v4, Lu6;->e:Ljava/lang/String;
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    aput-object v1, v5, v6
+
+    const-string v1, "Creating a delay_met command for workSpec with id (%s)"
+
+    invoke-static {v1, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-array v5, v6, [Ljava/lang/Throwable;
+
+    invoke-virtual {v3, v4, v1, v5}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    .line 18
+    iget-object v1, p0, Lu6;->c:Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;
+
+    new-instance v3, Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher$b;
+
+    iget v4, p0, Lu6;->b:I
+
+    invoke-direct {v3, v1, v2, v4}, Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher$b;-><init>(Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;Landroid/content/Intent;I)V
+
+    invoke-virtual {v1, v3}, Landroidx/work/impl/background/systemalarm/SystemAlarmDispatcher;->i(Ljava/lang/Runnable;)V
+
+    goto :goto_1
+
+    .line 19
+    :cond_3
+    iget-object v0, p0, Lu6;->d:Landroidx/work/impl/constraints/WorkConstraintsTracker;
+
+    invoke-virtual {v0}, Landroidx/work/impl/constraints/WorkConstraintsTracker;->reset()V
+
+    return-void
 .end method

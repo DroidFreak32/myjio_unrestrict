@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static final zzaxq:Lcom/google/android/gms/internal/gtm/zzqt;
+.field private static final zzaxq:Lcom/google/android/gms/internal/gtm/zzqt;
 
 
 # instance fields
-.field public zzaut:Z
+.field private zzaut:Z
 
 .field public final zzaxo:Lcom/google/android/gms/internal/gtm/zztc;
     .annotation system Ldalvik/annotation/Signature;
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public zzaxp:Z
+.field private zzaxp:Z
 
 
 # direct methods
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -73,7 +73,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Z)V
+.method private constructor <init>(Z)V
     .locals 0
 
     .line 4
@@ -162,6 +162,11 @@
 
 .method public static zza(Lcom/google/android/gms/internal/gtm/zzqj;Lcom/google/android/gms/internal/gtm/zzug;ILjava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 31
     sget-object v0, Lcom/google/android/gms/internal/gtm/zzug;->zzbfy:Lcom/google/android/gms/internal/gtm/zzug;
@@ -588,7 +593,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/gtm/zzug;Ljava/lang/Object;)V
+.method private static zza(Lcom/google/android/gms/internal/gtm/zzug;Ljava/lang/Object;)V
     .locals 2
 
     .line 15
@@ -613,17 +618,22 @@
 
     packed-switch p0, :pswitch_data_0
 
-    goto :goto_2
+    goto :goto_1
 
     .line 17
     :pswitch_0
     instance-of p0, p1, Lcom/google/android/gms/internal/gtm/zzsk;
 
-    if-nez p0, :cond_0
+    if-nez p0, :cond_1
 
     instance-of p0, p1, Lcom/google/android/gms/internal/gtm/zzrn;
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 
@@ -631,27 +641,23 @@
     :pswitch_1
     instance-of p0, p1, Ljava/lang/Integer;
 
-    if-nez p0, :cond_0
+    if-nez p0, :cond_1
 
     instance-of p0, p1, Lcom/google/android/gms/internal/gtm/zzrf;
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
-    :cond_0
-    :goto_0
-    const/4 v1, 0x1
-
-    goto :goto_2
+    goto :goto_0
 
     .line 19
     :pswitch_2
     instance-of p0, p1, Lcom/google/android/gms/internal/gtm/zzps;
 
-    if-nez p0, :cond_0
+    if-nez p0, :cond_1
 
     instance-of p0, p1, [B
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
@@ -659,41 +665,41 @@
     :pswitch_3
     instance-of v0, p1, Ljava/lang/String;
 
-    goto :goto_1
+    goto :goto_0
 
     .line 21
     :pswitch_4
     instance-of v0, p1, Ljava/lang/Boolean;
 
-    goto :goto_1
+    goto :goto_0
 
     .line 22
     :pswitch_5
     instance-of v0, p1, Ljava/lang/Double;
 
-    goto :goto_1
+    goto :goto_0
 
     .line 23
     :pswitch_6
     instance-of v0, p1, Ljava/lang/Float;
 
-    goto :goto_1
+    goto :goto_0
 
     .line 24
     :pswitch_7
     instance-of v0, p1, Ljava/lang/Long;
 
-    goto :goto_1
+    goto :goto_0
 
     .line 25
     :pswitch_8
     instance-of v0, p1, Ljava/lang/Integer;
 
-    :goto_1
+    :cond_1
+    :goto_0
     move v1, v0
 
-    :cond_1
-    :goto_2
+    :goto_1
     if-eqz v1, :cond_2
 
     return-void
@@ -707,6 +713,8 @@
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -844,7 +852,7 @@
     return p0
 .end method
 
-.method public static zzb(Lcom/google/android/gms/internal/gtm/zzug;Ljava/lang/Object;)I
+.method private static zzb(Lcom/google/android/gms/internal/gtm/zzug;Ljava/lang/Object;)I
     .locals 1
 
     .line 1
@@ -1192,7 +1200,7 @@
     .end packed-switch
 .end method
 
-.method public static zzc(Ljava/util/Map$Entry;)Z
+.method private static zzc(Ljava/util/Map$Entry;)Z
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1489,7 +1497,7 @@
     return-void
 .end method
 
-.method public static zze(Ljava/util/Map$Entry;)I
+.method private static zze(Ljava/util/Map$Entry;)I
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1609,7 +1617,7 @@
     return-object v0
 .end method
 
-.method public static zzu(Ljava/lang/Object;)Ljava/lang/Object;
+.method private static zzu(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
     .line 1
@@ -1657,6 +1665,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/gtm/zzqt;

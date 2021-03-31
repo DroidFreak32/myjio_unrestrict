@@ -25,102 +25,90 @@
 
 .field public static final enum TEXT:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-.field public static final synthetic s:[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+.field public static final synthetic a:[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 13
 
     new-instance v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const/4 v1, 0x0
+    const-string v1, "ANDROID_RESOURCE_ID"
 
-    const-string v2, "ANDROID_RESOURCE_ID"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->ANDROID_RESOURCE_ID:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    new-instance v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
     const-string v3, "RESOURCE_ID"
 
-    invoke-direct {v0, v3, v2}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->RESOURCE_ID:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    invoke-direct {v1, v3, v4}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    sput-object v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->RESOURCE_ID:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const-string v4, "TEXT"
+    const-string v5, "TEXT"
 
-    invoke-direct {v0, v4, v3}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->TEXT:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    invoke-direct {v3, v5, v6}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    sput-object v3, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->TEXT:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const-string v5, "NONE"
+    const-string v7, "NONE"
 
-    invoke-direct {v0, v5, v4}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->NONE:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    invoke-direct {v5, v7, v8}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    sput-object v5, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->NONE:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const/4 v5, 0x4
+    new-instance v7, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const-string v6, "CONTENT_DESCRIPTION"
+    const-string v9, "CONTENT_DESCRIPTION"
 
-    invoke-direct {v0, v6, v5}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
+    const/4 v10, 0x4
 
-    sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->CONTENT_DESCRIPTION:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    invoke-direct {v7, v9, v10}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    sput-object v7, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->CONTENT_DESCRIPTION:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const/4 v6, 0x5
+    new-instance v9, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    const-string v7, "TAG"
+    const-string v11, "TAG"
 
-    invoke-direct {v0, v7, v6}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
+    const/4 v12, 0x5
 
-    sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->TAG:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    invoke-direct {v9, v11, v12}, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x6
+    sput-object v9, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->TAG:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    new-array v0, v0, [Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    const/4 v11, 0x6
 
-    sget-object v7, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->ANDROID_RESOURCE_ID:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    new-array v11, v11, [Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
-    aput-object v7, v0, v1
+    aput-object v0, v11, v2
 
-    sget-object v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->RESOURCE_ID:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    aput-object v1, v11, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v11, v6
 
-    sget-object v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->TEXT:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    aput-object v5, v11, v8
 
-    aput-object v1, v0, v3
+    aput-object v7, v11, v10
 
-    sget-object v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->NONE:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    aput-object v9, v11, v12
 
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->CONTENT_DESCRIPTION:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->TAG:Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->s:[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    sput-object v11, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->a:[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
     return-void
 .end method
@@ -155,7 +143,7 @@
 .method public static values()[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
     .locals 1
 
-    sget-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->s:[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
+    sget-object v0, Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->a:[Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;
 
     invoke-virtual {v0}, [Lcom/jiny/android/data/models/nativemodels/StageIdentifierType;->clone()Ljava/lang/Object;
 

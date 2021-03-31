@@ -1,32 +1,16 @@
 .class public final Lcom/google/android/gms/internal/ads/zzanb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzaos;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzaos<",
-        "Ljava/lang/Throwable;",
-        "TT;>;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final synthetic zzcxf:Lcom/google/android/gms/internal/ads/zzanf;
+.implements Lcom/google/android/gms/internal/ads/zzamy;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzamz;Lcom/google/android/gms/internal/ads/zzanf;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzanb;->zzcxf:Lcom/google/android/gms/internal/ads/zzanf;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,34 +18,23 @@
 
 
 # virtual methods
-.method public final synthetic zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzapi;
-    .locals 2
+.method public final zza(Landroid/content/pm/ApplicationInfo;)Lcom/google/android/gms/internal/ads/zzdyz;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/pm/ApplicationInfo;",
+            ")",
+            "Lcom/google/android/gms/internal/ads/zzdyz<",
+            "Landroid/location/Location;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 p1, 0x0
 
     .line 1
-    check-cast p1, Ljava/lang/Throwable;
-
-    const-string v0, "Error occurred while dispatching http response in getter."
-
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 3
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzeo()Lcom/google/android/gms/internal/ads/zzakr;
-
-    move-result-object v0
-
-    const-string v1, "HttpGetter.deliverResponse.1"
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/internal/ads/zzakr;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    .line 4
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzanb;->zzcxf:Lcom/google/android/gms/internal/ads/zzanf;
-
-    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzanf;->zzpj()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaox;->zzj(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzaph;
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzdyr;->zzag(Ljava/lang/Object;)Lcom/google/android/gms/internal/ads/zzdyz;
 
     move-result-object p1
 

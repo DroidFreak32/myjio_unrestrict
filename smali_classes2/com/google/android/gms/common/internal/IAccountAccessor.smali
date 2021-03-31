@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/internal/IAccountAccessor;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Landroid/os/IInterface;
@@ -14,5 +15,13 @@
 
 
 # virtual methods
-.method public abstract getAccount()Landroid/accounts/Account;
+.method public abstract zza()Landroid/accounts/Account;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public final zzbg:Lcom/google/android/gms/maps/MapView$zzb;
+.field private final zzbg:Lcom/google/android/gms/maps/MapView$zzb;
 
 
 # direct methods

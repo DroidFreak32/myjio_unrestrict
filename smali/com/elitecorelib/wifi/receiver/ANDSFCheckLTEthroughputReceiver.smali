@@ -46,13 +46,9 @@
 
     invoke-virtual {p1, p2, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 p1, 0x1
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lc20;->a(Ljava/lang/Boolean;)Ljava/util/HashMap;
+    invoke-static {p1}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/Boolean;)Ljava/util/HashMap;
 
     sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
@@ -108,13 +104,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_0
-
     :catch_1
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :goto_0
     return-void
 .end method

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/location/Geofence$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -17,50 +18,57 @@
 
 
 # instance fields
-.field public zzad:Ljava/lang/String;
+.field private zza:Ljava/lang/String;
 
-.field public zzae:I
+.field private zzb:I
 
-.field public zzaf:J
+.field private zzc:J
 
-.field public zzag:S
+.field private zzd:S
 
-.field public zzah:D
+.field private zze:D
 
-.field public zzai:D
+.field private zzf:D
 
-.field public zzaj:F
+.field private zzg:F
 
-.field public zzak:I
+.field private zzh:I
 
-.field public zzal:I
+.field private zzi:I
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 3
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzad:Ljava/lang/String;
+    .line 2
+    iput-object v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zza:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzae:I
+    .line 3
+    iput v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzb:I
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    iput-wide v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzaf:J
+    .line 4
+    iput-wide v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzc:J
 
     const/4 v1, -0x1
 
-    iput-short v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzag:S
+    .line 5
+    iput-short v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzd:S
 
-    iput v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzak:I
+    .line 6
+    iput v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzh:I
 
-    iput v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzal:I
+    .line 7
+    iput v1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzi:I
 
     return-void
 .end method
@@ -68,13 +76,15 @@
 
 # virtual methods
 .method public final build()Lcom/google/android/gms/location/Geofence;
-    .locals 15
+    .locals 14
 
-    iget-object v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzad:Ljava/lang/String;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zza:Ljava/lang/String;
 
     if-eqz v0, :cond_6
 
-    iget v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzae:I
+    .line 2
+    iget v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzb:I
 
     if-eqz v0, :cond_5
 
@@ -82,12 +92,14 @@
 
     if-eqz v0, :cond_1
 
-    iget v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzal:I
+    .line 3
+    iget v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzi:I
 
     if-ltz v0, :cond_0
 
     goto :goto_0
 
+    .line 4
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -97,48 +109,57 @@
 
     throw v0
 
+    .line 5
     :cond_1
     :goto_0
-    iget-wide v11, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzaf:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzc:J
 
-    const-wide/high16 v0, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v2, v11, v0
+    cmp-long v4, v0, v2
 
-    if-eqz v2, :cond_4
+    if-eqz v4, :cond_4
 
-    iget-short v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzag:S
+    .line 6
+    iget-short v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzd:S
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_3
 
-    iget v13, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzak:I
+    .line 7
+    iget v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzh:I
 
-    if-ltz v13, :cond_2
+    if-ltz v0, :cond_2
 
-    new-instance v0, Lcom/google/android/gms/internal/location/zzbh;
+    .line 8
+    new-instance v0, Lcom/google/android/gms/internal/location/zzbg;
 
-    iget-object v3, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzad:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/location/Geofence$Builder;->zza:Ljava/lang/String;
 
-    iget v4, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzae:I
+    iget v3, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzb:I
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    iget-wide v6, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzah:D
+    iget-wide v5, p0, Lcom/google/android/gms/location/Geofence$Builder;->zze:D
 
-    iget-wide v8, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzai:D
+    iget-wide v7, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzf:D
 
-    iget v10, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzaj:F
+    iget v9, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzg:F
 
-    iget v14, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzal:I
+    iget-wide v10, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzc:J
 
-    move-object v2, v0
+    iget v12, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzh:I
 
-    invoke-direct/range {v2 .. v14}, Lcom/google/android/gms/internal/location/zzbh;-><init>(Ljava/lang/String;ISDDFJII)V
+    iget v13, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzi:I
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v13}, Lcom/google/android/gms/internal/location/zzbg;-><init>(Ljava/lang/String;ISDDFJII)V
 
     return-object v0
 
+    .line 9
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -148,6 +169,7 @@
 
     throw v0
 
+    .line 10
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -157,6 +179,7 @@
 
     throw v0
 
+    .line 11
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -166,6 +189,7 @@
 
     throw v0
 
+    .line 12
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -175,6 +199,7 @@
 
     throw v0
 
+    .line 13
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -190,13 +215,17 @@
 
     const/4 v0, 0x1
 
-    iput-short v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzag:S
+    .line 1
+    iput-short v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzd:S
 
-    iput-wide p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzah:D
+    .line 2
+    iput-wide p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zze:D
 
-    iput-wide p3, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzai:D
+    .line 3
+    iput-wide p3, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzf:D
 
-    iput p5, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzaj:F
+    .line 4
+    iput p5, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzg:F
 
     return-object p0
 .end method
@@ -212,18 +241,24 @@
 
     const-wide/16 p1, -0x1
 
-    iput-wide p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzaf:J
+    .line 1
+    iput-wide p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzc:J
 
     goto :goto_0
 
+    .line 2
     :cond_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    invoke-static {}, Lcom/google/android/gms/common/util/DefaultClock;->getInstance()Lcom/google/android/gms/common/util/Clock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
 
     move-result-wide v0
 
     add-long/2addr v0, p1
 
-    iput-wide v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzaf:J
+    iput-wide v0, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzc:J
 
     :goto_0
     return-object p0
@@ -232,7 +267,8 @@
 .method public final setLoiteringDelay(I)Lcom/google/android/gms/location/Geofence$Builder;
     .locals 0
 
-    iput p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzal:I
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzi:I
 
     return-object p0
 .end method
@@ -240,7 +276,8 @@
 .method public final setNotificationResponsiveness(I)Lcom/google/android/gms/location/Geofence$Builder;
     .locals 0
 
-    iput p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzak:I
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzh:I
 
     return-object p0
 .end method
@@ -248,7 +285,8 @@
 .method public final setRequestId(Ljava/lang/String;)Lcom/google/android/gms/location/Geofence$Builder;
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzad:Ljava/lang/String;
+    .line 1
+    iput-object p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zza:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -256,7 +294,8 @@
 .method public final setTransitionTypes(I)Lcom/google/android/gms/location/Geofence$Builder;
     .locals 0
 
-    iput p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzae:I
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/location/Geofence$Builder;->zzb:I
 
     return-object p0
 .end method

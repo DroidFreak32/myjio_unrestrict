@@ -7,11 +7,11 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public transient _asMap:Ljava/util/EnumMap;
+.field private transient _asMap:Ljava/util/EnumMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/EnumMap<",
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public final _enumClass:Ljava/lang/Class;
+.field private final _enumClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -32,9 +32,9 @@
     .end annotation
 .end field
 
-.field public final _textual:[Lcom/fasterxml/jackson/core/SerializableString;
+.field private final _textual:[Lcom/fasterxml/jackson/core/SerializableString;
 
-.field public final _values:[Ljava/lang/Enum;
+.field private final _values:[Ljava/lang/Enum;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -46,7 +46,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;[Lcom/fasterxml/jackson/core/SerializableString;)V
+.method private constructor <init>(Ljava/lang/Class;[Lcom/fasterxml/jackson/core/SerializableString;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -17,8 +17,12 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
@@ -37,6 +41,10 @@
 
 .method public static zzb(Landroid/content/Context;)Lcom/google/android/gms/clearcut/zzb;
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zze;
 

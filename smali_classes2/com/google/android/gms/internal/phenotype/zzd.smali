@@ -3,7 +3,11 @@
 
 
 # static fields
-.field public static zzbd:J
+.field private static zzbd:J
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "PhenotypeApiImpl.class"
+    .end annotation
+.end field
 
 
 # direct methods

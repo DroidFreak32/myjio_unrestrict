@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzbcu:Lcom/google/android/gms/internal/gtm/zzsf;
+.field private static final zzbcu:Lcom/google/android/gms/internal/gtm/zzsf;
 
-.field public static final zzbcv:Lcom/google/android/gms/internal/gtm/zzsf;
+.field private static final zzbcv:Lcom/google/android/gms/internal/gtm/zzsf;
 
 
 # direct methods
@@ -47,13 +47,13 @@
     return-object v0
 .end method
 
-.method public static zzqk()Lcom/google/android/gms/internal/gtm/zzsf;
+.method private static zzqk()Lcom/google/android/gms/internal/gtm/zzsf;
     .locals 3
 
+    :try_start_0
     const-string v0, "com.google.protobuf.MapFieldSchemaFull"
 
     .line 1
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

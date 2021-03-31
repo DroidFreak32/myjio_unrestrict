@@ -1,6 +1,5 @@
 .class public final Lcom/google/android/gms/base/R$styleable;
 .super Ljava/lang/Object;
-.source "R.java"
 
 
 # annotations
@@ -40,14 +39,12 @@
 
     new-array v1, v0, [I
 
-    .line 1
     fill-array-data v1, :array_0
 
     sput-object v1, Lcom/google/android/gms/base/R$styleable;->LoadingImageView:[I
 
     new-array v0, v0, [I
 
-    .line 2
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/google/android/gms/base/R$styleable;->SignInButton:[I
@@ -56,23 +53,22 @@
 
     :array_0
     .array-data 4
-        0x7f0400cf
-        0x7f040206
-        0x7f040207
+        0x7f0400ed
+        0x7f040256
+        0x7f040257
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f040090
-        0x7f0400f0
-        0x7f04037c
+        0x7f0400a9
+        0x7f040116
+        0x7f040401
     .end array-data
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

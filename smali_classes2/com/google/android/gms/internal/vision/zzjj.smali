@@ -1,295 +1,222 @@
-.class public interface abstract Lcom/google/android/gms/internal/vision/zzjj;
+.class public final Lcom/google/android/gms/internal/vision/zzjj;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/vision/zzjg;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zza(ID)V
+.method public final zzb(ILjava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
+
+    .line 1
+    check-cast p2, Lcom/google/android/gms/internal/vision/zzjh;
+
+    .line 2
+    check-cast p3, Lcom/google/android/gms/internal/vision/zzjf;
+
+    .line 3
+    invoke-virtual {p2}, Ljava/util/LinkedHashMap;->isEmpty()Z
+
+    move-result p1
+
+    const/4 p3, 0x0
+
+    if-eqz p1, :cond_0
+
+    return p3
+
+    .line 4
+    :cond_0
+    invoke-virtual {p2}, Lcom/google/android/gms/internal/vision/zzjh;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    return p3
+
+    :cond_1
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    .line 5
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    .line 6
+    new-instance p1, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw p1
 .end method
 
-.method public abstract zza(IF)V
+.method public final zzc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzjh;
+
+    .line 2
+    check-cast p2, Lcom/google/android/gms/internal/vision/zzjh;
+
+    .line 3
+    invoke-virtual {p2}, Ljava/util/LinkedHashMap;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 4
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzjh;->isMutable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 5
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzjh;->zzhy()Lcom/google/android/gms/internal/vision/zzjh;
+
+    move-result-object p1
+
+    .line 6
+    :cond_0
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/vision/zzjh;->zza(Lcom/google/android/gms/internal/vision/zzjh;)V
+
+    :cond_1
+    return-object p1
 .end method
 
-.method public abstract zza(IJ)V
-.end method
-
-.method public abstract zza(ILcom/google/android/gms/internal/vision/zzeo;)V
-.end method
-
-.method public abstract zza(ILcom/google/android/gms/internal/vision/zzgy;Ljava/util/Map;)V
+.method public final zzn(Ljava/lang/Object;)Ljava/util/Map;
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<K:",
+            "(",
             "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(I",
-            "Lcom/google/android/gms/internal/vision/zzgy<",
-            "TK;TV;>;",
+            ")",
             "Ljava/util/Map<",
-            "TK;TV;>;)V"
+            "**>;"
         }
     .end annotation
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzjh;
+
+    return-object p1
 .end method
 
-.method public abstract zza(ILjava/lang/Object;)V
-.end method
-
-.method public abstract zza(ILjava/lang/Object;Lcom/google/android/gms/internal/vision/zzhw;)V
-.end method
-
-.method public abstract zza(ILjava/lang/String;)V
-.end method
-
-.method public abstract zza(ILjava/util/List;)V
+.method public final zzo(Ljava/lang/Object;)Ljava/util/Map;
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;)V"
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/util/Map<",
+            "**>;"
         }
     .end annotation
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzjh;
+
+    return-object p1
 .end method
 
-.method public abstract zza(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzhw;)V
+.method public final zzp(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzjh;
+
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzjh;->isMutable()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final zzq(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    move-object v0, p1
+
+    check-cast v0, Lcom/google/android/gms/internal/vision/zzjh;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzjh;->zzej()V
+
+    return-object p1
+.end method
+
+.method public final zzr(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/internal/vision/zzjh;->zzhx()Lcom/google/android/gms/internal/vision/zzjh;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzjh;->zzhy()Lcom/google/android/gms/internal/vision/zzjh;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final zzs(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzje;
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I",
-            "Ljava/util/List<",
-            "*>;",
-            "Lcom/google/android/gms/internal/vision/zzhw;",
-            ")V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zza(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzb(IJ)V
-.end method
-
-.method public abstract zzb(ILjava/lang/Object;Lcom/google/android/gms/internal/vision/zzhw;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract zzb(ILjava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/internal/vision/zzeo;",
-            ">;)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzb(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzhw;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "*>;",
-            "Lcom/google/android/gms/internal/vision/zzhw;",
-            ")V"
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/google/android/gms/internal/vision/zzje<",
+            "**>;"
         }
     .end annotation
 
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzjf;
 
-.method public abstract zzb(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
+    .line 2
+    new-instance p1, Ljava/lang/NoSuchMethodError;
 
-.method public abstract zzb(IZ)V
-.end method
+    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-.method public abstract zzbe(I)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract zzbf(I)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract zzc(IJ)V
-.end method
-
-.method public abstract zzc(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Long;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzd(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Long;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zze(II)V
-.end method
-
-.method public abstract zze(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Long;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzed()I
-.end method
-
-.method public abstract zzf(II)V
-.end method
-
-.method public abstract zzf(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Float;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzg(II)V
-.end method
-
-.method public abstract zzg(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Double;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzh(II)V
-.end method
-
-.method public abstract zzh(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzi(IJ)V
-.end method
-
-.method public abstract zzi(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Boolean;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzj(IJ)V
-.end method
-
-.method public abstract zzj(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzk(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzl(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Long;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzm(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzn(ILjava/util/List;Z)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/List<",
-            "Ljava/lang/Long;",
-            ">;Z)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzo(II)V
-.end method
-
-.method public abstract zzp(II)V
+    throw p1
 .end method

@@ -7,13 +7,13 @@
 
 
 # static fields
-.field public static final name:Ljava/lang/String; = "Local Identity Repository"
+.field private static final name:Ljava/lang/String; = "Local Identity Repository"
 
 
 # instance fields
-.field public identities:Ljava/util/Vector;
+.field private identities:Ljava/util/Vector;
 
-.field public jsch:Lcom/jcraft/jsch/JSch;
+.field private jsch:Lcom/jcraft/jsch/JSch;
 
 
 # direct methods

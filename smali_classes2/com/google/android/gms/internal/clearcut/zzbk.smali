@@ -3,15 +3,15 @@
 
 
 # static fields
-.field public static volatile zzft:Z = true
+.field private static volatile zzft:Z = true
 
 
 # instance fields
-.field public zzfq:I
+.field private zzfq:I
 
-.field public zzfr:I
+.field private zzfr:I
 
-.field public zzfs:Z
+.field private zzfs:Z
 
 
 # direct methods
@@ -21,7 +21,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
     invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/clearcut/zzbm;-><init>([BIIZLcom/google/android/gms/internal/clearcut/zzbl;)V
 
     :try_start_0
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/clearcut/zzbm;->zzl(I)I
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/clearcut/zzbk;->zzl(I)I
     :try_end_0
     .catch Lcom/google/android/gms/internal/clearcut/zzco; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -123,4 +123,9 @@
 .end method
 
 .method public abstract zzl(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/clearcut/zzco;
+        }
+    .end annotation
 .end method

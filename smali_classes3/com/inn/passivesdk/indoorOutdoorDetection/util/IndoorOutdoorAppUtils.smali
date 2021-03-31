@@ -7,13 +7,13 @@
 
 
 # static fields
-.field public static _instance:Lcom/inn/passivesdk/indoorOutdoorDetection/util/IndoorOutdoorAppUtils;
+.field private static _instance:Lcom/inn/passivesdk/indoorOutdoorDetection/util/IndoorOutdoorAppUtils;
 
-.field public static context:Landroid/content/Context;
+.field private static context:Landroid/content/Context;
 
 
 # instance fields
-.field public final TAG:Ljava/lang/String;
+.field private final TAG:Ljava/lang/String;
 
 
 # direct methods
@@ -336,7 +336,7 @@
 
     move-result-wide v0
 
-    const-string/jumbo v2, "yyyy"
+    const-string v2, "yyyy"
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/inn/passivesdk/indoorOutdoorDetection/util/IndoorOutdoorAppUtils;->getFormatDateValues(JLjava/lang/String;)Ljava/lang/String;
 
@@ -426,33 +426,33 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x0
+    const-string v1, "AlarmPreference"
 
-    const-string v2, "AlarmPreference"
+    const/4 v2, 0x0
 
     .line 2
-    invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-string v2, "AlarmInitialized"
+    const-string v1, "AlarmInitialized"
 
     .line 3
-    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     .line 4
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     .line 5
-    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     .line 6
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
@@ -582,17 +582,17 @@
 
     invoke-virtual {p1, p3, p2}, Ljava/util/Calendar;->set(II)V
 
-    const/4 p2, 0x0
+    const/16 p2, 0xd
 
-    const/16 p3, 0xd
+    const/4 p3, 0x0
 
     .line 8
-    invoke-virtual {p1, p3, p2}, Ljava/util/Calendar;->set(II)V
+    invoke-virtual {p1, p2, p3}, Ljava/util/Calendar;->set(II)V
 
-    const/16 p3, 0xe
+    const/16 p2, 0xe
 
     .line 9
-    invoke-virtual {p1, p3, p2}, Ljava/util/Calendar;->set(II)V
+    invoke-virtual {p1, p2, p3}, Ljava/util/Calendar;->set(II)V
 
     return-void
 .end method
@@ -647,7 +647,7 @@
 
     add-long/2addr p2, p5
 
-    const-string/jumbo p5, "yyyy"
+    const-string p5, "yyyy"
 
     .line 4
     invoke-virtual {p0, p2, p3, p5}, Lcom/inn/passivesdk/indoorOutdoorDetection/util/IndoorOutdoorAppUtils;->getFormatDateValues(JLjava/lang/String;)Ljava/lang/String;
@@ -976,7 +976,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v0, "writeCellDataToCsvFile() Error: "
+    const-string v0, "writeCellDataToCsvFile() Error: "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1001,7 +1001,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v0, "writeCellDataToCsvFile() Exception: "
+    const-string v0, "writeCellDataToCsvFile() Exception: "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1087,7 +1087,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    const-string/jumbo p2, "tracking_data_.csv"
+    const-string p2, "tracking_data_.csv"
 
     .line 6
     new-instance v0, Ljava/io/File;
@@ -1290,7 +1290,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v0, "writeCellDataToCsvFile() Error: "
+    const-string v0, "writeCellDataToCsvFile() Error: "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1315,7 +1315,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v0, "writeCellDataToCsvFile() Exception: "
+    const-string v0, "writeCellDataToCsvFile() Exception: "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

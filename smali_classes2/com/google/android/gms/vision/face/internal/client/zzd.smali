@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/vision/face/internal/client/zzd;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -29,7 +30,7 @@
 
 # virtual methods
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 20
+    .locals 23
 
     move-object/from16 v0, p1
 
@@ -42,15 +43,15 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const v4, 0x7f7fffff    # Float.MAX_VALUE
 
-    move-object v15, v2
+    const/4 v5, 0x0
 
-    move-object/from16 v19, v15
+    const/high16 v6, -0x40800000    # -1.0f
 
-    const/4 v6, 0x0
+    move-object/from16 v17, v2
 
-    const/4 v7, 0x0
+    move-object/from16 v21, v17
 
     const/4 v8, 0x0
 
@@ -64,13 +65,19 @@
 
     const/4 v13, 0x0
 
-    const/4 v14, 0x0
+    const v14, 0x7f7fffff    # Float.MAX_VALUE
 
-    const/16 v16, 0x0
+    const v15, 0x7f7fffff    # Float.MAX_VALUE
 
-    const/16 v17, 0x0
+    const v16, 0x7f7fffff    # Float.MAX_VALUE
 
     const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    const/high16 v22, -0x40800000    # -1.0f
 
     .line 2
     :goto_0
@@ -101,30 +108,30 @@
     :pswitch_0
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v14
+    move-result v22
 
     goto :goto_0
 
     .line 7
     :pswitch_1
-    sget-object v3, Lcom/google/android/gms/vision/face/internal/client/zza;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
+
+    move-result v16
+
+    goto :goto_0
 
     .line 8
+    :pswitch_2
+    sget-object v3, Lcom/google/android/gms/vision/face/internal/client/zza;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
 
     move-result-object v2
 
-    move-object/from16 v19, v2
+    move-object/from16 v21, v2
 
-    check-cast v19, [Lcom/google/android/gms/vision/face/internal/client/zza;
-
-    goto :goto_0
-
-    .line 9
-    :pswitch_2
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
-
-    move-result v18
+    check-cast v21, [Lcom/google/android/gms/vision/face/internal/client/zza;
 
     goto :goto_0
 
@@ -132,7 +139,7 @@
     :pswitch_3
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v17
+    move-result v20
 
     goto :goto_0
 
@@ -140,30 +147,30 @@
     :pswitch_4
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v16
+    move-result v19
 
     goto :goto_0
 
     .line 12
     :pswitch_5
-    sget-object v3, Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
+
+    move-result v18
+
+    goto :goto_0
 
     .line 13
+    :pswitch_6
+    sget-object v3, Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 14
     invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
 
     move-result-object v2
 
-    move-object v15, v2
+    move-object/from16 v17, v2
 
-    check-cast v15, [Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;
-
-    goto :goto_0
-
-    .line 14
-    :pswitch_6
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
-
-    move-result v13
+    check-cast v17, [Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;
 
     goto :goto_0
 
@@ -171,7 +178,7 @@
     :pswitch_7
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v12
+    move-result v15
 
     goto :goto_0
 
@@ -179,7 +186,7 @@
     :pswitch_8
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v11
+    move-result v14
 
     goto :goto_0
 
@@ -187,7 +194,7 @@
     :pswitch_9
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v10
+    move-result v13
 
     goto :goto_0
 
@@ -195,7 +202,7 @@
     :pswitch_a
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v9
+    move-result v12
 
     goto :goto_0
 
@@ -203,15 +210,15 @@
     :pswitch_b
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v8
+    move-result v11
 
     goto :goto_0
 
     .line 20
     :pswitch_c
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readFloat(Landroid/os/Parcel;I)F
 
-    move-result v7
+    move-result v10
 
     goto :goto_0
 
@@ -219,20 +226,28 @@
     :pswitch_d
     invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v6
+    move-result v9
 
     goto :goto_0
 
     .line 22
+    :pswitch_e
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
+
+    move-result v8
+
+    goto :goto_0
+
+    .line 23
     :cond_0
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
-    .line 23
+    .line 24
     new-instance v0, Lcom/google/android/gms/vision/face/internal/client/FaceParcel;
 
-    move-object v5, v0
+    move-object v7, v0
 
-    invoke-direct/range {v5 .. v19}, Lcom/google/android/gms/vision/face/internal/client/FaceParcel;-><init>(IIFFFFFFF[Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;FFF[Lcom/google/android/gms/vision/face/internal/client/zza;)V
+    invoke-direct/range {v7 .. v22}, Lcom/google/android/gms/vision/face/internal/client/FaceParcel;-><init>(IIFFFFFFF[Lcom/google/android/gms/vision/face/internal/client/LandmarkParcel;FFF[Lcom/google/android/gms/vision/face/internal/client/zza;F)V
 
     return-object v0
 
@@ -240,6 +255,7 @@
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_e
         :pswitch_d
         :pswitch_c
         :pswitch_b

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public activitySet:Ljava/util/Set;
+.field private activitySet:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -49,6 +49,11 @@
 
 .method private checkThreadState()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/RuntimeException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;

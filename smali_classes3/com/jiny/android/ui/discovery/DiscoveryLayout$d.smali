@@ -17,14 +17,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+.field public final synthetic a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jiny/android/ui/discovery/DiscoveryLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$d;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iput-object p1, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$d;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,15 +36,15 @@
 .method public run()V
     .locals 7
 
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/jiny/android/data/a;->y()Lvj0;
+    invoke-virtual {v0}, Lcom/jiny/android/data/a;->f()Lcom/jiny/android/data/models/c/a;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lvj0;->c()Ljava/util/List;
+    invoke-virtual {v0}, Lcom/jiny/android/data/models/c/a;->c()Ljava/util/List;
 
     move-result-object v0
 
@@ -54,7 +54,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lgk0;
+    check-cast v1, Lcom/jiny/android/data/models/f/c;
 
     const/4 v2, 0x1
 
@@ -62,7 +62,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lgk0;
+    check-cast v2, Lcom/jiny/android/data/models/f/c;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -74,11 +74,11 @@
 
     if-ne v3, v4, :cond_0
 
-    invoke-virtual {v1}, Lgk0;->b()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/jiny/android/data/models/f/c;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2}, Lgk0;->b()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/jiny/android/data/models/f/c;->b()Ljava/lang/String;
 
     move-result-object v1
 
@@ -101,13 +101,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lgk0;
+    check-cast v0, Lcom/jiny/android/data/models/f/c;
 
-    invoke-virtual {v1}, Lgk0;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/jiny/android/data/models/f/c;->a()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2}, Lgk0;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/jiny/android/data/models/f/c;->a()Ljava/lang/String;
 
     move-result-object v4
 
@@ -120,16 +120,16 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v1}, Lgk0;->b()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/jiny/android/data/models/f/c;->b()Ljava/lang/String;
 
     move-result-object v5
 
     :goto_0
-    invoke-virtual {v2}, Lgk0;->b()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/jiny/android/data/models/f/c;->b()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lgk0;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/jiny/android/data/models/f/c;->b()Ljava/lang/String;
 
     move-result-object v0
 
@@ -141,17 +141,17 @@
     move-object v1, v0
 
     :goto_1
-    iget-object v2, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$d;->s:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
+    iget-object v2, p0, Lcom/jiny/android/ui/discovery/DiscoveryLayout$d;->a:Lcom/jiny/android/ui/discovery/DiscoveryLayout;
 
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/jiny/android/data/a;->M()Z
+    invoke-virtual {v3}, Lcom/jiny/android/data/a;->t()Z
 
     move-result v3
 
-    invoke-static {v2, v5, v1, v0, v3}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->a(Lcom/jiny/android/ui/discovery/DiscoveryLayout;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v2, v5, v1, v0, v3}, Lcom/jiny/android/ui/discovery/DiscoveryLayout;->m(Lcom/jiny/android/ui/discovery/DiscoveryLayout;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
 .end method

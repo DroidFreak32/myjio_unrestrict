@@ -27,49 +27,45 @@
 
 .field public static final enum RenderOptions:Lcom/caverock/androidsvg/CSSParser$Source;
 
-.field public static final synthetic s:[Lcom/caverock/androidsvg/CSSParser$Source;
+.field public static final synthetic a:[Lcom/caverock/androidsvg/CSSParser$Source;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$Source;
 
-    const/4 v1, 0x0
+    const-string v1, "Document"
 
-    const-string v2, "Document"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/caverock/androidsvg/CSSParser$Source;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/CSSParser$Source;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/caverock/androidsvg/CSSParser$Source;->Document:Lcom/caverock/androidsvg/CSSParser$Source;
 
     .line 2
-    new-instance v0, Lcom/caverock/androidsvg/CSSParser$Source;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/caverock/androidsvg/CSSParser$Source;
 
     const-string v3, "RenderOptions"
 
-    invoke-direct {v0, v3, v2}, Lcom/caverock/androidsvg/CSSParser$Source;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/caverock/androidsvg/CSSParser$Source;->RenderOptions:Lcom/caverock/androidsvg/CSSParser$Source;
+    invoke-direct {v1, v3, v4}, Lcom/caverock/androidsvg/CSSParser$Source;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/caverock/androidsvg/CSSParser$Source;->RenderOptions:Lcom/caverock/androidsvg/CSSParser$Source;
 
-    new-array v0, v0, [Lcom/caverock/androidsvg/CSSParser$Source;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/caverock/androidsvg/CSSParser$Source;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/caverock/androidsvg/CSSParser$Source;->Document:Lcom/caverock/androidsvg/CSSParser$Source;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/caverock/androidsvg/CSSParser$Source;->RenderOptions:Lcom/caverock/androidsvg/CSSParser$Source;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/caverock/androidsvg/CSSParser$Source;->s:[Lcom/caverock/androidsvg/CSSParser$Source;
+    sput-object v3, Lcom/caverock/androidsvg/CSSParser$Source;->a:[Lcom/caverock/androidsvg/CSSParser$Source;
 
     return-void
 .end method
@@ -107,7 +103,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcom/caverock/androidsvg/CSSParser$Source;->s:[Lcom/caverock/androidsvg/CSSParser$Source;
+    sget-object v0, Lcom/caverock/androidsvg/CSSParser$Source;->a:[Lcom/caverock/androidsvg/CSSParser$Source;
 
     invoke-virtual {v0}, [Lcom/caverock/androidsvg/CSSParser$Source;->clone()Ljava/lang/Object;
 

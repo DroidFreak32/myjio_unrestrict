@@ -1,79 +1,104 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzme;
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zzme;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzmf;
-
-
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzcq;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/measurement/zzcq<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# direct methods
-.method public static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzcw;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lcom/google/android/gms/internal/measurement/zzcr;->zza(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzcw;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.config.string.always_update_disk_on_set"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/measurement/zzcw;->zza(Ljava/lang/String;Z)Lcom/google/android/gms/internal/measurement/zzcq;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzme;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # virtual methods
-.method public final zza()Z
-    .locals 1
+.method public abstract zza()J
+.end method
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzme;->zza:Lcom/google/android/gms/internal/measurement/zzcq;
+.method public abstract zzaa()J
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzcq;->zzc()Ljava/lang/Object;
+.method public abstract zzab()J
+.end method
 
-    move-result-object v0
+.method public abstract zzac()J
+.end method
 
-    check-cast v0, Ljava/lang/Boolean;
+.method public abstract zzad()J
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+.method public abstract zzae()J
+.end method
 
-    move-result v0
+.method public abstract zzaf()Ljava/lang/String;
+.end method
 
-    return v0
+.method public abstract zzag()J
+.end method
+
+.method public abstract zzb()J
+.end method
+
+.method public abstract zzc()Ljava/lang/String;
+.end method
+
+.method public abstract zzd()Ljava/lang/String;
+.end method
+
+.method public abstract zze()J
+.end method
+
+.method public abstract zzf()J
+.end method
+
+.method public abstract zzg()J
+.end method
+
+.method public abstract zzh()J
+.end method
+
+.method public abstract zzi()J
+.end method
+
+.method public abstract zzj()J
+.end method
+
+.method public abstract zzk()J
+.end method
+
+.method public abstract zzl()J
+.end method
+
+.method public abstract zzm()J
+.end method
+
+.method public abstract zzn()J
+.end method
+
+.method public abstract zzo()J
+.end method
+
+.method public abstract zzp()J
+.end method
+
+.method public abstract zzq()J
+.end method
+
+.method public abstract zzr()J
+.end method
+
+.method public abstract zzs()J
+.end method
+
+.method public abstract zzt()J
+.end method
+
+.method public abstract zzu()J
+.end method
+
+.method public abstract zzv()J
+.end method
+
+.method public abstract zzw()J
+.end method
+
+.method public abstract zzx()J
+.end method
+
+.method public abstract zzy()J
+.end method
+
+.method public abstract zzz()J
 .end method

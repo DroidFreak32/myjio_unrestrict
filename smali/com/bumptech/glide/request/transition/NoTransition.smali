@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public static final NO_ANIMATION_FACTORY:Lcom/bumptech/glide/request/transition/TransitionFactory;
+.field private static final NO_ANIMATION_FACTORY:Lcom/bumptech/glide/request/transition/TransitionFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/transition/TransitionFactory<",

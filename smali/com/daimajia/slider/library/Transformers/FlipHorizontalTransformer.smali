@@ -47,7 +47,7 @@
 
     .line 1
     :goto_1
-    invoke-static {p1, v0}, La53;->a(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setAlpha(Landroid/view/View;F)V
 
     .line 2
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -60,7 +60,7 @@
 
     mul-float v0, v0, v1
 
-    invoke-static {p1, v0}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     .line 3
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -71,10 +71,10 @@
 
     mul-float v0, v0, v1
 
-    invoke-static {p1, v0}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     .line 4
-    invoke-static {p1, p2}, La53;->f(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setRotationY(Landroid/view/View;F)V
 
     return-void
 .end method

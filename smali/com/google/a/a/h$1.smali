@@ -35,23 +35,21 @@
 
     sput-object v0, Lcom/google/a/a/h$1;->c:[I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :try_start_0
-    sget-object v1, Lcom/google/a/a/h$1;->c:[I
-
     sget-object v2, Lcom/google/a/a/h$b;->e:Lcom/google/a/a/h$b;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
-    aput v0, v1, v2
+    aput v1, v0, v2
     :try_end_0
     .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
     :try_start_1
     sget-object v2, Lcom/google/a/a/h$1;->c:[I
@@ -62,7 +60,7 @@
 
     move-result v3
 
-    aput v1, v2, v3
+    aput v0, v2, v3
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -222,15 +220,13 @@
     sput-object v4, Lcom/google/a/a/h$1;->b:[I
 
     :try_start_b
-    sget-object v4, Lcom/google/a/a/h$1;->b:[I
-
     sget-object v5, Lcom/google/a/a/h$a;->a:Lcom/google/a/a/h$a;
 
     invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
 
     move-result v5
 
-    aput v0, v4, v5
+    aput v1, v4, v5
     :try_end_b
     .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
 
@@ -244,7 +240,7 @@
 
     move-result v5
 
-    aput v1, v4, v5
+    aput v0, v4, v5
     :try_end_c
     .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
 
@@ -288,21 +284,19 @@
     sput-object v4, Lcom/google/a/a/h$1;->a:[I
 
     :try_start_f
-    sget-object v4, Lcom/google/a/a/h$1;->a:[I
-
     sget-object v5, Lcom/google/a/a/j$a$a;->a:Lcom/google/a/a/j$a$a;
 
     invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
 
     move-result v5
 
-    aput v0, v4, v5
+    aput v1, v4, v5
     :try_end_f
     .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f
 
     :catch_f
     :try_start_10
-    sget-object v0, Lcom/google/a/a/h$1;->a:[I
+    sget-object v1, Lcom/google/a/a/h$1;->a:[I
 
     sget-object v4, Lcom/google/a/a/j$a$a;->b:Lcom/google/a/a/j$a$a;
 
@@ -310,7 +304,7 @@
 
     move-result v4
 
-    aput v1, v0, v4
+    aput v0, v1, v4
     :try_end_10
     .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10
 

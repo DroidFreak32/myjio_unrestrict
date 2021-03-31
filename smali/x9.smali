@@ -1,64 +1,53 @@
-.class public final Lx9;
+.class public Lx9;
 .super Ljava/lang/Object;
-.source "PointerIconCompat.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Ljava/lang/Object;
+.field public final synthetic a:Lcom/elitecore/wifi/api/WiFiConnection;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method public constructor <init>(Lcom/elitecore/wifi/api/WiFiConnection;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lx9;->a:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    .line 2
-    iput-object p1, p0, Lx9;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;I)Lx9;
-    .locals 2
-
-    .line 2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
-
-    .line 3
-    new-instance v0, Lx9;
-
-    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Lx9;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
-
-    .line 4
-    :cond_0
-    new-instance p0, Lx9;
-
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lx9;-><init>(Ljava/lang/Object;)V
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public a()Ljava/lang/Object;
-    .locals 1
+.method public run()V
+    .locals 5
 
-    .line 1
-    iget-object v0, p0, Lx9;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lx9;->a:Lcom/elitecore/wifi/api/WiFiConnection;
 
-    return-object v0
+    const-wide/16 v1, 0x7530
+
+    const-wide/16 v3, 0x1f4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/elitecore/wifi/api/WiFiConnection;->a(JJ)Lb9;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/elitecore/wifi/api/WiFiConnection;->c(Lcom/elitecore/wifi/api/WiFiConnection;Lb9;)Lb9;
+
+    iget-object v0, p0, Lx9;->a:Lcom/elitecore/wifi/api/WiFiConnection;
+
+    invoke-static {v0}, Lcom/elitecore/wifi/api/WiFiConnection;->b(Lcom/elitecore/wifi/api/WiFiConnection;)Lb9;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
+
+    iget-object v0, p0, Lx9;->a:Lcom/elitecore/wifi/api/WiFiConnection;
+
+    invoke-static {v0}, Lcom/elitecore/wifi/api/WiFiConnection;->n(Lcom/elitecore/wifi/api/WiFiConnection;)V
+
+    return-void
 .end method

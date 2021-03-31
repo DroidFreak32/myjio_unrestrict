@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final synthetic val$context:Landroid/content/Context;
+.field private final synthetic val$context:Landroid/content/Context;
 
 
 # direct methods

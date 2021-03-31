@@ -7,23 +7,23 @@
 
 
 # static fields
-.field public static final ID3_HEADER_SIZE:I = 0xa
+.field private static final ID3_HEADER_SIZE:I = 0xa
 
-.field public static final TAG:Ljava/lang/String; = "Id3Reader"
+.field private static final TAG:Ljava/lang/String; = "Id3Reader"
 
 
 # instance fields
-.field public final id3Header:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
+.field private final id3Header:Lcom/google/android/jioexoplayer2/util/ParsableByteArray;
 
-.field public output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
+.field private output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
-.field public sampleBytesRead:I
+.field private sampleBytesRead:I
 
-.field public sampleSize:I
+.field private sampleSize:I
 
-.field public sampleTimeUs:J
+.field private sampleTimeUs:J
 
-.field public writingSample:Z
+.field private writingSample:Z
 
 
 # direct methods
@@ -223,19 +223,17 @@
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Id3Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/extractor/ts/Id3Reader;->output:Lcom/google/android/jioexoplayer2/extractor/TrackOutput;
-
     invoke-virtual {p2}, Lcom/google/android/jioexoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->getFormatId()Ljava/lang/String;
 
     move-result-object p2
 
-    const/4 v0, 0x0
+    const-string v0, "application/id3"
 
-    const-string v1, "application/id3"
+    const/4 v1, 0x0
 
     const/4 v2, -0x1
 
-    invoke-static {p2, v1, v0, v2, v0}, Lcom/google/android/jioexoplayer2/Format;->createSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILcom/google/android/jioexoplayer2/drm/DrmInitData;)Lcom/google/android/jioexoplayer2/Format;
+    invoke-static {p2, v0, v1, v2, v1}, Lcom/google/android/jioexoplayer2/Format;->createSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILcom/google/android/jioexoplayer2/drm/DrmInitData;)Lcom/google/android/jioexoplayer2/Format;
 
     move-result-object p2
 

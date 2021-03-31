@@ -3,7 +3,7 @@
 .source "ViewDataBinding.java"
 
 # interfaces
-.implements Lud;
+.implements Landroidx/lifecycle/LifecycleObserver;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final s:Ljava/lang/ref/WeakReference;
+.field public final a:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -41,7 +41,7 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Landroidx/databinding/ViewDataBinding$OnStartListener;->s:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Landroidx/databinding/ViewDataBinding$OnStartListener;->a:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
@@ -59,12 +59,12 @@
 # virtual methods
 .method public onStart()V
     .locals 1
-    .annotation runtime Lde;
+    .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$OnStartListener;->s:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$OnStartListener;->a:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 

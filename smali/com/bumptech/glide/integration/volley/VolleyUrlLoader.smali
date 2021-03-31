@@ -25,31 +25,31 @@
 
 
 # instance fields
-.field public final requestFactory:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
+.field private final requestFactory:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
 
-.field public final requestQueue:Lvv;
+.field private final requestQueue:Lcom/android/volley/RequestQueue;
 
 
 # direct methods
-.method public constructor <init>(Lvv;)V
+.method public constructor <init>(Lcom/android/volley/RequestQueue;)V
     .locals 1
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;->DEFAULT_REQUEST_FACTORY:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
 
-    invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;-><init>(Lvv;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
+    invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;-><init>(Lcom/android/volley/RequestQueue;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lvv;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
+.method public constructor <init>(Lcom/android/volley/RequestQueue;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
     .locals 0
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    iput-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;->requestQueue:Lvv;
+    iput-object p1, p0, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;->requestQueue:Lcom/android/volley/RequestQueue;
 
     .line 4
     iput-object p2, p0, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;->requestFactory:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
@@ -61,6 +61,14 @@
 # virtual methods
 .method public buildLoadData(Lcom/bumptech/glide/load/model/GlideUrl;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/model/GlideUrl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,11 +87,11 @@
 
     new-instance p3, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;
 
-    iget-object p4, p0, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;->requestQueue:Lvv;
+    iget-object p4, p0, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;->requestQueue:Lcom/android/volley/RequestQueue;
 
     iget-object v0, p0, Lcom/bumptech/glide/integration/volley/VolleyUrlLoader;->requestFactory:Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;
 
-    invoke-direct {p3, p4, p1, v0}, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;-><init>(Lvv;Lcom/bumptech/glide/load/model/GlideUrl;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
+    invoke-direct {p3, p4, p1, v0}, Lcom/bumptech/glide/integration/volley/VolleyStreamFetcher;-><init>(Lcom/android/volley/RequestQueue;Lcom/bumptech/glide/load/model/GlideUrl;Lcom/bumptech/glide/integration/volley/VolleyRequestFactory;)V
 
     invoke-direct {p2, p1, p3}, Lcom/bumptech/glide/load/model/ModelLoader$LoadData;-><init>(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/data/DataFetcher;)V
 
@@ -92,6 +100,14 @@
 
 .method public bridge synthetic buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/bumptech/glide/load/model/GlideUrl;
@@ -105,6 +121,10 @@
 
 .method public handles(Lcom/bumptech/glide/load/model/GlideUrl;)Z
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/model/GlideUrl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 p1, 0x1
 
@@ -113,6 +133,10 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/bumptech/glide/load/model/GlideUrl;

@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public listener:Landroid/telephony/PhoneStateListener;
+.field private listener:Landroid/telephony/PhoneStateListener;
 
-.field public previousState:I
+.field private previousState:I
 
-.field public telephonyManager:Landroid/telephony/TelephonyManager;
+.field private telephonyManager:Landroid/telephony/TelephonyManager;
 
 
 # direct methods
@@ -92,13 +92,11 @@
 
     iput-object p1, p0, Lcom/elitecorelib/core/services/PhoneCallStatesService;->listener:Landroid/telephony/PhoneStateListener;
 
-    iget-object p1, p0, Lcom/elitecorelib/core/services/PhoneCallStatesService;->telephonyManager:Landroid/telephony/TelephonyManager;
-
-    iget-object p2, p0, Lcom/elitecorelib/core/services/PhoneCallStatesService;->listener:Landroid/telephony/PhoneStateListener;
+    iget-object p2, p0, Lcom/elitecorelib/core/services/PhoneCallStatesService;->telephonyManager:Landroid/telephony/TelephonyManager;
 
     const/16 p3, 0x20
 
-    invoke-virtual {p1, p2, p3}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+    invoke-virtual {p2, p1, p3}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
     const/4 p1, 0x1
 

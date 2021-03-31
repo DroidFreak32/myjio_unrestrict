@@ -16,19 +16,19 @@
 
 
 # instance fields
-.field public closeLatch:Ljava/util/concurrent/CountDownLatch;
+.field private closeLatch:Ljava/util/concurrent/CountDownLatch;
 
-.field public connectLatch:Ljava/util/concurrent/CountDownLatch;
+.field private connectLatch:Ljava/util/concurrent/CountDownLatch;
 
-.field public connectReadThread:Ljava/lang/Thread;
+.field private connectReadThread:Ljava/lang/Thread;
 
-.field public connectTimeout:I
+.field private connectTimeout:I
 
-.field public draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
+.field private draft:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;
 
-.field public engine:Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
+.field private engine:Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
 
-.field public headers:Ljava/util/Map;
+.field private headers:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -39,17 +39,17 @@
     .end annotation
 .end field
 
-.field public ostream:Ljava/io/OutputStream;
+.field private ostream:Ljava/io/OutputStream;
 
-.field public proxy:Ljava/net/Proxy;
+.field private proxy:Ljava/net/Proxy;
 
-.field public socket:Ljava/net/Socket;
+.field private socket:Ljava/net/Socket;
 
-.field public socketFactory:Ljavax/net/SocketFactory;
+.field private socketFactory:Ljavax/net/SocketFactory;
 
 .field public uri:Ljava/net/URI;
 
-.field public writeThread:Ljava/lang/Thread;
+.field private writeThread:Ljava/lang/Thread;
 
 
 # direct methods
@@ -102,7 +102,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/URI;Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;Ljava/util/Map;I)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,39 +124,39 @@
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->uri:Ljava/net/URI;
 
     .line 7
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->engine:Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
+    new-instance v1, Ljava/util/concurrent/CountDownLatch;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->closeLatch:Ljava/util/concurrent/CountDownLatch;
 
     .line 8
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socket:Ljava/net/Socket;
+    new-instance v1, Ljava/util/concurrent/CountDownLatch;
+
+    invoke-direct {v1, v2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectLatch:Ljava/util/concurrent/CountDownLatch;
+
+    const/4 v1, 0x0
 
     .line 9
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socketFactory:Ljavax/net/SocketFactory;
+    iput v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectTimeout:I
 
     .line 10
-    sget-object v0, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->proxy:Ljava/net/Proxy;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->engine:Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
 
     .line 11
-    new-instance v0, Ljava/util/concurrent/CountDownLatch;
+    sget-object v2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectLatch:Ljava/util/concurrent/CountDownLatch;
+    iput-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->proxy:Ljava/net/Proxy;
 
     .line 12
-    new-instance v0, Ljava/util/concurrent/CountDownLatch;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
-
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->closeLatch:Ljava/util/concurrent/CountDownLatch;
-
-    const/4 v0, 0x0
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socket:Ljava/net/Socket;
 
     .line 13
-    iput v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectTimeout:I
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socketFactory:Ljavax/net/SocketFactory;
 
     if-eqz p1, :cond_1
 
@@ -175,10 +175,10 @@
     iput p4, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectTimeout:I
 
     .line 18
-    invoke-virtual {p0, v0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->setTcpNoDelay(Z)V
+    invoke-virtual {p0, v1}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->setTcpNoDelay(Z)V
 
     .line 19
-    invoke-virtual {p0, v0}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->setReuseAddr(Z)V
+    invoke-virtual {p0, v1}, Lcom/clevertap/android/sdk/java_websocket/AbstractWebSocket;->setReuseAddr(Z)V
 
     .line 20
     new-instance p1, Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
@@ -249,7 +249,16 @@
     return-object p1
 .end method
 
-.method public static synthetic access$200(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
+.method public static synthetic access$200(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/net/Socket;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socket:Ljava/net/Socket;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
     .locals 0
 
     .line 1
@@ -258,20 +267,11 @@
     return-object p0
 .end method
 
-.method public static synthetic access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
+.method public static synthetic access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
     .locals 0
 
     .line 1
     iget-object p0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->ostream:Ljava/io/OutputStream;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/net/Socket;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socket:Ljava/net/Socket;
 
     return-object p0
 .end method
@@ -297,7 +297,7 @@
 
     move-result-object v0
 
-    const-string v1, "wss"
+    const-string/jumbo v1, "wss"
 
     .line 3
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -311,7 +311,7 @@
     return v0
 
     :cond_0
-    const-string v1, "ws"
+    const-string/jumbo v1, "ws"
 
     .line 4
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -332,7 +332,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "unknown scheme: "
+    const-string/jumbo v3, "unknown scheme: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -399,8 +399,6 @@
     if-eqz v0, :cond_0
 
     .line 5
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->writeThread:Ljava/lang/Thread;
-
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
     .line 6
@@ -413,8 +411,6 @@
     if-eqz v0, :cond_1
 
     .line 8
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectReadThread:Ljava/lang/Thread;
-
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
     .line 9
@@ -432,8 +428,6 @@
     if-eqz v0, :cond_2
 
     .line 12
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socket:Ljava/net/Socket;
-
     invoke-virtual {v0}, Ljava/net/Socket;->close()V
 
     .line 13
@@ -501,6 +495,15 @@
 
 .method private sendHandshake()V
     .locals 5
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->uri:Ljava/net/URI;
@@ -712,6 +715,11 @@
 
 .method public closeBlocking()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->close()V
@@ -751,8 +759,6 @@
     iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectReadThread:Ljava/lang/Thread;
 
     .line 3
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connectReadThread:Ljava/lang/Thread;
-
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -795,6 +801,11 @@
 
 .method public connectBlocking()Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connect()V
@@ -816,6 +827,11 @@
 
 .method public connectBlocking(JLjava/util/concurrent/TimeUnit;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 4
     invoke-virtual {p0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->connect()V
@@ -1233,6 +1249,11 @@
 
 .method public reconnectBlocking()Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->reset()V
@@ -1247,6 +1268,9 @@
 
 .method public run()V
     .locals 8
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     const/4 v0, -0x1
 
@@ -1261,8 +1285,6 @@
     if-eqz v1, :cond_0
 
     .line 2
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socketFactory:Ljavax/net/SocketFactory;
-
     invoke-virtual {v1}, Ljavax/net/SocketFactory;->createSocket()Ljava/net/Socket;
 
     move-result-object v1
@@ -1292,8 +1314,6 @@
 
     .line 5
     :cond_1
-    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->socket:Ljava/net/Socket;
-
     invoke-virtual {v1}, Ljava/net/Socket;->isClosed()Z
 
     move-result v1
@@ -1357,7 +1377,7 @@
 
     if-eqz v1, :cond_3
 
-    const-string v1, "wss"
+    const-string/jumbo v1, "wss"
 
     .line 10
     iget-object v5, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->uri:Ljava/net/URI;
@@ -1440,8 +1460,6 @@
     iput-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->writeThread:Ljava/lang/Thread;
 
     .line 19
-    iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->writeThread:Ljava/lang/Thread;
-
     invoke-virtual {v2}, Ljava/lang/Thread;->start()V
 
     const/16 v2, 0x4000
@@ -1694,7 +1712,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "socket has already been set"
+    const-string/jumbo v0, "socket has already been set"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

@@ -22,4 +22,11 @@
             "Lorg/apache/http/HttpResponse;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
 .end method

@@ -1,64 +1,42 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzaid;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/gms/internal/ads/zzaid;
+.super Ljava/util/TimerTask;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field private final synthetic zzdhc:Landroid/app/AlertDialog;
+
+.field private final synthetic zzdhd:Ljava/util/Timer;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzahz;Landroid/app/AlertDialog;Ljava/util/Timer;)V
+    .locals 0
+
+    .line 1
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaid;->zzdhc:Landroid/app/AlertDialog;
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzaid;->zzdhd:Ljava/util/Timer;
+
+    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract destroy()V
-.end method
+.method public final run()V
+    .locals 1
 
-.method public abstract getAdMetadata()Landroid/os/Bundle;
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaid;->zzdhc:Landroid/app/AlertDialog;
 
-.method public abstract getMediationAdapterClassName()Ljava/lang/String;
-.end method
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-.method public abstract isLoaded()Z
-.end method
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaid;->zzdhd:Ljava/util/Timer;
 
-.method public abstract pause()V
-.end method
+    invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
-.method public abstract resume()V
-.end method
-
-.method public abstract setAppPackageName(Ljava/lang/String;)V
-.end method
-
-.method public abstract setCustomData(Ljava/lang/String;)V
-.end method
-
-.method public abstract setImmersiveMode(Z)V
-.end method
-
-.method public abstract setUserId(Ljava/lang/String;)V
-.end method
-
-.method public abstract show()V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaib;)V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaii;)V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzaio;)V
-.end method
-
-.method public abstract zza(Lcom/google/android/gms/internal/ads/zzkz;)V
-.end method
-
-.method public abstract zzd(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zze(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzf(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzg(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    return-void
 .end method

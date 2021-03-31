@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Lcom/dd/CircularProgressButton$SavedState;
+.method public a(Landroid/os/Parcel;)Lcom/dd/CircularProgressButton$SavedState;
     .locals 2
 
-    .line 2
+    .line 1
     new-instance v0, Lcom/dd/CircularProgressButton$SavedState;
 
     const/4 v1, 0x0
@@ -51,22 +51,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Lcom/dd/CircularProgressButton$SavedState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Lcom/dd/CircularProgressButton$SavedState$a;->createFromParcel(Landroid/os/Parcel;)Lcom/dd/CircularProgressButton$SavedState;
-
-    move-result-object p1
+    new-array p1, p1, [Lcom/dd/CircularProgressButton$SavedState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Lcom/dd/CircularProgressButton$SavedState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Lcom/dd/CircularProgressButton$SavedState;
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/dd/CircularProgressButton$SavedState$a;->a(Landroid/os/Parcel;)Lcom/dd/CircularProgressButton$SavedState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -75,7 +75,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Lcom/dd/CircularProgressButton$SavedState$a;->newArray(I)[Lcom/dd/CircularProgressButton$SavedState;
+    invoke-virtual {p0, p1}, Lcom/dd/CircularProgressButton$SavedState$a;->b(I)[Lcom/dd/CircularProgressButton$SavedState;
 
     move-result-object p1
 

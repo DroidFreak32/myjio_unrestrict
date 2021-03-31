@@ -19,26 +19,29 @@
 
 
 # static fields
-.field public static final KEY_REQUIREMENTS:Ljava/lang/String; = "requirements"
+.field private static final KEY_REQUIREMENTS:Ljava/lang/String; = "requirements"
 
-.field public static final KEY_SERVICE_ACTION:Ljava/lang/String; = "service_action"
+.field private static final KEY_SERVICE_ACTION:Ljava/lang/String; = "service_action"
 
-.field public static final KEY_SERVICE_PACKAGE:Ljava/lang/String; = "service_package"
+.field private static final KEY_SERVICE_PACKAGE:Ljava/lang/String; = "service_package"
 
-.field public static final TAG:Ljava/lang/String; = "PlatformScheduler"
+.field private static final TAG:Ljava/lang/String; = "PlatformScheduler"
 
 
 # instance fields
-.field public final jobId:I
+.field private final jobId:I
 
-.field public final jobScheduler:Landroid/app/job/JobScheduler;
+.field private final jobScheduler:Landroid/app/job/JobScheduler;
 
-.field public final jobServiceComponentName:Landroid/content/ComponentName;
+.field private final jobServiceComponentName:Landroid/content/ComponentName;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 1
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.RECEIVE_BOOT_COMPLETED"
+    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +81,7 @@
     return-void
 .end method
 
-.method public static buildJobInfo(ILandroid/content/ComponentName;Lcom/google/android/jioexoplayer2/scheduler/Requirements;Ljava/lang/String;Ljava/lang/String;)Landroid/app/job/JobInfo;
+.method private static buildJobInfo(ILandroid/content/ComponentName;Lcom/google/android/jioexoplayer2/scheduler/Requirements;Ljava/lang/String;Ljava/lang/String;)Landroid/app/job/JobInfo;
     .locals 4
 
     .line 1
@@ -223,7 +226,7 @@
     return-object p0
 .end method
 
-.method public static logd(Ljava/lang/String;)V
+.method private static logd(Ljava/lang/String;)V
     .locals 0
 
     return-void

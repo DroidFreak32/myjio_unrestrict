@@ -4,23 +4,23 @@
 
 
 # instance fields
-.field public accuracy:Ljava/lang/Float;
+.field private accuracy:Ljava/lang/Float;
 
-.field public altitude:Ljava/lang/Double;
+.field private altitude:Ljava/lang/Double;
 
-.field public bearing:Ljava/lang/Float;
+.field private bearing:Ljava/lang/Float;
 
-.field public latitude:Ljava/lang/Double;
+.field private latitude:Ljava/lang/Double;
 
-.field public longitude:Ljava/lang/Double;
+.field private longitude:Ljava/lang/Double;
 
-.field public provider:Ljava/lang/String;
+.field private provider:Ljava/lang/String;
 
-.field public satellitesCount:Ljava/lang/Integer;
+.field private satellitesCount:Ljava/lang/Integer;
 
-.field public speed:Ljava/lang/Float;
+.field private speed:Ljava/lang/Float;
 
-.field public time:Ljava/lang/Long;
+.field private time:Ljava/lang/Long;
 
 
 # direct methods
@@ -35,88 +35,34 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/Float;
+.method public getAccuracy()Ljava/lang/Float;
     .locals 1
 
-    .line 2
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/LocationParams;->accuracy:Ljava/lang/Float;
 
     return-object v0
 .end method
 
-.method public a(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 6
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->altitude:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Float;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->accuracy:Ljava/lang/Float;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 5
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->satellitesCount:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Long;)V
-    .locals 0
-
-    .line 4
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->time:Ljava/lang/Long;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->provider:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/Double;
+.method public getAltitude()Ljava/lang/Double;
     .locals 1
 
-    .line 3
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/LocationParams;->altitude:Ljava/lang/Double;
 
     return-object v0
 .end method
 
-.method public b(Ljava/lang/Double;)V
-    .locals 0
+.method public getBearing()Ljava/lang/Float;
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->latitude:Ljava/lang/Double;
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/LocationParams;->bearing:Ljava/lang/Float;
 
-    return-void
+    return-object v0
 .end method
 
-.method public b(Ljava/lang/Float;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->bearing:Ljava/lang/Float;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/Double;
+.method public getLatitude()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -125,25 +71,7 @@
     return-object v0
 .end method
 
-.method public c(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->longitude:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public c(Ljava/lang/Float;)V
-    .locals 0
-
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->speed:Ljava/lang/Float;
-
-    return-void
-.end method
-
-.method public d()Ljava/lang/Double;
+.method public getLongitude()Ljava/lang/Double;
     .locals 1
 
     .line 1
@@ -152,7 +80,7 @@
     return-object v0
 .end method
 
-.method public e()Ljava/lang/String;
+.method public getProvider()Ljava/lang/String;
     .locals 1
 
     .line 1
@@ -161,13 +89,112 @@
     return-object v0
 .end method
 
-.method public f()Ljava/lang/Integer;
+.method public getSatellitesCount()Ljava/lang/Integer;
     .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/LocationParams;->satellitesCount:Ljava/lang/Integer;
 
     return-object v0
+.end method
+
+.method public getSpeed()Ljava/lang/Float;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/LocationParams;->speed:Ljava/lang/Float;
+
+    return-object v0
+.end method
+
+.method public getTime()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/LocationParams;->time:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public setAccuracy(Ljava/lang/Float;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->accuracy:Ljava/lang/Float;
+
+    return-void
+.end method
+
+.method public setAltitude(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->altitude:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setBearing(Ljava/lang/Float;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->bearing:Ljava/lang/Float;
+
+    return-void
+.end method
+
+.method public setLatitude(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->latitude:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setLongitude(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->longitude:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setProvider(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->provider:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setSatellitesCount(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->satellitesCount:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setSpeed(Ljava/lang/Float;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->speed:Ljava/lang/Float;
+
+    return-void
+.end method
+
+.method public setTime(Ljava/lang/Long;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/LocationParams;->time:Ljava/lang/Long;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

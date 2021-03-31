@@ -6,15 +6,15 @@
 
 
 # static fields
-.field public static final zzadq:Ljava/lang/Object;
+.field private static final zzadq:Ljava/lang/Object;
 
-.field public static zzagj:Lcom/google/android/gms/tagmanager/zzbb;
+.field private static zzagj:Lcom/google/android/gms/tagmanager/zzbb;
 
 
 # instance fields
-.field public zzaev:Lcom/google/android/gms/tagmanager/zzej;
+.field private zzaev:Lcom/google/android/gms/tagmanager/zzej;
 
-.field public zzagk:Lcom/google/android/gms/tagmanager/zzby;
+.field private zzagk:Lcom/google/android/gms/tagmanager/zzby;
 
 
 # direct methods
@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 1
 
     .line 1
@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zzby;Lcom/google/android/gms/tagmanager/zzej;)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zzby;Lcom/google/android/gms/tagmanager/zzej;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation

@@ -1,153 +1,114 @@
-.class public final Lcom/google/android/gms/internal/ads/zzji;
-.super Lcom/google/android/gms/dynamic/RemoteCreator;
+.class public Lcom/google/android/gms/internal/ads/zzji;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/dynamic/RemoteCreator<",
-        "Lcom/google/android/gms/internal/ads/zzkx;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private flags:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
-
-    const-string v0, "com.google.android.gms.ads.AdManagerCreatorImpl"
+    .locals 0
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/dynamic/RemoteCreator;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic getRemoteCreator(Landroid/os/IBinder;)Ljava/lang/Object;
-    .locals 2
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.client.IAdManagerCreator"
-
-    .line 1
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzkx;
-
-    if-eqz v1, :cond_1
-
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzkx;
-
-    return-object v0
-
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzky;
-
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzky;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
-.end method
-
-.method public final zza(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzjo;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzyn;I)Lcom/google/android/gms/internal/ads/zzku;
-    .locals 8
+.method public clear()V
+    .locals 1
 
     const/4 v0, 0x0
 
     .line 1
-    :try_start_0
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
+    iput v0, p0, Lcom/google/android/gms/internal/ads/zzji;->flags:I
 
-    move-result-object v2
+    return-void
+.end method
 
-    .line 2
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/dynamic/RemoteCreator;->getRemoteCreatorInstance(Landroid/content/Context;)Ljava/lang/Object;
+.method public final setFlags(I)V
+    .locals 0
 
-    move-result-object p1
+    .line 1
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzji;->flags:I
 
-    move-object v1, p1
+    return-void
+.end method
 
-    check-cast v1, Lcom/google/android/gms/internal/ads/zzkx;
+.method public final zzaa(I)V
+    .locals 1
 
-    const v6, 0xc65d40
+    .line 1
+    iget p1, p0, Lcom/google/android/gms/internal/ads/zzji;->flags:I
 
-    move-object v3, p2
+    const/high16 v0, -0x80000000
 
-    move-object v4, p3
+    or-int/2addr p1, v0
 
-    move-object v5, p4
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzji;->flags:I
 
-    move v7, p5
+    return-void
+.end method
 
-    .line 3
-    invoke-interface/range {v1 .. v7}, Lcom/google/android/gms/internal/ads/zzkx;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zzjo;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzyn;II)Landroid/os/IBinder;
+.method public final zzab(I)Z
+    .locals 1
 
-    move-result-object p1
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzji;->flags:I
 
-    if-nez p1, :cond_0
+    and-int/2addr v0, p1
 
-    return-object v0
+    if-ne v0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_0
-    const-string p2, "com.google.android.gms.ads.internal.client.IAdManager"
+    const/4 p1, 0x0
 
-    .line 4
-    invoke-interface {p1, p2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    return p1
+.end method
 
-    move-result-object p2
+.method public final zzgk()Z
+    .locals 1
 
-    .line 5
-    instance-of p3, p2, Lcom/google/android/gms/internal/ads/zzku;
+    const/high16 v0, -0x80000000
 
-    if-eqz p3, :cond_1
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/ads/zzji;->zzab(I)Z
 
-    .line 6
-    check-cast p2, Lcom/google/android/gms/internal/ads/zzku;
+    move-result v0
 
-    return-object p2
+    return v0
+.end method
 
-    .line 7
-    :cond_1
-    new-instance p2, Lcom/google/android/gms/internal/ads/zzkw;
+.method public final zzgl()Z
+    .locals 1
 
-    invoke-direct {p2, p1}, Lcom/google/android/gms/internal/ads/zzkw;-><init>(Landroid/os/IBinder;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lcom/google/android/gms/dynamic/RemoteCreator$RemoteCreatorException; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v0, 0x4
 
-    return-object p2
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/ads/zzji;->zzab(I)Z
 
-    :catch_0
-    move-exception p1
+    move-result v0
 
-    goto :goto_0
+    return v0
+.end method
 
-    :catch_1
-    move-exception p1
+.method public final zzgm()Z
+    .locals 1
 
-    :goto_0
-    const-string p2, "Could not create remote AdManager."
+    const/4 v0, 0x1
 
-    .line 8
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zza(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 1
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/ads/zzji;->zzab(I)Z
 
-    return-object v0
+    move-result v0
+
+    return v0
 .end method

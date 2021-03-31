@@ -1,21 +1,17 @@
 .class public final Lcom/google/android/gms/internal/ads/zzpe;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzblr:Lcom/google/android/gms/internal/ads/zzpd;
+.field private isOpen:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzpd;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzpe;->zzblr:Lcom/google/android/gms/internal/ads/zzpd;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,52 +19,114 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final declared-synchronized block()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
+    monitor-enter p0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->zzblr:Lcom/google/android/gms/internal/ads/zzpd;
+    :goto_0
+    :try_start_0
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->isOpen:Z
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpd;->zzb(Lcom/google/android/gms/internal/ads/zzpd;)Lcom/google/android/gms/internal/ads/zzpm;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    .line 2
+    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    .line 3
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized open()Z
+    .locals 1
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->isOpen:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v0, :cond_0
 
+    const/4 v0, 0x0
+
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->zzblr:Lcom/google/android/gms/internal/ads/zzpd;
+    monitor-exit p0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpd;->zzb(Lcom/google/android/gms/internal/ads/zzpd;)Lcom/google/android/gms/internal/ads/zzpm;
+    return v0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzpm;->zzlv()V
+    :cond_0
+    const/4 v0, 0x1
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->zzblr:Lcom/google/android/gms/internal/ads/zzpd;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpd;->zzb(Lcom/google/android/gms/internal/ads/zzpd;)Lcom/google/android/gms/internal/ads/zzpm;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzpm;->zzlu()V
+    :try_start_1
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->isOpen:Z
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->zzblr:Lcom/google/android/gms/internal/ads/zzpd;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzpd;->zzb(Lcom/google/android/gms/internal/ads/zzpd;)Lcom/google/android/gms/internal/ads/zzpm;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzpm;->zzcr()V
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 5
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->zzblr:Lcom/google/android/gms/internal/ads/zzpd;
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized zziu()Z
+    .locals 2
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzpe;->isOpen:Z
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzpd;->zza(Lcom/google/android/gms/internal/ads/zzpd;Lcom/google/android/gms/internal/ads/zzpm;)Lcom/google/android/gms/internal/ads/zzpm;
+    .line 2
+    iput-boolean v1, p0, Lcom/google/android/gms/internal/ads/zzpe;->isOpen:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
+    .line 3
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

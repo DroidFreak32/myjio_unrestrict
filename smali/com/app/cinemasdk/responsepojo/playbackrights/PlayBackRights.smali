@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public auto:Ljava/lang/String;
+.field private auto:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public cast:Ljava/lang/String;
+.field private cast:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public code:I
+.field private code:I
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field public contentName:Ljava/lang/String;
+.field private contentName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field public defaultLanguage:Ljava/lang/String;
+.field private defaultLanguage:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -49,7 +49,7 @@
     .end annotation
 .end field
 
-.field public displayLanguages:Ljava/util/ArrayList;
+.field private displayLanguages:Ljava/util/ArrayList;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -66,7 +66,7 @@
     .end annotation
 .end field
 
-.field public displaySubtitles:Ljava/util/List;
+.field private displaySubtitles:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -83,7 +83,7 @@
     .end annotation
 .end field
 
-.field public duration:I
+.field private duration:I
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -92,7 +92,7 @@
     .end annotation
 .end field
 
-.field public endCreditEnd:Ljava/lang/Object;
+.field private endCreditEnd:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -101,7 +101,7 @@
     .end annotation
 .end field
 
-.field public endCreditStart:Ljava/lang/String;
+.field private endCreditStart:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -110,7 +110,7 @@
     .end annotation
 .end field
 
-.field public high:Ljava/lang/String;
+.field private high:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -119,7 +119,7 @@
     .end annotation
 .end field
 
-.field public inqueue:Ljava/lang/Boolean;
+.field private inqueue:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -128,7 +128,7 @@
     .end annotation
 .end field
 
-.field public introCreditEnd:Ljava/lang/Object;
+.field private introCreditEnd:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -137,7 +137,7 @@
     .end annotation
 .end field
 
-.field public introCreditStart:Ljava/lang/Object;
+.field private introCreditStart:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -146,7 +146,7 @@
     .end annotation
 .end field
 
-.field public kid:Ljava/lang/String;
+.field private kid:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -155,7 +155,7 @@
     .end annotation
 .end field
 
-.field public kids:Ljava/lang/Boolean;
+.field private kids:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -164,7 +164,7 @@
     .end annotation
 .end field
 
-.field public low:Ljava/lang/String;
+.field private low:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -173,7 +173,7 @@
     .end annotation
 .end field
 
-.field public maturityRating:Ljava/lang/String;
+.field private maturityRating:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -182,7 +182,7 @@
     .end annotation
 .end field
 
-.field public medium:Ljava/lang/String;
+.field private medium:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -191,7 +191,7 @@
     .end annotation
 .end field
 
-.field public message:Ljava/lang/String;
+.field private message:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -200,7 +200,7 @@
     .end annotation
 .end field
 
-.field public precapCreditEnd:Ljava/lang/Object;
+.field private precapCreditEnd:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -209,7 +209,7 @@
     .end annotation
 .end field
 
-.field public precapCreditStart:Ljava/lang/Object;
+.field private precapCreditStart:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -218,7 +218,7 @@
     .end annotation
 .end field
 
-.field public recapCreditEnd:Ljava/lang/Object;
+.field private recapCreditEnd:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -227,7 +227,7 @@
     .end annotation
 .end field
 
-.field public recapCreditStart:Ljava/lang/Object;
+.field private recapCreditStart:Ljava/lang/Object;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -236,7 +236,7 @@
     .end annotation
 .end field
 
-.field public srt:Ljava/lang/String;
+.field private srt:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -245,7 +245,7 @@
     .end annotation
 .end field
 
-.field public subscription:Lcom/app/cinemasdk/responsepojo/playbackrights/Subscription;
+.field private subscription:Lcom/app/cinemasdk/responsepojo/playbackrights/Subscription;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -254,7 +254,7 @@
     .end annotation
 .end field
 
-.field public text:Ljava/lang/String;
+.field private text:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -263,7 +263,7 @@
     .end annotation
 .end field
 
-.field public thumb:Ljava/lang/String;
+.field private thumb:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -272,7 +272,7 @@
     .end annotation
 .end field
 
-.field public tinyUrl:Ljava/lang/String;
+.field private tinyUrl:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -281,7 +281,7 @@
     .end annotation
 .end field
 
-.field public totalDuration:Ljava/lang/String;
+.field private totalDuration:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -290,7 +290,7 @@
     .end annotation
 .end field
 
-.field public vendorName:Ljava/lang/String;
+.field private vendorName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -299,7 +299,7 @@
     .end annotation
 .end field
 
-.field public video:Lcom/app/cinemasdk/responsepojo/playbackrights/Video;
+.field private video:Lcom/app/cinemasdk/responsepojo/playbackrights/Video;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -308,7 +308,7 @@
     .end annotation
 .end field
 
-.field public videoId:I
+.field private videoId:I
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

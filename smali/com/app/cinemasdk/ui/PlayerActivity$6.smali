@@ -34,8 +34,6 @@
     sput-object v0, Lcom/app/cinemasdk/ui/PlayerActivity$6;->$SwitchMap$com$app$cinemasdk$utils$MediaQuailty:[I
 
     :try_start_0
-    sget-object v0, Lcom/app/cinemasdk/ui/PlayerActivity$6;->$SwitchMap$com$app$cinemasdk$utils$MediaQuailty:[I
-
     sget-object v1, Lcom/app/cinemasdk/utils/MediaQuailty;->Auto:Lcom/app/cinemasdk/utils/MediaQuailty;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

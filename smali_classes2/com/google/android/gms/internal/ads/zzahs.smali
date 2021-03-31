@@ -1,112 +1,136 @@
 .class public final Lcom/google/android/gms/internal/ads/zzahs;
-.super Lcom/google/android/gms/internal/ads/zzahz;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzahv;
 
 
 # annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/ads/zzahv<",
+        "Lcom/google/android/gms/internal/ads/zzbdv;",
+        ">;"
+    }
 .end annotation
 
 
-# instance fields
-.field public final zzcok:Ljava/lang/String;
-
-.field public final zzcol:I
-
-
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzahz;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzahs;->zzcok:Ljava/lang/String;
-
-    .line 3
-    iput p2, p0, Lcom/google/android/gms/internal/ads/zzahs;->zzcol:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final synthetic zza(Ljava/lang/Object;Ljava/util/Map;)V
+    .locals 5
+
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzbdv;
+
+    .line 2
+    invoke-interface {p1}, Lcom/google/android/gms/internal/ads/zzbdv;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    const-string v0, "window"
+
+    invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/WindowManager;
+
+    .line 3
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzkq()Lcom/google/android/gms/ads/internal/util/zzm;
+
+    move-object v0, p1
+
+    check-cast v0, Landroid/view/View;
+
+    .line 4
+    invoke-static {p2}, Lcom/google/android/gms/ads/internal/util/zzm;->zza(Landroid/view/WindowManager;)Landroid/util/DisplayMetrics;
+
+    move-result-object p2
+
+    .line 5
+    iget v1, p2, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    .line 6
+    iget p2, p2, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [I
+
+    .line 7
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    .line 8
+    invoke-virtual {v0, v2}, Landroid/view/View;->getLocationInWindow([I)V
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_1
+    .line 9
+    aget v0, v2, v0
 
-    .line 1
-    instance-of v1, p1, Lcom/google/android/gms/internal/ads/zzahs;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-nez v1, :cond_0
+    move-result-object v0
 
-    goto :goto_0
+    const-string v4, "xInPixels"
 
-    .line 2
-    :cond_0
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzahs;
+    invoke-interface {v3, v4, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzahs;->zzcok:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    .line 4
-    iget-object v2, p1, Lcom/google/android/gms/internal/ads/zzahs;->zzcok:Ljava/lang/String;
+    .line 10
+    aget v0, v2, v0
 
-    .line 5
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v1
+    move-result-object v0
 
-    if-eqz v1, :cond_1
+    const-string v2, "yInPixels"
 
-    .line 6
-    iget v1, p0, Lcom/google/android/gms/internal/ads/zzahs;->zzcol:I
+    invoke-interface {v3, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 7
+    .line 11
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 8
-    iget p1, p1, Lcom/google/android/gms/internal/ads/zzahs;->zzcol:I
+    const-string v1, "windowWidthInPixels"
 
-    .line 9
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v3, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    .line 12
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result-object p2
 
-    move-result p1
+    const-string v0, "windowHeightInPixels"
 
-    if-eqz p1, :cond_1
+    invoke-interface {v3, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 p1, 0x1
+    const-string p2, "locationReady"
 
-    return p1
+    .line 13
+    invoke-interface {p1, p2, v3}, Lcom/google/android/gms/internal/ads/zzakb;->zza(Ljava/lang/String;Ljava/util/Map;)V
 
-    :cond_1
-    :goto_0
-    return v0
-.end method
+    const-string p1, "GET LOCATION COMPILED"
 
-.method public final getAmount()I
-    .locals 1
+    .line 14
+    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaza;->zzfa(Ljava/lang/String;)V
 
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/internal/ads/zzahs;->zzcol:I
-
-    return v0
-.end method
-
-.method public final getType()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzahs;->zzcok:Ljava/lang/String;
-
-    return-object v0
+    return-void
 .end method

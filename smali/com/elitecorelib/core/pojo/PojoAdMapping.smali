@@ -16,17 +16,17 @@
     .end annotation
 .end field
 
-.field public static final serialVersionUID:J = -0x32614708afe68030L
+.field private static final serialVersionUID:J = -0x32614708afe68030L
 
 
 # instance fields
-.field public deviceCatagory:Ljava/lang/String;
+.field private deviceCatagory:Ljava/lang/String;
 
-.field public invocationCode:Ljava/lang/String;
+.field private invocationCode:Ljava/lang/String;
 
-.field public screenLocation:Ljava/lang/String;
+.field private screenLocation:Ljava/lang/String;
 
-.field public screenName:Ljava/lang/String;
+.field private screenName:Ljava/lang/String;
 
 
 # direct methods

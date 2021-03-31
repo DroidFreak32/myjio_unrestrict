@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public final zzwu:Landroid/content/Context;
+.field private final zzwu:Landroid/content/Context;
 
-.field public final zzwv:Landroid/content/Context;
+.field private final zzwv:Landroid/content/Context;
 
 
 # direct methods

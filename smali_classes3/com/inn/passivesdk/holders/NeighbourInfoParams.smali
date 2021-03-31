@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public neighbourCellHolders:Ljava/util/List;
+.field private neighbourCellHolders:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public a()Ljava/util/List;
+.method public getNeighbourCellHolders()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,7 +44,7 @@
     return-object v0
 .end method
 
-.method public a(Ljava/util/List;)V
+.method public setNeighbourCellHolders(Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -55,7 +55,7 @@
         }
     .end annotation
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/NeighbourInfoParams;->neighbourCellHolders:Ljava/util/List;
 
     return-void

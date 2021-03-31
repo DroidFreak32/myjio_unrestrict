@@ -1,11 +1,33 @@
-.class public interface abstract Lcom/google/android/gms/internal/measurement/zzkq;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.class public final Lcom/google/android/gms/internal/measurement/zzkq;
+.super Ljava/lang/RuntimeException;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
-# virtual methods
-.method public abstract zza()Z
-.end method
+# instance fields
+.field private final zza:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.method public abstract zzb()Z
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzjj;)V
+    .locals 0
+
+    const-string p1, "Message was missing required fields.  (Lite runtime could not determine which fields were missing)."
+
+    .line 1
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzkq;->zza:Ljava/util/List;
+
+    return-void
 .end method

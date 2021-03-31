@@ -19,10 +19,10 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
     .line 3
-    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    iput-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
 
     return-void
 .end method
@@ -107,6 +107,9 @@
 
 .method public static readStringLine(Ljava/nio/ByteBuffer;)Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->readLine(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
@@ -141,6 +144,15 @@
 
 .method public static translateHandshakeHttp(Ljava/nio/ByteBuffer;Lcom/clevertap/android/sdk/java_websocket/enums/Role;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
     .locals 7
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->readStringLine(Ljava/nio/ByteBuffer;)Ljava/lang/String;
@@ -149,27 +161,27 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v1, 0x3
+    const-string v1, " "
 
-    const-string v2, " "
+    const/4 v2, 0x3
 
     .line 2
-    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 3
-    array-length v3, v2
+    array-length v3, v1
 
-    if-ne v3, v1, :cond_5
+    if-ne v3, v2, :cond_5
 
     .line 4
-    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Role;->CLIENT:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
+    sget-object v2, Lcom/clevertap/android/sdk/java_websocket/enums/Role;->CLIENT:Lcom/clevertap/android/sdk/java_websocket/enums/Role;
 
-    if-ne p1, v1, :cond_0
+    if-ne p1, v2, :cond_0
 
     .line 5
-    invoke-static {v2, v0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->translateHandshakeHttpClient([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
+    invoke-static {v1, v0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->translateHandshakeHttpClient([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
 
     move-result-object p1
 
@@ -177,7 +189,7 @@
 
     .line 6
     :cond_0
-    invoke-static {v2, v0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->translateHandshakeHttpServer([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
+    invoke-static {v1, v0}, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->translateHandshakeHttpServer([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
 
     move-result-object p1
 
@@ -197,19 +209,19 @@
 
     if-lez v1, :cond_3
 
-    const/4 v1, 0x2
+    const-string v1, ":"
 
-    const-string v2, ":"
+    const/4 v2, 0x2
 
     .line 9
-    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v0
 
     .line 10
-    array-length v2, v0
+    array-length v1, v0
 
-    if-ne v2, v1, :cond_2
+    if-ne v1, v2, :cond_2
 
     const/4 v1, 0x0
 
@@ -329,8 +341,13 @@
     throw p1
 .end method
 
-.method public static translateHandshakeHttpClient([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
+.method private static translateHandshakeHttpClient([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -395,6 +412,7 @@
 
     const-string p0, "Invalid status line received: %s Status line: %s"
 
+    .line 7
     invoke-static {p0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -403,7 +421,7 @@
 
     throw v1
 
-    .line 7
+    .line 8
     :cond_1
     new-instance v1, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
 
@@ -417,6 +435,7 @@
 
     const-string p0, "Invalid status code received: %s Status line: %s"
 
+    .line 9
     invoke-static {p0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -426,8 +445,13 @@
     throw v1
 .end method
 
-.method public static translateHandshakeHttpServer([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
+.method private static translateHandshakeHttpServer([Ljava/lang/String;Ljava/lang/String;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -483,6 +507,7 @@
 
     const-string p0, "Invalid status line received: %s Status line: %s"
 
+    .line 6
     invoke-static {p0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -491,7 +516,7 @@
 
     throw v1
 
-    .line 6
+    .line 7
     :cond_1
     new-instance v1, Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
 
@@ -505,6 +530,7 @@
 
     const-string p0, "Invalid request method received: %s Status line: %s"
 
+    .line 8
     invoke-static {p0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -517,9 +543,19 @@
 
 # virtual methods
 .method public abstract acceptHandshakeAsClient(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshake;)Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 .end method
 
 .method public abstract acceptHandshakeAsServer(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;)Lcom/clevertap/android/sdk/java_websocket/enums/HandshakeState;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 .end method
 
 .method public basicAccept(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)Z
@@ -532,7 +568,7 @@
 
     move-result-object v0
 
-    const-string v1, "websocket"
+    const-string/jumbo v1, "websocket"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -542,6 +578,7 @@
 
     const-string v0, "Connection"
 
+    .line 2
     invoke-interface {p1, v0}, Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;->getFieldValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -552,7 +589,7 @@
 
     move-result-object p1
 
-    const-string v0, "upgrade"
+    const-string/jumbo v0, "upgrade"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -573,6 +610,11 @@
 
 .method public checkAlloc(I)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     if-ltz p1, :cond_0
 
@@ -592,7 +634,7 @@
 .end method
 
 .method public continuousFrame(Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;Ljava/nio/ByteBuffer;Z)Ljava/util/List;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -610,9 +652,9 @@
 
     if-eq p1, v0, :cond_1
 
-    sget-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->TEXT:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    sget-object v1, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->TEXT:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v1, :cond_0
 
     goto :goto_0
 
@@ -629,11 +671,11 @@
     .line 3
     :cond_1
     :goto_0
-    iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
     .line 4
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/framing/ContinuousFrame;
@@ -646,25 +688,22 @@
     :cond_2
     iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    .line 6
-    sget-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->BINARY:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
-
     if-ne p1, v0, :cond_3
 
-    .line 7
+    .line 6
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/framing/BinaryFrame;
 
     invoke-direct {v0}, Lcom/clevertap/android/sdk/java_websocket/framing/BinaryFrame;-><init>()V
 
     goto :goto_1
 
-    .line 8
+    .line 7
     :cond_3
     sget-object v0, Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;->TEXT:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
     if-ne p1, v0, :cond_4
 
-    .line 9
+    .line 8
     new-instance v0, Lcom/clevertap/android/sdk/java_websocket/framing/TextFrame;
 
     invoke-direct {v0}, Lcom/clevertap/android/sdk/java_websocket/framing/TextFrame;-><init>()V
@@ -672,16 +711,16 @@
     goto :goto_1
 
     :cond_4
-    move-object v0, v1
+    move-object v0, v2
 
-    .line 10
+    .line 9
     :goto_1
     invoke-virtual {v0, p2}, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->setPayload(Ljava/nio/ByteBuffer;)V
 
-    .line 11
+    .line 10
     invoke-virtual {v0, p3}, Lcom/clevertap/android/sdk/java_websocket/framing/FramedataImpl1;->setFin(Z)V
 
-    .line 12
+    .line 11
     :try_start_0
     invoke-virtual {v0}, Lcom/clevertap/android/sdk/java_websocket/framing/DataFrame;->isValid()V
     :try_end_0
@@ -689,16 +728,16 @@
 
     if-eqz p3, :cond_5
 
-    .line 13
-    iput-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
+    .line 12
+    iput-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
     goto :goto_2
 
-    .line 14
+    .line 13
     :cond_5
     iput-object p1, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->continuousFrameType:Lcom/clevertap/android/sdk/java_websocket/enums/Opcode;
 
-    .line 15
+    .line 14
     :goto_2
     invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
@@ -709,7 +748,7 @@
     :catch_0
     move-exception p1
 
-    .line 16
+    .line 15
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
@@ -751,6 +790,10 @@
 
 .method public createHandshake(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -774,6 +817,10 @@
 
 .method public createHandshake(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;Lcom/clevertap/android/sdk/java_websocket/enums/Role;)Ljava/util/List;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -799,6 +846,10 @@
 
 .method public createHandshake(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;Lcom/clevertap/android/sdk/java_websocket/enums/Role;Z)Ljava/util/List;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -824,6 +875,10 @@
 
 .method public createHandshake(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;Z)Ljava/util/List;
     .locals 5
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1004,7 +1059,7 @@
     :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "unknown role"
+    const-string/jumbo p2, "unknown role"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1024,12 +1079,27 @@
 .end method
 
 .method public abstract postProcessHandshakeRequestAsClient(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshakeBuilder;)Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshakeBuilder;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 .end method
 
 .method public abstract postProcessHandshakeResponseAsServer(Lcom/clevertap/android/sdk/java_websocket/handshake/ClientHandshake;Lcom/clevertap/android/sdk/java_websocket/handshake/ServerHandshakeBuilder;)Lcom/clevertap/android/sdk/java_websocket/handshake/HandshakeBuilder;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 .end method
 
 .method public abstract processFrame(Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;Lcom/clevertap/android/sdk/java_websocket/framing/Framedata;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 .end method
 
 .method public readVersion(Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;)I
@@ -1112,10 +1182,25 @@
             ">;"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 .end method
 
 .method public translateHandshake(Ljava/nio/ByteBuffer;)Lcom/clevertap/android/sdk/java_websocket/handshake/Handshakedata;
     .locals 1
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x13
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidHandshakeException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/drafts/Draft;->role:Lcom/clevertap/android/sdk/java_websocket/enums/Role;

@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final CUSTOM_ERROR_CODE_BASE:I = -0xc350
+.field private static final CUSTOM_ERROR_CODE_BASE:I = -0xc350
 
-.field public static final DECODER_QUERY_ERROR:I = -0xc34e
+.field private static final DECODER_QUERY_ERROR:I = -0xc34e
 
-.field public static final NO_SUITABLE_DECODER_ERROR:I = -0xc34f
+.field private static final NO_SUITABLE_DECODER_ERROR:I = -0xc34f
 
 
 # instance fields
@@ -28,6 +28,9 @@
 .field public final diagnosticInfo:Ljava/lang/String;
 
 .field public final fallbackDecoderInitializationException:Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 .field public final mimeType:Ljava/lang/String;
 
@@ -143,8 +146,20 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;)V
     .locals 0
+    .param p5    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p6    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p7    # Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 7
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -178,7 +193,7 @@
     return-object p0
 .end method
 
-.method public static buildCustomDiagnosticInfo(I)Ljava/lang/String;
+.method private static buildCustomDiagnosticInfo(I)Ljava/lang/String;
     .locals 3
 
     if-gez p0, :cond_0
@@ -217,6 +232,8 @@
 
 .method private copyWithFallbackException(Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;)Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
     .locals 9
+    .annotation build Landroidx/annotation/CheckResult;
+    .end annotation
 
     .line 1
     new-instance v8, Lcom/google/android/jioexoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;
@@ -248,7 +265,7 @@
     return-object v8
 .end method
 
-.method public static getDiagnosticInfoV21(Ljava/lang/Throwable;)Ljava/lang/String;
+.method private static getDiagnosticInfoV21(Ljava/lang/Throwable;)Ljava/lang/String;
     .locals 1
     .annotation build Landroid/annotation/TargetApi;
         value = 0x15

@@ -6,11 +6,11 @@
 
 
 # instance fields
-.field public s:Lt40;
+.field public a:Lwb;
 
-.field public t:Ljava/lang/String;
+.field public b:Ljava/lang/String;
 
-.field public u:Ljava/lang/String;
+.field public c:Ljava/lang/String;
 
 
 # direct methods
@@ -18,22 +18,6 @@
     .locals 0
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic a(Lcom/elitecorelib/wifi/utility/WifiStateReceiver;Lt40;)Lt40;
-    .locals 0
-
-    iput-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
-
-    return-object p1
-.end method
-
-.method public static synthetic a(Lcom/elitecorelib/wifi/utility/WifiStateReceiver;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a()V
 
     return-void
 .end method
@@ -47,7 +31,7 @@
 
     const-string v2, "callFromBootReceiver"
 
-    const-string v3, "wifiDisconnectionCategory"
+    const-string/jumbo v3, "wifiDisconnectionCategory"
 
     :try_start_0
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -70,7 +54,7 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lc20;->b(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v5, v6}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v7
 
@@ -86,7 +70,7 @@
 
     invoke-virtual {v4, v8, v10}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    invoke-static {}, Lc20;->A()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->a()V
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
 
@@ -140,7 +124,7 @@
 
     if-nez v10, :cond_0
 
-    invoke-static {v9}, Lc20;->a(Z)V
+    invoke-static {v9}, Lcom/elitecorelib/andsf/utility/a;->a(Z)V
 
     :cond_0
     const-string v10, "No data usage."
@@ -151,7 +135,7 @@
 
     if-eqz v11, :cond_1
 
-    const-string v11, "wifiEndSession"
+    const-string/jumbo v11, "wifiEndSession"
 
     invoke-virtual {v4, v11}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getLong(Ljava/lang/String;)J
 
@@ -171,13 +155,13 @@
     move-result-wide v11
 
     :goto_0
-    invoke-static {}, Lc20;->f0()D
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->r()D
 
     move-result-wide v13
 
     move-object v2, v10
 
-    invoke-static {}, Lc20;->g0()D
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->s()D
 
     move-result-wide v9
     :try_end_0
@@ -189,11 +173,11 @@
 
     cmpl-double v18, v13, v16
 
-    if-lez v18, :cond_9
+    if-lez v18, :cond_8
 
     cmpl-double v18, v9, v16
 
-    if-lez v18, :cond_9
+    if-lez v18, :cond_8
 
     :try_start_1
     new-instance v2, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;
@@ -296,7 +280,7 @@
 
     invoke-virtual {v2, v3}, Lcom/elitecorelib/core/room/pojo/AnalyticsUsageDetail;->setStartTime(Ljava/lang/Long;)V
 
-    sget-boolean v3, Lc20;->e:Z
+    sget-boolean v3, Lcom/elitecorelib/andsf/utility/a;->e:Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -316,7 +300,7 @@
     move-result-object v3
 
     :goto_2
-    sput-object v3, Lc20;->g:Ljava/lang/String;
+    sput-object v3, Lcom/elitecorelib/andsf/utility/a;->g:Ljava/lang/String;
 
     goto :goto_3
 
@@ -513,9 +497,9 @@
 
     cmp-long v3, v11, v0
 
-    if-lez v3, :cond_8
+    if-lez v3, :cond_9
 
-    if-eqz v17, :cond_8
+    if-eqz v17, :cond_9
 
     new-instance v0, Lcom/elitecorelib/core/room/AnalyticsDBRep;
 
@@ -523,16 +507,16 @@
 
     invoke-virtual {v0, v2}, Lcom/elitecorelib/core/room/AnalyticsDBRep;->insertData(Ljava/lang/Object;)V
 
-    :cond_8
-    move-object v2, v10
-
     goto :goto_8
 
-    :cond_9
+    :cond_8
     move/from16 v17, v7
 
     move-object/from16 v16, v8
 
+    move-object v10, v2
+
+    :cond_9
     :goto_8
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -546,7 +530,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -572,16 +556,32 @@
     return-void
 .end method
 
+.method public static synthetic b(Lcom/elitecorelib/wifi/utility/WifiStateReceiver;Lwb;)Lwb;
+    .locals 0
+
+    iput-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
+
+    return-object p1
+.end method
+
+.method public static synthetic f(Lcom/elitecorelib/wifi/utility/WifiStateReceiver;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public a(JJLandroid/content/Context;)Lt40;
+.method public a(JJLandroid/content/Context;)Lwb;
     .locals 8
 
-    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lt40;
+    new-instance v0, Lwb;
 
     move-object v1, v0
 
@@ -593,17 +593,17 @@
 
     move-object v7, p5
 
-    invoke-direct/range {v1 .. v7}, Lt40;-><init>(Lcom/elitecorelib/wifi/utility/WifiStateReceiver;JJLandroid/content/Context;)V
+    invoke-direct/range {v1 .. v7}, Lwb;-><init>(Lcom/elitecorelib/wifi/utility/WifiStateReceiver;JJLandroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iput-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     :cond_0
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     return-object p1
 .end method
 
-.method public final a()V
+.method public final c()V
     .locals 12
 
     const-string v0, "HTTP"
@@ -617,13 +617,13 @@
 
     invoke-virtual {v2, v1, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lc20;->q()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->Q()Ljava/lang/String;
 
     move-result-object v8
 
     sget-object v2, Lcom/elitecorelib/core/d;->c:Lcom/elitecorelib/core/d;
 
-    invoke-static {}, Lc20;->p()Lcom/elitecorelib/core/d;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->P()Lcom/elitecorelib/core/d;
 
     move-result-object v3
 
@@ -656,7 +656,7 @@
 
     if-eqz v2, :cond_8
 
-    invoke-static {}, Lc20;->v()Ljava/util/Map;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->V()Ljava/util/Map;
 
     move-result-object v3
 
@@ -664,23 +664,23 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lc20;->p(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/elitecorelib/andsf/utility/a;->p(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iput-object v4, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
     invoke-virtual {v2}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
+    iput-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
 
-    const-string v2, "ssid_list"
+    const-string/jumbo v2, "ssid_list"
 
     const-string v4, "SAMOG_EAP_AKA_TEST,JioPrivateNet,JioHomeNet"
 
-    invoke-static {v2, v4}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v4}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -704,11 +704,9 @@
 
     move-result-object v2
 
-    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
     if-eqz v5, :cond_1
-
-    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
 
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
@@ -716,7 +714,7 @@
 
     if-nez v5, :cond_1
 
-    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
     invoke-interface {v2, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -740,7 +738,7 @@
     :goto_0
     if-nez v2, :cond_6
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -748,7 +746,7 @@
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -756,11 +754,9 @@
 
     invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
-
     check-cast v2, Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -782,15 +778,15 @@
 
     invoke-virtual {v2, v1, v3}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v2, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lc20;->c(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Lcom/elitecorelib/andsf/utility/a;->c(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v2
 
-    invoke-static {}, Lc20;->x()I
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->X()I
 
     move-result v3
 
@@ -830,7 +826,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -838,7 +834,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
+    iget-object v3, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -854,7 +850,7 @@
     :cond_3
     const-string v2, "ConnectionCheckType"
 
-    invoke-static {v2, v0}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v0}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -873,17 +869,17 @@
     goto :goto_3
 
     :cond_4
-    new-instance v0, Lx30;
+    new-instance v0, Lcom/elitecorelib/core/utility/s;
 
-    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
+    iget-object v5, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
+    iget-object v6, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
 
-    invoke-static {}, Lc20;->r()I
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->R()I
 
     move-result v9
 
-    invoke-static {}, Lc20;->u()I
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->U()I
 
     move-result v10
 
@@ -891,7 +887,7 @@
 
     move-object v7, p0
 
-    invoke-direct/range {v4 .. v10}, Lx30;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;Ljava/lang/String;II)V
+    invoke-direct/range {v4 .. v10}, Lcom/elitecorelib/core/utility/s;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/elitecore/wifi/listener/OnWiFiTaskCompleteListner;Ljava/lang/String;II)V
 
     invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
@@ -942,7 +938,7 @@
     return-void
 .end method
 
-.method public final a(Landroid/content/Context;)V
+.method public final d(Landroid/content/Context;)V
     .locals 13
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
@@ -969,11 +965,11 @@
 
     if-nez v3, :cond_0
 
-    const-string v1, "waitTimeIntervalForBackON"
+    const-string/jumbo v1, "waitTimeIntervalForBackON"
 
     const-string v3, "15"
 
-    invoke-static {v1, v3}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v3}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -995,13 +991,11 @@
 
     move-object v12, p1
 
-    invoke-virtual/range {v7 .. v12}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a(JJLandroid/content/Context;)Lt40;
+    invoke-virtual/range {v7 .. v12}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a(JJLandroid/content/Context;)Lwb;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iput-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     invoke-virtual {p1}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
@@ -1018,7 +1012,7 @@
     return-void
 .end method
 
-.method public declared-synchronized a(Landroid/content/Intent;Landroid/content/Context;)V
+.method public declared-synchronized e(Landroid/content/Intent;Landroid/content/Context;)V
     .locals 9
 
     monitor-enter p0
@@ -1032,7 +1026,7 @@
 
     move-result-object v0
 
-    const-string v1, "wifi_state"
+    const-string/jumbo v1, "wifi_state"
 
     const/4 v2, -0x1
 
@@ -1116,7 +1110,7 @@
 
     move-result v4
 
-    const-string v5, "wifiCurrentState"
+    const-string/jumbo v5, "wifiCurrentState"
 
     invoke-virtual {v0, v5}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
@@ -1142,7 +1136,7 @@
     if-ne v1, v7, :cond_5
 
     :cond_1
-    const-string p1, "wifiCurrentState"
+    const-string/jumbo p1, "wifiCurrentState"
 
     invoke-virtual {v0, p1, v7}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
 
@@ -1164,28 +1158,26 @@
 
     invoke-virtual {v0, p1, v8}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     if-eqz p1, :cond_2
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
-
     invoke-virtual {p1}, Landroid/os/CountDownTimer;->cancel()V
 
-    iput-object v6, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iput-object v6, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     :cond_2
-    invoke-static {}, Lc20;->n0()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->z()V
 
     if-nez v4, :cond_3
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->g()Z
 
     move-result p1
 
     if-eqz p1, :cond_3
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->h()Z
 
     move-result p1
 
@@ -1207,7 +1199,7 @@
 
     invoke-virtual {v0, p1, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    invoke-static {p2}, Lc20;->b(Landroid/content/Context;)Z
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->b(Landroid/content/Context;)Z
 
     move-result p1
 
@@ -1221,7 +1213,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0, p2}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a(Landroid/content/Context;)V
+    invoke-virtual {p0, p2}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->d(Landroid/content/Context;)V
 
     goto :goto_0
 
@@ -1252,12 +1244,12 @@
 
     :cond_4
     :goto_0
-    invoke-static {v8}, Lc20;->b(Z)V
+    invoke-static {v8}, Lcom/elitecorelib/andsf/utility/a;->b(Z)V
 
     goto/16 :goto_5
 
     :cond_5
-    const-string v4, "wifiCurrentState"
+    const-string/jumbo v4, "wifiCurrentState"
 
     invoke-virtual {v0, v4}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
@@ -1275,28 +1267,26 @@
     if-ne v1, v3, :cond_13
 
     :cond_7
-    const-string p1, "wifiCurrentState"
+    const-string/jumbo p1, "wifiCurrentState"
 
     invoke-virtual {v0, p1, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     if-eqz p1, :cond_8
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
-
     invoke-virtual {p1}, Landroid/os/CountDownTimer;->cancel()V
 
-    iput-object v6, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->s:Lt40;
+    iput-object v6, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a:Lwb;
 
     :cond_8
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->g()Z
 
     move-result p1
 
     if-eqz p1, :cond_f
 
-    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c()Z
+    invoke-virtual {p0}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->h()Z
 
     move-result p1
 
@@ -1365,15 +1355,15 @@
     :goto_1
     if-nez v2, :cond_c
 
-    invoke-static {}, Lc20;->s()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->S()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {}, Lc20;->t()Ljava/lang/String;
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->T()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {p1, v1}, Lc20;->b(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v1}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result p1
 
@@ -1411,7 +1401,7 @@
 
     if-eqz p1, :cond_b
 
-    const-string p1, "wifiDisconnectionCategory"
+    const-string/jumbo p1, "wifiDisconnectionCategory"
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->MANUAL_DISCONNECTION:Ljava/lang/String;
 
@@ -1420,9 +1410,9 @@
     invoke-static {v8}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a(Z)V
 
     :cond_b
-    invoke-static {}, Lc20;->V()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->h()V
 
-    const-string p1, "wifiDesableTime"
+    const-string/jumbo p1, "wifiDesableTime"
 
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
@@ -1434,7 +1424,7 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveLong(Ljava/lang/String;J)V
 
-    invoke-static {}, Lc20;->W()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->i()V
 
     const-string p1, "iswifionbyANDSF"
 
@@ -1535,7 +1525,7 @@
 
     invoke-virtual {v0, p1, v8}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
 
-    const-string p1, "wifiDisableTime"
+    const-string/jumbo p1, "wifiDisableTime"
 
     invoke-virtual {v0, p1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getInt(Ljava/lang/String;)I
 
@@ -1545,7 +1535,7 @@
 
     if-eq p1, v1, :cond_e
 
-    const-string p1, "wifiDisableTime"
+    const-string/jumbo p1, "wifiDisableTime"
 
     invoke-virtual {v0, p1, v8}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
 
@@ -1557,7 +1547,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {p2}, Lc20;->n(Landroid/content/Context;)V
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->n(Landroid/content/Context;)V
 
     const-string p1, "CURRENT_STATE"
 
@@ -1592,13 +1582,13 @@
 
     if-nez p1, :cond_12
 
-    invoke-static {p2}, Lc20;->p(Landroid/content/Context;)Z
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->p(Landroid/content/Context;)Z
 
     move-result p1
 
     if-eqz p1, :cond_11
 
-    invoke-static {p2}, Lc20;->q(Landroid/content/Context;)Z
+    invoke-static {p2}, Lcom/elitecorelib/andsf/utility/a;->q(Landroid/content/Context;)Z
 
     move-result p1
 
@@ -1643,7 +1633,7 @@
 
     if-eqz p1, :cond_14
 
-    const-string p1, "wifiDisconnectionCategory"
+    const-string/jumbo p1, "wifiDisconnectionCategory"
 
     sget-object v1, Lcom/elitecorelib/analytics/constants/AnalyticsConstant;->MANUAL_DISCONNECTION:Ljava/lang/String;
 
@@ -1736,7 +1726,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "wifiStateChangeCall : "
+    const-string/jumbo v2, "wifiStateChangeCall : "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1777,7 +1767,7 @@
     throw p1
 .end method
 
-.method public final b()Z
+.method public final g()Z
     .locals 6
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -1838,7 +1828,120 @@
     goto :goto_0
 .end method
 
-.method public final c()Z
+.method public getResponseData(Ljava/lang/String;)V
+    .locals 5
+
+    const-string v0, "RequestId"
+
+    const-string v1, "WifiStateReceiver"
+
+    :try_start_0
+    new-instance v2, Lorg/json/JSONObject;
+
+    invoke-direct {v2, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/16 v3, 0x841
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    const/4 v3, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
+
+    invoke-static {p1, v0, v3}, Lcom/elitecorelib/andsf/utility/a;->b(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v0, "ping success remove ssid from invalid jio network"
+
+    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
+
+    invoke-static {p1, v0}, Lcom/elitecorelib/andsf/utility/a;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, v0, v2}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v4, "ping failed no change in invalid ssid"
+
+    invoke-virtual {p1, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/16 v0, 0x842
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
+
+    invoke-static {p1, v0, v3}, Lcom/elitecorelib/andsf/utility/a;->a(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->b:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->c:Ljava/lang/String;
+
+    invoke-static {p1, v0}, Lcom/elitecorelib/andsf/utility/a;->e(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final h()Z
     .locals 6
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -1899,119 +2002,6 @@
     const-string v1, "WiFi state not change due to Hotspot mode on."
 
     goto :goto_0
-.end method
-
-.method public getResponseData(Ljava/lang/String;)V
-    .locals 5
-
-    const-string v0, "RequestId"
-
-    const-string v1, "WifiStateReceiver"
-
-    :try_start_0
-    new-instance v2, Lorg/json/JSONObject;
-
-    invoke-direct {v2, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/16 v3, 0x841
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    const/4 v3, 0x0
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
-
-    invoke-static {p1, v0, v3}, Lc20;->b(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v0, "ping success remove ssid from invalid jio network"
-
-    invoke-virtual {p1, v1, v0}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
-
-    invoke-static {p1, v0}, Lc20;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
-
-    const/4 v2, 0x1
-
-    invoke-static {p1, v0, v2}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    const-string v4, "ping failed no change in invalid ssid"
-
-    invoke-virtual {p1, v1, v4}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/16 v0, 0x842
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
-
-    invoke-static {p1, v0, v3}, Lc20;->a(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->t:Ljava/lang/String;
-
-    iget-object v0, p0, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->u:Ljava/lang/String;
-
-    invoke-static {p1, v0}, Lc20;->e(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v1, p1}, Lcom/elitecorelib/core/logger/EliteLog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    :goto_0
-    return-void
 .end method
 
 .method public isWiFiInRange(Z)V
@@ -2082,7 +2072,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0, p2, p1}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->a(Landroid/content/Intent;Landroid/content/Context;)V
+    invoke-virtual {p0, p2, p1}, Lcom/elitecorelib/wifi/utility/WifiStateReceiver;->e(Landroid/content/Intent;Landroid/content/Context;)V
 
     goto :goto_0
 
@@ -2095,13 +2085,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_1
     :goto_0
     return-void

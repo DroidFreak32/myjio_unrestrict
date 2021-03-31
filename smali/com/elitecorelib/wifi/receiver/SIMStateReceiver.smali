@@ -13,6 +13,12 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -21,7 +27,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;)Z
+.method public static synthetic c(Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;)Z
     .locals 0
 
     invoke-virtual {p0}, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->a()Z
@@ -31,10 +37,10 @@
     return p0
 .end method
 
-.method public static synthetic a(Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;I)Z
+.method public static synthetic d(Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;I)Z
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->a(I)Z
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->b(I)Z
 
     move-result p0
 
@@ -54,7 +60,7 @@
 
     const-string v1, "405"
 
-    invoke-static {v0, v1}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -62,20 +68,20 @@
 
     const-string v2, "874#840#854#855#856#857#858#859#860#861#862#863#864#865#866#867#868#869#870#871#872#873"
 
-    invoke-static {v1, v2}, Lk30;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/elitecorelib/core/utility/f;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "#"
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {p0, v0, v1, v2}, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final a(I)Z
+.method public final b(I)Z
     .locals 6
 
     invoke-static {}, Lcom/elitecorelib/core/LibraryApplication;->getLibraryApplication()Lcom/elitecorelib/core/LibraryApplication;
@@ -104,7 +110,7 @@
 
     iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->a:Landroid/content/Context;
 
-    invoke-static {v3}, Lk30;->e(Landroid/content/Context;)I
+    invoke-static {v3}, Lcom/elitecorelib/core/utility/f;->e(Landroid/content/Context;)I
 
     move-result v3
 
@@ -141,7 +147,7 @@
 
     iget-object v3, p0, Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;->a:Landroid/content/Context;
 
-    invoke-static {v3}, Lk30;->e(Landroid/content/Context;)I
+    invoke-static {v3}, Lcom/elitecorelib/core/utility/f;->e(Landroid/content/Context;)I
 
     move-result v3
 
@@ -210,7 +216,7 @@
     return p1
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+.method public final e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 3
 
     sget-object v0, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
@@ -224,7 +230,7 @@
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-static {}, Lk30;->e()Ljava/util/ArrayList;
+    invoke-static {}, Lcom/elitecorelib/core/utility/f;->e()Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -408,7 +414,7 @@
 
     if-eqz p1, :cond_6
 
-    const-string p2, "ss"
+    const-string/jumbo p2, "ss"
 
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -465,11 +471,11 @@
 
     if-nez v0, :cond_6
 
-    new-instance v0, Lm40;
+    new-instance v0, Lqb;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lm40;-><init>(Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;Ll40;)V
+    invoke-direct {v0, p0, v1}, Lqb;-><init>(Lcom/elitecorelib/wifi/receiver/SIMStateReceiver;Lpb;)V
 
     const/4 v1, -0x1
 
@@ -539,7 +545,7 @@
 
     aput-object p2, v1, v4
 
-    const-string p2, "slot"
+    const-string/jumbo p2, "slot"
 
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 

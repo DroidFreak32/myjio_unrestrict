@@ -1,39 +1,124 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzvg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lcom/google/android/gms/internal/ads/zzvg;
+.super Lcom/google/android/gms/internal/ads/zzww;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # instance fields
-.field public final zzaab:Ljava/lang/String;
-
-.field public final zzbsk:Lcom/google/android/gms/internal/ads/zzve;
+.field private final zzcgw:Lcom/google/android/gms/ads/AdListener;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzve;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/gms/ads/AdListener;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzww;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzbsk:Lcom/google/android/gms/internal/ads/zzve;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzaab:Ljava/lang/String;
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final getAdListener()Lcom/google/android/gms/ads/AdListener;
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzbsk:Lcom/google/android/gms/internal/ads/zzve;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzaab:Ljava/lang/String;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzve;->zzbj(Ljava/lang/String;)V
+.method public final onAdClicked()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/AdListener;->onAdClicked()V
+
+    return-void
+.end method
+
+.method public final onAdClosed()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/AdListener;->onAdClosed()V
+
+    return-void
+.end method
+
+.method public final onAdFailedToLoad(I)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/AdListener;->onAdFailedToLoad(I)V
+
+    return-void
+.end method
+
+.method public final onAdImpression()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/AdListener;->onAdImpression()V
+
+    return-void
+.end method
+
+.method public final onAdLeftApplication()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/AdListener;->onAdLeftApplication()V
+
+    return-void
+.end method
+
+.method public final onAdLoaded()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/AdListener;->onAdLoaded()V
+
+    return-void
+.end method
+
+.method public final onAdOpened()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/AdListener;->onAdOpened()V
+
+    return-void
+.end method
+
+.method public final zzc(Lcom/google/android/gms/internal/ads/zzve;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzvg;->zzcgw:Lcom/google/android/gms/ads/AdListener;
+
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzve;->zzpm()Lcom/google/android/gms/ads/LoadAdError;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/ads/AdListener;->onAdFailedToLoad(Lcom/google/android/gms/ads/LoadAdError;)V
 
     return-void
 .end method

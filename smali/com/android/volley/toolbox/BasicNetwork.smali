@@ -3,19 +3,19 @@
 .source "BasicNetwork.java"
 
 # interfaces
-.implements Lsv;
+.implements Lcom/android/volley/Network;
 
 
 # static fields
 .field public static final DEBUG:Z
 
-.field public static final DEFAULT_POOL_SIZE:I = 0x1000
+.field private static final DEFAULT_POOL_SIZE:I = 0x1000
 
-.field public static final SLOW_REQUEST_THRESHOLD_MS:I = 0xbb8
+.field private static final SLOW_REQUEST_THRESHOLD_MS:I = 0xbb8
 
 
 # instance fields
-.field public final mBaseHttpStack:Lcom/android/volley/toolbox/BaseHttpStack;
+.field private final mBaseHttpStack:Lcom/android/volley/toolbox/BaseHttpStack;
 
 .field public final mHttpStack:Lcom/android/volley/toolbox/HttpStack;
     .annotation runtime Ljava/lang/Deprecated;
@@ -30,7 +30,7 @@
     .locals 1
 
     .line 1
-    sget-boolean v0, Lzv;->b:Z
+    sget-boolean v0, Lcom/android/volley/VolleyLog;->DEBUG:Z
 
     sput-boolean v0, Lcom/android/volley/toolbox/BasicNetwork;->DEBUG:Z
 
@@ -111,7 +111,7 @@
     return-void
 .end method
 
-.method public static attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+.method private static attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -124,8 +124,14 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/VolleyError;
+        }
+    .end annotation
+
     .line 1
-    invoke-virtual {p1}, Lcom/android/volley/Request;->getRetryPolicy()Lyv;
+    invoke-virtual {p1}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
 
     move-result-object v0
 
@@ -142,7 +148,7 @@
 
     .line 3
     :try_start_0
-    invoke-interface {v0, p2}, Lyv;->a(Lcom/android/volley/VolleyError;)V
+    invoke-interface {v0, p2}, Lcom/android/volley/RetryPolicy;->retry(Lcom/android/volley/VolleyError;)V
     :try_end_0
     .catch Lcom/android/volley/VolleyError; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -194,18 +200,18 @@
     throw p2
 .end method
 
-.method public static combineHeaders(Ljava/util/List;Lnv$a;)Ljava/util/List;
+.method private static combineHeaders(Ljava/util/List;Lcom/android/volley/Cache$Entry;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;",
-            "Lnv$a;",
+            "Lcom/android/volley/Cache$Entry;",
             ")",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;"
         }
     .end annotation
@@ -240,10 +246,10 @@
 
     move-result-object v2
 
-    check-cast v2, Lrv;
+    check-cast v2, Lcom/android/volley/Header;
 
     .line 4
-    invoke-virtual {v2}, Lrv;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/volley/Header;->getName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -258,7 +264,7 @@
     invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     .line 6
-    iget-object p0, p1, Lnv$a;->h:Ljava/util/List;
+    iget-object p0, p1, Lcom/android/volley/Cache$Entry;->allResponseHeaders:Ljava/util/List;
 
     if-eqz p0, :cond_2
 
@@ -270,7 +276,7 @@
     if-nez p0, :cond_4
 
     .line 8
-    iget-object p0, p1, Lnv$a;->h:Ljava/util/List;
+    iget-object p0, p1, Lcom/android/volley/Cache$Entry;->allResponseHeaders:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -288,10 +294,10 @@
 
     move-result-object p1
 
-    check-cast p1, Lrv;
+    check-cast p1, Lcom/android/volley/Header;
 
     .line 9
-    invoke-virtual {p1}, Lrv;->a()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/volley/Header;->getName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -308,7 +314,7 @@
 
     .line 11
     :cond_2
-    iget-object p0, p1, Lnv$a;->g:Ljava/util/Map;
+    iget-object p0, p1, Lcom/android/volley/Cache$Entry;->responseHeaders:Ljava/util/Map;
 
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
@@ -317,7 +323,7 @@
     if-nez p0, :cond_4
 
     .line 12
-    iget-object p0, p1, Lnv$a;->g:Ljava/util/Map;
+    iget-object p0, p1, Lcom/android/volley/Cache$Entry;->responseHeaders:Ljava/util/Map;
 
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -353,7 +359,7 @@
     if-nez v2, :cond_3
 
     .line 14
-    new-instance v2, Lrv;
+    new-instance v2, Lcom/android/volley/Header;
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -367,7 +373,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    invoke-direct {v2, v3, p1}, Lrv;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v3, p1}, Lcom/android/volley/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -377,12 +383,12 @@
     return-object v1
 .end method
 
-.method public static convertHeaders([Lrv;)Ljava/util/Map;
+.method public static convertHeaders([Lcom/android/volley/Header;)Ljava/util/Map;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ")",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
@@ -412,13 +418,13 @@
     .line 3
     aget-object v2, p0, v1
 
-    invoke-virtual {v2}, Lrv;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/volley/Header;->getName()Ljava/lang/String;
 
     move-result-object v2
 
     aget-object v3, p0, v1
 
-    invoke-virtual {v3}, Lrv;->b()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/android/volley/Header;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
@@ -432,12 +438,12 @@
     return-object v0
 .end method
 
-.method private getCacheHeaders(Lnv$a;)Ljava/util/Map;
+.method private getCacheHeaders(Lcom/android/volley/Cache$Entry;)Ljava/util/Map;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lnv$a;",
+            "Lcom/android/volley/Cache$Entry;",
             ")",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
@@ -462,7 +468,7 @@
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     .line 3
-    iget-object v1, p1, Lnv$a;->b:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
@@ -473,7 +479,7 @@
 
     .line 5
     :cond_1
-    iget-wide v1, p1, Lnv$a;->d:J
+    iget-wide v1, p1, Lcom/android/volley/Cache$Entry;->lastModified:J
 
     const-wide/16 v3, 0x0
 
@@ -497,6 +503,12 @@
 
 .method private inputStreamToBytes(Ljava/io/InputStream;I)[B
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/volley/ServerError;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;
@@ -560,7 +572,7 @@
     new-array p1, v1, [Ljava/lang/Object;
 
     .line 7
-    invoke-static {p2, p1}, Lzv;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p2, p1}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 8
     :cond_1
@@ -605,7 +617,7 @@
     new-array p1, v1, [Ljava/lang/Object;
 
     .line 12
-    invoke-static {p2, p1}, Lzv;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p2, p1}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 13
     :cond_3
@@ -663,9 +675,9 @@
 
     if-eqz p4, :cond_1
 
+    .line 3
     array-length p2, p4
 
-    .line 3
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -689,11 +701,12 @@
 
     const/4 p1, 0x4
 
-    invoke-virtual {p3}, Lcom/android/volley/Request;->getRetryPolicy()Lyv;
+    .line 5
+    invoke-virtual {p3}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
 
     move-result-object p2
 
-    invoke-interface {p2}, Lyv;->a()I
+    invoke-interface {p2}, Lcom/android/volley/RetryPolicy;->getCurrentRetryCount()I
 
     move-result p2
 
@@ -705,8 +718,8 @@
 
     const-string p1, "HTTP response for request=<%s> [lifetime=%d], [size=%s], [rc=%d], [retryCount=%s]"
 
-    .line 5
-    invoke-static {p1, v0}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 6
+    invoke-static {p1, v0}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_2
     return-void
@@ -747,19 +760,25 @@
 
     const-string p1, "HTTP ERROR(%s) %d ms to fetch %s"
 
-    invoke-static {p1, v2}, Lzv;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p1, v2}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public performRequest(Lcom/android/volley/Request;)Luv;
+.method public performRequest(Lcom/android/volley/Request;)Lcom/android/volley/NetworkResponse;
     .locals 28
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/android/volley/Request<",
             "*>;)",
-            "Luv;"
+            "Lcom/android/volley/NetworkResponse;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/VolleyError;
         }
     .end annotation
 
@@ -784,11 +803,11 @@
 
     .line 3
     :try_start_0
-    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getCacheEntry()Lnv$a;
+    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getCacheEntry()Lcom/android/volley/Cache$Entry;
 
     move-result-object v0
 
-    invoke-direct {v7, v0}, Lcom/android/volley/toolbox/BasicNetwork;->getCacheHeaders(Lnv$a;)Ljava/util/Map;
+    invoke-direct {v7, v0}, Lcom/android/volley/toolbox/BasicNetwork;->getCacheHeaders(Lcom/android/volley/Cache$Entry;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -824,14 +843,14 @@
 
     .line 7
     :try_start_2
-    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getCacheEntry()Lnv$a;
+    invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getCacheEntry()Lcom/android/volley/Cache$Entry;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
     .line 8
-    new-instance v0, Luv;
+    new-instance v0, Lcom/android/volley/NetworkResponse;
 
     const/16 v16, 0x130
 
@@ -850,22 +869,22 @@
 
     move-object/from16 v21, v13
 
-    invoke-direct/range {v15 .. v21}, Luv;-><init>(I[BZJLjava/util/List;)V
+    invoke-direct/range {v15 .. v21}, Lcom/android/volley/NetworkResponse;-><init>(I[BZJLjava/util/List;)V
 
     return-object v0
 
     .line 10
     :cond_0
-    invoke-static {v13, v0}, Lcom/android/volley/toolbox/BasicNetwork;->combineHeaders(Ljava/util/List;Lnv$a;)Ljava/util/List;
+    invoke-static {v13, v0}, Lcom/android/volley/toolbox/BasicNetwork;->combineHeaders(Ljava/util/List;Lcom/android/volley/Cache$Entry;)Ljava/util/List;
 
     move-result-object v27
 
     .line 11
-    new-instance v1, Luv;
+    new-instance v1, Lcom/android/volley/NetworkResponse;
 
     const/16 v22, 0x130
 
-    iget-object v0, v0, Lnv$a;->a:[B
+    iget-object v0, v0, Lcom/android/volley/Cache$Entry;->data:[B
 
     const/16 v24, 0x1
 
@@ -880,7 +899,7 @@
 
     move-object/from16 v23, v0
 
-    invoke-direct/range {v21 .. v27}, Luv;-><init>(I[BZJLjava/util/List;)V
+    invoke-direct/range {v21 .. v27}, Lcom/android/volley/NetworkResponse;-><init>(I[BZJLjava/util/List;)V
     :try_end_2
     .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_7
     .catch Ljava/net/MalformedURLException; {:try_start_2 .. :try_end_2} :catch_6
@@ -892,6 +911,8 @@
     move-exception v0
 
     move-object v15, v2
+
+    move-object v2, v12
 
     move-object/from16 v19, v13
 
@@ -965,7 +986,7 @@
     if-gt v14, v0, :cond_3
 
     .line 17
-    new-instance v0, Luv;
+    new-instance v0, Lcom/android/volley/NetworkResponse;
 
     const/16 v16, 0x0
 
@@ -989,7 +1010,7 @@
     move-object/from16 v19, v1
 
     :try_start_7
-    invoke-direct/range {v13 .. v19}, Luv;-><init>(I[BZJLjava/util/List;)V
+    invoke-direct/range {v13 .. v19}, Lcom/android/volley/NetworkResponse;-><init>(I[BZJLjava/util/List;)V
 
     return-object v0
 
@@ -1020,6 +1041,8 @@
     :goto_2
     move-object/from16 v19, v1
 
+    move-object v2, v12
+
     move-object/from16 v15, v20
 
     goto :goto_4
@@ -1039,6 +1062,8 @@
 
     move-object v15, v2
 
+    move-object v2, v12
+
     goto :goto_4
 
     :catch_5
@@ -1046,15 +1071,13 @@
 
     move-object/from16 v19, v1
 
-    move-object v12, v2
-
-    move-object v15, v12
+    move-object v15, v2
 
     :goto_4
-    if-eqz v12, :cond_b
+    if-eqz v2, :cond_b
 
     .line 20
-    invoke-virtual {v12}, Lcom/android/volley/toolbox/HttpResponse;->getStatusCode()I
+    invoke-virtual {v2}, Lcom/android/volley/toolbox/HttpResponse;->getStatusCode()I
 
     move-result v0
 
@@ -1079,12 +1102,12 @@
 
     const-string v2, "Unexpected response code %d for %s"
 
-    invoke-static {v2, v1}, Lzv;->c(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v1}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz v15, :cond_a
 
     .line 22
-    new-instance v1, Luv;
+    new-instance v1, Lcom/android/volley/NetworkResponse;
 
     const/16 v16, 0x0
 
@@ -1099,7 +1122,7 @@
 
     move v14, v0
 
-    invoke-direct/range {v13 .. v19}, Luv;-><init>(I[BZJLjava/util/List;)V
+    invoke-direct/range {v13 .. v19}, Lcom/android/volley/NetworkResponse;-><init>(I[BZJLjava/util/List;)V
 
     const/16 v2, 0x191
 
@@ -1126,7 +1149,7 @@
     :cond_5
     new-instance v0, Lcom/android/volley/ClientError;
 
-    invoke-direct {v0, v1}, Lcom/android/volley/ClientError;-><init>(Luv;)V
+    invoke-direct {v0, v1}, Lcom/android/volley/ClientError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
     throw v0
 
@@ -1150,7 +1173,7 @@
     .line 26
     new-instance v0, Lcom/android/volley/ServerError;
 
-    invoke-direct {v0, v1}, Lcom/android/volley/ServerError;-><init>(Luv;)V
+    invoke-direct {v0, v1}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
     const-string v1, "server"
 
@@ -1162,7 +1185,7 @@
     :cond_7
     new-instance v0, Lcom/android/volley/ServerError;
 
-    invoke-direct {v0, v1}, Lcom/android/volley/ServerError;-><init>(Luv;)V
+    invoke-direct {v0, v1}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
     throw v0
 
@@ -1170,7 +1193,7 @@
     :cond_8
     new-instance v0, Lcom/android/volley/ServerError;
 
-    invoke-direct {v0, v1}, Lcom/android/volley/ServerError;-><init>(Luv;)V
+    invoke-direct {v0, v1}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
     throw v0
 
@@ -1179,7 +1202,7 @@
     :goto_6
     new-instance v0, Lcom/android/volley/AuthFailureError;
 
-    invoke-direct {v0, v1}, Lcom/android/volley/AuthFailureError;-><init>(Luv;)V
+    invoke-direct {v0, v1}, Lcom/android/volley/AuthFailureError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
     const-string v1, "auth"
 
@@ -1241,7 +1264,7 @@
 
     invoke-direct {v0}, Lcom/android/volley/TimeoutError;-><init>()V
 
-    const-string v1, "socket"
+    const-string/jumbo v1, "socket"
 
     invoke-static {v1, v8, v0}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
 

@@ -1,25 +1,47 @@
 .class public Lcom/elitecorelib/core/room/pojo/PojoRamUsageData;
-.super Lgh;
+.super Landroidx/room/Room;
 
 # interfaces
 .implements Lcom/elitecorelib/analytics/pojo/BaseDTO;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "PojoRamUsageData"
+.end annotation
+
+
 # instance fields
 .field public ammry:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ammry"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public mctime:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "mctime"
+    .end annotation
+.end field
 
 .field public ummry:Ljava/lang/Long;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "ummry"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     return-void
 .end method

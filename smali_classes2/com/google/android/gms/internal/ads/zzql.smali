@@ -1,119 +1,58 @@
-.class public abstract Lcom/google/android/gms/internal/ads/zzql;
-.super Lcom/google/android/gms/internal/ads/zzen;
+.class public final Lcom/google/android/gms/internal/ads/zzql;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/ads/zzqk;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic zzaje:Ljava/lang/String;
+
+.field private final synthetic zzajf:J
+
+.field private final synthetic zzajg:J
+
+.field private final synthetic zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.INativeAdImage"
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzqj;Ljava/lang/String;JJ)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzen;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzql;->zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzql;->zzaje:Ljava/lang/String;
+
+    iput-wide p3, p0, Lcom/google/android/gms/internal/ads/zzql;->zzajf:J
+
+    iput-wide p5, p0, Lcom/google/android/gms/internal/ads/zzql;->zzajg:J
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zzj(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzqk;
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.ads.internal.formats.client.INativeAdImage"
-
-    .line 1
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzqk;
-
-    if-eqz v1, :cond_1
-
-    .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzqk;
-
-    return-object v0
-
-    .line 4
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzqm;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzqm;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final dispatchTransaction(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 2
-
-    const/4 p2, 0x1
-
-    if-eq p1, p2, :cond_2
-
-    const/4 p4, 0x2
-
-    if-eq p1, p4, :cond_1
-
-    const/4 p4, 0x3
-
-    if-eq p1, p4, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
+.method public final run()V
+    .locals 7
 
     .line 1
-    :cond_0
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzqk;->getScale()D
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzql;->zzbmw:Lcom/google/android/gms/internal/ads/zzqj;
 
-    move-result-wide v0
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzqj;->zza(Lcom/google/android/gms/internal/ads/zzqj;)Lcom/google/android/gms/internal/ads/zzqg;
 
-    .line 2
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move-result-object v1
 
-    .line 3
-    invoke-virtual {p3, v0, v1}, Landroid/os/Parcel;->writeDouble(D)V
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzql;->zzaje:Ljava/lang/String;
 
-    goto :goto_0
+    iget-wide v3, p0, Lcom/google/android/gms/internal/ads/zzql;->zzajf:J
 
-    .line 4
-    :cond_1
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzqk;->getUri()Landroid/net/Uri;
+    iget-wide v5, p0, Lcom/google/android/gms/internal/ads/zzql;->zzajg:J
 
-    move-result-object p1
+    invoke-interface/range {v1 .. v6}, Lcom/google/android/gms/internal/ads/zzqg;->zzd(Ljava/lang/String;JJ)V
 
-    .line 5
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 6
-    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zzb(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    goto :goto_0
-
-    .line 7
-    :cond_2
-    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzqk;->zzld()Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p1
-
-    .line 8
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 9
-    invoke-static {p3, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    :goto_0
-    return p2
+    return-void
 .end method

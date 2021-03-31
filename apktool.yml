@@ -3,9 +3,9 @@ apkFileName: com.jio.myjio.apk
 compressionType: false
 doNotCompress:
 - resources.arsc
-- META-INF/android.support.design_material.version
 - META-INF/androidx.activity_activity-ktx.version
 - META-INF/androidx.activity_activity.version
+- META-INF/androidx.annotation_annotation-experimental.version
 - META-INF/androidx.appcompat_appcompat-resources.version
 - META-INF/androidx.appcompat_appcompat.version
 - META-INF/androidx.arch.core_core-runtime.version
@@ -19,6 +19,7 @@ doNotCompress:
 - META-INF/androidx.customview_customview.version
 - META-INF/androidx.databinding_baseAdapters.version
 - META-INF/androidx.databinding_library.version
+- META-INF/androidx.databinding_viewbinding.version
 - META-INF/androidx.documentfile_documentfile.version
 - META-INF/androidx.drawerlayout_drawerlayout.version
 - META-INF/androidx.exifinterface_exifinterface.version
@@ -60,16 +61,18 @@ doNotCompress:
 - META-INF/androidx.vectordrawable_vectordrawable-animated.version
 - META-INF/androidx.vectordrawable_vectordrawable.version
 - META-INF/androidx.versionedparcelable_versionedparcelable.version
+- META-INF/androidx.viewpager2_viewpager2.version
 - META-INF/androidx.viewpager_viewpager.version
 - META-INF/androidx.work_work-runtime.version
 - META-INF/com.google.android.material_material.version
 - META-INF/com.google.dagger_dagger-android-support.version
 - META-INF/com.google.dagger_dagger-android.version
 - META-INF/com.google.dagger_dagger.version
-- META-INF/com.android.tools/proguard/dagger-android.pro
 - META-INF/services/com.fasterxml.jackson.core.JsonFactory
 - META-INF/services/com.fasterxml.jackson.core.ObjectCodec
 - mp3
+- assets/cl-app.properties
+- assets/cl-util.properties
 - assets/juspay/v1-boot_loader.jsa
 - assets/juspay/v1-config.jsa
 - assets/juspay/payments/in.juspay.godel/v1-acs.jsa
@@ -148,6 +151,7 @@ doNotCompress:
 - res/drawable-hdpi-v4/ic_back.webp
 - res/drawable-hdpi-v4/ic_default.webp
 - res/drawable-hdpi-v4/ic_dialog_close.webp
+- res/drawable-hdpi-v4/ic_jio_logo.webp
 - res/drawable-hdpi-v4/ic_locateus_direction_blue.webp
 - res/drawable-hdpi-v4/ic_mail.webp
 - res/drawable-hdpi-v4/ic_network_signal_1.webp
@@ -156,10 +160,7 @@ doNotCompress:
 - res/drawable-hdpi-v4/ic_new_default_99_132.webp
 - res/drawable-hdpi-v4/img_cloud_banner.webp
 - res/drawable-hdpi-v4/img_fiber_leads.webp
-- res/drawable-hdpi-v4/img_intro.webp
-- res/drawable-hdpi-v4/img_intro_2.webp
-- res/drawable-hdpi-v4/img_intro_bank.webp
-- res/drawable-hdpi-v4/img_intro_bank_2.webp
+- res/drawable-hdpi-v4/img_permssion_android.webp
 - res/drawable-hdpi-v4/incoming.webp
 - res/drawable-hdpi-v4/increase_limit_icon.webp
 - res/drawable-hdpi-v4/info_icon.webp
@@ -334,10 +335,12 @@ doNotCompress:
 - res/drawable-ldpi-v4/get_packs.webp
 - res/drawable-ldpi-v4/grab_order_bg.webp
 - res/drawable-ldpi-v4/ic_back.webp
+- res/drawable-ldpi-v4/ic_jio_logo.webp
 - res/drawable-ldpi-v4/ic_locateus_direction_blue.webp
 - res/drawable-ldpi-v4/ic_mail.webp
 - res/drawable-ldpi-v4/img_cloud_banner.webp
 - res/drawable-ldpi-v4/img_fiber_leads.webp
+- res/drawable-ldpi-v4/img_permssion_android.webp
 - res/drawable-ldpi-v4/info_icon_mnp.webp
 - res/drawable-ldpi-v4/invite_friends.webp
 - res/drawable-ldpi-v4/ioip_brief_case.webp
@@ -445,12 +448,14 @@ doNotCompress:
 - res/drawable-mdpi-v4/hand_up_icon.webp
 - res/drawable-mdpi-v4/ic_back.webp
 - res/drawable-mdpi-v4/ic_default.webp
+- res/drawable-mdpi-v4/ic_jio_logo.webp
 - res/drawable-mdpi-v4/ic_locateus_direction_blue.webp
 - res/drawable-mdpi-v4/ic_mail.webp
 - res/drawable-mdpi-v4/ic_new_default_160_90.webp
 - res/drawable-mdpi-v4/ic_new_default_99_132.webp
 - res/drawable-mdpi-v4/img_cloud_banner.webp
 - res/drawable-mdpi-v4/img_fiber_leads.webp
+- res/drawable-mdpi-v4/img_permssion_android.webp
 - res/drawable-mdpi-v4/incoming.webp
 - res/drawable-mdpi-v4/increase_limit_icon.webp
 - res/drawable-mdpi-v4/info_icon.webp
@@ -544,6 +549,7 @@ doNotCompress:
 - res/drawable-mdpi-v4/slider_icon.webp
 - res/drawable-mdpi-v4/sms_icon.webp
 - res/drawable-mdpi-v4/sms_usage.webp
+- jpg
 - res/drawable-mdpi-v4/support_icon.webp
 - res/drawable-mdpi-v4/support_icon_dialog.webp
 - res/drawable-mdpi-v4/tick_icon.webp
@@ -662,6 +668,7 @@ doNotCompress:
 - res/drawable-xhdpi-v4/ic_default.webp
 - res/drawable-xhdpi-v4/ic_defaultscreen.webp
 - res/drawable-xhdpi-v4/ic_dialog_close.webp
+- res/drawable-xhdpi-v4/ic_jio_logo.webp
 - res/drawable-xhdpi-v4/ic_locateus_direction_blue.webp
 - res/drawable-xhdpi-v4/ic_mail.webp
 - res/drawable-xhdpi-v4/ic_network_signal_4.webp
@@ -669,6 +676,7 @@ doNotCompress:
 - res/drawable-xhdpi-v4/ic_new_default_99_132.webp
 - res/drawable-xhdpi-v4/img_cloud_banner.webp
 - res/drawable-xhdpi-v4/img_fiber_leads.webp
+- res/drawable-xhdpi-v4/img_permssion_android.webp
 - res/drawable-xhdpi-v4/incoming.webp
 - res/drawable-xhdpi-v4/increase_limit_icon.webp
 - res/drawable-xhdpi-v4/info_icon.webp
@@ -799,7 +807,6 @@ doNotCompress:
 - res/drawable-xhdpi-v4/vmax_video_cta_focused.webp
 - res/drawable-xhdpi-v4/wifi_icon.webp
 - res/drawable-xxhdpi-v4/add.webp
-- res/drawable-xxhdpi-v4/alert.webp
 - res/drawable-xxhdpi-v4/arrow_lnk_gray.webp
 - res/drawable-xxhdpi-v4/arrow_lnk_gray_disabled.webp
 - res/drawable-xxhdpi-v4/attach_icon.webp
@@ -861,6 +868,7 @@ doNotCompress:
 - res/drawable-xxhdpi-v4/ic_default.webp
 - res/drawable-xxhdpi-v4/ic_defaultscreen.webp
 - res/drawable-xxhdpi-v4/ic_dialog_close.webp
+- res/drawable-xxhdpi-v4/ic_jio_logo.webp
 - res/drawable-xxhdpi-v4/ic_locateus_direction_blue.webp
 - res/drawable-xxhdpi-v4/ic_mail.webp
 - res/drawable-xxhdpi-v4/ic_network_signal_1.webp
@@ -869,6 +877,7 @@ doNotCompress:
 - res/drawable-xxhdpi-v4/ic_new_default_99_132.webp
 - res/drawable-xxhdpi-v4/img_cloud_banner.webp
 - res/drawable-xxhdpi-v4/img_fiber_leads.webp
+- res/drawable-xxhdpi-v4/img_permssion_android.webp
 - res/drawable-xxhdpi-v4/incoming.webp
 - res/drawable-xxhdpi-v4/increase_limit_icon.webp
 - res/drawable-xxhdpi-v4/info_icon_mnp.webp
@@ -996,7 +1005,6 @@ doNotCompress:
 - res/drawable-xxhdpi-v4/wifi_icon.webp
 - res/drawable-xxhdpi-v4/yes_icon.webp
 - res/drawable-xxxhdpi-v4/add.webp
-- res/drawable-xxxhdpi-v4/alert.webp
 - res/drawable-xxxhdpi-v4/arrow_lnk.webp
 - res/drawable-xxxhdpi-v4/arrow_lnk_gray.webp
 - res/drawable-xxxhdpi-v4/arrow_lnk_gray_disabled.webp
@@ -1027,11 +1035,13 @@ doNotCompress:
 - res/drawable-xxxhdpi-v4/ic_default.webp
 - res/drawable-xxxhdpi-v4/ic_defaultscreen.webp
 - res/drawable-xxxhdpi-v4/ic_dialog_close.webp
+- res/drawable-xxxhdpi-v4/ic_jio_logo.webp
 - res/drawable-xxxhdpi-v4/ic_locateus_direction_blue.webp
 - res/drawable-xxxhdpi-v4/ic_mail.webp
 - res/drawable-xxxhdpi-v4/img_cloud_banner.webp
 - res/drawable-xxxhdpi-v4/img_fiber_leads.webp
 - res/drawable-xxxhdpi-v4/img_jioprimetext.webp
+- res/drawable-xxxhdpi-v4/img_permssion_android.webp
 - res/drawable-xxxhdpi-v4/info_icon_mnp.webp
 - res/drawable-xxxhdpi-v4/invite_friends.webp
 - res/drawable-xxxhdpi-v4/ioip_brief_case.webp
@@ -1095,31 +1105,55 @@ doNotCompress:
 - res/drawable-xxxhdpi-v4/upi_img_banner_jpb.webp
 - res/drawable-xxxhdpi-v4/video_usage.webp
 - res/drawable-xxxhdpi-v4/wifi_icon.webp
-- jpg
 - res/drawable/bank_banner_jpb_dashboard.webp
+- res/drawable/banner_covid19_android.webp
 - res/drawable/banner_jiocloud_android.webp
+- res/drawable/banner_upi_dummy.webp
 - res/drawable/callerid_banner.webp
+- res/drawable/circle_icon.webp
 - res/drawable/edit_pencil.webp
+- res/drawable/finance_banner_new_account.webp
+- res/drawable/finance_ic_profile_img.webp
 - res/drawable/guthi.webp
+- res/drawable/ic_bhim_upi_banner.webp
+- res/drawable/ic_jio_logo.webp
+- res/drawable/ic_manage_bills_banner.webp
 - res/drawable/ic_myjiologo.webp
 - res/drawable/ic_new_default_160_90.webp
 - res/drawable/ic_new_default_99_132.webp
+- res/drawable/ic_payatshop_banner.webp
+- res/drawable/ic_repeat_black_36dp.webp
 - res/drawable/ic_thumbs_down.webp
 - res/drawable/ic_thumbs_down_red.webp
 - res/drawable/ic_thumbs_up.webp
 - res/drawable/ic_thumbs_up_green.webp
 - res/drawable/img_fiber_leads.webp
 - res/drawable/img_intro.webp
+- res/drawable/img_intro_2.webp
+- res/drawable/img_intro_bank.webp
+- res/drawable/img_intro_bank_2.webp
+- res/drawable/jioengage1.webp
 - res/drawable/jiotalk_floating_diabled.webp
+- res/drawable/jpb_myjio_banner.webp
 - res/drawable/make_calls.webp
 - res/drawable/manage_account.webp
 - res/drawable/my_device_banner.webp
 - res/drawable/new_download_icon.webp
 - res/drawable/profile_icon.webp
+- res/drawable/setup_upi_account.webp
 - res/drawable/social_call_guide_line.webp
 - res/drawable/social_call_intro.webp
 - res/drawable/temp_offers_item_icon_disabled.webp
 - res/drawable/temp_offers_item_icon_enabled.webp
+- res/drawable/transaction_failed.webp
+- res/drawable/trusticon.webp
+- res/drawable/upi_bank_default.webp
+- res/drawable/upi_bank_default1.webp
+- res/drawable/upi_bbps_assured.webp
+- res/drawable/upi_folderjioicons.webp
+- res/drawable/upi_icon_dashboard.webp
+- res/drawable/upi_send_success_icon.webp
+- res/drawable/upi_success_icon.webp
 - res/drawable/vmax_audio_landscape_default.webp
 - res/drawable/vmax_audio_portrait_default.webp
 - res/drawable/vmax_browser_bkgrnd.webp
@@ -1142,6 +1176,7 @@ sdkInfo: null
 sharedLibrary: false
 sparseResources: false
 unknownFiles:
+  DebugProbesKt.bin: '8'
   README: '8'
   androidsupportmultidexversion.txt: '0'
   firebase-abt.properties: '8'
@@ -1152,6 +1187,7 @@ unknownFiles:
   firebase-crashlytics.properties: '8'
   firebase-datatransport.properties: '8'
   firebase-encoders-json.properties: '8'
+  firebase-encoders.properties: '8'
   firebase-iid-interop.properties: '8'
   firebase-iid.properties: '8'
   firebase-installations-interop.properties: '8'
@@ -1159,8 +1195,7 @@ unknownFiles:
   firebase-measurement-connector.properties: '8'
   firebase-messaging.properties: '8'
   firebase-perf.properties: '8'
-  hellojio_config_v2_test.json: '8'
-  hellojio_feature_test.json: '8'
+  places.properties: '8'
   play-services-ads-base.properties: '8'
   play-services-ads-identifier.properties: '8'
   play-services-ads-lite.properties: '8'
@@ -1170,6 +1205,7 @@ unknownFiles:
   play-services-base.properties: '8'
   play-services-basement.properties: '8'
   play-services-clearcut.properties: '8'
+  play-services-cloud-messaging.properties: '8'
   play-services-flags.properties: '8'
   play-services-gass.properties: '8'
   play-services-gcm.properties: '8'
@@ -1183,16 +1219,19 @@ unknownFiles:
   play-services-measurement-sdk.properties: '8'
   play-services-measurement.properties: '8'
   play-services-phenotype.properties: '8'
+  play-services-places-placereport.properties: '8'
   play-services-stats.properties: '8'
   play-services-tagmanager-v4-impl.properties: '8'
   play-services-tasks.properties: '8'
   play-services-vision-common.properties: '8'
   play-services-vision.properties: '8'
   protobuf.meta: '8'
+  protolite-well-known-types.properties: '8'
   signer.crt: '8'
   transport-api.properties: '8'
   transport-backend-cct.properties: '8'
   transport-runtime.properties: '8'
+  stamp-cert-sha256: '8'
   auto/Auto_value.gwt.xml: '8'
   com/clevertap/android/sdk/certificates/DigiCertGlobalRootCA.crt: '8'
   com/clevertap/android/sdk/certificates/DigiCertSHA2SecureServerCA.crt: '8'
@@ -1738,6 +1777,15 @@ unknownFiles:
   com/google/i18n/phonenumbers/data/ShortNumberMetadataProto_ZA: '8'
   com/google/i18n/phonenumbers/data/ShortNumberMetadataProto_ZM: '8'
   com/google/i18n/phonenumbers/data/ShortNumberMetadataProto_ZW: '8'
+  google/protobuf/any.proto: '8'
+  google/protobuf/api.proto: '8'
+  google/protobuf/empty.proto: '8'
+  google/protobuf/field_mask.proto: '8'
+  google/protobuf/source_context.proto: '8'
+  google/protobuf/struct.proto: '8'
+  google/protobuf/timestamp.proto: '8'
+  google/protobuf/type.proto: '8'
+  google/protobuf/wrappers.proto: '8'
   okhttp3/internal/publicsuffix/NOTICE: '8'
   okhttp3/internal/publicsuffix/publicsuffixes.gz: '0'
   org/apache/xml/security/resource/config.dtd: '8'
@@ -1754,5 +1802,5 @@ unknownFiles:
   org/jsoup/nodes/entities-base.properties: '8'
   org/jsoup/nodes/entities-full.properties: '8'
 usesFramework: null
-version: 2.4.1
+version: 2.5.0
 versionInfo: null

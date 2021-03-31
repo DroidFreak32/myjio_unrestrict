@@ -21,6 +21,11 @@
 # virtual methods
 .method public final getBooleanFlagValue(Ljava/lang/String;ZI)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/flags/zza;->zza()Landroid/os/Parcel;
@@ -56,6 +61,11 @@
 
 .method public final getIntFlagValue(Ljava/lang/String;II)I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/flags/zza;->zza()Landroid/os/Parcel;
@@ -91,6 +101,11 @@
 
 .method public final getLongFlagValue(Ljava/lang/String;JI)J
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/flags/zza;->zza()Landroid/os/Parcel;
@@ -126,6 +141,11 @@
 
 .method public final getStringFlagValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/flags/zza;->zza()Landroid/os/Parcel;
@@ -161,6 +181,11 @@
 
 .method public final init(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/flags/zza;->zza()Landroid/os/Parcel;

@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public bssid:Ljava/lang/String;
+.field private bssid:Ljava/lang/String;
 
-.field public capabilities:Ljava/lang/String;
+.field private capabilities:Ljava/lang/String;
 
-.field public frequency:Ljava/lang/Integer;
+.field private frequency:Ljava/lang/Integer;
 
-.field public level:Ljava/lang/Integer;
+.field private level:Ljava/lang/Integer;
 
-.field public ssid:Ljava/lang/String;
+.field private ssid:Ljava/lang/String;
 
-.field public timestamp:Ljava/lang/Long;
+.field private timestamp:Ljava/lang/Long;
 
 
 # direct methods
@@ -29,25 +29,61 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/Integer;)V
-    .locals 0
+.method public getBssid()Ljava/lang/String;
+    .locals 1
 
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->frequency:Ljava/lang/Integer;
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->bssid:Ljava/lang/String;
 
-    return-void
+    return-object v0
 .end method
 
-.method public a(Ljava/lang/Long;)V
-    .locals 0
+.method public getCapabilities()Ljava/lang/String;
+    .locals 1
 
-    .line 3
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->timestamp:Ljava/lang/Long;
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->capabilities:Ljava/lang/String;
 
-    return-void
+    return-object v0
 .end method
 
-.method public a(Ljava/lang/String;)V
+.method public getFrequency()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->frequency:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getLevel()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->level:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getSsid()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->ssid:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getTimestamp()Ljava/lang/Long;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->timestamp:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public setBssid(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -56,16 +92,7 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/Integer;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->level:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/String;)V
+.method public setCapabilities(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -74,11 +101,38 @@
     return-void
 .end method
 
-.method public c(Ljava/lang/String;)V
+.method public setFrequency(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->frequency:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setLevel(Ljava/lang/Integer;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->level:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public setSsid(Ljava/lang/String;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->ssid:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setTimestamp(Ljava/lang/Long;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/SdkWifiScanHolder;->timestamp:Ljava/lang/Long;
 
     return-void
 .end method

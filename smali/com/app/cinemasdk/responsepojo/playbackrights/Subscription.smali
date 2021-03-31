@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public isSubscribed:Ljava/lang/Boolean;
+.field private isSubscribed:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

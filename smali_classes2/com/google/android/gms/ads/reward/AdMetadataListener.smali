@@ -1,9 +1,10 @@
 .class public Lcom/google/android/gms/ads/reward/AdMetadataListener;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # annotations
-.annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+.annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
@@ -21,8 +22,6 @@
 # virtual methods
 .method public onAdMetadataChanged()V
     .locals 0
-    .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
-    .end annotation
 
     return-void
 .end method

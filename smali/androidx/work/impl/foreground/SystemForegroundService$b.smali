@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/work/impl/foreground/SystemForegroundService;->a(IILandroid/app/Notification;)V
+    value = Landroidx/work/impl/foreground/SystemForegroundService;->startForeground(IILandroid/app/Notification;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,13 +18,13 @@
 
 
 # instance fields
-.field public final synthetic s:I
+.field public final synthetic a:I
 
-.field public final synthetic t:Landroid/app/Notification;
+.field public final synthetic b:Landroid/app/Notification;
 
-.field public final synthetic u:I
+.field public final synthetic c:I
 
-.field public final synthetic v:Landroidx/work/impl/foreground/SystemForegroundService;
+.field public final synthetic d:Landroidx/work/impl/foreground/SystemForegroundService;
 
 
 # direct methods
@@ -32,13 +32,13 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->v:Landroidx/work/impl/foreground/SystemForegroundService;
+    iput-object p1, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->d:Landroidx/work/impl/foreground/SystemForegroundService;
 
-    iput p2, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->s:I
+    iput p2, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->a:I
 
-    iput-object p3, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->t:Landroid/app/Notification;
+    iput-object p3, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->b:Landroid/app/Notification;
 
-    iput p4, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->u:I
+    iput p4, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,13 +58,13 @@
     if-lt v0, v1, :cond_0
 
     .line 2
-    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->v:Landroidx/work/impl/foreground/SystemForegroundService;
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->d:Landroidx/work/impl/foreground/SystemForegroundService;
 
-    iget v1, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->s:I
+    iget v1, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->a:I
 
-    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->t:Landroid/app/Notification;
+    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->b:Landroid/app/Notification;
 
-    iget v3, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->u:I
+    iget v3, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->c:I
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
 
@@ -72,11 +72,11 @@
 
     .line 3
     :cond_0
-    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->v:Landroidx/work/impl/foreground/SystemForegroundService;
+    iget-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->d:Landroidx/work/impl/foreground/SystemForegroundService;
 
-    iget v1, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->s:I
+    iget v1, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->a:I
 
-    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->t:Landroid/app/Notification;
+    iget-object v2, p0, Landroidx/work/impl/foreground/SystemForegroundService$b;->b:Landroid/app/Notification;
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 

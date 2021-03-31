@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field public downloadSpeed:Ljava/lang/Double;
+.field private downloadSpeed:Ljava/lang/Double;
 
-.field public downloadSpeedStatus:Ljava/lang/String;
+.field private downloadSpeedStatus:Ljava/lang/String;
 
-.field public latency:Ljava/lang/Double;
+.field private latency:Ljava/lang/Double;
 
-.field public latitude:Ljava/lang/Double;
+.field private latitude:Ljava/lang/Double;
 
-.field public longitude:Ljava/lang/Double;
+.field private longitude:Ljava/lang/Double;
 
-.field public nearestServerIP:Ljava/lang/String;
+.field private nearestServerIP:Ljava/lang/String;
 
-.field public serverLocation:Ljava/lang/String;
+.field private serverLocation:Ljava/lang/String;
 
-.field public type:Ljava/lang/String;
+.field private type:Ljava/lang/String;
 
-.field public uploadSpeed:Ljava/lang/Double;
+.field private uploadSpeed:Ljava/lang/Double;
 
-.field public uploadSpeedStatus:Ljava/lang/String;
+.field private uploadSpeedStatus:Ljava/lang/String;
 
 
 # direct methods
@@ -37,7 +37,97 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/Double;)V
+.method public getDownloadSpeed()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->downloadSpeed:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public getDownloadSpeedStatus()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->downloadSpeedStatus:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getLatency()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->latency:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public getLatitude()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->latitude:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public getLongitude()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->longitude:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public getNearestServerIP()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->nearestServerIP:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getServerLocation()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->serverLocation:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUploadSpeed()Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->uploadSpeed:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public getUploadSpeedStatus()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->uploadSpeedStatus:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setDownloadSpeed(Ljava/lang/Double;)V
     .locals 0
 
     .line 1
@@ -46,16 +136,16 @@
     return-void
 .end method
 
-.method public a(Ljava/lang/String;)V
+.method public setDownloadSpeedStatus(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->downloadSpeedStatus:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public b(Ljava/lang/Double;)V
+.method public setLatency(Ljava/lang/Double;)V
     .locals 0
 
     .line 1
@@ -64,25 +154,34 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/String;)V
+.method public setLatitude(Ljava/lang/Double;)V
     .locals 0
 
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->nearestServerIP:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public c(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->latitude:Ljava/lang/Double;
 
     return-void
 .end method
 
-.method public c(Ljava/lang/String;)V
+.method public setLongitude(Ljava/lang/Double;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->longitude:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public setNearestServerIP(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->nearestServerIP:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setServerLocation(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -91,16 +190,7 @@
     return-void
 .end method
 
-.method public d(Ljava/lang/Double;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->longitude:Ljava/lang/Double;
-
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
+.method public setType(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -109,7 +199,7 @@
     return-void
 .end method
 
-.method public e(Ljava/lang/Double;)V
+.method public setUploadSpeed(Ljava/lang/Double;)V
     .locals 0
 
     .line 1
@@ -118,10 +208,10 @@
     return-void
 .end method
 
-.method public e(Ljava/lang/String;)V
+.method public setUploadSpeedStatus(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/BackgroundSpeedTestHolder;->uploadSpeedStatus:Ljava/lang/String;
 
     return-void

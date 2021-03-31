@@ -1,6 +1,9 @@
 .class public Landroidx/databinding/ViewDataBinding$o;
-.super Ljava/lang/ref/WeakReference;
+.super Landroidx/databinding/Observable$OnPropertyChangedCallback;
 .source "ViewDataBinding.java"
+
+# interfaces
+.implements Landroidx/databinding/ViewDataBinding$k;
 
 
 # annotations
@@ -15,165 +18,143 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/ref/WeakReference<",
-        "Landroidx/databinding/ViewDataBinding;",
+        "Landroidx/databinding/Observable$OnPropertyChangedCallback;",
+        "Landroidx/databinding/ViewDataBinding$k<",
+        "Landroidx/databinding/Observable;",
         ">;"
     }
 .end annotation
 
 
 # instance fields
-.field public final a:Landroidx/databinding/ViewDataBinding$l;
+.field public final a:Landroidx/databinding/ViewDataBinding$m;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/databinding/ViewDataBinding$l<",
-            "TT;>;"
-        }
-    .end annotation
-.end field
-
-.field public final b:I
-
-.field public c:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
+            "Landroidx/databinding/ViewDataBinding$m<",
+            "Landroidx/databinding/Observable;",
+            ">;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Landroidx/databinding/ViewDataBinding;ILandroidx/databinding/ViewDataBinding$l;)V
+.method public constructor <init>(Landroidx/databinding/ViewDataBinding;I)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/databinding/ViewDataBinding;",
-            "I",
-            "Landroidx/databinding/ViewDataBinding$l<",
-            "TT;>;)V"
-        }
-    .end annotation
 
     .line 1
-    invoke-static {}, Landroidx/databinding/ViewDataBinding;->access$700()Ljava/lang/ref/ReferenceQueue;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+    invoke-direct {p0}, Landroidx/databinding/Observable$OnPropertyChangedCallback;-><init>()V
 
     .line 2
-    iput p2, p0, Landroidx/databinding/ViewDataBinding$o;->b:I
+    new-instance v0, Landroidx/databinding/ViewDataBinding$m;
 
-    .line 3
-    iput-object p3, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$l;
+    invoke-direct {v0, p1, p2, p0}, Landroidx/databinding/ViewDataBinding$m;-><init>(Landroidx/databinding/ViewDataBinding;ILandroidx/databinding/ViewDataBinding$k;)V
+
+    iput-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$m;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroidx/databinding/ViewDataBinding;
-    .locals 1
-
-    .line 6
-    invoke-virtual {p0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/databinding/ViewDataBinding;
-
-    if-nez v0, :cond_0
-
-    .line 7
-    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding$o;->c()Z
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public a(Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-
-    .line 2
-    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding$o;->c()Z
-
-    .line 3
-    iput-object p1, p0, Landroidx/databinding/ViewDataBinding$o;->c:Ljava/lang/Object;
-
-    .line 4
-    iget-object p1, p0, Landroidx/databinding/ViewDataBinding$o;->c:Ljava/lang/Object;
-
-    if-eqz p1, :cond_0
-
-    .line 5
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$l;
-
-    invoke-interface {v0, p1}, Landroidx/databinding/ViewDataBinding$l;->b(Ljava/lang/Object;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Lvd;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$l;
-
-    invoke-interface {v0, p1}, Landroidx/databinding/ViewDataBinding$l;->a(Lvd;)V
+.method public a(Landroidx/lifecycle/LifecycleOwner;)V
+    .locals 0
 
     return-void
 .end method
 
-.method public b()Ljava/lang/Object;
+.method public bridge synthetic b(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Landroidx/databinding/Observable;
+
+    invoke-virtual {p0, p1}, Landroidx/databinding/ViewDataBinding$o;->f(Landroidx/databinding/Observable;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic c(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Landroidx/databinding/Observable;
+
+    invoke-virtual {p0, p1}, Landroidx/databinding/ViewDataBinding$o;->d(Landroidx/databinding/Observable;)V
+
+    return-void
+.end method
+
+.method public d(Landroidx/databinding/Observable;)V
+    .locals 0
+
+    .line 1
+    invoke-interface {p1, p0}, Landroidx/databinding/Observable;->addOnPropertyChangedCallback(Landroidx/databinding/Observable$OnPropertyChangedCallback;)V
+
+    return-void
+.end method
+
+.method public e()Landroidx/databinding/ViewDataBinding$m;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "()",
+            "Landroidx/databinding/ViewDataBinding$m<",
+            "Landroidx/databinding/Observable;",
+            ">;"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->c:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$m;
 
     return-object v0
 .end method
 
-.method public c()Z
+.method public f(Landroidx/databinding/Observable;)V
+    .locals 0
+
+    .line 1
+    invoke-interface {p1, p0}, Landroidx/databinding/Observable;->removeOnPropertyChangedCallback(Landroidx/databinding/Observable$OnPropertyChangedCallback;)V
+
+    return-void
+.end method
+
+.method public onPropertyChanged(Landroidx/databinding/Observable;I)V
     .locals 2
 
     .line 1
-    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->c:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$m;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding$m;->a()Landroidx/databinding/ViewDataBinding;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
 
     .line 2
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$l;
-
-    invoke-interface {v1, v0}, Landroidx/databinding/ViewDataBinding$l;->a(Ljava/lang/Object;)V
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
     :cond_0
-    const/4 v0, 0x0
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$m;
 
-    :goto_0
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Landroidx/databinding/ViewDataBinding$m;->b()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/databinding/Observable;
+
+    if-eq v1, p1, :cond_1
+
+    return-void
 
     .line 3
-    iput-object v1, p0, Landroidx/databinding/ViewDataBinding$o;->c:Ljava/lang/Object;
+    :cond_1
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding$o;->a:Landroidx/databinding/ViewDataBinding$m;
 
-    return v0
+    iget v1, v1, Landroidx/databinding/ViewDataBinding$m;->b:I
+
+    invoke-static {v0, v1, p1, p2}, Landroidx/databinding/ViewDataBinding;->access$800(Landroidx/databinding/ViewDataBinding;ILjava/lang/Object;I)V
+
+    return-void
 .end method

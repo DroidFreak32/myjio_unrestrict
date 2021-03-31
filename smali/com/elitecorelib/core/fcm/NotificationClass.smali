@@ -7,21 +7,21 @@
 
 
 # instance fields
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public logoID:I
+.field private logoID:I
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public notificationIntent:Landroid/content/Intent;
+.field private notificationIntent:Landroid/content/Intent;
 
-.field public notificationLogo_Id:I
+.field private notificationLogo_Id:I
 
-.field public pi:Landroid/app/PendingIntent;
+.field private pi:Landroid/app/PendingIntent;
 
-.field public task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
-.field public totalNotification:I
+.field private totalNotification:I
 
 
 # direct methods
@@ -150,8 +150,6 @@
 
     iput v4, p0, Lcom/elitecorelib/core/fcm/NotificationClass;->notificationLogo_Id:I
 
-    iget v4, p0, Lcom/elitecorelib/core/fcm/NotificationClass;->notificationLogo_Id:I
-
     if-nez v4, :cond_2
 
     iget v4, p0, Lcom/elitecorelib/core/fcm/NotificationClass;->logoID:I
@@ -165,7 +163,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "small Icon is "
+    const-string/jumbo v8, "small Icon is "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -281,16 +279,16 @@
 
     invoke-virtual {v4, v7, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    new-instance v4, Lq6$f;
+    new-instance v4, Landroidx/core/app/NotificationCompat$InboxStyle;
 
-    invoke-direct {v4}, Lq6$f;-><init>()V
+    invoke-direct {v4}, Landroidx/core/app/NotificationCompat$InboxStyle;-><init>()V
 
     if-nez p1, :cond_4
 
     return-void
 
     :cond_4
-    invoke-static {p1}, Lk30;->c(Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/f;->c(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v7
 
@@ -327,13 +325,11 @@
     move-object v7, p1
 
     :cond_5
-    iget-object v8, p0, Lcom/elitecorelib/core/fcm/NotificationClass;->notificationIntent:Landroid/content/Intent;
+    iget-object v9, p0, Lcom/elitecorelib/core/fcm/NotificationClass;->notificationIntent:Landroid/content/Intent;
 
-    const-string v9, "notificationCount"
+    const-string v10, "notificationCount"
 
-    iget v10, p0, Lcom/elitecorelib/core/fcm/NotificationClass;->totalNotification:I
-
-    invoke-virtual {v8, v9, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v9, v10, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     const-string v8, "You are in jio high speed internet area."
 
@@ -350,7 +346,7 @@
     invoke-virtual {v8, v9, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     :cond_6
-    invoke-static {p1}, Lk30;->c(Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p1}, Lcom/elitecorelib/core/utility/f;->c(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
 
@@ -371,7 +367,7 @@
 
     check-cast v8, Ljava/lang/String;
 
-    invoke-virtual {v4, v8}, Lq6$f;->a(Ljava/lang/CharSequence;)Lq6$f;
+    invoke-virtual {v4, v8}, Landroidx/core/app/NotificationCompat$InboxStyle;->addLine(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$InboxStyle;
 
     goto :goto_3
 
@@ -515,7 +511,7 @@
 
     move-result v6
 
-    invoke-static {v4, v6}, Lx6;->a(Landroid/content/Context;I)I
+    invoke-static {v4, v6}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
     move-result v4
 

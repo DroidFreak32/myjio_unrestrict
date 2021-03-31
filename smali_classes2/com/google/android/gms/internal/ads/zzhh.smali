@@ -1,35 +1,16 @@
 .class public final Lcom/google/android/gms/internal/ads/zzhh;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic zzakk:Lcom/google/android/gms/internal/ads/zzhg;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzhg;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzhh;->zzakk:Lcom/google/android/gms/internal/ads/zzhg;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
+.method public static zza([Lcom/google/android/gms/internal/ads/zzhy;Lcom/google/android/gms/internal/ads/zzoh;Lcom/google/android/gms/internal/ads/zzht;)Lcom/google/android/gms/internal/ads/zzhd;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzhh;->zzakk:Lcom/google/android/gms/internal/ads/zzhg;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzhk;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzhg;->zza(Lcom/google/android/gms/internal/ads/zzhg;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/gms/internal/ads/zzhk;-><init>([Lcom/google/android/gms/internal/ads/zzhy;Lcom/google/android/gms/internal/ads/zzoh;Lcom/google/android/gms/internal/ads/zzht;)V
 
-    return-void
+    return-object v0
 .end method

@@ -21,6 +21,11 @@
 # virtual methods
 .method public final getTile(III)Lcom/google/android/gms/maps/model/Tile;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/maps/zza;->zza()Landroid/os/Parcel;

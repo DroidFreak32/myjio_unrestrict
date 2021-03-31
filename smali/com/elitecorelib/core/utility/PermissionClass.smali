@@ -3,23 +3,23 @@
 
 
 # static fields
-.field public static permissionClass:Lcom/elitecorelib/core/utility/PermissionClass;
+.field private static permissionClass:Lcom/elitecorelib/core/utility/PermissionClass;
 
 
 # instance fields
-.field public final ALL_REQUEST_CONSTANT:I
+.field private final ALL_REQUEST_CONSTANT:I
 
-.field public final MODULE:Ljava/lang/String;
+.field private final MODULE:Ljava/lang/String;
 
-.field public final REQUEST_CONSTANT:I
+.field private final REQUEST_CONSTANT:I
 
-.field public isGranted:Z
+.field private isGranted:Z
 
-.field public final mActivity:Landroid/app/Activity;
+.field private final mActivity:Landroid/app/Activity;
 
-.field public final mListner:Lcom/elitecorelib/core/interfaces/OnPermissionListner;
+.field private final mListner:Lcom/elitecorelib/core/interfaces/OnPermissionListner;
 
-.field public permissions:[Ljava/lang/String;
+.field private permissions:[Ljava/lang/String;
 
 
 # direct methods
@@ -163,11 +163,9 @@
 
     move-result-object v0
 
-    iget-object v1, v0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
-
-    if-eqz v1, :cond_1
-
     iget-object v0, v0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
+
+    if-eqz v0, :cond_1
 
     iput-object v0, p0, Lcom/elitecorelib/core/utility/PermissionClass;->permissions:[Ljava/lang/String;
     :try_end_0
@@ -218,7 +216,7 @@
     :try_start_0
     iget-object v6, p0, Lcom/elitecorelib/core/utility/PermissionClass;->mActivity:Landroid/app/Activity;
 
-    invoke-static {v6, v5}, Lx6;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v6, v5}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v6
 
@@ -413,7 +411,7 @@
 
     iget-object v1, p0, Lcom/elitecorelib/core/utility/PermissionClass;->mActivity:Landroid/app/Activity;
 
-    invoke-static {v1, p1}, Lx6;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v1
 
@@ -448,7 +446,7 @@
     :cond_0
     iget-object v1, p0, Lcom/elitecorelib/core/utility/PermissionClass;->mActivity:Landroid/app/Activity;
 
-    invoke-static {v1, p1}, Li6;->a(Landroid/app/Activity;Ljava/lang/String;)Z
+    invoke-static {v1, p1}, Landroidx/core/app/ActivityCompat;->shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
 
     move-result v1
 
@@ -551,17 +549,17 @@
 
     sget p2, Lcom/elitecore/eliteconnectlibrary/R$string;->setting:I
 
-    new-instance p3, La40;
+    new-instance p3, Lhb;
 
-    invoke-direct {p3, p0}, La40;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;)V
+    invoke-direct {p3, p0}, Lhb;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;)V
 
     invoke-virtual {v3, p2, p3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     sget p2, Lcom/elitecore/eliteconnectlibrary/R$string;->cancel:I
 
-    new-instance p3, Lb40;
+    new-instance p3, Lib;
 
-    invoke-direct {p3, p0, p1}, Lb40;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;Ljava/lang/String;)V
+    invoke-direct {p3, p0, p1}, Lib;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;Ljava/lang/String;)V
 
     invoke-virtual {v3, p2, p3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -599,17 +597,17 @@
 
     sget p2, Lcom/elitecore/eliteconnectlibrary/R$string;->ok:I
 
-    new-instance p3, Ly30;
+    new-instance p3, Lfb;
 
-    invoke-direct {p3, p0, v0, p1}, Ly30;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;Lcom/elitecorelib/core/utility/SharedPreferencesTask;Ljava/lang/String;)V
+    invoke-direct {p3, p0, v0, p1}, Lfb;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;Lcom/elitecorelib/core/utility/SharedPreferencesTask;Ljava/lang/String;)V
 
     invoke-virtual {v3, p2, p3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     sget p2, Lcom/elitecore/eliteconnectlibrary/R$string;->cancel:I
 
-    new-instance p3, Lz30;
+    new-instance p3, Lgb;
 
-    invoke-direct {p3, p0, p1}, Lz30;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;Ljava/lang/String;)V
+    invoke-direct {p3, p0, p1}, Lgb;-><init>(Lcom/elitecorelib/core/utility/PermissionClass;Ljava/lang/String;)V
 
     invoke-virtual {v3, p2, p3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

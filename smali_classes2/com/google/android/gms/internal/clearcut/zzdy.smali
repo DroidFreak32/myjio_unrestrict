@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzna:Lcom/google/android/gms/internal/clearcut/zzdw;
+.field private static final zzna:Lcom/google/android/gms/internal/clearcut/zzdw;
 
-.field public static final zznb:Lcom/google/android/gms/internal/clearcut/zzdw;
+.field private static final zznb:Lcom/google/android/gms/internal/clearcut/zzdw;
 
 
 # direct methods
@@ -43,12 +43,12 @@
     return-object v0
 .end method
 
-.method public static zzcl()Lcom/google/android/gms/internal/clearcut/zzdw;
+.method private static zzcl()Lcom/google/android/gms/internal/clearcut/zzdw;
     .locals 3
 
+    :try_start_0
     const-string v0, "com.google.protobuf.NewInstanceSchemaFull"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

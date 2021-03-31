@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public _accumulator:Ljava/util/List;
+.field private _accumulator:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public _result:Ljava/util/Map;
+.field private _result:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public final _valueType:Ljava/lang/Class;
+.field private final _valueType:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -146,6 +146,11 @@
 
 .method public resolveForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$MapReferringAccumulator;->_accumulator:Ljava/util/List;

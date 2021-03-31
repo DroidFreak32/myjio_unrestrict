@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzdg:Lcom/google/android/gms/internal/maps/zzq;
+.field private final zzdg:Lcom/google/android/gms/internal/maps/zzq;
 
 
 # direct methods
@@ -93,6 +93,8 @@
 
 .method public final getName()Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     :try_start_0
@@ -119,6 +121,8 @@
 
 .method public final getShortName()Ljava/lang/String;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     :try_start_0

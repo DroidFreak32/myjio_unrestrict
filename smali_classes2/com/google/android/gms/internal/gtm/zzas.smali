@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zztc:Ljava/util/Map;
+.field private final zztc:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -14,15 +14,15 @@
     .end annotation
 .end field
 
-.field public final zzut:Ljava/lang/String;
+.field private final zzut:Ljava/lang/String;
 
-.field public final zzww:J
+.field private final zzww:J
 
-.field public final zzwx:Ljava/lang/String;
+.field private final zzwx:Ljava/lang/String;
 
-.field public final zzwy:Z
+.field private final zzwy:Z
 
-.field public zzwz:J
+.field private zzwz:J
 
 
 # direct methods

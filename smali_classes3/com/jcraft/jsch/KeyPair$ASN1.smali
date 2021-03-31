@@ -27,6 +27,11 @@
 # direct methods
 .method public constructor <init>(Lcom/jcraft/jsch/KeyPair;[B)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/KeyPair$ASN1Exception;
+        }
+    .end annotation
 
     .line 1
     array-length v0, p2
@@ -40,6 +45,11 @@
 
 .method public constructor <init>(Lcom/jcraft/jsch/KeyPair;[BII)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/KeyPair$ASN1Exception;
+        }
+    .end annotation
 
     .line 2
     iput-object p1, p0, Lcom/jcraft/jsch/KeyPair$ASN1;->this$0:Lcom/jcraft/jsch/KeyPair;
@@ -159,20 +169,23 @@
     aget v1, v1, v0
 
     .line 4
-    new-array v2, v2, [B
+    new-array v3, v2, [B
 
     .line 5
-    iget-object v3, p0, Lcom/jcraft/jsch/KeyPair$ASN1;->buf:[B
+    iget-object v4, p0, Lcom/jcraft/jsch/KeyPair$ASN1;->buf:[B
 
-    array-length v4, v2
+    invoke-static {v4, v1, v3, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-static {v3, v1, v2, v0, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v2
+    return-object v3
 .end method
 
 .method public getContents()[Lcom/jcraft/jsch/KeyPair$ASN1;
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/jcraft/jsch/KeyPair$ASN1Exception;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/jcraft/jsch/KeyPair$ASN1;->buf:[B

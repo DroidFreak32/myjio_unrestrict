@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public final degrees:Ljava/math/BigDecimal;
+.field private final degrees:Ljava/math/BigDecimal;
 
 
 # direct methods

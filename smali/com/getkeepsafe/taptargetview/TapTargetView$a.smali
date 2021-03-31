@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/getkeepsafe/taptargetview/TapTargetView;-><init>(Landroid/content/Context;Landroid/view/ViewManager;Landroid/view/ViewGroup;Lx50;Lcom/getkeepsafe/taptargetview/TapTargetView$m;)V
+    value = Lcom/getkeepsafe/taptargetview/TapTargetView;-><init>(Landroid/content/Context;Landroid/view/ViewManager;Landroid/view/ViewGroup;Lcom/getkeepsafe/taptargetview/TapTarget;Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+.field public final synthetic a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iput-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,16 +36,16 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 7
+    .locals 8
 
     .line 1
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->E0:Lcom/getkeepsafe/taptargetview/TapTargetView$m;
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->A0:Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:[I
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->n0:[I
 
     if-eqz v0, :cond_5
 
@@ -55,54 +55,54 @@
 
     if-nez p1, :cond_0
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 2
     :cond_0
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->I:Landroid/graphics/Rect;
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->K:Landroid/graphics/Rect;
 
     .line 3
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object v1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v1, v1, Lcom/getkeepsafe/taptargetview/TapTargetView;->I:Landroid/graphics/Rect;
+    iget-object v1, v1, Lcom/getkeepsafe/taptargetview/TapTargetView;->K:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->centerY()I
 
     move-result v1
 
-    iget-object v2, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object v2, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->z0:F
+    iget v3, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->v0:F
 
     float-to-int v3, v3
 
-    iget v2, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->A0:F
+    iget v2, v2, Lcom/getkeepsafe/taptargetview/TapTargetView;->w0:F
 
     float-to-int v2, v2
 
-    invoke-virtual {p1, v0, v1, v3, v2}, Lcom/getkeepsafe/taptargetview/TapTargetView;->a(IIII)D
+    invoke-virtual {p1, v0, v1, v3, v2}, Lcom/getkeepsafe/taptargetview/TapTargetView;->i(IIII)D
 
     move-result-wide v0
 
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->p0:F
+    iget v2, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->r0:F
 
-    float-to-double v2, p1
+    float-to-double v2, v2
 
-    const/4 p1, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    cmpg-double v5, v0, v2
+    cmpg-double v6, v0, v2
 
-    if-gtz v5, :cond_1
+    if-gtz v6, :cond_1
 
     const/4 v0, 0x1
 
@@ -113,88 +113,80 @@
 
     .line 4
     :goto_0
-    iget-object v1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object v1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->n0:[I
 
-    iget-object v2, v1, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:[I
+    aget v2, v1, v5
 
-    aget v3, v2, v4
+    aget v1, v1, v4
 
-    aget v2, v2, p1
+    iget v3, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->v0:F
 
-    iget v5, v1, Lcom/getkeepsafe/taptargetview/TapTargetView;->z0:F
+    float-to-int v3, v3
 
-    float-to-int v5, v5
-
-    iget v6, v1, Lcom/getkeepsafe/taptargetview/TapTargetView;->A0:F
+    iget v6, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->w0:F
 
     float-to-int v6, v6
 
-    invoke-virtual {v1, v3, v2, v5, v6}, Lcom/getkeepsafe/taptargetview/TapTargetView;->a(IIII)D
+    invoke-virtual {p1, v2, v1, v3, v6}, Lcom/getkeepsafe/taptargetview/TapTargetView;->i(IIII)D
 
     move-result-wide v1
 
     .line 5
-    iget-object v3, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget v3, v3, Lcom/getkeepsafe/taptargetview/TapTargetView;->j0:F
+    iget v3, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:F
 
-    float-to-double v5, v3
+    float-to-double v6, v3
 
-    cmpg-double v3, v1, v5
+    cmpg-double v3, v1, v6
 
     if-gtz v3, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    const/4 v4, 0x0
 
     :goto_1
     if-eqz v0, :cond_3
 
     .line 6
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
-
-    invoke-static {p1, v4}, Lcom/getkeepsafe/taptargetview/TapTargetView;->a(Lcom/getkeepsafe/taptargetview/TapTargetView;Z)Z
+    invoke-static {p1, v5}, Lcom/getkeepsafe/taptargetview/TapTargetView;->b(Lcom/getkeepsafe/taptargetview/TapTargetView;Z)Z
 
     .line 7
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->E0:Lcom/getkeepsafe/taptargetview/TapTargetView$m;
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->A0:Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;
 
-    invoke-virtual {v0, p1}, Lcom/getkeepsafe/taptargetview/TapTargetView$m;->c(Lcom/getkeepsafe/taptargetview/TapTargetView;)V
+    invoke-virtual {v0, p1}, Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;->onTargetClick(Lcom/getkeepsafe/taptargetview/TapTargetView;)V
 
     goto :goto_2
 
     :cond_3
-    if-eqz p1, :cond_4
+    if-eqz v4, :cond_4
 
     .line 8
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->A0:Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->E0:Lcom/getkeepsafe/taptargetview/TapTargetView$m;
-
-    invoke-virtual {v0, p1}, Lcom/getkeepsafe/taptargetview/TapTargetView$m;->a(Lcom/getkeepsafe/taptargetview/TapTargetView;)V
+    invoke-virtual {v0, p1}, Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;->onOuterCircleClick(Lcom/getkeepsafe/taptargetview/TapTargetView;)V
 
     goto :goto_2
 
     .line 9
     :cond_4
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
-
-    iget-boolean v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->a0:Z
+    iget-boolean v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->c0:Z
 
     if-eqz v0, :cond_5
 
     .line 10
-    invoke-static {p1, v4}, Lcom/getkeepsafe/taptargetview/TapTargetView;->a(Lcom/getkeepsafe/taptargetview/TapTargetView;Z)Z
+    invoke-static {p1, v5}, Lcom/getkeepsafe/taptargetview/TapTargetView;->b(Lcom/getkeepsafe/taptargetview/TapTargetView;Z)Z
 
     .line 11
-    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->s:Lcom/getkeepsafe/taptargetview/TapTargetView;
+    iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$a;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->E0:Lcom/getkeepsafe/taptargetview/TapTargetView$m;
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->A0:Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;
 
-    invoke-virtual {v0, p1}, Lcom/getkeepsafe/taptargetview/TapTargetView$m;->b(Lcom/getkeepsafe/taptargetview/TapTargetView;)V
+    invoke-virtual {v0, p1}, Lcom/getkeepsafe/taptargetview/TapTargetView$Listener;->onTargetCancel(Lcom/getkeepsafe/taptargetview/TapTargetView;)V
 
     :cond_5
     :goto_2

@@ -75,6 +75,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -469,7 +475,7 @@
         }
     .end annotation
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbv;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzby;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbu;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzby;
 
     move-result-object v0
 
@@ -485,7 +491,7 @@
 
     check-cast v0, Lcom/google/android/gms/internal/clearcut/zzby;
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbv;->zza(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzby;)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbu;->zza(Ljava/lang/Object;Lcom/google/android/gms/internal/clearcut/zzby;)V
 
     :cond_0
     return-object v0
@@ -494,7 +500,7 @@
 .method public final zzc(Ljava/lang/Object;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbv;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzby;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbu;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/clearcut/zzby;
 
     move-result-object p1
 

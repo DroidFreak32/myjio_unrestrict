@@ -4,29 +4,29 @@
 
 
 # instance fields
-.field public final appState:Ljava/lang/String;
+.field private final appState:Ljava/lang/String;
 
-.field public final eventId:Ljava/lang/String;
+.field private final eventId:Ljava/lang/String;
 
-.field public final nativeTime:J
+.field private final nativeTime:J
 
-.field public final nativeViewAttached:Z
+.field private final nativeViewAttached:Z
 
-.field public final nativeViewBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
+.field private final nativeViewBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
-.field public final nativeViewHidden:Z
+.field private final nativeViewHidden:Z
 
-.field public final nativeViewVisibleBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
+.field private final nativeViewVisibleBounds:Lcom/google/ads/interactivemedia/v3/impl/data/v;
 
-.field public final nativeVolume:D
+.field private final nativeVolume:D
 
-.field public final queryId:Ljava/lang/String;
+.field private final queryId:Ljava/lang/String;
 
-.field public final vastEvent:Ljava/lang/String;
+.field private final vastEvent:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JDZZLcom/google/ads/interactivemedia/v3/impl/data/v;Lcom/google/ads/interactivemedia/v3/impl/data/v;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JDZZLcom/google/ads/interactivemedia/v3/impl/data/v;Lcom/google/ads/interactivemedia/v3/impl/data/v;)V
     .locals 0
 
     .line 1
@@ -611,7 +611,7 @@
 
     invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

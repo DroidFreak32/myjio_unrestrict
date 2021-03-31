@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final mCallbacks:Ljava/util/List;
+.field private final mCallbacks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public final mOptionsList:Ljava/util/List;
+.field private final mOptionsList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -86,7 +86,7 @@
 
     check-cast v1, Landroid/os/Bundle;
 
-    invoke-static {v1, p1}, Lxe;->a(Landroid/os/Bundle;Landroid/os/Bundle;)Z
+    invoke-static {v1, p1}, Landroidx/media/MediaBrowserCompatUtils;->areSameOptions(Landroid/os/Bundle;Landroid/os/Bundle;)Z
 
     move-result v1
 
@@ -185,7 +185,7 @@
 
     check-cast v1, Landroid/os/Bundle;
 
-    invoke-static {v1, p1}, Lxe;->a(Landroid/os/Bundle;Landroid/os/Bundle;)Z
+    invoke-static {v1, p1}, Landroidx/media/MediaBrowserCompatUtils;->areSameOptions(Landroid/os/Bundle;Landroid/os/Bundle;)Z
 
     move-result v1
 

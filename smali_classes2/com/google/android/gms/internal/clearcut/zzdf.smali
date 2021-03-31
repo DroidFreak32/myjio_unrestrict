@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public zzma:[Lcom/google/android/gms/internal/clearcut/zzdn;
+.field private zzma:[Lcom/google/android/gms/internal/clearcut/zzdn;
 
 
 # direct methods

@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public final height:I
+.field private final height:I
 
-.field public final left:I
+.field private final left:I
 
-.field public final top:I
+.field private final top:I
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
-.method public constructor <init>(IIII)V
+.method private constructor <init>(IIII)V
     .locals 0
 
     .line 1
@@ -202,7 +202,7 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

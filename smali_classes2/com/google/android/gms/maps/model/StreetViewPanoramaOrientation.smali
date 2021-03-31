@@ -160,6 +160,10 @@
 
 .method public static builder(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;)Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation$Builder;
     .locals 1
+    .param p0    # Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     new-instance v0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation$Builder;

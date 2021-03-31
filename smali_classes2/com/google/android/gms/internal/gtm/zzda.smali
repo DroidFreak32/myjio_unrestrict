@@ -3,19 +3,19 @@
 
 
 # instance fields
-.field public zzaau:Ljava/lang/String;
+.field private zzaau:Ljava/lang/String;
 
-.field public zzaav:Ljava/lang/String;
+.field private zzaav:Ljava/lang/String;
 
 .field public zzaax:I
 
-.field public zzacu:I
+.field private zzacu:I
 
 .field public zzacv:Z
 
-.field public zzacw:Z
+.field private zzacw:Z
 
-.field public zzacx:Z
+.field private zzacx:Z
 
 
 # direct methods
@@ -126,128 +126,119 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     :goto_1
-    if-eqz v1, :cond_2
+    if-eqz v4, :cond_2
 
     .line 12
-    iget-object v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaau:Ljava/lang/String;
-
-    .line 13
     iput-object v1, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzaau:Ljava/lang/String;
 
     const-string v4, "XML config - app name"
 
-    .line 14
+    .line 13
     invoke-virtual {p0, v4, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 15
+    .line 14
     :cond_2
     iget-object v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaav:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     :goto_2
-    if-eqz v1, :cond_4
+    if-eqz v4, :cond_4
 
-    .line 16
-    iget-object v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaav:Ljava/lang/String;
-
-    .line 17
+    .line 15
     iput-object v1, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzaav:Ljava/lang/String;
 
     const-string v4, "XML config - app version"
 
-    .line 18
+    .line 16
     invoke-virtual {p0, v4, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 19
+    .line 17
     :cond_4
     iget-object v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaaw:Ljava/lang/String;
 
     if-eqz v1, :cond_5
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     :goto_3
-    const/4 v4, -0x1
+    const/4 v5, -0x1
 
-    if-eqz v1, :cond_a
+    if-eqz v4, :cond_a
 
-    .line 20
-    iget-object v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaaw:Ljava/lang/String;
+    .line 18
+    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    .line 21
-    sget-object v5, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v1, v4}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v5, "verbose"
+    const-string v4, "verbose"
 
-    .line 22
-    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 19
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_6
+    if-eqz v4, :cond_6
 
     const/4 v1, 0x0
 
     goto :goto_4
 
     :cond_6
-    const-string v5, "info"
+    const-string v4, "info"
 
-    .line 23
-    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 20
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_7
+    if-eqz v4, :cond_7
 
     const/4 v1, 0x1
 
     goto :goto_4
 
     :cond_7
-    const-string v5, "warning"
+    const-string v4, "warning"
 
-    .line 24
-    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 21
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_8
+    if-eqz v4, :cond_8
 
     const/4 v1, 0x2
 
     goto :goto_4
 
     :cond_8
-    const-string v5, "error"
+    const-string v4, "error"
 
-    .line 25
-    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 22
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -263,70 +254,67 @@
     :goto_4
     if-ltz v1, :cond_a
 
-    .line 26
+    .line 23
     iput v1, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzacu:I
 
-    .line 27
+    .line 24
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v5, "XML config - log level"
+    const-string v4, "XML config - log level"
 
-    invoke-virtual {p0, v5, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v4, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zza(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 28
+    .line 25
     :cond_a
     iget v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaax:I
 
     if-ltz v1, :cond_b
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
     goto :goto_5
 
     :cond_b
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     :goto_5
-    if-eqz v1, :cond_c
+    if-eqz v4, :cond_c
 
-    .line 29
-    iget v1, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaax:I
-
-    .line 30
+    .line 26
     iput v1, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzaax:I
 
-    .line 31
+    .line 27
     iput-boolean v3, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzacv:Z
 
-    .line 32
+    .line 28
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v5, "XML config - dispatch period (sec)"
+    const-string v4, "XML config - dispatch period (sec)"
 
-    invoke-virtual {p0, v5, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v4, v1}, Lcom/google/android/gms/internal/gtm/zzam;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 33
+    .line 29
     :cond_c
     iget v0, v0, Lcom/google/android/gms/internal/gtm/zzcc;->zzaay:I
 
-    if-eq v0, v4, :cond_e
+    if-eq v0, v5, :cond_e
 
     if-ne v0, v3, :cond_d
 
     const/4 v2, 0x1
 
-    .line 34
+    .line 30
     :cond_d
     iput-boolean v2, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzacx:Z
 
-    .line 35
+    .line 31
     iput-boolean v3, p0, Lcom/google/android/gms/internal/gtm/zzda;->zzacw:Z
 
-    .line 36
+    .line 32
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0

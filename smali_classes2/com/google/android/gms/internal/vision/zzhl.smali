@@ -1,878 +1,1471 @@
-.class public final Lcom/google/android/gms/internal/vision/zzhl;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/vision/zzhw;
+.class public abstract Lcom/google/android/gms/internal/vision/zzhl;
+.super Lcom/google/android/gms/internal/vision/zzgt;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/vision/zzhw<",
-        "TT;>;"
+        Lcom/google/android/gms/internal/vision/zzhl$zzb;,
+        Lcom/google/android/gms/internal/vision/zzhl$zza;
     }
 .end annotation
 
 
+# static fields
+.field private static final logger:Ljava/util/logging/Logger;
+
+.field private static final zzun:Z
+
+
 # instance fields
-.field public final zzzh:Lcom/google/android/gms/internal/vision/zzhf;
-
-.field public final zzzi:Z
-
-.field public final zzzr:Lcom/google/android/gms/internal/vision/zzio;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/vision/zzio<",
-            "**>;"
-        }
-    .end annotation
-.end field
-
-.field public final zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;"
-        }
-    .end annotation
-.end field
+.field public zzuo:Lcom/google/android/gms/internal/vision/zzhn;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzio;Lcom/google/android/gms/internal/vision/zzfl;Lcom/google/android/gms/internal/vision/zzhf;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/internal/vision/zzio<",
-            "**>;",
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;",
-            "Lcom/google/android/gms/internal/vision/zzhf;",
-            ")V"
-        }
-    .end annotation
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lcom/google/android/gms/internal/vision/zzhl;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzhl;->logger:Ljava/util/logging/Logger;
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
+    invoke-static {}, Lcom/google/android/gms/internal/vision/zzld;->zzje()Z
 
-    .line 3
-    invoke-virtual {p2, p3}, Lcom/google/android/gms/internal/vision/zzfl;->zze(Lcom/google/android/gms/internal/vision/zzhf;)Z
+    move-result v0
 
-    move-result p1
-
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzi:Z
-
-    .line 4
-    iput-object p2, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    .line 5
-    iput-object p3, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzh:Lcom/google/android/gms/internal/vision/zzhf;
+    sput-boolean v0, Lcom/google/android/gms/internal/vision/zzhl;->zzun:Z
 
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/vision/zzio;Lcom/google/android/gms/internal/vision/zzfl;Lcom/google/android/gms/internal/vision/zzhf;)Lcom/google/android/gms/internal/vision/zzhl;
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzgt;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/vision/zzhk;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhl;-><init>()V
+
+    return-void
+.end method
+
+.method public static zza(ILcom/google/android/gms/internal/vision/zzis;)I
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcom/google/android/gms/internal/vision/zzio<",
-            "**>;",
-            "Lcom/google/android/gms/internal/vision/zzfl<",
-            "*>;",
-            "Lcom/google/android/gms/internal/vision/zzhf;",
-            ")",
-            "Lcom/google/android/gms/internal/vision/zzhl<",
-            "TT;>;"
-        }
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 4
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 5
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzis;->zzgz()I
+
+    move-result p1
+
+    .line 6
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p1
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static zza(Lcom/google/android/gms/internal/vision/zzis;)I
+    .locals 1
+
+    .line 7
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzis;->zzgz()I
+
+    move-result p0
+
+    .line 8
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zza(Lcom/google/android/gms/internal/vision/zzjn;Lcom/google/android/gms/internal/vision/zzkf;)I
+    .locals 2
+
+    .line 9
+    check-cast p0, Lcom/google/android/gms/internal/vision/zzge;
+
+    .line 10
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzge;->zzef()I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_0
+
+    .line 11
+    invoke-interface {p1, p0}, Lcom/google/android/gms/internal/vision/zzkf;->zzu(Ljava/lang/Object;)I
+
+    move-result v0
+
+    .line 12
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/vision/zzge;->zzak(I)V
+
+    .line 13
+    :cond_0
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method private static zzaa(J)J
+    .locals 3
+
+    const/4 v0, 0x1
+
+    shl-long v0, p0, v0
+
+    const/16 v2, 0x3f
+
+    shr-long/2addr p0, v2
+
+    xor-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static zzb(D)I
+    .locals 0
+
+    const/16 p0, 0x8
+
+    return p0
+.end method
+
+.method public static zzb(ID)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 3
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x8
+
+    return p0
+.end method
+
+.method public static zzb(IF)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 2
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x4
+
+    return p0
+.end method
+
+.method public static zzb(ILcom/google/android/gms/internal/vision/zzis;)I
+    .locals 2
+
+    const/16 v0, 0x8
+
+    .line 13
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    shl-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x2
+
+    .line 14
+    invoke-static {v1, p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzo(II)I
+
+    move-result p0
+
+    add-int/2addr v0, p0
+
+    const/4 p0, 0x3
+
+    .line 15
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zza(ILcom/google/android/gms/internal/vision/zzis;)I
+
+    move-result p0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzb(ILcom/google/android/gms/internal/vision/zzjn;)I
+    .locals 2
+
+    const/16 v0, 0x8
+
+    .line 9
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    shl-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x2
+
+    .line 10
+    invoke-static {v1, p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzo(II)I
+
+    move-result p0
+
+    add-int/2addr v0, p0
+
+    const/16 p0, 0x18
+
+    .line 11
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 12
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzc(Lcom/google/android/gms/internal/vision/zzjn;)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzb(ILcom/google/android/gms/internal/vision/zzjn;Lcom/google/android/gms/internal/vision/zzkf;)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 7
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 8
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zza(Lcom/google/android/gms/internal/vision/zzjn;Lcom/google/android/gms/internal/vision/zzkf;)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzb(ILjava/lang/String;)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 5
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 6
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzx(Ljava/lang/String;)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzb(IZ)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 4
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x1
+
+    return p0
+.end method
+
+.method public static zzb(Lcom/google/android/gms/internal/vision/zzgs;)I
+    .locals 1
+
+    .line 16
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgs;->size()I
+
+    move-result p0
+
+    .line 17
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzbh(I)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static zzbi(I)I
+    .locals 0
+
+    if-ltz p0, :cond_0
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    const/16 p0, 0xa
+
+    return p0
+.end method
+
+.method public static zzbj(I)I
+    .locals 1
+
+    and-int/lit8 v0, p0, -0x80
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    and-int/lit16 v0, p0, -0x4000
+
+    if-nez v0, :cond_1
+
+    const/4 p0, 0x2
+
+    return p0
+
+    :cond_1
+    const/high16 v0, -0x200000
+
+    and-int/2addr v0, p0
+
+    if-nez v0, :cond_2
+
+    const/4 p0, 0x3
+
+    return p0
+
+    :cond_2
+    const/high16 v0, -0x10000000
+
+    and-int/2addr p0, v0
+
+    if-nez p0, :cond_3
+
+    const/4 p0, 0x4
+
+    return p0
+
+    :cond_3
+    const/4 p0, 0x5
+
+    return p0
+.end method
+
+.method public static zzbk(I)I
+    .locals 0
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbo(I)I
+
+    move-result p0
+
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static zzbl(I)I
+    .locals 0
+
+    const/4 p0, 0x4
+
+    return p0
+.end method
+
+.method public static zzbm(I)I
+    .locals 0
+
+    const/4 p0, 0x4
+
+    return p0
+.end method
+
+.method public static zzbn(I)I
+    .locals 0
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbi(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static zzbo(I)I
+    .locals 1
+
+    shl-int/lit8 v0, p0, 0x1
+
+    shr-int/lit8 p0, p0, 0x1f
+
+    xor-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static zzbp(I)I
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzhl;
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;-><init>(Lcom/google/android/gms/internal/vision/zzio;Lcom/google/android/gms/internal/vision/zzfl;Lcom/google/android/gms/internal/vision/zzhf;)V
+    move-result p0
 
-    return-object v0
+    return p0
+.end method
+
+.method public static zzc(ILcom/google/android/gms/internal/vision/zzgs;)I
+    .locals 1
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzgs;->size()I
+
+    move-result p1
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p1
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static zzc(ILcom/google/android/gms/internal/vision/zzjn;Lcom/google/android/gms/internal/vision/zzkf;)I
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 6
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    shl-int/lit8 p0, p0, 0x1
+
+    .line 7
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzge;
+
+    .line 8
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzge;->zzef()I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_0
+
+    .line 9
+    invoke-interface {p2, p1}, Lcom/google/android/gms/internal/vision/zzkf;->zzu(Ljava/lang/Object;)I
+
+    move-result v0
+
+    .line 10
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/vision/zzge;->zzak(I)V
+
+    :cond_0
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static zzc(Lcom/google/android/gms/internal/vision/zzjn;)I
+    .locals 1
+
+    .line 4
+    invoke-interface {p0}, Lcom/google/android/gms/internal/vision/zzjn;->zzgz()I
+
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzd(IJ)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 2
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzw(J)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzd(ILcom/google/android/gms/internal/vision/zzgs;)I
+    .locals 2
+
+    const/16 v0, 0x8
+
+    .line 3
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    shl-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x2
+
+    .line 4
+    invoke-static {v1, p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzo(II)I
+
+    move-result p0
+
+    add-int/2addr v0, p0
+
+    const/4 p0, 0x3
+
+    .line 5
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzc(ILcom/google/android/gms/internal/vision/zzgs;)I
+
+    move-result p0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzd(Lcom/google/android/gms/internal/vision/zzjn;)I
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 6
+    invoke-interface {p0}, Lcom/google/android/gms/internal/vision/zzjn;->zzgz()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static zze(IJ)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 3
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 4
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzw(J)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zze([B)Lcom/google/android/gms/internal/vision/zzhl;
+    .locals 3
+
+    .line 1
+    array-length v0, p0
+
+    .line 2
+    new-instance v1, Lcom/google/android/gms/internal/vision/zzhl$zzb;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2, v0}, Lcom/google/android/gms/internal/vision/zzhl$zzb;-><init>([BII)V
+
+    return-object v1
+.end method
+
+.method public static zzf(IJ)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 2
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzaa(J)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzw(J)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzf([B)I
+    .locals 1
+
+    .line 3
+    array-length p0, p0
+
+    .line 4
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzg(IJ)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x8
+
+    return p0
+.end method
+
+.method public static synthetic zzgc()Z
+    .locals 1
+
+    .line 1
+    sget-boolean v0, Lcom/google/android/gms/internal/vision/zzhl;->zzun:Z
+
+    return v0
+.end method
+
+.method public static zzh(IJ)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x8
+
+    return p0
+.end method
+
+.method public static zzl(Z)I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static zzn(II)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbi(I)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzo(II)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzp(II)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbo(I)I
+
+    move-result p1
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzq(II)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x4
+
+    return p0
+.end method
+
+.method public static zzr(II)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 1
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    add-int/lit8 p0, p0, 0x4
+
+    return p0
+.end method
+
+.method public static zzs(II)I
+    .locals 0
+
+    shl-int/lit8 p0, p0, 0x3
+
+    .line 2
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result p0
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbi(I)I
+
+    move-result p1
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static zzt(F)I
+    .locals 0
+
+    const/4 p0, 0x4
+
+    return p0
+.end method
+
+.method public static zzv(J)I
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzw(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static zzw(J)I
+    .locals 6
+
+    const-wide/16 v0, -0x80
+
+    and-long/2addr v0, p0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    cmp-long v0, p0, v2
+
+    if-gez v0, :cond_1
+
+    const/16 p0, 0xa
+
+    return p0
+
+    :cond_1
+    const-wide v0, -0x800000000L
+
+    and-long/2addr v0, p0
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_2
+
+    const/4 v0, 0x6
+
+    const/16 v1, 0x1c
+
+    ushr-long/2addr p0, v1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x2
+
+    :goto_0
+    const-wide/32 v4, -0x200000
+
+    and-long/2addr v4, p0
+
+    cmp-long v1, v4, v2
+
+    if-eqz v1, :cond_3
+
+    add-int/lit8 v0, v0, 0x2
+
+    const/16 v1, 0xe
+
+    ushr-long/2addr p0, v1
+
+    :cond_3
+    const-wide/16 v4, -0x4000
+
+    and-long/2addr p0, v4
+
+    cmp-long v1, p0, v2
+
+    if-eqz v1, :cond_4
+
+    add-int/lit8 v0, v0, 0x1
+
+    :cond_4
+    return v0
+.end method
+
+.method public static zzx(J)I
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzaa(J)J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzw(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static zzx(Ljava/lang/String;)I
+    .locals 1
+
+    .line 2
+    :try_start_0
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzlf;->zza(Ljava/lang/CharSequence;)I
+
+    move-result p0
+    :try_end_0
+    .catch Lcom/google/android/gms/internal/vision/zzlj; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 3
+    :catch_0
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzie;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object p0
+
+    .line 4
+    array-length p0, p0
+
+    .line 5
+    :goto_0
+    invoke-static {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzbj(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static zzy(J)I
+    .locals 0
+
+    const/16 p0, 0x8
+
+    return p0
+.end method
+
+.method public static zzz(J)I
+    .locals 0
+
+    const/16 p0, 0x8
+
+    return p0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract writeTag(II)V
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(TT;TT;)Z"
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public final zza(D)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 3
+    invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
+
+    move-result-wide p1
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzu(J)V
+
+    return-void
+.end method
+
+.method public final zza(ID)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 2
+    invoke-static {p2, p3}, Ljava/lang/Double;->doubleToRawLongBits(D)J
+
+    move-result-wide p2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/vision/zzhl;->zzc(IJ)V
+
+    return-void
+.end method
+
+.method public final zza(IF)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
+    invoke-static {p2}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzio;->zzt(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result p2
 
-    move-result-object v0
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzm(II)V
 
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
+    return-void
+.end method
 
-    invoke-virtual {v1, p2}, Lcom/google/android/gms/internal/vision/zzio;->zzt(Ljava/lang/Object;)Ljava/lang/Object;
+.method public abstract zza(IJ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    move-result-object v1
+.method public abstract zza(ILcom/google/android/gms/internal/vision/zzgs;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    .line 3
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+.method public abstract zza(ILcom/google/android/gms/internal/vision/zzjn;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zza(ILcom/google/android/gms/internal/vision/zzjn;Lcom/google/android/gms/internal/vision/zzkf;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zza(ILjava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zza(IZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zza(Lcom/google/android/gms/internal/vision/zzgs;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public final zza(Ljava/lang/String;Lcom/google/android/gms/internal/vision/zzlj;)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 14
+    sget-object v0, Lcom/google/android/gms/internal/vision/zzhl;->logger:Ljava/util/logging/Logger;
+
+    sget-object v1, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+
+    const-string v2, "com.google.protobuf.CodedOutputStream"
+
+    const-string v3, "inefficientWriteStringNoTag"
+
+    const-string v4, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!"
+
+    move-object v5, p2
+
+    invoke-virtual/range {v0 .. v5}, Ljava/util/logging/Logger;->logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 15
+    sget-object p2, Lcom/google/android/gms/internal/vision/zzie;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object p1
+
+    .line 16
+    :try_start_0
+    array-length p2, p1
+
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzbe(I)V
+
+    const/4 p2, 0x0
+
+    .line 17
+    array-length v0, p1
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/gms/internal/vision/zzgt;->zzc([BII)V
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lcom/google/android/gms/internal/vision/zzhl$zza; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    .line 18
+    throw p1
+
+    :catch_1
+    move-exception p1
+
+    .line 19
+    new-instance p2, Lcom/google/android/gms/internal/vision/zzhl$zza;
+
+    invoke-direct {p2, p1}, Lcom/google/android/gms/internal/vision/zzhl$zza;-><init>(Ljava/lang/Throwable;)V
+
+    throw p2
+.end method
+
+.method public final zzb(IJ)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p2, p3}, Lcom/google/android/gms/internal/vision/zzhl;->zzaa(J)J
+
+    move-result-wide p2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/vision/zzhl;->zza(IJ)V
+
+    return-void
+.end method
+
+.method public abstract zzb(ILcom/google/android/gms/internal/vision/zzgs;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzb(Lcom/google/android/gms/internal/vision/zzjn;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzbd(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzbe(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public final zzbf(I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbo(I)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbe(I)V
+
+    return-void
+.end method
+
+.method public abstract zzbg(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzc(B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzc(IJ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zze([BII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract zzga()I
+.end method
+
+.method public final zzgb()V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzhl;->zzga()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    const/4 p1, 0x0
+    return-void
 
-    return p1
-
-    .line 4
+    .line 2
     :cond_0
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzi:Z
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    if-eqz v0, :cond_1
+    const-string v1, "Did not write as much data as expected."
 
-    .line 5
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
+    throw v0
+.end method
 
-    move-result-object p1
+.method public abstract zzj(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    .line 6
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
+.method public abstract zzk(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    invoke-virtual {v0, p2}, Lcom/google/android/gms/internal/vision/zzfl;->zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
+.method public final zzk(Z)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    move-result-object p2
+    int-to-byte p1, p1
 
-    .line 7
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/vision/zzfp;->equals(Ljava/lang/Object;)Z
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzc(B)V
+
+    return-void
+.end method
+
+.method public final zzl(II)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzbo(I)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzk(II)V
+
+    return-void
+.end method
+
+.method public abstract zzm(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public final zzs(F)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     move-result p1
 
-    return p1
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzhl;->zzbg(I)V
 
-    :cond_1
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method
 
-.method public final hashCode(Ljava/lang/Object;)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract zzs(J)V
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(TT;)I"
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public final zzt(J)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
+    invoke-static {p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzaa(J)J
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzio;->zzt(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-wide p1
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    .line 2
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzi:Z
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
-
-    move-result-object p1
-
-    mul-int/lit8 v0, v0, 0x35
-
-    .line 4
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzfp;->hashCode()I
-
-    move-result p1
-
-    add-int/2addr v0, p1
-
-    :cond_0
-    return v0
-.end method
-
-.method public final newInstance()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzh:Lcom/google/android/gms/internal/vision/zzhf;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzhf;->zzfa()Lcom/google/android/gms/internal/vision/zzhg;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/vision/zzhg;->zzff()Lcom/google/android/gms/internal/vision/zzhf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final zza(Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzhv;Lcom/google/android/gms/internal/vision/zzfk;)V
-    .locals 10
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;",
-            "Lcom/google/android/gms/internal/vision/zzhv;",
-            "Lcom/google/android/gms/internal/vision/zzfk;",
-            ")V"
-        }
-    .end annotation
-
-    .line 32
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    .line 33
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzio;->zzu(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 34
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zzd(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
-
-    move-result-object v3
-
-    .line 35
-    :cond_0
-    :try_start_0
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->zzcn()I
-
-    move-result v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const v5, 0x7fffffff
-
-    if-ne v4, v5, :cond_1
-
-    .line 36
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/internal/vision/zzio;->zzf(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhl;->zzs(J)V
 
     return-void
-
-    .line 37
-    :cond_1
-    :try_start_1
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->getTag()I
-
-    move-result v4
-
-    const/16 v6, 0xb
-
-    if-eq v4, v6, :cond_4
-
-    and-int/lit8 v5, v4, 0x7
-
-    const/4 v6, 0x2
-
-    if-ne v5, v6, :cond_3
-
-    .line 38
-    iget-object v5, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzh:Lcom/google/android/gms/internal/vision/zzhf;
-
-    ushr-int/lit8 v4, v4, 0x3
-
-    .line 39
-    invoke-virtual {v1, p3, v5, v4}, Lcom/google/android/gms/internal/vision/zzfl;->zza(Lcom/google/android/gms/internal/vision/zzfk;Lcom/google/android/gms/internal/vision/zzhf;I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_2
-
-    .line 40
-    invoke-virtual {v1, p2, v4, p3, v3}, Lcom/google/android/gms/internal/vision/zzfl;->zza(Lcom/google/android/gms/internal/vision/zzhv;Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzfk;Lcom/google/android/gms/internal/vision/zzfp;)V
-
-    goto :goto_1
-
-    .line 41
-    :cond_2
-    invoke-virtual {v0, v2, p2}, Lcom/google/android/gms/internal/vision/zzio;->zza(Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzhv;)Z
-
-    move-result v4
-
-    goto :goto_2
-
-    .line 42
-    :cond_3
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->zzco()Z
-
-    move-result v4
-
-    goto :goto_2
-
-    :cond_4
-    const/4 v4, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v7, v6
-
-    .line 43
-    :cond_5
-    :goto_0
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->zzcn()I
-
-    move-result v8
-
-    if-eq v8, v5, :cond_9
-
-    .line 44
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->getTag()I
-
-    move-result v8
-
-    const/16 v9, 0x10
-
-    if-ne v8, v9, :cond_6
-
-    .line 45
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->zzcx()I
-
-    move-result v4
-
-    .line 46
-    iget-object v6, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzh:Lcom/google/android/gms/internal/vision/zzhf;
-
-    .line 47
-    invoke-virtual {v1, p3, v6, v4}, Lcom/google/android/gms/internal/vision/zzfl;->zza(Lcom/google/android/gms/internal/vision/zzfk;Lcom/google/android/gms/internal/vision/zzhf;I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    goto :goto_0
-
-    :cond_6
-    const/16 v9, 0x1a
-
-    if-ne v8, v9, :cond_8
-
-    if-eqz v6, :cond_7
-
-    .line 48
-    invoke-virtual {v1, p2, v6, p3, v3}, Lcom/google/android/gms/internal/vision/zzfl;->zza(Lcom/google/android/gms/internal/vision/zzhv;Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzfk;Lcom/google/android/gms/internal/vision/zzfp;)V
-
-    goto :goto_0
-
-    .line 49
-    :cond_7
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->zzcw()Lcom/google/android/gms/internal/vision/zzeo;
-
-    move-result-object v7
-
-    goto :goto_0
-
-    .line 50
-    :cond_8
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->zzco()Z
-
-    move-result v8
-
-    if-nez v8, :cond_5
-
-    .line 51
-    :cond_9
-    invoke-interface {p2}, Lcom/google/android/gms/internal/vision/zzhv;->getTag()I
-
-    move-result v5
-
-    const/16 v8, 0xc
-
-    if-ne v5, v8, :cond_c
-
-    if-eqz v7, :cond_b
-
-    if-eqz v6, :cond_a
-
-    .line 52
-    invoke-virtual {v1, v7, v6, p3, v3}, Lcom/google/android/gms/internal/vision/zzfl;->zza(Lcom/google/android/gms/internal/vision/zzeo;Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzfk;Lcom/google/android/gms/internal/vision/zzfp;)V
-
-    goto :goto_1
-
-    .line 53
-    :cond_a
-    invoke-virtual {v0, v2, v4, v7}, Lcom/google/android/gms/internal/vision/zzio;->zza(Ljava/lang/Object;ILcom/google/android/gms/internal/vision/zzeo;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_b
-    :goto_1
-    const/4 v4, 0x1
-
-    :goto_2
-    if-nez v4, :cond_0
-
-    .line 54
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/internal/vision/zzio;->zzf(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-void
-
-    .line 55
-    :cond_c
-    :try_start_2
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzgf;->zzfl()Lcom/google/android/gms/internal/vision/zzgf;
-
-    move-result-object p2
-
-    throw p2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :catchall_0
-    move-exception p2
-
-    .line 56
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/internal/vision/zzio;->zzf(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    throw p2
 .end method
 
-.method public final zza(Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzjj;)V
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract zzu(J)V
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(TT;",
-            "Lcom/google/android/gms/internal/vision/zzjj;",
-            ")V"
+            Ljava/io/IOException;
         }
     .end annotation
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
-
-    move-result-object v0
-
-    .line 3
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzfp;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .line 4
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 5
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Map$Entry;
-
-    .line 6
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/internal/vision/zzfr;
-
-    .line 7
-    invoke-interface {v2}, Lcom/google/android/gms/internal/vision/zzfr;->zzet()Lcom/google/android/gms/internal/vision/zzji;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/gms/internal/vision/zzji;->zzacx:Lcom/google/android/gms/internal/vision/zzji;
-
-    if-ne v3, v4, :cond_1
-
-    invoke-interface {v2}, Lcom/google/android/gms/internal/vision/zzfr;->zzeu()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    invoke-interface {v2}, Lcom/google/android/gms/internal/vision/zzfr;->zzev()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    .line 8
-    instance-of v3, v1, Lcom/google/android/gms/internal/vision/zzgk;
-
-    if-eqz v3, :cond_0
-
-    .line 9
-    invoke-interface {v2}, Lcom/google/android/gms/internal/vision/zzfr;->zzr()I
-
-    move-result v2
-
-    check-cast v1, Lcom/google/android/gms/internal/vision/zzgk;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzgk;->zzfs()Lcom/google/android/gms/internal/vision/zzgi;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzgm;->zzce()Lcom/google/android/gms/internal/vision/zzeo;
-
-    move-result-object v1
-
-    .line 10
-    invoke-interface {p2, v2, v1}, Lcom/google/android/gms/internal/vision/zzjj;->zza(ILjava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 11
-    :cond_0
-    invoke-interface {v2}, Lcom/google/android/gms/internal/vision/zzfr;->zzr()I
-
-    move-result v2
-
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p2, v2, v1}, Lcom/google/android/gms/internal/vision/zzjj;->zza(ILjava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 12
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "Found invalid MessageSet item."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 13
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
-
-    .line 14
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzio;->zzt(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/vision/zzio;->zzc(Ljava/lang/Object;Lcom/google/android/gms/internal/vision/zzjj;)V
-
-    return-void
 .end method
 
-.method public final zza(Ljava/lang/Object;[BIILcom/google/android/gms/internal/vision/zzei;)V
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
+.method public abstract zzw(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(TT;[BII",
-            "Lcom/google/android/gms/internal/vision/zzei;",
-            ")V"
+            Ljava/io/IOException;
         }
     .end annotation
-
-    .line 15
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzfy;
-
-    iget-object v0, p1, Lcom/google/android/gms/internal/vision/zzfy;->zzwj:Lcom/google/android/gms/internal/vision/zzip;
-
-    .line 16
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzip;->zzhe()Lcom/google/android/gms/internal/vision/zzip;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    .line 17
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzip;->zzhf()Lcom/google/android/gms/internal/vision/zzip;
-
-    move-result-object v0
-
-    .line 18
-    iput-object v0, p1, Lcom/google/android/gms/internal/vision/zzfy;->zzwj:Lcom/google/android/gms/internal/vision/zzip;
-
-    :cond_0
-    move-object p1, v0
-
-    :goto_0
-    if-ge p3, p4, :cond_8
-
-    .line 19
-    invoke-static {p2, p3, p5}, Lcom/google/android/gms/internal/vision/zzeh;->zza([BILcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result v2
-
-    .line 20
-    iget v0, p5, Lcom/google/android/gms/internal/vision/zzei;->zzro:I
-
-    const/16 p3, 0xb
-
-    const/4 v1, 0x2
-
-    if-eq v0, p3, :cond_2
-
-    and-int/lit8 p3, v0, 0x7
-
-    if-ne p3, v1, :cond_1
-
-    move-object v1, p2
-
-    move v3, p4
-
-    move-object v4, p1
-
-    move-object v5, p5
-
-    .line 21
-    invoke-static/range {v0 .. v5}, Lcom/google/android/gms/internal/vision/zzeh;->zza(I[BIILcom/google/android/gms/internal/vision/zzip;Lcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result p3
-
-    goto :goto_0
-
-    .line 22
-    :cond_1
-    invoke-static {v0, p2, v2, p4, p5}, Lcom/google/android/gms/internal/vision/zzeh;->zza(I[BIILcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result p3
-
-    goto :goto_0
-
-    :cond_2
-    const/4 p3, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_1
-    if-ge v2, p4, :cond_6
-
-    .line 23
-    invoke-static {p2, v2, p5}, Lcom/google/android/gms/internal/vision/zzeh;->zza([BILcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result v2
-
-    .line 24
-    iget v3, p5, Lcom/google/android/gms/internal/vision/zzei;->zzro:I
-
-    ushr-int/lit8 v4, v3, 0x3
-
-    and-int/lit8 v5, v3, 0x7
-
-    if-eq v4, v1, :cond_4
-
-    const/4 v6, 0x3
-
-    if-eq v4, v6, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    if-ne v5, v1, :cond_5
-
-    .line 25
-    invoke-static {p2, v2, p5}, Lcom/google/android/gms/internal/vision/zzeh;->zze([BILcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result v2
-
-    .line 26
-    iget-object v0, p5, Lcom/google/android/gms/internal/vision/zzei;->zzrq:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/gms/internal/vision/zzeo;
-
-    goto :goto_1
-
-    :cond_4
-    if-nez v5, :cond_5
-
-    .line 27
-    invoke-static {p2, v2, p5}, Lcom/google/android/gms/internal/vision/zzeh;->zza([BILcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result v2
-
-    .line 28
-    iget p3, p5, Lcom/google/android/gms/internal/vision/zzei;->zzro:I
-
-    goto :goto_1
-
-    :cond_5
-    :goto_2
-    const/16 v4, 0xc
-
-    if-eq v3, v4, :cond_6
-
-    .line 29
-    invoke-static {v3, p2, v2, p4, p5}, Lcom/google/android/gms/internal/vision/zzeh;->zza(I[BIILcom/google/android/gms/internal/vision/zzei;)I
-
-    move-result v2
-
-    goto :goto_1
-
-    :cond_6
-    if-eqz v0, :cond_7
-
-    shl-int/lit8 p3, p3, 0x3
-
-    or-int/2addr p3, v1
-
-    .line 30
-    invoke-virtual {p1, p3, v0}, Lcom/google/android/gms/internal/vision/zzip;->zzb(ILjava/lang/Object;)V
-
-    :cond_7
-    move p3, v2
-
-    goto :goto_0
-
-    :cond_8
-    if-ne p3, p4, :cond_9
-
-    return-void
-
-    .line 31
-    :cond_9
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzgf;->zzfo()Lcom/google/android/gms/internal/vision/zzgf;
-
-    move-result-object p1
-
-    throw p1
-.end method
-
-.method public final zzc(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;)V"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
-
-    invoke-static {v0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhy;->zza(Lcom/google/android/gms/internal/vision/zzio;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 2
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzi:Z
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    invoke-static {v0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhy;->zza(Lcom/google/android/gms/internal/vision/zzfl;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final zze(Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzio;->zze(Ljava/lang/Object;)V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zze(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final zzp(Ljava/lang/Object;)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)I"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzr:Lcom/google/android/gms/internal/vision/zzio;
-
-    .line 2
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzio;->zzt(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 3
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/vision/zzio;->zzv(Ljava/lang/Object;)I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x0
-
-    .line 4
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzi:Z
-
-    if-eqz v1, :cond_0
-
-    .line 5
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzfp;->zzer()I
-
-    move-result p1
-
-    add-int/2addr v0, p1
-
-    :cond_0
-    return v0
-.end method
-
-.method public final zzr(Ljava/lang/Object;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)Z"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhl;->zzzs:Lcom/google/android/gms/internal/vision/zzfl;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/vision/zzfl;->zzc(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzfp;
-
-    move-result-object p1
-
-    .line 2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzfp;->isInitialized()Z
-
-    move-result p1
-
-    return p1
 .end method

@@ -4,18 +4,22 @@
 
 
 # static fields
-.field public static final END_OF_STREAM:I = -0x1
+.field private static final END_OF_STREAM:I = -0x1
 
-.field public static final UNSET:I = -0x80000000
+.field private static final UNSET:I = -0x80000000
 
 
 # instance fields
-.field public availableBytes:I
+.field private availableBytes:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
     .locals 0
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
@@ -90,6 +94,11 @@
 # virtual methods
 .method public available()I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/util/MarkEnforcingInputStream;->availableBytes:I
@@ -147,6 +156,11 @@
 
 .method public read()I
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const-wide/16 v0, 0x1
 
@@ -179,6 +193,15 @@
 
 .method public read([BII)I
     .locals 2
+    .param p1    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     int-to-long v0, p3
 
@@ -211,6 +234,11 @@
 
 .method public declared-synchronized reset()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -240,6 +268,11 @@
 
 .method public skip(J)J
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/bumptech/glide/util/MarkEnforcingInputStream;->getBytesToRead(J)J

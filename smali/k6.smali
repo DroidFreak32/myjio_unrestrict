@@ -1,678 +1,246 @@
-.class public final Lk6;
+.class public Lk6;
 .super Ljava/lang/Object;
-.source "ActivityRecreator.java"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lk6$d;
-    }
-.end annotation
+.source "AndroidResources.java"
 
 
 # static fields
-.field public static final a:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "*>;"
-        }
-    .end annotation
-.end field
+.field public static final a:[I
 
-.field public static final b:Ljava/lang/reflect/Field;
+.field public static final b:[I
 
-.field public static final c:Ljava/lang/reflect/Field;
+.field public static final c:[I
 
-.field public static final d:Ljava/lang/reflect/Method;
+.field public static final d:[I
 
-.field public static final e:Ljava/lang/reflect/Method;
+.field public static final e:[I
 
-.field public static final f:Ljava/lang/reflect/Method;
+.field public static final f:[I
 
-.field public static final g:Landroid/os/Handler;
+.field public static final g:[I
+
+.field public static final h:[I
+
+.field public static final i:[I
+
+.field public static final j:[I
+
+.field public static final k:[I
+
+.field public static final l:[I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    sput-object v0, Lk6;->g:Landroid/os/Handler;
-
-    .line 2
-    invoke-static {}, Lk6;->a()Ljava/lang/Class;
-
-    move-result-object v0
-
-    sput-object v0, Lk6;->a:Ljava/lang/Class;
-
-    .line 3
-    invoke-static {}, Lk6;->b()Ljava/lang/reflect/Field;
-
-    move-result-object v0
-
-    sput-object v0, Lk6;->b:Ljava/lang/reflect/Field;
-
-    .line 4
-    invoke-static {}, Lk6;->c()Ljava/lang/reflect/Field;
-
-    move-result-object v0
-
-    sput-object v0, Lk6;->c:Ljava/lang/reflect/Field;
-
-    .line 5
-    sget-object v0, Lk6;->a:Ljava/lang/Class;
-
-    invoke-static {v0}, Lk6;->b(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lk6;->d:Ljava/lang/reflect/Method;
-
-    .line 6
-    sget-object v0, Lk6;->a:Ljava/lang/Class;
-
-    invoke-static {v0}, Lk6;->a(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lk6;->e:Ljava/lang/reflect/Method;
-
-    .line 7
-    sget-object v0, Lk6;->a:Ljava/lang/Class;
-
-    invoke-static {v0}, Lk6;->c(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lk6;->f:Ljava/lang/reflect/Method;
-
-    return-void
-.end method
-
-.method public static a()Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "*>;"
-        }
-    .end annotation
-
-    const-string v0, "android.app.ActivityThread"
-
-    .line 22
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v0
-
-    :catchall_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public static a(Ljava/lang/Class;)Ljava/lang/reflect/Method;
     .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)",
-            "Ljava/lang/reflect/Method;"
-        }
-    .end annotation
 
-    const/4 v0, 0x0
+    const/16 v0, 0x9
 
-    if-nez p0, :cond_0
-
-    return-object v0
-
-    :cond_0
-    :try_start_0
-    const-string v1, "performStopActivity"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    const/4 v3, 0x0
-
-    .line 20
-    const-class v4, Landroid/os/IBinder;
-
-    aput-object v4, v2, v3
-
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x1
-
-    aput-object v3, v2, v4
-
-    invoke-virtual {p0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object p0
-
-    .line 21
-    invoke-virtual {p0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object p0
-
-    :catchall_0
-    return-object v0
-.end method
-
-.method public static a(Landroid/app/Activity;)Z
-    .locals 9
+    new-array v0, v0, [I
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    fill-array-data v0, :array_0
 
-    const/4 v1, 0x1
-
-    const/16 v2, 0x1c
-
-    if-lt v0, v2, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Landroid/app/Activity;->recreate()V
-
-    return v1
-
-    .line 3
-    :cond_0
-    invoke-static {}, Lk6;->d()Z
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_1
-
-    sget-object v0, Lk6;->f:Ljava/lang/reflect/Method;
-
-    if-nez v0, :cond_1
-
-    return v2
-
-    .line 4
-    :cond_1
-    sget-object v0, Lk6;->e:Ljava/lang/reflect/Method;
-
-    if-nez v0, :cond_2
-
-    sget-object v0, Lk6;->d:Ljava/lang/reflect/Method;
-
-    if-nez v0, :cond_2
-
-    return v2
-
-    .line 5
-    :cond_2
-    :try_start_0
-    sget-object v0, Lk6;->c:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    return v2
-
-    .line 6
-    :cond_3
-    sget-object v3, Lk6;->b:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v3, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-nez v3, :cond_4
-
-    return v2
-
-    .line 7
-    :cond_4
-    invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
-
-    move-result-object v4
-
-    .line 8
-    new-instance v5, Lk6$d;
-
-    invoke-direct {v5, p0}, Lk6$d;-><init>(Landroid/app/Activity;)V
-
-    .line 9
-    invoke-virtual {v4, v5}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
-
-    .line 10
-    sget-object v6, Lk6;->g:Landroid/os/Handler;
-
-    new-instance v7, Lk6$a;
-
-    invoke-direct {v7, v5, v0}, Lk6$a;-><init>(Lk6$d;Ljava/lang/Object;)V
-
-    invoke-virtual {v6, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 11
-    :try_start_1
-    invoke-static {}, Lk6;->d()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    .line 12
-    sget-object p0, Lk6;->f:Ljava/lang/reflect/Method;
-
-    const/16 v6, 0x9
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    aput-object v0, v6, v2
-
-    const/4 v0, 0x0
-
-    aput-object v0, v6, v1
-
-    const/4 v7, 0x2
-
-    aput-object v0, v6, v7
-
-    const/4 v7, 0x3
-
-    .line 13
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x4
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v8
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x5
-
-    aput-object v0, v6, v7
-
-    const/4 v7, 0x6
-
-    aput-object v0, v6, v7
-
-    const/4 v0, 0x7
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v7
-
-    aput-object v7, v6, v0
+    sput-object v0, Lk6;->a:[I
 
     const/16 v0, 0x8
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v7
-
-    aput-object v7, v6, v0
-
-    .line 14
-    invoke-virtual {p0, v3, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 15
-    :cond_5
-    invoke-virtual {p0}, Landroid/app/Activity;->recreate()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 16
-    :goto_0
-    :try_start_2
-    sget-object p0, Lk6;->g:Landroid/os/Handler;
-
-    new-instance v0, Lk6$b;
-
-    invoke-direct {v0, v4, v5}, Lk6$b;-><init>(Landroid/app/Application;Lk6$d;)V
-
-    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return v1
-
-    :catchall_0
-    move-exception p0
-
-    sget-object v0, Lk6;->g:Landroid/os/Handler;
-
-    new-instance v1, Lk6$b;
-
-    invoke-direct {v1, v4, v5}, Lk6$b;-><init>(Landroid/app/Application;Lk6$d;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    throw p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :catchall_1
-    return v2
-.end method
-
-.method public static a(Ljava/lang/Object;Landroid/app/Activity;)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    .line 17
-    :try_start_0
-    sget-object v1, Lk6;->c:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v1, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eq v1, p0, :cond_0
-
-    return v0
-
-    .line 18
-    :cond_0
-    sget-object p0, Lk6;->b:Ljava/lang/reflect/Field;
-
-    invoke-virtual {p0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    .line 19
-    sget-object p1, Lk6;->g:Landroid/os/Handler;
-
-    new-instance v2, Lk6$c;
-
-    invoke-direct {v2, p0, v1}, Lk6$c;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {p1, v2}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :catchall_0
-    return v0
-.end method
-
-.method public static b()Ljava/lang/reflect/Field;
-    .locals 2
-
-    .line 3
-    :try_start_0
-    const-class v0, Landroid/app/Activity;
-
-    const-string v1, "mMainThread"
-
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    .line 4
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v0
-
-    :catchall_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public static b(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)",
-            "Ljava/lang/reflect/Method;"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_0
-
-    return-object v0
-
-    :cond_0
-    :try_start_0
-    const-string v1, "performStopActivity"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    const/4 v3, 0x0
-
-    .line 1
-    const-class v4, Landroid/os/IBinder;
-
-    aput-object v4, v2, v3
-
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x1
-
-    aput-object v3, v2, v4
-
-    const/4 v3, 0x2
-
-    const-class v5, Ljava/lang/String;
-
-    aput-object v5, v2, v3
-
-    invoke-virtual {p0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object p0
+    new-array v1, v0, [I
 
     .line 2
-    invoke-virtual {p0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    fill-array-data v1, :array_1
 
-    return-object p0
+    sput-object v1, Lk6;->b:[I
 
-    :catchall_0
-    return-object v0
-.end method
+    const/16 v1, 0xe
 
-.method public static c()Ljava/lang/reflect/Field;
-    .locals 2
+    new-array v1, v1, [I
+
+    .line 3
+    fill-array-data v1, :array_2
+
+    sput-object v1, Lk6;->c:[I
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [I
 
     .line 4
-    :try_start_0
-    const-class v0, Landroid/app/Activity;
+    fill-array-data v1, :array_3
 
-    const-string v1, "mToken"
-
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v0
+    sput-object v1, Lk6;->d:[I
 
     const/4 v1, 0x1
+
+    new-array v2, v1, [I
+
+    const v3, 0x1010199
+
+    const/4 v4, 0x0
+
+    aput v3, v2, v4
 
     .line 5
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sput-object v2, Lk6;->e:[I
 
-    return-object v0
+    const/4 v2, 0x2
 
-    :catchall_0
-    const/4 v0, 0x0
+    new-array v2, v2, [I
 
-    return-object v0
-.end method
+    .line 6
+    fill-array-data v2, :array_4
 
-.method public static c(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)",
-            "Ljava/lang/reflect/Method;"
-        }
-    .end annotation
+    sput-object v2, Lk6;->f:[I
 
-    .line 1
-    invoke-static {}, Lk6;->d()Z
+    new-array v0, v0, [I
 
-    move-result v0
+    .line 7
+    fill-array-data v0, :array_5
 
-    const/4 v1, 0x0
+    sput-object v0, Lk6;->g:[I
 
-    if-eqz v0, :cond_1
+    new-array v0, v1, [I
 
-    if-nez p0, :cond_0
+    const v1, 0x10102e2
 
-    goto :goto_0
+    aput v1, v0, v4
 
-    :cond_0
-    :try_start_0
-    const-string v0, "requestRelaunchActivity"
+    .line 8
+    sput-object v0, Lk6;->h:[I
 
-    const/16 v2, 0x9
+    const/4 v0, 0x4
 
-    new-array v2, v2, [Ljava/lang/Class;
+    new-array v1, v0, [I
 
-    const/4 v3, 0x0
+    .line 9
+    fill-array-data v1, :array_6
 
-    .line 2
-    const-class v4, Landroid/os/IBinder;
+    sput-object v1, Lk6;->i:[I
 
-    aput-object v4, v2, v3
+    new-array v1, v0, [I
 
-    const-class v3, Ljava/util/List;
+    .line 10
+    fill-array-data v1, :array_7
 
-    const/4 v4, 0x1
+    sput-object v1, Lk6;->j:[I
 
-    aput-object v3, v2, v4
+    new-array v0, v0, [I
 
-    const/4 v3, 0x2
+    .line 11
+    fill-array-data v0, :array_8
 
-    const-class v5, Ljava/util/List;
+    sput-object v0, Lk6;->k:[I
 
-    aput-object v5, v2, v3
+    const/4 v0, 0x5
 
-    const/4 v3, 0x3
+    new-array v0, v0, [I
 
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    .line 12
+    fill-array-data v0, :array_9
 
-    aput-object v5, v2, v3
+    sput-object v0, Lk6;->l:[I
 
-    const/4 v3, 0x4
+    return-void
 
-    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    nop
 
-    aput-object v5, v2, v3
+    :array_0
+    .array-data 4
+        0x1010003
+        0x1010121
+        0x1010155
+        0x1010159
+        0x101031f
+        0x10103ea
+        0x10103fb
+        0x1010402
+        0x1010403
+    .end array-data
 
-    const/4 v3, 0x5
+    :array_1
+    .array-data 4
+        0x1010003
+        0x10101b5
+        0x10101b6
+        0x1010324
+        0x1010325
+        0x1010326
+        0x101045a
+        0x101045b
+    .end array-data
 
-    const-class v5, Landroid/content/res/Configuration;
+    :array_2
+    .array-data 4
+        0x1010003
+        0x1010404
+        0x1010405
+        0x1010406
+        0x1010407
+        0x1010408
+        0x1010409
+        0x101040a
+        0x101040b
+        0x101040c
+        0x101040d
+        0x10104cb
+        0x10104cc
+        0x101051e
+    .end array-data
 
-    aput-object v5, v2, v3
+    :array_3
+    .array-data 4
+        0x1010003
+        0x1010405
+        0x101051e
+    .end array-data
 
-    const/4 v3, 0x6
+    :array_4
+    .array-data 4
+        0x1010003
+        0x10101cd
+    .end array-data
 
-    const-class v5, Landroid/content/res/Configuration;
+    :array_5
+    .array-data 4
+        0x1010141
+        0x1010198
+        0x10101be
+        0x10101bf
+        0x10101c0
+        0x10102de
+        0x10102df
+        0x10102e0
+    .end array-data
 
-    aput-object v5, v2, v3
+    :array_6
+    .array-data 4
+        0x10102de
+        0x10102df
+        0x10102e0
+        0x10102e1
+    .end array-data
 
-    const/4 v3, 0x7
+    :array_7
+    .array-data 4
+        0x1010024
+        0x1010141
+        0x10102e0
+        0x10104d8
+    .end array-data
 
-    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    :array_8
+    .array-data 4
+        0x10102e1
+        0x1010405
+        0x1010474
+        0x1010475
+    .end array-data
 
-    aput-object v5, v2, v3
-
-    const/16 v3, 0x8
-
-    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v5, v2, v3
-
-    invoke-virtual {p0, v0, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object p0
-
-    .line 3
-    invoke-virtual {p0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object p0
-
-    :catchall_0
-    :cond_1
-    :goto_0
-    return-object v1
-.end method
-
-.method public static d()Z
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-eq v0, v1, :cond_1
-
-    const/16 v1, 0x1b
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
+    :array_9
+    .array-data 4
+        0x10103fc
+        0x10103fd
+        0x10103fe
+        0x10103ff
+        0x1010405
+    .end array-data
 .end method

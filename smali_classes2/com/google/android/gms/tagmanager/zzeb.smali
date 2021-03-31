@@ -11,25 +11,25 @@
 
 
 # static fields
-.field public static final zzxj:Ljava/lang/String;
+.field private static final zzxj:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzaie:Lcom/google/android/gms/tagmanager/zzed;
+.field private final zzaie:Lcom/google/android/gms/tagmanager/zzed;
 
-.field public volatile zzaif:Lcom/google/android/gms/tagmanager/zzbe;
+.field private volatile zzaif:Lcom/google/android/gms/tagmanager/zzbe;
 
-.field public final zzaig:Lcom/google/android/gms/tagmanager/zzcc;
+.field private final zzaig:Lcom/google/android/gms/tagmanager/zzcc;
 
-.field public final zzaih:Ljava/lang/String;
+.field private final zzaih:Ljava/lang/String;
 
-.field public zzaii:J
+.field private zzaii:J
 
-.field public final zzaij:I
+.field private final zzaij:I
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
-.field public zzsd:Lcom/google/android/gms/common/util/Clock;
+.field private zzsd:Lcom/google/android/gms/common/util/Clock;
 
 
 # direct methods
@@ -95,7 +95,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/tagmanager/zzcc;Landroid/content/Context;Ljava/lang/String;I)V
+.method private constructor <init>(Lcom/google/android/gms/tagmanager/zzcc;Landroid/content/Context;Ljava/lang/String;I)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -126,18 +126,12 @@
     .line 7
     new-instance p1, Lcom/google/android/gms/tagmanager/zzed;
 
-    iget-object p2, p0, Lcom/google/android/gms/tagmanager/zzeb;->zzrm:Landroid/content/Context;
-
-    iget-object p3, p0, Lcom/google/android/gms/tagmanager/zzeb;->zzaih:Ljava/lang/String;
-
     invoke-direct {p1, p0, p2, p3}, Lcom/google/android/gms/tagmanager/zzed;-><init>(Lcom/google/android/gms/tagmanager/zzeb;Landroid/content/Context;Ljava/lang/String;)V
 
     iput-object p1, p0, Lcom/google/android/gms/tagmanager/zzeb;->zzaie:Lcom/google/android/gms/tagmanager/zzed;
 
     .line 8
     new-instance p1, Lcom/google/android/gms/tagmanager/zzfu;
-
-    iget-object p2, p0, Lcom/google/android/gms/tagmanager/zzeb;->zzrm:Landroid/content/Context;
 
     new-instance p3, Lcom/google/android/gms/tagmanager/zzec;
 
@@ -1405,7 +1399,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/tagmanager/zzfn;->dispatch()V
+    invoke-virtual {v0}, Lcom/google/android/gms/tagmanager/zzfm;->dispatch()V
 
     :cond_2
     return-void

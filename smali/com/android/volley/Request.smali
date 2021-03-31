@@ -10,7 +10,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/volley/Request$Priority;,
-        Lcom/android/volley/Request$b;
+        Lcom/android/volley/Request$b;,
+        Lcom/android/volley/Request$Method;
     }
 .end annotation
 
@@ -28,60 +29,83 @@
 
 
 # static fields
-.field public static final DEFAULT_PARAMS_ENCODING:Ljava/lang/String; = "UTF-8"
+.field private static final DEFAULT_PARAMS_ENCODING:Ljava/lang/String; = "UTF-8"
 
 
 # instance fields
-.field public mCacheEntry:Lnv$a;
+.field private mCacheEntry:Lcom/android/volley/Cache$Entry;
 
-.field public mCanceled:Z
+.field private mCanceled:Z
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public final mDefaultTrafficStatsTag:I
+.field private final mDefaultTrafficStatsTag:I
 
-.field public mErrorListener:Lwv$a;
+.field private mErrorListener:Lcom/android/volley/Response$ErrorListener;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "mLock"
+    .end annotation
 
-.field public final mEventLog:Lzv$a;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final mLock:Ljava/lang/Object;
+.field private final mEventLog:Lcom/android/volley/VolleyLog$a;
 
-.field public final mMethod:I
+.field private final mLock:Ljava/lang/Object;
 
-.field public mRequestCompleteListener:Lcom/android/volley/Request$b;
+.field private final mMethod:I
 
-.field public mRequestQueue:Lvv;
+.field private mRequestCompleteListener:Lcom/android/volley/Request$b;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public mResponseDelivered:Z
+.field private mRequestQueue:Lcom/android/volley/RequestQueue;
 
-.field public mRetryPolicy:Lyv;
+.field private mResponseDelivered:Z
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
-.field public mSequence:Ljava/lang/Integer;
+.field private mRetryPolicy:Lcom/android/volley/RetryPolicy;
 
-.field public mShouldCache:Z
+.field private mSequence:Ljava/lang/Integer;
 
-.field public mShouldRetryServerErrors:Z
+.field private mShouldCache:Z
 
-.field public mTag:Ljava/lang/Object;
+.field private mShouldRetryServerErrors:Z
 
-.field public final mUrl:Ljava/lang/String;
+.field private mTag:Ljava/lang/Object;
+
+.field private final mUrl:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Lwv$a;)V
+.method public constructor <init>(ILjava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
     .locals 2
+    .param p3    # Lcom/android/volley/Response$ErrorListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    sget-boolean v0, Lzv$a;->c:Z
+    sget-boolean v0, Lcom/android/volley/VolleyLog$a;->c:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lzv$a;
+    new-instance v0, Lcom/android/volley/VolleyLog$a;
 
-    invoke-direct {v0}, Lzv$a;-><init>()V
+    invoke-direct {v0}, Lcom/android/volley/VolleyLog$a;-><init>()V
 
     goto :goto_0
 
@@ -89,7 +113,7 @@
     move-object v0, v1
 
     :goto_0
-    iput-object v0, p0, Lcom/android/volley/Request;->mEventLog:Lzv$a;
+    iput-object v0, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$a;
 
     .line 4
     new-instance v0, Ljava/lang/Object;
@@ -115,7 +139,7 @@
     iput-boolean v0, p0, Lcom/android/volley/Request;->mShouldRetryServerErrors:Z
 
     .line 9
-    iput-object v1, p0, Lcom/android/volley/Request;->mCacheEntry:Lnv$a;
+    iput-object v1, p0, Lcom/android/volley/Request;->mCacheEntry:Lcom/android/volley/Cache$Entry;
 
     .line 10
     iput p1, p0, Lcom/android/volley/Request;->mMethod:I
@@ -124,14 +148,14 @@
     iput-object p2, p0, Lcom/android/volley/Request;->mUrl:Ljava/lang/String;
 
     .line 12
-    iput-object p3, p0, Lcom/android/volley/Request;->mErrorListener:Lwv$a;
+    iput-object p3, p0, Lcom/android/volley/Request;->mErrorListener:Lcom/android/volley/Response$ErrorListener;
 
     .line 13
-    new-instance p1, Lpv;
+    new-instance p1, Lcom/android/volley/DefaultRetryPolicy;
 
-    invoke-direct {p1}, Lpv;-><init>()V
+    invoke-direct {p1}, Lcom/android/volley/DefaultRetryPolicy;-><init>()V
 
-    invoke-virtual {p0, p1}, Lcom/android/volley/Request;->setRetryPolicy(Lyv;)Lcom/android/volley/Request;
+    invoke-virtual {p0, p1}, Lcom/android/volley/Request;->setRetryPolicy(Lcom/android/volley/RetryPolicy;)Lcom/android/volley/Request;
 
     .line 14
     invoke-static {p2}, Lcom/android/volley/Request;->findDefaultTrafficStatsTag(Ljava/lang/String;)I
@@ -143,7 +167,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lwv$a;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
     .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -151,22 +175,22 @@
     const/4 v0, -0x1
 
     .line 1
-    invoke-direct {p0, v0, p1, p2}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lwv$a;)V
+    invoke-direct {p0, v0, p1, p2}, Lcom/android/volley/Request;-><init>(ILjava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
 
     return-void
 .end method
 
-.method public static synthetic access$000(Lcom/android/volley/Request;)Lzv$a;
+.method public static synthetic access$000(Lcom/android/volley/Request;)Lcom/android/volley/VolleyLog$a;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/android/volley/Request;->mEventLog:Lzv$a;
+    iget-object p0, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$a;
 
     return-object p0
 .end method
 
 .method private encodeParameters(Ljava/util/Map;Ljava/lang/String;)[B
-    .locals 3
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -199,7 +223,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -208,6 +232,19 @@
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 3
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    .line 4
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -222,10 +259,10 @@
 
     const/16 v2, 0x3d
 
-    .line 4
+    .line 5
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 5
+    .line 6
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -240,13 +277,49 @@
 
     const/16 v1, 0x26
 
-    .line 6
+    .line 7
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 7
+    .line 8
     :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Request#getParams() or Request#getPostParams() returned a map containing a null key or value: (%s, %s). All keys and values must be non-null."
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    .line 9
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    aput-object v1, v2, v3
+
+    .line 10
+    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 11
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -262,7 +335,7 @@
     :catch_0
     move-exception p1
 
-    .line 8
+    .line 12
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -284,7 +357,7 @@
     throw v0
 .end method
 
-.method public static findDefaultTrafficStatsTag(Ljava/lang/String;)I
+.method private static findDefaultTrafficStatsTag(Ljava/lang/String;)I
     .locals 1
 
     .line 1
@@ -327,12 +400,12 @@
     .locals 3
 
     .line 1
-    sget-boolean v0, Lzv$a;->c:Z
+    sget-boolean v0, Lcom/android/volley/VolleyLog$a;->c:Z
 
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/android/volley/Request;->mEventLog:Lzv$a;
+    iget-object v0, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$a;
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -342,7 +415,7 @@
 
     move-result-wide v1
 
-    invoke-virtual {v0, p1, v1, v2}, Lzv$a;->a(Ljava/lang/String;J)V
+    invoke-virtual {v0, p1, v1, v2}, Lcom/android/volley/VolleyLog$a;->a(Ljava/lang/String;J)V
 
     :cond_0
     return-void
@@ -350,6 +423,8 @@
 
 .method public cancel()V
     .locals 2
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/android/volley/Request;->mLock:Ljava/lang/Object;
@@ -365,7 +440,7 @@
     const/4 v1, 0x0
 
     .line 3
-    iput-object v1, p0, Lcom/android/volley/Request;->mErrorListener:Lwv$a;
+    iput-object v1, p0, Lcom/android/volley/Request;->mErrorListener:Lcom/android/volley/Response$ErrorListener;
 
     .line 4
     monitor-exit v0
@@ -407,7 +482,6 @@
     .line 4
     iget-object v0, p0, Lcom/android/volley/Request;->mSequence:Ljava/lang/Integer;
 
-    .line 5
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -422,7 +496,6 @@
 
     goto :goto_0
 
-    .line 6
     :cond_0
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -461,7 +534,7 @@
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/android/volley/Request;->mErrorListener:Lwv$a;
+    iget-object v1, p0, Lcom/android/volley/Request;->mErrorListener:Lcom/android/volley/Response$ErrorListener;
 
     .line 3
     monitor-exit v0
@@ -471,7 +544,7 @@
     if-eqz v1, :cond_0
 
     .line 4
-    invoke-interface {v1, p1}, Lwv$a;->onErrorResponse(Lcom/android/volley/VolleyError;)V
+    invoke-interface {v1, p1}, Lcom/android/volley/Response$ErrorListener;->onErrorResponse(Lcom/android/volley/VolleyError;)V
 
     :cond_0
     return-void
@@ -500,16 +573,16 @@
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/android/volley/Request;->mRequestQueue:Lvv;
+    iget-object v0, p0, Lcom/android/volley/Request;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-virtual {v0, p0}, Lvv;->finish(Lcom/android/volley/Request;)V
+    invoke-virtual {v0, p0}, Lcom/android/volley/RequestQueue;->finish(Lcom/android/volley/Request;)V
 
     .line 3
     :cond_0
-    sget-boolean v0, Lzv$a;->c:Z
+    sget-boolean v0, Lcom/android/volley/VolleyLog$a;->c:Z
 
     if-eqz v0, :cond_2
 
@@ -553,18 +626,18 @@
 
     .line 8
     :cond_1
-    iget-object v2, p0, Lcom/android/volley/Request;->mEventLog:Lzv$a;
+    iget-object v2, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$a;
 
-    invoke-virtual {v2, p1, v0, v1}, Lzv$a;->a(Ljava/lang/String;J)V
+    invoke-virtual {v2, p1, v0, v1}, Lcom/android/volley/VolleyLog$a;->a(Ljava/lang/String;J)V
 
     .line 9
-    iget-object p1, p0, Lcom/android/volley/Request;->mEventLog:Lzv$a;
+    iget-object p1, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$a;
 
     invoke-virtual {p0}, Lcom/android/volley/Request;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lzv$a;->a(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Lcom/android/volley/VolleyLog$a;->b(Ljava/lang/String;)V
 
     :cond_2
     return-void
@@ -572,6 +645,11 @@
 
 .method public getBody()[B
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/android/volley/Request;->getParams()Ljava/util/Map;
@@ -629,33 +707,90 @@
     return-object v0
 .end method
 
-.method public getCacheEntry()Lnv$a;
+.method public getCacheEntry()Lcom/android/volley/Cache$Entry;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/android/volley/Request;->mCacheEntry:Lnv$a;
+    iget-object v0, p0, Lcom/android/volley/Request;->mCacheEntry:Lcom/android/volley/Cache$Entry;
 
     return-object v0
 .end method
 
 .method public getCacheKey()Ljava/lang/String;
-    .locals 1
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 2
+    invoke-virtual {p0}, Lcom/android/volley/Request;->getMethod()I
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 v2, -0x1
+
+    if-ne v1, v2, :cond_0
+
+    goto :goto_0
+
+    .line 3
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x2d
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
-.method public getErrorListener()Lwv$a;
-    .locals 1
+.method public getErrorListener()Lcom/android/volley/Response$ErrorListener;
+    .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/android/volley/Request;->mErrorListener:Lwv$a;
+    iget-object v0, p0, Lcom/android/volley/Request;->mLock:Ljava/lang/Object;
 
-    return-object v0
+    monitor-enter v0
+
+    .line 2
+    :try_start_0
+    iget-object v1, p0, Lcom/android/volley/Request;->mErrorListener:Lcom/android/volley/Response$ErrorListener;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    .line 3
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method public getHeaders()Ljava/util/Map;
@@ -667,6 +802,12 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
         }
     .end annotation
 
@@ -699,6 +840,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
+
     const/4 v0, 0x0
 
     return-object v0
@@ -714,6 +861,12 @@
 
 .method public getPostBody()[B
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -773,6 +926,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/volley/AuthFailureError;
+        }
+    .end annotation
+
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -806,11 +965,11 @@
     return-object v0
 .end method
 
-.method public getRetryPolicy()Lyv;
+.method public getRetryPolicy()Lcom/android/volley/RetryPolicy;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/android/volley/Request;->mRetryPolicy:Lyv;
+    iget-object v0, p0, Lcom/android/volley/Request;->mRetryPolicy:Lcom/android/volley/RetryPolicy;
 
     return-object v0
 .end method
@@ -854,9 +1013,11 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/android/volley/Request;->mRetryPolicy:Lyv;
+    invoke-virtual {p0}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
 
-    invoke-interface {v0}, Lyv;->b()I
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/volley/RetryPolicy;->getCurrentTimeout()I
 
     move-result v0
 
@@ -984,7 +1145,7 @@
     if-eqz v1, :cond_0
 
     .line 4
-    invoke-interface {v1, p0}, Lcom/android/volley/Request$b;->a(Lcom/android/volley/Request;)V
+    invoke-interface {v1, p0}, Lcom/android/volley/Request$b;->b(Lcom/android/volley/Request;)V
 
     :cond_0
     return-void
@@ -1001,12 +1162,12 @@
     throw v1
 .end method
 
-.method public notifyListenerResponseReceived(Lwv;)V
+.method public notifyListenerResponseReceived(Lcom/android/volley/Response;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
             "*>;)V"
         }
     .end annotation
@@ -1028,7 +1189,7 @@
     if-eqz v1, :cond_0
 
     .line 4
-    invoke-interface {v1, p0, p1}, Lcom/android/volley/Request$b;->a(Lcom/android/volley/Request;Lwv;)V
+    invoke-interface {v1, p0, p1}, Lcom/android/volley/Request$b;->a(Lcom/android/volley/Request;Lcom/android/volley/Response;)V
 
     :cond_0
     return-void
@@ -1051,24 +1212,24 @@
     return-object p1
 .end method
 
-.method public abstract parseNetworkResponse(Luv;)Lwv;
+.method public abstract parseNetworkResponse(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Luv;",
+            "Lcom/android/volley/NetworkResponse;",
             ")",
-            "Lwv<",
+            "Lcom/android/volley/Response<",
             "TT;>;"
         }
     .end annotation
 .end method
 
-.method public setCacheEntry(Lnv$a;)Lcom/android/volley/Request;
+.method public setCacheEntry(Lcom/android/volley/Cache$Entry;)Lcom/android/volley/Request;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lnv$a;",
+            "Lcom/android/volley/Cache$Entry;",
             ")",
             "Lcom/android/volley/Request<",
             "*>;"
@@ -1076,7 +1237,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/android/volley/Request;->mCacheEntry:Lnv$a;
+    iput-object p1, p0, Lcom/android/volley/Request;->mCacheEntry:Lcom/android/volley/Cache$Entry;
 
     return-object p0
 .end method
@@ -1108,12 +1269,12 @@
     throw p1
 .end method
 
-.method public setRequestQueue(Lvv;)Lcom/android/volley/Request;
+.method public setRequestQueue(Lcom/android/volley/RequestQueue;)Lcom/android/volley/Request;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lvv;",
+            "Lcom/android/volley/RequestQueue;",
             ")",
             "Lcom/android/volley/Request<",
             "*>;"
@@ -1121,17 +1282,17 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/android/volley/Request;->mRequestQueue:Lvv;
+    iput-object p1, p0, Lcom/android/volley/Request;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     return-object p0
 .end method
 
-.method public setRetryPolicy(Lyv;)Lcom/android/volley/Request;
+.method public setRetryPolicy(Lcom/android/volley/RetryPolicy;)Lcom/android/volley/Request;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lyv;",
+            "Lcom/android/volley/RetryPolicy;",
             ")",
             "Lcom/android/volley/Request<",
             "*>;"
@@ -1139,7 +1300,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/android/volley/Request;->mRetryPolicy:Lyv;
+    iput-object p1, p0, Lcom/android/volley/Request;->mRetryPolicy:Lcom/android/volley/RetryPolicy;
 
     return-object p0
 .end method
@@ -1263,7 +1424,9 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-boolean v2, p0, Lcom/android/volley/Request;->mCanceled:Z
+    invoke-virtual {p0}, Lcom/android/volley/Request;->isCanceled()Z
+
+    move-result v2
 
     if-eqz v2, :cond_0
 
@@ -1277,6 +1440,7 @@
     :goto_0
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 3
     invoke-virtual {p0}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
 
     move-result-object v2
@@ -1291,7 +1455,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3
+    .line 4
     invoke-virtual {p0}, Lcom/android/volley/Request;->getPriority()Lcom/android/volley/Request$Priority;
 
     move-result-object v0

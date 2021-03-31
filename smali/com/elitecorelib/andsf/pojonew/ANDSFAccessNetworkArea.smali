@@ -7,8 +7,17 @@
 
 # instance fields
 .field public geo_Location_:Lcom/elitecorelib/andsf/pojonew/ANDSFGeoLocation;
+    .annotation build Landroidx/room/Embedded;
+    .end annotation
+.end field
 
 .field public location_3gpps:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -21,6 +30,12 @@
 .field public name:Ljava/lang/String;
 
 .field public wiMax_Locations:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -31,6 +46,12 @@
 .end field
 
 .field public wlan_Locations:Ljava/util/List;
+    .annotation build Landroidx/room/TypeConverters;
+        value = {
+            Lcom/elitecorelib/core/room/DataConverter;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

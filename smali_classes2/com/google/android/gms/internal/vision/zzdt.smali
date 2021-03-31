@@ -1,358 +1,272 @@
 .class public final Lcom/google/android/gms/internal/vision/zzdt;
-.super Lcom/google/android/gms/internal/vision/zzjn;
+.super Ljava/util/AbstractSet;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/android/gms/internal/vision/zzjn<",
-        "Lcom/google/android/gms/internal/vision/zzdt;",
-        ">;"
+        "Ljava/util/AbstractSet<",
+        "Ljava/util/Map$Entry<",
+        "TK;TV;>;>;"
     }
 .end annotation
 
 
-# static fields
-.field public static volatile zzpx:[Lcom/google/android/gms/internal/vision/zzdt;
-
-
 # instance fields
-.field public zzpy:Lcom/google/android/gms/internal/vision/zzdk;
-
-.field public zzpz:Ljava/lang/Integer;
-
-.field public zzqa:Lcom/google/android/gms/internal/vision/zzdo;
-
-.field public zzqb:Lcom/google/android/gms/internal/vision/zzdj;
+.field private final synthetic zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzdp;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzjn;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpy:Lcom/google/android/gms/internal/vision/zzdk;
-
-    .line 3
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpz:Ljava/lang/Integer;
-
-    .line 4
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqa:Lcom/google/android/gms/internal/vision/zzdo;
-
-    .line 5
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqb:Lcom/google/android/gms/internal/vision/zzdj;
-
-    const/4 v0, -0x1
-
-    .line 6
-    iput v0, p0, Lcom/google/android/gms/internal/vision/zzjt;->zzadp:I
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     return-void
-.end method
-
-.method public static zzcd()[Lcom/google/android/gms/internal/vision/zzdt;
-    .locals 2
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzdt;->zzpx:[Lcom/google/android/gms/internal/vision/zzdt;
-
-    if-nez v0, :cond_1
-
-    .line 2
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzjr;->zzado:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    sget-object v1, Lcom/google/android/gms/internal/vision/zzdt;->zzpx:[Lcom/google/android/gms/internal/vision/zzdt;
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Lcom/google/android/gms/internal/vision/zzdt;
-
-    .line 4
-    sput-object v1, Lcom/google/android/gms/internal/vision/zzdt;->zzpx:[Lcom/google/android/gms/internal/vision/zzdt;
-
-    .line 5
-    :cond_0
-    monitor-exit v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-
-    .line 6
-    :cond_1
-    :goto_0
-    sget-object v0, Lcom/google/android/gms/internal/vision/zzdt;->zzpx:[Lcom/google/android/gms/internal/vision/zzdt;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/vision/zzjk;)Lcom/google/android/gms/internal/vision/zzjt;
-    .locals 2
-
-    .line 10
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzjk;->zzdq()I
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    const/16 v1, 0xa
-
-    if-eq v0, v1, :cond_6
-
-    const/16 v1, 0x10
-
-    if-eq v0, v1, :cond_5
-
-    const/16 v1, 0x82
-
-    if-eq v0, v1, :cond_3
-
-    const/16 v1, 0x8a
-
-    if-eq v0, v1, :cond_1
-
-    .line 11
-    invoke-super {p0, p1, v0}, Lcom/google/android/gms/internal/vision/zzjn;->zza(Lcom/google/android/gms/internal/vision/zzjk;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object p0
-
-    .line 12
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqb:Lcom/google/android/gms/internal/vision/zzdj;
-
-    if-nez v0, :cond_2
-
-    .line 13
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzdj;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzdj;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqb:Lcom/google/android/gms/internal/vision/zzdj;
-
-    .line 14
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqb:Lcom/google/android/gms/internal/vision/zzdj;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/vision/zzjk;->zza(Lcom/google/android/gms/internal/vision/zzjt;)V
-
-    goto :goto_0
-
-    .line 15
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqa:Lcom/google/android/gms/internal/vision/zzdo;
-
-    if-nez v0, :cond_4
-
-    .line 16
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzdo;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzdo;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqa:Lcom/google/android/gms/internal/vision/zzdo;
-
-    .line 17
-    :cond_4
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqa:Lcom/google/android/gms/internal/vision/zzdo;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/vision/zzjk;->zza(Lcom/google/android/gms/internal/vision/zzjt;)V
-
-    goto :goto_0
-
-    .line 18
-    :cond_5
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzjk;->zzdt()I
-
-    move-result v0
-
-    .line 19
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpz:Ljava/lang/Integer;
-
-    goto :goto_0
-
-    .line 20
-    :cond_6
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpy:Lcom/google/android/gms/internal/vision/zzdk;
-
-    if-nez v0, :cond_7
-
-    .line 21
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzdk;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzdk;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpy:Lcom/google/android/gms/internal/vision/zzdk;
-
-    .line 22
-    :cond_7
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpy:Lcom/google/android/gms/internal/vision/zzdk;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/vision/zzjk;->zza(Lcom/google/android/gms/internal/vision/zzjt;)V
-
-    goto :goto_0
-
-    :cond_8
-    return-object p0
-.end method
-
-.method public final zza(Lcom/google/android/gms/internal/vision/zzjl;)V
-    .locals 2
+.method public final clear()V
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpy:Lcom/google/android/gms/internal/vision/zzdk;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    .line 2
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/vision/zzjl;->zza(ILcom/google/android/gms/internal/vision/zzjt;)V
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpz:Ljava/lang/Integer;
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x2
-
-    .line 4
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/vision/zzjl;->zze(II)V
-
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqa:Lcom/google/android/gms/internal/vision/zzdo;
-
-    if-eqz v0, :cond_2
-
-    const/16 v1, 0x10
-
-    .line 6
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/vision/zzjl;->zza(ILcom/google/android/gms/internal/vision/zzjt;)V
-
-    .line 7
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqb:Lcom/google/android/gms/internal/vision/zzdj;
-
-    if-eqz v0, :cond_3
-
-    const/16 v1, 0x11
-
-    .line 8
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/vision/zzjl;->zza(ILcom/google/android/gms/internal/vision/zzjt;)V
-
-    .line 9
-    :cond_3
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzjn;->zza(Lcom/google/android/gms/internal/vision/zzjl;)V
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->clear()V
 
     return-void
 .end method
 
-.method public final zzt()I
+.method public final contains(Ljava/lang/Object;)Z
     .locals 3
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0}, Lcom/google/android/gms/internal/vision/zzjn;->zzt()I
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzcf()Ljava/util/Map;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 3
+    :cond_0
+    instance-of v0, p1, Ljava/util/Map$Entry;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    .line 4
+    check-cast p1, Ljava/util/Map$Entry;
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/vision/zzdp;->zzb(Lcom/google/android/gms/internal/vision/zzdp;Ljava/lang/Object;)I
 
     move-result v0
 
+    const/4 v2, -0x1
+
+    if-eq v0, v2, :cond_1
+
+    .line 6
+    iget-object v2, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    iget-object v2, v2, Lcom/google/android/gms/internal/vision/zzdp;->zzmj:[Ljava/lang/Object;
+
+    aget-object v0, v2, v0
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/vision/zzcz;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    return v1
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator<",
+            "Ljava/util/Map$Entry<",
+            "TK;TV;>;>;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzck()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 9
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzcf()Ljava/util/Map;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpy:Lcom/google/android/gms/internal/vision/zzdk;
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    if-eqz v1, :cond_0
+    move-result-object v0
 
-    const/4 v2, 0x1
+    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 
     .line 3
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/vision/zzjl;->zzb(ILcom/google/android/gms/internal/vision/zzjt;)I
+    :cond_0
+    instance-of v0, p1, Ljava/util/Map$Entry;
 
-    move-result v1
+    const/4 v1, 0x0
 
-    add-int/2addr v0, v1
+    if-eqz v0, :cond_3
 
     .line 4
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzpz:Ljava/lang/Integer;
-
-    if-eqz v1, :cond_1
-
-    const/4 v2, 0x2
+    check-cast p1, Ljava/util/Map$Entry;
 
     .line 5
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    move-result v1
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzce()Z
 
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/vision/zzjl;->zzi(II)I
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_1
 
-    add-int/2addr v0, v1
+    return v1
 
     .line 6
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqa:Lcom/google/android/gms/internal/vision/zzdo;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    if-eqz v1, :cond_2
+    invoke-static {v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzb(Lcom/google/android/gms/internal/vision/zzdp;)I
 
-    const/16 v2, 0x10
+    move-result v0
 
     .line 7
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/vision/zzjl;->zzb(ILcom/google/android/gms/internal/vision/zzjt;)I
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v2
 
-    add-int/2addr v0, v1
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzdp;->zzc(Lcom/google/android/gms/internal/vision/zzdp;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    iget-object v6, p1, Lcom/google/android/gms/internal/vision/zzdp;->zzmh:[I
+
+    iget-object v7, p1, Lcom/google/android/gms/internal/vision/zzdp;->zzmi:[Ljava/lang/Object;
+
+    iget-object v8, p1, Lcom/google/android/gms/internal/vision/zzdp;->zzmj:[Ljava/lang/Object;
+
+    move v4, v0
 
     .line 8
-    :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzqb:Lcom/google/android/gms/internal/vision/zzdj;
+    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/vision/zzea;->zza(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;[I[Ljava/lang/Object;[Ljava/lang/Object;)I
 
-    if-eqz v1, :cond_3
+    move-result p1
 
-    const/16 v2, 0x11
+    const/4 v2, -0x1
+
+    if-ne p1, v2, :cond_2
+
+    return v1
 
     .line 9
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/vision/zzjl;->zzb(ILcom/google/android/gms/internal/vision/zzjt;)I
+    :cond_2
+    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    move-result v1
+    invoke-virtual {v1, p1, v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzf(II)V
 
-    add-int/2addr v0, v1
+    .line 10
+    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzdp;->zzd(Lcom/google/android/gms/internal/vision/zzdp;)I
+
+    .line 11
+    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzdp;->zzch()V
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_3
+    return v1
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdt;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->size()I
+
+    move-result v0
+
     return v0
 .end method

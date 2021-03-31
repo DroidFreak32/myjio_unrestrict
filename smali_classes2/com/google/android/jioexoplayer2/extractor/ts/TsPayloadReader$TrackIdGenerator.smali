@@ -15,19 +15,19 @@
 
 
 # static fields
-.field public static final ID_UNSET:I = -0x80000000
+.field private static final ID_UNSET:I = -0x80000000
 
 
 # instance fields
-.field public final firstTrackId:I
+.field private final firstTrackId:I
 
-.field public formatId:Ljava/lang/String;
+.field private formatId:Ljava/lang/String;
 
-.field public final formatIdPrefix:Ljava/lang/String;
+.field private final formatIdPrefix:Ljava/lang/String;
 
-.field public trackId:I
+.field private trackId:I
 
-.field public final trackIdIncrement:I
+.field private final trackIdIncrement:I
 
 
 # direct methods

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public analytics:Ljava/lang/String;
+.field private analytics:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public cdnKeyMap:Ljava/util/List;
+.field private cdnKeyMap:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -30,7 +30,7 @@
     .end annotation
 .end field
 
-.field public cdnUrlExpiry:Ljava/lang/Integer;
+.field private cdnUrlExpiry:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public cdnencryptionFlag:Ljava/lang/Boolean;
+.field private cdnencryptionFlag:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -48,7 +48,7 @@
     .end annotation
 .end field
 
-.field public dRMUrl:Lcom/app/cinemasdk/model/config/DRMUrl;
+.field private dRMUrl:Lcom/app/cinemasdk/model/config/DRMUrl;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -57,7 +57,7 @@
     .end annotation
 .end field
 
-.field public home:Ljava/lang/String;
+.field private home:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -66,7 +66,7 @@
     .end annotation
 .end field
 
-.field public image:Ljava/lang/String;
+.field private image:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -75,7 +75,7 @@
     .end annotation
 .end field
 
-.field public jioNetworkCheckInterval:Ljava/lang/String;
+.field private jioNetworkCheckInterval:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -84,7 +84,7 @@
     .end annotation
 .end field
 
-.field public kid:Ljava/lang/String;
+.field private kid:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -93,7 +93,7 @@
     .end annotation
 .end field
 
-.field public languageAndCode:Ljava/util/ArrayList;
+.field private languageAndCode:Ljava/util/ArrayList;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -110,7 +110,7 @@
     .end annotation
 .end field
 
-.field public thumb:Ljava/lang/String;
+.field private thumb:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -119,7 +119,7 @@
     .end annotation
 .end field
 
-.field public tid:Ljava/lang/String;
+.field private tid:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 
@@ -128,7 +128,7 @@
     .end annotation
 .end field
 
-.field public wvProxyUrl:Ljava/lang/String;
+.field private wvProxyUrl:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/Expose;
     .end annotation
 

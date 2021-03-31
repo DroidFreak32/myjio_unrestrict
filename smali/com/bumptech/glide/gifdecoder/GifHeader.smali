@@ -11,6 +11,9 @@
 
 # instance fields
 .field public bgColor:I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
 .field public bgIndex:I
 
@@ -29,6 +32,9 @@
 .end field
 
 .field public gct:[I
+    .annotation build Landroidx/annotation/ColorInt;
+    .end annotation
+.end field
 
 .field public gctFlag:Z
 

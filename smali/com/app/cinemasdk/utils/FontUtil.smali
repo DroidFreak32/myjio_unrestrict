@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static fontCache:Ljava/util/Hashtable;
+.field private static fontCache:Ljava/util/Hashtable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Hashtable<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public static mFontInstance:Lcom/app/cinemasdk/utils/FontUtil;
+.field private static mFontInstance:Lcom/app/cinemasdk/utils/FontUtil;
 
 
 # direct methods

@@ -8,7 +8,7 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -54,12 +54,22 @@
 # virtual methods
 .method public beforeArrayValues(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public beforeObjectEntries(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -84,6 +94,11 @@
 
 .method public writeArrayValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/MinimalPrettyPrinter;->_separators:Lcom/fasterxml/jackson/core/util/Separators;
@@ -99,6 +114,11 @@
 
 .method public writeEndArray(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 p2, 0x5d
 
@@ -110,6 +130,11 @@
 
 .method public writeEndObject(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 p2, 0x7d
 
@@ -121,6 +146,11 @@
 
 .method public writeObjectEntrySeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/MinimalPrettyPrinter;->_separators:Lcom/fasterxml/jackson/core/util/Separators;
@@ -136,6 +166,11 @@
 
 .method public writeObjectFieldValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/MinimalPrettyPrinter;->_separators:Lcom/fasterxml/jackson/core/util/Separators;
@@ -151,6 +186,11 @@
 
 .method public writeRootValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/MinimalPrettyPrinter;->_rootValueSeparator:Ljava/lang/String;
@@ -166,6 +206,11 @@
 
 .method public writeStartArray(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x5b
 
@@ -177,6 +222,11 @@
 
 .method public writeStartObject(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/16 v0, 0x7b
 

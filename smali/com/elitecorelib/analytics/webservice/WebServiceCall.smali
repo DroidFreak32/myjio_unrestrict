@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "AnalyticWSCall"
+.field private static final MODULE:Ljava/lang/String; = "AnalyticWSCall"
 
-.field public static final task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
+.field private static final task:Lcom/elitecorelib/core/utility/SharedPreferencesTask;
 
 
 # direct methods
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, p0, p2, p3, v0}, Lc20;->a(Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;)V
+    invoke-static {p1, p0, p2, p3, v0}, Lcom/elitecorelib/andsf/utility/a;->a(Lcom/elitecorelib/core/services/ConnectionManagerCompleteListner;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;)V
 
     return-void
 .end method
@@ -90,7 +90,7 @@
     return-void
 .end method
 
-.method public static getHeaders()Ljava/util/Map;
+.method private static getHeaders()Ljava/util/Map;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -138,7 +138,7 @@
     return-object v0
 .end method
 
-.method public static getOffloadStatisticsURL()Ljava/lang/String;
+.method private static getOffloadStatisticsURL()Ljava/lang/String;
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -162,7 +162,7 @@
     return-object v0
 .end method
 
-.method public static getRegistrationURL()Ljava/lang/String;
+.method private static getRegistrationURL()Ljava/lang/String;
     .locals 1
 
     const-string v0, "data/WIFIOFFLOADING/ANDSFREGISTRATION"

@@ -13,7 +13,7 @@
 
 
 # static fields
-.field public static final CLS_OBJECT:Ljava/lang/Class;
+.field private static final CLS_OBJECT:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public static final EMPTY_ITERATOR:Ljava/util/Iterator;
+.field private static final EMPTY_ITERATOR:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -31,9 +31,9 @@
     .end annotation
 .end field
 
-.field public static final NO_ANNOTATIONS:[Ljava/lang/annotation/Annotation;
+.field private static final NO_ANNOTATIONS:[Ljava/lang/annotation/Annotation;
 
-.field public static final NO_CTORS:[Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;
+.field private static final NO_CTORS:[Lcom/fasterxml/jackson/databind/util/ClassUtil$Ctor;
 
 
 # direct methods
@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method public static _addRawSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
+.method private static _addRawSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -155,7 +155,7 @@
     return-void
 .end method
 
-.method public static _addSuperTypes(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;Ljava/util/Collection;Z)V
+.method private static _addSuperTypes(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;Ljava/util/Collection;Z)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -247,7 +247,7 @@
     return-void
 .end method
 
-.method public static _interfaces(Ljava/lang/Class;)[Ljava/lang/Class;
+.method private static _interfaces(Ljava/lang/Class;)[Ljava/lang/Class;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -539,6 +539,11 @@
 
 .method public static closeOnFailAndThrowAsIOE(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/io/Closeable;Ljava/lang/Exception;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p0, :cond_0
 
@@ -597,6 +602,11 @@
 
 .method public static closeOnFailAndThrowAsIOE(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Exception;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->AUTO_CLOSE_JSON_CONTENT:Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
@@ -641,6 +651,12 @@
             ">(",
             "Ljava/lang/Class<",
             "TT;>;Z)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
@@ -946,6 +962,12 @@
             "TT;>;Z)",
             "Ljava/lang/reflect/Constructor<",
             "TT;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
@@ -1547,7 +1569,7 @@
 
     if-nez p0, :cond_0
 
-    const-string p0, "unknown"
+    const-string/jumbo p0, "unknown"
 
     return-object p0
 
@@ -2821,6 +2843,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
     .line 1
     instance-of v0, p1, Lcom/fasterxml/jackson/databind/JsonMappingException;
 
@@ -2867,6 +2895,11 @@
 
 .method public static throwIfIOE(Ljava/lang/Throwable;)Ljava/lang/Throwable;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     instance-of v0, p0, Ljava/io/IOException;
@@ -2901,6 +2934,11 @@
 
 .method public static throwRootCauseIfIOE(Ljava/lang/Throwable;)Ljava/lang/Throwable;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;

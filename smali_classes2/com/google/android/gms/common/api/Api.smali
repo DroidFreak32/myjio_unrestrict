@@ -1,18 +1,19 @@
 .class public final Lcom/google/android/gms/common/api/Api;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/gms/common/api/Api$SimpleClient;,
+        Lcom/google/android/gms/common/api/Api$zaa;,
         Lcom/google/android/gms/common/api/Api$Client;,
         Lcom/google/android/gms/common/api/Api$AnyClient;,
         Lcom/google/android/gms/common/api/Api$zab;,
         Lcom/google/android/gms/common/api/Api$ClientKey;,
         Lcom/google/android/gms/common/api/Api$AnyClientKey;,
         Lcom/google/android/gms/common/api/Api$ApiOptions;,
-        Lcom/google/android/gms/common/api/Api$zaa;,
+        Lcom/google/android/gms/common/api/Api$zac;,
         Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;,
         Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
     }
@@ -29,9 +30,10 @@
 
 
 # instance fields
-.field public final mName:Ljava/lang/String;
+.field private final zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-.field public final zaau:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
@@ -40,16 +42,22 @@
     .end annotation
 .end field
 
-.field public final zaav:Lcom/google/android/gms/common/api/Api$zaa;
+.field private final zab:Lcom/google/android/gms/common/api/Api$zac;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/common/api/Api$zaa<",
+            "Lcom/google/android/gms/common/api/Api$zac<",
             "*TO;>;"
         }
     .end annotation
 .end field
 
-.field public final zaaw:Lcom/google/android/gms/common/api/Api$ClientKey;
+.field private final zac:Lcom/google/android/gms/common/api/Api$ClientKey;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$ClientKey<",
@@ -58,7 +66,10 @@
     .end annotation
 .end field
 
-.field public final zaax:Lcom/google/android/gms/common/api/Api$zab;
+.field private final zad:Lcom/google/android/gms/common/api/Api$zab;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$zab<",
@@ -66,6 +77,8 @@
         }
     .end annotation
 .end field
+
+.field private final zae:Ljava/lang/String;
 
 
 # direct methods
@@ -98,65 +111,28 @@
     invoke-static {p3, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
-    iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->mName:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->zae:Ljava/lang/String;
 
     .line 5
-    iput-object p2, p0, Lcom/google/android/gms/common/api/Api;->zaau:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/Api;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
     const/4 p1, 0x0
 
     .line 6
-    iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->zaav:Lcom/google/android/gms/common/api/Api$zaa;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->zab:Lcom/google/android/gms/common/api/Api$zac;
 
     .line 7
-    iput-object p3, p0, Lcom/google/android/gms/common/api/Api;->zaaw:Lcom/google/android/gms/common/api/Api$ClientKey;
+    iput-object p3, p0, Lcom/google/android/gms/common/api/Api;->zac:Lcom/google/android/gms/common/api/Api$ClientKey;
 
     .line 8
-    iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->zaax:Lcom/google/android/gms/common/api/Api$zab;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->zad:Lcom/google/android/gms/common/api/Api$zab;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getClientKey()Lcom/google/android/gms/common/api/Api$AnyClientKey;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/common/api/Api$AnyClientKey<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaaw:Lcom/google/android/gms/common/api/Api$ClientKey;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    .line 2
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "This API was constructed with null client keys. This should not be possible."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final getName()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->mName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final zah()Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
+.method public final zaa()Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -167,13 +143,22 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaau:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
 
     return-object v0
 .end method
 
-.method public final zai()Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.method public final zab()Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -183,7 +168,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaau:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
     if-eqz v0, :cond_0
 
@@ -200,7 +185,44 @@
     invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(ZLjava/lang/Object;)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaau:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+
+    return-object v0
+.end method
+
+.method public final zac()Lcom/google/android/gms/common/api/Api$AnyClientKey;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/common/api/Api$AnyClientKey<",
+            "*>;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zac:Lcom/google/android/gms/common/api/Api$ClientKey;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    .line 2
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "This API was constructed with null client keys. This should not be possible."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final zad()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Api;->zae:Ljava/lang/String;
 
     return-object v0
 .end method

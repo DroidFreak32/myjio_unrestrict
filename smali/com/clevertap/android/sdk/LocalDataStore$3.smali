@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/clevertap/android/sdk/LocalDataStore;->persistLocalProfileAsync()V
+    value = Lcom/clevertap/android/sdk/LocalDataStore;->postAsyncSafely(Ljava/lang/String;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,21 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/LocalDataStore;
 
-.field public final synthetic val$profileID:Ljava/lang/String;
+.field public final synthetic val$name:Ljava/lang/String;
+
+.field public final synthetic val$runnable:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Lcom/clevertap/android/sdk/LocalDataStore;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/clevertap/android/sdk/LocalDataStore;Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
 
-    iput-object p2, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$profileID:Ljava/lang/String;
+    iput-object p2, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$name:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$runnable:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,89 +44,80 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
-
-    invoke-static {v0}, Lcom/clevertap/android/sdk/LocalDataStore;->access$500(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/util/HashMap;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    monitor-enter v0
+    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lcom/clevertap/android/sdk/LocalDataStore;->access$502(J)J
 
     .line 2
     :try_start_0
+    iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
+
+    invoke-static {v0}, Lcom/clevertap/android/sdk/LocalDataStore;->access$400(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/Logger;
+
+    move-result-object v0
+
     iget-object v1, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/LocalDataStore;->access$300(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/DBAdapter;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/LocalDataStore;->access$300(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$profileID:Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Lorg/json/JSONObject;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v4, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
+    const-string v3, "Local Data Store Executor service: Starting task - "
 
-    invoke-static {v4}, Lcom/clevertap/android/sdk/LocalDataStore;->access$500(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/util/HashMap;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    iget-object v3, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$name:Ljava/lang/String;
 
-    invoke-direct {v3, v4}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2, v3}, Lcom/clevertap/android/sdk/DBAdapter;->storeUserProfile(Ljava/lang/String;Lorg/json/JSONObject;)J
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-wide v1
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 3
-    iget-object v3, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
+    iget-object v0, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$runnable:Ljava/lang/Runnable;
 
-    invoke-static {v3}, Lcom/clevertap/android/sdk/LocalDataStore;->access$200(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/Logger;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
-
-    invoke-static {v4}, Lcom/clevertap/android/sdk/LocalDataStore;->access$100(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Persist Local Profile complete with status "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, " for id "
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->val$profileID:Ljava/lang/String;
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v4, v1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    .line 4
+    iget-object v1, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
+
+    invoke-static {v1}, Lcom/clevertap/android/sdk/LocalDataStore;->access$400(Lcom/clevertap/android/sdk/LocalDataStore;)Lcom/clevertap/android/sdk/Logger;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/clevertap/android/sdk/LocalDataStore$3;->this$0:Lcom/clevertap/android/sdk/LocalDataStore;
+
+    invoke-static {v2}, Lcom/clevertap/android/sdk/LocalDataStore;->access$300(Lcom/clevertap/android/sdk/LocalDataStore;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "Executor service: Failed to complete the scheduled task"
+
+    invoke-virtual {v1, v2, v3, v0}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_0
+    return-void
 .end method

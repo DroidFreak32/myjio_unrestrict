@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/StatusCallback;
 .super Lcom/google/android/gms/common/api/internal/IStatusCallback$Stub;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # instance fields
-.field public final mResultHolder:Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;
+.field private final mResultHolder:Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 

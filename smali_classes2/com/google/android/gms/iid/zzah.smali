@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzdc:Lcom/google/android/gms/iid/zzaf;
+.field private final synthetic zzdc:Lcom/google/android/gms/iid/zzaf;
 
 
 # direct methods

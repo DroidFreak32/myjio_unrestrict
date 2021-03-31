@@ -1,172 +1,287 @@
 .class public final Lcom/google/android/gms/internal/ads/zzabj;
 .super Ljava/lang/Object;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final zzbss:Lcom/google/android/gms/internal/ads/zzasg;
+.field private context:Landroid/content/Context;
 
-.field public final zzbzx:Z
+.field private zzbrf:Ljava/lang/String;
 
-.field public final zzbzy:Ljava/lang/String;
+.field private zzczk:Ljava/lang/String;
 
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzasg;Ljava/util/Map;)V
-    .locals 1
+.field private zzczn:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lcom/google/android/gms/internal/ads/zzasg;",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            ">;)V"
+            ">;"
         }
     .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbss:Lcom/google/android/gms/internal/ads/zzasg;
+    const/4 v0, 0x0
 
-    const-string p1, "forceOrientation"
+    .line 2
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->context:Landroid/content/Context;
 
     .line 3
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbzy:Ljava/lang/String;
-
-    const-string p1, "allowOrientationChange"
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbrf:Ljava/lang/String;
 
     .line 4
-    invoke-interface {p2, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzabj;->context:Landroid/content/Context;
 
-    move-result v0
+    .line 5
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbrf:Ljava/lang/String;
+
+    .line 6
+    sget-object p2, Lcom/google/android/gms/internal/ads/zzacu;->zzdbq:Lcom/google/android/gms/internal/ads/zzacn;
+
+    invoke-virtual {p2}, Lcom/google/android/gms/internal/ads/zzacn;->get()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/String;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczk:Ljava/lang/String;
+
+    .line 7
+    new-instance p2, Ljava/util/LinkedHashMap;
+
+    invoke-direct {p2}, Ljava/util/LinkedHashMap;-><init>()V
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    const-string v0, "s"
+
+    const-string v1, "gmob_sdk"
+
+    .line 8
+    invoke-interface {p2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 9
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    const-string v0, "v"
+
+    const-string v1, "3"
+
+    invoke-interface {p2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 10
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
+
+    const-string v1, "os"
+
+    invoke-interface {p2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 11
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    sget-object v0, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
+
+    const-string v1, "api_v"
+
+    invoke-interface {p2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 12
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzkq()Lcom/google/android/gms/ads/internal/util/zzm;
+
+    invoke-static {}, Lcom/google/android/gms/ads/internal/util/zzm;->zzyg()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "device"
+
+    invoke-interface {p2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 13
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    .line 14
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 5
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 15
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    invoke-static {p1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 16
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    const-string v1, "app"
+
+    .line 17
+    invoke-interface {p2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 18
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    .line 19
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzkq()Lcom/google/android/gms/ads/internal/util/zzm;
+
+    invoke-static {p1}, Lcom/google/android/gms/ads/internal/util/zzm;->zzaw(Landroid/content/Context;)Z
 
     move-result p1
 
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbzx:Z
+    if-eqz p1, :cond_1
+
+    const-string p1, "1"
+
+    goto :goto_1
+
+    :cond_1
+    const-string p1, "0"
+
+    :goto_1
+    const-string v0, "is_lite_sdk"
+
+    .line 20
+    invoke-interface {p2, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzlb()Lcom/google/android/gms/internal/ads/zzats;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->context:Landroid/content/Context;
+
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/ads/zzats;->zzr(Landroid/content/Context;)Ljava/util/concurrent/Future;
+
+    move-result-object p1
+
+    .line 22
+    :try_start_0
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    const-string v0, "network_coarse"
+
+    .line 23
+    invoke-interface {p1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/internal/ads/zzatq;
+
+    iget v1, v1, Lcom/google/android/gms/internal/ads/zzatq;->zzdwr:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 24
+    invoke-interface {p2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 25
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
+
+    const-string v0, "network_fine"
+
+    .line 26
+    invoke-interface {p1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzatq;
+
+    iget p1, p1, Lcom/google/android/gms/internal/ads/zzatq;->zzdws:I
+
+    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 27
+    invoke-interface {p2, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :cond_0
-    const/4 p1, 0x1
+    :catch_0
+    move-exception p1
 
-    .line 6
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbzx:Z
+    .line 28
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzku()Lcom/google/android/gms/internal/ads/zzayg;
+
+    move-result-object p2
+
+    const-string v0, "CsiConfiguration.CsiConfiguration"
+
+    invoke-virtual {p2, p1, v0}, Lcom/google/android/gms/internal/ads/zzayg;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute()V
-    .locals 2
+.method public final getContext()Landroid/content/Context;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbss:Lcom/google/android/gms/internal/ads/zzasg;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->context:Landroid/content/Context;
 
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    const-string v0, "AdWebView is null"
+.method public final zzlv()Ljava/lang/String;
+    .locals 1
 
-    .line 2
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzdp(Ljava/lang/String;)V
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbrf:Ljava/lang/String;
 
-    return-void
+    return-object v0
+.end method
 
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbzy:Ljava/lang/String;
+.method public final zzrs()Ljava/lang/String;
+    .locals 1
 
-    const-string v1, "portrait"
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczk:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    return-object v0
+.end method
 
-    move-result v0
+.method public final zzrt()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    if-eqz v0, :cond_1
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzczn:Ljava/util/Map;
 
-    .line 4
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzem()Lcom/google/android/gms/internal/ads/zzalw;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzalw;->zztb()I
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbzy:Ljava/lang/String;
-
-    const-string v1, "landscape"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 6
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzem()Lcom/google/android/gms/internal/ads/zzalw;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzalw;->zzta()I
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 7
-    :cond_2
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbzx:Z
-
-    if-eqz v0, :cond_3
-
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    .line 8
-    :cond_3
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzem()Lcom/google/android/gms/internal/ads/zzalw;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzalw;->zztc()I
-
-    move-result v0
-
-    .line 9
-    :goto_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzabj;->zzbss:Lcom/google/android/gms/internal/ads/zzasg;
-
-    invoke-interface {v1, v0}, Lcom/google/android/gms/internal/ads/zzasg;->setRequestedOrientation(I)V
-
-    return-void
+    return-object v0
 .end method

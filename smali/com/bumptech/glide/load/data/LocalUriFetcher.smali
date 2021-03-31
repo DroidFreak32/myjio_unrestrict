@@ -20,13 +20,13 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "LocalUriFetcher"
+.field private static final TAG:Ljava/lang/String; = "LocalUriFetcher"
 
 
 # instance fields
-.field public final contentResolver:Landroid/content/ContentResolver;
+.field private final contentResolver:Landroid/content/ContentResolver;
 
-.field public data:Ljava/lang/Object;
+.field private data:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -34,7 +34,7 @@
     .end annotation
 .end field
 
-.field public final uri:Landroid/net/Uri;
+.field private final uri:Landroid/net/Uri;
 
 
 # direct methods
@@ -86,10 +86,18 @@
             "(TT;)V"
         }
     .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
 .method public getDataSource()Lcom/bumptech/glide/load/DataSource;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/load/DataSource;->LOCAL:Lcom/bumptech/glide/load/DataSource;
@@ -99,6 +107,14 @@
 
 .method public final loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/Priority;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -123,8 +139,6 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
-    iget-object p1, p0, Lcom/bumptech/glide/load/data/LocalUriFetcher;->data:Ljava/lang/Object;
-
     invoke-interface {p2, p1}, Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;->onDataReady(Ljava/lang/Object;)V
 
     return-void
@@ -154,6 +168,12 @@
             "Landroid/net/Uri;",
             "Landroid/content/ContentResolver;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/FileNotFoundException;
         }
     .end annotation
 .end method

@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static final logger:Ljava/util/logging/Logger;
+.field private static final logger:Ljava/util/logging/Logger;
 
-.field public static zzbai:Ljava/lang/String;
+.field private static zzbai:Ljava/lang/String;
 
 
 # direct methods

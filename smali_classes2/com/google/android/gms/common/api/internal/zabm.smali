@@ -1,45 +1,97 @@
-.class public final Lcom/google/android/gms/common/api/internal/zabm;
+.class public interface abstract Lcom/google/android/gms/common/api/internal/zabm;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/internal/BaseGmsClient$SignOutCallbacks;
-
-
-# instance fields
-.field public final synthetic zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabm;->zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # virtual methods
-.method public final onSignOutComplete()V
-    .locals 2
+.method public abstract zaa(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/ConnectionResult;
+.end method
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabm;->zaiy:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+.method public abstract zaa(Lcom/google/android/gms/common/api/Api;)Lcom/google/android/gms/common/ConnectionResult;
+    .param p1    # Lcom/google/android/gms/common/api/Api;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaim:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/gms/common/api/Api<",
+            "*>;)",
+            "Lcom/google/android/gms/common/ConnectionResult;"
+        }
+    .end annotation
+.end method
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager;)Landroid/os/Handler;
+.method public abstract zaa(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+    .param p1    # Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<A::",
+            "Lcom/google/android/gms/common/api/Api$AnyClient;",
+            "R::",
+            "Lcom/google/android/gms/common/api/Result;",
+            "T:",
+            "Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl<",
+            "TR;TA;>;>(TT;)TT;"
+        }
+    .end annotation
+.end method
 
-    move-result-object v0
+.method public abstract zaa()V
+.end method
 
-    new-instance v1, Lcom/google/android/gms/common/api/internal/zabn;
+.method public abstract zaa(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    .param p2    # Ljava/io/FileDescriptor;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+.end method
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/internal/zabn;-><init>(Lcom/google/android/gms/common/api/internal/zabm;)V
+.method public abstract zaa(Lcom/google/android/gms/common/api/internal/SignInConnectionListener;)Z
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+.method public abstract zab()Lcom/google/android/gms/common/ConnectionResult;
+.end method
 
-    return-void
+.method public abstract zab(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+    .param p1    # Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<A::",
+            "Lcom/google/android/gms/common/api/Api$AnyClient;",
+            "T:",
+            "Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl<",
+            "+",
+            "Lcom/google/android/gms/common/api/Result;",
+            "TA;>;>(TT;)TT;"
+        }
+    .end annotation
+.end method
+
+.method public abstract zac()V
+.end method
+
+.method public abstract zad()Z
+.end method
+
+.method public abstract zae()Z
+.end method
+
+.method public abstract zaf()V
+.end method
+
+.method public abstract zag()V
 .end method

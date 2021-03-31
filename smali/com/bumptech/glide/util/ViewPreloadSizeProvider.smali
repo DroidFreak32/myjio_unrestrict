@@ -28,9 +28,9 @@
 
 
 # instance fields
-.field public size:[I
+.field private size:[I
 
-.field public viewTarget:Lcom/bumptech/glide/util/ViewPreloadSizeProvider$SizeViewTarget;
+.field private viewTarget:Lcom/bumptech/glide/util/ViewPreloadSizeProvider$SizeViewTarget;
 
 
 # direct methods
@@ -45,6 +45,10 @@
 
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,6 +67,13 @@
 # virtual methods
 .method public getPreloadSize(Ljava/lang/Object;II)[I
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;II)[I"
@@ -117,6 +128,10 @@
 
 .method public setView(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/util/ViewPreloadSizeProvider;->size:[I

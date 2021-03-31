@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final _id:Ljava/lang/Object;
+.field private final _id:Ljava/lang/Object;
 
-.field public final _location:Lcom/fasterxml/jackson/core/JsonLocation;
+.field private final _location:Lcom/fasterxml/jackson/core/JsonLocation;
 
-.field public final _type:Ljava/lang/Class;
+.field private final _type:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",

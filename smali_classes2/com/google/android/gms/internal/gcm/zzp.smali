@@ -13,7 +13,7 @@
 # static fields
 .field public static final enum zzdo:I = 0x1
 
-.field public static final synthetic zzdp:[I
+.field private static final synthetic zzdp:[I
 
 
 # direct methods

@@ -28,6 +28,9 @@
 
 .method public static with(I)Lcom/bumptech/glide/GenericTransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TranscodeType:",
@@ -54,6 +57,13 @@
 
 .method public static with(Lcom/bumptech/glide/request/transition/TransitionFactory;)Lcom/bumptech/glide/GenericTransitionOptions;
     .locals 1
+    .param p0    # Lcom/bumptech/glide/request/transition/TransitionFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TranscodeType:",
@@ -82,6 +92,13 @@
 
 .method public static with(Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;)Lcom/bumptech/glide/GenericTransitionOptions;
     .locals 1
+    .param p0    # Lcom/bumptech/glide/request/transition/ViewPropertyTransition$Animator;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TranscodeType:",
@@ -110,6 +127,9 @@
 
 .method public static withNoTransition()Lcom/bumptech/glide/GenericTransitionOptions;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TranscodeType:",

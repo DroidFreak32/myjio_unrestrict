@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroid/content/Context;
+.field public final synthetic a:Landroid/content/Context;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iput-object p2, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,35 +39,35 @@
     .locals 10
 
     .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
-    invoke-static {v0}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {v0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Log0;->v()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->globalNetworkProvider()Ljava/lang/String;
 
     move-result-object v6
 
     .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
-    invoke-static {v0}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {v0}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lhf0;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/inn/passivesdk/PreferenceHelper;->getGPSONOffRequester()Ljava/lang/String;
 
     move-result-object v0
 
     .line 3
-    iget-object v1, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iget-object v1, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
-    invoke-static {v1}, Log0;->b(Landroid/content/Context;)Log0;
+    invoke-static {v1}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkNetworkUtil;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Log0;->x()Z
+    invoke-virtual {v1}, Lcom/inn/passivesdk/util/SdkNetworkUtil;->isLocationEnabled()Z
 
     move-result v1
 
@@ -87,19 +87,19 @@
     if-eqz v0, :cond_0
 
     .line 5
-    sput-boolean v7, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sput-boolean v7, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     return-void
 
     .line 6
     :cond_0
-    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
-    invoke-static {v0}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {v0}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lhf0;->f(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/inn/passivesdk/PreferenceHelper;->setGPSONOffRequester(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -116,33 +116,31 @@
     if-eqz v0, :cond_2
 
     .line 8
-    sput-boolean v7, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sput-boolean v7, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     return-void
 
     .line 9
     :cond_2
-    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iget-object v0, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
-    invoke-static {v0}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {v0}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lhf0;->f(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/inn/passivesdk/PreferenceHelper;->setGPSONOffRequester(Ljava/lang/String;)V
 
     :goto_0
     move-object v3, v1
 
     .line 10
-    invoke-static {}, Lug0;->a()Lug0;
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->s:Landroid/content/Context;
+    iget-object v2, p0, Lcom/inn/passivesdk/receiver/GpsLocationReceiver$a;->a:Landroid/content/Context;
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
+    sget-object v4, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -152,10 +150,10 @@
 
     move-result-object v5
 
-    invoke-virtual/range {v1 .. v6}, Lug0;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Long;Ljava/lang/String;)V
+    invoke-virtual/range {v1 .. v6}, Lcom/inn/passivesdk/util/ServiceUtil;->captureAndPersistData(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Long;Ljava/lang/String;)V
 
     .line 11
-    sput-boolean v7, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->a:Z
+    sput-boolean v7, Lcom/inn/passivesdk/receiver/GpsLocationReceiver;->capturePassive:Z
 
     return-void
 .end method

@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public a(Landroid/graphics/Matrix;)V
+.method public j(Landroid/graphics/Matrix;)V
     .locals 0
 
     .line 1
@@ -42,7 +42,7 @@
     return-void
 .end method
 
-.method public g()Ljava/lang/String;
+.method public m()Ljava/lang/String;
     .locals 1
 
     const-string v0, "group"

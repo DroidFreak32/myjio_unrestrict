@@ -59,7 +59,7 @@
 
     if-eqz v2, :cond_2
 
-    const-string v2, "wifi_state"
+    const-string/jumbo v2, "wifi_state"
 
     const/4 v3, 0x0
 
@@ -165,7 +165,7 @@
 
     move-result-wide v0
 
-    const-string p2, "wifiDesableTime"
+    const-string/jumbo p2, "wifiDesableTime"
 
     invoke-virtual {p1, p2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->getLong(Ljava/lang/String;)J
 
@@ -228,7 +228,7 @@
 
     invoke-virtual {p1, v1, p2}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveInt(Ljava/lang/String;I)V
 
-    invoke-static {}, Lc20;->W()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->i()V
 
     :cond_1
     invoke-virtual {p1, v5, v3}, Lcom/elitecorelib/core/utility/SharedPreferencesTask;->saveBoolean(Ljava/lang/String;Z)V
@@ -253,13 +253,7 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    goto :goto_0
-
     :catch_1
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_2
     :goto_0
     return-void

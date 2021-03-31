@@ -2,46 +2,46 @@
 .super Landroid/app/Activity;
 
 # interfaces
-.implements Lnl0$b;
-.implements Lcom/jiny/android/ui/custom/DraggableLayout$b;
-.implements Lqm0$c;
-.implements Lrm0$e;
-.implements Lsm0$a;
-.implements Lum0$b;
+.implements Lcom/jiny/android/ui/a/a$a;
+.implements Lcom/jiny/android/ui/custom/DraggableLayout$a;
+.implements Lcom/jiny/android/ui/panel/a$a;
+.implements Lcom/jiny/android/ui/panel/b$a;
+.implements Lcom/jiny/android/ui/panel/c$a;
+.implements Lcom/jiny/android/ui/panel/e$a;
 
 
 # instance fields
 .field public A:Ljava/lang/String;
 
-.field public B:Ljava/util/List;
+.field public B:Ljava/lang/String;
+
+.field public C:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lfk0;",
+            "Lcom/jiny/android/data/models/f/b;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public C:Z
+.field public D:Z
 
-.field public D:Lnl0;
+.field public E:Lcom/jiny/android/ui/a/a;
 
-.field public s:I
+.field public a:I
 
-.field public t:I
+.field public b:I
 
-.field public u:I
+.field public c:I
 
-.field public v:Ljava/lang/String;
+.field public d:Ljava/lang/String;
 
-.field public w:Ljava/lang/String;
-
-.field public x:I
+.field public e:Ljava/lang/String;
 
 .field public y:I
 
-.field public z:Ljava/lang/String;
+.field public z:I
 
 
 # direct methods
@@ -52,21 +52,21 @@
 
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->s:I
+    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a:I
 
-    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->t:I
+    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->b:I
 
-    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
+    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/util/List;
+    iput-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Ljava/util/List;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Z
+    iput-boolean v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Z
 
     return-void
 .end method
@@ -91,23 +91,8 @@
     return-object v0
 .end method
 
-.method public static a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;Lwj0;)Landroid/content/Intent;
+.method public static a(Landroid/content/Context;ILcom/jiny/android/data/models/c/b;)Landroid/content/Intent;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "I",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/Integer;",
-            ">;",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Lwj0;",
-            ")",
-            "Landroid/content/Intent;"
-        }
-    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -123,27 +108,7 @@
 
     invoke-virtual {v0, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    const-string p0, "extras_branch_sound_url"
-
-    invoke-virtual {v0, p0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    if-eqz p4, :cond_0
-
-    const-string p0, "extras_branch_title"
-
-    invoke-virtual {v0, p0, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    :cond_0
-    if-eqz p2, :cond_1
-
-    const-string p0, "extras_flow_list"
-
-    invoke-virtual {v0, p0, p2}, Landroid/content/Intent;->putIntegerArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
-
-    :cond_1
-    if-eqz p5, :cond_2
-
-    invoke-virtual {p5}, Lwj0;->f()Ljava/lang/Integer;
+    invoke-virtual {p2}, Lcom/jiny/android/data/models/c/b;->g()Ljava/lang/Integer;
 
     move-result-object p0
 
@@ -155,11 +120,18 @@
 
     invoke-virtual {v0, p1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    :cond_2
+    invoke-virtual {p2}, Lcom/jiny/android/data/models/c/b;->f()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "extras_trigger_sound_name"
+
+    invoke-virtual {v0, p1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     return-object v0
 .end method
 
-.method public static a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ltk0;Ljk0;)Landroid/content/Intent;
+.method public static a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Lcom/jiny/android/data/models/nativemodels/b;Lcom/jiny/android/data/models/f/f;)Landroid/content/Intent;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -170,8 +142,8 @@
             "Ljava/lang/Integer;",
             ">;",
             "Ljava/lang/String;",
-            "Ltk0;",
-            "Ljk0;",
+            "Lcom/jiny/android/data/models/nativemodels/b;",
+            "Lcom/jiny/android/data/models/f/f;",
             ")",
             "Landroid/content/Intent;"
         }
@@ -213,7 +185,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p4}, Ltk0;->c()Ljava/lang/Integer;
+    invoke-virtual {p4}, Lcom/jiny/android/data/models/nativemodels/b;->c()Ljava/lang/Integer;
 
     move-result-object p2
 
@@ -229,7 +201,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-virtual {p5}, Ljk0;->b()Ljava/lang/Integer;
+    invoke-virtual {p5}, Lcom/jiny/android/data/models/f/f;->b()Ljava/lang/Integer;
 
     move-result-object p0
 
@@ -239,8 +211,23 @@
     return-object v0
 .end method
 
-.method public static a(Landroid/content/Context;ILwj0;)Landroid/content/Intent;
+.method public static a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;Lcom/jiny/android/data/models/c/b;)Landroid/content/Intent;
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "I",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Integer;",
+            ">;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Lcom/jiny/android/data/models/c/b;",
+            ")",
+            "Landroid/content/Intent;"
+        }
+    .end annotation
 
     new-instance v0, Landroid/content/Intent;
 
@@ -256,7 +243,27 @@
 
     invoke-virtual {v0, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    invoke-virtual {p2}, Lwj0;->f()Ljava/lang/Integer;
+    const-string p0, "extras_branch_sound_url"
+
+    invoke-virtual {v0, p0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    if-eqz p4, :cond_0
+
+    const-string p0, "extras_branch_title"
+
+    invoke-virtual {v0, p0, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    :cond_0
+    if-eqz p2, :cond_1
+
+    const-string p0, "extras_flow_list"
+
+    invoke-virtual {v0, p0, p2}, Landroid/content/Intent;->putIntegerArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
+
+    :cond_1
+    if-eqz p5, :cond_2
+
+    invoke-virtual {p5}, Lcom/jiny/android/data/models/c/b;->g()Ljava/lang/Integer;
 
     move-result-object p0
 
@@ -268,14 +275,7 @@
 
     invoke-virtual {v0, p1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    invoke-virtual {p2}, Lwj0;->e()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string p1, "extras_trigger_sound_name"
-
-    invoke-virtual {v0, p1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
+    :cond_2
     return-object v0
 .end method
 
@@ -365,14 +365,34 @@
     return-object v0
 .end method
 
-.method public static a(ILjava/lang/String;Ljk0;Ltk0;)V
-    .locals 7
+.method public static a(ILcom/jiny/android/data/models/c/b;)V
+    .locals 1
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->g()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILcom/jiny/android/data/models/c/b;)Landroid/content/Intent;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public static a(ILjava/lang/String;Lcom/jiny/android/data/models/f/f;Lcom/jiny/android/data/models/nativemodels/b;)V
+    .locals 7
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v0
 
@@ -388,7 +408,7 @@
 
     move-object v6, p2
 
-    invoke-static/range {v1 .. v6}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ltk0;Ljk0;)Landroid/content/Intent;
+    invoke-static/range {v1 .. v6}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Lcom/jiny/android/data/models/nativemodels/b;Lcom/jiny/android/data/models/f/f;)Landroid/content/Intent;
 
     move-result-object p0
 
@@ -397,7 +417,7 @@
     return-void
 .end method
 
-.method public static a(ILjava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;Lwj0;)V
+.method public static a(ILjava/util/ArrayList;Ljava/lang/String;Lcom/jiny/android/data/models/f/f;Lcom/jiny/android/data/models/nativemodels/b;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -406,61 +426,17 @@
             "Ljava/lang/Integer;",
             ">;",
             "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Lwj0;",
+            "Lcom/jiny/android/data/models/f/f;",
+            "Lcom/jiny/android/data/models/nativemodels/b;",
             ")V"
         }
     .end annotation
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->e()Landroid/content/Context;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    move v2, p0
-
-    move-object v3, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    move-object v6, p4
-
-    invoke-static/range {v1 .. v6}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;Lwj0;)Landroid/content/Intent;
-
-    move-result-object p0
-
-    invoke-static {v0, p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public static a(ILjava/util/ArrayList;Ljava/lang/String;Ljk0;Ltk0;)V
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/Integer;",
-            ">;",
-            "Ljava/lang/String;",
-            "Ljk0;",
-            "Ltk0;",
-            ")V"
-        }
-    .end annotation
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v0
 
@@ -476,7 +452,7 @@
 
     move-object v6, p3
 
-    invoke-static/range {v1 .. v6}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ltk0;Ljk0;)Landroid/content/Intent;
+    invoke-static/range {v1 .. v6}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Lcom/jiny/android/data/models/nativemodels/b;Lcom/jiny/android/data/models/f/f;)Landroid/content/Intent;
 
     move-result-object p0
 
@@ -485,18 +461,90 @@
     return-void
 .end method
 
-.method public static a(ILwj0;)V
+.method public static a(ILjava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;Lcom/jiny/android/data/models/c/b;)V
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Integer;",
+            ">;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Lcom/jiny/android/data/models/c/b;",
+            ")V"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->g()Landroid/content/Context;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    move v2, p0
+
+    move-object v3, p1
+
+    move-object v4, p2
+
+    move-object v5, p3
+
+    move-object v6, p4
+
+    invoke-static/range {v1 .. v6}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILjava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;Lcom/jiny/android/data/models/c/b;)Landroid/content/Intent;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
+
+    invoke-static {}, Lcom/jiny/android/d;->a()Lcom/jiny/android/d$a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/jiny/android/d;->f:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/jiny/android/d$a;->a(Ljava/lang/String;)Lcom/jiny/android/d$a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/jiny/android/d;->p:Ljava/lang/String;
+
+    sget-object v2, Lcom/jiny/android/d;->t:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lcom/jiny/android/d$a;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/jiny/android/d$a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/d$a;->a()V
+
+    invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public static b(I)V
     .locals 1
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->e()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->g()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0, p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;ILwj0;)Landroid/content/Intent;
+    invoke-static {v0, p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;I)Landroid/content/Intent;
 
     move-result-object p0
 
@@ -505,7 +553,7 @@
     return-void
 .end method
 
-.method public static a(IZ)V
+.method public static c(IZ)V
     .locals 0
 
     const/4 p1, 0x1
@@ -536,60 +584,16 @@
     const-string p0, "jiny_option_panel"
 
     :goto_0
-    invoke-static {p0}, Lth0;->a(Ljava/lang/String;)V
+    invoke-static {p0}, Lcom/jiny/android/a/b;->a(Ljava/lang/String;)V
 
     :goto_1
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
-
-    invoke-static {}, Lzi0;->a()Lzi0$a;
-
-    move-result-object v0
-
-    sget-object v1, Lzi0;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lzi0$a;->a(Ljava/lang/String;)Lzi0$a;
-
-    sget-object v1, Lzi0;->p:Ljava/lang/String;
-
-    sget-object v2, Lzi0;->t:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lzi0$a;->a(Ljava/lang/String;Ljava/lang/String;)Lzi0$a;
-
-    invoke-virtual {v0}, Lzi0$a;->a()V
-
-    invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public static synthetic a(Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;)V
+.method public static synthetic d(Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;)V
     .locals 0
 
     invoke-super {p0}, Landroid/app/Activity;->finish()V
-
-    return-void
-.end method
-
-.method public static b(I)V
-    .locals 1
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->e()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;I)Landroid/content/Intent;
-
-    move-result-object p0
-
-    invoke-static {v0, p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Landroid/content/Context;Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -601,13 +605,13 @@
 
     const-string v0, "jiny_mute_button_click"
 
-    invoke-static {v0}, Lth0;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jiny/android/a/b;->b(Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/jiny/android/data/a;->S()V
+    invoke-virtual {v0}, Lcom/jiny/android/data/a;->z()V
 
     invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
 
@@ -617,11 +621,11 @@
 .method public a(I)V
     .locals 2
 
-    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
+    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
 
     if-eq v0, p1, :cond_4
 
-    iput p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
+    iput p1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
 
     const/4 v0, 0x0
 
@@ -644,9 +648,9 @@
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lqm0;
+    new-instance v0, Lcom/jiny/android/ui/panel/a;
 
-    invoke-direct {v0}, Lqm0;-><init>()V
+    invoke-direct {v0}, Lcom/jiny/android/ui/panel/a;-><init>()V
 
     goto :goto_0
 
@@ -658,24 +662,24 @@
     goto :goto_0
 
     :cond_2
-    new-instance v0, Lsm0;
+    new-instance v0, Lcom/jiny/android/ui/panel/c;
 
-    invoke-direct {v0}, Lsm0;-><init>()V
+    invoke-direct {v0}, Lcom/jiny/android/ui/panel/c;-><init>()V
 
     goto :goto_0
 
     :cond_3
-    new-instance v0, Lum0;
+    new-instance v0, Lcom/jiny/android/ui/panel/e;
 
-    invoke-direct {v0}, Lum0;-><init>()V
+    invoke-direct {v0}, Lcom/jiny/android/ui/panel/e;-><init>()V
 
     :goto_0
     invoke-virtual {p0, p1, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(ILandroid/app/Fragment;)V
 
     :cond_4
-    iget-boolean v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Z
+    iget-boolean v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Z
 
-    invoke-static {p1, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(IZ)V
+    invoke-static {p1, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c(IZ)V
 
     return-void
 .end method
@@ -693,13 +697,13 @@
 
     move-result-object v0
 
-    sget v1, Loh0;->frame:I
+    sget v1, Lcom/jiny/android/R$id;->frame:I
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "uis"
+    const-string v3, "uis"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -722,7 +726,7 @@
     invoke-virtual {p1}, Landroid/app/FragmentTransaction;->commit()I
 
     :cond_0
-    sget p1, Loh0;->fade_view:I
+    sget p1, Lcom/jiny/android/R$id;->fade_view:I
 
     invoke-virtual {p0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -755,13 +759,13 @@
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     :cond_1
-    sget p1, Llh0;->jiny_slide_up:I
+    sget p1, Lcom/jiny/android/R$anim;->jiny_slide_up:I
 
     invoke-static {p0, p1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object p1
 
-    sget p2, Loh0;->frame:I
+    sget p2, Lcom/jiny/android/R$id;->frame:I
 
     invoke-virtual {p0, p2}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -772,38 +776,10 @@
     return-void
 .end method
 
-.method public final a(ILjava/lang/String;ILjava/lang/String;)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-ne p1, v1, :cond_0
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-static {p2, v2, p4, v1, v0}, Lxi0;->b(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLoi0$a;)Z
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-static {p2, p1, p4, v1, v0}, Lxi0;->a(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLoi0$a;)Z
-
-    :cond_1
-    return-void
-.end method
-
-.method public a(Lfk0;)V
+.method public a(Lcom/jiny/android/data/models/f/b;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->b(Lfk0;)V
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->b(Lcom/jiny/android/data/models/f/b;)V
 
     return-void
 .end method
@@ -816,35 +792,508 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
+.method public a(Z)V
+    .locals 3
+
+    sget-object v0, Lcom/jiny/android/d;->g:Ljava/lang/String;
+
+    sget-object v1, Lcom/jiny/android/d;->q:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Lcom/jiny/android/d;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
+
+    move-result-object v0
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    invoke-virtual {v0, p1}, Lcom/jiny/android/data/a;->f(Z)V
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+.end method
+
+.method public b()V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+.end method
+
+.method public final b(ILjava/lang/String;ILjava/lang/String;)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    if-ne p1, v1, :cond_0
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {p2, v2, p4, v1, v0}, Lcom/jiny/android/c/g;->b(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLcom/jiny/android/c/b$a;)Z
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p2, p1, p4, v1, v0}, Lcom/jiny/android/c/g;->a(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLcom/jiny/android/c/b$a;)Z
+
+    :cond_1
+    return-void
+.end method
+
+.method public b(Lcom/jiny/android/data/models/f/b;)V
+    .locals 2
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->i()Lcom/jiny/android/b/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/b/a;->f()Lcom/jiny/android/ui/h;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Z
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0, p1}, Lcom/jiny/android/ui/h;->a(Lcom/jiny/android/data/models/f/b;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, p1}, Lcom/jiny/android/ui/h;->b(Lcom/jiny/android/data/models/f/b;)V
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+.end method
+
+.method public b(Ljava/lang/String;)V
+    .locals 6
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->i()Lcom/jiny/android/b/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/b/a;->f()Lcom/jiny/android/ui/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/ui/h;->e()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->b:I
+
+    invoke-static {p1, v0}, Lcom/jiny/android/c/g;->a(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    sget-object v2, Lcom/jiny/android/data/a;->f:Ljava/util/Map;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0, p1, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_1
+    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
+
+    iget v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->z:I
+
+    const/4 v3, -0x1
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->e:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-static {p1, v2, v4, v1}, Lcom/jiny/android/c/g;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_2
+    const-string v2, ""
+
+    :goto_0
+    iget v4, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
+
+    const/4 v5, 0x1
+
+    if-ne v4, v3, :cond_3
+
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->e:Ljava/lang/String;
+
+    iget v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->z:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {p1, v0, v1, v5}, Lcom/jiny/android/c/g;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->z:I
+
+    const/4 v1, 0x1
+
+    :cond_3
+    invoke-virtual {p0, v2}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_4
+    iget-object v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->e:Ljava/lang/String;
+
+    invoke-virtual {p0, v1, v2, v0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->b(ILjava/lang/String;ILjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public c()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/jiny/android/data/models/f/b;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public c(Ljava/lang/String;)Z
+    .locals 2
+
+    sget-object v0, Lcom/jiny/android/data/a;->f:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/jiny/android/data/a;->f:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    const/4 v0, 0x2
+
+    if-ne p1, v0, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
+.end method
+
+.method public d()V
     .locals 1
 
-    invoke-static {p2}, Lxi0;->a(Ljava/lang/String;)Z
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(I)V
+
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
+    .locals 4
+
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/data/a;->v()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/jiny/android/data/a;->e(Ljava/lang/String;)V
+
+    :cond_0
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/jiny/android/h;->i()Lcom/jiny/android/b/a;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/jiny/android/b/a;->f()Lcom/jiny/android/ui/h;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/jiny/android/ui/h;->e()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/FragmentManager;->getBackStackEntryCount()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x1
+
+    if-ne v1, v2, :cond_3
+
+    iput v3, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
+
+    invoke-virtual {p1}, Lcom/jiny/android/ui/h;->m()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    invoke-static {}, Lcom/jiny/android/data/c;->a()Lcom/jiny/android/data/c;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/jiny/android/data/c;->f()Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->onBackPressed()V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    :goto_0
+    return-void
+
+    :cond_3
+    invoke-virtual {v0}, Landroid/app/FragmentManager;->getBackStackEntryCount()I
+
+    move-result p1
+
+    const/4 v1, 0x3
+
+    if-ne p1, v1, :cond_4
+
+    iput v3, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
+
+    invoke-virtual {v0}, Landroid/app/FragmentManager;->popBackStackImmediate()Z
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->onBackPressed()V
+
+    return-void
+
+    :cond_4
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+.end method
+
+.method public e()V
+    .locals 3
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->h()Lcom/jiny/android/d/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/d/b;->b()V
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/jiny/android/h;->i()Lcom/jiny/android/b/a;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/jiny/android/b/a;->f()Lcom/jiny/android/ui/h;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->h()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1}, Lcom/jiny/android/ui/h;->e()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/jiny/android/d/b;->a(I)V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+.end method
+
+.method public final e(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    invoke-static {p2}, Lcom/jiny/android/c/g;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p1}, Lrk0;->a(Ljava/lang/String;)Ljava/util/Map;
+    invoke-static {p1}, Lcom/jiny/android/data/models/i;->a(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->v:Ljava/lang/String;
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d:Ljava/lang/String;
 
-    invoke-static {p1, v0}, Lrk0;->c(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;
+    invoke-static {p1, v0}, Lcom/jiny/android/data/models/i;->c(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
     :goto_0
-    invoke-virtual {p0, p1, p2, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
+    invoke-virtual {p0, p1, p2, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->f(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
+.method public f()V
+    .locals 1
+
+    const-string v0, "jiny_center_bar_button_click"
+
+    invoke-static {v0}, Lcom/jiny/android/a/b;->b(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->h()Lcom/jiny/android/d/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/d/b;->b()V
+
+    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
+
+    return-void
+.end method
+
+.method public final f(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -893,7 +1342,7 @@
 
     const/4 p3, 0x1
 
-    invoke-static {p2, p3, p1, v0}, Lrm0;->a(Ljava/lang/String;ILjava/lang/String;Ljava/util/ArrayList;)Lrm0;
+    invoke-static {p2, p3, p1, v0}, Lcom/jiny/android/ui/panel/b;->a(Ljava/lang/String;ILjava/lang/String;Ljava/util/ArrayList;)Lcom/jiny/android/ui/panel/b;
 
     move-result-object p1
 
@@ -905,455 +1354,10 @@
     return-void
 .end method
 
-.method public a(Z)V
-    .locals 3
-
-    sget-object v0, Lzi0;->g:Ljava/lang/String;
-
-    sget-object v1, Lzi0;->q:Ljava/lang/String;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lzi0;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
-
-    move-result-object v0
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    invoke-virtual {v0, p1}, Lcom/jiny/android/data/a;->f(Z)V
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-.end method
-
-.method public b(Lfk0;)V
-    .locals 2
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->g()Lyh0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lyh0;->f()Lfm0;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0, p1}, Lfm0;->a(Lfk0;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0, p1}, Lfm0;->b(Lfk0;)V
-
-    :goto_0
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/String;)V
-    .locals 6
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->g()Lyh0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lyh0;->f()Lfm0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lfm0;->e()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->t:I
-
-    invoke-static {p1, v0}, Lxi0;->a(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_0
-    sget-object v2, Lcom/jiny/android/data/a;->c0:Ljava/util/Map;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-interface {v2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p0, p1, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_1
-    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->x:I
-
-    iget v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
-
-    const/4 v3, -0x1
-
-    if-ne v2, v3, :cond_2
-
-    iget-object v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->w:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-static {p1, v2, v4, v1}, Lxi0;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_2
-    const-string v2, ""
-
-    :goto_0
-    iget v4, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->x:I
-
-    const/4 v5, 0x1
-
-    if-ne v4, v3, :cond_3
-
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->w:Ljava/lang/String;
-
-    iget v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {p1, v0, v1, v5}, Lxi0;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
-
-    const/4 v1, 0x1
-
-    :cond_3
-    invoke-virtual {p0, v2}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_4
-    iget-object v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->w:Ljava/lang/String;
-
-    invoke-virtual {p0, v1, v2, v0, p1}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(ILjava/lang/String;ILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public c()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Lfk0;",
-            ">;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public c(Ljava/lang/String;)Z
-    .locals 2
-
-    sget-object v0, Lcom/jiny/android/data/a;->c0:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/jiny/android/data/a;->c0:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_0
-
-    const/4 v1, 0x1
-
-    :cond_0
-    return v1
-.end method
-
-.method public d()V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(I)V
-
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .locals 4
-
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/jiny/android/data/a;->O()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/jiny/android/data/a;->d(Ljava/lang/String;)V
-
-    :cond_0
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lil0;->g()Lyh0;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lyh0;->f()Lfm0;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lfm0;->e()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->getBackStackEntryCount()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
-
-    if-ne v1, v2, :cond_3
-
-    iput v3, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
-
-    invoke-virtual {p1}, Lfm0;->m()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    invoke-static {}, Lej0;->p()Lej0;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lej0;->e()Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->onBackPressed()V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    :goto_0
-    return-void
-
-    :cond_3
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->getBackStackEntryCount()I
-
-    move-result p1
-
-    const/4 v1, 0x3
-
-    if-ne p1, v1, :cond_4
-
-    iput v3, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
-
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->popBackStackImmediate()Z
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->onBackPressed()V
-
-    return-void
-
-    :cond_4
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-.end method
-
-.method public e()V
-    .locals 3
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->f()Lbj0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lbj0;->b()V
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lil0;->g()Lyh0;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lyh0;->f()Lfm0;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->h()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v1}, Lfm0;->e()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lbj0;->a(I)V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-.end method
-
-.method public f()V
-    .locals 1
-
-    const-string v0, "jiny_center_bar_button_click"
-
-    invoke-static {v0}, Lth0;->b(Ljava/lang/String;)V
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->f()Lbj0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lbj0;->b()V
-
-    invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
-
-    return-void
-.end method
-
 .method public finish()V
     .locals 5
 
-    sget v0, Loh0;->fade_view:I
+    sget v0, Lcom/jiny/android/R$id;->fade_view:I
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -1377,7 +1381,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    sget v0, Loh0;->frame:I
+    sget v0, Lcom/jiny/android/R$id;->frame:I
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -1431,17 +1435,17 @@
 
     const-string v0, "jiny_cross_button_click"
 
-    invoke-static {v0}, Lth0;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jiny/android/a/b;->b(Ljava/lang/String;)V
 
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->f()Lbj0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbj0;->b()V
+    invoke-virtual {v0}, Lcom/jiny/android/h;->h()Lcom/jiny/android/d/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/d/b;->b()V
 
     invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->finish()V
 
@@ -1451,7 +1455,7 @@
 .method public h()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/util/List;
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -1465,40 +1469,38 @@
 .method public final i()V
     .locals 3
 
-    iget-boolean v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Z
+    iget-boolean v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Z
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lnl0;
-
-    iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->z:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/util/List;
-
-    invoke-direct {v0, p0, v1, v2, p0}, Lnl0;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;Lnl0$b;)V
-
-    iput-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Lnl0;
-
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Lnl0;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
-
-    invoke-static {}, Lil0;->o()Lil0;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lil0;->f()Lbj0;
-
-    move-result-object v0
+    new-instance v0, Lcom/jiny/android/ui/a/a;
 
     iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->A:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lbj0;->a(Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Ljava/util/List;
+
+    invoke-direct {v0, p0, v1, v2, p0}, Lcom/jiny/android/ui/a/a;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;Lcom/jiny/android/ui/a/a$a;)V
+
+    iput-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->E:Lcom/jiny/android/ui/a/a;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/jiny/android/h;->h()Lcom/jiny/android/d/b;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/jiny/android/d/b;->a(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->s:I
+    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a:I
 
     invoke-virtual {p0, v0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a(I)V
 
@@ -1528,7 +1530,7 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->s:I
+    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->a:I
 
     const-string v1, "extras_branch_sound_url"
 
@@ -1544,16 +1546,16 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->A:Ljava/lang/String;
+    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/lang/String;
 
     :cond_1
-    iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->A:Ljava/lang/String;
+    iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/lang/String;
 
     if-eqz v1, :cond_2
 
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Z
+    iput-boolean v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Z
 
     :cond_2
     const-string v1, "extras_branch_title"
@@ -1568,7 +1570,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->z:Ljava/lang/String;
+    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->A:Ljava/lang/String;
 
     :cond_3
     const-string v1, "extras_flow_list"
@@ -1585,7 +1587,7 @@
 
     if-eqz v1, :cond_4
 
-    invoke-static {}, Lcom/jiny/android/data/a;->W()Lcom/jiny/android/data/a;
+    invoke-static {}, Lcom/jiny/android/data/a;->c()Lcom/jiny/android/data/a;
 
     move-result-object v2
 
@@ -1593,7 +1595,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/util/List;
+    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->C:Ljava/util/List;
 
     :cond_4
     const-string v1, "extras_trigger_id"
@@ -1608,7 +1610,7 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->t:I
+    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->b:I
 
     :cond_5
     const-string v1, "extras_trigger_sound_name"
@@ -1623,7 +1625,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->v:Ljava/lang/String;
+    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->d:Ljava/lang/String;
 
     :cond_6
     const-string v1, "extras_flow_name"
@@ -1638,7 +1640,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->w:Ljava/lang/String;
+    iput-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->e:Ljava/lang/String;
 
     :cond_7
     const-string v1, "extras_native_page_id"
@@ -1653,7 +1655,7 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
+    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->z:I
 
     :cond_8
     const-string v1, "extras_web_page_id"
@@ -1668,7 +1670,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->x:I
+    iput v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->y:I
 
     :cond_9
     return-void
@@ -1786,7 +1788,7 @@
     const/4 v0, 0x0
 
     :goto_2
-    invoke-static {v1, v0, v2, v3}, Lrm0;->a(Ljava/lang/String;ILjava/lang/String;Ljava/util/ArrayList;)Lrm0;
+    invoke-static {v1, v0, v2, v3}, Lcom/jiny/android/ui/panel/b;->a(Ljava/lang/String;ILjava/lang/String;Ljava/util/ArrayList;)Lcom/jiny/android/ui/panel/b;
 
     move-result-object v1
 
@@ -1816,11 +1818,11 @@
     :cond_0
     invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
 
-    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
+    iget v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
 
     if-eq v0, v1, :cond_1
 
-    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->u:I
+    iput v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->c:I
 
     :cond_1
     return-void
@@ -1828,6 +1830,10 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
+    .param p1    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 
@@ -1839,11 +1845,11 @@
 
     move-result-object p1
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->a()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->c()Landroid/content/Context;
 
     move-result-object v0
 
@@ -1851,7 +1857,7 @@
 
     move-result-object p1
 
-    sget v0, Lph0;->jiny_floater_window:I
+    sget v0, Lcom/jiny/android/R$layout;->jiny_floater_window:I
 
     const/4 v1, 0x0
 
@@ -1865,7 +1871,7 @@
 
     invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->k()V
 
-    sget p1, Loh0;->draggableLayout:I
+    sget p1, Lcom/jiny/android/R$id;->draggableLayout:I
 
     invoke-virtual {p0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -1873,7 +1879,7 @@
 
     check-cast p1, Lcom/jiny/android/ui/custom/DraggableLayout;
 
-    invoke-virtual {p1, p0}, Lcom/jiny/android/ui/custom/DraggableLayout;->setPullActionListener(Lcom/jiny/android/ui/custom/DraggableLayout$b;)V
+    invoke-virtual {p1, p0}, Lcom/jiny/android/ui/custom/DraggableLayout;->setPullActionListener(Lcom/jiny/android/ui/custom/DraggableLayout$a;)V
 
     invoke-virtual {p0}, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->i()V
 
@@ -1889,7 +1895,7 @@
 
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Lnl0;
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->E:Lcom/jiny/android/ui/a/a;
 
     if-eqz v0, :cond_0
 
@@ -1899,7 +1905,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Lnl0;
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->E:Lcom/jiny/android/ui/a/a;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
@@ -1912,7 +1918,7 @@
 
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Lnl0;
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->E:Lcom/jiny/android/ui/a/a;
 
     if-eqz v0, :cond_0
 
@@ -1922,21 +1928,21 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->D:Lnl0;
+    iget-object v0, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->E:Lcom/jiny/android/ui/a/a;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    invoke-static {}, Lil0;->o()Lil0;
+    invoke-static {}, Lcom/jiny/android/h;->b()Lcom/jiny/android/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lil0;->f()Lbj0;
+    invoke-virtual {v0}, Lcom/jiny/android/h;->h()Lcom/jiny/android/d/b;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->A:Ljava/lang/String;
+    iget-object v1, p0, Lcom/jiny/android/ui/panel/JinyBottomFloaterActivity;->B:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lbj0;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/jiny/android/d/b;->a(Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -1947,13 +1953,13 @@
 
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    sget-object v0, Lzi0;->f:Ljava/lang/String;
+    sget-object v0, Lcom/jiny/android/d;->f:Ljava/lang/String;
 
-    sget-object v1, Lzi0;->p:Ljava/lang/String;
+    sget-object v1, Lcom/jiny/android/d;->p:Ljava/lang/String;
 
-    sget-object v2, Lzi0;->u:Ljava/lang/String;
+    sget-object v2, Lcom/jiny/android/d;->u:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lzi0;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/jiny/android/d;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

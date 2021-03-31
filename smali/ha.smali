@@ -1,14 +1,23 @@
-.class public interface abstract Lha;
+.class public final Lha;
 .super Ljava/lang/Object;
-.source "ViewPropertyAnimatorListener.java"
+
+# interfaces
+.implements Lcom/elitecorelib/core/interfaces/OnLocationEnableListner;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract onAnimationCancel(Landroid/view/View;)V
-.end method
+.method public isLocationEnable(Z)V
+    .locals 0
 
-.method public abstract onAnimationEnd(Landroid/view/View;)V
-.end method
-
-.method public abstract onAnimationStart(Landroid/view/View;)V
+    return-void
 .end method

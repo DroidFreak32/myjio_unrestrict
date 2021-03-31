@@ -3,18 +3,18 @@
 
 
 # static fields
-.field public static final zzabm:Ljava/lang/String;
+.field private static final zzabm:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 .end field
 
 
 # instance fields
-.field public zzabn:Z
+.field private zzabn:Z
 
-.field public zzabo:Z
+.field private zzabo:Z
 
-.field public final zzwc:Lcom/google/android/gms/internal/gtm/zzap;
+.field private final zzwc:Lcom/google/android/gms/internal/gtm/zzap;
 
 
 # direct methods

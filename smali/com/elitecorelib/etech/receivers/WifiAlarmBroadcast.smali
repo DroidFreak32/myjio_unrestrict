@@ -14,28 +14,18 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 0
+    .locals 1
 
     :try_start_0
-    invoke-static {p1}, Lcom/elitecorelib/core/LibraryApplication;->reInitApplicationResourceIfNeeded(Landroid/content/Context;)V
+    new-instance p2, Ljava/lang/Thread;
 
-    invoke-static {}, Lcom/elitecorelib/andsf/api/ANDSFClient;->getClient()Lcom/elitecorelib/andsf/api/ANDSFClient;
+    new-instance v0, Lcom/elitecorelib/etech/receivers/WifiAlarmBroadcast$1;
 
-    move-result-object p2
+    invoke-direct {v0, p0, p1}, Lcom/elitecorelib/etech/receivers/WifiAlarmBroadcast$1;-><init>(Lcom/elitecorelib/etech/receivers/WifiAlarmBroadcast;Landroid/content/Context;)V
 
-    invoke-virtual {p2}, Lcom/elitecorelib/andsf/api/ANDSFClient;->isANDSFEnable()Z
+    invoke-direct {p2, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    const-string p2, "Alarm Receive called"
-
-    invoke-static {p2}, Lcom/elitecorelib/etech/AppUtils;->writeText(Ljava/lang/String;)V
-
-    invoke-static {p1}, Lcom/elitecorelib/etech/AppUtils;->startService(Landroid/content/Context;)Z
-
-    invoke-static {}, Lcom/elitecorelib/etech/AppUtils;->storeCurrentTime()V
+    invoke-virtual {p2}, Ljava/lang/Thread;->start()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -44,9 +34,20 @@
     :catch_0
     move-exception p1
 
+    :try_start_1
+    sget-object p2, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
+
+    const-string v0, "WifiAlarmBroadcast"
+
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    :cond_0
+    move-result-object p1
+
+    invoke-virtual {p2, v0, p1}, Lcom/elitecorelib/core/logger/EliteLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
     :goto_0
     return-void
 .end method

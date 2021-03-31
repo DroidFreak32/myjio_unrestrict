@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field public isDestroyed:Z
+.field private isDestroyed:Z
 
-.field public isStarted:Z
+.field private isStarted:Z
 
-.field public final lifecycleListeners:Ljava/util/Set;
+.field private final lifecycleListeners:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -48,6 +48,10 @@
 # virtual methods
 .method public addListener(Lcom/bumptech/glide/manager/LifecycleListener;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/manager/LifecycleListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;
@@ -208,6 +212,10 @@
 
 .method public removeListener(Lcom/bumptech/glide/manager/LifecycleListener;)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/manager/LifecycleListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;

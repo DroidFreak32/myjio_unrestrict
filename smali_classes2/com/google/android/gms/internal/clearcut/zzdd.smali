@@ -6,11 +6,11 @@
 
 
 # static fields
-.field public static final zzlz:Lcom/google/android/gms/internal/clearcut/zzdn;
+.field private static final zzlz:Lcom/google/android/gms/internal/clearcut/zzdn;
 
 
 # instance fields
-.field public final zzly:Lcom/google/android/gms/internal/clearcut/zzdn;
+.field private final zzly:Lcom/google/android/gms/internal/clearcut/zzdn;
 
 
 # direct methods
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/internal/clearcut/zzdn;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/clearcut/zzdn;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method public static zza(Lcom/google/android/gms/internal/clearcut/zzdm;)Z
+.method private static zza(Lcom/google/android/gms/internal/clearcut/zzdm;)Z
     .locals 1
 
     invoke-interface {p0}, Lcom/google/android/gms/internal/clearcut/zzdm;->zzcf()I
@@ -97,12 +97,12 @@
     return p0
 .end method
 
-.method public static zzby()Lcom/google/android/gms/internal/clearcut/zzdn;
+.method private static zzby()Lcom/google/android/gms/internal/clearcut/zzdn;
     .locals 4
 
+    :try_start_0
     const-string v0, "com.google.protobuf.DescriptorMessageInfoFactory"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

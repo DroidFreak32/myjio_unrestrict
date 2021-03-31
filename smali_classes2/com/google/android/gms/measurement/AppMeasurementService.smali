@@ -1,16 +1,16 @@
 .class public final Lcom/google/android/gms/measurement/AppMeasurementService;
 .super Landroid/app/Service;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
+.source "com.google.android.gms:play-services-measurement@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/measurement/internal/zzjp;
+.implements Lcom/google/android/gms/measurement/internal/zzju;
 
 
 # instance fields
-.field public zza:Lcom/google/android/gms/measurement/internal/zzjl;
+.field private zza:Lcom/google/android/gms/measurement/internal/zzjq;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/measurement/internal/zzjl<",
+            "Lcom/google/android/gms/measurement/internal/zzjq<",
             "Lcom/google/android/gms/measurement/AppMeasurementService;",
             ">;"
         }
@@ -28,32 +28,32 @@
     return-void
 .end method
 
-.method private final zza()Lcom/google/android/gms/measurement/internal/zzjl;
+.method private final zza()Lcom/google/android/gms/measurement/internal/zzjq;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/android/gms/measurement/internal/zzjl<",
+            "Lcom/google/android/gms/measurement/internal/zzjq<",
             "Lcom/google/android/gms/measurement/AppMeasurementService;",
             ">;"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementService;->zza:Lcom/google/android/gms/measurement/internal/zzjl;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementService;->zza:Lcom/google/android/gms/measurement/internal/zzjq;
 
     if-nez v0, :cond_0
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/measurement/internal/zzjl;
+    new-instance v0, Lcom/google/android/gms/measurement/internal/zzjq;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/measurement/internal/zzjl;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/measurement/internal/zzjq;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementService;->zza:Lcom/google/android/gms/measurement/internal/zzjl;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementService;->zza:Lcom/google/android/gms/measurement/internal/zzjq;
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementService;->zza:Lcom/google/android/gms/measurement/internal/zzjl;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementService;->zza:Lcom/google/android/gms/measurement/internal/zzjq;
 
     return-object v0
 .end method
@@ -62,13 +62,15 @@
 # virtual methods
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjl;
+    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjq;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/internal/zzjl;->zza(Landroid/content/Intent;)Landroid/os/IBinder;
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/internal/zzjq;->zza(Landroid/content/Intent;)Landroid/os/IBinder;
 
     move-result-object p1
 
@@ -77,29 +79,33 @@
 
 .method public final onCreate()V
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
     .line 2
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjl;
+    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjq;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzjl;->zza()V
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzjq;->zza()V
 
     return-void
 .end method
 
 .method public final onDestroy()V
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjl;
+    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjq;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzjl;->zzb()V
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzjq;->zzb()V
 
     .line 2
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
@@ -109,26 +115,30 @@
 
 .method public final onRebind(Landroid/content/Intent;)V
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjl;
+    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjq;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/internal/zzjl;->zzc(Landroid/content/Intent;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/internal/zzjq;->zzc(Landroid/content/Intent;)V
 
     return-void
 .end method
 
 .method public final onStartCommand(Landroid/content/Intent;II)I
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjl;
+    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjq;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/measurement/internal/zzjl;->zza(Landroid/content/Intent;II)I
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/measurement/internal/zzjq;->zza(Landroid/content/Intent;II)I
 
     move-result p1
 
@@ -137,13 +147,15 @@
 
 .method public final onUnbind(Landroid/content/Intent;)Z
     .locals 1
+    .annotation build Landroidx/annotation/MainThread;
+    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjl;
+    invoke-direct {p0}, Lcom/google/android/gms/measurement/AppMeasurementService;->zza()Lcom/google/android/gms/measurement/internal/zzjq;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/internal/zzjl;->zzb(Landroid/content/Intent;)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/internal/zzjq;->zzb(Landroid/content/Intent;)Z
 
     move-result p1
 

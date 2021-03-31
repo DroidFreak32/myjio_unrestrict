@@ -1,36 +1,41 @@
 .class public final Lcom/google/android/gms/internal/ads/zzalu;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzazs;
+
+
+# instance fields
+.field private final synthetic zzdjo:Lcom/google/android/gms/internal/ads/zzalo;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzalo;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzals;Lcom/google/android/gms/internal/ads/zzalo;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzalu;->zzdjo:Lcom/google/android/gms/internal/ads/zzalo;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/ads/zzalo;Lcom/google/android/gms/internal/ads/zzalr;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzalu;-><init>(Lcom/google/android/gms/internal/ads/zzalo;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 0
+.method public final run()V
+    .locals 1
+
+    const-string v0, "Rejecting reference for JS Engine."
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzaoe;->zztx()V
+    invoke-static {v0}, Lcom/google/android/gms/ads/internal/util/zzd;->zzee(Ljava/lang/String;)V
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzale;->zzaf(Landroid/content/Context;)V
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzalu;->zzdjo:Lcom/google/android/gms/internal/ads/zzalo;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/ads/zzazx;->reject()V
 
     return-void
 .end method

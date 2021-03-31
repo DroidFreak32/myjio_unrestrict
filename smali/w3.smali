@@ -1,54 +1,34 @@
-.class public final Lw3;
+.class public interface abstract Lw3;
 .super Ljava/lang/Object;
-.source "CustomTabsIntent.java"
+.source "AudioAttributesImpl.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lw3$a;
-    }
-.end annotation
-
-
-# instance fields
-.field public final a:Landroid/content/Intent;
-
-.field public final b:Landroid/os/Bundle;
-
-
-# direct methods
-.method public constructor <init>(Landroid/content/Intent;Landroid/os/Bundle;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lw3;->a:Landroid/content/Intent;
-
-    .line 3
-    iput-object p2, p0, Lw3;->b:Landroid/os/Bundle;
-
-    return-void
-.end method
+# interfaces
+.implements Landroidx/versionedparcelable/VersionedParcelable;
 
 
 # virtual methods
-.method public a(Landroid/content/Context;Landroid/net/Uri;)V
-    .locals 1
+.method public abstract a()I
+.end method
 
-    .line 1
-    iget-object v0, p0, Lw3;->a:Landroid/content/Intent;
+.method public abstract getAudioAttributes()Ljava/lang/Object;
+.end method
 
-    invoke-virtual {v0, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+.method public abstract getContentType()I
+.end method
 
-    .line 2
-    iget-object p2, p0, Lw3;->a:Landroid/content/Intent;
+.method public abstract getFlags()I
+.end method
 
-    iget-object v0, p0, Lw3;->b:Landroid/os/Bundle;
+.method public abstract getLegacyStreamType()I
+.end method
 
-    invoke-static {p1, p2, v0}, Lx6;->a(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
+.method public abstract getUsage()I
+.end method
 
-    return-void
+.method public abstract getVolumeControlStream()I
+.end method
+
+.method public abstract toBundle()Landroid/os/Bundle;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method

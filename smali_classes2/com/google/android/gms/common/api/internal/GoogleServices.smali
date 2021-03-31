@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/GoogleServices;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -11,19 +12,29 @@
 
 
 # static fields
-.field public static final sLock:Ljava/lang/Object;
+.field private static final zza:Ljava/lang/Object;
 
-.field public static zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+.field private static zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "sLock"
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final zzaz:Ljava/lang/String;
+.field private final zzc:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final zzba:Lcom/google/android/gms/common/api/Status;
+.field private final zzd:Lcom/google/android/gms/common/api/Status;
 
-.field public final zzbb:Z
+.field private final zze:Z
 
-.field public final zzbc:Z
+.field private final zzf:Z
 
 
 # direct methods
@@ -35,7 +46,7 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->sLock:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zza:Ljava/lang/Object;
 
     return-void
 .end method
@@ -86,29 +97,28 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_0
+    const/4 v2, 0x1
 
     :cond_0
-    const/4 v3, 0x0
-
-    :goto_0
-    xor-int/lit8 v0, v3, 0x1
+    xor-int/lit8 v0, v2, 0x1
 
     .line 7
-    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbc:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzf:Z
 
-    goto :goto_1
+    move v3, v2
+
+    goto :goto_0
 
     .line 8
     :cond_1
-    iput-boolean v2, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbc:Z
+    iput-boolean v2, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzf:Z
 
     .line 9
-    :goto_1
-    iput-boolean v3, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbb:Z
+    :goto_0
+    iput-boolean v3, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zze:Z
 
     .line 10
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzp;->zzc(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzt;->zza(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -143,23 +153,23 @@
 
     invoke-direct {p1, v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzba:Lcom/google/android/gms/common/api/Status;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzd:Lcom/google/android/gms/common/api/Status;
 
     const/4 p1, 0x0
 
     .line 15
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzaz:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzc:Ljava/lang/String;
 
     return-void
 
     .line 16
     :cond_3
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzaz:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzc:Ljava/lang/String;
 
     .line 17
     sget-object p1, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzba:Lcom/google/android/gms/common/api/Status;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzd:Lcom/google/android/gms/common/api/Status;
 
     return-void
 .end method
@@ -176,46 +186,44 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 19
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzaz:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzc:Ljava/lang/String;
 
     .line 20
     sget-object p1, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzba:Lcom/google/android/gms/common/api/Status;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzd:Lcom/google/android/gms/common/api/Status;
 
     .line 21
-    iput-boolean p2, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbb:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zze:Z
 
     xor-int/lit8 p1, p2, 0x1
 
     .line 22
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbc:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzf:Z
 
     return-void
 .end method
 
-.method public static checkInitialized(Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/GoogleServices;
+.method private static checkInitialized(Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/GoogleServices;
     .locals 4
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->sLock:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sget-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
     if-eqz v1, :cond_0
 
     .line 3
-    sget-object p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
-
     monitor-exit v0
 
-    return-object p0
+    return-object v1
 
     .line 4
     :cond_0
@@ -273,7 +281,7 @@
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->sLock:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -281,7 +289,7 @@
 
     .line 2
     :try_start_0
-    sput-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sput-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
     .line 3
     monitor-exit v0
@@ -300,6 +308,9 @@
 
 .method public static getGoogleAppId()Ljava/lang/String;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -311,13 +322,20 @@
     move-result-object v0
 
     .line 2
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzaz:Ljava/lang/String;
+    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzc:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public static initialize(Landroid/content/Context;)Lcom/google/android/gms/common/api/Status;
     .locals 2
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -327,13 +345,13 @@
     invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 10
-    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->sLock:Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zza:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 11
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sget-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
     if-nez v1, :cond_0
 
@@ -342,13 +360,13 @@
 
     invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/internal/GoogleServices;-><init>(Landroid/content/Context;)V
 
-    sput-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sput-object v1, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
     .line 13
     :cond_0
-    sget-object p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sget-object p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
-    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzba:Lcom/google/android/gms/common/api/Status;
+    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzd:Lcom/google/android/gms/common/api/Status;
 
     monitor-exit v0
 
@@ -367,6 +385,21 @@
 
 .method public static initialize(Landroid/content/Context;Ljava/lang/String;Z)Lcom/google/android/gms/common/api/Status;
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Z
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -381,20 +414,18 @@
     invoke-static {p1, p0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotEmpty(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     .line 3
-    sget-object p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->sLock:Ljava/lang/Object;
+    sget-object p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zza:Ljava/lang/Object;
 
     monitor-enter p0
 
     .line 4
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
     if-eqz v0, :cond_0
 
     .line 5
-    sget-object p2, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
-
-    invoke-virtual {p2, p1}, Lcom/google/android/gms/common/api/internal/GoogleServices;->checkGoogleAppId(Ljava/lang/String;)Lcom/google/android/gms/common/api/Status;
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/GoogleServices;->checkGoogleAppId(Ljava/lang/String;)Lcom/google/android/gms/common/api/Status;
 
     move-result-object p1
 
@@ -409,9 +440,9 @@
     invoke-direct {v0, p1, p2}, Lcom/google/android/gms/common/api/internal/GoogleServices;-><init>(Ljava/lang/String;Z)V
 
     .line 7
-    sput-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzay:Lcom/google/android/gms/common/api/internal/GoogleServices;
+    sput-object v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzb:Lcom/google/android/gms/common/api/internal/GoogleServices;
 
-    iget-object p1, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzba:Lcom/google/android/gms/common/api/Status;
+    iget-object p1, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzd:Lcom/google/android/gms/common/api/Status;
 
     monitor-exit p0
 
@@ -430,6 +461,9 @@
 
 .method public static isMeasurementEnabled()Z
     .locals 2
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -441,7 +475,7 @@
     move-result-object v0
 
     .line 2
-    iget-object v1, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzba:Lcom/google/android/gms/common/api/Status;
+    iget-object v1, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzd:Lcom/google/android/gms/common/api/Status;
 
     invoke-virtual {v1}, Lcom/google/android/gms/common/api/Status;->isSuccess()Z
 
@@ -449,7 +483,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbb:Z
+    iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zze:Z
 
     if-eqz v0, :cond_0
 
@@ -465,6 +499,9 @@
 
 .method public static isMeasurementExplicitlyDisabled()Z
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -476,7 +513,7 @@
     move-result-object v0
 
     .line 2
-    iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzbc:Z
+    iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzf:Z
 
     return v0
 .end method
@@ -492,7 +529,7 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzaz:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzc:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
@@ -507,7 +544,7 @@
 
     const/16 v0, 0xa
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzaz:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/GoogleServices;->zzc:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

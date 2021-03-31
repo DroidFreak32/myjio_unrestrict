@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-vision@@20.1.2"
 
 
 # annotations
@@ -54,9 +55,9 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/vision/barcode/zzi;
+    new-instance v0, Lcom/google/android/gms/vision/barcode/zzj;
 
-    invoke-direct {v0}, Lcom/google/android/gms/vision/barcode/zzi;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/vision/barcode/zzj;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/vision/barcode/Barcode$GeoPoint;->CREATOR:Landroid/os/Parcelable$Creator;
 

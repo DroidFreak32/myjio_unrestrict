@@ -12,8 +12,16 @@
     return-void
 .end method
 
-.method public static zzd(Landroid/content/SharedPreferences;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
+.method private static zzd(Landroid/content/SharedPreferences;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
     .locals 3
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/iid/zzp;
+        }
+    .end annotation
 
     const-string v0, "|P|"
 
@@ -68,8 +76,17 @@
     return-object v1
 .end method
 
-.method public static zzd(Ljava/io/File;)Lcom/google/android/gms/iid/zzo;
+.method private static zzd(Ljava/io/File;)Lcom/google/android/gms/iid/zzo;
     .locals 6
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/iid/zzp;,
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 14
     new-instance v0, Ljava/io/FileInputStream;
@@ -181,7 +198,7 @@
     throw v1
 .end method
 
-.method public static zzd(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/iid/zzo;)V
+.method private static zzd(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/iid/zzo;)V
     .locals 3
 
     :try_start_0
@@ -314,7 +331,7 @@
     return-void
 .end method
 
-.method public static synthetic zzd(Ljava/lang/Throwable;Ljava/io/FileInputStream;)V
+.method private static synthetic zzd(Ljava/lang/Throwable;Ljava/io/FileInputStream;)V
     .locals 0
 
     if-eqz p0, :cond_0
@@ -340,7 +357,7 @@
     return-void
 .end method
 
-.method public static synthetic zzd(Ljava/lang/Throwable;Ljava/io/FileOutputStream;)V
+.method private static synthetic zzd(Ljava/lang/Throwable;Ljava/io/FileOutputStream;)V
     .locals 0
 
     if-eqz p0, :cond_0
@@ -366,7 +383,7 @@
     return-void
 .end method
 
-.method public static zze(Landroid/content/SharedPreferences;Ljava/lang/String;)J
+.method private static zze(Landroid/content/SharedPreferences;Ljava/lang/String;)J
     .locals 1
 
     const-string v0, "cre"
@@ -502,8 +519,13 @@
     return-void
 .end method
 
-.method public static zzg(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyPair;
+.method private static zzg(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyPair;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/iid/zzp;
+        }
+    .end annotation
 
     const/16 v0, 0x8
 
@@ -634,6 +656,14 @@
 
 .method private final zzh(Landroid/content/Context;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
     .locals 4
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/iid/zzp;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -702,6 +732,14 @@
 
 .method private final zzi(Landroid/content/Context;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
     .locals 2
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/iid/zzp;
+        }
+    .end annotation
 
     .line 5
     invoke-static {p1, p2}, Lcom/google/android/gms/iid/zzn;->zzj(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
@@ -867,11 +905,11 @@
     return-void
 .end method
 
-.method public static zzj(Landroid/content/Context;)Ljava/io/File;
+.method private static zzj(Landroid/content/Context;)Ljava/io/File;
     .locals 2
 
     .line 1
-    invoke-static {p0}, Lx6;->c(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p0}, Landroidx/core/content/ContextCompat;->getNoBackupFilesDir(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v0
 
@@ -895,7 +933,7 @@
     return-object p0
 .end method
 
-.method public static zzj(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+.method private static zzj(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
     .locals 2
 
     .line 4
@@ -983,6 +1021,14 @@
 # virtual methods
 .method public final zze(Landroid/content/Context;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
     .locals 1
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/iid/zzp;
+        }
+    .end annotation
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/google/android/gms/iid/zzn;->zzh(Landroid/content/Context;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
@@ -1004,6 +1050,8 @@
 
 .method public final zzf(Landroid/content/Context;Ljava/lang/String;)Lcom/google/android/gms/iid/zzo;
     .locals 5
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
 
     const-string v0, "InstanceID"
 

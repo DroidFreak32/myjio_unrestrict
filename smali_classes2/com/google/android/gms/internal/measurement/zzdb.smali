@@ -1,110 +1,42 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzdb;
-.super Lcom/google/android/gms/internal/measurement/zzdd;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.class public final synthetic Lcom/google/android/gms/internal/measurement/zzdb;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/measurement/zzcz;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Lcom/google/android/gms/internal/measurement/zzdd<",
-        "TT;>;"
-    }
-.end annotation
+# instance fields
+.field private final zza:Lcom/google/android/gms/internal/measurement/zzcy;
 
-
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzdb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/measurement/zzdb<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final zzb:Ljava/lang/String;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzdb;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzdb;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzdb;->zza:Lcom/google/android/gms/internal/measurement/zzdb;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzcy;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzdd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzdb;->zza:Lcom/google/android/gms/internal/measurement/zzcy;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/measurement/zzdb;->zzb:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+.method public final zza()Ljava/lang/Object;
+    .locals 2
 
-    if-ne p1, p0, :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzdb;->zza:Lcom/google/android/gms/internal/measurement/zzcy;
 
-    const/4 p1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzdb;->zzb:Ljava/lang/String;
 
-    return p1
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/measurement/zzcy;->zzb(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    const v0, 0x79a31aac
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "Optional.absent()"
+    move-result-object v0
 
     return-object v0
-.end method
-
-.method public final zza()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final zzb()Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-
-    .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Optional.get() cannot be called on an absent value"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

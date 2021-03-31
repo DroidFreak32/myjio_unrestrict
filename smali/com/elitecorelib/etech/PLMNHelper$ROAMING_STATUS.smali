@@ -13,7 +13,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+.field private static final synthetic $VALUES:[Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
 .field public static final enum HOME:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
@@ -26,74 +26,66 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     new-instance v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    const/4 v1, 0x0
+    const-string v1, "NONE"
 
-    const-string v2, "NONE"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->NONE:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    new-instance v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
     const-string v3, "HOME"
 
-    invoke-direct {v0, v3, v2}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->HOME:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    invoke-direct {v1, v3, v4}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    sput-object v1, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->HOME:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    const-string v4, "ROAMING"
+    const-string v5, "ROAMING"
 
-    invoke-direct {v0, v4, v3}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->ROAMING:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    invoke-direct {v3, v5, v6}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    sput-object v3, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->ROAMING:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    const-string v5, "INTERNATIONAL_ROAMING"
+    const-string v7, "INTERNATIONAL_ROAMING"
 
-    invoke-direct {v0, v5, v4}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->INTERNATIONAL_ROAMING:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    invoke-direct {v5, v7, v8}, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->INTERNATIONAL_ROAMING:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    new-array v0, v0, [Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    const/4 v7, 0x4
 
-    sget-object v5, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->NONE:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    new-array v7, v7, [Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
-    aput-object v5, v0, v1
+    aput-object v0, v7, v2
 
-    sget-object v1, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->HOME:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    aput-object v1, v7, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v7, v6
 
-    sget-object v1, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->ROAMING:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    aput-object v5, v7, v8
 
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->INTERNATIONAL_ROAMING:Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->$VALUES:[Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
+    sput-object v7, Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;->$VALUES:[Lcom/elitecorelib/etech/PLMNHelper$ROAMING_STATUS;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

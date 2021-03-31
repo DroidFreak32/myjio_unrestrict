@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;
+.field public static final a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     invoke-direct {v0}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;-><init>()V
 
-    sput-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;
+    sput-object v0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity$j;
 
     return-void
 .end method
@@ -48,11 +48,6 @@
     .locals 0
 
     .line 1
-    sget-object p2, Lar0;->b:Lar0;
-
-    invoke-virtual {p2}, Lar0;->e()V
-
-    .line 2
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

@@ -5,25 +5,25 @@
 # static fields
 .field public static final zzbcw:[I
 
-.field public static final zzbhm:I = 0xb
+.field private static final zzbhm:I = 0xb
 
-.field public static final zzbhn:I = 0xc
+.field private static final zzbhn:I = 0xc
 
-.field public static final zzbho:I = 0x10
+.field private static final zzbho:I = 0x10
 
-.field public static final zzbhp:I = 0x1a
+.field private static final zzbhp:I = 0x1a
 
-.field public static final zzbhq:[J
+.field private static final zzbhq:[J
 
-.field public static final zzbhr:[F
+.field private static final zzbhr:[F
 
-.field public static final zzbhs:[D
+.field private static final zzbhs:[D
 
-.field public static final zzbht:[Z
+.field private static final zzbht:[Z
 
 .field public static final zzbhu:[Ljava/lang/String;
 
-.field public static final zzbhv:[[B
+.field private static final zzbhv:[[B
 
 .field public static final zzbhw:[B
 
@@ -79,6 +79,11 @@
 
 .method public static final zzb(Lcom/google/android/gms/internal/gtm/zzun;I)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/internal/gtm/zzun;->getPosition()I

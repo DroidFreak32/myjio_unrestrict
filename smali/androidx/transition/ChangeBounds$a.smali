@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/transition/ChangeBounds;->createAnimator(Landroid/view/ViewGroup;Llj;Llj;)Landroid/animation/Animator;
+    value = Landroidx/transition/ChangeBounds;->createAnimator(Landroid/view/ViewGroup;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public final synthetic s:Landroid/view/ViewGroup;
+.field public final synthetic a:Landroid/view/ViewGroup;
 
-.field public final synthetic t:Landroid/graphics/drawable/BitmapDrawable;
+.field public final synthetic b:Landroid/graphics/drawable/BitmapDrawable;
 
-.field public final synthetic u:Landroid/view/View;
+.field public final synthetic c:Landroid/view/View;
 
-.field public final synthetic v:F
+.field public final synthetic d:F
 
 
 # direct methods
@@ -29,13 +29,13 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Landroidx/transition/ChangeBounds$a;->s:Landroid/view/ViewGroup;
+    iput-object p2, p0, Landroidx/transition/ChangeBounds$a;->a:Landroid/view/ViewGroup;
 
-    iput-object p3, p0, Landroidx/transition/ChangeBounds$a;->t:Landroid/graphics/drawable/BitmapDrawable;
+    iput-object p3, p0, Landroidx/transition/ChangeBounds$a;->b:Landroid/graphics/drawable/BitmapDrawable;
 
-    iput-object p4, p0, Landroidx/transition/ChangeBounds$a;->u:Landroid/view/View;
+    iput-object p4, p0, Landroidx/transition/ChangeBounds$a;->c:Landroid/view/View;
 
-    iput p5, p0, Landroidx/transition/ChangeBounds$a;->v:F
+    iput p5, p0, Landroidx/transition/ChangeBounds$a;->d:F
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -48,22 +48,22 @@
     .locals 1
 
     .line 1
-    iget-object p1, p0, Landroidx/transition/ChangeBounds$a;->s:Landroid/view/ViewGroup;
+    iget-object p1, p0, Landroidx/transition/ChangeBounds$a;->a:Landroid/view/ViewGroup;
 
-    invoke-static {p1}, Lxj;->b(Landroid/view/View;)Lwj;
+    invoke-static {p1}, La6;->b(Landroid/view/View;)Lz5;
 
     move-result-object p1
 
-    iget-object v0, p0, Landroidx/transition/ChangeBounds$a;->t:Landroid/graphics/drawable/BitmapDrawable;
+    iget-object v0, p0, Landroidx/transition/ChangeBounds$a;->b:Landroid/graphics/drawable/BitmapDrawable;
 
-    invoke-interface {p1, v0}, Lwj;->b(Landroid/graphics/drawable/Drawable;)V
+    invoke-interface {p1, v0}, Lz5;->remove(Landroid/graphics/drawable/Drawable;)V
 
     .line 2
-    iget-object p1, p0, Landroidx/transition/ChangeBounds$a;->u:Landroid/view/View;
+    iget-object p1, p0, Landroidx/transition/ChangeBounds$a;->c:Landroid/view/View;
 
-    iget v0, p0, Landroidx/transition/ChangeBounds$a;->v:F
+    iget v0, p0, Landroidx/transition/ChangeBounds$a;->d:F
 
-    invoke-static {p1, v0}, Lxj;->a(Landroid/view/View;F)V
+    invoke-static {p1, v0}, La6;->h(Landroid/view/View;F)V
 
     return-void
 .end method

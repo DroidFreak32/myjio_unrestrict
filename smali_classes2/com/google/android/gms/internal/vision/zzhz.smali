@@ -1,540 +1,395 @@
-.class public Lcom/google/android/gms/internal/vision/zzhz;
-.super Ljava/util/AbstractMap;
+.class public final Lcom/google/android/gms/internal/vision/zzhz;
+.super Lcom/google/android/gms/internal/vision/zzgi;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/vision/zzik;
+.implements Lcom/google/android/gms/internal/vision/zzjz;
+.implements Ljava/util/RandomAccess;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<K::",
-        "Ljava/lang/Comparable<",
-        "TK;>;V:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/util/AbstractMap<",
-        "TK;TV;>;"
+        "Lcom/google/android/gms/internal/vision/zzgi<",
+        "Ljava/lang/Float;",
+        ">;",
+        "Lcom/google/android/gms/internal/vision/zzik<",
+        "Ljava/lang/Float;",
+        ">;",
+        "Lcom/google/android/gms/internal/vision/zzjz;",
+        "Ljava/util/RandomAccess;"
     }
 .end annotation
 
 
+# static fields
+.field private static final zzxm:Lcom/google/android/gms/internal/vision/zzhz;
+
+
 # instance fields
-.field public final zzaae:I
+.field private size:I
 
-.field public zzaaf:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/internal/vision/zzig;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public zzaag:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
-.end field
-
-.field public volatile zzaah:Lcom/google/android/gms/internal/vision/zzii;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/vision/zzii;"
-        }
-    .end annotation
-.end field
-
-.field public zzaai:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
-.end field
-
-.field public volatile zzaaj:Lcom/google/android/gms/internal/vision/zzic;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/vision/zzic;"
-        }
-    .end annotation
-.end field
-
-.field public zztn:Z
+.field private zzxn:[F
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzhz;
 
-    .line 2
-    iput p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaae:I
-
-    .line 3
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    .line 4
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    .line 5
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaai:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(ILcom/google/android/gms/internal/vision/zzia;)V
-    .locals 0
-
-    .line 6
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;-><init>(I)V
-
-    return-void
-.end method
-
-.method private final zza(Ljava/lang/Comparable;)I
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)I"
-        }
-    .end annotation
-
-    .line 13
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    if-ltz v0, :cond_1
-
-    .line 14
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzig;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Comparable;
-
-    invoke-interface {p1, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    add-int/lit8 v0, v0, 0x2
-
-    neg-int p1, v0
-
-    return p1
-
-    :cond_0
-    if-nez v1, :cond_1
-
-    return v0
-
-    :cond_1
     const/4 v1, 0x0
 
-    :goto_0
-    if-gt v1, v0, :cond_4
+    new-array v2, v1, [F
 
-    add-int v2, v1, v0
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/internal/vision/zzhz;-><init>([FI)V
 
-    .line 15
-    div-int/lit8 v2, v2, 0x2
+    .line 2
+    sput-object v0, Lcom/google/android/gms/internal/vision/zzhz;->zzxm:Lcom/google/android/gms/internal/vision/zzhz;
 
-    .line 16
-    iget-object v3, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-virtual {v3}, Lcom/google/android/gms/internal/vision/zzig;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Comparable;
-
-    invoke-interface {p1, v3}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result v3
-
-    if-gez v3, :cond_2
-
-    add-int/lit8 v0, v2, -0x1
-
-    goto :goto_0
-
-    :cond_2
-    if-lez v3, :cond_3
-
-    add-int/lit8 v1, v2, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    return v2
-
-    :cond_4
-    add-int/lit8 v1, v1, 0x1
-
-    neg-int p1, v1
-
-    return p1
-.end method
-
-.method public static synthetic zza(Lcom/google/android/gms/internal/vision/zzhz;I)Ljava/lang/Object;
-    .locals 0
-
-    .line 18
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzbq(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic zza(Lcom/google/android/gms/internal/vision/zzhz;)V
-    .locals 0
-
-    .line 17
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzgi;->zzej()V
 
     return-void
 .end method
 
-.method public static synthetic zzb(Lcom/google/android/gms/internal/vision/zzhz;)Ljava/util/List;
+.method public constructor <init>()V
+    .locals 2
+
+    const/16 v0, 0xa
+
+    new-array v0, v0, [F
+
+    const/4 v1, 0x0
+
+    .line 1
+    invoke-direct {p0, v0, v1}, Lcom/google/android/gms/internal/vision/zzhz;-><init>([FI)V
+
+    return-void
+.end method
+
+.method private constructor <init>([FI)V
     .locals 0
 
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public static zzbo(I)Lcom/google/android/gms/internal/vision/zzhz;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<FieldDescriptorType::",
-            "Lcom/google/android/gms/internal/vision/zzfr<",
-            "TFieldDescriptorType;>;>(I)",
-            "Lcom/google/android/gms/internal/vision/zzhz<",
-            "TFieldDescriptorType;",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzia;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/vision/zzia;-><init>(I)V
-
-    return-object v0
-.end method
-
-.method private final zzbq(I)Ljava/lang/Object;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)TV;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
-
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzig;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
+    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzgi;-><init>()V
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
 
     .line 4
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgy()Ljava/util/SortedMap;
+    iput p2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/SortedMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .line 5
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    new-instance v2, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Map$Entry;
-
-    invoke-direct {v2, p0, v3}, Lcom/google/android/gms/internal/vision/zzig;-><init>(Lcom/google/android/gms/internal/vision/zzhz;Ljava/util/Map$Entry;)V
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 6
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    :cond_0
-    return-object p1
+    return-void
 .end method
 
-.method public static synthetic zzc(Lcom/google/android/gms/internal/vision/zzhz;)Ljava/util/Map;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    return-object p0
-.end method
-
-.method public static synthetic zzd(Lcom/google/android/gms/internal/vision/zzhz;)Ljava/util/Map;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaai:Ljava/util/Map;
-
-    return-object p0
-.end method
-
-.method private final zzgx()V
+.method private final zzal(I)V
     .locals 1
 
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zztn:Z
+    if-ltz p1, :cond_0
 
-    if-nez v0, :cond_0
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    if-ge p1, v0, :cond_0
 
     return-void
 
     .line 2
     :cond_0
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzam(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
 
-.method private final zzgy()Ljava/util/SortedMap;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/SortedMap<",
-            "TK;TV;>;"
-        }
-    .end annotation
+.method private final zzam(I)Ljava/lang/String;
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+    const/16 v2, 0x23
 
-    move-result v0
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-eqz v0, :cond_0
+    const-string v2, "Index:"
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    instance-of v0, v0, Ljava/util/TreeMap;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    const-string p1, ", Size:"
 
-    .line 3
-    new-instance v0, Ljava/util/TreeMap;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
+    move-result-object p1
 
-    check-cast v0, Ljava/util/TreeMap;
-
-    invoke-virtual {v0}, Ljava/util/TreeMap;->descendingMap()Ljava/util/NavigableMap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaai:Ljava/util/Map;
-
-    .line 5
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    check-cast v0, Ljava/util/SortedMap;
-
-    return-object v0
+    return-object p1
 .end method
 
 
 # virtual methods
-.method public clear()V
-    .locals 1
+.method public final synthetic add(ILjava/lang/Object;)V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
+    check-cast p2, Ljava/lang/Float;
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    move-result p2
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    if-ltz p1, :cond_1
 
     .line 4
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
+    if-gt p1, v0, :cond_1
 
     .line 5
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
+    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    array-length v2, v1
 
-    :cond_1
-    return-void
-.end method
+    if-ge v0, v2, :cond_0
 
-.method public containsKey(Ljava/lang/Object;)Z
-    .locals 1
+    add-int/lit8 v2, p1, 0x1
 
-    .line 1
-    check-cast p1, Ljava/lang/Comparable;
+    sub-int/2addr v0, p1
 
-    .line 2
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zza(Ljava/lang/Comparable;)I
-
-    move-result v0
-
-    if-gez v0, :cond_1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
+    .line 6
+    invoke-static {v1, p1, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    mul-int/lit8 v0, v0, 0x3
 
-    return p1
+    .line 7
+    div-int/lit8 v0, v0, 0x2
 
-    :cond_1
+    add-int/lit8 v0, v0, 0x1
+
+    .line 8
+    new-array v0, v0, [F
+
+    const/4 v2, 0x0
+
+    .line 9
+    invoke-static {v1, v2, v0, v2, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 10
+    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    add-int/lit8 v2, p1, 0x1
+
+    iget v3, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    sub-int/2addr v3, p1
+
+    invoke-static {v1, p1, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 11
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    .line 12
     :goto_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    aput p2, v0, p1
+
+    .line 13
+    iget p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    .line 14
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    return-void
+
+    .line 15
+    :cond_1
+    new-instance p2, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzam(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public final synthetic add(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 16
+    check-cast p1, Ljava/lang/Float;
+
+    .line 17
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzu(F)V
+
     const/4 p1, 0x1
 
     return p1
 .end method
 
-.method public entrySet()Ljava/util/Set;
-    .locals 2
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
-            "Ljava/util/Set<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
+            "(",
+            "Ljava/util/Collection<",
+            "+",
+            "Ljava/lang/Float;",
+            ">;)Z"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaah:Lcom/google/android/gms/internal/vision/zzii;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
+
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzie;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 3
+    instance-of v0, p1, Lcom/google/android/gms/internal/vision/zzhz;
 
     if-nez v0, :cond_0
 
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzii;
+    .line 4
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzgi;->addAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 5
+    :cond_0
+    check-cast p1, Lcom/google/android/gms/internal/vision/zzhz;
+
+    .line 6
+    iget v0, p1, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/android/gms/internal/vision/zzii;-><init>(Lcom/google/android/gms/internal/vision/zzhz;Lcom/google/android/gms/internal/vision/zzia;)V
+    if-nez v0, :cond_1
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaah:Lcom/google/android/gms/internal/vision/zzii;
+    return v1
 
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaah:Lcom/google/android/gms/internal/vision/zzii;
+    :cond_1
+    const v2, 0x7fffffff
 
-    return-object v0
+    .line 7
+    iget v3, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    sub-int/2addr v2, v3
+
+    if-lt v2, v0, :cond_3
+
+    add-int/2addr v3, v0
+
+    .line 8
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    array-length v2, v0
+
+    if-le v3, v2, :cond_2
+
+    .line 9
+    invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    .line 10
+    :cond_2
+    iget-object v0, p1, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    iget v4, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    iget p1, p1, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    invoke-static {v0, v1, v2, v4, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 11
+    iput v3, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    .line 12
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    const/4 v0, 0x1
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    return v0
+
+    .line 13
+    :cond_3
+    new-instance p1, Ljava/lang/OutOfMemoryError;
+
+    invoke-direct {p1}, Ljava/lang/OutOfMemoryError;-><init>()V
+
+    throw p1
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->indexOf(Ljava/lang/Object;)I
+
+    move-result p1
+
+    const/4 v0, -0x1
+
+    if-eq p1, v0, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -549,7 +404,7 @@
     if-nez v1, :cond_1
 
     .line 2
-    invoke-super {p0, p1}, Ljava/util/AbstractMap;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/vision/zzgi;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -560,14 +415,9 @@
     check-cast p1, Lcom/google/android/gms/internal/vision/zzhz;
 
     .line 4
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzhz;->size()I
+    iget v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
-    move-result v1
-
-    .line 5
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzhz;->size()I
-
-    move-result v2
+    iget v2, p1, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
     const/4 v3, 0x0
 
@@ -575,590 +425,437 @@
 
     return v3
 
-    .line 6
+    .line 5
     :cond_2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgu()I
+    iget-object p1, p1, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    const/4 v1, 0x0
+
+    .line 6
+    :goto_0
+    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    if-ge v1, v2, :cond_4
+
+    .line 7
+    iget-object v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    aget v2, v2, v1
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v2
 
-    .line 7
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzgu()I
+    aget v4, p1, v1
+
+    invoke-static {v4}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v4
 
     if-eq v2, v4, :cond_3
 
-    .line 8
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzhz;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzhz;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_3
-    const/4 v4, 0x0
-
-    :goto_0
-    if-ge v4, v2, :cond_5
-
-    .line 9
-    invoke-virtual {p0, v4}, Lcom/google/android/gms/internal/vision/zzhz;->zzbp(I)Ljava/util/Map$Entry;
-
-    move-result-object v5
-
-    invoke-virtual {p1, v4}, Lcom/google/android/gms/internal/vision/zzhz;->zzbp(I)Ljava/util/Map$Entry;
-
-    move-result-object v6
-
-    invoke-interface {v5, v6}, Ljava/util/Map$Entry;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_4
-
     return v3
 
-    :cond_4
-    add-int/lit8 v4, v4, 0x1
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_5
-    if-eq v2, v1, :cond_6
-
-    .line 10
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    iget-object p1, p1, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_6
+    :cond_4
     return v0
 .end method
 
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic get(I)Ljava/lang/Object;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")TV;"
-        }
-    .end annotation
 
     .line 1
-    check-cast p1, Ljava/lang/Comparable;
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzal(I)V
 
     .line 2
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zza(Ljava/lang/Comparable;)I
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
 
-    move-result v0
-
-    if-ltz v0, :cond_0
+    aget p1, v0, p1
 
     .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/vision/zzig;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 4
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public hashCode()I
-    .locals 4
+.method public final hashCode()I
+    .locals 3
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgu()I
-
-    move-result v0
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
+    .line 1
     :goto_0
-    if-ge v1, v0, :cond_0
+    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    if-ge v1, v2, :cond_0
+
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 2
-    iget-object v3, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
 
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    aget v2, v2, v1
 
-    move-result-object v3
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    check-cast v3, Lcom/google/android/gms/internal/vision/zzig;
+    move-result v2
 
-    invoke-virtual {v3}, Lcom/google/android/gms/internal/vision/zzig;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
+    add-int/2addr v0, v2
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->hashCode()I
-
-    move-result v0
-
-    add-int/2addr v2, v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final isImmutable()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zztn:Z
-
     return v0
 .end method
 
-.method public synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Ljava/lang/Comparable;
-
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzhz;->zza(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")TV;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
-
-    .line 2
-    check-cast p1, Ljava/lang/Comparable;
-
-    .line 3
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zza(Ljava/lang/Comparable;)I
-
-    move-result v0
-
-    if-ltz v0, :cond_0
-
-    .line 4
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/vision/zzhz;->zzbq(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 5
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    .line 6
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public size()I
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v1}, Ljava/util/Map;->size()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final zza(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final indexOf(Ljava/lang/Object;)I
     .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;)TV;"
-        }
-    .end annotation
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
+    instance-of v0, p1, Ljava/lang/Float;
 
-    .line 2
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zza(Ljava/lang/Comparable;)I
-
-    move-result v0
-
-    if-ltz v0, :cond_0
-
-    .line 3
-    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-virtual {p1, p2}, Lcom/google/android/gms/internal/vision/zzig;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 4
-    :cond_0
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgx()V
-
-    .line 5
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    instance-of v1, v1, Ljava/util/ArrayList;
-
-    if-nez v1, :cond_1
-
-    .line 6
-    new-instance v1, Ljava/util/ArrayList;
-
-    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaae:I
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    neg-int v0, v0
-
-    .line 7
-    iget v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaae:I
-
-    if-lt v0, v1, :cond_2
-
-    .line 8
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgy()Ljava/util/SortedMap;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/SortedMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 9
-    :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaae:I
-
-    if-ne v1, v2, :cond_3
-
-    .line 10
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    add-int/lit8 v2, v2, -0x1
-
-    invoke-interface {v1, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/vision/zzig;
-
-    .line 11
-    invoke-direct {p0}, Lcom/google/android/gms/internal/vision/zzhz;->zzgy()Ljava/util/SortedMap;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzig;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Comparable;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/vision/zzig;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v2, v3, v1}, Ljava/util/SortedMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 12
-    :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    new-instance v2, Lcom/google/android/gms/internal/vision/zzig;
-
-    invoke-direct {v2, p0, p1, p2}, Lcom/google/android/gms/internal/vision/zzig;-><init>(Lcom/google/android/gms/internal/vision/zzhz;Ljava/lang/Comparable;Ljava/lang/Object;)V
-
-    invoke-interface {v1, v0, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final zzbp(I)Ljava/util/Map$Entry;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    return-object p1
-.end method
-
-.method public zzci()V
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zztn:Z
-
-    if-nez v0, :cond_2
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    :goto_0
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    .line 5
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaai:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 6
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    .line 7
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaai:Ljava/util/Map;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    :goto_1
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaai:Ljava/util/Map;
-
-    const/4 v0, 0x1
-
-    .line 8
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zztn:Z
-
-    :cond_2
-    return-void
-.end method
-
-.method public final zzgu()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaf:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final zzgv()Ljava/lang/Iterable;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Iterable<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/vision/zzid;->zzha()Ljava/lang/Iterable;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaag:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final zzgw()Ljava/util/Set;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaj:Lcom/google/android/gms/internal/vision/zzic;
+    const/4 v1, -0x1
 
     if-nez v0, :cond_0
 
+    return v1
+
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzic;
+    :cond_0
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    .line 3
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzhz;->size()I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_2
+
+    .line 4
+    iget-object v3, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    aget v3, v3, v2
+
+    cmpl-float v3, v3, p1
+
+    if-nez v3, :cond_1
+
+    return v2
+
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return v1
+.end method
+
+.method public final synthetic remove(I)Ljava/lang/Object;
+    .locals 4
+
+    .line 7
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
+
+    .line 8
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzal(I)V
+
+    .line 9
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    aget v1, v0, p1
+
+    .line 10
+    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    add-int/lit8 v3, v2, -0x1
+
+    if-ge p1, v3, :cond_0
+
+    add-int/lit8 v3, p1, 0x1
+
+    sub-int/2addr v2, p1
+
+    add-int/lit8 v2, v2, -0x1
+
+    .line 11
+    invoke-static {v0, v3, v0, p1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 12
+    :cond_0
+    iget p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    add-int/lit8 p1, p1, -0x1
+
+    iput p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    .line 13
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    .line 14
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
+
+    const/4 v0, 0x0
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/android/gms/internal/vision/zzic;-><init>(Lcom/google/android/gms/internal/vision/zzhz;Lcom/google/android/gms/internal/vision/zzia;)V
+    .line 2
+    :goto_0
+    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaj:Lcom/google/android/gms/internal/vision/zzic;
+    if-ge v1, v2, :cond_1
+
+    .line 3
+    iget-object v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    aget v2, v2, v1
+
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 4
+    iget-object p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    add-int/lit8 v0, v1, 0x1
+
+    iget v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    sub-int/2addr v2, v1
+
+    const/4 v3, 0x1
+
+    sub-int/2addr v2, v3
+
+    invoke-static {p1, v0, p1, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 5
+    iget p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    sub-int/2addr p1, v3
+
+    iput p1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    .line 6
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/2addr p1, v3
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    return v3
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final removeRange(II)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
+
+    if-lt p2, p1, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    iget v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    sub-int/2addr v1, p2
+
+    invoke-static {v0, p2, v0, p1, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 3
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    sub-int/2addr p2, p1
+
+    sub-int/2addr v0, p2
+
+    iput v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    .line 4
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    return-void
+
+    .line 5
+    :cond_0
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string p2, "toIndex < fromIndex"
+
+    invoke-direct {p1, p2}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    check-cast p2, Ljava/lang/Float;
+
+    .line 2
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p2
+
+    .line 3
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
+
+    .line 4
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzhz;->zzal(I)V
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    aget v1, v0, p1
+
+    .line 6
+    aput p2, v0, p1
+
+    .line 7
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    return v0
+.end method
+
+.method public final synthetic zzan(I)Lcom/google/android/gms/internal/vision/zzik;
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    if-lt p1, v0, :cond_0
+
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzhz;
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    invoke-static {v1, p1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object p1
+
+    iget v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/gms/internal/vision/zzhz;-><init>([FI)V
+
+    return-object v0
 
     .line 3
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzaaj:Lcom/google/android/gms/internal/vision/zzic;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    return-object v0
+    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final zzu(F)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/vision/zzgi;->zzek()V
+
+    .line 2
+    iget v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    array-length v2, v1
+
+    if-ne v0, v2, :cond_0
+
+    mul-int/lit8 v2, v0, 0x3
+
+    .line 3
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/lit8 v2, v2, 0x1
+
+    .line 4
+    new-array v2, v2, [F
+
+    const/4 v3, 0x0
+
+    .line 5
+    invoke-static {v1, v3, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 6
+    iput-object v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    .line 7
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzhz;->zzxn:[F
+
+    iget v1, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lcom/google/android/gms/internal/vision/zzhz;->size:I
+
+    aput p1, v0, v1
+
+    return-void
 .end method

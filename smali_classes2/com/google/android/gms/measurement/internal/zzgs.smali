@@ -1,211 +1,148 @@
-.class public Lcom/google/android/gms/measurement/internal/zzgs;
+.class public final Lcom/google/android/gms/measurement/internal/zzgs;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/measurement/internal/zzgu;
-
-
-# instance fields
-.field public final zzz:Lcom/google/android/gms/measurement/internal/zzfx;
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzfx;)V
-    .locals 0
+.method public static zza(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+    .param p0    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "TT;>;TT;)TT;"
+        }
+    .end annotation
+
+    .line 6
+    invoke-virtual {p0, p1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    return-object p3
+
+    .line 7
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_1
+
+    return-object p0
+
+    .line 8
+    :cond_1
+    new-instance p3, Ljava/lang/IllegalStateException;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 p1, 0x1
+
+    .line 9
+    invoke-virtual {p2}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object p2
+
+    aput-object p2, v0, p1
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object p0
+
+    aput-object p0, v0, p1
+
+    const-string p0, "Invalid conditional user property field type. \'%s\' expected [%s] but was [%s]"
+
+    .line 10
+    invoke-static {p0, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p3, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p3
+.end method
+
+.method public static zza(Landroid/os/Bundle;Ljava/lang/Object;)V
+    .locals 4
+    .param p0    # Landroid/os/Bundle;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    instance-of v0, p1, Ljava/lang/Double;
+
+    const-string v1, "value"
+
+    if-eqz v0, :cond_0
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Double;
+
+    invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v1, v2, v3}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
+
+    return-void
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
+    :cond_0
+    instance-of v0, p1, Ljava/lang/Long;
+
+    if-eqz v0, :cond_1
+
+    .line 4
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     return-void
-.end method
 
+    .line 5
+    :cond_1
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-# virtual methods
-.method public zza()V
-    .locals 1
+    move-result-object p1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzae()V
+    invoke-virtual {p0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method public zzb()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzad()V
-
-    return-void
-.end method
-
-.method public zzc()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzq()Lcom/google/android/gms/measurement/internal/zzfu;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfu;->zzc()V
-
-    return-void
-.end method
-
-.method public zzd()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzq()Lcom/google/android/gms/measurement/internal/zzfu;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfu;->zzd()V
-
-    return-void
-.end method
-
-.method public zzl()Lcom/google/android/gms/measurement/internal/zzak;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzx()Lcom/google/android/gms/measurement/internal/zzak;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzm()Lcom/google/android/gms/common/util/Clock;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzm()Lcom/google/android/gms/common/util/Clock;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzn()Landroid/content/Context;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzn()Landroid/content/Context;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzo()Lcom/google/android/gms/measurement/internal/zzer;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzj()Lcom/google/android/gms/measurement/internal/zzer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzp()Lcom/google/android/gms/measurement/internal/zzko;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzi()Lcom/google/android/gms/measurement/internal/zzko;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzq()Lcom/google/android/gms/measurement/internal/zzfu;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzq()Lcom/google/android/gms/measurement/internal/zzfu;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzr()Lcom/google/android/gms/measurement/internal/zzet;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzs()Lcom/google/android/gms/measurement/internal/zzff;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzt()Lcom/google/android/gms/measurement/internal/zzaa;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzb()Lcom/google/android/gms/measurement/internal/zzaa;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzu()Lcom/google/android/gms/measurement/internal/zzv;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzgs;->zzz:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzu()Lcom/google/android/gms/measurement/internal/zzv;
-
-    move-result-object v0
-
-    return-object v0
 .end method

@@ -4,21 +4,21 @@
 
 
 # static fields
-.field public static final SSH_MSG_USERAUTH_GSSAPI_ERROR:I = 0x40
+.field private static final SSH_MSG_USERAUTH_GSSAPI_ERROR:I = 0x40
 
-.field public static final SSH_MSG_USERAUTH_GSSAPI_ERRTOK:I = 0x41
+.field private static final SSH_MSG_USERAUTH_GSSAPI_ERRTOK:I = 0x41
 
-.field public static final SSH_MSG_USERAUTH_GSSAPI_EXCHANGE_COMPLETE:I = 0x3f
+.field private static final SSH_MSG_USERAUTH_GSSAPI_EXCHANGE_COMPLETE:I = 0x3f
 
-.field public static final SSH_MSG_USERAUTH_GSSAPI_MIC:I = 0x42
+.field private static final SSH_MSG_USERAUTH_GSSAPI_MIC:I = 0x42
 
-.field public static final SSH_MSG_USERAUTH_GSSAPI_RESPONSE:I = 0x3c
+.field private static final SSH_MSG_USERAUTH_GSSAPI_RESPONSE:I = 0x3c
 
-.field public static final SSH_MSG_USERAUTH_GSSAPI_TOKEN:I = 0x3d
+.field private static final SSH_MSG_USERAUTH_GSSAPI_TOKEN:I = 0x3d
 
-.field public static final supported_method:[Ljava/lang/String;
+.field private static final supported_method:[Ljava/lang/String;
 
-.field public static final supported_oid:[[B
+.field private static final supported_oid:[[B
 
 
 # direct methods
@@ -82,6 +82,11 @@
 # virtual methods
 .method public start(Lcom/jcraft/jsch/Session;)Z
     .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1}, Lcom/jcraft/jsch/UserAuth;->start(Lcom/jcraft/jsch/Session;)Z
@@ -113,7 +118,7 @@
     .line 6
     iget-object v1, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
-    const-string/jumbo v3, "ssh-connection"
+    const-string v3, "ssh-connection"
 
     invoke-static {v3}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B
 
@@ -184,8 +189,6 @@
     iput-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 13
-    iget-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v6
@@ -353,8 +356,6 @@
     iput-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 30
-    iget-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v6
@@ -375,8 +376,6 @@
     iput-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 32
-    iget-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v6
@@ -401,8 +400,6 @@
     iput-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 34
-    iget-object v6, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {v6}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result v6
@@ -525,8 +522,6 @@
     iput-object p1, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
 
     .line 50
-    iget-object p1, p0, Lcom/jcraft/jsch/UserAuth;->buf:Lcom/jcraft/jsch/Buffer;
-
     invoke-virtual {p1}, Lcom/jcraft/jsch/Buffer;->getCommand()B
 
     move-result p1

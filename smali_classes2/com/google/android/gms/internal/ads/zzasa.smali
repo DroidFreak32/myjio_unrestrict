@@ -1,35 +1,33 @@
-.class public final Lcom/google/android/gms/internal/ads/zzasa;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzasa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
-
-# instance fields
-.field public final synthetic zzdfk:Landroid/webkit/JsResult;
-
-
-# direct methods
-.method public constructor <init>(Landroid/webkit/JsResult;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasa;->zzdfk:Landroid/webkit/JsResult;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+.method public abstract onError(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 1
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzasa;->zzdfk:Landroid/webkit/JsResult;
+.method public abstract onSuccess(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Landroid/net/Uri;",
+            ">;)V"
+        }
+    .end annotation
 
-    invoke-virtual {p1}, Landroid/webkit/JsResult;->cancel()V
-
-    return-void
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

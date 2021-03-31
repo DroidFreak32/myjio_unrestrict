@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field public a:Lcom/google/a/a/a/c$a;
+.field private a:Lcom/google/a/a/a/c$a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/a/a/a/c$a<",

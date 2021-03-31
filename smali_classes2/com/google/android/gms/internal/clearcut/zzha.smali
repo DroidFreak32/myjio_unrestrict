@@ -17,53 +17,53 @@
 
 
 # instance fields
-.field public tag:Ljava/lang/String;
+.field private tag:Ljava/lang/String;
 
 .field public zzbjf:J
 
 .field public zzbjg:J
 
-.field public zzbjh:J
+.field private zzbjh:J
 
 .field public zzbji:I
 
-.field public zzbjj:Ljava/lang/String;
+.field private zzbjj:Ljava/lang/String;
 
-.field public zzbjk:I
+.field private zzbjk:I
 
-.field public zzbjl:Z
+.field private zzbjl:Z
 
-.field public zzbjm:[Lcom/google/android/gms/internal/clearcut/zzhb;
+.field private zzbjm:[Lcom/google/android/gms/internal/clearcut/zzhb;
 
-.field public zzbjn:[B
+.field private zzbjn:[B
 
-.field public zzbjo:Lcom/google/android/gms/internal/clearcut/zzge$zzd;
+.field private zzbjo:Lcom/google/android/gms/internal/clearcut/zzge$zzd;
 
 .field public zzbjp:[B
 
-.field public zzbjq:Ljava/lang/String;
+.field private zzbjq:Ljava/lang/String;
 
-.field public zzbjr:Ljava/lang/String;
+.field private zzbjr:Ljava/lang/String;
 
-.field public zzbjs:Lcom/google/android/gms/internal/clearcut/zzgy;
+.field private zzbjs:Lcom/google/android/gms/internal/clearcut/zzgy;
 
-.field public zzbjt:Ljava/lang/String;
+.field private zzbjt:Ljava/lang/String;
 
 .field public zzbju:J
 
-.field public zzbjv:Lcom/google/android/gms/internal/clearcut/zzgz;
+.field private zzbjv:Lcom/google/android/gms/internal/clearcut/zzgz;
 
 .field public zzbjw:[B
 
-.field public zzbjx:Ljava/lang/String;
+.field private zzbjx:Ljava/lang/String;
 
-.field public zzbjy:I
+.field private zzbjy:I
 
-.field public zzbjz:[I
+.field private zzbjz:[I
 
-.field public zzbka:J
+.field private zzbka:J
 
-.field public zzbkb:Lcom/google/android/gms/internal/clearcut/zzge$zzs;
+.field private zzbkb:Lcom/google/android/gms/internal/clearcut/zzge$zzs;
 
 .field public zzbkc:Z
 
@@ -194,7 +194,7 @@
 
     aget-object v2, v2, v1
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzhb;->clone()Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -219,7 +219,7 @@
 
     if-eqz v1, :cond_3
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzgy;->clone()Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -232,7 +232,7 @@
 
     if-eqz v1, :cond_4
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzgz;->clone()Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -281,6 +281,11 @@
 # virtual methods
 .method public final synthetic clone()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
     invoke-direct {p0}, Lcom/google/android/gms/internal/clearcut/zzha;->zzgd()Lcom/google/android/gms/internal/clearcut/zzha;
 
@@ -1036,7 +1041,12 @@
 .end method
 
 .method public final zza(Lcom/google/android/gms/internal/clearcut/zzfs;)V
-    .locals 9
+    .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjf:J
 
@@ -1115,14 +1125,12 @@
 
     const/4 v0, 0x4
 
-    iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjn:[B
+    iget-object v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjn:[B
 
-    invoke-virtual {p1, v0, v5}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(I[B)V
+    invoke-virtual {p1, v0, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(I[B)V
 
     :cond_4
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
-
-    sget-object v5, Lcom/google/android/gms/internal/clearcut/zzgb;->zzse:[B
 
     invoke-static {v0, v5}, Ljava/util/Arrays;->equals([B[B)Z
 
@@ -1132,18 +1140,18 @@
 
     const/4 v0, 0x6
 
-    iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
+    iget-object v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
 
-    invoke-virtual {p1, v0, v5}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(I[B)V
+    invoke-virtual {p1, v0, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(I[B)V
 
     :cond_5
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjs:Lcom/google/android/gms/internal/clearcut/zzgy;
 
     if-eqz v0, :cond_6
 
-    const/4 v5, 0x7
+    const/4 v6, 0x7
 
-    invoke-virtual {p1, v5, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILcom/google/android/gms/internal/clearcut/zzfz;)V
+    invoke-virtual {p1, v6, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILcom/google/android/gms/internal/clearcut/zzfz;)V
 
     :cond_6
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
@@ -1158,27 +1166,27 @@
 
     const/16 v0, 0x8
 
-    iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v5}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILjava/lang/String;)V
+    invoke-virtual {p1, v0, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILjava/lang/String;)V
 
     :cond_7
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjo:Lcom/google/android/gms/internal/clearcut/zzge$zzd;
 
     if-eqz v0, :cond_8
 
-    const/16 v5, 0x9
+    const/16 v6, 0x9
 
-    invoke-virtual {p1, v5, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zze(ILcom/google/android/gms/internal/clearcut/zzdo;)V
+    invoke-virtual {p1, v6, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zze(ILcom/google/android/gms/internal/clearcut/zzdo;)V
 
     :cond_8
     iget v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbji:I
 
     if-eqz v0, :cond_9
 
-    const/16 v5, 0xb
+    const/16 v6, 0xb
 
-    invoke-virtual {p1, v5, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzc(II)V
+    invoke-virtual {p1, v6, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzc(II)V
 
     :cond_9
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
@@ -1193,9 +1201,9 @@
 
     const/16 v0, 0xd
 
-    iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v5}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILjava/lang/String;)V
+    invoke-virtual {p1, v0, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILjava/lang/String;)V
 
     :cond_a
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
@@ -1210,16 +1218,16 @@
 
     const/16 v0, 0xe
 
-    iget-object v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v5}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILjava/lang/String;)V
+    invoke-virtual {p1, v0, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILjava/lang/String;)V
 
     :cond_b
-    iget-wide v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbju:J
+    iget-wide v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbju:J
 
-    const-wide/32 v7, 0x2bf20
+    const-wide/32 v8, 0x2bf20
 
-    cmp-long v0, v5, v7
+    cmp-long v0, v6, v8
 
     if-eqz v0, :cond_c
 
@@ -1227,38 +1235,36 @@
 
     invoke-virtual {p1, v0, v4}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(II)V
 
-    invoke-static {v5, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzj(J)J
+    invoke-static {v6, v7}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzj(J)J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {p1, v5, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzn(J)V
+    invoke-virtual {p1, v6, v7}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzn(J)V
 
     :cond_c
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjv:Lcom/google/android/gms/internal/clearcut/zzgz;
 
     if-eqz v0, :cond_d
 
-    const/16 v5, 0x10
+    const/16 v6, 0x10
 
-    invoke-virtual {p1, v5, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILcom/google/android/gms/internal/clearcut/zzfz;)V
+    invoke-virtual {p1, v6, v0}, Lcom/google/android/gms/internal/clearcut/zzfs;->zza(ILcom/google/android/gms/internal/clearcut/zzfz;)V
 
     :cond_d
-    iget-wide v5, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjg:J
+    iget-wide v6, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjg:J
 
-    cmp-long v0, v5, v2
+    cmp-long v0, v6, v2
 
     if-eqz v0, :cond_e
 
     const/16 v0, 0x11
 
-    invoke-virtual {p1, v0, v5, v6}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzi(IJ)V
+    invoke-virtual {p1, v0, v6, v7}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzi(IJ)V
 
     :cond_e
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjw:[B
 
-    sget-object v2, Lcom/google/android/gms/internal/clearcut/zzgb;->zzse:[B
-
-    invoke-static {v0, v2}, Ljava/util/Arrays;->equals([B[B)Z
+    invoke-static {v0, v5}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v0
 
@@ -1355,7 +1361,7 @@
 .end method
 
 .method public final zzen()I
-    .locals 12
+    .locals 13
 
     invoke-super {p0}, Lcom/google/android/gms/internal/clearcut/zzfu;->zzen()I
 
@@ -1405,24 +1411,22 @@
 
     const/4 v7, 0x0
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     array-length v1, v1
 
-    if-lez v1, :cond_4
+    if-lez v1, :cond_3
 
-    move v1, v0
-
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
     iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjm:[Lcom/google/android/gms/internal/clearcut/zzhb;
 
     array-length v9, v8
 
-    if-ge v0, v9, :cond_3
+    if-ge v1, v9, :cond_3
 
-    aget-object v8, v8, v0
+    aget-object v8, v8, v1
 
     if-eqz v8, :cond_2
 
@@ -1432,17 +1436,14 @@
 
     move-result v8
 
-    add-int/2addr v1, v8
+    add-int/2addr v0, v8
 
     :cond_2
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_3
-    move v0, v1
-
-    :cond_4
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjn:[B
 
     sget-object v8, Lcom/google/android/gms/internal/clearcut/zzgb;->zzse:[B
@@ -1451,107 +1452,126 @@
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_4
 
     const/4 v1, 0x4
 
-    iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjn:[B
+    iget-object v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjn:[B
 
-    invoke-static {v1, v8}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(I[B)I
+    invoke-static {v1, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(I[B)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_4
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
+
+    invoke-static {v1, v8}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    const/4 v1, 0x6
+
+    iget-object v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
+
+    invoke-static {v1, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(I[B)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_5
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjs:Lcom/google/android/gms/internal/clearcut/zzgy;
 
-    sget-object v8, Lcom/google/android/gms/internal/clearcut/zzgb;->zzse:[B
+    if-eqz v1, :cond_6
 
-    invoke-static {v1, v8}, Ljava/util/Arrays;->equals([B[B)Z
+    const/4 v9, 0x7
 
-    move-result v1
-
-    if-nez v1, :cond_6
-
-    const/4 v1, 0x6
-
-    iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjp:[B
-
-    invoke-static {v1, v8}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(I[B)I
+    invoke-static {v9, v1}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILcom/google/android/gms/internal/clearcut/zzfz;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_6
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjs:Lcom/google/android/gms/internal/clearcut/zzgy;
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
 
     if-eqz v1, :cond_7
 
-    const/4 v8, 0x7
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v8, v1}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILcom/google/android/gms/internal/clearcut/zzfz;)I
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    const/16 v1, 0x8
+
+    iget-object v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
+
+    invoke-static {v1, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_7
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjo:Lcom/google/android/gms/internal/clearcut/zzge$zzd;
 
     if-eqz v1, :cond_8
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/16 v9, 0x9
 
-    move-result v1
-
-    if-nez v1, :cond_8
-
-    const/16 v1, 0x8
-
-    iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjq:Ljava/lang/String;
-
-    invoke-static {v1, v8}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILjava/lang/String;)I
+    invoke-static {v9, v1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzc(ILcom/google/android/gms/internal/clearcut/zzdo;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_8
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjo:Lcom/google/android/gms/internal/clearcut/zzge$zzd;
+    iget v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbji:I
 
     if-eqz v1, :cond_9
 
-    const/16 v8, 0x9
+    const/16 v9, 0xb
 
-    invoke-static {v8, v1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzc(ILcom/google/android/gms/internal/clearcut/zzdo;)I
+    invoke-static {v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzr(I)I
 
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_9
-    iget v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbji:I
-
-    if-eqz v1, :cond_a
-
-    const/16 v8, 0xb
-
-    invoke-static {v8}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzr(I)I
-
-    move-result v8
+    move-result v9
 
     invoke-static {v1}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzs(I)I
 
     move-result v1
 
-    add-int/2addr v8, v1
+    add-int/2addr v9, v1
 
-    add-int/2addr v0, v8
+    add-int/2addr v0, v9
+
+    :cond_9
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
+
+    if-eqz v1, :cond_a
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_a
+
+    const/16 v1, 0xd
+
+    iget-object v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
+
+    invoke-static {v1, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILjava/lang/String;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
 
     :cond_a
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
 
     if-eqz v1, :cond_b
 
@@ -1561,45 +1581,24 @@
 
     if-nez v1, :cond_b
 
-    const/16 v1, 0xd
+    const/16 v1, 0xe
 
-    iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjr:Ljava/lang/String;
+    iget-object v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
 
-    invoke-static {v1, v8}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILjava/lang/String;)I
+    invoke-static {v1, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_b
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
+    iget-wide v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbju:J
+
+    const-wide/32 v11, 0x2bf20
+
+    cmp-long v1, v9, v11
 
     if-eqz v1, :cond_c
-
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_c
-
-    const/16 v1, 0xe
-
-    iget-object v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjt:Ljava/lang/String;
-
-    invoke-static {v1, v8}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILjava/lang/String;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_c
-    iget-wide v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbju:J
-
-    const-wide/32 v10, 0x2bf20
-
-    cmp-long v1, v8, v10
-
-    if-eqz v1, :cond_d
 
     const/16 v1, 0xf
 
@@ -1607,56 +1606,54 @@
 
     move-result v1
 
-    invoke-static {v8, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzj(J)J
+    invoke-static {v9, v10}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzj(J)J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    invoke-static {v8, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzo(J)I
+    invoke-static {v9, v10}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzo(J)I
 
-    move-result v8
+    move-result v9
 
-    add-int/2addr v1, v8
+    add-int/2addr v1, v9
+
+    add-int/2addr v0, v1
+
+    :cond_c
+    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjv:Lcom/google/android/gms/internal/clearcut/zzgz;
+
+    if-eqz v1, :cond_d
+
+    const/16 v9, 0x10
+
+    invoke-static {v9, v1}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILcom/google/android/gms/internal/clearcut/zzfz;)I
+
+    move-result v1
 
     add-int/2addr v0, v1
 
     :cond_d
-    iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjv:Lcom/google/android/gms/internal/clearcut/zzgz;
+    iget-wide v9, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjg:J
+
+    cmp-long v1, v9, v3
 
     if-eqz v1, :cond_e
 
-    const/16 v8, 0x10
+    const/16 v1, 0x11
 
-    invoke-static {v8, v1}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzb(ILcom/google/android/gms/internal/clearcut/zzfz;)I
+    invoke-static {v1, v9, v10}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzd(IJ)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_e
-    iget-wide v8, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjg:J
-
-    cmp-long v1, v8, v3
-
-    if-eqz v1, :cond_f
-
-    const/16 v1, 0x11
-
-    invoke-static {v1, v8, v9}, Lcom/google/android/gms/internal/clearcut/zzfs;->zzd(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_f
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjw:[B
 
-    sget-object v3, Lcom/google/android/gms/internal/clearcut/zzgb;->zzse:[B
-
-    invoke-static {v1, v3}, Ljava/util/Arrays;->equals([B[B)Z
+    invoke-static {v1, v8}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_f
 
     const/16 v1, 0x12
 
@@ -1668,14 +1665,14 @@
 
     add-int/2addr v0, v1
 
-    :cond_10
+    :cond_f
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjz:[I
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_11
 
     array-length v1, v1
 
-    if-lez v1, :cond_12
+    if-lez v1, :cond_11
 
     const/4 v1, 0x0
 
@@ -1684,7 +1681,7 @@
 
     array-length v4, v3
 
-    if-ge v7, v4, :cond_11
+    if-ge v7, v4, :cond_10
 
     aget v3, v3, v7
 
@@ -1698,7 +1695,7 @@
 
     goto :goto_1
 
-    :cond_11
+    :cond_10
     add-int/2addr v0, v1
 
     array-length v1, v3
@@ -1707,10 +1704,10 @@
 
     add-int/2addr v0, v1
 
-    :cond_12
+    :cond_11
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbkb:Lcom/google/android/gms/internal/clearcut/zzge$zzs;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_12
 
     const/16 v2, 0x17
 
@@ -1720,16 +1717,16 @@
 
     add-int/2addr v0, v1
 
-    :cond_13
+    :cond_12
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjx:Ljava/lang/String;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_13
 
     invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_13
 
     const/16 v1, 0x18
 
@@ -1741,10 +1738,10 @@
 
     add-int/2addr v0, v1
 
-    :cond_14
+    :cond_13
     iget-boolean v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbkc:Z
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_14
 
     const/16 v1, 0x19
 
@@ -1756,16 +1753,16 @@
 
     add-int/2addr v0, v1
 
-    :cond_15
+    :cond_14
     iget-object v1, p0, Lcom/google/android/gms/internal/clearcut/zzha;->zzbjj:Ljava/lang/String;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_15
 
     invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_15
 
     const/16 v1, 0x1a
 
@@ -1777,14 +1774,19 @@
 
     add-int/2addr v0, v1
 
-    :cond_16
+    :cond_15
     return v0
 .end method
 
 .method public final synthetic zzeo()Lcom/google/android/gms/internal/clearcut/zzfu;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzha;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1795,8 +1797,13 @@
 
 .method public final synthetic zzep()Lcom/google/android/gms/internal/clearcut/zzfz;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzha;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/clearcut/zzfz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

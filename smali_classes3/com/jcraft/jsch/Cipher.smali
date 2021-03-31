@@ -17,10 +17,20 @@
 .end method
 
 .method public abstract init(I[B[B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method
 
 .method public abstract isCBC()Z
 .end method
 
 .method public abstract update([BII[BI)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method

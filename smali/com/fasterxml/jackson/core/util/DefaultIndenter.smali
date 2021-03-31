@@ -4,21 +4,21 @@
 
 
 # static fields
-.field public static final INDENT_LEVELS:I = 0x10
+.field private static final INDENT_LEVELS:I = 0x10
 
 .field public static final SYSTEM_LINEFEED_INSTANCE:Lcom/fasterxml/jackson/core/util/DefaultIndenter;
 
 .field public static final SYS_LF:Ljava/lang/String;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final charsPerLevel:I
+.field private final charsPerLevel:I
 
-.field public final eol:Ljava/lang/String;
+.field private final eol:Ljava/lang/String;
 
-.field public final indents:[C
+.field private final indents:[C
 
 
 # direct methods
@@ -45,15 +45,13 @@
     sput-object v0, Lcom/fasterxml/jackson/core/util/DefaultIndenter;->SYS_LF:Ljava/lang/String;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/core/util/DefaultIndenter;
-
-    sget-object v1, Lcom/fasterxml/jackson/core/util/DefaultIndenter;->SYS_LF:Ljava/lang/String;
+    new-instance v1, Lcom/fasterxml/jackson/core/util/DefaultIndenter;
 
     const-string v2, "  "
 
-    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/core/util/DefaultIndenter;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v0}, Lcom/fasterxml/jackson/core/util/DefaultIndenter;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    sput-object v0, Lcom/fasterxml/jackson/core/util/DefaultIndenter;->SYSTEM_LINEFEED_INSTANCE:Lcom/fasterxml/jackson/core/util/DefaultIndenter;
+    sput-object v1, Lcom/fasterxml/jackson/core/util/DefaultIndenter;->SYSTEM_LINEFEED_INSTANCE:Lcom/fasterxml/jackson/core/util/DefaultIndenter;
 
     return-void
 .end method
@@ -225,6 +223,11 @@
 
 .method public writeIndentation(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/DefaultIndenter;->eol:Ljava/lang/String;

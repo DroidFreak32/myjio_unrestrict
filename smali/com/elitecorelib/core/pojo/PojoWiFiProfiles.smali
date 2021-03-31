@@ -6,25 +6,25 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x1eddbc80654a2947L
+.field private static final serialVersionUID:J = 0x1eddbc80654a2947L
 
 
 # instance fields
-.field public androidSettingId:Ljava/lang/Long;
+.field private androidSettingId:Ljava/lang/Long;
 
-.field public androidSettingName:Ljava/lang/String;
+.field private androidSettingName:Ljava/lang/String;
 
-.field public description:Ljava/lang/String;
+.field private description:Ljava/lang/String;
 
-.field public isPreferable:Ljava/lang/String;
+.field private isPreferable:Ljava/lang/String;
 
-.field public readOnlySetting:Ljava/lang/String;
+.field private readOnlySetting:Ljava/lang/String;
 
-.field public removeAllowFromApp:Ljava/lang/String;
+.field private removeAllowFromApp:Ljava/lang/String;
 
-.field public status:Ljava/lang/String;
+.field private status:Ljava/lang/String;
 
-.field public wifiSettingSet:Ljava/util/Set;
+.field private wifiSettingSet:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -63,7 +63,9 @@
     return v1
 
     :cond_1
-    const-class v2, Lcom/elitecorelib/core/pojo/PojoWiFiProfiles;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

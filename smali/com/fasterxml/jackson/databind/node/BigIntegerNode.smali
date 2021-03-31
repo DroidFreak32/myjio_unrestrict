@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final MAX_INTEGER:Ljava/math/BigInteger;
+.field private static final MAX_INTEGER:Ljava/math/BigInteger;
 
-.field public static final MAX_LONG:Ljava/math/BigInteger;
+.field private static final MAX_LONG:Ljava/math/BigInteger;
 
-.field public static final MIN_INTEGER:Ljava/math/BigInteger;
+.field private static final MIN_INTEGER:Ljava/math/BigInteger;
 
-.field public static final MIN_LONG:Ljava/math/BigInteger;
+.field private static final MIN_LONG:Ljava/math/BigInteger;
 
 
 # instance fields
@@ -355,6 +355,12 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     .line 1
     iget-object p2, p0, Lcom/fasterxml/jackson/databind/node/BigIntegerNode;->_value:Ljava/math/BigInteger;

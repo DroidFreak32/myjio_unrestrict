@@ -1,106 +1,93 @@
 .class public final Lcom/google/android/gms/internal/ads/zzadc;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzadl;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# static fields
+.field public static zzclt:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzadl<",
-        "Lcom/google/android/gms/internal/ads/zzoz;",
-        ">;"
-    }
-.end annotation
+.field public static zzdcv:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static zzdcw:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static zzdcx:Lcom/google/android/gms/internal/ads/zzacn;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/internal/ads/zzacn<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzadd;Lorg/json/JSONObject;)Lcom/google/android/gms/internal/ads/zzpo;
+.method public static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "html_containers"
+    const-string v0, "gads:adapter_initialization:red_button"
 
-    const-string v1, "instream"
+    const/4 v1, 0x0
 
     .line 1
-    filled-new-array {v0, v1}, [Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
     move-result-object v0
 
-    invoke-static {p2, v0}, Lcom/google/android/gms/internal/ads/zzanj;->zza(Lorg/json/JSONObject;[Ljava/lang/String;)Lorg/json/JSONObject;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadc;->zzdcv:Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "video"
-
-    .line 2
-    invoke-virtual {p1, p2, v0}, Lcom/google/android/gms/internal/ads/zzadd;->zzc(Lorg/json/JSONObject;Ljava/lang/String;)Lcom/google/android/gms/internal/ads/zzapi;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const-string p2, "base_url"
-
-    .line 3
-    invoke-virtual {v0, p2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string v1, "html"
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    const-string v0, "gads:ad_serving:enabled"
 
     const/4 v1, 0x1
 
+    .line 2
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadc;->zzdcw:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:adaptive_banner:fail_invalid_ad_size"
+
+    .line 3
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadc;->zzdcx:Lcom/google/android/gms/internal/ads/zzacn;
+
+    const-string v0, "gads:sdk_use_dynamic_module"
+
     .line 4
-    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/gms/internal/ads/zzadd;->zza(Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzapi;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzacn;->zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object p1
+    move-result-object v0
 
-    .line 5
-    :goto_0
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzadd;->zzc(Lcom/google/android/gms/internal/ads/zzapi;)Lcom/google/android/gms/internal/ads/zzasg;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzadc;->zzclt:Lcom/google/android/gms/internal/ads/zzacn;
 
-    move-result-object p1
-
-    if-nez p1, :cond_1
-
-    const-string p1, "Can not get video view for instream ad."
-
-    .line 6
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzdp(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    .line 7
-    :cond_1
-    new-instance p2, Lcom/google/android/gms/internal/ads/zzoz;
-
-    invoke-direct {p2, p1}, Lcom/google/android/gms/internal/ads/zzoz;-><init>(Lcom/google/android/gms/internal/ads/zzasg;)V
-
-    return-object p2
+    return-void
 .end method

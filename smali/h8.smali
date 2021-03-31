@@ -1,41 +1,27 @@
 .class public final Lh8;
 .super Ljava/lang/Object;
-.source "ParcelableCompat.java"
+.source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lh8$a;
-    }
-.end annotation
-
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+# interfaces
+.implements Ljavax/net/ssl/HostnameVerifier;
 
 
 # direct methods
-.method public static a(Li8;)Landroid/os/Parcelable$Creator;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Li8<",
-            "TT;>;)",
-            "Landroid/os/Parcelable$Creator<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    new-instance v0, Lh8$a;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0}, Lh8$a;-><init>(Li8;)V
+    return-void
+.end method
 
-    return-object v0
+
+# virtual methods
+.method public final verify(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
+    .locals 0
+
+    const/4 p1, 0x1
+
+    return p1
 .end method

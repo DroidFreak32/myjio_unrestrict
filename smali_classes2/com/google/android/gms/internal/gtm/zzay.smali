@@ -6,17 +6,17 @@
 
 
 # static fields
-.field public static final zzxj:Ljava/lang/String;
+.field private static final zzxj:Ljava/lang/String;
 
-.field public static final zzxk:Ljava/lang/String;
+.field private static final zzxk:Ljava/lang/String;
 
 
 # instance fields
-.field public final zzxl:Lcom/google/android/gms/internal/gtm/zzaz;
+.field private final zzxl:Lcom/google/android/gms/internal/gtm/zzaz;
 
-.field public final zzxm:Lcom/google/android/gms/internal/gtm/zzcv;
+.field private final zzxm:Lcom/google/android/gms/internal/gtm/zzcv;
 
-.field public final zzxn:Lcom/google/android/gms/internal/gtm/zzcv;
+.field private final zzxn:Lcom/google/android/gms/internal/gtm/zzcv;
 
 
 # direct methods
@@ -27,23 +27,23 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v1, "hits2"
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const-string v2, "hits2"
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const/4 v3, 0x1
+    const-string v3, "hit_id"
 
-    const-string v4, "hit_id"
+    const/4 v4, 0x1
 
-    aput-object v4, v0, v3
+    aput-object v3, v0, v4
 
-    const-string v4, "hit_time"
+    const/4 v3, 0x2
 
-    const/4 v5, 0x2
+    const-string v5, "hit_time"
 
-    aput-object v4, v0, v5
+    aput-object v5, v0, v3
 
     const/4 v6, 0x3
 
@@ -72,11 +72,11 @@
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzay;->zzxj:Ljava/lang/String;
 
-    new-array v0, v5, [Ljava/lang/Object;
+    new-array v0, v3, [Ljava/lang/Object;
 
-    aput-object v4, v0, v2
+    aput-object v5, v0, v1
 
-    aput-object v1, v0, v3
+    aput-object v2, v0, v4
 
     const-string v1, "SELECT MAX(%s) FROM %s WHERE 1;"
 
@@ -516,7 +516,7 @@
     return-wide v0
 .end method
 
-.method public static zzdt()Ljava/lang/String;
+.method private static zzdt()Ljava/lang/String;
     .locals 1
 
     const-string v0, "google_analytics_v4.db"

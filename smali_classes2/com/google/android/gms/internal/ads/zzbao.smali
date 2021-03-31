@@ -1,19 +1,6 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbao;
+.class public abstract Lcom/google/android/gms/internal/ads/zzbao;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzbam;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/internal/ads/zzbam<",
-        "Ljavax/crypto/KeyAgreement;",
-        ">;"
-    }
-.end annotation
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
@@ -26,25 +13,24 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic zzb(Ljava/lang/String;Ljava/security/Provider;)Ljava/lang/Object;
+.method public static zza(Lcom/google/android/gms/internal/ads/zzbbe;)Z
     .locals 0
 
-    if-nez p2, :cond_0
-
     .line 1
-    invoke-static {p1}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzbfc;->zzacq()Lcom/google/android/gms/internal/ads/zzbfn;
 
-    move-result-object p1
+    move-result-object p0
 
-    return-object p1
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzbfn;->zzady()Z
 
-    .line 2
-    :cond_0
-    invoke-static {p1, p2}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;
+    move-result p0
 
-    move-result-object p1
+    return p0
+.end method
 
-    return-object p1
+
+# virtual methods
+.method public abstract zza(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zzbbe;IZLcom/google/android/gms/internal/ads/zzabs;Lcom/google/android/gms/internal/ads/zzbbf;)Lcom/google/android/gms/internal/ads/zzbap;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method

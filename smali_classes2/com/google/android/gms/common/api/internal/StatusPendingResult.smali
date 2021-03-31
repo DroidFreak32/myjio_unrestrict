@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/StatusPendingResult;
 .super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations

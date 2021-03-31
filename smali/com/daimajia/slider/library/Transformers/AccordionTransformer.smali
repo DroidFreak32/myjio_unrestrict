@@ -35,7 +35,7 @@
     int-to-float v0, v0
 
     :goto_0
-    invoke-static {p1, v0}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -50,7 +50,7 @@
 
     .line 2
     :goto_1
-    invoke-static {p1, p2}, La53;->g(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setScaleX(Landroid/view/View;F)V
 
     return-void
 .end method

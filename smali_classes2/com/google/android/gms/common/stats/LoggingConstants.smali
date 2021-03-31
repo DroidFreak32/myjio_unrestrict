@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/stats/LoggingConstants;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -9,27 +10,33 @@
 
 # static fields
 .field public static final EXTRA_WAKE_LOCK_KEY:Ljava/lang/String; = "WAKE_LOCK_KEY"
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
-.field public static LOG_LEVEL_OFF:I
+.field private static final zza:Landroid/content/ComponentName;
 
-.field public static final zzfg:Landroid/content/ComponentName;
+.field private static zzb:I
 
-.field public static zzfh:I
+.field private static zzc:I
 
-.field public static zzfi:I
+.field private static zzd:I
 
-.field public static zzfj:I
+.field private static zze:I
 
-.field public static zzfk:I
+.field private static zzf:I
 
-.field public static zzfl:I
+.field private static zzg:I
 
-.field public static zzfm:I
+.field private static zzh:I
 
-.field public static zzfn:I
+.field private static zzi:I
 
 
 # direct methods
@@ -45,50 +52,50 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfg:Landroid/content/ComponentName;
+    sput-object v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zza:Landroid/content/ComponentName;
 
     const/4 v0, 0x0
 
     .line 2
-    sput v0, Lcom/google/android/gms/common/stats/LoggingConstants;->LOG_LEVEL_OFF:I
+    sput v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zzb:I
 
     const/4 v0, 0x1
 
     .line 3
-    sput v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfh:I
+    sput v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zzc:I
 
     const/4 v1, 0x2
 
     .line 4
-    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfi:I
+    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzd:I
 
     const/4 v1, 0x4
 
     .line 5
-    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfj:I
+    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zze:I
 
     const/16 v1, 0x8
 
     .line 6
-    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfk:I
+    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzf:I
 
     const/16 v1, 0x10
 
     .line 7
-    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfl:I
+    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzg:I
 
     const/16 v1, 0x20
 
     .line 8
-    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfm:I
+    sput v1, Lcom/google/android/gms/common/stats/LoggingConstants;->zzh:I
 
     .line 9
-    sput v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zzfn:I
+    sput v0, Lcom/google/android/gms/common/stats/LoggingConstants;->zzi:I
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

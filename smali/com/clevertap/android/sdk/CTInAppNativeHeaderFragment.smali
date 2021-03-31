@@ -17,6 +17,16 @@
 # virtual methods
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 6
+    .param p2    # Landroid/view/ViewGroup;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x11
+    .end annotation
 
     .line 1
     new-instance p3, Ljava/util/ArrayList;
@@ -35,8 +45,6 @@
     iput-object p1, p0, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;->inAppView:Landroid/view/View;
 
     .line 3
-    iget-object p1, p0, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;->inAppView:Landroid/view/View;
-
     sget p2, Lcom/clevertap/android/sdk/R$id;->header_frame_layout:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -285,9 +293,7 @@
     check-cast v3, Landroid/widget/Button;
 
     .line 30
-    iget-object v4, p0, Lcom/clevertap/android/sdk/CTInAppBaseFragment;->inAppNotification:Lcom/clevertap/android/sdk/CTInAppNotification;
-
-    invoke-virtual {p0, v3, v0, v4, v1}, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;->setupInAppButton(Landroid/widget/Button;Lcom/clevertap/android/sdk/CTInAppNotificationButton;Lcom/clevertap/android/sdk/CTInAppNotification;I)V
+    invoke-virtual {p0, v3, v0, v1}, Lcom/clevertap/android/sdk/CTInAppBasePartialNativeFragment;->setupInAppButton(Landroid/widget/Button;Lcom/clevertap/android/sdk/CTInAppNotificationButton;I)V
 
     :goto_2
     add-int/lit8 v1, v1, 0x1

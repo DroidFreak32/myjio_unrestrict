@@ -41,8 +41,6 @@
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
 
     .line 2
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
 
     sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
@@ -51,103 +49,77 @@
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "xx-small"
+    const-string/jumbo v3, "xx-small"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
     const v3, 0x3f553f7d    # 0.833f
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "x-small"
+    const-string/jumbo v3, "x-small"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
     const/high16 v3, 0x41200000    # 10.0f
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "small"
+    const-string/jumbo v3, "small"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
     const/high16 v3, 0x41400000    # 12.0f
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "medium"
+    const-string v3, "medium"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
     const v3, 0x41666666    # 14.4f
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "large"
+    const-string v3, "large"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
     const v3, 0x418a6666    # 17.3f
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "x-large"
+    const-string/jumbo v3, "x-large"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
     const v3, 0x41a5999a    # 20.7f
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "xx-large"
+    const-string/jumbo v2, "xx-large"
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 9
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
 
     sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->percent:Lcom/caverock/androidsvg/SVG$Unit;
@@ -156,16 +128,12 @@
 
     invoke-direct {v1, v3, v2}, Lcom/caverock/androidsvg/SVG$o;-><init>(FLcom/caverock/androidsvg/SVG$Unit;)V
 
-    const-string v2, "smaller"
+    const-string/jumbo v3, "smaller"
 
-    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 10
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$d;->a:Ljava/util/Map;
-
     new-instance v1, Lcom/caverock/androidsvg/SVG$o;
-
-    sget-object v2, Lcom/caverock/androidsvg/SVG$Unit;->percent:Lcom/caverock/androidsvg/SVG$Unit;
 
     const/high16 v3, 0x42f00000    # 120.0f
 

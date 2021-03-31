@@ -21,15 +21,15 @@
 
 
 # instance fields
-.field public final mAudioStream:I
+.field private final mAudioStream:I
 
-.field public final mCurrentVolume:I
+.field private final mCurrentVolume:I
 
-.field public final mMaxVolume:I
+.field private final mMaxVolume:I
 
-.field public final mPlaybackType:I
+.field private final mPlaybackType:I
 
-.field public final mVolumeControl:I
+.field private final mVolumeControl:I
 
 
 # direct methods

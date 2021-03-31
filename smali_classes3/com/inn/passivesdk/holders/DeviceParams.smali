@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public BarometerReading:Ljava/lang/String;
+.field private BarometerReading:Ljava/lang/String;
 
-.field public BasebandVersion:Ljava/lang/String;
+.field private BasebandVersion:Ljava/lang/String;
 
-.field public advertiseId:Ljava/lang/String;
+.field private advertiseId:Ljava/lang/String;
 
-.field public androidId:Ljava/lang/String;
+.field private androidId:Ljava/lang/String;
 
-.field public buildNumber:Ljava/lang/String;
+.field private buildNumber:Ljava/lang/String;
 
-.field public cpuAndMemoryUsage:Ljava/util/ArrayList;
+.field private cpuAndMemoryUsage:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -24,35 +24,35 @@
     .end annotation
 .end field
 
-.field public dataUsage:Ljava/lang/String;
+.field private dataUsage:Ljava/lang/String;
 
-.field public deviceOS:Ljava/lang/String;
+.field private deviceOS:Ljava/lang/String;
 
-.field public fingerprint:Ljava/lang/String;
+.field private fingerprint:Ljava/lang/String;
 
-.field public imei:Ljava/lang/String;
+.field private imei:Ljava/lang/String;
 
-.field public imsi:Ljava/lang/String;
+.field private imsi:Ljava/lang/String;
 
-.field public isEnterprise:Ljava/lang/String;
+.field private isEnterprise:Ljava/lang/String;
 
-.field public isFlightMode:Ljava/lang/String;
+.field private isFlightMode:Ljava/lang/String;
 
-.field public isdualSimCardReady:Ljava/lang/String;
+.field private isdualSimCardReady:Ljava/lang/String;
 
-.field public lightReadingValue:Ljava/lang/String;
+.field private lightReadingValue:Ljava/lang/String;
 
-.field public macAdress:Ljava/lang/String;
+.field private macAdress:Ljava/lang/String;
 
-.field public make:Ljava/lang/String;
+.field private make:Ljava/lang/String;
 
-.field public model:Ljava/lang/String;
+.field private model:Ljava/lang/String;
 
-.field public moduleName:Ljava/lang/String;
+.field private moduleName:Ljava/lang/String;
 
-.field public userActivity:Ljava/lang/Integer;
+.field private userActivity:Ljava/lang/Integer;
 
-.field public versionName:Ljava/lang/String;
+.field private versionName:Ljava/lang/String;
 
 
 # direct methods
@@ -67,25 +67,249 @@
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public getAdvertiseId()Ljava/lang/String;
     .locals 1
 
-    .line 4
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->advertiseId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getAndroidId()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->androidId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getBarometerReading()Ljava/lang/String;
+    .locals 1
+
+    .line 1
     iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->BarometerReading:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public a(Ljava/lang/String;)V
+.method public getBasebandVersion()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->BasebandVersion:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getBuildNumber()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->buildNumber:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getCpuAndMemoryUsage()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->cpuAndMemoryUsage:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method public getDataUsage()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->dataUsage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getDeviceOS()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->deviceOS:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getFingerprint()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->fingerprint:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getImei()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->imei:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getImsi()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->imsi:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getIsEnterprise()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->isEnterprise:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getIsdualSimCardReady()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->isdualSimCardReady:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getLightReadingValue()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->lightReadingValue:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getMacAdress()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->macAdress:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getMake()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->make:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getModel()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->model:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getModuleName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->moduleName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUserActivity()Ljava/lang/Integer;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->userActivity:Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method public getVersionName()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->versionName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public isFlightMode()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->isFlightMode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public setAdvertiseId(Ljava/lang/String;)V
     .locals 0
 
-    .line 5
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->advertiseId:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setAndroidId(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->androidId:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setBarometerReading(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->BarometerReading:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public a(Ljava/util/ArrayList;)V
+.method public setBasebandVersion(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->BasebandVersion:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setBuildNumber(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->buildNumber:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public setCpuAndMemoryUsage(Ljava/util/ArrayList;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -120,78 +344,16 @@
     return-void
 .end method
 
-.method public b()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->BasebandVersion:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public b(Ljava/lang/String;)V
+.method public setDataUsage(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->BasebandVersion:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/String;
-    .locals 1
-
     .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->buildNumber:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public c(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->buildNumber:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public d()Ljava/util/ArrayList;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->cpuAndMemoryUsage:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
     iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->dataUsage:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public e()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->dataUsage:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public e(Ljava/lang/String;)V
+.method public setDeviceOS(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -200,34 +362,16 @@
     return-void
 .end method
 
-.method public f()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->deviceOS:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public f(Ljava/lang/String;)V
+.method public setFingerprint(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->fingerprint:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public g()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->fingerprint:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public g(Ljava/lang/String;)V
+.method public setFlightMode(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -236,16 +380,7 @@
     return-void
 .end method
 
-.method public h()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->isEnterprise:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public h(Ljava/lang/String;)V
+.method public setImei(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -254,16 +389,7 @@
     return-void
 .end method
 
-.method public i()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->isdualSimCardReady:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public i(Ljava/lang/String;)V
+.method public setImsi(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -272,16 +398,7 @@
     return-void
 .end method
 
-.method public j()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->lightReadingValue:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public j(Ljava/lang/String;)V
+.method public setIsEnterprise(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -290,16 +407,7 @@
     return-void
 .end method
 
-.method public k()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->macAdress:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public k(Ljava/lang/String;)V
+.method public setIsdualSimCardReady(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -308,52 +416,25 @@
     return-void
 .end method
 
-.method public l()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->make:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public l(Ljava/lang/String;)V
+.method public setLightReadingValue(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->lightReadingValue:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public m()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->model:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public m(Ljava/lang/String;)V
+.method public setMacAdress(Ljava/lang/String;)V
     .locals 0
 
-    .line 2
+    .line 1
     iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->macAdress:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public n()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->moduleName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public n(Ljava/lang/String;)V
+.method public setMake(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -362,16 +443,7 @@
     return-void
 .end method
 
-.method public o()Ljava/lang/Integer;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->userActivity:Ljava/lang/Integer;
-
-    return-object v0
-.end method
-
-.method public o(Ljava/lang/String;)V
+.method public setModel(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -380,16 +452,7 @@
     return-void
 .end method
 
-.method public p()Ljava/lang/String;
-    .locals 1
-
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->versionName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public p(Ljava/lang/String;)V
+.method public setModuleName(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -398,16 +461,16 @@
     return-void
 .end method
 
-.method public q()Ljava/lang/String;
-    .locals 1
+.method public setUserActivity(Ljava/lang/Integer;)V
+    .locals 0
 
-    .line 2
-    iget-object v0, p0, Lcom/inn/passivesdk/holders/DeviceParams;->isFlightMode:Ljava/lang/String;
+    .line 1
+    iput-object p1, p0, Lcom/inn/passivesdk/holders/DeviceParams;->userActivity:Ljava/lang/Integer;
 
-    return-object v0
+    return-void
 .end method
 
-.method public q(Ljava/lang/String;)V
+.method public setVersionName(Ljava/lang/String;)V
     .locals 0
 
     .line 1

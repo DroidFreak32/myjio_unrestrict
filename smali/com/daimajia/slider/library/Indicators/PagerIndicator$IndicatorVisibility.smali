@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+.field private static final synthetic $VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
 .field public static final enum Invisible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
@@ -32,49 +32,45 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
-    const/4 v1, 0x0
+    const-string v1, "Visible"
 
-    const-string v2, "Visible"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->Visible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
     .line 2
-    new-instance v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
     const-string v3, "Invisible"
 
-    invoke-direct {v0, v3, v2}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->Invisible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+    invoke-direct {v1, v3, v4}, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x2
+    sput-object v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->Invisible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
-    new-array v0, v0, [Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
 
     .line 3
-    sget-object v3, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->Visible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
-
-    aput-object v3, v0, v1
-
-    sget-object v1, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->Invisible:Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->$VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
+    sput-object v3, Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;->$VALUES:[Lcom/daimajia/slider/library/Indicators/PagerIndicator$IndicatorVisibility;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -28,17 +28,17 @@
 
 
 # instance fields
-.field public isIncreasing:Z
+.field private isIncreasing:Z
 
-.field public lastEnd:I
+.field private lastEnd:I
 
-.field public lastFirstVisible:I
+.field private lastFirstVisible:I
 
-.field public lastStart:I
+.field private lastStart:I
 
-.field public final maxPreload:I
+.field private final maxPreload:I
 
-.field public final preloadDimensionProvider:Lcom/bumptech/glide/ListPreloader$PreloadSizeProvider;
+.field private final preloadDimensionProvider:Lcom/bumptech/glide/ListPreloader$PreloadSizeProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/ListPreloader$PreloadSizeProvider<",
@@ -47,7 +47,7 @@
     .end annotation
 .end field
 
-.field public final preloadModelProvider:Lcom/bumptech/glide/ListPreloader$PreloadModelProvider;
+.field private final preloadModelProvider:Lcom/bumptech/glide/ListPreloader$PreloadModelProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/ListPreloader$PreloadModelProvider<",
@@ -56,16 +56,28 @@
     .end annotation
 .end field
 
-.field public final preloadTargetQueue:Lcom/bumptech/glide/ListPreloader$PreloadTargetQueue;
+.field private final preloadTargetQueue:Lcom/bumptech/glide/ListPreloader$PreloadTargetQueue;
 
-.field public final requestManager:Lcom/bumptech/glide/RequestManager;
+.field private final requestManager:Lcom/bumptech/glide/RequestManager;
 
-.field public totalItemCount:I
+.field private totalItemCount:I
 
 
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/RequestManager;Lcom/bumptech/glide/ListPreloader$PreloadModelProvider;Lcom/bumptech/glide/ListPreloader$PreloadSizeProvider;I)V
     .locals 1
+    .param p1    # Lcom/bumptech/glide/RequestManager;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/ListPreloader$PreloadModelProvider;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/ListPreloader$PreloadSizeProvider;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -337,6 +349,10 @@
 
 .method private preloadItem(Ljava/lang/Object;II)V
     .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;II)V"

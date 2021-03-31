@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public zzabv:Landroid/content/SharedPreferences;
+.field private zzabv:Landroid/content/SharedPreferences;
 
-.field public zzabw:J
+.field private zzabw:J
 
-.field public zzabx:J
+.field private zzabx:J
 
-.field public final zzaby:Lcom/google/android/gms/internal/gtm/zzco;
+.field private final zzaby:Lcom/google/android/gms/internal/gtm/zzco;
 
 
 # direct methods
@@ -328,22 +328,22 @@
     .line 3
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzcm;->zzabv:Landroid/content/SharedPreferences;
 
-    const/4 v1, 0x0
+    const-string v1, "installation_campaign"
 
-    const-string v2, "installation_campaign"
+    const/4 v2, 0x0
 
-    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 4
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    return-object v1
+    return-object v2
 
     :cond_0
     return-object v0

@@ -18,17 +18,17 @@
 
 
 # instance fields
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public notificationDisplayed:Z
+.field private notificationDisplayed:Z
 
-.field public final notificationId:I
+.field private final notificationId:I
 
-.field public periodicUpdatesStarted:Z
+.field private periodicUpdatesStarted:Z
 
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/offline/DownloadService;
 
-.field public final updateInterval:J
+.field private final updateInterval:J
 
 
 # direct methods

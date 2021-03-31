@@ -19,7 +19,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;"
         }
     .end annotation
@@ -41,7 +41,45 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJJJLjava/util/List;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
+    .locals 12
+
+    .line 9
+    iget-object v2, p2, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
+
+    iget-wide v3, p2, Lcom/android/volley/Cache$Entry;->serverDate:J
+
+    iget-wide v5, p2, Lcom/android/volley/Cache$Entry;->lastModified:J
+
+    iget-wide v7, p2, Lcom/android/volley/Cache$Entry;->ttl:J
+
+    iget-wide v9, p2, Lcom/android/volley/Cache$Entry;->softTtl:J
+
+    .line 10
+    invoke-static {p2}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->getAllResponseHeaders(Lcom/android/volley/Cache$Entry;)Ljava/util/List;
+
+    move-result-object v11
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    .line 11
+    invoke-direct/range {v0 .. v11}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;-><init>(Ljava/lang/String;Ljava/lang/String;JJJJLjava/util/List;)V
+
+    .line 12
+    iget-object p1, p2, Lcom/android/volley/Cache$Entry;->data:[B
+
+    array-length p1, p1
+
+    int-to-long p1, p1
+
+    iput-wide p1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->size:J
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;JJJJLjava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,7 +88,7 @@
             "Ljava/lang/String;",
             "JJJJ",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;)V"
         }
     .end annotation
@@ -93,59 +131,21 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lnv$a;)V
-    .locals 12
-
-    .line 9
-    iget-object v2, p2, Lnv$a;->b:Ljava/lang/String;
-
-    iget-wide v3, p2, Lnv$a;->c:J
-
-    iget-wide v5, p2, Lnv$a;->d:J
-
-    iget-wide v7, p2, Lnv$a;->e:J
-
-    iget-wide v9, p2, Lnv$a;->f:J
-
-    .line 10
-    invoke-static {p2}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->getAllResponseHeaders(Lnv$a;)Ljava/util/List;
-
-    move-result-object v11
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    .line 11
-    invoke-direct/range {v0 .. v11}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;-><init>(Ljava/lang/String;Ljava/lang/String;JJJJLjava/util/List;)V
-
-    .line 12
-    iget-object p1, p2, Lnv$a;->a:[B
-
-    array-length p1, p1
-
-    int-to-long p1, p1
-
-    iput-wide p1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->size:J
-
-    return-void
-.end method
-
-.method public static getAllResponseHeaders(Lnv$a;)Ljava/util/List;
+.method private static getAllResponseHeaders(Lcom/android/volley/Cache$Entry;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lnv$a;",
+            "Lcom/android/volley/Cache$Entry;",
             ")",
             "Ljava/util/List<",
-            "Lrv;",
+            "Lcom/android/volley/Header;",
             ">;"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lnv$a;->h:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/volley/Cache$Entry;->allResponseHeaders:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
@@ -153,7 +153,7 @@
 
     .line 2
     :cond_0
-    iget-object p0, p0, Lnv$a;->g:Ljava/util/Map;
+    iget-object p0, p0, Lcom/android/volley/Cache$Entry;->responseHeaders:Ljava/util/Map;
 
     invoke-static {p0}, Lcom/android/volley/toolbox/HttpHeaderParser;->toAllHeaderList(Ljava/util/Map;)Ljava/util/List;
 
@@ -164,6 +164,11 @@
 
 .method public static readHeader(Lcom/android/volley/toolbox/DiskBasedCache$CountingInputStream;)Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;
     .locals 14
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->readInt(Ljava/io/InputStream;)I
@@ -229,41 +234,41 @@
 
 
 # virtual methods
-.method public toCacheEntry([B)Lnv$a;
+.method public toCacheEntry([B)Lcom/android/volley/Cache$Entry;
     .locals 3
 
     .line 1
-    new-instance v0, Lnv$a;
+    new-instance v0, Lcom/android/volley/Cache$Entry;
 
-    invoke-direct {v0}, Lnv$a;-><init>()V
+    invoke-direct {v0}, Lcom/android/volley/Cache$Entry;-><init>()V
 
     .line 2
-    iput-object p1, v0, Lnv$a;->a:[B
+    iput-object p1, v0, Lcom/android/volley/Cache$Entry;->data:[B
 
     .line 3
     iget-object p1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->etag:Ljava/lang/String;
 
-    iput-object p1, v0, Lnv$a;->b:Ljava/lang/String;
+    iput-object p1, v0, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
 
     .line 4
     iget-wide v1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->serverDate:J
 
-    iput-wide v1, v0, Lnv$a;->c:J
+    iput-wide v1, v0, Lcom/android/volley/Cache$Entry;->serverDate:J
 
     .line 5
     iget-wide v1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->lastModified:J
 
-    iput-wide v1, v0, Lnv$a;->d:J
+    iput-wide v1, v0, Lcom/android/volley/Cache$Entry;->lastModified:J
 
     .line 6
     iget-wide v1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->ttl:J
 
-    iput-wide v1, v0, Lnv$a;->e:J
+    iput-wide v1, v0, Lcom/android/volley/Cache$Entry;->ttl:J
 
     .line 7
     iget-wide v1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->softTtl:J
 
-    iput-wide v1, v0, Lnv$a;->f:J
+    iput-wide v1, v0, Lcom/android/volley/Cache$Entry;->softTtl:J
 
     .line 8
     iget-object p1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->allResponseHeaders:Ljava/util/List;
@@ -272,7 +277,7 @@
 
     move-result-object p1
 
-    iput-object p1, v0, Lnv$a;->g:Ljava/util/Map;
+    iput-object p1, v0, Lcom/android/volley/Cache$Entry;->responseHeaders:Ljava/util/Map;
 
     .line 9
     iget-object p1, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->allResponseHeaders:Ljava/util/List;
@@ -281,7 +286,7 @@
 
     move-result-object p1
 
-    iput-object p1, v0, Lnv$a;->h:Ljava/util/List;
+    iput-object p1, v0, Lcom/android/volley/Cache$Entry;->allResponseHeaders:Ljava/util/List;
 
     return-object v0
 .end method
@@ -309,12 +314,7 @@
 
     const-string v0, ""
 
-    goto :goto_0
-
     :cond_0
-    iget-object v0, p0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->etag:Ljava/lang/String;
-
-    :goto_0
     invoke-static {p1, v0}, Lcom/android/volley/toolbox/DiskBasedCache;->writeString(Ljava/io/OutputStream;Ljava/lang/String;)V
 
     .line 4
@@ -365,7 +365,7 @@
 
     const-string p1, "%s"
 
-    invoke-static {p1, v0}, Lzv;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p1, v0}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return v1
 .end method

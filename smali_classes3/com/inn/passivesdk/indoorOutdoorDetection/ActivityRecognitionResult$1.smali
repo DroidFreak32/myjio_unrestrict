@@ -46,6 +46,10 @@
 # virtual methods
 .method public onResult(Lcom/google/android/gms/awareness/snapshot/DetectedActivityResult;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/awareness/snapshot/DetectedActivityResult;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_0
 
@@ -76,7 +80,7 @@
 
     const-string v1, "ActivityRecognitionResult Callback"
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 5
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult$1;->this$0:Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionResult;
@@ -95,6 +99,10 @@
 
 .method public bridge synthetic onResult(Lcom/google/android/gms/common/api/Result;)V
     .locals 0
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/google/android/gms/awareness/snapshot/DetectedActivityResult;

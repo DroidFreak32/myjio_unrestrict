@@ -3,7 +3,7 @@
 .source "CTInboxStyleConfig.java"
 
 # interfaces
-.implements Lcom/google/android/material/tabs/TabLayout$OnTabSelectedListener;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
@@ -14,6 +14,15 @@
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x9
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/clevertap/android/sdk/CTInboxStyleConfig;",
+        ">;"
+    }
 .end annotation
 
 
@@ -29,20 +38,44 @@
 
 
 # virtual methods
-.method public onTabReselected(Lcom/google/android/material/tabs/TabLayout$Tab;)V
-    .locals 0
+.method public createFromParcel(Landroid/os/Parcel;)Lcom/clevertap/android/sdk/CTInboxStyleConfig;
+    .locals 1
 
-    return-void
+    .line 2
+    new-instance v0, Lcom/clevertap/android/sdk/CTInboxStyleConfig;
+
+    invoke-direct {v0, p1}, Lcom/clevertap/android/sdk/CTInboxStyleConfig;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
 .end method
 
-.method public onTabSelected(Lcom/google/android/material/tabs/TabLayout$Tab;)V
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    return-void
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/clevertap/android/sdk/CTInboxStyleConfig$1;->createFromParcel(Landroid/os/Parcel;)Lcom/clevertap/android/sdk/CTInboxStyleConfig;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public onTabUnselected(Lcom/google/android/material/tabs/TabLayout$Tab;)V
+.method public newArray(I)[Lcom/clevertap/android/sdk/CTInboxStyleConfig;
     .locals 0
 
-    return-void
+    .line 2
+    new-array p1, p1, [Lcom/clevertap/android/sdk/CTInboxStyleConfig;
+
+    return-object p1
+.end method
+
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/clevertap/android/sdk/CTInboxStyleConfig$1;->newArray(I)[Lcom/clevertap/android/sdk/CTInboxStyleConfig;
+
+    move-result-object p1
+
+    return-object p1
 .end method

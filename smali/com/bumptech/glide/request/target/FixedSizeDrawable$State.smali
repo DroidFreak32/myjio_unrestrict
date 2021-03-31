@@ -19,7 +19,7 @@
 
 .field public final width:I
 
-.field public final wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
+.field private final wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
 
 
 # direct methods
@@ -68,6 +68,8 @@
 
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;
@@ -85,6 +87,8 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/bumptech/glide/request/target/FixedSizeDrawable;

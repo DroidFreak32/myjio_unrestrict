@@ -34,94 +34,72 @@
 
 .field public static final enum zzbax:I = 0x7
 
-.field public static final synthetic zzbay:[I
+.field private static final synthetic zzbay:[I
 
 .field public static final enum zzbaz:I = 0x1
 
 .field public static final enum zzbba:I = 0x2
 
-.field public static final synthetic zzbbb:[I
+.field private static final synthetic zzbbb:[I
 
 .field public static final enum zzbbc:I = 0x1
 
 .field public static final enum zzbbd:I = 0x2
 
-.field public static final synthetic zzbbe:[I
+.field private static final synthetic zzbbe:[I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     const/4 v0, 0x7
 
-    new-array v0, v0, [I
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbar:I
+    new-array v1, v0, [I
 
     const/4 v2, 0x0
 
-    aput v1, v0, v2
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbas:I
-
     const/4 v3, 0x1
 
-    aput v1, v0, v3
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbat:I
+    aput v3, v1, v2
 
     const/4 v4, 0x2
 
-    aput v1, v0, v4
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbau:I
+    aput v4, v1, v3
 
     const/4 v5, 0x3
 
-    aput v1, v0, v5
+    aput v5, v1, v4
 
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbav:I
+    const/4 v6, 0x4
 
-    const/4 v5, 0x4
-
-    aput v1, v0, v5
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbaw:I
+    aput v6, v1, v5
 
     const/4 v5, 0x5
 
-    aput v1, v0, v5
+    aput v5, v1, v6
 
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbax:I
+    const/4 v6, 0x6
 
-    const/4 v5, 0x6
+    aput v6, v1, v5
 
-    aput v1, v0, v5
+    aput v0, v1, v6
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbay:[I
+    sput-object v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbay:[I
 
     new-array v0, v4, [I
 
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbaz:I
+    aput v3, v0, v2
 
-    aput v1, v0, v2
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbba:I
-
-    aput v1, v0, v3
+    aput v4, v0, v3
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbbb:[I
 
     new-array v0, v4, [I
 
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbbc:I
+    aput v3, v0, v2
 
-    aput v1, v0, v2
-
-    sget v1, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbbd:I
-
-    aput v1, v0, v3
+    aput v4, v0, v3
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzrc$zze;->zzbbe:[I
 

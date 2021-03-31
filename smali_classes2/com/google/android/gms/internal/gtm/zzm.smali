@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzqx:Landroid/os/IBinder;
+.field private final zzqx:Landroid/os/IBinder;
 
-.field public final zzqy:Ljava/lang/String;
+.field private final zzqy:Ljava/lang/String;
 
 
 # direct methods
@@ -56,6 +56,11 @@
 
 .method public final transactAndReadException(ILandroid/os/Parcel;)Landroid/os/Parcel;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -107,6 +112,11 @@
 
 .method public final zza(ILandroid/os/Parcel;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -148,6 +158,11 @@
 
 .method public final zzb(ILandroid/os/Parcel;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     :try_start_0

@@ -47,11 +47,11 @@
 
     .line 1
     :try_start_0
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->C()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->isCheckPermissions()Z
 
     move-result v0
 
@@ -131,11 +131,11 @@
     if-eqz v0, :cond_1
 
     .line 8
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->C()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->isCheckPermissions()Z
 
     move-result v0
 
@@ -145,8 +145,6 @@
     iget-object v0, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->c:Ljava/lang/String;
 
     if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->c:Ljava/lang/String;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -182,24 +180,24 @@
     if-eqz p2, :cond_2
 
     .line 12
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lmg0;->C()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isCheckPermissions()Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
     .line 13
-    invoke-static {p1}, Lpg0;->a(Landroid/content/Context;)Lpg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkPassiveAppUtil;
 
     move-result-object p2
 
     iget-object v0, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->c:Ljava/lang/String;
 
-    invoke-virtual {p2, v0}, Lpg0;->a(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->deleteAppEntry(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_1
@@ -207,11 +205,11 @@
     .line 14
     :cond_2
     :try_start_1
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lmg0;->C()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isCheckPermissions()Z
 
     move-result p2
 
@@ -230,11 +228,11 @@
 
     if-eqz p2, :cond_3
 
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lhf0;->V()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PreferenceHelper;->isInternationalRoaming()Z
 
     move-result p2
 
@@ -247,35 +245,29 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lmg0;->b(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;
+    invoke-static {p1, p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->isServiceRunning(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->b:Landroid/content/ComponentName;
 
-    .line 17
-    iget-object p2, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->b:Landroid/content/ComponentName;
-
     if-nez p2, :cond_3
 
-    .line 18
-    invoke-static {p1}, Lpg0;->a(Landroid/content/Context;)Lpg0;
+    .line 17
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkPassiveAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lpg0;->g()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->isEligibleToStartService()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->d:Z
 
-    .line 19
-    iget-boolean p2, p0, Lcom/inn/passivesdk/receiver/PackageReceiver;->d:Z
-
     if-eqz p2, :cond_3
 
-    .line 20
-    invoke-static {p1}, Lpg0;->a(Landroid/content/Context;)Lpg0;
+    .line 18
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkPassiveAppUtil;
 
     move-result-object p2
 
@@ -283,14 +275,14 @@
 
     move-result-object v0
 
-    invoke-virtual {p2, v0}, Lpg0;->a(Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->deleteAppEntry(Ljava/lang/String;)V
 
-    .line 21
-    invoke-static {p1}, Lff0;->a(Landroid/content/Context;)Lff0;
+    .line 19
+    invoke-static {p1}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lff0;->i()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/PassiveManager;->startMonitoring()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_1
@@ -300,7 +292,7 @@
     :catch_0
     move-exception p1
 
-    .line 22
+    .line 20
     :try_start_2
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_2

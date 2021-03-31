@@ -10,11 +10,17 @@
     }
 .end annotation
 
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
 
 # instance fields
-.field public s:I
+.field public a:I
 
-.field public t:I
+.field public b:I
 
 
 # direct methods
@@ -49,13 +55,13 @@
     const v0, 0x7fffffff
 
     .line 4
-    iput v0, p0, Landroidx/preference/internal/PreferenceImageView;->s:I
+    iput v0, p0, Landroidx/preference/internal/PreferenceImageView;->a:I
 
     .line 5
-    iput v0, p0, Landroidx/preference/internal/PreferenceImageView;->t:I
+    iput v0, p0, Landroidx/preference/internal/PreferenceImageView;->b:I
 
     .line 6
-    sget-object v1, Luf;->PreferenceImageView:[I
+    sget-object v1, Landroidx/preference/R$styleable;->PreferenceImageView:[I
 
     const/4 v2, 0x0
 
@@ -64,7 +70,7 @@
     move-result-object p1
 
     .line 7
-    sget p2, Luf;->PreferenceImageView_maxWidth:I
+    sget p2, Landroidx/preference/R$styleable;->PreferenceImageView_maxWidth:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -73,7 +79,7 @@
     invoke-virtual {p0, p2}, Landroidx/preference/internal/PreferenceImageView;->setMaxWidth(I)V
 
     .line 8
-    sget p2, Luf;->PreferenceImageView_maxHeight:I
+    sget p2, Landroidx/preference/R$styleable;->PreferenceImageView_maxHeight:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -93,7 +99,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Landroidx/preference/internal/PreferenceImageView;->t:I
+    iget v0, p0, Landroidx/preference/internal/PreferenceImageView;->b:I
 
     return v0
 .end method
@@ -102,7 +108,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Landroidx/preference/internal/PreferenceImageView;->s:I
+    iget v0, p0, Landroidx/preference/internal/PreferenceImageView;->a:I
 
     return v0
 .end method
@@ -190,7 +196,7 @@
     .locals 0
 
     .line 1
-    iput p1, p0, Landroidx/preference/internal/PreferenceImageView;->t:I
+    iput p1, p0, Landroidx/preference/internal/PreferenceImageView;->b:I
 
     .line 2
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setMaxHeight(I)V
@@ -202,7 +208,7 @@
     .locals 0
 
     .line 1
-    iput p1, p0, Landroidx/preference/internal/PreferenceImageView;->s:I
+    iput p1, p0, Landroidx/preference/internal/PreferenceImageView;->a:I
 
     .line 2
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setMaxWidth(I)V

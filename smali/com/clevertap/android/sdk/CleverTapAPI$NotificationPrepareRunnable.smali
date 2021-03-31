@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final cleverTapAPIWeakReference:Ljava/lang/ref/WeakReference;
+.field private final cleverTapAPIWeakReference:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final jsonObject:Lorg/json/JSONObject;
+.field private final jsonObject:Lorg/json/JSONObject;
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-.field public videoSupport:Z
+.field private videoSupport:Z
 
 
 # direct methods
@@ -76,27 +76,29 @@
 
     iget-boolean v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$NotificationPrepareRunnable;->videoSupport:Z
 
+    .line 2
     invoke-virtual {v0, v1, v2}, Lcom/clevertap/android/sdk/CTInAppNotification;->initWithJSON(Lorg/json/JSONObject;Z)Lcom/clevertap/android/sdk/CTInAppNotification;
 
     move-result-object v0
 
-    .line 2
+    .line 3
     invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotification;->getError()Ljava/lang/String;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 3
+    .line 4
     iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$NotificationPrepareRunnable;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$1000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$000(Lcom/clevertap/android/sdk/CleverTapAPI;)Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/clevertap/android/sdk/CleverTapAPI$NotificationPrepareRunnable;->this$0:Lcom/clevertap/android/sdk/CleverTapAPI;
 
-    invoke-static {v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->access$900(Lcom/clevertap/android/sdk/CleverTapAPI;)Ljava/lang/String;
+    .line 5
+    invoke-virtual {v2}, Lcom/clevertap/android/sdk/CleverTapAPI;->getAccountId()Ljava/lang/String;
 
     move-result-object v2
 
@@ -122,7 +124,7 @@
 
     return-void
 
-    .line 4
+    .line 6
     :cond_0
     iget-object v1, p0, Lcom/clevertap/android/sdk/CleverTapAPI$NotificationPrepareRunnable;->cleverTapAPIWeakReference:Ljava/lang/ref/WeakReference;
 
@@ -134,7 +136,7 @@
 
     iput-object v1, v0, Lcom/clevertap/android/sdk/CTInAppNotification;->listener:Lcom/clevertap/android/sdk/CTInAppNotification$CTInAppNotificationListener;
 
-    .line 5
+    .line 7
     invoke-virtual {v0}, Lcom/clevertap/android/sdk/CTInAppNotification;->prepareForDisplay()V
 
     return-void

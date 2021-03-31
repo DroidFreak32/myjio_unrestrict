@@ -3,7 +3,7 @@
 .source "TapTargetView.java"
 
 # interfaces
-.implements Lw50$c;
+.implements Lgc$c;
 
 
 # annotations
@@ -43,7 +43,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/getkeepsafe/taptargetview/TapTargetView;->b(Lcom/getkeepsafe/taptargetview/TapTargetView;Z)V
+    invoke-static {v0, v1}, Lcom/getkeepsafe/taptargetview/TapTargetView;->c(Lcom/getkeepsafe/taptargetview/TapTargetView;Z)V
 
     return-void
 .end method

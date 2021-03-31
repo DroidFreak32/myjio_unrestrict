@@ -1,85 +1,60 @@
-.class public synthetic Lcom/airbnb/lottie/LottieAnimationView$f;
-.super Ljava/lang/Object;
+.class public Lcom/airbnb/lottie/LottieAnimationView$f;
+.super Lcom/airbnb/lottie/value/LottieValueCallback;
 .source "LottieAnimationView.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/airbnb/lottie/LottieAnimationView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/airbnb/lottie/LottieAnimationView;->addValueCallback(Lcom/airbnb/lottie/model/KeyPath;Ljava/lang/Object;Lcom/airbnb/lottie/value/SimpleLottieValueCallback;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1009
+    accessFlags = 0x1
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/airbnb/lottie/value/LottieValueCallback<",
+        "TT;>;"
+    }
+.end annotation
 
-# static fields
-.field public static final synthetic a:[I
+
+# instance fields
+.field public final synthetic c:Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcom/airbnb/lottie/LottieAnimationView;Lcom/airbnb/lottie/value/SimpleLottieValueCallback;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/airbnb/lottie/RenderMode;->values()[Lcom/airbnb/lottie/RenderMode;
+    iput-object p2, p0, Lcom/airbnb/lottie/LottieAnimationView$f;->c:Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
 
-    move-result-object v0
+    invoke-direct {p0}, Lcom/airbnb/lottie/value/LottieValueCallback;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/airbnb/lottie/LottieAnimationView$f;->a:[I
-
-    :try_start_0
-    sget-object v0, Lcom/airbnb/lottie/LottieAnimationView$f;->a:[I
-
-    sget-object v1, Lcom/airbnb/lottie/RenderMode;->HARDWARE:Lcom/airbnb/lottie/RenderMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v0, Lcom/airbnb/lottie/LottieAnimationView$f;->a:[I
-
-    sget-object v1, Lcom/airbnb/lottie/RenderMode;->SOFTWARE:Lcom/airbnb/lottie/RenderMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Lcom/airbnb/lottie/LottieAnimationView$f;->a:[I
-
-    sget-object v1, Lcom/airbnb/lottie/RenderMode;->AUTOMATIC:Lcom/airbnb/lottie/RenderMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
     return-void
+.end method
+
+
+# virtual methods
+.method public getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/airbnb/lottie/value/LottieFrameInfo<",
+            "TT;>;)TT;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/airbnb/lottie/LottieAnimationView$f;->c:Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
+
+    invoke-interface {v0, p1}, Lcom/airbnb/lottie/value/SimpleLottieValueCallback;->getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -3,40 +3,52 @@
 .source "ManifestInfo.java"
 
 
+# annotations
+.annotation build Landroidx/annotation/RestrictTo;
+    value = {
+        .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+    }
+.end annotation
+
+
 # static fields
-.field public static accountId:Ljava/lang/String;
+.field private static accountId:Ljava/lang/String;
 
-.field public static accountRegion:Ljava/lang/String;
+.field private static accountRegion:Ljava/lang/String;
 
-.field public static accountToken:Ljava/lang/String;
+.field private static accountToken:Ljava/lang/String;
 
-.field public static appLaunchedDisabled:Z
+.field private static appLaunchedDisabled:Z
 
-.field public static backgroundSync:Z
+.field private static backgroundSync:Z
 
-.field public static beta:Z
+.field private static beta:Z
 
-.field public static excludedActivities:Ljava/lang/String;
+.field private static excludedActivities:Ljava/lang/String;
 
-.field public static fcmSenderId:Ljava/lang/String;
+.field private static fcmSenderId:Ljava/lang/String;
 
-.field public static instance:Lcom/clevertap/android/sdk/ManifestInfo;
+.field private static instance:Lcom/clevertap/android/sdk/ManifestInfo;
 
-.field public static intentServiceName:Ljava/lang/String;
+.field private static intentServiceName:Ljava/lang/String;
 
-.field public static notificationIcon:Ljava/lang/String;
+.field private static notificationIcon:Ljava/lang/String;
 
-.field public static packageName:Ljava/lang/String;
+.field private static packageName:Ljava/lang/String;
 
-.field public static sslPinning:Z
+.field private static sslPinning:Z
 
-.field public static useADID:Z
+.field private static useADID:Z
 
-.field public static useCustomID:Z
+.field private static useCustomID:Z
+
+.field private static xiaomiAppID:Ljava/lang/String;
+
+.field private static xiaomiAppKey:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 4
 
     .line 1
@@ -217,16 +229,13 @@
 
     sput-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->fcmSenderId:Ljava/lang/String;
 
-    .line 20
-    sget-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->fcmSenderId:Ljava/lang/String;
-
     if-eqz v0, :cond_4
 
     const-string v2, "id:"
 
     const-string v3, ""
 
-    .line 21
+    .line 20
     invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
@@ -236,7 +245,7 @@
     :cond_4
     const-string v0, "CLEVERTAP_APP_PACKAGE"
 
-    .line 22
+    .line 21
     invoke-static {p1, v0}, Lcom/clevertap/android/sdk/ManifestInfo;->_getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -245,7 +254,7 @@
 
     const-string v0, "CLEVERTAP_BETA"
 
-    .line 23
+    .line 22
     invoke-static {p1, v0}, Lcom/clevertap/android/sdk/ManifestInfo;->_getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -256,25 +265,43 @@
 
     sput-boolean v0, Lcom/clevertap/android/sdk/ManifestInfo;->beta:Z
 
-    .line 24
+    .line 23
     sget-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->intentServiceName:Ljava/lang/String;
 
     if-nez v0, :cond_5
 
     const-string v0, "CLEVERTAP_INTENT_SERVICE"
 
+    .line 24
+    invoke-static {p1, v0}, Lcom/clevertap/android/sdk/ManifestInfo;->_getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->intentServiceName:Ljava/lang/String;
+
+    :cond_5
+    const-string v0, "CLEVERTAP_XIAOMI_APP_KEY"
+
     .line 25
+    invoke-static {p1, v0}, Lcom/clevertap/android/sdk/ManifestInfo;->_getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->xiaomiAppKey:Ljava/lang/String;
+
+    const-string v0, "CLEVERTAP_XIAOMI_APP_ID"
+
+    .line 26
     invoke-static {p1, v0}, Lcom/clevertap/android/sdk/ManifestInfo;->_getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    sput-object p1, Lcom/clevertap/android/sdk/ManifestInfo;->intentServiceName:Ljava/lang/String;
+    sput-object p1, Lcom/clevertap/android/sdk/ManifestInfo;->xiaomiAppID:Ljava/lang/String;
 
-    :cond_5
     return-void
 .end method
 
-.method public static _getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
+.method private static _getManifestStringValueForKey(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
     const/4 v0, 0x0
@@ -431,6 +458,24 @@
 
     .line 1
     sget-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->packageName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getXiaomiAppID()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->xiaomiAppID:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getXiaomiAppKey()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/clevertap/android/sdk/ManifestInfo;->xiaomiAppKey:Ljava/lang/String;
 
     return-object v0
 .end method

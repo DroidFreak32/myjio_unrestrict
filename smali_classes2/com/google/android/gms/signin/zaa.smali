@@ -1,29 +1,10 @@
 .class public final Lcom/google/android/gms/signin/zaa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # static fields
-.field public static final API:Lcom/google/android/gms/common/api/Api;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api<",
-            "Lcom/google/android/gms/signin/SignInOptions;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/Api$ClientKey<",
-            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zaph:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.field public static final zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
@@ -34,9 +15,27 @@
     .end annotation
 .end field
 
-.field public static final zar:Lcom/google/android/gms/common/api/Scope;
+.field public static final zab:Lcom/google/android/gms/common/api/Api;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/Api<",
+            "Lcom/google/android/gms/signin/SignInOptions;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static final zars:Lcom/google/android/gms/common/api/Api$ClientKey;
+.field private static final zac:Lcom/google/android/gms/common/api/Api$ClientKey;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/Api$ClientKey<",
+            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final zad:Lcom/google/android/gms/common/api/Api$ClientKey;
     .annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
     .end annotation
 
@@ -49,105 +48,99 @@
     .end annotation
 .end field
 
-.field public static final zart:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.field private static final zae:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
             "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-            "Ljava/lang/Object;",
+            "Lcom/google/android/gms/signin/zae;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public static final zaru:Lcom/google/android/gms/common/api/Api;
+.field private static final zaf:Lcom/google/android/gms/common/api/Scope;
+
+.field private static final zag:Lcom/google/android/gms/common/api/Scope;
+
+.field private static final zah:Lcom/google/android/gms/common/api/Api;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api<",
-            "Ljava/lang/Object;",
+            "Lcom/google/android/gms/signin/zae;",
             ">;"
         }
     .end annotation
 .end field
-
-.field public static final zas:Lcom/google/android/gms/common/api/Scope;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 6
 
     .line 1
     new-instance v0, Lcom/google/android/gms/common/api/Api$ClientKey;
 
     invoke-direct {v0}, Lcom/google/android/gms/common/api/Api$ClientKey;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
+    sput-object v0, Lcom/google/android/gms/signin/zaa;->zac:Lcom/google/android/gms/common/api/Api$ClientKey;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/common/api/Api$ClientKey;
+    new-instance v1, Lcom/google/android/gms/common/api/Api$ClientKey;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/Api$ClientKey;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/gms/common/api/Api$ClientKey;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zars:Lcom/google/android/gms/common/api/Api$ClientKey;
+    sput-object v1, Lcom/google/android/gms/signin/zaa;->zad:Lcom/google/android/gms/common/api/Api$ClientKey;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/signin/zab;
+    new-instance v2, Lcom/google/android/gms/signin/zac;
 
-    invoke-direct {v0}, Lcom/google/android/gms/signin/zab;-><init>()V
+    invoke-direct {v2}, Lcom/google/android/gms/signin/zac;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zaph:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    sput-object v2, Lcom/google/android/gms/signin/zaa;->zaa:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
     .line 4
-    new-instance v0, Lcom/google/android/gms/signin/zac;
+    new-instance v3, Lcom/google/android/gms/signin/zab;
 
-    invoke-direct {v0}, Lcom/google/android/gms/signin/zac;-><init>()V
+    invoke-direct {v3}, Lcom/google/android/gms/signin/zab;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zart:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    sput-object v3, Lcom/google/android/gms/signin/zaa;->zae:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 
     .line 5
-    new-instance v0, Lcom/google/android/gms/common/api/Scope;
+    new-instance v4, Lcom/google/android/gms/common/api/Scope;
 
-    const-string v1, "profile"
+    const-string v5, "profile"
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zar:Lcom/google/android/gms/common/api/Scope;
+    sput-object v4, Lcom/google/android/gms/signin/zaa;->zaf:Lcom/google/android/gms/common/api/Scope;
 
     .line 6
-    new-instance v0, Lcom/google/android/gms/common/api/Scope;
+    new-instance v4, Lcom/google/android/gms/common/api/Scope;
 
-    const-string v1, "email"
+    const-string v5, "email"
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zas:Lcom/google/android/gms/common/api/Scope;
+    sput-object v4, Lcom/google/android/gms/signin/zaa;->zag:Lcom/google/android/gms/common/api/Scope;
 
     .line 7
-    new-instance v0, Lcom/google/android/gms/common/api/Api;
+    new-instance v4, Lcom/google/android/gms/common/api/Api;
 
-    sget-object v1, Lcom/google/android/gms/signin/zaa;->zaph:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    const-string v5, "SignIn.API"
 
-    sget-object v2, Lcom/google/android/gms/signin/zaa;->CLIENT_KEY:Lcom/google/android/gms/common/api/Api$ClientKey;
+    invoke-direct {v4, v5, v2, v0}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
 
-    const-string v3, "SignIn.API"
-
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
-
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->API:Lcom/google/android/gms/common/api/Api;
+    sput-object v4, Lcom/google/android/gms/signin/zaa;->zab:Lcom/google/android/gms/common/api/Api;
 
     .line 8
     new-instance v0, Lcom/google/android/gms/common/api/Api;
 
-    sget-object v1, Lcom/google/android/gms/signin/zaa;->zart:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    const-string v2, "SignIn.INTERNAL_API"
 
-    sget-object v2, Lcom/google/android/gms/signin/zaa;->zars:Lcom/google/android/gms/common/api/Api$ClientKey;
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
 
-    const-string v3, "SignIn.INTERNAL_API"
-
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/Api;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
-
-    sput-object v0, Lcom/google/android/gms/signin/zaa;->zaru:Lcom/google/android/gms/common/api/Api;
+    sput-object v0, Lcom/google/android/gms/signin/zaa;->zah:Lcom/google/android/gms/common/api/Api;
 
     return-void
 .end method

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final EMPTY_PARAMS:[Ljava/lang/Class;
+.field private static final EMPTY_PARAMS:[Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public static final NEVER_MATCH_PATH:Ljava/util/List;
+.field private static final NEVER_MATCH_PATH:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -36,13 +36,13 @@
 
 
 # instance fields
-.field public activitySet:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$ActivitySet;
+.field private activitySet:Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$ActivitySet;
 
-.field public config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
+.field private config:Lcom/clevertap/android/sdk/CleverTapInstanceConfig;
 
-.field public context:Landroid/content/Context;
+.field private context:Landroid/content/Context;
 
-.field public final currentEdits:Ljava/util/Deque;
+.field private final currentEdits:Ljava/util/Deque;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Deque<",
@@ -52,7 +52,7 @@
     .end annotation
 .end field
 
-.field public final editorSessionImageUrls:Ljava/util/ArrayList;
+.field private final editorSessionImageUrls:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -62,7 +62,7 @@
     .end annotation
 .end field
 
-.field public final newEdits:Ljava/util/Map;
+.field private final newEdits:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -74,11 +74,11 @@
     .end annotation
 .end field
 
-.field public resourceIds:Lcom/clevertap/android/sdk/ab_testing/uieditor/ResourceIds;
+.field private resourceIds:Lcom/clevertap/android/sdk/ab_testing/uieditor/ResourceIds;
 
-.field public snapshotConfig:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;
+.field private snapshotConfig:Lcom/clevertap/android/sdk/ab_testing/uieditor/SnapshotBuilder$ViewSnapshotConfig;
 
-.field public final uiThreadHandler:Landroid/os/Handler;
+.field private final uiThreadHandler:Landroid/os/Handler;
 
 
 # direct methods
@@ -176,7 +176,7 @@
     return-void
 .end method
 
-.method public static synthetic access$100(Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;)V
+.method public static synthetic access$200(Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;)V
     .locals 0
 
     .line 1
@@ -524,6 +524,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 10
     invoke-virtual {p1}, Ljava/lang/ClassCastException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -534,6 +535,7 @@
 
     move-result-object p1
 
+    .line 11
     invoke-virtual {p2, p3, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -730,6 +732,12 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
     .line 1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -759,33 +767,33 @@
 
     move-result-object v4
 
-    const-string v5, "view_class"
+    const-string/jumbo v5, "view_class"
 
     .line 5
     invoke-static {v3, v5}, Lcom/clevertap/android/sdk/Utils;->optionalStringKey(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    const/4 v5, -0x1
+    const-string v5, "index"
 
-    const-string v6, "index"
+    const/4 v6, -0x1
 
     .line 6
-    invoke-virtual {v3, v6, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    invoke-virtual {v3, v5, v6}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
     move-result v9
 
-    const-string v6, "contentDescription"
+    const-string v5, "contentDescription"
 
     .line 7
-    invoke-static {v3, v6}, Lcom/clevertap/android/sdk/Utils;->optionalStringKey(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v5}, Lcom/clevertap/android/sdk/Utils;->optionalStringKey(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    const-string v6, "id"
+    const-string v5, "id"
 
     .line 8
-    invoke-virtual {v3, v6, v5}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    invoke-virtual {v3, v5, v6}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
     move-result v5
 
@@ -796,7 +804,7 @@
 
     move-result-object v6
 
-    const-string v7, "tag"
+    const-string/jumbo v7, "tag"
 
     .line 10
     invoke-static {v3, v7}, Lcom/clevertap/android/sdk/Utils;->optionalStringKey(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -810,7 +818,7 @@
     goto :goto_1
 
     :cond_0
-    const-string v3, "shortest"
+    const-string/jumbo v3, "shortest"
 
     .line 11
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1172,6 +1180,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 24
     invoke-virtual {p1}, Ljava/lang/ClassNotFoundException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -1182,11 +1191,12 @@
 
     move-result-object p1
 
+    .line 25
     invoke-virtual {v0, v1, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
 
-    .line 24
+    .line 26
     :cond_5
     invoke-direct {p0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
@@ -1220,7 +1230,7 @@
     :catch_1
     move-exception p1
 
-    .line 25
+    .line 27
     invoke-direct {p0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v0
@@ -1237,6 +1247,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 28
     invoke-virtual {p1}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -1247,6 +1258,7 @@
 
     move-result-object p1
 
+    .line 29
     invoke-virtual {v0, v1, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
@@ -1254,7 +1266,7 @@
     :catch_2
     move-exception p1
 
-    .line 26
+    .line 30
     invoke-direct {p0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->getConfigLogger()Lcom/clevertap/android/sdk/Logger;
 
     move-result-object v0
@@ -1271,6 +1283,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 31
     invoke-virtual {p1}, Ljava/lang/NoSuchMethodException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -1281,6 +1294,7 @@
 
     move-result-object p1
 
+    .line 32
     invoke-virtual {v0, v1, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
@@ -1346,7 +1360,7 @@
 
     move-result-object v1
 
-    const-string v7, "type"
+    const-string/jumbo v7, "type"
 
     invoke-virtual {v1, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1808,7 +1822,7 @@
     const-string v0, "dimensions"
 
     :try_start_0
-    const-string v1, "url"
+    const-string/jumbo v1, "url"
 
     .line 1
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1854,7 +1868,7 @@
 
     move-result v0
 
-    const-string v2, "top"
+    const-string/jumbo v2, "top"
 
     .line 6
     invoke-virtual {p1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
@@ -1924,6 +1938,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 13
     invoke-virtual {p1}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -1934,6 +1949,7 @@
 
     move-result-object p1
 
+    .line 14
     invoke-virtual {p2, v0, p1}, Lcom/clevertap/android/sdk/Logger;->verbose(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 p1, 0x0
@@ -2032,30 +2048,31 @@
 
     iget-object v6, v4, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$UIChange;->imageUrls:Ljava/util/List;
 
+    .line 6
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 6
+    .line 7
     :cond_2
     iget-object v5, v4, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$UIChange;->imageUrls:Ljava/util/List;
 
     invoke-virtual {v1, v5}, Lcom/clevertap/android/sdk/ab_testing/models/CTABVariant;->addImageUrls(Ljava/util/List;)V
 
-    .line 7
+    .line 8
     invoke-virtual {v3}, Lcom/clevertap/android/sdk/ab_testing/models/CTABVariant$CTVariantAction;->getActivityName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 8
+    .line 9
     iget-object v4, v4, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor$UIChange;->viewEdit:Lcom/clevertap/android/sdk/ab_testing/uieditor/ViewEdit;
 
-    .line 9
+    .line 10
     invoke-interface {v0, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 10
+    .line 11
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -2064,13 +2081,13 @@
 
     goto :goto_1
 
-    .line 11
+    .line 12
     :cond_3
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 12
+    .line 13
     invoke-interface {v0, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v3, v5
@@ -2078,37 +2095,37 @@
     :goto_1
     if-eqz v3, :cond_1
 
-    .line 13
+    .line 14
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 14
+    .line 15
     :cond_4
     invoke-direct {p0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->clearEdits()V
 
-    .line 15
+    .line 16
     iget-object p1, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->newEdits:Ljava/util/Map;
 
     monitor-enter p1
 
-    .line 16
+    .line 17
     :try_start_0
     iget-object p2, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->newEdits:Ljava/util/Map;
 
     invoke-interface {p2}, Ljava/util/Map;->clear()V
 
-    .line 17
+    .line 18
     iget-object p2, p0, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->newEdits:Ljava/util/Map;
 
     invoke-interface {p2, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 18
+    .line 19
     monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 19
+    .line 20
     invoke-direct {p0}, Lcom/clevertap/android/sdk/ab_testing/uieditor/UIEditor;->handleNewEditsOnUiThread()V
 
     return-void
@@ -2116,7 +2133,7 @@
     :catchall_0
     move-exception p2
 
-    .line 20
+    .line 21
     :try_start_1
     monitor-exit p1
     :try_end_1

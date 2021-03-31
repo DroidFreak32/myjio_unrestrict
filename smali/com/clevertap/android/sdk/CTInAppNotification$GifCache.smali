@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final MIN_CACHE_SIZE:I = 0x1400
+.field private static final MIN_CACHE_SIZE:I = 0x1400
 
-.field public static final cacheSize:I
+.field private static final cacheSize:I
 
-.field public static mMemoryCache:Landroid/util/LruCache;
+.field private static mMemoryCache:Landroid/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/LruCache<",
@@ -29,7 +29,7 @@
     .end annotation
 .end field
 
-.field public static final maxMemory:I
+.field private static final maxMemory:I
 
 
 # direct methods
@@ -52,13 +52,11 @@
     sput v1, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->maxMemory:I
 
     .line 2
-    sget v0, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->maxMemory:I
+    div-int/lit8 v1, v1, 0x20
 
-    div-int/lit8 v0, v0, 0x20
+    const/16 v0, 0x1400
 
-    const/16 v1, 0x1400
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -67,7 +65,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -76,7 +74,7 @@
     return-void
 .end method
 
-.method public static synthetic access$100([B)I
+.method public static synthetic access$000([B)I
     .locals 0
 
     .line 1
@@ -223,7 +221,7 @@
     return p0
 .end method
 
-.method public static cleanup()V
+.method private static cleanup()V
     .locals 2
 
     .line 1
@@ -265,7 +263,7 @@
     throw v1
 .end method
 
-.method public static getAvailableMemory()I
+.method private static getAvailableMemory()I
     .locals 3
 
     .line 1
@@ -284,15 +282,13 @@
     goto :goto_0
 
     :cond_0
-    sget v1, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->cacheSize:I
+    sget v2, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->cacheSize:I
 
-    sget-object v2, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->mMemoryCache:Landroid/util/LruCache;
+    invoke-virtual {v1}, Landroid/util/LruCache;->size()I
 
-    invoke-virtual {v2}, Landroid/util/LruCache;->size()I
+    move-result v1
 
-    move-result v2
-
-    sub-int/2addr v1, v2
+    sub-int v1, v2, v1
 
     :goto_0
     monitor-exit v0
@@ -329,8 +325,6 @@
     goto :goto_0
 
     :cond_0
-    sget-object v1, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->mMemoryCache:Landroid/util/LruCache;
-
     invoke-virtual {v1, p0}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -353,7 +347,7 @@
     throw p0
 .end method
 
-.method public static getByteArraySizeInKB([B)I
+.method private static getByteArraySizeInKB([B)I
     .locals 0
 
     .line 1
@@ -365,7 +359,7 @@
 .end method
 
 .method public static init()V
-    .locals 3
+    .locals 4
 
     .line 1
     const-class v0, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;
@@ -399,9 +393,9 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, "KB"
+    const-string v3, "KB"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -414,8 +408,6 @@
     .line 4
     :try_start_1
     new-instance v1, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache$1;
-
-    sget v2, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->cacheSize:I
 
     invoke-direct {v1, v2}, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache$1;-><init>(I)V
 
@@ -455,7 +447,7 @@
     throw v1
 .end method
 
-.method public static isEmpty()Z
+.method private static isEmpty()Z
     .locals 2
 
     .line 1
@@ -510,17 +502,16 @@
 
     if-nez v1, :cond_0
 
+    .line 3
     monitor-exit v0
 
     return-void
 
-    .line 3
+    .line 4
     :cond_0
-    sget-object v1, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->mMemoryCache:Landroid/util/LruCache;
-
     invoke-virtual {v1, p0}, Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4
+    .line 5
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -537,10 +528,10 @@
 
     invoke-static {p0}, Lcom/clevertap/android/sdk/Logger;->v(Ljava/lang/String;)V
 
-    .line 5
+    .line 6
     invoke-static {}, Lcom/clevertap/android/sdk/CTInAppNotification$GifCache;->cleanup()V
 
-    .line 6
+    .line 7
     monitor-exit v0
 
     return-void

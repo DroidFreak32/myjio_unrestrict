@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field public encoder:Lcom/bumptech/glide/load/ResourceEncoder;
+.field private encoder:Lcom/bumptech/glide/load/ResourceEncoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/ResourceEncoder<",
@@ -33,9 +33,9 @@
     .end annotation
 .end field
 
-.field public key:Lcom/bumptech/glide/load/Key;
+.field private key:Lcom/bumptech/glide/load/Key;
 
-.field public toEncode:Lcom/bumptech/glide/load/engine/LockedResource;
+.field private toEncode:Lcom/bumptech/glide/load/engine/LockedResource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/LockedResource<",

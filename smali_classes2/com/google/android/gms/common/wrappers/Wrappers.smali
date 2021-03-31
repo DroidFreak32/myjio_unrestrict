@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/wrappers/Wrappers;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,11 +9,14 @@
 
 
 # static fields
-.field public static zzhz:Lcom/google/android/gms/common/wrappers/Wrappers;
+.field private static zzb:Lcom/google/android/gms/common/wrappers/Wrappers;
 
 
 # instance fields
-.field public zzhy:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+.field private zza:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -24,7 +28,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/wrappers/Wrappers;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzhz:Lcom/google/android/gms/common/wrappers/Wrappers;
+    sput-object v0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzb:Lcom/google/android/gms/common/wrappers/Wrappers;
 
     return-void
 .end method
@@ -38,27 +42,34 @@
     const/4 v0, 0x0
 
     .line 2
-    iput-object v0, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzhy:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    iput-object v0, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zza:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 
     return-void
 .end method
 
 .method public static packageManager(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
     .locals 1
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzhz:Lcom/google/android/gms/common/wrappers/Wrappers;
+    sget-object v0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzb:Lcom/google/android/gms/common/wrappers/Wrappers;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/wrappers/Wrappers;->zzi(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/wrappers/Wrappers;->zza(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private final declared-synchronized zzi(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+.method private final declared-synchronized zza(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
     .locals 1
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -67,7 +78,7 @@
 
     .line 1
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzhy:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    iget-object v0, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zza:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 
     if-nez v0, :cond_1
 
@@ -91,11 +102,11 @@
 
     invoke-direct {v0, p1}, Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzhy:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    iput-object v0, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zza:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 
     .line 4
     :cond_1
-    iget-object p1, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zzhy:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    iget-object p1, p0, Lcom/google/android/gms/common/wrappers/Wrappers;->zza:Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

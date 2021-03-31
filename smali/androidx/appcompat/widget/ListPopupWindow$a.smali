@@ -1,14 +1,11 @@
 .class public Landroidx/appcompat/widget/ListPopupWindow$a;
-.super Ljava/lang/Object;
+.super Landroidx/appcompat/widget/ForwardingListener;
 .source "ListPopupWindow.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/appcompat/widget/ListPopupWindow;->f()I
+    value = Landroidx/appcompat/widget/ListPopupWindow;->createDragToOpenListener(Landroid/view/View;)Landroid/view/View$OnTouchListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,47 +15,39 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/ListPopupWindow;
+.field public final synthetic C:Landroidx/appcompat/widget/ListPopupWindow;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/appcompat/widget/ListPopupWindow;)V
+.method public constructor <init>(Landroidx/appcompat/widget/ListPopupWindow;Landroid/view/View;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$a;->s:Landroidx/appcompat/widget/ListPopupWindow;
+    iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$a;->C:Landroidx/appcompat/widget/ListPopupWindow;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroidx/appcompat/widget/ForwardingListener;-><init>(Landroid/view/View;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public bridge synthetic getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$a;->s:Landroidx/appcompat/widget/ListPopupWindow;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->h()Landroid/view/View;
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ListPopupWindow$a;->h()Landroidx/appcompat/widget/ListPopupWindow;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    return-object v0
+.end method
 
-    .line 2
-    invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+.method public h()Landroidx/appcompat/widget/ListPopupWindow;
+    .locals 1
 
-    move-result-object v0
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$a;->C:Landroidx/appcompat/widget/ListPopupWindow;
 
-    if-eqz v0, :cond_0
-
-    .line 3
-    iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$a;->s:Landroidx/appcompat/widget/ListPopupWindow;
-
-    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

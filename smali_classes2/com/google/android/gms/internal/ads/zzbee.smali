@@ -1,37 +1,36 @@
-.class public final Lcom/google/android/gms/internal/ads/zzbee;
+.class public final synthetic Lcom/google/android/gms/internal/ads/zzbee;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        "V:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzbfj;
 
 
 # instance fields
-.field public final zzdzx:Lcom/google/android/gms/internal/ads/zzbgj;
+.field private final zzeqf:Lcom/google/android/gms/internal/ads/zzazr;
 
-.field public final zzdzy:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TK;"
-        }
-    .end annotation
-.end field
 
-.field public final zzdzz:Lcom/google/android/gms/internal/ads/zzbgj;
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzazr;)V
+    .locals 0
 
-.field public final zzeaa:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TV;"
-        }
-    .end annotation
-.end field
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbee;->zzeqf:Lcom/google/android/gms/internal/ads/zzazr;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final zzai(Z)V
+    .locals 0
+
+    .line 1
+    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzbee;->zzeqf:Lcom/google/android/gms/internal/ads/zzazr;
+
+    .line 2
+    invoke-virtual {p1}, Lcom/google/android/gms/internal/ads/zzazr;->zzzj()V
+
+    return-void
+.end method

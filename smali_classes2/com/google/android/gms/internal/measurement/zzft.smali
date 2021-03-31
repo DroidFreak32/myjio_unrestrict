@@ -1,127 +1,82 @@
-.class public Lcom/google/android/gms/internal/measurement/zzft;
-.super Ljava/io/IOException;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.class public final Lcom/google/android/gms/internal/measurement/zzft;
+.super Lcom/google/android/gms/internal/measurement/zzfb;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/internal/measurement/zzfb<",
+        "Ljava/lang/Object;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public zza:Lcom/google/android/gms/internal/measurement/zzgt;
+.field private final transient zza:[Ljava/lang/Object;
+
+.field private final transient zzb:I
+
+.field private final transient zzc:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>([Ljava/lang/Object;II)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
+    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzfb;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzft;->zza:Lcom/google/android/gms/internal/measurement/zzgt;
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzft;->zza:[Ljava/lang/Object;
+
+    .line 3
+    iput p2, p0, Lcom/google/android/gms/internal/measurement/zzft;->zzb:I
+
+    .line 4
+    iput p3, p0, Lcom/google/android/gms/internal/measurement/zzft;->zzc:I
 
     return-void
 .end method
 
-.method public static zza()Lcom/google/android/gms/internal/measurement/zzft;
+
+# virtual methods
+.method public final get(I)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
+    iget v0, p0, Lcom/google/android/gms/internal/measurement/zzft;->zzc:I
 
-    const-string v1, "While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length."
+    invoke-static {p1, v0}, Lcom/google/android/gms/internal/measurement/zzeb;->zza(II)I
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzft;->zza:[Ljava/lang/Object;
 
-    return-object v0
+    mul-int/lit8 p1, p1, 0x2
+
+    iget v1, p0, Lcom/google/android/gms/internal/measurement/zzft;->zzb:I
+
+    add-int/2addr p1, v1
+
+    aget-object p1, v0, p1
+
+    return-object p1
 .end method
 
-.method public static zzb()Lcom/google/android/gms/internal/measurement/zzft;
-    .locals 2
+.method public final size()I
+    .locals 1
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
+    iget v0, p0, Lcom/google/android/gms/internal/measurement/zzft;->zzc:I
 
-    const-string v1, "CodedInputStream encountered an embedded string or message which claimed to have negative size."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
-
-    return-object v0
+    return v0
 .end method
 
-.method public static zzc()Lcom/google/android/gms/internal/measurement/zzft;
-    .locals 2
+.method public final zzf()Z
+    .locals 1
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
+    const/4 v0, 0x1
 
-    const-string v1, "CodedInputStream encountered a malformed varint."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static zzd()Lcom/google/android/gms/internal/measurement/zzft;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
-
-    const-string v1, "Protocol message contained an invalid tag (zero)."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static zze()Lcom/google/android/gms/internal/measurement/zzft;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
-
-    const-string v1, "Protocol message end-group tag did not match expected tag."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static zzf()Lcom/google/android/gms/internal/measurement/zzfs;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzfs;
-
-    const-string v1, "Protocol message tag had invalid wire type."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzfs;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static zzg()Lcom/google/android/gms/internal/measurement/zzft;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
-
-    const-string v1, "Failed to parse the message."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static zzh()Lcom/google/android/gms/internal/measurement/zzft;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzft;
-
-    const-string v1, "Protocol message had invalid UTF-8."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzft;-><init>(Ljava/lang/String;)V
-
-    return-object v0
+    return v0
 .end method

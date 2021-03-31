@@ -39,7 +39,7 @@
     mul-float v0, v0, p2
 
     :goto_0
-    invoke-static {p1, v0}, La53;->i(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setTranslationX(Landroid/view/View;F)V
 
     return-void
 .end method

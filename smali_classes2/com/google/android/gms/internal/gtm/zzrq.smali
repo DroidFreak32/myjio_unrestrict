@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public zzbca:Ljava/util/Iterator;
+.field private zzbca:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",

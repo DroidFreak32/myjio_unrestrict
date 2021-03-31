@@ -37,12 +37,19 @@
 
 .method public lockInterruptibly()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public newCondition()Ljava/util/concurrent/locks/Condition;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -64,6 +71,15 @@
 
 .method public tryLock(JLjava/util/concurrent/TimeUnit;)Z
     .locals 0
+    .param p3    # Ljava/util/concurrent/TimeUnit;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
 
     const/4 p1, 0x1
 

@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/loader/content/ModernAsyncTask;
+.field public final synthetic a:Landroidx/loader/content/ModernAsyncTask;
 
 
 # direct methods
@@ -30,7 +30,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/loader/content/ModernAsyncTask$c;->s:Landroidx/loader/content/ModernAsyncTask;
+    iput-object p1, p0, Landroidx/loader/content/ModernAsyncTask$c;->a:Landroidx/loader/content/ModernAsyncTask;
 
     invoke-direct {p0, p2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
@@ -51,9 +51,9 @@
     move-result-object v1
 
     .line 2
-    iget-object v2, p0, Landroidx/loader/content/ModernAsyncTask$c;->s:Landroidx/loader/content/ModernAsyncTask;
+    iget-object v2, p0, Landroidx/loader/content/ModernAsyncTask$c;->a:Landroidx/loader/content/ModernAsyncTask;
 
-    invoke-virtual {v2, v1}, Landroidx/loader/content/ModernAsyncTask;->e(Ljava/lang/Object;)V
+    invoke-virtual {v2, v1}, Landroidx/loader/content/ModernAsyncTask;->m(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
@@ -74,11 +74,11 @@
 
     .line 4
     :catch_0
-    iget-object v0, p0, Landroidx/loader/content/ModernAsyncTask$c;->s:Landroidx/loader/content/ModernAsyncTask;
+    iget-object v0, p0, Landroidx/loader/content/ModernAsyncTask$c;->a:Landroidx/loader/content/ModernAsyncTask;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroidx/loader/content/ModernAsyncTask;->e(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroidx/loader/content/ModernAsyncTask;->m(Ljava/lang/Object;)V
 
     goto :goto_0
 

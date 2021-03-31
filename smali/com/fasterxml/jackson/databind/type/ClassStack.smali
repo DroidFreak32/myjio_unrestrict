@@ -15,7 +15,7 @@
 
 .field public final _parent:Lcom/fasterxml/jackson/databind/type/ClassStack;
 
-.field public _selfRefs:Ljava/util/ArrayList;
+.field private _selfRefs:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;)V
+.method private constructor <init>(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

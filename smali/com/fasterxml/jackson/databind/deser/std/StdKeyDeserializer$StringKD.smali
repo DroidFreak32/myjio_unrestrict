@@ -18,11 +18,11 @@
 
 
 # static fields
-.field public static final sObject:Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$StringKD;
+.field private static final sObject:Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$StringKD;
 
-.field public static final sString:Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$StringKD;
+.field private static final sString:Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$StringKD;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Class;)V
+.method private constructor <init>(Ljava/lang/Class;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -113,6 +113,12 @@
 # virtual methods
 .method public deserializeKey(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JsonProcessingException;
+        }
+    .end annotation
 
     return-object p1
 .end method

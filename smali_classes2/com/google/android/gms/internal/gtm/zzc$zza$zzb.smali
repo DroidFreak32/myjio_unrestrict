@@ -26,13 +26,13 @@
 
 
 # static fields
-.field public static final enum zznx:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+.field private static final enum zznx:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
-.field public static final enum zzny:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+.field private static final enum zzny:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
-.field public static final enum zznz:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+.field private static final enum zznz:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
-.field public static final zzoa:Lcom/google/android/gms/internal/gtm/zzrg;
+.field private static final zzoa:Lcom/google/android/gms/internal/gtm/zzrg;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzrg<",
@@ -42,68 +42,62 @@
     .end annotation
 .end field
 
-.field public static final synthetic zzob:[Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+.field private static final synthetic zzob:[Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 8
 
     .line 1
     new-instance v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
-    const/4 v1, 0x0
+    const-string v1, "NO_CACHE"
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const-string v3, "NO_CACHE"
+    const/4 v3, 0x1
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zznx:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
     .line 2
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
-
-    const/4 v3, 0x2
+    new-instance v1, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
     const-string v4, "PRIVATE"
 
-    invoke-direct {v0, v4, v2, v3}, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v5, 0x2
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zzny:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+    invoke-direct {v1, v4, v3, v5}, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zzny:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
     .line 3
-    new-instance v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+    new-instance v4, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
-    const/4 v4, 0x3
+    const-string v6, "PUBLIC"
 
-    const-string v5, "PUBLIC"
+    const/4 v7, 0x3
 
-    invoke-direct {v0, v5, v3, v4}, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v4, v6, v5, v7}, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zznz:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+    sput-object v4, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zznz:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
-    new-array v0, v4, [Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+    new-array v6, v7, [Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+
+    aput-object v0, v6, v2
+
+    aput-object v1, v6, v3
+
+    aput-object v4, v6, v5
 
     .line 4
-    sget-object v4, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zznx:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zzny:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zznz:Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zzob:[Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
+    sput-object v6, Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;->zzob:[Lcom/google/android/gms/internal/gtm/zzc$zza$zzb;
 
     .line 5
     new-instance v0, Lcom/google/android/gms/internal/gtm/zze;
@@ -115,7 +109,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

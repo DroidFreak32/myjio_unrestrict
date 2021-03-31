@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzl:Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener;
+.field private final synthetic zzl:Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener;
 
 
 # direct methods

@@ -16,21 +16,21 @@
     .end annotation
 .end field
 
-.field public static final serialVersionUID:J = -0x760b59aba69c8e90L
+.field private static final serialVersionUID:J = -0x760b59aba69c8e90L
 
 
 # instance fields
-.field public imgPath:Ljava/lang/String;
+.field private imgPath:Ljava/lang/String;
 
-.field public status:Ljava/lang/String;
+.field private status:Ljava/lang/String;
 
-.field public tagDescription:Ljava/lang/String;
+.field private tagDescription:Ljava/lang/String;
 
-.field public tagId:Ljava/lang/Long;
+.field private tagId:Ljava/lang/Long;
 
-.field public tagName:Ljava/lang/String;
+.field private tagName:Ljava/lang/String;
 
-.field public tagName_ar:Ljava/lang/String;
+.field private tagName_ar:Ljava/lang/String;
 
 
 # direct methods

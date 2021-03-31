@@ -8,11 +8,11 @@
 
 
 # instance fields
-.field public zzrl:Lcom/google/android/gms/analytics/Tracker;
+.field private zzrl:Lcom/google/android/gms/analytics/Tracker;
 
-.field public zzrm:Landroid/content/Context;
+.field private zzrm:Landroid/content/Context;
 
-.field public zzro:Lcom/google/android/gms/analytics/GoogleAnalytics;
+.field private zzro:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
 
 # direct methods
@@ -49,8 +49,6 @@
     iput-object v0, p0, Lcom/google/android/gms/tagmanager/zzgf;->zzro:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
     .line 3
-    iget-object v0, p0, Lcom/google/android/gms/tagmanager/zzgf;->zzro:Lcom/google/android/gms/analytics/GoogleAnalytics;
-
     new-instance v1, Lcom/google/android/gms/tagmanager/zzgg;
 
     invoke-direct {v1}, Lcom/google/android/gms/tagmanager/zzgg;-><init>()V

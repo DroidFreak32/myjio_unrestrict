@@ -1,34 +1,80 @@
 .class public Lcom/elitecorelib/core/pojonew/ANDSFLocation3GPPLevel1;
-.super Lgh;
+.super Landroidx/room/Room;
+
+
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "ANDSFLocation3GPPLevel1"
+.end annotation
 
 
 # instance fields
 .field public EUTRA_CI:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "EUTRA_CI"
+    .end annotation
+.end field
 
 .field public GERAN_CI:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "GERAN_CI"
+    .end annotation
+.end field
 
 .field public LAC:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "LAC"
+    .end annotation
+.end field
 
 .field public PLMN:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "PLMN"
+    .end annotation
+.end field
 
 .field public TAC:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "TAC"
+    .end annotation
+.end field
 
 .field public UTRAN_CI:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "UTRAN_CI"
+    .end annotation
+.end field
 
 .field public counter:J
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "counter"
+    .end annotation
+.end field
 
 .field public id:J
+    .annotation build Landroidx/room/PrimaryKey;
+        autoGenerate = true
+    .end annotation
+.end field
 
 .field public lastUpdatedDate:J
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "lastUpdatedDate"
+    .end annotation
+.end field
 
 .field public policyId:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "policyId"
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 2
 
-    invoke-direct {p0}, Lgh;-><init>()V
+    invoke-direct {p0}, Landroidx/room/Room;-><init>()V
 
     const-string v0, ""
 

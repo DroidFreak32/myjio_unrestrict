@@ -1,109 +1,129 @@
 .class public final Lcom/google/android/gms/internal/ads/zzavy;
-.super Ljava/lang/Object;
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
+
+
+# annotations
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
+    creator = "ServerSideVerificationOptionsParcelCreator"
+.end annotation
+
+.annotation runtime Ljavax/annotation/ParametersAreNonnullByDefault;
+.end annotation
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/internal/ads/zzavy;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public final zzdxy:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x1
+    .end annotation
+.end field
+
+.field public final zzdxz:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x2
+    .end annotation
+.end field
 
 
 # direct methods
-.method public static final zzh([B)Lcom/google/android/gms/internal/ads/zzavu;
-    .locals 4
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    :try_start_0
-    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzaze;->zzj([B)Lcom/google/android/gms/internal/ads/zzaze;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzawb;
 
-    move-result-object p0
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzawb;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzavy;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/gms/ads/rewarded/ServerSideVerificationOptions;)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p1}, Lcom/google/android/gms/ads/rewarded/ServerSideVerificationOptions;->getUserId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/google/android/gms/ads/rewarded/ServerSideVerificationOptions;->getCustomData()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, v0, p1}, Lcom/google/android/gms/internal/ads/zzavy;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x1
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x2
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
+    .end annotation
 
     .line 2
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzaze;->zzabf()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/internal/ads/zzaze$zzb;
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 3
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzaze$zzb;->zzabj()Lcom/google/android/gms/internal/ads/zzayv;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/ads/zzayv;->zzaas()Lcom/google/android/gms/internal/ads/zzayv$zzb;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzayv$zzb;->zzdok:Lcom/google/android/gms/internal/ads/zzayv$zzb;
-
-    if-eq v2, v3, :cond_0
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzavy;->zzdxy:Ljava/lang/String;
 
     .line 4
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzaze$zzb;->zzabj()Lcom/google/android/gms/internal/ads/zzayv;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzavy;->zzdxz:Ljava/lang/String;
 
-    move-result-object v2
+    return-void
+.end method
 
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/ads/zzayv;->zzaas()Lcom/google/android/gms/internal/ads/zzayv$zzb;
 
-    move-result-object v2
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 3
 
-    sget-object v3, Lcom/google/android/gms/internal/ads/zzayv$zzb;->zzdol:Lcom/google/android/gms/internal/ads/zzayv$zzb;
+    .line 1
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
-    if-eq v2, v3, :cond_0
+    move-result p2
 
-    .line 5
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzaze$zzb;->zzabj()Lcom/google/android/gms/internal/ads/zzayv;
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavy;->zzdxy:Ljava/lang/String;
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/ads/zzayv;->zzaas()Lcom/google/android/gms/internal/ads/zzayv$zzb;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    sget-object v2, Lcom/google/android/gms/internal/ads/zzayv$zzb;->zzdom:Lcom/google/android/gms/internal/ads/zzayv$zzb;
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzavy;->zzdxz:Ljava/lang/String;
 
-    if-eq v1, v2, :cond_0
+    const/4 v1, 0x2
 
-    goto :goto_0
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    .line 6
-    :cond_0
-    new-instance p0, Ljava/security/GeneralSecurityException;
+    .line 4
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
 
-    const-string v0, "keyset contains secret key material"
-
-    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 7
-    :cond_1
-    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzavu;->zza(Lcom/google/android/gms/internal/ads/zzaze;)Lcom/google/android/gms/internal/ads/zzavu;
-
-    move-result-object p0
-    :try_end_0
-    .catch Lcom/google/android/gms/internal/ads/zzbdl; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    .line 8
-    :catch_0
-    new-instance p0, Ljava/security/GeneralSecurityException;
-
-    const-string v0, "invalid keyset"
-
-    invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method

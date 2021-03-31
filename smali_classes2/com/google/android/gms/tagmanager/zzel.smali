@@ -8,9 +8,9 @@
 
 
 # static fields
-.field public static final ID:Ljava/lang/String;
+.field private static final ID:Ljava/lang/String;
 
-.field public static final zzajb:Ljava/lang/String;
+.field private static final zzajb:Ljava/lang/String;
 
 
 # direct methods

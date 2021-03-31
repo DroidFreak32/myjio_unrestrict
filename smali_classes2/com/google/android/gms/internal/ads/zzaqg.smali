@@ -1,20 +1,25 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaqg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+.field private final synthetic zzdod:Lcom/google/android/gms/ads/internal/overlay/AdOverlayInfoParcel;
+
+.field private final synthetic zzdoe:Lcom/google/android/gms/internal/ads/zzaqe;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqe;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaqe;Lcom/google/android/gms/ads/internal/overlay/AdOverlayInfoParcel;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdoe:Lcom/google/android/gms/internal/ads/zzaqe;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdod:Lcom/google/android/gms/ads/internal/overlay/AdOverlayInfoParcel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,26 +29,23 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzkp()Lcom/google/android/gms/ads/internal/overlay/zzo;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zza(Lcom/google/android/gms/internal/ads/zzaqe;)Lcom/google/android/gms/internal/ads/zzaqo;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdoe:Lcom/google/android/gms/internal/ads/zzaqe;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zzb(Lcom/google/android/gms/internal/ads/zzaqe;)Landroid/app/Activity;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdod:Lcom/google/android/gms/ads/internal/overlay/AdOverlayInfoParcel;
+
+    const/4 v2, 0x1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaqg;->zzdbd:Lcom/google/android/gms/internal/ads/zzaqe;
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/ads/internal/overlay/zzo;->zza(Landroid/content/Context;Lcom/google/android/gms/ads/internal/overlay/AdOverlayInfoParcel;Z)V
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaqe;->zza(Lcom/google/android/gms/internal/ads/zzaqe;)Lcom/google/android/gms/internal/ads/zzaqo;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/ads/zzaqo;->zzuj()V
-
-    :cond_0
     return-void
 .end method

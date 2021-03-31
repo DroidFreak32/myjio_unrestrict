@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public final object:Ljava/lang/Object;
+.field private final object:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public final zzaid:Z
+.field private final zzaid:Z
 
 
 # direct methods

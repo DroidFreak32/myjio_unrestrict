@@ -3,10 +3,13 @@
 
 
 # annotations
+.annotation build Landroidx/room/Dao;
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
-        "Lgh;",
+        "Landroidx/room/Room;",
         ">",
         "Ljava/lang/Object;"
     }
@@ -24,14 +27,19 @@
 
 
 # virtual methods
-.method public abstract deleteRecord(Lei;)I
+.method public abstract deleteRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
+    .annotation build Landroidx/room/RawQuery;
+    .end annotation
 .end method
 
-.method public abstract getLastRecord(Lei;)Ljava/util/List;
+.method public abstract getLastRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)Ljava/util/List;
+    .annotation build Landroidx/room/RawQuery;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lei;",
+            "Landroidx/sqlite/db/SupportSQLiteQuery;",
             ")",
             "Ljava/util/List<",
             "TT;>;"
@@ -39,13 +47,20 @@
     .end annotation
 .end method
 
-.method public abstract getMaxCount(Lei;)I
+.method public abstract getMaxCount(Landroidx/sqlite/db/SupportSQLiteQuery;)I
+    .annotation build Landroidx/room/RawQuery;
+    .end annotation
 .end method
 
-.method public abstract getRecordCount(Lei;)I
+.method public abstract getRecordCount(Landroidx/sqlite/db/SupportSQLiteQuery;)I
+    .annotation build Landroidx/room/RawQuery;
+    .end annotation
 .end method
 
-.method public abstract insertRecord(Lgh;)V
+.method public abstract insertRecord(Landroidx/room/Room;)V
+    .annotation build Landroidx/room/Insert;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -53,18 +68,23 @@
     .end annotation
 .end method
 
-.method public insertRecordAll(Lgh;)V
+.method public insertRecordAll(Landroidx/room/Room;)V
     .locals 0
+    .annotation build Landroidx/room/Transaction;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
 
-    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->insertRecord(Lgh;)V
+    invoke-virtual {p0, p1}, Lcom/elitecorelib/core/room/dao/analyticdao/AnalyticDao;->insertRecord(Landroidx/room/Room;)V
 
     return-void
 .end method
 
-.method public abstract updateRecord(Lei;)I
+.method public abstract updateRecord(Landroidx/sqlite/db/SupportSQLiteQuery;)I
+    .annotation build Landroidx/room/RawQuery;
+    .end annotation
 .end method

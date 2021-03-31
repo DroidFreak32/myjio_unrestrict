@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final zzajx:Ljava/util/Set;
+.field private final zzajx:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public final zzakh:Ljava/util/Map;
+.field private final zzakh:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public final zzaki:Ljava/util/Map;
+.field private final zzaki:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -37,7 +37,7 @@
     .end annotation
 .end field
 
-.field public final zzakj:Ljava/util/Map;
+.field private final zzakj:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -49,7 +49,7 @@
     .end annotation
 .end field
 
-.field public final zzakk:Ljava/util/Map;
+.field private final zzakk:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -61,7 +61,7 @@
     .end annotation
 .end field
 
-.field public zzakl:Lcom/google/android/gms/internal/gtm/zzot;
+.field private zzakl:Lcom/google/android/gms/internal/gtm/zzot;
 
 
 # direct methods

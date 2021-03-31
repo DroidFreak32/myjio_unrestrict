@@ -37,7 +37,10 @@
 
 
 # instance fields
-.field public final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+.field private final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelCache<",
@@ -85,6 +88,10 @@
 
 .method public constructor <init>(Lcom/bumptech/glide/load/model/ModelCache;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/model/ModelCache;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,6 +115,14 @@
 # virtual methods
 .method public buildLoadData(Lcom/bumptech/glide/load/model/GlideUrl;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/model/GlideUrl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -176,6 +191,14 @@
 
 .method public bridge synthetic buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/bumptech/glide/load/model/GlideUrl;
@@ -189,6 +212,10 @@
 
 .method public handles(Lcom/bumptech/glide/load/model/GlideUrl;)Z
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/model/GlideUrl;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 p1, 0x1
 
@@ -197,6 +224,10 @@
 
 .method public bridge synthetic handles(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Lcom/bumptech/glide/load/model/GlideUrl;

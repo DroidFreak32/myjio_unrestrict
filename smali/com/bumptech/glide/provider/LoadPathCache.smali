@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final NO_PATHS_SIGNAL:Lcom/bumptech/glide/load/engine/LoadPath;
+.field private static final NO_PATHS_SIGNAL:Lcom/bumptech/glide/load/engine/LoadPath;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/LoadPath<",
@@ -15,10 +15,10 @@
 
 
 # instance fields
-.field public final cache:Lm4;
+.field private final cache:Landroidx/collection/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lm4<",
+            "Landroidx/collection/ArrayMap<",
             "Lcom/bumptech/glide/util/MultiClassKey;",
             "Lcom/bumptech/glide/load/engine/LoadPath<",
             "***>;>;"
@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field public final keyRef:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final keyRef:Ljava/util/concurrent/atomic/AtomicReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference<",
@@ -71,7 +71,7 @@
 
     move-object v7, v0
 
-    invoke-direct/range {v7 .. v13}, Lcom/bumptech/glide/load/engine/DecodePath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Lz8;)V
+    invoke-direct/range {v7 .. v13}, Lcom/bumptech/glide/load/engine/DecodePath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Landroidx/core/util/Pools$Pool;)V
 
     .line 3
     invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -82,7 +82,7 @@
 
     move-object v0, v6
 
-    invoke-direct/range {v0 .. v5}, Lcom/bumptech/glide/load/engine/LoadPath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lz8;)V
+    invoke-direct/range {v0 .. v5}, Lcom/bumptech/glide/load/engine/LoadPath;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Landroidx/core/util/Pools$Pool;)V
 
     sput-object v6, Lcom/bumptech/glide/provider/LoadPathCache;->NO_PATHS_SIGNAL:Lcom/bumptech/glide/load/engine/LoadPath;
 
@@ -96,11 +96,11 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-instance v0, Lm4;
+    new-instance v0, Landroidx/collection/ArrayMap;
 
-    invoke-direct {v0}, Lm4;-><init>()V
+    invoke-direct {v0}, Landroidx/collection/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Lm4;
+    iput-object v0, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Landroidx/collection/ArrayMap;
 
     .line 3
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
@@ -156,6 +156,9 @@
 # virtual methods
 .method public get(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/engine/LoadPath;
     .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Data:",
@@ -182,15 +185,15 @@
     move-result-object p1
 
     .line 2
-    iget-object p2, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Lm4;
+    iget-object p2, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Landroidx/collection/ArrayMap;
 
     monitor-enter p2
 
     .line 3
     :try_start_0
-    iget-object p3, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Lm4;
+    iget-object p3, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Landroidx/collection/ArrayMap;
 
-    invoke-virtual {p3, p1}, Ls4;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p3, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -222,6 +225,10 @@
 
 .method public isEmptyLoadPath(Lcom/bumptech/glide/load/engine/LoadPath;)Z
     .locals 1
+    .param p1    # Lcom/bumptech/glide/load/engine/LoadPath;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -242,6 +249,10 @@
 
 .method public put(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/engine/LoadPath;)V
     .locals 3
+    .param p4    # Lcom/bumptech/glide/load/engine/LoadPath;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -257,13 +268,13 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Lm4;
+    iget-object v0, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Landroidx/collection/ArrayMap;
 
     monitor-enter v0
 
     .line 2
     :try_start_0
-    iget-object v1, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Lm4;
+    iget-object v1, p0, Lcom/bumptech/glide/provider/LoadPathCache;->cache:Landroidx/collection/ArrayMap;
 
     new-instance v2, Lcom/bumptech/glide/util/MultiClassKey;
 
@@ -279,7 +290,7 @@
 
     .line 4
     :goto_0
-    invoke-virtual {v1, v2, p4}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, p4}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
     monitor-exit v0

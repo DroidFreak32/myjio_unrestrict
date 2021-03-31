@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final end:D
+.field private final end:D
 
-.field public final played:Z
+.field private final played:Z
 
-.field public final start:D
+.field private final start:D
 
 
 # direct methods
@@ -237,7 +237,7 @@
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

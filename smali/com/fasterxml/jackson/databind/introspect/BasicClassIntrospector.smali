@@ -15,7 +15,7 @@
 
 .field public static final STRING_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -40,17 +40,15 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/type/SimpleType;->constructUnsafe(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/SimpleType;
 
-    move-result-object v0
-
-    const-class v1, Ljava/lang/String;
-
-    invoke-static {v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-
     move-result-object v1
+
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+
+    move-result-object v0
 
     const/4 v2, 0x0
 
-    invoke-static {v2, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     move-result-object v0
 
@@ -61,15 +59,13 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/type/SimpleType;->constructUnsafe(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/SimpleType;
 
-    move-result-object v0
-
-    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    invoke-static {v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-
     move-result-object v1
 
-    invoke-static {v2, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+
+    move-result-object v0
+
+    invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     move-result-object v0
 
@@ -80,15 +76,13 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/type/SimpleType;->constructUnsafe(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/SimpleType;
 
-    move-result-object v0
-
-    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    invoke-static {v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-
     move-result-object v1
 
-    invoke-static {v2, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+
+    move-result-object v0
+
+    invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     move-result-object v0
 
@@ -99,15 +93,13 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/type/SimpleType;->constructUnsafe(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/SimpleType;
 
-    move-result-object v0
-
-    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    invoke-static {v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-
     move-result-object v1
 
-    invoke-static {v2, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClassResolver;->createPrimordial(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+
+    move-result-object v0
+
+    invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     move-result-object v0
 
@@ -450,7 +442,7 @@
     :goto_1
     if-nez v0, :cond_2
 
-    const-string p3, "with"
+    const-string/jumbo p3, "with"
 
     goto :goto_2
 

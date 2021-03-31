@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzot:Ljava/util/Iterator;
+.field private static final zzot:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -13,7 +13,7 @@
     .end annotation
 .end field
 
-.field public static final zzou:Ljava/lang/Iterable;
+.field private static final zzou:Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Iterable<",

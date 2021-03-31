@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public isRegExp:Ljava/lang/String;
+.field private isRegExp:Ljava/lang/String;
 
-.field public pattern:Ljava/lang/String;
+.field private pattern:Ljava/lang/String;
 
 
 # direct methods

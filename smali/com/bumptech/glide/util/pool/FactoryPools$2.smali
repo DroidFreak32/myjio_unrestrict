@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafeList(I)Lz8;
+    value = Lcom/bumptech/glide/util/pool/FactoryPools;->threadSafeList(I)Landroidx/core/util/Pools$Pool;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -40,6 +40,8 @@
 # virtual methods
 .method public bridge synthetic create()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/util/pool/FactoryPools$2;->create()Ljava/util/List;
@@ -51,6 +53,9 @@
 
 .method public create()Ljava/util/List;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

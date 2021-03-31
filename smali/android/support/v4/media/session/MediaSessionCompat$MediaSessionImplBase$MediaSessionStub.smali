@@ -67,6 +67,11 @@
 
 .method public fastForward()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x10
 
@@ -207,12 +212,10 @@
     :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
 
-    iget-object v1, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mState:Landroid/support/v4/media/session/PlaybackStateCompat;
+    iget-object v2, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mState:Landroid/support/v4/media/session/PlaybackStateCompat;
 
     .line 3
-    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
-
-    iget-object v2, v2, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMetadata:Landroid/support/v4/media/MediaMetadataCompat;
+    iget-object v1, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMetadata:Landroid/support/v4/media/MediaMetadataCompat;
 
     .line 4
     monitor-exit v0
@@ -220,7 +223,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
-    invoke-static {v1, v2}, Landroid/support/v4/media/session/MediaSessionCompat;->getStateWithUpdatedPosition(Landroid/support/v4/media/session/PlaybackStateCompat;Landroid/support/v4/media/MediaMetadataCompat;)Landroid/support/v4/media/session/PlaybackStateCompat;
+    invoke-static {v2, v1}, Landroid/support/v4/media/session/MediaSessionCompat;->getStateWithUpdatedPosition(Landroid/support/v4/media/session/PlaybackStateCompat;Landroid/support/v4/media/MediaMetadataCompat;)Landroid/support/v4/media/session/PlaybackStateCompat;
 
     move-result-object v0
 
@@ -349,46 +352,40 @@
     iget v3, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeType:I
 
     .line 3
-    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
-
     iget v4, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLocalStream:I
 
     .line 4
-    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
+    iget-object v2, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeProvider:Landroidx/media/VolumeProviderCompat;
 
-    iget-object v1, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeProvider:Lif;
+    const/4 v5, 0x2
 
-    const/4 v2, 0x2
-
-    if-ne v3, v2, :cond_0
+    if-ne v3, v5, :cond_0
 
     .line 5
-    invoke-virtual {v1}, Lif;->c()I
+    invoke-virtual {v2}, Landroidx/media/VolumeProviderCompat;->getVolumeControl()I
 
-    move-result v2
+    move-result v1
 
     .line 6
-    invoke-virtual {v1}, Lif;->b()I
+    invoke-virtual {v2}, Landroidx/media/VolumeProviderCompat;->getMaxVolume()I
 
     move-result v5
 
     .line 7
-    invoke-virtual {v1}, Lif;->a()I
+    invoke-virtual {v2}, Landroidx/media/VolumeProviderCompat;->getCurrentVolume()I
 
-    move-result v1
+    move-result v2
 
-    move v7, v1
+    move v7, v2
 
     move v6, v5
 
-    move v5, v2
+    move v5, v1
 
     goto :goto_0
 
     .line 8
     :cond_0
-    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
-
     iget-object v1, v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1, v4}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
@@ -396,19 +393,17 @@
     move-result v1
 
     .line 9
-    iget-object v5, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
+    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
 
-    iget-object v5, v5, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
+    iget-object v2, v2, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v5, v4}, Landroid/media/AudioManager;->getStreamVolume(I)I
+    invoke-virtual {v2, v4}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
-    move-result v5
+    move-result v2
 
     move v6, v1
 
-    move v7, v5
-
-    const/4 v5, 0x2
+    move v7, v2
 
     .line 10
     :goto_0
@@ -481,6 +476,11 @@
 
 .method public next()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0xe
 
@@ -492,6 +492,11 @@
 
 .method public pause()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0xc
 
@@ -503,6 +508,11 @@
 
 .method public play()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x7
 
@@ -514,6 +524,11 @@
 
 .method public playFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x8
 
@@ -525,6 +540,11 @@
 
 .method public playFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x9
 
@@ -536,6 +556,11 @@
 
 .method public playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0xa
 
@@ -652,6 +677,11 @@
 
 .method public prepare()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x3
 
@@ -663,6 +693,11 @@
 
 .method public prepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -674,6 +709,11 @@
 
 .method public prepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x5
 
@@ -685,6 +725,11 @@
 
 .method public prepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/4 v0, 0x6
 
@@ -696,6 +741,11 @@
 
 .method public previous()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0xf
 
@@ -707,6 +757,11 @@
 
 .method public rate(Landroid/support/v4/media/RatingCompat;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x13
 
@@ -718,6 +773,11 @@
 
 .method public rateWithExtras(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x1f
 
@@ -748,7 +808,7 @@
 
     .line 3
     :cond_0
-    new-instance v0, Lbf;
+    new-instance v0, Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
     .line 4
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
@@ -761,7 +821,7 @@
 
     const-string v3, "android.media.session.MediaController"
 
-    invoke-direct {v0, v3, v1, v2}, Lbf;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v3, v1, v2}, Landroidx/media/MediaSessionManager$RemoteUserInfo;-><init>(Ljava/lang/String;II)V
 
     .line 5
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;
@@ -797,6 +857,11 @@
 
 .method public rewind()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x11
 
@@ -808,6 +873,11 @@
 
 .method public seekTo(J)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -840,6 +910,11 @@
 
 .method public sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x14
 
@@ -882,6 +957,11 @@
 
 .method public setCaptioningEnabled(Z)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -897,6 +977,11 @@
 
 .method public setRepeatMode(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x17
 
@@ -908,6 +993,11 @@
 
 .method public setShuffleMode(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x1e
 
@@ -919,6 +1009,11 @@
 
 .method public setShuffleModeEnabledRemoved(Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -951,6 +1046,11 @@
 
 .method public stop()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0xd
 

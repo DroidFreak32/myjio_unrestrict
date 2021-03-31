@@ -26,15 +26,15 @@
 
 
 # static fields
-.field public static final enum zzbim:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+.field private static final enum zzbim:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-.field public static final enum zzbin:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+.field private static final enum zzbin:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-.field public static final enum zzbio:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+.field private static final enum zzbio:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-.field public static final synthetic zzbip:[Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+.field private static final synthetic zzbip:[Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-.field public static final zzbq:Lcom/google/android/gms/internal/clearcut/zzck;
+.field private static final zzbq:Lcom/google/android/gms/internal/clearcut/zzck;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/clearcut/zzck<",
@@ -46,60 +46,54 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-    const/4 v1, 0x0
+    const-string v1, "NO_RESTRICTION"
 
-    const-string v2, "NO_RESTRICTION"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbim:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
     const-string v3, "SIDEWINDER_DEVICE"
 
-    invoke-direct {v0, v3, v2, v2}, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbin:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    sput-object v1, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbin:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-    const-string v4, "LATCHSKY_DEVICE"
+    const-string v5, "LATCHSKY_DEVICE"
 
-    invoke-direct {v0, v4, v3, v3}, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;-><init>(Ljava/lang/String;II)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbio:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;-><init>(Ljava/lang/String;II)V
 
-    const/4 v0, 0x3
+    sput-object v3, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbio:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-    new-array v0, v0, [Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    const/4 v5, 0x3
 
-    sget-object v4, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbim:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    new-array v5, v5, [Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
-    aput-object v4, v0, v1
+    aput-object v0, v5, v2
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbin:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    aput-object v1, v5, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v5, v6
 
-    sget-object v1, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbio:Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbip:[Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
+    sput-object v5, Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;->zzbip:[Lcom/google/android/gms/internal/clearcut/zzgt$zza$zzb;
 
     new-instance v0, Lcom/google/android/gms/internal/clearcut/zzgv;
 
@@ -110,7 +104,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -3,7 +3,7 @@
 .source "ActionMenuPresenter.java"
 
 # interfaces
-.implements Lu1$a;
+.implements Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/appcompat/widget/ActionMenuPresenter;
+.field public final synthetic a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->s:Landroidx/appcompat/widget/ActionMenuPresenter;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,24 +35,73 @@
 
 
 # virtual methods
-.method public a(Ln1;)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    return v0
+.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
+    .locals 2
+    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
+    instance-of v0, p1, Landroidx/appcompat/view/menu/SubMenuBuilder;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V
+
+    .line 3
     :cond_0
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->s:Landroidx/appcompat/widget/ActionMenuPresenter;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
+
+    invoke-virtual {v0}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->getCallback()Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 4
+    invoke-interface {v0, p1, p2}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+    .locals 3
+    .param p1    # Landroidx/appcompat/view/menu/MenuBuilder;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
+
+    invoke-static {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->d(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuBuilder;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-ne p1, v0, :cond_0
+
+    return v1
+
+    .line 2
+    :cond_0
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
     move-object v2, p1
 
-    check-cast v2, Lz1;
+    check-cast v2, Landroidx/appcompat/view/menu/SubMenuBuilder;
 
-    invoke-virtual {v2}, Lz1;->getItem()Landroid/view/MenuItem;
+    invoke-virtual {v2}, Landroidx/appcompat/view/menu/SubMenuBuilder;->getItem()Landroid/view/MenuItem;
 
     move-result-object v2
 
@@ -60,56 +109,22 @@
 
     move-result v2
 
-    iput v2, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->U:I
-
-    .line 2
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->s:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    invoke-virtual {v1}, Li1;->a()Lu1$a;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
+    iput v2, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->Q:I
 
     .line 3
-    invoke-interface {v1, p1}, Lu1$a;->a(Ln1;)Z
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->a:Landroidx/appcompat/widget/ActionMenuPresenter;
 
-    move-result v0
-
-    :cond_1
-    return v0
-.end method
-
-.method public onCloseMenu(Ln1;Z)V
-    .locals 2
-
-    .line 1
-    instance-of v0, p1, Lz1;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-virtual {p1}, Ln1;->getRootMenu()Ln1;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ln1;->close(Z)V
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$f;->s:Landroidx/appcompat/widget/ActionMenuPresenter;
-
-    invoke-virtual {v0}, Li1;->a()Lu1$a;
+    invoke-virtual {v0}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->getCallback()Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
     .line 4
-    invoke-interface {v0, p1, p2}, Lu1$a;->onCloseMenu(Ln1;Z)V
+    invoke-interface {v0, p1}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+
+    move-result v1
 
     :cond_1
-    return-void
+    return v1
 .end method

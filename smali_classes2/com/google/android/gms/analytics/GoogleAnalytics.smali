@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static zzrp:Ljava/util/List;
+.field private static zzrp:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -27,9 +27,9 @@
 
 
 # instance fields
-.field public zzrq:Z
+.field private zzrq:Z
 
-.field public zzrr:Ljava/util/Set;
+.field private zzrr:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -39,13 +39,13 @@
     .end annotation
 .end field
 
-.field public zzrs:Z
+.field private zzrs:Z
 
-.field public zzrt:Z
+.field private zzrt:Z
 
-.field public volatile zzru:Z
+.field private volatile zzru:Z
 
-.field public zzrv:Z
+.field private zzrv:Z
 
 
 # direct methods
@@ -82,6 +82,12 @@
 
 .method public static getInstance(Landroid/content/Context;)Lcom/google/android/gms/analytics/GoogleAnalytics;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresPermission;
+        allOf = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        }
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/google/android/gms/internal/gtm/zzap;->zzc(Landroid/content/Context;)Lcom/google/android/gms/internal/gtm/zzap;
@@ -110,8 +116,6 @@
     if-eqz v1, :cond_1
 
     .line 3
-    sget-object v1, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzrp:Ljava/util/List;
-
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1

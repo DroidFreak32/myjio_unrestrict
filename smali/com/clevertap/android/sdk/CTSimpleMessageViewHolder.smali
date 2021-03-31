@@ -4,24 +4,28 @@
 
 
 # instance fields
-.field public cta1:Landroid/widget/Button;
+.field private cta1:Landroid/widget/Button;
 
-.field public cta2:Landroid/widget/Button;
+.field private cta2:Landroid/widget/Button;
 
-.field public cta3:Landroid/widget/Button;
+.field private cta3:Landroid/widget/Button;
 
-.field public message:Landroid/widget/TextView;
+.field private message:Landroid/widget/TextView;
 
-.field public readDot:Landroid/widget/ImageView;
+.field private readDot:Landroid/widget/ImageView;
 
-.field public timestamp:Landroid/widget/TextView;
+.field private timestamp:Landroid/widget/TextView;
 
-.field public title:Landroid/widget/TextView;
+.field private title:Landroid/widget/TextView;
 
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
+    .param p1    # Landroid/view/View;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0, p1}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;-><init>(Landroid/view/View;)V
@@ -536,9 +540,8 @@
 
     new-instance v6, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
 
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
-
-    invoke-virtual {v3}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    .line 35
+    invoke-virtual {v8}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -562,16 +565,16 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;-><init>(ILcom/clevertap/android/sdk/CTInboxMessage;Ljava/lang/String;Lorg/json/JSONObject;Lcom/clevertap/android/sdk/CTInboxListViewFragment;)V
 
+    .line 36
     invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 35
+    .line 37
     iget-object v12, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
 
     new-instance v14, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
 
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
-
-    invoke-virtual {v3}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    .line 38
+    invoke-virtual {v12}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -591,16 +594,16 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;-><init>(ILcom/clevertap/android/sdk/CTInboxMessage;Ljava/lang/String;Lorg/json/JSONObject;Lcom/clevertap/android/sdk/CTInboxListViewFragment;)V
 
+    .line 39
     invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 36
+    .line 40
     iget-object v12, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta3:Landroid/widget/Button;
 
     new-instance v14, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
 
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta3:Landroid/widget/Button;
-
-    invoke-virtual {v3}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    .line 41
+    invoke-virtual {v12}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -620,22 +623,23 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;-><init>(ILcom/clevertap/android/sdk/CTInboxMessage;Ljava/lang/String;Lorg/json/JSONObject;Lcom/clevertap/android/sdk/CTInboxListViewFragment;)V
 
+    .line 42
     invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto/16 :goto_1
 
-    .line 37
+    .line 43
     :cond_2
     invoke-virtual {v0, v10}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v7
 
-    .line 38
+    .line 44
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v3, v10}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 39
+    .line 45
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v11, v7}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkText(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -644,7 +648,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 40
+    .line 46
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v11, v7}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkColor(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -657,7 +661,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 41
+    .line 47
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v11, v7}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkBGColor(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -670,17 +674,17 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 42
+    .line 48
     invoke-virtual {v0, v13}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 43
+    .line 49
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
 
     invoke-virtual {v3, v10}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 44
+    .line 50
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
 
     invoke-virtual {v11, v0}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkText(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -689,7 +693,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 45
+    .line 51
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
 
     invoke-virtual {v11, v0}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkColor(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -702,7 +706,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 46
+    .line 52
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
 
     invoke-virtual {v11, v0}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkBGColor(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -715,7 +719,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 47
+    .line 53
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     iget-object v4, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
@@ -726,14 +730,13 @@
 
     if-eqz v9, :cond_4
 
-    .line 48
+    .line 54
     iget-object v12, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     new-instance v14, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
 
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
-
-    invoke-virtual {v3}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    .line 55
+    invoke-virtual {v12}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -751,16 +754,16 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;-><init>(ILcom/clevertap/android/sdk/CTInboxMessage;Ljava/lang/String;Lorg/json/JSONObject;Lcom/clevertap/android/sdk/CTInboxListViewFragment;)V
 
+    .line 56
     invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 49
+    .line 57
     iget-object v12, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
 
     new-instance v14, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
 
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
-
-    invoke-virtual {v3}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    .line 58
+    invoke-virtual {v12}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -780,22 +783,23 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;-><init>(ILcom/clevertap/android/sdk/CTInboxMessage;Ljava/lang/String;Lorg/json/JSONObject;Lcom/clevertap/android/sdk/CTInboxListViewFragment;)V
 
+    .line 59
     invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_1
 
-    .line 50
+    .line 60
     :cond_3
     invoke-virtual {v0, v10}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v7
 
-    .line 51
+    .line 61
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v0, v10}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 52
+    .line 62
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v11, v7}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkText(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -804,7 +808,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 53
+    .line 63
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v11, v7}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkColor(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -817,7 +821,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 54
+    .line 64
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     invoke-virtual {v11, v7}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getLinkBGColor(Lorg/json/JSONObject;)Ljava/lang/String;
@@ -830,7 +834,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 55
+    .line 65
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta2:Landroid/widget/Button;
@@ -841,14 +845,13 @@
 
     if-eqz v9, :cond_4
 
-    .line 56
+    .line 66
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
 
     new-instance v12, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;
 
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;->cta1:Landroid/widget/Button;
-
-    invoke-virtual {v3}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
+    .line 67
+    invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -866,6 +869,7 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;-><init>(ILcom/clevertap/android/sdk/CTInboxMessage;Ljava/lang/String;Lorg/json/JSONObject;Lcom/clevertap/android/sdk/CTInboxListViewFragment;)V
 
+    .line 68
     invoke-virtual {v0, v12}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
@@ -875,7 +879,7 @@
     :catch_0
     move-exception v0
 
-    .line 57
+    .line 69
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -902,7 +906,7 @@
 
     goto :goto_2
 
-    .line 58
+    .line 70
     :cond_5
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->ctaLinearLayout:Landroid/widget/LinearLayout;
 
@@ -910,13 +914,13 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 59
+    .line 71
     :goto_2
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 60
+    .line 72
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual/range {p1 .. p1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getBgColor()Ljava/lang/String;
@@ -929,12 +933,12 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 61
+    .line 73
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 62
+    .line 74
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual/range {p1 .. p1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getBgColor()Ljava/lang/String;
@@ -947,17 +951,17 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 63
+    .line 75
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 64
+    .line 76
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->progressBarFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 65
+    .line 77
     :try_start_1
     invoke-virtual/range {p1 .. p1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getOrientation()Ljava/lang/String;
 
@@ -1024,7 +1028,7 @@
 
     goto/16 :goto_7
 
-    .line 66
+    .line 78
     :cond_9
     :try_start_2
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsImage()Z
@@ -1033,17 +1037,17 @@
 
     if-eqz v0, :cond_a
 
-    .line 67
+    .line 79
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 68
+    .line 80
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 69
+    .line 81
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
@@ -1052,7 +1056,7 @@
     :try_end_2
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_2 .. :try_end_2} :catch_7
 
-    .line 70
+    .line 82
     :try_start_3
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
@@ -1064,7 +1068,7 @@
 
     move-result-object v0
 
-    .line 71
+    .line 83
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
 
     move-result-object v3
@@ -1079,11 +1083,12 @@
 
     iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 72
+    .line 84
     invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
 
+    .line 85
     invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v3
@@ -1092,7 +1097,7 @@
 
     iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 73
+    .line 86
     invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
@@ -1101,14 +1106,14 @@
 
     move-result-object v3
 
-    .line 74
+    .line 87
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 75
+    .line 88
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
     :try_end_3
     .catch Ljava/lang/NoSuchMethodError; {:try_start_3 .. :try_end_3} :catch_1
@@ -1116,12 +1121,12 @@
 
     goto/16 :goto_7
 
-    .line 76
+    .line 89
     :catch_1
     :try_start_4
     invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 77
+    .line 90
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1132,7 +1137,7 @@
 
     move-result-object v0
 
-    .line 78
+    .line 91
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
 
     move-result-object v3
@@ -1143,12 +1148,12 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 79
+    .line 92
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto/16 :goto_7
 
-    .line 80
+    .line 93
     :cond_a
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsGIF()Z
 
@@ -1156,17 +1161,17 @@
 
     if-eqz v0, :cond_b
 
-    .line 81
+    .line 94
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 82
+    .line 95
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 83
+    .line 96
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
@@ -1175,7 +1180,7 @@
     :try_end_4
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_4 .. :try_end_4} :catch_7
 
-    .line 84
+    .line 97
     :try_start_5
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
@@ -1187,12 +1192,12 @@
 
     move-result-object v0
 
-    .line 85
+    .line 98
     invoke-virtual {v0}, Lcom/bumptech/glide/RequestManager;->asGif()Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
-    .line 86
+    .line 99
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
 
     move-result-object v3
@@ -1207,11 +1212,12 @@
 
     iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 87
+    .line 100
     invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
 
+    .line 101
     invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v3
@@ -1220,7 +1226,7 @@
 
     iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 88
+    .line 102
     invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
@@ -1229,14 +1235,14 @@
 
     move-result-object v3
 
-    .line 89
+    .line 103
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 90
+    .line 104
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
     :try_end_5
     .catch Ljava/lang/NoSuchMethodError; {:try_start_5 .. :try_end_5} :catch_2
@@ -1244,12 +1250,12 @@
 
     goto/16 :goto_7
 
-    .line 91
+    .line 105
     :catch_2
     :try_start_6
     invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 92
+    .line 106
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1260,12 +1266,12 @@
 
     move-result-object v0
 
-    .line 93
+    .line 107
     invoke-virtual {v0}, Lcom/bumptech/glide/RequestManager;->asGif()Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
-    .line 94
+    .line 108
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
 
     move-result-object v3
@@ -1276,12 +1282,12 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 95
+    .line 109
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto/16 :goto_7
 
-    .line 96
+    .line 110
     :cond_b
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsVideo()Z
 
@@ -1289,7 +1295,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 97
+    .line 111
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getPosterUrl()Ljava/lang/String;
 
     move-result-object v0
@@ -1300,24 +1306,24 @@
 
     if-nez v0, :cond_d
 
-    .line 98
+    .line 112
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 99
+    .line 113
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 100
+    .line 114
     sget v0, Lcom/clevertap/android/sdk/CTInboxActivity;->orientation:I
 
     const/4 v3, 0x2
 
     if-ne v0, v3, :cond_c
 
-    .line 101
+    .line 115
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
@@ -1326,7 +1332,7 @@
 
     goto :goto_5
 
-    .line 102
+    .line 116
     :cond_c
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
@@ -1336,7 +1342,7 @@
     :try_end_6
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_6 .. :try_end_6} :catch_7
 
-    .line 103
+    .line 117
     :goto_5
     :try_start_7
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
@@ -1349,7 +1355,7 @@
 
     move-result-object v0
 
-    .line 104
+    .line 118
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getPosterUrl()Ljava/lang/String;
 
     move-result-object v3
@@ -1364,11 +1370,12 @@
 
     iget-object v5, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 105
+    .line 119
     invoke-static {v5, v4}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v5
 
+    .line 120
     invoke-virtual {v3, v5}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v3
@@ -1377,7 +1384,7 @@
 
     iget-object v5, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 106
+    .line 121
     invoke-static {v5, v4}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
@@ -1386,14 +1393,14 @@
 
     move-result-object v3
 
-    .line 107
+    .line 122
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 108
+    .line 123
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
     :try_end_7
     .catch Ljava/lang/NoSuchMethodError; {:try_start_7 .. :try_end_7} :catch_3
@@ -1401,12 +1408,12 @@
 
     goto/16 :goto_7
 
-    .line 109
+    .line 124
     :catch_3
     :try_start_8
     invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 110
+    .line 125
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1417,7 +1424,7 @@
 
     move-result-object v0
 
-    .line 111
+    .line 126
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getPosterUrl()Ljava/lang/String;
 
     move-result-object v3
@@ -1428,30 +1435,30 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 112
+    .line 127
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto/16 :goto_7
 
-    .line 113
+    .line 128
     :cond_d
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 114
+    .line 129
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 115
+    .line 130
     sget v0, Lcom/clevertap/android/sdk/CTInboxActivity;->orientation:I
 
     const/4 v3, 0x2
 
     if-ne v0, v3, :cond_e
 
-    .line 116
+    .line 131
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
@@ -1460,7 +1467,7 @@
 
     goto :goto_6
 
-    .line 117
+    .line 132
     :cond_e
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
@@ -1468,7 +1475,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 118
+    .line 133
     :goto_6
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
@@ -1478,7 +1485,7 @@
 
     if-eq v0, v5, :cond_15
 
-    .line 119
+    .line 134
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1489,7 +1496,7 @@
 
     move-result-object v3
 
-    .line 120
+    .line 135
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -1500,12 +1507,12 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 121
+    .line 136
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto/16 :goto_7
 
-    .line 122
+    .line 137
     :cond_f
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsAudio()Z
 
@@ -1513,24 +1520,24 @@
 
     if-eqz v0, :cond_15
 
-    .line 123
+    .line 138
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 124
+    .line 139
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 125
+    .line 140
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     sget-object v4, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 126
+    .line 141
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual/range {p0 .. p0}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->getImageBackgroundColor()I
@@ -1539,7 +1546,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 127
+    .line 142
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
     invoke-static {v0, v3}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
@@ -1548,7 +1555,7 @@
 
     if-eq v0, v5, :cond_15
 
-    .line 128
+    .line 143
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1559,7 +1566,7 @@
 
     move-result-object v3
 
-    .line 129
+    .line 144
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -1570,12 +1577,12 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->squareImage:Landroid/widget/ImageView;
 
-    .line 130
+    .line 145
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto/16 :goto_7
 
-    .line 131
+    .line 146
     :cond_10
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsImage()Z
 
@@ -1583,17 +1590,17 @@
 
     if-eqz v0, :cond_11
 
-    .line 132
+    .line 147
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 133
+    .line 148
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 134
+    .line 149
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
@@ -1602,7 +1609,7 @@
     :try_end_8
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_8 .. :try_end_8} :catch_7
 
-    .line 135
+    .line 150
     :try_start_9
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
@@ -1614,140 +1621,12 @@
 
     move-result-object v0
 
-    .line 136
-    invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/bumptech/glide/request/RequestOptions;
-
-    invoke-direct {v3}, Lcom/bumptech/glide/request/RequestOptions;-><init>()V
-
-    iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
-
-    .line 137
-    invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/bumptech/glide/request/RequestOptions;
-
-    iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
-
-    .line 138
-    invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->error(I)Lcom/bumptech/glide/request/BaseRequestOptions;
-
-    move-result-object v3
-
-    .line 139
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
-
-    move-result-object v0
-
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
-
-    .line 140
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
-    :try_end_9
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_9 .. :try_end_9} :catch_4
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_9 .. :try_end_9} :catch_7
-
-    goto/16 :goto_7
-
-    .line 141
-    :catch_4
-    :try_start_a
-    invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
-
-    .line 142
-    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/bumptech/glide/Glide;->with(Landroid/content/Context;)Lcom/bumptech/glide/RequestManager;
-
-    move-result-object v0
-
-    .line 143
-    invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
-
-    move-result-object v0
-
-    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
-
-    .line 144
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
-
-    goto/16 :goto_7
-
-    .line 145
-    :cond_11
-    invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsGIF()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    .line 146
-    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 147
-    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 148
-    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
-
-    sget-object v3, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-    :try_end_a
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_a .. :try_end_a} :catch_7
-
-    .line 149
-    :try_start_b
-    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/bumptech/glide/Glide;->with(Landroid/content/Context;)Lcom/bumptech/glide/RequestManager;
-
-    move-result-object v0
-
-    .line 150
-    invoke-virtual {v0}, Lcom/bumptech/glide/RequestManager;->asGif()Lcom/bumptech/glide/RequestBuilder;
-
-    move-result-object v0
-
     .line 151
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
@@ -1762,6 +1641,7 @@
 
     move-result v4
 
+    .line 153
     invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v3
@@ -1770,7 +1650,7 @@
 
     iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 153
+    .line 154
     invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
@@ -1779,27 +1659,27 @@
 
     move-result-object v3
 
-    .line 154
+    .line 155
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
-    .line 155
+    .line 156
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
-    :try_end_b
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_b .. :try_end_b} :catch_5
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_b .. :try_end_b} :catch_7
+    :try_end_9
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_9 .. :try_end_9} :catch_4
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_9 .. :try_end_9} :catch_7
 
     goto/16 :goto_7
 
-    .line 156
-    :catch_5
-    :try_start_c
+    .line 157
+    :catch_4
+    :try_start_a
     invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 157
+    .line 158
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1810,17 +1690,12 @@
 
     move-result-object v0
 
-    .line 158
-    invoke-virtual {v0}, Lcom/bumptech/glide/RequestManager;->asGif()Lcom/bumptech/glide/RequestBuilder;
-
-    move-result-object v0
-
     .line 159
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
@@ -1832,6 +1707,140 @@
     goto/16 :goto_7
 
     .line 161
+    :cond_11
+    invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsGIF()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    .line 162
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    .line 163
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 164
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
+
+    sget-object v3, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    :try_end_a
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_a .. :try_end_a} :catch_7
+
+    .line 165
+    :try_start_b
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/bumptech/glide/Glide;->with(Landroid/content/Context;)Lcom/bumptech/glide/RequestManager;
+
+    move-result-object v0
+
+    .line 166
+    invoke-virtual {v0}, Lcom/bumptech/glide/RequestManager;->asGif()Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object v0
+
+    .line 167
+    invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object v0
+
+    new-instance v3, Lcom/bumptech/glide/request/RequestOptions;
+
+    invoke-direct {v3}, Lcom/bumptech/glide/request/RequestOptions;-><init>()V
+
+    iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
+
+    .line 168
+    invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v4
+
+    .line 169
+    invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/bumptech/glide/request/RequestOptions;
+
+    iget-object v4, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
+
+    .line 170
+    invoke-static {v4, v7}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Lcom/bumptech/glide/request/BaseRequestOptions;->error(I)Lcom/bumptech/glide/request/BaseRequestOptions;
+
+    move-result-object v3
+
+    .line 171
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object v0
+
+    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
+
+    .line 172
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
+    :try_end_b
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_b .. :try_end_b} :catch_5
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_b .. :try_end_b} :catch_7
+
+    goto/16 :goto_7
+
+    .line 173
+    :catch_5
+    :try_start_c
+    invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
+
+    .line 174
+    iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/bumptech/glide/Glide;->with(Landroid/content/Context;)Lcom/bumptech/glide/RequestManager;
+
+    move-result-object v0
+
+    .line 175
+    invoke-virtual {v0}, Lcom/bumptech/glide/RequestManager;->asGif()Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object v0
+
+    .line 176
+    invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getMedia()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->load(Ljava/lang/String;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object v0
+
+    iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
+
+    .line 177
+    invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
+
+    goto/16 :goto_7
+
+    .line 178
     :cond_12
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsVideo()Z
 
@@ -1839,7 +1848,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 162
+    .line 179
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getPosterUrl()Ljava/lang/String;
 
     move-result-object v0
@@ -1850,17 +1859,17 @@
 
     if-nez v0, :cond_13
 
-    .line 163
+    .line 180
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 164
+    .line 181
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 165
+    .line 182
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
@@ -1869,7 +1878,7 @@
     :try_end_c
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_c .. :try_end_c} :catch_7
 
-    .line 166
+    .line 183
     :try_start_d
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
@@ -1881,7 +1890,7 @@
 
     move-result-object v0
 
-    .line 167
+    .line 184
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getPosterUrl()Ljava/lang/String;
 
     move-result-object v3
@@ -1896,11 +1905,12 @@
 
     iget-object v5, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 168
+    .line 185
     invoke-static {v5, v4}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v5
 
+    .line 186
     invoke-virtual {v3, v5}, Lcom/bumptech/glide/request/BaseRequestOptions;->placeholder(I)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v3
@@ -1909,7 +1919,7 @@
 
     iget-object v5, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
-    .line 169
+    .line 187
     invoke-static {v5, v4}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v4
@@ -1918,14 +1928,14 @@
 
     move-result-object v3
 
-    .line 170
+    .line 188
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object v0
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
-    .line 171
+    .line 189
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
     :try_end_d
     .catch Ljava/lang/NoSuchMethodError; {:try_start_d .. :try_end_d} :catch_6
@@ -1933,12 +1943,12 @@
 
     goto/16 :goto_7
 
-    .line 172
+    .line 190
     :catch_6
     :try_start_e
     invoke-static {v6}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 173
+    .line 191
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -1949,7 +1959,7 @@
 
     move-result-object v0
 
-    .line 174
+    .line 192
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->getPosterUrl()Ljava/lang/String;
 
     move-result-object v3
@@ -1960,30 +1970,30 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
-    .line 175
+    .line 193
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto/16 :goto_7
 
-    .line 176
+    .line 194
     :cond_13
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 177
+    .line 195
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 178
+    .line 196
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 179
+    .line 197
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
     invoke-static {v0, v4}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
@@ -1992,7 +2002,7 @@
 
     if-eq v0, v5, :cond_15
 
-    .line 180
+    .line 198
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -2003,7 +2013,7 @@
 
     move-result-object v3
 
-    .line 181
+    .line 199
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -2014,12 +2024,12 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
-    .line 182
+    .line 200
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     goto :goto_7
 
-    .line 183
+    .line 201
     :cond_14
     invoke-virtual {v11}, Lcom/clevertap/android/sdk/CTInboxMessageContent;->mediaIsAudio()Z
 
@@ -2027,24 +2037,24 @@
 
     if-eqz v0, :cond_15
 
-    .line 184
+    .line 202
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 185
+    .line 203
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 186
+    .line 204
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 187
+    .line 205
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual/range {p0 .. p0}, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->getImageBackgroundColor()I
@@ -2053,7 +2063,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 188
+    .line 206
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
 
     invoke-static {v0, v3}, Lcom/clevertap/android/sdk/Utils;->getThumbnailImage(Landroid/content/Context;Ljava/lang/String;)I
@@ -2062,7 +2072,7 @@
 
     if-eq v0, v5, :cond_15
 
-    .line 189
+    .line 207
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -2073,7 +2083,7 @@
 
     move-result-object v3
 
-    .line 190
+    .line 208
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -2084,7 +2094,7 @@
 
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->mediaImage:Landroid/widget/ImageView;
 
-    .line 191
+    .line 209
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
     :try_end_e
     .catch Ljava/lang/NoClassDefFoundError; {:try_start_e .. :try_end_e} :catch_7
@@ -2094,10 +2104,10 @@
     :catch_7
     const-string v0, "CleverTap SDK requires Glide dependency. Please refer CleverTap Documentation for more info"
 
-    .line 192
+    .line 210
     invoke-static {v0}, Lcom/clevertap/android/sdk/Logger;->d(Ljava/lang/String;)V
 
-    .line 193
+    .line 211
     :cond_15
     :goto_7
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->context:Landroid/content/Context;
@@ -2106,14 +2116,14 @@
 
     move-result-object v0
 
-    .line 194
+    .line 212
     sget v3, Lcom/clevertap/android/sdk/CTInboxActivity;->orientation:I
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_16
 
-    .line 195
+    .line 213
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v2
@@ -2122,7 +2132,7 @@
 
     div-int/2addr v2, v4
 
-    .line 196
+    .line 214
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v0
@@ -2133,7 +2143,7 @@
 
     goto :goto_8
 
-    .line 197
+    .line 215
     :cond_16
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -2141,7 +2151,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 198
+    .line 216
     invoke-virtual/range {p1 .. p1}, Lcom/clevertap/android/sdk/CTInboxMessage;->getOrientation()Ljava/lang/String;
 
     move-result-object v3
@@ -2167,7 +2177,7 @@
     :cond_17
     move v2, v0
 
-    .line 199
+    .line 217
     :goto_8
     iget-object v3, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->progressBarFrameLayout:Landroid/widget/FrameLayout;
 
@@ -2177,26 +2187,26 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 200
+    .line 218
     new-instance v0, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder$1;
 
     move/from16 v2, p3
 
     invoke-direct {v0, v1, v2}, Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder$1;-><init>(Lcom/clevertap/android/sdk/CTSimpleMessageViewHolder;I)V
 
-    .line 201
+    .line 219
     new-instance v3, Landroid/os/Handler;
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
     const-wide/16 v4, 0x7d0
 
-    .line 202
+    .line 220
     invoke-virtual {v3, v0, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     if-eqz v9, :cond_18
 
-    .line 203
+    .line 221
     iget-object v0, v1, Lcom/clevertap/android/sdk/CTInboxBaseMessageViewHolder;->clickLayout:Landroid/widget/RelativeLayout;
 
     new-instance v10, Lcom/clevertap/android/sdk/CTInboxButtonClickListener;

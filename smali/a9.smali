@@ -1,181 +1,112 @@
 .class public La9;
-.super Ljava/lang/Object;
-.source "Pools.java"
-
-# interfaces
-.implements Lz8;
+.super Landroid/os/AsyncTask;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lz8<",
-        "TT;>;"
+        "Landroid/os/AsyncTask<",
+        "Ljava/lang/String;",
+        "Ljava/lang/String;",
+        "Ljava/lang/String;",
+        ">;"
     }
 .end annotation
 
 
 # instance fields
-.field public final a:[Ljava/lang/Object;
+.field public final synthetic a:Ljava/lang/String;
 
-.field public b:I
+.field public final synthetic b:Lcom/elitecorelib/core/a/a;
+
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(Lw8;Ljava/lang/String;Lcom/elitecorelib/core/a/a;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, La9;->a:Ljava/lang/String;
 
-    if-lez p1, :cond_0
+    iput-object p3, p0, La9;->b:Lcom/elitecorelib/core/a/a;
 
-    .line 2
-    new-array p1, p1, [Ljava/lang/Object;
+    iput-object p4, p0, La9;->c:Ljava/lang/String;
 
-    iput-object p1, p0, La9;->a:[Ljava/lang/Object;
+    iput-object p5, p0, La9;->d:Ljava/lang/String;
+
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
-
-    .line 3
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "The max pool size must be > 0"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Z
+.method public varargs a([Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)Z"
-        }
-    .end annotation
 
-    const/4 v0, 0x0
+    iget-object p1, p0, La9;->a:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string v0, "EliteSMPHelper"
 
-    .line 1
-    :goto_0
-    iget v2, p0, La9;->b:I
+    if-eqz p1, :cond_0
 
-    if-ge v1, v2, :cond_1
+    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
-    .line 2
-    iget-object v2, p0, La9;->a:[Ljava/lang/Object;
+    move-result p1
 
-    aget-object v2, v2, v1
+    if-nez p1, :cond_0
 
-    if-ne v2, p1, :cond_0
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-    const/4 p1, 0x1
+    const-string v1, "genericAPICall invoked jsonparam not null"
 
-    return p1
+    invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    iget-object p1, p0, La9;->b:Lcom/elitecorelib/core/a/a;
+
+    iget-object v0, p0, La9;->c:Ljava/lang/String;
+
+    iget-object v1, p0, La9;->a:Ljava/lang/String;
+
+    iget-object v2, p0, La9;->d:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1, v2}, Lcom/elitecorelib/core/a/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    :cond_1
-    return v0
-.end method
-
-.method public acquire()Ljava/lang/Object;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-
-    .line 1
-    iget v0, p0, La9;->b:I
-
-    const/4 v1, 0x0
-
-    if-lez v0, :cond_0
-
-    add-int/lit8 v2, v0, -0x1
-
-    .line 2
-    iget-object v3, p0, La9;->a:[Ljava/lang/Object;
-
-    aget-object v4, v3, v2
-
-    .line 3
-    aput-object v1, v3, v2
-
-    add-int/lit8 v0, v0, -0x1
-
-    .line 4
-    iput v0, p0, La9;->b:I
-
-    return-object v4
-
     :cond_0
-    return-object v1
-.end method
+    sget-object p1, Lcom/elitecorelib/core/EliteSession;->eLog:Lcom/elitecorelib/core/logger/EliteLog;
 
-.method public release(Ljava/lang/Object;)Z
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)Z"
-        }
-    .end annotation
+    const-string v1, "genericAPICall invoked jsonparam null"
 
-    .line 1
-    invoke-virtual {p0, p1}, La9;->a(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0, v1}, Lcom/elitecorelib/core/logger/EliteLog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    iget-object p1, p0, La9;->b:Lcom/elitecorelib/core/a/a;
 
-    if-nez v0, :cond_1
+    iget-object v0, p0, La9;->c:Ljava/lang/String;
 
-    .line 2
-    iget v0, p0, La9;->b:I
+    iget-object v1, p0, La9;->d:Ljava/lang/String;
 
-    iget-object v1, p0, La9;->a:[Ljava/lang/Object;
+    const-string/jumbo v2, "{}"
 
-    array-length v2, v1
+    invoke-virtual {p1, v0, v2, v1}, Lcom/elitecorelib/core/a/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    if-ge v0, v2, :cond_0
-
-    .line 3
-    aput-object p1, v1, v0
-
-    const/4 p1, 0x1
-
-    add-int/2addr v0, p1
-
-    .line 4
-    iput v0, p0, La9;->b:I
-
-    return p1
-
-    :cond_0
+    :goto_0
     const/4 p1, 0x0
 
-    return p1
+    return-object p1
+.end method
 
-    .line 5
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
+.method public synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const-string v0, "Already in the pool!"
+    check-cast p1, [Ljava/lang/String;
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, La9;->a([Ljava/lang/String;)Ljava/lang/String;
 
-    throw p1
+    move-result-object p1
+
+    return-object p1
 .end method

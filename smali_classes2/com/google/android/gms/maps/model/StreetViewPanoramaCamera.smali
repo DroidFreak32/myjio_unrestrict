@@ -54,7 +54,10 @@
     .end annotation
 .end field
 
-.field public final zzeg:Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+.field private final zzeg:Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -212,6 +215,10 @@
 
 .method public static builder(Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;)Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera$Builder;
     .locals 1
+    .param p0    # Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 2
     new-instance v0, Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera$Builder;
@@ -299,6 +306,8 @@
 
 .method public getOrientation()Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;->zzeg:Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;

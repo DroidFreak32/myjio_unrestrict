@@ -4,34 +4,34 @@
 
 
 # virtual methods
-.method public abstract getSimJSON()Ljr4;
+.method public abstract getSimJSON()Lretrofit2/Call;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/networkcheck/Models/JioNetworkData;",
             ">;"
         }
     .end annotation
 
-    .annotation runtime Lgt4;
+    .annotation runtime Lretrofit2/http/GET;
         value = "/v1/network/check?app_name="
     .end annotation
 .end method
 
-.method public abstract getVipJSON(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljr4;
+.method public abstract getVipJSON(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;
     .param p1    # Ljava/lang/String;
-        .annotation runtime Ldt4;
+        .annotation runtime Lretrofit2/http/Field;
             value = "os"
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation runtime Ldt4;
+        .annotation runtime Lretrofit2/http/Field;
             value = "username"
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation runtime Ldt4;
+        .annotation runtime Lretrofit2/http/Field;
             value = "application"
         .end annotation
     .end param
@@ -42,23 +42,23 @@
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/networkcheck/Models/VipPojo;",
             ">;"
         }
     .end annotation
 
-    .annotation runtime Lft4;
+    .annotation runtime Lretrofit2/http/FormUrlEncoded;
     .end annotation
 
-    .annotation runtime Lpt4;
+    .annotation runtime Lretrofit2/http/POST;
         value = "/apis/jionetwork/v2/checklist_v2.0/"
     .end annotation
 .end method
 
-.method public abstract getWifiJSON(Lcom/app/cinemasdk/networkcheck/Models/Wifi;)Ljr4;
+.method public abstract getWifiJSON(Lcom/app/cinemasdk/networkcheck/Models/Wifi;)Lretrofit2/Call;
     .param p1    # Lcom/app/cinemasdk/networkcheck/Models/Wifi;
-        .annotation runtime Lbt4;
+        .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -66,13 +66,13 @@
             "(",
             "Lcom/app/cinemasdk/networkcheck/Models/Wifi;",
             ")",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/networkcheck/Models/Wifi;",
             ">;"
         }
     .end annotation
 
-    .annotation runtime Lpt4;
+    .annotation runtime Lretrofit2/http/POST;
         value = "/apis/jionetwork/v2/testip/"
     .end annotation
 .end method

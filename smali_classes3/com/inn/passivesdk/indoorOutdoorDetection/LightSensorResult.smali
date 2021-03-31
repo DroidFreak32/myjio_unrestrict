@@ -7,23 +7,23 @@
 
 
 # instance fields
-.field public final HIGH_THRESHOLD:F
+.field private final HIGH_THRESHOLD:F
 
-.field public final LOW_THRESHOLD:F
+.field private final LOW_THRESHOLD:F
 
-.field public confidence:D
+.field private confidence:D
 
 .field public i:I
 
-.field public indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public isInSunlight:Z
+.field private isInSunlight:Z
 
-.field public lightBlocked:Z
+.field private lightBlocked:Z
 
-.field public lightIntensity:F
+.field private lightIntensity:F
 
-.field public lightReading:Ljava/util/ArrayList;
+.field private lightReading:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -33,26 +33,26 @@
     .end annotation
 .end field
 
-.field public lightSensor:Landroid/hardware/Sensor;
+.field private lightSensor:Landroid/hardware/Sensor;
 
-.field public listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public mContext:Landroid/content/Context;
+.field private mContext:Landroid/content/Context;
 
-.field public outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public proxSensor:Landroid/hardware/Sensor;
+.field private proxSensor:Landroid/hardware/Sensor;
 
-.field public semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public sensorManager:Landroid/hardware/SensorManager;
+.field private sensorManager:Landroid/hardware/SensorManager;
 
-.field public time:I
+.field private time:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -131,11 +131,9 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightSensor:Landroid/hardware/Sensor;
 
     .line 15
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->sensorManager:Landroid/hardware/SensorManager;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->sensorManager:Landroid/hardware/SensorManager;
 
-    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightSensor:Landroid/hardware/Sensor;
-
-    invoke-virtual {p1, p0, v1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+    invoke-virtual {v1, p0, p1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
     .line 16
     iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->sensorManager:Landroid/hardware/SensorManager;
@@ -149,11 +147,9 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->proxSensor:Landroid/hardware/Sensor;
 
     .line 17
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->sensorManager:Landroid/hardware/SensorManager;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->sensorManager:Landroid/hardware/SensorManager;
 
-    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->proxSensor:Landroid/hardware/Sensor;
-
-    invoke-virtual {p1, p0, v1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+    invoke-virtual {v1, p0, p1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
     .line 18
     new-instance p1, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
@@ -183,25 +179,23 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 21
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    aput-object v1, p1, v0
+    aput-object v2, v1, v0
 
     .line 22
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    aput-object v0, p1, v1
+    aput-object v0, v1, v2
+
+    const/4 v0, 0x2
 
     .line 23
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
-    const/4 v1, 0x2
-
-    aput-object v0, p1, v1
+    aput-object p1, v1, v0
 
     return-void
 .end method
@@ -309,7 +303,7 @@
 .end method
 
 .method public getLocationByLightSensor()Ljava/lang/String;
-    .locals 10
+    .locals 12
 
     const-string v0, "lightBlocked: "
 
@@ -366,7 +360,7 @@
 
     move-result-object v4
 
-    invoke-static {v1, v4}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 6
     iget-boolean v4, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->isInSunlight:Z
@@ -388,7 +382,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 8
     sget-object v0, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->prevPosition:Ljava/lang/String;
@@ -448,6 +442,12 @@
 
     add-double/2addr v4, v8
 
+    move-wide v10, v0
+
+    move-wide v0, v4
+
+    move-wide v4, v10
+
     goto :goto_0
 
     :cond_2
@@ -456,11 +456,11 @@
     move-wide v6, v0
 
     :goto_0
-    cmpl-double v8, v0, v4
+    cmpl-double v8, v4, v0
 
     if-lez v8, :cond_3
 
-    cmpl-double v8, v0, v6
+    cmpl-double v8, v4, v6
 
     if-lez v8, :cond_3
 
@@ -474,24 +474,24 @@
     :cond_3
     const-string v2, "OUTDOOR"
 
-    cmpl-double v8, v6, v0
+    cmpl-double v8, v6, v4
 
     if-lez v8, :cond_4
 
-    cmpl-double v8, v6, v4
+    cmpl-double v8, v6, v0
 
     if-ltz v8, :cond_4
 
     return-object v2
 
     :cond_4
-    cmpl-double v8, v4, v0
+    cmpl-double v8, v0, v4
 
     if-lez v8, :cond_5
 
-    cmpl-double v0, v4, v6
+    cmpl-double v4, v0, v6
 
-    if-ltz v0, :cond_5
+    if-ltz v4, :cond_5
 
     return-object v2
 
@@ -503,7 +503,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -515,7 +515,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_5
     :goto_1
@@ -599,7 +599,7 @@
 
     const-string v8, "LightSensorResult: "
 
-    invoke-static {v8, v1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v8, v1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     int-to-double v0, v0
 
@@ -633,7 +633,7 @@
     const-string v0, "hour: indoor"
 
     .line 11
-    invoke-static {v8, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v8, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 12
     iget v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightIntensity:F
@@ -661,7 +661,7 @@
 
     move-result-object v0
 
-    invoke-static {v8, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v8, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 14
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
@@ -690,7 +690,7 @@
     const-string v0, "hour: indoor 2"
 
     .line 19
-    invoke-static {v8, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v8, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 20
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
@@ -729,9 +729,9 @@
 
     if-gtz v1, :cond_3
 
-    cmpl-float v0, v0, v3
+    cmpl-float v1, v0, v3
 
-    if-ltz v0, :cond_3
+    if-ltz v1, :cond_3
 
     .line 26
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
@@ -756,60 +756,57 @@
 
     goto :goto_0
 
-    .line 31
     :cond_3
-    iget v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightIntensity:F
-
     cmpg-float v0, v0, v3
 
     if-gez v0, :cond_4
 
-    .line 32
+    .line 31
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     invoke-virtual {v0, v6, v7}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->setConfidence(D)V
 
-    .line 33
+    .line 32
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     invoke-virtual {v0, v4, v5}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->setConfidence(D)V
 
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     invoke-virtual {v0, v6, v7}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->setConfidence(D)V
 
-    .line 35
+    .line 34
     iput-boolean v8, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->isInSunlight:Z
 
-    .line 36
+    .line 35
     sput-object v2, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->prevPosition:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 37
+    .line 36
     :cond_4
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     invoke-virtual {v0, v4, v5}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->setConfidence(D)V
 
-    .line 38
+    .line 37
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     invoke-virtual {v0, v6, v7}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->setConfidence(D)V
 
-    .line 39
+    .line 38
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     invoke-virtual {v0, v6, v7}, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;->setConfidence(D)V
 
-    .line 40
+    .line 39
     iput-boolean v8, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->isInSunlight:Z
 
-    .line 41
+    .line 40
     sput-object v11, Lcom/inn/passivesdk/indoorOutdoorDetection/ResultUtils;->prevPosition:Ljava/lang/String;
 
-    .line 42
+    .line 41
     :cond_5
     :goto_0
     iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
@@ -869,7 +866,7 @@
 
     move-result-object v0
 
-    invoke-static {v3, v0}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v0}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 3
     iget v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->i:I
@@ -891,17 +888,15 @@
     iput p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightIntensity:F
 
     .line 6
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightReading:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightReading:Ljava/util/ArrayList;
 
-    iget v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightIntensity:F
+    float-to-double v1, p1
 
-    float-to-double v0, v0
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    move-result-object p1
 
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -942,7 +937,7 @@
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Llg0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, p1}, Lcom/inn/passivesdk/util/SDKLogging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 10
     iput-boolean v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/LightSensorResult;->lightBlocked:Z

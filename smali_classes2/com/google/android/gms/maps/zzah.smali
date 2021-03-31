@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final synthetic zzbv:Lcom/google/android/gms/maps/OnStreetViewPanoramaReadyCallback;
+.field private final synthetic zzbv:Lcom/google/android/gms/maps/OnStreetViewPanoramaReadyCallback;
 
 
 # direct methods
@@ -22,6 +22,11 @@
 # virtual methods
 .method public final zza(Lcom/google/android/gms/maps/internal/IStreetViewPanoramaDelegate;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/maps/zzah;->zzbv:Lcom/google/android/gms/maps/OnStreetViewPanoramaReadyCallback;

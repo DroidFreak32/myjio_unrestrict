@@ -1,20 +1,24 @@
 .class public final Lcom/elitecorelib/core/room/ANDSFDB$1;
-.super Lqh;
+.super Landroidx/room/migration/Migration;
 
 
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lqh;-><init>(II)V
+    invoke-direct {p0, p1, p2}, Landroidx/room/migration/Migration;-><init>(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public migrate(Lbi;)V
+.method public migrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 7
+    .param p1    # Landroidx/sqlite/db/SupportSQLiteDatabase;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     const-string v0, "DataBase Migration"
 
@@ -27,11 +31,11 @@
 
     const-string v1, "CREATE TABLE IF NOT EXISTS `ANDSFLocation3GPP` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `LAC` TEXT, `TAC` TEXT, `GERAN_CI` TEXT, `UTRAN_CI` TEXT, `PLMN` TEXT, `EUTRA_CI` TEXT, `policyId` TEXT)"
 
-    invoke-interface {p1, v1}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v1, "select location_3GPP from ANDSFPolicies"
 
-    invoke-interface {p1, v1}, Lbi;->g(Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v1
 
@@ -78,7 +82,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lc20;->b(Lorg/json/JSONObject;)Landroid/content/ContentValues;
+    invoke-static {v4}, Lcom/elitecorelib/andsf/utility/a;->b(Lorg/json/JSONObject;)Landroid/content/ContentValues;
 
     move-result-object v4
 
@@ -86,7 +90,7 @@
 
     const/4 v6, 0x4
 
-    invoke-interface {p1, v5, v6, v4}, Lbi;->a(Ljava/lang/String;ILandroid/content/ContentValues;)J
+    invoke-interface {p1, v5, v6, v4}, Landroidx/sqlite/db/SupportSQLiteDatabase;->insert(Ljava/lang/String;ILandroid/content/ContentValues;)J
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -160,19 +164,19 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `ANDSFPolicies_temp` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `policyId` TEXT, `policyName` TEXT, `rulePriority` INTEGER NOT NULL, `prioritizedAccess` TEXT, `PLMN` TEXT, `enable` INTEGER NOT NULL, `roaming` INTEGER NOT NULL, `timeOfDay` TEXT, `version` TEXT, `RPLMN` TEXT, `name` TEXT, `WLAN_Location` TEXT, `wiMAX_Location` TEXT, `geo_Location_` TEXT, `batteryLife` INTEGER, `wifiStrength` INTEGER, `wifiPassiveDownloadSpeed` INTEGER, `wifiPassiveUploadSpeed` INTEGER, `packetLoss` INTEGER, `wifiJitter` INTEGER, `evaluationTime` INTEGER)"
 
-    invoke-interface {p1, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "Insert into ANDSFPolicies_temp SELECT id,policyId,policyName,rulePriority,prioritizedAccess,PLMN,enable,roaming,timeOfDay,version,RPLMN,name,WLAN_Location,wiMAX_Location,geo_Location_,batteryLife,wifiStrength,wifiPassiveDownloadSpeed,wifiPassiveUploadSpeed,packetLoss,wifiJitter,evaluationTime FROM ANDSFPolicies"
 
-    invoke-interface {p1, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE ANDSFPolicies"
 
-    invoke-interface {p1, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "ALTER TABLE ANDSFPolicies_temp RENAME TO ANDSFPolicies"
 
-    invoke-interface {p1, v0}, Lbi;->e(Ljava/lang/String;)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_2
 

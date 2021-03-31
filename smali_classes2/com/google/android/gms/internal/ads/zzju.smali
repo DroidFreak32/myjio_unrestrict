@@ -1,86 +1,111 @@
 .class public final Lcom/google/android/gms/internal/ads/zzju;
-.super Lcom/google/android/gms/internal/ads/zzkc;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/internal/ads/zzkc<",
-        "Lcom/google/android/gms/internal/ads/zzabw;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzkf;
 
 
 # instance fields
-.field public final synthetic val$activity:Landroid/app/Activity;
+.field private final length:I
 
-.field public final synthetic zzavi:Lcom/google/android/gms/internal/ads/zzjs;
+.field private final zzaif:J
+
+.field private final zzaol:[I
+
+.field private final zzaom:[J
+
+.field private final zzaon:[J
+
+.field private final zzaoo:[J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzjs;Landroid/app/Activity;)V
-    .locals 0
+.method public constructor <init>([I[J[J[J)V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzju;->zzavi:Lcom/google/android/gms/internal/ads/zzjs;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzju;->val$activity:Landroid/app/Activity;
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaol:[I
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzkc;-><init>()V
+    .line 3
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaom:[J
+
+    .line 4
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaon:[J
+
+    .line 5
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaoo:[J
+
+    .line 6
+    array-length p1, p1
+
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzju;->length:I
+
+    if-lez p1, :cond_0
+
+    add-int/lit8 p2, p1, -0x1
+
+    .line 7
+    aget-wide p2, p3, p2
+
+    add-int/lit8 p1, p1, -0x1
+
+    aget-wide v0, p4, p1
+
+    add-long/2addr p2, v0
+
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaif:J
+
+    return-void
+
+    :cond_0
+    const-wide/16 p1, 0x0
+
+    .line 8
+    iput-wide p1, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaif:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic zza(Lcom/google/android/gms/internal/ads/zzlf;)Ljava/lang/Object;
+.method public final getDurationUs()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaif:J
+
+    return-wide v0
+.end method
+
+.method public final isSeekable()Z
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzju;->val$activity:Landroid/app/Activity;
+    const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/ads/zzlf;->createAdOverlay(Lcom/google/android/gms/dynamic/IObjectWrapper;)Lcom/google/android/gms/internal/ads/zzabw;
-
-    move-result-object p1
-
-    return-object p1
+    return v0
 .end method
 
-.method public final synthetic zziu()Ljava/lang/Object;
-    .locals 2
+.method public final zzdz(J)J
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzju;->val$activity:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaom:[J
 
-    const-string v1, "ad_overlay"
+    .line 2
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzju;->zzaoo:[J
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ads/zzjs;->zzb(Landroid/content/Context;Ljava/lang/String;)V
+    const/4 v2, 0x1
 
-    const/4 v0, 0x0
+    invoke-static {v1, p1, p2, v2, v2}, Lcom/google/android/gms/internal/ads/zzpt;->zza([JJZZ)I
 
-    return-object v0
-.end method
+    move-result p1
 
-.method public final synthetic zziv()Ljava/lang/Object;
-    .locals 2
+    .line 3
+    aget-wide p1, v0, p1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzju;->zzavi:Lcom/google/android/gms/internal/ads/zzjs;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzjs;->zzg(Lcom/google/android/gms/internal/ads/zzjs;)Lcom/google/android/gms/internal/ads/zzabv;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzju;->val$activity:Landroid/app/Activity;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/ads/zzabv;->zze(Landroid/app/Activity;)Lcom/google/android/gms/internal/ads/zzabw;
-
-    move-result-object v0
-
-    return-object v0
+    return-wide p1
 .end method

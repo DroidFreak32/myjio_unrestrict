@@ -1,9 +1,6 @@
-.class public final Lcom/jio/media/androidsdk/player/SaavnAudioService$d;
-.super Ljava/lang/Object;
-.source ""
-
-# interfaces
-.implements Landroid/media/AudioManager$OnAudioFocusChangeListener;
+.class public Lcom/jio/media/androidsdk/player/SaavnAudioService$d;
+.super Ljiosaavnsdk/d6;
+.source "SourceFile"
 
 
 # annotations
@@ -12,38 +9,56 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = null
+    accessFlags = 0x1
+    name = "d"
 .end annotation
 
 
+# instance fields
+.field public final synthetic a:Lcom/jio/media/androidsdk/player/SaavnAudioService;
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/jio/media/androidsdk/player/SaavnAudioService;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$d;->a:Lcom/jio/media/androidsdk/player/SaavnAudioService;
+
+    invoke-direct {p0}, Ljiosaavnsdk/d6;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAudioFocusChange(I)V
-    .locals 3
+.method public a(Ljiosaavnsdk/e6;)V
+    .locals 2
 
     .line 1
-    sget-object v0, Lcom/jio/media/androidsdk/player/SaavnAudioService;->I:Landroid/os/Handler;
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
+    iget-object v0, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$d;->a:Lcom/jio/media/androidsdk/player/SaavnAudioService;
 
     .line 2
-    invoke-virtual {v0, v1, p1, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p1
+    iget-object v0, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$d;->a:Lcom/jio/media/androidsdk/player/SaavnAudioService;
 
-    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+    iget-object v1, v0, Lcom/jio/media/androidsdk/player/SaavnAudioService;->d:Ljiosaavnsdk/a6;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljiosaavnsdk/a6;
+
+    invoke-direct {v1, v0}, Ljiosaavnsdk/a6;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, v0, Lcom/jio/media/androidsdk/player/SaavnAudioService;->d:Ljiosaavnsdk/a6;
+
+    :cond_0
+    iget-object v0, p0, Lcom/jio/media/androidsdk/player/SaavnAudioService$d;->a:Lcom/jio/media/androidsdk/player/SaavnAudioService;
+
+    iget-object v0, v0, Lcom/jio/media/androidsdk/player/SaavnAudioService;->d:Ljiosaavnsdk/a6;
+
+    .line 3
+    iput-object p1, v0, Ljiosaavnsdk/k6;->a:Ljiosaavnsdk/e6;
 
     return-void
 .end method

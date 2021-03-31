@@ -1,119 +1,484 @@
 .class public final Lcom/google/android/gms/internal/ads/zzauc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/ads/internal/gmsg/zzu;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/gms/ads/internal/gmsg/zzu<",
-        "Lcom/google/android/gms/internal/ads/zzasg;",
-        ">;"
-    }
-.end annotation
+.super Landroid/content/ContextWrapper;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzdiz:Lcom/google/android/gms/internal/ads/zzaub;
+.field private zzdxs:Landroid/content/Context;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+.end field
+
+.field private zzdxt:Ljava/lang/ref/WeakReference;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "this"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference<",
+            "Landroid/app/Activity;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzaub;)V
-    .locals 0
+.method private constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdiz:Lcom/google/android/gms/internal/ads/zzaub;
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2
+    new-instance p1, Ljava/lang/ref/WeakReference;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxt:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
+.method private final declared-synchronized zze(Landroid/content/Intent;)Landroid/content/Intent;
+    .locals 2
 
-# virtual methods
-.method public final synthetic zza(Ljava/lang/Object;Ljava/util/Map;)V
-    .locals 1
-
-    if-eqz p2, :cond_1
-
-    const-string p1, "height"
+    monitor-enter p0
 
     .line 1
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxs:Landroid/content/Context;
 
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
+    if-eqz v0, :cond_1
 
     .line 2
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result p2
+    move-result-object v0
 
-    if-nez p2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 3
-    :try_start_0
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result p1
+    move-result-object v0
 
-    .line 4
-    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdiz:Lcom/google/android/gms/internal/ads/zzaub;
+    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    monitor-enter p2
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
-    .line 5
-    :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdiz:Lcom/google/android/gms/internal/ads/zzaub;
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxs:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaub;->zza(Lcom/google/android/gms/internal/ads/zzaub;)I
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eq v0, p1, :cond_0
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    .line 4
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Intent;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Intent;
+
+    .line 5
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdiz:Lcom/google/android/gms/internal/ads/zzaub;
+    monitor-exit p0
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaub;->zza(Lcom/google/android/gms/internal/ads/zzaub;I)I
+    return-object v0
 
     .line 7
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdiz:Lcom/google/android/gms/internal/ads/zzaub;
+    :cond_1
+    :goto_0
+    monitor-exit p0
 
-    invoke-virtual {p1}, Landroid/webkit/WebView;->requestLayout()V
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method private final declared-synchronized zzf(Landroid/content/Intent;)V
+    .locals 5
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxt:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    const/high16 v1, 0x10000000
+
+    if-nez v0, :cond_0
+
+    .line 2
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 3
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 4
+    monitor-exit p0
+
+    return-void
+
+    .line 5
+    :cond_0
+    :try_start_1
+    invoke-virtual {p1}, Landroid/content/Intent;->clone()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/Intent;
+
+    .line 6
+    invoke-virtual {p1}, Landroid/content/Intent;->getFlags()I
+
+    move-result v3
+
+    const v4, -0x10000001
+
+    and-int/2addr v3, v4
+
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 7
+    invoke-virtual {v0, v2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    .line 9
+    :try_start_2
+    invoke-static {}, Lcom/google/android/gms/ads/internal/zzp;->zzku()Lcom/google/android/gms/internal/ads/zzayg;
+
+    move-result-object v2
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v0, v3}, Lcom/google/android/gms/internal/ads/zzayg;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
+
+    .line 10
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 11
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->startActivity(Landroid/content/Intent;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    .line 12
+    monitor-exit p0
+
+    return-void
+
+    :catchall_1
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method private static zzl(Landroid/content/Context;)Landroid/content/Context;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-object p0
+
     :cond_0
-    monitor-exit p2
+    return-object v0
+.end method
+
+.method public static zzx(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzauc;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzauc;
+
+    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzauc;->zzl(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzauc;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
+.method public static zzy(Landroid/content/Context;)Landroid/content/Context;
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Lcom/google/android/gms/internal/ads/zzauc;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    check-cast p0, Lcom/google/android/gms/internal/ads/zzauc;
+
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 3
+    :cond_0
+    invoke-static {p0}, Lcom/google/android/gms/internal/ads/zzauc;->zzl(Landroid/content/Context;)Landroid/content/Context;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final getApplicationContext()Landroid/content/Context;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final declared-synchronized getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    .locals 1
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxs:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    :try_start_1
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized getPackageName()Ljava/lang/String;
+    .locals 1
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxs:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    :try_start_1
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized getPackageResourcePath()Ljava/lang/String;
+    .locals 1
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxs:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageResourcePath()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    :try_start_1
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getPackageResourcePath()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized setAppPackageName(Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    .line 1
+    :try_start_0
+    invoke-super {p0, p1, v0}, Landroid/content/ContextWrapper;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzauc;->zzdxs:Landroid/content/Context;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 2
+    monitor-exit p0
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    monitor-exit p2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit p0
 
-    :try_start_2
     throw p1
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+.end method
 
-    :catch_0
+.method public final declared-synchronized startActivity(Landroid/content/Intent;)V
+    .locals 0
+
+    monitor-enter p0
+
+    .line 1
+    :try_start_0
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzauc;->zze(Landroid/content/Intent;)Landroid/content/Intent;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzauc;->zzf(Landroid/content/Intent;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 2
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
     move-exception p1
 
-    const-string p2, "Exception occurred while getting webview content height"
+    monitor-exit p0
 
-    .line 9
-    invoke-static {p2, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzc(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    return-void
+    throw p1
 .end method

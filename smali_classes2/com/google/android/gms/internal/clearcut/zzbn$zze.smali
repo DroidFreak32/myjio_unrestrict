@@ -14,24 +14,24 @@
 
 
 # instance fields
-.field public final zzgc:Ljava/nio/ByteBuffer;
+.field private final zzgc:Ljava/nio/ByteBuffer;
 
-.field public final zzgd:Ljava/nio/ByteBuffer;
+.field private final zzgd:Ljava/nio/ByteBuffer;
 
-.field public final zzge:J
+.field private final zzge:J
 
-.field public final zzgf:J
+.field private final zzgf:J
 
-.field public final zzgg:J
+.field private final zzgg:J
 
-.field public final zzgh:J
+.field private final zzgh:J
 
-.field public zzgi:J
+.field private zzgi:J
 
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .locals 4
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -57,41 +57,33 @@
 
     iput-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzge:J
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzge:J
-
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
 
     int-to-long v2, v2
 
-    add-long/2addr v0, v2
+    add-long/2addr v2, v0
 
-    iput-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgf:J
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzge:J
+    iput-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgf:J
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result p1
 
-    int-to-long v2, p1
+    int-to-long v4, p1
 
-    add-long/2addr v0, v2
+    add-long/2addr v0, v4
 
     iput-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
+    const-wide/16 v4, 0xa
 
-    const-wide/16 v2, 0xa
-
-    sub-long/2addr v0, v2
+    sub-long/2addr v0, v4
 
     iput-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgh:J
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgf:J
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
+    iput-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
     return-void
 .end method
@@ -134,6 +126,11 @@
 
 .method public final write([BII)V
     .locals 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_1
 
@@ -180,17 +177,10 @@
 
     :cond_1
     :goto_0
-    if-nez p1, :cond_2
-
-    new-instance p1, Ljava/lang/NullPointerException;
-
     const-string p2, "value"
 
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    throw p1
-
-    :cond_2
     new-instance p1, Lcom/google/android/gms/internal/clearcut/zzbn$zzc;
 
     const/4 p2, 0x3
@@ -238,6 +228,11 @@
 
 .method public final zza(B)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -260,39 +255,41 @@
     :cond_0
     new-instance p1, Lcom/google/android/gms/internal/clearcut/zzbn$zzc;
 
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    move-result-object v0
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    aput-object v0, v2, v3
+    move-result-object v2
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
+    aput-object v2, v0, v1
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v1, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    aput-object v0, v2, v1
-
-    const/4 v0, 0x2
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    aput-object v1, v2, v0
+    const/4 v2, 0x1
 
-    const-string v0, "Pos: %d, limit: %d, len: %d"
+    aput-object v1, v0, v2
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v1, 0x2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const-string v1, "Pos: %d, limit: %d, len: %d"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -303,72 +300,102 @@
 
 .method public final zza(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(J)V
+    invoke-virtual {p0, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(J)V
 
     return-void
 .end method
 
 .method public final zza(ILcom/google/android/gms/internal/clearcut/zzbb;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zza(Lcom/google/android/gms/internal/clearcut/zzbb;)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zza(Lcom/google/android/gms/internal/clearcut/zzbb;)V
 
     return-void
 .end method
 
 .method public final zza(ILcom/google/android/gms/internal/clearcut/zzdo;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(Lcom/google/android/gms/internal/clearcut/zzdo;)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(Lcom/google/android/gms/internal/clearcut/zzdo;)V
 
     return-void
 .end method
 
 .method public final zza(ILcom/google/android/gms/internal/clearcut/zzdo;Lcom/google/android/gms/internal/clearcut/zzef;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Lcom/google/android/gms/internal/clearcut/zzef;)V
+    invoke-virtual {p0, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn;->zza(Lcom/google/android/gms/internal/clearcut/zzdo;Lcom/google/android/gms/internal/clearcut/zzef;)V
 
     return-void
 .end method
 
 .method public final zza(ILjava/lang/String;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzg(Ljava/lang/String;)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzg(Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public final zza(Lcom/google/android/gms/internal/clearcut/zzbb;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-virtual {p1}, Lcom/google/android/gms/internal/clearcut/zzbb;->size()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     invoke-virtual {p1, p0}, Lcom/google/android/gms/internal/clearcut/zzbb;->zza(Lcom/google/android/gms/internal/clearcut/zzba;)V
 
@@ -377,6 +404,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/clearcut/zzdo;Lcom/google/android/gms/internal/clearcut/zzef;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     move-object v0, p1
 
@@ -397,7 +429,7 @@
     invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/clearcut/zzas;->zzf(I)V
 
     :cond_0
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn;->zzfz:Lcom/google/android/gms/internal/clearcut/zzbp;
 
@@ -408,8 +440,13 @@
 
 .method public final zza([BII)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->write([BII)V
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn;->write([BII)V
 
     return-void
 .end method
@@ -430,76 +467,101 @@
 
 .method public final zzb(II)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     shl-int/lit8 p1, p1, 0x3
 
     or-int/2addr p1, p2
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     return-void
 .end method
 
 .method public final zzb(ILcom/google/android/gms/internal/clearcut/zzbb;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    const/4 v0, 0x3
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x3
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
     const/4 v2, 0x2
 
-    invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzd(II)V
+    invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzd(II)V
 
-    invoke-virtual {p0, v0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zza(ILcom/google/android/gms/internal/clearcut/zzbb;)V
+    invoke-virtual {p0, v1, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zza(ILcom/google/android/gms/internal/clearcut/zzbb;)V
 
     const/4 p1, 0x4
 
-    invoke-virtual {p0, v1, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
     return-void
 .end method
 
 .method public final zzb(ILcom/google/android/gms/internal/clearcut/zzdo;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    const/4 v0, 0x3
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x3
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
     const/4 v2, 0x2
 
-    invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzd(II)V
+    invoke-virtual {p0, v2, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzd(II)V
 
-    invoke-virtual {p0, v0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zza(ILcom/google/android/gms/internal/clearcut/zzdo;)V
+    invoke-virtual {p0, v1, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zza(ILcom/google/android/gms/internal/clearcut/zzdo;)V
 
     const/4 p1, 0x4
 
-    invoke-virtual {p0, v1, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
     return-void
 .end method
 
 .method public final zzb(IZ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
     int-to-byte p1, p2
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zza(B)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zza(B)V
 
     return-void
 .end method
 
 .method public final zzb(J)V
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -602,13 +664,15 @@
 
     new-array p2, p2, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v1, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    move-result-object v0
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    aput-object v0, p2, v2
+    move-result-object v1
+
+    aput-object v1, p2, v0
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
@@ -641,12 +705,17 @@
 
 .method public final zzb(Lcom/google/android/gms/internal/clearcut/zzdo;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     invoke-interface {p1}, Lcom/google/android/gms/internal/clearcut/zzdo;->zzas()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     invoke-interface {p1, p0}, Lcom/google/android/gms/internal/clearcut/zzdo;->zzb(Lcom/google/android/gms/internal/clearcut/zzbn;)V
 
@@ -655,42 +724,62 @@
 
 .method public final zzc(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzn(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzn(I)V
 
     return-void
 .end method
 
 .method public final zzc(IJ)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzd(J)V
+    invoke-virtual {p0, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzd(J)V
 
     return-void
 .end method
 
 .method public final zzd(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     return-void
 .end method
 
 .method public final zzd(J)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgd:Ljava/nio/ByteBuffer;
 
@@ -717,30 +806,45 @@
 
 .method public final zzd([BII)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    invoke-virtual {p0, p3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, p3}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     const/4 p2, 0x0
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->write([BII)V
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/internal/clearcut/zzbn;->write([BII)V
 
     return-void
 .end method
 
 .method public final zzf(II)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     const/4 v0, 0x5
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(II)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(II)V
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzq(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzq(I)V
 
     return-void
 .end method
 
 .method public final zzg(Ljava/lang/String;)V
     .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -791,7 +895,7 @@
 
     sub-int/2addr v3, v2
 
-    invoke-virtual {p0, v3}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, v3}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     iget-wide v4, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -808,7 +912,7 @@
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, v2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     iget-wide v3, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -855,8 +959,6 @@
 
     iput-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
-
     invoke-direct {p0, v0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzk(J)V
 
     invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/internal/clearcut/zzbn;->zza(Ljava/lang/String;Lcom/google/android/gms/internal/clearcut/zzfi;)V
@@ -866,23 +968,33 @@
 
 .method public final zzn(I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     if-ltz p1, :cond_0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzo(I)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzo(I)V
 
     return-void
 
     :cond_0
     int-to-long v0, p1
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzb(J)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzb(J)V
 
     return-void
 .end method
 
 .method public final zzo(I)V
     .locals 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
@@ -967,39 +1079,41 @@
     :cond_3
     new-instance p1, Lcom/google/android/gms/internal/clearcut/zzbn$zzc;
 
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v2, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgi:J
 
-    move-result-object v0
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    aput-object v0, v2, v3
+    move-result-object v2
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
+    aput-object v2, v0, v1
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v1, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgg:J
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    aput-object v0, v2, v1
-
-    const/4 v0, 0x2
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    aput-object v1, v2, v0
+    const/4 v2, 0x1
 
-    const-string v0, "Pos: %d, limit: %d, len: %d"
+    aput-object v1, v0, v2
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v1, 0x2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const-string v1, "Pos: %d, limit: %d, len: %d"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1010,6 +1124,11 @@
 
 .method public final zzq(I)V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zze;->zzgd:Ljava/nio/ByteBuffer;
 

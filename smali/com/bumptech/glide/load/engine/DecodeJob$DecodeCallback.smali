@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public final dataSource:Lcom/bumptech/glide/load/DataSource;
+.field private final dataSource:Lcom/bumptech/glide/load/DataSource;
 
 .field public final synthetic this$0:Lcom/bumptech/glide/load/engine/DecodeJob;
 
@@ -53,6 +53,13 @@
 # virtual methods
 .method public onResourceDecoded(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
     .locals 2
+    .param p1    # Lcom/bumptech/glide/load/engine/Resource;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

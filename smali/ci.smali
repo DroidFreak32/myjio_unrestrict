@@ -1,30 +1,36 @@
-.class public interface abstract Lci;
+.class public final synthetic Lci;
 .super Ljava/lang/Object;
-.source "SupportSQLiteOpenHelper.java"
+.source "lambda"
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Lcom/google/android/jioexoplayer2/util/EventDispatcher$Event;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lci$c;,
-        Lci$b;,
-        Lci$a;
-    }
-.end annotation
+# instance fields
+.field public final synthetic a:Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager$MissingSchemeDataException;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager$MissingSchemeDataException;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lci;->a:Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager$MissingSchemeDataException;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract close()V
-.end method
+.method public final sendTo(Ljava/lang/Object;)V
+    .locals 1
 
-.method public abstract getDatabaseName()Ljava/lang/String;
-.end method
+    iget-object v0, p0, Lci;->a:Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager$MissingSchemeDataException;
 
-.method public abstract getWritableDatabase()Lbi;
-.end method
+    check-cast p1, Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionEventListener;
 
-.method public abstract setWriteAheadLoggingEnabled(Z)V
+    invoke-static {v0, p1}, Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager;->a(Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionManager$MissingSchemeDataException;Lcom/google/android/jioexoplayer2/drm/DefaultDrmSessionEventListener;)V
+
+    return-void
 .end method

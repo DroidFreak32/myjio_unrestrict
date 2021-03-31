@@ -1,392 +1,502 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzgg;
+.class public abstract Lcom/google/android/gms/internal/measurement/zzgg;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 # interfaces
-.implements Lcom/google/android/gms/internal/measurement/zzhl;
+.implements Lcom/google/android/gms/internal/measurement/zzjj;
 
 
-# static fields
-.field public static final zzb:Lcom/google/android/gms/internal/measurement/zzgq;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<MessageType:",
+        "Lcom/google/android/gms/internal/measurement/zzgg<",
+        "TMessageType;TBuilderType;>;BuilderType:",
+        "Lcom/google/android/gms/internal/measurement/zzgi<",
+        "TMessageType;TBuilderType;>;>",
+        "Ljava/lang/Object;",
+        "Lcom/google/android/gms/internal/measurement/zzjj;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/internal/measurement/zzgq;
+.field public zza:I
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzgj;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzgj;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzgg;->zzb:Lcom/google/android/gms/internal/measurement/zzgq;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 4
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzgi;
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Lcom/google/android/gms/internal/measurement/zzgq;
-
-    .line 2
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzfj;->zza()Lcom/google/android/gms/internal/measurement/zzfj;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgg;->zza()Lcom/google/android/gms/internal/measurement/zzgq;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzgi;-><init>([Lcom/google/android/gms/internal/measurement/zzgq;)V
-
-    .line 3
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/measurement/zzgg;-><init>(Lcom/google/android/gms/internal/measurement/zzgq;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzgq;)V
     .locals 1
 
-    .line 4
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "messageInfoFactory"
+    const/4 v0, 0x0
 
-    .line 5
-    invoke-static {p1, v0}, Lcom/google/android/gms/internal/measurement/zzfk;->zza(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/internal/measurement/zzgq;
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzgg;->zza:Lcom/google/android/gms/internal/measurement/zzgq;
+    .line 2
+    iput v0, p0, Lcom/google/android/gms/internal/measurement/zzgg;->zza:I
 
     return-void
 .end method
 
-.method public static zza()Lcom/google/android/gms/internal/measurement/zzgq;
-    .locals 4
-
-    const-string v0, "com.google.protobuf.DescriptorMessageInfoFactory"
-
-    .line 39
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-string v1, "getInstance"
-
-    const/4 v2, 0x0
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    .line 40
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzgq;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    .line 41
-    :catch_0
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgg;->zzb:Lcom/google/android/gms/internal/measurement/zzgq;
-
-    return-object v0
-.end method
-
-.method public static zza(Lcom/google/android/gms/internal/measurement/zzgr;)Z
-    .locals 1
-
-    .line 38
-    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zzgr;->zza()I
-
-    move-result p0
-
-    sget v0, Lcom/google/android/gms/internal/measurement/zzfi$zze;->zzh:I
-
-    if-ne p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-
-# virtual methods
-.method public final zza(Ljava/lang/Class;)Lcom/google/android/gms/internal/measurement/zzhi;
-    .locals 9
+.method public static zza(Ljava/lang/Iterable;Ljava/util/List;)V
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ljava/lang/Class<",
-            "TT;>;)",
-            "Lcom/google/android/gms/internal/measurement/zzhi<",
-            "TT;>;"
+            "Ljava/lang/Iterable<",
+            "TT;>;",
+            "Ljava/util/List<",
+            "-TT;>;)V"
         }
     .end annotation
 
     .line 1
-    const-class v0, Lcom/google/android/gms/internal/measurement/zzfi;
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/measurement/zzhk;->zza(Ljava/lang/Class;)V
+    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzia;->zza(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 2
-    iget-object v1, p0, Lcom/google/android/gms/internal/measurement/zzgg;->zza:Lcom/google/android/gms/internal/measurement/zzgq;
+    instance-of v0, p0, Lcom/google/android/gms/internal/measurement/zziq;
 
-    invoke-interface {v1, p1}, Lcom/google/android/gms/internal/measurement/zzgq;->zzb(Ljava/lang/Class;)Lcom/google/android/gms/internal/measurement/zzgr;
+    const-string v1, " is null."
 
-    move-result-object v3
+    const-string v2, "Element at index "
 
-    .line 3
-    invoke-interface {v3}, Lcom/google/android/gms/internal/measurement/zzgr;->zzb()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 4
-    invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 5
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhk;->zzc()Lcom/google/android/gms/internal/measurement/zzia;
-
-    move-result-object p1
-
-    .line 6
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzey;->zza()Lcom/google/android/gms/internal/measurement/zzex;
-
-    move-result-object v0
-
-    .line 7
-    invoke-interface {v3}, Lcom/google/android/gms/internal/measurement/zzgr;->zzc()Lcom/google/android/gms/internal/measurement/zzgt;
-
-    move-result-object v1
-
-    .line 8
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/internal/measurement/zzgz;->zza(Lcom/google/android/gms/internal/measurement/zzia;Lcom/google/android/gms/internal/measurement/zzex;Lcom/google/android/gms/internal/measurement/zzgt;)Lcom/google/android/gms/internal/measurement/zzgz;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 9
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhk;->zza()Lcom/google/android/gms/internal/measurement/zzia;
-
-    move-result-object p1
-
-    .line 10
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzey;->zzb()Lcom/google/android/gms/internal/measurement/zzex;
-
-    move-result-object v0
-
-    .line 11
-    invoke-interface {v3}, Lcom/google/android/gms/internal/measurement/zzgr;->zzc()Lcom/google/android/gms/internal/measurement/zzgt;
-
-    move-result-object v1
-
-    .line 12
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/internal/measurement/zzgz;->zza(Lcom/google/android/gms/internal/measurement/zzia;Lcom/google/android/gms/internal/measurement/zzex;Lcom/google/android/gms/internal/measurement/zzgt;)Lcom/google/android/gms/internal/measurement/zzgz;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 13
-    :cond_1
-    invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 14
-    invoke-static {v3}, Lcom/google/android/gms/internal/measurement/zzgg;->zza(Lcom/google/android/gms/internal/measurement/zzgr;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 15
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhd;->zzb()Lcom/google/android/gms/internal/measurement/zzhb;
-
-    move-result-object v4
-
-    .line 16
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgd;->zzb()Lcom/google/android/gms/internal/measurement/zzgd;
-
-    move-result-object v5
-
-    .line 17
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhk;->zzc()Lcom/google/android/gms/internal/measurement/zzia;
-
-    move-result-object v6
-
-    .line 18
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzey;->zza()Lcom/google/android/gms/internal/measurement/zzex;
-
-    move-result-object v7
-
-    .line 19
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgo;->zzb()Lcom/google/android/gms/internal/measurement/zzgm;
-
-    move-result-object v8
-
-    move-object v2, p1
-
-    .line 20
-    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/measurement/zzgx;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/measurement/zzgr;Lcom/google/android/gms/internal/measurement/zzhb;Lcom/google/android/gms/internal/measurement/zzgd;Lcom/google/android/gms/internal/measurement/zzia;Lcom/google/android/gms/internal/measurement/zzex;Lcom/google/android/gms/internal/measurement/zzgm;)Lcom/google/android/gms/internal/measurement/zzgx;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 21
-    :cond_2
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhd;->zzb()Lcom/google/android/gms/internal/measurement/zzhb;
-
-    move-result-object v4
-
-    .line 22
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgd;->zzb()Lcom/google/android/gms/internal/measurement/zzgd;
-
-    move-result-object v5
-
-    .line 23
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhk;->zzc()Lcom/google/android/gms/internal/measurement/zzia;
-
-    move-result-object v6
-
-    const/4 v7, 0x0
-
-    .line 24
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgo;->zzb()Lcom/google/android/gms/internal/measurement/zzgm;
-
-    move-result-object v8
-
-    move-object v2, p1
-
-    .line 25
-    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/measurement/zzgx;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/measurement/zzgr;Lcom/google/android/gms/internal/measurement/zzhb;Lcom/google/android/gms/internal/measurement/zzgd;Lcom/google/android/gms/internal/measurement/zzia;Lcom/google/android/gms/internal/measurement/zzex;Lcom/google/android/gms/internal/measurement/zzgm;)Lcom/google/android/gms/internal/measurement/zzgx;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 26
-    :cond_3
-    invoke-static {v3}, Lcom/google/android/gms/internal/measurement/zzgg;->zza(Lcom/google/android/gms/internal/measurement/zzgr;)Z
-
-    move-result v0
+    const/16 v3, 0x25
 
     if-eqz v0, :cond_4
 
-    .line 27
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhd;->zza()Lcom/google/android/gms/internal/measurement/zzhb;
+    .line 3
+    check-cast p0, Lcom/google/android/gms/internal/measurement/zziq;
+
+    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zziq;->zzb()Ljava/util/List;
+
+    move-result-object p0
+
+    .line 4
+    move-object v0, p1
+
+    check-cast v0, Lcom/google/android/gms/internal/measurement/zziq;
+
+    .line 5
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    .line 6
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 28
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgd;->zza()Lcom/google/android/gms/internal/measurement/zzgd;
+    if-nez v4, :cond_1
 
-    move-result-object v5
+    .line 7
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    .line 29
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhk;->zza()Lcom/google/android/gms/internal/measurement/zzia;
+    move-result p0
 
-    move-result-object v6
+    sub-int/2addr p0, p1
 
-    .line 30
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzey;->zzb()Lcom/google/android/gms/internal/measurement/zzex;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 31
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgo;->zza()Lcom/google/android/gms/internal/measurement/zzgm;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-object v2, p1
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 32
-    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/measurement/zzgx;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/measurement/zzgr;Lcom/google/android/gms/internal/measurement/zzhb;Lcom/google/android/gms/internal/measurement/zzgd;Lcom/google/android/gms/internal/measurement/zzia;Lcom/google/android/gms/internal/measurement/zzex;Lcom/google/android/gms/internal/measurement/zzgm;)Lcom/google/android/gms/internal/measurement/zzgx;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    return-object p1
+    .line 8
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    .line 33
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_1
+    if-lt v1, p1, :cond_0
+
+    .line 9
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_1
+
+    .line 10
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    invoke-direct {p1, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 11
+    :cond_1
+    instance-of v5, v4, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    if-eqz v5, :cond_2
+
+    .line 12
+    check-cast v4, Lcom/google/android/gms/internal/measurement/zzgp;
+
+    invoke-interface {v0, v4}, Lcom/google/android/gms/internal/measurement/zziq;->zza(Lcom/google/android/gms/internal/measurement/zzgp;)V
+
+    goto :goto_0
+
+    .line 13
+    :cond_2
+    check-cast v4, Ljava/lang/String;
+
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_3
+    return-void
+
+    .line 14
     :cond_4
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhd;->zza()Lcom/google/android/gms/internal/measurement/zzhb;
+    instance-of v0, p0, Lcom/google/android/gms/internal/measurement/zzjv;
+
+    if-eqz v0, :cond_5
+
+    .line 15
+    check-cast p0, Ljava/util/Collection;
+
+    invoke-interface {p1, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    return-void
+
+    .line 16
+    :cond_5
+    instance-of v0, p1, Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_6
+
+    instance-of v0, p0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_6
+
+    .line 17
+    move-object v0, p1
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    move-object v5, p0
+
+    check-cast v5, Ljava/util/Collection;
+
+    invoke-interface {v5}, Ljava/util/Collection;->size()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    .line 18
+    :cond_6
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    .line 19
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_2
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_9
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 34
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgd;->zza()Lcom/google/android/gms/internal/measurement/zzgd;
+    if-nez v4, :cond_8
 
-    move-result-object v5
+    .line 20
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    .line 35
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhk;->zzb()Lcom/google/android/gms/internal/measurement/zzia;
+    move-result p0
 
-    move-result-object v6
+    sub-int/2addr p0, v0
 
-    const/4 v7, 0x0
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 36
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgo;->zza()Lcom/google/android/gms/internal/measurement/zzgm;
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result-object v8
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v2, p1
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 37
-    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/measurement/zzgx;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/measurement/zzgr;Lcom/google/android/gms/internal/measurement/zzhb;Lcom/google/android/gms/internal/measurement/zzgd;Lcom/google/android/gms/internal/measurement/zzia;Lcom/google/android/gms/internal/measurement/zzex;Lcom/google/android/gms/internal/measurement/zzgm;)Lcom/google/android/gms/internal/measurement/zzgx;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-object p1
+    move-result-object p0
+
+    .line 21
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_3
+    if-lt v1, v0, :cond_7
+
+    .line 22
+    invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_3
+
+    .line 23
+    :cond_7
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    invoke-direct {p1, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 24
+    :cond_8
+    invoke-interface {p1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    :cond_9
+    return-void
+.end method
+
+
+# virtual methods
+.method public final zzbj()Lcom/google/android/gms/internal/measurement/zzgp;
+    .locals 6
+
+    .line 1
+    :try_start_0
+    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zzjj;->zzbp()I
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzgp;->zzc(I)Lcom/google/android/gms/internal/measurement/zzgx;
+
+    move-result-object v0
+
+    .line 2
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgx;->zzb()Lcom/google/android/gms/internal/measurement/zzhi;
+
+    move-result-object v1
+
+    invoke-interface {p0, v1}, Lcom/google/android/gms/internal/measurement/zzjj;->zza(Lcom/google/android/gms/internal/measurement/zzhi;)V
+
+    .line 3
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/measurement/zzgx;->zza()Lcom/google/android/gms/internal/measurement/zzgp;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    .line 4
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "ByteString"
+
+    .line 5
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x3e
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Serializing "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " to a "
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " threw an IOException (should never happen)."
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 6
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final zzbk()[B
+    .locals 6
+
+    .line 1
+    :try_start_0
+    invoke-interface {p0}, Lcom/google/android/gms/internal/measurement/zzjj;->zzbp()I
+
+    move-result v0
+
+    new-array v0, v0, [B
+
+    .line 2
+    invoke-static {v0}, Lcom/google/android/gms/internal/measurement/zzhi;->zza([B)Lcom/google/android/gms/internal/measurement/zzhi;
+
+    move-result-object v1
+
+    .line 3
+    invoke-interface {p0, v1}, Lcom/google/android/gms/internal/measurement/zzjj;->zza(Lcom/google/android/gms/internal/measurement/zzhi;)V
+
+    .line 4
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/measurement/zzhi;->zzb()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    .line 5
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "byte array"
+
+    .line 6
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x3e
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Serializing "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " to a "
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " threw an IOException (should never happen)."
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 7
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public zzbl()I
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public zzc(I)V
+    .locals 0
+
+    .line 1
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
 .end method

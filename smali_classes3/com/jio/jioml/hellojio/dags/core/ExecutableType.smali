@@ -19,11 +19,12 @@
         0x3
     }
     d1 = {
-        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008.\u0008\u0086\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002j\u0002\u0008\u0003j\u0002\u0008\u0004j\u0002\u0008\u0005j\u0002\u0008\u0006j\u0002\u0008\u0007j\u0002\u0008\u0008j\u0002\u0008\tj\u0002\u0008\nj\u0002\u0008\u000bj\u0002\u0008\u000cj\u0002\u0008\rj\u0002\u0008\u000ej\u0002\u0008\u000fj\u0002\u0008\u0010j\u0002\u0008\u0011j\u0002\u0008\u0012j\u0002\u0008\u0013j\u0002\u0008\u0014j\u0002\u0008\u0015j\u0002\u0008\u0016j\u0002\u0008\u0017j\u0002\u0008\u0018j\u0002\u0008\u0019j\u0002\u0008\u001aj\u0002\u0008\u001bj\u0002\u0008\u001cj\u0002\u0008\u001dj\u0002\u0008\u001ej\u0002\u0008\u001fj\u0002\u0008 j\u0002\u0008!j\u0002\u0008\"j\u0002\u0008#j\u0002\u0008$j\u0002\u0008%j\u0002\u0008&j\u0002\u0008\'j\u0002\u0008(j\u0002\u0008)j\u0002\u0008*j\u0002\u0008+j\u0002\u0008,j\u0002\u0008-j\u0002\u0008.\u00a8\u0006/"
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u00085\u0008\u0086\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\t\u0008\u0002\u00a2\u0006\u0004\u0008\u0002\u0010\u0003j\u0002\u0008\u0004j\u0002\u0008\u0005j\u0002\u0008\u0006j\u0002\u0008\u0007j\u0002\u0008\u0008j\u0002\u0008\tj\u0002\u0008\nj\u0002\u0008\u000bj\u0002\u0008\u000cj\u0002\u0008\rj\u0002\u0008\u000ej\u0002\u0008\u000fj\u0002\u0008\u0010j\u0002\u0008\u0011j\u0002\u0008\u0012j\u0002\u0008\u0013j\u0002\u0008\u0014j\u0002\u0008\u0015j\u0002\u0008\u0016j\u0002\u0008\u0017j\u0002\u0008\u0018j\u0002\u0008\u0019j\u0002\u0008\u001aj\u0002\u0008\u001bj\u0002\u0008\u001cj\u0002\u0008\u001dj\u0002\u0008\u001ej\u0002\u0008\u001fj\u0002\u0008 j\u0002\u0008!j\u0002\u0008\"j\u0002\u0008#j\u0002\u0008$j\u0002\u0008%j\u0002\u0008&j\u0002\u0008\'j\u0002\u0008(j\u0002\u0008)j\u0002\u0008*j\u0002\u0008+j\u0002\u0008,j\u0002\u0008-j\u0002\u0008.j\u0002\u0008/j\u0002\u00080j\u0002\u00081j\u0002\u00082j\u0002\u00083j\u0002\u00084j\u0002\u00085\u00a8\u00066"
     }
     d2 = {
         "Lcom/jio/jioml/hellojio/dags/core/ExecutableType;",
         "",
+        "<init>",
         "(Ljava/lang/String;I)V",
         "MESSAGE",
         "ASK",
@@ -51,6 +52,9 @@
         "VOICE_STATUS_JIO_SIM",
         "PREFERRED_SMS_SIM",
         "NETWORK_MODE_SETTING",
+        "PLAY_VIDEO",
+        "PLAY_YOUTUBE_VIDEO",
+        "PLAY_ANY_VIDEO",
         "MYJIO_SERVICE_TYPE",
         "VOICE_ACTIVE_JIO_ACCOUNT",
         "GET_CALL_USAGE",
@@ -69,13 +73,16 @@
         "VOICE_ACTIVE_ON_JIO_ACCOUNT",
         "CHECK_IS_PRIME_CUSTOMER",
         "GET_VOICE_BALANCE",
+        "CAMERA_RESOLUTION",
+        "FRONT_CAMERA_RESOLUTION",
+        "SCREEN_DIMENSION",
         "hellojiosdk_release"
     }
     k = 0x1
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
@@ -86,6 +93,8 @@
 .field public static final enum AEROPLANE_MODE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 .field public static final enum ASK:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+.field public static final enum CAMERA_RESOLUTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 .field public static final enum CHECK_FUP:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -104,6 +113,8 @@
 .field public static final enum DISPATCH_EVENT:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 .field public static final enum FORECAST_FUP:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+.field public static final enum FRONT_CAMERA_RESOLUTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 .field public static final enum GET_APP_PERMISSIONS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -155,9 +166,17 @@
 
 .field public static final enum PLAN_EXPIRY:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
+.field public static final enum PLAY_ANY_VIDEO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+.field public static final enum PLAY_VIDEO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+.field public static final enum PLAY_YOUTUBE_VIDEO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
 .field public static final enum PREFERRED_SMS_SIM:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 .field public static final enum PROFILE_UPDATE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+.field public static final enum SCREEN_DIMENSION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 .field public static final enum SEND_LOGS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -169,196 +188,196 @@
 
 .field public static final enum WIFI_SETTINGS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-.field public static final synthetic s:[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+.field public static final synthetic a:[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 4
 
-    const/16 v0, 0x2c
+    const/16 v0, 0x32
 
     new-array v0, v0, [Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x0
+    const-string v2, "MESSAGE"
 
-    const-string v3, "MESSAGE"
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->MESSAGE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x1
+    const-string v2, "ASK"
 
-    const-string v3, "ASK"
+    const/4 v3, 0x1
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->ASK:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x2
+    const-string v2, "ACTIONS"
 
-    const-string v3, "ACTIONS"
+    const/4 v3, 0x2
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->ACTIONS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x3
+    const-string v2, "DISPATCH_EVENT"
 
-    const-string v3, "DISPATCH_EVENT"
+    const/4 v3, 0x3
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->DISPATCH_EVENT:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x4
+    const-string v2, "JIO_SIGNAL_STRENGTH"
 
-    const-string v3, "JIO_SIGNAL_STRENGTH"
+    const/4 v3, 0x4
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->JIO_SIGNAL_STRENGTH:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x5
+    const-string v2, "JIO_SIM_INSERTION"
 
-    const-string v3, "JIO_SIM_INSERTION"
+    const/4 v3, 0x5
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->JIO_SIM_INSERTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x6
+    const-string v2, "AEROPLANE_MODE"
 
-    const-string v3, "AEROPLANE_MODE"
+    const/4 v3, 0x6
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->AEROPLANE_MODE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/4 v2, 0x7
+    const-string v2, "IS_APP_INSTALLED"
 
-    const-string v3, "IS_APP_INSTALLED"
+    const/4 v3, 0x7
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->IS_APP_INSTALLED:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x8
+    const-string v2, "WIFI_SETTINGS"
 
-    const-string v3, "WIFI_SETTINGS"
+    const/16 v3, 0x8
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->WIFI_SETTINGS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x9
+    const-string v2, "PING_WEBSITES"
 
-    const-string v3, "PING_WEBSITES"
+    const/16 v3, 0x9
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PING_WEBSITES:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0xa
+    const-string v2, "DEVICE_SPACE_AVAILABILITY"
 
-    const-string v3, "DEVICE_SPACE_AVAILABILITY"
+    const/16 v3, 0xa
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->DEVICE_SPACE_AVAILABILITY:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0xb
+    const-string v2, "GET_APP_PERMISSIONS"
 
-    const-string v3, "GET_APP_PERMISSIONS"
+    const/16 v3, 0xb
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_APP_PERMISSIONS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0xc
+    const-string v2, "MOBILE_DATA_SETTINGS"
 
-    const-string v3, "MOBILE_DATA_SETTINGS"
+    const/16 v3, 0xc
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->MOBILE_DATA_SETTINGS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0xd
+    const-string v2, "INTERNET_ACTIVE_ON_JIO"
 
-    const-string v3, "INTERNET_ACTIVE_ON_JIO"
+    const/16 v3, 0xd
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->INTERNET_ACTIVE_ON_JIO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0xe
+    const-string v2, "INTERNATIONAL_ROAMING_STATUS"
 
-    const-string v3, "INTERNATIONAL_ROAMING_STATUS"
+    const/16 v3, 0xe
 
-    invoke-direct {v1, v3, v2}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->INTERNATIONAL_ROAMING_STATUS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -370,9 +389,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->DATA_ROAMING_STATUS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -384,9 +401,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->NETWORK_ROAMING_STATUS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x10
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -398,9 +413,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PATTERN_MATCHER:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x11
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -412,9 +425,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->DEEPLINK_SOURCE_IDENTIFIER:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x12
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -426,9 +437,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->CHECK_OS_VERSION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x13
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -440,9 +449,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->LOGIN:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x14
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -454,9 +461,7 @@
 
     sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->SEND_LOGS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const/16 v2, 0x15
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
@@ -516,13 +521,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "MYJIO_SERVICE_TYPE"
+    const-string v2, "PLAY_VIDEO"
 
     const/16 v3, 0x1a
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->MYJIO_SERVICE_TYPE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PLAY_VIDEO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x1a
 
@@ -530,13 +535,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "VOICE_ACTIVE_JIO_ACCOUNT"
+    const-string v2, "PLAY_YOUTUBE_VIDEO"
 
     const/16 v3, 0x1b
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->VOICE_ACTIVE_JIO_ACCOUNT:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PLAY_YOUTUBE_VIDEO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x1b
 
@@ -544,13 +549,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "GET_CALL_USAGE"
+    const-string v2, "PLAY_ANY_VIDEO"
 
     const/16 v3, 0x1c
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_CALL_USAGE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PLAY_ANY_VIDEO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x1c
 
@@ -558,13 +563,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "INTERNET_SPEED_TEST"
+    const-string v2, "MYJIO_SERVICE_TYPE"
 
     const/16 v3, 0x1d
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->INTERNET_SPEED_TEST:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->MYJIO_SERVICE_TYPE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x1d
 
@@ -572,13 +577,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "INTERNET_SPEED_TEST_FTTX"
+    const-string v2, "VOICE_ACTIVE_JIO_ACCOUNT"
 
     const/16 v3, 0x1e
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->INTERNET_SPEED_TEST_FTTX:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->VOICE_ACTIVE_JIO_ACCOUNT:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x1e
 
@@ -586,13 +591,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "CHECK_FUP"
+    const-string v2, "GET_CALL_USAGE"
 
     const/16 v3, 0x1f
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->CHECK_FUP:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_CALL_USAGE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x1f
 
@@ -600,13 +605,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "DATA_AVG_CONSUMPTION"
+    const-string v2, "INTERNET_SPEED_TEST"
 
     const/16 v3, 0x20
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->DATA_AVG_CONSUMPTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->INTERNET_SPEED_TEST:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x20
 
@@ -614,13 +619,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "GET_DATA_PLAN_ATTACHED"
+    const-string v2, "INTERNET_SPEED_TEST_FTTX"
 
     const/16 v3, 0x21
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_DATA_PLAN_ATTACHED:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->INTERNET_SPEED_TEST_FTTX:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x21
 
@@ -628,13 +633,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "FORECAST_FUP"
+    const-string v2, "CHECK_FUP"
 
     const/16 v3, 0x22
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->FORECAST_FUP:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->CHECK_FUP:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x22
 
@@ -642,13 +647,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "GET_USAGE"
+    const-string v2, "DATA_AVG_CONSUMPTION"
 
     const/16 v3, 0x23
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_USAGE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->DATA_AVG_CONSUMPTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x23
 
@@ -656,13 +661,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "JIO_ACCOUNT_INFO"
+    const-string v2, "GET_DATA_PLAN_ATTACHED"
 
     const/16 v3, 0x24
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->JIO_ACCOUNT_INFO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_DATA_PLAN_ATTACHED:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x24
 
@@ -670,13 +675,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "JIO_ACCOUNT_STATUS"
+    const-string v2, "FORECAST_FUP"
 
     const/16 v3, 0x25
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->JIO_ACCOUNT_STATUS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->FORECAST_FUP:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x25
 
@@ -684,13 +689,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "MONETARY_BALANCE"
+    const-string v2, "GET_USAGE"
 
     const/16 v3, 0x26
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->MONETARY_BALANCE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_USAGE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x26
 
@@ -698,13 +703,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "PLAN_EXPIRY"
+    const-string v2, "JIO_ACCOUNT_INFO"
 
     const/16 v3, 0x27
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PLAN_EXPIRY:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->JIO_ACCOUNT_INFO:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x27
 
@@ -712,13 +717,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "PROFILE_UPDATE"
+    const-string v2, "JIO_ACCOUNT_STATUS"
 
     const/16 v3, 0x28
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PROFILE_UPDATE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->JIO_ACCOUNT_STATUS:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x28
 
@@ -726,13 +731,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "VOICE_ACTIVE_ON_JIO_ACCOUNT"
+    const-string v2, "MONETARY_BALANCE"
 
     const/16 v3, 0x29
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->VOICE_ACTIVE_ON_JIO_ACCOUNT:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->MONETARY_BALANCE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x29
 
@@ -740,13 +745,13 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "CHECK_IS_PRIME_CUSTOMER"
+    const-string v2, "PLAN_EXPIRY"
 
     const/16 v3, 0x2a
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->CHECK_IS_PRIME_CUSTOMER:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PLAN_EXPIRY:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x2a
 
@@ -754,19 +759,103 @@
 
     new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
-    const-string v2, "GET_VOICE_BALANCE"
+    const-string v2, "PROFILE_UPDATE"
 
     const/16 v3, 0x2b
 
     invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_VOICE_BALANCE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->PROFILE_UPDATE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     const/16 v2, 0x2b
 
     aput-object v1, v0, v2
 
-    sput-object v0, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->s:[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const-string v2, "VOICE_ACTIVE_ON_JIO_ACCOUNT"
+
+    const/16 v3, 0x2c
+
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->VOICE_ACTIVE_ON_JIO_ACCOUNT:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const/16 v2, 0x2c
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const-string v2, "CHECK_IS_PRIME_CUSTOMER"
+
+    const/16 v3, 0x2d
+
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->CHECK_IS_PRIME_CUSTOMER:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const/16 v2, 0x2d
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const-string v2, "GET_VOICE_BALANCE"
+
+    const/16 v3, 0x2e
+
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->GET_VOICE_BALANCE:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const/16 v2, 0x2e
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const-string v2, "CAMERA_RESOLUTION"
+
+    const/16 v3, 0x2f
+
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->CAMERA_RESOLUTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const/16 v2, 0x2f
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const-string v2, "FRONT_CAMERA_RESOLUTION"
+
+    const/16 v3, 0x30
+
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->FRONT_CAMERA_RESOLUTION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const/16 v2, 0x30
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const-string v2, "SCREEN_DIMENSION"
+
+    const/16 v3, 0x31
+
+    invoke-direct {v1, v2, v3}, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->SCREEN_DIMENSION:Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+
+    const/16 v2, 0x31
+
+    aput-object v1, v0, v2
+
+    sput-object v0, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->a:[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     return-void
 .end method
@@ -802,7 +891,7 @@
 .method public static values()[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
     .locals 1
 
-    sget-object v0, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->s:[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
+    sget-object v0, Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->a:[Lcom/jio/jioml/hellojio/dags/core/ExecutableType;
 
     invoke-virtual {v0}, [Lcom/jio/jioml/hellojio/dags/core/ExecutableType;->clone()Ljava/lang/Object;
 

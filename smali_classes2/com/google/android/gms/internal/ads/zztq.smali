@@ -1,58 +1,41 @@
 .class public final Lcom/google/android/gms/internal/ads/zztq;
-.super Lcom/google/android/gms/internal/ads/zzem;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzto;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.ads.internal.instream.client.IInstreamAdLoadCallback"
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final zza(Lcom/google/android/gms/internal/ads/zztk;)V
+.method public static zza(Landroid/content/Context;Lcom/google/android/gms/internal/ads/zztf;)Ljava/util/concurrent/Future;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Lcom/google/android/gms/internal/ads/zztf;",
+            ")",
+            "Ljava/util/concurrent/Future<",
+            "Lcom/google/android/gms/internal/ads/zztt;",
+            ">;"
+        }
+    .end annotation
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zztl;
 
-    move-result-object v0
-
-    .line 2
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzeo;->zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 p1, 0x1
-
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
-
-    return-void
-.end method
-
-.method public final zzac(I)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzem;->obtainAndWriteInterfaceToken()Landroid/os/Parcel;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zztl;-><init>(Landroid/content/Context;)V
 
     .line 2
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ads/zztl;->zzd(Lcom/google/android/gms/internal/ads/zztf;)Ljava/util/concurrent/Future;
 
-    const/4 p1, 0x2
+    move-result-object p0
 
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;->zza(ILandroid/os/Parcel;)V
-
-    return-void
+    return-object p0
 .end method

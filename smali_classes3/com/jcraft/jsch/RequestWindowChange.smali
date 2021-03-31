@@ -47,6 +47,11 @@
 # virtual methods
 .method public request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-super {p0, p1, p2}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
@@ -76,7 +81,7 @@
 
     invoke-virtual {p1, p2}, Lcom/jcraft/jsch/Buffer;->putInt(I)V
 
-    const-string/jumbo p2, "window-change"
+    const-string p2, "window-change"
 
     .line 7
     invoke-static {p2}, Lcom/jcraft/jsch/Util;->str2byte(Ljava/lang/String;)[B

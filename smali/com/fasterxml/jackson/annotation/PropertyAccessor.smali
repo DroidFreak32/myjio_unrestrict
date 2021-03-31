@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+.field private static final synthetic $VALUES:[Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
 .field public static final enum ALL:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
@@ -33,124 +33,110 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 15
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v1, 0x0
+    const-string v1, "GETTER"
 
-    const-string v2, "GETTER"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->GETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     .line 2
-    new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     const-string v3, "SETTER"
 
-    invoke-direct {v0, v3, v2}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->SETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    invoke-direct {v1, v3, v4}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->SETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     .line 3
-    new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    new-instance v3, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v3, 0x2
+    const-string v5, "CREATOR"
 
-    const-string v4, "CREATOR"
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v4, v3}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->CREATOR:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    sput-object v3, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->CREATOR:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     .line 4
-    new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    new-instance v5, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v4, 0x3
+    const-string v7, "FIELD"
 
-    const-string v5, "FIELD"
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v5, v4}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->FIELD:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    sput-object v5, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->FIELD:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     .line 5
-    new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    new-instance v7, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v5, 0x4
+    const-string v9, "IS_GETTER"
 
-    const-string v6, "IS_GETTER"
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v6, v5}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->IS_GETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    sput-object v7, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->IS_GETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     .line 6
-    new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    new-instance v9, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v6, 0x5
+    const-string v11, "NONE"
 
-    const-string v7, "NONE"
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v7, v6}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->NONE:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    sput-object v9, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->NONE:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     .line 7
-    new-instance v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    new-instance v11, Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v7, 0x6
+    const-string v13, "ALL"
 
-    const-string v8, "ALL"
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v8, v7}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v11, v13, v14}, Lcom/fasterxml/jackson/annotation/PropertyAccessor;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->ALL:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    sput-object v11, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->ALL:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
-    const/4 v0, 0x7
+    const/4 v13, 0x7
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    new-array v13, v13, [Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+
+    aput-object v0, v13, v2
+
+    aput-object v1, v13, v4
+
+    aput-object v3, v13, v6
+
+    aput-object v5, v13, v8
+
+    aput-object v7, v13, v10
+
+    aput-object v9, v13, v12
+
+    aput-object v11, v13, v14
 
     .line 8
-    sget-object v8, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->GETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v8, v0, v1
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->SETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->CREATOR:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->FIELD:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->IS_GETTER:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->NONE:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->ALL:Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-
-    aput-object v1, v0, v7
-
-    sput-object v0, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->$VALUES:[Lcom/fasterxml/jackson/annotation/PropertyAccessor;
+    sput-object v13, Lcom/fasterxml/jackson/annotation/PropertyAccessor;->$VALUES:[Lcom/fasterxml/jackson/annotation/PropertyAccessor;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

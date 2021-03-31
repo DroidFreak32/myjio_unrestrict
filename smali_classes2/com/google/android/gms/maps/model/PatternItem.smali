@@ -25,18 +25,21 @@
     .end annotation
 .end field
 
-.field public static final TAG:Ljava/lang/String;
+.field private static final TAG:Ljava/lang/String;
 
 
 # instance fields
-.field public final type:I
+.field private final type:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getType"
         id = 0x2
     .end annotation
 .end field
 
-.field public final zzdv:Ljava/lang/Float;
+.field private final zzdv:Ljava/lang/Float;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getLength"
         id = 0x3
@@ -75,6 +78,9 @@
         .end annotation
     .end param
     .param p2    # Ljava/lang/Float;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x3
         .end annotation
@@ -157,6 +163,13 @@
 
 .method public static zza(Ljava/util/List;)Ljava/util/List;
     .locals 6
+    .param p0    # Ljava/util/List;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

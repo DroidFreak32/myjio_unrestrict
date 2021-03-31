@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final VARS_ABSTRACT_LIST:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_ABSTRACT_LIST:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_ARRAY_LIST:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_ARRAY_LIST:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_COLLECTION:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_COLLECTION:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -45,7 +45,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_HASH_MAP:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_HASH_MAP:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_ITERABLE:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_ITERABLE:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -65,7 +65,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_LINKED_HASH_MAP:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_LINKED_HASH_MAP:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -75,7 +75,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_LIST:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_LIST:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -85,7 +85,7 @@
     .end annotation
 .end field
 
-.field public static final VARS_MAP:[Ljava/lang/reflect/TypeVariable;
+.field private static final VARS_MAP:[Ljava/lang/reflect/TypeVariable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",

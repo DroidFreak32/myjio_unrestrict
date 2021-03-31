@@ -7,4 +7,9 @@
 
 # virtual methods
 .method public abstract onMyLocationClick(Landroid/location/Location;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

@@ -16,4 +16,8 @@
 
 # virtual methods
 .method public abstract surfaceChanged(Landroid/view/Surface;)V
+    .param p1    # Landroid/view/Surface;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final idNameToId:Ljava/util/Map;
+.field private final idNameToId:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -15,7 +15,7 @@
     .end annotation
 .end field
 
-.field public final idToIdName:Landroid/util/SparseArray;
+.field private final idToIdName:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public final resourcePackageName:Ljava/lang/String;
+.field private final resourcePackageName:Ljava/lang/String;
 
 
 # direct methods
@@ -221,7 +221,7 @@
     return-void
 .end method
 
-.method public static readClassIds(Ljava/lang/Class;Ljava/lang/String;Ljava/util/Map;)V
+.method private static readClassIds(Ljava/lang/Class;Ljava/lang/String;Ljava/util/Map;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {

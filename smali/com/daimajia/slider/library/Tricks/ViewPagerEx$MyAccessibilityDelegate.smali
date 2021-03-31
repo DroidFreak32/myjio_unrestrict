@@ -1,5 +1,5 @@
 .class public Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;
-.super Le9;
+.super Landroidx/core/view/AccessibilityDelegateCompat;
 .source "ViewPagerEx.java"
 
 
@@ -25,7 +25,7 @@
     .line 1
     iput-object p1, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-direct {p0}, Le9;-><init>()V
+    invoke-direct {p0}, Landroidx/core/view/AccessibilityDelegateCompat;-><init>()V
 
     return-void
 .end method
@@ -36,7 +36,7 @@
     .line 1
     iget-object v0, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-static {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Lsk;
+    invoke-static {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -46,11 +46,11 @@
 
     iget-object v0, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-static {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Lsk;
+    invoke-static {v0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lsk;->getCount()I
+    invoke-virtual {v0}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I
 
     move-result v0
 
@@ -71,7 +71,7 @@
     .locals 1
 
     .line 1
-    invoke-super {p0, p1, p2}, Le9;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
     .line 2
     const-class p1, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
@@ -83,7 +83,7 @@
     invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
     .line 3
-    invoke-static {}, Lqa;->a()Lqa;
+    invoke-static {}, Landroidx/core/view/accessibility/AccessibilityRecordCompat;->obtain()Landroidx/core/view/accessibility/AccessibilityRecordCompat;
 
     move-result-object p1
 
@@ -92,7 +92,7 @@
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Lqa;->a(Z)V
+    invoke-virtual {p1, v0}, Landroidx/core/view/accessibility/AccessibilityRecordCompat;->setScrollable(Z)V
 
     .line 5
     invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
@@ -105,7 +105,7 @@
 
     iget-object p2, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-static {p2}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Lsk;
+    invoke-static {p2}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object p2
 
@@ -114,15 +114,15 @@
     .line 6
     iget-object p2, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
 
-    invoke-static {p2}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Lsk;
+    invoke-static {p2}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;->access$200(Lcom/daimajia/slider/library/Tricks/ViewPagerEx;)Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lsk;->getCount()I
+    invoke-virtual {p2}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I
 
     move-result p2
 
-    invoke-virtual {p1, p2}, Lqa;->b(I)V
+    invoke-virtual {p1, p2}, Landroidx/core/view/accessibility/AccessibilityRecordCompat;->setItemCount(I)V
 
     .line 7
     iget-object p2, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
@@ -131,7 +131,7 @@
 
     move-result p2
 
-    invoke-virtual {p1, p2}, Lqa;->a(I)V
+    invoke-virtual {p1, p2}, Landroidx/core/view/accessibility/AccessibilityRecordCompat;->setFromIndex(I)V
 
     .line 8
     iget-object p2, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
@@ -140,17 +140,17 @@
 
     move-result p2
 
-    invoke-virtual {p1, p2}, Lqa;->c(I)V
+    invoke-virtual {p1, p2}, Landroidx/core/view/accessibility/AccessibilityRecordCompat;->setToIndex(I)V
 
     :cond_0
     return-void
 .end method
 
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Loa;)V
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 1
 
     .line 1
-    invoke-super {p0, p1, p2}, Le9;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Loa;)V
+    invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 
     .line 2
     const-class p1, Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
@@ -159,14 +159,14 @@
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Loa;->a(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setClassName(Ljava/lang/CharSequence;)V
 
     .line 3
     invoke-direct {p0}, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->canScroll()Z
 
     move-result p1
 
-    invoke-virtual {p2, p1}, Loa;->n(Z)V
+    invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setScrollable(Z)V
 
     .line 4
     iget-object p1, p0, Lcom/daimajia/slider/library/Tricks/ViewPagerEx$MyAccessibilityDelegate;->this$0:Lcom/daimajia/slider/library/Tricks/ViewPagerEx;
@@ -182,7 +182,7 @@
     const/16 p1, 0x1000
 
     .line 5
-    invoke-virtual {p2, p1}, Loa;->a(I)V
+    invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(I)V
 
     .line 6
     :cond_0
@@ -199,7 +199,7 @@
     const/16 p1, 0x2000
 
     .line 7
-    invoke-virtual {p2, p1}, Loa;->a(I)V
+    invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(I)V
 
     :cond_1
     return-void
@@ -209,7 +209,7 @@
     .locals 1
 
     .line 1
-    invoke-super {p0, p1, p2, p3}, Le9;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+    invoke-super {p0, p1, p2, p3}, Landroidx/core/view/AccessibilityDelegateCompat;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result p1
 

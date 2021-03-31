@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final s:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    iput-object v0, p0, Landroidx/loader/content/ModernAsyncTask$a;->s:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object v0, p0, Landroidx/loader/content/ModernAsyncTask$a;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
@@ -56,7 +56,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Landroidx/loader/content/ModernAsyncTask$a;->s:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v2, p0, Landroidx/loader/content/ModernAsyncTask$a;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 

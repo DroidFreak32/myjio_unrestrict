@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public zzao:J
+.field private zzao:J
 
-.field public zzap:J
+.field private zzap:J
 
 
 # direct methods
@@ -66,7 +66,7 @@
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/gcm/PeriodicTask$Builder;->checkConditions()V
+    invoke-virtual {p0}, Lcom/google/android/gms/gcm/Task$Builder;->checkConditions()V
 
     .line 2
     new-instance v0, Lcom/google/android/gms/gcm/PeriodicTask;
@@ -143,7 +143,9 @@
 
     .line 6
     :cond_2
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    iget-wide v1, p0, Lcom/google/android/gms/gcm/PeriodicTask$Builder;->zzao:J
 
     const/16 v3, 0x42
 
@@ -155,15 +157,15 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     .line 7
     :cond_3
@@ -216,6 +218,9 @@
 
 .method public setPersisted(Z)Lcom/google/android/gms/gcm/PeriodicTask$Builder;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.RECEIVE_BOOT_COMPLETED"
+    .end annotation
 
     .line 1
     iput-boolean p1, p0, Lcom/google/android/gms/gcm/Task$Builder;->isPersisted:Z
@@ -225,6 +230,9 @@
 
 .method public bridge synthetic setPersisted(Z)Lcom/google/android/gms/gcm/Task$Builder;
     .locals 0
+    .annotation build Landroidx/annotation/RequiresPermission;
+        value = "android.permission.RECEIVE_BOOT_COMPLETED"
+    .end annotation
 
     .line 2
     invoke-virtual {p0, p1}, Lcom/google/android/gms/gcm/PeriodicTask$Builder;->setPersisted(Z)Lcom/google/android/gms/gcm/PeriodicTask$Builder;

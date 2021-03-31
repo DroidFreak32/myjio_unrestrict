@@ -8,11 +8,11 @@
 
 
 # instance fields
-.field public final zzaec:Ljava/lang/String;
+.field private final zzaec:Ljava/lang/String;
 
-.field public final zzafj:Ljava/util/Random;
+.field private final zzafj:Ljava/util/Random;
 
-.field public final zzrm:Landroid/content/Context;
+.field private final zzrm:Landroid/content/Context;
 
 
 # direct methods
@@ -29,8 +29,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Random;)V
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Random;)V
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,46 +62,46 @@
 .end method
 
 .method private final zza(JJ)J
-    .locals 7
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/tagmanager/zzai;->zzhp()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-wide/16 v1, 0x0
+    const-string v1, "FORBIDDEN_COUNT"
 
-    const-string v3, "FORBIDDEN_COUNT"
+    const-wide/16 v2, 0x0
 
     .line 2
-    invoke-interface {v0, v3, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-string v5, "SUCCESSFUL_COUNT"
+    const-string v1, "SUCCESSFUL_COUNT"
 
     .line 3
-    invoke-interface {v0, v5, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v5
-
-    invoke-static {v1, v2, v5, v6}, Ljava/lang/Math;->max(JJ)J
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
-    long-to-float v2, v3
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
 
-    add-long/2addr v3, v0
+    move-result-wide v0
+
+    long-to-float v2, v4
+
+    add-long/2addr v4, v0
 
     const-wide/16 v0, 0x1
 
-    add-long/2addr v3, v0
+    add-long/2addr v4, v0
 
-    long-to-float v0, v3
+    long-to-float v0, v4
 
     div-float/2addr v2, v0
 

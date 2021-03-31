@@ -1,281 +1,221 @@
 .class public final Lcom/google/android/gms/internal/ads/zzmn;
-.super Landroid/content/ContentProvider;
+.super Lcom/google/android/gms/internal/ads/zzmk;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/internal/ads/zzmn;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field private final description:Ljava/lang/String;
+
+.field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzmm;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzmm;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzmn;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public static zzg(Landroid/content/Context;)Landroid/os/Bundle;
-    .locals 2
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 1
 
-    .line 1
-    :try_start_0
-    invoke-static {p0}, Lcom/google/android/gms/common/wrappers/Wrappers;->packageManager(Landroid/content/Context;)Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
+    .line 4
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p0
-
-    const/16 v1, 0x80
-
-    invoke-virtual {v0, p0, v1}, Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p0
-
-    .line 3
-    iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    const-string v0, "Failed to load metadata: Package name not found"
-
-    .line 4
-    invoke-static {v0, p0}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    const-string v0, "Failed to load metadata: Null pointer exception"
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzmk;-><init>(Ljava/lang/String;)V
 
     .line 5
-    invoke-static {v0, p0}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    :goto_0
-    const/4 p0, 0x0
+    move-result-object v0
 
-    return-object p0
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzmn;->description:Ljava/lang/String;
+
+    .line 6
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzmn;->value:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/ads/zzmk;-><init>(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzmn;->description:Ljava/lang/String;
+
+    .line 3
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzmn;->value:Ljava/lang/String;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzmn;->zzg(Landroid/content/Context;)Landroid/os/Bundle;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    if-ne p0, p1, :cond_0
 
+    return v0
+
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_2
 
-    :try_start_0
-    const-string v2, "com.google.android.gms.ads.APPLICATION_ID"
+    .line 1
+    const-class v2, Lcom/google/android/gms/internal/ads/zzmn;
 
-    .line 2
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
-    :catch_0
-    const-string v2, "The com.google.android.gms.ads.APPLICATION_ID metadata must have a String value"
+    .line 2
+    :cond_1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzmn;
 
     .line 3
-    invoke-static {v2}, Lcom/google/android/gms/internal/ads/zzaok;->e(Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzmk;->id:Ljava/lang/String;
 
-    move-object v2, v1
+    iget-object v3, p1, Lcom/google/android/gms/internal/ads/zzmk;->id:Ljava/lang/String;
 
-    :goto_0
-    :try_start_1
-    const-string v3, "com.google.android.gms.ads.AD_MANAGER_APP"
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzmn;->description:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/google/android/gms/internal/ads/zzmn;->description:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Lcom/google/android/gms/internal/ads/zzpt;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/ads/zzmn;->value:Ljava/lang/String;
+
+    iget-object p1, p1, Lcom/google/android/gms/internal/ads/zzmn;->value:Ljava/lang/String;
 
     .line 4
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, p1}, Lcom/google/android/gms/internal/ads/zzpt;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result p1
 
-    check-cast v0, Ljava/lang/Boolean;
-    :try_end_1
-    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_1} :catch_1
+    if-eqz p1, :cond_2
 
-    move-object v1, v0
-
-    goto :goto_1
-
-    :catch_1
-    const-string v0, "The com.google.android.gms.ads.AD_MANAGER_APP metadata must have a boolean value"
-
-    .line 5
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->e(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_0
-    move-object v2, v1
-
-    :goto_1
-    if-eqz v1, :cond_1
-
-    .line 6
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    :cond_1
-    if-eqz v2, :cond_6
+    return v0
 
     :cond_2
-    if-eqz v2, :cond_5
+    :goto_0
+    return v1
+.end method
 
-    const-string v0, "^ca-app-pub-[0-9]{16}~[0-9]{10}$"
+.method public final hashCode()I
+    .locals 3
 
-    .line 7
-    invoke-virtual {v2, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzmk;->id:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    add-int/lit16 v0, v0, 0x20f
 
-    const-string v0, "Publisher provided Google AdMob App ID in manifest: "
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 8
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    .line 2
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzmn;->description:Ljava/lang/String;
 
-    move-result-object v1
+    const/4 v2, 0x0
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    if-eqz v1, :cond_0
 
-    move-result v3
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    if-eqz v3, :cond_3
+    move-result v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object v0
-
-    goto :goto_2
-
-    :cond_3
-    new-instance v1, Ljava/lang/String;
-
-    invoke-direct {v1, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    move-object v0, v1
-
-    :goto_2
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    .line 9
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
+    :cond_0
     const/4 v1, 0x0
 
-    const-string v3, "measurementEnabled"
+    :goto_0
+    add-int/2addr v0, v1
 
-    .line 10
-    invoke-virtual {v0, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 11
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/internal/ads/zzxt;->zza(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzmn;->value:Ljava/lang/String;
 
-    goto :goto_3
+    if-eqz v1, :cond_1
 
-    .line 12
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalStateException;
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    const-string p2, "\n\n******************************************************************************\n* Invalid application ID. Follow instructions here: https://goo.gl/fQ2neu to *\n* find your app ID.                                                          *\n******************************************************************************\n\n"
+    move-result v2
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 13
-    :cond_5
-    :goto_3
-    invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
-
-    return-void
-
-    .line 14
-    :cond_6
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "\n\n******************************************************************************\n* The Google Mobile Ads SDK was initialized incorrectly. AdMob publishers    *\n* should follow the instructions here: https://goo.gl/fQ2neu to add a valid  *\n* App ID inside the AndroidManifest. Google Ad Manager publishers should     *\n* follow instructions here: https://goo.gl/h17b6x.                           *\n******************************************************************************\n\n"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final getType(Landroid/net/Uri;)Ljava/lang/String;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final onCreate()Z
-    .locals 1
-
-    const/4 v0, 0x0
+    :cond_1
+    add-int/2addr v0, v2
 
     return v0
 .end method
 
-.method public final query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    const/4 p1, 0x0
+    .line 1
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzmk;->id:Ljava/lang/String;
 
-    return-object p1
-.end method
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-.method public final update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    .locals 0
+    .line 2
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzmn;->description:Ljava/lang/String;
 
-    const/4 p1, 0x0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return p1
+    .line 3
+    iget-object p2, p0, Lcom/google/android/gms/internal/ads/zzmn;->value:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    return-void
 .end method

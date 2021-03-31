@@ -14,7 +14,7 @@
     const-string v0, "RescheduleReceiver"
 
     .line 1
-    invoke-static {v0}, Lbl;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Landroidx/work/Logger;->tagWithPrefix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -38,7 +38,7 @@
     .locals 4
 
     .line 1
-    invoke-static {}, Lbl;->a()Lbl;
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v0
 
@@ -60,7 +60,7 @@
 
     new-array v2, v3, [Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v1, p2, v2}, Lbl;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1, p2, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     .line 2
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -71,7 +71,7 @@
 
     .line 3
     :try_start_0
-    invoke-static {p1}, Lvl;->a(Landroid/content/Context;)Lvl;
+    invoke-static {p1}, Landroidx/work/impl/WorkManagerImpl;->getInstance(Landroid/content/Context;)Landroidx/work/impl/WorkManagerImpl;
 
     move-result-object p1
 
@@ -81,7 +81,7 @@
     move-result-object p2
 
     .line 5
-    invoke-virtual {p1, p2}, Lvl;->a(Landroid/content/BroadcastReceiver$PendingResult;)V
+    invoke-virtual {p1, p2}, Landroidx/work/impl/WorkManagerImpl;->setReschedulePendingResult(Landroid/content/BroadcastReceiver$PendingResult;)V
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -89,7 +89,7 @@
 
     .line 6
     :catch_0
-    invoke-static {}, Lbl;->a()Lbl;
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object p1
 
@@ -99,13 +99,13 @@
 
     const-string v1, "Cannot reschedule jobs. WorkManager needs to be initialized via a ContentProvider#onCreate() or an Application#onCreate()."
 
-    invoke-virtual {p1, p2, v1, v0}, Lbl;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {p1, p2, v1, v0}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     goto :goto_0
 
     .line 7
     :cond_0
-    invoke-static {p1}, Lam;->b(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static {p1}, Landroidx/work/impl/background/systemalarm/CommandHandler;->d(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object p2
 

@@ -1,275 +1,207 @@
 .class public final Lcom/google/android/gms/internal/firebase_messaging/zzl;
-.super Ljava/io/FilterInputStream;
-.source "com.google.firebase:firebase-messaging@@20.2.0"
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-messaging@@21.0.0"
 
 
-# instance fields
-.field public zza:J
+# static fields
+.field private static final zza:[B
 
-.field public zzb:J
+.field private static final zzb:[I
+
+.field private static final zzc:[I
+
+.field private static final zzd:[I
+
+.field private static zze:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;J)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
-
-    const-wide/16 p2, -0x1
-
-    .line 2
-    iput-wide p2, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzb:J
-
-    .line 3
-    invoke-static {p1}, Lcom/google/android/gms/internal/firebase_messaging/zzg;->zza(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-wide/32 p1, 0x100001
-
-    .line 4
-    iput-wide p1, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final available()I
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    iget-wide v2, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    return v1
-.end method
-
-.method public final declared-synchronized mark(I)V
+.method public static constructor <clinit>()V
     .locals 2
 
-    monitor-enter p0
+    const/16 v0, 0x21
+
+    new-array v0, v0, [B
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    fill-array-data v0, :array_0
 
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
+    sput-object v0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:[B
+
+    const/16 v0, 0xa
+
+    new-array v1, v0, [I
 
     .line 2
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
+    fill-array-data v1, :array_1
 
-    iput-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzb:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sput-object v1, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzb:[I
+
+    new-array v0, v0, [I
 
     .line 3
-    monitor-exit p0
+    fill-array-data v0, :array_2
+
+    sput-object v0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzc:[I
+
+    const/16 v0, 0xd
+
+    new-array v0, v0, [I
+
+    .line 4
+    fill-array-data v0, :array_3
+
+    sput-object v0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzd:[I
+
+    const/16 v0, 0x11
+
+    new-array v0, v0, [I
+
+    .line 5
+    fill-array-data v0, :array_4
+
+    sput-object v0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zze:[I
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :array_0
+    .array-data 1
+        0x9t
+        0x9t
+        0x9t
+        0x8t
+        0x8t
+        0x8t
+        0x7t
+        0x7t
+        0x7t
+        0x6t
+        0x6t
+        0x6t
+        0x6t
+        0x5t
+        0x5t
+        0x5t
+        0x4t
+        0x4t
+        0x4t
+        0x3t
+        0x3t
+        0x3t
+        0x3t
+        0x2t
+        0x2t
+        0x2t
+        0x1t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x0t
+        0x0t
+    .end array-data
 
-    monitor-exit p0
+    nop
 
-    throw p1
+    :array_1
+    .array-data 4
+        0x1
+        0xa
+        0x64
+        0x3e8
+        0x2710
+        0x186a0
+        0xf4240
+        0x989680
+        0x5f5e100
+        0x3b9aca00
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x3
+        0x1f
+        0x13c
+        0xc5a
+        0x7b86
+        0x4d343
+        0x3040a5
+        0x1e28678
+        0x12d940b6
+        0x7fffffff
+    .end array-data
+
+    :array_3
+    .array-data 4
+        0x1
+        0x1
+        0x2
+        0x6
+        0x18
+        0x78
+        0x2d0
+        0x13b0
+        0x9d80
+        0x58980
+        0x375f00
+        0x2611500
+        0x1c8cfc00
+    .end array-data
+
+    :array_4
+    .array-data 4
+        0x7fffffff
+        0x7fffffff
+        0x10000
+        0x929
+        0x1dd
+        0xc1
+        0x6e
+        0x4b
+        0x3a
+        0x31
+        0x2b
+        0x27
+        0x25
+        0x23
+        0x22
+        0x22
+        0x21
+    .end array-data
 .end method
 
-.method public final read()I
-    .locals 6
+.method public static zza(II)I
+    .locals 3
 
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
+    int-to-long p0, p0
 
-    const/4 v2, -0x1
+    const/4 v0, 0x1
 
-    const-wide/16 v3, 0x0
+    shl-long/2addr p0, v0
 
-    cmp-long v5, v0, v3
+    const-wide/32 v0, 0x7fffffff
 
-    if-nez v5, :cond_0
+    cmp-long v2, p0, v0
 
-    return v2
+    if-lez v2, :cond_0
 
-    .line 2
-    :cond_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    const p0, 0x7fffffff
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-
-    move-result v0
-
-    if-eq v0, v2, :cond_1
-
-    .line 3
-    iget-wide v1, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    const-wide/16 v3, 0x1
-
-    sub-long/2addr v1, v3
-
-    iput-wide v1, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    :cond_1
-    return v0
-.end method
-
-.method public final read([BII)I
-    .locals 6
-
-    .line 4
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    const/4 v2, -0x1
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, v0, v3
-
-    if-nez v5, :cond_0
-
-    return v2
+    return p0
 
     :cond_0
-    int-to-long v3, p3
+    const-wide/32 v0, -0x80000000
 
-    .line 5
-    invoke-static {v3, v4, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    cmp-long v2, p0, v0
 
-    move-result-wide v0
+    if-gez v2, :cond_1
 
-    long-to-int p3, v0
+    const/high16 p0, -0x80000000
 
-    .line 6
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result p1
-
-    if-eq p1, v2, :cond_1
-
-    .line 7
-    iget-wide p2, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    int-to-long v0, p1
-
-    sub-long/2addr p2, v0
-
-    iput-wide p2, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
+    return p0
 
     :cond_1
+    long-to-int p1, p0
+
     return p1
-.end method
-
-.method public final declared-synchronized reset()V
-    .locals 5
-
-    monitor-enter p0
-
-    .line 1
-    :try_start_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 2
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzb:J
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v4, v0, v2
-
-    if-eqz v4, :cond_0
-
-    .line 3
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
-
-    .line 4
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zzb:J
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5
-    monitor-exit p0
-
-    return-void
-
-    .line 6
-    :cond_0
-    :try_start_1
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Mark not set"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 7
-    :cond_1
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Mark not supported"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final skip(J)J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide p1
-
-    .line 2
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide p1
-
-    .line 3
-    iget-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    sub-long/2addr v0, p1
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/firebase_messaging/zzl;->zza:J
-
-    return-wide p1
 .end method

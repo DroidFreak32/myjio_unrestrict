@@ -7,28 +7,28 @@
 
 
 # instance fields
-.field public final TAG:Ljava/lang/String;
+.field private final TAG:Ljava/lang/String;
 
-.field public indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
 .field public mContext:Landroid/content/Context;
 
-.field public outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public pressureSensor:Landroid/hardware/Sensor;
+.field private pressureSensor:Landroid/hardware/Sensor;
 
-.field public pressureValue:F
+.field private pressureValue:F
 
-.field public semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
 .field public sensorManager:Landroid/hardware/SensorManager;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,18 +56,16 @@
 
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->sensorManager:Landroid/hardware/SensorManager;
 
-    const/4 p1, 0x3
+    const/4 v0, 0x3
 
-    new-array p1, p1, [Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    new-array v0, v0, [Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 5
-    iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
-    .line 6
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->sensorManager:Landroid/hardware/SensorManager;
+    iput-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     const/4 v0, 0x6
 
+    .line 6
     invoke-virtual {p1, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     move-result-object p1
@@ -75,13 +73,11 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->pressureSensor:Landroid/hardware/Sensor;
 
     .line 7
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->sensorManager:Landroid/hardware/SensorManager;
-
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->pressureSensor:Landroid/hardware/Sensor;
+    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->sensorManager:Landroid/hardware/SensorManager;
 
     const/4 v1, 0x2
 
-    invoke-virtual {p1, p0, v0, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+    invoke-virtual {v0, p0, p1, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
     .line 8
     new-instance p1, Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
@@ -111,25 +107,23 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 11
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    aput-object v0, p1, v2
+    aput-object v2, v0, v3
 
     .line 12
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v2, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    aput-object v0, p1, v2
+    aput-object v2, v0, v3
 
     .line 13
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/BarometerSensorResult;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
-
-    aput-object v0, p1, v1
+    aput-object p1, v0, v1
 
     return-void
 .end method

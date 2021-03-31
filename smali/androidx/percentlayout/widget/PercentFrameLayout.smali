@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final s:Lnf;
+.field public final a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
 
 # direct methods
@@ -26,11 +26,11 @@
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 2
-    new-instance p1, Lnf;
+    new-instance p1, Landroidx/percentlayout/widget/PercentLayoutHelper;
 
-    invoke-direct {p1, p0}, Lnf;-><init>(Landroid/view/ViewGroup;)V
+    invoke-direct {p1, p0}, Landroidx/percentlayout/widget/PercentLayoutHelper;-><init>(Landroid/view/ViewGroup;)V
 
-    iput-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->s:Lnf;
+    iput-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
     return-void
 .end method
@@ -42,11 +42,11 @@
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 4
-    new-instance p1, Lnf;
+    new-instance p1, Landroidx/percentlayout/widget/PercentLayoutHelper;
 
-    invoke-direct {p1, p0}, Lnf;-><init>(Landroid/view/ViewGroup;)V
+    invoke-direct {p1, p0}, Landroidx/percentlayout/widget/PercentLayoutHelper;-><init>(Landroid/view/ViewGroup;)V
 
-    iput-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->s:Lnf;
+    iput-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
     return-void
 .end method
@@ -58,11 +58,11 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 6
-    new-instance p1, Lnf;
+    new-instance p1, Landroidx/percentlayout/widget/PercentLayoutHelper;
 
-    invoke-direct {p1, p0}, Lnf;-><init>(Landroid/view/ViewGroup;)V
+    invoke-direct {p1, p0}, Landroidx/percentlayout/widget/PercentLayoutHelper;-><init>(Landroid/view/ViewGroup;)V
 
-    iput-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->s:Lnf;
+    iput-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
     return-void
 .end method
@@ -148,9 +148,9 @@
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
     .line 2
-    iget-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->s:Lnf;
+    iget-object p1, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
-    invoke-virtual {p1}, Lnf;->b()V
+    invoke-virtual {p1}, Landroidx/percentlayout/widget/PercentLayoutHelper;->restoreOriginalParams()V
 
     return-void
 .end method
@@ -159,17 +159,17 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->s:Lnf;
+    iget-object v0, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
-    invoke-virtual {v0, p1, p2}, Lnf;->a(II)V
+    invoke-virtual {v0, p1, p2}, Landroidx/percentlayout/widget/PercentLayoutHelper;->adjustChildren(II)V
 
     .line 2
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     .line 3
-    iget-object v0, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->s:Lnf;
+    iget-object v0, p0, Landroidx/percentlayout/widget/PercentFrameLayout;->a:Landroidx/percentlayout/widget/PercentLayoutHelper;
 
-    invoke-virtual {v0}, Lnf;->a()Z
+    invoke-virtual {v0}, Landroidx/percentlayout/widget/PercentLayoutHelper;->handleMeasuredStateTooSmall()Z
 
     move-result v0
 

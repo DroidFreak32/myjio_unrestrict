@@ -1,55 +1,75 @@
 .class public final Lcom/google/android/gms/internal/vision/zzdx;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/vision/zzgd;
+.super Ljava/util/AbstractCollection;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
-# static fields
-.field public static final zzhl:Lcom/google/android/gms/internal/vision/zzgd;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/util/AbstractCollection<",
+        "TV;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final synthetic zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/vision/zzdx;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/vision/zzdx;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/vision/zzdx;->zzhl:Lcom/google/android/gms/internal/vision/zzgd;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/vision/zzdp;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzdx;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzh(I)Z
-    .locals 0
+.method public final clear()V
+    .locals 1
 
     .line 1
-    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzdv;->zzv(I)Lcom/google/android/gms/internal/vision/zzdv;
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdx;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    move-result-object p1
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->clear()V
 
-    if-eqz p1, :cond_0
+    return-void
+.end method
 
-    const/4 p1, 0x1
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator<",
+            "TV;>;"
+        }
+    .end annotation
 
-    return p1
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdx;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
 
-    :cond_0
-    const/4 p1, 0x0
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->zzcl()Ljava/util/Iterator;
 
-    return p1
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzdx;->zzmo:Lcom/google/android/gms/internal/vision/zzdp;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzdp;->size()I
+
+    move-result v0
+
+    return v0
 .end method

@@ -18,13 +18,13 @@
 
 
 # instance fields
-.field public mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+.field private mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
 .field public final synthetic this$0:Lcom/app/cinemasdk/utils/CustomRadioGroup;
 
 
 # direct methods
-.method public constructor <init>(Lcom/app/cinemasdk/utils/CustomRadioGroup;)V
+.method private constructor <init>(Lcom/app/cinemasdk/utils/CustomRadioGroup;)V
     .locals 0
 
     .line 1
@@ -57,6 +57,9 @@
 # virtual methods
 .method public onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x11
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p2}, Lcom/app/cinemasdk/utils/CustomRadioGroup$PassThroughHierarchyChangeListener;->traverseTree(Landroid/view/View;)V
@@ -152,6 +155,9 @@
 
 .method public traverseTree(Landroid/view/View;)V
     .locals 2
+    .annotation build Landroidx/annotation/RequiresApi;
+        api = 0x11
+    .end annotation
 
     .line 1
     instance-of v0, p1, Landroid/widget/RadioButton;

@@ -29,6 +29,9 @@
 .end field
 
 .field public location_3GPP:Ljava/util/List;
+    .annotation build Landroidx/room/Ignore;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",

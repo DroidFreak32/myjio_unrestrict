@@ -1,43 +1,42 @@
-.class public final Ln3$a;
-.super Ljava/lang/Object;
-.source "ArchTaskExecutor.java"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+.class public Ln3$a;
+.super Landroid/transition/Transition$EpicenterCallback;
+.source "FragmentTransitionCompat21.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Ln3;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Ln3;->setEpicenter(Ljava/lang/Object;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
+# instance fields
+.field public final synthetic a:Landroid/graphics/Rect;
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ln3;Landroid/graphics/Rect;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ln3$a;->a:Landroid/graphics/Rect;
+
+    invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public execute(Ljava/lang/Runnable;)V
-    .locals 1
+.method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
+    .locals 0
 
     .line 1
-    invoke-static {}, Ln3;->c()Ln3;
+    iget-object p1, p0, Ln3$a;->a:Landroid/graphics/Rect;
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ln3;->c(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object p1
 .end method

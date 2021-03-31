@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/Fragment$SavedState$a;
+.class public Landroidx/fragment/app/Fragment$SavedState$a;
 .super Ljava/lang/Object;
 .source "Fragment.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/Fragment$SavedState;
+.method public a(Landroid/os/Parcel;)Landroidx/fragment/app/Fragment$SavedState;
     .locals 2
 
-    .line 3
+    .line 1
     new-instance v0, Landroidx/fragment/app/Fragment$SavedState;
 
     const/4 v1, 0x0
@@ -51,10 +51,10 @@
     return-object v0
 .end method
 
-.method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/fragment/app/Fragment$SavedState;
+.method public b(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/fragment/app/Fragment$SavedState;
     .locals 1
 
-    .line 4
+    .line 1
     new-instance v0, Landroidx/fragment/app/Fragment$SavedState;
 
     invoke-direct {v0, p1, p2}, Landroidx/fragment/app/Fragment$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -62,11 +62,20 @@
     return-object v0
 .end method
 
+.method public c(I)[Landroidx/fragment/app/Fragment$SavedState;
+    .locals 0
+
+    .line 1
+    new-array p1, p1, [Landroidx/fragment/app/Fragment$SavedState;
+
+    return-object p1
+.end method
+
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$SavedState$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/Fragment$SavedState;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$SavedState$a;->a(Landroid/os/Parcel;)Landroidx/fragment/app/Fragment$SavedState;
 
     move-result-object p1
 
@@ -77,18 +86,9 @@
     .locals 0
 
     .line 2
-    invoke-virtual {p0, p1, p2}, Landroidx/fragment/app/Fragment$SavedState$a;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/fragment/app/Fragment$SavedState;
+    invoke-virtual {p0, p1, p2}, Landroidx/fragment/app/Fragment$SavedState$a;->b(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/fragment/app/Fragment$SavedState;
 
     move-result-object p1
-
-    return-object p1
-.end method
-
-.method public newArray(I)[Landroidx/fragment/app/Fragment$SavedState;
-    .locals 0
-
-    .line 2
-    new-array p1, p1, [Landroidx/fragment/app/Fragment$SavedState;
 
     return-object p1
 .end method
@@ -97,7 +97,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$SavedState$a;->newArray(I)[Landroidx/fragment/app/Fragment$SavedState;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment$SavedState$a;->c(I)[Landroidx/fragment/app/Fragment$SavedState;
 
     move-result-object p1
 

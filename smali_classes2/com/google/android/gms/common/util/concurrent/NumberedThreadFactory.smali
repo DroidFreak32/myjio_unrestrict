@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 # interfaces
 .implements Ljava/util/concurrent/ThreadFactory;
@@ -11,18 +12,22 @@
 
 
 # instance fields
-.field public final priority:I
+.field private final zza:Ljava/lang/String;
 
-.field public final zzhr:Ljava/util/concurrent/ThreadFactory;
+.field private final zzb:I
 
-.field public final zzhs:Ljava/lang/String;
+.field private final zzc:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public final zzht:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final zzd:Ljava/util/concurrent/ThreadFactory;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -34,7 +39,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
     .line 2
@@ -45,14 +50,14 @@
 
     invoke-direct {p2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzht:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p2, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzc:Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 4
     invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
 
     move-result-object p2
 
-    iput-object p2, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzhr:Ljava/util/concurrent/ThreadFactory;
+    iput-object p2, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzd:Ljava/util/concurrent/ThreadFactory;
 
     const-string p2, "Name must not be null"
 
@@ -63,12 +68,12 @@
 
     check-cast p1, Ljava/lang/String;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzhs:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zza:Ljava/lang/String;
 
     const/4 p1, 0x0
 
     .line 6
-    iput p1, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->priority:I
+    iput p1, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzb:I
 
     return-void
 .end method
@@ -77,9 +82,15 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 4
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzhr:Ljava/util/concurrent/ThreadFactory;
+    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzd:Ljava/util/concurrent/ThreadFactory;
 
     new-instance v1, Lcom/google/android/gms/common/util/concurrent/zza;
 
@@ -92,9 +103,9 @@
     move-result-object p1
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzhs:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zza:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzht:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v1, p0, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;->zzc:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 

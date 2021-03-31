@@ -19,7 +19,7 @@
 
 
 # static fields
-.field public static final zzavr:Lcom/google/android/gms/internal/gtm/zzqp;
+.field private static final zzavr:Lcom/google/android/gms/internal/gtm/zzqp;
 
 
 # direct methods

@@ -7,25 +7,25 @@
 
 
 # static fields
-.field public static final APP_VERSION:I = 0x1
+.field private static final APP_VERSION:I = 0x1
 
-.field public static final TAG:Ljava/lang/String; = "DiskLruCacheWrapper"
+.field private static final TAG:Ljava/lang/String; = "DiskLruCacheWrapper"
 
-.field public static final VALUE_COUNT:I = 0x1
+.field private static final VALUE_COUNT:I = 0x1
 
-.field public static wrapper:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+.field private static wrapper:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
 
 
 # instance fields
-.field public final directory:Ljava/io/File;
+.field private final directory:Ljava/io/File;
 
-.field public diskLruCache:Lcom/bumptech/glide/disklrucache/DiskLruCache;
+.field private diskLruCache:Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
-.field public final maxSize:J
+.field private final maxSize:J
 
-.field public final safeKeyGenerator:Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;
+.field private final safeKeyGenerator:Lcom/bumptech/glide/load/engine/cache/SafeKeyGenerator;
 
-.field public final writeLocker:Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker;
+.field private final writeLocker:Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker;
 
 
 # direct methods
@@ -113,6 +113,11 @@
 
 .method private declared-synchronized getDiskCache()Lcom/bumptech/glide/disklrucache/DiskLruCache;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 

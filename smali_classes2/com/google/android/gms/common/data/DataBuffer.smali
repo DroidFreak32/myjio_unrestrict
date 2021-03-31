@@ -1,8 +1,10 @@
 .class public interface abstract Lcom/google/android/gms/common/data/DataBuffer;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Releasable;
+.implements Ljava/io/Closeable;
 .implements Ljava/lang/Iterable;
 
 
@@ -14,6 +16,7 @@
         ">",
         "Ljava/lang/Object;",
         "Lcom/google/android/gms/common/api/Releasable;",
+        "Ljava/io/Closeable;",
         "Ljava/lang/Iterable<",
         "TT;>;"
     }
@@ -22,8 +25,6 @@
 
 # virtual methods
 .method public abstract close()V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 .end method
 
 .method public abstract get(I)Ljava/lang/Object;
@@ -38,6 +39,9 @@
 .end method
 
 .method public abstract getMetadata()Landroid/os/Bundle;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 .end method

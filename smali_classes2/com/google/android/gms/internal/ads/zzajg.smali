@@ -1,43 +1,62 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzajg;
+.class public final Lcom/google/android/gms/internal/ads/zzajg;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lcom/google/android/gms/ads/initialization/InitializationStatus;
+
+
+# instance fields
+.field private final zzdhq:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lcom/google/android/gms/ads/initialization/AdapterStatus;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/Map;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lcom/google/android/gms/ads/initialization/AdapterStatus;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzajg;->zzdhq:Ljava/util/Map;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Lcom/google/android/gms/internal/ads/zzajk;)V
-.end method
+.method public final getAdapterStatusMap()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lcom/google/android/gms/ads/initialization/AdapterStatus;",
+            ">;"
+        }
+    .end annotation
 
-.method public abstract zzc(Landroid/os/Bundle;)V
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzajg;->zzdhq:Ljava/util/Map;
 
-.method public abstract zzc(Lcom/google/android/gms/dynamic/IObjectWrapper;I)V
-.end method
-
-.method public abstract zzd(Lcom/google/android/gms/dynamic/IObjectWrapper;I)V
-.end method
-
-.method public abstract zzs(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzt(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzu(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzv(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzw(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzx(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzy(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
-.end method
-
-.method public abstract zzz(Lcom/google/android/gms/dynamic/IObjectWrapper;)V
+    return-object v0
 .end method

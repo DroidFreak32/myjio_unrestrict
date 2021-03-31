@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final zzmf:Lcom/google/android/gms/internal/clearcut/zzdj;
+.field private static final zzmf:Lcom/google/android/gms/internal/clearcut/zzdj;
 
-.field public static final zzmg:Lcom/google/android/gms/internal/clearcut/zzdj;
+.field private static final zzmg:Lcom/google/android/gms/internal/clearcut/zzdj;
 
 
 # direct methods
@@ -43,12 +43,12 @@
     return-object v0
 .end method
 
-.method public static zzce()Lcom/google/android/gms/internal/clearcut/zzdj;
+.method private static zzce()Lcom/google/android/gms/internal/clearcut/zzdj;
     .locals 3
 
+    :try_start_0
     const-string v0, "com.google.protobuf.MapFieldSchemaFull"
 
-    :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0

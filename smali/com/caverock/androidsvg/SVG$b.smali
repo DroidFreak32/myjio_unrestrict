@@ -92,10 +92,10 @@
 
 
 # virtual methods
-.method public a()F
+.method public b()F
     .locals 2
 
-    .line 2
+    .line 1
     iget v0, p0, Lcom/caverock/androidsvg/SVG$b;->a:F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->c:F
@@ -105,10 +105,46 @@
     return v0
 .end method
 
-.method public a(Lcom/caverock/androidsvg/SVG$b;)V
+.method public c()F
     .locals 2
 
-    .line 3
+    .line 1
+    iget v0, p0, Lcom/caverock/androidsvg/SVG$b;->b:F
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->d:F
+
+    add-float/2addr v0, v1
+
+    return v0
+.end method
+
+.method public d()Landroid/graphics/RectF;
+    .locals 5
+
+    .line 1
+    new-instance v0, Landroid/graphics/RectF;
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->a:F
+
+    iget v2, p0, Lcom/caverock/androidsvg/SVG$b;->b:F
+
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVG$b;->b()F
+
+    move-result v3
+
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVG$b;->c()F
+
+    move-result v4
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    return-object v0
+.end method
+
+.method public e(Lcom/caverock/androidsvg/SVG$b;)V
+    .locals 2
+
+    .line 1
     iget v0, p1, Lcom/caverock/androidsvg/SVG$b;->a:F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->a:F
@@ -119,7 +155,7 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$b;->a:F
 
-    .line 4
+    .line 2
     :cond_0
     iget v0, p1, Lcom/caverock/androidsvg/SVG$b;->b:F
 
@@ -131,32 +167,8 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$b;->b:F
 
-    .line 5
+    .line 3
     :cond_1
-    invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$b;->a()F
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVG$b;->a()F
-
-    move-result v1
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_2
-
-    invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$b;->a()F
-
-    move-result v0
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->a:F
-
-    sub-float/2addr v0, v1
-
-    iput v0, p0, Lcom/caverock/androidsvg/SVG$b;->c:F
-
-    .line 6
-    :cond_2
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$b;->b()F
 
     move-result v0
@@ -167,9 +179,33 @@
 
     cmpl-float v0, v0, v1
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_2
 
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$b;->b()F
+
+    move-result v0
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->a:F
+
+    sub-float/2addr v0, v1
+
+    iput v0, p0, Lcom/caverock/androidsvg/SVG$b;->c:F
+
+    .line 4
+    :cond_2
+    invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$b;->c()F
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVG$b;->c()F
+
+    move-result v1
+
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_3
+
+    invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$b;->c()F
 
     move-result p1
 
@@ -181,19 +217,6 @@
 
     :cond_3
     return-void
-.end method
-
-.method public b()F
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lcom/caverock/androidsvg/SVG$b;->b:F
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVG$b;->d:F
-
-    add-float/2addr v0, v1
-
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

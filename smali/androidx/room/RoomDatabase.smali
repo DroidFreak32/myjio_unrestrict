@@ -6,24 +6,30 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/room/RoomDatabase$b;,
-        Landroidx/room/RoomDatabase$c;,
-        Landroidx/room/RoomDatabase$a;,
+        Landroidx/room/RoomDatabase$Callback;,
+        Landroidx/room/RoomDatabase$MigrationContainer;,
+        Landroidx/room/RoomDatabase$Builder;,
         Landroidx/room/RoomDatabase$JournalMode;
     }
 .end annotation
 
 
 # static fields
-.field public static final DB_IMPL_SUFFIX:Ljava/lang/String; = "_Impl"
+.field private static final DB_IMPL_SUFFIX:Ljava/lang/String; = "_Impl"
 
 .field public static final MAX_BIND_PARAMETER_CNT:I = 0x3e7
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public mAllowMainThreadQueries:Z
+.field private mAllowMainThreadQueries:Z
 
-.field public final mBackingFieldMap:Ljava/util/Map;
+.field private final mBackingFieldMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -35,10 +41,13 @@
 .end field
 
 .field public mCallbacks:Ljava/util/List;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Landroidx/room/RoomDatabase$b;",
+            "Landroidx/room/RoomDatabase$Callback;",
             ">;"
         }
     .end annotation
@@ -47,20 +56,20 @@
     .end annotation
 .end field
 
-.field public final mCloseLock:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+.field private final mCloseLock:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
-.field public volatile mDatabase:Lbi;
+.field public volatile mDatabase:Landroidx/sqlite/db/SupportSQLiteDatabase;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
-.field public final mInvalidationTracker:Leh;
+.field private final mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-.field public mOpenHelper:Lci;
+.field private mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-.field public mQueryExecutor:Ljava/util/concurrent/Executor;
+.field private mQueryExecutor:Ljava/util/concurrent/Executor;
 
-.field public final mSuspendingTransactionId:Ljava/lang/ThreadLocal;
+.field private final mSuspendingTransactionId:Ljava/lang/ThreadLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ThreadLocal<",
@@ -70,7 +79,7 @@
     .end annotation
 .end field
 
-.field public mTransactionExecutor:Ljava/util/concurrent/Executor;
+.field private mTransactionExecutor:Ljava/util/concurrent/Executor;
 
 .field public mWriteAheadLoggingEnabled:Z
 
@@ -104,16 +113,16 @@
     iput-object v0, p0, Landroidx/room/RoomDatabase;->mBackingFieldMap:Ljava/util/Map;
 
     .line 5
-    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->createInvalidationTracker()Leh;
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->createInvalidationTracker()Landroidx/room/InvalidationTracker;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iput-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
     return-void
 .end method
 
-.method public static isMainThread()Z
+.method private static isMainThread()Z
     .locals 2
 
     .line 1
@@ -146,6 +155,11 @@
 # virtual methods
 .method public assertNotMainThread()V
     .locals 2
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Landroidx/room/RoomDatabase;->mAllowMainThreadQueries:Z
@@ -177,6 +191,11 @@
 
 .method public assertNotSuspendingTransaction()V
     .locals 2
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->inTransaction()Z
@@ -219,24 +238,26 @@
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
 
     .line 2
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
     .line 3
-    iget-object v1, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iget-object v1, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-    invoke-virtual {v1, v0}, Leh;->b(Lbi;)V
+    invoke-virtual {v1, v0}, Landroidx/room/InvalidationTracker;->j(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     .line 4
-    invoke-interface {v0}, Lbi;->beginTransaction()V
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->beginTransaction()V
 
     return-void
 .end method
 
 .method public abstract clearAllTables()V
+    .annotation build Landroidx/annotation/WorkerThread;
+    .end annotation
 .end method
 
 .method public close()V
@@ -261,14 +282,14 @@
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 4
-    iget-object v1, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iget-object v1, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-    invoke-virtual {v1}, Leh;->c()V
+    invoke-virtual {v1}, Landroidx/room/InvalidationTracker;->g()V
 
     .line 5
-    iget-object v1, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v1, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v1}, Lci;->close()V
+    invoke-interface {v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -290,8 +311,12 @@
     return-void
 .end method
 
-.method public compileStatement(Ljava/lang/String;)Lfi;
+.method public compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
@@ -300,23 +325,27 @@
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
     .line 3
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lbi;->f(Ljava/lang/String;)Lfi;
+    invoke-interface {v0, p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public abstract createInvalidationTracker()Leh;
+.method public abstract createInvalidationTracker()Landroidx/room/InvalidationTracker;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method
 
-.method public abstract createOpenHelper(Lyg;)Lci;
+.method public abstract createOpenHelper(Landroidx/room/DatabaseConfiguration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method
 
 .method public endTransaction()V
@@ -325,13 +354,13 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lbi;->endTransaction()V
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->endTransaction()V
 
     .line 2
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->inTransaction()Z
@@ -341,9 +370,9 @@
     if-nez v0, :cond_0
 
     .line 3
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-    invoke-virtual {v0}, Leh;->b()V
+    invoke-virtual {v0}, Landroidx/room/InvalidationTracker;->refreshVersionsAsync()V
 
     :cond_0
     return-void
@@ -351,6 +380,12 @@
 
 .method public getBackingFieldMap()Ljava/util/Map;
     .locals 1
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -380,26 +415,32 @@
     return-object v0
 .end method
 
-.method public getInvalidationTracker()Leh;
+.method public getInvalidationTracker()Landroidx/room/InvalidationTracker;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
     return-object v0
 .end method
 
-.method public getOpenHelper()Lci;
+.method public getOpenHelper()Landroidx/sqlite/db/SupportSQLiteOpenHelper;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     return-object v0
 .end method
 
 .method public getQueryExecutor()Ljava/util/concurrent/Executor;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroidx/room/RoomDatabase;->mQueryExecutor:Ljava/util/concurrent/Executor;
@@ -409,6 +450,12 @@
 
 .method public getSuspendingTransactionId()Ljava/lang/ThreadLocal;
     .locals 1
+    .annotation build Landroidx/annotation/RestrictTo;
+        value = {
+            .enum Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -426,6 +473,8 @@
 
 .method public getTransactionExecutor()Ljava/util/concurrent/Executor;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Landroidx/room/RoomDatabase;->mTransactionExecutor:Ljava/util/concurrent/Executor;
@@ -437,41 +486,45 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lbi;->E()Z
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public init(Lyg;)V
+.method public init(Landroidx/room/DatabaseConfiguration;)V
     .locals 3
+    .param p1    # Landroidx/room/DatabaseConfiguration;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/CallSuper;
+    .end annotation
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/room/RoomDatabase;->createOpenHelper(Lyg;)Lci;
+    invoke-virtual {p0, p1}, Landroidx/room/RoomDatabase;->createOpenHelper(Landroidx/room/DatabaseConfiguration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iput-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
     .line 2
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
-
-    instance-of v1, v0, Llh;
+    instance-of v1, v0, Ls4;
 
     if-eqz v1, :cond_0
 
     .line 3
-    check-cast v0, Llh;
+    check-cast v0, Ls4;
 
     .line 4
-    invoke-virtual {v0, p1}, Llh;->a(Lyg;)V
+    invoke-virtual {v0, p1}, Ls4;->b(Landroidx/room/DatabaseConfiguration;)V
 
     .line 5
     :cond_0
@@ -484,7 +537,7 @@
     if-lt v0, v1, :cond_2
 
     .line 6
-    iget-object v0, p1, Lyg;->g:Landroidx/room/RoomDatabase$JournalMode;
+    iget-object v0, p1, Landroidx/room/DatabaseConfiguration;->journalMode:Landroidx/room/RoomDatabase$JournalMode;
 
     sget-object v1, Landroidx/room/RoomDatabase$JournalMode;->WRITE_AHEAD_LOGGING:Landroidx/room/RoomDatabase$JournalMode;
 
@@ -496,32 +549,32 @@
 
     .line 7
     :cond_1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0, v2}, Lci;->setWriteAheadLoggingEnabled(Z)V
+    invoke-interface {v0, v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->setWriteAheadLoggingEnabled(Z)V
 
     .line 8
     :cond_2
-    iget-object v0, p1, Lyg;->e:Ljava/util/List;
+    iget-object v0, p1, Landroidx/room/DatabaseConfiguration;->callbacks:Ljava/util/List;
 
     iput-object v0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     .line 9
-    iget-object v0, p1, Lyg;->h:Ljava/util/concurrent/Executor;
+    iget-object v0, p1, Landroidx/room/DatabaseConfiguration;->queryExecutor:Ljava/util/concurrent/Executor;
 
     iput-object v0, p0, Landroidx/room/RoomDatabase;->mQueryExecutor:Ljava/util/concurrent/Executor;
 
     .line 10
-    new-instance v0, Lph;
+    new-instance v0, Lu4;
 
-    iget-object v1, p1, Lyg;->i:Ljava/util/concurrent/Executor;
+    iget-object v1, p1, Landroidx/room/DatabaseConfiguration;->transactionExecutor:Ljava/util/concurrent/Executor;
 
-    invoke-direct {v0, v1}, Lph;-><init>(Ljava/util/concurrent/Executor;)V
+    invoke-direct {v0, v1}, Lu4;-><init>(Ljava/util/concurrent/Executor;)V
 
     iput-object v0, p0, Landroidx/room/RoomDatabase;->mTransactionExecutor:Ljava/util/concurrent/Executor;
 
     .line 11
-    iget-boolean v0, p1, Lyg;->f:Z
+    iget-boolean v0, p1, Landroidx/room/DatabaseConfiguration;->allowMainThreadQueries:Z
 
     iput-boolean v0, p0, Landroidx/room/RoomDatabase;->mAllowMainThreadQueries:Z
 
@@ -529,30 +582,34 @@
     iput-boolean v2, p0, Landroidx/room/RoomDatabase;->mWriteAheadLoggingEnabled:Z
 
     .line 13
-    iget-boolean v0, p1, Lyg;->j:Z
+    iget-boolean v0, p1, Landroidx/room/DatabaseConfiguration;->multiInstanceInvalidation:Z
 
     if-eqz v0, :cond_3
 
     .line 14
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-    iget-object v1, p1, Lyg;->b:Landroid/content/Context;
+    iget-object v1, p1, Landroidx/room/DatabaseConfiguration;->context:Landroid/content/Context;
 
-    iget-object p1, p1, Lyg;->c:Ljava/lang/String;
+    iget-object p1, p1, Landroidx/room/DatabaseConfiguration;->name:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, p1}, Leh;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p1}, Landroidx/room/InvalidationTracker;->e(Landroid/content/Context;Ljava/lang/String;)V
 
     :cond_3
     return-void
 .end method
 
-.method public internalInitInvalidationTracker(Lbi;)V
+.method public internalInitInvalidationTracker(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 1
+    .param p1    # Landroidx/sqlite/db/SupportSQLiteDatabase;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Leh;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mInvalidationTracker:Landroidx/room/InvalidationTracker;
 
-    invoke-virtual {v0, p1}, Leh;->a(Lbi;)V
+    invoke-virtual {v0, p1}, Landroidx/room/InvalidationTracker;->c(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     return-void
 .end method
@@ -561,12 +618,12 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mDatabase:Lbi;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mDatabase:Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     if-eqz v0, :cond_0
 
     .line 2
-    invoke-interface {v0}, Lbi;->isOpen()Z
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->isOpen()Z
 
     move-result v0
 
@@ -583,21 +640,37 @@
     return v0
 .end method
 
-.method public query(Lei;)Landroid/database/Cursor;
+.method public query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
     .locals 1
+    .param p1    # Landroidx/sqlite/db/SupportSQLiteQuery;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     const/4 v0, 0x0
 
     .line 2
-    invoke-virtual {p0, p1, v0}, Landroidx/room/RoomDatabase;->query(Lei;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-virtual {p0, p1, v0}, Landroidx/room/RoomDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public query(Lei;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+.method public query(Landroidx/sqlite/db/SupportSQLiteQuery;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
     .locals 2
+    .param p1    # Landroidx/sqlite/db/SupportSQLiteQuery;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/os/CancellationSignal;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 3
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
@@ -615,13 +688,13 @@
     if-lt v0, v1, :cond_0
 
     .line 6
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lbi;->a(Lei;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-interface {v0, p1, p2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -629,13 +702,13 @@
 
     .line 7
     :cond_0
-    iget-object p2, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object p2, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {p2}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {p2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object p2
 
-    invoke-interface {p2, p1}, Lbi;->a(Lei;)Landroid/database/Cursor;
+    invoke-interface {p2, p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -644,19 +717,29 @@
 
 .method public query(Ljava/lang/String;[Ljava/lang/Object;)Landroid/database/Cursor;
     .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # [Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
-    new-instance v1, Lai;
+    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
 
-    invoke-direct {v1, p1, p2}, Lai;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {v1, p1, p2}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-interface {v0, v1}, Lbi;->a(Lei;)Landroid/database/Cursor;
+    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -665,6 +748,10 @@
 
 .method public runInTransaction(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
     .locals 0
+    .param p1    # Ljava/util/concurrent/Callable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -706,33 +793,40 @@
 
     .line 10
     :try_start_1
-    invoke-static {p1}, Lvh;->a(Ljava/lang/Exception;)V
+    invoke-static {p1}, Landroidx/room/util/SneakyThrow;->reThrow(Ljava/lang/Exception;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/4 p1, 0x0
 
-    throw p1
+    .line 11
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    return-object p1
 
     :catch_1
     move-exception p1
 
-    .line 11
+    .line 12
     :try_start_2
     throw p1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 12
+    .line 13
     :goto_0
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 13
+    .line 14
     throw p1
 .end method
 
 .method public runInTransaction(Ljava/lang/Runnable;)V
     .locals 0
+    .param p1    # Ljava/lang/Runnable;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
@@ -766,13 +860,13 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Lci;
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
-    invoke-interface {v0}, Lci;->getWritableDatabase()Lbi;
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lbi;->setTransactionSuccessful()V
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->setTransactionSuccessful()V
 
     return-void
 .end method

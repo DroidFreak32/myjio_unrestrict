@@ -1,53 +1,49 @@
-.class public final Lt3;
+.class public Lt3;
 .super Ljava/lang/Object;
-.source "R.java"
+.source "EmptyActivityLifecycleCallbacks.java"
+
+# interfaces
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
-# static fields
-.field public static final browser_actions_context_menu_max_width:I = 0x7f0700c7
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.field public static final browser_actions_context_menu_min_padding:I = 0x7f0700c8
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static final compat_button_inset_horizontal_material:I = 0x7f07010c
+    return-void
+.end method
 
-.field public static final compat_button_inset_vertical_material:I = 0x7f07010d
 
-.field public static final compat_button_padding_horizontal_material:I = 0x7f07010e
+# virtual methods
+.method public onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 0
 
-.field public static final compat_button_padding_vertical_material:I = 0x7f07010f
+    return-void
+.end method
 
-.field public static final compat_control_corner_material:I = 0x7f070110
+.method public onActivityPaused(Landroid/app/Activity;)V
+    .locals 0
 
-.field public static final compat_notification_large_icon_max_height:I = 0x7f070111
+    return-void
+.end method
 
-.field public static final compat_notification_large_icon_max_width:I = 0x7f070112
+.method public onActivityResumed(Landroid/app/Activity;)V
+    .locals 0
 
-.field public static final notification_action_icon_size:I = 0x7f0703bd
+    return-void
+.end method
 
-.field public static final notification_action_text_size:I = 0x7f0703c0
+.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
 
-.field public static final notification_big_circle_margin:I = 0x7f0703c1
+    return-void
+.end method
 
-.field public static final notification_content_margin_start:I = 0x7f0703c8
+.method public onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
 
-.field public static final notification_large_icon_height:I = 0x7f0703cc
-
-.field public static final notification_large_icon_width:I = 0x7f0703cd
-
-.field public static final notification_main_column_padding_top:I = 0x7f0703ce
-
-.field public static final notification_media_narrow_margin:I = 0x7f0703d0
-
-.field public static final notification_right_icon_size:I = 0x7f0703d1
-
-.field public static final notification_right_side_padding_top:I = 0x7f0703d2
-
-.field public static final notification_small_icon_background_padding:I = 0x7f0703d4
-
-.field public static final notification_small_icon_size_as_large:I = 0x7f0703d5
-
-.field public static final notification_subtext_size:I = 0x7f0703d6
-
-.field public static final notification_top_pad:I = 0x7f0703d7
-
-.field public static final notification_top_pad_large_text:I = 0x7f0703d8
+    return-void
+.end method

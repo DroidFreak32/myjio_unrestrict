@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/ads/mediation/MediationNativeListener;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 
 # virtual methods
@@ -10,6 +11,15 @@
 .end method
 
 .method public abstract onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;I)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
+.method public abstract onAdFailedToLoad(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;Lcom/google/android/gms/ads/AdError;)V
+    .param p2    # Lcom/google/android/gms/ads/AdError;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract onAdImpression(Lcom/google/android/gms/ads/mediation/MediationNativeAdapter;)V

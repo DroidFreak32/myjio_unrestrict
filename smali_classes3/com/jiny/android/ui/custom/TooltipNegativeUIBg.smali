@@ -11,34 +11,16 @@
 
 
 # instance fields
-.field public J:Z
+.field public K:Z
 
-.field public K:Landroid/graphics/Rect;
+.field public L:Landroid/graphics/Rect;
 
-.field public L:Z
+.field public M:Z
 
-.field public M:Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;
+.field public N:Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    invoke-static {}, Lcom/jiny/android/ui/custom/NegativeUIView;->getDefaultProps()Lcom/jiny/android/ui/custom/NegativeUIView$b;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, v0}, Lcom/jiny/android/ui/custom/NegativeUIView;-><init>(Landroid/content/Context;Lcom/jiny/android/ui/custom/NegativeUIView$b;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->J:Z
-
-    invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->setShouldHighlightAreaBeClickable(Z)V
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
@@ -46,7 +28,7 @@
 
     const/4 p1, 0x0
 
-    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->J:Z
+    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->K:Z
 
     invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->setShouldHighlightAreaBeClickable(Z)V
 
@@ -60,17 +42,17 @@
 
     const/4 p1, 0x0
 
-    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->J:Z
+    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->K:Z
 
     invoke-virtual {p0, p1}, Lcom/jiny/android/ui/custom/NegativeUIView;->setShouldHighlightAreaBeClickable(Z)V
 
     return-void
 .end method
 
-.method private a(FF)Z
+.method private d(FF)Z
     .locals 3
 
-    iget-object v0, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->K:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->L:Landroid/graphics/Rect;
 
     const/4 v1, 0x1
 
@@ -126,7 +108,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    iget-boolean v0, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->L:Z
+    iget-boolean v0, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->M:Z
 
     if-eqz v0, :cond_0
 
@@ -139,7 +121,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    iget-boolean v0, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->J:Z
+    iget-boolean v0, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->K:Z
 
     const/4 v1, 0x0
 
@@ -156,13 +138,13 @@
 
     move-result v2
 
-    invoke-direct {p0, v0, v2}, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->a(FF)Z
+    invoke-direct {p0, v0, v2}, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->d(FF)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    iget-object p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->M:Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;
+    iget-object p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->N:Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;
 
     if-eqz p1, :cond_1
 
@@ -182,7 +164,7 @@
 .method public setDismissOnOutsideClick(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->J:Z
+    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->K:Z
 
     return-void
 .end method
@@ -190,7 +172,7 @@
 .method public setNegativeUI(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->L:Z
+    iput-boolean p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->M:Z
 
     return-void
 .end method
@@ -198,7 +180,7 @@
 .method public setOnOutsideTooltipClickListener(Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->M:Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->N:Lcom/jiny/android/ui/custom/TooltipNegativeUIBg$a;
 
     return-void
 .end method
@@ -206,7 +188,7 @@
 .method public setToolTipPosition(Landroid/graphics/Rect;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->K:Landroid/graphics/Rect;
+    iput-object p1, p0, Lcom/jiny/android/ui/custom/TooltipNegativeUIBg;->L:Landroid/graphics/Rect;
 
     return-void
 .end method

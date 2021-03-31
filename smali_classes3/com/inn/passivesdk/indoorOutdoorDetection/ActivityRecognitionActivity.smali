@@ -16,15 +16,15 @@
 
 
 # instance fields
-.field public THRESHOLD:I
+.field private THRESHOLD:I
 
-.field public indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-.field public semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+.field private semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
 
 # direct methods
@@ -146,27 +146,25 @@
     iput-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
     .line 20
-    iget-object p1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->listProfile:[Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->indoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    aput-object v0, p1, v1
+    aput-object v1, v0, v2
 
     .line 21
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    iget-object v1, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->semi:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    aput-object v0, p1, v1
-
-    .line 22
-    iget-object v0, p0, Lcom/inn/passivesdk/indoorOutdoorDetection/ActivityRecognitionActivity;->outdoor:Lcom/inn/passivesdk/indoorOutdoorDetection/DetectionProfile;
+    aput-object v1, v0, v2
 
     const/4 v1, 0x2
 
-    aput-object v0, p1, v1
+    .line 22
+    aput-object p1, v0, v1
 
     return-void
 .end method

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final QUEUE:Ljava/util/Queue;
+.field private static final QUEUE:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",
@@ -16,9 +16,9 @@
 
 
 # instance fields
-.field public exception:Ljava/io/IOException;
+.field private exception:Ljava/io/IOException;
 
-.field public wrapped:Ljava/io/InputStream;
+.field private wrapped:Ljava/io/InputStream;
 
 
 # direct methods
@@ -47,7 +47,7 @@
 .end method
 
 .method public static clearQueue()V
-    .locals 1
+    .locals 2
 
     .line 1
     :goto_0
@@ -55,13 +55,11 @@
 
     invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     .line 2
-    sget-object v0, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->QUEUE:Ljava/util/Queue;
-
     invoke-interface {v0}, Ljava/util/Queue;->remove()Ljava/lang/Object;
 
     goto :goto_0
@@ -72,6 +70,12 @@
 
 .method public static obtain(Ljava/io/InputStream;)Lcom/bumptech/glide/util/ExceptionCatchingInputStream;
     .locals 2
+    .param p0    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->QUEUE:Ljava/util/Queue;
@@ -80,9 +84,7 @@
 
     .line 2
     :try_start_0
-    sget-object v1, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->QUEUE:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -122,6 +124,11 @@
 # virtual methods
 .method public available()I
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->wrapped:Ljava/io/InputStream;
@@ -135,6 +142,11 @@
 
 .method public close()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->wrapped:Ljava/io/InputStream;
@@ -146,6 +158,8 @@
 
 .method public getException()Ljava/io/IOException;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->exception:Ljava/io/IOException;
@@ -276,9 +290,7 @@
 
     .line 4
     :try_start_0
-    sget-object v1, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->QUEUE:Ljava/util/Queue;
-
-    invoke-interface {v1, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
     .line 5
     monitor-exit v0
@@ -297,6 +309,11 @@
 
 .method public declared-synchronized reset()V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     monitor-enter p0
 
@@ -323,6 +340,10 @@
 
 .method public setInputStream(Ljava/io/InputStream;)V
     .locals 0
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/util/ExceptionCatchingInputStream;->wrapped:Ljava/io/InputStream;

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public s:I
+.field public a:I
 
-.field public t:Landroid/view/View;
+.field public b:Landroid/view/View;
 
-.field public u:I
+.field public c:I
 
 
 # direct methods
@@ -21,17 +21,17 @@
     const/4 p1, -0x1
 
     .line 2
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     const/4 p1, 0x0
 
     .line 3
-    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     const/4 v0, 0x4
 
     .line 4
-    iput v0, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iput v0, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     .line 5
     invoke-virtual {p0, p1}, Landroidx/constraintlayout/widget/Placeholder;->a(Landroid/util/AttributeSet;)V
@@ -48,17 +48,17 @@
     const/4 p1, -0x1
 
     .line 7
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     const/4 p1, 0x0
 
     .line 8
-    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     const/4 p1, 0x4
 
     .line 9
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     .line 10
     invoke-virtual {p0, p2}, Landroidx/constraintlayout/widget/Placeholder;->a(Landroid/util/AttributeSet;)V
@@ -75,19 +75,46 @@
     const/4 p1, -0x1
 
     .line 12
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     const/4 p1, 0x0
 
     .line 13
-    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     const/4 p1, 0x4
 
     .line 14
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     .line 15
+    invoke-virtual {p0, p2}, Landroidx/constraintlayout/widget/Placeholder;->a(Landroid/util/AttributeSet;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    .locals 0
+
+    .line 16
+    invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    const/4 p1, -0x1
+
+    .line 17
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
+
+    const/4 p1, 0x0
+
+    .line 18
+    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
+
+    const/4 p1, 0x4
+
+    .line 19
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
+
+    .line 20
     invoke-virtual {p0, p2}, Landroidx/constraintlayout/widget/Placeholder;->a(Landroid/util/AttributeSet;)V
 
     return-void
@@ -99,14 +126,14 @@
     .locals 4
 
     .line 1
-    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     invoke-super {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     const/4 v0, -0x1
 
     .line 2
-    iput v0, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iput v0, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     if-eqz p1, :cond_2
 
@@ -115,7 +142,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lt5;->ConstraintLayout_placeholder:[I
+    sget-object v1, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_placeholder:[I
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -137,35 +164,35 @@
     move-result v2
 
     .line 6
-    sget v3, Lt5;->ConstraintLayout_placeholder_content:I
+    sget v3, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_placeholder_content:I
 
     if-ne v2, v3, :cond_0
 
     .line 7
-    iget v3, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iget v3, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    iput v2, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iput v2, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     goto :goto_1
 
     .line 8
     :cond_0
-    sget v3, Lt5;->ConstraintLayout_placeholder_emptyVisibility:I
+    sget v3, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_placeholder_emptyVisibility:I
 
     if-ne v2, v3, :cond_1
 
     .line 9
-    iget v3, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iget v3, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v2
 
-    iput v2, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iput v2, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     :cond_1
     :goto_1
@@ -177,141 +204,11 @@
     return-void
 .end method
 
-.method public a(Landroidx/constraintlayout/widget/ConstraintLayout;)V
-    .locals 3
-
-    .line 10
-    iget-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
-
-    if-nez p1, :cond_0
-
-    return-void
-
-    .line 11
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
-
-    .line 12
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
-
-    .line 13
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
-
-    .line 14
-    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->k0:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->o(I)V
-
-    .line 15
-    iget-object v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->k0:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-
-    iget-object v2, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->k0:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-
-    invoke-virtual {v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->t()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->p(I)V
-
-    .line 16
-    iget-object p1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->k0:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-
-    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->k0:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-
-    invoke-virtual {v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->j()I
-
-    move-result v1
-
-    invoke-virtual {p1, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->h(I)V
-
-    .line 17
-    iget-object p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->k0:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->o(I)V
-
-    return-void
-.end method
-
-.method public b(Landroidx/constraintlayout/widget/ConstraintLayout;)V
-    .locals 2
-
-    .line 1
-    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Landroid/view/View;->isInEditMode()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 3
-    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    .line 4
-    :cond_0
-    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
-
-    .line 5
-    iget-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
-
-    if-eqz p1, :cond_1
-
-    .line 6
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
-
-    const/4 v0, 0x1
-
-    .line 7
-    iput-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->Z:Z
-
-    .line 8
-    iget-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
-
-    .line 9
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_1
-    return-void
-.end method
-
 .method public getContent()Landroid/view/View;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     return-object v0
 .end method
@@ -320,7 +217,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
     return v0
 .end method
@@ -462,7 +359,7 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     if-ne v0, p1, :cond_0
 
@@ -470,7 +367,7 @@
 
     .line 2
     :cond_0
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
@@ -480,7 +377,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 4
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     .line 5
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -490,16 +387,16 @@
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
 
     .line 6
-    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->Z:Z
+    iput-boolean v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->h:Z
 
     const/4 v0, 0x0
 
     .line 7
-    iput-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->t:Landroid/view/View;
+    iput-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
 
     .line 8
     :cond_1
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->s:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
 
     const/4 v0, -0x1
 
@@ -531,7 +428,134 @@
     .locals 0
 
     .line 1
-    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->u:I
+    iput p1, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
 
+    return-void
+.end method
+
+.method public updatePostMeasure(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    .locals 3
+
+    .line 1
+    iget-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    .line 2
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
+
+    .line 3
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
+
+    .line 4
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
+
+    .line 5
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->s:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVisibility(I)V
+
+    .line 6
+    iget-object v1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->s:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
+
+    iget-object v2, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->s:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
+
+    invoke-virtual {v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getWidth()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setWidth(I)V
+
+    .line 7
+    iget-object p1, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->s:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
+
+    iget-object v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->s:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
+
+    invoke-virtual {v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getHeight()I
+
+    move-result v1
+
+    invoke-virtual {p1, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setHeight(I)V
+
+    .line 8
+    iget-object p1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->s:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVisibility(I)V
+
+    return-void
+.end method
+
+.method public updatePreLayout(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    .locals 2
+
+    .line 1
+    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_0
+
+    .line 2
+    invoke-virtual {p0}, Landroid/view/View;->isInEditMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 3
+    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->c:I
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 4
+    :cond_0
+    iget v0, p0, Landroidx/constraintlayout/widget/Placeholder;->a:I
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
+
+    if-eqz p1, :cond_1
+
+    .line 5
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
+
+    const/4 v0, 0x1
+
+    .line 6
+    iput-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->h:Z
+
+    .line 7
+    iget-object p1, p0, Landroidx/constraintlayout/widget/Placeholder;->b:Landroid/view/View;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 8
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_1
     return-void
 .end method

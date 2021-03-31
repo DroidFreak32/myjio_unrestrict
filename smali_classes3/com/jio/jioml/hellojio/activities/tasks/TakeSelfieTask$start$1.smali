@@ -3,12 +3,12 @@
 .source "TakeSelfieTask.kt"
 
 # interfaces
-.implements Lsq3;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,8 +19,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lsq3<",
-        "Lno3;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
@@ -32,18 +32,19 @@
         0x3
     }
     d1 = {
-        "\u0000\u0008\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002"
+        "\u0000\u0008\n\u0002\u0010\u0002\n\u0002\u0008\u0003\u0010\u0003\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002"
     }
     d2 = {
-        "<anonymous>",
         "",
-        "invoke"
+        "invoke",
+        "()V",
+        "<anonymous>"
     }
     k = 0x3
     mv = {
         0x1,
         0x1,
-        0x10
+        0xf
     }
 .end annotation
 
@@ -77,7 +78,7 @@
     .line 1
     invoke-virtual {p0}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$start$1;->invoke()V
 
-    sget-object v0, Lno3;->a:Lno3;
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
@@ -88,11 +89,11 @@
     .line 2
     iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$start$1;->this$0:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;)Landroid/view/View;
+    invoke-static {v0}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;)Landroid/view/View;
 
     move-result-object v0
 
-    sget v1, Ldn0;->ivSelfie:I
+    sget v1, Lcom/jio/jioml/hellojio/R$id;->ivSelfie:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

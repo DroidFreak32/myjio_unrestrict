@@ -5,6 +5,9 @@
 
 # static fields
 .field public static final DEFAULT_TRANSITION_OPTIONS:Lcom/bumptech/glide/TransitionOptions;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/TransitionOptions<",
@@ -15,9 +18,9 @@
 
 
 # instance fields
-.field public final arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+.field private final arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
 
-.field public final defaultRequestListeners:Ljava/util/List;
+.field private final defaultRequestListeners:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -28,9 +31,9 @@
     .end annotation
 .end field
 
-.field public final defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
+.field private final defaultRequestOptions:Lcom/bumptech/glide/request/RequestOptions;
 
-.field public final defaultTransitionOptions:Ljava/util/Map;
+.field private final defaultTransitionOptions:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -42,15 +45,15 @@
     .end annotation
 .end field
 
-.field public final engine:Lcom/bumptech/glide/load/engine/Engine;
+.field private final engine:Lcom/bumptech/glide/load/engine/Engine;
 
-.field public final imageViewTargetFactory:Lcom/bumptech/glide/request/target/ImageViewTargetFactory;
+.field private final imageViewTargetFactory:Lcom/bumptech/glide/request/target/ImageViewTargetFactory;
 
-.field public final isLoggingRequestOriginsEnabled:Z
+.field private final isLoggingRequestOriginsEnabled:Z
 
-.field public final logLevel:I
+.field private final logLevel:I
 
-.field public final registry:Lcom/bumptech/glide/Registry;
+.field private final registry:Lcom/bumptech/glide/Registry;
 
 
 # direct methods
@@ -69,6 +72,38 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;Lcom/bumptech/glide/Registry;Lcom/bumptech/glide/request/target/ImageViewTargetFactory;Lcom/bumptech/glide/request/RequestOptions;Ljava/util/Map;Ljava/util/List;Lcom/bumptech/glide/load/engine/Engine;ZI)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p3    # Lcom/bumptech/glide/Registry;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/request/target/ImageViewTargetFactory;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p5    # Lcom/bumptech/glide/request/RequestOptions;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p6    # Ljava/util/Map;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p7    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p8    # Lcom/bumptech/glide/load/engine/Engine;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,6 +167,17 @@
 # virtual methods
 .method public buildImageViewTarget(Landroid/widget/ImageView;Ljava/lang/Class;)Lcom/bumptech/glide/request/target/ViewTarget;
     .locals 1
+    .param p1    # Landroid/widget/ImageView;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -158,6 +204,8 @@
 
 .method public getArrayPool()Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->arrayPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
@@ -194,6 +242,13 @@
 
 .method public getDefaultTransitionOptions(Ljava/lang/Class;)Lcom/bumptech/glide/TransitionOptions;
     .locals 4
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -276,6 +331,8 @@
 
 .method public getEngine()Lcom/bumptech/glide/load/engine/Engine;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->engine:Lcom/bumptech/glide/load/engine/Engine;
@@ -294,6 +351,8 @@
 
 .method public getRegistry()Lcom/bumptech/glide/Registry;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/GlideContext;->registry:Lcom/bumptech/glide/Registry;

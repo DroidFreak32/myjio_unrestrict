@@ -56,43 +56,39 @@
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
     .line 2
-    iget-wide p1, p0, Lcom/jcraft/jsch/ChannelSftp$2;->val$skip:J
+    iput-wide p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->offset:J
 
-    iput-wide p1, p0, Lcom/jcraft/jsch/ChannelSftp$2;->offset:J
-
-    const/4 p1, 0x0
+    const/4 p2, 0x0
 
     .line 3
-    iput-boolean p1, p0, Lcom/jcraft/jsch/ChannelSftp$2;->closed:Z
+    iput-boolean p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->closed:Z
 
     .line 4
-    iput p1, p0, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
+    iput p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
-    const/4 p1, 0x1
+    const/4 p2, 0x1
 
-    new-array p2, p1, [B
+    new-array p3, p2, [B
 
     .line 5
-    iput-object p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->_data:[B
+    iput-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$2;->_data:[B
 
-    const/16 p2, 0x400
+    const/16 p3, 0x400
 
-    new-array p2, p2, [B
+    new-array p3, p3, [B
 
     .line 6
-    iput-object p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->rest_byte:[B
+    iput-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$2;->rest_byte:[B
 
     .line 7
-    new-instance p2, Lcom/jcraft/jsch/ChannelSftp$Header;
+    new-instance p3, Lcom/jcraft/jsch/ChannelSftp$Header;
 
-    iget-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
+    invoke-direct {p3, p1}, Lcom/jcraft/jsch/ChannelSftp$Header;-><init>(Lcom/jcraft/jsch/ChannelSftp;)V
 
-    invoke-direct {p2, p3}, Lcom/jcraft/jsch/ChannelSftp$Header;-><init>(Lcom/jcraft/jsch/ChannelSftp;)V
-
-    iput-object p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->header:Lcom/jcraft/jsch/ChannelSftp$Header;
+    iput-object p3, p0, Lcom/jcraft/jsch/ChannelSftp$2;->header:Lcom/jcraft/jsch/ChannelSftp$Header;
 
     .line 8
-    iput p1, p0, Lcom/jcraft/jsch/ChannelSftp$2;->request_max:I
+    iput p2, p0, Lcom/jcraft/jsch/ChannelSftp$2;->request_max:I
 
     .line 9
     iget-wide p1, p0, Lcom/jcraft/jsch/ChannelSftp$2;->offset:J
@@ -106,6 +102,11 @@
 # virtual methods
 .method public close()V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp$2;->closed:Z
@@ -172,6 +173,11 @@
 
 .method public read()I
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp$2;->closed:Z
@@ -211,6 +217,11 @@
 
 .method public read([B)I
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 4
     iget-boolean v0, p0, Lcom/jcraft/jsch/ChannelSftp$2;->closed:Z
@@ -236,6 +247,11 @@
 
 .method public read([BII)I
     .locals 21
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     move-object/from16 v1, p0
 
@@ -254,8 +270,9 @@
 
     return v5
 
+    .line 7
     :cond_0
-    if-eqz v0, :cond_19
+    invoke-static/range {p1 .. p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-ltz v2, :cond_18
 
@@ -263,7 +280,7 @@
 
     add-int v4, v2, v3
 
-    .line 7
+    .line 8
     array-length v6, v0
 
     if-gt v4, v6, :cond_18
@@ -274,7 +291,7 @@
 
     return v4
 
-    .line 8
+    .line 9
     :cond_1
     iget v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
@@ -287,25 +304,25 @@
     :cond_2
     move v3, v6
 
-    .line 9
+    .line 10
     :goto_0
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_byte:[B
 
     invoke-static {v6, v4, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 10
+    .line 11
     iget v0, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
     if-eq v3, v0, :cond_3
 
-    .line 11
+    .line 12
     iget-object v2, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_byte:[B
 
     sub-int/2addr v0, v3
 
     invoke-static {v2, v3, v2, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 12
+    .line 13
     :cond_3
     iget-object v0, v1, Lcom/jcraft/jsch/ChannelSftp$2;->val$monitor:Lcom/jcraft/jsch/SftpProgressMonitor;
 
@@ -313,19 +330,19 @@
 
     int-to-long v6, v3
 
-    .line 13
+    .line 14
     invoke-interface {v0, v6, v7}, Lcom/jcraft/jsch/SftpProgressMonitor;->count(J)Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 14
+    .line 15
     invoke-virtual/range {p0 .. p0}, Lcom/jcraft/jsch/ChannelSftp$2;->close()V
 
     return v5
 
-    .line 15
+    .line 16
     :cond_4
     iget v0, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
@@ -335,7 +352,7 @@
 
     return v3
 
-    .line 16
+    .line 17
     :cond_5
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -351,7 +368,7 @@
 
     if-ge v6, v3, :cond_6
 
-    .line 17
+    .line 18
     iget-object v3, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v3}, Lcom/jcraft/jsch/ChannelSftp;->access$700(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/Buffer;
@@ -364,7 +381,7 @@
 
     add-int/lit8 v3, v3, -0xd
 
-    .line 18
+    .line 19
     :cond_6
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -380,7 +397,7 @@
 
     const/16 v3, 0x400
 
-    .line 19
+    .line 20
     :cond_7
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -396,7 +413,7 @@
 
     if-nez v6, :cond_9
 
-    .line 20
+    .line 21
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v6}, Lcom/jcraft/jsch/ChannelSftp;->access$700(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/Buffer;
@@ -409,7 +426,7 @@
 
     add-int/lit8 v6, v6, -0xd
 
-    .line 21
+    .line 22
     iget-object v9, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v9}, Lcom/jcraft/jsch/ChannelSftp;->access$800(Lcom/jcraft/jsch/ChannelSftp;)I
@@ -418,26 +435,28 @@
 
     if-nez v9, :cond_8
 
-    const/16 v6, 0x400
+    goto :goto_1
 
-    .line 22
     :cond_8
+    move v7, v6
+
+    .line 23
     :goto_1
-    iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
+    iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
-    invoke-static {v7}, Lcom/jcraft/jsch/ChannelSftp;->access$900(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
+    invoke-static {v6}, Lcom/jcraft/jsch/ChannelSftp;->access$900(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Lcom/jcraft/jsch/ChannelSftp$RequestQueue;->count()I
+    invoke-virtual {v6}, Lcom/jcraft/jsch/ChannelSftp$RequestQueue;->count()I
 
-    move-result v7
+    move-result v6
 
     iget v9, v1, Lcom/jcraft/jsch/ChannelSftp$2;->request_max:I
 
-    if-ge v7, v9, :cond_9
+    if-ge v6, v9, :cond_9
 
-    .line 23
+    .line 24
     :try_start_0
     iget-object v10, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -445,22 +464,20 @@
 
     iget-wide v12, v1, Lcom/jcraft/jsch/ChannelSftp$2;->request_offset:J
 
-    iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
-
-    invoke-static {v7}, Lcom/jcraft/jsch/ChannelSftp;->access$900(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
+    invoke-static {v10}, Lcom/jcraft/jsch/ChannelSftp;->access$900(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
     move-result-object v15
 
-    move v14, v6
+    move v14, v7
 
     invoke-static/range {v10 .. v15}, Lcom/jcraft/jsch/ChannelSftp;->access$1000(Lcom/jcraft/jsch/ChannelSftp;[BJILcom/jcraft/jsch/ChannelSftp$RequestQueue;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 24
+    .line 25
     iget-wide v9, v1, Lcom/jcraft/jsch/ChannelSftp$2;->request_offset:J
 
-    int-to-long v11, v6
+    int-to-long v11, v7
 
     add-long/2addr v9, v11
 
@@ -468,7 +485,7 @@
 
     goto :goto_1
 
-    .line 25
+    .line 26
     :catch_0
     new-instance v0, Ljava/io/IOException;
 
@@ -476,7 +493,7 @@
 
     throw v0
 
-    .line 26
+    .line 27
     :cond_9
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -492,20 +509,18 @@
 
     iput-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->header:Lcom/jcraft/jsch/ChannelSftp$Header;
 
-    .line 27
-    iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->header:Lcom/jcraft/jsch/ChannelSftp$Header;
-
+    .line 28
     iget v7, v6, Lcom/jcraft/jsch/ChannelSftp$Header;->length:I
 
     iput v7, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
-    .line 28
+    .line 29
     iget v7, v6, Lcom/jcraft/jsch/ChannelSftp$Header;->type:I
 
-    .line 29
+    .line 30
     iget v6, v6, Lcom/jcraft/jsch/ChannelSftp$Header;->rid:I
 
-    .line 30
+    .line 31
     :try_start_1
     iget-object v6, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -534,7 +549,7 @@
 
     goto :goto_2
 
-    .line 31
+    .line 32
     :cond_a
     new-instance v0, Ljava/io/IOException;
 
@@ -548,7 +563,7 @@
 
     if-ne v7, v9, :cond_d
 
-    .line 32
+    .line 33
     iget-object v0, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v0}, Lcom/jcraft/jsch/ChannelSftp;->access$700(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/Buffer;
@@ -559,7 +574,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/jcraft/jsch/ChannelSftp;->access$1100(Lcom/jcraft/jsch/ChannelSftp;Lcom/jcraft/jsch/Buffer;I)V
 
-    .line 33
+    .line 34
     iget-object v0, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v0}, Lcom/jcraft/jsch/ChannelSftp;->access$700(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/Buffer;
@@ -570,17 +585,17 @@
 
     move-result v0
 
-    .line 34
+    .line 35
     iput v4, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
     if-ne v0, v10, :cond_c
 
-    .line 35
+    .line 36
     invoke-virtual/range {p0 .. p0}, Lcom/jcraft/jsch/ChannelSftp$2;->close()V
 
     return v5
 
-    .line 36
+    .line 37
     :cond_c
     new-instance v0, Ljava/io/IOException;
 
@@ -588,7 +603,7 @@
 
     throw v0
 
-    .line 37
+    .line 38
     :cond_d
     iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
@@ -598,7 +613,7 @@
 
     invoke-virtual {v7}, Lcom/jcraft/jsch/Buffer;->rewind()V
 
-    .line 38
+    .line 39
     iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v7}, Lcom/jcraft/jsch/ChannelSftp;->access$700(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/Buffer;
@@ -611,7 +626,7 @@
 
     invoke-static {v7, v9, v4, v11}, Lcom/jcraft/jsch/ChannelSftp;->access$1200(Lcom/jcraft/jsch/ChannelSftp;[BII)I
 
-    .line 39
+    .line 40
     iget-object v7, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
 
     invoke-static {v7}, Lcom/jcraft/jsch/ChannelSftp;->access$700(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/Buffer;
@@ -627,9 +642,6 @@
     sub-int/2addr v9, v11
 
     iput v9, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
-
-    .line 40
-    iget v9, v1, Lcom/jcraft/jsch/ChannelSftp$2;->rest_length:I
 
     sub-int/2addr v9, v7
 
@@ -771,9 +783,7 @@
 
     long-to-int v4, v3
 
-    iget-object v3, v1, Lcom/jcraft/jsch/ChannelSftp$2;->this$0:Lcom/jcraft/jsch/ChannelSftp;
-
-    invoke-static {v3}, Lcom/jcraft/jsch/ChannelSftp;->access$900(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
+    invoke-static {v15}, Lcom/jcraft/jsch/ChannelSftp;->access$900(Lcom/jcraft/jsch/ChannelSftp;)Lcom/jcraft/jsch/ChannelSftp$RequestQueue;
 
     move-result-object v20
 
@@ -923,14 +933,6 @@
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
-
-    throw v0
-
-    .line 63
-    :cond_19
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 .end method

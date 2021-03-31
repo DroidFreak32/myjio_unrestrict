@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -17,7 +18,7 @@
 
 
 # instance fields
-.field public final zzer:Ljava/util/List;
+.field private final zza:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -27,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final zzes:Ljava/lang/Object;
+.field private final zzb:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method private constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -42,19 +43,19 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzes:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzb:Ljava/lang/Object;
 
     .line 3
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzer:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zza:Ljava/util/List;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/Object;Lcom/google/android/gms/common/internal/zzq;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;Lcom/google/android/gms/common/internal/zzu;)V
     .locals 0
 
     .line 4
@@ -67,11 +68,22 @@
 # virtual methods
 .method public final add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
     .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzer:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zza:Ljava/util/List;
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -126,6 +138,9 @@
 
 .method public final toString()Ljava/lang/String;
     .locals 4
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -136,7 +151,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzes:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzb:Ljava/lang/Object;
 
     .line 2
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -154,7 +169,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 3
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzer:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zza:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -166,7 +181,7 @@
     if-ge v2, v1, :cond_1
 
     .line 4
-    iget-object v3, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zzer:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->zza:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

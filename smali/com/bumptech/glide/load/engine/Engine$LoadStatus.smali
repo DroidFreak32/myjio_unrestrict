@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final cb:Lcom/bumptech/glide/request/ResourceCallback;
+.field private final cb:Lcom/bumptech/glide/request/ResourceCallback;
 
-.field public final engineJob:Lcom/bumptech/glide/load/engine/EngineJob;
+.field private final engineJob:Lcom/bumptech/glide/load/engine/EngineJob;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/engine/EngineJob<",

@@ -1,39 +1,18 @@
-.class public final Lcom/google/android/gms/internal/vision/zzjm;
-.super Ljava/io/IOException;
+.class public interface abstract Lcom/google/android/gms/internal/vision/zzjm;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/vision/zzjp;
+.implements Ljava/lang/Cloneable;
 
 
-# direct methods
-.method public constructor <init>(II)V
-    .locals 2
+# virtual methods
+.method public abstract zza(Lcom/google/android/gms/internal/vision/zzjn;)Lcom/google/android/gms/internal/vision/zzjm;
+.end method
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+.method public abstract zzgv()Lcom/google/android/gms/internal/vision/zzjn;
+.end method
 
-    const/16 v1, 0x6c
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "CodedOutputStream was writing to a flat byte array and ran out of space (pos "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, " limit "
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ")."
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    return-void
+.method public abstract zzgw()Lcom/google/android/gms/internal/vision/zzjn;
 .end method

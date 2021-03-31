@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public final mAction:Ljava/lang/String;
+.field private final mAction:Ljava/lang/String;
 
-.field public mExtras:Landroid/os/Bundle;
+.field private mExtras:Landroid/os/Bundle;
 
-.field public final mIcon:I
+.field private final mIcon:I
 
-.field public final mName:Ljava/lang/CharSequence;
+.field private final mName:Ljava/lang/CharSequence;
 
 
 # direct methods

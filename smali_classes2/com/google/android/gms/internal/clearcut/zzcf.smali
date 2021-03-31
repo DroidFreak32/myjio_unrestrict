@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final zzjo:Lcom/google/android/gms/internal/clearcut/zzcf;
+.field private static final zzjo:Lcom/google/android/gms/internal/clearcut/zzcf;
 
 
 # direct methods
@@ -22,7 +22,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

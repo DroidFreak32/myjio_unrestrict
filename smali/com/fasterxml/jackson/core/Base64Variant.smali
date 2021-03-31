@@ -11,27 +11,27 @@
 
 .field public static final BASE64_VALUE_PADDING:I = -0x2
 
-.field public static final INT_SPACE:I = 0x20
+.field private static final INT_SPACE:I = 0x20
 
 .field public static final PADDING_CHAR_NONE:C = '\u0000'
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public final transient _asciiToBase64:[I
+.field private final transient _asciiToBase64:[I
 
-.field public final transient _base64ToAsciiB:[B
+.field private final transient _base64ToAsciiB:[B
 
-.field public final transient _base64ToAsciiC:[C
+.field private final transient _base64ToAsciiC:[C
 
-.field public final transient _maxLineLength:I
+.field private final transient _maxLineLength:I
 
 .field public final _name:Ljava/lang/String;
 
-.field public final transient _paddingChar:C
+.field private final transient _paddingChar:C
 
-.field public final transient _usesPadding:Z
+.field private final transient _usesPadding:Z
 
 
 # direct methods
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/lang/String;ZCI)V
-    .locals 3
+    .locals 5
 
     .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,17 +69,17 @@
     .line 19
     iput-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    const/16 v0, 0x40
+    const/16 v1, 0x40
 
-    new-array v1, v0, [C
+    new-array v2, v1, [C
 
     .line 20
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iput-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    new-array v0, v0, [B
+    new-array v1, v1, [B
 
     .line 21
-    iput-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     .line 22
     iput-object p2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_name:Ljava/lang/String;
@@ -88,33 +88,27 @@
     iget-object p2, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     .line 24
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    array-length v3, p2
 
-    array-length v1, p2
+    const/4 v4, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-static {p2, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p2, v4, v1, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 25
     iget-object p2, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
     .line 26
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
-
     array-length v1, p2
 
-    invoke-static {p2, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p2, v4, v2, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 27
     iget-object p1, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
     .line 28
-    iget-object p2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    array-length p2, p1
 
-    array-length v0, p1
-
-    invoke-static {p1, v2, p2, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v4, v0, v4, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 29
     iput-boolean p3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_usesPadding:Z
@@ -129,7 +123,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ZCI)V
-    .locals 2
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -141,17 +135,17 @@
     .line 2
     iput-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    const/16 v0, 0x40
+    const/16 v1, 0x40
 
-    new-array v1, v0, [C
+    new-array v2, v1, [C
 
     .line 3
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iput-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    new-array v1, v0, [B
+    new-array v3, v1, [B
 
     .line 4
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     .line 5
     iput-object p1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_name:Ljava/lang/String;
@@ -170,43 +164,39 @@
 
     move-result p1
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v1, :cond_2
+
+    const/4 p5, 0x0
 
     .line 10
-    iget-object p5, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    invoke-virtual {p2, p5, p1, v2, p5}, Ljava/lang/String;->getChars(II[CI)V
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p2, v0, p1, p5, v0}, Ljava/lang/String;->getChars(II[CI)V
+    const/4 p2, -0x1
 
     .line 11
-    iget-object p2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
-
-    const/4 p5, -0x1
-
-    invoke-static {p2, p5}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {v0, p2}, Ljava/util/Arrays;->fill([II)V
 
     :goto_0
-    if-ge v0, p1, :cond_0
+    if-ge p5, p1, :cond_0
 
     .line 12
     iget-object p2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    aget-char p2, p2, v0
+    aget-char p2, p2, p5
 
     .line 13
-    iget-object p5, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     int-to-byte v1, p2
 
-    aput-byte v1, p5, v0
+    aput-byte v1, v0, p5
 
     .line 14
-    iget-object p5, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    aput v0, p5, p2
+    aput p5, v0, p2
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 p5, p5, 0x1
 
     goto :goto_0
 
@@ -254,6 +244,11 @@
 # virtual methods
 .method public _reportBase64EOF()V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -267,6 +262,11 @@
 
 .method public _reportInvalidBase64(CILjava/lang/String;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     const/16 v0, 0x20
 
@@ -448,6 +448,11 @@
 
 .method public decode(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;)V
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 4
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -700,6 +705,11 @@
 
 .method public decode(Ljava/lang/String;)[B
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;

@@ -16,4 +16,6 @@
 
 # virtual methods
 .method public abstract getVerifier()Lcom/bumptech/glide/util/pool/StateVerifier;
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 .end method

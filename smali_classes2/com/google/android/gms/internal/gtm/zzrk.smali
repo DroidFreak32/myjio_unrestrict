@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public zzbbk:Lcom/google/android/gms/internal/gtm/zzsk;
+.field private zzbbk:Lcom/google/android/gms/internal/gtm/zzsk;
 
 
 # direct methods

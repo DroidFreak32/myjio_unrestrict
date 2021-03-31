@@ -19,32 +19,32 @@
 
 
 # instance fields
-.field public final deviceOrientationMatrix:[F
+.field private final deviceOrientationMatrix:[F
 
-.field public deviceRoll:F
+.field private deviceRoll:F
 
-.field public final projectionMatrix:[F
+.field private final projectionMatrix:[F
 
-.field public final scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
+.field private final scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
 
-.field public final tempMatrix:[F
+.field private final tempMatrix:[F
 
 .field public final synthetic this$0:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;
 
-.field public touchPitch:F
+.field private touchPitch:F
 
-.field public final touchPitchMatrix:[F
+.field private final touchPitchMatrix:[F
 
-.field public final touchYawMatrix:[F
+.field private final touchYawMatrix:[F
 
-.field public final viewMatrix:[F
+.field private final viewMatrix:[F
 
-.field public final viewProjectionMatrix:[F
+.field private final viewProjectionMatrix:[F
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;)V
-    .locals 1
+    .locals 4
 
     .line 1
     iput-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->this$0:Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView;
@@ -68,20 +68,20 @@
     .line 4
     iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->deviceOrientationMatrix:[F
 
-    new-array v0, p1, [F
+    new-array v1, p1, [F
 
     .line 5
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchPitchMatrix:[F
+    iput-object v1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchPitchMatrix:[F
 
-    new-array v0, p1, [F
+    new-array v2, p1, [F
 
     .line 6
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchYawMatrix:[F
+    iput-object v2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchYawMatrix:[F
 
-    new-array v0, p1, [F
+    new-array v3, p1, [F
 
     .line 7
-    iput-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->viewMatrix:[F
+    iput-object v3, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->viewMatrix:[F
 
     new-array p1, p1, [F
 
@@ -91,22 +91,16 @@
     .line 9
     iput-object p2, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->scene:Lcom/google/android/jioexoplayer2/jioui/spherical/SceneRenderer;
 
+    const/4 p1, 0x0
+
     .line 10
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->deviceOrientationMatrix:[F
-
-    const/4 p2, 0x0
-
-    invoke-static {p1, p2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    invoke-static {v0, p1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     .line 11
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchPitchMatrix:[F
-
-    invoke-static {p1, p2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    invoke-static {v1, p1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     .line 12
-    iget-object p1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchYawMatrix:[F
-
-    invoke-static {p1, p2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    invoke-static {v2, p1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     const p1, 0x40490fdb    # (float)Math.PI
 
@@ -175,6 +169,8 @@
 
 .method private updatePitchMatrix()V
     .locals 6
+    .annotation build Landroidx/annotation/AnyThread;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->touchPitchMatrix:[F
@@ -297,6 +293,8 @@
 
 .method public declared-synchronized onScrollChange(Landroid/graphics/PointF;)V
     .locals 7
+    .annotation build Landroidx/annotation/UiThread;
+    .end annotation
 
     monitor-enter p0
 
@@ -408,6 +406,8 @@
 
 .method public declared-synchronized setDeviceOrientation([FF)V
     .locals 3
+    .annotation build Landroidx/annotation/BinderThread;
+    .end annotation
 
     monitor-enter p0
 
@@ -415,9 +415,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->deviceOrientationMatrix:[F
 
-    iget-object v1, p0, Lcom/google/android/jioexoplayer2/jioui/spherical/SphericalSurfaceView$Renderer;->deviceOrientationMatrix:[F
-
-    array-length v1, v1
+    array-length v1, v0
 
     const/4 v2, 0x0
 

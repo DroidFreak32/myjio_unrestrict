@@ -7,13 +7,13 @@
 
 
 # static fields
-.field public static final patternComma:Ljava/util/regex/Pattern;
+.field private static final patternComma:Ljava/util/regex/Pattern;
 
-.field public static final patternSpace:Ljava/util/regex/Pattern;
+.field private static final patternSpace:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field public final providedProtocol:Ljava/lang/String;
+.field private final providedProtocol:Ljava/lang/String;
 
 
 # direct methods
@@ -150,7 +150,9 @@
     if-eqz p1, :cond_2
 
     .line 1
-    const-class v0, Lcom/clevertap/android/sdk/java_websocket/protocols/Protocol;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

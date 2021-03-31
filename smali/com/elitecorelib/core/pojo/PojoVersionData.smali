@@ -6,21 +6,21 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = -0x46abc773753e22cL
+.field private static final serialVersionUID:J = -0x46abc773753e22cL
 
 
 # instance fields
-.field public forceUpdate:Ljava/lang/String;
+.field private forceUpdate:Ljava/lang/String;
 
-.field public releasedate:Ljava/lang/String;
+.field private releasedate:Ljava/lang/String;
 
-.field public url:Ljava/lang/String;
+.field private url:Ljava/lang/String;
 
-.field public version:Ljava/lang/String;
+.field private version:Ljava/lang/String;
 
-.field public versionId:Ljava/lang/Long;
+.field private versionId:Ljava/lang/Long;
 
-.field public versionType:Ljava/lang/String;
+.field private versionType:Ljava/lang/String;
 
 
 # direct methods
@@ -51,7 +51,9 @@
     return v1
 
     :cond_1
-    const-class v2, Lcom/elitecorelib/core/pojo/PojoVersionData;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

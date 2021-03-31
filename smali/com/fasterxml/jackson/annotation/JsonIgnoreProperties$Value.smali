@@ -31,7 +31,7 @@
 # static fields
 .field public static final EMPTY:Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
 
-.field public static final serialVersionUID:J = 0x1L
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
@@ -127,7 +127,7 @@
     return-void
 .end method
 
-.method public static _asSet([Ljava/lang/String;)Ljava/util/Set;
+.method private static _asSet([Ljava/lang/String;)Ljava/util/Set;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -187,7 +187,7 @@
     return-object p0
 .end method
 
-.method public static _empty(Ljava/util/Set;ZZZZ)Z
+.method private static _empty(Ljava/util/Set;ZZZZ)Z
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -235,7 +235,7 @@
     return v2
 .end method
 
-.method public static _equals(Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;)Z
+.method private static _equals(Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;)Z
     .locals 2
 
     .line 1
@@ -284,7 +284,7 @@
     return p0
 .end method
 
-.method public static _merge(Ljava/util/Set;Ljava/util/Set;)Ljava/util/Set;
+.method private static _merge(Ljava/util/Set;Ljava/util/Set;)Ljava/util/Set;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -595,7 +595,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     if-ne v2, v3, :cond_2
 

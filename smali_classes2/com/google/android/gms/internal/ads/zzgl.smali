@@ -1,134 +1,169 @@
-.class public final Lcom/google/android/gms/internal/ads/zzgl;
+.class public abstract Lcom/google/android/gms/internal/ads/zzgl;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final synthetic zzaip:Lcom/google/android/gms/internal/ads/zzgk;
+.field private final TAG:Ljava/lang/String;
+
+.field private final className:Ljava/lang/String;
+
+.field public final zzaay:Lcom/google/android/gms/internal/ads/zzcf$zza$zza;
+
+.field private final zzabg:Ljava/lang/String;
+
+.field public zzabi:Ljava/lang/reflect/Method;
+
+.field private final zzabl:I
+
+.field private final zzabm:I
+
+.field public final zzwb:Lcom/google/android/gms/internal/ads/zzfa;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzgk;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzfa;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzcf$zza$zza;II)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaip:Lcom/google/android/gms/internal/ads/zzgk;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzgl;->TAG:Ljava/lang/String;
+
+    .line 3
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzwb:Lcom/google/android/gms/internal/ads/zzfa;
+
+    .line 4
+    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zzgl;->className:Ljava/lang/String;
+
+    .line 5
+    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabg:Ljava/lang/String;
+
+    .line 6
+    iput-object p4, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaay:Lcom/google/android/gms/internal/ads/zzcf$zza$zza;
+
+    .line 7
+    iput p5, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabl:I
+
+    .line 8
+    iput p6, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabm:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public synthetic call()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaip:Lcom/google/android/gms/internal/ads/zzgk;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzgk;->zza(Lcom/google/android/gms/internal/ads/zzgk;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgl;->zzcy()Ljava/lang/Void;
 
     move-result-object v0
 
-    monitor-enter v0
+    return-object v0
+.end method
+
+.method public abstract zzcw()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalAccessException;,
+            Ljava/lang/reflect/InvocationTargetException;
+        }
+    .end annotation
+.end method
+
+.method public zzcy()Ljava/lang/Void;
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    .line 1
+    :try_start_0
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v1
 
     .line 2
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaip:Lcom/google/android/gms/internal/ads/zzgk;
+    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzwb:Lcom/google/android/gms/internal/ads/zzfa;
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzgk;->zzb(Lcom/google/android/gms/internal/ads/zzgk;)Z
+    iget-object v4, p0, Lcom/google/android/gms/internal/ads/zzgl;->className:Ljava/lang/String;
 
-    move-result v1
+    iget-object v5, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabg:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaip:Lcom/google/android/gms/internal/ads/zzgk;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzgk;->zzc(Lcom/google/android/gms/internal/ads/zzgk;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaip:Lcom/google/android/gms/internal/ads/zzgk;
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/ads/zzgk;->zza(Lcom/google/android/gms/internal/ads/zzgk;Z)Z
-
-    const-string v1, "App went background"
-
-    .line 4
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    .line 5
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzaip:Lcom/google/android/gms/internal/ads/zzgk;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzgk;->zzd(Lcom/google/android/gms/internal/ads/zzgk;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v3, v4, v5}, Lcom/google/android/gms/internal/ads/zzfa;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/reflect/Method;
 
     move-result-object v3
 
-    check-cast v3, Lcom/google/android/gms/internal/ads/zzgm;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-object v3, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabi:Ljava/lang/reflect/Method;
+
+    if-nez v3, :cond_0
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ads/zzgl;->zzcw()V
+
+    .line 4
+    iget-object v3, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzwb:Lcom/google/android/gms/internal/ads/zzfa;
+
+    invoke-virtual {v3}, Lcom/google/android/gms/internal/ads/zzfa;->zzcl()Lcom/google/android/gms/internal/ads/zzdt;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1
+
+    .line 5
+    iget v4, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabl:I
+
+    const/high16 v5, -0x80000000
+
+    if-eq v4, v5, :cond_1
 
     .line 6
-    :try_start_1
-    invoke-interface {v3, v2}, Lcom/google/android/gms/internal/ads/zzgm;->zzh(Z)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v3
-
-    :try_start_2
-    const-string v4, ""
+    iget v5, p0, Lcom/google/android/gms/internal/ads/zzgl;->zzabm:I
 
     .line 7
-    invoke-static {v4, v3}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    goto :goto_0
+    move-result-wide v6
 
-    :cond_0
-    const-string v1, "App is still foreground"
+    sub-long/2addr v6, v1
+
+    const-wide/16 v1, 0x3e8
+
+    div-long/2addr v6, v1
 
     .line 8
-    invoke-static {v1}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    invoke-virtual {v3, v5, v4, v6, v7}, Lcom/google/android/gms/internal/ads/zzdt;->zza(IIJ)V
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 9
+    :catch_0
     :cond_1
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v1
+    return-object v0
 .end method

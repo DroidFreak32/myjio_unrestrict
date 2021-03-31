@@ -7,9 +7,9 @@
 
 
 # static fields
-.field public static final bsize:I = 0x10
+.field private static final bsize:I = 0x10
 
-.field public static final ivsize:I = 0x8
+.field private static final ivsize:I = 0x8
 
 
 # direct methods
@@ -42,6 +42,11 @@
 
 .method public init(I[B[B)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     return-void
 .end method
@@ -56,6 +61,11 @@
 
 .method public update([BII[BI)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     return-void
 .end method

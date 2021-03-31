@@ -21,7 +21,7 @@
 
 .field public c:I
 
-.field public d:Lpz;
+.field public d:Ln8;
 
 
 # direct methods
@@ -40,11 +40,11 @@
     iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
 
     .line 4
-    new-instance v0, Lpz;
+    new-instance v0, Ln8;
 
-    invoke-direct {v0}, Lpz;-><init>()V
+    invoke-direct {v0}, Ln8;-><init>()V
 
-    iput-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Lpz;
+    iput-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Ln8;
 
     .line 5
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -54,8 +54,6 @@
     iput-object p1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
 
     .line 6
-    iget-object p1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -67,7 +65,157 @@
 
 
 # virtual methods
-.method public a(F)F
+.method public A()V
+    .locals 2
+
+    .line 1
+    :goto_0
+    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
+
+    if-ge v0, v1, :cond_1
+
+    .line 2
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVGParser$g;->k(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    .line 3
+    :cond_0
+    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return-void
+.end method
+
+.method public a()I
+    .locals 3
+
+    .line 1
+    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
+
+    const/4 v2, -0x1
+
+    if-ne v0, v1, :cond_0
+
+    return v2
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    .line 2
+    iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    if-ge v0, v1, :cond_1
+
+    .line 3
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public b()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    .line 2
+    :goto_0
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+
+    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lcom/caverock/androidsvg/SVGParser$g;->k(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 3
+    iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    goto :goto_0
+
+    .line 4
+    :cond_0
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+
+    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 5
+    iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    return-object v1
+.end method
+
+.method public c(Ljava/lang/Object;)Ljava/lang/Boolean;
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    .line 1
+    :cond_0
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->z()Z
+
+    .line 2
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->m()Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public d(F)F
     .locals 0
 
     .line 1
@@ -83,17 +231,17 @@
 
     .line 2
     :cond_0
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->p()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->z()Z
 
     .line 3
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->g()F
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->n()F
 
     move-result p1
 
     return p1
 .end method
 
-.method public a(Ljava/lang/Boolean;)F
+.method public e(Ljava/lang/Boolean;)F
     .locals 0
 
     if-nez p1, :cond_0
@@ -102,172 +250,22 @@
 
     return p1
 
-    .line 4
+    .line 1
     :cond_0
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->p()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->z()Z
 
-    .line 5
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->g()F
+    .line 2
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->n()F
 
     move-result p1
 
     return p1
 .end method
 
-.method public a()I
+.method public f(C)Z
     .locals 3
 
-    .line 13
-    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
-
-    const/4 v2, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    return v2
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    .line 14
-    iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    .line 15
-    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    if-ge v0, v1, :cond_1
-
-    .line 16
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public a(Ljava/lang/Object;)Ljava/lang/Boolean;
-    .locals 0
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    .line 6
-    :cond_0
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->p()Z
-
-    .line 7
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->f()Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(CZ)Ljava/lang/String;
-    .locals 3
-
-    .line 17
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    return-object v1
-
-    .line 18
-    :cond_0
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
-    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    if-nez p2, :cond_1
-
-    .line 19
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVGParser$g;->b(I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_1
-    if-ne v0, p1, :cond_3
-
-    :cond_2
-    return-object v1
-
-    .line 20
-    :cond_3
-    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    .line 21
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->a()I
-
-    move-result v1
-
-    :goto_0
-    const/4 v2, -0x1
-
-    if-eq v1, v2, :cond_6
-
-    if-ne v1, p1, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    if-nez p2, :cond_5
-
-    .line 22
-    invoke-virtual {p0, v1}, Lcom/caverock/androidsvg/SVGParser$g;->b(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    goto :goto_1
-
-    .line 23
-    :cond_5
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->a()I
-
-    move-result v1
-
-    goto :goto_0
-
-    .line 24
-    :cond_6
-    :goto_1
-    iget-object p1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
-    iget p2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    invoke-virtual {p1, v0, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(C)Z
-    .locals 3
-
-    .line 8
+    .line 1
     iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
 
     iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
@@ -294,7 +292,7 @@
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 9
+    .line 2
     iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
 
     add-int/2addr v0, v2
@@ -305,41 +303,15 @@
     return p1
 .end method
 
-.method public a(I)Z
-    .locals 1
-
-    const/16 v0, 0xa
-
-    if-eq p1, v0, :cond_1
-
-    const/16 v0, 0xd
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    :goto_1
-    return p1
-.end method
-
-.method public a(Ljava/lang/String;)Z
+.method public g(Ljava/lang/String;)Z
     .locals 4
 
-    .line 10
+    .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 11
+    .line 2
     iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
 
     iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
@@ -372,7 +344,7 @@
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 12
+    .line 3
     iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
 
     add-int/2addr v1, v0
@@ -383,120 +355,7 @@
     return p1
 .end method
 
-.method public b()Ljava/lang/String;
-    .locals 3
-
-    .line 2
-    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    .line 3
-    :goto_0
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
-    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/caverock/androidsvg/SVGParser$g;->b(I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 4
-    iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    goto :goto_0
-
-    .line 5
-    :cond_0
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
-    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 6
-    iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    return-object v1
-.end method
-
-.method public b(C)Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    invoke-virtual {p0, p1, v0}, Lcom/caverock/androidsvg/SVGParser$g;->a(CZ)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public b(I)Z
-    .locals 1
-
-    const/16 v0, 0x20
-
-    if-eq p1, v0, :cond_1
-
-    const/16 v0, 0xa
-
-    if-eq p1, v0, :cond_1
-
-    const/16 v0, 0xd
-
-    if-eq p1, v0, :cond_1
-
-    const/16 v0, 0x9
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    :goto_1
-    return p1
-.end method
-
-.method public c(C)Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    .line 2
-    invoke-virtual {p0, p1, v0}, Lcom/caverock/androidsvg/SVGParser$g;->a(CZ)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public c()Z
+.method public h()Z
     .locals 2
 
     .line 1
@@ -517,7 +376,7 @@
     return v0
 .end method
 
-.method public d()Z
+.method public i()Z
     .locals 3
 
     .line 1
@@ -563,7 +422,67 @@
     return v2
 .end method
 
-.method public e()Ljava/lang/Integer;
+.method public j(I)Z
+    .locals 1
+
+    const/16 v0, 0xa
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v0, 0xd
+
+    if-ne p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    return p1
+.end method
+
+.method public k(I)Z
+    .locals 1
+
+    const/16 v0, 0x20
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v0, 0xa
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v0, 0xd
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v0, 0x9
+
+    if-ne p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    return p1
+.end method
+
+.method public l()Ljava/lang/Integer;
     .locals 3
 
     .line 1
@@ -596,7 +515,7 @@
     return-object v0
 .end method
 
-.method public f()Ljava/lang/Boolean;
+.method public m()Ljava/lang/Boolean;
     .locals 4
 
     .line 1
@@ -658,11 +577,11 @@
     return-object v0
 .end method
 
-.method public g()F
+.method public n()F
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Lpz;
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Ln8;
 
     iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
 
@@ -670,7 +589,7 @@
 
     iget v3, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
 
-    invoke-virtual {v0, v1, v2, v3}, Lpz;->a(Ljava/lang/String;II)F
+    invoke-virtual {v0, v1, v2, v3}, Ln8;->b(Ljava/lang/String;II)F
 
     move-result v0
 
@@ -682,9 +601,9 @@
     if-nez v1, :cond_0
 
     .line 3
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Lpz;
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Ln8;
 
-    invoke-virtual {v1}, Lpz;->a()I
+    invoke-virtual {v1}, Ln8;->a()I
 
     move-result v1
 
@@ -694,11 +613,11 @@
     return v0
 .end method
 
-.method public h()Ljava/lang/String;
+.method public o()Ljava/lang/String;
     .locals 5
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
 
     move-result v0
 
@@ -751,7 +670,7 @@
 
     .line 6
     :goto_1
-    invoke-virtual {p0, v2}, Lcom/caverock/androidsvg/SVGParser$g;->b(I)Z
+    invoke-virtual {p0, v2}, Lcom/caverock/androidsvg/SVGParser$g;->k(I)Z
 
     move-result v4
 
@@ -792,11 +711,11 @@
     return-object v1
 .end method
 
-.method public i()Lcom/caverock/androidsvg/SVG$o;
+.method public p()Lcom/caverock/androidsvg/SVG$o;
     .locals 3
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->g()F
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->n()F
 
     move-result v0
 
@@ -813,7 +732,7 @@
 
     .line 3
     :cond_0
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->l()Lcom/caverock/androidsvg/SVG$Unit;
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->v()Lcom/caverock/androidsvg/SVG$Unit;
 
     move-result-object v1
 
@@ -837,11 +756,11 @@
     return-object v2
 .end method
 
-.method public j()Ljava/lang/String;
+.method public q()Ljava/lang/String;
     .locals 5
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
 
     move-result v0
 
@@ -909,22 +828,20 @@
     iput v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
 
     .line 8
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+    iget-object v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
 
     add-int/lit8 v0, v0, 0x1
 
-    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+    add-int/lit8 v1, v1, -0x1
 
-    add-int/lit8 v2, v2, -0x1
-
-    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public k()Ljava/lang/String;
+.method public r()Ljava/lang/String;
     .locals 2
 
     const/16 v0, 0x20
@@ -932,18 +849,135 @@
     const/4 v1, 0x0
 
     .line 1
-    invoke-virtual {p0, v0, v1}, Lcom/caverock/androidsvg/SVGParser$g;->a(CZ)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Lcom/caverock/androidsvg/SVGParser$g;->t(CZ)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public l()Lcom/caverock/androidsvg/SVG$Unit;
+.method public s(C)Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-virtual {p0, p1, v0}, Lcom/caverock/androidsvg/SVGParser$g;->t(CZ)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public t(CZ)Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    return-object v1
+
+    .line 2
+    :cond_0
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+
+    iget v2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    if-nez p2, :cond_1
+
+    .line 3
+    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVGParser$g;->k(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    :cond_1
+    if-ne v0, p1, :cond_3
+
+    :cond_2
+    return-object v1
+
+    .line 4
+    :cond_3
+    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    .line 5
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->a()I
+
+    move-result v1
+
+    :goto_0
+    const/4 v2, -0x1
+
+    if-eq v1, v2, :cond_6
+
+    if-ne v1, p1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    if-nez p2, :cond_5
+
+    .line 6
+    invoke-virtual {p0, v1}, Lcom/caverock/androidsvg/SVGParser$g;->k(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    goto :goto_1
+
+    .line 7
+    :cond_5
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->a()I
+
+    move-result v1
+
+    goto :goto_0
+
+    .line 8
+    :cond_6
+    :goto_1
+    iget-object p1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
+
+    iget p2, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
+
+    invoke-virtual {p1, v0, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public u(C)Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x1
+
+    .line 1
+    invoke-virtual {p0, p1, v0}, Lcom/caverock/androidsvg/SVGParser$g;->t(CZ)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public v()Lcom/caverock/androidsvg/SVG$Unit;
     .locals 4
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
 
     move-result v0
 
@@ -1027,11 +1061,11 @@
     return-object v1
 .end method
 
-.method public m()Ljava/lang/String;
+.method public w()Ljava/lang/String;
     .locals 7
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
 
     move-result v0
 
@@ -1112,14 +1146,14 @@
     return-object v1
 .end method
 
-.method public n()F
+.method public x()F
     .locals 4
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->p()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->z()Z
 
     .line 2
-    iget-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Lpz;
+    iget-object v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Ln8;
 
     iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
 
@@ -1127,7 +1161,7 @@
 
     iget v3, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
 
-    invoke-virtual {v0, v1, v2, v3}, Lpz;->a(Ljava/lang/String;II)F
+    invoke-virtual {v0, v1, v2, v3}, Ln8;->b(Ljava/lang/String;II)F
 
     move-result v0
 
@@ -1139,9 +1173,9 @@
     if-nez v1, :cond_0
 
     .line 4
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Lpz;
+    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->d:Ln8;
 
-    invoke-virtual {v1}, Lpz;->a()I
+    invoke-virtual {v1}, Ln8;->a()I
 
     move-result v1
 
@@ -1151,11 +1185,11 @@
     return v0
 .end method
 
-.method public o()Ljava/lang/String;
+.method public y()Ljava/lang/String;
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->c()Z
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->h()Z
 
     move-result v0
 
@@ -1184,11 +1218,11 @@
     return-object v0
 .end method
 
-.method public p()Z
+.method public z()Z
     .locals 3
 
     .line 1
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->q()V
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->A()V
 
     .line 2
     iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
@@ -1226,48 +1260,7 @@
     iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
 
     .line 5
-    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->q()V
+    invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGParser$g;->A()V
 
     return v1
-.end method
-
-.method public q()V
-    .locals 2
-
-    .line 1
-    :goto_0
-    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    iget v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->c:I
-
-    if-ge v0, v1, :cond_1
-
-    .line 2
-    iget-object v1, p0, Lcom/caverock/androidsvg/SVGParser$g;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVGParser$g;->b(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    .line 3
-    :cond_0
-    iget v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/caverock/androidsvg/SVGParser$g;->b:I
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    return-void
 .end method

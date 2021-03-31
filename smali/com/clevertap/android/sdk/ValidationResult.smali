@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public errorCode:I
+.field private errorCode:I
 
-.field public errorDesc:Ljava/lang/String;
+.field private errorDesc:Ljava/lang/String;
 
-.field public object:Ljava/lang/Object;
+.field private object:Ljava/lang/Object;
 
 
 # direct methods

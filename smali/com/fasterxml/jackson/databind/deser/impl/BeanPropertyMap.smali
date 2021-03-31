@@ -20,11 +20,11 @@
 
 
 # static fields
-.field public static final serialVersionUID:J = 0x2L
+.field private static final serialVersionUID:J = 0x2L
 
 
 # instance fields
-.field public final _aliasDefs:Ljava/util/Map;
+.field private final _aliasDefs:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public final _aliasMapping:Ljava/util/Map;
+.field private final _aliasMapping:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -49,15 +49,15 @@
 
 .field public final _caseInsensitive:Z
 
-.field public _hashArea:[Ljava/lang/Object;
+.field private _hashArea:[Ljava/lang/Object;
 
-.field public _hashMask:I
+.field private _hashMask:I
 
-.field public _propsInOrder:[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+.field private _propsInOrder:[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-.field public _size:I
+.field private _size:I
 
-.field public _spillCount:I
+.field private _spillCount:I
 
 
 # direct methods
@@ -94,8 +94,6 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_propsInOrder:[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 13
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_propsInOrder:[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -852,7 +850,7 @@
     return-object v0
 .end method
 
-.method public static final findSize(I)I
+.method private static final findSize(I)I
     .locals 1
 
     const/4 v0, 0x5
@@ -1096,6 +1094,11 @@
 
 .method public findDeserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;Ljava/lang/String;)Z
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0, p4}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->find(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
@@ -1192,8 +1195,6 @@
     iput v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
 
     .line 2
-    iget v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
-
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->findSize(I)I
 
     move-result v0
@@ -1876,8 +1877,6 @@
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_propsInOrder:[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 19
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_propsInOrder:[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
     aput-object p1, v0, v1
 
     return-object p0
@@ -1961,6 +1960,11 @@
 
 .method public wrapAndThrow(Ljava/lang/Throwable;Ljava/lang/Object;Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :goto_0

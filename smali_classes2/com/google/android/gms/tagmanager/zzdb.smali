@@ -25,7 +25,7 @@
 
 
 # instance fields
-.field public zzahy:Landroid/util/LruCache;
+.field private zzahy:Landroid/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/LruCache<",

@@ -14,6 +14,9 @@
 
 # instance fields
 .field public final activeEngineResources:Ljava/util/Map;
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -24,17 +27,20 @@
     .end annotation
 .end field
 
-.field public volatile cb:Lcom/bumptech/glide/load/engine/ActiveResources$DequeuedResourceCallback;
+.field private volatile cb:Lcom/bumptech/glide/load/engine/ActiveResources$DequeuedResourceCallback;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final isActiveResourceRetentionAllowed:Z
+.field private final isActiveResourceRetentionAllowed:Z
 
-.field public volatile isShutdown:Z
+.field private volatile isShutdown:Z
 
-.field public listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
+.field private listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
 
-.field public final monitorClearedResourcesExecutor:Ljava/util/concurrent/Executor;
+.field private final monitorClearedResourcesExecutor:Ljava/util/concurrent/Executor;
 
-.field public final resourceReferenceQueue:Ljava/lang/ref/ReferenceQueue;
+.field private final resourceReferenceQueue:Ljava/lang/ref/ReferenceQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/ReferenceQueue<",
@@ -67,6 +73,8 @@
 
 .method public constructor <init>(ZLjava/util/concurrent/Executor;)V
     .locals 1
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -207,6 +215,10 @@
 
 .method public cleanupActiveReference(Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;)V
     .locals 5
+    .param p1    # Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
@@ -240,29 +252,27 @@
 
     .line 5
     :cond_0
-    new-instance v1, Lcom/bumptech/glide/load/engine/EngineResource;
-
-    iget-object v2, p1, Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;->resource:Lcom/bumptech/glide/load/engine/Resource;
+    new-instance v2, Lcom/bumptech/glide/load/engine/EngineResource;
 
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    invoke-direct {v1, v2, v3, v4}, Lcom/bumptech/glide/load/engine/EngineResource;-><init>(Lcom/bumptech/glide/load/engine/Resource;ZZ)V
+    invoke-direct {v2, v1, v3, v4}, Lcom/bumptech/glide/load/engine/EngineResource;-><init>(Lcom/bumptech/glide/load/engine/Resource;ZZ)V
 
     .line 6
-    iget-object v2, p1, Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;->key:Lcom/bumptech/glide/load/Key;
+    iget-object v1, p1, Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;->key:Lcom/bumptech/glide/load/Key;
 
     iget-object v3, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
 
-    invoke-virtual {v1, v2, v3}, Lcom/bumptech/glide/load/engine/EngineResource;->setResourceListener(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;)V
+    invoke-virtual {v2, v1, v3}, Lcom/bumptech/glide/load/engine/EngineResource;->setResourceListener(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;)V
 
     .line 7
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->listener:Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;
 
     iget-object p1, p1, Lcom/bumptech/glide/load/engine/ActiveResources$ResourceWeakReference;->key:Lcom/bumptech/glide/load/Key;
 
-    invoke-interface {v2, p1, v1}, Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;->onResourceReleased(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource;)V
+    invoke-interface {v1, p1, v2}, Lcom/bumptech/glide/load/engine/EngineResource$ResourceListener;->onResourceReleased(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource;)V
 
     .line 8
     monitor-exit p0
@@ -353,6 +363,9 @@
 
 .method public declared-synchronized get(Lcom/bumptech/glide/load/Key;)Lcom/bumptech/glide/load/engine/EngineResource;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -418,6 +431,8 @@
 
 .method public setDequeuedResourceCallback(Lcom/bumptech/glide/load/engine/ActiveResources$DequeuedResourceCallback;)V
     .locals 0
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/load/engine/ActiveResources;->cb:Lcom/bumptech/glide/load/engine/ActiveResources$DequeuedResourceCallback;
@@ -479,6 +494,8 @@
 
 .method public shutdown()V
     .locals 2
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     const/4 v0, 0x1
 

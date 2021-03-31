@@ -1,104 +1,107 @@
-.class public final Lcom/google/android/gms/internal/ads/zzavf;
-.super Lcom/google/android/gms/ads/internal/zzac;
+.class public abstract Lcom/google/android/gms/internal/ads/zzavf;
+.super Lcom/google/android/gms/internal/ads/zzgw;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/ads/internal/zzac<",
-        "Lcom/google/android/gms/internal/ads/zzavk;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/android/gms/internal/ads/zzavc;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;)V
-    .locals 7
+.method public constructor <init>()V
+    .locals 1
 
-    const/16 v3, 0x74
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
+    const-string v0, "com.google.android.gms.ads.internal.rewarded.client.IRewardItem"
 
     .line 1
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/ads/internal/zzac;-><init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/BaseGmsClient$BaseConnectionCallbacks;Lcom/google/android/gms/common/internal/BaseGmsClient$BaseOnConnectionFailedListener;Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/ads/zzgw;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic createServiceInterface(Landroid/os/IBinder;)Landroid/os/IInterface;
+.method public static zzaq(Landroid/os/IBinder;)Lcom/google/android/gms/internal/ads/zzavc;
     .locals 2
 
-    if-nez p1, :cond_0
+    if-nez p0, :cond_0
 
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    return-object p1
+    return-object p0
 
     :cond_0
-    const-string v0, "com.google.android.gms.gass.internal.IGassService"
+    const-string v0, "com.google.android.gms.ads.internal.rewarded.client.IRewardItem"
 
     .line 1
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
     .line 2
-    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzavk;
+    instance-of v1, v0, Lcom/google/android/gms/internal/ads/zzavc;
 
     if-eqz v1, :cond_1
 
     .line 3
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzavk;
+    check-cast v0, Lcom/google/android/gms/internal/ads/zzavc;
 
     return-object v0
 
     .line 4
     :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzavl;
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzave;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/internal/ads/zzavl;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
-.end method
-
-.method public final getServiceDescriptor()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.gass.internal.IGassService"
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/ads/zzave;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 .end method
 
-.method public final getStartServiceAction()Ljava/lang/String;
-    .locals 1
 
-    const-string v0, "com.google.android.gms.gass.START"
+# virtual methods
+.method public final zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    return-object v0
-.end method
+    const/4 p2, 0x1
 
-.method public final zzxw()Lcom/google/android/gms/internal/ads/zzavk;
-    .locals 1
+    if-eq p1, p2, :cond_1
+
+    const/4 p4, 0x2
+
+    if-eq p1, p4, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
 
     .line 1
-    invoke-super {p0}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
+    :cond_0
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzavc;->getAmount()I
 
-    move-result-object v0
+    move-result p1
 
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzavk;
+    .line 2
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return-object v0
+    .line 3
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_0
+
+    .line 4
+    :cond_1
+    invoke-interface {p0}, Lcom/google/android/gms/internal/ads/zzavc;->getType()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 5
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 6
+    invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    :goto_0
+    return p2
 .end method

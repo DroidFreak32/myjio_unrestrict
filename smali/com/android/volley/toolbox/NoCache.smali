@@ -3,7 +3,7 @@
 .source "NoCache.java"
 
 # interfaces
-.implements Lnv;
+.implements Lcom/android/volley/Cache;
 
 
 # direct methods
@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method public get(Ljava/lang/String;)Lnv$a;
+.method public get(Ljava/lang/String;)Lcom/android/volley/Cache$Entry;
     .locals 0
 
     const/4 p1, 0x0
@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method public put(Ljava/lang/String;Lnv$a;)V
+.method public put(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
     .locals 0
 
     return-void

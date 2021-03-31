@@ -1,31 +1,14 @@
-.class public interface abstract Lcom/google/android/gms/internal/ads/zzakl;
+.class public final Lcom/google/android/gms/internal/ads/zzakl;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# virtual methods
-.method public abstract zza(Ljava/lang/String;Landroid/content/pm/PackageInfo;)Lcom/google/android/gms/internal/ads/zzapi;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Landroid/content/pm/PackageInfo;",
-            ")",
-            "Lcom/google/android/gms/internal/ads/zzapi<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract zzac(Landroid/content/Context;)Lcom/google/android/gms/internal/ads/zzapi;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            ")",
-            "Lcom/google/android/gms/internal/ads/zzapi<",
-            "Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;",
-            ">;"
-        }
-    .end annotation
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

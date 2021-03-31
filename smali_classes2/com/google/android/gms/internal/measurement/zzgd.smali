@@ -1,103 +1,149 @@
-.class public abstract Lcom/google/android/gms/internal/measurement/zzgd;
+.class public final Lcom/google/android/gms/internal/measurement/zzgd;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzgd;
+# instance fields
+.field private final zza:Ljava/util/concurrent/ConcurrentHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentHashMap<",
+            "Lcom/google/android/gms/internal/measurement/zzgc;",
+            "Ljava/util/List<",
+            "Ljava/lang/Throwable;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
-.field public static final zzb:Lcom/google/android/gms/internal/measurement/zzgd;
+.field private final zzb:Ljava/lang/ref/ReferenceQueue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/ReferenceQueue<",
+            "Ljava/lang/Throwable;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzgf;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzgf;-><init>(Lcom/google/android/gms/internal/measurement/zzgc;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzgd;->zza:Lcom/google/android/gms/internal/measurement/zzgd;
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzge;
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/measurement/zzge;-><init>(Lcom/google/android/gms/internal/measurement/zzgc;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzgd;->zzb:Lcom/google/android/gms/internal/measurement/zzgd;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 0
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/measurement/zzgc;)V
-    .locals 0
-
     .line 2
-    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzgd;-><init>()V
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    const/16 v1, 0x10
+
+    const/high16 v2, 0x3f400000    # 0.75f
+
+    const/16 v3, 0xa
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(IFI)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zza:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 3
+    new-instance v0, Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zzb:Ljava/lang/ref/ReferenceQueue;
 
     return-void
-.end method
-
-.method public static zza()Lcom/google/android/gms/internal/measurement/zzgd;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgd;->zza:Lcom/google/android/gms/internal/measurement/zzgd;
-
-    return-object v0
-.end method
-
-.method public static zzb()Lcom/google/android/gms/internal/measurement/zzgd;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgd;->zzb:Lcom/google/android/gms/internal/measurement/zzgd;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract zza(Ljava/lang/Object;J)Ljava/util/List;
+.method public final zza(Ljava/lang/Throwable;Z)Ljava/util/List;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<",
-            "L:Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Object;",
-            "J)",
+            "(",
+            "Ljava/lang/Throwable;",
+            "Z)",
             "Ljava/util/List<",
-            "T",
-            "L;",
+            "Ljava/lang/Throwable;",
             ">;"
         }
     .end annotation
-.end method
 
-.method public abstract zza(Ljava/lang/Object;Ljava/lang/Object;J)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<",
-            "L:Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Object;",
-            "Ljava/lang/Object;",
-            "J)V"
-        }
-    .end annotation
-.end method
+    .line 1
+    iget-object p2, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zzb:Ljava/lang/ref/ReferenceQueue;
 
-.method public abstract zzb(Ljava/lang/Object;J)V
+    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
+
+    move-result-object p2
+
+    :goto_0
+    if-eqz p2, :cond_0
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zza:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 3
+    iget-object p2, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zzb:Ljava/lang/ref/ReferenceQueue;
+
+    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    .line 4
+    :cond_0
+    new-instance p2, Lcom/google/android/gms/internal/measurement/zzgc;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p2, p1, v0}, Lcom/google/android/gms/internal/measurement/zzgc;-><init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zza:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    if-eqz p2, :cond_1
+
+    return-object p2
+
+    .line 6
+    :cond_1
+    new-instance p2, Ljava/util/Vector;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p2, v0}, Ljava/util/Vector;-><init>(I)V
+
+    .line 7
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zza:Ljava/util/concurrent/ConcurrentHashMap;
+
+    new-instance v1, Lcom/google/android/gms/internal/measurement/zzgc;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/measurement/zzgd;->zzb:Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v1, p1, v2}, Lcom/google/android/gms/internal/measurement/zzgc;-><init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+
+    invoke-virtual {v0, v1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/List;
+
+    if-nez p1, :cond_2
+
+    return-object p2
+
+    :cond_2
+    return-object p1
 .end method

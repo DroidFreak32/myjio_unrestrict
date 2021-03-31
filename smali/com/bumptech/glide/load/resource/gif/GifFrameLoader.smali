@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-.field public final callbacks:Ljava/util/List;
+.field private final callbacks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -27,27 +27,30 @@
     .end annotation
 .end field
 
-.field public current:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
+.field private current:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
 
-.field public firstFrame:Landroid/graphics/Bitmap;
+.field private firstFrame:Landroid/graphics/Bitmap;
 
-.field public final gifDecoder:Lcom/bumptech/glide/gifdecoder/GifDecoder;
+.field private final gifDecoder:Lcom/bumptech/glide/gifdecoder/GifDecoder;
 
-.field public final handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field public isCleared:Z
+.field private isCleared:Z
 
-.field public isLoadPending:Z
+.field private isLoadPending:Z
 
-.field public isRunning:Z
+.field private isRunning:Z
 
-.field public next:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
+.field private next:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
 
-.field public onEveryFrameListener:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$OnEveryFrameListener;
+.field private onEveryFrameListener:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$OnEveryFrameListener;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public pendingTarget:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
+.field private pendingTarget:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
 
-.field public requestBuilder:Lcom/bumptech/glide/RequestBuilder;
+.field private requestBuilder:Lcom/bumptech/glide/RequestBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/RequestBuilder<",
@@ -59,9 +62,9 @@
 
 .field public final requestManager:Lcom/bumptech/glide/RequestManager;
 
-.field public startFromFirstFrame:Z
+.field private startFromFirstFrame:Z
 
-.field public transformation:Lcom/bumptech/glide/load/Transformation;
+.field private transformation:Lcom/bumptech/glide/load/Transformation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Transformation<",
@@ -199,7 +202,7 @@
     return-void
 .end method
 
-.method public static getFrameSignature()Lcom/bumptech/glide/load/Key;
+.method private static getFrameSignature()Lcom/bumptech/glide/load/Key;
     .locals 3
 
     .line 1
@@ -255,7 +258,7 @@
     return v0
 .end method
 
-.method public static getRequestBuilder(Lcom/bumptech/glide/RequestManager;II)Lcom/bumptech/glide/RequestBuilder;
+.method private static getRequestBuilder(Lcom/bumptech/glide/RequestManager;II)Lcom/bumptech/glide/RequestBuilder;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -737,6 +740,8 @@
 
 .method public onFrameReady(Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;)V
     .locals 3
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader;->onEveryFrameListener:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$OnEveryFrameListener;
@@ -934,6 +939,12 @@
 
 .method public setOnEveryFrameReadyListener(Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$OnEveryFrameListener;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$OnEveryFrameListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/VisibleForTesting;
+    .end annotation
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader;->onEveryFrameListener:Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$OnEveryFrameListener;

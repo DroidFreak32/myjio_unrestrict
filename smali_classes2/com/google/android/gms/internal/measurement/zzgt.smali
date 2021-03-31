@@ -1,23 +1,41 @@
-.class public interface abstract Lcom/google/android/gms/internal/measurement/zzgt;
+.class public final Lcom/google/android/gms/internal/measurement/zzgt;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 # interfaces
 .implements Lcom/google/android/gms/internal/measurement/zzgv;
 
 
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/measurement/zzgs;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Lcom/google/android/gms/internal/measurement/zzgt;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/internal/measurement/zzes;)V
-.end method
+.method public final zza([BII)[B
+    .locals 0
 
-.method public abstract zzbh()Lcom/google/android/gms/internal/measurement/zzdz;
-.end method
+    add-int/2addr p3, p2
 
-.method public abstract zzbn()I
-.end method
+    .line 1
+    invoke-static {p1, p2, p3}, Ljava/util/Arrays;->copyOfRange([BII)[B
 
-.method public abstract zzbr()Lcom/google/android/gms/internal/measurement/zzgs;
-.end method
+    move-result-object p1
 
-.method public abstract zzbs()Lcom/google/android/gms/internal/measurement/zzgs;
+    return-object p1
 .end method

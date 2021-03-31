@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final zzde:Ljava/util/concurrent/ConcurrentHashMap;
+.field private static final zzde:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap<",
@@ -14,19 +14,19 @@
     .end annotation
 .end field
 
-.field public static final zzdl:[Ljava/lang/String;
+.field private static final zzdl:[Ljava/lang/String;
 
 
 # instance fields
-.field public final uri:Landroid/net/Uri;
+.field private final uri:Landroid/net/Uri;
 
-.field public final zzdf:Landroid/content/ContentResolver;
+.field private final zzdf:Landroid/content/ContentResolver;
 
-.field public final zzdg:Landroid/database/ContentObserver;
+.field private final zzdg:Landroid/database/ContentObserver;
 
-.field public final zzdh:Ljava/lang/Object;
+.field private final zzdh:Ljava/lang/Object;
 
-.field public volatile zzdi:Ljava/util/Map;
+.field private volatile zzdi:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -37,9 +37,13 @@
     .end annotation
 .end field
 
-.field public final zzdj:Ljava/lang/Object;
+.field private final zzdj:Ljava/lang/Object;
 
-.field public final zzdk:Ljava/util/List;
+.field private final zzdk:Ljava/util/List;
+    .annotation build Landroidx/annotation/GuardedBy;
+        value = "listenersLock"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -73,7 +77,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
+.method private constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,19 +122,17 @@
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lcom/google/android/gms/internal/clearcut/zzab;
+    check-cast v1, Lcom/google/android/gms/internal/clearcut/zzab;
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    new-instance v0, Lcom/google/android/gms/internal/clearcut/zzab;
+    new-instance v1, Lcom/google/android/gms/internal/clearcut/zzab;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/clearcut/zzab;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/internal/clearcut/zzab;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
-    sget-object p0, Lcom/google/android/gms/internal/clearcut/zzab;->zzde:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {p0, p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -138,24 +140,24 @@
 
     if-nez p0, :cond_0
 
-    iget-object p0, v0, Lcom/google/android/gms/internal/clearcut/zzab;->zzdf:Landroid/content/ContentResolver;
+    iget-object p0, v1, Lcom/google/android/gms/internal/clearcut/zzab;->zzdf:Landroid/content/ContentResolver;
 
-    iget-object p1, v0, Lcom/google/android/gms/internal/clearcut/zzab;->uri:Landroid/net/Uri;
+    iget-object p1, v1, Lcom/google/android/gms/internal/clearcut/zzab;->uri:Landroid/net/Uri;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v2, v0, Lcom/google/android/gms/internal/clearcut/zzab;->zzdg:Landroid/database/ContentObserver;
+    iget-object v2, v1, Lcom/google/android/gms/internal/clearcut/zzab;->zzdg:Landroid/database/ContentObserver;
 
-    invoke-virtual {p0, p1, v1, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+    invoke-virtual {p0, p1, v0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     goto :goto_0
 
     :cond_0
-    move-object v0, p0
+    move-object v1, p0
 
     :cond_1
     :goto_0
-    return-object v0
+    return-object v1
 .end method
 
 .method public static synthetic zza(Lcom/google/android/gms/internal/clearcut/zzab;)V

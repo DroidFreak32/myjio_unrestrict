@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public final zzav:Ljava/lang/String;
+.field private final zzav:Ljava/lang/String;
 
-.field public final zzaw:Z
+.field private final zzaw:Z
 
 
 # direct methods

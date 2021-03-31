@@ -1,84 +1,122 @@
 .class public final Lcom/google/android/gms/internal/ads/zzhb;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# instance fields
-.field public final value:J
+# static fields
+.field public static final CHANNEL_OUT_7POINT1_SURROUND:I
 
-.field public final zzajw:Ljava/lang/String;
+.field public static final UUID_NIL:Ljava/util/UUID;
 
-.field public final zzajx:I
+.field private static final zzaea:Ljava/util/UUID;
+
+.field private static final zzaeb:Ljava/util/UUID;
+
+.field private static final zzaec:Ljava/util/UUID;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;I)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lcom/google/android/gms/internal/ads/zzpt;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-ge v0, v1, :cond_0
+
+    const/16 v0, 0x3fc
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v0, 0x18fc
 
     .line 2
-    iput-wide p1, p0, Lcom/google/android/gms/internal/ads/zzhb;->value:J
+    :goto_0
+    sput v0, Lcom/google/android/gms/internal/ads/zzhb;->CHANNEL_OUT_7POINT1_SURROUND:I
 
     .line 3
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzhb;->zzajw:Ljava/lang/String;
+    new-instance v0, Ljava/util/UUID;
+
+    const-wide/16 v1, 0x0
+
+    invoke-direct {v0, v1, v2, v1, v2}, Ljava/util/UUID;-><init>(JJ)V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzhb;->UUID_NIL:Ljava/util/UUID;
 
     .line 4
-    iput p4, p0, Lcom/google/android/gms/internal/ads/zzhb;->zzajx:I
+    new-instance v0, Ljava/util/UUID;
+
+    const-wide v1, 0x1077efecc0b24d02L
+
+    const-wide v3, -0x531cc3e1ad1d04b5L    # -1.8442503140481377E-92
+
+    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzhb;->zzaea:Ljava/util/UUID;
+
+    .line 5
+    new-instance v0, Ljava/util/UUID;
+
+    const-wide v1, -0x121074568629b532L    # -3.563403477674908E221
+
+    const-wide v3, -0x5c37d8232ae2de13L
+
+    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzhb;->zzaeb:Ljava/util/UUID;
+
+    .line 6
+    new-instance v0, Ljava/util/UUID;
+
+    const-wide v1, -0x65fb0f8667bfbd7aL
+
+    const-wide v3, -0x546d19a41f77a06bL    # -8.640911267670052E-99
+
+    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzhb;->zzaec:Ljava/util/UUID;
 
     return-void
 .end method
 
+.method public static zzdm(J)J
+    .locals 3
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 6
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v0, 0x0
+    cmp-long v2, p0, v0
 
-    if-eqz p1, :cond_1
+    if-nez v2, :cond_0
+
+    return-wide v0
+
+    :cond_0
+    const-wide/16 v0, 0x3e8
 
     .line 1
-    instance-of v1, p1, Lcom/google/android/gms/internal/ads/zzhb;
+    div-long/2addr p0, v0
 
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    check-cast p1, Lcom/google/android/gms/internal/ads/zzhb;
-
-    iget-wide v1, p1, Lcom/google/android/gms/internal/ads/zzhb;->value:J
-
-    iget-wide v3, p0, Lcom/google/android/gms/internal/ads/zzhb;->value:J
-
-    cmp-long v5, v1, v3
-
-    if-nez v5, :cond_1
-
-    iget p1, p1, Lcom/google/android/gms/internal/ads/zzhb;->zzajx:I
-
-    iget v1, p0, Lcom/google/android/gms/internal/ads/zzhb;->zzajx:I
-
-    if-ne p1, v1, :cond_1
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_1
-    :goto_0
-    return v0
+    return-wide p0
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public static zzdn(J)J
+    .locals 3
 
-    .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zzhb;->value:J
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    long-to-int v1, v0
+    cmp-long v2, p0, v0
 
-    return v1
+    if-nez v2, :cond_0
+
+    return-wide v0
+
+    :cond_0
+    const-wide/16 v0, 0x3e8
+
+    mul-long p0, p0, v0
+
+    return-wide p0
 .end method

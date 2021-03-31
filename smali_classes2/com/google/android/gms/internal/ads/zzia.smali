@@ -1,183 +1,88 @@
 .class public final Lcom/google/android/gms/internal/ads/zzia;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# static fields
+.field public static final zzaic:Lcom/google/android/gms/internal/ads/zzia;
 
 
 # instance fields
-.field public zzamf:Lcom/google/android/gms/internal/ads/zzeq;
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
-.end field
-
-.field public zzamg:Z
-    .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
-    .end annotation
-.end field
+.field public final zzaid:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;)V
+.method public static constructor <clinit>()V
     .locals 2
 
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzia;
 
-    .line 10
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zznw;->initialize(Landroid/content/Context;)V
+    const/4 v1, 0x0
 
-    .line 11
-    sget-object v0, Lcom/google/android/gms/internal/ads/zznw;->zzbgt:Lcom/google/android/gms/internal/ads/zznl;
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/ads/zzia;-><init>(I)V
 
-    .line 12
-    invoke-static {}, Lcom/google/android/gms/internal/ads/zzkd;->zzjd()Lcom/google/android/gms/internal/ads/zznt;
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzia;->zzaic:Lcom/google/android/gms/internal/ads/zzia;
 
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/ads/zznt;->zzd(Lcom/google/android/gms/internal/ads/zznl;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 13
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.ads.clearcut.DynamiteClearcutLogger"
-
-    .line 14
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzic;->zzamh:Lcom/google/android/gms/internal/ads/zzaom;
-
-    .line 15
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/internal/ads/zzaol;->zza(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzaom;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/ads/zzeq;
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzia;->zzamf:Lcom/google/android/gms/internal/ads/zzeq;
-
-    .line 16
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    .line 17
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzia;->zzamf:Lcom/google/android/gms/internal/ads/zzeq;
-
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p1
-
-    const-string v1, "GMA_SDK"
-
-    invoke-interface {v0, p1, v1}, Lcom/google/android/gms/internal/ads/zzeq;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;)V
-
-    const/4 p1, 0x1
-
-    .line 18
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzia;->zzamg:Z
-    :try_end_0
-    .catch Lcom/google/android/gms/internal/ads/zzaon; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    const-string p1, "Cannot dynamite load clearcut"
-
-    .line 19
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+.method private constructor <init>(I)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 p1, 0x0
+
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zznw;->initialize(Landroid/content/Context;)V
-
-    :try_start_0
-    const-string p3, "com.google.android.gms.ads.clearcut.DynamiteClearcutLogger"
-
-    .line 3
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzib;->zzamh:Lcom/google/android/gms/internal/ads/zzaom;
-
-    .line 4
-    invoke-static {p1, p3, v0}, Lcom/google/android/gms/internal/ads/zzaol;->zza(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzaom;)Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lcom/google/android/gms/internal/ads/zzeq;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ads/zzia;->zzamf:Lcom/google/android/gms/internal/ads/zzeq;
-
-    .line 5
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    .line 6
-    iget-object p3, p0, Lcom/google/android/gms/internal/ads/zzia;->zzamf:Lcom/google/android/gms/internal/ads/zzeq;
-
-    invoke-static {p1}, Lcom/google/android/gms/dynamic/ObjectWrapper;->wrap(Ljava/lang/Object;)Lcom/google/android/gms/dynamic/IObjectWrapper;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-interface {p3, p1, p2, v0}, Lcom/google/android/gms/internal/ads/zzeq;->zza(Lcom/google/android/gms/dynamic/IObjectWrapper;Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 p1, 0x1
-
-    .line 7
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/ads/zzia;->zzamg:Z
-    :try_end_0
-    .catch Lcom/google/android/gms/internal/ads/zzaon; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    const-string p1, "Cannot dynamite load clearcut"
-
-    .line 8
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    iput p1, p0, Lcom/google/android/gms/internal/ads/zzia;->zzaid:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zzd([B)Lcom/google/android/gms/internal/ads/zzie;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzie;
+    const-class v1, Lcom/google/android/gms/internal/ads/zzia;
 
-    const/4 v1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0, p0, p1, v1}, Lcom/google/android/gms/internal/ads/zzie;-><init>(Lcom/google/android/gms/internal/ads/zzia;[BLcom/google/android/gms/internal/ads/zzid;)V
+    move-result-object v2
 
-    return-object v0
+    if-eq v1, v2, :cond_1
+
+    goto :goto_0
+
+    .line 2
+    :cond_1
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzia;
+
+    return v0
+
+    :cond_2
+    :goto_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

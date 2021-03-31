@@ -29,11 +29,11 @@
 
 .field public static final OUTDOOR:Lcom/google/android/gms/maps/model/StreetViewSource;
 
-.field public static final TAG:Ljava/lang/String;
+.field private static final TAG:Ljava/lang/String;
 
 
 # instance fields
-.field public final type:I
+.field private final type:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getType"
         id = 0x2

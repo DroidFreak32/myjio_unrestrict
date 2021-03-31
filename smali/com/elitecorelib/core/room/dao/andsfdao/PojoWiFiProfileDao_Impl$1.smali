@@ -1,11 +1,11 @@
 .class public Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl$1;
-.super Lah;
+.super Landroidx/room/EntityInsertionAdapter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lah<",
+        "Landroidx/room/EntityInsertionAdapter<",
         "Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;",
         ">;"
     }
@@ -22,14 +22,14 @@
 
     iput-object p1, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl$1;->this$0:Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl;
 
-    invoke-direct {p0, p2}, Lah;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bind(Lfi;Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;)V
+.method public bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;)V
     .locals 4
 
     invoke-virtual {p2}, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;->getProfileId()I
@@ -40,7 +40,7 @@
 
     const/4 v2, 0x1
 
-    invoke-interface {p1, v2, v0, v1}, Ldi;->a(IJ)V
+    invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     invoke-virtual {p2}, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;->isPreferable()Z
 
@@ -50,7 +50,7 @@
 
     int-to-long v2, v0
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     invoke-virtual {p2}, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;->getDescription()Ljava/lang/String;
 
@@ -60,7 +60,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     invoke-virtual {p2}, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;->getAndroidSettingName()Ljava/lang/String;
@@ -80,7 +80,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_1
     invoke-virtual {p2}, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;->getRemoveAllowFromApp()Ljava/lang/String;
@@ -100,7 +100,7 @@
 
     if-nez v0, :cond_2
 
-    invoke-interface {p1, v1}, Ldi;->c(I)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_2
 
@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    invoke-interface {p1, v1, v0}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_2
     invoke-virtual {p2}, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;->isLocal()Z
@@ -120,7 +120,7 @@
 
     int-to-long v2, v0
 
-    invoke-interface {p1, v1, v2, v3}, Ldi;->a(IJ)V
+    invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     iget-object v0, p0, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl$1;->this$0:Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl;
 
@@ -140,23 +140,23 @@
 
     if-nez p2, :cond_3
 
-    invoke-interface {p1, v0}, Ldi;->c(I)V
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_3
 
     :cond_3
-    invoke-interface {p1, v0, p2}, Ldi;->b(ILjava/lang/String;)V
+    invoke-interface {p1, v0, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_3
     return-void
 .end method
 
-.method public bridge synthetic bind(Lfi;Ljava/lang/Object;)V
+.method public bridge synthetic bind(Landroidx/sqlite/db/SupportSQLiteStatement;Ljava/lang/Object;)V
     .locals 0
 
     check-cast p2, Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;
 
-    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl$1;->bind(Lfi;Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;)V
+    invoke-virtual {p0, p1, p2}, Lcom/elitecorelib/core/room/dao/andsfdao/PojoWiFiProfileDao_Impl$1;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/elitecorelib/core/pojonew/PojoWiFiProfile;)V
 
     return-void
 .end method

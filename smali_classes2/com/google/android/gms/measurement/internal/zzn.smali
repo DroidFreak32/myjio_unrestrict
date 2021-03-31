@@ -1,565 +1,807 @@
 .class public final Lcom/google/android/gms/measurement/internal/zzn;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+
+# annotations
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
+    creator = "AppMetadataCreator"
+.end annotation
+
+.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
+    value = {
+        0x1,
+        0x14
+    }
+.end annotation
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/gms/measurement/internal/zzn;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/measurement/internal/zzfx;
+.field public final zza:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x2
+    .end annotation
+.end field
+
+.field public final zzb:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x3
+    .end annotation
+.end field
+
+.field public final zzc:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x4
+    .end annotation
+.end field
+
+.field public final zzd:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x5
+    .end annotation
+.end field
+
+.field public final zze:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x6
+    .end annotation
+.end field
+
+.field public final zzf:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x7
+    .end annotation
+.end field
+
+.field public final zzg:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x8
+    .end annotation
+.end field
+
+.field public final zzh:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        defaultValue = "true"
+        id = 0x9
+    .end annotation
+.end field
+
+.field public final zzi:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0xa
+    .end annotation
+.end field
+
+.field public final zzj:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        defaultValueUnchecked = "Integer.MIN_VALUE"
+        id = 0xb
+    .end annotation
+.end field
+
+.field public final zzk:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0xc
+    .end annotation
+.end field
+
+.field public final zzl:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0xd
+    .end annotation
+.end field
+
+.field public final zzm:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0xe
+    .end annotation
+.end field
+
+.field public final zzn:I
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0xf
+    .end annotation
+.end field
+
+.field public final zzo:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        defaultValue = "true"
+        id = 0x10
+    .end annotation
+.end field
+
+.field public final zzp:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        defaultValue = "true"
+        id = 0x11
+    .end annotation
+.end field
+
+.field public final zzq:Z
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x12
+    .end annotation
+.end field
+
+.field public final zzr:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x13
+    .end annotation
+.end field
+
+.field public final zzs:Ljava/lang/Boolean;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x15
+    .end annotation
+.end field
+
+.field public final zzt:J
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x16
+    .end annotation
+.end field
+
+.field public final zzu:Ljava/util/List;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x17
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzv:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        id = 0x18
+    .end annotation
+.end field
+
+.field public final zzw:Ljava/lang/String;
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
+        defaultValue = ""
+        id = 0x19
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzfx;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcom/google/android/gms/measurement/internal/zzp;
 
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
+    invoke-direct {v0}, Lcom/google/android/gms/measurement/internal/zzp;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/measurement/internal/zzn;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method private final zzc()Z
-    .locals 6
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;JJLjava/lang/String;ZZLjava/lang/String;JJIZZZLjava/lang/String;Ljava/lang/Boolean;JLjava/util/List;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "J",
+            "Ljava/lang/String;",
+            "JJ",
+            "Ljava/lang/String;",
+            "ZZ",
+            "Ljava/lang/String;",
+            "JJIZZZ",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            "J",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
+
+    move-object v0, p0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzn;->zzd()Z
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    move-result v0
+    .line 2
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotEmpty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-object v1, p1
+
+    .line 3
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Ljava/lang/String;
+
+    .line 4
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    goto :goto_0
 
-    return v1
-
-    .line 2
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
+    move-object v1, p2
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzm()Lcom/google/android/gms/common/util/Clock;
+    :goto_0
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzb:Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 3
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzx:Lcom/google/android/gms/measurement/internal/zzfj;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfj;->zza()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 4
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzb()Lcom/google/android/gms/measurement/internal/zzaa;
-
-    move-result-object v0
-
-    const/4 v4, 0x0
+    move-object v1, p3
 
     .line 5
-    sget-object v5, Lcom/google/android/gms/measurement/internal/zzas;->zzcq:Lcom/google/android/gms/measurement/internal/zzem;
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzc:Ljava/lang/String;
 
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/measurement/internal/zzaa;->zza(Ljava/lang/String;Lcom/google/android/gms/measurement/internal/zzem;)J
+    move-wide v1, p4
 
-    move-result-wide v4
+    .line 6
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzj:J
 
-    cmp-long v0, v2, v4
+    move-object v1, p6
 
-    if-lez v0, :cond_1
+    .line 7
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzd:Ljava/lang/String;
 
-    const/4 v0, 0x1
+    move-wide v1, p7
 
-    return v0
+    .line 8
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zze:J
 
-    :cond_1
-    return v1
+    move-wide v1, p9
+
+    .line 9
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzf:J
+
+    move-object v1, p11
+
+    .line 10
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzg:Ljava/lang/String;
+
+    move v1, p12
+
+    .line 11
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzh:Z
+
+    move/from16 v1, p13
+
+    .line 12
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzi:Z
+
+    move-object/from16 v1, p14
+
+    .line 13
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzk:Ljava/lang/String;
+
+    move-wide/from16 v1, p15
+
+    .line 14
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzl:J
+
+    move-wide/from16 v1, p17
+
+    .line 15
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzm:J
+
+    move/from16 v1, p19
+
+    .line 16
+    iput v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzn:I
+
+    move/from16 v1, p20
+
+    .line 17
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzo:Z
+
+    move/from16 v1, p21
+
+    .line 18
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzp:Z
+
+    move/from16 v1, p22
+
+    .line 19
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzq:Z
+
+    move-object/from16 v1, p23
+
+    .line 20
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzr:Ljava/lang/String;
+
+    move-object/from16 v1, p24
+
+    .line 21
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzs:Ljava/lang/Boolean;
+
+    move-wide/from16 v1, p25
+
+    .line 22
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzt:J
+
+    move-object/from16 v1, p27
+
+    .line 23
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzu:Ljava/util/List;
+
+    move-object/from16 v1, p28
+
+    .line 24
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzv:Ljava/lang/String;
+
+    move-object/from16 v1, p29
+
+    .line 25
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzw:Ljava/lang/String;
+
+    return-void
 .end method
 
-.method private final zzd()Z
-    .locals 5
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/lang/String;ZZJLjava/lang/String;JJIZZZLjava/lang/String;Ljava/lang/Boolean;JLjava/util/List;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x2
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x3
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x4
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x5
+        .end annotation
+    .end param
+    .param p5    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x6
+        .end annotation
+    .end param
+    .param p7    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x7
+        .end annotation
+    .end param
+    .param p9    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x8
+        .end annotation
+    .end param
+    .param p10    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x9
+        .end annotation
+    .end param
+    .param p11    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0xa
+        .end annotation
+    .end param
+    .param p12    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0xb
+        .end annotation
+    .end param
+    .param p14    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0xc
+        .end annotation
+    .end param
+    .param p15    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0xd
+        .end annotation
+    .end param
+    .param p17    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0xe
+        .end annotation
+    .end param
+    .param p19    # I
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0xf
+        .end annotation
+    .end param
+    .param p20    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x10
+        .end annotation
+    .end param
+    .param p21    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x11
+        .end annotation
+    .end param
+    .param p22    # Z
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x12
+        .end annotation
+    .end param
+    .param p23    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x13
+        .end annotation
+    .end param
+    .param p24    # Ljava/lang/Boolean;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x15
+        .end annotation
+    .end param
+    .param p25    # J
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x16
+        .end annotation
+    .end param
+    .param p27    # Ljava/util/List;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x17
+        .end annotation
+    .end param
+    .param p28    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x18
+        .end annotation
+    .end param
+    .param p29    # Ljava/lang/String;
+        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
+            id = 0x19
+        .end annotation
+    .end param
+    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "JJ",
+            "Ljava/lang/String;",
+            "ZZJ",
+            "Ljava/lang/String;",
+            "JJIZZZ",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            "J",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
+    move-object v0, p0
 
-    move-result-object v0
+    .line 26
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzx:Lcom/google/android/gms/measurement/internal/zzfj;
+    move-object v1, p1
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfj;->zza()J
+    .line 27
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Ljava/lang/String;
 
-    move-result-wide v0
+    move-object v1, p2
 
-    const-wide/16 v2, 0x0
+    .line 28
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzb:Ljava/lang/String;
 
-    cmp-long v4, v0, v2
+    move-object v1, p3
 
-    if-lez v4, :cond_0
+    .line 29
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzc:Ljava/lang/String;
 
-    const/4 v0, 0x1
+    move-wide v1, p12
 
-    return v0
+    .line 30
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzj:J
 
-    :cond_0
-    const/4 v0, 0x0
+    move-object v1, p4
 
-    return v0
+    .line 31
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzd:Ljava/lang/String;
+
+    move-wide v1, p5
+
+    .line 32
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zze:J
+
+    move-wide v1, p7
+
+    .line 33
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzf:J
+
+    move-object v1, p9
+
+    .line 34
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzg:Ljava/lang/String;
+
+    move v1, p10
+
+    .line 35
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzh:Z
+
+    move v1, p11
+
+    .line 36
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzi:Z
+
+    move-object/from16 v1, p14
+
+    .line 37
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzk:Ljava/lang/String;
+
+    move-wide/from16 v1, p15
+
+    .line 38
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzl:J
+
+    move-wide/from16 v1, p17
+
+    .line 39
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzm:J
+
+    move/from16 v1, p19
+
+    .line 40
+    iput v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzn:I
+
+    move/from16 v1, p20
+
+    .line 41
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzo:Z
+
+    move/from16 v1, p21
+
+    .line 42
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzp:Z
+
+    move/from16 v1, p22
+
+    .line 43
+    iput-boolean v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzq:Z
+
+    move-object/from16 v1, p23
+
+    .line 44
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzr:Ljava/lang/String;
+
+    move-object/from16 v1, p24
+
+    .line 45
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzs:Ljava/lang/Boolean;
+
+    move-wide/from16 v1, p25
+
+    .line 46
+    iput-wide v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzt:J
+
+    move-object/from16 v1, p27
+
+    .line 47
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzu:Ljava/util/List;
+
+    move-object/from16 v1, p28
+
+    .line 48
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzv:Ljava/lang/String;
+
+    move-object/from16 v1, p29
+
+    .line 49
+    iput-object v1, v0, Lcom/google/android/gms/measurement/internal/zzn;->zzw:Ljava/lang/String;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final zza()V
-    .locals 10
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 2
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzq()Lcom/google/android/gms/measurement/internal/zzfu;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfu;->zzd()V
-
-    .line 3
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzn;->zzd()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 4
-    :cond_0
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzn;->zzc()Z
-
-    move-result v0
-
-    const-wide/16 v1, 0x1
-
-    const-string v3, "_cc"
-
-    const/4 v4, 0x0
-
-    if-eqz v0, :cond_1
-
-    .line 5
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzw:Lcom/google/android/gms/measurement/internal/zzfl;
-
-    invoke-virtual {v0, v4}, Lcom/google/android/gms/measurement/internal/zzfl;->zza(Ljava/lang/String;)V
-
-    .line 6
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    const-string v4, "(not set)"
-
-    const-string v5, "source"
-
-    .line 7
-    invoke-virtual {v0, v5, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v5, "medium"
-
-    .line 8
-    invoke-virtual {v0, v5, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v4, "_cis"
-
-    const-string v5, "intent"
-
-    .line 9
-    invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 10
-    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 11
-    iget-object v1, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 12
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzh()Lcom/google/android/gms/measurement/internal/zzhc;
-
-    move-result-object v1
-
-    const-string v2, "auto"
-
-    const-string v3, "_cmpx"
-
-    .line 13
-    invoke-virtual {v1, v2, v3, v0}, Lcom/google/android/gms/measurement/internal/zzhc;->zza(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-
-    goto/16 :goto_2
-
-    .line 14
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzw:Lcom/google/android/gms/measurement/internal/zzfl;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfl;->zza()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 15
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    .line 16
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzr()Lcom/google/android/gms/measurement/internal/zzet;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzet;->zzg()Lcom/google/android/gms/measurement/internal/zzev;
-
-    move-result-object v0
-
-    const-string v1, "Cache still valid but referrer not found"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzev;->zza(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    .line 17
-    :cond_2
-    iget-object v5, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v5}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v5
-
-    iget-object v5, v5, Lcom/google/android/gms/measurement/internal/zzff;->zzx:Lcom/google/android/gms/measurement/internal/zzfj;
-
-    invoke-virtual {v5}, Lcom/google/android/gms/measurement/internal/zzfj;->zza()J
-
-    move-result-wide v5
-
-    const-wide/32 v7, 0x36ee80
-
-    .line 18
-    div-long/2addr v5, v7
-
-    sub-long/2addr v5, v1
-
-    mul-long v5, v5, v7
-
-    .line 19
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    .line 20
-    new-instance v1, Landroid/os/Bundle;
-
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
-
-    .line 21
-    new-instance v2, Landroid/util/Pair;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {v2, v7, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 22
-    invoke-virtual {v0}, Landroid/net/Uri;->getQueryParameterNames()Ljava/util/Set;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    :goto_0
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_3
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/String;
-
-    .line 23
-    invoke-virtual {v0, v8}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v1, v8, v9}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 24
-    :cond_3
-    iget-object v0, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Landroid/os/Bundle;
-
-    invoke-virtual {v0, v3, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    .line 25
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 26
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzh()Lcom/google/android/gms/measurement/internal/zzhc;
-
-    move-result-object v0
-
-    iget-object v1, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    iget-object v2, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v2, Landroid/os/Bundle;
-
-    const-string v3, "_cmp"
-
-    .line 27
-    invoke-virtual {v0, v1, v3, v2}, Lcom/google/android/gms/measurement/internal/zzhc;->zza(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 28
-    :goto_1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzw:Lcom/google/android/gms/measurement/internal/zzfl;
-
-    invoke-virtual {v0, v4}, Lcom/google/android/gms/measurement/internal/zzfl;->zza(Ljava/lang/String;)V
-
-    .line 29
-    :goto_2
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzx:Lcom/google/android/gms/measurement/internal/zzfj;
-
-    const-wide/16 v1, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/measurement/internal/zzfj;->zza(J)V
-
-    return-void
-.end method
-
-.method public final zza(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 3
-
-    .line 30
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 31
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzq()Lcom/google/android/gms/measurement/internal/zzfu;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfu;->zzd()V
-
-    .line 32
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzab()Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    if-eqz p2, :cond_4
-
-    .line 33
-    invoke-virtual {p2}, Landroid/os/Bundle;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    .line 34
-    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    const-string p1, "auto"
-
-    .line 35
-    :cond_2
-    new-instance v0, Landroid/net/Uri$Builder;
-
-    invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
-
-    .line 36
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    .line 37
-    invoke-virtual {p2}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    .line 38
-    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    goto :goto_0
-
-    .line 39
-    :cond_3
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_4
-    :goto_1
-    const/4 p1, 0x0
-
-    .line 40
-    :goto_2
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
 
     move-result p2
 
-    if-nez p2, :cond_5
-
-    .line 41
-    iget-object p2, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    invoke-virtual {p2}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object p2
-
-    iget-object p2, p2, Lcom/google/android/gms/measurement/internal/zzff;->zzw:Lcom/google/android/gms/measurement/internal/zzfl;
-
-    invoke-virtual {p2, p1}, Lcom/google/android/gms/measurement/internal/zzfl;->zza(Ljava/lang/String;)V
-
-    .line 42
-    iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 43
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lcom/google/android/gms/measurement/internal/zzff;->zzx:Lcom/google/android/gms/measurement/internal/zzfj;
-
-    iget-object p2, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
-
-    .line 44
-    invoke-virtual {p2}, Lcom/google/android/gms/measurement/internal/zzfx;->zzm()Lcom/google/android/gms/common/util/Clock;
-
-    move-result-object p2
-
-    invoke-interface {p2}, Lcom/google/android/gms/common/util/Clock;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/measurement/internal/zzfj;->zza(J)V
-
-    :cond_5
-    return-void
-.end method
-
-.method public final zzb()V
-    .locals 2
-
-    .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzn;->zzd()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzn;->zzc()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Lcom/google/android/gms/measurement/internal/zzfx;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zza:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzfx;->zzc()Lcom/google/android/gms/measurement/internal/zzff;
+    const/4 v1, 0x2
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    iget-object v0, v0, Lcom/google/android/gms/measurement/internal/zzff;->zzw:Lcom/google/android/gms/measurement/internal/zzfl;
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/4 v1, 0x0
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzb:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/internal/zzfl;->zza(Ljava/lang/String;)V
+    const/4 v1, 0x3
 
-    :cond_0
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzc:Ljava/lang/String;
+
+    const/4 v1, 0x4
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzd:Ljava/lang/String;
+
+    const/4 v1, 0x5
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 6
+    iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zze:J
+
+    const/4 v3, 0x6
+
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+
+    .line 7
+    iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzf:J
+
+    const/4 v3, 0x7
+
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+
+    .line 8
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzg:Ljava/lang/String;
+
+    const/16 v1, 0x8
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 9
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzh:Z
+
+    const/16 v1, 0x9
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+
+    .line 10
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzi:Z
+
+    const/16 v1, 0xa
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+
+    .line 11
+    iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzj:J
+
+    const/16 v3, 0xb
+
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+
+    .line 12
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzk:Ljava/lang/String;
+
+    const/16 v1, 0xc
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 13
+    iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzl:J
+
+    const/16 v3, 0xd
+
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+
+    .line 14
+    iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzm:J
+
+    const/16 v3, 0xe
+
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+
+    .line 15
+    iget v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzn:I
+
+    const/16 v1, 0xf
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeInt(Landroid/os/Parcel;II)V
+
+    .line 16
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzo:Z
+
+    const/16 v1, 0x10
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+
+    .line 17
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzp:Z
+
+    const/16 v1, 0x11
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+
+    .line 18
+    iget-boolean v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzq:Z
+
+    const/16 v1, 0x12
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBoolean(Landroid/os/Parcel;IZ)V
+
+    .line 19
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzr:Ljava/lang/String;
+
+    const/16 v1, 0x13
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 20
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzs:Ljava/lang/Boolean;
+
+    const/16 v1, 0x15
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeBooleanObject(Landroid/os/Parcel;ILjava/lang/Boolean;Z)V
+
+    .line 21
+    iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzt:J
+
+    const/16 v3, 0x16
+
+    invoke-static {p1, v3, v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeLong(Landroid/os/Parcel;IJ)V
+
+    .line 22
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzu:Ljava/util/List;
+
+    const/16 v1, 0x17
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeStringList(Landroid/os/Parcel;ILjava/util/List;Z)V
+
+    .line 23
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzv:Ljava/lang/String;
+
+    const/16 v1, 0x18
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 24
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzn;->zzw:Ljava/lang/String;
+
+    const/16 v1, 0x19
+
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+
+    .line 25
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
+
     return-void
 .end method

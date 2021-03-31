@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final DEFAULT_CACHE_DIR:Ljava/lang/String; = "volley"
+.field private static final DEFAULT_CACHE_DIR:Ljava/lang/String; = "volley"
 
 
 # direct methods
@@ -17,20 +17,49 @@
     return-void
 .end method
 
-.method public static newRequestQueue(Landroid/content/Context;)Lvv;
+.method public static newRequestQueue(Landroid/content/Context;)Lcom/android/volley/RequestQueue;
     .locals 1
 
     const/4 v0, 0x0
 
     .line 15
-    invoke-static {p0, v0}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/BaseHttpStack;)Lvv;
+    invoke-static {p0, v0}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/BaseHttpStack;)Lcom/android/volley/RequestQueue;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/BaseHttpStack;)Lvv;
+.method private static newRequestQueue(Landroid/content/Context;Lcom/android/volley/Network;)Lcom/android/volley/RequestQueue;
+    .locals 2
+
+    .line 12
+    new-instance v0, Ljava/io/File;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object p0
+
+    const-string/jumbo v1, "volley"
+
+    invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    .line 13
+    new-instance p0, Lcom/android/volley/RequestQueue;
+
+    new-instance v1, Lcom/android/volley/toolbox/DiskBasedCache;
+
+    invoke-direct {v1, v0}, Lcom/android/volley/toolbox/DiskBasedCache;-><init>(Ljava/io/File;)V
+
+    invoke-direct {p0, v1, p1}, Lcom/android/volley/RequestQueue;-><init>(Lcom/android/volley/Cache;Lcom/android/volley/Network;)V
+
+    .line 14
+    invoke-virtual {p0}, Lcom/android/volley/RequestQueue;->start()V
+
+    return-object p0
+.end method
+
+.method public static newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/BaseHttpStack;)Lcom/android/volley/RequestQueue;
     .locals 2
 
     if-nez p1, :cond_1
@@ -51,9 +80,7 @@
 
     invoke-direct {p1, v0}, Lcom/android/volley/toolbox/BasicNetwork;-><init>(Lcom/android/volley/toolbox/BaseHttpStack;)V
 
-    move-object v0, p1
-
-    goto :goto_1
+    goto :goto_2
 
     .line 3
     :cond_0
@@ -97,7 +124,7 @@
     goto :goto_0
 
     :catch_0
-    const-string p1, "volley/0"
+    const-string/jumbo p1, "volley/0"
 
     .line 6
     :goto_0
@@ -122,16 +149,19 @@
 
     invoke-direct {v0, p1}, Lcom/android/volley/toolbox/BasicNetwork;-><init>(Lcom/android/volley/toolbox/BaseHttpStack;)V
 
-    .line 9
     :goto_1
-    invoke-static {p0, v0}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lsv;)Lvv;
+    move-object p1, v0
+
+    .line 9
+    :goto_2
+    invoke-static {p0, p1}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lcom/android/volley/Network;)Lcom/android/volley/RequestQueue;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/HttpStack;)Lvv;
+.method public static newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/HttpStack;)Lcom/android/volley/RequestQueue;
     .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -141,7 +171,7 @@
     const/4 p1, 0x0
 
     .line 10
-    invoke-static {p0, p1}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/BaseHttpStack;)Lvv;
+    invoke-static {p0, p1}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lcom/android/volley/toolbox/BaseHttpStack;)Lcom/android/volley/RequestQueue;
 
     move-result-object p0
 
@@ -153,38 +183,9 @@
 
     invoke-direct {v0, p1}, Lcom/android/volley/toolbox/BasicNetwork;-><init>(Lcom/android/volley/toolbox/HttpStack;)V
 
-    invoke-static {p0, v0}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lsv;)Lvv;
+    invoke-static {p0, v0}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;Lcom/android/volley/Network;)Lcom/android/volley/RequestQueue;
 
     move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static newRequestQueue(Landroid/content/Context;Lsv;)Lvv;
-    .locals 2
-
-    .line 12
-    new-instance v0, Ljava/io/File;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
-
-    move-result-object p0
-
-    const-string v1, "volley"
-
-    invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 13
-    new-instance p0, Lvv;
-
-    new-instance v1, Lcom/android/volley/toolbox/DiskBasedCache;
-
-    invoke-direct {v1, v0}, Lcom/android/volley/toolbox/DiskBasedCache;-><init>(Ljava/io/File;)V
-
-    invoke-direct {p0, v1, p1}, Lvv;-><init>(Lnv;Lsv;)V
-
-    .line 14
-    invoke-virtual {p0}, Lvv;->start()V
 
     return-object p0
 .end method

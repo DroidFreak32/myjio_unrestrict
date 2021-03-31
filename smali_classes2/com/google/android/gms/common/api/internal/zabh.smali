@@ -1,45 +1,46 @@
 .class public final Lcom/google/android/gms/common/api/internal/zabh;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
+
+# interfaces
+.implements Lcom/google/android/gms/common/internal/BaseGmsClient$SignOutCallbacks;
 
 
-# static fields
-.field public static final zahw:Ljava/util/concurrent/ExecutorService;
+# instance fields
+.field public final synthetic zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/base/zam;->zacv()Lcom/google/android/gms/internal/base/zal;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabh;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
-    move-result-object v0
-
-    new-instance v1, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;
-
-    const-string v2, "GAC_Executor"
-
-    invoke-direct {v1, v2}, Lcom/google/android/gms/common/util/concurrent/NumberedThreadFactory;-><init>(Ljava/lang/String;)V
-
-    const/4 v2, 0x2
-
-    const/16 v3, 0x9
-
-    .line 2
-    invoke-interface {v0, v2, v1, v3}, Lcom/google/android/gms/internal/base/zal;->zaa(ILjava/util/concurrent/ThreadFactory;I)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/common/api/internal/zabh;->zahw:Ljava/util/concurrent/ExecutorService;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static zabb()Ljava/util/concurrent/ExecutorService;
-    .locals 1
+
+# virtual methods
+.method public final onSignOutComplete()V
+    .locals 2
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/common/api/internal/zabh;->zahw:Ljava/util/concurrent/ExecutorService;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabh;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
 
-    return-object v0
+    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/gms/common/api/internal/zabg;
+
+    invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/internal/zabg;-><init>(Lcom/google/android/gms/common/api/internal/zabh;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 .end method

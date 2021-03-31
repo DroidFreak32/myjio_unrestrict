@@ -3,17 +3,17 @@
 
 
 # instance fields
-.field public dateTime:J
+.field private dateTime:J
 
-.field public eventId:I
+.field private eventId:I
 
-.field public eventValue:Ljava/lang/String;
+.field private eventValue:Ljava/lang/String;
 
-.field public param1:Ljava/lang/String;
+.field private param1:Ljava/lang/String;
 
-.field public param2:Ljava/lang/String;
+.field private param2:Ljava/lang/String;
 
-.field public param3:Ljava/lang/String;
+.field private param3:Ljava/lang/String;
 
 
 # direct methods

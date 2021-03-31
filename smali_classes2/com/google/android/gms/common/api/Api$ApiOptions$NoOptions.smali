@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$ApiOptions$NotRequiredOptions;
@@ -17,11 +18,20 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/common/api/zaa;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;-><init>()V
 
     return-void
 .end method

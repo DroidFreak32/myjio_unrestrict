@@ -1,57 +1,56 @@
-.class public final synthetic Lcom/google/android/gms/internal/ads/zzasy;
+.class public interface abstract Lcom/google/android/gms/internal/ads/zzasy;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final zzcwf:I
-
-.field public final zzcwg:I
-
-.field public final zzdgp:Z
-
-.field public final zzdgq:Z
-
-.field public final zzdil:Lcom/google/android/gms/internal/ads/zzasw;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzasw;IIZZ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzdil:Lcom/google/android/gms/internal/ads/zzasw;
-
-    iput p2, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzcwf:I
-
-    iput p3, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzcwg:I
-
-    iput-boolean p4, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzdgp:Z
-
-    iput-boolean p5, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzdgq:Z
-
-    return-void
-.end method
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzass;)Lcom/google/android/gms/internal/ads/zzasu;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzdil:Lcom/google/android/gms/internal/ads/zzasw;
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzass;Lcom/google/android/gms/internal/ads/zzatd;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget v1, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzcwf:I
+.method public abstract zza(Lcom/google/android/gms/internal/ads/zzatl;Lcom/google/android/gms/internal/ads/zzatf;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget v2, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzcwg:I
+.method public abstract zza(Ljava/lang/String;Lcom/google/android/gms/internal/ads/zzatf;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-boolean v3, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzdgp:Z
+.method public abstract zzb(Lcom/google/android/gms/internal/ads/zzatl;Lcom/google/android/gms/internal/ads/zzatf;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    iget-boolean v4, p0, Lcom/google/android/gms/internal/ads/zzasy;->zzdgq:Z
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/gms/internal/ads/zzasw;->zzb(IIZZ)V
-
-    return-void
+.method public abstract zzc(Lcom/google/android/gms/internal/ads/zzatl;Lcom/google/android/gms/internal/ads/zzatf;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

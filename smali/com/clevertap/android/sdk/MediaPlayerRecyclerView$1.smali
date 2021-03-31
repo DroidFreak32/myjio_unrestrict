@@ -1,5 +1,5 @@
 .class public Lcom/clevertap/android/sdk/MediaPlayerRecyclerView$1;
-.super Landroidx/recyclerview/widget/RecyclerView$s;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "MediaPlayerRecyclerView.java"
 
 
@@ -25,7 +25,7 @@
     .line 1
     iput-object p1, p0, Lcom/clevertap/android/sdk/MediaPlayerRecyclerView$1;->this$0:Lcom/clevertap/android/sdk/MediaPlayerRecyclerView;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$s;-><init>()V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
@@ -34,9 +34,13 @@
 # virtual methods
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 0
+    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$s;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
+    invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
     if-nez p2, :cond_0
 
@@ -51,9 +55,13 @@
 
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
+    .param p1    # Landroidx/recyclerview/widget/RecyclerView;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$s;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
     return-void
 .end method

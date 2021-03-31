@@ -28,7 +28,7 @@
     .locals 0
 
     .line 1
-    iget-object p1, p1, Lcom/squareup/moshi/LinkedHashTreeMap$d;->s:Lcom/squareup/moshi/LinkedHashTreeMap;
+    iget-object p1, p1, Lcom/squareup/moshi/LinkedHashTreeMap$d;->a:Lcom/squareup/moshi/LinkedHashTreeMap;
 
     invoke-direct {p0, p1}, Lcom/squareup/moshi/LinkedHashTreeMap$f;-><init>(Lcom/squareup/moshi/LinkedHashTreeMap;)V
 
@@ -37,18 +37,7 @@
 
 
 # virtual methods
-.method public bridge synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lcom/squareup/moshi/LinkedHashTreeMap$d$a;->next()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public next()Ljava/util/Map$Entry;
+.method public b()Ljava/util/Map$Entry;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -58,8 +47,19 @@
         }
     .end annotation
 
-    .line 2
+    .line 1
     invoke-virtual {p0}, Lcom/squareup/moshi/LinkedHashTreeMap$f;->a()Lcom/squareup/moshi/LinkedHashTreeMap$g;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lcom/squareup/moshi/LinkedHashTreeMap$d$a;->b()Ljava/util/Map$Entry;
 
     move-result-object v0
 

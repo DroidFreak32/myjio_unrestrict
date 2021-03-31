@@ -40,11 +40,9 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
 
-    .line 2
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v1, 0x190
 
+    .line 2
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -53,11 +51,9 @@
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v2, 0x2bc
 
+    .line 3
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -66,11 +62,9 @@
 
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/4 v3, 0x1
 
+    .line 4
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -79,11 +73,9 @@
 
     invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/4 v3, -0x1
 
+    .line 5
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -92,11 +84,9 @@
 
     invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 6
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v3, 0x64
 
+    .line 6
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -105,11 +95,9 @@
 
     invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 7
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v3, 0xc8
 
+    .line 7
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -118,11 +106,9 @@
 
     invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v3, 0x12c
 
+    .line 8
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -131,18 +117,14 @@
 
     invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 9
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const-string v3, "400"
 
+    .line 9
     invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 10
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
 
     const/16 v1, 0x1f4
 
+    .line 10
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -151,11 +133,9 @@
 
     invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 11
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v1, 0x258
 
+    .line 11
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -164,18 +144,14 @@
 
     invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 12
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const-string v1, "700"
 
+    .line 12
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 13
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
 
     const/16 v1, 0x320
 
+    .line 13
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -184,11 +160,9 @@
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 14
-    sget-object v0, Lcom/caverock/androidsvg/SVGParser$e;->a:Ljava/util/Map;
-
     const/16 v1, 0x384
 
+    .line 14
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1

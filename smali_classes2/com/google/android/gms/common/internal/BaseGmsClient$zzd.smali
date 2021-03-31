@@ -1,5 +1,9 @@
 .class public final Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;
-.super Lcom/google/android/gms/common/internal/IGmsCallbacks$zza;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
+
+# interfaces
+.implements Landroid/content/ServiceConnection;
 
 
 # annotations
@@ -11,15 +15,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x11
     name = "zzd"
 .end annotation
 
 
 # instance fields
-.field public zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
+.field private final zza:I
 
-.field public final zzcx:I
+.field private final synthetic zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
 
 # direct methods
@@ -27,84 +31,159 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/IGmsCallbacks$zza;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
-
-    .line 3
-    iput p2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcx:I
+    iput p2, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zza:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPostInitComplete(ILandroid/os/IBinder;Landroid/os/Bundle;)V
-    .locals 2
+.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 3
+
+    if-nez p2, :cond_0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    const-string v1, "onPostInitComplete can be called only once per call to getRemoteService"
+    const/16 p2, 0x10
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
-
-    iget v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcx:I
-
-    invoke-virtual {v0, p1, p2, p3, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->onPostInitHandler(ILandroid/os/IBinder;Landroid/os/Bundle;I)V
-
-    const/4 p1, 0x0
-
-    .line 3
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;I)V
 
     return-void
-.end method
-
-.method public final zza(ILandroid/os/Bundle;)V
-    .locals 1
-
-    .line 1
-    new-instance p1, Ljava/lang/Exception;
-
-    invoke-direct {p1}, Ljava/lang/Exception;-><init>()V
-
-    const-string p2, "GmsClient"
-
-    const-string v0, "received deprecated onAccountValidationComplete callback, ignoring"
-
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-.end method
-
-.method public final zza(ILandroid/os/IBinder;Lcom/google/android/gms/common/internal/zzb;)V
-    .locals 2
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    :cond_0
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    const-string v1, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService"
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;)Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p1
+
+    monitor-enter p1
 
     .line 3
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    const-string v1, "com.google.android.gms.common.internal.IGmsServiceBroker"
 
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzcw:Lcom/google/android/gms/common/internal/BaseGmsClient;
+    invoke-interface {p2, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    invoke-static {v0, p3}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;Lcom/google/android/gms/common/internal/zzb;)V
+    move-result-object v1
+
+    if-eqz v1, :cond_1
 
     .line 5
-    iget-object p3, p3, Lcom/google/android/gms/common/internal/zzb;->zzda:Landroid/os/Bundle;
+    instance-of v2, v1, Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    if-eqz v2, :cond_1
 
     .line 6
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->onPostInitComplete(ILandroid/os/IBinder;Landroid/os/Bundle;)V
+    check-cast v1, Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    goto :goto_0
+
+    .line 7
+    :cond_1
+    new-instance v1, Lcom/google/android/gms/common/internal/IGmsServiceBroker$Stub$zza;
+
+    invoke-direct {v1, p2}, Lcom/google/android/gms/common/internal/IGmsServiceBroker$Stub$zza;-><init>(Landroid/os/IBinder;)V
+
+    .line 8
+    :goto_0
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;Lcom/google/android/gms/common/internal/IGmsServiceBroker;)Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    .line 9
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 10
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    const/4 p2, 0x0
+
+    const/4 v0, 0x0
+
+    iget v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zza:I
+
+    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(ILandroid/os/Bundle;I)V
 
     return-void
+
+    :catchall_0
+    move-exception p2
+
+    .line 11
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p2
+.end method
+
+.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 3
+
+    .line 1
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    monitor-enter p1
+
+    .line 2
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza(Lcom/google/android/gms/common/internal/BaseGmsClient;Lcom/google/android/gms/common/internal/IGmsServiceBroker;)Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    .line 3
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 4
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zzb:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zza:Landroid/os/Handler;
+
+    const/4 v0, 0x6
+
+    iget v1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$zzd;->zza:I
+
+    const/4 v2, 0x1
+
+    .line 5
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 6
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    .line 7
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

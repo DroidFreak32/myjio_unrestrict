@@ -11,8 +11,12 @@
 .end annotation
 
 
+# static fields
+.field public static final TAG:Ljava/lang/String; = "Constraints"
+
+
 # instance fields
-.field public s:Lr5;
+.field public a:Landroidx/constraintlayout/widget/ConstraintSet;
 
 
 # direct methods
@@ -133,29 +137,29 @@
     return-object v0
 .end method
 
-.method public getConstraintSet()Lr5;
+.method public getConstraintSet()Landroidx/constraintlayout/widget/ConstraintSet;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->s:Lr5;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->a:Landroidx/constraintlayout/widget/ConstraintSet;
 
     if-nez v0, :cond_0
 
     .line 2
-    new-instance v0, Lr5;
+    new-instance v0, Landroidx/constraintlayout/widget/ConstraintSet;
 
-    invoke-direct {v0}, Lr5;-><init>()V
+    invoke-direct {v0}, Landroidx/constraintlayout/widget/ConstraintSet;-><init>()V
 
-    iput-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->s:Lr5;
+    iput-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->a:Landroidx/constraintlayout/widget/ConstraintSet;
 
     .line 3
     :cond_0
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->s:Lr5;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->a:Landroidx/constraintlayout/widget/ConstraintSet;
 
-    invoke-virtual {v0, p0}, Lr5;->a(Landroidx/constraintlayout/widget/Constraints;)V
+    invoke-virtual {v0, p0}, Landroidx/constraintlayout/widget/ConstraintSet;->clone(Landroidx/constraintlayout/widget/Constraints;)V
 
     .line 4
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->s:Lr5;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->a:Landroidx/constraintlayout/widget/ConstraintSet;
 
     return-object v0
 .end method

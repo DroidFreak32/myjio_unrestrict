@@ -23,22 +23,22 @@
 
     .line 1
     :try_start_0
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->C()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->isCheckPermissions()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
     .line 2
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg0;->N()V
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkAppUtil;->setInternationalRoamingToPreference()V
 
     const-string v0, "Settings"
 
@@ -59,11 +59,11 @@
     if-eqz v0, :cond_4
 
     .line 5
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lhf0;->V()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/PreferenceHelper;->isInternationalRoaming()Z
 
     move-result v0
 
@@ -73,11 +73,11 @@
 
     .line 6
     :cond_0
-    invoke-static {p1}, Lpg0;->a(Landroid/content/Context;)Lpg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkPassiveAppUtil;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lpg0;->g()Z
+    invoke-virtual {v0}, Lcom/inn/passivesdk/util/SdkPassiveAppUtil;->isEligibleToStartService()Z
 
     move-result v0
 
@@ -117,21 +117,21 @@
     if-lt p2, v0, :cond_2
 
     .line 9
-    invoke-static {p1}, Lff0;->a(Landroid/content/Context;)Lff0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PassiveManager;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PassiveManager;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lff0;->g()V
+    invoke-virtual {p1}, Lcom/inn/passivesdk/PassiveManager;->setJobScheduler()V
 
     goto :goto_0
 
     .line 10
     :cond_2
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lmg0;->c()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->checkFreeSpace()Z
 
     move-result p2
 

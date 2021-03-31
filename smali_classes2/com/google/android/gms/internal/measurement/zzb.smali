@@ -1,10 +1,10 @@
 .class public Lcom/google/android/gms/internal/measurement/zzb;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
 # static fields
-.field public static final zza:Ljava/lang/ClassLoader;
+.field private static final zza:Ljava/lang/ClassLoader;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1

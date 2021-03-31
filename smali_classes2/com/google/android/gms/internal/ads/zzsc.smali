@@ -1,13 +1,8 @@
 .class public interface abstract Lcom/google/android/gms/internal/ads/zzsc;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # virtual methods
-.method public abstract onUnconfirmedClickCancelled()V
-.end method
-
-.method public abstract onUnconfirmedClickReceived(Ljava/lang/String;)V
+.method public abstract zzms()V
 .end method

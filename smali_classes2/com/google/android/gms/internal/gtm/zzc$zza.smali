@@ -34,9 +34,9 @@
 
 
 # static fields
-.field public static final zznv:Lcom/google/android/gms/internal/gtm/zzc$zza;
+.field private static final zznv:Lcom/google/android/gms/internal/gtm/zzc$zza;
 
-.field public static volatile zznw:Lcom/google/android/gms/internal/gtm/zzsu;
+.field private static volatile zznw:Lcom/google/android/gms/internal/gtm/zzsu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/internal/gtm/zzsu<",
@@ -48,13 +48,13 @@
 
 
 # instance fields
-.field public zznr:I
+.field private zznr:I
 
-.field public zzns:I
+.field private zzns:I
 
-.field public zznt:I
+.field private zznt:I
 
-.field public zznu:I
+.field private zznu:I
 
 
 # direct methods
@@ -69,16 +69,14 @@
     sput-object v0, Lcom/google/android/gms/internal/gtm/zzc$zza;->zznv:Lcom/google/android/gms/internal/gtm/zzc$zza;
 
     .line 2
-    const-class v0, Lcom/google/android/gms/internal/gtm/zzc$zza;
+    const-class v1, Lcom/google/android/gms/internal/gtm/zzc$zza;
 
-    sget-object v1, Lcom/google/android/gms/internal/gtm/zzc$zza;->zznv:Lcom/google/android/gms/internal/gtm/zzc$zza;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/gtm/zzrc;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Ljava/lang/Class;Lcom/google/android/gms/internal/gtm/zzrc;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     .line 1
@@ -112,7 +110,7 @@
     const/4 v2, 0x0
 
     .line 17
-    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/gms/internal/gtm/zzc$zza;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -255,12 +253,12 @@
 
     aput-object p3, p1, p2
 
+    const-string p2, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u000c\u0000\u0002\u0004\u0001\u0003\u0004\u0002"
+
     .line 12
-    sget-object p2, Lcom/google/android/gms/internal/gtm/zzc$zza;->zznv:Lcom/google/android/gms/internal/gtm/zzc$zza;
+    sget-object p3, Lcom/google/android/gms/internal/gtm/zzc$zza;->zznv:Lcom/google/android/gms/internal/gtm/zzc$zza;
 
-    const-string p3, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u000c\u0000\u0002\u0004\u0001\u0003\u0004\u0002"
-
-    invoke-static {p2, p3, p1}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Lcom/google/android/gms/internal/gtm/zzsk;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, p2, p1}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Lcom/google/android/gms/internal/gtm/zzsk;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/util/UidVerifier;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -8,7 +9,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -19,6 +20,17 @@
 
 .method public static isGooglePlayServicesUid(Landroid/content/Context;I)Z
     .locals 3
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -78,8 +90,23 @@
 
 .method public static uidHasPackageName(Landroid/content/Context;ILjava/lang/String;)Z
     .locals 0
+    .param p0    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p1    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x13
+    .end annotation
+
+    .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
@@ -90,7 +117,7 @@
 
     move-result-object p0
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;->zzb(ILjava/lang/String;)Z
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;->zza(ILjava/lang/String;)Z
 
     move-result p0
 

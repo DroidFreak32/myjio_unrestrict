@@ -43,68 +43,6 @@
 
 
 # virtual methods
-.method public a()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Lcom/caverock/androidsvg/CSSParser$l;",
-            ">;"
-        }
-    .end annotation
-
-    .line 13
-    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public a(Lcom/caverock/androidsvg/CSSParser$Source;)V
-    .locals 2
-
-    .line 14
-    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 15
-    :cond_0
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .line 16
-    :cond_1
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 17
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/caverock/androidsvg/CSSParser$l;
-
-    iget-object v1, v1, Lcom/caverock/androidsvg/CSSParser$l;->c:Lcom/caverock/androidsvg/CSSParser$Source;
-
-    if-ne v1, p1, :cond_1
-
-    .line 18
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    :cond_2
-    return-void
-.end method
-
 .method public a(Lcom/caverock/androidsvg/CSSParser$l;)V
     .locals 3
 
@@ -174,34 +112,36 @@
     return-void
 .end method
 
-.method public a(Lcom/caverock/androidsvg/CSSParser$n;)V
+.method public b(Lcom/caverock/androidsvg/CSSParser$n;)V
     .locals 2
 
-    .line 8
+    .line 1
     iget-object v0, p1, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 9
+    .line 2
     :cond_0
-    iget-object v1, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    .line 10
-    new-instance v1, Ljava/util/ArrayList;
+    .line 3
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    iget-object v1, p1, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
 
-    move-result v0
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    move-result v1
 
-    iput-object v1, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11
+    iput-object v0, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
+
+    .line 4
     :cond_1
     iget-object p1, p1, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
 
@@ -222,7 +162,7 @@
 
     check-cast v0, Lcom/caverock/androidsvg/CSSParser$l;
 
-    .line 12
+    .line 5
     invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/CSSParser$n;->a(Lcom/caverock/androidsvg/CSSParser$l;)V
 
     goto :goto_0
@@ -231,7 +171,24 @@
     return-void
 .end method
 
-.method public b()Z
+.method public c()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/caverock/androidsvg/CSSParser$l;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public d()Z
     .locals 1
 
     .line 1
@@ -260,7 +217,52 @@
     return v0
 .end method
 
-.method public c()I
+.method public e(Lcom/caverock/androidsvg/CSSParser$Source;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/caverock/androidsvg/CSSParser$n;->a:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 2
+    :cond_0
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .line 3
+    :cond_1
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 4
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/caverock/androidsvg/CSSParser$l;
+
+    iget-object v1, v1, Lcom/caverock/androidsvg/CSSParser$l;->c:Lcom/caverock/androidsvg/CSSParser$Source;
+
+    if-ne v1, p1, :cond_1
+
+    .line 5
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_0
+
+    :cond_2
+    return-void
+.end method
+
+.method public f()I
     .locals 1
 
     .line 1

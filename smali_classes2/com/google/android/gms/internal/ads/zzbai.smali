@@ -1,111 +1,62 @@
-.class public final enum Lcom/google/android/gms/internal/ads/zzbai;
-.super Ljava/lang/Enum;
+.class public final Lcom/google/android/gms/internal/ads/zzbai;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum<",
-        "Lcom/google/android/gms/internal/ads/zzbai;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic zzeib:Lcom/google/android/gms/internal/ads/zzbac;
 
+.field private final synthetic zzeif:I
 
-# static fields
-.field public static final enum zzdrb:Lcom/google/android/gms/internal/ads/zzbai;
-
-.field public static final enum zzdrc:Lcom/google/android/gms/internal/ads/zzbai;
-
-.field public static final enum zzdrd:Lcom/google/android/gms/internal/ads/zzbai;
-
-.field public static final synthetic zzdre:[Lcom/google/android/gms/internal/ads/zzbai;
+.field private final synthetic zzeig:I
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 5
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbai;
-
-    const/4 v1, 0x0
-
-    const-string v2, "NIST_P256"
-
-    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/internal/ads/zzbai;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbai;->zzdrb:Lcom/google/android/gms/internal/ads/zzbai;
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbai;
-
-    const/4 v2, 0x1
-
-    const-string v3, "NIST_P384"
-
-    invoke-direct {v0, v3, v2}, Lcom/google/android/gms/internal/ads/zzbai;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbai;->zzdrc:Lcom/google/android/gms/internal/ads/zzbai;
-
-    .line 3
-    new-instance v0, Lcom/google/android/gms/internal/ads/zzbai;
-
-    const/4 v3, 0x2
-
-    const-string v4, "NIST_P521"
-
-    invoke-direct {v0, v4, v3}, Lcom/google/android/gms/internal/ads/zzbai;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbai;->zzdrd:Lcom/google/android/gms/internal/ads/zzbai;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lcom/google/android/gms/internal/ads/zzbai;
-
-    .line 4
-    sget-object v4, Lcom/google/android/gms/internal/ads/zzbai;->zzdrb:Lcom/google/android/gms/internal/ads/zzbai;
-
-    aput-object v4, v0, v1
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzbai;->zzdrc:Lcom/google/android/gms/internal/ads/zzbai;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/android/gms/internal/ads/zzbai;->zzdrd:Lcom/google/android/gms/internal/ads/zzbai;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/android/gms/internal/ads/zzbai;->zzdre:[Lcom/google/android/gms/internal/ads/zzbai;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzbac;II)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeib:Lcom/google/android/gms/internal/ads/zzbac;
+
+    iput p2, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeif:I
+
+    iput p3, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeig:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lcom/google/android/gms/internal/ads/zzbai;
-    .locals 1
+
+# virtual methods
+.method public final run()V
+    .locals 3
 
     .line 1
-    sget-object v0, Lcom/google/android/gms/internal/ads/zzbai;->zzdre:[Lcom/google/android/gms/internal/ads/zzbai;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeib:Lcom/google/android/gms/internal/ads/zzbac;
 
-    invoke-virtual {v0}, [Lcom/google/android/gms/internal/ads/zzbai;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbac;->zza(Lcom/google/android/gms/internal/ads/zzbac;)Lcom/google/android/gms/internal/ads/zzbam;
 
     move-result-object v0
 
-    check-cast v0, [Lcom/google/android/gms/internal/ads/zzbai;
+    if-eqz v0, :cond_0
 
-    return-object v0
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeib:Lcom/google/android/gms/internal/ads/zzbac;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzbac;->zza(Lcom/google/android/gms/internal/ads/zzbac;)Lcom/google/android/gms/internal/ads/zzbam;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeif:I
+
+    iget v2, p0, Lcom/google/android/gms/internal/ads/zzbai;->zzeig:I
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/internal/ads/zzbam;->zzk(II)V
+
+    :cond_0
+    return-void
 .end method

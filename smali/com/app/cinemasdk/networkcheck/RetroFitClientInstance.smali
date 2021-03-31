@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final ROOT_URL:Ljava/lang/String; = "http://api.media.jio.com"
+.field private static final ROOT_URL:Ljava/lang/String; = "http://api.media.jio.com"
 
-.field public static final SECO_URL:Ljava/lang/String; = "http://api.jio.com"
+.field private static final SECO_URL:Ljava/lang/String; = "http://api.jio.com"
 
-.field public static retrofit:Lyr4;
+.field private static retrofit:Lretrofit2/Retrofit;
 
-.field public static retrofit1:Lyr4;
+.field private static retrofit1:Lretrofit2/Retrofit;
 
 
 # direct methods
@@ -23,80 +23,88 @@
     return-void
 .end method
 
-.method public static getRetrofitRootInstance()Lyr4;
+.method public static getRetrofitRootInstance()Lretrofit2/Retrofit;
     .locals 2
 
     .line 1
-    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit:Lyr4;
+    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit:Lretrofit2/Retrofit;
 
     if-nez v0, :cond_0
 
     .line 2
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     const-string v1, "http://api.media.jio.com"
 
     .line 3
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
-
-    .line 4
-    invoke-static {}, Lks4;->a()Lks4;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Lnr4$a;)Lyr4$b;
-
-    .line 5
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 
-    sput-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit:Lyr4;
+    .line 4
+    invoke-static {}, Lretrofit2/converter/gson/GsonConverterFactory;->create()Lretrofit2/converter/gson/GsonConverterFactory;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->addConverterFactory(Lretrofit2/Converter$Factory;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit:Lretrofit2/Retrofit;
 
     .line 6
     :cond_0
-    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit:Lyr4;
+    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit:Lretrofit2/Retrofit;
 
     return-object v0
 .end method
 
-.method public static getretrofit1SecoInstance()Lyr4;
+.method public static getretrofit1SecoInstance()Lretrofit2/Retrofit;
     .locals 2
 
     .line 1
-    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit1:Lyr4;
+    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit1:Lretrofit2/Retrofit;
 
     if-nez v0, :cond_0
 
     .line 2
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     const-string v1, "http://api.jio.com"
 
     .line 3
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
-
-    .line 4
-    invoke-static {}, Lks4;->a()Lks4;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Lnr4$a;)Lyr4$b;
-
-    .line 5
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 
-    sput-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit1:Lyr4;
+    .line 4
+    invoke-static {}, Lretrofit2/converter/gson/GsonConverterFactory;->create()Lretrofit2/converter/gson/GsonConverterFactory;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->addConverterFactory(Lretrofit2/Converter$Factory;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit1:Lretrofit2/Retrofit;
 
     .line 6
     :cond_0
-    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit1:Lyr4;
+    sget-object v0, Lcom/app/cinemasdk/networkcheck/RetroFitClientInstance;->retrofit1:Lretrofit2/Retrofit;
 
     return-object v0
 .end method

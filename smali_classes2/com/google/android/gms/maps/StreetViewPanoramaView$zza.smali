@@ -20,11 +20,11 @@
 
 
 # instance fields
-.field public final parent:Landroid/view/ViewGroup;
+.field private final parent:Landroid/view/ViewGroup;
 
-.field public final zzce:Lcom/google/android/gms/maps/internal/IStreetViewPanoramaViewDelegate;
+.field private final zzce:Lcom/google/android/gms/maps/internal/IStreetViewPanoramaViewDelegate;
 
-.field public zzcf:Landroid/view/View;
+.field private zzcf:Landroid/view/View;
 
 
 # direct methods

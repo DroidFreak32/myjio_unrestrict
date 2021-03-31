@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field public final zzl:Landroid/content/Context;
+.field private final zzl:Landroid/content/Context;
 
-.field public zzm:Ljava/lang/String;
+.field private zzm:Ljava/lang/String;
 
-.field public final zzn:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final zzn:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/content/Context;)V
     .locals 3
 
     .line 1
@@ -110,16 +110,16 @@
 .end method
 
 .method private final zze(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
-    .locals 12
+    .locals 13
 
     const-string v0, ": "
 
-    .line 76
+    .line 75
     invoke-static {p1, p2}, Lcom/google/android/gms/gcm/zzd;->zzd(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 77
+    .line 76
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -128,7 +128,7 @@
 
     return-object v1
 
-    .line 78
+    .line 77
     :cond_0
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -160,7 +160,7 @@
 
     move-result-object v1
 
-    .line 79
+    .line 78
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -171,7 +171,7 @@
 
     return-object v4
 
-    .line 80
+    .line 79
     :cond_2
     iget-object v3, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
 
@@ -179,7 +179,7 @@
 
     move-result-object v3
 
-    .line 81
+    .line 80
     iget-object v5, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -198,7 +198,7 @@
 
     if-nez v5, :cond_4
 
-    .line 82
+    .line 81
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -222,13 +222,13 @@
 
     move-object p1, p2
 
-    .line 83
+    .line 82
     :goto_1
     invoke-virtual {p1, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 84
+    .line 83
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
@@ -267,7 +267,7 @@
 
     return-object v4
 
-    .line 85
+    .line 84
     :cond_4
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -299,56 +299,53 @@
 
     move-result-object p1
 
-    .line 86
+    .line 85
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_6
 
-    .line 87
+    .line 86
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
     return-object p1
 
-    .line 88
+    .line 87
     :cond_6
     :try_start_0
     new-instance v2, Lorg/json/JSONArray;
 
     invoke-direct {v2, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 89
+    .line 88
     invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
 
     move-result v9
 
-    new-array v9, v9, [Ljava/lang/String;
+    new-array v10, v9, [Ljava/lang/String;
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    .line 90
     :goto_3
-    array-length v11, v9
+    if-ge v11, v9, :cond_7
 
-    if-ge v10, v11, :cond_7
+    .line 89
+    invoke-virtual {v2, v11}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
 
-    .line 91
-    invoke-virtual {v2, v10}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+    move-result-object v12
 
-    move-result-object v11
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
-
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v11, v11, 0x1
 
     goto :goto_3
 
-    .line 92
+    .line 90
     :cond_7
-    invoke-virtual {v3, v5, v9}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v3, v5, v10}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
     :try_end_0
@@ -357,7 +354,7 @@
 
     return-object p1
 
-    .line 93
+    .line 91
     :catch_0
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -402,7 +399,7 @@
     :catch_1
     nop
 
-    .line 94
+    .line 92
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
@@ -426,13 +423,13 @@
 
     move-object p2, v1
 
-    .line 95
+    .line 93
     :goto_4
     invoke-virtual {p2, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 96
+    .line 94
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -513,16 +510,13 @@
     if-eqz v0, :cond_0
 
     .line 4
-    iget-object v1, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
-
-    if-eqz v1, :cond_0
-
-    .line 5
     iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 6
+    .line 5
     :cond_0
     sget-object v0, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
 
@@ -954,6 +948,8 @@
 
     const/4 v9, 0x3
 
+    const-string v10, "fcm_fallback_notification_channel"
+
     if-eqz v8, :cond_12
 
     iget-object v8, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
@@ -965,9 +961,9 @@
 
     iget v8, v8, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    const/16 v10, 0x1a
+    const/16 v11, 0x1a
 
-    if-ge v8, v10, :cond_c
+    if-ge v8, v11, :cond_c
 
     goto/16 :goto_6
 
@@ -1011,21 +1007,21 @@
 
     add-int/lit8 v8, v8, 0x7a
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10, v8}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v11, v8}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v8, "Notification Channel requested ("
 
-    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v7, ") has not been created by the app. Manifest configuration, or default, value will be used."
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 45
     :cond_e
@@ -1053,8 +1049,6 @@
     iput-object v7, p0, Lcom/google/android/gms/gcm/zzd;->zzm:Ljava/lang/String;
 
     .line 47
-    iget-object v7, p0, Lcom/google/android/gms/gcm/zzd;->zzm:Ljava/lang/String;
-
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
@@ -1075,67 +1069,68 @@
 
     goto :goto_6
 
-    :cond_10
-    const-string v7, "fcm_fallback_notification_channel"
-
     .line 50
-    invoke-virtual {v6, v7}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
+    :cond_10
+    invoke-virtual {v6, v10}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-nez v8, :cond_11
+    if-nez v7, :cond_11
 
     .line 51
-    new-instance v8, Landroid/app/NotificationChannel;
+    new-instance v7, Landroid/app/NotificationChannel;
 
-    iget-object v10, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
+    iget-object v8, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
 
     sget v11, Lcom/google/android/gms/gcm/R$string;->gcm_fallback_notification_channel_label:I
 
     .line 52
-    invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-direct {v8, v7, v10, v9}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+    invoke-direct {v7, v10, v8, v9}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
     .line 53
-    invoke-virtual {v6, v8}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+    invoke-virtual {v6, v7}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
     .line 54
     :cond_11
-    iput-object v7, p0, Lcom/google/android/gms/gcm/zzd;->zzm:Ljava/lang/String;
+    iput-object v10, p0, Lcom/google/android/gms/gcm/zzd;->zzm:Ljava/lang/String;
+
+    move-object v6, v10
 
     .line 55
-    iget-object v6, p0, Lcom/google/android/gms/gcm/zzd;->zzm:Ljava/lang/String;
-
-    .line 56
     :cond_12
     :goto_6
-    new-instance v7, Lq6$d;
+    new-instance v7, Landroidx/core/app/NotificationCompat$Builder;
 
     iget-object v8, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
 
-    invoke-direct {v7, v8}, Lq6$d;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v8}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
 
     const/4 v8, 0x1
 
+    .line 56
+    invoke-virtual {v7, v8}, Landroidx/core/app/NotificationCompat$Builder;->setAutoCancel(Z)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v4}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v4
+
     .line 57
-    invoke-virtual {v7, v8}, Lq6$d;->a(Z)Lq6$d;
-
-    invoke-virtual {v7, v4}, Lq6$d;->f(I)Lq6$d;
-
-    .line 58
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v7
 
-    if-nez v4, :cond_13
+    if-nez v7, :cond_13
+
+    .line 58
+    invoke-virtual {v4, v0}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 59
-    invoke-virtual {v7, v0}, Lq6$d;->b(Ljava/lang/CharSequence;)Lq6$d;
-
-    .line 60
     :cond_13
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1143,19 +1138,21 @@
 
     if-nez v0, :cond_14
 
+    .line 60
+    invoke-virtual {v4, v1}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+
     .line 61
-    invoke-virtual {v7, v1}, Lq6$d;->a(Ljava/lang/CharSequence;)Lq6$d;
+    new-instance v0, Landroidx/core/app/NotificationCompat$BigTextStyle;
+
+    invoke-direct {v0}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
+
+    invoke-virtual {v0, v1}, Landroidx/core/app/NotificationCompat$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 62
-    new-instance v0, Lq6$c;
-
-    invoke-direct {v0}, Lq6$c;-><init>()V
-
-    invoke-virtual {v0, v1}, Lq6$c;->a(Ljava/lang/CharSequence;)Lq6$c;
-
-    invoke-virtual {v7, v0}, Lq6$d;->a(Lq6$g;)Lq6$d;
-
-    .line 63
     :cond_14
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1163,71 +1160,71 @@
 
     if-nez v0, :cond_15
 
-    .line 64
+    .line 63
     invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v0
 
-    invoke-virtual {v7, v0}, Lq6$d;->b(I)Lq6$d;
+    invoke-virtual {v4, v0}, Landroidx/core/app/NotificationCompat$Builder;->setColor(I)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_15
     if-eqz v3, :cond_16
 
-    .line 65
-    invoke-virtual {v7, v3}, Lq6$d;->a(Landroid/net/Uri;)Lq6$d;
+    .line 64
+    invoke-virtual {v4, v3}, Landroidx/core/app/NotificationCompat$Builder;->setSound(Landroid/net/Uri;)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_16
     if-eqz v5, :cond_17
 
-    .line 66
-    invoke-virtual {v7, v5}, Lq6$d;->a(Landroid/app/PendingIntent;)Lq6$d;
+    .line 65
+    invoke-virtual {v4, v5}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
 
     :cond_17
     if-eqz v6, :cond_18
 
-    .line 67
-    invoke-virtual {v7, v6}, Lq6$d;->a(Ljava/lang/String;)Lq6$d;
+    .line 66
+    invoke-virtual {v4, v6}, Landroidx/core/app/NotificationCompat$Builder;->setChannelId(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
-    .line 68
+    .line 67
     :cond_18
-    invoke-virtual {v7}, Lq6$d;->a()Landroid/app/Notification;
+    invoke-virtual {v4}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object v0
 
     const-string v1, "gcm.n.tag"
 
-    .line 69
+    .line 68
     invoke-static {p1, v1}, Lcom/google/android/gms/gcm/zzd;->zzd(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v1, "GcmNotification"
 
-    .line 70
+    .line 69
     invoke-static {v1, v9}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v1
 
-    .line 71
+    .line 70
     iget-object v1, p0, Lcom/google/android/gms/gcm/zzd;->zzl:Landroid/content/Context;
 
     const-string v2, "notification"
 
-    .line 72
+    .line 71
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/app/NotificationManager;
 
-    .line 73
+    .line 72
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_19
 
-    .line 74
+    .line 73
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -1251,7 +1248,7 @@
     :cond_19
     const/4 v2, 0x0
 
-    .line 75
+    .line 74
     invoke-virtual {v1, p1, v2, v0}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
 
     return v8

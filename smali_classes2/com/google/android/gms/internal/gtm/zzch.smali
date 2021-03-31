@@ -11,7 +11,7 @@
 
 
 # static fields
-.field public static volatile zzabk:Lcom/google/android/gms/analytics/Logger;
+.field private static volatile zzabk:Lcom/google/android/gms/analytics/Logger;
 
 
 # direct methods
@@ -40,7 +40,7 @@
     return-object v0
 .end method
 
-.method public static isLoggable(I)Z
+.method private static isLoggable(I)Z
     .locals 2
 
     .line 1

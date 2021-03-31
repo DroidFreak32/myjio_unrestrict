@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$b;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$b;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,11 +38,18 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$b;->s:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+    sget-object v0, Lcom/jio/jioml/hellojio/utils/Console;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Console;
 
-    const/4 v1, 0x0
+    const-string v1, "my tts: animating"
 
-    invoke-static {v0, v1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->b(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Z)V
+    invoke-virtual {v0, v1}, Lcom/jio/jioml/hellojio/utils/Console;->debug(Ljava/lang/String;)V
+
+    .line 2
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/HelloJioActivity$b;->a:Lcom/jio/jioml/hellojio/activities/HelloJioActivity;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/jio/jioml/hellojio/activities/HelloJioActivity;->access$setMicAnimating$p(Lcom/jio/jioml/hellojio/activities/HelloJioActivity;Z)V
 
     return-void
 .end method

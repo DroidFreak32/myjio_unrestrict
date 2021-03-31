@@ -1,9 +1,168 @@
-.class public final Lcom/google/android/gms/internal/measurement/zzcp;
+.class public Lcom/google/android/gms/internal/measurement/zzcp;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
+
+
+# static fields
+.field public static final zza:Landroid/net/Uri;
+
+.field public static final zzb:Ljava/util/regex/Pattern;
+
+.field public static final zzc:Ljava/util/regex/Pattern;
+
+.field private static final zzd:Landroid/net/Uri;
+
+.field private static final zze:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private static zzf:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final zzg:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final zzh:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final zzi:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final zzj:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static zzk:Ljava/lang/Object;
+
+.field private static zzl:Z
+
+.field private static zzm:[Ljava/lang/String;
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    const-string v0, "content://com.google.android.gsf.gservices"
+
+    .line 1
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zza:Landroid/net/Uri;
+
+    const-string v0, "content://com.google.android.gsf.gservices/prefix"
+
+    .line 2
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzd:Landroid/net/Uri;
+
+    const-string v0, "^(1|true|t|on|yes|y)$"
+
+    const/4 v1, 0x2
+
+    .line 3
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzb:Ljava/util/regex/Pattern;
+
+    const-string v0, "^(0|false|f|off|no|n)$"
+
+    .line 4
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzc:Ljava/util/regex/Pattern;
+
+    .line 5
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zze:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 6
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzg:Ljava/util/HashMap;
+
+    .line 7
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzh:Ljava/util/HashMap;
+
+    .line 8
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzi:Ljava/util/HashMap;
+
+    .line 9
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzj:Ljava/util/HashMap;
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    .line 10
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzm:[Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -13,460 +172,468 @@
     return-void
 .end method
 
-.method public static zza(Ljava/io/File;)Lcom/google/android/gms/internal/measurement/zzcm;
-    .locals 6
-
-    .line 15
-    :try_start_0
-    new-instance v0, Ljava/io/BufferedReader;
-
-    new-instance v1, Ljava/io/InputStreamReader;
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    invoke-direct {v1, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
-
-    invoke-direct {v0, v1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 16
-    :try_start_1
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    .line 17
-    :goto_0
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_3
-
-    const-string v3, " "
-
-    const/4 v4, 0x3
-
-    .line 18
-    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 19
-    array-length v5, v3
-
-    if-eq v5, v4, :cond_1
-
-    const-string v3, "Invalid: "
-
-    .line 20
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v2, Ljava/lang/String;
-
-    invoke-direct {v2, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    .line 21
-    aget-object v2, v3, v2
-
-    const/4 v4, 0x1
-
-    .line 22
-    aget-object v4, v3, v4
-
-    invoke-static {v4}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    .line 23
-    aget-object v3, v3, v5
-
-    invoke-static {v3}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 24
-    invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
-
-    .line 25
-    new-instance v5, Ljava/util/HashMap;
-
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
-
-    invoke-interface {v1, v2, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 26
-    :cond_2
-    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map;
-
-    invoke-interface {v2, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 27
-    :cond_3
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x7
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Parsed "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 28
-    new-instance p0, Lcom/google/android/gms/internal/measurement/zzcm;
-
-    invoke-direct {p0, v1}, Lcom/google/android/gms/internal/measurement/zzcm;-><init>(Ljava/util/Map;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 29
-    :try_start_2
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    .line 30
-    :try_start_3
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_4
-    invoke-static {p0, v0}, Lcom/google/android/gms/internal/measurement/zzdl;->zza(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    :goto_1
-    throw p0
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
-
-    :catch_0
-    move-exception p0
-
-    .line 31
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-.end method
-
-.method public static zza(Landroid/content/Context;)Lcom/google/android/gms/internal/measurement/zzdd;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            ")",
-            "Lcom/google/android/gms/internal/measurement/zzdd<",
-            "Lcom/google/android/gms/internal/measurement/zzcm;",
-            ">;"
-        }
-    .end annotation
+.method public static zza(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 10
 
     .line 1
-    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    const-class p2, Lcom/google/android/gms/internal/measurement/zzcp;
 
-    sget-object v1, Landroid/os/Build;->TAGS:Ljava/lang/String;
-
-    sget-object v2, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
-
-    const-string v3, "eng"
+    monitor-enter p2
 
     .line 2
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_start_0
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
 
-    move-result v3
+    const/4 v1, 0x1
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    if-nez v3, :cond_0
-
-    const-string v3, "userdebug"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
+    const/4 v3, 0x0
 
     if-nez v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "goldfish"
-
     .line 3
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zze:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "ranchu"
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 4
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-instance v0, Ljava/util/HashMap;
 
-    move-result v0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    if-nez v0, :cond_1
-
-    const-string v0, "robolectric"
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
 
     .line 5
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-instance v0, Ljava/lang/Object;
 
-    move-result v0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const-string v0, "dev-keys"
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzk:Ljava/lang/Object;
 
     .line 6
-    invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    sput-boolean v2, Lcom/google/android/gms/internal/measurement/zzcp;->zzl:Z
 
-    move-result v0
+    .line 7
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zza:Landroid/net/Uri;
 
-    if-nez v0, :cond_2
+    new-instance v4, Lcom/google/android/gms/internal/measurement/zzco;
 
-    const-string v0, "test-keys"
+    invoke-direct {v4, v3}, Lcom/google/android/gms/internal/measurement/zzco;-><init>(Landroid/os/Handler;)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
+    invoke-virtual {p0, v0, v1, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     goto :goto_0
 
-    :cond_2
-    const/4 v4, 0x1
+    .line 8
+    :cond_0
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zze:Ljava/util/concurrent/atomic/AtomicBoolean;
 
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 9
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 10
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzg:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 11
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzh:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 12
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzi:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 13
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzj:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 14
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzk:Ljava/lang/Object;
+
+    .line 15
+    sput-boolean v2, Lcom/google/android/gms/internal/measurement/zzcp;->zzl:Z
+
+    .line 16
+    :cond_1
     :goto_0
-    if-nez v4, :cond_3
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzk:Ljava/lang/Object;
 
-    .line 7
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzdd;->zzc()Lcom/google/android/gms/internal/measurement/zzdd;
+    .line 17
+    sget-object v4, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-virtual {v4, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    .line 18
+    sget-object p0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Ljava/lang/String;
 
-    .line 8
+    if-eqz p0, :cond_2
+
+    move-object v3, p0
+
+    .line 19
+    :cond_2
+    monitor-exit p2
+
+    return-object v3
+
+    .line 20
     :cond_3
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzcd;->zza()Z
+    sget-object v4, Lcom/google/android/gms/internal/measurement/zzcp;->zzm:[Ljava/lang/String;
 
-    move-result v0
+    array-length v5, v4
 
-    if-eqz v0, :cond_5
+    const/4 v6, 0x0
 
-    .line 9
-    invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
+    :goto_1
+    if-ge v6, v5, :cond_8
 
-    move-result v0
+    aget-object v7, v4, v6
+
+    .line 21
+    invoke-virtual {p1, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    .line 22
+    sget-boolean v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzl:Z
 
     if-eqz v0, :cond_4
 
-    goto :goto_1
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
 
-    .line 10
-    :cond_4
-    invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    .line 11
-    :cond_5
-    :goto_1
-    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzcp;->zzb(Landroid/content/Context;)Lcom/google/android/gms/internal/measurement/zzdd;
-
-    move-result-object p0
-
-    .line 12
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzdd;->zza()Z
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 13
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/measurement/zzdd;->zzb()Ljava/lang/Object;
+    .line 23
+    :cond_4
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zzm:[Ljava/lang/String;
+
+    .line 24
+    sget-object v2, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/internal/measurement/zzcp;->zza(Landroid/content/ContentResolver;[Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object p0
 
-    check-cast p0, Ljava/io/File;
+    invoke-virtual {v2, p0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzcp;->zza(Ljava/io/File;)Lcom/google/android/gms/internal/measurement/zzcm;
+    .line 25
+    sput-boolean v1, Lcom/google/android/gms/internal/measurement/zzcp;->zzl:Z
+
+    .line 26
+    sget-object p0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_6
+
+    .line 27
+    sget-object p0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/google/android/gms/internal/measurement/zzdd;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/measurement/zzdd;
+    check-cast p0, Ljava/lang/String;
 
-    move-result-object p0
+    if-eqz p0, :cond_5
 
-    return-object p0
+    move-object v3, p0
 
-    .line 14
+    .line 28
+    :cond_5
+    monitor-exit p2
+
+    return-object v3
+
+    .line 29
     :cond_6
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzdd;->zzc()Lcom/google/android/gms/internal/measurement/zzdd;
+    monitor-exit p2
+
+    return-object v3
+
+    :cond_7
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_1
+
+    .line 30
+    :cond_8
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 31
+    sget-object v5, Lcom/google/android/gms/internal/measurement/zzcp;->zza:Landroid/net/Uri;
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    new-array v8, v1, [Ljava/lang/String;
+
+    aput-object p1, v8, v2
+
+    const/4 v9, 0x0
+
+    move-object v4, p0
+
+    invoke-virtual/range {v4 .. v9}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p0
 
-    return-object p0
+    if-nez p0, :cond_a
+
+    if-eqz p0, :cond_9
+
+    .line 32
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_9
+    return-object v3
+
+    .line 33
+    :cond_a
+    :try_start_1
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result p2
+
+    if-nez p2, :cond_c
+
+    .line 34
+    invoke-static {v0, p1, v3}, Lcom/google/android/gms/internal/measurement/zzcp;->zza(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz p0, :cond_b
+
+    .line 35
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_b
+    return-object v3
+
+    .line 36
+    :cond_c
+    :try_start_2
+    invoke-interface {p0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_d
+
+    .line 37
+    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_d
+
+    move-object p2, v3
+
+    .line 38
+    :cond_d
+    invoke-static {v0, p1, p2}, Lcom/google/android/gms/internal/measurement/zzcp;->zza(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-eqz p2, :cond_e
+
+    move-object v3, p2
+
+    :cond_e
+    if-eqz p0, :cond_f
+
+    .line 39
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_f
+    return-object v3
+
+    :catchall_0
+    move-exception p1
+
+    if-eqz p0, :cond_10
+
+    .line 40
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_10
+    throw p1
+
+    :catchall_1
+    move-exception p0
+
+    .line 41
+    :try_start_3
+    monitor-exit p2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p0
 .end method
 
-.method public static zzb(Landroid/content/Context;)Lcom/google/android/gms/internal/measurement/zzdd;
-    .locals 4
+.method private static varargs zza(Landroid/content/ContentResolver;[Ljava/lang/String;)Ljava/util/Map;
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Landroid/content/Context;",
+            "Landroid/content/ContentResolver;",
+            "[",
+            "Ljava/lang/String;",
             ")",
-            "Lcom/google/android/gms/internal/measurement/zzdd<",
-            "Ljava/io/File;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 
-    .line 1
-    invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;
+    .line 46
+    sget-object v1, Lcom/google/android/gms/internal/measurement/zzcp;->zzd:Landroid/net/Uri;
 
-    move-result-object v0
-
-    .line 2
-    :try_start_0
-    invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskWrites()Landroid/os/StrictMode$ThreadPolicy;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 3
-    :try_start_1
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, "phenotype_hermetic"
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-virtual {p0, v2, v3}, Landroid/content/Context;->getDir(Ljava/lang/String;I)Ljava/io/File;
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v4, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p0
 
-    const-string v2, "overrides.txt"
+    .line 47
+    new-instance p1, Ljava/util/TreeMap;
 
-    invoke-direct {v1, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-direct {p1}, Ljava/util/TreeMap;-><init>()V
 
-    .line 4
-    :try_start_2
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+    if-nez p0, :cond_0
 
-    move-result p0
+    return-object p1
 
-    if-eqz p0, :cond_0
+    .line 48
+    :cond_0
+    :goto_0
+    :try_start_0
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/measurement/zzdd;->zza(Ljava/lang/Object;)Lcom/google/android/gms/internal/measurement/zzdd;
+    move-result v0
 
-    move-result-object p0
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    .line 49
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {p0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
+    .line 50
+    :cond_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    .line 51
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    throw p1
+.end method
+
+.method public static synthetic zza()Ljava/util/concurrent/atomic/AtomicBoolean;
+    .locals 1
+
+    .line 52
+    sget-object v0, Lcom/google/android/gms/internal/measurement/zzcp;->zze:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-object v0
+.end method
+
+.method private static zza(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+
+    .line 42
+    const-class v0, Lcom/google/android/gms/internal/measurement/zzcp;
+
+    monitor-enter v0
+
+    .line 43
+    :try_start_0
+    sget-object v1, Lcom/google/android/gms/internal/measurement/zzcp;->zzk:Ljava/lang/Object;
+
+    if-ne p0, v1, :cond_0
+
+    .line 44
+    sget-object p0, Lcom/google/android/gms/internal/measurement/zzcp;->zzf:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 45
     :cond_0
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzdd;->zzc()Lcom/google/android/gms/internal/measurement/zzdd;
+    monitor-exit v0
 
-    move-result-object p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 5
-    :goto_0
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    return-object p0
-
-    .line 6
-    :catch_0
-    :try_start_3
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzdd;->zzc()Lcom/google/android/gms/internal/measurement/zzdd;
-
-    move-result-object p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 7
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    return-object p0
+    return-void
 
     :catchall_0
     move-exception p0
 
-    .line 8
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9
     throw p0
 .end method

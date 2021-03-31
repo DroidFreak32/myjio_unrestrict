@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static _session:[B
+.field private static _session:[B
 
 
 # instance fields
@@ -67,7 +67,7 @@
     .line 5
     iput-boolean v0, p0, Lcom/jcraft/jsch/ChannelSession;->pty:Z
 
-    const-string/jumbo v0, "vt100"
+    const-string v0, "vt100"
 
     .line 6
     iput-object v0, p0, Lcom/jcraft/jsch/ChannelSession;->ttype:Ljava/lang/String;
@@ -190,22 +190,14 @@
 
     if-eqz v2, :cond_3
 
-    iget-object v2, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
     iget-object v2, v2, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
 
     if-eqz v2, :cond_3
 
     .line 4
-    iget-object v2, p0, Lcom/jcraft/jsch/Channel;->io:Lcom/jcraft/jsch/IO;
-
-    iget-object v2, v2, Lcom/jcraft/jsch/IO;->in:Ljava/io/InputStream;
-
     iget-object v3, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
 
-    iget-object v4, v0, Lcom/jcraft/jsch/Buffer;->buffer:[B
-
-    array-length v4, v4
+    array-length v4, v3
 
     const/16 v5, 0xe
 
@@ -311,6 +303,11 @@
 
 .method public sendRequests()V
     .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/jcraft/jsch/Channel;->getSession()Lcom/jcraft/jsch/Session;
@@ -328,7 +325,7 @@
     invoke-direct {v1}, Lcom/jcraft/jsch/RequestAgentForwarding;-><init>()V
 
     .line 4
-    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/RequestAgentForwarding;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
+    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
 
     .line 5
     :cond_0
@@ -342,7 +339,7 @@
     invoke-direct {v1}, Lcom/jcraft/jsch/RequestX11;-><init>()V
 
     .line 7
-    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/RequestX11;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
+    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
 
     .line 8
     :cond_1
@@ -381,7 +378,7 @@
 
     .line 14
     :cond_2
-    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/RequestPtyReq;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
+    invoke-virtual {v1, v0, p0}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
 
     .line 15
     :cond_3
@@ -430,7 +427,7 @@
     invoke-virtual {v4, v2, v3}, Lcom/jcraft/jsch/RequestEnv;->setEnv([B[B)V
 
     .line 21
-    invoke-virtual {v4, v0, p0}, Lcom/jcraft/jsch/RequestEnv;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
+    invoke-virtual {v4, v0, p0}, Lcom/jcraft/jsch/Request;->request(Lcom/jcraft/jsch/Session;Lcom/jcraft/jsch/Channel;)V
 
     goto :goto_0
 

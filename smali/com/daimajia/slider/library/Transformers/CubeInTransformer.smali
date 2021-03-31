@@ -45,17 +45,17 @@
     int-to-float v1, v1
 
     :goto_0
-    invoke-static {p1, v1}, La53;->b(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Lcom/nineoldandroids/view/ViewHelper;->setPivotX(Landroid/view/View;F)V
 
     .line 2
-    invoke-static {p1, v0}, La53;->c(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Lcom/nineoldandroids/view/ViewHelper;->setPivotY(Landroid/view/View;F)V
 
     const/high16 v0, -0x3d4c0000    # -90.0f
 
     mul-float p2, p2, v0
 
     .line 3
-    invoke-static {p1, p2}, La53;->d(Landroid/view/View;F)V
+    invoke-static {p1, p2}, Lcom/nineoldandroids/view/ViewHelper;->setRotation(Landroid/view/View;F)V
 
     return-void
 .end method

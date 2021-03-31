@@ -1,106 +1,50 @@
-.class public final Lcom/google/android/gms/location/zzah;
+.class public final synthetic Lcom/google/android/gms/location/zzah;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/location/LocationSettingsResult;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final zza:Lcom/google/android/gms/location/GeofencingRequest;
+
+.field private final zzb:Landroid/app/PendingIntent;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/location/zzah;->zza:Lcom/google/android/gms/location/GeofencingRequest;
+
+    iput-object p2, p0, Lcom/google/android/gms/location/zzah;->zzb:Landroid/app/PendingIntent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/zzah;->zza:Lcom/google/android/gms/location/GeofencingRequest;
 
-    move-result v0
+    iget-object v1, p0, Lcom/google/android/gms/location/zzah;->zzb:Landroid/app/PendingIntent;
 
-    const/4 v1, 0x0
+    check-cast p1, Lcom/google/android/gms/internal/location/zzay;
 
-    move-object v2, v1
+    check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    .line 2
+    new-instance v2, Lcom/google/android/gms/location/GeofencingClient$zza;
 
-    move-result v3
+    invoke-direct {v2, p2}, Lcom/google/android/gms/location/GeofencingClient$zza;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    if-ge v3, v0, :cond_2
+    invoke-virtual {p1, v0, v1, v2}, Lcom/google/android/gms/internal/location/zzay;->zza(Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;)V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readHeader(Landroid/os/Parcel;)I
-
-    move-result v3
-
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->getFieldId(I)I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    if-eq v4, v5, :cond_1
-
-    const/4 v5, 0x2
-
-    if-eq v4, v5, :cond_0
-
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v2, Lcom/google/android/gms/location/LocationSettingsStates;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v3, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/location/LocationSettingsStates;
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v3, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/api/Status;
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    new-instance p1, Lcom/google/android/gms/location/LocationSettingsResult;
-
-    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/location/LocationSettingsResult;-><init>(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/location/LocationSettingsStates;)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    new-array p1, p1, [Lcom/google/android/gms/location/LocationSettingsResult;
-
-    return-object p1
+    return-void
 .end method

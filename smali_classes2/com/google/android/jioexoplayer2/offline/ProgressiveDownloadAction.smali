@@ -6,13 +6,16 @@
 # static fields
 .field public static final DESERIALIZER:Lcom/google/android/jioexoplayer2/offline/DownloadAction$Deserializer;
 
-.field public static final TYPE:Ljava/lang/String; = "progressive"
+.field private static final TYPE:Ljava/lang/String; = "progressive"
 
-.field public static final VERSION:I
+.field private static final VERSION:I
 
 
 # instance fields
-.field public final customCacheKey:Ljava/lang/String;
+.field private final customCacheKey:Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -35,6 +38,14 @@
 
 .method public constructor <init>(Landroid/net/Uri;Z[BLjava/lang/String;)V
     .locals 6
+    .param p3    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -61,6 +72,14 @@
 
 .method public static createDownloadAction(Landroid/net/Uri;[BLjava/lang/String;)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
     .locals 2
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v0, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
@@ -74,6 +93,14 @@
 
 .method public static createRemoveAction(Landroid/net/Uri;[BLjava/lang/String;)Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
     .locals 2
+    .param p1    # [B
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     new-instance v0, Lcom/google/android/jioexoplayer2/offline/ProgressiveDownloadAction;
@@ -136,6 +163,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-ne p0, p1, :cond_0
 
@@ -239,6 +270,11 @@
 
 .method public writeToStream(Ljava/io/DataOutputStream;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/google/android/jioexoplayer2/offline/DownloadAction;->uri:Landroid/net/Uri;

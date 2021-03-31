@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/GooglePlayServicesUtil;
 .super Lcom/google/android/gms/common/GooglePlayServicesUtilLight;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # static fields
@@ -30,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -56,6 +57,10 @@
 
 .method public static getErrorDialog(ILandroid/app/Activity;ILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
     .locals 1
+    .param p3    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -195,6 +200,10 @@
 
 .method public static showErrorDialogFragment(ILandroid/app/Activity;ILandroid/content/DialogInterface$OnCancelListener;)Z
     .locals 1
+    .param p3    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -210,6 +219,14 @@
 
 .method public static showErrorDialogFragment(ILandroid/app/Activity;Landroidx/fragment/app/Fragment;ILandroid/content/DialogInterface$OnCancelListener;)Z
     .locals 2
+    .param p2    # Landroidx/fragment/app/Fragment;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p4    # Landroid/content/DialogInterface$OnCancelListener;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 2
     invoke-static {p1, p0}, Lcom/google/android/gms/common/GooglePlayServicesUtilLight;->isPlayServicesPossiblyUpdating(Landroid/content/Context;I)Z
@@ -249,12 +266,12 @@
     move-result-object v0
 
     .line 7
-    invoke-static {p2, v0, p3}, Lcom/google/android/gms/common/internal/DialogRedirect;->getInstance(Landroidx/fragment/app/Fragment;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/DialogRedirect;
+    invoke-static {p2, v0, p3}, Lcom/google/android/gms/common/internal/zad;->zaa(Landroidx/fragment/app/Fragment;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/zad;
 
     move-result-object p2
 
     .line 8
-    invoke-static {p1, p0, p2, p4}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/DialogRedirect;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-static {p1, p0, p2, p4}, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa(Landroid/content/Context;ILcom/google/android/gms/common/internal/zad;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object p0
 

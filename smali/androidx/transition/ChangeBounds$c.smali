@@ -43,11 +43,11 @@
     return-object p1
 .end method
 
-.method public a(Landroidx/transition/ChangeBounds$k;Landroid/graphics/PointF;)V
+.method public b(Landroidx/transition/ChangeBounds$k;Landroid/graphics/PointF;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1, p2}, Landroidx/transition/ChangeBounds$k;->b(Landroid/graphics/PointF;)V
+    invoke-virtual {p1, p2}, Landroidx/transition/ChangeBounds$k;->c(Landroid/graphics/PointF;)V
 
     return-void
 .end method
@@ -73,7 +73,7 @@
 
     check-cast p2, Landroid/graphics/PointF;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeBounds$c;->a(Landroidx/transition/ChangeBounds$k;Landroid/graphics/PointF;)V
+    invoke-virtual {p0, p1, p2}, Landroidx/transition/ChangeBounds$c;->b(Landroidx/transition/ChangeBounds$k;Landroid/graphics/PointF;)V
 
     return-void
 .end method

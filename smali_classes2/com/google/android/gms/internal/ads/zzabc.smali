@@ -1,12 +1,13 @@
 .class public final Lcom/google/android/gms/internal/ads/zzabc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-lite@@19.5.0"
 
 # interfaces
-.implements Lcom/google/android/gms/ads/internal/overlay/zzn;
+.implements Lcom/google/android/gms/internal/ads/zzadp;
 
 
 # instance fields
-.field public final synthetic zzbzc:Lcom/google/android/gms/internal/ads/zzabb;
+.field private final synthetic zzclp:Lcom/google/android/gms/internal/ads/zzabb;
 
 
 # direct methods
@@ -14,7 +15,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzbzc:Lcom/google/android/gms/internal/ads/zzabb;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzclp:Lcom/google/android/gms/internal/ads/zzabb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,68 +24,111 @@
 
 
 # virtual methods
-.method public final onPause()V
+.method public final get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "AdMobCustomTabsAdapter overlay is paused."
-
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzclp:Lcom/google/android/gms/internal/ads/zzabb;
 
-    return-void
-.end method
-
-.method public final onResume()V
-    .locals 1
-
-    const-string v0, "AdMobCustomTabsAdapter overlay is resumed."
-
-    .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final zzca()V
-    .locals 2
-
-    const-string v0, "AdMobCustomTabsAdapter overlay is closed."
-
-    .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzbzc:Lcom/google/android/gms/internal/ads/zzabb;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzbzc:Lcom/google/android/gms/internal/ads/zzabb;
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdClosed(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
+    move-result-object p1
 
-    return-void
+    return-object p1
 .end method
 
-.method public final zzcb()V
+.method public final getLong(Ljava/lang/String;J)Ljava/lang/Long;
     .locals 2
 
-    const-string v0, "Opening AdMobCustomTabsAdapter overlay."
-
     .line 1
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzco(Ljava/lang/String;)V
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzclp:Lcom/google/android/gms/internal/ads/zzabb;
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzbzc:Lcom/google/android/gms/internal/ads/zzabb;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzbzc:Lcom/google/android/gms/internal/ads/zzabb;
+    invoke-interface {v0, p1, p2, p3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/ads/mediation/MediationInterstitialListener;->onAdOpened(Lcom/google/android/gms/ads/mediation/MediationInterstitialAdapter;)V
+    move-result-wide v0
 
-    return-void
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    .line 2
+    :catch_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzclp:Lcom/google/android/gms/internal/ads/zzabb;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    long-to-int p3, p2
+
+    invoke-interface {v0, p1, p3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result p1
+
+    int-to-long p1, p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final zza(Ljava/lang/String;D)Ljava/lang/Double;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzclp:Lcom/google/android/gms/internal/ads/zzabb;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    double-to-float p2, p2
+
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
+
+    move-result p1
+
+    float-to-double p1, p1
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final zzf(Ljava/lang/String;Z)Ljava/lang/Boolean;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzabc;->zzclp:Lcom/google/android/gms/internal/ads/zzabb;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzabb;->zza(Lcom/google/android/gms/internal/ads/zzabb;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

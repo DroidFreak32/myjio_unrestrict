@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,18 +18,18 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-.field public final synthetic t:Ljava/io/File;
+.field public final synthetic b:Ljava/io/File;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;Ljava/io/File;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    iput-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->t:Ljava/io/File;
+    iput-object p2, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->b:Ljava/io/File;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,7 +42,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->t:Ljava/io/File;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->b:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -51,21 +51,21 @@
     if-eqz v0, :cond_0
 
     .line 2
-    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iget-object v0, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    const-string/jumbo v1, "v"
+    const-string v1, "v"
 
-    invoke-static {p1, v1}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->t:Ljava/io/File;
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->b:Ljava/io/File;
 
-    invoke-static {v0, p1, v1}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->a(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;Landroid/view/View;Ljava/io/File;)V
+    invoke-static {v0, p1, v1}, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;->access$deletePhoto(Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;Landroid/view/View;Ljava/io/File;)V
 
     goto :goto_0
 
     .line 3
     :cond_0
-    sget-object p1, Lmq0;->b:Lmq0;
+    sget-object p1, Lcom/jio/jioml/hellojio/utils/Console;->INSTANCE:Lcom/jio/jioml/hellojio/utils/Console;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -75,9 +75,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->s:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
+    iget-object v1, p0, Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask$d;->a:Lcom/jio/jioml/hellojio/activities/tasks/TakeSelfieTask;
 
-    invoke-virtual {v1}, Lao0;->c()Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;
+    invoke-virtual {v1}, Lcom/jio/jioml/hellojio/activities/tasks/core/Task;->getItem()Lcom/jio/jioml/hellojio/datamodels/ChatDataModels;
 
     move-result-object v1
 
@@ -95,7 +95,7 @@
 
     const-string v1, "TakeSelfieTask"
 
-    invoke-virtual {p1, v1, v0}, Lmq0;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v1, v0}, Lcom/jio/jioml/hellojio/utils/Console;->debug(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void

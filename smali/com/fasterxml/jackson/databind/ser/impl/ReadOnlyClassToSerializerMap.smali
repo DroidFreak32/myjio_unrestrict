@@ -12,11 +12,11 @@
 
 
 # instance fields
-.field public final _buckets:[Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap$Bucket;
+.field private final _buckets:[Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap$Bucket;
 
-.field public final _mask:I
+.field private final _mask:I
 
-.field public final _size:I
+.field private final _size:I
 
 
 # direct methods
@@ -118,7 +118,7 @@
     return-void
 .end method
 
-.method public static final findSize(I)I
+.method private static final findSize(I)I
     .locals 1
 
     const/16 v0, 0x40

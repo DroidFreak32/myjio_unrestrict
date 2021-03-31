@@ -1,18 +1,31 @@
 .class public final Lcom/google/android/gms/internal/ads/zzaci;
-.super Lcom/google/android/gms/internal/ads/zzem;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
-# interfaces
-.implements Lcom/google/android/gms/internal/ads/zzacg;
+
+# static fields
+.field private static final zzdav:Lcom/google/android/gms/internal/ads/zzacj;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
+.method public static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com.google.android.gms.ads.internal.purchase.client.IInAppPurchaseManager"
-
     .line 1
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/ads/zzem;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    new-instance v0, Lcom/google/android/gms/internal/ads/zzacj;
+
+    invoke-direct {v0}, Lcom/google/android/gms/internal/ads/zzacj;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/internal/ads/zzaci;->zzdav:Lcom/google/android/gms/internal/ads/zzacj;
 
     return-void
+.end method
+
+.method public static synthetic zzsi()Lcom/google/android/gms/internal/ads/zzacj;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzaci;->zzdav:Lcom/google/android/gms/internal/ads/zzacj;
+
+    return-object v0
 .end method

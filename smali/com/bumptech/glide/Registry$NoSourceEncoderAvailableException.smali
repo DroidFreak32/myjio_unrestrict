@@ -17,6 +17,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
     .locals 2
+    .param p1    # Ljava/lang/Class;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

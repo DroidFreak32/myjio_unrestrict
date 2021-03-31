@@ -3,19 +3,19 @@
 
 
 # static fields
-.field public static final zzbem:Lcom/google/android/gms/internal/gtm/zzts;
+.field private static final zzbem:Lcom/google/android/gms/internal/gtm/zzts;
 
 
 # instance fields
-.field public count:I
+.field private count:I
 
-.field public zzavs:Z
+.field private zzavs:Z
 
-.field public zzbal:I
+.field private zzbal:I
 
-.field public zzbcz:[Ljava/lang/Object;
+.field private zzbcz:[Ljava/lang/Object;
 
-.field public zzben:[I
+.field private zzben:[I
 
 
 # direct methods
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 4
 
     const/16 v0, 0x8
@@ -57,7 +57,7 @@
     return-void
 .end method
 
-.method public constructor <init>(I[I[Ljava/lang/Object;Z)V
+.method private constructor <init>(I[I[Ljava/lang/Object;Z)V
     .locals 1
 
     .line 2
@@ -137,8 +137,13 @@
     return-object p0
 .end method
 
-.method public static zzb(ILjava/lang/Object;Lcom/google/android/gms/internal/gtm/zzum;)V
+.method private static zzb(ILjava/lang/Object;Lcom/google/android/gms/internal/gtm/zzum;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     ushr-int/lit8 v0, p0, 0x3
 
@@ -462,6 +467,11 @@
 
 .method public final zza(Lcom/google/android/gms/internal/gtm/zzum;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 7
     invoke-interface {p1}, Lcom/google/android/gms/internal/gtm/zzum;->zzol()I
@@ -570,7 +580,7 @@
 .end method
 
 .method public final zzb(ILjava/lang/Object;)V
-    .locals 2
+    .locals 3
 
     .line 19
     iget-boolean v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzavs:Z
@@ -582,46 +592,41 @@
 
     iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzben:[I
 
-    array-length v1, v1
+    array-length v2, v1
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v2, :cond_1
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    if-ge v0, v1, :cond_0
+    if-ge v0, v2, :cond_0
 
-    const/16 v0, 0x8
+    const/16 v2, 0x8
 
     goto :goto_0
 
     :cond_0
-    shr-int/lit8 v0, v0, 0x1
+    shr-int/lit8 v2, v0, 0x1
+
+    :goto_0
+    add-int/2addr v0, v2
 
     .line 21
-    :goto_0
-    iget v1, p0, Lcom/google/android/gms/internal/gtm/zzts;->count:I
+    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([II)[I
 
-    add-int/2addr v1, v0
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzben:[I
 
     .line 22
-    iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzben:[I
+    iget-object v1, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzbcz:[Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzben:[I
-
-    .line 23
-    iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzbcz:[Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzbcz:[Ljava/lang/Object;
 
-    .line 24
+    .line 23
     :cond_1
     iget-object v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzben:[I
 
@@ -629,19 +634,19 @@
 
     aput p1, v0, v1
 
-    .line 25
+    .line 24
     iget-object p1, p0, Lcom/google/android/gms/internal/gtm/zzts;->zzbcz:[Ljava/lang/Object;
 
     aput-object p2, p1, v1
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 26
+    .line 25
     iput v1, p0, Lcom/google/android/gms/internal/gtm/zzts;->count:I
 
     return-void
 
-    .line 27
+    .line 26
     :cond_2
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
@@ -652,6 +657,11 @@
 
 .method public final zzb(Lcom/google/android/gms/internal/gtm/zzum;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     iget v0, p0, Lcom/google/android/gms/internal/gtm/zzts;->count:I

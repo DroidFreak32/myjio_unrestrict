@@ -1,18 +1,28 @@
 .class public final Lcom/google/android/gms/internal/location/zzt;
-.super Lcom/google/android/gms/internal/location/zzab;
+.super Lcom/google/android/gms/internal/location/zzaa;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # instance fields
-.field public final synthetic zzcn:Z
+.field private final synthetic zza:Lcom/google/android/gms/location/LocationRequest;
+
+.field private final synthetic zzb:Lcom/google/android/gms/location/LocationListener;
+
+.field private final synthetic zzc:Landroid/os/Looper;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/location/zzq;Lcom/google/android/gms/common/api/GoogleApiClient;Z)V
+.method public constructor <init>(Lcom/google/android/gms/internal/location/zzn;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/LocationRequest;Lcom/google/android/gms/location/LocationListener;Landroid/os/Looper;)V
     .locals 0
 
-    iput-boolean p3, p0, Lcom/google/android/gms/internal/location/zzt;->zzcn:Z
+    .line 1
+    iput-object p3, p0, Lcom/google/android/gms/internal/location/zzt;->zza:Lcom/google/android/gms/location/LocationRequest;
 
-    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/location/zzab;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    iput-object p4, p0, Lcom/google/android/gms/internal/location/zzt;->zzb:Lcom/google/android/gms/location/LocationListener;
+
+    iput-object p5, p0, Lcom/google/android/gms/internal/location/zzt;->zzc:Landroid/os/Looper;
+
+    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/location/zzaa;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     return-void
 .end method
@@ -20,17 +30,46 @@
 
 # virtual methods
 .method public final synthetic doExecute(Lcom/google/android/gms/common/api/Api$AnyClient;)V
-    .locals 1
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    check-cast p1, Lcom/google/android/gms/internal/location/zzaz;
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/location/zzay;
 
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/location/zzt;->zzcn:Z
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/location/zzz;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/location/zzaz;->zza(Z)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/location/zzz;-><init>(Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;)V
 
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzt;->zza:Lcom/google/android/gms/location/LocationRequest;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
+    iget-object v2, p0, Lcom/google/android/gms/internal/location/zzt;->zzb:Lcom/google/android/gms/location/LocationListener;
+
+    iget-object v3, p0, Lcom/google/android/gms/internal/location/zzt;->zzc:Landroid/os/Looper;
+
+    .line 4
+    invoke-static {v3}, Lcom/google/android/gms/internal/location/zzbj;->zza(Landroid/os/Looper;)Landroid/os/Looper;
+
+    move-result-object v3
+
+    const-class v4, Lcom/google/android/gms/location/LocationListener;
+
+    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 5
+    invoke-static {v2, v3, v4}, Lcom/google/android/gms/common/api/internal/ListenerHolders;->createListenerHolder(Ljava/lang/Object;Landroid/os/Looper;Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/ListenerHolder;
+
+    move-result-object v2
+
+    .line 6
+    invoke-virtual {p1, v1, v2, v0}, Lcom/google/android/gms/internal/location/zzay;->zza(Lcom/google/android/gms/location/LocationRequest;Lcom/google/android/gms/common/api/internal/ListenerHolder;Lcom/google/android/gms/internal/location/zzai;)V
 
     return-void
 .end method

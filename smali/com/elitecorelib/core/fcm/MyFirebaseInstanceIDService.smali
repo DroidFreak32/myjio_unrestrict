@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final MODULE:Ljava/lang/String; = "MyFirebaseIIDService"
+.field private static final MODULE:Ljava/lang/String; = "MyFirebaseIIDService"
 
 
 # direct methods

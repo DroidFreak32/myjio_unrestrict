@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final HASH_ACCUMULATOR:I = 0x11
+.field private static final HASH_ACCUMULATOR:I = 0x11
 
-.field public static final HASH_MULTIPLIER:I = 0x1f
+.field private static final HASH_MULTIPLIER:I = 0x1f
 
-.field public static final HEX_CHAR_ARRAY:[C
+.field private static final HEX_CHAR_ARRAY:[C
 
-.field public static final SHA_256_CHARS:[C
+.field private static final SHA_256_CHARS:[C
 
 
 # direct methods
@@ -36,7 +36,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .line 1
@@ -93,6 +93,14 @@
 
 .method public static bothModelsNullEquivalentOrEquals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p0, :cond_1
 
@@ -134,6 +142,14 @@
 
 .method public static bothNullOrEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p0, :cond_1
 
@@ -158,8 +174,18 @@
     return p0
 .end method
 
-.method public static bytesToHex([B[C)Ljava/lang/String;
+.method private static bytesToHex([B[C)Ljava/lang/String;
     .locals 5
+    .param p0    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p1    # [C
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -209,6 +235,9 @@
 
 .method public static createQueue(I)Ljava/util/Queue;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -229,6 +258,10 @@
 
 .method public static getBitmapByteSize(IILandroid/graphics/Bitmap$Config;)I
     .locals 0
+    .param p2    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     mul-int p0, p0, p1
 
@@ -244,6 +277,10 @@
 
 .method public static getBitmapByteSize(Landroid/graphics/Bitmap;)I
     .locals 3
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/TargetApi;
         value = 0x13
     .end annotation
@@ -312,7 +349,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, "x"
+    const-string/jumbo v2, "x"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -341,8 +378,12 @@
     throw v0
 .end method
 
-.method public static getBytesPerPixel(Landroid/graphics/Bitmap$Config;)I
+.method private static getBytesPerPixel(Landroid/graphics/Bitmap$Config;)I
     .locals 3
+    .param p0    # Landroid/graphics/Bitmap$Config;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p0, :cond_0
 
@@ -396,6 +437,10 @@
 
 .method public static getSize(Landroid/graphics/Bitmap;)I
     .locals 0
+    .param p0    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -409,6 +454,13 @@
 
 .method public static getSnapshot(Ljava/util/Collection;)Ljava/util/List;
     .locals 2
+    .param p0    # Ljava/util/Collection;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -511,6 +563,10 @@
 
 .method public static hashCode(Ljava/lang/Object;I)I
     .locals 0
+    .param p0    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     if-nez p0, :cond_0
 
@@ -594,7 +650,7 @@
     return v0
 .end method
 
-.method public static isValidDimension(I)Z
+.method private static isValidDimension(I)Z
     .locals 1
 
     if-gtz p0, :cond_1
@@ -646,7 +702,13 @@
 .end method
 
 .method public static sha256BytesToHex([B)Ljava/lang/String;
-    .locals 2
+    .locals 1
+    .param p0    # [B
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 1
     sget-object v0, Lcom/bumptech/glide/util/Util;->SHA_256_CHARS:[C
@@ -655,9 +717,7 @@
 
     .line 2
     :try_start_0
-    sget-object v1, Lcom/bumptech/glide/util/Util;->SHA_256_CHARS:[C
-
-    invoke-static {p0, v1}, Lcom/bumptech/glide/util/Util;->bytesToHex([B[C)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/bumptech/glide/util/Util;->bytesToHex([B[C)Ljava/lang/String;
 
     move-result-object p0
 

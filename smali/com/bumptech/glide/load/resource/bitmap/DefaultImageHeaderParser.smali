@@ -18,51 +18,51 @@
 
 
 # static fields
-.field public static final BYTES_PER_FORMAT:[I
+.field private static final BYTES_PER_FORMAT:[I
 
 .field public static final EXIF_MAGIC_NUMBER:I = 0xffd8
 
 .field public static final EXIF_SEGMENT_TYPE:I = 0xe1
 
-.field public static final GIF_HEADER:I = 0x474946
+.field private static final GIF_HEADER:I = 0x474946
 
-.field public static final INTEL_TIFF_MAGIC_NUMBER:I = 0x4949
+.field private static final INTEL_TIFF_MAGIC_NUMBER:I = 0x4949
 
-.field public static final JPEG_EXIF_SEGMENT_PREAMBLE:Ljava/lang/String; = "Exif\u0000\u0000"
+.field private static final JPEG_EXIF_SEGMENT_PREAMBLE:Ljava/lang/String; = "Exif\u0000\u0000"
 
 .field public static final JPEG_EXIF_SEGMENT_PREAMBLE_BYTES:[B
 
-.field public static final MARKER_EOI:I = 0xd9
+.field private static final MARKER_EOI:I = 0xd9
 
-.field public static final MOTOROLA_TIFF_MAGIC_NUMBER:I = 0x4d4d
+.field private static final MOTOROLA_TIFF_MAGIC_NUMBER:I = 0x4d4d
 
-.field public static final ORIENTATION_TAG_TYPE:I = 0x112
+.field private static final ORIENTATION_TAG_TYPE:I = 0x112
 
-.field public static final PNG_HEADER:I = -0x76afb1b9
+.field private static final PNG_HEADER:I = -0x76afb1b9
 
-.field public static final RIFF_HEADER:I = 0x52494646
+.field private static final RIFF_HEADER:I = 0x52494646
 
-.field public static final SEGMENT_SOS:I = 0xda
+.field private static final SEGMENT_SOS:I = 0xda
 
 .field public static final SEGMENT_START_ID:I = 0xff
 
-.field public static final TAG:Ljava/lang/String; = "DfltImageHeaderParser"
+.field private static final TAG:Ljava/lang/String; = "DfltImageHeaderParser"
 
-.field public static final VP8_HEADER:I = 0x56503800
+.field private static final VP8_HEADER:I = 0x56503800
 
-.field public static final VP8_HEADER_MASK:I = -0x100
+.field private static final VP8_HEADER_MASK:I = -0x100
 
-.field public static final VP8_HEADER_TYPE_EXTENDED:I = 0x58
+.field private static final VP8_HEADER_TYPE_EXTENDED:I = 0x58
 
-.field public static final VP8_HEADER_TYPE_LOSSLESS:I = 0x4c
+.field private static final VP8_HEADER_TYPE_LOSSLESS:I = 0x4c
 
-.field public static final VP8_HEADER_TYPE_MASK:I = 0xff
+.field private static final VP8_HEADER_TYPE_MASK:I = 0xff
 
-.field public static final WEBP_EXTENDED_ALPHA_FLAG:I = 0x10
+.field private static final WEBP_EXTENDED_ALPHA_FLAG:I = 0x10
 
-.field public static final WEBP_HEADER:I = 0x57454250
+.field private static final WEBP_HEADER:I = 0x57454250
 
-.field public static final WEBP_LOSSLESS_ALPHA_FLAG:I = 0x8
+.field private static final WEBP_LOSSLESS_ALPHA_FLAG:I = 0x8
 
 
 # direct methods
@@ -122,7 +122,7 @@
     return-void
 .end method
 
-.method public static calcTagOffset(II)I
+.method private static calcTagOffset(II)I
     .locals 0
 
     add-int/lit8 p0, p0, 0x2
@@ -136,6 +136,11 @@
 
 .method private getOrientation(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)I
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 7
     invoke-interface {p1}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;->getUInt16()I
@@ -186,14 +191,9 @@
 
     if-ne v0, v4, :cond_2
 
-    .line 12
-    invoke-static {v3, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result p1
-
     return v4
 
-    .line 13
+    .line 12
     :cond_2
     const-class v1, [B
 
@@ -203,7 +203,7 @@
 
     check-cast v1, [B
 
-    .line 14
+    .line 13
     :try_start_0
     invoke-direct {p0, p1, v1, v0}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser;->parseExifSegment(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;[BI)I
 
@@ -211,7 +211,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 15
+    .line 14
     invoke-interface {p2, v1}, Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;->put(Ljava/lang/Object;)V
 
     return p1
@@ -226,6 +226,14 @@
 
 .method private getType(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .locals 6
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 3
     invoke-interface {p1}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;->getUInt16()I
@@ -434,7 +442,7 @@
     return-object p1
 .end method
 
-.method public static handles(I)Z
+.method private static handles(I)Z
     .locals 2
 
     const v0, 0xffd8
@@ -507,8 +515,6 @@
 
     if-eq v3, v2, :cond_1
 
-    const/4 p2, 0x0
-
     goto :goto_2
 
     :cond_1
@@ -517,12 +523,19 @@
     goto :goto_1
 
     :cond_2
+    move v0, p2
+
     :goto_2
-    return p2
+    return v0
 .end method
 
 .method private moveToExifSegmentAndGetLength(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;)I
     .locals 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     :cond_0
@@ -649,7 +662,7 @@
     return v1
 .end method
 
-.method public static parseExifSegment(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;)I
+.method private static parseExifSegment(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$RandomAccessReader;)I
     .locals 12
 
     const/4 v0, 0x6
@@ -978,6 +991,11 @@
 
 .method private parseExifSegment(Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;[BI)I
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-interface {p1, p2, p3}, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$Reader;->read([BI)I
@@ -1053,6 +1071,19 @@
 # virtual methods
 .method public getOrientation(Ljava/io/InputStream;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)I
     .locals 1
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;
@@ -1082,6 +1113,19 @@
 
 .method public getOrientation(Ljava/nio/ByteBuffer;Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;)I
     .locals 1
+    .param p1    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/load/engine/bitmap_recycle/ArrayPool;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 4
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;
@@ -1111,6 +1155,18 @@
 
 .method public getType(Ljava/io/InputStream;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .locals 1
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$StreamReader;
@@ -1132,6 +1188,18 @@
 
 .method public getType(Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
     .locals 1
+    .param p1    # Ljava/nio/ByteBuffer;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 2
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;

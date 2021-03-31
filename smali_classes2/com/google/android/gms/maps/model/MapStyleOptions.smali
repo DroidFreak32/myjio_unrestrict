@@ -25,11 +25,11 @@
     .end annotation
 .end field
 
-.field public static final TAG:Ljava/lang/String;
+.field private static final TAG:Ljava/lang/String;
 
 
 # instance fields
-.field public zzdl:Ljava/lang/String;
+.field private zzdl:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getJson"
         id = 0x2
@@ -81,6 +81,11 @@
 
 .method public static loadRawResourceStyle(Landroid/content/Context;I)Lcom/google/android/gms/maps/model/MapStyleOptions;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/res/Resources$NotFoundException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

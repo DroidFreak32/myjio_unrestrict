@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/FragmentState$a;
+.class public Landroidx/fragment/app/FragmentState$a;
 .super Ljava/lang/Object;
 .source "FragmentState.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -38,10 +38,10 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentState;
+.method public a(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentState;
     .locals 1
 
-    .line 2
+    .line 1
     new-instance v0, Landroidx/fragment/app/FragmentState;
 
     invoke-direct {v0, p1}, Landroidx/fragment/app/FragmentState;-><init>(Landroid/os/Parcel;)V
@@ -49,22 +49,22 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public b(I)[Landroidx/fragment/app/FragmentState;
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentState$a;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentState;
-
-    move-result-object p1
+    new-array p1, p1, [Landroidx/fragment/app/FragmentState;
 
     return-object p1
 .end method
 
-.method public newArray(I)[Landroidx/fragment/app/FragmentState;
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2
-    new-array p1, p1, [Landroidx/fragment/app/FragmentState;
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentState$a;->a(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentState;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -73,7 +73,7 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentState$a;->newArray(I)[Landroidx/fragment/app/FragmentState;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentState$a;->b(I)[Landroidx/fragment/app/FragmentState;
 
     move-result-object p1
 

@@ -1,111 +1,47 @@
 .class public final Lcom/google/android/gms/internal/location/zzad;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-
-# interfaces
-.implements Lcom/google/android/gms/common/api/Result;
-
-
-# annotations
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Class;
-    creator = "FusedLocationProviderResultCreator"
-.end annotation
-
-.annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Reserved;
-    value = {
-        0x3e8
-    }
-.end annotation
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/internal/location/zzad;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final zzcr:Lcom/google/android/gms/internal/location/zzad;
+.super Lcom/google/android/gms/internal/location/zzaf;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # instance fields
-.field public final zzbl:Lcom/google/android/gms/common/api/Status;
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
-        getter = "getStatus"
-        id = 0x1
-    .end annotation
-.end field
+.field private final synthetic zza:Lcom/google/android/gms/location/GeofencingRequest;
+
+.field private final synthetic zzb:Landroid/app/PendingIntent;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lcom/google/android/gms/internal/location/zzad;
-
-    sget-object v1, Lcom/google/android/gms/common/api/Status;->RESULT_SUCCESS:Lcom/google/android/gms/common/api/Status;
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/location/zzad;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/location/zzad;->zzcr:Lcom/google/android/gms/internal/location/zzad;
-
-    new-instance v0, Lcom/google/android/gms/internal/location/zzae;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/location/zzae;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/location/zzad;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/common/api/Status;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/location/zzae;Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;)V
     .locals 0
-    .param p1    # Lcom/google/android/gms/common/api/Status;
-        .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
-            id = 0x1
-        .end annotation
-    .end param
-    .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Constructor;
-    .end annotation
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+    .line 1
+    iput-object p3, p0, Lcom/google/android/gms/internal/location/zzad;->zza:Lcom/google/android/gms/location/GeofencingRequest;
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/location/zzad;->zzbl:Lcom/google/android/gms/common/api/Status;
+    iput-object p4, p0, Lcom/google/android/gms/internal/location/zzad;->zzb:Landroid/app/PendingIntent;
+
+    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/location/zzaf;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getStatus()Lcom/google/android/gms/common/api/Status;
-    .locals 1
+.method public final synthetic doExecute(Lcom/google/android/gms/common/api/Api$AnyClient;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzad;->zzbl:Lcom/google/android/gms/common/api/Status;
+    .line 1
+    check-cast p1, Lcom/google/android/gms/internal/location/zzay;
 
-    return-object v0
-.end method
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/internal/location/zzad;->zza:Lcom/google/android/gms/location/GeofencingRequest;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
+    iget-object v1, p0, Lcom/google/android/gms/internal/location/zzad;->zzb:Landroid/app/PendingIntent;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/location/zzad;->getStatus()Lcom/google/android/gms/common/api/Status;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->finishObjectHeader(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v0, v1, p0}, Lcom/google/android/gms/internal/location/zzay;->zza(Lcom/google/android/gms/location/GeofencingRequest;Landroid/app/PendingIntent;Lcom/google/android/gms/common/api/internal/BaseImplementation$ResultHolder;)V
 
     return-void
 .end method

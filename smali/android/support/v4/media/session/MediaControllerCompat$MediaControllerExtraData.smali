@@ -1,5 +1,5 @@
 .class public Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerExtraData;
-.super Landroidx/core/app/ComponentActivity$a;
+.super Landroidx/core/app/ComponentActivity$ExtraData;
 .source "MediaControllerCompat.java"
 
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final mMediaController:Landroid/support/v4/media/session/MediaControllerCompat;
+.field private final mMediaController:Landroid/support/v4/media/session/MediaControllerCompat;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroidx/core/app/ComponentActivity$a;-><init>()V
+    invoke-direct {p0}, Landroidx/core/app/ComponentActivity$ExtraData;-><init>()V
 
     .line 2
     iput-object p1, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerExtraData;->mMediaController:Landroid/support/v4/media/session/MediaControllerCompat;

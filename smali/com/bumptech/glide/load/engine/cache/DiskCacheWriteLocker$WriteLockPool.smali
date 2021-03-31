@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final MAX_POOL_SIZE:I = 0xa
+.field private static final MAX_POOL_SIZE:I = 0xa
 
 
 # instance fields
-.field public final pool:Ljava/util/Queue;
+.field private final pool:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",

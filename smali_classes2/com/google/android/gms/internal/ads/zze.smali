@@ -1,58 +1,95 @@
 .class public final Lcom/google/android/gms/internal/ads/zze;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "com.google.android.gms:play-services-gass@@19.5.0"
 
 
 # instance fields
-.field public final synthetic zzn:Lcom/google/android/gms/internal/ads/zzr;
+.field private final zzb:Ljava/nio/ByteBuffer;
 
-.field public final synthetic zzo:Lcom/google/android/gms/internal/ads/zzd;
+.field private final zzc:J
+
+.field private final zzd:J
+
+.field private final zze:J
+
+.field private final zzf:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/ads/zzd;Lcom/google/android/gms/internal/ads/zzr;)V
+.method private constructor <init>(Ljava/nio/ByteBuffer;JJJLjava/nio/ByteBuffer;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zze;->zzo:Lcom/google/android/gms/internal/ads/zzd;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/ads/zze;->zzn:Lcom/google/android/gms/internal/ads/zzr;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zze;->zzb:Ljava/nio/ByteBuffer;
+
+    .line 3
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ads/zze;->zzc:J
+
+    .line 4
+    iput-wide p4, p0, Lcom/google/android/gms/internal/ads/zze;->zzd:J
+
+    .line 5
+    iput-wide p6, p0, Lcom/google/android/gms/internal/ads/zze;->zze:J
+
+    .line 6
+    iput-object p8, p0, Lcom/google/android/gms/internal/ads/zze;->zzf:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
+.method public synthetic constructor <init>(Ljava/nio/ByteBuffer;JJJLjava/nio/ByteBuffer;Lcom/google/android/gms/internal/ads/zza;)V
+    .locals 0
 
-# virtual methods
-.method public final run()V
+    .line 7
+    invoke-direct/range {p0 .. p8}, Lcom/google/android/gms/internal/ads/zze;-><init>(Ljava/nio/ByteBuffer;JJJLjava/nio/ByteBuffer;)V
+
+    return-void
+.end method
+
+.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zze;)Ljava/nio/ByteBuffer;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zze;->zzb:Ljava/nio/ByteBuffer;
+
+    return-object p0
+.end method
+
+.method public static synthetic zzb(Lcom/google/android/gms/internal/ads/zze;)J
     .locals 2
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zze;->zzo:Lcom/google/android/gms/internal/ads/zzd;
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zze;->zzc:J
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/ads/zzd;->zza(Lcom/google/android/gms/internal/ads/zzd;)Ljava/util/concurrent/BlockingQueue;
+    return-wide v0
+.end method
 
-    move-result-object v0
+.method public static synthetic zzc(Lcom/google/android/gms/internal/ads/zze;)J
+    .locals 2
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zze;->zzn:Lcom/google/android/gms/internal/ads/zzr;
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zze;->zzd:J
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/BlockingQueue;->put(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    return-wide v0
+.end method
 
-    return-void
+.method public static synthetic zzd(Lcom/google/android/gms/internal/ads/zze;)J
+    .locals 2
 
-    .line 2
-    :catch_0
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    .line 1
+    iget-wide v0, p0, Lcom/google/android/gms/internal/ads/zze;->zze:J
 
-    move-result-object v0
+    return-wide v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
+.method public static synthetic zze(Lcom/google/android/gms/internal/ads/zze;)Ljava/nio/ByteBuffer;
+    .locals 0
 
-    return-void
+    .line 1
+    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zze;->zzf:Ljava/nio/ByteBuffer;
+
+    return-object p0
 .end method

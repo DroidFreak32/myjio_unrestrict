@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/vision/CameraSource$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public final zzr:Lcom/google/android/gms/vision/Detector;
+.field private final zzx:Lcom/google/android/gms/vision/Detector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/vision/Detector<",
@@ -23,7 +24,7 @@
     .end annotation
 .end field
 
-.field public zzs:Lcom/google/android/gms/vision/CameraSource;
+.field private zzy:Lcom/google/android/gms/vision/CameraSource;
 
 
 # direct methods
@@ -48,19 +49,17 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/vision/CameraSource;-><init>(Lcom/google/android/gms/vision/zza;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iput-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     if-eqz p1, :cond_1
 
     if-eqz p2, :cond_0
 
     .line 3
-    iput-object p2, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzr:Lcom/google/android/gms/vision/Detector;
+    iput-object p2, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzx:Lcom/google/android/gms/vision/Detector;
 
     .line 4
-    iget-object p2, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
-
-    invoke-static {p2, p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {v0, p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;Landroid/content/Context;)Landroid/content/Context;
 
     return-void
 
@@ -91,20 +90,20 @@
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
-    new-instance v1, Lcom/google/android/gms/vision/CameraSource$zzb;
+    new-instance v1, Lcom/google/android/gms/vision/CameraSource$zza;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzr:Lcom/google/android/gms/vision/Detector;
+    iget-object v2, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzx:Lcom/google/android/gms/vision/Detector;
 
-    invoke-direct {v1, v0, v2}, Lcom/google/android/gms/vision/CameraSource$zzb;-><init>(Lcom/google/android/gms/vision/CameraSource;Lcom/google/android/gms/vision/Detector;)V
+    invoke-direct {v1, v0, v2}, Lcom/google/android/gms/vision/CameraSource$zza;-><init>(Lcom/google/android/gms/vision/CameraSource;Lcom/google/android/gms/vision/Detector;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;Lcom/google/android/gms/vision/CameraSource$zzb;)Lcom/google/android/gms/vision/CameraSource$zzb;
+    invoke-static {v0, v1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;Lcom/google/android/gms/vision/CameraSource$zza;)Lcom/google/android/gms/vision/CameraSource$zza;
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     return-object v0
 .end method
@@ -113,7 +112,7 @@
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;Z)Z
 
@@ -158,9 +157,54 @@
     .line 2
     :cond_1
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/CameraSource;->zzc(Lcom/google/android/gms/vision/CameraSource;I)I
+
+    return-object p0
+.end method
+
+.method public setFocusMode(Ljava/lang/String;)Lcom/google/android/gms/vision/CameraSource$Builder;
+    .locals 2
+
+    const-string v0, "continuous-video"
+
+    .line 1
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "continuous-picture"
+
+    .line 2
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const-string p1, "FocusMode %s is not supported for now."
+
+    .line 3
+    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    .line 4
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
+
+    invoke-static {v0, p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;Ljava/lang/String;)Ljava/lang/String;
 
     return-object p0
 .end method
@@ -175,7 +219,7 @@
     if-lez v0, :cond_0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;F)F
 
@@ -220,12 +264,12 @@
     if-gt p2, v0, :cond_0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object v0, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {v0, p1}, Lcom/google/android/gms/vision/CameraSource;->zza(Lcom/google/android/gms/vision/CameraSource;I)I
 
     .line 2
-    iget-object p1, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzs:Lcom/google/android/gms/vision/CameraSource;
+    iget-object p1, p0, Lcom/google/android/gms/vision/CameraSource$Builder;->zzy:Lcom/google/android/gms/vision/CameraSource;
 
     invoke-static {p1, p2}, Lcom/google/android/gms/vision/CameraSource;->zzb(Lcom/google/android/gms/vision/CameraSource;I)I
 

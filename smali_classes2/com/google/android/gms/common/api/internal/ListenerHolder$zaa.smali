@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;
 .super Lcom/google/android/gms/internal/base/zap;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic zajm:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+.field private final synthetic zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
 
 # direct methods
@@ -22,7 +23,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;->zajm:Lcom/google/android/gms/common/api/internal/ListenerHolder;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
     .line 2
     invoke-direct {p0, p2}, Lcom/google/android/gms/internal/base/zap;-><init>(Landroid/os/Looper;)V
@@ -51,11 +52,12 @@
     invoke-static {v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
 
     .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;->zajm:Lcom/google/android/gms/common/api/internal/ListenerHolder;
-
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/google/android/gms/common/api/internal/ListenerHolder$Notifier;
+
+    .line 3
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/ListenerHolder$zaa;->zaa:Lcom/google/android/gms/common/api/internal/ListenerHolder;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/ListenerHolder;->notifyListenerInternal(Lcom/google/android/gms/common/api/internal/ListenerHolder$Notifier;)V
 

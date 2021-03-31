@@ -30,13 +30,13 @@
 
 
 # static fields
-.field public static final BASE64_TAG:Ljava/lang/String; = ";base64"
+.field private static final BASE64_TAG:Ljava/lang/String; = ";base64"
 
-.field public static final DATA_SCHEME_IMAGE:Ljava/lang/String; = "data:image"
+.field private static final DATA_SCHEME_IMAGE:Ljava/lang/String; = "data:image"
 
 
 # instance fields
-.field public final dataDecoder:Lcom/bumptech/glide/load/model/DataUrlLoader$DataDecoder;
+.field private final dataDecoder:Lcom/bumptech/glide/load/model/DataUrlLoader$DataDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/DataUrlLoader$DataDecoder<",
@@ -70,6 +70,14 @@
 # virtual methods
 .method public buildLoadData(Ljava/lang/Object;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/model/ModelLoader$LoadData;
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p4    # Lcom/bumptech/glide/load/Options;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;II",
@@ -105,6 +113,10 @@
 
 .method public handles(Ljava/lang/Object;)Z
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TModel;)Z"

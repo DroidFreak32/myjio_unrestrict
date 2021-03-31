@@ -1,127 +1,72 @@
 .class public final Lcom/google/android/gms/internal/ads/zzats;
-.super Landroid/content/MutableContextWrapper;
-
-
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
 # instance fields
-.field public zzafg:Landroid/content/Context;
-
-.field public zzcyg:Landroid/app/Activity;
-
-.field public zzdiq:Landroid/content/Context;
+.field private zzdxk:Ljava/util/WeakHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/WeakHashMap<",
+            "Landroid/content/Context;",
+            "Lcom/google/android/gms/internal/ads/zzatu;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzdxk:Ljava/util/WeakHashMap;
+
+    return-void
+.end method
+
+.method public static synthetic zza(Lcom/google/android/gms/internal/ads/zzats;)Ljava/util/WeakHashMap;
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Landroid/content/MutableContextWrapper;-><init>(Landroid/content/Context;)V
+    iget-object p0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzdxk:Ljava/util/WeakHashMap;
 
-    .line 2
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ads/zzats;->setBaseContext(Landroid/content/Context;)V
-
-    return-void
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 1
+.method public final zzr(Landroid/content/Context;)Ljava/util/concurrent/Future;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            ")",
+            "Ljava/util/concurrent/Future<",
+            "Lcom/google/android/gms/internal/ads/zzatq;",
+            ">;"
+        }
+    .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzdiq:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/internal/ads/zzazj;->zzegp:Lcom/google/android/gms/internal/ads/zzdzc;
 
-    invoke-virtual {v0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v1, Lcom/google/android/gms/internal/ads/zzatv;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/internal/ads/zzatv;-><init>(Lcom/google/android/gms/internal/ads/zzats;Landroid/content/Context;)V
+
+    invoke-interface {v0, v1}, Lcom/google/android/gms/internal/ads/zzdzc;->zze(Ljava/util/concurrent/Callable;)Lcom/google/android/gms/internal/ads/zzdyz;
 
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public final setBaseContext(Landroid/content/Context;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzafg:Landroid/content/Context;
-
-    .line 2
-    instance-of v0, p1, Landroid/app/Activity;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p1
-
-    check-cast v0, Landroid/app/Activity;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzcyg:Landroid/app/Activity;
-
-    .line 3
-    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzats;->zzdiq:Landroid/content/Context;
-
-    .line 4
-    iget-object p1, p0, Lcom/google/android/gms/internal/ads/zzats;->zzafg:Landroid/content/Context;
-
-    invoke-super {p0, p1}, Landroid/content/MutableContextWrapper;->setBaseContext(Landroid/content/Context;)V
-
-    return-void
-.end method
-
-.method public final startActivity(Landroid/content/Intent;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzcyg:Landroid/app/Activity;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-virtual {v0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    return-void
-
-    :cond_0
-    const/high16 v0, 0x10000000
-
-    .line 3
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzafg:Landroid/content/Context;
-
-    invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public final zzvc()Landroid/app/Activity;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzcyg:Landroid/app/Activity;
-
-    return-object v0
-.end method
-
-.method public final zzvq()Landroid/content/Context;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzats;->zzdiq:Landroid/content/Context;
-
-    return-object v0
 .end method

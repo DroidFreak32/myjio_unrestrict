@@ -106,8 +106,14 @@
     return-object p0
 .end method
 
-.method public static zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/lang/StringBuffer;)V
+.method private static zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/lang/StringBuffer;)V
     .locals 12
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalAccessException;,
+            Ljava/lang/reflect/InvocationTargetException;
+        }
+    .end annotation
 
     if-eqz p1, :cond_15
 
@@ -620,7 +626,7 @@
     return-void
 .end method
 
-.method public static zzl(Ljava/lang/String;)Ljava/lang/String;
+.method private static zzl(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
     new-instance v0, Ljava/lang/StringBuffer;

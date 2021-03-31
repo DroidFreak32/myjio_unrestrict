@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/getkeepsafe/taptargetview/TapTargetView;->a(Landroid/content/Context;)V
+    value = Lcom/getkeepsafe/taptargetview/TapTargetView;->applyTargetOptions(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -41,7 +41,7 @@
     .line 1
     iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$c;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:[I
+    iget-object v0, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->n0:[I
 
     if-nez v0, :cond_0
 
@@ -55,7 +55,7 @@
 
     int-to-float v2, v2
 
-    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->j0:F
+    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->l0:F
 
     sub-float/2addr v2, p1
 
@@ -92,7 +92,7 @@
     .line 3
     iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$c;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->m0:I
+    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->o0:I
 
     int-to-float p1, p1
 
@@ -112,7 +112,7 @@
     .line 5
     iget-object p1, p0, Lcom/getkeepsafe/taptargetview/TapTargetView$c;->a:Lcom/getkeepsafe/taptargetview/TapTargetView;
 
-    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->E:I
+    iget p1, p1, Lcom/getkeepsafe/taptargetview/TapTargetView;->F:I
 
     invoke-virtual {p2, v1, p1}, Landroid/graphics/Outline;->offset(II)V
 

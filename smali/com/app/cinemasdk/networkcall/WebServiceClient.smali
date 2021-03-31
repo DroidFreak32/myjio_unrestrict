@@ -12,13 +12,13 @@
 
 
 # instance fields
-.field public retrofit:Lyr4;
+.field private retrofit:Lretrofit2/Retrofit;
 
-.field public retrofitAnalytics:Lyr4;
+.field private retrofitAnalytics:Lretrofit2/Retrofit;
 
-.field public retrofitProd:Lyr4;
+.field private retrofitProd:Lretrofit2/Retrofit;
 
-.field public retrofitSecure:Lyr4;
+.field private retrofitSecure:Lretrofit2/Retrofit;
 
 
 # direct methods
@@ -29,105 +29,121 @@
     invoke-direct {p0}, Lcom/app/cinemasdk/networkcall/RequestUtils;-><init>()V
 
     .line 2
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/RequestUtils;->getUnSecureBaseUrl()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object v0
 
     invoke-direct {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getOkHttpClient()Lokhttp3/OkHttpClient;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Lokhttp3/OkHttpClient;)Lyr4$b;
-
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->client(Lokhttp3/OkHttpClient;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofit:Lyr4;
+    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofit:Lretrofit2/Retrofit;
 
     .line 3
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/RequestUtils;->getSecureBaseUrl()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object v0
 
     invoke-direct {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getOkHttpClient()Lokhttp3/OkHttpClient;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Lokhttp3/OkHttpClient;)Lyr4$b;
-
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->client(Lokhttp3/OkHttpClient;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitSecure:Lyr4;
+    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitSecure:Lretrofit2/Retrofit;
 
     .line 4
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/RequestUtils;->getProdBaseUrl()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object v0
 
     invoke-direct {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getOkHttpClient()Lokhttp3/OkHttpClient;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Lokhttp3/OkHttpClient;)Lyr4$b;
-
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->client(Lokhttp3/OkHttpClient;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitProd:Lyr4;
+    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitProd:Lretrofit2/Retrofit;
 
     .line 5
-    new-instance v0, Lyr4$b;
+    new-instance v0, Lretrofit2/Retrofit$Builder;
 
-    invoke-direct {v0}, Lyr4$b;-><init>()V
+    invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V
 
     invoke-virtual {p0}, Lcom/app/cinemasdk/networkcall/RequestUtils;->getAnalyticsUrl()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Ljava/lang/String;)Lyr4$b;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
+
+    move-result-object v0
 
     invoke-direct {p0}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->getOkHttpClientForAnalytics()Lokhttp3/OkHttpClient;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lyr4$b;->a(Lokhttp3/OkHttpClient;)Lyr4$b;
-
-    invoke-virtual {v0}, Lyr4$b;->a()Lyr4;
+    invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->client(Lokhttp3/OkHttpClient;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitAnalytics:Lyr4;
+    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitAnalytics:Lretrofit2/Retrofit;
 
     return-void
 .end method
 
-.method public static synthetic access$000(Lcom/app/cinemasdk/networkcall/WebServiceClient;Lxr4;Lcom/app/cinemasdk/networkcall/INetworkResultListener;ILokhttp3/HttpUrl;)V
+.method public static synthetic access$000(Lcom/app/cinemasdk/networkcall/WebServiceClient;Lretrofit2/Response;Lcom/app/cinemasdk/networkcall/INetworkResultListener;ILokhttp3/HttpUrl;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->validateResponse(Lxr4;Lcom/app/cinemasdk/networkcall/INetworkResultListener;ILokhttp3/HttpUrl;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/app/cinemasdk/networkcall/WebServiceClient;->validateResponse(Lretrofit2/Response;Lcom/app/cinemasdk/networkcall/INetworkResultListener;ILokhttp3/HttpUrl;)V
 
     return-void
 .end method
@@ -163,14 +179,10 @@
 
     move-result-object v1
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
     .line 4
     invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     move-result-object v1
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 5
     invoke-virtual {v1, v3, v4, v2}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
@@ -207,14 +219,10 @@
 
     move-result-object v0
 
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
     .line 3
     invoke-virtual {v0, v2, v3, v1}, Lokhttp3/OkHttpClient$Builder;->writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 
     move-result-object v0
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 4
     invoke-virtual {v0, v2, v3, v1}, Lokhttp3/OkHttpClient$Builder;->readTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
@@ -307,12 +315,16 @@
     return-void
 .end method
 
-.method private validateResponse(Lxr4;Lcom/app/cinemasdk/networkcall/INetworkResultListener;ILokhttp3/HttpUrl;)V
+.method private validateResponse(Lretrofit2/Response;Lcom/app/cinemasdk/networkcall/INetworkResultListener;ILokhttp3/HttpUrl;)V
     .locals 21
+    .param p1    # Lretrofit2/Response;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lxr4<",
+            "Lretrofit2/Response<",
             "Lokhttp3/ResponseBody;",
             ">;",
             "Lcom/app/cinemasdk/networkcall/INetworkResultListener;",
@@ -328,24 +340,24 @@
 
     .line 1
     :try_start_0
-    invoke-virtual/range {p1 .. p1}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lokhttp3/ResponseBody;
 
     .line 2
-    invoke-virtual/range {p1 .. p1}, Lxr4;->c()Lokhttp3/ResponseBody;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->errorBody()Lokhttp3/ResponseBody;
 
     move-result-object v3
 
     .line 3
-    invoke-virtual/range {p1 .. p1}, Lxr4;->d()Lokhttp3/Headers;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->headers()Lokhttp3/Headers;
 
     move-result-object v4
 
     .line 4
-    invoke-virtual/range {p1 .. p1}, Lxr4;->e()Z
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->isSuccessful()Z
 
     move-result v5
 
@@ -374,7 +386,7 @@
 
     if-eq v1, v7, :cond_0
 
-    const-string v3, "yyyy-MM-dd"
+    const-string/jumbo v3, "yyyy-MM-dd"
 
     .line 6
     new-instance v5, Ljava/text/SimpleDateFormat;
@@ -391,7 +403,7 @@
     move-result-object v11
 
     .line 8
-    invoke-virtual/range {p1 .. p1}, Lxr4;->g()Lokhttp3/Response;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->raw()Lokhttp3/Response;
 
     move-result-object v3
 
@@ -404,7 +416,7 @@
     div-long v16, v7, v12
 
     .line 9
-    invoke-virtual/range {p1 .. p1}, Lxr4;->g()Lokhttp3/Response;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->raw()Lokhttp3/Response;
 
     move-result-object v3
 
@@ -422,11 +434,11 @@
     move-result-object v10
 
     .line 11
-    invoke-virtual/range {p1 .. p1}, Lxr4;->b()I
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->code()I
 
     move-result v18
 
-    invoke-virtual/range {p1 .. p1}, Lxr4;->f()Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->message()Ljava/lang/String;
 
     move-result-object v19
 
@@ -443,11 +455,11 @@
 
     move-result-object v3
 
-    invoke-virtual/range {p1 .. p1}, Lxr4;->f()Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->message()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual/range {p1 .. p1}, Lxr4;->b()I
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->code()I
 
     move-result v7
 
@@ -505,7 +517,7 @@
 
     move-result-object v4
 
-    invoke-virtual/range {p1 .. p1}, Lxr4;->b()I
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->code()I
 
     move-result v5
 
@@ -517,7 +529,7 @@
 
     move-result-object v2
 
-    invoke-virtual/range {p1 .. p1}, Lxr4;->b()I
+    invoke-virtual/range {p1 .. p1}, Lretrofit2/Response;->code()I
 
     move-result v3
 
@@ -540,38 +552,38 @@
 
 
 # virtual methods
-.method public getRetrofit()Lyr4;
+.method public getRetrofit()Lretrofit2/Retrofit;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofit:Lyr4;
+    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofit:Lretrofit2/Retrofit;
 
     return-object v0
 .end method
 
-.method public getRetrofitAnalytics()Lyr4;
+.method public getRetrofitAnalytics()Lretrofit2/Retrofit;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitAnalytics:Lyr4;
+    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitAnalytics:Lretrofit2/Retrofit;
 
     return-object v0
 .end method
 
-.method public getRetrofitProd()Lyr4;
+.method public getRetrofitProd()Lretrofit2/Retrofit;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitProd:Lyr4;
+    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitProd:Lretrofit2/Retrofit;
 
     return-object v0
 .end method
 
-.method public getRetrofitSecure()Lyr4;
+.method public getRetrofitSecure()Lretrofit2/Retrofit;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitSecure:Lyr4;
+    iget-object v0, p0, Lcom/app/cinemasdk/networkcall/WebServiceClient;->retrofitSecure:Lretrofit2/Retrofit;
 
     return-object v0
 .end method

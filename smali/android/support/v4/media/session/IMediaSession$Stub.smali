@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static final DESCRIPTOR:Ljava/lang/String; = "android.support.v4.media.session.IMediaSession"
+.field private static final DESCRIPTOR:Ljava/lang/String; = "android.support.v4.media.session.IMediaSession"
 
 .field public static final TRANSACTION_addQueueItem:I = 0x29
 
@@ -188,6 +188,11 @@
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     const/16 v0, 0x33
 

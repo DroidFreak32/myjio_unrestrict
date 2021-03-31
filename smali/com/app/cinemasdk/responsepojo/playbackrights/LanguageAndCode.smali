@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public code:Ljava/lang/String;
+.field private code:Ljava/lang/String;
 
-.field public lang:Ljava/lang/String;
+.field private lang:Ljava/lang/String;
 
 
 # direct methods

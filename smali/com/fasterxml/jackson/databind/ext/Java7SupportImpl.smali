@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final _bogus:Ljava/lang/Class;
+.field private final _bogus:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",

@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final MAX_ENTRIES:I = 0x8
+.field private static final MAX_ENTRIES:I = 0x8
 
 
 # instance fields
-.field public final _entries:[Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$TypeAndSerializer;
+.field private final _entries:[Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$TypeAndSerializer;
 
 
 # direct methods

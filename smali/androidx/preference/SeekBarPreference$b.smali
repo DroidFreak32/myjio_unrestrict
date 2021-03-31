@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/preference/SeekBarPreference;
+.field public final synthetic a:Landroidx/preference/SeekBarPreference;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/preference/SeekBarPreference$b;->s:Landroidx/preference/SeekBarPreference;
+    iput-object p1, p0, Landroidx/preference/SeekBarPreference$b;->a:Landroidx/preference/SeekBarPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 1
+    .locals 2
 
     .line 1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
@@ -51,39 +51,37 @@
 
     .line 2
     :cond_0
-    iget-object p1, p0, Landroidx/preference/SeekBarPreference$b;->s:Landroidx/preference/SeekBarPreference;
+    iget-object p1, p0, Landroidx/preference/SeekBarPreference$b;->a:Landroidx/preference/SeekBarPreference;
 
-    iget-boolean p1, p1, Landroidx/preference/SeekBarPreference;->T:Z
+    iget-boolean v1, p1, Landroidx/preference/SeekBarPreference;->r0:Z
 
-    if-nez p1, :cond_2
+    if-nez v1, :cond_2
 
-    const/16 p1, 0x15
+    const/16 v1, 0x15
 
-    if-eq p2, p1, :cond_1
+    if-eq p2, v1, :cond_1
 
-    const/16 p1, 0x16
+    const/16 v1, 0x16
 
-    if-ne p2, p1, :cond_2
+    if-ne p2, v1, :cond_2
 
     :cond_1
     return v0
 
     :cond_2
-    const/16 p1, 0x17
+    const/16 v1, 0x17
 
-    if-eq p2, p1, :cond_5
+    if-eq p2, v1, :cond_5
 
-    const/16 p1, 0x42
+    const/16 v1, 0x42
 
-    if-ne p2, p1, :cond_3
+    if-ne p2, v1, :cond_3
 
     goto :goto_0
 
     .line 3
     :cond_3
-    iget-object p1, p0, Landroidx/preference/SeekBarPreference$b;->s:Landroidx/preference/SeekBarPreference;
-
-    iget-object p1, p1, Landroidx/preference/SeekBarPreference;->R:Landroid/widget/SeekBar;
+    iget-object p1, p1, Landroidx/preference/SeekBarPreference;->p0:Landroid/widget/SeekBar;
 
     if-nez p1, :cond_4
 

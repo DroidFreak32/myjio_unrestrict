@@ -45,6 +45,8 @@
     "songID": "00159",
     "reference": "Reference",
     "referenceID": "00160",
+    "expiryDate": "Expires on",
+    "expiryDateID": "",
     "doneText": "Done",
     "doneTextID": "00161",
     "jioTunes": "JioTunes",
@@ -71,9 +73,11 @@
     "popUpCountCrossClick": 2,
     "popUpCountRateClick": 1,
     "isCardVisible": 1,
+    "isInAppRatingPopUpEnabled": 1,
     "isAllStarCardVisible": 1,
     "songsCount": 5,
     "headerColour": "#FFFFFF",
+    "headerColourNew": "#0028AF",
     "headerTextColour": "#FFFFFF"
   },
   "jioTuneDashboardContent": [

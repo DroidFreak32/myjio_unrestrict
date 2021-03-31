@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public payloadLength:I
+.field private payloadLength:I
 
-.field public realPackageSize:I
+.field private realPackageSize:I
 
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/java_websocket/drafts/Draft_6455;
 

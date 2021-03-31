@@ -14,15 +14,15 @@
 
 
 # instance fields
-.field public final componentName:Landroid/content/ComponentName;
+.field private final componentName:Landroid/content/ComponentName;
 
-.field public final context:Landroid/content/Context;
+.field private final context:Landroid/content/Context;
 
-.field public final remoteViews:Landroid/widget/RemoteViews;
+.field private final remoteViews:Landroid/widget/RemoteViews;
 
-.field public final viewId:I
+.field private final viewId:I
 
-.field public final widgetIds:[I
+.field private final widgetIds:[I
 
 
 # direct methods
@@ -225,6 +225,14 @@
 # virtual methods
 .method public onResourceReady(Landroid/graphics/Bitmap;Lcom/bumptech/glide/request/transition/Transition;)V
     .locals 1
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/transition/Transition;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -251,6 +259,14 @@
 
 .method public bridge synthetic onResourceReady(Ljava/lang/Object;Lcom/bumptech/glide/request/transition/Transition;)V
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/request/transition/Transition;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     check-cast p1, Landroid/graphics/Bitmap;

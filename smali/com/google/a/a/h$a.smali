@@ -30,79 +30,71 @@
 
 .field public static final enum d:Lcom/google/a/a/h$a;
 
-.field public static final synthetic e:[Lcom/google/a/a/h$a;
+.field private static final synthetic e:[Lcom/google/a/a/h$a;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     new-instance v0, Lcom/google/a/a/h$a;
 
-    const/4 v1, 0x0
+    const-string v1, "E164"
 
-    const-string v2, "E164"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/a/a/h$a;->a:Lcom/google/a/a/h$a;
 
-    new-instance v0, Lcom/google/a/a/h$a;
-
-    const/4 v2, 0x1
+    new-instance v1, Lcom/google/a/a/h$a;
 
     const-string v3, "INTERNATIONAL"
 
-    invoke-direct {v0, v3, v2}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x1
 
-    sput-object v0, Lcom/google/a/a/h$a;->b:Lcom/google/a/a/h$a;
+    invoke-direct {v1, v3, v4}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/a/a/h$a;
+    sput-object v1, Lcom/google/a/a/h$a;->b:Lcom/google/a/a/h$a;
 
-    const/4 v3, 0x2
+    new-instance v3, Lcom/google/a/a/h$a;
 
-    const-string v4, "NATIONAL"
+    const-string v5, "NATIONAL"
 
-    invoke-direct {v0, v4, v3}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
+    const/4 v6, 0x2
 
-    sput-object v0, Lcom/google/a/a/h$a;->c:Lcom/google/a/a/h$a;
+    invoke-direct {v3, v5, v6}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/a/a/h$a;
+    sput-object v3, Lcom/google/a/a/h$a;->c:Lcom/google/a/a/h$a;
 
-    const/4 v4, 0x3
+    new-instance v5, Lcom/google/a/a/h$a;
 
-    const-string v5, "RFC3966"
+    const-string v7, "RFC3966"
 
-    invoke-direct {v0, v5, v4}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
+    const/4 v8, 0x3
 
-    sput-object v0, Lcom/google/a/a/h$a;->d:Lcom/google/a/a/h$a;
+    invoke-direct {v5, v7, v8}, Lcom/google/a/a/h$a;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x4
+    sput-object v5, Lcom/google/a/a/h$a;->d:Lcom/google/a/a/h$a;
 
-    new-array v0, v0, [Lcom/google/a/a/h$a;
+    const/4 v7, 0x4
 
-    sget-object v5, Lcom/google/a/a/h$a;->a:Lcom/google/a/a/h$a;
+    new-array v7, v7, [Lcom/google/a/a/h$a;
 
-    aput-object v5, v0, v1
+    aput-object v0, v7, v2
 
-    sget-object v1, Lcom/google/a/a/h$a;->b:Lcom/google/a/a/h$a;
+    aput-object v1, v7, v4
 
-    aput-object v1, v0, v2
+    aput-object v3, v7, v6
 
-    sget-object v1, Lcom/google/a/a/h$a;->c:Lcom/google/a/a/h$a;
+    aput-object v5, v7, v8
 
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/a/a/h$a;->d:Lcom/google/a/a/h$a;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/google/a/a/h$a;->e:[Lcom/google/a/a/h$a;
+    sput-object v7, Lcom/google/a/a/h$a;->e:[Lcom/google/a/a/h$a;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

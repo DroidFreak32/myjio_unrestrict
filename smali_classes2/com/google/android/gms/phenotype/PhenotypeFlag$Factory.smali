@@ -17,17 +17,17 @@
 
 
 # instance fields
-.field public final zzax:Ljava/lang/String;
+.field private final zzax:Ljava/lang/String;
 
-.field public final zzay:Landroid/net/Uri;
+.field private final zzay:Landroid/net/Uri;
 
-.field public final zzaz:Ljava/lang/String;
+.field private final zzaz:Ljava/lang/String;
 
-.field public final zzba:Ljava/lang/String;
+.field private final zzba:Ljava/lang/String;
 
-.field public final zzbb:Z
+.field private final zzbb:Z
 
-.field public final zzbc:Z
+.field private final zzbc:Z
 
 
 # direct methods
@@ -55,7 +55,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;ZZ)V
+.method private constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;ZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

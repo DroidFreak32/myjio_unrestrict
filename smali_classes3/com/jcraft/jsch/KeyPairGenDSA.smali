@@ -20,4 +20,9 @@
 .end method
 
 .method public abstract init(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method

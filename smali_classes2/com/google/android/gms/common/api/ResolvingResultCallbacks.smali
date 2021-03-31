@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/ResolvingResultCallbacks;
 .super Lcom/google/android/gms/common/api/ResultCallbacks;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -15,14 +16,22 @@
 
 
 # instance fields
-.field public final mActivity:Landroid/app/Activity;
+.field private final zza:Landroid/app/Activity;
 
-.field public final zzao:I
+.field private final zzb:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;I)V
     .locals 1
+    .param p1    # Landroid/app/Activity;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/api/ResultCallbacks;-><init>()V
@@ -36,10 +45,10 @@
 
     check-cast p1, Landroid/app/Activity;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->mActivity:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->zza:Landroid/app/Activity;
 
     .line 3
-    iput p2, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->zzao:I
+    iput p2, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->zzb:I
 
     return-void
 .end method
@@ -48,6 +57,10 @@
 # virtual methods
 .method public final onFailure(Lcom/google/android/gms/common/api/Status;)V
     .locals 2
+    .param p1    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -60,9 +73,9 @@
 
     .line 2
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->mActivity:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->zza:Landroid/app/Activity;
 
-    iget v1, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->zzao:I
+    iget v1, p0, Lcom/google/android/gms/common/api/ResolvingResultCallbacks;->zzb:I
 
     invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/common/api/Status;->startResolutionForResult(Landroid/app/Activity;I)V
     :try_end_0
@@ -90,6 +103,10 @@
 .end method
 
 .method public abstract onSuccess(Lcom/google/android/gms/common/api/Result;)V
+    .param p1    # Lcom/google/android/gms/common/api/Result;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"
@@ -98,4 +115,8 @@
 .end method
 
 .method public abstract onUnresolvableFailure(Lcom/google/android/gms/common/api/Status;)V
+    .param p1    # Lcom/google/android/gms/common/api/Status;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 .end method

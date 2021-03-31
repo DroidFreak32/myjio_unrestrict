@@ -3,13 +3,13 @@
 
 
 # instance fields
-.field public zzyv:Z
+.field private zzyv:Z
 
-.field public zzyw:Z
+.field private zzyw:Z
 
-.field public final zzyx:Landroid/app/AlarmManager;
+.field private final zzyx:Landroid/app/AlarmManager;
 
-.field public zzyy:Ljava/lang/Integer;
+.field private zzyy:Ljava/lang/Integer;
 
 
 # direct methods

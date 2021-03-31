@@ -81,7 +81,7 @@
 
     if-eq v2, p1, :cond_0
 
-    invoke-static {}, Lc20;->g()V
+    invoke-static {}, Lcom/elitecorelib/andsf/utility/a;->G()V
 
     goto :goto_0
 
@@ -110,14 +110,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_2
-
     :catch_0
-    move-exception p1
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
     :cond_2
-    :goto_2
     return-void
 .end method

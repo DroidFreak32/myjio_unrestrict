@@ -17,6 +17,11 @@
 # virtual methods
 .method public isValid()V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/clevertap/android/sdk/java_websocket/exceptions/InvalidDataException;
+        }
+    .end annotation
 
     return-void
 .end method

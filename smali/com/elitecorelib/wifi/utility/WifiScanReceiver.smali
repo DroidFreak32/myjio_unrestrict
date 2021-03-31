@@ -63,7 +63,7 @@
 
     move-result-object p1
 
-    const-string v0, "wifi"
+    const-string/jumbo v0, "wifi"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -72,8 +72,6 @@
     check-cast p1, Landroid/net/wifi/WifiManager;
 
     iput-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiScanReceiver;->b:Landroid/net/wifi/WifiManager;
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiScanReceiver;->b:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {p1}, Landroid/net/wifi/WifiManager;->startScan()Z
 
@@ -110,11 +108,7 @@
 
     iput-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiScanReceiver;->a:Ljava/util/List;
 
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiScanReceiver;->a:Ljava/util/List;
-
     if-eqz p1, :cond_5
-
-    iget-object p1, p0, Lcom/elitecorelib/wifi/utility/WifiScanReceiver;->a:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -169,7 +163,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "ssid in range >>>>> "
+    const-string/jumbo v2, "ssid in range >>>>> "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

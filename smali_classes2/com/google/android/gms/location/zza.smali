@@ -1,12 +1,13 @@
 .class public final Lcom/google/android/gms/location/zza;
 .super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-        "Lcom/google/android/gms/internal/location/zzaz;",
+        "Lcom/google/android/gms/internal/location/zzay;",
         "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
         ">;"
     }
@@ -17,6 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;-><init>()V
 
     return-void
@@ -27,7 +29,11 @@
 .method public final synthetic buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
     .locals 6
 
-    new-instance p3, Lcom/google/android/gms/internal/location/zzaz;
+    .line 1
+    check-cast p4, Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;
+
+    .line 2
+    new-instance p3, Lcom/google/android/gms/internal/location/zzay;
 
     const-string v5, "activity_recognition"
 
@@ -41,7 +47,7 @@
 
     move-object v4, p6
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/location/zzaz;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/location/zzay;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;Ljava/lang/String;)V
 
     return-object p3
 .end method

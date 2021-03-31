@@ -1,251 +1,102 @@
 .class public Ld1$a;
-.super Ljava/lang/Object;
-.source "SupportActionModeWrapper.java"
-
-# interfaces
-.implements Lz0$a;
+.super Landroidx/core/content/res/ResourcesCompat$FontCallback;
+.source "AppCompatTextHelper.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Ld1;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Ld1;->B(Landroid/content/Context;Landroidx/appcompat/widget/TintTypedArray;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "a"
+    accessFlags = 0x1
+    name = null
 .end annotation
 
 
 # instance fields
-.field public final a:Landroid/view/ActionMode$Callback;
+.field public final synthetic a:I
 
-.field public final b:Landroid/content/Context;
+.field public final synthetic b:I
 
-.field public final c:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList<",
-            "Ld1;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final synthetic c:Ljava/lang/ref/WeakReference;
 
-.field public final d:Ls4;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ls4<",
-            "Landroid/view/Menu;",
-            "Landroid/view/Menu;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final synthetic d:Ld1;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/ActionMode$Callback;)V
+.method public constructor <init>(Ld1;IILjava/lang/ref/WeakReference;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ld1$a;->d:Ld1;
 
-    .line 2
-    iput-object p1, p0, Ld1$a;->b:Landroid/content/Context;
+    iput p2, p0, Ld1$a;->a:I
 
-    .line 3
-    iput-object p2, p0, Ld1$a;->a:Landroid/view/ActionMode$Callback;
+    iput p3, p0, Ld1$a;->b:I
 
-    .line 4
-    new-instance p1, Ljava/util/ArrayList;
+    iput-object p4, p0, Ld1$a;->c:Ljava/lang/ref/WeakReference;
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Ld1$a;->c:Ljava/util/ArrayList;
-
-    .line 5
-    new-instance p1, Ls4;
-
-    invoke-direct {p1}, Ls4;-><init>()V
-
-    iput-object p1, p0, Ld1$a;->d:Ls4;
+    invoke-direct {p0}, Landroidx/core/content/res/ResourcesCompat$FontCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/Menu;)Landroid/view/Menu;
-    .locals 3
-
-    .line 6
-    iget-object v0, p0, Ld1$a;->d:Ls4;
-
-    invoke-virtual {v0, p1}, Ls4;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/Menu;
-
-    if-nez v0, :cond_0
-
-    .line 7
-    new-instance v0, Lw1;
-
-    iget-object v1, p0, Ld1$a;->b:Landroid/content/Context;
-
-    move-object v2, p1
-
-    check-cast v2, Lz7;
-
-    invoke-direct {v0, v1, v2}, Lw1;-><init>(Landroid/content/Context;Lz7;)V
-
-    .line 8
-    iget-object v1, p0, Ld1$a;->d:Ls4;
-
-    invoke-virtual {v1, p1, v0}, Ls4;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public a(Lz0;)V
-    .locals 1
-
-    .line 5
-    iget-object v0, p0, Ld1$a;->a:Landroid/view/ActionMode$Callback;
-
-    invoke-virtual {p0, p1}, Ld1$a;->b(Lz0;)Landroid/view/ActionMode;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
+.method public onFontRetrievalFailed(I)V
+    .locals 0
 
     return-void
 .end method
 
-.method public a(Lz0;Landroid/view/Menu;)Z
-    .locals 1
+.method public onFontRetrieved(Landroid/graphics/Typeface;)V
+    .locals 2
+    .param p1    # Landroid/graphics/Typeface;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Ld1$a;->a:Landroid/view/ActionMode$Callback;
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-virtual {p0, p1}, Ld1$a;->b(Lz0;)Landroid/view/ActionMode;
+    const/16 v1, 0x1c
 
-    move-result-object p1
+    if-lt v0, v1, :cond_1
 
     .line 2
-    invoke-virtual {p0, p2}, Ld1$a;->a(Landroid/view/Menu;)Landroid/view/Menu;
+    iget v0, p0, Ld1$a;->a:I
 
-    move-result-object p2
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_1
 
     .line 3
-    invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+    iget v1, p0, Ld1$a;->b:I
 
-    move-result p1
+    and-int/lit8 v1, v1, 0x2
 
-    return p1
-.end method
+    if-eqz v1, :cond_0
 
-.method public a(Lz0;Landroid/view/MenuItem;)Z
-    .locals 3
-
-    .line 4
-    iget-object v0, p0, Ld1$a;->a:Landroid/view/ActionMode$Callback;
-
-    invoke-virtual {p0, p1}, Ld1$a;->b(Lz0;)Landroid/view/ActionMode;
-
-    move-result-object p1
-
-    new-instance v1, Lr1;
-
-    iget-object v2, p0, Ld1$a;->b:Landroid/content/Context;
-
-    check-cast p2, La8;
-
-    invoke-direct {v1, v2, p2}, Lr1;-><init>(Landroid/content/Context;La8;)V
-
-    invoke-interface {v0, p1, v1}, Landroid/view/ActionMode$Callback;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public b(Lz0;)Landroid/view/ActionMode;
-    .locals 4
-
-    .line 4
-    iget-object v0, p0, Ld1$a;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    .line 5
-    iget-object v2, p0, Ld1$a;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ld1;
-
-    if-eqz v2, :cond_0
-
-    .line 6
-    iget-object v3, v2, Ld1;->b:Lz0;
-
-    if-ne v3, p1, :cond_0
-
-    return-object v2
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 7
-    :cond_1
-    new-instance v0, Ld1;
+    :cond_0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Ld1$a;->b:Landroid/content/Context;
-
-    invoke-direct {v0, v1, p1}, Ld1;-><init>(Landroid/content/Context;Lz0;)V
-
-    .line 8
-    iget-object p1, p0, Ld1$a;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-object v0
-.end method
-
-.method public b(Lz0;Landroid/view/Menu;)Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ld1$a;->a:Landroid/view/ActionMode$Callback;
-
-    invoke-virtual {p0, p1}, Ld1$a;->b(Lz0;)Landroid/view/ActionMode;
+    :goto_0
+    invoke-static {p1, v0, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
 
     move-result-object p1
 
-    .line 2
-    invoke-virtual {p0, p2}, Ld1$a;->a(Landroid/view/Menu;)Landroid/view/Menu;
+    .line 4
+    :cond_1
+    iget-object v0, p0, Ld1$a;->d:Ld1;
 
-    move-result-object p2
+    iget-object v1, p0, Ld1$a;->c:Ljava/lang/ref/WeakReference;
 
-    .line 3
-    invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+    invoke-virtual {v0, v1, p1}, Ld1;->n(Ljava/lang/ref/WeakReference;Landroid/graphics/Typeface;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

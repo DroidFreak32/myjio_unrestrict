@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->j()V
+    value = Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->start()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+.field public final synthetic a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
 
 # direct methods
 .method public constructor <init>(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$b;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iput-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$b;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,13 +38,13 @@
     .locals 1
 
     .line 1
-    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$b;->s:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
+    iget-object p1, p0, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask$b;->a:Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;
 
-    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->b(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
+    invoke-static {p1}, Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;->access$getView$p(Lcom/jio/jioml/hellojio/activities/tasks/VideoTask;)Landroid/view/View;
 
     move-result-object p1
 
-    sget v0, Ldn0;->video_view:I
+    sget v0, Lcom/jio/jioml/hellojio/R$id;->video_view:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

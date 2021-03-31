@@ -20,7 +20,7 @@
 # instance fields
 .field public final synthetic this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-.field public final webSocketClient:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
+.field private final webSocketClient:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
 
 # direct methods
@@ -45,7 +45,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/net/Socket;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$200(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/net/Socket;
 
     move-result-object v0
 
@@ -54,7 +54,7 @@
     .line 2
     iget-object v0, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/net/Socket;
+    invoke-static {v0}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$200(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/net/Socket;
 
     move-result-object v0
 
@@ -81,6 +81,11 @@
 
 .method private runWriteData()V
     .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     :goto_0
     const/4 v0, 0x0
@@ -96,7 +101,7 @@
     .line 2
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$200(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
 
     move-result-object v1
 
@@ -111,7 +116,7 @@
     .line 3
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v2}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
+    invoke-static {v2}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
 
     move-result-object v2
 
@@ -128,7 +133,7 @@
     .line 4
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
 
     move-result-object v1
 
@@ -142,7 +147,7 @@
     :catch_0
     iget-object v1, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v1}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$200(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
+    invoke-static {v1}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Lcom/clevertap/android/sdk/java_websocket/WebSocketImpl;
 
     move-result-object v1
 
@@ -168,7 +173,7 @@
     .line 6
     iget-object v3, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v3}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
+    invoke-static {v3}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
 
     move-result-object v3
 
@@ -185,7 +190,7 @@
     .line 7
     iget-object v2, p0, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient$WebsocketWriteThread;->this$0:Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;
 
-    invoke-static {v2}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$300(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
+    invoke-static {v2}, Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;->access$400(Lcom/clevertap/android/sdk/java_websocket/client/WebSocketClient;)Ljava/io/OutputStream;
 
     move-result-object v2
 

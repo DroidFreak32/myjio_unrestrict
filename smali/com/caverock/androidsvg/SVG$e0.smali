@@ -26,32 +26,7 @@
     .end annotation
 .end method
 
-.method public abstract a(Ljava/lang/String;)V
-.end method
-
-.method public abstract a(Ljava/util/Set;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract b(Ljava/util/Set;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract c()Ljava/lang/String;
+.method public abstract b()Ljava/lang/String;
 .end method
 
 .method public abstract c(Ljava/util/Set;)V
@@ -65,7 +40,7 @@
     .end annotation
 .end method
 
-.method public abstract d(Ljava/util/Set;)V
+.method public abstract e(Ljava/util/Set;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -76,29 +51,54 @@
     .end annotation
 .end method
 
-.method public abstract e()Ljava/util/Set;
+.method public abstract f(Ljava/util/Set;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "(",
             "Ljava/util/Set<",
             "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end method
-
-.method public abstract f()Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;"
+            ">;)V"
         }
     .end annotation
 .end method
 
 .method public abstract getRequiredFeatures()Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract h(Ljava/util/Set;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract i(Ljava/lang/String;)V
+.end method
+
+.method public abstract k()Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract l()Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

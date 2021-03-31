@@ -1,85 +1,96 @@
-.class public Lcom/google/android/gms/measurement/internal/zzke;
-.super Lcom/google/android/gms/measurement/internal/zzgs;
-.source "com.google.android.gms:play-services-measurement@@17.4.2"
-
-# interfaces
-.implements Lcom/google/android/gms/measurement/internal/zzgu;
+.class public final Lcom/google/android/gms/measurement/internal/zzke;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@18.0.0"
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/measurement/internal/zzkg;
+.field private final zza:Lcom/google/android/gms/common/util/Clock;
+
+.field private zzb:J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/measurement/internal/zzkg;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/common/util/Clock;)V
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/internal/zzkg;->zzs()Lcom/google/android/gms/measurement/internal/zzfx;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/measurement/internal/zzgs;-><init>(Lcom/google/android/gms/measurement/internal/zzfx;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     invoke-static {p1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/measurement/internal/zzkg;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/common/util/Clock;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e_()Lcom/google/android/gms/measurement/internal/zzq;
-    .locals 1
+.method public final zza()V
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/measurement/internal/zzkg;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/common/util/Clock;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkg;->zzf()Lcom/google/android/gms/measurement/internal/zzq;
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
 
-    move-result-object v0
+    move-result-wide v0
 
-    return-object v0
+    iput-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
+
+    return-void
 .end method
 
-.method public zzg()Lcom/google/android/gms/measurement/internal/zzkk;
-    .locals 1
+.method public final zza(J)Z
+    .locals 4
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/measurement/internal/zzkg;
+    .line 2
+    iget-wide p1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkg;->zzh()Lcom/google/android/gms/measurement/internal/zzkk;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    const-wide/16 v1, 0x0
 
-    return-object v0
+    cmp-long v3, p1, v1
+
+    if-nez v3, :cond_0
+
+    return v0
+
+    .line 3
+    :cond_0
+    iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/common/util/Clock;
+
+    invoke-interface {p1}, Lcom/google/android/gms/common/util/Clock;->elapsedRealtime()J
+
+    move-result-wide p1
+
+    iget-wide v1, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
+
+    sub-long/2addr p1, v1
+
+    const-wide/32 v1, 0x36ee80
+
+    cmp-long v3, p1, v1
+
+    if-ltz v3, :cond_1
+
+    return v0
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
-.method public zzi()Lcom/google/android/gms/measurement/internal/zzab;
-    .locals 1
+.method public final zzb()V
+    .locals 2
+
+    const-wide/16 v0, 0x0
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/measurement/internal/zzkg;
+    iput-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zzb:J
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkg;->zze()Lcom/google/android/gms/measurement/internal/zzab;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzj()Lcom/google/android/gms/measurement/internal/zzfr;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzke;->zza:Lcom/google/android/gms/measurement/internal/zzkg;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/zzkg;->zzc()Lcom/google/android/gms/measurement/internal/zzfr;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

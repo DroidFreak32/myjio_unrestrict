@@ -16,16 +16,24 @@
 
 # virtual methods
 .method public abstract createCurrentContentIntent(Lcom/google/android/jioexoplayer2/Player;)Landroid/app/PendingIntent;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getCurrentContentText(Lcom/google/android/jioexoplayer2/Player;)Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getCurrentContentTitle(Lcom/google/android/jioexoplayer2/Player;)Ljava/lang/String;
 .end method
 
 .method public abstract getCurrentLargeIcon(Lcom/google/android/jioexoplayer2/Player;Lcom/google/android/jioexoplayer2/jioui/PlayerNotificationManager$BitmapCallback;)Landroid/graphics/Bitmap;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract getCurrentSubText(Lcom/google/android/jioexoplayer2/Player;)Ljava/lang/String;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 .end method

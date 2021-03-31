@@ -15,13 +15,13 @@
 
 
 # instance fields
-.field public final drawMode:I
+.field private final drawMode:I
 
-.field public final textureBuffer:Ljava/nio/FloatBuffer;
+.field private final textureBuffer:Ljava/nio/FloatBuffer;
 
-.field public final vertexBuffer:Ljava/nio/FloatBuffer;
+.field private final vertexBuffer:Ljava/nio/FloatBuffer;
 
-.field public final vertexCount:I
+.field private final vertexCount:I
 
 
 # direct methods

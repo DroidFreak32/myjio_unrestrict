@@ -3,7 +3,7 @@
 .source "MainActivity.java"
 
 # interfaces
-.implements Llr4;
+.implements Lretrofit2/Callback;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Llr4<",
+        "Lretrofit2/Callback<",
         "Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SsoRefreshResponse;",
         ">;"
     }
@@ -44,12 +44,12 @@
 
 
 # virtual methods
-.method public onFailure(Ljr4;Ljava/lang/Throwable;)V
+.method public onFailure(Lretrofit2/Call;Ljava/lang/Throwable;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SsoRefreshResponse;",
             ">;",
             "Ljava/lang/Throwable;",
@@ -102,17 +102,19 @@
 
     new-instance v6, Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
+    iget-object v1, p0, Lcom/app/cinemasdk/ui/MainActivity$4;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
+
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "We are unable to play this content currently, Please try again later."
+    const-string v2, "We are unable to play this content currently, Please try again later."
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, " ("
+    const-string v2, " ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -131,8 +133,6 @@
     iget-object v5, p0, Lcom/app/cinemasdk/ui/MainActivity$4;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
     move-object v0, v6
-
-    move-object v1, p2
 
     invoke-direct/range {v0 .. v5}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;-><init>(Landroid/app/Activity;Ljava/lang/String;ZILcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;)V
 
@@ -172,15 +172,15 @@
     return-void
 .end method
 
-.method public onResponse(Ljr4;Lxr4;)V
+.method public onResponse(Lretrofit2/Call;Lretrofit2/Response;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljr4<",
+            "Lretrofit2/Call<",
             "Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SsoRefreshResponse;",
             ">;",
-            "Lxr4<",
+            "Lretrofit2/Response<",
             "Lcom/app/cinemasdk/responsepojo/refreshSSOToken/SsoRefreshResponse;",
             ">;)V"
         }
@@ -195,7 +195,7 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result v0
 
@@ -210,19 +210,19 @@
     if-eqz p2, :cond_0
 
     .line 2
-    invoke-virtual {p2}, Lxr4;->e()Z
+    invoke-virtual {p2}, Lretrofit2/Response;->isSuccessful()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result p1
 
@@ -239,7 +239,7 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -266,7 +266,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -287,7 +287,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Lxr4;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lretrofit2/Response;->body()Ljava/lang/Object;
 
     move-result-object p2
 
@@ -312,15 +312,17 @@
 
     new-instance v6, Lcom/app/cinemasdk/dialog/CustomErrorDialog;
 
+    iget-object v1, p0, Lcom/app/cinemasdk/ui/MainActivity$4;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
+
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "We are unable to play this content currently, Please try again later. ("
+    const-string v2, "We are unable to play this content currently, Please try again later. ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Lxr4;->b()I
+    invoke-virtual {p2}, Lretrofit2/Response;->code()I
 
     move-result p2
 
@@ -341,8 +343,6 @@
     iget-object v5, p0, Lcom/app/cinemasdk/ui/MainActivity$4;->this$0:Lcom/app/cinemasdk/ui/MainActivity;
 
     move-object v0, v6
-
-    move-object v1, p1
 
     invoke-direct/range {v0 .. v5}, Lcom/app/cinemasdk/dialog/CustomErrorDialog;-><init>(Landroid/app/Activity;Ljava/lang/String;ZILcom/app/cinemasdk/dialog/CustomErrorDialog$CustomErrorListener;)V
 

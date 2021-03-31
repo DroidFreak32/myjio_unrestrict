@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/dynamic/DeferredLifecycleHelper$zaa;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.3.0"
 
 
 # annotations
@@ -14,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract getState()I
+.method public abstract zaa()I
 .end method
 
 .method public abstract zaa(Lcom/google/android/gms/dynamic/LifecycleDelegate;)V

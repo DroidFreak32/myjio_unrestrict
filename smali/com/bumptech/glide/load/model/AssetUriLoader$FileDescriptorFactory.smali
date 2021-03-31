@@ -32,7 +32,7 @@
 
 
 # instance fields
-.field public final assetManager:Landroid/content/res/AssetManager;
+.field private final assetManager:Landroid/content/res/AssetManager;
 
 
 # direct methods
@@ -52,6 +52,9 @@
 # virtual methods
 .method public build(Lcom/bumptech/glide/load/model/MultiModelLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

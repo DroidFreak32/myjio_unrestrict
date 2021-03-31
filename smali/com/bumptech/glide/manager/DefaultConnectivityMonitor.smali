@@ -7,17 +7,17 @@
 
 
 # static fields
-.field public static final TAG:Ljava/lang/String; = "ConnectivityMonitor"
+.field private static final TAG:Ljava/lang/String; = "ConnectivityMonitor"
 
 
 # instance fields
-.field public final connectivityReceiver:Landroid/content/BroadcastReceiver;
+.field private final connectivityReceiver:Landroid/content/BroadcastReceiver;
 
-.field public final context:Landroid/content/Context;
+.field private final context:Landroid/content/Context;
 
 .field public isConnected:Z
 
-.field public isRegistered:Z
+.field private isRegistered:Z
 
 .field public final listener:Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;
 
@@ -25,6 +25,14 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -138,6 +146,10 @@
 # virtual methods
 .method public isConnected(Landroid/content/Context;)Z
     .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "MissingPermission"

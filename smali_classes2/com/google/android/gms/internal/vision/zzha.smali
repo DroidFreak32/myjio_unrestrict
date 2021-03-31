@@ -1,55 +1,70 @@
-.class public interface abstract Lcom/google/android/gms/internal/vision/zzha;
+.class public final Lcom/google/android/gms/internal/vision/zzha;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-vision-common@@19.1.2"
+
+
+# instance fields
+.field private final buffer:[B
+
+.field private final zztz:Lcom/google/android/gms/internal/vision/zzhl;
+
+
+# direct methods
+.method private constructor <init>(I)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    new-array p1, p1, [B
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzha;->buffer:[B
+
+    .line 3
+    invoke-static {p1}, Lcom/google/android/gms/internal/vision/zzhl;->zze([B)Lcom/google/android/gms/internal/vision/zzhl;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/vision/zzha;->zztz:Lcom/google/android/gms/internal/vision/zzhl;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(ILcom/google/android/gms/internal/vision/zzgv;)V
+    .locals 0
+
+    .line 4
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/vision/zzha;-><init>(I)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract zzb(ILjava/lang/Object;Ljava/lang/Object;)I
+.method public final zzfp()Lcom/google/android/gms/internal/vision/zzgs;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzha;->zztz:Lcom/google/android/gms/internal/vision/zzhl;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/vision/zzhl;->zzgb()V
+
+    .line 2
+    new-instance v0, Lcom/google/android/gms/internal/vision/zzhc;
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/vision/zzha;->buffer:[B
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/vision/zzhc;-><init>([B)V
+
+    return-object v0
 .end method
 
-.method public abstract zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-.end method
+.method public final zzfq()Lcom/google/android/gms/internal/vision/zzhl;
+    .locals 1
 
-.method public abstract zzj(Ljava/lang/Object;)Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")",
-            "Ljava/util/Map<",
-            "**>;"
-        }
-    .end annotation
-.end method
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/vision/zzha;->zztz:Lcom/google/android/gms/internal/vision/zzhl;
 
-.method public abstract zzk(Ljava/lang/Object;)Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")",
-            "Ljava/util/Map<",
-            "**>;"
-        }
-    .end annotation
-.end method
-
-.method public abstract zzl(Ljava/lang/Object;)Z
-.end method
-
-.method public abstract zzm(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract zzn(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract zzo(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzgy;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")",
-            "Lcom/google/android/gms/internal/vision/zzgy<",
-            "**>;"
-        }
-    .end annotation
+    return-object v0
 .end method

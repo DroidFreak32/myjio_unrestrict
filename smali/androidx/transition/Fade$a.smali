@@ -1,5 +1,5 @@
 .class public Landroidx/transition/Fade$a;
-.super Lhj;
+.super Landroidx/transition/TransitionListenerAdapter;
 .source "Fade.java"
 
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroid/view/View;
+.field public final synthetic a:Landroid/view/View;
 
 
 # direct methods
@@ -23,32 +23,36 @@
     .locals 0
 
     .line 1
-    iput-object p2, p0, Landroidx/transition/Fade$a;->s:Landroid/view/View;
+    iput-object p2, p0, Landroidx/transition/Fade$a;->a:Landroid/view/View;
 
-    invoke-direct {p0}, Lhj;-><init>()V
+    invoke-direct {p0}, Landroidx/transition/TransitionListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public d(Landroidx/transition/Transition;)V
+.method public onTransitionEnd(Landroidx/transition/Transition;)V
     .locals 2
+    .param p1    # Landroidx/transition/Transition;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
-    iget-object v0, p0, Landroidx/transition/Fade$a;->s:Landroid/view/View;
+    iget-object v0, p0, Landroidx/transition/Fade$a;->a:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-static {v0, v1}, Lxj;->a(Landroid/view/View;F)V
+    invoke-static {v0, v1}, La6;->h(Landroid/view/View;F)V
 
     .line 2
-    iget-object v0, p0, Landroidx/transition/Fade$a;->s:Landroid/view/View;
+    iget-object v0, p0, Landroidx/transition/Fade$a;->a:Landroid/view/View;
 
-    invoke-static {v0}, Lxj;->a(Landroid/view/View;)V
+    invoke-static {v0}, La6;->a(Landroid/view/View;)V
 
     .line 3
-    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$g;)Landroidx/transition/Transition;
+    invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
 
     return-void
 .end method

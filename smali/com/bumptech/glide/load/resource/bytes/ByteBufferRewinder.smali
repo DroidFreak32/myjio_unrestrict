@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field public final buffer:Ljava/nio/ByteBuffer;
+.field private final buffer:Ljava/nio/ByteBuffer;
 
 
 # direct methods
@@ -50,6 +50,14 @@
 
 .method public bridge synthetic rewindAndGet()Ljava/lang/Object;
     .locals 1
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bytes/ByteBufferRewinder;->rewindAndGet()Ljava/nio/ByteBuffer;
@@ -61,6 +69,8 @@
 
 .method public rewindAndGet()Ljava/nio/ByteBuffer;
     .locals 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
 
     .line 2
     iget-object v0, p0, Lcom/bumptech/glide/load/resource/bytes/ByteBufferRewinder;->buffer:Ljava/nio/ByteBuffer;

@@ -3,7 +3,7 @@
 .source "SavedStateRegistry.java"
 
 # interfaces
-.implements Lod;
+.implements Landroidx/lifecycle/GenericLifecycleObserver;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final synthetic s:Landroidx/savedstate/SavedStateRegistry;
+.field public final synthetic a:Landroidx/savedstate/SavedStateRegistry;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Landroidx/savedstate/SavedStateRegistry$1;->s:Landroidx/savedstate/SavedStateRegistry;
+    iput-object p1, p0, Landroidx/savedstate/SavedStateRegistry$1;->a:Landroidx/savedstate/SavedStateRegistry;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public a(Lvd;Landroidx/lifecycle/Lifecycle$Event;)V
+.method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 0
 
     .line 1
@@ -44,7 +44,7 @@
     if-ne p2, p1, :cond_0
 
     .line 2
-    iget-object p1, p0, Landroidx/savedstate/SavedStateRegistry$1;->s:Landroidx/savedstate/SavedStateRegistry;
+    iget-object p1, p0, Landroidx/savedstate/SavedStateRegistry$1;->a:Landroidx/savedstate/SavedStateRegistry;
 
     const/4 p2, 0x1
 
@@ -59,7 +59,7 @@
     if-ne p2, p1, :cond_1
 
     .line 4
-    iget-object p1, p0, Landroidx/savedstate/SavedStateRegistry$1;->s:Landroidx/savedstate/SavedStateRegistry;
+    iget-object p1, p0, Landroidx/savedstate/SavedStateRegistry$1;->a:Landroidx/savedstate/SavedStateRegistry;
 
     const/4 p2, 0x0
 

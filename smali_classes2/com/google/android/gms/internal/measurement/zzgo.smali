@@ -1,87 +1,46 @@
 .class public final Lcom/google/android/gms/internal/measurement/zzgo;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.2"
+.source "com.google.android.gms:play-services-measurement-base@@18.0.0"
 
 
-# static fields
-.field public static final zza:Lcom/google/android/gms/internal/measurement/zzgm;
+# instance fields
+.field public zza:I
 
-.field public static final zzb:Lcom/google/android/gms/internal/measurement/zzgm;
+.field public zzb:J
+
+.field public zzc:Ljava/lang/Object;
+
+.field public final zzd:Lcom/google/android/gms/internal/measurement/zzhl;
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .line 1
-    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzgo;->zzc()Lcom/google/android/gms/internal/measurement/zzgm;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    invoke-static {}, Lcom/google/android/gms/internal/measurement/zzhl;->zza()Lcom/google/android/gms/internal/measurement/zzhl;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzgo;->zza:Lcom/google/android/gms/internal/measurement/zzgm;
-
-    .line 2
-    new-instance v0, Lcom/google/android/gms/internal/measurement/zzgp;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/measurement/zzgp;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/internal/measurement/zzgo;->zzb:Lcom/google/android/gms/internal/measurement/zzgm;
+    iput-object v0, p0, Lcom/google/android/gms/internal/measurement/zzgo;->zzd:Lcom/google/android/gms/internal/measurement/zzhl;
 
     return-void
 .end method
 
-.method public static zza()Lcom/google/android/gms/internal/measurement/zzgm;
-    .locals 1
+.method public constructor <init>(Lcom/google/android/gms/internal/measurement/zzhl;)V
+    .locals 0
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgo;->zza:Lcom/google/android/gms/internal/measurement/zzgm;
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object v0
-.end method
+    .line 4
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public static zzb()Lcom/google/android/gms/internal/measurement/zzgm;
-    .locals 1
+    .line 5
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzgo;->zzd:Lcom/google/android/gms/internal/measurement/zzhl;
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/internal/measurement/zzgo;->zzb:Lcom/google/android/gms/internal/measurement/zzgm;
-
-    return-object v0
-.end method
-
-.method public static zzc()Lcom/google/android/gms/internal/measurement/zzgm;
-    .locals 3
-
-    const-string v0, "com.google.protobuf.MapFieldSchemaFull"
-
-    .line 1
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v2, v1, [Ljava/lang/Class;
-
-    .line 2
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/internal/measurement/zzgm;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method

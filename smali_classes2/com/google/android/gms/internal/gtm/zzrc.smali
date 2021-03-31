@@ -27,7 +27,7 @@
 
 
 # static fields
-.field public static zzbam:Ljava/util/Map;
+.field private static zzbam:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -42,7 +42,7 @@
 # instance fields
 .field public zzbak:Lcom/google/android/gms/internal/gtm/zzts;
 
-.field public zzbal:I
+.field private zzbal:I
 
 
 # direct methods
@@ -90,6 +90,12 @@
             "Lcom/google/android/gms/internal/gtm/zzqe;",
             "Lcom/google/android/gms/internal/gtm/zzqp;",
             ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/gms/internal/gtm/zzrk;
         }
     .end annotation
 
@@ -572,22 +578,15 @@
 
     iput v0, p0, Lcom/google/android/gms/internal/gtm/zzpl;->zzavp:I
 
-    .line 3
-    iget v0, p0, Lcom/google/android/gms/internal/gtm/zzpl;->zzavp:I
-
     return v0
 .end method
 
 .method public final isInitialized()Z
     .locals 1
 
+    const/4 v0, 0x1
+
     .line 1
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
     invoke-static {p0, v0}, Lcom/google/android/gms/internal/gtm/zzrc;->zza(Lcom/google/android/gms/internal/gtm/zzrc;Z)Z
 
     move-result v0
@@ -624,6 +623,11 @@
 
 .method public final zzb(Lcom/google/android/gms/internal/gtm/zzqj;)V
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .line 1
     invoke-static {}, Lcom/google/android/gms/internal/gtm/zzsw;->zzqs()Lcom/google/android/gms/internal/gtm/zzsw;

@@ -20,11 +20,14 @@
 
 
 # instance fields
-.field public final height:I
+.field private final height:I
 
-.field public request:Lcom/bumptech/glide/request/Request;
+.field private request:Lcom/bumptech/glide/request/Request;
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end field
 
-.field public final width:I
+.field private final width:I
 
 
 # direct methods
@@ -93,6 +96,8 @@
 # virtual methods
 .method public final getRequest()Lcom/bumptech/glide/request/Request;
     .locals 1
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
 
     .line 1
     iget-object v0, p0, Lcom/bumptech/glide/request/target/CustomTarget;->request:Lcom/bumptech/glide/request/Request;
@@ -102,6 +107,10 @@
 
 .method public final getSize(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 2
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     .line 1
     iget v0, p0, Lcom/bumptech/glide/request/target/CustomTarget;->width:I
@@ -121,12 +130,20 @@
 
 .method public onLoadFailed(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public onLoadStarted(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .param p1    # Landroid/graphics/drawable/Drawable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     return-void
 .end method
@@ -145,12 +162,20 @@
 
 .method public final removeCallback(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     return-void
 .end method
 
 .method public final setRequest(Lcom/bumptech/glide/request/Request;)V
     .locals 0
+    .param p1    # Lcom/bumptech/glide/request/Request;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
 
     .line 1
     iput-object p1, p0, Lcom/bumptech/glide/request/target/CustomTarget;->request:Lcom/bumptech/glide/request/Request;

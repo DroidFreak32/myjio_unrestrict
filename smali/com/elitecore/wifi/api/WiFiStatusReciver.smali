@@ -141,7 +141,7 @@
 
     move-result-object p1
 
-    const-string p2, "wifi"
+    const-string/jumbo p2, "wifi"
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -198,7 +198,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0, p2}, Lo00;->a(Landroid/net/wifi/WifiManager;Ljava/lang/String;I)V
+    invoke-static {p1, v0, p2}, Lcom/elitecore/wifi/api/b;->a(Landroid/net/wifi/WifiManager;Ljava/lang/String;I)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 

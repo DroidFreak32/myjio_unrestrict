@@ -2,26 +2,72 @@
 .super Ljava/lang/Object;
 
 
+# annotations
+.annotation build Landroidx/room/Entity;
+    tableName = "AnalyticsDevInfo"
+.end annotation
+
+
 # instance fields
-.field public DevID:Ljava/lang/String;
+.field private DevID:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "DevID"
+    .end annotation
+.end field
 
-.field public DevType:Ljava/lang/String;
+.field private DevType:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "DevType"
+    .end annotation
+.end field
 
-.field public DmV:Ljava/lang/String;
+.field private DmV:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "DmV"
+    .end annotation
+.end field
 
-.field public FwV:Ljava/lang/String;
+.field private FwV:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "FwV"
+    .end annotation
+.end field
 
-.field public HwV:Ljava/lang/String;
+.field private HwV:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "HwV"
+    .end annotation
+.end field
 
-.field public Lang:Ljava/lang/String;
+.field private Lang:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "Lang"
+    .end annotation
+.end field
 
-.field public Man:Ljava/lang/String;
+.field private Man:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "Man"
+    .end annotation
+.end field
 
-.field public Mod:Ljava/lang/String;
+.field private Mod:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "Mod"
+    .end annotation
+.end field
 
-.field public OEM:Ljava/lang/String;
+.field private OEM:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "OEM"
+    .end annotation
+.end field
 
-.field public SwV:Ljava/lang/String;
+.field private SwV:Ljava/lang/String;
+    .annotation build Landroidx/room/ColumnInfo;
+        name = "SwV"
+    .end annotation
+.end field
 
 
 # direct methods

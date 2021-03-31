@@ -29,11 +29,11 @@
 
     .line 1
     :try_start_0
-    invoke-static {p1}, Lhf0;->a(Landroid/content/Context;)Lhf0;
+    invoke-static {p1}, Lcom/inn/passivesdk/PreferenceHelper;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/PreferenceHelper;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lhf0;->Y()Z
+    invoke-virtual {p2}, Lcom/inn/passivesdk/PreferenceHelper;->isReceiverRegister()Z
 
     move-result p2
 
@@ -43,7 +43,7 @@
 
     .line 2
     :cond_0
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
@@ -51,34 +51,34 @@
 
     move-result-wide v0
 
-    invoke-virtual {p2, v0, v1}, Lmg0;->c(J)V
+    invoke-virtual {p2, v0, v1}, Lcom/inn/passivesdk/util/SdkAppUtil;->resetAppInfoListCapturedTime(J)V
 
     .line 3
-    invoke-static {p1}, Lmg0;->d(Landroid/content/Context;)Lmg0;
+    invoke-static {p1}, Lcom/inn/passivesdk/util/SdkAppUtil;->getInstance(Landroid/content/Context;)Lcom/inn/passivesdk/util/SdkAppUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lmg0;->b()V
+    invoke-virtual {p2}, Lcom/inn/passivesdk/util/SdkAppUtil;->checkCaptureAppInfoList()V
 
     .line 4
-    invoke-static {}, Lug0;->a()Lug0;
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object p2
 
-    invoke-virtual {p2, p1}, Lug0;->b(Landroid/content/Context;)Z
+    invoke-virtual {p2, p1}, Lcom/inn/passivesdk/util/ServiceUtil;->isAbleToCaptureScreenOnEvent(Landroid/content/Context;)Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
     .line 5
-    invoke-static {}, Lug0;->a()Lug0;
+    invoke-static {}, Lcom/inn/passivesdk/util/ServiceUtil;->getInstance()Lcom/inn/passivesdk/util/ServiceUtil;
 
     move-result-object p2
 
     const/4 v0, 0x0
 
-    invoke-virtual {p2, p1, v0}, Lug0;->a(Landroid/content/Context;Z)V
+    invoke-virtual {p2, p1, v0}, Lcom/inn/passivesdk/util/ServiceUtil;->captureScreenOnEventAfterDelay(Landroid/content/Context;Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0

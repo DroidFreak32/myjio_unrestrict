@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/common/Feature;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-basement@@17.4.0"
 
 
 # annotations
@@ -13,6 +14,9 @@
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -24,14 +28,14 @@
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final zza:Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getName"
         id = 0x1
     .end annotation
 .end field
 
-.field public final zzk:I
+.field private final zzb:I
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         getter = "getOldVersion"
         id = 0x2
@@ -41,7 +45,7 @@
     .end annotation
 .end field
 
-.field public final zzl:J
+.field private final zzc:J
     .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Field;
         defaultValue = "-1"
         getter = "getVersion"
@@ -67,16 +71,25 @@
 .method public constructor <init>(Ljava/lang/String;IJ)V
     .locals 0
     .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x1
         .end annotation
     .end param
     .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
         .end annotation
     .end param
     .param p3    # J
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x3
         .end annotation
@@ -88,19 +101,27 @@
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 6
-    iput-object p1, p0, Lcom/google/android/gms/common/Feature;->name:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/Feature;->zza:Ljava/lang/String;
 
     .line 7
-    iput p2, p0, Lcom/google/android/gms/common/Feature;->zzk:I
+    iput p2, p0, Lcom/google/android/gms/common/Feature;->zzb:I
 
     .line 8
-    iput-wide p3, p0, Lcom/google/android/gms/common/Feature;->zzl:J
+    iput-wide p3, p0, Lcom/google/android/gms/common/Feature;->zzc:J
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;J)V
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # J
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -108,15 +129,15 @@
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/Feature;->name:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/Feature;->zza:Ljava/lang/String;
 
     .line 3
-    iput-wide p2, p0, Lcom/google/android/gms/common/Feature;->zzl:J
+    iput-wide p2, p0, Lcom/google/android/gms/common/Feature;->zzc:J
 
     const/4 p1, -0x1
 
     .line 4
-    iput p1, p0, Lcom/google/android/gms/common/Feature;->zzk:I
+    iput p1, p0, Lcom/google/android/gms/common/Feature;->zzb:I
 
     return-void
 .end method
@@ -125,6 +146,12 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .param p1    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/common/Feature;
@@ -195,22 +222,28 @@
 
 .method public getName()Ljava/lang/String;
     .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/Feature;->name:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/Feature;->zza:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public getVersion()J
     .locals 5
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     .line 1
-    iget-wide v0, p0, Lcom/google/android/gms/common/Feature;->zzl:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/Feature;->zzc:J
 
     const-wide/16 v2, -0x1
 
@@ -218,7 +251,7 @@
 
     if-nez v4, :cond_0
 
-    iget v0, p0, Lcom/google/android/gms/common/Feature;->zzk:I
+    iget v0, p0, Lcom/google/android/gms/common/Feature;->zzb:I
 
     int-to-long v0, v0
 
@@ -228,6 +261,8 @@
 
 .method public hashCode()I
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -263,6 +298,8 @@
 
 .method public toString()Ljava/lang/String;
     .locals 3
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
 
     .line 1
     invoke-static {p0}, Lcom/google/android/gms/common/internal/Objects;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
@@ -305,6 +342,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # I
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->beginObjectHeader(Landroid/os/Parcel;)I
@@ -324,7 +369,7 @@
     invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     .line 4
-    iget v0, p0, Lcom/google/android/gms/common/Feature;->zzk:I
+    iget v0, p0, Lcom/google/android/gms/common/Feature;->zzb:I
 
     const/4 v1, 0x2
 

@@ -1,181 +1,108 @@
-.class public Lcom/google/android/gms/internal/ads/zzaud;
-.super Landroid/webkit/WebView;
+.class public final Lcom/google/android/gms/internal/ads/zzaud;
+.super Lcom/google/android/gms/internal/ads/zzaue;
+.source "com.google.android.gms:play-services-ads@@19.5.0"
 
 
-# annotations
-.annotation runtime Lcom/google/android/gms/internal/ads/zzaer;
-.end annotation
+# instance fields
+.field private final type:Ljava/lang/String;
+
+.field private final zzdxu:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
-
-    const/4 p1, 0x0
+    invoke-direct {p0}, Lcom/google/android/gms/internal/ads/zzaue;-><init>()V
 
     .line 2
-    invoke-virtual {p0, p1}, Landroid/webkit/WebView;->setBackgroundColor(I)V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ads/zzaud;->type:Ljava/lang/String;
 
     .line 3
-    invoke-virtual {p0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    move-result-object v0
-
-    .line 4
-    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V
-
-    .line 5
-    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setSavePassword(Z)V
-
-    const/4 p1, 0x1
-
-    .line 6
-    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
-
-    .line 7
-    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
-
-    .line 8
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v1, v2, :cond_0
-
-    const/4 v1, 0x2
-
-    .line 9
-    invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
-
-    .line 10
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzem()Lcom/google/android/gms/internal/ads/zzalw;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/internal/ads/zzalw;->zza(Landroid/content/Context;Landroid/webkit/WebSettings;)Z
-
-    const-string v0, "accessibility"
-
-    .line 11
-    invoke-virtual {p0, v0}, Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V
-
-    const-string v0, "accessibilityTraversal"
-
-    .line 12
-    invoke-virtual {p0, v0}, Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V
-
-    .line 13
-    :try_start_0
-    invoke-virtual {p0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "Unable to enable Javascript."
-
-    .line 14
-    invoke-static {v1, v0}, Lcom/google/android/gms/internal/ads/zzaok;->zzb(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    const/4 v0, 0x0
-
-    .line 15
-    invoke-virtual {p0, p1, v0}, Landroid/webkit/WebView;->setLayerType(ILandroid/graphics/Paint;)V
+    iput p2, p0, Lcom/google/android/gms/internal/ads/zzaud;->zzdxu:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_1
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    instance-of v1, p1, Lcom/google/android/gms/internal/ads/zzaud;
 
-    const/16 v1, 0x11
+    if-nez v1, :cond_0
 
-    if-lt v0, v1, :cond_0
+    goto :goto_0
 
     .line 2
-    invoke-super {p0, p1, p2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-void
-
     :cond_0
-    const-string p1, "Ignore addJavascriptInterface due to low Android version."
+    check-cast p1, Lcom/google/android/gms/internal/ads/zzaud;
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/internal/ads/zzalg;->v(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/google/android/gms/internal/ads/zzaud;->type:Ljava/lang/String;
 
-    return-void
-.end method
+    .line 4
+    iget-object v2, p1, Lcom/google/android/gms/internal/ads/zzaud;->type:Ljava/lang/String;
 
-.method public loadUrl(Ljava/lang/String;)V
-    .locals 2
+    .line 5
+    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 1
-    :try_start_0
-    invoke-super {p0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IncompatibleClassChangeError; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v1
 
-    return-void
+    if-eqz v1, :cond_1
 
-    :catch_0
-    move-exception p1
+    .line 6
+    iget v1, p0, Lcom/google/android/gms/internal/ads/zzaud;->zzdxu:I
 
-    goto :goto_0
+    .line 7
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :catch_1
-    move-exception p1
+    move-result-object v1
 
-    goto :goto_0
+    .line 8
+    iget p1, p1, Lcom/google/android/gms/internal/ads/zzaud;->zzdxu:I
 
-    :catch_2
-    move-exception p1
+    .line 9
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 2
+    move-result-object p1
+
+    invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
     :goto_0
-    invoke-static {}, Lcom/google/android/gms/ads/internal/zzbv;->zzeo()Lcom/google/android/gms/internal/ads/zzakr;
-
-    move-result-object v0
-
-    const-string v1, "CoreWebView.loadUrl"
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/internal/ads/zzakr;->zza(Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    const-string v0, "#007 Could not call remote method."
-
-    .line 3
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/ads/zzaok;->zzd(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    return v0
 .end method
 
-.method public zzbh(Ljava/lang/String;)V
-    .locals 0
+.method public final getAmount()I
+    .locals 1
 
     .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ads/zzaui;->zza(Landroid/webkit/WebView;Ljava/lang/String;)V
+    iget v0, p0, Lcom/google/android/gms/internal/ads/zzaud;->zzdxu:I
 
-    return-void
+    return v0
+.end method
+
+.method public final getType()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ads/zzaud;->type:Ljava/lang/String;
+
+    return-object v0
 .end method

@@ -1,16 +1,38 @@
 .class public interface abstract Ls2;
 .super Ljava/lang/Object;
-.source "FitWindowsViewGroup.java"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Ls2$a;
-    }
-.end annotation
+.source "LocaleListInterface.java"
 
 
 # virtual methods
-.method public abstract setOnFitSystemWindowsListener(Ls2$a;)V
+.method public abstract a(Ljava/util/Locale;)I
+    .annotation build Landroidx/annotation/IntRange;
+        from = -0x1L
+    .end annotation
+.end method
+
+.method public abstract b()Ljava/lang/String;
+.end method
+
+.method public abstract c()Ljava/lang/Object;
+.end method
+
+.method public abstract d([Ljava/lang/String;)Ljava/util/Locale;
+    .param p1    # [Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+.end method
+
+.method public abstract get(I)Ljava/util/Locale;
+.end method
+
+.method public abstract isEmpty()Z
+.end method
+
+.method public abstract size()I
+    .annotation build Landroidx/annotation/IntRange;
+        from = 0x0L
+    .end annotation
 .end method

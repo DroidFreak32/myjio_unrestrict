@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/location/LocationSettingsRequest$Builder;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-location@@17.1.0"
 
 
 # annotations
@@ -14,13 +15,7 @@
 
 
 # instance fields
-.field public zzbh:Z
-
-.field public zzbi:Z
-
-.field public zzbj:Lcom/google/android/gms/location/zzae;
-
-.field public final zzbk:Ljava/util/ArrayList;
+.field private final zza:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -30,28 +25,39 @@
     .end annotation
 .end field
 
+.field private zzb:Z
+
+.field private zzc:Z
+
+.field private zzd:Lcom/google/android/gms/location/zzay;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbk:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zza:Ljava/util/ArrayList;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbh:Z
+    .line 3
+    iput-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzb:Z
 
-    iput-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbi:Z
+    .line 4
+    iput-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzc:Z
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbj:Lcom/google/android/gms/location/zzae;
+    .line 5
+    iput-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzd:Lcom/google/android/gms/location/zzay;
 
     return-void
 .end method
@@ -70,6 +76,7 @@
         }
     .end annotation
 
+    .line 1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -90,7 +97,8 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbk:Ljava/util/ArrayList;
+    .line 2
+    iget-object v1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zza:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -102,10 +110,15 @@
 
 .method public final addLocationRequest(Lcom/google/android/gms/location/LocationRequest;)Lcom/google/android/gms/location/LocationSettingsRequest$Builder;
     .locals 1
+    .param p1    # Lcom/google/android/gms/location/LocationRequest;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbk:Ljava/util/ArrayList;
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zza:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -116,17 +129,18 @@
 .method public final build()Lcom/google/android/gms/location/LocationSettingsRequest;
     .locals 5
 
+    .line 1
     new-instance v0, Lcom/google/android/gms/location/LocationSettingsRequest;
 
-    iget-object v1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbk:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zza:Ljava/util/ArrayList;
 
-    iget-boolean v2, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbh:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzb:Z
 
-    iget-boolean v3, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbi:Z
+    iget-boolean v3, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzc:Z
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/gms/location/LocationSettingsRequest;-><init>(Ljava/util/List;ZZLcom/google/android/gms/location/zzae;)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/gms/location/LocationSettingsRequest;-><init>(Ljava/util/List;ZZLcom/google/android/gms/location/zzay;)V
 
     return-object v0
 .end method
@@ -134,7 +148,8 @@
 .method public final setAlwaysShow(Z)Lcom/google/android/gms/location/LocationSettingsRequest$Builder;
     .locals 0
 
-    iput-boolean p1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbh:Z
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzb:Z
 
     return-object p0
 .end method
@@ -142,7 +157,8 @@
 .method public final setNeedBle(Z)Lcom/google/android/gms/location/LocationSettingsRequest$Builder;
     .locals 0
 
-    iput-boolean p1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzbi:Z
+    .line 1
+    iput-boolean p1, p0, Lcom/google/android/gms/location/LocationSettingsRequest$Builder;->zzc:Z
 
     return-object p0
 .end method
